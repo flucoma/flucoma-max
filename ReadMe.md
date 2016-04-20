@@ -1,6 +1,6 @@
-# Max-SDK-Lite
-[![Build Status](https://travis-ci.org/tap/max-sdk-lite.svg?branch=master)](https://travis-ci.org/tap/max-sdk-lite)
-[![Build status](https://ci.appveyor.com/api/projects/status/jkmmam5t0p0pplps?svg=true)](https://ci.appveyor.com/project/tap/max-sdk-lite)
+# Max-DevKit
+[![Build Status](https://travis-ci.org/Cycling74/max-devkit.svg?branch=master)](https://travis-ci.org/Cycling74/max-devkit)
+[![Build status](https://ci.appveyor.com/api/projects/status/jkmmam5t0p0pplps?svg=true)](https://ci.appveyor.com/project/Cycling74/max-devkit)
 
 This is a simplified and reduced version of the full Max SDK.
 
@@ -8,10 +8,10 @@ While this may not provide all of the backwards compatibility or functionality o
 
 ## Structure
 
-There are two levels of material included in the Max-SDK-Lite package.  The outer level is a Max package folder named, appropriately, "max-sdk-lite".  The inner level is a folder called "max-sdk-core". 
+There are two levels of material included in the Max-DevKit package.  The outer level is a Max package folder named, appropriately, "max-devkit".  The inner level is a folder called "max-api". 
 
-* `max-sdk-lite` is an example package following current best-practices package creation.
-* `max-sdk-core` is a folder containing all of the support files you will need to compile an external object written in C/C++.  This folder you will include in your own package's source folder.
+* `max-devkit` is an example package following current best-practices package creation.
+* `max-api` is a folder containing all of the support files you will need to compile an external object written in C/C++.  This folder you will include in your own package's source folder.
 
 
 ## Prerequisites
@@ -59,10 +59,10 @@ It is highly recommended that you test your code thoroughly. One option is use t
 
 Continuous Integration (CI) is...
 
-The Max-SDK-Lite project models CI using two different services, both of which are free and very easy to set up if your project is hosted publically on Github.
+The Max-DevKit project models CI using two different services, both of which are free and very easy to set up if your project is hosted publically on Github.
 
-* **Mac**: go to http://travis-ci.org and sign up.  If your repository follows the same model as Max-SDK-Lite, you can copy `.travis.yml` directly with no changes.  Now every push to your repository will trigger an automatic build for the Mac with Travis CI.
-* **Windows**: go to http://appveyor.com and sign up.  If your repository follows the same model as Max-SDK-Lite, you can copy `appveyor.yml` directly with no changes.  Now every push to your repository will trigger automatic builds for both 32 and 64-bit Windows with Appveyor.
+* **Mac**: go to http://travis-ci.org and sign up.  If your repository follows the same model as Max-DevKit, you can copy `.travis.yml` directly with no changes.  Now every push to your repository will trigger an automatic build for the Mac with Travis CI.
+* **Windows**: go to http://appveyor.com and sign up.  If your repository follows the same model as Max-DevKit, you can copy `appveyor.yml` directly with no changes.  Now every push to your repository will trigger automatic builds for both 32 and 64-bit Windows with Appveyor.
 
 ### Fetching your builds
 

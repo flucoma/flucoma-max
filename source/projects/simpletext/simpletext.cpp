@@ -36,7 +36,8 @@ void simpletext_dblclick(t_simpletext* self) {
 		object_attr_setchar(self->editor, gensym("visible"), 1);
 	else {
 		self->editor = (t_object*)object_new(CLASS_NOBOX, gensym("jed"), self, 0);
-		object_method(self->editor, gensym("settext"), self->text.c_str(), gensym("utf-8"));
+		object_method_direct(void, (t_object*, const char*, t_symbol*),
+							 self->editor, gensym("settext"), self->text.c_str(), gensym("utf-8"));
 		object_attr_setchar(self->editor, gensym("scratch"), 1);
 		object_attr_setsym(self->editor, gensym("title"), gensym("simpletext"));
 	}
