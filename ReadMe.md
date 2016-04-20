@@ -1,6 +1,7 @@
 # Max-DevKit
 [![Build Status](https://travis-ci.org/Cycling74/max-devkit.svg?branch=master)](https://travis-ci.org/Cycling74/max-devkit)
-[![Build status](https://ci.appveyor.com/api/projects/status/jkmmam5t0p0pplps?svg=true)](https://ci.appveyor.com/project/Cycling74/max-devkit)
+[![Build status](https://ci.appveyor.com/api/projects/status/4u6n0eseaemdp2t5?svg=true)](https://ci.appveyor.com/project/tap/max-devkit)
+
 
 This is a simplified and reduced version of the full Max SDK.
 
