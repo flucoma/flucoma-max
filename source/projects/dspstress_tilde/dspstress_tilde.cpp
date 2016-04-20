@@ -44,7 +44,8 @@ void dspstress_perform64(t_dspstress* self, t_object* dsp64, double** ins, long 
 
 void dspstress_dsp64(t_dspstress* self, t_object* dsp64, short *count, double samplerate, long maxvectorsize, long flags) {
 	self->svtime_ms = maxvectorsize / samplerate * 1000.0;
-	object_method(dsp64, gensym("dsp_add64"), self, dspstress_perform64, 0, NULL);
+	object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
+						 dsp64, gensym("dsp_add64"), (t_object*)self, (t_perfroutine64)dspstress_perform64, 0, NULL);
 }
 
 

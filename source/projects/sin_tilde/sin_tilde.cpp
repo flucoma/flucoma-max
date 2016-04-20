@@ -31,7 +31,8 @@ void sin_perform64(t_sin* self, t_object* dsp64, double** ins, long numins, doub
 
 
 void sin_dsp64(t_sin* self, t_object* dsp64, short* count, double samplerate, long maxvectorsize, long flags) {
-	object_method(dsp64, gensym("dsp_add64"), self, sin_perform64, 0, NULL);
+	object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
+						 dsp64, gensym("dsp_add64"), (t_object*)self, (t_perfroutine64)sin_perform64, 0, NULL);
 }
 
 
