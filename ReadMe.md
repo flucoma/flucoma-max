@@ -72,7 +72,7 @@ The Max-DevKit project models CI using two different services, both of which are
 
 #### S3 Integration
 
-The builds from Travis for this package can be found on [this free S3 page](https://s3-us-west-2.amazonaws.com/74objects-ci/tap/max-sdk-lite/index.html).
+The builds from Travis for this package can be found on [this S3-hosted page](https://s3-us-west-2.amazonaws.com/cycling74-ci/Cycling74/index.html?prefix=Cycling74/max-devkit/).
 
 To setup your own page:
 
@@ -81,7 +81,7 @@ To setup your own page:
 2. Add the correct info to your `.travis.yml` file for your S3 bucket as described in the [Travis Artifacts Documentation](https://docs.travis-ci.com/user/uploading-artifacts/).  For security, you will need to encrypt your S3 info as documented in the [Travis Encryption Keys Documentation](https://docs.travis-ci.com/user/encryption-keys/).
 3. At this point, builds should go from Travis to your S3 bucket.  The process will create a folder heirarchy of the form `user_name/repo_name/travis_build/travis_job/your_package.zip`.
 4. To access the build, you can log in to your S3 account and download it. Alternatively you may want to make your builds publically available. If you wish to do the later, read on...
-5. upload the files from this folder's `source/max-sdk-lite/site` folder to your S3 bucket's `user_name/repo_name` folder. For more information on the content of these files, please visit the Github page for the [S3 Bucket Listing Code](https://github.com/rgrp/s3-bucket-listing).
+5. upload the files from this folder's `source/max-api/site` folder to your S3 bucket's `user_name/repo_name` folder. For more information on the content of these files, please visit the Github page for the [S3 Bucket Listing Code](https://github.com/rgrp/s3-bucket-listing).
 6. As described on the above Github page, you will need to set the permissions for your bucket such that "Everyone" has both `listing` and `viewing` access.
 
 
