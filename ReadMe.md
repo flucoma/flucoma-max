@@ -3,9 +3,9 @@
 [![Build status](https://ci.appveyor.com/api/projects/status/4u6n0eseaemdp2t5?svg=true)](https://ci.appveyor.com/project/tap/max-devkit)
 
 
-This is a simplified and reduced version of the full Max SDK.
+Tools, documentation, and reference implementation of a Max Package built using the Max-API.
 
-While this may not provide all of the backwards compatibility or functionality of the [full Max SDK](https://github.com/Cycling74/max-sdk), it should provide an easier path for those wishing to create their own package including Max external objects written in C/C++.
+For full backwards compatibility or additional functionality, the [legacy Max SDK](https://github.com/Cycling74/max-sdk) may provide an alternate path for those wishing to create their own package including Max external objects written in C/C++.
 
 ## Structure
 
