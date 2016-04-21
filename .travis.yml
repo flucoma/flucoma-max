@@ -1,11 +1,14 @@
 language:
 - objective-c
 - c++
+
 compiler:
 - clang
+
 sudo: false
 os: osx
 osx_image: xcode7.3
+
 script:
 - mkdir build
 - cd build
@@ -29,16 +32,7 @@ script:
 - if [ -d patchers ]; then cp -r help $PACKAGE_NAME; fi
 - mkdir dist
 - zip -r dist/$PACKAGE_NAME-$PACKAGE_REV.zip $PACKAGE_NAME
-#addons:
-#  artifacts:
-#    s3_region: us-west-2
-#    paths:
-#    - "$PACKAGE_NAME-$PACKAGE_REV.zip"
-#env:
-#  global:
-#  - ARTIFACTS_BUCKET=cycling74-ci
-#  - ARTIFACTS_KEY=AKIAIWE3SI2TMXC5AJBA
-#  - secure: rV67ClxSKj0wER+8E+vF0W6Emd69ePSL32dRxeG3KwA4ZhMF71r2FnjQNqE9zFc67DV/XdIiGSTxaLmAx2zZgLMgQBk+Cn+Y8IzExUD5iYhia2YV0iirge3b8KzncfMpMcuVFLZyn9cvu0NIorvFGIrCkygtn3s2GNJVSX44xs53AOaNyUARSdJbZVUhiA+5uHDdOzAl28/DlSo22pCjn9rb+o69ti0apAseT8qsnNO/mBBNDj0ZKK2WaE1nxZfcQmu+spM3sTzCKZdou2vXasnU7CAXvNmYu6okXMjOglCSDGJoaxrHebSo2RuKwAYjTOj0Dz+NW8TJQHYWY4K0w3039pionLnNiUT/mOEmAzXLjj+FWPBdWIgtA18OZWQnN6P6y9cldMUQvfduo8RPTjup6S+vAEo6AyUytVe3zUdHsIESRwew3uQdGjSLn7AONDIYjINSVpvMm80janBluxIHAiuoHMTwobMX2DD4FsTn9eBPgODvH99eAffbVthGTqhTAcrXxwE4Qm3oHhbeVg00UpcfVQ7gm0GFJDlb/rixAlNGDugxmr9Lz2pMlXrnEFPgHs/4CBd+zVqNYaLiXKG29bc9Cl6FmicX5c2IHBLaNnm+wlkXXna0PIgCpkEQ9rkYgwInESvn7R1WNCWNTIPjn/UxyZBzb/vVwgb/rDw=
+
 deploy:
   provider: s3
   access_key_id: AKIAIWE3SI2TMXC5AJBA
