@@ -45,6 +45,7 @@ deploy:
   secret_access_key:
     secure: HUKaAnjUJOF9N4TQhhXqDb7ZJQPD/VLFOzRtf7cmt8fhLCv7yE2tmIC8GcW+CJbMKIxszgcw19Wasl9vY6gUOCRd6f8jkqFYEZr9fyD+pJ2sUniZBjuJrR6iNmZy+pBmH/z6ho8H4U/VhDKNz2rAudzjEgUzmgqDfJBR3qz2x+7CG6C+V8r4Yj71HzfT6F/vD0vO8vR+D1/h+H3J66HTCJNNd9fpYrEfEOLGxN7+4P9tSUyXGWAzWrZuzobnH9grz9mZuH3NSYXje+q9uFlgHM45lYJzAu8SLoxEcwcJ1YJPOciZRLUM/NKrDQM7j/0zFuzLHZxn+ZJgVSYQPol+xQ9AP/q/RpWTCNNMt4y9UFLigTTav6kbM8vHex1T7lu9Lub5NKOJBbtrTrVKFgIJOc5dwP6ldMxVCjvrzvX0UxU7e0lIsBLEHaNN5tn9M4wO4HbjDBjlybuqeQgIY/jzpAFMzTweO75Fc4bZSjz1EPmjxc1SREpGzRJoKa4z5iSmnKNSDY3BUuyE6ZCKeYJ3WnyMs3r6+OMe/ukP1WKMcGrZIGWmsfhlGbLTo2aDUMqD9GJoRLAO8XSFFtBP1Z7LqwOLQJI1+Dg8GGrD/w07WdJuTHguF4LYhFupABgWCIjjeohv5I1cmEiJ7Tb//F++TrTe8Qt/mmzKMwGV4Zg3PNc=
   bucket: cycling74-ci
+  skip_cleanup: true
   local-dir: dist
   upload-dir: max-devkit
   acl: public_read
