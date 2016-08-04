@@ -26,7 +26,7 @@ void sin_free(t_sin* self) {
 
 void sin_perform64(t_sin* self, t_object* dsp64, double** ins, long numins, double** outs, long numouts, long sampleframes, long flags, void* userparam) {
 	for (auto i=0; i<sampleframes; ++i)
-		outs[0][i] = std::sin(ins[0][i] * M_2_PI);
+		outs[0][i] = std::sin(ins[0][i] * 2.0 * M_PI);
 }
 
 
