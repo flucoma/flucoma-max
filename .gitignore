@@ -10,5 +10,5 @@ build
 *.o
 *.dylib
 tmp
-
+*.xcodeproj/*
 package-info.json
