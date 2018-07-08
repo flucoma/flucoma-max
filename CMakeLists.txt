@@ -1,15 +1,16 @@
 cmake_minimum_required(VERSION 3.0)
 
+set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Minimum OS X deployment version")
 # Fetch the correct verion of the max-api
-message(STATUS "Updating Git Submodules")
-execute_process(
-	COMMAND				git submodule update --init --recursive
-	WORKING_DIRECTORY	"${CMAKE_CURRENT_SOURCE_DIR}"
-)
+#message(STATUS "Updating Git Submodules")
+#execute_process(
+#	COMMAND				git submodule update --init --recursive
+#	WORKING_DIRECTORY	"${CMAKE_CURRENT_SOURCE_DIR}"
+#)
 
 
 # Misc setup and subroutines
-include(${CMAKE_CURRENT_SOURCE_DIR}/source/max-api/script/max-package.cmake)
+include(${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake)
 
 
 # Generate a project for every folder in the "source/projects" folder
