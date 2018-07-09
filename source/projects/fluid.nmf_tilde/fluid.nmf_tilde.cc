@@ -1,24 +1,18 @@
+/* Non-real time NMF in Max
+ *
+ */
 
-//#include "c74_msp.h"
 #include <vector>
 #include <algorithm>
 #include "stft.h"
 #include "nmf.h"
 #include <Eigen/Dense>
 #include "ext.h"
-//#include "z_dsp.h"
-//#include "math.h"
 #include "ext_buffer.h"
 #include "fluid_nmf_tilde_util.h"
 #include "version.h"
-//#include "ext_atomic.h"
-//#include "ext_obex.h"
 
-//using namespace c74::max;
-
-
-//using std::runtime_error;
-//using std::cout;
+//Using statements for eigenmf. These will change
 using stft::STFT;
 using stft::ISTFT;
 using stft::Spectrogram;
@@ -33,6 +27,7 @@ using util::stlVecVec2Eigen;
 using util::Eigen2StlVecVec;
 using std::numeric_limits;
 
+//Using for utilities relating to this Max object
 using fluid::nmf_max_client::error_strings;
 using fluid::nmf_max_client::copy_to_buffer;
 using fluid::nmf_max_client::from_rows;
@@ -57,19 +52,8 @@ struct fft_args{
 
 void *nmf_new(t_symbol *s,  short argc, t_atom *argv);
 void nmf_free(t_nmf *x);
-//t_max_err nmf_notify(t_nmf *x, t_symbol *s, t_symbol *msg, void *sender, void *data);
-//void nmf_assist(t_nmf *x, void *b, long m, long a, char *s);
-//void nmf_limits(t_nmf *x);
-//void nmf_set(t_nmf *x, t_symbol *s, long ac, t_atom *av);
-//void nmf_float(t_nmf *x, double f);
-//void nmf_int(t_nmf *x, long n);
-//void nmf_dblclick(t_nmf *x);
-//void nmf_perform64(t_nmf *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam);
-//void nmf_dsp64(t_nmf *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags);
-
 void nmf_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av);
 void nmf_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av);
-
 void nmf_fftcheck(t_nmf *x, t_symbol *s, long ac, t_atom *av);
 
 bool validate_polybuffer(t_nmf *x, t_symbol *pb_name);
@@ -87,32 +71,17 @@ void ext_main(void *r)
 {
     t_class *c = class_new("fluid.nmf~", (method)nmf_new, NULL, sizeof(t_nmf), NULL, A_GIMME, 0);
     
-    //    class_addmethod(c, (method)nmf_dsp64,        "dsp64",    A_CANT, 0);
-    //    class_addmethod(c, (method)nmf_float,        "float",    A_FLOAT, 0);
-    //    class_addmethod(c, (method)nmf_int,            "int",        A_LONG, 0);
-    //    class_addmethod(c, (method)nmf_set,            "set",        A_GIMME, 0);
-    //    class_addmethod(c, (method)nmf_assist,        "assist",    A_CANT, 0);
-    //    class_addmethod(c, (method)nmf_dblclick,    "dblclick",    A_CANT, 0);
-    //    class_addmethod(c, (method)nmf_notify,        "notify",    A_CANT, 0);
-    
     class_addmethod(c, (method)call_makefilters,        "filters",   A_GIMME, 0);
     class_addmethod(c, (method)call_makesources,        "sources",  A_GIMME, 0);
-    
     class_addmethod(c, (method)call_fftcheck, "fftcheck", A_GIMME, 0);
     
     c->c_flags |= CLASS_FLAG_NEWDICTIONARY; //To let us have default attr values
-    
     CLASS_ATTR_LONG        (c, "iterations", 0, t_nmf, m_iterations);
     CLASS_ATTR_FILTER_MIN  (c, "iterations", 1);
     CLASS_ATTR_DEFAULT_SAVE(c, "iterations", 0, "100");
-    
-    
-    
-    //    class_dspinit(c);
+
     class_register(CLASS_BOX, c);
     s_nmf_class = c;
-    
-    //    ps_buffer_modified = gensym("buffer_modified");
 }
 
 
@@ -132,12 +101,7 @@ void *nmf_new(t_symbol *s,  short argc, t_atom *argv)
 
 
 void nmf_free(t_nmf *x)
-{
-    //    dsp_free((t_pxobject *)x);
-    
-    // must free our buffer reference when we will no longer use it
-    //    object_free(x->w_buf);
-}
+{}
 
 bool validate_polybuffer(t_nmf *x, t_symbol *pb_name)
 {
@@ -181,7 +145,6 @@ void process_fft_args(t_object* obj, fft_args* a, long ac, t_atom *av, int offse
             a->fft_size = pow(2,trunc(log2_fft_size) + 1);
         }
     }
-    //    aframe_size = (fft_size >> 1) + 1;
     
     a->window_size = ac > offset+1 ? atom_getlong(av + offset +1) : a->fft_size;
     if( a->window_size > a->fft_size)
