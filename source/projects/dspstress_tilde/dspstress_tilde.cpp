@@ -7,9 +7,8 @@
  @ingroup	examples
  */
 
-#include "c74_msp.h"
-
-using namespace c74::max;
+#include "ext.h"
+#include "z_dsp.h"
 
 static t_class* this_class = nullptr;
 
@@ -42,22 +41,23 @@ void dspstress_perform64(t_dspstress* self, t_object* dsp64, double** ins, long 
 }
 
 
-void dspstress_dsp64(t_dspstress* self, t_object* dsp64, short *count, double samplerate, long maxvectorsize, long flags) {
-	self->svtime_ms = maxvectorsize / samplerate * 1000.0;
-	object_method_direct(void, (t_object*, t_object*, t_perfroutine64, long, void*),
-						 dsp64, gensym("dsp_add64"), (t_object*)self, (t_perfroutine64)dspstress_perform64, 0, NULL);
+void dspstress_dsp64(t_dspstress* x, t_object* dsp64, short *count, double samplerate, long maxvectorsize, long flags) {
+	x->svtime_ms = maxvectorsize / samplerate * 1000.0;
+    object_method(dsp64, gensym("dsp_add64"), x, dspstress_perform64, 0, NULL);
 }
 
 
-void dspstress_assist(t_dspstress* self, void* unused, t_assist_function io, long index, char* string_dest) {
-	if (io == ASSIST_INLET) {
-		switch (index) {
-			case 0:
-				strncpy(string_dest, "Specify cpu usage % here", ASSIST_STRING_MAXSIZE);
-				break;
-		}
-	}
+void dspstress_assist(t_dspstress *x, void *b, long m, long a, char *s)
+{
+    if (m == ASSIST_INLET) {
+        switch (a) {
+            case 0:
+                strcpy(s,"Specify cpu usage % here");
+                break;
+        }
+    }
 }
+
 
 
 void* dspstress_new(double val) {
