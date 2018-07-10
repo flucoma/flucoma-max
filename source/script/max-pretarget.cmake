@@ -35,7 +35,7 @@ set(C74_CXX_STANDARD 0)
 
 if (APPLE)
 	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
-	SET( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -include ${C74_MAX_INCLUDES}/macho-prefix.pch")
+	SET( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -include \"${C74_MAX_INCLUDES}/macho-prefix.pch\"")
 endif ()
 
 if (NOT DEFINED C74_BUILD_MAX_EXTENSION)
