@@ -10,8 +10,7 @@ include_directories(
 	"${C74_MSP_INCLUDES}"
 	"${C74_JIT_INCLUDES}"
 	"${FLUID_DECOMP_DIR}/include"
-        "${FLUID_DECOMP_DIR}/3rdparty/Eigen"
-        "${FLUID_DECOMP_DIR}/3rdparty/HISSTools_FFT"
+        "${FLUID_DECOMP_DIR}/3rdparty"      
 )
 
 
