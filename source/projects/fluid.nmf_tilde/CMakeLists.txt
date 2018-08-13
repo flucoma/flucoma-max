@@ -3,32 +3,29 @@ cmake_minimum_required(VERSION 3.0)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/../../script/max-pretarget.cmake)
 
-set(EIGENMF_DIR ~/eigenmf)
+set(FLUID_DECOMP_DIR ~/fluid_decomposition)
 
-include_directories( 
+include_directories(
 	"${C74_MAX_INCLUDES}"
 	"${C74_MSP_INCLUDES}"
 	"${C74_JIT_INCLUDES}"
-	"${EIGENMF_DIR}"
-        "${EIGENMF_DIR}/Eigen"
-        "${EIGENMF_DIR}/HISSTools_FFT"
+	"${FLUID_DECOMP_DIR}/include"
+        "${FLUID_DECOMP_DIR}/3rdparty/Eigen"
+        "${FLUID_DECOMP_DIR}/3rdparty/HISSTools_FFT"
 )
 
 
-add_library( 
-	${PROJECT_NAME} 
+add_library(
+	${PROJECT_NAME}
 	MODULE
 	${PROJECT_NAME}.cc
-	"${EIGENMF_DIR}/nmf.cc"
-	"${EIGENMF_DIR}/nmf.h"
-	"${EIGENMF_DIR}/stft.cc"
-	"${EIGENMF_DIR}/stft.h"
-        "${EIGENMF_DIR}/HISSTools_FFT/HISSTools_FFT.cpp"
+	"fluid_client_nmf.cc"
+	MaxBufferAdaptor.cpp
 )
 
 
-if(APPLE) 
-	target_link_libraries(${PROJECT_NAME} "-framework Accelerate") 
+if(APPLE)
+	target_link_libraries(${PROJECT_NAME} "-framework Accelerate")
 endif ()
 
 
