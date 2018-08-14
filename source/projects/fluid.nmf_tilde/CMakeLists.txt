@@ -10,7 +10,7 @@ include_directories(
 	"${C74_MSP_INCLUDES}"
 	"${C74_JIT_INCLUDES}"
 	"${FLUID_DECOMP_DIR}/include"
-        "${FLUID_DECOMP_DIR}/3rdparty"      
+        "${FLUID_DECOMP_DIR}/3rdparty"
 )
 
 
@@ -19,7 +19,8 @@ add_library(
 	MODULE
 	${PROJECT_NAME}.cc
 	"fluid_client_nmf.cc"
-	MaxBufferAdaptor.cpp
+	"fluid_client_nmf.h"
+	"${FLUID_DECOMP_DIR}/3rdparty/HISSTools_FFT/HISSTools_FFT.cpp"
 )
 
 
