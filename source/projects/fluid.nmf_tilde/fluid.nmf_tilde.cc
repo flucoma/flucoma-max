@@ -3,36 +3,137 @@
  */
 
 #include <vector>
+#include <array>
 #include <algorithm>
-#include "stft.h"
-#include "nmf.h"
-#include <Eigen/Dense>
+
 #include "ext.h"
 #include "ext_buffer.h"
 #include "fluid_nmf_tilde_util.h"
 #include "version.h"
+#include "FluidTensor.hpp"
+#include "fluid_client_nmf.h"
 
-//Using statements for eigenmf. These will change
-using stft::STFT;
-using stft::ISTFT;
-using stft::Spectrogram;
-using stft:: audio_buffer_t;
-using stft:: magnitude_t;
-using nmf::NMF;
-using nmf::NMFModel;
-using Eigen::MatrixXcd;
-using Eigen::MatrixXd;
-using std::complex;
-using util::stlVecVec2Eigen;
-using util::Eigen2StlVecVec;
-using std::numeric_limits;
 
-//Using for utilities relating to this Max object
-using fluid::nmf_max_client::error_strings;
-using fluid::nmf_max_client::copy_to_buffer;
-using fluid::nmf_max_client::from_rows;
-using fluid::nmf_max_client::from_cols;
-using fluid::nmf_max_client::check_symbol_param;
+using fluid::FluidTensor;
+using fluid::FluidTensorView;
+using fluid::nmf::error_strings;
+using fluid::nmf::NMFClient;
+using real_vector = FluidTensor<double, 1>;
+
+namespace  {
+/*********************************************************************************************
+ A little hierarchy of small classes for helping with RAII interaction with
+ Max buffers, and wrapping a buffer's data in a FluidTensorView, and talking to polybuffer's buffers
+ ************************************************************************************************/
+    
+    /***
+     RAII for a Max buffer reference
+     ***/
+    class MaxBufferAdaptor
+    {
+    public:
+        MaxBufferAdaptor() = delete;
+        MaxBufferAdaptor(MaxBufferAdaptor&) = delete;
+        MaxBufferAdaptor operator=(MaxBufferAdaptor&) = delete;
+        
+        MaxBufferAdaptor(t_object* x, t_symbol* name)
+        {
+            m_bufref = buffer_ref_new(x, name);//throw if this fails?
+            m_buff = buffer_ref_getobject(m_bufref);
+            n_frames = buffer_getframecount(m_buff);
+            n_chans = buffer_getchannelcount(m_buff);
+        }
+        
+        ~MaxBufferAdaptor()
+        {
+            if(m_bufref)
+                object_free(m_bufref);
+        }
+        
+        t_buffer_ref* m_bufref;
+        t_buffer_obj* m_buff;
+        size_t n_frames;
+        size_t n_chans;
+        
+    };
+    
+    /***
+     RAII for buffer's data
+     ***/
+    class MaxBufferData: public MaxBufferAdaptor
+    {
+    public:
+        MaxBufferData()=delete;
+        MaxBufferData(MaxBufferData&)=delete;
+        MaxBufferData operator=(MaxBufferData&)=delete;
+        
+        MaxBufferData(t_object* x, t_symbol* name):
+        MaxBufferAdaptor(x,name)
+        {
+            m_samps = buffer_locksamples(m_buff);
+        }
+        
+        ~MaxBufferData()
+        {
+            if(m_samps)
+                buffer_unlocksamples(m_buff);
+        }
+        
+        
+        float *m_samps;
+    };
+    
+    /***
+     Wrap buffer data in a FluidTensorView
+     ***/
+    class MaxBufferView: public MaxBufferData, public FluidTensorView<float, 2>
+    {
+    public:
+        MaxBufferView() = delete;
+        MaxBufferView(MaxBufferView&) = delete;
+        MaxBufferView operator=(MaxBufferView&) = delete;
+        
+        MaxBufferView(t_object* x, t_symbol* name):
+        MaxBufferData(x,name),FluidTensorView<float,2>({0,{n_chans, n_frames}},m_samps)
+        {}
+    };
+    
+    /***
+     Construct a polybuffer-buffer name
+     ***/
+    class PolyBufferName
+    {
+    public:
+        PolyBufferName()=delete;
+        PolyBufferName(PolyBufferName&)=delete;
+        PolyBufferName operator=(PolyBufferName&)=delete;
+        PolyBufferName(t_symbol* name, size_t index)
+        {
+            std::ostringstream ss;
+            ss << name->s_name << "." << index;
+            buffer_name = gensym(ss.str().c_str());
+        }
+        t_symbol* buffer_name;
+    };
+    
+    /***
+     View of polybuffer-buffer
+     ***/
+    class PolyBufferView: public PolyBufferName, public MaxBufferView
+    {
+    public:
+        PolyBufferView() = delete;
+        PolyBufferView(PolyBufferView&) = delete;
+        PolyBufferView operator=(PolyBufferView&) = delete;
+        
+        PolyBufferView(t_object* x, t_symbol* name, size_t idx):PolyBufferName(name,idx),MaxBufferView(x,buffer_name)
+        {}
+    };
+}
+
+/*********************************************************************************************
+Max struct, forward declarations
+ ************************************************************************************************/
 
 typedef struct _nmf {
     t_object w_obj;
@@ -61,48 +162,34 @@ bool validate_polybuffer(t_nmf *x, t_symbol *pb_name);
 void call_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av);
 void call_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av);
 
-void call_fftcheck (t_nmf *x, t_symbol *s, long ac, t_atom *av);
+//void call_fftcheck (t_nmf *x, t_symbol *s, long ac, t_atom *av);
 
+bool check_symbol_param(t_object* obj, const t_symbol* param, const char* err_msg);
+//void copy_to_buffer(t_object* obj, int rank, t_symbol* polybuf_name,const FluidTensor<double,2> &mtrx);
 //static t_symbol *ps_buffer_modified;
 static t_class *s_nmf_class;
+FluidTensorView<double, 1> view_of_polybuffer(t_symbol* polybuffer, size_t index, size_t size);
 
 
-void ext_main(void *r)
+/*********************************************************************************************
+Utility functions
+ ************************************************************************************************/
+
+/***
+ Check if a symbol param is non-null. If not, do object_error and return false
+ ***/
+bool check_symbol_param(t_object* obj, const t_symbol* param, const char* err_msg)
 {
-    t_class *c = class_new("fluid.nmf~", (method)nmf_new, NULL, sizeof(t_nmf), NULL, A_GIMME, 0);
-    
-    class_addmethod(c, (method)call_makefilters,        "filters",   A_GIMME, 0);
-    class_addmethod(c, (method)call_makesources,        "sources",  A_GIMME, 0);
-    class_addmethod(c, (method)call_fftcheck, "fftcheck", A_GIMME, 0);
-    
-    c->c_flags |= CLASS_FLAG_NEWDICTIONARY; //To let us have default attr values
-    CLASS_ATTR_LONG        (c, "iterations", 0, t_nmf, m_iterations);
-    CLASS_ATTR_FILTER_MIN  (c, "iterations", 1);
-    CLASS_ATTR_DEFAULT_SAVE(c, "iterations", 0, "100");
-
-    class_register(CLASS_BOX, c);
-    s_nmf_class = c;
+    if(! param)
+    {
+        object_error(obj,err_msg);
+        return false;
+    }
+    return true;
 }
-
-
-void *nmf_new(t_symbol *s,  short argc, t_atom *argv)
-{
-    t_dictionary *d = NULL;
-    if (!(d = object_dictionaryarg(argc,argv)))
-        return NULL;
-    
-    t_nmf *x = (t_nmf *)object_alloc(s_nmf_class);
-    x->m_outlet_done = bangout((t_object*)x);
-    attr_dictionary_process(x, d);
-    
-    object_post((t_object*)x, "fluid.nmf~ version %s", FLUID_NMF_VERSION_STRING);
-    return (x);
-}
-
-
-void nmf_free(t_nmf *x)
-{}
-
+/**
+ Check that a poly buffe exists
+ **/
 bool validate_polybuffer(t_nmf *x, t_symbol *pb_name)
 {
     t_object* this_obj = (t_object*)x;
@@ -128,6 +215,9 @@ bool validate_polybuffer(t_nmf *x, t_symbol *pb_name)
     }
 }
 
+/**
+ Validate FFT arguments
+ **/
 void process_fft_args(t_object* obj, fft_args* a, long ac, t_atom *av, int offset)
 {
     a->fft_size = ac > offset ? atom_getlong(av + offset) : 2048;
@@ -161,6 +251,9 @@ void process_fft_args(t_object* obj, fft_args* a, long ac, t_atom *av, int offse
     }
 }
 
+/**
+ Clear and add buffers to a polybuffer
+ **/
 void add_n_buffers_to_polybuffer(t_symbol *polybuffer_name, int n_buffers, long buffer_length_samps)
 {
     t_object* polybuffer = polybuffer_name->s_thing;
@@ -183,6 +276,46 @@ void add_n_buffers_to_polybuffer(t_symbol *polybuffer_name, int n_buffers, long 
     atom_setlong(&resize_args[2],buffer_length_samps);
     object_method_typed(polybuffer,gensym("send"),3,resize_args,NULL);
 }
+
+
+/*********************************************************************************************
+ Max object functions
+ ************************************************************************************************/
+
+void ext_main(void *r)
+{
+    t_class *c = class_new("fluid.nmf~", (method)nmf_new, NULL, sizeof(t_nmf), NULL, A_GIMME, 0);
+    
+    class_addmethod(c, (method)call_makefilters,        "filters",   A_GIMME, 0);
+    class_addmethod(c, (method)call_makesources,        "sources",  A_GIMME, 0);
+    //    class_addmethod(c, (method)call_fftcheck, "fftcheck", A_GIMME, 0);
+    
+    c->c_flags |= CLASS_FLAG_NEWDICTIONARY; //To let us have default attr values
+    CLASS_ATTR_LONG        (c, "iterations", 0, t_nmf, m_iterations);
+    CLASS_ATTR_FILTER_MIN  (c, "iterations", 1);
+    CLASS_ATTR_DEFAULT_SAVE(c, "iterations", 0, "100");
+    
+    class_register(CLASS_BOX, c);
+    s_nmf_class = c;
+}
+
+
+void *nmf_new(t_symbol *s,  short argc, t_atom *argv)
+{
+    t_dictionary *d = NULL;
+    if (!(d = object_dictionaryarg(argc,argv)))
+        return NULL;
+    
+    t_nmf *x = (t_nmf *)object_alloc(s_nmf_class);
+    x->m_outlet_done = bangout((t_object*)x);
+    attr_dictionary_process(x, d);
+    
+    object_post((t_object*)x, "fluid.nmf~ version %s", FLUID_NMF_VERSION_STRING);
+    return (x);
+}
+
+void nmf_free(t_nmf *x){}
+
 
 void call_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av)
 {
@@ -238,18 +371,12 @@ void nmf_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av)
      *********************************/
     bool is_ok = true;
     
-    t_buffer_ref* input_buffer_ref = buffer_ref_new(thisobj, inbuffer_name);
-    t_buffer_obj* input_buffer = buffer_ref_getobject(input_buffer_ref);
-    
-    if(!input_buffer)
+    MaxBufferView input_buffer(thisobj,inbuffer_name);
+    if(!input_buffer.m_bufref)
     {
         object_error(thisobj, "Could not get buffer for name %s", inbuffer_name->s_name);
         is_ok = false;
     }
-    
-    long in_samps   = buffer_getframecount(input_buffer);
-    long in_channs  = buffer_getchannelcount(input_buffer);
-    //long n_frames = trunc(in_samps )
     
     //Check that polybuffers are kosher
     if(!validate_polybuffer(x, dict_polybuffername) || !validate_polybuffer(x, act_polybuffername))
@@ -257,50 +384,47 @@ void nmf_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av)
         is_ok = false;
     }
     
-    
     //DO STUFF!
     if(is_ok)
     {
-        std::vector<double> audio_in(in_samps);
+        //Copy data
+        FluidTensor<double, 1> audio_in(input_buffer.row(0));
+        //Set up NMF
+        NMFClient nmf(rank ,x->m_iterations, fft_settings.fft_size, fft_settings.window_size, fft_settings.hop_size);
+        //Process, no resyntheis
+        nmf.process(audio_in, false);
+        //Add dictionary and activation output buffers
+        add_n_buffers_to_polybuffer(dict_polybuffername, rank, nmf.dictionary_size());
+        add_n_buffers_to_polybuffer(act_polybuffername, rank, nmf.activations_length());
         
-        float* samps = buffer_locksamples(input_buffer);
-        if(samps)
+        //Find maximum activation amplitude to scale activations
+        double h_scale = 1. /  *std::max_element(nmf.activations().begin(), nmf.activations().end());
+        object_post(thisobj,"%e",h_scale);
+        //Copy output data
+        for (int i = 0; i < rank; ++i)
         {
-            for(long i = 0, j = 0; i < in_samps; i++, j+=in_channs)
-            {
-                audio_in[i] = samps[j];
-            }
+            //FluidTensorView wrapping polybuffers, FTW (see top of file)
+            PolyBufferView dictbuff(thisobj, dict_polybuffername,i+1);
+            PolyBufferView actbuff(thisobj, act_polybuffername,i+1);
+            dictbuff.row(0) = nmf.dictionary(i);
+            actbuff.row(0) = nmf.activation(i);
             
-            buffer_unlocksamples(input_buffer);
+            //scale activations
+            actbuff.row(0).apply([&](float& x)
+                                 {
+                                     x *= h_scale;
+                                 }); 
             
-            STFT stft(fft_settings.window_size,fft_settings.fft_size,fft_settings.hop_size);
-            Spectrogram spec = stft.process(audio_in);
-            magnitude_t mag = spec.magnitude();
-            NMF nmfProcessor(rank, x->m_iterations);
-            NMFModel decomposition = nmfProcessor.process(mag);
-            //            long n_dicts = decomposition.W.size();
-            long n_activations = decomposition.H.size();
-            //            MatrixXd W = stlVecVec2Eigen<double>(decomposition.W);
-            MatrixXd H = stlVecVec2Eigen<double>(decomposition.H);
-            double h_scalefactor = H.maxCoeff();
-            //magnitude_t tamed_activations =  Eigen2StlVecVec<double>(scale_activations);
-            add_n_buffers_to_polybuffer(dict_polybuffername, rank, decomposition.W[0].size());
-            add_n_buffers_to_polybuffer(act_polybuffername, rank, n_activations);
-            //copy data
-            copy_to_buffer(thisobj, rank, dict_polybuffername, decomposition.W, from_cols);
-            copy_to_buffer(thisobj, rank, act_polybuffername,  decomposition.H, from_rows, 1. / h_scalefactor);
-            outlet_bang(x->m_outlet_done);
         }
+        outlet_bang(x->m_outlet_done);
     }
-    //finally
-    if(input_buffer_ref)
-        object_free(input_buffer_ref);
 }
 
 void call_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av)
 {
     defer(x,(method)nmf_makesources, s, ac, av);
 }
+
 
 void nmf_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av)
 {
@@ -346,19 +470,13 @@ void nmf_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av)
      Set up buffers
      *********************************/
     bool is_ok = true;
+    MaxBufferView input_buffer(thisobj,inbuffer_name);
     
-    t_buffer_ref* input_buffer_ref = buffer_ref_new(thisobj, inbuffer_name);
-    t_buffer_obj* input_buffer = buffer_ref_getobject(input_buffer_ref);
-    
-    if(!input_buffer)
+    if(!input_buffer.m_bufref)
     {
         object_error(thisobj, "Could not get buffer for name %s", inbuffer_name->s_name);
         is_ok = false;
     }
-    
-    long in_samps   = buffer_getframecount(input_buffer);
-    long in_channs  = buffer_getchannelcount(input_buffer);
-    //long n_frames = trunc(in_samps )
     
     //Check that polybuffers are kosher
     if(!validate_polybuffer(x, polybuffername))
@@ -369,141 +487,20 @@ void nmf_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av)
     //DO STUFF!
     if(is_ok)
     {
-        std::vector<double> audio_in(in_samps);
-        
-        float* samps = buffer_locksamples(input_buffer);
-        if(samps)
+        //Copy data
+        FluidTensor<double,1> audio_in = input_buffer.row(0);
+        //Set NMF
+        NMFClient nmf(rank ,x->m_iterations, fft_settings.fft_size, fft_settings.window_size, fft_settings.hop_size);
+        //Process, with resynthesis
+        nmf.process(audio_in,true);
+        //Make output buffers
+        add_n_buffers_to_polybuffer(polybuffername, rank, input_buffer.n_frames);
+        //Copy output
+        for (int i = 0; i < rank; ++i)
         {
-            for(long i = 0, j = 0; i < in_samps; i++, j+=in_channs)
-            {
-                audio_in[i] = samps[j];
-            }
-            
-            buffer_unlocksamples(input_buffer);
-            
-            STFT stft(fft_settings.window_size,fft_settings.fft_size,fft_settings.hop_size);
-            Spectrogram spec = stft.process(audio_in);
-            magnitude_t mag = spec.magnitude();
-            NMF nmfProcessor(rank, x->m_iterations);
-            NMFModel decomposition = nmfProcessor.process(mag);
-            ISTFT istft(fft_settings.window_size,fft_settings.fft_size,fft_settings.hop_size);
-            //
-            MatrixXd W = stlVecVec2Eigen<double>(decomposition.W);
-            MatrixXd H = stlVecVec2Eigen<double>(decomposition.H);
-            
-            MatrixXd V = W * H;
-            
-            add_n_buffers_to_polybuffer(polybuffername, rank, in_samps);
-            
-            for (int i = 0; i < rank; i++)
-            {
-                MatrixXd source = W.col(i) * H.row(i);
-                MatrixXd filter = source.cwiseQuotient(V);
-                MatrixXcd specMatrix = stlVecVec2Eigen(spec.mData);
-                specMatrix = specMatrix.cwiseProduct(filter);
-                Spectrogram resultS(Eigen2StlVecVec<complex<double>>(specMatrix));
-                
-                audio_buffer_t result = istft.process(resultS);
-                std::ostringstream ss;
-                ss << polybuffername->s_name << "." << i+1;
-                const char* buffer_name = ss.str().c_str();
-                
-                t_buffer_ref* out_buf_ref =   buffer_ref_new(thisobj, gensym(buffer_name));
-                t_buffer_obj* out_buf = buffer_ref_getobject(out_buf_ref);
-                float* out_samps = buffer_locksamples(out_buf);
-                long out_nsamps = buffer_getframecount(out_buf);
-                assert(in_samps == out_nsamps);
-                
-                //I'd prefer to use stl here, but Windoze might moan
-                //about precision loss (Mac doesn't)
-                if(out_samps)
-                    for(int j = 0; j < in_samps; j++)
-                    {
-                        out_samps[j] = result[j];
-                    }
-                
-                buffer_unlocksamples(out_buf);
-                if(out_buf_ref)
-                    object_free(out_buf_ref);
-                
-            }
-            
-            outlet_bang(x->m_outlet_done);
+            PolyBufferView source(thisobj, polybuffername,i+1);
+            source.row(0) = nmf.source(i);
         }
     }
-    //finally
-    if(input_buffer_ref)
-        object_free(input_buffer_ref);
+    outlet_bang(x->m_outlet_done);
 }
-
-void call_fftcheck (t_nmf *x, t_symbol *s, long ac, t_atom *av){
-    defer(x, (method)nmf_fftcheck, s, ac, av);
-}
-
-void nmf_fftcheck (t_nmf *x, t_symbol *s, long ac, t_atom *av)
-{
-    //NOT MEANT FOR PUBLIC CONSUMPTION.
-    //used for checking consistency of stft. Comment out line addmethod
-    //in main() for release code
-    //args: inbuffer, outbuffer, fft args (window, fftsize, hopsize)
-    t_object* thisobj = (t_object*)x;
-
-    if(ac < 5)
-    {
-        object_error(thisobj, "Not enough args:inbuffer, outbuffer, fft args (fftsize, window, hopsize)");
-        return;
-    }
-    
-    t_symbol* in_buf_name = atom_getsym(av);
-    t_symbol* out_buf_name = atom_getsym(av+1);
-    
-    fft_args fft_settings;
-    process_fft_args(thisobj, &fft_settings, ac, av, 2);
-    
-    
-    t_buffer_ref* in_buf_ref  = buffer_ref_new(thisobj, in_buf_name);
-    t_buffer_ref* out_buf_ref = buffer_ref_new(thisobj, out_buf_name);
-
-    t_buffer_obj* in_buf_obj = buffer_ref_getobject(in_buf_ref);
-    STFT stft(fft_settings.window_size, fft_settings.fft_size,fft_settings.hop_size);
-    ISTFT istft(fft_settings.window_size, fft_settings.fft_size,fft_settings.hop_size);
-    
-    
-    float* in_samps = buffer_locksamples(in_buf_obj);
-    if(in_samps)
-    {
-        long in_count = buffer_getframecount(in_buf_obj);
-        std::vector<double> tmp_vec(in_count);
-        
-        for(int i = 0; i < in_count; i++)
-            tmp_vec[i] = in_samps[i];
-        buffer_unlocksamples(in_buf_obj);
-        
-        Spectrogram spec = stft.process(tmp_vec);
-        std::vector<double>  out_vec = istft.process(spec);
-        
-
-        object_attr_setlong(out_buf_name->s_thing, gensym("samps"), in_count);
-
-       
-        t_buffer_obj* out_buf_obj = buffer_ref_getobject(out_buf_ref);
-        
-//        t_atom temp_atom[2];
-//        atom_setlong(temp_atom, in_count);
-        
-//        object_method_typed ((t_object *)out_buf_obj, gensym("sizeinsamps"), 1L, temp_atom, temp_atom + 1);
-        float* out_samps = buffer_locksamples(out_buf_obj);
-        if(out_samps)
-        {
-            for(int i = 0; i < in_count; i++)
-                out_samps[i] =  out_vec[i];
-        }
-    }
-    
-    if(in_buf_ref) object_free(in_buf_ref);
-    if(out_buf_ref)object_free(out_buf_ref);
-    
-}
-
-
-

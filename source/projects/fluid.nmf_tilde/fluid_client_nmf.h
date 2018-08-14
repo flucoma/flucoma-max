@@ -1,44 +1,96 @@
-#ifndef fluid_client_nmf_hpp
-#define fluid_client_nmf_hpp
+#pragma once
 
-#include "stft.h"
-#include "nmf.h"
-#include "Eigen/Dense"
+#include "FluidTensor.hpp"
+#include "NMF.hpp"
 #include <vector>
+#include <iterator>
 
-using Eigen::MatrixXd;
-using Eigen::MatrixXcd;
-using std::vector;
+using fluid::FluidTensor;
 
 namespace fluid {
-    class nmf_client
+namespace nmf{
+    /**
+     Integration class for doing NMF filtering and resynthesis
+     **/
+    class NMFClient
     {
+//        using vec_iterator = std::vector<double>::const_iterator;
+//        using source_iterator = std::vector<std::vector<double>>::const_iterator;
+        
     public:
-        nmf_client(long rank, long iterations, long fft_size, long window_size, long hop_size);
-        ~nmf_client();
-        void reset();
-        bool isReady() const;
-        void process(const std::vector<double> &data);
-        long get_dictionary_size() const;
-        long getActivationLength() const;
-        long getNumSources() const;
-        long getRank() const;
-        void getDictionary(const long idx, std::vector<double> &dict) const;
-        void getActivation(const long idx, std::vector<double> &act) const;
-        void getSource(const long idx,std::vector<double> &src) const;
+        //No, you may not construct an empty instance, or copy this, or move this
+        NMFClient() = delete;
+        NMFClient(NMFClient&)=delete;
+        NMFClient(NMFClient&&)=delete;
+        NMFClient operator=(NMFClient&)=delete;
+        NMFClient operator=(NMFClient&&)=delete;
+        
+        /**
+        You may constrct one by supplying some senisble numbers here
+         rank: NMF rank
+         iterations: max nmf iterations
+         fft_size: power 2 pls
+         **/
+        NMFClient(size_t rank, size_t iterations, size_t fft_size, size_t window_size, size_t hop_size);
+        ~NMFClient()= default;
+        //Not implemented
+        //void reset();
+        //bool isReady() const;
+       
+        /***
+         Take some data, NMF it
+         ***/
+        void process(const FluidTensor<double,1> &data, bool resynthesise);
+        
+        /***
+         Report the size of a dictionary, in bins (= fft_size/2)
+         ***/
+        size_t dictionary_size() const;
+        
+        /***
+         Report the length of an activation, in frames
+         ***/
+        size_t activations_length() const;
+        
+        /***
+         Report the number of sources (i.e. the rank
+         ***/
+        size_t num_sources() const;
+//        size_t rank() const;
+        
+        /***
+         Retreive the dictionary at the given index
+         ***/
+        const FluidTensorView<double, 1> dictionary(const size_t idx) const;
+        
+        /***
+         Retreive the activation at the given index
+         ***/
+        const FluidTensorView<double, 1> activation(const size_t idx) const;
+        
+        /***
+         Retreive the resynthesized source at the given index (so long as resyntheiss has happened, mind
+         ***/
+        const FluidTensorView<double, 1> source(const size_t idx) const;
+        
+//        source_iterator sources_begin() const ;
+//        source_iterator sources_end()const;
+        
+        /***
+         Get the whole of dictionaries / activations as a 2D structure
+         ***/
+        const FluidTensor<double,2> dictionaries() const;
+        const FluidTensor<double,2> activations() const;
     private:
-        long m_rank;
-        long m_iterations;
-        long m_fft_size;
-        long m_window_size;
-        long m_hop_size;
+        size_t m_rank;
+        size_t m_iterations;
+        size_t m_fft_size;
+        size_t m_window_size;
+        size_t m_hop_size;
         bool m_has_processed;
         bool m_has_resynthed;
-        nmf::NMFModel m_model;
+        fluid::nmf::NMFModel m_model;
+        FluidTensor<double,2> m_audio_buffers;
     };
-}
-
-
-
-
-#endif /* fluid_client_nmf_hpp */
+} //namespace max
+} //namesapce fluid
