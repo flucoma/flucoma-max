@@ -79,7 +79,7 @@ namespace nmf{
 
     
     
-     const FluidTensorView<double, 1> NMFClient::source(const size_t idx) const
+    FluidTensorView<const double, 1> NMFClient::source(const size_t idx) const
     {
         assert(idx < m_audio_buffers.rows() && "Range Error");
         return m_audio_buffers.row(idx);

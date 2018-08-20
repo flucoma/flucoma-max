@@ -11,6 +11,8 @@
 #include "fluid_nmf_tilde_util.h"
 #include "version.h"
 #include "FluidTensor.hpp"
+#include "STFT.hpp"
+
 #include "fluid_client_nmf.h"
 
 
@@ -94,7 +96,7 @@ namespace  {
         MaxBufferView operator=(MaxBufferView&) = delete;
         
         MaxBufferView(t_object* x, t_symbol* name):
-        MaxBufferData(x,name),FluidTensorView<float,2>({0,{n_chans, n_frames}},m_samps)
+        MaxBufferData(x,name),FluidTensorView<float,2>({0,{n_frames,n_chans}},m_samps)
         {}
     };
     
@@ -388,7 +390,7 @@ void nmf_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av)
     if(is_ok)
     {
         //Copy data
-        FluidTensor<double, 1> audio_in(input_buffer.row(0));
+        FluidTensor<double, 1> audio_in(input_buffer.col(0));
         //Set up NMF
         NMFClient nmf(rank ,x->m_iterations, fft_settings.fft_size, fft_settings.window_size, fft_settings.hop_size);
         //Process, no resyntheis
@@ -406,11 +408,11 @@ void nmf_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av)
             //FluidTensorView wrapping polybuffers, FTW (see top of file)
             PolyBufferView dictbuff(thisobj, dict_polybuffername,i+1);
             PolyBufferView actbuff(thisobj, act_polybuffername,i+1);
-            dictbuff.row(0) = nmf.dictionary(i);
-            actbuff.row(0) = nmf.activation(i);
+            dictbuff.col(0) = nmf.dictionary(i);
+            actbuff.col(0) = nmf.activation(i);
             
             //scale activations
-            actbuff.row(0).apply([&](float& x)
+            actbuff.col(0).apply([&](float& x)
                                  {
                                      x *= h_scale;
                                  }); 
@@ -488,7 +490,7 @@ void nmf_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av)
     if(is_ok)
     {
         //Copy data
-        FluidTensor<double,1> audio_in = input_buffer.row(0);
+        FluidTensor<double,1> audio_in = input_buffer.col(0);
         //Set NMF
         NMFClient nmf(rank ,x->m_iterations, fft_settings.fft_size, fft_settings.window_size, fft_settings.hop_size);
         //Process, with resynthesis
@@ -499,7 +501,7 @@ void nmf_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av)
         for (int i = 0; i < rank; ++i)
         {
             PolyBufferView source(thisobj, polybuffername,i+1);
-            source.row(0) = nmf.source(i);
+            source.col(0) = nmf.source(i);
         }
     }
     outlet_bang(x->m_outlet_done);

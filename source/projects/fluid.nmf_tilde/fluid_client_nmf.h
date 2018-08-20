@@ -71,7 +71,7 @@ namespace nmf{
         /***
          Retreive the resynthesized source at the given index (so long as resyntheiss has happened, mind
          ***/
-        const FluidTensorView<double, 1> source(const size_t idx) const;
+         FluidTensorView<const double, 1> source(const size_t idx) const;
         
 //        source_iterator sources_begin() const ;
 //        source_iterator sources_end()const;
