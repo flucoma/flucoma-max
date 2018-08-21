@@ -398,8 +398,10 @@ void nmf_makefilters(t_nmf *x, t_symbol *s, long ac, t_atom *av)
         add_n_buffers_to_polybuffer(dict_polybuffername, rank, nmf.dictionary_size());
         add_n_buffers_to_polybuffer(act_polybuffername, rank, nmf.activations_length());
         
+        auto all_activations = nmf.activations();
+        
         //Find maximum activation amplitude to scale activations
-        double h_scale = 1. /  *std::max_element(nmf.activations().begin(), nmf.activations().end());
+        double h_scale = 1. /  *std::max_element(all_activations.begin(), all_activations.end());
         object_post(thisobj,"%e",h_scale);
         //Copy output data
         for (int i = 0; i < rank; ++i)
