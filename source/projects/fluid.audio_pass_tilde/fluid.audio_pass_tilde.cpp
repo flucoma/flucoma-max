@@ -5,7 +5,7 @@
  */
 
 //Main client code:
-#include "fluid.audio.gainclient.hpp"
+#include "clients/rt/GainClient.hpp"
 //Max SDK
 #include "ext.h"
 #include "z_dsp.h"
@@ -16,6 +16,10 @@ using fluid::audio::GainAudioClient;
 using fluid::FluidTensorView;
 
 
+using audio_client = GainAudioClient<double, double>;
+using audio_signal = audio_client::audio_signal;
+using scalar_signal = audio_client::scalar_signal;
+using signal_type = audio_client::signal_type;
 /**********
  Maxy things
  *********/
@@ -23,29 +27,36 @@ static t_class* this_class = nullptr;
 
 struct t_fluid_audio_pass {
     t_pxobject    obj;
-    GainAudioClient<double>* fluid_obj;
+    audio_client* fluid_obj;
     size_t chunk_size;
     double gain = 1;
+    signal_type* input_type;
+    signal_type* output_type;
 };
 
 /**!
  Perform() method for when there are two audio channels connected
  Returns channel 1 * channel 2
  **/
-void fluid_audio_pass_perform_vector(t_fluid_audio_pass* x, t_object* dsp64, double** ins, long numins, double** outs, long numouts, long sampleframes, long flags, void* userparam) {
-
-    x->fluid_obj->do_process(ins, outs,sampleframes,numins,numouts);
-}
-
-/**!
- Perform() method for when there is left audio channel connected
- Returns channel 1 * gain attribute
- **/
-void fluid_audio_pass_perform_scalar(t_fluid_audio_pass* x, t_object* dsp64, double** ins, long numins, double** outs, long numouts, long sampleframes, long flags, void* userparam) {
-    x->fluid_obj->set_gain(x->gain); 
-    x->fluid_obj->do_process(ins, outs,sampleframes,1,numouts);
+void fluid_audio_pass_perform(t_fluid_audio_pass* x, t_object* dsp64, double** ins, long numins, double** outs, long numouts, long sampleframes, long flags, void* userparam) {
     
+    //Map an audio_signal to our first signal inlet, come what may
+    audio_signal input;
+    input.set(ins[0],0);
+    
+    //Make 2 input signals, using whatever we set in dsp() for the second signal
+    signal_type* in_sigs[2] {&input, x->input_type};
+    //Make 1 output signal (this would always be audio in Max, but could be kr in SC)
+    signal_type* out_sigs[1] {x->output_type};
+    
+    //Map 2nd input signal to 2nd audio inlet, and gain attribute
+    x->input_type->set(ins[1], x->gain);
+    //Map output signal to first signal outlet
+    x->output_type->set(outs[0],0);
+    //Process! 
+    x->fluid_obj->do_process(in_sigs, out_sigs,sampleframes,numins,numouts);
 }
+
 
 /**!
  DSP Setup, sets up client and adds correct perform() fn
@@ -65,7 +76,20 @@ void fluid_audio_pass_dsp64(t_fluid_audio_pass* x, t_object* dsp64, short *count
     if(x->fluid_obj)
         delete x->fluid_obj;
     //Make new one with appropriate number of channels
-    x->fluid_obj = new GainAudioClient<double>(x->chunk_size,inputchannels); 
+    x->fluid_obj = new GainAudioClient<double,double>(x->chunk_size,2);
+    
+    if(x->input_type)
+        delete x->input_type;
+    if(x->output_type)
+        delete x->output_type;
+    
+    x->output_type = new GainAudioClient<double, double>::audio_signal();
+    
+    if(inputchannels == 1)
+        x->input_type = new GainAudioClient<double, double>::scalar_signal();
+    else
+        x->input_type = new GainAudioClient<double, double>::audio_signal();
+    
     
     
     //TODO: I imagine some algorithms will need the sample rate in future as well
@@ -83,14 +107,14 @@ void fluid_audio_pass_dsp64(t_fluid_audio_pass* x, t_object* dsp64, short *count
     // Which of our current use cases does this touch? (Apart from this test case?)
     
     //Meanwhile, one-size-delays-all buffering perform method
-    if(inputchannels == 2)
-    {
-        object_method(dsp64, gensym("dsp_add64"), x, fluid_audio_pass_perform_vector, 0, NULL);
-    }
-    else
-    {
-        object_method(dsp64, gensym("dsp_add64"), x, fluid_audio_pass_perform_scalar, 0, NULL);
-    }
+//    if(inputchannels == 2)
+//    {
+        object_method(dsp64, gensym("dsp_add64"), x, fluid_audio_pass_perform, 0, NULL);
+//    }
+//    else
+//    {
+//        object_method(dsp64, gensym("dsp_add64"), x, fluid_audio_pass_perform_scalar, 0, NULL);
+//    }
 }
 
 
