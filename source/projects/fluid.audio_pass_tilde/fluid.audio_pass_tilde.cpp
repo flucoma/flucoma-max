@@ -1,21 +1,25 @@
 
 /**
  @file
- fluid_audio_pass_tilde - very simple fluid msp object that does nothing except pass audio
- 
- SINGLE CHANNEL FOR NOW. DON'T @ ME
- 
+ fluid_audio_pass_tilde - very simple fluid msp object that does nothing except pass audio with gain applied
  */
 
+//Main client code:
 #include "fluid.audio.gainclient.hpp"
+//Max SDK
 #include "ext.h"
 #include "z_dsp.h"
 
+//Client class
 using fluid::audio::GainAudioClient;
+//Data container
 using fluid::FluidTensorView;
 
-static t_class* this_class = nullptr;
 
+/**********
+ Maxy things
+ *********/
+static t_class* this_class = nullptr;
 
 struct t_fluid_audio_pass {
     t_pxobject    obj;
@@ -24,28 +28,43 @@ struct t_fluid_audio_pass {
     double gain = 1;
 };
 
-
+/**!
+ Perform() method for when there are two audio channels connected
+ Returns channel 1 * channel 2
+ **/
 void fluid_audio_pass_perform_vector(t_fluid_audio_pass* x, t_object* dsp64, double** ins, long numins, double** outs, long numouts, long sampleframes, long flags, void* userparam) {
 
     x->fluid_obj->do_process(ins, outs,sampleframes,numins,numouts);
-
 }
 
+/**!
+ Perform() method for when there is left audio channel connected
+ Returns channel 1 * gain attribute
+ **/
 void fluid_audio_pass_perform_scalar(t_fluid_audio_pass* x, t_object* dsp64, double** ins, long numins, double** outs, long numouts, long sampleframes, long flags, void* userparam) {
     x->fluid_obj->set_gain(x->gain); 
     x->fluid_obj->do_process(ins, outs,sampleframes,1,numouts);
     
 }
 
-
+/**!
+ DSP Setup, sets up client and adds correct perform() fn
+ **/
 void fluid_audio_pass_dsp64(t_fluid_audio_pass* x, t_object* dsp64, short *count, double samplerate, long maxvectorsize, long flags) {
     
+    //no audio in left channel? Then no-op
+    if(!count[0])
+    {
+        return;
+    }
+    
+    //Audio in right inlet?
     size_t inputchannels = count[1] ? 2 : 1;
     
-    //If we've got two signals connected but only a mono processor, make a new one
+    //Delete old processor
     if(x->fluid_obj)
         delete x->fluid_obj;
-    
+    //Make new one with appropriate number of channels
     x->fluid_obj = new GainAudioClient<double>(x->chunk_size,inputchannels); 
     
     
@@ -53,7 +72,7 @@ void fluid_audio_pass_dsp64(t_fluid_audio_pass* x, t_object* dsp64, short *count
     x->fluid_obj->set_host_buffer_size(maxvectorsize);
     x->fluid_obj->reset();
     
-    //TODO: Add perform method for no latency edge case
+    //TODO: Add perform method for no latency edge case. Maybe. One day.
     //If and only if the following are true,
     //given
     //  fsize = our frame size
@@ -92,7 +111,6 @@ void* fluid_audio_pass_new(t_symbol *s,  short argc, t_atom *argv) {
     t_fluid_audio_pass* x = (t_fluid_audio_pass*)object_alloc(this_class);
     
     x->chunk_size = argc > 0 ? atom_getlong(argv) : 1024;
-    //x->fluid_obj = new GainAudioClient<double>(x->chunk_size);
     
     //2 inlets, 1 outlet
     dsp_setup((t_pxobject*)x, 2);
@@ -116,9 +134,9 @@ void ext_main(void* r) {
     class_addmethod(this_class, (method)fluid_audio_pass_dsp64, "dsp64", A_CANT, 0);
     class_addmethod(this_class, (method)fluid_audio_pass_assist,"assist",A_CANT,0);
     
-    CLASS_ATTR_DOUBLE(this_class, "gain", 0, t_fluid_audio_pass, gain);
-    CLASS_ATTR_MIN(this_class, "gain", 0, "0");
-    CLASS_ATTR_SAVE(this_class, "gain", 0);
+    CLASS_ATTR_DOUBLE   (this_class, "gain", 0, t_fluid_audio_pass, gain);
+    CLASS_ATTR_MIN      (this_class, "gain", 0, "0");
+    CLASS_ATTR_SAVE     (this_class, "gain", 0);
     
     class_dspinit(this_class);
 

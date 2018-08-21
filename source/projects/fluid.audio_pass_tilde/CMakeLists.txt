@@ -10,7 +10,7 @@ include_directories(
 	"${C74_MSP_INCLUDES}"
 	"${C74_JIT_INCLUDES}"
 	"${FLUID_DECOMP_DIR}/include"
-        "${FLUID_DECOMP_DIR}/3rdparty"
+	"${FLUID_DECOMP_DIR}/3rdparty"
 )
 
 
@@ -18,8 +18,8 @@ add_library(
 	${PROJECT_NAME}
 	MODULE
 	${PROJECT_NAME}.cpp
-	"fluid.audio.baseclient.hpp"
-	"fluid.audio.gainclient.hpp"
+	"${FLUID_DECOMP_DIR}/include/clients/rt/BaseAudioClient.hpp"
+	"${FLUID_DECOMP_DIR}/include/clients/rt/GainClient.hpp"
 	"${FLUID_DECOMP_DIR}/3rdparty/HISSTools_FFT/HISSTools_FFT.cpp"
 )
 
