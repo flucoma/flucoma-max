@@ -53,7 +53,7 @@ void fluid_audio_pass_perform(t_fluid_audio_pass* x, t_object* dsp64, double** i
     x->input_type->set(ins[1], x->gain);
     //Map output signal to first signal outlet
     x->output_type->set(outs[0],0);
-    //Process! 
+    //Process!
     x->fluid_obj->do_process(in_sigs, out_sigs,sampleframes,numins,numouts);
 }
 
@@ -76,7 +76,7 @@ void fluid_audio_pass_dsp64(t_fluid_audio_pass* x, t_object* dsp64, short *count
     if(x->fluid_obj)
         delete x->fluid_obj;
     //Make new one with appropriate number of channels
-    x->fluid_obj = new GainAudioClient<double,double>(x->chunk_size,2);
+    x->fluid_obj = new GainAudioClient<double,double>(x->chunk_size);
     
     if(x->input_type)
         delete x->input_type;
