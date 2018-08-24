@@ -503,6 +503,10 @@ void nmf_makesources(t_nmf *x, t_symbol *s, long ac, t_atom *av)
         {
             PolyBufferView source(thisobj, polybuffername,i+1);
             source.col(0) = nmf.source(i);
+            
+            
+            assert(source.end() == std::find_if(source.begin(), source.end(), std::isnan<double>));
+            
         }
     }
     outlet_bang(x->m_outlet_done);

@@ -29,6 +29,7 @@ struct t_fluid_audio_pass {
   t_pxobject    obj;
   audio_client* fluid_obj;
   size_t chunk_size;
+  size_t hop_size;
   double gain = 1;
   signal_wrapper* input_wrappers[2];
   signal_wrapper* output_wrappers[1];
@@ -68,7 +69,7 @@ void fluid_audio_pass_dsp64(t_fluid_audio_pass* x, t_object* dsp64, short *count
   if(x->fluid_obj)
     delete x->fluid_obj;
   //Make new one with appropriate number of channels
-  x->fluid_obj = new GainAudioClient<double,double>(x->chunk_size);
+  x->fluid_obj = new GainAudioClient<double,double>(x->chunk_size, x->hop_size);
   
   if(x->input_wrappers[0])
     delete x->input_wrappers[0];
@@ -120,12 +121,20 @@ void fluid_audio_pass_assist(t_fluid_audio_pass *x, void *b, long m, long a, cha
 void* fluid_audio_pass_new(t_symbol *s,  short argc, t_atom *argv) {
   t_fluid_audio_pass* x = (t_fluid_audio_pass*)object_alloc(this_class);
   
-  x->chunk_size = argc > 0 ? atom_getlong(argv) : 1024;
+  x->chunk_size = argc > 0 ? atom_getlong(argv)     : 1024;
+  x->hop_size   = argc > 1 ? atom_getlong(argv + 1) : x->chunk_size;
   
+  if (x->hop_size > x->chunk_size)
+  {
+    object_warn((t_object*)x, "Hop size, %ld, can't be bigger than frame size,%ld : setting to %ld", x->hop_size, x->chunk_size,x->chunk_size);
+    x->hop_size = x->chunk_size;
+  }
+  
+
   //2 inlets, 1 outlet
   dsp_setup((t_pxobject*)x, 2);
   outlet_new((t_object *)x, "signal");
-  x->gain = 1. ;
+  x->gain = 1.;
   return x;
 }
 
