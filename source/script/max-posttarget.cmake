@@ -1,16 +1,17 @@
  # Copyright (c) 2016, Cycling '74
 # Usage of this file and its contents is governed by the MIT License
 
-if (${C74_CXX_STANDARD} EQUAL 98)
-	if (APPLE)
-		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++98 -stdlib=libstdc++")
-		set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libstdc++")
-		set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -stdlib=libstdc++")
-	endif ()
-else ()
-	set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
-	set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
-endif ()
+# if (${C74_CXX_STANDARD} EQUAL 98)
+# 	if (APPLE)
+# 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++98 -stdlib=libstdc++")
+# 		set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libstdc++")
+# 		set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -stdlib=libstdc++")
+# 	endif ()
+# else ()
+
+	# set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
+	# set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
+# endif ()
 
 if ("${PROJECT_NAME}" MATCHES ".*_tilde")
 	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${PROJECT_NAME}")
