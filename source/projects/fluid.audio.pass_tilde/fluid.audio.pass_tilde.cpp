@@ -121,9 +121,12 @@ void fluid_audio_pass_assist(t_fluid_audio_pass *x, void *b, long m, long a, cha
 void* fluid_audio_pass_new(t_symbol *s,  short argc, t_atom *argv) {
   t_fluid_audio_pass* x = (t_fluid_audio_pass*)object_alloc(this_class);
   
-  x->chunk_size = argc > 0 ? atom_getlong(argv)     : 1024;
-  x->hop_size   = argc > 1 ? atom_getlong(argv + 1) : x->chunk_size;
+  short nargs = attr_args_offset(argc,argv);
   
+  x->chunk_size = nargs > 0 ? atom_getlong(argv)     : 1024;
+  x->hop_size   = nargs > 1 ? atom_getlong(argv + 1) : x->chunk_size;
+  x->gain = 1.;
+  attr_args_process(x, argc, argv);
   if (x->hop_size > x->chunk_size)
   {
     object_warn((t_object*)x, "Hop size, %ld, can't be bigger than frame size,%ld : setting to %ld", x->hop_size, x->chunk_size,x->chunk_size);
@@ -134,7 +137,7 @@ void* fluid_audio_pass_new(t_symbol *s,  short argc, t_atom *argv) {
   //2 inlets, 1 outlet
   dsp_setup((t_pxobject*)x, 2);
   outlet_new((t_object *)x, "signal");
-  x->gain = 1.;
+  
   return x;
 }
 
