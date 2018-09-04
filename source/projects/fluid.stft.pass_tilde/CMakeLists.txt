@@ -11,6 +11,7 @@ include_directories(
 	"${C74_JIT_INCLUDES}"
 	"${FLUID_DECOMP_DIR}/include"
 	"${FLUID_DECOMP_DIR}/3rdparty"
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
 )
 
 
