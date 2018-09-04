@@ -10,5 +10,6 @@ build
 *.o
 *.dylib
 tmp
-*.xcodeproj/*
-package-info.json
+**/*.xcodeproj/*
+**/info.plist
+**/package-info.json
