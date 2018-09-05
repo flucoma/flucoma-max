@@ -53,33 +53,36 @@ namespace max{
     ~MaxBufferData()
     {
       release();
-      if(m_bufref)
-        object_free(m_bufref);
+      if(mBufref)
+        object_free(mBufref);
     }
     
     bool valid() const override
     {
-      return m_bufref;
+      return mBufref;
     }
     
     void resize(size_t frames, size_t channels, size_t rank) override
     {
-      if(m_bufref)
+      if(mBuffObj)
       {
         //Do this in two stages so we can set length in samps rather than ms
         t_atom args[2];
         atom_setfloat(&args[0], 0.);
         atom_setlong(&args[1], rank * channels);
         t_symbol* setSizeMsg = gensym("setsize");
-        object_method_typed(m_bufref, setSizeMsg, 2, args, nullptr);
+       
+        
+        object_method_typed(mBuffObj, setSizeMsg, 2, args, nullptr);
         
         t_atom newsize;
         atom_setlong(&newsize, frames);
-        t_symbol* sampsMsg = gensym("samps");
-        object_method_typed(m_bufref, sampsMsg, 1, &newsize, nullptr);
+        t_symbol* sampsMsg = gensym("sizeinsamps");
+        object_method_typed(mBuffObj, sampsMsg, 1, &newsize, nullptr);
         
-        n_frames = frames;
-        n_chans = rank * channels;
+        mFrames = frames;
+        mChans = channels;
+        mRank = rank;
         
       }
     }
@@ -92,35 +95,35 @@ namespace max{
     
     void acquire() override
     {
-      m_samps = buffer_locksamples(m_buff);
+      mSamps = buffer_locksamples(mBuffObj);
       
     }
     
     void release()override
     {
-      if(m_samps)
-        buffer_unlocksamples(m_buff);
+      if(mSamps)
+        buffer_unlocksamples(mBuffObj);
     }
     
     FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
     {
       
-      FluidTensorView<float,2>  v{this->m_samps,0, this->n_frames, this->n_chans};
+      FluidTensorView<float,2>  v{this->mSamps,0, this->mChans * this->mRank,this->mFrames};
       
-      return v.col(rankIdx + channel * (this->n_chans - 1));
+      return v.row(channel + rankIdx * mRank);
     }
     
     //Return a view of all the data
     FluidTensorView<float,2> samps() override
     {
-      return {this->m_samps,0, this->n_frames, this->n_chans};
+      return {this->mSamps,0, this->mChans,this->mFrames};
     }
     
     size_t numSamps() const override
     {
       if(valid())
       {
-        return this->n_frames;
+        return this->mFrames;
       }
       return 0;
     }
@@ -129,7 +132,7 @@ namespace max{
     {
       if(valid())
       {
-        return this->n_chans;
+        return this->mChans;
       }
       return 0;
     }
@@ -137,27 +140,25 @@ namespace max{
     bool equal(BufferAdaptor* rhs) const override
     {
       MaxBufferData* x = dynamic_cast<MaxBufferData*>(rhs);
-      if(x && x->m_bufref)
+      if(x && x->mBufref)
       {
-        return m_bufref == x->m_bufref;
+        return mBufref == x->mBufref;
       }
       return false;
     }
     
-    float *m_samps;
-    t_buffer_ref* m_bufref;
-    t_buffer_obj* m_buff;
-    size_t n_frames;
-    size_t n_chans;
+    float *mSamps;
+    t_buffer_ref* mBufref;
+    t_buffer_obj* mBuffObj;
   private:
     void init()
     {
-      m_bufref = buffer_ref_new(mHostObject, mName);
-      if(m_bufref)
+      mBufref = buffer_ref_new(mHostObject, mName);
+      if(mBufref)
       {
-        m_buff = buffer_ref_getobject(m_bufref);
-        n_frames = buffer_getframecount(m_buff);
-        n_chans = buffer_getchannelcount(m_buff);
+        mBuffObj = buffer_ref_getobject(mBufref);
+        mFrames = buffer_getframecount(mBuffObj);
+        mChans = buffer_getchannelcount(mBuffObj);
       }
     }
   };
@@ -214,14 +215,17 @@ namespace max{
     void resize(size_t frames, size_t channels, size_t rank) override
     {
       t_object* polybuffer = mName->s_thing;
-      
+      mBufs.clear(); 
       //clear polybuff (for now)
       object_method_typed(polybuffer, gensym("clear"), 0, NULL, NULL);
-      
+      mRank = rank;
       //Add buffers. We want exact sample lengths, so this will take two calls
       t_atom append_args[2];
       atom_setfloat(&append_args[0], 1);
       atom_setlong(&append_args[1], channels);
+      
+      
+      
       for(int i = 0; i < rank; ++i)
       {
         object_method_typed(polybuffer, gensym("appendempty"), 2, append_args, NULL);
@@ -356,8 +360,12 @@ namespace max{
     template <typename T, typename U>
     static void makeAttributes(t_class* c)
     {
+      
+      
+      
       for(auto&& d: T::getParamDescriptors())
       {
+        std::cout << d<< '\n';
         //Make attributes out of parameters marked not instantiation only. Hum.
         if(!d.instatiation()){
           switch(d.getType())
@@ -385,6 +393,7 @@ namespace max{
               break;
             }
           }
+          std::cerr << d.getName() << '\n'; 
           attrAccessors<U, &U::param_get, &U::param_set>(c, d.getName().c_str());
           CLASS_ATTR_SAVE(c, d.getName().c_str(), 0); 
         }

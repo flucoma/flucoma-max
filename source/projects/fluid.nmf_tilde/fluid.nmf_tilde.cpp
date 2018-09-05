@@ -185,7 +185,7 @@ private:
     }
     //Now, we can proceed
     nmf::NMFClient nmf(processModel);
-    nmf.process();
+//    nmf.process();
 //    mModel = processModel;
   }
   
