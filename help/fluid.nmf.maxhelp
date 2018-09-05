@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 4,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1025.0, 874.0 ],
+		"rect" : [ 34.0, 79.0, 1025.0, 877.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,28 +38,27 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-47",
-					"maxclass" : "message",
-					"numinlets" : 2,
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 231.0, 329.0, 99.0, 22.0 ],
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 93.0, 266.0, 700.0, 22.0 ],
 					"style" : "",
-					"text" : "decompose jong"
+					"text" : "fluid.nmf~ @resynthbuf resynth @filterbuf filt @envbuf env @rank 5 @iterations 100 @winsize 1024 @hopsize 256 @fftsize 2048"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 16.0,
-					"id" : "obj-33",
+					"id" : "obj-47",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 231.0, 391.0, 279.0, 26.0 ],
+					"patching_rect" : [ 93.0, 224.0, 79.0, 22.0 ],
 					"style" : "",
-					"text" : "sources 5 bob resynth 2048 1024 256"
+					"text" : "process jong"
 				}
 
 			}
@@ -97,71 +96,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 82.0, 10.0, 192.0, 45.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-28",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 867.0, 165.0, 51.0, 22.0 ],
-					"style" : "",
-					"text" : "fill sin 8"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-23",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 887.0, 218.0, 164.0, 22.0 ],
-					"style" : "",
-					"text" : "buffer~ sinein @samps 4096"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-30",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 877.0, 285.0, 171.0, 22.0 ],
-					"style" : "",
-					"text" : "buffer~ sineout @samps 4096"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 365.0, 285.0, 212.0, 22.0 ],
-					"style" : "",
-					"text" : "fftcheck sinein sineout 2048 2048 512"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 748.0, 325.0, 91.0, 22.0 ],
-					"style" : "",
-					"text" : "buffer~ outjong"
 				}
 
 			}
@@ -214,7 +148,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -494,20 +428,6 @@
 , 			{
 				"box" : 				{
 					"fontface" : 1,
-					"id" : "obj-25",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 439.0, 126.0, 368.0, 33.0 ],
-					"style" : "",
-					"text" : "filters: decompose sound and frequency filters and amplitude envelopes into a polybuffer~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 1,
 					"id" : "obj-24",
 					"linecount" : 2,
 					"maxclass" : "comment",
@@ -515,20 +435,20 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 58.0, 126.0, 352.0, 33.0 ],
 					"style" : "",
-					"text" : "sources: decompose sound and return time-domain re-synthesised sounds into a polybuffer~"
+					"text" : "decompose: decompose sound and return time-domain re-synthesised sounds into a polybuffer~"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-19",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 58.0, 165.0, 364.0, 33.0 ],
+					"patching_rect" : [ 58.0, 165.0, 364.0, 47.0 ],
 					"style" : "",
-					"text" : "sources <rank> <sources polybuffer~>  \noptional: <fft size> <window size> <hop size> "
+					"text" : "decompose <source buffer~>  \noptional: <offset frames> <num frames> <offset channels> <num channels> "
 				}
 
 			}
@@ -580,7 +500,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1011.79425, 26.0, 150.0, 47.0 ],
+					"patching_rect" : [ 573.449341, 191.5, 150.0, 47.0 ],
 					"style" : "",
 					"text" : "This poly buffer will be filled with resynthesised components"
 				}
@@ -679,7 +599,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 920.449341, 101.5, 113.0, 22.0 ],
+					"patching_rect" : [ 448.449341, 197.5, 113.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0
 					}
@@ -691,26 +611,12 @@
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 16.0,
-					"id" : "obj-13",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 58.0, 200.0, 283.0, 26.0 ],
-					"style" : "",
-					"text" : "sources 5 jong resynth 1024 1024 512"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 58.0, 317.0, 76.5, 76.5 ],
+					"patching_rect" : [ 93.0, 355.0, 76.5, 76.5 ],
 					"style" : ""
 				}
 
@@ -718,28 +624,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-22",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 802.449341, 588.5, 112.449341, 35.0 ],
+					"patching_rect" : [ 867.0, 588.5, 157.0, 22.0 ],
 					"style" : "",
-					"text" : "combine act. 1 @triggers 1"
+					"text" : "combine env. 1 @triggers 1"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 713.949341, 588.5, 84.0, 35.0 ],
+					"patching_rect" : [ 713.949341, 588.5, 150.0, 22.0 ],
 					"style" : "",
-					"text" : "combine dict. 1 @triggers 1"
+					"text" : "combine filt. 1 @triggers 1"
 				}
 
 			}
@@ -775,19 +679,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-17",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 439.0, 163.5, 345.0, 33.0 ],
-					"style" : "",
-					"text" : "filters <rank> <filters polybuffer~> <envelopes polybuffer~>  optional: <fft size> <window size> <hop size> "
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-12",
 					"maxclass" : "comment",
 					"numinlets" : 1,
@@ -805,7 +696,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 829.449341, 40.0, 150.0, 33.0 ],
+					"patching_rect" : [ 555.886536, 145.5, 150.0, 33.0 ],
 					"style" : "",
 					"text" : "This poly buffer will be filled with envelopes"
 				}
@@ -818,7 +709,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 643.886536, 40.0, 150.0, 33.0 ],
+					"patching_rect" : [ 555.886536, 101.0, 150.0, 33.0 ],
 					"style" : "",
 					"text" : "This poly buffer will be filled with filter shapes"
 				}
@@ -857,27 +748,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 829.449341, 72.5, 89.0, 22.0 ],
+					"patching_rect" : [ 448.449341, 156.5, 93.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0
 					}
 ,
 					"style" : "",
-					"text" : "polybuffer~ act"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 16.0,
-					"id" : "obj-4",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 443.0, 196.0, 245.0, 26.0 ],
-					"style" : "",
-					"text" : "filters 5 jong dict act 512 512 256"
+					"text" : "polybuffer~ env"
 				}
 
 			}
@@ -888,39 +765,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
-					"patching_rect" : [ 643.886536, 72.5, 92.0, 22.0 ],
+					"patching_rect" : [ 448.449341, 106.5, 85.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0
 					}
 ,
 					"style" : "",
-					"text" : "polybuffer~ dict"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 16.0,
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 58.0, 269.5, 80.0, 26.0 ],
-					"saved_object_attributes" : 					{
-						"Activation Buffer" : "act",
-						"Activation Update" : 0,
-						"Dictionary Buffer" : "dict",
-						"Dictionary Update" : 0,
-						"FFT Size" : -1,
-						"Iterations" : 1,
-						"Rank" : 1,
-						"Resynthesis Buffer" : "resynth",
-						"Window Size" : 1024
-					}
-,
-					"style" : "",
-					"text" : "fluid.nmf~"
+					"text" : "polybuffer~ filt"
 				}
 
 			}
@@ -973,16 +824,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 1 ],
-					"midpoints" : [ 723.449341, 580.0, 788.449341, 580.0 ],
+					"midpoints" : [ 723.449341, 580.0, 854.449341, 580.0 ],
 					"source" : [ "obj-10", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 67.5, 247.25, 67.5, 247.25 ],
-					"source" : [ "obj-13", 0 ]
 				}
 
 			}
@@ -996,7 +839,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-22", 1 ],
-					"midpoints" : [ 817.949341, 580.0, 905.398682, 580.0 ],
+					"midpoints" : [ 817.949341, 580.0, 1014.5, 580.0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
@@ -1012,20 +855,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-9", 2 ],
 					"source" : [ "obj-22", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-23", 0 ],
-					"source" : [ "obj-28", 0 ]
 				}
 
 			}
@@ -1066,13 +895,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
 					"source" : [ "obj-31", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-33", 0 ]
 				}
 
 			}
@@ -1134,14 +956,6 @@
 					"destination" : [ "obj-41", 0 ],
 					"order" : 1,
 					"source" : [ "obj-39", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 452.5, 245.25, 67.5, 245.25 ],
-					"source" : [ "obj-4", 0 ]
 				}
 
 			}

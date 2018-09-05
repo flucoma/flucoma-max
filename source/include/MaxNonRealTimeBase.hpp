@@ -395,7 +395,7 @@ namespace max{
           }
           std::cerr << d.getName() << '\n'; 
           attrAccessors<U, &U::param_get, &U::param_set>(c, d.getName().c_str());
-          CLASS_ATTR_SAVE(c, d.getName().c_str(), 0); 
+//          CLASS_ATTR_SAVE(c, d.getName().c_str(), 0);
         }
       }
     }

@@ -25,7 +25,7 @@ class NMFMax: public fluid::max::MaxNonRealTimeBase
 public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
-    addMethod<NMFMax,&NMFMax::decompose>(c, "decompose");
+    addMethod<NMFMax,&NMFMax::decompose>(c, "process");
     makeAttributes<nmf::NMFClient,NMFMax>(c);
   }
 
@@ -185,7 +185,7 @@ private:
     }
     //Now, we can proceed
     nmf::NMFClient nmf(processModel);
-//    nmf.process();
+    nmf.process();
 //    mModel = processModel;
   }
   
