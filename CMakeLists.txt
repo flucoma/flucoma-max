@@ -12,6 +12,7 @@ set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Minimum OS X deployment ver
 # Misc setup and subroutines
 include(${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake)
 
+set(FLUID_PATH ~/fluid_decomposition CACHE PATH "The top level of the fluid_decomposition repo")
 
 # Generate a project for every folder in the "source/projects" folder
 SUBDIRLIST(PROJECT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/source/projects)

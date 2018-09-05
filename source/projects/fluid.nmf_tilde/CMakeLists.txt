@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.0)
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/../../script/max-pretarget.cmake)
 
-set(FLUID_DECOMP_DIR ~/fluid_decomposition)
+set(FLUID_DECOMP_DIR ${FLUID_PATH})
 
 include_directories(
 	"${C74_MAX_INCLUDES}"
