@@ -25,6 +25,8 @@ namespace max{
   class MaxBufferAdaptor: public parameter::BufferAdaptor
   {
   public:
+//    MaxBufferAdaptor(MaxBufferAdaptor&) = delete; 
+    
     MaxBufferAdaptor(t_object* x, t_symbol* name):mName(name),mHostObject(x) {}
 
     virtual void setName(t_symbol* name) = 0;
@@ -79,11 +81,11 @@ namespace max{
         atom_setlong(&newsize, frames);
         t_symbol* sampsMsg = gensym("sizeinsamps");
         object_method_typed(mBuffObj, sampsMsg, 1, &newsize, nullptr);
+        buffer_setdirty(mBuffObj);
         
-        mFrames = frames;
-        mChans = channels;
         mRank = rank;
-        
+        mFrames = buffer_getframecount(mBuffObj);
+        mChans = buffer_getchannelcount(mBuffObj)/mRank;
       }
     }
     
@@ -108,15 +110,15 @@ namespace max{
     FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
     {
       
-      FluidTensorView<float,2>  v{this->mSamps,0, this->mChans * this->mRank,this->mFrames};
+      FluidTensorView<float,2>  v{this->mSamps,0,this->mFrames, this->mChans * this->mRank};
       
-      return v.row(channel + rankIdx * mRank);
+      return v.col( rankIdx  + channel * mRank);
     }
     
     //Return a view of all the data
     FluidTensorView<float,2> samps() override
     {
-      return {this->mSamps,0, this->mChans,this->mFrames};
+      return {this->mSamps,0,this->mFrames,this->mChans * this->mRank};
     }
     
     size_t numSamps() const override
@@ -224,7 +226,7 @@ namespace max{
       atom_setfloat(&append_args[0], 1);
       atom_setlong(&append_args[1], channels);
       
-      
+      mBufs.reserve(rank);
       
       for(int i = 0; i < rank; ++i)
       {
