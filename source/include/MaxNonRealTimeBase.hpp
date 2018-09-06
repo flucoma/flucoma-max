@@ -237,7 +237,23 @@ namespace {
     
     PolyBufferAdaptor(t_object* hostObject, t_symbol* name) : MaxBufferView(hostObject, name)
     {
-      
+      //if polybuffer name points towards an extent instance, fill mBufs with its babies
+      if(valid())
+      {
+//        t_object* polybuffer = mName->s_thing;
+//        mBufs.clear();
+
+        
+        for(size_t i = 0;;++i)
+        {
+          mBufs.emplace_back(mHostObject,mName,i);
+          if(!mBufs.back().valid())
+          {
+            mBufs.pop_back();
+            break;
+          }
+        }
+      }
     }
     
     void resize(size_t frames, size_t channels, size_t rank) override
@@ -315,7 +331,11 @@ namespace {
     {
       if (valid() && mBufs.size() > 0)
       {
-        return mBufs[0].numFrames();
+        const PolyBufferData& shortestBuffer = *std::min_element(mBufs.begin(),mBufs.end(), [] (const PolyBufferData& lhs, const PolyBufferData& rhs)->bool{
+          return lhs.numFrames() < rhs.numFrames();
+        } );
+        
+        return shortestBuffer.numFrames();
       }
       return 0;
     }
@@ -324,7 +344,11 @@ namespace {
     {
       if (valid() && mBufs.size() > 0)
       {
-        return mBufs[0].numChans();
+        const PolyBufferData& narrowestBuffer = *std::min_element(mBufs.begin(),mBufs.end(), [] (const PolyBufferData& lhs, const PolyBufferData& rhs)->bool{
+          return lhs.numChans() < rhs.numChans();
+        } );
+        
+        return narrowestBuffer.numChans();
       }
       return 0;
     }
