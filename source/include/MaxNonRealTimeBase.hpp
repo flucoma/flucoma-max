@@ -28,8 +28,6 @@ namespace max{
 //    MaxBufferAdaptor(MaxBufferAdaptor&) = delete; 
     
     MaxBufferAdaptor(t_object* x, t_symbol* name):mName(name),mHostObject(x) {}
-
-    virtual void setName(t_symbol* name) = 0;
     
     t_symbol* getName() const
     {
@@ -49,13 +47,13 @@ namespace max{
     MaxBufferData(t_object* x, t_symbol* name):
     MaxBufferAdaptor(x,name)
     {
-      init();
+      mBufref = buffer_ref_new(mHostObject, mName);
     }
     
     ~MaxBufferData()
     {
       release();
-      if(mBufref)
+      if (mBufref)
         object_free(mBufref);
     }
     
@@ -65,30 +63,25 @@ namespace max{
     MaxBufferData(MaxBufferData&& other)
       : MaxBufferAdaptor(other.mHostObject, other.mName)
     {
-      mSamps = other.mSamps;
-      mBuffObj = other.mBuffObj;
-      mBufref = other.mBufref;
-      init();
-      
-      other.mSamps = nullptr;
-      other.mBuffObj = nullptr;
-      other.mBufref = nullptr;
+      swap(std::move(other));
     }
     
     MaxBufferData& operator=(MaxBufferData&& other)
     {
-      std::swap(*this, other);
+      swap(std::move(other));
       return *this;
     }
     
     bool valid() const override
     {
-      return mBufref;
+      return getBuffer();
     }
     
     void resize(size_t frames, size_t channels, size_t rank) override
     {
-      if(mBuffObj)
+      t_object *buffer = getBuffer();
+      
+      if (buffer)
       {
         //Do this in two stages so we can set length in samps rather than ms
         t_atom args[2];
@@ -97,94 +90,93 @@ namespace max{
         t_symbol* setSizeMsg = gensym("setsize");
        
         
-        object_method_typed(mBuffObj, setSizeMsg, 2, args, nullptr);
+        object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
         
         t_atom newsize;
         atom_setlong(&newsize, frames);
         t_symbol* sampsMsg = gensym("sizeinsamps");
-        object_method_typed(mBuffObj, sampsMsg, 1, &newsize, nullptr);
-        buffer_setdirty(mBuffObj);
+        object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
+        buffer_setdirty(buffer);
         
         mRank = rank;
-        mFrames = buffer_getframecount(mBuffObj);
-        mChans = buffer_getchannelcount(mBuffObj)/mRank;
       }
-    }
-    
-    void setName(t_symbol* name) override
-    {
-      mName = name;
-      init();
     }
     
     void acquire() override
     {
-      mSamps = buffer_locksamples(mBuffObj);
+      mSamps = buffer_locksamples(getBuffer());
       
     }
     
     void release()override
     {
-      if(mSamps)
-        buffer_unlocksamples(mBuffObj);
+      if (mSamps)
+        buffer_unlocksamples(getBuffer());
     }
     
     FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
     {
+      FluidTensorView<float,2>  v{this->mSamps,0, numFrames(), numChans() * this->mRank};
       
-      FluidTensorView<float,2>  v{this->mSamps,0,this->mFrames, this->mChans * this->mRank};
-      
-      return v.col( rankIdx  + channel * mRank);
+      return v.col(rankIdx  + channel * mRank);
     }
     
     //Return a view of all the data
     FluidTensorView<float,2> samps() override
     {
-      return {this->mSamps,0,this->mFrames,this->mChans * this->mRank};
+      return {this->mSamps, 0, numFrames(), numChans() * this->mRank};
     }
     
-    size_t numSamps() const override
+    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
     {
-      if(valid())
-      {
-        return this->mFrames;
-      }
-      return 0;
+      auto s = samps();
+      return s(fluid::slice(offset, nframes), fluid::slice(chanoffset, chans));
+    }
+
+    size_t numFrames() const override
+    {
+      return valid() ? buffer_getframecount(getBuffer()) : 0;
     }
     
     size_t numChans() const override
     {
-      if(valid())
-      {
-        return this->mChans;
-      }
-      return 0;
+      return valid() ?  buffer_getchannelcount(getBuffer()) / mRank : 0;
     }
+    
+    size_t rank() const override
+    {
+      return valid() ? mRank : 0;
+    }
+    
   protected:
     bool equal(BufferAdaptor* rhs) const override
     {
       MaxBufferData* x = dynamic_cast<MaxBufferData*>(rhs);
       if(x && x->mBufref)
       {
-        return mBufref == x->mBufref;
+        return mName == x->mName;
       }
       return false;
     }
     
+    t_object *getBuffer() const
+    {
+      return mBufref ? buffer_ref_getobject(mBufref) : nullptr;
+    }
+    
+    void swap(MaxBufferData&& other)
+    {
+      mSamps = other.mSamps;
+      mBufref = other.mBufref;
+      mRank = other.mRank;
+      
+      other.mSamps = nullptr;
+      other.mBufref = nullptr;
+    }
+    
     float *mSamps;
     t_buffer_ref* mBufref;
-    t_buffer_obj* mBuffObj;
-  private:
-    void init()
-    {
-      mBufref = buffer_ref_new(mHostObject, mName);
-      if(mBufref)
-      {
-        mBuffObj = buffer_ref_getobject(mBufref);
-        mFrames = buffer_getframecount(mBuffObj);
-        mChans = buffer_getchannelcount(mBuffObj);
-      }
-    }
+    size_t mRank;
   };
   
 //  /***
@@ -242,7 +234,6 @@ namespace max{
       mBufs.clear(); 
       //clear polybuff (for now)
       object_method_typed(polybuffer, gensym("clear"), 0, NULL, NULL);
-      mRank = rank;
       //Add buffers. We want exact sample lengths, so this will take two calls
       t_atom append_args[2];
       atom_setfloat(&append_args[0], 1);
@@ -287,11 +278,6 @@ namespace max{
       }
     }
     
-    void setName(t_symbol* name) override
-    {
-      
-    }
-    
     FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
     {
       if(valid() && mBufs.size() > 0)
@@ -308,20 +294,35 @@ namespace max{
       return FluidTensorView<float,2>(nullptr,0,0,0);
     }
     
-    size_t numSamps() const override
+    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
     {
-      if(valid() && mBufs.size() > 0)
+      assert("I don't beleive this should happen");
+      return FluidTensorView<float,2>(nullptr,0,0,0);
+    }
+    
+    size_t numFrames() const override
+    {
+      if (valid() && mBufs.size() > 0)
       {
-        return mBufs[0].numSamps();
+        return mBufs[0].numFrames();
       }
       return 0;
     }
     
     size_t numChans() const override
     {
-      if(valid())
+      if (valid())
       {
         return this->numChans();
+      }
+      return 0;
+    }
+      
+    size_t rank() const override
+    {
+      if (valid())
+      {
+        return mBufs.size();
       }
       return 0;
     }
