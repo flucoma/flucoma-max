@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"revision" : 5,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -38,6 +38,31 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 648.0, 286.0, 42.0, 22.0 ],
+					"style" : "",
+					"text" : "*~ 0.1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "meter~",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "float" ],
+					"patching_rect" : [ 533.0, 407.0, 80.0, 13.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bufsize" : 256,
 					"calccount" : 2,
 					"id" : "obj-14",
@@ -45,7 +70,6 @@
 					"numinlets" : 2,
 					"numoutlets" : 0,
 					"patching_rect" : [ 115.200012, 508.0, 300.0, 126.0 ],
-					"presentation_rect" : [ 115.200012, 508.0, 0.0, 0.0 ],
 					"range" : [ 0.0, 256.0 ],
 					"style" : ""
 				}
@@ -72,7 +96,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 91.0, 240.0, 128.0, 22.0 ],
-					"presentation_rect" : [ 88.0, 240.0, 0.0, 0.0 ],
 					"saved_object_attributes" : 					{
 						"gain" : 0.1
 					}
@@ -101,9 +124,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 473.0, 289.0, 46.0, 22.0 ],
+					"patching_rect" : [ 473.0, 289.0, 40.0, 22.0 ],
 					"style" : "",
-					"text" : "noise~"
+					"text" : "pink~"
 				}
 
 			}
@@ -127,7 +150,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 634.0, 289.0, 55.0, 22.0 ],
+					"patching_rect" : [ 640.0, 233.0, 55.0, 22.0 ],
 					"style" : "",
 					"text" : "cycle~ 2"
 				}
@@ -198,7 +221,7 @@
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 473.0, 346.0, 186.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"gain" : 1.0
+						"gain" : 0.1
 					}
 ,
 					"style" : "",
@@ -209,7 +232,7 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 1 ],
+					"destination" : [ "obj-3", 0 ],
 					"order" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
@@ -217,8 +240,16 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-9", 0 ],
+					"destination" : [ "obj-9", 1 ],
 					"order" : 1,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"order" : 2,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -264,8 +295,15 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 1 ],
+					"destination" : [ "obj-2", 0 ],
 					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 1 ],
+					"source" : [ "obj-2", 0 ]
 				}
 
 			}
@@ -292,7 +330,15 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "fluid.audio_pass~.mxo",
+				"name" : "fluid.audio.pass~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vminus~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vtimes~.mxo",
 				"type" : "iLaX"
 			}
  ],
