@@ -19,15 +19,14 @@
 
 namespace fluid {
 namespace max{
-  /***
-   RAII for a Max buffer reference
-   ***/
-  class MaxBufferAdaptor: public parameter::BufferAdaptor
+  
+namespace {
+  class MaxBufferRef
   {
   public:
-//    MaxBufferAdaptor(MaxBufferAdaptor&) = delete; 
+    //    MaxBufferAdaptor(MaxBufferAdaptor&) = delete;
     
-    MaxBufferAdaptor(t_object* x, t_symbol* name):mName(name),mHostObject(x) {}
+    MaxBufferRef(t_object* x, t_symbol* name):mName(name),mHostObject(x) {}
     
     t_symbol* getName() const
     {
@@ -38,14 +37,38 @@ namespace max{
     t_object* mHostObject;
   };
   
+  class MaxBufferView: public MaxBufferRef
+  {
+  public:
+    using MaxBufferRef::MaxBufferRef;
+    
+    virtual void acquire() = 0;
+    virtual void release() = 0;
+    virtual bool valid() const   = 0;
+    
+    virtual void resize(size_t frames, size_t channels, size_t rank) = 0;
+    
+    //Return a slice of the buffer
+    virtual FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 1) = 0;
+    //Return a view of all the data
+    virtual FluidTensorView<float,2> samps() = 0;
+    virtual FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) = 0;
+    
+    virtual size_t numFrames() const = 0;
+    virtual size_t numChans() const = 0;
+    virtual size_t rank() const = 0;
+    
+  };
+  
+ 
+  
   /***
    RAII for buffer's data
    ***/
-  class MaxBufferData: public MaxBufferAdaptor
+  class MaxBufferData:  public MaxBufferView
   {
   public:
-    MaxBufferData(t_object* x, t_symbol* name):
-    MaxBufferAdaptor(x,name)
+    MaxBufferData(t_object* x, t_symbol* name) : MaxBufferView(x, name), mRank(1)
     {
       mBufref = buffer_ref_new(mHostObject, mName);
     }
@@ -60,8 +83,7 @@ namespace max{
     MaxBufferData(const MaxBufferData&) = delete;
     MaxBufferData& operator=(const MaxBufferData& other) = delete;
     
-    MaxBufferData(MaxBufferData&& other)
-      : MaxBufferAdaptor(other.mHostObject, other.mName)
+    MaxBufferData(MaxBufferData&& other) : MaxBufferView(other.mHostObject, other.mName)
     {
       swap(std::move(other));
     }
@@ -149,15 +171,15 @@ namespace max{
     }
     
   protected:
-    bool equal(BufferAdaptor* rhs) const override
-    {
-      MaxBufferData* x = dynamic_cast<MaxBufferData*>(rhs);
-      if(x && x->mBufref)
-      {
-        return mName == x->mName;
-      }
-      return false;
-    }
+//    bool equal(MaxBufferRef* rhs) const override
+//    {
+//      MaxBufferData* x = dynamic_cast<MaxBufferData*>(rhs);
+//      if(x && x->mBufref)
+//      {
+//        return mName == x->mName;
+//      }
+//      return false;
+//    }
     
     t_object *getBuffer() const
     {
@@ -178,21 +200,6 @@ namespace max{
     t_buffer_ref* mBufref;
     size_t mRank;
   };
-  
-//  /***
-//   Wrap buffer data in a FluidTensorView
-//   ***/
-//  class MaxBufferView: public MaxBufferData, public FluidTensorView<float, 2>
-//  {
-//  public:
-//    MaxBufferView() = delete;
-//    MaxBufferView(MaxBufferView&) = delete;
-//    MaxBufferView operator=(MaxBufferView&) = delete;
-//
-//    MaxBufferView(t_object* x, t_symbol* name):
-//    MaxBufferData(x,name),FluidTensorView<float,2>({0,{n_frames,n_chans}},m_samps)
-//    {}
-//  };
   
   /***
    Construct a polybuffer-buffer name
@@ -222,11 +229,11 @@ namespace max{
     PolyBufferName(name,idx),MaxBufferData(x,buffer_name){}
   };
   
-  class PolyBufferAdaptor: public MaxBufferAdaptor
+  class PolyBufferAdaptor: public MaxBufferView
   {
   public:
     
-    PolyBufferAdaptor(t_object* hostObject, t_symbol* name): MaxBufferAdaptor(hostObject, name) {}
+    PolyBufferAdaptor(t_object* hostObject, t_symbol* name) : MaxBufferView(hostObject, name) {}
     
     void resize(size_t frames, size_t channels, size_t rank) override
     {
@@ -327,17 +334,128 @@ namespace max{
       return 0;
     }
   protected:
-    bool equal(BufferAdaptor* rhs) const override
-    {
-      PolyBufferAdaptor* x = dynamic_cast<PolyBufferAdaptor*>(rhs);
-      if(x && x->mName)
-      {
-        return mName == x->mName;
-      }
-      return false;
-    }
+//    bool equal(parameter::BufferAdaptor& rhs) const override
+//    {
+//      PolyBufferAdaptor* x = dynamic_cast<PolyBufferAdaptor*>(rhs);
+//      if(x && x->mName)
+//      {
+//        return mName == x->mName;
+//      }
+//      return false;
+//    }
   private:
     std::vector<PolyBufferData> mBufs;
+  };
+} //anonymous namespace
+  
+  /***
+   RAII for a Max buffer reference
+   ***/
+  class MaxBufferAdaptor: public parameter::BufferAdaptor, public MaxBufferRef
+  {
+  public:
+    //    MaxBufferAdaptor(MaxBufferAdaptor&) = delete;
+    
+    MaxBufferAdaptor(t_object* x, t_symbol* name): MaxBufferRef(x, name) {}
+    
+    void acquire() override
+    {
+      
+      //Test for buffer
+      t_buffer_ref* buf_ref = buffer_ref_new(mHostObject, mName);
+      if(buf_ref && buffer_ref_exists(buf_ref))
+      {
+        
+        std::unique_ptr<MaxBufferView> p(new MaxBufferData(mHostObject,mName));
+        mData = std::move(p);
+        
+        object_free(buf_ref); 
+        
+      }
+      //The s_thing of a polybuffer t_symbol* binds to a class called
+      //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
+      else if(mName->s_thing && object_classname_compare(mName->s_thing, gensym("polybuffer")))
+      {
+        std::unique_ptr<MaxBufferView> p(new PolyBufferAdaptor(mHostObject,mName));
+        mData = std::move(p);
+      }
+      
+      
+      if(mData)
+        mData->acquire();
+    }
+    
+    void release() override
+    {
+      if(mData)
+        mData->release();
+    }
+    
+    bool valid() const override
+    {
+      return mData? mData && mData->valid() : false;
+    }
+    
+    void resize(size_t frames, size_t channels, size_t rank) override
+    {
+      if(mData)
+        mData->resize(frames,channels,rank);
+    }
+    
+    FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
+    {
+      
+      return mData ?  mData->samps(channel, rankIdx) : emptyView() ;
+    }
+    
+    //Return a view of all the data
+    FluidTensorView<float,2> samps() override
+    {
+      return mData? mData->samps() : emptyView();
+    }
+    
+    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
+    {
+      return  mData ? mData->samps(offset, nframes,chanoffset,chans) : emptyView();
+    }
+    
+    size_t numFrames() const override
+    {
+      return mData ? mData->numFrames(): 0;
+    }
+    
+    size_t numChans() const override
+    {
+      return mData? mData->numChans() : 0;
+    }
+    
+    size_t rank() const override
+    {
+      return mData? mData->rank() : 0;
+    }
+    
+    
+    
+  private:
+    
+    static  FluidTensorView<float,1> emptyView()
+    {
+      static FluidTensorView<float,1> empty {nullptr,0,0};
+      return empty;
+    }
+
+
+    
+    bool equal(parameter::BufferAdaptor* rhs) const override
+    {
+      MaxBufferAdaptor* a = dynamic_cast<MaxBufferAdaptor*>(rhs);
+      
+      return a && mData && (mData->getName() == a->getName());
+    }
+    
+    std::unique_ptr<MaxBufferView> mData;
+    
+   
   };
   
   

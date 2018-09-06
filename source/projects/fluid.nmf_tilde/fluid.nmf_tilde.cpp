@@ -2,12 +2,9 @@
  *
  */
 
-
-
 #include  "MaxNonRealTimeBase.hpp"
 #include "fluid_nmf_tilde_util.h"
 #include "version.h"
-
 
 //#include "algorithms/STFT.hpp"
 #include "clients/nrt/NMFClient.hpp"
@@ -17,7 +14,6 @@
 #include <vector>
 #include <array>
 #include <algorithm>
-
 
 namespace fluid {
 class NMFMax: public fluid::max::MaxNonRealTimeBase
@@ -31,7 +27,7 @@ public:
 
   NMFMax(t_symbol *s, long argc, t_atom *argv)
   {
-    mParams = nmf::NMFClient::newParameterSet();
+//    mParams = nmf::NMFClient::newParameterSet();
     attr_args_process(*this, argc, argv);
     mOutlets.push_back((t_object*)bangout(this));
   }
@@ -41,7 +37,7 @@ public:
     for(auto&& a: mOutlets)
       object_free(a);
     
-    for(auto&& p:mParams)
+    for(auto&& p:nmf.getParams())
     {
       if(p.getDescriptor().getType() == parameter::Type::Buffer)
       {
@@ -56,7 +52,7 @@ public:
     {
       t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
       
-      parameter::Instance& p = parameter::lookupParam(attrname->s_name, mParams);
+      parameter::Instance& p = parameter::lookupParam(attrname->s_name, nmf.getParams());
      
       switch(p.getDescriptor().getType())
       {
@@ -72,33 +68,38 @@ public:
         }
         case parameter::Type::Buffer:
         {
-          max::MaxBufferAdaptor* b = dynamic_cast<max::MaxBufferAdaptor*>(p.getBuffer());
           
           t_symbol* s = atom_getsym(argv);
           
-          //is it a buffer or a poly buffer?
+          max::MaxBufferAdaptor* b = dynamic_cast<max::MaxBufferAdaptor*>(p.getBuffer());
+          if(b)
+            delete b;
           
-          //Test for buffer
-          t_buffer_ref* buf_ref = buffer_ref_new(*this, s);
-          if(buf_ref && buffer_ref_exists(buf_ref))
-          {
-            if(b)
-              delete b;
-            p.setBuffer(new max::MaxBufferData(*this,s));
-            break;
-          }
-          //The s_thing of a polybuffer t_symbol* binds to a class called
-          //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
-          if(s->s_thing && object_classname_compare(s->s_thing, gensym("polybuffer")))
-          {
-            if(b)
-              delete b;
-            p.setBuffer(new max::PolyBufferAdaptor(*this,s));
-            break;
-          }
-          
-          //Otherwise, let's moan bout not change the param
-          object_warn(*this, "Can't find a buffer~ or polybuffer~ with the name %s",s->s_name);
+          p.setBuffer(new max::MaxBufferAdaptor(*this,s));
+//
+//          //is it a buffer or a poly buffer?
+//
+//          //Test for buffer
+//          t_buffer_ref* buf_ref = buffer_ref_new(*this, s);
+//          if(buf_ref && buffer_ref_exists(buf_ref))
+//          {
+//            if(b)
+//              delete b;
+//            p.setBuffer(new max::MaxBufferData(*this,s));
+//            break;
+//          }
+//          //The s_thing of a polybuffer t_symbol* binds to a class called
+//          //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
+//          if(s->s_thing && object_classname_compare(s->s_thing, gensym("polybuffer")))
+//          {
+//            if(b)
+//              delete b;
+//            p.setBuffer(new max::PolyBufferAdaptor(*this,s));
+//            break;
+//          }
+//
+//          //Otherwise, let's moan bout not change the param
+//          object_warn(*this, "Can't find a buffer~ or polybuffer~ with the name %s",s->s_name);
           break;
         }
         default:
@@ -112,7 +113,7 @@ public:
   {
     t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
     
-    parameter::Instance p = parameter::lookupParam(attrname->s_name, mParams);
+    parameter::Instance p = parameter::lookupParam(attrname->s_name, nmf.getParams());
     
     char alloc;
 //    long size = 0;
@@ -148,52 +149,47 @@ public:
   
   void decompose(t_symbol *s, long ac, t_atom *av)
   {
-    
     if(atom_gettype(av) == A_SYM)
     {
-      if(mParams[0].getBuffer())
-        delete mParams[0].getBuffer();
-      
-      mParams[0].setBuffer( new max::MaxBufferData(*this, atom_getsym(av)));
+      if(nmf.getParams()[0].getBuffer())
+        delete nmf.getParams()[0].getBuffer();
+      nmf.getParams()[0].setBuffer( new max::MaxBufferAdaptor(*this, atom_getsym(av)));
     }
     
     if(ac > 1)
     {
       while(ac-- > 1)
       {
-        mParams[ac].setLong(atom_getlong(&av[ac]));
+        if(atom_gettype(av) == A_LONG)
+          nmf.getParams()[ac].setLong(atom_getlong(&av[ac]));
       }
     }
-    
-    
-    
     deferMethod<NMFMax,&NMFMax::do_decompose>(s, ac, av);
   }
-
 private:
-  
   void do_decompose(t_symbol *s, long ac, t_atom *av)
   {
     bool parametersOk;
     nmf::NMFClient::ProcessModel processModel;
     std::string whatHappened;//this will give us a message to pass back if param check fails
-    std::tie(parametersOk,whatHappened,processModel) = nmf::NMFClient::sanityCheck(mParams);
+    std::tie(parametersOk,whatHappened,processModel) = nmf.sanityCheck();
     if(!parametersOk)
     {
       object_error(*this, "fdNMF: %s \n", whatHappened.c_str());
       return;
     }
     //Now, we can proceed
-    nmf::NMFClient nmf(processModel);
-    nmf.process();
+//    nmf::NMFClient nmf();
+    nmf.process(processModel);
 //    mModel = processModel;
   }
   
-  std::vector<parameter::Instance> mParams;
+  
+  nmf::NMFClient nmf; 
+//  std::vector<parameter::Instance> mParams;
   std::vector<t_object*> mOutlets;
-//
 };
-}
+}//namespace
 void ext_main(void *r)
 {
   fluid::NMFMax::makeClass<fluid::NMFMax>(CLASS_BOX, "fluid.nmf~");
