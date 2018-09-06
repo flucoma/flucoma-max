@@ -68,7 +68,7 @@ namespace {
   class MaxBufferData:  public MaxBufferView
   {
   public:
-    MaxBufferData(t_object* x, t_symbol* name) : MaxBufferView(x, name), mRank(1)
+    MaxBufferData(t_object* x, t_symbol* name) : MaxBufferView(x, name), mSamps(nullptr), mRank(1)
     {
       mBufref = buffer_ref_new(mHostObject, mName);
     }
@@ -235,7 +235,10 @@ namespace {
   {
   public:
     
-    PolyBufferAdaptor(t_object* hostObject, t_symbol* name) : MaxBufferView(hostObject, name) {}
+    PolyBufferAdaptor(t_object* hostObject, t_symbol* name) : MaxBufferView(hostObject, name)
+    {
+      
+    }
     
     void resize(size_t frames, size_t channels, size_t rank) override
     {
@@ -257,6 +260,7 @@ namespace {
         object_method_typed(polybuffer, gensym("appendempty"), 2, append_args, NULL);
         mBufs.emplace_back(mHostObject,mName,size_t(i));
         mBufs.back().resize(frames, channels, 1);
+        assert(mBufs[i].numFrames() == frames && mBufs[i].numChans() == channels);
       }
       
       acquire();
@@ -318,9 +322,9 @@ namespace {
     
     size_t numChans() const override
     {
-      if (valid())
+      if (valid() && mBufs.size() > 0)
       {
-        return this->numChans();
+        return mBufs[0].numChans();
       }
       return 0;
     }
@@ -379,7 +383,6 @@ namespace {
         std::unique_ptr<MaxBufferView> p(new PolyBufferAdaptor(mHostObject,mName));
         mData = std::move(p);
       }
-      
       
       if(mData)
         mData->acquire();
