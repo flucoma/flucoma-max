@@ -59,6 +59,28 @@ namespace max{
         object_free(mBufref);
     }
     
+    MaxBufferData(const MaxBufferData&) = delete;
+    MaxBufferData& operator=(const MaxBufferData& other) = delete;
+    
+    MaxBufferData(MaxBufferData&& other)
+      : MaxBufferAdaptor(other.mHostObject, other.mName)
+    {
+      mSamps = other.mSamps;
+      mBuffObj = other.mBuffObj;
+      mBufref = other.mBufref;
+      init();
+      
+      other.mSamps = nullptr;
+      other.mBuffObj = nullptr;
+      other.mBufref = nullptr;
+    }
+    
+    MaxBufferData& operator=(MaxBufferData&& other)
+    {
+      std::swap(*this, other);
+      return *this;
+    }
+    
     bool valid() const override
     {
       return mBufref;
