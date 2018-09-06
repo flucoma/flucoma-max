@@ -84,6 +84,7 @@ namespace max{
       if (buffer)
       {
         //Do this in two stages so we can set length in samps rather than ms
+        release();
         t_atom args[2];
         atom_setfloat(&args[0], 0.);
         atom_setlong(&args[1], rank * channels);
@@ -97,6 +98,7 @@ namespace max{
         t_symbol* sampsMsg = gensym("sizeinsamps");
         object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
         buffer_setdirty(buffer);
+        acquire();
         
         mRank = rank;
       }
@@ -230,6 +232,8 @@ namespace max{
     
     void resize(size_t frames, size_t channels, size_t rank) override
     {
+      release();
+      
       t_object* polybuffer = mName->s_thing;
       mBufs.clear(); 
       //clear polybuff (for now)
@@ -248,11 +252,7 @@ namespace max{
         mBufs.back().resize(frames, channels, 1);
       }
       
-//      t_atom resize_args[3];
-//      atom_setlong(&resize_args[0], 0); //send to all
-//      atom_setsym(&resize_args[1], gensym("samps"));
-//      atom_setlong(&resize_args[2],frames);
-//      object_method_typed(polybuffer,gensym("send"),3,resize_args,NULL);
+      acquire();
     }
     
     bool valid() const override
