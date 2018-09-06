@@ -36,15 +36,6 @@ public:
   {
     for(auto&& a: mOutlets)
       object_free(a);
-    
-    for(auto&& p:nmf.getParams())
-    {
-      if(p.getDescriptor().getType() == parameter::Type::Buffer)
-      {
-        if(p.getBuffer())
-          delete p.getBuffer();
-      }
-    }
   }
   
   
@@ -68,38 +59,8 @@ public:
         }
         case parameter::Type::Buffer:
         {
-          
           t_symbol* s = atom_getsym(argv);
-          
-          max::MaxBufferAdaptor* b = dynamic_cast<max::MaxBufferAdaptor*>(p.getBuffer());
-          if(b)
-            delete b;
-          
           p.setBuffer(new max::MaxBufferAdaptor(*this,s));
-//
-//          //is it a buffer or a poly buffer?
-//
-//          //Test for buffer
-//          t_buffer_ref* buf_ref = buffer_ref_new(*this, s);
-//          if(buf_ref && buffer_ref_exists(buf_ref))
-//          {
-//            if(b)
-//              delete b;
-//            p.setBuffer(new max::MaxBufferData(*this,s));
-//            break;
-//          }
-//          //The s_thing of a polybuffer t_symbol* binds to a class called
-//          //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
-//          if(s->s_thing && object_classname_compare(s->s_thing, gensym("polybuffer")))
-//          {
-//            if(b)
-//              delete b;
-//            p.setBuffer(new max::PolyBufferAdaptor(*this,s));
-//            break;
-//          }
-//
-//          //Otherwise, let's moan bout not change the param
-//          object_warn(*this, "Can't find a buffer~ or polybuffer~ with the name %s",s->s_name);
           break;
         }
         default:
@@ -113,7 +74,7 @@ public:
   {
     t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
     
-    parameter::Instance p = parameter::lookupParam(attrname->s_name, nmf.getParams());
+    parameter::Instance& p = parameter::lookupParam(attrname->s_name, nmf.getParams());
     
     char alloc;
 //    long size = 0;
@@ -150,11 +111,7 @@ public:
   void decompose(t_symbol *s, long ac, t_atom *av)
   {
     if(atom_gettype(av) == A_SYM)
-    {
-      if(nmf.getParams()[0].getBuffer())
-        delete nmf.getParams()[0].getBuffer();
-      nmf.getParams()[0].setBuffer( new max::MaxBufferAdaptor(*this, atom_getsym(av)));
-    }
+        nmf.getParams()[0].setBuffer( new max::MaxBufferAdaptor(*this, atom_getsym(av)));
     
     if(ac > 1)
     {
