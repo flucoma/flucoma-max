@@ -78,6 +78,7 @@ private:
       return;
     }
     trans.process(processModel);
+    outlet_bang(mOutlets[0]);
   }
   str::TransientNRTClient trans;
   std::vector<t_object*> mOutlets;

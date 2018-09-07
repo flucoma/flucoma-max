@@ -72,6 +72,7 @@ private:
       return;
     }
     nmf.process(processModel);
+    outlet_bang(mOutlets[0]);
   }
   
   nmf::NMFClient nmf; 
