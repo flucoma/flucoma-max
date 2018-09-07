@@ -1,10 +1,12 @@
 
+
 /**
  @file MaxNonRealTimeBase.hpp
  
  Base classes for non-real time Max wrappers
  
  **/
+
 
 #pragma once
 
@@ -490,22 +492,29 @@ namespace {
   {
   public:
    
-    template <class T>struct AttrAccessor { typedef t_max_err (T::*MethodAttrAccessor) (t_object *attr, long ac, t_atom *av); };
+//    template <class T> struct AttrAccessor { typedef t_max_err (T::*MethodAttrAccessor) (t_object *attr, long ac, t_atom *av, std::vector<parameter::Instance>& p); };
     
-    template <class T> struct AttrGetter { typedef  t_max_err (T::*MethodAttrGetter) (t_object *attr, long *argc, t_atom **argv);};
+//    template <class T> struct AttrGetter { typedef  t_max_err (T::*MethodAttrGetter) (t_object *attr, long *argc, t_atom **argv,std::vector<parameter::Instance>& p);};
+//
     
-    template <class T, typename AttrAccessor<T>::MethodAttrAccessor F>
-    static void call(T *x, t_object *attr, long ac, t_atom *av) {((x)->*F)(attr, ac, av); };
-    
-    template <class T, typename AttrGetter<T>::MethodAttrGetter F>
-    static void call(T *x, t_object *attr, long *ac, t_atom **av) {((x)->*F)(attr, ac, av); };
-    
-    
-    template <class T, typename AttrGetter<T>::MethodAttrGetter GET, typename AttrAccessor<T>::MethodAttrAccessor SET>
-    static void attrAccessors(t_class *c, const char *attrname)
-    {
-      CLASS_ATTR_ACCESSORS(c, attrname, ((method)call<T,GET>), ((method)call<T,SET>));
-    }
+//    template <typename T>
+//    using MethodAttrGetter = t_max_err (T::*) (t_object *attr, long *argc, t_atom **argv,std::vector<parameter::Instance>& p);
+//
+//    template <typename T>
+//    using ParamsMethod = std::vector<parameter::Instance>& (T::*) ();
+//
+//    template <class T, typename AttrAccessor<T>::MethodAttrAccessor F>
+//    static void call(T *x, t_object *attr, long ac, t_atom *av) {((x)->*F)(attr, ac, av, ((x)->getParams())); };
+//
+//    template <class T, MethodAttrGetter<T> F, ParamsMethod<T> P>
+//    static void call(T *x, t_object *attr, long *ac, t_atom **av) {((x)->*F)(attr, ac, av, ((x)->*P)()); };
+//
+//
+//    template <class T, MethodAttrGetter<T> GET, typename AttrAccessor<T>::MethodAttrAccessor SET, ParamsMethod<T> P>
+//    static void attrAccessors(t_class *c, const char *attrname)
+//    {
+//      CLASS_ATTR_ACCESSORS(c, attrname, ((method)call<T,GET,P>), ((method)call<T,SET>));
+//    }
 
     template <class T, typename Gimme<T>::MethodGimme F>
     static void call(T* x, t_symbol* s, long argc, t_atom* argv) { ((x)->*F)(s, argc, argv);};
@@ -516,24 +525,93 @@ namespace {
       defer(this, (method)call<T,F>, s, argc, av); 
     }
     
+    template<typename Wrapper, std::vector<parameter::Instance>&(Wrapper::*F)()>
+    static void getterDispatch(Wrapper* x, t_object *attr, long *ac, t_atom **av)
+    {
+      x->param_get(attr, ac, av,(x->*F)());
+    }
+    
+    template<typename Wrapper, std::vector<parameter::Instance>&(Wrapper::*F)()>
+    static void setterDispatch(Wrapper* x, t_object *attr, long ac, t_atom *av)
+    {
+      x->param_set(attr, ac, av,(x->*F)());
+    }
      
+    t_max_err param_set(t_object *attr, long argc, t_atom *argv, std::vector<parameter::Instance>& params)
+    {
+      t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
+      
+      parameter::Instance& p = parameter::lookupParam(attrname->s_name, params);
+      
+      switch(p.getDescriptor().getType())
+      {
+        case parameter::Type::Float:
+        {
+          p.setFloat(atom_getfloat(argv));
+          break;
+        }
+        case parameter::Type::Long:
+        {
+          p.setLong(atom_getlong(argv));
+          break;
+        }
+        case parameter::Type::Buffer:
+        {
+          t_symbol* s = atom_getsym(argv);
+          p.setBuffer(new max::MaxBufferAdaptor(*this,s));
+          break;
+        }
+        default:
+        {}
+      }
+      return 0;
+    }
     
-//    template<class T, typename Gimme<T>::MethodGimme F>
-//    static void Defer(t_symbol* s, short argc, t_atom* av)
-//    {
-//      defer(T *x, (method)call<T,F>, s, argc, av);
-//    }
-   
+    
+    t_max_err param_get(t_object *attr, long *argc, t_atom **argv,std::vector<parameter::Instance>& params)
+    {
+      t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
+      
+      parameter::Instance& p = parameter::lookupParam(attrname->s_name, params);
+      
+      char alloc;
+      //    long size = 0;
+      atom_alloc(argc, argv, &alloc);
+      
+      switch(p.getDescriptor().getType())
+      {
+        case parameter::Type::Float:
+        {
+          atom_setfloat(*argv, p.getFloat());
+          break;
+        }
+        case parameter::Type::Long:
+        {
+          atom_setlong(*argv, p.getLong());
+          break;
+        }
+        case parameter::Type::Buffer:
+        {
+          if(p.getBuffer())
+          {
+            max::MaxBufferAdaptor* b = dynamic_cast<max::MaxBufferAdaptor*>(p.getBuffer());
+            if(b)
+              atom_setsym(*argv, b->getName());
+          }
+          break;
+        }
+        default:
+        {}
+      }
+      return 0;
+    }
     
     
     
-    template <typename T, typename U>
+    template <typename Client, typename Wrapper>
     static void makeAttributes(t_class* c)
     {
-      
-      
-      
-      for(auto&& d: T::getParamDescriptors())
+      for(auto&& d: Client::getParamDescriptors())
       {
         std::cout << d<< '\n';
         //Make attributes out of parameters marked not instantiation only. Hum.
@@ -542,18 +620,18 @@ namespace {
           {
             case parameter::Type::Float :
             
-              CLASS_ATTR_DOUBLE(c, d.getName().c_str(), 0, U, mDummy);
+              CLASS_ATTR_DOUBLE(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
 
             case parameter::Type::Long :
             {
-              CLASS_ATTR_LONG(c, d.getName().c_str(), 0, U, mDummy);
+              CLASS_ATTR_LONG(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
             }
               
             case parameter::Type::Buffer :
             {
-              CLASS_ATTR_SYM(c, d.getName().c_str(), 0, U, mDummy);
+              CLASS_ATTR_SYM(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
             }
               
@@ -563,8 +641,10 @@ namespace {
               break;
             }
           }
-          std::cerr << d.getName() << '\n'; 
-          attrAccessors<U, &U::param_get, &U::param_set>(c, d.getName().c_str());
+          
+          CLASS_ATTR_ACCESSORS(c, d.getName().c_str(), (getterDispatch<Wrapper, &Wrapper::getParams>), (setterDispatch<Wrapper, &Wrapper::getParams>));
+          //          std::cerr << d.getName() << '\n';
+//          MaxNonRealTimeBase::attrAccessors<U, &U::param_get, &U::param_set, &U::getParams>(c, d.getName().c_str());
 //          CLASS_ATTR_SAVE(c, d.getName().c_str(), 0);
         }
       }
@@ -572,8 +652,5 @@ namespace {
   private:
     t_object mDummy;
   };
-  
-  
-  
 } //namespace max
 } //namespace fluid
