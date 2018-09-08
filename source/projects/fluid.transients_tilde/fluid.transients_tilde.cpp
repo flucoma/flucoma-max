@@ -44,18 +44,18 @@ public:
   
   void process(t_symbol *s, long ac, t_atom *av)
   {
-    
-    if(atom_gettype(av) == A_SYM)
-      trans.getParams()[0].setBuffer( new max::MaxBufferAdaptor(*this, atom_getsym(av)));
-
-    
-    if(ac > 1)
-    {
-      while(ac-- > 1)
-      {
-        trans.getParams()[ac].setLong(atom_getlong(&av[ac]));
-      }
-    }
+//    
+//    if(atom_gettype(av) == A_SYM)
+//      trans.getParams()[0].setBuffer( new max::MaxBufferAdaptor(*this, atom_getsym(av)));
+//
+//    
+//    if(ac > 1)
+//    {
+//      while(ac-- > 1)
+//      {
+//        trans.getParams()[ac].setLong(atom_getlong(&av[ac]));
+//      }
+//    }
     deferMethod<TransientMax,&TransientMax::do_process>(s, ac, av);
   }
   
@@ -68,6 +68,53 @@ private:
   
   void do_process(t_symbol *s, long ac, t_atom *av)
   {
+    for(size_t i = 0, paramIdx = 0; i < ac; ++i)
+    {
+      switch(atom_gettype(av + i))
+      {
+        case A_SYM:
+          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Buffer)
+          {
+            if(++paramIdx >= getParams().size())
+            {
+              object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
+              return;
+            }
+          }
+          getParams()[paramIdx++].setBuffer(new max::MaxBufferAdaptor(*this, atom_getsym(av + i)));
+          break;
+        case A_FLOAT:
+        case A_LONG:
+        {
+          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
+                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float)
+          {
+            if(++paramIdx >= getParams().size())
+            {
+              object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
+              return;
+            }
+          }
+          
+          parameter::Instance& p = getParams()[paramIdx++];
+          
+          if(p.getDescriptor().getType() == parameter::Type::Long)
+          {
+            p.setLong(atom_getlong(av + i));
+          }
+          else
+          {
+            p.setFloat(atom_getfloat(av+i));
+          }
+          break;
+        }
+        default:
+          assert(false && "I don't know how to interpret this state of affairs");
+      }
+    }
+    
+    
+    
     bool parametersOk;
     str::TransientNRTClient::ProcessModel processModel;
     std::string whatHappened;//this will give us a message to pass back if param check fails
@@ -78,6 +125,13 @@ private:
       return;
     }
     trans.process(processModel);
+    
+    for(auto&& p: getParams())
+    {
+      if(p.getDescriptor().instatiation())
+        p.reset();
+    }
+    
     outlet_bang(mOutlets[0]);
   }
   str::TransientNRTClient trans;

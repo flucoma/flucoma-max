@@ -1,5 +1,5 @@
 #include "clients/nrt/BufferComposeNRT.hpp"
-#include  "MaxNonRealTimeBase.hpp"
+#include "MaxNonRealTimeBase.hpp"
 #include "ext_obex.h"
 #include <vector>
 #include <array>
@@ -29,17 +29,18 @@ public:
   
   void process(t_symbol *s, long ac, t_atom *av)
   {
-    
-    if(atom_gettype(av) == A_SYM)
-      bufferCompose.getParams()[0].setBuffer( new max::MaxBufferAdaptor(*this, atom_getsym(av)));
+    deferMethod<BufferCompose,&BufferCompose::do_process>(s, ac, av);
+  }
+  
+  std::vector<parameter::Instance>& getParams()
+  {
+    return bufferCompose.getParams();
+  }
 
-//    if(ac > 1)
-//    {
-//      while(ac-- > 1)
-//      {
-//        bufferCompose.getParams()[ac].setLong(atom_getlong(&av[ac]));
-//      }
-//    }
+private:
+  
+  void do_process(t_symbol *s, long ac, t_atom *av)
+  {
     
     size_t paramIdx = 0;
     //This is pretty low fi. Really, params should know if they're optional, and we should die as soon as it becomes clear
@@ -86,24 +87,9 @@ public:
         }
         default:
           assert(false && "I don't know how to interpret this state of affairs");
-          
-          
       }
     }
     
-    
-    deferMethod<BufferCompose,&BufferCompose::do_process>(s, ac, av);
-  }
-  
-  std::vector<parameter::Instance>& getParams()
-  {
-    return bufferCompose.getParams();
-  }
-
-private:
-  
-  void do_process(t_symbol *s, long ac, t_atom *av)
-  {
     bool parametersOk;
     buf::BufferComposeClient::ProcessModel processModel;
     std::string whatHappened;//this will give us a message to pass back if param check fails
@@ -113,7 +99,15 @@ private:
       object_error(*this, whatHappened.c_str());
       return;
     }
+    
     bufferCompose.process(processModel);
+    
+    for(auto&& p: getParams())
+    {
+      if(p.getDescriptor().instatiation())
+        p.reset();
+    }
+    
     outlet_bang(mOutlets[0]);
   }
   buf::BufferComposeClient bufferCompose;
