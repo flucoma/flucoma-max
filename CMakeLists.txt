@@ -1,10 +1,11 @@
 cmake_minimum_required(VERSION 3.3)
 
-
-set(CMAKE_CXX_STANDARD 11)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_STANDARD 11)
+
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
 set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libc++")
+SET(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
 set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Minimum OS X deployment version")
 
 
@@ -23,17 +24,17 @@ include(${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake)
 
 set(FLUID_PATH ~/fluid_decomposition CACHE PATH "The top level of the fluid_decomposition repo")
 
-get_filename_component(FLUIDPATH ${FLUID_DECOMP_PATH} ABSOLUTE)
-message(${FLUIDPATH})
+get_filename_component(FLUID_ABS_PATH ${FLUID_PATH} ABSOLUTE)
+message(${FLUID_ABS_PATH})
 # if (NOT DEFINED ${FLUID_DECOMP_PATH})
 # 	message(FATAL_ERROR "Please set the path to the fluid_decomposition sources with -DFLUID_DECOMP_PATH=<path>")
 # endif()
 
-if (NOT (EXISTS "${FLUIDPATH}/build/fluid_decomposition-exports.cmake"))
-	message(FATAL_ERROR "Can't find the fluid_decomposition CMake targets file at ${FLUIDPATH}/build/fluid_decomposition-expors.cmake. Please go to ${FLUIDPATH}/build and run CMake")
+if (NOT (EXISTS "${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake"))
+	message(FATAL_ERROR "Can't find the fluid_decomposition CMake targets file at ${FLUID_ABS_PATH}/build/fluid_decomposition-expors.cmake. Please go to ${FLUID_ABS_PATH}/build and run CMake")
 endif()
 
-include("${FLUIDPATH}/build/fluid_decomposition-exports.cmake")
+include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
 
 # Generate a project for every folder in the "source/projects" folder
 SUBDIRLIST(PROJECT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/source/projects)
