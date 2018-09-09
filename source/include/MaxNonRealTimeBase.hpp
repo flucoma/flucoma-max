@@ -440,12 +440,12 @@ namespace {
     //Return a view of all the data
     FluidTensorView<float,2> samps() override
     {
-      return mData? mData->samps() : emptyView();
+      return mData? mData->samps() : FluidTensorView<float,2>(emptyView());
     }
     
     FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
     {
-      return  mData ? mData->samps(offset, nframes,chanoffset,chans) : emptyView();
+      return  mData ? mData->samps(offset, nframes,chanoffset,chans) : FluidTensorView<float,2>(emptyView());
     }
     
     size_t numFrames() const override
