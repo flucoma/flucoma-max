@@ -47,7 +47,7 @@ void fluid_audio_pass_perform(t_fluid_audio_pass* x, t_object* dsp64, double** i
   //Map output signal to first signal outlet
   x->output_wrappers[0]->set(outs[0],0);
   //Process!
-  x->fluid_obj->do_process(x->input_wrappers, x->output_wrappers, sampleframes,numins,numouts);
+  x->fluid_obj->do_process(std::begin(x->input_wrappers),std::end(x->output_wrappers),std::begin(x->output_wrappers), std::end(x->output_wrappers), sampleframes,numins,numouts);
 }
 
 
