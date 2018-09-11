@@ -69,7 +69,7 @@ void fluid_audio_pass_dsp64(t_fluid_audio_pass* x, t_object* dsp64, short *count
   if(x->fluid_obj)
     delete x->fluid_obj;
   //Make new one with appropriate number of channels
-  x->fluid_obj = new GainAudioClient<double,double>(x->chunk_size, x->hop_size);
+  x->fluid_obj = new GainAudioClient<double,double>(x->chunk_size);
   
   if(x->input_wrappers[0])
     delete x->input_wrappers[0];

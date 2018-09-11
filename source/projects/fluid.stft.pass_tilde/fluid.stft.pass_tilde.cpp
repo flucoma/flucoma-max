@@ -58,18 +58,26 @@ namespace fluid {
         if(fluid_obj)
           delete fluid_obj;
         //Make new one with appropriate number of channels, pass in STFT params
-        fluid_obj = new BaseSTFTClient<double,double>(window_size, hop_size, fft_size);
-        
-        
-        //TODO: Given that this will always be audio signals, all this is redundant
-//        if(inputWrapper)
-//          delete inputWrapper;
-//        if(output_wrappers[0])
-//          delete output_wrappers[0];
-        
-        
+        fluid_obj = new BaseSTFTClient<double,double>(65536);
         inputWrapper[0] = SignalPointer(new audio_signal_wrapper());
         outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
+        fluid_obj->getParams()[0].setLong(window_size);
+        fluid_obj->getParams()[1].setLong(hop_size);
+        fluid_obj->getParams()[2].setLong(fft_size);
+        
+        
+        
+        bool isOK;
+        std::string feedback;
+        
+        std::tie(isOK, feedback) = fluid_obj->sanityCheck();
+        if(!isOK)
+        {
+          object_error(*this,feedback.c_str());
+          return;
+        }
+        
+        
         //TODO: I imagine some algorithms will need the sample rate in future as well
         fluid_obj->set_host_buffer_size(maxvectorsize);
         fluid_obj->reset();
