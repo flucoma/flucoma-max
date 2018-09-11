@@ -5,7 +5,7 @@
  
 **/
 
-#include "MaxClass_Base.h"
+#include "MaxNonRealTimeBase.hpp"
 
 #include "ext.h"
 #include "z_dsp.h"
@@ -24,7 +24,7 @@ using fluid::FluidTensorView;
 
 namespace fluid {
   namespace hpss {
-    class HPSS_RT: public MaxClass_Base
+    class HPSS_RT: public max::MaxNonRealTimeBase
     {
       using audio_client = HPSSClient<double, double>;
       using audio_signal_wrapper = audio_client::AudioSignal;
@@ -36,19 +36,63 @@ namespace fluid {
     public:
       static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
       {
-//        addMethod<NMFMax,&NMFMax::decompose>(c, "process");
-//        makeAttributes<nmf::NMFClient,NMFMax>(c);
+        makeAttributes<audio_client,HPSS_RT>(c);
         dspInit(c);
         addMethod<HPSS_RT,&HPSS_RT::dsp>(c);
       }
       
-      HPSS_RT(t_symbol *s, long argc, t_atom *argv)
+      HPSS_RT(t_symbol *s, long argc, t_atom *argv):
+      fluid_obj(65536)
       {
-        pSize =       argc > 0 ? atom_getlong(argv) : 3;
-        hSize =       argc > 1 ? atom_getlong(argv + 1): 3;
-        window_size = argc > 2 ? atom_getlong(argv + 2) : 1024;
-//        hop_size   =  argc > 3 ? atom_getlong(argv + 3) : -1;
-//        fft_size   =  argc > 4 ? atom_getlong(argv + 4) : -1;
+        size_t offset = attr_args_offset(argc, argv);
+        
+        for(size_t i = 0,paramIdx = 0; i < offset; ++i)
+        {
+          switch(atom_gettype(argv+i))
+          {
+            case A_FLOAT:
+            case A_LONG:
+            {
+              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
+                    && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float)
+                    || !getParams()[paramIdx].getDescriptor().instatiation())
+              {
+                if(++paramIdx >= getParams().size())
+                {
+                  object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
+                  return;
+                }
+              }
+              parameter::Instance& p = getParams()[paramIdx++];
+              
+              if(p.getDescriptor().getType() == parameter::Type::Long)
+              {
+                p.setLong(atom_getlong(argv + i));
+              }
+              else
+              {
+                p.setFloat(atom_getfloat(argv+i));
+              }
+              break;
+            }
+            case A_SYM:
+            {
+              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Buffer
+                    || ! getParams()[paramIdx].getDescriptor().instatiation())
+              {
+                if(++paramIdx >= getParams().size())
+                {
+                  object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
+                  return;
+                }
+              }
+              getParams()[paramIdx++].setBuffer(new max::MaxBufferAdaptor(*this, atom_getsym(argv + i)));
+              break;
+            }
+          }
+        }
+        
+        attr_args_process(*this, argc, argv + offset);
         dspSetup(1);
         outlet_new(*this, "signal");
         outlet_new(*this, "signal");
@@ -63,16 +107,15 @@ namespace fluid {
         }
         
         //Delete old processor
-        if(fluid_obj)
-          delete fluid_obj;
+        
         //Make new one with appropriate number of channels, pass in STFT params
-        fluid_obj = new HPSSClient<double,double>(65536);
+        
         inputWrapper[0] = SignalPointer(new audio_signal_wrapper());
         outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
         outputWrapper[1] = SignalPointer(new audio_signal_wrapper());
-        fluid_obj->getParams()[0].setLong(pSize);
-        fluid_obj->getParams()[1].setLong(hSize);
-        fluid_obj->getParams()[2].setLong(window_size);
+//        fluid_obj.getParams()[0].setLong(pSize);
+//        fluid_obj.getParams()[1].setLong(hSize);
+//        fluid_obj.getParams()[2].setLong(window_size);
 //        fluid_obj->getParams()[3].setLong(hop_size);
 //        fluid_obj->getParams()[4].setLong(fft_size);
         
@@ -80,7 +123,7 @@ namespace fluid {
         bool isOK;
         std::string feedback;
         
-        std::tie(isOK, feedback) = fluid_obj->sanityCheck();
+        std::tie(isOK, feedback) = fluid_obj.sanityCheck();
         if(!isOK)
         {
           object_error(*this,feedback.c_str());
@@ -89,8 +132,8 @@ namespace fluid {
         
         
         //TODO: I imagine some algorithms will need the sample rate in future as well
-        fluid_obj->set_host_buffer_size(maxvectorsize);
-        fluid_obj->reset();
+        fluid_obj.set_host_buffer_size(maxvectorsize);
+        fluid_obj.reset();
         addPerform<HPSS_RT, &HPSS_RT::perform>(dsp64);
       }
       
@@ -99,16 +142,18 @@ namespace fluid {
         inputWrapper[0]->set(ins[0], 0);
         outputWrapper[0]->set(outs[0],0);
         outputWrapper[1]->set(outs[1],0);
-        fluid_obj->do_process(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,1,2);
+        fluid_obj.do_process(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,1,2);
+      }
+      
+      std::vector<parameter::Instance>& getParams()
+      {
+        return fluid_obj.getParams();
       }
       
     private:
-      audio_client* fluid_obj;
-//      signal_wrapper* input_wrappers[1];
-//      signal_wrapper* output_wrappers[1];
+      audio_client fluid_obj;
       std::array<SignalPointer,1> inputWrapper;
       std::array<SignalPointer,2> outputWrapper;
-      
       size_t pSize;
       size_t hSize;
       size_t window_size;
