@@ -548,11 +548,13 @@ namespace {
         case parameter::Type::Float:
         {
           p.setFloat(atom_getfloat(argv));
+          p.checkRange();
           break;
         }
         case parameter::Type::Long:
         {
           p.setLong(atom_getlong(argv));
+          p.checkRange();
           break;
         }
         case parameter::Type::Buffer:
@@ -645,15 +647,15 @@ namespace {
           CLASS_ATTR_ACCESSORS(c, d.getName().c_str(), (getterDispatch<Wrapper, &Wrapper::getParams>), (setterDispatch<Wrapper, &Wrapper::getParams>));
           CLASS_ATTR_LABEL(c, d.getName().c_str(), 0, d.getDisplayName().c_str());
           
-          if(d.hasMin())
-          {
-            CLASS_ATTR_MIN(c,d.getName().c_str(),0, std::to_string(d.getMin()).c_str());
-          }
-          
-          if(d.hasMax())
-          {
-            CLASS_ATTR_MAX(c,d.getName().c_str(),0, std::to_string(d.getMax()).c_str());
-          }
+//          if(d.hasMin())
+//          {
+//            CLASS_ATTR_MIN(c,d.getName().c_str(),0, std::to_string(d.getMin()).c_str());
+//          }
+//          
+//          if(d.hasMax())
+//          {
+//            CLASS_ATTR_MAX(c,d.getName().c_str(),0, std::to_string(d.getMax()).c_str());
+//          }
           
           //          std::cerr << d.getName() << '\n';
 //          MaxNonRealTimeBase::attrAccessors<U, &U::param_get, &U::param_set, &U::getParams>(c, d.getName().c_str());
