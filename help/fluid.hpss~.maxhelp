@@ -38,11 +38,50 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"data" : 					{
+						"clips" : [ 							{
+								"filename" : "jongly.aif",
+								"filekind" : "audiofile",
+								"loop" : 0,
+								"content_state" : 								{
+									"pitchshift" : [ 1.0 ],
+									"originaltempo" : [ 120.0 ],
+									"pitchcorrection" : [ 0 ],
+									"quality" : [ "basic" ],
+									"speed" : [ 1.0 ],
+									"timestretch" : [ 0 ],
+									"slurtime" : [ 0.0 ],
+									"play" : [ 0 ],
+									"mode" : [ "basic" ],
+									"originallength" : [ 0.0, "ticks" ],
+									"formantcorrection" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"formant" : [ 1.0 ]
+								}
+
+							}
+ ]
+					}
+,
+					"id" : "obj-6",
+					"maxclass" : "playlist~",
+					"numinlets" : 1,
+					"numoutlets" : 5,
+					"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
+					"patching_rect" : [ 447.0, 104.0, 150.0, 30.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 308.0, 260.0, 37.0, 22.0 ],
+					"patching_rect" : [ 259.0, 269.0, 37.0, 22.0 ],
 					"style" : "",
 					"text" : "dac~"
 				}
@@ -56,21 +95,21 @@
 								"filekind" : "audiofile",
 								"loop" : 0,
 								"content_state" : 								{
-									"originallength" : [ 0.0, "ticks" ],
-									"play" : [ 0 ],
-									"formant" : [ 1.0 ],
-									"timestretch" : [ 0 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"originaltempo" : [ 120.0 ],
-									"mode" : [ "basic" ],
-									"formantcorrection" : [ 0 ],
 									"pitchshift" : [ 1.0 ],
-									"slurtime" : [ 0.0 ],
-									"basictuning" : [ 440 ],
+									"originaltempo" : [ 120.0 ],
 									"pitchcorrection" : [ 0 ],
+									"quality" : [ "basic" ],
 									"speed" : [ 1.0 ],
-									"originallengthms" : [ 0.0 ]
+									"timestretch" : [ 0 ],
+									"slurtime" : [ 0.0 ],
+									"play" : [ 0 ],
+									"mode" : [ "basic" ],
+									"originallength" : [ 0.0, "ticks" ],
+									"formantcorrection" : [ 0 ],
+									"originallengthms" : [ 0.0 ],
+									"followglobaltempo" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"formant" : [ 1.0 ]
 								}
 
 							}
@@ -106,9 +145,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 250.0, 183.0, 132.0, 22.0 ],
+					"patching_rect" : [ 241.5, 182.0, 68.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.hpss~ 17 31 1024"
+					"text" : "fluid.hpss~"
 				}
 
 			}
@@ -116,7 +155,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
-					"source" : [ "obj-1", 0 ]
+					"source" : [ "obj-1", 1 ]
 				}
 
 			}
@@ -127,9 +166,22 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
  ],
 		"dependency_cache" : [ 			{
 				"name" : "anton.aif",
+				"bootpath" : "C74:/media/msp",
+				"type" : "AIFF",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "jongly.aif",
 				"bootpath" : "C74:/media/msp",
 				"type" : "AIFF",
 				"implicit" : 1
