@@ -1,132 +1,139 @@
-#define EIGEN_USE_BLAS
+/*!
+ @file fluid.stft_pass_tilde
+ 
+ Pass through STFT Max object
+ 
+**/
+#include "clients/rt/TransientClient.hpp"
 
-#include "clients/nrt/TransientNRTClient.hpp"
 
-#include  "MaxNonRealTimeBase.hpp"
-
-//#include "version.h"
-
-
-//#include "algorithms/STFT.hpp"
-
+#include "MaxNonRealTimeBase.hpp"
 #include "ext_obex.h"
-
-
-#include <vector>
-#include <array>
-#include <algorithm>
+#include "z_dsp.h"
 
 
 namespace fluid {
-class TransientMax: public fluid::max::MaxNonRealTimeBase
-{
-public:
-  static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
-  {
-    addMethod<TransientMax,&TransientMax::process>(c, "process");
-    makeAttributes<str::TransientNRTClient,TransientMax>(c);
-  }
-
-  TransientMax(t_symbol *s, long argc, t_atom *argv)
-  {
-    attr_args_process(*this, argc, argv);
-    mOutlets.push_back((t_object*)bangout(this));
-  }
-  
-  ~TransientMax()
-  {
-    for(auto&& a: mOutlets)
-      object_free(a);
-  }
-  
-  void process(t_symbol *s, long ac, t_atom *av)
-  {
-
-    deferMethod<TransientMax,&TransientMax::do_process>(s, ac, av);
-  }
-  
-  std::vector<parameter::Instance>& getParams()
-  {
-    return trans.getParams();
-  }
-
-private:
-  
-  void do_process(t_symbol *s, long ac, t_atom *av)
-  {
-    for(size_t i = 0, paramIdx = 0; i < ac; ++i)
+  namespace stn {
+    class Transients_RT: public max::MaxNonRealTimeBase
     {
-      switch(atom_gettype(av + i))
+      using audio_client = TransientsClient<double, double>;
+      using audio_signal_wrapper = audio_client::AudioSignal;
+      using scalar_signal_wrapper = audio_client::ScalarSignal;
+      using signal_wrapper = audio_client::Signal<double>;
+      using SignalPointer = std::unique_ptr<signal_wrapper>;
+    public:
+      static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
       {
-        case A_SYM:
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Buffer)
-          {
-            if(++paramIdx >= getParams().size())
-            {
-              object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
-              return;
-            }
-          }
-          getParams()[paramIdx++].setBuffer(new max::MaxBufferAdaptor(*this, atom_getsym(av + i)));
-          break;
-        case A_FLOAT:
-        case A_LONG:
-        {
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
-                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float)
-          {
-            if(++paramIdx >= getParams().size())
-            {
-              object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
-              return;
-            }
-          }
-          
-          parameter::Instance& p = getParams()[paramIdx++];
-          
-          if(p.getDescriptor().getType() == parameter::Type::Long)
-          {
-            p.setLong(atom_getlong(av + i));
-          }
-          else
-          {
-            p.setFloat(atom_getfloat(av+i));
-          }
-          break;
-        }
-        default:
-          assert(false && "I don't know how to interpret this state of affairs");
+        makeAttributes<audio_client,Transients_RT>(c);
+        dspInit(c);
+        addMethod<Transients_RT,&Transients_RT::dsp>(c);
       }
-    }
-    
-    
-    
-    bool parametersOk;
-    str::TransientNRTClient::ProcessModel processModel;
-    std::string whatHappened;//this will give us a message to pass back if param check fails
-    std::tie(parametersOk,whatHappened,processModel) = trans.sanityCheck();
-    if(!parametersOk)
-    {
-      object_error(*this, whatHappened.c_str());
-      return;
-    }
-    trans.process(processModel);
-    
-    for(auto&& p: getParams())
-    {
-      if(p.getDescriptor().instatiation())
-        p.reset();
-    }
-    
-    outlet_bang(mOutlets[0]);
+      
+      Transients_RT(t_symbol *s, long argc, t_atom *argv):
+      fluid_obj(65536)
+      {
+        size_t offset = attr_args_offset(argc, argv);
+        
+        for(size_t i = 0,paramIdx = 0; i < offset; ++i)
+        {
+          switch(atom_gettype(argv+i))
+          {
+            case A_FLOAT:
+            case A_LONG:
+            {
+              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
+                    && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float)
+                    || !getParams()[paramIdx].getDescriptor().instatiation())
+              {
+                if(++paramIdx >= getParams().size())
+                {
+                  object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
+                  return;
+                }
+              }
+              parameter::Instance& p = getParams()[paramIdx++];
+              
+              if(p.getDescriptor().getType() == parameter::Type::Long)
+              {
+                p.setLong(atom_getlong(argv + i));
+              }
+              else
+              {
+                p.setFloat(atom_getfloat(argv+i));
+              }
+              break;
+            }
+            case A_SYM:
+            {
+              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Buffer
+                    || ! getParams()[paramIdx].getDescriptor().instatiation())
+              {
+                if(++paramIdx >= getParams().size())
+                {
+                  object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
+                  return;
+                }
+              }
+              getParams()[paramIdx++].setBuffer(new max::MaxBufferAdaptor(*this, atom_getsym(argv + i)));
+              break;
+            }
+          }
+        }
+        
+        attr_args_process(*this, argc, argv + offset);
+        dspSetup(1);
+        outlet_new(*this, "signal");
+        outlet_new(*this, "signal");
+      }
+      
+      void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
+      {
+//        no audio in left channel? Then no-op
+        if(!count[0])
+        {
+          return;
+        }
+        
+        inputWrapper[0] = SignalPointer(new audio_signal_wrapper());
+        outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
+        outputWrapper[1] = SignalPointer(new audio_signal_wrapper());
+        bool isOK;
+        std::string feedback;
+        
+        std::tie(isOK, feedback) = fluid_obj.sanityCheck();
+        if(!isOK)
+        {
+          object_error(*this,feedback.c_str());
+          return;
+        }
+        
+        //TODO: I imagine some algorithms will need the sample rate in future as well
+        fluid_obj.set_host_buffer_size(maxvectorsize);
+        fluid_obj.reset();
+        addPerform<Transients_RT, &Transients_RT::perform>(dsp64);
+      }
+      
+      void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+      {
+        inputWrapper[0]->set(ins[0], 0);
+        outputWrapper[0]->set(outs[0],0);
+        outputWrapper[1]->set(outs[1],0);
+        fluid_obj.do_process(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,1,2);
+      }
+      
+      std::vector<parameter::Instance>& getParams()
+      {
+        return fluid_obj.getParams();
+      }
+    private:
+      audio_client fluid_obj;
+      std::array<SignalPointer,1> inputWrapper;
+      std::array<SignalPointer,2> outputWrapper;
+    };
   }
-  str::TransientNRTClient trans;
-  std::vector<t_object*> mOutlets;
-};
 }
+
 void ext_main(void *r)
 {
-  fluid::TransientMax::makeClass<fluid::TransientMax>(CLASS_BOX, "fluid.transients~");
+  fluid::stn::Transients_RT::makeClass<fluid::stn::Transients_RT>(CLASS_BOX, "fluid.transientsrt~");
 }
-
-
