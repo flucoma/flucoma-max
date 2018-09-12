@@ -136,7 +136,7 @@ private:
 }//namespace
 void ext_main(void *r)
 {
-  fluid::NMFMax::makeClass<fluid::NMFMax>(CLASS_BOX, "fluid.nmf~");
+  fluid::NMFMax::makeClass<fluid::NMFMax>(CLASS_BOX, "fluid.bufnmf~");
 }
 
 

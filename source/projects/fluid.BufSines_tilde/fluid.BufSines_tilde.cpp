@@ -116,7 +116,7 @@ private:
 }
 void ext_main(void *r)
 {
-  fluid::Sines_NRT::makeClass<fluid::Sines_NRT>(CLASS_BOX, "fluid.sines.buf~");
+  fluid::Sines_NRT::makeClass<fluid::Sines_NRT>(CLASS_BOX, "fluid.bufsines~");
 }
 
 

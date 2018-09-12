@@ -126,7 +126,7 @@ private:
 }
 void ext_main(void *r)
 {
-  fluid::TransientMax::makeClass<fluid::TransientMax>(CLASS_BOX, "fluid.transients~");
+  fluid::TransientMax::makeClass<fluid::TransientMax>(CLASS_BOX, "fluid.buftransients~");
 }
 
 

@@ -150,7 +150,7 @@ void fluid_audio_pass_free(t_fluid_audio_pass *x)
 }
 
 void ext_main(void* r) {
-  this_class = class_new("fluid.audio_pass~", (method)fluid_audio_pass_new, (method)fluid_audio_pass_free, sizeof(t_fluid_audio_pass), 0,A_GIMME, 0);
+  this_class = class_new("fluid.gain~", (method)fluid_audio_pass_new, (method)fluid_audio_pass_free, sizeof(t_fluid_audio_pass), 0,A_GIMME, 0);
   
   class_addmethod(this_class, (method)fluid_audio_pass_dsp64, "dsp64", A_CANT, 0);
   class_addmethod(this_class, (method)fluid_audio_pass_assist,"assist",A_CANT,0);

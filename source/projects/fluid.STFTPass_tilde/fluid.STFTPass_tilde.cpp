@@ -106,5 +106,5 @@ namespace fluid {
 
 void ext_main(void *r)
 {
-  fluid::stft::BaseSTFTWrapper::makeClass<fluid::stft::BaseSTFTWrapper>(CLASS_BOX, "fluid.stft.pass~");
+  fluid::stft::BaseSTFTWrapper::makeClass<fluid::stft::BaseSTFTWrapper>(CLASS_BOX, "fluid.stftpass~");
 }

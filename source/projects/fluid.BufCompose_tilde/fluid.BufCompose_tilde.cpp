@@ -116,7 +116,7 @@ private:
 }
 void ext_main(void *r)
 {
-  fluid::BufferCompose::makeClass<fluid::BufferCompose>(CLASS_BOX, "fluid.compose~");
+  fluid::BufferCompose::makeClass<fluid::BufferCompose>(CLASS_BOX, "fluid.bufcompose~");
 }
 
 

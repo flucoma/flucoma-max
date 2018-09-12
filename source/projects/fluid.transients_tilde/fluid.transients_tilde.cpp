@@ -135,5 +135,5 @@ namespace fluid {
 
 void ext_main(void *r)
 {
-  fluid::stn::Transients_RT::makeClass<fluid::stn::Transients_RT>(CLASS_BOX, "fluid.transientsrt~");
+  fluid::stn::Transients_RT::makeClass<fluid::stn::Transients_RT>(CLASS_BOX, "fluid.transients~");
 }

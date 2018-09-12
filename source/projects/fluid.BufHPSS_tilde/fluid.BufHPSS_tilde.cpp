@@ -116,7 +116,7 @@ private:
 }
 void ext_main(void *r)
 {
-  fluid::HPSS_NRT::makeClass<fluid::HPSS_NRT>(CLASS_BOX, "fluid.hpss.buf~");
+  fluid::HPSS_NRT::makeClass<fluid::HPSS_NRT>(CLASS_BOX, "fluid.bufhpss~");
 }
 
 
