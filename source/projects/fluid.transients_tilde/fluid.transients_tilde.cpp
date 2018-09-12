@@ -39,23 +39,9 @@ public:
       object_free(a);
   }
   
-  
-
-  
   void process(t_symbol *s, long ac, t_atom *av)
   {
-//    
-//    if(atom_gettype(av) == A_SYM)
-//      trans.getParams()[0].setBuffer( new max::MaxBufferAdaptor(*this, atom_getsym(av)));
-//
-//    
-//    if(ac > 1)
-//    {
-//      while(ac-- > 1)
-//      {
-//        trans.getParams()[ac].setLong(atom_getlong(&av[ac]));
-//      }
-//    }
+
     deferMethod<TransientMax,&TransientMax::do_process>(s, ac, av);
   }
   
