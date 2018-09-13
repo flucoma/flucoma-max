@@ -92,9 +92,16 @@ public:
     
     template <class T> static void *create(t_symbol *sym, long ac, t_atom *av)
     {
+      try
+      {
         void *x = object_alloc(*getClassPointer<T>());
         new(x) T(sym, ac, av);
         return x;
+      }
+      catch (std::invalid_argument)
+      {
+        return nullptr;
+      }
     }
     
     template <class T> static void destroy(t_object * x)

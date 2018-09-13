@@ -60,7 +60,7 @@ namespace fluid {
                 if(++paramIdx >= getParams().size())
                 {
                   object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
-                  return;
+                  throw std::invalid_argument("");
                 }
               }
               parameter::Instance& p = getParams()[paramIdx++];
@@ -83,7 +83,7 @@ namespace fluid {
                 if(++paramIdx >= getParams().size())
                 {
                   object_error(*this, "Could not parse arguments. Ran in trouble at argument %ld",i);
-                  return;
+                  throw std::invalid_argument("");;
                 }
               }
               getParams()[paramIdx++].setBuffer(new max::MaxBufferAdaptor(*this, atom_getsym(argv + i)));
