@@ -616,8 +616,8 @@ namespace {
       for(auto&& d: Client::getParamDescriptors())
       {
         std::cout << d<< '\n';
-        //Make attributes out of parameters marked not instantiation only. Hum.
-        if(!d.instantiation()){
+        //Attributes = parameters
+        if(!(d.instantiation() && !d.hasDefault())){
           switch(d.getType())
           {
             case parameter::Type::Float :
