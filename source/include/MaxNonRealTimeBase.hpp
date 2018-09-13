@@ -617,7 +617,7 @@ namespace {
       {
         std::cout << d<< '\n';
         //Make attributes out of parameters marked not instantiation only. Hum.
-        if(!d.instatiation()){
+        if(!d.instantiation()){
           switch(d.getType())
           {
             case parameter::Type::Float :
