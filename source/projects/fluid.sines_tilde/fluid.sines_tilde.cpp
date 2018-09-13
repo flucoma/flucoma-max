@@ -43,9 +43,9 @@ namespace fluid {
             case A_FLOAT:
             case A_LONG:
             {
-              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
-                    && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float
-                    || !getParams()[paramIdx].getDescriptor().instatiation())
+              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
+                    && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float)
+                    || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
                 {
@@ -68,7 +68,7 @@ namespace fluid {
             case A_SYM:
             {
               while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Buffer
-                    || ! getParams()[paramIdx].getDescriptor().instatiation())
+                    || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
                 {
@@ -83,6 +83,13 @@ namespace fluid {
         }
         
         attr_args_process(*this, argc, argv + offset);
+        
+        for(auto&& p: getParams())
+        {
+          object_attr_setdisabled(*this, gensym(p.getDescriptor().getName().c_str()), p.getDescriptor().instantiation());
+        }
+        
+        
         dspSetup(1);
         outlet_new(*this, "signal");
         outlet_new(*this, "signal");

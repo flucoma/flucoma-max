@@ -43,6 +43,13 @@ namespace max{
       }
       
       attr_args_process(*this, argc, argv + offset);
+      
+      for(auto&& p: getParams())
+      {
+        object_attr_setdisabled(*this, gensym(p.getDescriptor().getName().c_str()), p.getDescriptor().instantiation());
+      }
+      
+      
       dspSetup(2);
       outlet_new(*this, "signal");
     }

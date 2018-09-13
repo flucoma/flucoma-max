@@ -104,7 +104,7 @@ private:
     
     for(auto&& p: getParams())
     {
-      if(p.getDescriptor().instatiation())
+      if(p.getDescriptor().instantiation())
         p.reset();
     }
     
