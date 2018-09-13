@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"revision" : 5,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 84.0, 129.0, 640.0, 480.0 ],
+		"rect" : [ 423.0, -846.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -95,9 +95,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 73.0, 202.0, 381.0, 22.0 ],
+					"patching_rect" : [ 73.0, 202.0, 378.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.hpss.buf~ @harmbuf harm @percbuf perc @hsize 17 @psize 37"
+					"text" : "fluid.bufhpss~ @harmbuf harm @percbuf perc @hsize 17 @psize 37"
 				}
 
 			}
@@ -111,7 +111,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "fluid.hpss.buf~.mxo",
+				"name" : "fluid.bufhpss~.mxo",
 				"type" : "iLaX"
 			}
  ],

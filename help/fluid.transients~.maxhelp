@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"revision" : 5,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+		"rect" : [ 172.0, -891.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,7 +43,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 167.0, 231.0, 87.0 ],
+					"patching_rect" : [ 39.0, 167.0, 231.0, 74.0 ],
 					"style" : "",
 					"text" : "fluid.transientsrt~ order blocksize \norder def = 20 \nblocksize def = 256\n\nAll other params appear as attributes\n"
 				}
@@ -69,21 +69,21 @@
 								"filekind" : "audiofile",
 								"loop" : 1,
 								"content_state" : 								{
-									"pitchcorrection" : [ 0 ],
-									"originaltempo" : [ 120.0 ],
-									"mode" : [ "basic" ],
+									"play" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"formantcorrection" : [ 0 ],
 									"speed" : [ 1.0 ],
 									"followglobaltempo" : [ 0 ],
-									"formantcorrection" : [ 0 ],
+									"formant" : [ 1.0 ],
 									"originallengthms" : [ 0.0 ],
 									"quality" : [ "basic" ],
-									"slurtime" : [ 0.0 ],
-									"formant" : [ 1.0 ],
 									"pitchshift" : [ 1.0 ],
+									"pitchcorrection" : [ 0 ],
+									"mode" : [ "basic" ],
+									"slurtime" : [ 0.0 ],
+									"originaltempo" : [ 120.0 ],
 									"timestretch" : [ 0 ],
-									"play" : [ 0 ],
-									"originallength" : [ 0.0, "ticks" ],
-									"basictuning" : [ 440 ]
+									"originallength" : [ 0.0, "ticks" ]
 								}
 
 							}
@@ -107,9 +107,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 252.0, 364.0, 142.0, 22.0 ],
+					"patching_rect" : [ 252.0, 364.0, 243.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.transientsrt~ 20 256"
+					"text" : "fluid.transients~ @order 20 @blocksize 256"
 				}
 
 			}
@@ -194,7 +194,16 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-4", 1 ],
+					"order" : 0,
+					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
+					"order" : 1,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -250,14 +259,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "01-mix.wav",
-				"bootpath" : "~/Desktop/denoise_stn/sources",
-				"patcherrelativepath" : "../../Desktop/denoise_stn/sources",
-				"type" : "WAVE",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.transientsrt~.mxo",
+				"name" : "fluid.transients~.mxo",
 				"type" : "iLaX"
 			}
  ],

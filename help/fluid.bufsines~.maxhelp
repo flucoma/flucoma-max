@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -120,9 +120,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 139.0, 153.0, 176.0, 22.0 ],
+					"patching_rect" : [ 139.0, 153.0, 172.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.sines.buf~ @threshold 0.3"
+					"text" : "fluid.bufsines~ @threshold 0.3"
 				}
 
 			}
@@ -142,12 +142,8 @@
 
 			}
  ],
-		"parameters" : 		{
-
-		}
-,
 		"dependency_cache" : [ 			{
-				"name" : "fluid.sines.buf~.mxo",
+				"name" : "fluid.bufsines~.mxo",
 				"type" : "iLaX"
 			}
  ],

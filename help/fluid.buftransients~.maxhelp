@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 324.0, 182.0, 1212.0, 934.0 ],
+		"rect" : [ 436.0, -1114.0, 1212.0, 934.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -530,9 +530,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 56.0, 618.0, 272.0, 22.0 ],
+					"patching_rect" : [ 56.0, 618.0, 289.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.transients~ @resbuf clean @transbuf spikes"
+					"text" : "fluid.buftransients~ @resbuf clean @transbuf spikes"
 				}
 
 			}
@@ -553,15 +553,6 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"order" : 1,
-					"source" : [ "obj-1", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 1 ],
-					"order" : 0,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -903,7 +894,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "fluid.transients~.mxo",
+				"name" : "fluid.buftransients~.mxo",
 				"type" : "iLaX"
 			}
 , 			{

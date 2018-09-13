@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 520.0, 79.0, 1025.0, 871.0 ],
+		"rect" : [ 441.0, -1024.0, 1025.0, 871.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -95,13 +95,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 91.0, 240.0, 128.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"gain" : 0.1
-					}
-,
+					"patching_rect" : [ 91.0, 240.0, 89.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.audio_pass~ 256"
+					"text" : "fluid.gain~ 256"
 				}
 
 			}
@@ -219,13 +215,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 473.0, 346.0, 186.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"gain" : 0.1
-					}
-,
+					"patching_rect" : [ 473.0, 346.0, 147.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.audio_pass~ 256 @gain 0.1"
+					"text" : "fluid.gain~ 256 @gain 0.1"
 				}
 
 			}
@@ -330,7 +322,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "fluid.audio.pass~.mxo",
+				"name" : "fluid.gain~.mxo",
 				"type" : "iLaX"
 			}
 , 			{

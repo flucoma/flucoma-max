@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"revision" : 5,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1217.0, 867.0 ],
+		"rect" : [ 540.0, -1057.0, 1217.0, 867.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -124,21 +124,21 @@
 								"filekind" : "audiofile",
 								"loop" : 0,
 								"content_state" : 								{
-									"originallengthms" : [ 0.0 ],
+									"play" : [ 0 ],
+									"basictuning" : [ 440 ],
+									"formantcorrection" : [ 0 ],
 									"speed" : [ 1.0 ],
+									"followglobaltempo" : [ 0 ],
 									"formant" : [ 1.0 ],
+									"originallengthms" : [ 0.0 ],
+									"quality" : [ "basic" ],
 									"pitchshift" : [ 1.0 ],
 									"pitchcorrection" : [ 0 ],
-									"timestretch" : [ 0 ],
-									"basictuning" : [ 440 ],
-									"play" : [ 0 ],
-									"originaltempo" : [ 120.0 ],
-									"followglobaltempo" : [ 0 ],
-									"quality" : [ "basic" ],
-									"originallength" : [ 0.0, "ticks" ],
-									"slurtime" : [ 0.0 ],
 									"mode" : [ "basic" ],
-									"formantcorrection" : [ 0 ]
+									"slurtime" : [ 0.0 ],
+									"originaltempo" : [ 120.0 ],
+									"timestretch" : [ 0 ],
+									"originallength" : [ 0.0, "ticks" ]
 								}
 
 							}
@@ -174,9 +174,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 135.0, 413.0, 256.0, 22.0 ],
+					"patching_rect" : [ 135.0, 413.0, 484.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.sines~ 76 1024 512 8192 @threshold 0.7"
+					"text" : "fluid.sines~ @bandwidth 76 @winsize 1024 @hopsize 512 @fftsize 8192 @threshold 0.7"
 				}
 
 			}
@@ -236,13 +236,15 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 1 ],
-					"source" : [ "obj-1", 1 ]
+					"order" : 0,
+					"source" : [ "obj-1", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-5", 0 ],
+					"order" : 1,
 					"source" : [ "obj-1", 0 ]
 				}
 
@@ -291,14 +293,11 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "maxou-FR-a-k.wav.wav",
-				"bootpath" : "~/Box Sync/FluCoMa/Test files/SMS test files/Test Files/PAs 24 bit files",
-				"patcherrelativepath" : "../../Box Sync/FluCoMa/Test files/SMS test files/Test Files/PAs 24 bit files",
-				"type" : "WAVE",
-				"implicit" : 1
+				"name" : "fluid.sines~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.sines~.mxo",
+				"name" : "vtimes~.mxo",
 				"type" : "iLaX"
 			}
  ],
