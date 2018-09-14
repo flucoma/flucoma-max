@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 80.0, 892.0, 1081.0 ],
+		"rect" : [ 34.0, -1144.0, 892.0, 1110.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -83,7 +83,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 215.0, 391.0, 93.0, 22.0 ],
 					"style" : "",
-					"text" : "6653.18604"
+					"text" : "2409.75548"
 				}
 
 			}
@@ -129,7 +129,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 994.0, 79.0, 892.0, 1082.0 ],
+						"rect" : [ 994.0, -1144.0, 892.0, 1110.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -158,6 +158,45 @@
 						"subpatcher_template" : "",
 						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-31",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 253.0, 96.0, 108.0, 22.0 ],
+									"style" : "",
+									"text" : "fluid.bufcompose~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 253.0, 67.0, 297.0, 22.0 ],
+									"style" : "",
+									"text" : "process synth guit 550000 -1 0 1 0.6 0 1 stereosource"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 51.0, 36.0, 276.0, 22.0 ],
+									"style" : "",
+									"text" : "buffer~ guit Tremblay-AaS-AcousticStrums-M.wav"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-22",
 									"maxclass" : "button",
@@ -231,7 +270,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 488.0, 474.0, 50.0, 49.0 ],
 									"style" : "",
-									"text" : "set resynth2.4"
+									"text" : "set resynth2.1"
 								}
 
 							}
@@ -371,7 +410,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 576.0, 37.5, 70.0, 22.0 ],
+									"patching_rect" : [ 743.0, 36.0, 70.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ filt1"
 								}
@@ -384,7 +423,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 571.0, 135.0, 97.0, 22.0 ],
+									"patching_rect" : [ 738.0, 133.5, 97.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ resynth1"
 								}
@@ -397,7 +436,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 576.0, 84.0, 77.0, 22.0 ],
+									"patching_rect" : [ 743.0, 82.5, 77.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ env1"
 								}
@@ -423,7 +462,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 392.449341, 128.5, 119.0, 22.0 ],
+									"patching_rect" : [ 559.449341, 127.0, 119.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0
 									}
@@ -440,7 +479,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 392.449341, 87.5, 99.0, 22.0 ],
+									"patching_rect" : [ 559.449341, 86.0, 99.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0
 									}
@@ -457,7 +496,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
-									"patching_rect" : [ 392.449341, 37.5, 92.0, 22.0 ],
+									"patching_rect" : [ 559.449341, 36.0, 92.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0
 									}
@@ -482,25 +521,12 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.0, 67.0, 236.0, 22.0 ],
-									"style" : "",
-									"text" : "replace /Users/pa/Desktop/verystereo.wav"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 42.0, 107.0, 141.0, 22.0 ],
+									"patching_rect" : [ 51.0, 67.0, 141.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ stereosource 2 2"
 								}
@@ -646,6 +672,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-31", 0 ],
+									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-25", 0 ]
 								}
@@ -669,13 +702,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-28", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -743,7 +769,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 639.0, 52.0, 122.0, 22.0 ],
+					"patching_rect" : [ 699.449341, 44.0, 122.0, 22.0 ],
 					"style" : "",
 					"text" : "s new_buffer_loaded"
 				}
@@ -769,9 +795,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 93.0, 224.0, 79.0, 22.0 ],
+					"patching_rect" : [ 93.0, 224.0, 85.0, 22.0 ],
 					"style" : "",
-					"text" : "process jong"
+					"text" : "process synth"
 				}
 
 			}
@@ -940,9 +966,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 338.449341, 191.0, 74.0, 22.0 ],
+									"patching_rect" : [ 338.449341, 191.0, 80.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ jong"
+									"text" : "buffer~ synth"
 								}
 
 							}
@@ -1046,9 +1072,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 294.449341, 517.0, 72.0, 22.0 ],
+					"patching_rect" : [ 294.449341, 517.0, 78.0, 22.0 ],
 					"style" : "",
-					"text" : "index~ jong"
+					"text" : "index~ synth"
 				}
 
 			}
@@ -1114,9 +1140,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 424.0, 72.5, 124.0, 22.0 ],
+					"patching_rect" : [ 424.0, 72.5, 265.0, 22.0 ],
 					"style" : "",
-					"text" : "buffer~ jong jongly.aif"
+					"text" : "buffer~ synth Tremblay-AaS-SynthTwoVoices-M"
 				}
 
 			}
@@ -1728,6 +1754,10 @@
 			}
 , 			{
 				"name" : "fluid.bufnmf~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufcompose~.mxo",
 				"type" : "iLaX"
 			}
  ],
