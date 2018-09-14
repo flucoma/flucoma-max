@@ -137,5 +137,5 @@ namespace fluid {
 
 void ext_main(void *r)
 {
-  fluid::segmentation::TransientsSlice_RT::makeClass<fluid::segmentation::TransientsSlice_RT>(CLASS_BOX, "fluid.slicetransients~");
+  fluid::segmentation::TransientsSlice_RT::makeClass<fluid::segmentation::TransientsSlice_RT>(CLASS_BOX, "fluid.transientslice~");
 }

@@ -45,7 +45,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 116.0, 189.0, 50.0, 22.0 ],
-					"presentation_rect" : [ 115.5, 189.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -57,7 +56,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 125.5, 146.0, 50.0, 20.0 ],
-					"presentation_rect" : [ 125.5, 149.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "order"
 				}
@@ -72,7 +70,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 101.0, 331.0, 50.0, 22.0 ],
-					"presentation_rect" : [ 101.0, 330.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
