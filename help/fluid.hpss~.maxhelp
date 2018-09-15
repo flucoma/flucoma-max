@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, -1144.0, 722.0, 1110.0 ],
+		"rect" : [ 34.0, 79.0, 1100.0, 875.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,12 +38,95 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"attr" : "pthreshf2",
+					"id" : "obj-19",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 696.5, 302.0, 150.0, 22.0 ],
+					"showcaption" : 1,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "pthresha2",
+					"id" : "obj-20",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 696.5, 328.0, 150.0, 22.0 ],
+					"showcaption" : 1,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "pthreshf1",
+					"id" : "obj-16",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 531.5, 301.0, 150.0, 22.0 ],
+					"showcaption" : 1,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "pthresha1",
+					"id" : "obj-17",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 531.5, 327.0, 150.0, 22.0 ],
+					"showcaption" : 1,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "hthreshf2",
+					"id" : "obj-10",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 373.5, 301.0, 150.0, 22.0 ],
+					"showcaption" : 1,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "hthresha2",
+					"id" : "obj-12",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 373.5, 327.0, 150.0, 22.0 ],
+					"showcaption" : 1,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 91.0, 201.0, 50.0, 20.0 ],
-					"presentation_rect" : [ 90.0, 204.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "winsize"
 				}
@@ -128,14 +211,14 @@
 			}
 , 			{
 				"box" : 				{
-					"columns" : 3,
+					"columns" : 4,
 					"id" : "obj-15",
 					"maxclass" : "matrixctrl",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "list", "list" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 258.0, 550.0, 61.0, 25.0 ],
+					"patching_rect" : [ 506.5, 502.0, 88.0, 26.0 ],
 					"rows" : 1,
 					"style" : ""
 				}
@@ -160,12 +243,12 @@
 				"box" : 				{
 					"id" : "obj-13",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "list" ],
-					"patching_rect" : [ 155.5, 537.0, 70.0, 22.0 ],
+					"patching_rect" : [ 155.5, 537.0, 214.0, 22.0 ],
 					"style" : "",
-					"text" : "matrix~ 3 1"
+					"text" : "matrix~ 4 1"
 				}
 
 			}
@@ -248,7 +331,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 360.0, 269.0, 212.0, 47.0 ],
+					"patching_rect" : [ 233.0, 227.0, 212.0, 47.0 ],
 					"style" : "",
 					"text" : "fluid.hpss~ percussive filter size, harmonic filter size, win size, hop size, fft size"
 				}
@@ -271,42 +354,51 @@
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 147.5, 434.0, 430.0, 22.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "signal", "signal", "signal" ],
+					"patching_rect" : [ 147.5, 434.0, 560.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.hpss~ @psize 17 @hsize 31 @winsize 1024 @hopsize 512 @fftsize 2048"
+					"text" : "fluid.hpss~ @psize 17 @hsize 31 @winsize 1024 @hopsize 512 @fftsize 2048 @binaryh 1 @binaryp 1"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"attr" : "pthresh",
-					"id" : "obj-9",
+					"attr" : "hthreshf1",
+					"id" : "obj-2",
 					"maxclass" : "attrui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 190.0, 394.0, 150.0, 22.0 ],
+					"patching_rect" : [ 214.5, 301.0, 150.0, 22.0 ],
+					"showcaption" : 1,
 					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"attr" : "hthresh",
-					"id" : "obj-10",
+					"attr" : "hthresha1",
+					"id" : "obj-9",
 					"maxclass" : "attrui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 345.0, 394.0, 150.0, 22.0 ],
+					"patching_rect" : [ 214.5, 327.0, 150.0, 22.0 ],
+					"showcaption" : 1,
 					"style" : ""
 				}
 
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-13", 3 ],
+					"source" : [ "obj-1", 2 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 2 ],
 					"source" : [ "obj-1", 1 ]
@@ -323,7 +415,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 354.5, 425.0, 157.0, 425.0 ],
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -332,6 +423,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
 					"source" : [ "obj-11", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -367,8 +465,43 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-14", 0 ],
 					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-20", 0 ]
 				}
 
 			}
@@ -440,7 +573,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
-					"midpoints" : [ 199.5, 425.0, 157.0, 425.0 ],
 					"source" : [ "obj-9", 0 ]
 				}
 
@@ -448,10 +580,6 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "fluid.hpss~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vtimes~.mxo",
 				"type" : "iLaX"
 			}
  ],
