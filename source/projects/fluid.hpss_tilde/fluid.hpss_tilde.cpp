@@ -41,6 +41,10 @@ namespace fluid {
         addMethod<HPSS_RT,&HPSS_RT::dsp>(c);
       }
       
+
+      
+      
+      
       HPSS_RT(t_symbol *s, long argc, t_atom *argv):
       fluid_obj(65536)
       {
@@ -100,11 +104,88 @@ namespace fluid {
         }
         
         
+        if(!fluid_obj.binaryP())
+        {
+          object_attr_setdisabled(*this,gensym("pthreshf1"),true);
+          object_attr_setdisabled(*this,gensym("pthresha1"),true);
+          object_attr_setdisabled(*this,gensym("pthreshf2"),true);
+          object_attr_setdisabled(*this,gensym("pthresha2"),true);
+        }
+        if(!fluid_obj.binaryH())
+        {
+          object_attr_setdisabled(*this,gensym("hthreshf1"),true);
+          object_attr_setdisabled(*this,gensym("hthresha1"),true);
+          object_attr_setdisabled(*this,gensym("hthreshf2"),true);
+          object_attr_setdisabled(*this,gensym("hthresha2"),true);
+        }
         
         dspSetup(1);
         outlet_new(*this, "signal");
         outlet_new(*this, "signal");
+        outlet_new(*this, "signal");
       }
+      
+      t_max_err param_set(t_object *attr, long argc, t_atom *argv, std::vector<parameter::Instance>& params)
+      {
+        t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
+        double newval = atom_getfloat(argv);
+        parameter::Instance& thisparam = parameter::lookupParam(attrname->s_name, params);
+        
+        if(attrname == gensym("pthreshf1"))
+        {
+          double limit = parameter::lookupParam("pthreshf2", params).getFloat();
+          
+          if(newval < limit)
+          {
+            thisparam.setFloat(newval);
+            thisparam.checkRange();
+          }
+          return 0;
+          
+        }
+        if(attrname == gensym("pthreshf2"))
+        {
+          double limit = parameter::lookupParam("pthreshf1", params).getFloat();
+          
+          if(newval > limit)
+          {
+            thisparam.setFloat(newval);
+            thisparam.checkRange();
+          }
+          return 0;
+          
+        }
+        if(attrname == gensym("hthreshf1"))
+        {
+          double limit = parameter::lookupParam("hthreshf2", params).getFloat();
+          
+          if(newval < limit)
+          {
+            thisparam.setFloat(newval);
+            thisparam.checkRange();
+          }
+          
+          return 0;
+          
+        }
+        if(attrname == gensym("hthreshf2"))
+        {
+          double limit = parameter::lookupParam("hthreshf1", params).getFloat();
+          
+          if(newval > limit)
+          {
+            thisparam.setFloat(newval);
+            thisparam.checkRange();
+          }
+          
+          return 0;
+          
+        }
+        return MaxNonRealTimeBase::param_set(attr, argc, argv, params);
+      }
+      
+      
+      
       
       void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
       {
@@ -118,9 +199,11 @@ namespace fluid {
         
         //Make new one with appropriate number of channels, pass in STFT params
         
-        inputWrapper[0] = SignalPointer(new audio_signal_wrapper());
+        inputWrapper [0] = SignalPointer(new audio_signal_wrapper());
+        
         outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
         outputWrapper[1] = SignalPointer(new audio_signal_wrapper());
+        outputWrapper[2] = SignalPointer(new audio_signal_wrapper());
 //        fluid_obj.getParams()[0].setLong(pSize);
 //        fluid_obj.getParams()[1].setLong(hSize);
 //        fluid_obj.getParams()[2].setLong(window_size);
@@ -150,7 +233,8 @@ namespace fluid {
         inputWrapper[0]->set(ins[0], 0);
         outputWrapper[0]->set(outs[0],0);
         outputWrapper[1]->set(outs[1],0);
-        fluid_obj.do_process(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,1,2);
+        outputWrapper[2]->set(outs[2],0);
+        fluid_obj.do_process(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,1,3);
       }
       
       std::vector<parameter::Instance>& getParams()
@@ -161,12 +245,7 @@ namespace fluid {
     private:
       audio_client fluid_obj;
       std::array<SignalPointer,1> inputWrapper;
-      std::array<SignalPointer,2> outputWrapper;
-//      size_t pSize;
-//      size_t hSize;
-//      size_t window_size;
-//      size_t hop_size;
-//      size_t fft_size;
+      std::array<SignalPointer,3> outputWrapper;
     };
   }
 }
