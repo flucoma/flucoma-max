@@ -127,60 +127,34 @@ namespace fluid {
       
       t_max_err param_set(t_object *attr, long argc, t_atom *argv, std::vector<parameter::Instance>& params)
       {
+        
+        struct Constraint{
+          std::string param;
+          std::function<bool(double, double)> condition;
+        };
+        
+        static std::map<std::string, Constraint> paramConstraints{
+          {"pthreshf1",{"pthreshf2", std::less<double>()}},
+          {"hthreshf1",{"hthreshf2", std::less<double>()}},
+          {"pthreshf2",{"pthreshf1", std::greater<double>()}},
+          {"hthreshf2",{"hthreshf1", std::greater<double>()}}
+        };
+        
+        
         t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
         double newval = atom_getfloat(argv);
-        parameter::Instance& thisparam = parameter::lookupParam(attrname->s_name, params);
+        auto constraint = paramConstraints.find(attrname->s_name);
         
-        if(attrname == gensym("pthreshf1"))
+        if(constraint != paramConstraints.end())
         {
-          double limit = parameter::lookupParam("pthreshf2", params).getFloat();
+          double limit = parameter::lookupParam(constraint->second.param, getParams()).getFloat();
           
-          if(newval < limit)
+          if(!constraint->second.condition(newval,limit))
           {
-            thisparam.setFloat(newval);
-            thisparam.checkRange();
+            return 0 ;
           }
-          return 0;
-          
         }
-        if(attrname == gensym("pthreshf2"))
-        {
-          double limit = parameter::lookupParam("pthreshf1", params).getFloat();
-          
-          if(newval > limit)
-          {
-            thisparam.setFloat(newval);
-            thisparam.checkRange();
-          }
-          return 0;
-          
-        }
-        if(attrname == gensym("hthreshf1"))
-        {
-          double limit = parameter::lookupParam("hthreshf2", params).getFloat();
-          
-          if(newval < limit)
-          {
-            thisparam.setFloat(newval);
-            thisparam.checkRange();
-          }
-          
-          return 0;
-          
-        }
-        if(attrname == gensym("hthreshf2"))
-        {
-          double limit = parameter::lookupParam("hthreshf1", params).getFloat();
-          
-          if(newval > limit)
-          {
-            thisparam.setFloat(newval);
-            thisparam.checkRange();
-          }
-          
-          return 0;
-          
-        }
+
         return MaxNonRealTimeBase::param_set(attr, argc, argv, params);
       }
       
