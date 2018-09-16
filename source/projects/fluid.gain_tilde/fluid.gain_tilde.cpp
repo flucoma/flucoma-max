@@ -16,9 +16,9 @@ namespace max{
   class FluidGainMax: public max::MaxNonRealTimeBase
   {
     using audio_client = audio::GainAudioClient<double, double>;
-    using audio_signal_wrapper = audio_client::audio_signal;
-    using scalar_signal_wrapper = audio_client::scalar_signal;
-    using signal_wrapper = audio_client::signal_type;
+    using audio_signal_wrapper = audio_client::AudioSignal;
+    using scalar_signal_wrapper = audio_client::ScalarSignal;
+    using signal_wrapper = audio_client::Signal;
     using SignalPointer = std::unique_ptr<signal_wrapper>;
     
   public:
