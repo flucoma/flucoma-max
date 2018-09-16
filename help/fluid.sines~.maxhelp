@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 436.0, -1063.0, 1217.0, 867.0 ],
+		"rect" : [ 329.0, -968.0, 1217.0, 867.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,7 +43,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 109.5, 260.0, 89.0, 20.0 ],
-					"presentation_rect" : [ 112.0, 260.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "winsize"
 				}
@@ -58,7 +57,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 120.5, 287.0, 50.0, 22.0 ],
-					"presentation_rect" : [ 109.5, 269.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -195,6 +193,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 97.5, 93.0, 182.0, 22.0 ],
 					"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/fluid_decomposition/AudioFiles/",
+					"prefix_mode" : 2,
 					"style" : ""
 				}
 
@@ -286,9 +285,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "signal" ],
-					"patching_rect" : [ 179.0, 422.0, 484.0, 22.0 ],
+					"patching_rect" : [ 179.0, 422.0, 571.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.sines~ @bandwidth 76 @winsize 1024 @hopsize 512 @fftsize 8192 @threshold 0.7"
+					"text" : "fluid.sines~ @bandwidth 76 @winsize 1024 @hopsize 512 @fftsize 8192 @threshold 0.3 @mintracklen 0"
 				}
 
 			}
