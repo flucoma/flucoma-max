@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 837.0, 908.0 ],
+						"rect" : [ 542.0, 180.0, 837.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,6 +84,51 @@
 						"showontab" : 1,
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"autopopulate" : 1,
+									"depth" : 1,
+									"id" : "obj-1",
+									"items" : [ "-credits.txt", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"maxclass" : "umenu",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "int", "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 330.5, 102.0, 182.0, 22.0 ],
+									"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/fluid_decomposition/AudioFiles/",
+									"prefix_mode" : 2,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 65.0, 755.0, 50.0, 35.0 ],
+									"style" : "",
+									"text" : "421.44855"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "" ],
+									"patching_rect" : [ 93.0, 700.0, 37.0, 22.0 ],
+									"style" : "",
+									"text" : "timer"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "comment",
@@ -128,7 +173,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 565.0, 514.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "1044"
+									"text" : "1072"
 								}
 
 							}
@@ -210,23 +255,6 @@
 							}
 , 							{
 								"box" : 								{
-									"autopopulate" : 1,
-									"depth" : 1,
-									"id" : "obj-19",
-									"items" : [ "-credits.txt", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
-									"maxclass" : "umenu",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "int", "", "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 330.5, 100.0, 182.0, 22.0 ],
-									"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/fluid_decomposition/AudioFiles/",
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"hiderwff" : 1,
 									"id" : "obj-20",
 									"maxclass" : "playbar",
@@ -268,7 +296,7 @@
 										"followglobaltempo" : 0,
 										"formantcorrection" : 0,
 										"mode" : "basic",
-										"originallength" : [ 11212.8, "ticks" ],
+										"originallength" : [ 9881.512925, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
 										"quality" : "basic",
@@ -480,14 +508,21 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 113.0, 446.0, 268.0, 22.0 ],
+									"patching_rect" : [ 113.0, 446.0, 366.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.transientslice~ @order 80 @blocksize 1024"
+									"text" : "fluid.transientslice~ @order 80 @blocksize 1024 @debounce 4410"
 								}
 
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-10", 0 ]
@@ -498,6 +533,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-26", 1 ],
+									"source" : [ "obj-13", 0 ]
 								}
 
 							}
@@ -526,13 +568,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"source" : [ "obj-18", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
-									"source" : [ "obj-19", 1 ]
 								}
 
 							}
@@ -612,7 +647,40 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-13", 1 ],
+									"order" : 0,
+									"source" : [ "obj-32", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"order" : 1,
+									"source" : [ "obj-32", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 1 ],
+									"order" : 0,
+									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"order" : 1,
+									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
+									"order" : 2,
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -620,6 +688,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-36", 0 ],
+									"order" : 2,
 									"source" : [ "obj-32", 1 ]
 								}
 

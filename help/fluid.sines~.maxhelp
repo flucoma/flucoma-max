@@ -193,6 +193,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 97.5, 93.0, 182.0, 22.0 ],
 					"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/fluid_decomposition/AudioFiles/",
+					"prefix_mode" : 2,
 					"style" : ""
 				}
 
@@ -240,7 +241,7 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"mode" : "basic",
-						"originallength" : [ 11212.8, "ticks" ],
+						"originallength" : [ 9881.512925, "ticks" ],
 						"originaltempo" : 120.0,
 						"pitchcorrection" : 0,
 						"quality" : "basic",

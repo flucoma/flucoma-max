@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 144.0, -1144.0, 1110.0, 888.0 ],
+		"rect" : [ 334.0, -968.0, 1110.0, 888.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,24 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"autopopulate" : 1,
+					"depth" : 1,
+					"id" : "obj-4",
+					"items" : [ "-credits.txt", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+					"maxclass" : "umenu",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 86.5, 64.0, 182.0, 22.0 ],
+					"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/fluid_decomposition/AudioFiles/",
+					"prefix_mode" : 2,
+					"style" : ""
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "number",
@@ -179,23 +197,6 @@
 					"patching_rect" : [ 144.5, 506.0, 70.0, 22.0 ],
 					"style" : "",
 					"text" : "matrix~ 3 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"autopopulate" : 1,
-					"depth" : 1,
-					"id" : "obj-12",
-					"items" : [ "-credits.txt", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
-					"maxclass" : "umenu",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "int", "", "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 86.5, 62.0, 182.0, 22.0 ],
-					"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/fluid_decomposition/AudioFiles/",
-					"style" : ""
 				}
 
 			}
@@ -426,13 +427,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"source" : [ "obj-12", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-19", 1 ],
 					"order" : 0,
 					"source" : [ "obj-13", 0 ]
@@ -493,6 +487,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-41", 2 ],
 					"source" : [ "obj-24", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-4", 1 ]
 				}
 
 			}
