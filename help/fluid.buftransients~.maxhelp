@@ -142,14 +142,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-41",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 107.0, 800.0, 50.0, 35.0 ],
+					"patching_rect" : [ 107.0, 800.0, 107.0, 22.0 ],
 					"style" : "",
-					"text" : "17226.722059"
+					"text" : "17523.8"
 				}
 
 			}
