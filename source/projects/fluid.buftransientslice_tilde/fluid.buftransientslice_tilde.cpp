@@ -25,7 +25,7 @@ public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<TransientSliceNRTMax,&TransientSliceNRTMax::process>(c, "process");
-    makeAttributes<TransientSliceNRT,TransientSliceNRTMax>(c);
+    makeAttributes<TransientSliceNRT,TransientSliceNRTMax>(c,true);
   }
 
   TransientSliceNRTMax(t_symbol *s, long argc, t_atom *argv)

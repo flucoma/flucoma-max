@@ -22,7 +22,7 @@ public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<NMFMax,&NMFMax::decompose>(c, "process");
-    makeAttributes<nmf::NMFClient,NMFMax>(c);
+    makeAttributes<nmf::NMFClient,NMFMax>(c,true);
   }
 
   NMFMax(t_symbol *s, long argc, t_atom *argv)

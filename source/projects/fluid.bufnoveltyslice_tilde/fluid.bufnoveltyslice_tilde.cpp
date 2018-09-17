@@ -18,7 +18,7 @@ public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<NoveltySliceNRTMax,&NoveltySliceNRTMax::process>(c, "process");
-    makeAttributes<NoveltyClient,NoveltySliceNRTMax>(c);
+    makeAttributes<NoveltyClient,NoveltySliceNRTMax>(c,true);
   }
 
   NoveltySliceNRTMax(t_symbol *s, long argc, t_atom *argv)

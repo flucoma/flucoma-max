@@ -12,7 +12,7 @@ public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<Sines_NRT,&Sines_NRT::process>(c, "process");
-    makeAttributes<stn::SinesClient,Sines_NRT>(c);
+    makeAttributes<stn::SinesClient,Sines_NRT>(c,true);
   }
 
   Sines_NRT(t_symbol *s, long argc, t_atom *argv)

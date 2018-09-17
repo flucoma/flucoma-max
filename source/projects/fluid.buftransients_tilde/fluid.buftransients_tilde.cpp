@@ -24,7 +24,7 @@ public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<TransientMax,&TransientMax::process>(c, "process");
-    makeAttributes<str::TransientNRTClient,TransientMax>(c);
+    makeAttributes<str::TransientNRTClient,TransientMax>(c,true);
   }
 
   TransientMax(t_symbol *s, long argc, t_atom *argv)

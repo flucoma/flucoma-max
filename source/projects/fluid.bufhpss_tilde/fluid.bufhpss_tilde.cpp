@@ -12,7 +12,7 @@ public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<HPSS_NRT,&HPSS_NRT::process>(c, "process");
-    makeAttributes<hpss::HPSSClient,HPSS_NRT>(c);
+    makeAttributes<hpss::HPSSClient,HPSS_NRT>(c,true);
   }
 
   HPSS_NRT(t_symbol *s, long argc, t_atom *argv)
