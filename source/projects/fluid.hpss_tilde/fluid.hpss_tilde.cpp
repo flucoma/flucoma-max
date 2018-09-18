@@ -104,20 +104,22 @@ namespace fluid {
         }
         
         
-        if(!fluid_obj.binaryP())
+        if(fluid_obj.mode() == 0)
         {
-          object_attr_setdisabled(*this,gensym("pthreshf1"),true);
-          object_attr_setdisabled(*this,gensym("pthresha1"),true);
-          object_attr_setdisabled(*this,gensym("pthreshf2"),true);
-          object_attr_setdisabled(*this,gensym("pthresha2"),true);
-        }
-        if(!fluid_obj.binaryH())
+          object_attr_setdisabled(*this,gensym("htf1"),true);
+          object_attr_setdisabled(*this,gensym("hta1"),true);
+          object_attr_setdisabled(*this,gensym("htf2"),true);
+          object_attr_setdisabled(*this,gensym("hta2"),true);
+         }
+        
+        if(fluid_obj.mode() != 2)
         {
-          object_attr_setdisabled(*this,gensym("hthreshf1"),true);
-          object_attr_setdisabled(*this,gensym("hthresha1"),true);
-          object_attr_setdisabled(*this,gensym("hthreshf2"),true);
-          object_attr_setdisabled(*this,gensym("hthresha2"),true);
+          object_attr_setdisabled(*this,gensym("ptf1"),true);
+          object_attr_setdisabled(*this,gensym("pta1"),true);
+          object_attr_setdisabled(*this,gensym("ptf2"),true);
+          object_attr_setdisabled(*this,gensym("pta2"),true);
         }
+  
         
         dspSetup(1);
         outlet_new(*this, "signal");
@@ -134,10 +136,10 @@ namespace fluid {
         };
         
         static std::map<std::string, Constraint> paramConstraints{
-          {"pthreshf1",{"pthreshf2", std::less<double>()}},
-          {"hthreshf1",{"hthreshf2", std::less<double>()}},
-          {"pthreshf2",{"pthreshf1", std::greater<double>()}},
-          {"hthreshf2",{"hthreshf1", std::greater<double>()}}
+          {"ptf1",{"ptf2", std::less<double>()}},
+          {"htf1",{"htf2", std::less<double>()}},
+          {"ptf2",{"ptf1", std::greater<double>()}},
+          {"htf2",{"htf1", std::greater<double>()}}
         };
         
         

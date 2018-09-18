@@ -123,7 +123,7 @@ namespace {
         object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
         buffer_setdirty(buffer);
         acquire();
-        assert(frames == numFrames() && channels == numChans()); 
+        assert(frames == numFrames() && channels * rank == numChans()); 
         mRank = rank;
       }
     }
