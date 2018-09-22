@@ -108,9 +108,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 41.0, 203.0, 33.0 ],
+					"patching_rect" : [ 39.0, 41.0, 183.0, 33.0 ],
 					"style" : "",
-					"text" : "FluidSTFTPass"
+					"text" : "Fluid.STFTPass"
 				}
 
 			}
@@ -200,6 +200,23 @@
 						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 12.0,
+									"id" : "obj-15",
+									"maxclass" : "number~",
+									"mode" : 2,
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "float" ],
+									"patching_rect" : [ 134.0, 373.0, 56.0, 22.0 ],
+									"sig" : 0.0,
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"format" : 6,
 									"id" : "obj-21",
 									"maxclass" : "flonum",
@@ -207,7 +224,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 238.0, 435.0, 50.0, 22.0 ],
+									"patching_rect" : [ 289.5, 449.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -219,7 +236,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 235.5, 481.0, 41.0, 22.0 ],
+									"patching_rect" : [ 289.5, 487.0, 41.0, 22.0 ],
 									"style" : "",
 									"text" : "dbtoa"
 								}
@@ -580,7 +597,16 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"order" : 0,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
+									"order" : 1,
 									"source" : [ "obj-6", 0 ]
 								}
 

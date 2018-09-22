@@ -226,6 +226,42 @@
 						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 40.0, 654.0, 99.0, 20.0 ],
+									"style" : "",
+									"text" : "bang when done"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 40.0, 623.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 293.0, 617.0, 91.0, 20.0 ],
+									"style" : "",
+									"text" : "play the results"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -233,32 +269,6 @@
 									"patching_rect" : [ 341.0, 480.0, 172.0, 20.0 ],
 									"style" : "",
 									"text" : "reset buffer size between calls"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 31.0, 72.0, 516.0, 33.0 ],
-									"style" : "",
-									"text" : "dst buffer and gains can be set by attribute. Values passed in message are sticky (i.e. will change attrs)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 31.0, 13.0, 520.0, 47.0 ],
-									"style" : "",
-									"text" : "process \nsrc1 <offset> <nframes> <chan start> <num chans> <gain> <dest offset> <dest chans> src 2 <offset><nframes><chan start><num chans> <gain> <dest offset> <dest chans> <dst buffer>"
 								}
 
 							}
@@ -510,7 +520,16 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"order" : 0,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
+									"order" : 1,
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -648,6 +667,18 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 55.0, 54.0, 213.0, 20.0 ],
+									"style" : "",
+									"text" : "3 messages in a row, summing to itsel"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-6",
 									"maxclass" : "comment",
@@ -837,7 +868,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.0, 43.0, 564.0, 22.0 ],
+									"patching_rect" : [ 50.0, 76.0, 564.0, 22.0 ],
 									"style" : "",
 									"text" : "process stereopiano 0 -1 0 1 pile pile, process stereopiano 0 -1 1 1 pile pile, process monosynth pile pile"
 								}
