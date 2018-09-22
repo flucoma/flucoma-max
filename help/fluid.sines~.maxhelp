@@ -79,13 +79,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 8,
+					"linecount" : 11,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 387.0, 92.0, 114.0 ],
+					"patching_rect" : [ 39.0, 387.0, 92.0, 154.0 ],
 					"style" : "",
-					"text" : "bandwidth\nthresh\nminTrackLen\nmagWeight\nfreqWeight\nwinSize\nhopSize\nfftSize"
+					"text" : "bandwidth\n\nthresh\nminTrackLen\n\nmagWeight\nfreqWeight\nwinSize\n\nhopSize\nfftSize"
 				}
 
 			}
@@ -171,7 +171,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -199,7 +199,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-30",
@@ -759,8 +758,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",

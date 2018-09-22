@@ -70,7 +70,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 340.0, 916.0, 60.0 ],
+					"patching_rect" : [ 107.0, 340.0, 916.0, 60.0 ],
 					"style" : "",
 					"text" : "The size of the buffered window to be analysed, in samples. It will add that much latency to the signal. This is not modulatable.\nHow much the buffered window moves forward, in samples. This is not modulatable.\nHow large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize argument, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. The -1 default value will default to windowSize. This is not modulatable"
 				}
@@ -169,7 +169,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 892.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -197,7 +197,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontface" : 0,
