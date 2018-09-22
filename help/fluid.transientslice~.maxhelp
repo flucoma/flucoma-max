@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 542.0, 154.0, 837.0, 934.0 ],
+		"rect" : [ 34.0, 79.0, 892.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,110 @@
 		"isolateaudio" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 57.0, 254.0, 648.0, 20.0 ],
+					"style" : "",
+					"text" : " impulses at detected transients. The latency between the input and the output is (blockSize + padSize - order) samples."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"linecount" : 12,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 143.0, 340.0, 916.0, 167.0 ],
+					"style" : "",
+					"text" : "The order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positives.\nThe window size in sample within with positive detections will be clumped together to avoid overdetecting in time. No slice will be shorter than this duration."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"linecount" : 8,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 340.0, 92.0, 114.0 ],
+					"style" : "",
+					"text" : "order\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 67.0, 223.0, 20.0 ],
+					"style" : "",
+					"text" : "Transient-Based Real-Time Audio Slicer"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 24.0,
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 41.0, 214.0, 33.0 ],
+					"style" : "",
+					"text" : "FluidTransientSlice"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 11.0,
+					"id" : "obj-8",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 833.0, 758.0, 31.0 ],
+					"style" : "",
+					"text" : "[1] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 119.0, 846.0, 60.0 ],
+					"style" : "",
+					"text" : "This class implements a real-time transient-based slice extractor relying on the same algorithm than Classes/FluidBufTransients using clicks/transients/derivation/anomaly in the signal to estimate the slicing points. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return an audio steam with sample-long impulses at estimated starting points of the different slices."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 16.0,
+					"id" : "obj-3",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 93.0, 92.0, 24.0 ],
+					"style" : "",
+					"text" : "Description"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -54,7 +158,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 542.0, 180.0, 837.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 892.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -772,7 +876,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 28.0, 153.0, 110.0, 22.0 ],
+					"patching_rect" : [ 154.0, 1012.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -788,6 +892,7 @@
 			}
 , 			{
 				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -802,7 +907,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 837.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 892.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1282,7 +1387,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 28.0, 79.0, 110.0, 22.0 ],
+					"patching_rect" : [ 29.0, 1012.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

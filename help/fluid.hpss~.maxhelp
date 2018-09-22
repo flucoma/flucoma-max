@@ -39,6 +39,123 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 42.0, 299.0, 1034.0, 20.0 ],
+					"style" : "",
+					"text" : "[0] is the harmonic part extracted, [1] is the percussive part extracted, [2] is the rest. The latency between the input and the output is ((harmFiltSize + (winSize / hopSize) - 1) * hopSize) samples."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"linecount" : 22,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 142.0, 340.0, 1695.0, 301.0 ],
+					"style" : "",
+					"text" : "The size, in spectral frames, of the median filter for the harmonic component. Must be an odd number, >= 3.\nThe size, in spectral bins, of the median filter for the percussive component. Must be an odd number, >=3\nThe way the masking is applied to the original spectrogram. (0,1,2)\nThe traditional soft mask used in Fitzgerald's original method of 'Wiener-inspired' filtering. Complimentary, soft masks are made for the harmonic and percussive parts by allocating some fraction of a point in time-frequency to each. This provides the fewest artefacts, but the weakest separation. The two resulting buffers will sum to exactly the original material.\nRelative mode - Better separation, with more artefacts. The harmonic mask is constructed using a binary decision, based on whether a threshold is exceeded at a given time-frequency point (these are set using htf1, hta1, htf2, hta2, see below). The percussive mask is then formed as the inverse of the harmonic one, meaning that as above, the two components will sum to the original sound.\nInter-dependent mode - Thresholds can be varied independently, but are coupled in effect. Binary masks are made for each of the harmonic and percussive components, and the masks are converted to soft at the end so that everything null sums even if the params are independent, that is what makes it harder to control. These aren't guranteed to cover the whole sound; in this case the 'leftovers' will placed into a third buffer.\nIn modes 1 and 2, the frequency of the low part of the threshold for the harmonic filter (0-1)\nIn modes 1 and 2, the threshold of the low part for the harmonic filter. That threshold applies to all frequencies up to htf1: how much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic.\nIn modes 1 and 2, the frequency of the hight part of the threshold for the harmonic filter. (0-1)\nIn modes 1 and 2, the threshold of the high part for the harmonic filter. That threshold applies to all frequencies above htf2. The threshold between htf1 and htf2 is interpolated between hta1 and hta2. How much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic.\nIn mode 2, the frequency of the low part of the threshold for the percussive filter. (0-1)\nIn mode 2, the threshold of the low part for the percussive filter. That threshold applies to all frequencies up to ptf1. How much more powerful (in dB) the percussive median filter needs to be than the harmonic median filter for this bin to be counted as percussive.\nIn mode 2, the frequency of the hight part of the threshold for the percussive filter. (0-1)\nIn mode 2, the threshold of the high part for the percussive filter. That threshold applies to all frequencies above ptf2. The threshold between ptf1 and ptf2 is interpolated between pta1 and pta2. How much more powerful (in dB) the percussive median filter needs to be than the harmonic median filter for this bin to be counted as percussive.\nThe window size in samples. As HPSS relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty\nThe window hop size in samples. As HPSS relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts.\nThe inner FFT/IFFT size. It should be at least 4 samples long; at least the size of the window; and a power of 2. Making it larger than the window size provides interpolation in frequency."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"linecount" : 17,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 340.0, 92.0, 234.0 ],
+					"style" : "",
+					"text" : "harmFiltSize\npercFiltSize\nmodeFlag\n0\n1\n2\nhtf1\nhta1\nhtf2\nhta2\nptf1\npta1\nptf2\npta2\nwinSize\nhopSize\nfftSize"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-14",
+					"linecount" : 9,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 672.0, 794.0, 127.0 ],
+					"style" : "",
+					"text" : "HPSS works by using median filters on the spectral magnitudes of a sound. It hinges on a simple modelling assumption that tonal components will tend to yield concentrations of energy across time, spread out in frequency, and percussive components will manifest as concentrations of energy across frequency, spread out in time. By using median filters across time and frequency respectively, we get initial esitmates of the tonal-ness / transient-ness of a point in time and frequency. These are then combined into 'masks' that are applied to the orginal spectral data in order to produce a separation.\n\nThe modeFlag parameter provides different approaches to combinging estimates and producing masks. Some settings (especially in modes 1 & 2) will provide better separation but with more artefacts. These can, in principle, be ameliorated by applying smoothing filters to the masks before transforming back to the time-domain (not yet implemented).\n"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 67.0, 350.0, 20.0 ],
+					"style" : "",
+					"text" : "Harmonic-Percussive Source Separation Using Median Filtering"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 24.0,
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 41.0, 128.0, 33.0 ],
+					"style" : "",
+					"text" : "FluidHPSS"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 11.0,
+					"id" : "obj-8",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 833.0, 758.0, 68.0 ],
+					"style" : "",
+					"text" : "[1] - Fitzgerald, Derry. 2010. ‘Harmonic/Percussive Separation Using Median Filtering’. In Proceedings DaFx 10. https://arrow.dit.ie/argcon/67.\n[2] - Driedger, Jonathan, Meinard Uller, and Sascha Disch. 2014. ‘Extending Harmonic-Percussive Separation of Audio Signals’. In Proc. ISMIR. http://www.terasoft.com.tw/conf/ismir2014/proceedings/T110_127_Paper.pdf.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"linecount" : 11,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 119.0, 846.0, 154.0 ],
+					"style" : "",
+					"text" : "A FluidHPSS object performs Harmonic-Percussive Source Separation (HPSS) on the an audio input. The class performs HPSS as described in its original form1 as well as a variation on the extension propsoed by Driedger et al.2\n\nThe algorithm takes an audio in, and divides it into two or three outputs, depending on the mode:\n• an harmonic component;\n• a percussive component;\n• a residual of the previous two if the flag is set to inter-dependant thresholds. See the modeFlag below.\n\nIt is part of the Fluid Decomposition Toolkit of the FluCoMa project.3\n\nMore information on median filtering, and on HPSS for musicianly usage, are availabe in The Fluid Corpus Manipulation Project overview file."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 16.0,
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 93.0, 92.0, 24.0 ],
+					"style" : "",
+					"text" : "Description"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -107,7 +224,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "float" ],
 									"patching_rect" : [ 50.0, 818.0, 71.0, 22.0 ],
-									"presentation_rect" : [ 49.0, 818.0, 0.0, 0.0 ],
 									"sig" : 0.0,
 									"style" : ""
 								}
@@ -621,7 +737,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 111.5, 214.0, 57.0, 22.0 ],
+					"patching_rect" : [ 59.5, 1008.0, 57.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -637,6 +753,7 @@
 			}
 , 			{
 				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -890,7 +1007,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1031.5, 666.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "-5."
+									"text" : "0."
 								}
 
 							}
@@ -903,7 +1020,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1031.5, 636.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "1801.845425"
+									"text" : "3556.55882"
 								}
 
 							}
@@ -940,7 +1057,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 907.5, 666.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "-10.625"
+									"text" : "0."
 								}
 
 							}
@@ -953,7 +1070,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 907.5, 636.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "532.145011"
+									"text" : "112.468265"
 								}
 
 							}
@@ -1647,7 +1764,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 222.5, 214.0, 57.0, 22.0 ],
+					"patching_rect" : [ 170.5, 1008.0, 57.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1663,6 +1780,7 @@
 			}
 , 			{
 				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -1677,7 +1795,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 106.0, 1852.0, 1055.0 ],
+						"rect" : [ 0.0, 26.0, 1852.0, 1055.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1876,7 +1994,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1129.5, 562.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "10.3125"
+									"text" : "0."
 								}
 
 							}
@@ -1889,7 +2007,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1129.5, 532.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "704.53893"
+									"text" : "3556.55882"
 								}
 
 							}
@@ -1926,7 +2044,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1005.5, 562.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "5."
+									"text" : "0."
 								}
 
 							}
@@ -1939,7 +2057,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1005.5, 532.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "269.598512"
+									"text" : "112.468265"
 								}
 
 							}
@@ -2080,7 +2198,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1088.5, 1070.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "-15."
+									"text" : "0."
 								}
 
 							}
@@ -2093,7 +2211,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1088.5, 1040.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "1670.725094"
+									"text" : "3556.55882"
 								}
 
 							}
@@ -2130,7 +2248,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 964.5, 1070.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "-4.6875"
+									"text" : "0."
 								}
 
 							}
@@ -2143,7 +2261,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 964.5, 1040.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "162.332313"
+									"text" : "112.468265"
 								}
 
 							}
@@ -3081,7 +3199,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 315.5, 209.0, 57.0, 22.0 ],
+					"patching_rect" : [ 263.5, 1003.0, 57.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
