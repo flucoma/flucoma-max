@@ -39,6 +39,43 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 314.0, 527.0, 20.0 ],
+					"style" : "",
+					"text" : "This is the method that calls for the transient extraction to be performed on a given source buffer."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 294.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "message:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 294.0, 338.0, 20.0 ],
+					"style" : "",
+					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-18",
 					"linecount" : 20,
 					"maxclass" : "comment",
@@ -59,7 +96,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 340.0, 92.0, 208.0 ],
 					"style" : "",
-					"text" : "srcBufNum\nstartAt\nnFrames\nstartChan\nnChans\ntransBufNum\nresBufNum\norder\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
+					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ntransBuf\nresBuf\norder\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
 				}
 
 			}
@@ -95,9 +132,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 41.0, 210.0, 33.0 ],
+					"patching_rect" : [ 39.0, 41.0, 216.0, 33.0 ],
 					"style" : "",
-					"text" : "FluidBufTransients"
+					"text" : "Fluid.BufTransients"
 				}
 
 			}

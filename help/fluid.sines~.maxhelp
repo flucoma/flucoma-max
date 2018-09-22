@@ -39,13 +39,27 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-4",
+					"id" : "obj-11",
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 42.0, 308.0, 794.0, 20.0 ],
+					"patching_rect" : [ 39.0, 294.0, 48.0, 47.0 ],
 					"style" : "",
-					"text" : "[0] is the harmonic part extracted, [1] is the rest. The latency between the input and the output is (( hopSize * minTrackLen) + windowSize) samples."
+					"text" : "in [0]\nout [0]\nout [1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 89.0, 294.0, 702.0, 60.0 ],
+					"style" : "",
+					"text" : "The audio input\nThe harmonic part extracted\nThe rest.\nThe latency between the input and the output is (( hopSize * minTrackLen) + windowSize) samples."
 				}
 
 			}
@@ -56,7 +70,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 340.0, 987.0, 154.0 ],
+					"patching_rect" : [ 143.0, 387.0, 987.0, 154.0 ],
 					"style" : "",
 					"text" : "The width in bins of the fragment of the fft window that is considered a normal deviation for a potential continuous sinusoidal track. It has an effect on CPU cost: the widest is more accurate but more computationally expensive.\nThe normalised threshold, between 0 an 1, to consider a peak as a sinusoidal component from the normalized cross-correlation.\nThe minimum duration, in spectral frames, for a sinusoidal track to be accepted as a partial. It allows to remove space-monkeys, but is more CPU intensive and might reject quick pitch material.\nThe weight of the magnitude proximity of a peak when trying to associate it to an existing track (relative to freqWeight - suggested between 0 to 1)\nThe weight of the frequency proximity of a peak when trying to associate it to an existing track (relative to magWeight - suggested between 0 to 1)\nThe window size. As sinusoidal estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty\nThe window hope size. As sinusoidal estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap will create audible artefacts.\nThe inner FFT/IFFT size. It should be at least 4 samples long, at least the size of the window, and a power of 2. Making it larger allows an oversampling of the spectral precision."
 				}
@@ -69,7 +83,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 114.0 ],
+					"patching_rect" : [ 39.0, 387.0, 92.0, 114.0 ],
 					"style" : "",
 					"text" : "bandwidth\nthresh\nminTrackLen\nmagWeight\nfreqWeight\nwinSize\nhopSize\nfftSize"
 				}

@@ -39,6 +39,43 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 306.0, 668.0, 20.0 ],
+					"style" : "",
+					"text" : "This is the method that calls for the sinusoidal estimation to be calculated on a given source buffer and to be resynthesised."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 286.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "message:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 286.0, 338.0, 20.0 ],
+					"style" : "",
+					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-18",
 					"linecount" : 17,
 					"maxclass" : "comment",
@@ -59,7 +96,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 339.0, 92.0, 208.0 ],
 					"style" : "",
-					"text" : "srcBufNum\nstartAt\nnFrames\nstartChan\nnChans\nsineBufNum\nresBufNum\nbandwidth\nthresh\nminTrackLen\nmagWeight\nfreqWeight\nwinSize\nhopSize\nfftSize"
+					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\nsineBuf\nresBuf\nbandwidth\nthresh\nminTrackLen\nmagWeight\nfreqWeight\nwinSize\nhopSize\nfftSize"
 				}
 
 			}
@@ -95,9 +132,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 40.0, 159.0, 33.0 ],
+					"patching_rect" : [ 39.0, 40.0, 165.0, 33.0 ],
 					"style" : "",
-					"text" : "FluidBufSines"
+					"text" : "Fluid.BufSines"
 				}
 
 			}

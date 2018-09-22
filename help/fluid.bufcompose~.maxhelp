@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 892.0, 1082.0 ],
+		"rect" : [ 34.0, 79.0, 1852.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,12 +39,49 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 302.0, 211.0, 20.0 ],
+					"style" : "",
+					"text" : "This method triggers the compositing."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 282.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "message:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 282.0, 1628.0, 20.0 ],
+					"style" : "",
+					"text" : "process srcBufA <startAtA> <nFramesA> <startChanA> <nChansA> <srcGainA> <dstStartAtA> <dstStartChanA> srcBufB <startAtB><nFramesB><startChanB><nChansB> <srcGainB> <dstStartAtB> <dstStartChanB> dstBuf"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-18",
 					"linecount" : 17,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 340.0, 916.0, 234.0 ],
+					"patching_rect" : [ 140.0, 340.0, 916.0, 234.0 ],
 					"style" : "",
 					"text" : "The bufNum of the first source buffer.\nThe starting point (in samples) from which to copy in the first source buffer.\nThe duration (in samples) to copy from the first source buffer.\nThe first channel from which to copy in the first source buffer.\nThe number of channels from which to copy in the first source buffer. This parameter will wrap around the number of channels in the source buffer.\nThe gain applied to the samples to be copied from the first source buffer.\nThe time offset (in samples) in the destination buffer to start writing the first source at. The destination buffer will be resized if the portion to copy is overflowing.\nThe channel offest in the destination buffer to start writing the first source at. The destination buffer will be resized if the number of channels to copy is overflowing.\nThe bufNum of the second source buffer.\nThe starting point (in samples) from which to copy in the second source buffer.\nThe duration (in samples) to copy from the second source buffer.\nThe first channel from which to copy in the second source buffer.\nThe number of channels from which to copy in the second source buffer. This parameter will wrap around the number of channels in the source buffer.\nThe gain applied to the samples to be copied from the second source buffer.\nThe time offset (in samples) in the destination buffer to start writing the second source at. The destination buffer will be resized if the portion to copy is overflowing.\nThe channel offest in the destination buffer to start writing the second source at. The destination buffer will be resized if the number of channels to copy is overflowing.\nThe bufNum of the destination buffer."
 				}
@@ -59,7 +96,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 340.0, 92.0, 234.0 ],
 					"style" : "",
-					"text" : "srcBufNumA\nstartAtA\nnFramesA\nstartChanA\nnChansA\nsrcGainA\ndstStartAtA\ndstStartChanA\nsrcBufNumB\nstartAtB\nnFramesB\nstartChanB\nnChansB\nsrcGainB\ndstStartAtB\ndstStartChanB\ndstBufNum"
+					"text" : "srcBufA\nstartAtA\nnFramesA\nstartChanA\nnChansA\nsrcGainA\ndstStartAtA\ndstStartChanA\nsrcBufB\nstartAtB\nnFramesB\nstartChanB\nnChansB\nsrcGainB\ndstStartAtB\ndstStartChanB\ndstBuf"
 				}
 
 			}
@@ -95,9 +132,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 41.0, 203.0, 33.0 ],
+					"patching_rect" : [ 39.0, 41.0, 208.0, 33.0 ],
 					"style" : "",
-					"text" : "FluidBufCompose"
+					"text" : "Fluid.BufCompose"
 				}
 
 			}
@@ -123,7 +160,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 846.0, 141.0 ],
-					"presentation_rect" : [ 39.0, 119.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "A FluidBufCompose object provides a flexible utility for combining the contents of buffers on the server. It can be used for thing like mixing down multichannel buffers, or converting from left-right stereo to mid-side. We use it extensively in our example code.\n\nAt its most simple, the object copies the content of two source buffers into a destination buffer. The flexibility comes from the various flags controlling which portions and channels of the sources to use, and by applying gains (which can be positive or negative) to the source data.\n\nIt is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe algorithm takes two buffers in, and writes the composited information at the provided dstBuf. These buffer arguments can all point to the same buffer, which gives great flexibility in transforming and reshaping."
 				}
@@ -195,7 +231,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 341.0, 480.0, 172.0, 20.0 ],
-									"presentation_rect" : [ 347.0, 541.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "reset buffer size between calls"
 								}
@@ -584,7 +619,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 892.0, 1056.0 ],
+						"rect" : [ 0.0, 26.0, 1852.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -976,7 +1011,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 892.0, 1056.0 ],
+						"rect" : [ 0.0, 26.0, 1852.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

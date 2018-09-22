@@ -39,6 +39,32 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 41.0, 188.0, 48.0, 47.0 ],
+					"style" : "",
+					"text" : "in [0]\nin [1]\nout [0]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 91.0, 188.0, 702.0, 60.0 ],
+					"style" : "",
+					"text" : "The audio input\nThe gain\nThe audio output with the new gain\nThe latency between the input and the output is blockSize samples."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-18",
 					"linecount" : 2,
 					"maxclass" : "comment",

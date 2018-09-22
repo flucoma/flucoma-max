@@ -39,12 +39,49 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 84.0, 596.0, 487.0, 20.0 ],
+					"style" : "",
+					"text" : "This is the method that calls for the factorisation to be calculated on a given source buffer."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 576.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "message:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 84.0, 576.0, 338.0, 20.0 ],
+					"style" : "",
+					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-18",
 					"linecount" : 25,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 113.449341, 607.0, 1360.0, 342.0 ],
+					"patching_rect" : [ 113.449341, 639.0, 1360.0, 342.0 ],
 					"style" : "",
 					"text" : "The index of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the srcBuf should the NMF process start, in sample.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel should be processed first.\nFor multichannel srcBuf, how many channel should be processed.\nThe index of the buffer where the different reconstructed ranks will be reconstructed. The buffer will be resized to rank * numChannelsProcessed channels and sourceDuration lenght. If nil is provided, the reconstruction will not happen.\nThe index of the buffer where the different dictionaries will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no dictionary will be returned.\nThis flag decides of how the dictionnary buffer passed as the previous argument is treated.\nThe dictionaries are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (fftSize / 2 + 1) lenght.\nThe passed buffer is considered as seed for the dictionaries. Its dimensions should match the values above. The resulting dictionaries will replace the seed ones.\nThe passed buffer is considered as a template for the dictionaries, and will therefore not change. Its dictionaries should match the values above.\nThe index of the buffer where the different activations will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no activation will be returned.\nThis flag decides of how the activation buffer passed as the previous argument is treated.\nThe activations are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (sourceDuration / hopsize + 1) lenght.\nThe passed buffer is considered as seed for the activations. Its dimensions should match the values above. The resulting activations will replace the seed ones.\nThe passed buffer is considered as a template for the activations, and will therefore not change. Its dimensions should match the values above.\nThe number of elements the NMF algorithm will try to divide the spectrogram of the source in.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU expensive, lower numbers will be more unpredictable in quality.\nThis allows to choose between the different methods of sorting the ranks in order to get similar sonic qualities on a given rank (not implemented yet)\nThe window size. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty\nThe window hope size. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap will create audible artefacts.\nThe inner FFT/IFFT size. It should be at least 4 samples long, at least the size of the window, and a power of 2. Making it larger allows an oversampling of the spectral precision.\nThe inner FFT/IFFT windowing type (not implemented yet)\nThe NMF process needs to seed its starting point. If specified, the same values will be used. The default of -1 will randomly assign them. (not implemented yet)"
 				}
@@ -57,9 +94,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 607.0, 92.0, 328.0 ],
+					"patching_rect" : [ 16.0, 639.0, 92.0, 328.0 ],
 					"style" : "",
-					"text" : "srcBufNum\nstartAt\nnFrames\nstartChan\nnChans\ndstBufNum\ndictBufNum\ndictFlag\n0\n1\n2\nactBufNum\nactFlag\n0\n1\n2\nrank\nnIter\nsortFlag\nwinSize\nhopSize\nfftSize\nwinType\nrandSeed"
+					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ndstBuf\ndictBuf\ndictFlag\n0\n1\n2\nactBuf\nactFlag\n0\n1\n2\nrank\nnIter\nsortFlag\nwinSize\nhopSize\nfftSize\nwinType\nrandSeed"
 				}
 
 			}
@@ -82,9 +119,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 22.0, 151.0, 33.0 ],
+					"patching_rect" : [ 16.0, 22.0, 157.0, 33.0 ],
 					"style" : "",
-					"text" : "FluidBufNMF"
+					"text" : "Fluid.BufNMF"
 				}
 
 			}
@@ -96,7 +133,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 956.0, 899.0, 56.0 ],
+					"patching_rect" : [ 31.0, 988.0, 902.0, 56.0 ],
 					"style" : "",
 					"text" : "[1] - Lee, Daniel D., and H. Sebastian Seung. 1999. ‘Learning the Parts of Objects by Non-Negative Matrix Factorization’. Nature 401 (6755): 788–91. https://doi.org/10.1038/44565.\n[2] - Smaragdis and Brown, Non-Negative Matrix Factorization for Polyphonic Music Transcription.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).\n"
 				}
@@ -105,11 +142,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
-					"linecount" : 37,
+					"linecount" : 33,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 100.0, 856.0, 503.0 ],
+					"patching_rect" : [ 16.0, 100.0, 1004.0, 449.0 ],
 					"style" : "",
 					"text" : "The FluidBufNMF object decomposes the spectrum of a sound into a number of components using Non-Negative Matrix Factorisation (NMF)1 . NMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored.\n\nThe algorithm takes a buffer in and divides it into a number of components, determined by the rank argument. It works iteratively, by trying to find a combination of spectral templates ('dictionaries') and envelopes ('activations') that yield the original magnitude spectrogram when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe object can return either or all of the following:\n• a spectral contour of each component in the form of a magnitude spectrogram (called a dictionary in NMF lingo);\n• an amplitude envelope of each component in the form of gains for each consecutive frame of the underlying spectrogram (called an activation in NMF lingo);\n• an audio reconstruction of each components in the time domain.\n\nThe dictionaries and activations can be used to make a kind of vocoder based on what NMF has 'learned' from the original data. Alternatively, taking the matrix product of a dictionary and an activation will yield a synthetic magnitude spectrogram of a component (which could be reconsructed, given some phase informaiton from somewhere).\n\nSome additional options and flexibility can be found through combinations of the dictFlag and actFlag arguments. If these flags are set to 1, the object expects to be supplied with pre-formed spectra (or envelopes) that will be used as seeds for the decomposition, providing more guided results. When set to 2, the supplied buffers won't be updated, so become templates to match against instead. Note that having both dictionaries and activations set to 2 doesn't make sense, so the object will complain.\n\nIf supplying pre-formed data, it's up to the user to make sure that the supplied buffers are the right size:\n• dictionaries must be (fft size / 2) + 1 frames and (rank * input channels) channels\n• activations must be (input frames / hopSize) + 1 frames and (rank * input channels) channels\n\nIn this implementation, the components are reconstructed by masking the ogriginal spectrum, such that they will sum to yield the original sound.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes that are learned from the data, and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
 				}
@@ -809,7 +846,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 341.0, 989.0, 63.0, 22.0 ],
+					"patching_rect" : [ 341.0, 1021.0, 63.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1284,33 +1321,6 @@
 									"patching_rect" : [ 294.449341, 517.0, 78.0, 22.0 ],
 									"style" : "",
 									"text" : "index~ synth"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 1,
-									"id" : "obj-24",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 58.0, 126.0, 352.0, 33.0 ],
-									"style" : "",
-									"text" : "decompose: decompose sound and return time-domain re-synthesised sounds into a polybuffer~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-19",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 58.0, 165.0, 364.0, 47.0 ],
-									"style" : "",
-									"text" : "decompose <source buffer~>  \noptional: <offset frames> <num frames> <offset channels> <num channels> "
 								}
 
 							}
@@ -1873,7 +1883,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 36.0, 989.0, 94.0, 22.0 ],
+					"patching_rect" : [ 36.0, 1021.0, 94.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2482,7 +2492,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 167.449341, 989.0, 110.0, 22.0 ],
+					"patching_rect" : [ 167.449341, 1021.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

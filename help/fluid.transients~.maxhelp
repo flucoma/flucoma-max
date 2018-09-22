@@ -39,13 +39,27 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-4",
+					"id" : "obj-11",
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 40.0, 318.0, 702.0, 20.0 ],
+					"patching_rect" : [ 39.0, 313.0, 48.0, 47.0 ],
 					"style" : "",
-					"text" : "[0] is the transient extracted, [1] is the rest. The latency between the input and the output is (blockSize + padSize - order) samples."
+					"text" : "in [0]\nout [0]\nout [1]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 89.0, 313.0, 702.0, 60.0 ],
+					"style" : "",
+					"text" : "The audio input\nThe transient extracted\nThe rest. \nThe latency between the input and the output is (blockSize + padSize - order) samples."
 				}
 
 			}
@@ -56,7 +70,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 340.0, 916.0, 167.0 ],
+					"patching_rect" : [ 142.0, 397.0, 916.0, 167.0 ],
 					"style" : "",
 					"text" : "The order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positive.\nThe window size in sample within which positive detections will be clumped together to avoid overdetecting in time."
 				}
@@ -69,7 +83,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 114.0 ],
+					"patching_rect" : [ 39.0, 397.0, 92.0, 114.0 ],
 					"style" : "",
 					"text" : "order\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
 				}

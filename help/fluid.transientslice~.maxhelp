@@ -40,13 +40,27 @@
 		"isolateaudio" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
+					"id" : "obj-11",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 57.0, 254.0, 648.0, 20.0 ],
+					"patching_rect" : [ 37.0, 224.0, 44.0, 33.0 ],
 					"style" : "",
-					"text" : " impulses at detected transients. The latency between the input and the output is (blockSize + padSize - order) samples."
+					"text" : "in [0]\nout [0]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 83.0, 224.0, 648.0, 33.0 ],
+					"style" : "",
+					"text" : "The audio input\nImpulses at detected transients. The latency between the input and the output is (blockSize + padSize - order) samples."
 				}
 
 			}
@@ -938,6 +952,18 @@
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 482.0, 384.0, 150.0, 20.0 ],
+									"style" : "",
+									"text" : "latency calculator"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "scope~",
 									"numinlets" : 2,
@@ -954,7 +980,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 319.0, 547.0, 24.0, 22.0 ],
+									"patching_rect" : [ 519.0, 520.0, 24.0, 22.0 ],
 									"style" : "",
 									"text" : "t b"
 								}
@@ -1002,7 +1028,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 383.0, 513.0, 50.0, 22.0 ],
+									"patching_rect" : [ 583.0, 486.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1013,7 +1039,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 392.5, 470.0, 50.0, 20.0 ],
+									"patching_rect" : [ 592.5, 443.0, 50.0, 20.0 ],
 									"style" : "",
 									"text" : "order"
 								}
@@ -1027,7 +1053,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 282.0, 470.0, 50.0, 22.0 ],
+									"patching_rect" : [ 482.0, 443.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1040,7 +1066,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 336.5, 482.0, 50.0, 22.0 ],
+									"patching_rect" : [ 536.5, 455.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1052,7 +1078,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 290.0, 572.0, 110.0, 22.0 ],
+									"patching_rect" : [ 490.0, 545.0, 110.0, 22.0 ],
 									"style" : "",
 									"text" : "expr $i1 + $i2 - $i3"
 								}
@@ -1065,7 +1091,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 340.5, 448.0, 50.0, 33.0 ],
+									"patching_rect" : [ 540.5, 421.0, 50.0, 33.0 ],
 									"style" : "",
 									"text" : "padding"
 								}
@@ -1077,7 +1103,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 282.0, 439.0, 39.0, 20.0 ],
+									"patching_rect" : [ 482.0, 412.0, 39.0, 20.0 ],
 									"style" : "",
 									"text" : "block"
 								}

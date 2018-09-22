@@ -39,6 +39,43 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 306.0, 487.0, 20.0 ],
+					"style" : "",
+					"text" : "This is the method that calls for the slicing to be calculated on a given source buffer."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 286.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "message:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 286.0, 338.0, 20.0 ],
+					"style" : "",
+					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-18",
 					"linecount" : 19,
 					"maxclass" : "comment",
@@ -59,7 +96,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 340.0, 92.0, 194.0 ],
 					"style" : "",
-					"text" : "srcBufNum\nstartAt\nnFrames\nstartChan\nnChans\ntransBufNum\norder\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
+					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ntransBuf\norder\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
 				}
 
 			}
@@ -82,9 +119,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 41.0, 250.0, 33.0 ],
+					"patching_rect" : [ 39.0, 41.0, 256.0, 33.0 ],
 					"style" : "",
-					"text" : "FluidBufTransientSlice"
+					"text" : "Fluid.BufTransientSlice"
 				}
 
 			}
