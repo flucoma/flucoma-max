@@ -13,3 +13,4 @@ tmp
 **/*.xcodeproj/*
 **/info.plist
 **/package-info.json
+media
