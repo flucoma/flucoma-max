@@ -1,19 +1,13 @@
-
-
 /**
  @file MaxNonRealTimeBase.hpp
  
  Base classes for non-real time Max wrappers
- 
  **/
-
-
 #pragma once
-
+#pragma clang system_header
 #include "MaxClass_Base.h"
 #include "clients/common/FluidParams.hpp"
 #include "data/FluidTensor.hpp"
-
 
 #include "ext_buffer.h"
 
@@ -52,16 +46,13 @@ namespace {
     //Return a slice of the buffer
     virtual FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 1) = 0;
     //Return a view of all the data
-    virtual FluidTensorView<float,2> samps() = 0;
-    virtual FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) = 0;
+//    virtual FluidTensorView<float,2> samps() = 0;
+    virtual FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) = 0;
     
     virtual size_t numFrames() const = 0;
     virtual size_t numChans() const = 0;
     virtual size_t rank() const = 0;
-    
   };
-  
- 
   
   /***
    RAII for buffer's data
@@ -130,7 +121,6 @@ namespace {
     void acquire() override
     {
       mSamps = buffer_locksamples(getBuffer());
-      
     }
     
     void release()override
@@ -146,16 +136,16 @@ namespace {
       return v.col(rankIdx  + channel * mRank);
     }
     
-    //Return a view of all the data
-    FluidTensorView<float,2> samps() override
-    {
-      return {this->mSamps, 0, numFrames(), numChans() * this->mRank};
-    }
+//    //Return a view of all the data
+//    FluidTensorView<float,2> samps() override
+//    {
+//      return {this->mSamps, 0, numFrames(), numChans() * this->mRank};
+//    }
     
-    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
+    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
     {
-      auto s = samps();
-      return s(fluid::slice(offset, nframes), fluid::slice(chanoffset, chans));
+      auto s = FluidTensorView<float,2>(this->mSamps, 0, numFrames(), numChans() * this->mRank);
+      return s(fluid::slice(offset, nframes), fluid::slice(chanoffset, 1)).col(0);
     }
 
     t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) override
@@ -321,17 +311,21 @@ namespace {
       return FluidTensorView<float,1>(nullptr,0,0);
     }
     
-    //Return a view of all the data
-    FluidTensorView<float,2> samps() override
-    {
-      assert("I don't beleive this should happen");
-      return FluidTensorView<float,2>(nullptr,0,0,0);
-    }
+//    //Return a view of all the data
+//    FluidTensorView<float,2> samps() override
+//    {
+//      assert("I don't beleive this should happen");
+//      return FluidTensorView<float,2>(nullptr,0,0,0);
+//    }
     
-    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
+    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
     {
-      assert("I don't beleive this should happen");
-      return FluidTensorView<float,2>(nullptr,0,0,0);
+      if(valid() && mBufs.size() > 0 && chanoffset < mBufs.size())
+      {
+        //TODO this isn't ideal
+        return mBufs[chanoffset].samps(offset,nframes,0);
+      }
+      return FluidTensorView<float,1>(nullptr,0,0,0);
     }
     
     size_t numFrames() const override
@@ -366,7 +360,7 @@ namespace {
           return lhs.numChans() < rhs.numChans();
         } );
         
-        return narrowestBuffer.numChans();
+        return narrowestBuffer.numChans() * rank();
       }
       return 0;
     }
@@ -465,15 +459,15 @@ namespace {
       return mData ?  mData->samps(channel, rankIdx) : emptyView() ;
     }
     
-    //Return a view of all the data
-    FluidTensorView<float,2> samps() override
-    {
-      return mData? mData->samps() : FluidTensorView<float,2>(emptyView());
-    }
+//    //Return a view of all the data
+//    FluidTensorView<float,2> samps() override
+//    {
+//      return mData? mData->samps() : FluidTensorView<float,2>(emptyView());
+//    }
     
-    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
+    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
     {
-      return  mData ? mData->samps(offset, nframes,chanoffset,chans) : FluidTensorView<float,2>(emptyView());
+      return  mData ? mData->samps(offset, nframes,chanoffset) : emptyView();
     }
     
     size_t numFrames() const override
