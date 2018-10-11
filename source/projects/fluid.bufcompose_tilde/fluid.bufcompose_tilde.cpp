@@ -45,6 +45,7 @@ private:
     size_t paramIdx = 0;
     //This is pretty low fi. Really, params should know if they're optional, and we should die as soon as it becomes clear
     //that things are wonky.
+    
     for(size_t i = 0; i < ac; ++i)
     {
       switch(atom_gettype(av + i))
@@ -90,8 +91,14 @@ private:
       }
     }
     
-    bool parametersOk;
+    bool parametersOk = false;
     buf::BufferComposeClient::ProcessModel processModel;
+    
+    for(auto&& p:getParams())
+      if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+          (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
+
+    
     std::string whatHappened;//this will give us a message to pass back if param check fails
     std::tie(parametersOk,whatHappened,processModel) = bufferCompose.sanityCheck();
     if(!parametersOk)

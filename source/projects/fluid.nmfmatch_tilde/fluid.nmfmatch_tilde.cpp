@@ -85,6 +85,8 @@ namespace fluid {
           }
         }
         
+
+                
         attr_args_process(*this, argc, argv + offset);
         
         for(auto&& p: getParams())
@@ -98,6 +100,7 @@ namespace fluid {
         listOutlet = listout(*this);
         
       }
+
       
       void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
       {
@@ -113,10 +116,14 @@ namespace fluid {
 //        fluid_obj->getParams()[1].setLong(hop_size);
 //        fluid_obj->getParams()[2].setLong(fft_size);
         
-        
+        for(auto&& p:getParams())
+          if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+            (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
+
         
         bool isOK;
         std::string feedback;
+        
         
         std::tie(isOK, feedback) = fluid_obj.sanityCheck();
         if(!isOK)
