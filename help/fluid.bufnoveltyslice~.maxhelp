@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1212.0, 1082.0 ],
+		"rect" : [ 100.0, 80.0, 1212.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -212,6 +212,19 @@
 						"showontab" : 1,
 						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-46",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 492.0, 190.0, 50.0, 22.0 ],
+									"style" : "",
+									"text" : "replace"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-45",
 									"maxclass" : "comment",
@@ -576,7 +589,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 81.0, 458.0, 161.0, 56.0 ],
-									"size" : 2.0,
+									"size" : 274.0,
 									"style" : ""
 								}
 
@@ -957,7 +970,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 403.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "0"
+									"text" : "274"
 								}
 
 							}
@@ -2345,6 +2358,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-46", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-52", 0 ],
 									"source" : [ "obj-49", 0 ]
 								}
@@ -2522,8 +2542,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
