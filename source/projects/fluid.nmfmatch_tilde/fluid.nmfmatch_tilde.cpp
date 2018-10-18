@@ -109,9 +109,15 @@ namespace fluid {
         {
           return;
         }
+        
+        mRank = parameter::lookupParam("rank", getParams()).getLong();
 
         inputWrapper[0] = SignalPointer(new audio_signal_wrapper());
-//        outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
+        outputWrappers.resize(mRank);
+        for(auto&& w:outputWrappers)
+          w.reset(new scalar_signal_wrapper());
+        
+        
 //        fluid_obj.getParams()[0].setLong(window_size);
 //        fluid_obj->getParams()[1].setLong(hop_size);
 //        fluid_obj->getParams()[2].setLong(fft_size);
@@ -133,17 +139,35 @@ namespace fluid {
         }
         
         
+        activationAtoms.reset(new t_atom[sizeLimit()]);
+        
         //TODO: I imagine some algorithms will need the sample rate in future as well
         fluid_obj.set_host_buffer_size(maxvectorsize);
         fluid_obj.reset();
         addPerform<NMFMatcher, &NMFMatcher::perform>(dsp64);
       }
       
+      void toOutlet(t_symbol *s, short ac, t_atom *av)
+      {
+        outlet_list(listOutlet, nullptr, sizeLimit(), activationAtoms.get());
+      }
+      
+      static void toOutletExternal(NMFMatcher *x,t_symbol *s, short ac, t_atom *av)
+      {
+        x->toOutlet(s, ac, av);
+      }
+      
       void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
       {
         inputWrapper[0]->set(ins[0], 0);
 //        outputWrapper[0]->set(outs[0],0);
-        fluid_obj.do_process(inputWrapper.begin(),inputWrapper.end(),sampleframes,1);
+        fluid_obj.do_process_noOLA(inputWrapper.begin(),inputWrapper.end(),outputWrappers.begin(), outputWrappers.end(), sampleframes,1,mRank);
+        
+        
+        for(size_t i = 0; i < mRank; ++i)
+          atom_setfloat(&activationAtoms[i], outputWrappers[i]->next());
+        
+        schedule_delay(*this, (method) &NMFMatcher::toOutletExternal, 0.0, nullptr, mRank, &activationAtoms[0]);
       }
     
       
@@ -153,11 +177,19 @@ namespace fluid {
       }
       
     private:
+      
+      size_t sizeLimit()
+      {
+         return std::min<size_t>(parameter::lookupParam("rank", getParams()).getLong(),32767);
+      }
+      
       audio_client fluid_obj;
 //      signal_wrapper* input_wrappers[1];
-//      signal_wrapper* output_wrappers[1];
       std::array<SignalPointer,1> inputWrapper;
+      std::vector<std::unique_ptr<scalar_signal_wrapper>> outputWrappers;
       void* listOutlet;
+      std::unique_ptr<t_atom[]> activationAtoms;
+      size_t mRank;
 //      std::array<SignalPointer,1> outputWrapper;
 //      size_t window_size;
 //      size_t hop_size;
