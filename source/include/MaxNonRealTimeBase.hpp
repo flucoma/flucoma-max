@@ -1,19 +1,13 @@
-
-
 /**
  @file MaxNonRealTimeBase.hpp
  
  Base classes for non-real time Max wrappers
- 
  **/
-
-
 #pragma once
-
+#pragma clang system_header
 #include "MaxClass_Base.h"
 #include "clients/common/FluidParams.hpp"
 #include "data/FluidTensor.hpp"
-
 
 #include "ext_buffer.h"
 
@@ -30,7 +24,7 @@ namespace {
     
     MaxBufferRef(t_object* x, t_symbol* name):mName(name),mHostObject(x) {}
     
-    t_symbol* getName() const
+    t_symbol* name() const
     {
       return mName;
     }
@@ -47,22 +41,18 @@ namespace {
     virtual void acquire() = 0;
     virtual void release() = 0;
     virtual bool valid() const   = 0;
-    
     virtual void resize(size_t frames, size_t channels, size_t rank) = 0;
-    
+    virtual t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) = 0;
     //Return a slice of the buffer
     virtual FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 1) = 0;
     //Return a view of all the data
-    virtual FluidTensorView<float,2> samps() = 0;
-    virtual FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) = 0;
+//    virtual FluidTensorView<float,2> samps() = 0;
+    virtual FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) = 0;
     
     virtual size_t numFrames() const = 0;
     virtual size_t numChans() const = 0;
     virtual size_t rank() const = 0;
-    
   };
-  
- 
   
   /***
    RAII for buffer's data
@@ -131,7 +121,6 @@ namespace {
     void acquire() override
     {
       mSamps = buffer_locksamples(getBuffer());
-      
     }
     
     void release()override
@@ -147,18 +136,24 @@ namespace {
       return v.col(rankIdx  + channel * mRank);
     }
     
-    //Return a view of all the data
-    FluidTensorView<float,2> samps() override
-    {
-      return {this->mSamps, 0, numFrames(), numChans() * this->mRank};
-    }
+//    //Return a view of all the data
+//    FluidTensorView<float,2> samps() override
+//    {
+//      return {this->mSamps, 0, numFrames(), numChans() * this->mRank};
+//    }
     
-    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
+    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
     {
-      auto s = samps();
-      return s(fluid::slice(offset, nframes), fluid::slice(chanoffset, chans));
+      auto s = FluidTensorView<float,2>(this->mSamps, 0, numFrames(), numChans() * this->mRank);
+      return s(fluid::slice(offset, nframes), fluid::slice(chanoffset, 1)).col(0);
     }
 
+    t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) override
+    {
+      return (mName == s) && valid()? buffer_ref_notify(mBufref, s, msg, sender, data): 0;
+    }
+    
+    
     size_t numFrames() const override
     {
       return valid() ? buffer_getframecount(getBuffer()) : 0;
@@ -187,7 +182,7 @@ namespace {
     
     t_object *getBuffer() const
     {
-      return mBufref ? buffer_ref_getobject(mBufref) : nullptr;
+      return mBufref && buffer_ref_exists(mBufref) ? buffer_ref_getobject(mBufref) : nullptr;
     }
     
     void swap(MaxBufferData&& other)
@@ -316,17 +311,21 @@ namespace {
       return FluidTensorView<float,1>(nullptr,0,0);
     }
     
-    //Return a view of all the data
-    FluidTensorView<float,2> samps() override
-    {
-      assert("I don't beleive this should happen");
-      return FluidTensorView<float,2>(nullptr,0,0,0);
-    }
+//    //Return a view of all the data
+//    FluidTensorView<float,2> samps() override
+//    {
+//      assert("I don't beleive this should happen");
+//      return FluidTensorView<float,2>(nullptr,0,0,0);
+//    }
     
-    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
+    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
     {
-      assert("I don't beleive this should happen");
-      return FluidTensorView<float,2>(nullptr,0,0,0);
+      if(valid() && mBufs.size() > 0 && chanoffset < mBufs.size())
+      {
+        //TODO this isn't ideal
+        return mBufs[chanoffset].samps(offset,nframes,0);
+      }
+      return FluidTensorView<float,1>(nullptr,0,0,0);
     }
     
     size_t numFrames() const override
@@ -342,6 +341,17 @@ namespace {
       return 0;
     }
     
+    
+    t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) override
+    {
+      if(valid() && mBufs.size() > 0)
+      {
+        for(auto&& b: mBufs)
+          b.notify(s, msg, sender,data);
+      }
+      return 0;
+    }
+    
     size_t numChans() const override
     {
       if (valid() && mBufs.size() > 0)
@@ -350,7 +360,7 @@ namespace {
           return lhs.numChans() < rhs.numChans();
         } );
         
-        return narrowestBuffer.numChans();
+        return narrowestBuffer.numChans() * rank();
       }
       return 0;
     }
@@ -386,11 +396,19 @@ namespace {
   public:
     //    MaxBufferAdaptor(MaxBufferAdaptor&) = delete;
     
-    MaxBufferAdaptor(t_object* x, t_symbol* name): MaxBufferRef(x, name) {}
+    MaxBufferAdaptor(t_object* x, t_symbol* name): MaxBufferRef(x, name)
+    {
+      update(); 
+    }
     
     void acquire() override
     {
-      
+      if(mData)
+         mData->acquire();
+    }
+    
+    void update()
+    {
       //Test for buffer
       t_buffer_ref* buf_ref = buffer_ref_new(mHostObject, mName);
       if(buf_ref && buffer_ref_exists(buf_ref))
@@ -399,7 +417,7 @@ namespace {
         std::unique_ptr<MaxBufferView> p(new MaxBufferData(mHostObject,mName));
         mData = std::move(p);
         
-        object_free(buf_ref); 
+        object_free(buf_ref);
         
       }
       //The s_thing of a polybuffer t_symbol* binds to a class called
@@ -409,15 +427,19 @@ namespace {
         std::unique_ptr<MaxBufferView> p(new PolyBufferAdaptor(mHostObject,mName));
         mData = std::move(p);
       }
-      
-      if(mData)
-        mData->acquire();
     }
+    
     
     void release() override
     {
       if(mData)
         mData->release();
+    }
+    
+    void notify(t_symbol* s, t_symbol* msg, void* sender, void* data)
+    {
+      if(mData)
+        mData->notify(s, msg, sender, data);
     }
     
     bool valid() const override
@@ -437,15 +459,15 @@ namespace {
       return mData ?  mData->samps(channel, rankIdx) : emptyView() ;
     }
     
-    //Return a view of all the data
-    FluidTensorView<float,2> samps() override
-    {
-      return mData? mData->samps() : FluidTensorView<float,2>(emptyView());
-    }
+//    //Return a view of all the data
+//    FluidTensorView<float,2> samps() override
+//    {
+//      return mData? mData->samps() : FluidTensorView<float,2>(emptyView());
+//    }
     
-    FluidTensorView<float,2> samps(size_t offset, size_t nframes, size_t chanoffset, size_t chans) override
+    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
     {
-      return  mData ? mData->samps(offset, nframes,chanoffset,chans) : FluidTensorView<float,2>(emptyView());
+      return  mData ? mData->samps(offset, nframes,chanoffset) : emptyView();
     }
     
     size_t numFrames() const override
@@ -479,7 +501,7 @@ namespace {
     {
       MaxBufferAdaptor* a = dynamic_cast<MaxBufferAdaptor*>(rhs);
       
-      return a && mData && (mData->getName() == a->getName());
+      return a && mData && (mData->name() == a->name());
     }
     
     std::unique_ptr<MaxBufferView> mData;
@@ -490,39 +512,48 @@ namespace {
   
   class MaxNonRealTimeBase: public MaxClass_Base
   {
+    using parameters = std::vector<parameter::Instance>&;
   public:
-   
-//    template <class T> struct AttrAccessor { typedef t_max_err (T::*MethodAttrAccessor) (t_object *attr, long ac, t_atom *av, std::vector<parameter::Instance>& p); };
-    
-//    template <class T> struct AttrGetter { typedef  t_max_err (T::*MethodAttrGetter) (t_object *attr, long *argc, t_atom **argv,std::vector<parameter::Instance>& p);};
-//
-    
-//    template <typename T>
-//    using MethodAttrGetter = t_max_err (T::*) (t_object *attr, long *argc, t_atom **argv,std::vector<parameter::Instance>& p);
-//
-//    template <typename T>
-//    using ParamsMethod = std::vector<parameter::Instance>& (T::*) ();
-//
-//    template <class T, typename AttrAccessor<T>::MethodAttrAccessor F>
-//    static void call(T *x, t_object *attr, long ac, t_atom *av) {((x)->*F)(attr, ac, av, ((x)->getParams())); };
-//
-//    template <class T, MethodAttrGetter<T> F, ParamsMethod<T> P>
-//    static void call(T *x, t_object *attr, long *ac, t_atom **av) {((x)->*F)(attr, ac, av, ((x)->*P)()); };
-//
-//
-//    template <class T, MethodAttrGetter<T> GET, typename AttrAccessor<T>::MethodAttrAccessor SET, ParamsMethod<T> P>
-//    static void attrAccessors(t_class *c, const char *attrname)
-//    {
-//      CLASS_ATTR_ACCESSORS(c, attrname, ((method)call<T,GET,P>), ((method)call<T,SET>));
-//    }
 
-    template <class T, typename Gimme<T>::MethodGimme F>
-    static void call(T* x, t_symbol* s, long argc, t_atom* argv) { ((x)->*F)(s, argc, argv);};
+    template <class T>
+    struct Notify{ typedef t_max_err (T::*MethodNotify) (t_symbol*,t_symbol*,void*,void*,parameters); };
+    template <class T, parameters (T::*P)()>
+    static t_max_err notifyDispatch(T *x, t_symbol *s, t_symbol *msg, void *sender, void *data) {
+      return x->notify(s, msg, sender, data,(x->*P)());
+    }
+    template <class T, parameters (T::*P)()>
+    static void addNotify(t_class *c) { class_addmethod(c, (method) notifyDispatch<T, P>, "notify", A_CANT, 0); }
+    
+    
+    
+//    template <class T, typename Gimme<T>::MethodGimme F>
+//    static void call(T* x, t_symbol* s, long argc, t_atom* argv) { ((x)->*F)(s, argc, argv);};
+    
+    
+
+    
+    t_max_err notify(t_symbol* s, t_symbol* msg, void *sender, void *data,parameters params)
+    {
+      t_symbol* sender_name = (t_symbol*)object_method((t_object*)sender,gensym("getname"));
+
+      for(auto&& p: params)
+      {
+        if(p.getDescriptor().getType() == parameter::Type::Buffer)
+        {
+          auto b = static_cast<MaxBufferAdaptor*>(p.getBuffer());
+          if(b)
+            b->notify(s, msg, sender, data);
+        }
+      }
+      return 0;
+    }
+    
+    
     
     template <class T, typename Gimme<T>::MethodGimme F>
     void deferMethod(t_symbol* s, long argc, t_atom* av)
     {
-      defer(this, (method)call<T,F>, s, argc, av); 
+      defer(this, (method)MaxClass_Base::call<T,F>, s, argc, av); 
     }
     
     template<typename Wrapper, std::vector<parameter::Instance>&(Wrapper::*F)()>
@@ -598,7 +629,7 @@ namespace {
           {
             max::MaxBufferAdaptor* b = dynamic_cast<max::MaxBufferAdaptor*>(p.getBuffer());
             if(b)
-              atom_setsym(*argv, b->getName());
+              atom_setsym(*argv, b->name());
           }
           break;
         }
@@ -613,6 +644,10 @@ namespace {
     template <typename Client, typename Wrapper>
     static void makeAttributes(t_class* c, bool hideInstantiation = false)
     {
+      
+      MaxNonRealTimeBase::addNotify<Wrapper, &Wrapper::getParams>(c);
+      
+      
       for(auto&& d: Client::getParamDescriptors())
       {
         std::cout << d<< '\n';

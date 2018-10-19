@@ -71,6 +71,10 @@ namespace max{
                                  : SignalPointer(new scalar_signal_wrapper());
       outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
       
+      for(auto&& p:getParams())
+        if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+          (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
+      
       bool isOK;
       std::string feedback;
       

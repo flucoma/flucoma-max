@@ -90,6 +90,10 @@ private:
       }
     }
     
+    for(auto&& p:getParams())
+      if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+        (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
+    
     bool parametersOk;
     stn::SinesClient::ProcessModel processModel;
     std::string whatHappened;//this will give us a message to pass back if param check fails

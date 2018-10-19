@@ -107,7 +107,10 @@ private:
       }
     }
     
-    
+    for(auto&& p:getParams())
+      if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+        (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
+
     
     bool parametersOk;
     nmf::NMFClient::ProcessModel processModel;

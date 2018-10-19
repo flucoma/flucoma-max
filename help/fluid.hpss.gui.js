@@ -25,7 +25,6 @@ function bang() {
     framecircle(0.02);
   }
   refresh();
-  outlet(0,Math.pow(10,(freq1 + 2) * 0.75) * 20,thresh1 * 50,Math.pow(10,(freq2 + 2) * 0.75) * 20,thresh2 * 50);
 }
 
 function clear () {
@@ -34,6 +33,7 @@ function clear () {
   freq2 = 1;
   thresh2 = 0;
   bang();
+  outlet(0,Math.pow(10,(freq1 + 2) * 0.75) * 20,thresh1 * 50,Math.pow(10,(freq2 + 2) * 0.75) * 20,thresh2 * 50);
 }
 
 function onclick (x,y) {
@@ -85,4 +85,5 @@ function ondrag (x, y) {
       break;
   }
   bang();
+  outlet(0,Math.pow(10,(freq1 + 2) * 0.75) * 20,thresh1 * 50,Math.pow(10,(freq2 + 2) * 0.75) * 20,thresh2 * 50);
 }

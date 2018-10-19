@@ -115,7 +115,9 @@ namespace fluid {
 //        fluid_obj->getParams()[1].setLong(hop_size);
 //        fluid_obj->getParams()[2].setLong(fft_size);
         
-        
+        for(auto&& p:getParams())
+          if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+            (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
         
         bool isOK;
         std::string feedback;
