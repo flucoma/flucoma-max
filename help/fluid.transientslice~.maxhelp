@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 542.0, 154.0, 837.0, 934.0 ],
+		"rect" : [ 34.0, 79.0, 892.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,6 +40,124 @@
 		"isolateaudio" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 37.0, 224.0, 44.0, 33.0 ],
+					"style" : "",
+					"text" : "in [0]\nout [0]"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 83.0, 224.0, 648.0, 33.0 ],
+					"style" : "",
+					"text" : "The audio input\nImpulses at detected transients. The latency between the input and the output is (blockSize + padSize - order) samples."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"linecount" : 12,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 119.0, 340.0, 916.0, 167.0 ],
+					"style" : "",
+					"text" : "The order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positives.\nThe window size in sample within with positive detections will be clumped together to avoid overdetecting in time. No slice will be shorter than this duration."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"linecount" : 12,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 340.0, 92.0, 167.0 ],
+					"style" : "",
+					"text" : "order\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 67.0, 223.0, 20.0 ],
+					"style" : "",
+					"text" : "Transient-Based Real-Time Audio Slicer"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 24.0,
+					"id" : "obj-10",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 41.0, 220.0, 33.0 ],
+					"style" : "",
+					"text" : "Fluid.TransientSlice"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 11.0,
+					"id" : "obj-8",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 833.0, 758.0, 31.0 ],
+					"style" : "",
+					"text" : "[1] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 119.0, 846.0, 60.0 ],
+					"style" : "",
+					"text" : "This class implements a real-time transient-based slice extractor relying on the same algorithm than Classes/FluidBufTransients using clicks/transients/derivation/anomaly in the signal to estimate the slicing points. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return an audio steam with sample-long impulses at estimated starting points of the different slices."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontsize" : 16.0,
+					"id" : "obj-3",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 93.0, 92.0, 24.0 ],
+					"style" : "",
+					"text" : "Description"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -54,7 +172,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 542.0, 180.0, 837.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 892.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,6 +202,108 @@
 						"showontab" : 1,
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-51",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 555.0, 302.0, 187.0, 20.0 ],
+									"style" : "",
+									"text" : "update the latency compensation"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-49",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 160.0, 209.0, 150.0, 20.0 ],
+									"style" : "",
+									"text" : "change settings"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-47",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 358.0, 76.0, 150.0, 20.0 ],
+									"style" : "",
+									"text" : "select a source"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-35",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 132.0, 208.0, 20.0, 20.0 ],
+									"presentation_rect" : [ 1231.0, 374.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-33",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 330.5, 76.0, 20.0, 20.0 ],
+									"presentation_rect" : [ 1215.0, 327.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-28",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 528.0, 300.0, 20.0, 20.0 ],
+									"presentation_rect" : [ 1215.0, 387.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"autopopulate" : 1,
 									"depth" : 1,
@@ -769,10 +989,59 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "max6box",
+								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6inlet",
+								"default" : 								{
+									"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6message",
+								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgfillcolor" : 									{
+										"type" : "gradient",
+										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "max6box",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6outlet",
+								"default" : 								{
+									"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
-					"patching_rect" : [ 28.0, 153.0, 110.0, 22.0 ],
+					"patching_rect" : [ 154.0, 1012.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -788,6 +1057,7 @@
 			}
 , 			{
 				"box" : 				{
+					"hidden" : 1,
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -802,7 +1072,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 837.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 892.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -833,6 +1103,86 @@
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 456.0, 734.0, 150.0, 20.0 ],
+									"style" : "",
+									"text" : "start audio"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-25",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 82.0, 856.0, 151.0, 20.0 ],
+									"style" : "",
+									"text" : "sample accurate detection"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-33",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 429.0, 734.0, 20.0, 20.0 ],
+									"presentation_rect" : [ 1215.0, 327.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-32",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 56.0, 856.0, 20.0, 20.0 ],
+									"presentation_rect" : [ 1216.0, 359.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 489.0, 405.0, 150.0, 20.0 ],
+									"style" : "",
+									"text" : "latency calculator"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "scope~",
 									"numinlets" : 2,
@@ -849,7 +1199,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 319.0, 547.0, 24.0, 22.0 ],
+									"patching_rect" : [ 519.0, 520.0, 24.0, 22.0 ],
 									"style" : "",
 									"text" : "t b"
 								}
@@ -897,7 +1247,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 383.0, 513.0, 50.0, 22.0 ],
+									"patching_rect" : [ 590.0, 507.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -908,7 +1258,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 392.5, 470.0, 50.0, 20.0 ],
+									"patching_rect" : [ 595.5, 476.0, 50.0, 20.0 ],
 									"style" : "",
 									"text" : "order"
 								}
@@ -922,7 +1272,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 282.0, 470.0, 50.0, 22.0 ],
+									"patching_rect" : [ 489.0, 464.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -935,7 +1285,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 336.5, 482.0, 50.0, 22.0 ],
+									"patching_rect" : [ 543.5, 476.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -947,7 +1297,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 290.0, 572.0, 110.0, 22.0 ],
+									"patching_rect" : [ 490.0, 545.0, 110.0, 22.0 ],
 									"style" : "",
 									"text" : "expr $i1 + $i2 - $i3"
 								}
@@ -956,11 +1306,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 340.5, 448.0, 50.0, 33.0 ],
+									"patching_rect" : [ 547.5, 442.0, 53.0, 20.0 ],
 									"style" : "",
 									"text" : "padding"
 								}
@@ -972,7 +1321,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 282.0, 439.0, 39.0, 20.0 ],
+									"patching_rect" : [ 489.0, 433.0, 39.0, 20.0 ],
 									"style" : "",
 									"text" : "block"
 								}
@@ -1076,7 +1425,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 111.0, 168.0, 41.0, 22.0 ],
+									"patching_rect" : [ 56.0, 195.0, 41.0, 22.0 ],
 									"style" : "",
 									"text" : "click~"
 								}
@@ -1089,7 +1438,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 111.0, 134.0, 128.0, 22.0 ],
+									"patching_rect" : [ 56.0, 161.0, 128.0, 22.0 ],
 									"style" : "",
 									"text" : "metro 1000 @active 1"
 								}
@@ -1279,10 +1628,59 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "max6box",
+								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6inlet",
+								"default" : 								{
+									"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6message",
+								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgfillcolor" : 									{
+										"type" : "gradient",
+										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "max6box",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6outlet",
+								"default" : 								{
+									"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
-					"patching_rect" : [ 28.0, 79.0, 110.0, 22.0 ],
+					"patching_rect" : [ 29.0, 1012.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
