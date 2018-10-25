@@ -11,8 +11,14 @@ add_library(
 )
 target_link_libraries(${PROJECT_NAME} FLUID_DECOMPOSITION)
 target_include_directories(
-	${PROJECT_NAME} PRIVATE
+	${PROJECT_NAME}
+	PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
+)
+
+target_include_directories(
+		${PROJECT_NAME}
+	SYSTEM PRIVATE
 	"${C74_MAX_INCLUDES}"
 	"${C74_MSP_INCLUDES}"
 	"${C74_JIT_INCLUDES}"
