@@ -51,7 +51,7 @@ private:
       switch(atom_gettype(av + i))
       {
         case A_SYM:
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Buffer)
+          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -64,8 +64,8 @@ private:
         case A_FLOAT:
         case A_LONG:
         {
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
-                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float)
+          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
+                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -76,7 +76,7 @@ private:
           
           parameter::Instance& p = getParams()[paramIdx++];
           
-          if(p.getDescriptor().getType() == parameter::Type::Long)
+          if(p.getDescriptor().getType() == parameter::Type::kLong)
           {
             p.setLong(atom_getlong(av + i));
           }
@@ -95,7 +95,7 @@ private:
     buf::BufferComposeClient::ProcessModel processModel;
     
     for(auto&& p:getParams())
-      if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+      if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
           (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
 
     

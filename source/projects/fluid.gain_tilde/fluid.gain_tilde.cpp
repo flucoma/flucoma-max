@@ -72,7 +72,7 @@ namespace max{
       outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
       
       for(auto&& p:getParams())
-        if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+        if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
           (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
       
       bool isOK;
@@ -87,7 +87,7 @@ namespace max{
       
       
       //TODO: I imagine some algorithms will need the sample rate in future as well
-      fluid_obj.set_host_buffer_size(maxvectorsize);
+      fluid_obj.setHostBufferSize(maxvectorsize);
       fluid_obj.reset();
       addPerform<FluidGainMax, &FluidGainMax::perform>(dsp64);
     }
@@ -97,7 +97,7 @@ namespace max{
       inputWrapper[0]->set(ins[0], 0);
       inputWrapper[1]->set(ins[1], parameter::lookupParam("gain", getParams()).getFloat());
       outputWrapper[0]->set(outs[0],0);
-      fluid_obj.do_process(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,2,1);
+      fluid_obj.doProcess(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,2,1);
     }
     
     std::vector<parameter::Instance>& getParams()

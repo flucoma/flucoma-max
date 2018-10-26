@@ -46,8 +46,8 @@ namespace fluid {
             case A_FLOAT:
             case A_LONG:
             {
-              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Long
-                     && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Float)
+              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
+                     && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -58,7 +58,7 @@ namespace fluid {
               }
               parameter::Instance& p = getParams()[paramIdx++];
               
-              if(p.getDescriptor().getType() == parameter::Type::Long)
+              if(p.getDescriptor().getType() == parameter::Type::kLong)
               {
                 p.setLong(atom_getlong(argv + i));
               }
@@ -70,7 +70,7 @@ namespace fluid {
             }
             case A_SYM:
             {
-              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::Buffer
+              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -123,7 +123,7 @@ namespace fluid {
 //        fluid_obj->getParams()[2].setLong(fft_size);
         
         for(auto&& p:getParams())
-          if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+          if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
             (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
 
         
@@ -142,7 +142,7 @@ namespace fluid {
         activationAtoms.reset(new t_atom[sizeLimit()]);
         
         //TODO: I imagine some algorithms will need the sample rate in future as well
-        fluid_obj.set_host_buffer_size(maxvectorsize);
+        fluid_obj.setHostBufferSize(maxvectorsize);
         fluid_obj.reset();
         addPerform<NMFMatcher, &NMFMatcher::perform>(dsp64);
       }
@@ -161,7 +161,7 @@ namespace fluid {
       {
         inputWrapper[0]->set(ins[0], 0);
 //        outputWrapper[0]->set(outs[0],0);
-        fluid_obj.do_process_noOLA(inputWrapper.begin(),inputWrapper.end(),outputWrappers.begin(), outputWrappers.end(), sampleframes,1,mRank);
+        fluid_obj.doProcessNoOla(inputWrapper.begin(),inputWrapper.end(),outputWrappers.begin(), outputWrappers.end(), sampleframes,1,mRank);
         
         
         for(size_t i = 0; i < mRank; ++i)

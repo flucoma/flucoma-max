@@ -145,7 +145,7 @@ namespace {
     FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
     {
       auto s = FluidTensorView<float,2>(this->mSamps, 0, numFrames(), numChans() * this->mRank);
-      return s(fluid::slice(offset, nframes), fluid::slice(chanoffset, 1)).col(0);
+      return s(fluid::Slice(offset, nframes), fluid::Slice(chanoffset, 1)).col(0);
     }
 
     t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) override
@@ -538,7 +538,7 @@ namespace {
 
       for(auto&& p: params)
       {
-        if(p.getDescriptor().getType() == parameter::Type::Buffer)
+        if(p.getDescriptor().getType() == parameter::Type::kBuffer)
         {
           auto b = static_cast<MaxBufferAdaptor*>(p.getBuffer());
           if(b)
@@ -576,19 +576,19 @@ namespace {
       
       switch(p.getDescriptor().getType())
       {
-        case parameter::Type::Float:
+        case parameter::Type::kFloat:
         {
           p.setFloat(atom_getfloat(argv));
           p.checkRange();
           break;
         }
-        case parameter::Type::Long:
+        case parameter::Type::kLong:
         {
           p.setLong(atom_getlong(argv));
           p.checkRange();
           break;
         }
-        case parameter::Type::Buffer:
+        case parameter::Type::kBuffer:
         {
           t_symbol* s = atom_getsym(argv);
           p.setBuffer(new max::MaxBufferAdaptor(*this,s));
@@ -613,17 +613,17 @@ namespace {
       
       switch(p.getDescriptor().getType())
       {
-        case parameter::Type::Float:
+        case parameter::Type::kFloat:
         {
           atom_setfloat(*argv, p.getFloat());
           break;
         }
-        case parameter::Type::Long:
+        case parameter::Type::kLong:
         {
           atom_setlong(*argv, p.getLong());
           break;
         }
-        case parameter::Type::Buffer:
+        case parameter::Type::kBuffer:
         {
           if(p.getBuffer())
           {
@@ -655,24 +655,24 @@ namespace {
         if(!(d.instantiation() && !d.hasDefault())){
           switch(d.getType())
           {
-            case parameter::Type::Float :
+            case parameter::Type::kFloat :
             
               CLASS_ATTR_DOUBLE(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
 
-            case parameter::Type::Long :
+            case parameter::Type::kLong :
             {
               CLASS_ATTR_LONG(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
             }
               
-            case parameter::Type::Buffer :
+            case parameter::Type::kBuffer :
             {
               CLASS_ATTR_SYM(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
             }
               
-            case parameter::Type::Enum :
+            case parameter::Type::kEnum :
             {
 //              CLASS_ATTR_ENUM(c, d.getName(), 0, mObject);
               break;
