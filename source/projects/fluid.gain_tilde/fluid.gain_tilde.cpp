@@ -15,7 +15,7 @@ namespace fluid{
 namespace max{
   class FluidGainMax: public max::MaxNonRealTimeBase
   {
-    using audio_client = audio::GainAudioClient<double, double>;
+    using audio_client = client::GainAudioClient<double, double>;
     using audio_signal_wrapper = audio_client::AudioSignal;
     using scalar_signal_wrapper = audio_client::ScalarSignal;
     using signal_wrapper = audio_client::Signal;
@@ -37,8 +37,8 @@ namespace max{
         auto atom_type = atom_gettype(argv);
         if(atom_type == A_LONG || atom_type == A_FLOAT)
         {
-          parameter::lookupParam("winsize", getParams()).setLong(atom_getlong(argv));
-          parameter::lookupParam("hopsize", getParams()).setLong(atom_getlong(argv));
+          client::lookupParam("winsize", getParams()).setLong(atom_getlong(argv));
+          client::lookupParam("hopsize", getParams()).setLong(atom_getlong(argv));
         }
       }
       
@@ -72,7 +72,7 @@ namespace max{
       outputWrapper[0] = SignalPointer(new audio_signal_wrapper());
       
       for(auto&& p:getParams())
-        if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+        if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
           (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
       
       bool isOK;
@@ -95,12 +95,12 @@ namespace max{
     void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
     {
       inputWrapper[0]->set(ins[0], 0);
-      inputWrapper[1]->set(ins[1], parameter::lookupParam("gain", getParams()).getFloat());
+      inputWrapper[1]->set(ins[1], client::lookupParam("gain", getParams()).getFloat());
       outputWrapper[0]->set(outs[0],0);
       fluid_obj.doProcess(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,2,1);
     }
     
-    std::vector<parameter::Instance>& getParams()
+    std::vector<client::Instance>& getParams()
     {
       return fluid_obj.getParams();
     }

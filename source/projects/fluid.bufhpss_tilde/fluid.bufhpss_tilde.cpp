@@ -6,13 +6,14 @@
 #include <algorithm>
 
 namespace fluid {
+namespace wrapper{
 class HPSS_NRT: public fluid::max::MaxNonRealTimeBase
 {
 public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<HPSS_NRT,&HPSS_NRT::process>(c, "process");
-    makeAttributes<hpss::HPSSClient,HPSS_NRT>(c,true);
+    makeAttributes<client::HPSSClient,HPSS_NRT>(c,true);
   }
 
   HPSS_NRT(t_symbol *s, long argc, t_atom *argv)
@@ -32,7 +33,7 @@ public:
     deferMethod<HPSS_NRT,&HPSS_NRT::do_process>(s, ac, av);
   }
   
-  std::vector<parameter::Instance>& getParams()
+  std::vector<client::Instance>& getParams()
   {
     return bufferHPSS.getParams();
   }
@@ -50,7 +51,7 @@ private:
       switch(atom_gettype(av + i))
       {
         case A_SYM:
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kBuffer)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -63,8 +64,8 @@ private:
         case A_FLOAT:
         case A_LONG:
         {
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
-                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kLong
+                && getParams()[paramIdx].getDescriptor().getType() != client::Type::kFloat)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -73,9 +74,9 @@ private:
             }
           }
           
-          parameter::Instance& p = getParams()[paramIdx++];
+          client::Instance& p = getParams()[paramIdx++];
           
-          if(p.getDescriptor().getType() == parameter::Type::kLong)
+          if(p.getDescriptor().getType() == client::Type::kLong)
           {
             p.setLong(atom_getlong(av + i));
           }
@@ -91,11 +92,11 @@ private:
     }
     
     for(auto&& p:getParams())
-      if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+      if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
         (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
     
     bool parametersOk;
-    hpss::HPSSClient::ProcessModel processModel;
+    client::HPSSClient::ProcessModel processModel;
     std::string whatHappened;//this will give us a message to pass back if param check fails
     std::tie(parametersOk,whatHappened,processModel) = bufferHPSS.sanityCheck();
     if(!parametersOk)
@@ -114,13 +115,14 @@ private:
     
     outlet_bang(mOutlets[0]);
   }
-  hpss::HPSSClient bufferHPSS;
+  client::HPSSClient bufferHPSS;
   std::vector<t_object*> mOutlets;
 };
-}
+} //namespace wrapper
+} //namespace fluid
 void ext_main(void *r)
 {
-  fluid::HPSS_NRT::makeClass<fluid::HPSS_NRT>(CLASS_BOX, "fluid.bufhpss~");
+  fluid::wrapper::HPSS_NRT::makeClass<fluid::wrapper::HPSS_NRT>(CLASS_BOX, "fluid.bufhpss~");
 }
 
 

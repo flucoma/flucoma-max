@@ -16,18 +16,19 @@
 #include <algorithm>
 
 namespace fluid {
+namespace  wrapper{
 class NMFMax: public fluid::max::MaxNonRealTimeBase
 {
 public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<NMFMax,&NMFMax::decompose>(c, "process");
-    makeAttributes<nmf::NMFClient,NMFMax>(c,true);
+    makeAttributes<client::NMFClient,NMFMax>(c,true);
   }
 
   NMFMax(t_symbol *s, long argc, t_atom *argv)
   {
-//    mParams = nmf::NMFClient::newParameterSet();
+//    mParams = algorithm::NMFClient::newParameterSet();
     attr_args_process(*this, argc, argv);
     mOutlets.push_back((t_object*)bangout(this));
   }
@@ -54,7 +55,7 @@ public:
     deferMethod<NMFMax,&NMFMax::do_decompose>(s, ac, av);
   }
   
-  std::vector<parameter::Instance>& getParams()
+  std::vector<client::Instance>& getParams()
   {
     return nmf.getParams(); 
   }
@@ -67,7 +68,7 @@ private:
       switch(atom_gettype(av + i))
       {
         case A_SYM:
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kBuffer)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -80,8 +81,8 @@ private:
         case A_FLOAT:
         case A_LONG:
         {
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
-                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kLong
+                && getParams()[paramIdx].getDescriptor().getType() != client::Type::kFloat)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -90,9 +91,9 @@ private:
             }
           }
           
-          parameter::Instance& p = getParams()[paramIdx++];
+          client::Instance& p = getParams()[paramIdx++];
           
-          if(p.getDescriptor().getType() == parameter::Type::kLong)
+          if(p.getDescriptor().getType() == client::Type::kLong)
           {
             p.setLong(atom_getlong(av + i));
           }
@@ -108,12 +109,12 @@ private:
     }
     
     for(auto&& p:getParams())
-      if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+      if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
         (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
 
     
     bool parametersOk;
-    nmf::NMFClient::ProcessModel processModel;
+    client::NMFClient::ProcessModel processModel;
     std::string whatHappened;//this will give us a message to pass back if param check fails
     std::tie(parametersOk,whatHappened,processModel) = nmf.sanityCheck();
     if(!parametersOk)
@@ -133,13 +134,14 @@ private:
     outlet_bang(mOutlets[0]);
   }
   
-  nmf::NMFClient nmf; 
+  client::NMFClient nmf;
   std::vector<t_object*> mOutlets;
 };
 }//namespace
+}
 void ext_main(void *r)
 {
-  fluid::NMFMax::makeClass<fluid::NMFMax>(CLASS_BOX, "fluid.bufnmf~");
+  fluid::wrapper::NMFMax::makeClass<fluid::wrapper::NMFMax>(CLASS_BOX, "fluid.bufnmf~");
 }
 
 

@@ -18,14 +18,14 @@
 
 
 namespace fluid {
-  namespace segmentation {
+  namespace wrapper {
 class TransientSliceNRTMax: public fluid::max::MaxNonRealTimeBase
 {
 public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<TransientSliceNRTMax,&TransientSliceNRTMax::process>(c, "process");
-    makeAttributes<TransientSliceNRT,TransientSliceNRTMax>(c,true);
+    makeAttributes<client::TransientSliceNRT,TransientSliceNRTMax>(c,true);
   }
 
   TransientSliceNRTMax(t_symbol *s, long argc, t_atom *argv)
@@ -46,7 +46,7 @@ public:
     deferMethod<TransientSliceNRTMax,&TransientSliceNRTMax::do_process>(s, ac, av);
   }
   
-  std::vector<parameter::Instance>& getParams()
+  std::vector<client::Instance>& getParams()
   {
     return trans.getParams();
   }
@@ -60,7 +60,7 @@ private:
       switch(atom_gettype(av + i))
       {
         case A_SYM:
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kBuffer)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -73,8 +73,8 @@ private:
         case A_FLOAT:
         case A_LONG:
         {
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
-                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kLong
+                && getParams()[paramIdx].getDescriptor().getType() != client::Type::kFloat)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -83,9 +83,9 @@ private:
             }
           }
           
-          parameter::Instance& p = getParams()[paramIdx++];
+          client::Instance& p = getParams()[paramIdx++];
           
-          if(p.getDescriptor().getType() == parameter::Type::kLong)
+          if(p.getDescriptor().getType() == client::Type::kLong)
           {
             p.setLong(atom_getlong(av + i));
           }
@@ -101,11 +101,11 @@ private:
     }
     
     for(auto&& p:getParams())
-      if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+      if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
         (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
     
     bool parametersOk;
-    TransientSliceNRT::ProcessModel processModel;
+    client::TransientSliceNRT::ProcessModel processModel;
     std::string whatHappened;//this will give us a message to pass back if param check fails
     std::tie(parametersOk,whatHappened,processModel) = trans.sanityCheck();
     if(!parametersOk)
@@ -123,14 +123,14 @@ private:
     
     outlet_bang(mOutlets[0]);
   }
-  TransientSliceNRT trans;
+  client::TransientSliceNRT trans;
   std::vector<t_object*> mOutlets;
 };
 }
 }
 void ext_main(void *r)
 {
-  fluid::segmentation::TransientSliceNRTMax::makeClass<fluid::segmentation::TransientSliceNRTMax>(CLASS_BOX, "fluid.buftransientslice~");
+  fluid::wrapper::TransientSliceNRTMax::makeClass<fluid::wrapper::TransientSliceNRTMax>(CLASS_BOX, "fluid.buftransientslice~");
 }
 
 

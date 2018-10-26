@@ -16,11 +16,11 @@
 
 
 namespace fluid {
-  namespace nmf {
+  namespace wrapper {
     
     class NMFMatcher: public max::MaxNonRealTimeBase
     {
-      using audio_client = NMFMatch<double, double>;
+      using audio_client = client::NMFMatch<double, double>;
       using audio_signal_wrapper = audio_client::AudioSignal;
       using scalar_signal_wrapper = audio_client::ScalarSignal;
       using signal_wrapper = audio_client::Signal<double>;
@@ -46,8 +46,8 @@ namespace fluid {
             case A_FLOAT:
             case A_LONG:
             {
-              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
-                     && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
+              while((getParams()[paramIdx].getDescriptor().getType() != client::Type::kLong
+                     && getParams()[paramIdx].getDescriptor().getType() != client::Type::kFloat)
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -56,9 +56,9 @@ namespace fluid {
                   throw std::invalid_argument("");
                 }
               }
-              parameter::Instance& p = getParams()[paramIdx++];
+              client::Instance& p = getParams()[paramIdx++];
               
-              if(p.getDescriptor().getType() == parameter::Type::kLong)
+              if(p.getDescriptor().getType() == client::Type::kLong)
               {
                 p.setLong(atom_getlong(argv + i));
               }
@@ -70,7 +70,7 @@ namespace fluid {
             }
             case A_SYM:
             {
-              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer
+              while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kBuffer
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -110,7 +110,7 @@ namespace fluid {
           return;
         }
         
-        mRank = parameter::lookupParam("rank", getParams()).getLong();
+        mRank = client::lookupParam("rank", getParams()).getLong();
 
         inputWrapper[0] = SignalPointer(new audio_signal_wrapper());
         outputWrappers.resize(mRank);
@@ -123,7 +123,7 @@ namespace fluid {
 //        fluid_obj->getParams()[2].setLong(fft_size);
         
         for(auto&& p:getParams())
-          if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+          if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
             (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
 
         
@@ -171,7 +171,7 @@ namespace fluid {
       }
     
       
-      std::vector<parameter::Instance>& getParams()
+      std::vector<client::Instance>& getParams()
       {
         return fluid_obj.getParams();
       }
@@ -180,7 +180,7 @@ namespace fluid {
       
       size_t sizeLimit()
       {
-         return std::min<size_t>(parameter::lookupParam("rank", getParams()).getLong(),32767);
+         return std::min<size_t>(client::lookupParam("rank", getParams()).getLong(),32767);
       }
       
       audio_client fluid_obj;
@@ -200,5 +200,5 @@ namespace fluid {
 
 void ext_main(void *r)
 {
-  fluid::nmf::NMFMatcher::makeClass<fluid::nmf::NMFMatcher>(CLASS_BOX, "fluid.nmfmatch~");
+  fluid::wrapper::NMFMatcher::makeClass<fluid::wrapper::NMFMatcher>(CLASS_BOX, "fluid.nmfmatch~");
 }

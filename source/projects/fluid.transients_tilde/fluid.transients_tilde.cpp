@@ -13,10 +13,10 @@
 
 
 namespace fluid {
-  namespace stn {
+  namespace wrapper {
     class Transients_RT: public max::MaxNonRealTimeBase
     {
-      using audio_client = TransientsClient<double, double>;
+      using audio_client = client::TransientsClient<double, double>;
       using audio_signal_wrapper = audio_client::AudioSignal;
       using scalar_signal_wrapper = audio_client::ScalarSignal;
       using signal_wrapper = audio_client::Signal<double>;
@@ -41,8 +41,8 @@ namespace fluid {
             case A_FLOAT:
             case A_LONG:
             {
-              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
-                    && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
+              while((getParams()[paramIdx].getDescriptor().getType() != client::Type::kLong
+                    && getParams()[paramIdx].getDescriptor().getType() != client::Type::kFloat)
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -51,9 +51,9 @@ namespace fluid {
                   throw std::invalid_argument("");;
                 }
               }
-              parameter::Instance& p = getParams()[paramIdx++];
+              client::Instance& p = getParams()[paramIdx++];
               
-              if(p.getDescriptor().getType() == parameter::Type::kLong)
+              if(p.getDescriptor().getType() == client::Type::kLong)
               {
                 p.setLong(atom_getlong(argv + i));
               }
@@ -65,7 +65,7 @@ namespace fluid {
             }
             case A_SYM:
             {
-              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer
+              while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kBuffer
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -106,7 +106,7 @@ namespace fluid {
         outputWrapper[1] = SignalPointer(new audio_signal_wrapper());
        
         for(auto&& p:getParams())
-          if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+          if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
             (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
         
         bool isOK;
@@ -133,7 +133,7 @@ namespace fluid {
         fluid_obj.doProcess(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,1,2);
       }
       
-      std::vector<parameter::Instance>& getParams()
+      std::vector<client::Instance>& getParams()
       {
         return fluid_obj.getParams();
       }
@@ -147,5 +147,5 @@ namespace fluid {
 
 void ext_main(void *r)
 {
-  fluid::stn::Transients_RT::makeClass<fluid::stn::Transients_RT>(CLASS_BOX, "fluid.transients~");
+  fluid::wrapper::Transients_RT::makeClass<fluid::wrapper::Transients_RT>(CLASS_BOX, "fluid.transients~");
 }

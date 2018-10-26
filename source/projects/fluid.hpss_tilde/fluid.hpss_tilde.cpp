@@ -23,10 +23,10 @@ using fluid::FluidTensorView;
 //using signal_wrapper = audio_client::Signal<double>;
 
 namespace fluid {
-  namespace hpss {
+  namespace wrapper {
     class HPSS_RT: public max::MaxNonRealTimeBase
     {
-      using audio_client = HPSSClient<double, double>;
+      using audio_client = client::HPSSClient<double, double>;
       using audio_signal_wrapper = audio_client::AudioSignal;
       using scalar_signal_wrapper = audio_client::ScalarSignal;
       using signal_wrapper = audio_client::Signal<double>;
@@ -57,8 +57,8 @@ namespace fluid {
             case A_FLOAT:
             case A_LONG:
             {
-              while((getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
-                    && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
+              while((getParams()[paramIdx].getDescriptor().getType() != client::Type::kLong
+                    && getParams()[paramIdx].getDescriptor().getType() != client::Type::kFloat)
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -67,9 +67,9 @@ namespace fluid {
                   throw std::invalid_argument("");
                 }
               }
-              parameter::Instance& p = getParams()[paramIdx++];
+              client::Instance& p = getParams()[paramIdx++];
               
-              if(p.getDescriptor().getType() == parameter::Type::kLong)
+              if(p.getDescriptor().getType() == client::Type::kLong)
               {
                 p.setLong(atom_getlong(argv + i));
               }
@@ -81,7 +81,7 @@ namespace fluid {
             }
             case A_SYM:
             {
-              while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer
+              while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kBuffer
                     || !(getParams()[paramIdx].getDescriptor().instantiation() && !getParams()[paramIdx].getDescriptor().hasDefault()))
               {
                 if(++paramIdx >= getParams().size())
@@ -127,7 +127,7 @@ namespace fluid {
         outlet_new(*this, "signal");
       }
       
-      t_max_err param_set(t_object *attr, long argc, t_atom *argv, std::vector<parameter::Instance>& params)
+      t_max_err param_set(t_object *attr, long argc, t_atom *argv, std::vector<client::Instance>& params)
       {
         
         struct Constraint{
@@ -149,7 +149,7 @@ namespace fluid {
         
         if(constraint != paramConstraints.end())
         {
-          double limit = parameter::lookupParam(constraint->second.param, getParams()).getFloat();
+          double limit = client::lookupParam(constraint->second.param, getParams()).getFloat();
           
           if(!constraint->second.condition(newval,limit))
           {
@@ -187,7 +187,7 @@ namespace fluid {
 //        fluid_obj->getParams()[4].setLong(fft_size);
         
         for(auto&& p:getParams())
-          if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+          if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
             (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
         
         bool isOK;
@@ -216,7 +216,7 @@ namespace fluid {
         fluid_obj.doProcess(inputWrapper.begin(),inputWrapper.end(), outputWrapper.begin(), outputWrapper.end(), sampleframes,1,3);
       }
       
-      std::vector<parameter::Instance>& getParams()
+      std::vector<client::Instance>& getParams()
       {
         return fluid_obj.getParams();
       }
@@ -226,10 +226,10 @@ namespace fluid {
       std::array<SignalPointer,1> inputWrapper;
       std::array<SignalPointer,3> outputWrapper;
     };
-  }
-}
+  } //namespace wrapper
+} //namespace fluid
 
 void ext_main(void *r)
 {
-  fluid::hpss::HPSS_RT::makeClass<fluid::hpss::HPSS_RT>(CLASS_BOX, "fluid.hpss~");
+  fluid::wrapper::HPSS_RT::makeClass<fluid::wrapper::HPSS_RT>(CLASS_BOX, "fluid.hpss~");
 }

@@ -374,7 +374,7 @@ namespace {
       return 0;
     }
   protected:
-//    bool equal(parameter::BufferAdaptor& rhs) const override
+//    bool equal(client::BufferAdaptor& rhs) const override
 //    {
 //      PolyBufferAdaptor* x = dynamic_cast<PolyBufferAdaptor*>(rhs);
 //      if(x && x->mName)
@@ -391,7 +391,7 @@ namespace {
   /***
    RAII for a Max buffer reference
    ***/
-  class MaxBufferAdaptor: public parameter::BufferAdaptor, public MaxBufferRef
+  class MaxBufferAdaptor: public client::BufferAdaptor, public MaxBufferRef
   {
   public:
     //    MaxBufferAdaptor(MaxBufferAdaptor&) = delete;
@@ -497,7 +497,7 @@ namespace {
 
 
     
-    bool equal(parameter::BufferAdaptor* rhs) const override
+    bool equal(client::BufferAdaptor* rhs) const override
     {
       MaxBufferAdaptor* a = dynamic_cast<MaxBufferAdaptor*>(rhs);
       
@@ -512,7 +512,7 @@ namespace {
   
   class MaxNonRealTimeBase: public MaxClass_Base
   {
-    using parameters = std::vector<parameter::Instance>&;
+    using parameters = std::vector<client::Instance>&;
   public:
 
     template <class T>
@@ -538,7 +538,7 @@ namespace {
 
       for(auto&& p: params)
       {
-        if(p.getDescriptor().getType() == parameter::Type::kBuffer)
+        if(p.getDescriptor().getType() == client::Type::kBuffer)
         {
           auto b = static_cast<MaxBufferAdaptor*>(p.getBuffer());
           if(b)
@@ -556,39 +556,39 @@ namespace {
       defer(this, (method)MaxClass_Base::call<T,F>, s, argc, av); 
     }
     
-    template<typename Wrapper, std::vector<parameter::Instance>&(Wrapper::*F)()>
+    template<typename Wrapper, std::vector<client::Instance>&(Wrapper::*F)()>
     static void getterDispatch(Wrapper* x, t_object *attr, long *ac, t_atom **av)
     {
       x->param_get(attr, ac, av,(x->*F)());
     }
     
-    template<typename Wrapper, std::vector<parameter::Instance>&(Wrapper::*F)()>
+    template<typename Wrapper, std::vector<client::Instance>&(Wrapper::*F)()>
     static void setterDispatch(Wrapper* x, t_object *attr, long ac, t_atom *av)
     {
       x->param_set(attr, ac, av,(x->*F)());
     }
      
-    t_max_err param_set(t_object *attr, long argc, t_atom *argv, std::vector<parameter::Instance>& params)
+    t_max_err param_set(t_object *attr, long argc, t_atom *argv, std::vector<client::Instance>& params)
     {
       t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
       
-      parameter::Instance& p = parameter::lookupParam(attrname->s_name, params);
+      client::Instance& p = client::lookupParam(attrname->s_name, params);
       
       switch(p.getDescriptor().getType())
       {
-        case parameter::Type::kFloat:
+        case client::Type::kFloat:
         {
           p.setFloat(atom_getfloat(argv));
           p.checkRange();
           break;
         }
-        case parameter::Type::kLong:
+        case client::Type::kLong:
         {
           p.setLong(atom_getlong(argv));
           p.checkRange();
           break;
         }
-        case parameter::Type::kBuffer:
+        case client::Type::kBuffer:
         {
           t_symbol* s = atom_getsym(argv);
           p.setBuffer(new max::MaxBufferAdaptor(*this,s));
@@ -601,11 +601,11 @@ namespace {
     }
     
     
-    t_max_err param_get(t_object *attr, long *argc, t_atom **argv,std::vector<parameter::Instance>& params)
+    t_max_err param_get(t_object *attr, long *argc, t_atom **argv,std::vector<client::Instance>& params)
     {
       t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
       
-      parameter::Instance& p = parameter::lookupParam(attrname->s_name, params);
+      client::Instance& p = client::lookupParam(attrname->s_name, params);
       
       char alloc;
       //    long size = 0;
@@ -613,17 +613,17 @@ namespace {
       
       switch(p.getDescriptor().getType())
       {
-        case parameter::Type::kFloat:
+        case client::Type::kFloat:
         {
           atom_setfloat(*argv, p.getFloat());
           break;
         }
-        case parameter::Type::kLong:
+        case client::Type::kLong:
         {
           atom_setlong(*argv, p.getLong());
           break;
         }
-        case parameter::Type::kBuffer:
+        case client::Type::kBuffer:
         {
           if(p.getBuffer())
           {
@@ -655,24 +655,24 @@ namespace {
         if(!(d.instantiation() && !d.hasDefault())){
           switch(d.getType())
           {
-            case parameter::Type::kFloat :
+            case client::Type::kFloat :
             
               CLASS_ATTR_DOUBLE(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
 
-            case parameter::Type::kLong :
+            case client::Type::kLong :
             {
               CLASS_ATTR_LONG(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
             }
               
-            case parameter::Type::kBuffer :
+            case client::Type::kBuffer :
             {
               CLASS_ATTR_SYM(c, d.getName().c_str(), 0, Wrapper, mDummy);
               break;
             }
               
-            case parameter::Type::kEnum :
+            case client::Type::kEnum :
             {
 //              CLASS_ATTR_ENUM(c, d.getName(), 0, mObject);
               break;

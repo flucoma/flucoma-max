@@ -6,13 +6,14 @@
 #include <algorithm>
 
 namespace fluid {
+namespace wrapper{
 class BufferCompose: public fluid::max::MaxNonRealTimeBase
 {
 public:
   static void classInit(t_class* c, t_symbol* nameSpace, const char* classname)
   {
     addMethod<BufferCompose,&BufferCompose::process>(c, "process");
-    makeAttributes<buf::BufferComposeClient,BufferCompose>(c,true);
+    makeAttributes<client::BufferComposeClient,BufferCompose>(c,true);
   }
 
   BufferCompose(t_symbol *s, long argc, t_atom *argv)
@@ -32,7 +33,7 @@ public:
     deferMethod<BufferCompose,&BufferCompose::do_process>(s, ac, av);
   }
   
-  std::vector<parameter::Instance>& getParams()
+  std::vector<client::Instance>& getParams()
   {
     return bufferCompose.getParams();
   }
@@ -51,7 +52,7 @@ private:
       switch(atom_gettype(av + i))
       {
         case A_SYM:
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kBuffer)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kBuffer)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -64,8 +65,8 @@ private:
         case A_FLOAT:
         case A_LONG:
         {
-          while(getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kLong
-                && getParams()[paramIdx].getDescriptor().getType() != parameter::Type::kFloat)
+          while(getParams()[paramIdx].getDescriptor().getType() != client::Type::kLong
+                && getParams()[paramIdx].getDescriptor().getType() != client::Type::kFloat)
           {
             if(++paramIdx >= getParams().size())
             {
@@ -74,9 +75,9 @@ private:
             }
           }
           
-          parameter::Instance& p = getParams()[paramIdx++];
+          client::Instance& p = getParams()[paramIdx++];
           
-          if(p.getDescriptor().getType() == parameter::Type::kLong)
+          if(p.getDescriptor().getType() == client::Type::kLong)
           {
             p.setLong(atom_getlong(av + i));
           }
@@ -92,10 +93,10 @@ private:
     }
     
     bool parametersOk = false;
-    buf::BufferComposeClient::ProcessModel processModel;
+    client::BufferComposeClient::ProcessModel processModel;
     
     for(auto&& p:getParams())
-      if(p.getDescriptor().getType() == parameter::Type::kBuffer && p.getBuffer())
+      if(p.getDescriptor().getType() == client::Type::kBuffer && p.getBuffer())
           (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
 
     
@@ -117,13 +118,14 @@ private:
     
     outlet_bang(mOutlets[0]);
   }
-  buf::BufferComposeClient bufferCompose;
+  client::BufferComposeClient bufferCompose;
   std::vector<t_object*> mOutlets;
 };
 }
+}
 void ext_main(void *r)
 {
-  fluid::BufferCompose::makeClass<fluid::BufferCompose>(CLASS_BOX, "fluid.bufcompose~");
+  fluid::wrapper::BufferCompose::makeClass<fluid::wrapper::BufferCompose>(CLASS_BOX, "fluid.bufcompose~");
 }
 
 
