@@ -20,6 +20,21 @@ namespace fluid {
     
     class NMFMatcher: public max::MaxNonRealTimeBase
     {
+      
+      class InPerform
+      {
+      public:
+        InPerform(t_int32_atomic* state): mState(state)
+        { ATOMIC_INCREMENT(mState); }
+        
+        ~InPerform() {ATOMIC_DECREMENT(mState); }
+        
+//        operator bool() { return mState; };
+        
+      private:
+        t_int32_atomic* mState;
+      };
+      
       using audio_client = NMFMatch<double, double>;
       using audio_signal_wrapper = audio_client::AudioSignal;
       using scalar_signal_wrapper = audio_client::ScalarSignal;
@@ -102,34 +117,70 @@ namespace fluid {
       }
 
       
+      
+      void param_set(t_object *attr, long argc, t_atom *argv, std::vector<parameter::Instance> &params)
+      {
+        MaxNonRealTimeBase::param_set(attr, argc, argv, params);
+
+        t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
+        
+
+        filterBuffer = parameter::lookupParam("filterbuf", params).getBuffer();
+        while(inPerform);
+        bufferValid = false;
+        
+        //validate
+        if(hasValidated && (std::string("filterbuf").compare(attrname->s_name)==0))
+        {
+          long fftsize = parameter::lookupParam("fftsize", params).getLong();
+          long maxrank = parameter::lookupParam("maxrank", params).getLong();
+
+          parameter::BufferAdaptor::Access buf(filterBuffer);
+          
+          if(buf.numFrames() != (fftsize / 2) + 1)
+          {
+            object_error(*this, "Filters buffer needs to be FFT Size / 2 + 1 frames");
+          }
+          
+          mRank = std::min<long>(buf.numChans(),maxrank);
+        }
+        while(inPerform);
+        bufferValid = true;
+      }
+      
       void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
       {
+        hasValidated = false;
 //        no audio in left channel? Then no-op
         if(!count[0])
         {
           return;
         }
+      
         
-        mRank = parameter::lookupParam("rank", getParams()).getLong();
+        for(auto&& p:getParams())
+          if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
+            (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
+        
 
+        mMaxRank = parameter::lookupParam("maxrank", getParams()).getLong();
+        filterBuffer = parameter::lookupParam("filterbuf", getParams()).getBuffer();
+        parameter::BufferAdaptor::Access buf(filterBuffer);
+        mRank = std::min<long>(buf.numChans(),mMaxRank);
+        
+        
+        
         inputWrapper[0] = SignalPointer(new audio_signal_wrapper());
-        outputWrappers.resize(mRank);
+        outputWrappers.resize(mMaxRank);
         for(auto&& w:outputWrappers)
           w.reset(new scalar_signal_wrapper());
-        
         
 //        fluid_obj.getParams()[0].setLong(window_size);
 //        fluid_obj->getParams()[1].setLong(hop_size);
 //        fluid_obj->getParams()[2].setLong(fft_size);
         
-        for(auto&& p:getParams())
-          if(p.getDescriptor().getType() == parameter::Type::Buffer && p.getBuffer())
-            (static_cast<max::MaxBufferAdaptor*>(p.getBuffer()))->update();
-
-        
         bool isOK;
         std::string feedback;
-        
         
         std::tie(isOK, feedback) = fluid_obj.sanityCheck();
         if(!isOK)
@@ -137,7 +188,7 @@ namespace fluid {
           object_error(*this,feedback.c_str());
           return;
         }
-        
+        hasValidated = true;
         
         activationAtoms.reset(new t_atom[sizeLimit()]);
         
@@ -159,17 +210,25 @@ namespace fluid {
       
       void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
       {
+        InPerform spinlock(&inPerform);
+        
+        if(!(filterBuffer && bufferValid))
+          return;
+        
         inputWrapper[0]->set(ins[0], 0);
 //        outputWrapper[0]->set(outs[0],0);
-        fluid_obj.do_process_noOLA(inputWrapper.begin(),inputWrapper.end(),outputWrappers.begin(), outputWrappers.end(), sampleframes,1,mRank);
+        fluid_obj.do_process_noOLA(inputWrapper.begin(),inputWrapper.end(),outputWrappers.begin(), outputWrappers.end(), sampleframes,1,mMaxRank);
         
+        parameter::BufferAdaptor::Access buf(filterBuffer);
         
         for(size_t i = 0; i < mRank; ++i)
           atom_setfloat(&activationAtoms[i], outputWrappers[i]->next());
-        
-        schedule_delay(*this, (method) &NMFMatcher::toOutletExternal, 0.0, nullptr, mRank, &activationAtoms[0]);
+
+        for(size_t i = mRank; i < mMaxRank ; ++i)
+          atom_setfloat(&activationAtoms[i], 0.);
+
+        schedule_delay(*this, (method) &NMFMatcher::toOutletExternal, 0.0, nullptr, mMaxRank, &activationAtoms[0]);
       }
-    
       
       std::vector<parameter::Instance>& getParams()
       {
@@ -180,7 +239,7 @@ namespace fluid {
       
       size_t sizeLimit()
       {
-         return std::min<size_t>(parameter::lookupParam("rank", getParams()).getLong(),32767);
+         return std::min<size_t>(parameter::lookupParam("maxrank", getParams()).getLong(),32767);
       }
       
       audio_client fluid_obj;
@@ -190,6 +249,11 @@ namespace fluid {
       void* listOutlet;
       std::unique_ptr<t_atom[]> activationAtoms;
       size_t mRank;
+      size_t mMaxRank = 0 ;
+      parameter::BufferAdaptor* filterBuffer;
+      bool hasValidated;
+      t_int32_atomic inPerform;
+      bool bufferValid;
 //      std::array<SignalPointer,1> outputWrapper;
 //      size_t window_size;
 //      size_t hop_size;
