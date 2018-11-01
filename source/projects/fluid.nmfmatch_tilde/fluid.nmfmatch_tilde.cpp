@@ -225,6 +225,8 @@ namespace fluid {
         
         parameter::BufferAdaptor::Access buf(filterBuffer);
         
+        mRank = std::min( mMaxRank, buf.numChans()); 
+        
         for(size_t i = 0; i < mRank; ++i)
           atom_setfloat(&activationAtoms[i], outputWrappers[i]->next());
 
