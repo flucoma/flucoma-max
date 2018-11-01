@@ -120,6 +120,7 @@ namespace {
     
     void acquire() override
     {
+      if(getBuffer())
       mSamps = buffer_locksamples(getBuffer());
     }
     
@@ -218,174 +219,174 @@ namespace {
     t_symbol* buffer_name;
   };
   
-  /***
-   View of polybuffer-buffer
-   ***/
-  class PolyBufferData: public PolyBufferName, public MaxBufferData
-  {
-  public:
-    PolyBufferData(t_object* x, t_symbol* name, size_t idx):
-    PolyBufferName(name,idx),MaxBufferData(x,buffer_name){}
-  };
-  
-  class PolyBufferAdaptor: public MaxBufferView
-  {
-  public:
-    
-    PolyBufferAdaptor(t_object* hostObject, t_symbol* name) : MaxBufferView(hostObject, name)
-    {
-      //if polybuffer name points towards an extent instance, fill mBufs with its babies
-      if(valid())
-      {
-//        t_object* polybuffer = mName->s_thing;
-//        mBufs.clear();
-
-        
-        for(size_t i = 0;;++i)
-        {
-          mBufs.emplace_back(mHostObject,mName,i);
-          if(!mBufs.back().valid())
-          {
-            mBufs.pop_back();
-            break;
-          }
-        }
-      }
-    }
-    
-    void resize(size_t frames, size_t channels, size_t rank) override
-    {
-      release();
-      
-      t_object* polybuffer = mName->s_thing;
-      mBufs.clear(); 
-      //clear polybuff (for now)
-      object_method_typed(polybuffer, gensym("clear"), 0, NULL, NULL);
-      //Add buffers. We want exact sample lengths, so this will take two calls
-      t_atom append_args[2];
-      atom_setfloat(&append_args[0], 1);
-      atom_setlong(&append_args[1], channels);
-      
-      mBufs.reserve(rank);
-      
-      for(int i = 0; i < rank; ++i)
-      {
-        object_method_typed(polybuffer, gensym("appendempty"), 2, append_args, NULL);
-        mBufs.emplace_back(mHostObject,mName,size_t(i));
-        mBufs.back().resize(frames, channels, 1);
-        assert(mBufs[i].numFrames() == frames && mBufs[i].numChans() == channels);
-      }
-      
-      acquire();
-    }
-    
-    bool valid() const override
-    {
-      if(mName && mName->s_thing && object_classname_compare(mName->s_thing, gensym("polybuffer")))
-         return true;
-      return false;
-    }
-
-    void acquire() override
-    {
-      for(auto&& b: mBufs)
-      {
-        b.acquire();
-      }
-    }
-    
-    void release()override
-    {
-      for(auto&& b: mBufs)
-      {
-        b.release();
-      }
-    }
-    
-    FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
-    {
-      if(valid() && mBufs.size() > 0)
-      {
-        return mBufs[rankIdx].samps(channel,0); //in polybuffer case, we've already divided by rank
-      }
-      return FluidTensorView<float,1>(nullptr,0,0);
-    }
-    
-//    //Return a view of all the data
-//    FluidTensorView<float,2> samps() override
+//  /***
+//   View of polybuffer-buffer
+//   ***/
+//  class PolyBufferData: public PolyBufferName, public MaxBufferData
+//  {
+//  public:
+//    PolyBufferData(t_object* x, t_symbol* name, size_t idx):
+//    PolyBufferName(name,idx),MaxBufferData(x,buffer_name){}
+//  };
+//
+//  class PolyBufferAdaptor: public MaxBufferView
+//  {
+//  public:
+//
+//    PolyBufferAdaptor(t_object* hostObject, t_symbol* name) : MaxBufferView(hostObject, name)
 //    {
-//      assert("I don't beleive this should happen");
-//      return FluidTensorView<float,2>(nullptr,0,0,0);
-//    }
-    
-    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
-    {
-      if(valid() && mBufs.size() > 0 && chanoffset < mBufs.size())
-      {
-        //TODO this isn't ideal
-        return mBufs[chanoffset].samps(offset,nframes,0);
-      }
-      return FluidTensorView<float,1>(nullptr,0,0,0);
-    }
-    
-    size_t numFrames() const override
-    {
-      if (valid() && mBufs.size() > 0)
-      {
-        const PolyBufferData& shortestBuffer = *std::min_element(mBufs.begin(),mBufs.end(), [] (const PolyBufferData& lhs, const PolyBufferData& rhs)->bool{
-          return lhs.numFrames() < rhs.numFrames();
-        } );
-        
-        return shortestBuffer.numFrames();
-      }
-      return 0;
-    }
-    
-    
-    t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) override
-    {
-      if(valid() && mBufs.size() > 0)
-      {
-        for(auto&& b: mBufs)
-          b.notify(s, msg, sender,data);
-      }
-      return 0;
-    }
-    
-    size_t numChans() const override
-    {
-      if (valid() && mBufs.size() > 0)
-      {
-        const PolyBufferData& narrowestBuffer = *std::min_element(mBufs.begin(),mBufs.end(), [] (const PolyBufferData& lhs, const PolyBufferData& rhs)->bool{
-          return lhs.numChans() < rhs.numChans();
-        } );
-        
-        return narrowestBuffer.numChans() * rank();
-      }
-      return 0;
-    }
-      
-    size_t rank() const override
-    {
-      if (valid())
-      {
-        return mBufs.size();
-      }
-      return 0;
-    }
-  protected:
-//    bool equal(parameter::BufferAdaptor& rhs) const override
-//    {
-//      PolyBufferAdaptor* x = dynamic_cast<PolyBufferAdaptor*>(rhs);
-//      if(x && x->mName)
+//      //if polybuffer name points towards an extent instance, fill mBufs with its babies
+//      if(valid())
 //      {
-//        return mName == x->mName;
+////        t_object* polybuffer = mName->s_thing;
+////        mBufs.clear();
+//
+//
+//        for(size_t i = 0;;++i)
+//        {
+//          mBufs.emplace_back(mHostObject,mName,i);
+//          if(!mBufs.back().valid())
+//          {
+//            mBufs.pop_back();
+//            break;
+//          }
+//        }
 //      }
+//    }
+//
+//    void resize(size_t frames, size_t channels, size_t rank) override
+//    {
+//      release();
+//
+//      t_object* polybuffer = mName->s_thing;
+//      mBufs.clear();
+//      //clear polybuff (for now)
+//      object_method_typed(polybuffer, gensym("clear"), 0, NULL, NULL);
+//      //Add buffers. We want exact sample lengths, so this will take two calls
+//      t_atom append_args[2];
+//      atom_setfloat(&append_args[0], 1);
+//      atom_setlong(&append_args[1], channels);
+//
+//      mBufs.reserve(rank);
+//
+//      for(int i = 0; i < rank; ++i)
+//      {
+//        object_method_typed(polybuffer, gensym("appendempty"), 2, append_args, NULL);
+//        mBufs.emplace_back(mHostObject,mName,size_t(i));
+//        mBufs.back().resize(frames, channels, 1);
+//        assert(mBufs[i].numFrames() == frames && mBufs[i].numChans() == channels);
+//      }
+//
+//      acquire();
+//    }
+//
+//    bool valid() const override
+//    {
+//      if(mName && mName->s_thing && object_classname_compare(mName->s_thing, gensym("polybuffer")))
+//         return true;
 //      return false;
 //    }
-  private:
-    std::vector<PolyBufferData> mBufs;
-  };
+//
+//    void acquire() override
+//    {
+//      for(auto&& b: mBufs)
+//      {
+//        b.acquire();
+//      }
+//    }
+//
+//    void release()override
+//    {
+//      for(auto&& b: mBufs)
+//      {
+//        b.release();
+//      }
+//    }
+//
+//    FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
+//    {
+//      if(valid() && mBufs.size() > 0)
+//      {
+//        return mBufs[rankIdx].samps(channel,0); //in polybuffer case, we've already divided by rank
+//      }
+//      return FluidTensorView<float,1>(nullptr,0,0);
+//    }
+//
+////    //Return a view of all the data
+////    FluidTensorView<float,2> samps() override
+////    {
+////      assert("I don't beleive this should happen");
+////      return FluidTensorView<float,2>(nullptr,0,0,0);
+////    }
+//
+//    FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) override
+//    {
+//      if(valid() && mBufs.size() > 0 && chanoffset < mBufs.size())
+//      {
+//        //TODO this isn't ideal
+//        return mBufs[chanoffset].samps(offset,nframes,0);
+//      }
+//      return FluidTensorView<float,1>(nullptr,0,0,0);
+//    }
+//
+//    size_t numFrames() const override
+//    {
+//      if (valid() && mBufs.size() > 0)
+//      {
+//        const PolyBufferData& shortestBuffer = *std::min_element(mBufs.begin(),mBufs.end(), [] (const PolyBufferData& lhs, const PolyBufferData& rhs)->bool{
+//          return lhs.numFrames() < rhs.numFrames();
+//        } );
+//
+//        return shortestBuffer.numFrames();
+//      }
+//      return 0;
+//    }
+//
+//
+//    t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) override
+//    {
+//      if(valid() && mBufs.size() > 0)
+//      {
+//        for(auto&& b: mBufs)
+//          b.notify(s, msg, sender,data);
+//      }
+//      return 0;
+//    }
+//
+//    size_t numChans() const override
+//    {
+//      if (valid() && mBufs.size() > 0)
+//      {
+//        const PolyBufferData& narrowestBuffer = *std::min_element(mBufs.begin(),mBufs.end(), [] (const PolyBufferData& lhs, const PolyBufferData& rhs)->bool{
+//          return lhs.numChans() < rhs.numChans();
+//        } );
+//
+//        return narrowestBuffer.numChans() * rank();
+//      }
+//      return 0;
+//    }
+//
+//    size_t rank() const override
+//    {
+//      if (valid())
+//      {
+//        return mBufs.size();
+//      }
+//      return 0;
+//    }
+//  protected:
+////    bool equal(parameter::BufferAdaptor& rhs) const override
+////    {
+////      PolyBufferAdaptor* x = dynamic_cast<PolyBufferAdaptor*>(rhs);
+////      if(x && x->mName)
+////      {
+////        return mName == x->mName;
+////      }
+////      return false;
+////    }
+//  private:
+//    std::vector<PolyBufferData> mBufs;
+//  };
 } //anonymous namespace
   
   /***
@@ -409,24 +410,24 @@ namespace {
     
     void update()
     {
-      //Test for buffer
-      t_buffer_ref* buf_ref = buffer_ref_new(mHostObject, mName);
-      if(buf_ref && buffer_ref_exists(buf_ref))
-      {
-        
+//      //Test for buffer
+//      t_buffer_ref* buf_ref = buffer_ref_new(mHostObject, mName);
+//      if(buf_ref && buffer_ref_exists(buf_ref))
+//      {
+//        
         std::unique_ptr<MaxBufferView> p(new MaxBufferData(mHostObject,mName));
         mData = std::move(p);
         
-        object_free(buf_ref);
-        
-      }
-      //The s_thing of a polybuffer t_symbol* binds to a class called
-      //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
-      else if(mName->s_thing && object_classname_compare(mName->s_thing, gensym("polybuffer")))
-      {
-        std::unique_ptr<MaxBufferView> p(new PolyBufferAdaptor(mHostObject,mName));
-        mData = std::move(p);
-      }
+//        object_free(buf_ref);
+//
+//      }
+//      //The s_thing of a polybuffer t_symbol* binds to a class called
+//      //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
+//      else if(mName->s_thing && object_classname_compare(mName->s_thing, gensym("polybuffer")))
+//      {
+//        std::unique_ptr<MaxBufferView> p(new PolyBufferAdaptor(mHostObject,mName));
+//        mData = std::move(p);
+//      }
     }
     
     

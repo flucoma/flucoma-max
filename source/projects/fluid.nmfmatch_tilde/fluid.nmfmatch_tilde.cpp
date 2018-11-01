@@ -127,7 +127,7 @@ namespace fluid {
         mMaxRank = parameter::lookupParam("maxrank", params).getLong();
         
         
-        filterBuffer = parameter::lookupParam("filterbuf", params).getBuffer();
+        auto filterBuffer = parameter::lookupParam("filterbuf", params).getBuffer();
         while(inPerform);
         bufferValid = false;
         
@@ -166,7 +166,7 @@ namespace fluid {
         
 
         mMaxRank = parameter::lookupParam("maxrank", getParams()).getLong();
-        filterBuffer = parameter::lookupParam("filterbuf", getParams()).getBuffer();
+        auto filterBuffer = parameter::lookupParam("filterbuf", getParams()).getBuffer();
         parameter::BufferAdaptor::Access buf(filterBuffer);
         mRank = std::min<long>(buf.numChans(),mMaxRank);
         
@@ -214,6 +214,8 @@ namespace fluid {
       {
         InPerform spinlock(&inPerform);
         
+        auto filterBuffer = parameter::lookupParam("filterbuf", getParams()).getBuffer();
+        
         if(!(filterBuffer && bufferValid))
           return;
         
@@ -252,7 +254,7 @@ namespace fluid {
       std::unique_ptr<t_atom[]> activationAtoms;
       size_t mRank;
       size_t mMaxRank = 0 ;
-      parameter::BufferAdaptor* filterBuffer;
+//      parameter::Instance* filterBuffer;
       bool hasValidated;
       t_int32_atomic inPerform;
       bool bufferValid;
