@@ -124,7 +124,9 @@ namespace fluid {
 
         t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
         
-
+        mMaxRank = parameter::lookupParam("maxrank", params).getLong();
+        
+        
         filterBuffer = parameter::lookupParam("filterbuf", params).getBuffer();
         while(inPerform);
         bufferValid = false;
@@ -133,7 +135,7 @@ namespace fluid {
         if(hasValidated && (std::string("filterbuf").compare(attrname->s_name)==0))
         {
           long fftsize = parameter::lookupParam("fftsize", params).getLong();
-          long maxrank = parameter::lookupParam("maxrank", params).getLong();
+          mMaxRank = parameter::lookupParam("maxrank", params).getLong();
 
           parameter::BufferAdaptor::Access buf(filterBuffer);
           
@@ -142,7 +144,7 @@ namespace fluid {
             object_error(*this, "Filters buffer needs to be FFT Size / 2 + 1 frames");
           }
           
-          mRank = std::min<long>(buf.numChans(),maxrank);
+          mRank = std::min<long>(buf.numChans(),mMaxRank);
         }
         while(inPerform);
         bufferValid = true;

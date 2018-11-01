@@ -398,15 +398,8 @@ namespace {
     
     MaxBufferAdaptor(t_object* x, t_symbol* name): MaxBufferRef(x, name)
     {
-      update();
-      std::cout << "Construct";
+      update(); 
     }
-    
-    ~MaxBufferAdaptor()
-    {
-      std::cout << "Destroy";
-    }
-    
     
     void acquire() override
     {
@@ -416,24 +409,24 @@ namespace {
     
     void update()
     {
-//      //Test for buffer
-//      t_buffer_ref* buf_ref = buffer_ref_new(mHostObject, mName);
-//      if(buf_ref && buffer_ref_exists(buf_ref))
-//      {
+      //Test for buffer
+      t_buffer_ref* buf_ref = buffer_ref_new(mHostObject, mName);
+      if(buf_ref && buffer_ref_exists(buf_ref))
+      {
         
         std::unique_ptr<MaxBufferView> p(new MaxBufferData(mHostObject,mName));
         mData = std::move(p);
         
-//        object_free(buf_ref);
-//
-//      }
-//      //The s_thing of a polybuffer t_symbol* binds to a class called
-//      //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
-//      else if(mName->s_thing && object_classname_compare(mName->s_thing, gensym("polybuffer")))
-//      {
-//        std::unique_ptr<MaxBufferView> p(new PolyBufferAdaptor(mHostObject,mName));
-//        mData = std::move(p);
-//      }
+        object_free(buf_ref);
+        
+      }
+      //The s_thing of a polybuffer t_symbol* binds to a class called
+      //'polybuffer', not 'polybuffer~', which sits in the CLASS_NOBOX namesapce
+      else if(mName->s_thing && object_classname_compare(mName->s_thing, gensym("polybuffer")))
+      {
+        std::unique_ptr<MaxBufferView> p(new PolyBufferAdaptor(mHostObject,mName));
+        mData = std::move(p);
+      }
     }
     
     
