@@ -84,6 +84,18 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 82.0, 285.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-78",
 									"linecount" : 10,
 									"maxclass" : "comment",
@@ -102,7 +114,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 292.0, 208.0, 168.0, 20.0 ],
-									"presentation_rect" : [ 292.0, 206.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "try doing too much smoothing"
 								}
@@ -115,7 +126,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 265.0, 177.0, 155.0, 20.0 ],
-									"presentation_rect" : [ 263.75, 177.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "process this second setting"
 								}
@@ -128,7 +138,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 194.25, 392.0, 88.0, 20.0 ],
-									"presentation_rect" : [ 134.0, 391.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "play segments"
 								}
@@ -142,7 +151,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 98.0, 177.0, 136.0, 22.0 ],
-									"presentation_rect" : [ 98.0, 177.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "filtersize 4, process guit"
 								}
@@ -156,7 +164,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 212.5, 423.0, 29.5, 22.0 ],
-									"presentation_rect" : [ 807.5, 428.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "5"
 								}
@@ -170,7 +177,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 82.0, 139.0, 136.0, 22.0 ],
-									"presentation_rect" : [ 83.0, 176.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "filtersize 0, process guit"
 								}
@@ -184,7 +190,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 144.5, 423.0, 29.5, 22.0 ],
-									"presentation_rect" : [ 725.5, 427.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "3"
 								}
@@ -198,7 +203,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 179.5, 423.0, 29.5, 22.0 ],
-									"presentation_rect" : [ 733.0, 431.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "4"
 								}
@@ -445,9 +449,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 82.5, 686.0, 69.0, 22.0 ],
+									"patching_rect" : [ 82.5, 686.0, 72.0, 22.0 ],
 									"style" : "",
-									"text" : "play~ src 2"
+									"text" : "play~ guit 2"
 								}
 
 							}
@@ -468,7 +472,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 1089.0, -984.0, 640.0, 480.0 ],
+										"rect" : [ 1088.0, -984.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -769,6 +773,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-17", 0 ]
 								}
@@ -883,9 +894,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -903,7 +914,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -913,7 +923,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1508,7 +1519,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 81.0, 458.0, 161.0, 56.0 ],
-									"size" : 2.0,
+									"size" : 21.0,
 									"style" : ""
 								}
 
@@ -1889,7 +1900,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 29.0, 403.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "0"
+									"text" : "21"
 								}
 
 							}
@@ -1898,7 +1909,7 @@
 									"autopopulate" : 1,
 									"depth" : 1,
 									"id" : "obj-5",
-									"items" : [ "-credits.txt", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -3468,9 +3479,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3488,7 +3499,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3498,7 +3508,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -3561,9 +3572,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3581,7 +3592,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3591,7 +3601,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
