@@ -114,6 +114,9 @@ namespace fluid {
         
         listOutlet = listout(*this);
         
+        auto maxRank = parameter::lookupParam("maxrank", getParams()).getLong();
+        activationAtoms.reset(new t_atom[sizeLimit()]);
+        
       }
 
       
@@ -192,7 +195,7 @@ namespace fluid {
         }
         hasValidated = true;
         
-        activationAtoms.reset(new t_atom[sizeLimit()]);
+        
         
         //TODO: I imagine some algorithms will need the sample rate in future as well
         fluid_obj.set_host_buffer_size(maxvectorsize);
