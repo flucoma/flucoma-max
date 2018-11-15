@@ -114,7 +114,6 @@ namespace fluid {
         
         listOutlet = listout(*this);
         
-        auto maxRank = parameter::lookupParam("maxrank", getParams()).getLong();
         activationAtoms.reset(new t_atom[sizeLimit()]);
         
       }

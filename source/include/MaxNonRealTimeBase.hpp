@@ -88,7 +88,8 @@ namespace {
     
     bool valid() const override
     {
-      return getBuffer();
+      return mSamps;
+//      return getBuffer();
     }
     
     void resize(size_t frames, size_t channels, size_t rank) override
