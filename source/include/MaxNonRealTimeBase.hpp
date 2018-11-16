@@ -40,6 +40,7 @@ namespace {
     
     virtual void acquire() = 0;
     virtual void release() = 0;
+    virtual bool exists() const  = 0; 
     virtual bool valid() const   = 0;
     virtual void resize(size_t frames, size_t channels, size_t rank) = 0;
     virtual t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) = 0;
@@ -85,6 +86,8 @@ namespace {
       swap(std::move(other));
       return *this;
     }
+    
+    bool exists() const override { return getBuffer();}
     
     bool valid() const override
     {
@@ -448,6 +451,9 @@ namespace {
     {
       return mData? mData && mData->valid() : false;
     }
+    
+    bool exists() const override { return mData? mData && mData->exists() : false;}
+
     
     void resize(size_t frames, size_t channels, size_t rank) override
     {
