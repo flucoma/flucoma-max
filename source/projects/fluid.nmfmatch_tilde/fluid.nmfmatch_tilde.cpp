@@ -122,6 +122,9 @@ namespace fluid {
       
       void param_set(t_object *attr, long argc, t_atom *argv, std::vector<parameter::Instance> &params)
       {
+         while(inPerform);
+        bufferValid = false;
+      
         MaxNonRealTimeBase::param_set(attr, argc, argv, params);
 
         t_symbol* attrname = (t_symbol *)object_method((t_object *)attr, gensym("getname"));
@@ -130,8 +133,7 @@ namespace fluid {
         
         
         auto filterBuffer = parameter::lookupParam("filterbuf", params).getBuffer();
-        while(inPerform);
-        bufferValid = false;
+       
         
         //validate
         if(hasValidated && (std::string("filterbuf").compare(attrname->s_name)==0))

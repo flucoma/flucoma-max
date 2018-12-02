@@ -49,7 +49,7 @@ namespace {
     //Return a view of all the data
 //    virtual FluidTensorView<float,2> samps() = 0;
     virtual FluidTensorView<float,1> samps(size_t offset, size_t nframes, size_t chanoffset) = 0;
-    
+    virtual void set(t_symbol* s) = 0;
     virtual size_t numFrames() const = 0;
     virtual size_t numChans() const = 0;
     virtual size_t rank() const = 0;
@@ -122,9 +122,19 @@ namespace {
       }
     }
     
+    void set(t_symbol* s)
+    {
+      if(mBufref)
+      {
+        buffer_ref_set(mBufref,s);
+      }
+    }
+    
+    
     void acquire() override
     {
-      if(getBuffer())
+      t_object *buffer = getBuffer();
+      if(buffer)
       mSamps = buffer_locksamples(getBuffer());
     }
     
@@ -435,6 +445,13 @@ namespace {
     }
     
     
+    void set(t_symbol* s)
+    {
+      if(mData)
+        mData->set(s);
+    }
+    
+    
     void release() override
     {
       if(mData)
@@ -599,7 +616,22 @@ namespace {
         case parameter::Type::Buffer:
         {
           t_symbol* s = atom_getsym(argv);
-          p.setBuffer(new max::MaxBufferAdaptor(*this,s));
+          
+          parameter::BufferAdaptor* b = p.getBuffer();
+          
+          if(!b)
+          {
+            p.setBuffer(new max::MaxBufferAdaptor(*this,s));
+          }
+          else
+          {
+            MaxBufferAdaptor* bmax = static_cast<MaxBufferAdaptor*>(b);
+            
+            bmax->set(s);
+            
+          }
+          
+          
           break;
         }
         default:
