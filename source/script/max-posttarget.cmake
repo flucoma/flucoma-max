@@ -13,6 +13,11 @@
 	# set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
 # endif ()
 
+target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
+
+target_link_libraries(${PROJECT_NAME} PUBLIC  FLUID_MAX)
+
+
 if ("${PROJECT_NAME}" MATCHES ".*_tilde")
 	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${PROJECT_NAME}")
 else ()
