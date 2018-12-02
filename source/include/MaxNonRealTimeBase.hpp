@@ -155,7 +155,7 @@ namespace {
 
     t_max_err notify(t_symbol* s, t_symbol* msg, void* sender, void* data) override
     {
-      return (mName == s) && valid()? buffer_ref_notify(mBufref, s, msg, sender, data): 0;
+      return buffer_ref_notify(mBufref, s, msg, sender, data);
     }
     
     
