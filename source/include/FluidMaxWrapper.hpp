@@ -2,6 +2,7 @@
 
 #include "MaxClass_Base.h"
 
+#include <clients/common/AudioClient.hpp>
 #include <clients/common/FluidBaseClient.hpp>
 #include <clients/common/ParameterTypes.hpp>
 
@@ -27,8 +28,21 @@ template <typename Client, typename... Ts>
 class FluidMaxWrapper : public MaxClass_Base {
 public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av) {
-    dspSetup(2);
-    outlet_new(this, "signal");
+    makeAudioInputs(mClient);
+    makeAudioOutputs(mClient);
+  }
+
+  template<typename T>
+  std::enable_if_t<!std::is_base_of<AudioIn,T>(),void> makeAudioInputs(T& x){};
+  
+  void makeAudioInputs(AudioIn& x) { dspSetup(x.channels); }
+  
+  template<typename T>
+  std::enable_if_t<!std::is_base_of<AudioOut,T>(),void> makeAudioOutputs(T& x){};
+  
+  void makeAudioOutputs(AudioOut& x) {
+  for(int i = 0; i < x.channels; ++i)
+      outlet_new(this, "signal");    
   }
 
   /// Overloads for declaring attributes of the correct type
@@ -69,8 +83,6 @@ public:
   }
 
   
-
-
 
   ///Sets up a single attribute
   ///TODO: static assert on T?
