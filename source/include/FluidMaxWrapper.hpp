@@ -28,22 +28,28 @@ template <typename Client, typename... Ts>
 class FluidMaxWrapper : public MaxClass_Base {
 public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av) {
-    makeAudioInputs(mClient);
-    makeAudioOutputs(mClient);
+//    makeAudioInputs(mClient);
+//    makeAudioOutputs(mClient);
+    
+      if(mClient.audioChannelsIn())
+          dspSetup(mClient.audioChannelsIn());
+    
+      for(int i = 0; i < mClient.audioChannelsOut(); ++i)
+        outlet_new(this, "signal");
   }
 
-  template<typename T>
-  std::enable_if_t<!std::is_base_of<AudioIn,T>(),void> makeAudioInputs(T& x){};
-  
-  void makeAudioInputs(AudioIn& x) { dspSetup(x.channels); }
-  
-  template<typename T>
-  std::enable_if_t<!std::is_base_of<AudioOut,T>(),void> makeAudioOutputs(T& x){};
-  
-  void makeAudioOutputs(AudioOut& x) {
-  for(int i = 0; i < x.channels; ++i)
-      outlet_new(this, "signal");    
-  }
+//  template<typename T>
+//  std::enable_if_t<!std::is_base_of<AudioIn,T>(),void> makeAudioInputs(T& x){};
+//
+//  void makeAudioInputs(AudioIn& x) { dspSetup(x.channels); }
+//
+//  template<typename T>
+//  std::enable_if_t<!std::is_base_of<AudioOut,T>(),void> makeAudioOutputs(T& x){};
+//
+//  void makeAudioOutputs(AudioOut& x) {
+//  for(int i = 0; i < x.channels; ++i)
+//      outlet_new(this, "signal");
+//  }
 
   /// Overloads for declaring attributes of the correct type
   static void declareAttr(FloatT t) {
@@ -86,7 +92,7 @@ public:
 
   ///Sets up a single attribute
   ///TODO: static assert on T?
-  template <typename T, size_t N> static void setupAttribute(T &attr) {
+  template <typename T, size_t N> static void setupAttribute(const T &attr) {
     declareAttr(attr);
     using AttrType = std::remove_reference_t<decltype(attr)>;
     CLASS_ATTR_ACCESSORS(*getClassPointer<FluidMaxWrapper>(), attr.name,
@@ -96,16 +102,16 @@ public:
 
   ///Process the tuple of parameter descriptors
   template <size_t... Is>
-  static void processParameters(std::tuple<Ts...> params,
+  static void processParameters(const std::tuple<Ts...>& params,
                                 std::index_sequence<Is...>) {
     (void)std::initializer_list<int>{
-        (setupAttribute<Ts, Is>(std::get<Is>(params)), 0)...};
+        (setupAttribute<typename Ts::first_type, Is>(std::get<Is>(params).first), 0)...};
   }
 
   
   ///Entry point: sets up the Max class and its attributes
   static void makeClass(t_symbol *nameSpace, const char *className,
-                        const std::tuple<Ts...> params) {
+                        const std::tuple<Ts...>& params) {
     MaxClass_Base::makeClass<FluidMaxWrapper>(nameSpace, className);
     
     t_class* c = *getClassPointer<FluidMaxWrapper>();
@@ -118,25 +124,60 @@ public:
   
   void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
   {
+    
+//    auto nChannels = mClient.audioChannelsIn() + mClient.audioChannelsOut();
+    
+    audioInputConnections.resize(mClient.audioChannelsIn());
+    std::copy(count,count + mClient.audioChannelsIn(),audioInputConnections.begin());
+    
+    audioOutputConnections.resize(mClient.audioChannelsOut());
+    std::copy(count + mClient.audioChannelsIn(),count + mClient.audioChannelsIn() + mClient.audioChannelsOut(),audioOutputConnections.begin());
+
+    mInputs.clear();
+    mOutputs.clear();
+    mInputs.reserve(mClient.audioChannelsIn());
+    mOutputs.reserve(mClient.audioChannelsOut());
+    std::fill_n(std::back_inserter(mInputs),mClient.audioChannelsIn(),FluidTensorView<double, 1>(nullptr,0,0));
+    std::fill_n(std::back_inserter(mOutputs),mClient.audioChannelsOut(),FluidTensorView<double, 1>(nullptr,0,0));
+
+  
+
     addPerform<FluidMaxWrapper, &FluidMaxWrapper::perform>(dsp64);
+//    (dsp64, gensym("dsp_add64"), (this),
+//    [this](t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+//    {
+//      perform(dsp64,ins, numins,outs,numouts,sampleframes,flags,userparam);
+//    }
+//    , 0, nullptr);
   }
-
-
 
 
   void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
   {
   
-      FluidTensorView<double,1> inputs[2]{{ins[0],0,sampleframes},{ins[0],0,sampleframes}};
-      FluidTensorView<double,1> outputs[1]{{outs[0],0,sampleframes}};
+      for(int i = 0; i < numins; ++i)
+        if(audioInputConnections[i])
+          mInputs[i].reset(ins[i],0,sampleframes);
   
-      mClient.process(inputs,outputs);
+      for(int i = 0; i < numouts; ++i)
+        //if(audioOutputConnections[i])
+          mOutputs[i].reset(outs[i],0,sampleframes);
+
+      mClient.process(mInputs,mOutputs);
   }
 
 private:
   /// Max expects attribute variables to be in the object struct.
   /// We're not doing that, but we still need this to keep Max happy when
   /// declaring attributes
+  
+  std::vector<FluidTensorView<double,1>> mInputs;
+  std::vector<FluidTensorView<double,1>> mOutputs;
+
+  std::vector<short> audioInputConnections;
+  std::vector<short> audioOutputConnections;
+
+  
   Client mClient;
   t_object mDummy;
 };
@@ -216,7 +257,7 @@ struct GetterDispatchImpl<Client, LongT, N> {
 
 template <typename Client, typename... Ts>
 void makeMaxWrapper(const char *classname, const std::tuple<Ts...> &params) {
-  FluidMaxWrapper<Client, typename Ts::first_type...>::makeClass(CLASS_BOX, classname, ParameterDescriptors<Ts...>::get(params));
+  FluidMaxWrapper<Client, Ts...>::makeClass(CLASS_BOX, classname, params);
 }
 
 } // namespace client
