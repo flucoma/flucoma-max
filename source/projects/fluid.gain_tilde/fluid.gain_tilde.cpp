@@ -117,5 +117,5 @@ namespace client{
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<GainAudioClient<double>>("fluid.gain~", GainParams);
+  makeMaxWrapper<GainClient<double>>("fluid.gain~", GainParams);
 }
