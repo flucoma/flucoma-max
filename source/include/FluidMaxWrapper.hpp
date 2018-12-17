@@ -248,7 +248,7 @@ public:
     if (mClient.audioChannelsIn())
     {
       dsp_setup(&mObject, mClient.audioChannelsIn());
-      // FIX - not sure if we need this assumption??
+      // TODO - not sure if we need this assumption?? Let's assume not!
       //mObject.z_misc = Z_NO_INPLACE;
     }
     
@@ -259,39 +259,10 @@ public:
   FluidMaxWrapper(const FluidMaxWrapper&) = delete;
   FluidMaxWrapper& operator=(const FluidMaxWrapper&) = delete;
 
-  static t_symbol* maxAttrType(FloatT)  { return USESYM(float64);  }
-  static t_symbol* maxAttrType(LongT)   { return USESYM(long);  }
-  static t_symbol* maxAttrType(BufferT) { return USESYM(symbol);  }
-  static t_symbol* maxAttrType(EnumT)   { return USESYM(long);  }
-
-  // Sets up a single attribute
-  ///TODO: static assert on T?
-  
-  template <size_t N, typename T> static void setupAttribute(const T &attr)
-  {
-    using AttrType = std::remove_reference_t<decltype(attr)>;
-
-    auto setterMethod = &impl::Setter<Client, std::remove_const_t<AttrType>, N>::set;
-    auto getterMethod = &impl::Getter<Client, std::remove_const_t<AttrType>, N>::get;
-    
-    std::string name(attr.name);
-    std::transform(name.begin(),name.end(),name.begin(),[](unsigned char c){return std::tolower(c);});
-
-    class_addattr(*getClassPointer<FluidMaxWrapper>(),
-    attribute_new(name.c_str(), maxAttrType(attr), 0, (method)getterMethod, (method)setterMethod));
-  }
-
-  ///Process the tuple of parameter descriptors
-  template <size_t... Is>
-  static void processParameters(typename Client::ParamType& params, std::index_sequence<Is...>)
-  {
-    (void)std::initializer_list<int>{ (setupAttribute<Is>(std::get<Is>(params).first), 0)...};
-  }
-
   static void *create(t_symbol *sym, long ac, t_atom *av)
   {
-    // FIX - I removed Owen's try/catch, because everthing is bust if we run out of memory
-    void *x = object_alloc(*getClassPointer<Client>());
+    // TODO - Check - I removed Owen's try/catch, because everything is bust if we run out of memory
+    void *x = object_alloc(*getClass<Client>());
     new(x) FluidMaxWrapper(sym, ac, av);
     return x;
   }
@@ -301,10 +272,9 @@ public:
     x->~FluidMaxWrapper();
   }
   
-  ///Entry point: sets up the Max class and its attributes
   static void makeClass(const char *className, typename Client::ParamType& params)
   {
-    t_class** c = getClassPointer<Client>();
+    t_class** c = getClass<Client>();
     
     *c = class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0);
     FluidMaxBase::setup(*c);
@@ -315,12 +285,48 @@ public:
 private:
     
   template <class T>
-  static t_class **getClassPointer()
+  static t_class **getClass()
   {
     static t_class *C;
     return &C;
   }
+  
+  static t_symbol* maxAttrType(FloatT)  { return USESYM(float64);  }
+  static t_symbol* maxAttrType(LongT)   { return USESYM(long);  }
+  static t_symbol* maxAttrType(BufferT) { return USESYM(symbol);  }
+  static t_symbol* maxAttrType(EnumT)   { return USESYM(long);  }
+  
+  // Sets up a single attribute
+  // TODO: static assert on T?
+  
+  static std::string lowerCase(const char *str)
+  {
+    std::string result(str);
+    std::transform(result.begin(),result.end(),result.begin(),[](unsigned char c){return std::tolower(c);});
+    return result;
+  }
     
+  template <size_t N, typename T>
+  static void setupAttribute(const T &attr)
+  {
+    using AttrType = std::remove_const_t<std::remove_reference_t<decltype(attr)>>;
+    
+    std::string name = lowerCase(attr.name);
+    method setterMethod = (method) &impl::Setter<Client, AttrType, N>::set;
+    method getterMethod = (method) &impl::Getter<Client, AttrType, N>::get;
+    
+    t_object *maxAttr = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
+    class_addattr(*getClass<FluidMaxWrapper>(), maxAttr);
+  }
+  
+  ///Process the tuple of parameter descriptors
+  
+  template <size_t... Is>
+  static void processParameters(typename Client::ParamType& params, std::index_sequence<Is...>)
+  {
+    (void)std::initializer_list<int>{ (setupAttribute<Is>(std::get<Is>(params).first), 0)...};
+  }
+
   // The object structure
     
   t_pxobject mObject;
