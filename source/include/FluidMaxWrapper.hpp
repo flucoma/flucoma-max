@@ -256,7 +256,7 @@ public:
 
   static void *create(t_symbol *sym, long ac, t_atom *av)
   {
-    void *x = object_alloc(*getClass<Client>());
+    void *x = object_alloc(getClass());
     new(x) FluidMaxWrapper(sym, ac, av);
     return x;
   }
@@ -268,21 +268,18 @@ public:
   
   static void makeClass(const char *className, typename Client::ParamType& params)
   {
-    t_class** c = getClass<Client>();
-    
-    *c = class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0);
-    FluidMaxBase::setup(*c);
-    class_register(CLASS_BOX, *c);
+    getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
+    FluidMaxBase::setup(getClass());
+    class_register(CLASS_BOX, getClass());
     processParameters(params, typename Client::ParamIndexList());
   }
   
 private:
     
-  template <class T>
-  static t_class **getClass()
+  static t_class *getClass(t_class *setClass = nullptr)
   {
-    static t_class *C;
-    return &C;
+    static t_class *C = nullptr;
+    return (C = setClass ? setClass : C);
   }
   
   static t_symbol* maxAttrType(FloatT)  { return USESYM(float64);  }
@@ -308,7 +305,7 @@ private:
     method getterMethod = (method) &impl::Getter<Client, T, N>::get;
       
     t_object *maxAttr = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
-    class_addattr(*getClass<FluidMaxWrapper>(), maxAttr);
+    class_addattr(getClass(), maxAttr);
   }
   
   // Process the tuple of parameter descriptors
