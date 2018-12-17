@@ -1,13 +1,15 @@
 #pragma once
 
-#include "MaxClass_Base.h"
+#include <ext.h>
+#include <ext_obex.h>
+#include <ext_obex_util.h>
+#include <commonsyms.h>
+#include <z_dsp.h>
 
 #include <clients/common/OfflineClient.hpp>
 #include <clients/common/FluidBaseClient.hpp>
 #include <clients/common/ParameterTypes.hpp>
 
-#include <ext.h>
-#include <commonsyms.h>
 #include <MaxBufferAdaptor.hpp> 
 
 #include <tuple>
@@ -16,40 +18,22 @@
 namespace fluid {
 namespace client {
 
-
-//Forward decl
-template <typename Client, typename... Ts>
-class FluidMaxWrapper;
-
 namespace impl {
-// This seems faffy, but comes from Herb Sutter's reccomendation for avoiding
-// specialising functions, and hence be seing surprised by the compiler and
-// (courting ODR problems in a header-only context)
-// http://www.gotw.ca/publications/mill17.htm.
-// Specialisations are below the wrapper template, to try and reudce clutter
-
   
 template <typename Client, typename T, size_t N> struct Setter;
 template <typename Client, typename T, size_t N> struct Getter;
 
-
-//Empty template for non-Audio clients
-template<typename Wrapper, typename isAudio>
-class RealTimeProcessor;
-
-template<typename Wrapper>
-class RealTimeProcessor<Wrapper, std::false_type>{
+  // Dummy Class
+  
+template <class Wrapper, typename T>
+struct RealTime { static void callDSP(Wrapper *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags) {}; };
+  
+// Class Proper
+  
+template<class Wrapper>
+class RealTime<Wrapper, std::true_type>
+{
 public:
-  static void makeClass(t_class* c){}
-};
-
-template<typename Wrapper>
-class RealTimeProcessor<Wrapper, std::true_type>{
-public:
-  static void makeClass(t_class* c) {
-    Wrapper::dspInit(c);
-    class_addmethod(c, (method)callDSP, "dsp64",A_CANT,0);
-  }
 
   static void callDSP(Wrapper *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags) { x->dsp(dsp64, count, samplerate, maxvectorsize, flags); }
   
@@ -97,107 +81,96 @@ private:
   std::vector<short> audioInputConnections;
   std::vector<short> audioOutputConnections;
 };
-
-template<typename Wrapper, typename isOffline>
-class NonRealTimeProcessor;
-
-template<typename Wrapper>
-class NonRealTimeProcessor<Wrapper,std::false_type>
-{
-public:  static void makeClass(t_class* c){}
-};
-
-template<typename Wrapper>
-class NonRealTimeProcessor<Wrapper,std::true_type>
-{
-public:
-  static void makeClass(t_class* c){
-    class_addmethod(c,(method)callProcess, "process",A_GIMME,0);
-  }
   
-
+// Dummy Class
   
+template <class Wrapper, typename T>
+struct NonRealTime { static void callProcess(Wrapper *x, t_symbol* s, long ac, t_atom* av) {}; };
+  
+// Class Proper
+  
+template <class Wrapper>
+struct NonRealTime<Wrapper, std::true_type>
+{
   void process(t_symbol* s, long ac, t_atom* av)
   {
     //Phase 1: Just take complete buffers as symbols
     std::vector<MaxBufferAdaptor> buffersIn;
     std::vector<MaxBufferAdaptor> buffersOut;
-
+    
     std::vector<BufferProcessSpec> inputs;
     std::vector<BufferProcessSpec> outputs;
-
+    
     auto& wrapper = static_cast<Wrapper&>(*this);
     auto& client = wrapper.client();
-  
+
     if(ac != client.audioBuffersIn() + client.audioBuffersOut())
-      object_error(wrapper, "Wrong number of buffers");
+      object_error((t_object *)&wrapper, "Wrong number of buffers");
     
     buffersIn.reserve(client.audioBuffersIn());
     buffersOut.reserve(client.audioBuffersOut());
     
     for(int i = 0; i < client.audioBuffersIn(); ++i)
     {
-      buffersIn.emplace_back(wrapper,atom_getsym(av + i));
+      buffersIn.emplace_back(wrapper, atom_getsym(av + i));
       inputs.emplace_back();
       inputs[i].buffer = &buffersIn[i];
     }
-
-    for(int i = client.audioBuffersIn(),j=0; i < client.audioBuffersIn() + client.audioBuffersOut(); ++i,++j)
+    
+    for (int i = client.audioBuffersIn(), j=0; i < client.audioBuffersIn() + client.audioBuffersOut(); ++i,++j)
     {
-      buffersOut.emplace_back(wrapper,atom_getsym(av + i));
+      buffersOut.emplace_back(wrapper, atom_getsym(av + i));
       outputs.emplace_back();
       outputs[j].buffer= &buffersOut[j];
     }
-
-    client.process(inputs,outputs);
-
+    
+    client.process(inputs, outputs);
   }
   
   static void callProcess(Wrapper *x, t_symbol* s, long ac, t_atom* av)
   {
     x->process(s,ac,av);
   }
-  
 };
-
 
 
 } // namespace impl
 
-
-template<typename T>
-using isAudioProcessor = typename std::is_base_of<Audio,T>::type;
-
-template<typename T>
-using isOfflineProcessor = typename std::is_base_of<Offline, T>::type;
-
-
-template <typename Client, typename... Ts>
-class FluidMaxWrapper : public MaxClass_Base,  public impl::RealTimeProcessor<FluidMaxWrapper<Client,Ts...>,isAudioProcessor<Client>>,
-  public impl::NonRealTimeProcessor<FluidMaxWrapper<Client,Ts...>,isOfflineProcessor<Client>>
-{
-
-    using RealTimeProc = impl::RealTimeProcessor<FluidMaxWrapper<Client,Ts...>,isAudioProcessor<Client>>;
-    using NonRealTimeProc = impl::NonRealTimeProcessor<FluidMaxWrapper<Client,Ts...>,isOfflineProcessor<Client>>;
-
-public:
-  using ClientType = Client;
+template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
+template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
   
-  FluidMaxWrapper(t_symbol*, long ac, t_atom *av) {
-
-      if(mClient.audioChannelsIn())
-          dspSetup(mClient.audioChannelsIn());
+template <typename Client, typename... Ts>
+class FluidMaxWrapper
+  : public impl::NonRealTime<FluidMaxWrapper<Client, Ts...>, isNonRealTime<Client>>
+  , public impl::RealTime<FluidMaxWrapper<Client, Ts...>, isRealTime<Client>>
+{
+  using RT = impl::RealTime<FluidMaxWrapper<Client, Ts...>, isRealTime<Client>>;
+  using NRT = impl::NonRealTime<FluidMaxWrapper<Client, Ts...>, isNonRealTime<Client>>;
+  
+public:
+  
+  FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
+  {
+      if (mClient.audioChannelsIn())
+      {
+        dsp_setup(&mObject, mClient.audioChannelsIn());
+        // FIX - not sure if we need this assumption??
+        //mObject.z_misc = Z_NO_INPLACE;
+      }
     
-      for(int i = 0; i < mClient.audioChannelsOut(); ++i)
+      for (int i = 0; i < mClient.audioChannelsOut(); ++i)
         outlet_new(this, "signal");
   }
+    
+  FluidMaxWrapper(const FluidMaxWrapper&) = delete;
+  FluidMaxWrapper& operator=(const FluidMaxWrapper&) = delete;
 
-  static t_symbol* maxAttrType(FloatT) { return USESYM(float64);  }
-  static t_symbol* maxAttrType(LongT) { return USESYM(long);  }
+  static t_symbol* maxAttrType(FloatT)  { return USESYM(float64);  }
+  static t_symbol* maxAttrType(LongT)   { return USESYM(long);  }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol);  }
-  static t_symbol* maxAttrType(EnumT) { return USESYM(long);  }
+  static t_symbol* maxAttrType(EnumT)   { return USESYM(long);  }
 
-  ///Sets up a single attribute
+  // Sets up a single attribute
   ///TODO: static assert on T?
   
   template <typename T, size_t N> static void setupAttribute(const T &attr)
@@ -222,34 +195,61 @@ public:
         (setupAttribute<typename Ts::first_type, Is>(std::get<Is>(params).first), 0)...};
   }
 
+  static void *create(t_symbol *sym, long ac, t_atom *av)
+  {
+    // FIX - I removed Owen's try/catch, because everthing is bust if we run out of memory
+    void *x = object_alloc(*getClassPointer<Client>());
+    new(x) FluidMaxWrapper(sym, ac, av);
+    return x;
+  }
+  
+  static void destroy(FluidMaxWrapper * x)
+  {
+    x->~FluidMaxWrapper();
+  }
   
   ///Entry point: sets up the Max class and its attributes
-  static void makeClass(t_symbol *nameSpace, const char *className,
-                        const std::tuple<Ts...>& params) {
-    MaxClass_Base::makeClass<FluidMaxWrapper>(nameSpace, className);
+  static void makeClass(t_symbol *nameSpace, const char *className, const std::tuple<Ts...>& params)
+  {
+    t_class** c = getClassPointer<Client>();
     
-    t_class* c = *getClassPointer<FluidMaxWrapper>();
+    *c = class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0);
+
+    if (isRealTime<Client>())
+    {
+      class_dspinit(*c);
+      class_addmethod(*c, (method)RT::callDSP, "dsp64", A_CANT, 0);
+    }
     
-    RealTimeProc::makeClass(c);
-    NonRealTimeProc::makeClass(c);
+    if (isNonRealTime<Client>())
+    {
+      class_addmethod(*c,(method)NRT::callProcess, "process", A_GIMME, 0);
+    }
+    
+    class_register(nameSpace, *c);
     processParameters(params, std::index_sequence_for<Ts...>{});
-  
   }
   
   Client& client() { return mClient; }
 
 private:
-  /// Max expects attribute variables to be in the object struct.
-  /// We're not doing that, but we still need this to keep Max happy when
-  /// declaring attributes
-//  RealTimeProc mRealTime;
+    
+  template <class T>
+  static t_class **getClassPointer()
+  {
+    static t_class *C;
+    return &C;
+  }
+    
+  // The object structure
+    
+  t_pxobject mObject;
   Client mClient;
-//  t_object mDummy;
 };
 
 namespace impl {
+  
 /// Specialisations for managing the compile-time dispatch of Max attributes to Fluid Parameters
-/// Protoypes are at top of file.
 /// We need set + get specialisations for each allowed type (Float,Long, Buffer, Enum, FloatArry, LongArray, BufferArray)
 /// Note that set in the fluid base client *returns a function
 
@@ -308,7 +308,6 @@ struct SetterDispatchImpl<Client, FloatArrayT, N> {
   }
 };
 
-
 template <typename Client, size_t N>
 struct SetterDispatchImpl<Client, LongArrayT, N> {
   static void f(Client *x, t_object *attr, long ac, t_atom *av) {
@@ -333,4 +332,3 @@ void makeMaxWrapper(const char *classname, const std::tuple<Ts...> &params) {
 
 } // namespace client
 } // namespace fluid
-
