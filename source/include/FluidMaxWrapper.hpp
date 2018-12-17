@@ -215,17 +215,23 @@ struct NonRealTimeAndRealTime : public RealTime<Wrapper>, public NonRealTime<Wra
   
 // Base type selection
   
+struct MaxBase
+{
+  t_pxobject *getMaxObject() { return &mObject; }
+  t_pxobject mObject;
+};
+    
 template <class Wrapper, typename NRT, typename RT>
-struct FluidMaxBase { /* This shouldn't happen, but not sure how to throw an error if it does */ };
+struct FluidMaxBase : public MaxBase { /* This shouldn't happen, but not sure how to throw an error if it does */ };
 
 template<class Wrapper>
-struct FluidMaxBase<Wrapper, std::true_type, std::false_type> : public NonRealTime<Wrapper> {};
+struct FluidMaxBase<Wrapper, std::true_type, std::false_type> : public MaxBase, public NonRealTime<Wrapper> {};
   
 template<class Wrapper>
-struct FluidMaxBase<Wrapper, std::false_type, std::true_type> : public RealTime<Wrapper> {};
+struct FluidMaxBase<Wrapper, std::false_type, std::true_type> : public MaxBase, public RealTime<Wrapper> {};
   
 template<class Wrapper>
-struct FluidMaxBase<Wrapper, std::true_type, std::true_type> : public NonRealTimeAndRealTime<Wrapper>  {};
+struct FluidMaxBase<Wrapper, std::true_type, std::true_type> : public MaxBase, public NonRealTimeAndRealTime<Wrapper> {};
   
 } // namespace impl
 
@@ -245,7 +251,7 @@ public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
   {
     if (mClient.audioChannelsIn())
-      dsp_setup(&mObject, mClient.audioChannelsIn());
+      dsp_setup(impl::MaxBase::getMaxObject(), mClient.audioChannelsIn());
 
     for (int i = 0; i < mClient.audioChannelsOut(); ++i)
       outlet_new(this, "signal");
@@ -270,8 +276,8 @@ public:
   {
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     FluidMaxBase::setup(getClass());
-    class_register(CLASS_BOX, getClass());
     processParameters(params, typename Client::ParamIndexList());
+    class_register(CLASS_BOX, getClass());
   }
   
 private:
@@ -315,10 +321,7 @@ private:
   {
     (void)std::initializer_list<int>{ (setupAttribute<Is>(std::get<Is>(params).first), 0)...};
   }
-
-  // The object structure
     
-  t_pxobject mObject;
   Client mClient;
 };
 
