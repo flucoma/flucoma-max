@@ -27,8 +27,11 @@ namespace impl {
 // (courting ODR problems in a header-only context)
 // http://www.gotw.ca/publications/mill17.htm.
 // Specialisations are below the wrapper template, to try and reudce clutter
-template <typename Client, typename T, size_t N> struct SetterDispatchImpl;
-template <typename Client, typename T, size_t N> struct GetterDispatchImpl;
+
+  
+template <typename Client, typename T, size_t N> struct Setter;
+template <typename Client, typename T, size_t N> struct Getter;
+
 
 //Empty template for non-Audio clients
 template<typename Wrapper, typename isAudio>
@@ -194,57 +197,21 @@ public:
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol);  }
   static t_symbol* maxAttrType(EnumT) { return USESYM(long);  }
 
-  /// Overloads for declaring attributes of the correct type
-//  static void declareAttr(FloatT t) {
-//    CLASS_ATTR_DOUBLE(*getClassPointer<FluidMaxWrapper>(), t.name, 0,
-//                      FluidMaxWrapper, mDummy);
-//  };
-//
-//  static void declareAttr(LongT t) {
-//    CLASS_ATTR_LONG(*getClassPointer<FluidMaxWrapper>(), t.name, 0,
-//                    FluidMaxWrapper, mDummy);
-//  }
-//
-//  static void declareAttr(BufferT t) {
-//    CLASS_ATTR_SYM(*getClassPointer<FluidMaxWrapper>(), t.name, 0,
-//                   FluidMaxWrapper, mDummy);
-//  }
-//
-//  static void declareAttr(EnumT t) {
-//    CLASS_ATTR_LONG(*getClassPointer<FluidMaxWrapper>(), t.name, 0,
-//                    FluidMaxWrapper, mDummy);
-//  }
-
-  /// Static dispatchers, used for generating getters and setters for attributes
-  template <typename T, size_t N>
-  static void getterDispatch(FluidMaxWrapper *x, t_object *attr, long *ac, t_atom **av) {
-    char alloc;
-    atom_alloc(ac, av, &alloc);
-    impl::GetterDispatchImpl<Client, std::remove_const_t<T>, N>::f(x->mClient, attr, ac,
-                                                                   av);
-  }
-
-
-  template <typename T, size_t N>
-  static void setterDispatch(FluidMaxWrapper *x, t_object *attr, long ac, t_atom *av) {
-     impl::SetterDispatchImpl<Client, std::remove_const_t<T>, N>::f(x->mClient, attr, ac,
-                                                                   av);
-  }
-
   ///Sets up a single attribute
   ///TODO: static assert on T?
-  template <typename T, size_t N> static void setupAttribute(const T &attr) {
-//    declareAttr(attr);
+  
+  template <typename T, size_t N> static void setupAttribute(const T &attr)
+  {
     using AttrType = std::remove_reference_t<decltype(attr)>;
+
+    auto setterMethod = &impl::Setter<Client, std::remove_const_t<AttrType>, N>::set;
+    auto getterMethod = &impl::Getter<Client, std::remove_const_t<AttrType>, N>::get;
     
     std::string name(attr.name);
     std::transform(name.begin(),name.end(),name.begin(),[](unsigned char c){return std::tolower(c);});
 
     class_addattr(*getClassPointer<FluidMaxWrapper>(),
-    attribute_new(name.c_str(), maxAttrType(attr), 0, (method)getterDispatch<AttrType, N>, (method)setterDispatch<AttrType, N>));
-//    CLASS_ATTR_ACCESSORS(*getClassPointer<FluidMaxWrapper>(), attr.name,
-//                         (getterDispatch<AttrType, N>),
-//                         (setterDispatch<AttrType, N>));
+    attribute_new(name.c_str(), maxAttrType(attr), 0, (method)getterMethod, (method)setterMethod));
   }
 
   ///Process the tuple of parameter descriptors
@@ -286,30 +253,49 @@ namespace impl {
 /// We need set + get specialisations for each allowed type (Float,Long, Buffer, Enum, FloatArry, LongArray, BufferArray)
 /// Note that set in the fluid base client *returns a function
 
-///Setters
-template <typename Client, size_t N>
-struct SetterDispatchImpl<Client, FloatT, N> {
-  static void f(Client &x, t_object *attr, long ac, t_atom *av) {
-    x.template setter<N>()(atom_getfloat(av));
+// Setters
+    
+template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
+struct SetValue
+{
+  static void set(Client &x, t_object *attr, long ac, t_atom *av)
+  {
+    x.template setter<N>()(Method(av));
   }
 };
+  
+template <typename Client, size_t N>
+struct Setter<Client, FloatT, N> : public SetValue<Client, N, t_atom_float, &atom_getfloat> {};
 
 template <typename Client, size_t N>
-struct SetterDispatchImpl<Client, LongT, N> {
-  static void f(Client &x, t_object *attr, long ac, t_atom *av) {
-    x.template setter<N>()(atom_getlong(av));
+struct Setter<Client, LongT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong> {};
+
+template <typename Client, size_t N>
+struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong> {};
+  
+// Getters
+  
+template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
+struct GetValue
+{
+  static void get(Client &x, t_object *attr, long *ac, t_atom **av)
+  {
+    char alloc;
+    atom_alloc(ac, av, &alloc);
+    (Method)(*av, x.template get<N>());
   }
 };
-
+  
+template <typename Client, size_t N>
+struct Getter<Client, FloatT, N> : public GetValue<Client, N, double, &atom_setfloat> {};
+  
+template <typename Client, size_t N>
+struct Getter<Client, LongT, N> : public GetValue<Client, N, t_atom_long, &atom_setlong> {};
+ 
+// Broken things
+/*
 template <typename Client, size_t N>
 struct SetterDispatchImpl<Client, BufferT, N> {
-  static void f(Client *x, t_object *attr, long ac, t_atom *av) {
-    x->template setter<N>()(atom_getlong(av));
-  }
-};
-
-template <typename Client, size_t N>
-struct SetterDispatchImpl<Client, EnumT, N> {
   static void f(Client *x, t_object *attr, long ac, t_atom *av) {
     x->template setter<N>()(atom_getlong(av));
   }
@@ -336,21 +322,8 @@ struct SetterDispatchImpl<Client, BufferArrayT, N> {
     x->template setter<N>()(atom_getlong(av));
   }
 };
-
-///Getters
-template <typename Client, size_t N>
-struct GetterDispatchImpl<Client, FloatT, N> {
-  static void f(Client &x, t_object *attr, long *ac, t_atom **av) {
-    atom_setfloat(*av, x.template get<N>());
-  }
-};
-
-template <typename Client, size_t N>
-struct GetterDispatchImpl<Client, LongT, N> {
-  static void f(Client &x, t_object *attr, long *ac, t_atom **av) {
-    atom_setfloat(*av, x.template get<N>());
-  }
-};
+*/
+  
 } // namespace impl
 
 template <typename Client, typename... Ts>
