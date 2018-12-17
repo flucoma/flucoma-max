@@ -139,13 +139,13 @@ struct NonRealTime<Wrapper, std::true_type>
 template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
 template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
   
-template <typename Client, typename... Ts>
+template <typename Client>
 class FluidMaxWrapper
-  : public impl::NonRealTime<FluidMaxWrapper<Client, Ts...>, isNonRealTime<Client>>
-  , public impl::RealTime<FluidMaxWrapper<Client, Ts...>, isRealTime<Client>>
+  : public impl::NonRealTime<FluidMaxWrapper<Client>, isNonRealTime<Client>>
+  , public impl::RealTime<FluidMaxWrapper<Client>, isRealTime<Client>>
 {
-  using RT = impl::RealTime<FluidMaxWrapper<Client, Ts...>, isRealTime<Client>>;
-  using NRT = impl::NonRealTime<FluidMaxWrapper<Client, Ts...>, isNonRealTime<Client>>;
+  using RT = impl::RealTime<FluidMaxWrapper<Client>, isRealTime<Client>>;
+  using NRT = impl::NonRealTime<FluidMaxWrapper<Client>, isNonRealTime<Client>>;
   
 public:
   
@@ -173,7 +173,7 @@ public:
   // Sets up a single attribute
   ///TODO: static assert on T?
   
-  template <typename T, size_t N> static void setupAttribute(const T &attr)
+  template <size_t N, typename T> static void setupAttribute(const T &attr)
   {
     using AttrType = std::remove_reference_t<decltype(attr)>;
 
@@ -189,10 +189,9 @@ public:
 
   ///Process the tuple of parameter descriptors
   template <size_t... Is>
-  static void processParameters(const std::tuple<Ts...>& params,
-                                std::index_sequence<Is...>) {
-    (void)std::initializer_list<int>{
-        (setupAttribute<typename Ts::first_type, Is>(std::get<Is>(params).first), 0)...};
+  static void processParameters(typename Client::ParamType& params, std::index_sequence<Is...>)
+  {
+    (void)std::initializer_list<int>{ (setupAttribute<Is>(std::get<Is>(params).first), 0)...};
   }
 
   static void *create(t_symbol *sym, long ac, t_atom *av)
@@ -209,7 +208,7 @@ public:
   }
   
   ///Entry point: sets up the Max class and its attributes
-  static void makeClass(t_symbol *nameSpace, const char *className, const std::tuple<Ts...>& params)
+  static void makeClass(t_symbol *nameSpace, const char *className, typename Client::ParamType& params)
   {
     t_class** c = getClassPointer<Client>();
     
@@ -227,7 +226,7 @@ public:
     }
     
     class_register(nameSpace, *c);
-    processParameters(params, std::index_sequence_for<Ts...>{});
+    processParameters(params, typename Client::ParamIndexList());
   }
   
   Client& client() { return mClient; }
@@ -325,9 +324,9 @@ struct SetterDispatchImpl<Client, BufferArrayT, N> {
   
 } // namespace impl
 
-template <typename Client, typename... Ts>
-void makeMaxWrapper(const char *classname, const std::tuple<Ts...> &params) {
-  FluidMaxWrapper<Client, Ts...>::makeClass(CLASS_BOX, classname, params);
+template <typename Client>
+void makeMaxWrapper(const char *classname, typename Client::ParamType &params) {
+  FluidMaxWrapper<Client>::makeClass(CLASS_BOX, classname, params);
 }
 
 } // namespace client
