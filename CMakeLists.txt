@@ -54,6 +54,7 @@ target_sources(
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxClass_Base.h"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxNonRealTimeBase.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/FluidMaxWrapper.hpp"
+	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxBufferAdaptor.hpp"
 )
 
 # set_target_properties (FLUID_MAX PROPERTIES
