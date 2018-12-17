@@ -308,12 +308,10 @@ private:
     
   template <size_t N, typename T>
   static void setupAttribute(const T &attr)
-  {
-    using AttrType = std::remove_const_t<std::remove_reference_t<decltype(attr)>>;
-    
+  {    
     std::string name = lowerCase(attr.name);
-    method setterMethod = (method) &impl::Setter<Client, AttrType, N>::set;
-    method getterMethod = (method) &impl::Getter<Client, AttrType, N>::get;
+    method setterMethod = (method) &impl::Setter<Client, T, N>::set;
+    method getterMethod = (method) &impl::Getter<Client, T, N>::get;
     
     t_object *maxAttr = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
     class_addattr(*getClass<FluidMaxWrapper>(), maxAttr);
