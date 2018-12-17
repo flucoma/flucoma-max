@@ -23,18 +23,91 @@ namespace impl {
 template <typename Client, typename T, size_t N> struct Setter;
 template <typename Client, typename T, size_t N> struct Getter;
 
-  // Dummy Class
-  
-template <class Wrapper, typename T>
-struct RealTime { static void callDSP(Wrapper *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags) {}; };
-  
-// Class Proper
+/// Specialisations for managing the compile-time dispatch of Max attributes to Fluid Parameters
+/// We need set + get specialisations for each allowed type (Float,Long, Buffer, Enum, FloatArry, LongArray, BufferArray)
+/// Note that set in the fluid base client *returns a function
+
+// Setters
+
+template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
+struct SetValue
+{
+  static void set(Client &x, t_object *attr, long ac, t_atom *av)
+  {
+    x.template setter<N>()(Method(av));
+  }
+};
+
+template <typename Client, size_t N>
+struct Setter<Client, FloatT, N> : public SetValue<Client, N, t_atom_float, &atom_getfloat> {};
+
+template <typename Client, size_t N>
+struct Setter<Client, LongT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong> {};
+
+template <typename Client, size_t N>
+struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong> {};
+
+// Getters
+
+template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
+struct GetValue
+{
+  static void get(Client &x, t_object *attr, long *ac, t_atom **av)
+  {
+    char alloc;
+    atom_alloc(ac, av, &alloc);
+    (Method)(*av, x.template get<N>());
+  }
+};
+
+template <typename Client, size_t N>
+struct Getter<Client, FloatT, N> : public GetValue<Client, N, double, &atom_setfloat> {};
+
+template <typename Client, size_t N>
+struct Getter<Client, LongT, N> : public GetValue<Client, N, t_atom_long, &atom_setlong> {};
+
+// Broken things
+/*
+ template <typename Client, size_t N>
+ struct SetterDispatchImpl<Client, BufferT, N> {
+ static void f(Client *x, t_object *attr, long ac, t_atom *av) {
+ x->template setter<N>()(atom_getlong(av));
+ }
+ };
+ 
+ template <typename Client, size_t N>
+ struct SetterDispatchImpl<Client, FloatArrayT, N> {
+ static void f(Client *x, t_object *attr, long ac, t_atom *av) {
+ x->template setter<N>()(atom_getlong(av));
+ }
+ };
+ 
+ template <typename Client, size_t N>
+ struct SetterDispatchImpl<Client, LongArrayT, N> {
+ static void f(Client *x, t_object *attr, long ac, t_atom *av) {
+ x->template setter<N>()(atom_getlong(av));
+ }
+ };
+ 
+ template <typename Client, size_t N>
+ struct SetterDispatchImpl<Client, BufferArrayT, N> {
+ static void f(Client *x, t_object *attr, long ac, t_atom *av) {
+ x->template setter<N>()(atom_getlong(av));
+ }
+ };
+ */
   
 template<class Wrapper>
-class RealTime<Wrapper, std::true_type>
+class RealTime
 {
 public:
 
+  static void setup(t_class *c)
+  {
+    class_dspinit(c);
+    class_addmethod(c, (method)callDSP, "dsp64", A_CANT, 0);
+  }
+  
   static void callDSP(Wrapper *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags) { x->dsp(dsp64, count, samplerate, maxvectorsize, flags); }
   
   static void callPerform(Wrapper *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam) {
@@ -43,7 +116,7 @@ public:
 
   void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
   {
-    auto& client = static_cast<Wrapper*>(this)->client();
+    auto& client = static_cast<Wrapper*>(this)->mClient;
     Wrapper* wrapper = static_cast<Wrapper*>(this);
 
     audioInputConnections.resize(client.audioChannelsIn());
@@ -63,7 +136,7 @@ public:
   
   void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
   {
-      auto& client = static_cast<Wrapper*>(this)->client();
+      auto& client = static_cast<Wrapper*>(this)->mClient;
       for(int i = 0; i < numins; ++i)
         if(audioInputConnections[i])
           mInputs[i].reset(ins[i],0,sampleframes);
@@ -82,16 +155,14 @@ private:
   std::vector<short> audioOutputConnections;
 };
   
-// Dummy Class
-  
-template <class Wrapper, typename T>
-struct NonRealTime { static void callProcess(Wrapper *x, t_symbol* s, long ac, t_atom* av) {}; };
-  
-// Class Proper
-  
 template <class Wrapper>
-struct NonRealTime<Wrapper, std::true_type>
+struct NonRealTime
 {
+  static void setup(t_class *c)
+  {
+    class_addmethod(c, (method)callProcess, "process", A_GIMME, 0);
+  }
+  
   void process(t_symbol* s, long ac, t_atom* av)
   {
     //Phase 1: Just take complete buffers as symbols
@@ -102,7 +173,7 @@ struct NonRealTime<Wrapper, std::true_type>
     std::vector<BufferProcessSpec> outputs;
     
     auto& wrapper = static_cast<Wrapper&>(*this);
-    auto& client = wrapper.client();
+    auto& client = wrapper.mClient;
 
     if(ac != client.audioBuffersIn() + client.audioBuffersOut())
       object_error((t_object *)&wrapper, "Wrong number of buffers");
@@ -133,33 +204,56 @@ struct NonRealTime<Wrapper, std::true_type>
   }
 };
 
+template <class Wrapper>
+struct NonRealTimeAndRealTime : public RealTime<Wrapper>, public NonRealTime<Wrapper>
+{
+  static void setup(t_class *c)
+  {
+    RealTime<Wrapper>::setup(c);
+    NonRealTime<Wrapper>::setup(c);
+  }
+};
+  
+// Base type selection
+  
+template <class Wrapper, typename NRT, typename RT>
+struct FluidMaxBase { /* This shouldn't happen, but not sure how to throw an error if it does */ };
 
+template<class Wrapper>
+struct FluidMaxBase<Wrapper, std::true_type, std::false_type> : public NonRealTime<Wrapper> {};
+  
+template<class Wrapper>
+struct FluidMaxBase<Wrapper, std::false_type, std::true_type> : public RealTime<Wrapper> {};
+  
+template<class Wrapper>
+struct FluidMaxBase<Wrapper, std::true_type, std::true_type> : public NonRealTimeAndRealTime<Wrapper>  {};
+  
 } // namespace impl
 
 template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
 template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
   
 template <typename Client>
-class FluidMaxWrapper
-  : public impl::NonRealTime<FluidMaxWrapper<Client>, isNonRealTime<Client>>
-  , public impl::RealTime<FluidMaxWrapper<Client>, isRealTime<Client>>
+class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>
 {
-  using RT = impl::RealTime<FluidMaxWrapper<Client>, isRealTime<Client>>;
-  using NRT = impl::NonRealTime<FluidMaxWrapper<Client>, isNonRealTime<Client>>;
+  friend impl::RealTime<FluidMaxWrapper<Client>>;
+  friend impl::NonRealTime<FluidMaxWrapper<Client>>;
+  
+  using FluidMaxBase = impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>;
   
 public:
   
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
   {
-      if (mClient.audioChannelsIn())
-      {
-        dsp_setup(&mObject, mClient.audioChannelsIn());
-        // FIX - not sure if we need this assumption??
-        //mObject.z_misc = Z_NO_INPLACE;
-      }
+    if (mClient.audioChannelsIn())
+    {
+      dsp_setup(&mObject, mClient.audioChannelsIn());
+      // FIX - not sure if we need this assumption??
+      //mObject.z_misc = Z_NO_INPLACE;
+    }
     
-      for (int i = 0; i < mClient.audioChannelsOut(); ++i)
-        outlet_new(this, "signal");
+    for (int i = 0; i < mClient.audioChannelsOut(); ++i)
+      outlet_new(this, "signal");
   }
     
   FluidMaxWrapper(const FluidMaxWrapper&) = delete;
@@ -208,29 +302,16 @@ public:
   }
   
   ///Entry point: sets up the Max class and its attributes
-  static void makeClass(t_symbol *nameSpace, const char *className, typename Client::ParamType& params)
+  static void makeClass(const char *className, typename Client::ParamType& params)
   {
     t_class** c = getClassPointer<Client>();
     
     *c = class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0);
-
-    if (isRealTime<Client>())
-    {
-      class_dspinit(*c);
-      class_addmethod(*c, (method)RT::callDSP, "dsp64", A_CANT, 0);
-    }
-    
-    if (isNonRealTime<Client>())
-    {
-      class_addmethod(*c,(method)NRT::callProcess, "process", A_GIMME, 0);
-    }
-    
-    class_register(nameSpace, *c);
+    FluidMaxBase::setup(*c);
+    class_register(CLASS_BOX, *c);
     processParameters(params, typename Client::ParamIndexList());
   }
   
-  Client& client() { return mClient; }
-
 private:
     
   template <class T>
@@ -246,87 +327,9 @@ private:
   Client mClient;
 };
 
-namespace impl {
-  
-/// Specialisations for managing the compile-time dispatch of Max attributes to Fluid Parameters
-/// We need set + get specialisations for each allowed type (Float,Long, Buffer, Enum, FloatArry, LongArray, BufferArray)
-/// Note that set in the fluid base client *returns a function
-
-// Setters
-    
-template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
-struct SetValue
-{
-  static void set(Client &x, t_object *attr, long ac, t_atom *av)
-  {
-    x.template setter<N>()(Method(av));
-  }
-};
-  
-template <typename Client, size_t N>
-struct Setter<Client, FloatT, N> : public SetValue<Client, N, t_atom_float, &atom_getfloat> {};
-
-template <typename Client, size_t N>
-struct Setter<Client, LongT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong> {};
-
-template <typename Client, size_t N>
-struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong> {};
-  
-// Getters
-  
-template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
-struct GetValue
-{
-  static void get(Client &x, t_object *attr, long *ac, t_atom **av)
-  {
-    char alloc;
-    atom_alloc(ac, av, &alloc);
-    (Method)(*av, x.template get<N>());
-  }
-};
-  
-template <typename Client, size_t N>
-struct Getter<Client, FloatT, N> : public GetValue<Client, N, double, &atom_setfloat> {};
-  
-template <typename Client, size_t N>
-struct Getter<Client, LongT, N> : public GetValue<Client, N, t_atom_long, &atom_setlong> {};
- 
-// Broken things
-/*
-template <typename Client, size_t N>
-struct SetterDispatchImpl<Client, BufferT, N> {
-  static void f(Client *x, t_object *attr, long ac, t_atom *av) {
-    x->template setter<N>()(atom_getlong(av));
-  }
-};
-
-template <typename Client, size_t N>
-struct SetterDispatchImpl<Client, FloatArrayT, N> {
-  static void f(Client *x, t_object *attr, long ac, t_atom *av) {
-    x->template setter<N>()(atom_getlong(av));
-  }
-};
-
-template <typename Client, size_t N>
-struct SetterDispatchImpl<Client, LongArrayT, N> {
-  static void f(Client *x, t_object *attr, long ac, t_atom *av) {
-    x->template setter<N>()(atom_getlong(av));
-  }
-};
-
-template <typename Client, size_t N>
-struct SetterDispatchImpl<Client, BufferArrayT, N> {
-  static void f(Client *x, t_object *attr, long ac, t_atom *av) {
-    x->template setter<N>()(atom_getlong(av));
-  }
-};
-*/
-  
-} // namespace impl
-
 template <typename Client>
 void makeMaxWrapper(const char *classname, typename Client::ParamType &params) {
-  FluidMaxWrapper<Client>::makeClass(CLASS_BOX, classname, params);
+  FluidMaxWrapper<Client>::makeClass(classname, params);
 }
 
 } // namespace client
