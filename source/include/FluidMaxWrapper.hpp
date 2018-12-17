@@ -165,7 +165,6 @@ struct NonRealTime
   
   void process(t_symbol* s, long ac, t_atom* av)
   {
-    //Phase 1: Just take complete buffers as symbols
     std::vector<MaxBufferAdaptor> buffersIn;
     std::vector<MaxBufferAdaptor> buffersOut;
     
@@ -181,7 +180,7 @@ struct NonRealTime
     buffersIn.reserve(client.audioBuffersIn());
     buffersOut.reserve(client.audioBuffersOut());
     
-    for(int i = 0; i < client.audioBuffersIn(); ++i)
+    for (int i = 0; i < client.audioBuffersIn(); ++i)
     {
       buffersIn.emplace_back(wrapper, atom_getsym(av + i));
       inputs.emplace_back();
@@ -246,12 +245,8 @@ public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
   {
     if (mClient.audioChannelsIn())
-    {
       dsp_setup(&mObject, mClient.audioChannelsIn());
-      // TODO - not sure if we need this assumption?? Let's assume not!
-      //mObject.z_misc = Z_NO_INPLACE;
-    }
-    
+
     for (int i = 0; i < mClient.audioChannelsOut(); ++i)
       outlet_new(this, "signal");
   }
@@ -261,7 +256,6 @@ public:
 
   static void *create(t_symbol *sym, long ac, t_atom *av)
   {
-    // TODO - Check - I removed Owen's try/catch, because everything is bust if we run out of memory
     void *x = object_alloc(*getClass<Client>());
     new(x) FluidMaxWrapper(sym, ac, av);
     return x;
@@ -308,16 +302,16 @@ private:
     
   template <size_t N, typename T>
   static void setupAttribute(const T &attr)
-  {    
+  {
     std::string name = lowerCase(attr.name);
     method setterMethod = (method) &impl::Setter<Client, T, N>::set;
     method getterMethod = (method) &impl::Getter<Client, T, N>::get;
-    
+      
     t_object *maxAttr = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
     class_addattr(*getClass<FluidMaxWrapper>(), maxAttr);
   }
   
-  ///Process the tuple of parameter descriptors
+  // Process the tuple of parameter descriptors
   
   template <size_t... Is>
   static void processParameters(typename Client::ParamType& params, std::index_sequence<Is...>)
