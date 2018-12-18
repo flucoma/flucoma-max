@@ -326,17 +326,18 @@ private:
   
   // Get Symbols for attribute types
   
-  static t_symbol* maxAttrType(FloatT)  { return USESYM(float64);  }
-  static t_symbol* maxAttrType(LongT)   { return USESYM(long);  }
-  static t_symbol* maxAttrType(BufferT) { return USESYM(symbol);  }
-  static t_symbol* maxAttrType(EnumT)   { return USESYM(long);  }
+  static t_symbol* maxAttrType(FloatT)  { return USESYM(float64); }
+  static t_symbol* maxAttrType(LongT)   { return USESYM(long); }
+  static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
+  static t_symbol* maxAttrType(EnumT)   { return USESYM(long); }
   
 public:
   Client mClient;
 };
 
 template <typename Client>
-void makeMaxWrapper(const char *classname, typename Client::ParamType &params) {
+void makeMaxWrapper(const char *classname, typename Client::ParamType &params)
+{
   FluidMaxWrapper<Client>::makeClass(classname, params);
 }
 
