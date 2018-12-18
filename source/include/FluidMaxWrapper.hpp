@@ -37,9 +37,10 @@ template <typename Client, typename T, size_t N> struct Getter;
 template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
 struct SetValue
 {
-  static void set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
+  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     x->mClient.template setter<N>()(Method(av));
+    return MAX_ERR_NONE;
   }
 };
 
@@ -57,11 +58,12 @@ struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_
 template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
 struct GetValue
 {
-  static void get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
     char alloc;
     atom_alloc(ac, av, &alloc);
     (Method)(*av, x->mClient.template get<N>());
+    return MAX_ERR_NONE;
   }
 };
 
