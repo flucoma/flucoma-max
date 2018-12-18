@@ -220,39 +220,44 @@ struct NonRealTimeAndRealTime : public RealTime<Wrapper>, public NonRealTime<Wra
   }
 };
   
-// Base type selection
+// Max base type
   
 struct MaxBase
 {
   t_pxobject *getMaxObject() { return &mObject; }
   t_pxobject mObject;
 };
+  
+// Templates and specilisations for all possible base options
     
 template <class Wrapper, typename NRT, typename RT>
-struct FluidMaxBase : public MaxBase { /* This shouldn't happen, but not sure how to throw an error if it does */ };
+struct FluidMaxBaseImpl : public MaxBase { /* This shouldn't happen, but not sure how to throw an error if it does */ };
 
 template<class Wrapper>
-struct FluidMaxBase<Wrapper, std::true_type, std::false_type> : public MaxBase, public NonRealTime<Wrapper> {};
+struct FluidMaxBaseImpl<Wrapper, std::true_type, std::false_type> : public MaxBase, public NonRealTime<Wrapper> {};
   
 template<class Wrapper>
-struct FluidMaxBase<Wrapper, std::false_type, std::true_type> : public MaxBase, public RealTime<Wrapper> {};
+struct FluidMaxBaseImpl<Wrapper, std::false_type, std::true_type> : public MaxBase, public RealTime<Wrapper> {};
   
 template<class Wrapper>
-struct FluidMaxBase<Wrapper, std::true_type, std::true_type> : public MaxBase, public NonRealTimeAndRealTime<Wrapper> {};
+struct FluidMaxBaseImpl<Wrapper, std::true_type, std::true_type> : public MaxBase, public NonRealTimeAndRealTime<Wrapper> {};
   
-} // namespace impl
-
+// Base class selection
+    
 template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
 template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
+    
+template <typename Client>
+using FluidMaxBase = FluidMaxBaseImpl<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>;
+
+} // namespace impl
   
 template <typename Client>
-class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>
+class FluidMaxWrapper : public impl::FluidMaxBase<Client>
 {
   friend impl::RealTime<FluidMaxWrapper<Client>>;
   friend impl::NonRealTime<FluidMaxWrapper<Client>>;
-  
-  using FluidMaxBase = impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>;
-  
+    
 public:
   
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
@@ -282,7 +287,7 @@ public:
   static void makeClass(const char *className, typename Client::ParamType& params)
   {
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
-    FluidMaxBase::setup(getClass());
+    impl::FluidMaxBase<Client>::setup(getClass());
     processParameters(params, typename Client::ParamIndexList());
     class_register(CLASS_BOX, getClass());
   }
