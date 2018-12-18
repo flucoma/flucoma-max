@@ -107,6 +107,8 @@ struct Getter<Client, LongT, N> : public GetValue<Client, N, t_atom_long, &atom_
 template<class Wrapper>
 class RealTime
 {
+  using ViewType = FluidTensorView<double,1>;
+  
 public:
 
   static void setup(t_class *c)
@@ -132,15 +134,13 @@ public:
 
     audioInputConnections.resize(client.audioChannelsIn());
     std::copy(count, count + client.audioChannelsIn(), audioInputConnections.begin());
+    
     audioOutputConnections.resize(client.audioChannelsOut());
     std::copy(count + client.audioChannelsIn(),count + client.audioChannelsIn() + client.audioChannelsOut(),audioOutputConnections.begin());
-    mInputs.clear();
-    mOutputs.clear();
-    mInputs.reserve(client.audioChannelsIn());
-    mOutputs.reserve(client.audioChannelsOut());
-    std::fill_n(std::back_inserter(mInputs),client.audioChannelsIn(),FluidTensorView<double, 1>(nullptr,0,0));
-    std::fill_n(std::back_inserter(mOutputs),client.audioChannelsOut(),FluidTensorView<double, 1>(nullptr,0,0));
-
+    
+    mInputs = std::vector<ViewType>(client.audioChannelsIn(), ViewType(nullptr,0,0));
+    mOutputs = std::vector<ViewType>(client.audioChannelsIn(), ViewType(nullptr,0,0));
+    
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
   }
   
@@ -149,18 +149,18 @@ public:
       auto& client = static_cast<Wrapper*>(this)->mClient;
       for(int i = 0; i < numins; ++i)
         if(audioInputConnections[i])
-          mInputs[i].reset(ins[i],0,sampleframes);
+          mInputs[i].reset(ins[i], 0, sampleframes);
   
       for(int i = 0; i < numouts; ++i)
         //if(audioOutputConnections[i])
-          mOutputs[i].reset(outs[i],0,sampleframes);
+          mOutputs[i].reset(outs[i], 0, sampleframes);
 
      client.process(mInputs,mOutputs);
   }
 
 private:
-  std::vector<FluidTensorView<double,1>> mInputs;
-  std::vector<FluidTensorView<double,1>> mOutputs;
+  std::vector<ViewType> mInputs;
+  std::vector<ViewType> mOutputs;
   std::vector<short> audioInputConnections;
   std::vector<short> audioOutputConnections;
 };
