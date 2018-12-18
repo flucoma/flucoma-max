@@ -192,14 +192,14 @@ struct NonRealTime
     
     for (int i = 0; i < client.audioBuffersIn(); ++i)
     {
-      buffersIn.emplace_back(wrapper, atom_getsym(av + i));
+      buffersIn.emplace_back(wrapper.getMaxObject(), atom_getsym(av + i));
       inputs.emplace_back();
       inputs[i].buffer = &buffersIn[i];
     }
     
     for (int i = client.audioBuffersIn(), j=0; i < client.audioBuffersIn() + client.audioBuffersOut(); ++i,++j)
     {
-      buffersOut.emplace_back(wrapper, atom_getsym(av + i));
+      buffersOut.emplace_back(wrapper.getMaxObject(), atom_getsym(av + i));
       outputs.emplace_back();
       outputs[j].buffer= &buffersOut[j];
     }
@@ -227,7 +227,8 @@ struct NonRealTimeAndRealTime : public RealTime<Wrapper>, public NonRealTime<Wra
   
 struct MaxBase
 {
-  t_pxobject *getMaxObject() { return &mObject; }
+  t_object* getMaxObject() { return (t_object*) &mObject; }
+  t_pxobject* getMSPObject() { return &mObject; }
   t_pxobject mObject;
 };
   
@@ -266,7 +267,7 @@ public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
   {
     if (mClient.audioChannelsIn())
-      dsp_setup(impl::MaxBase::getMaxObject(), mClient.audioChannelsIn());
+      dsp_setup(impl::MaxBase::getMSPObject(), mClient.audioChannelsIn());
 
     for (int i = 0; i < mClient.audioChannelsOut(); ++i)
       outlet_new(this, "signal");
