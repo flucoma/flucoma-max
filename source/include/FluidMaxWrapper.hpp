@@ -300,21 +300,16 @@ private:
     return (C = setClass ? setClass : C);
   }
   
-  static t_symbol* maxAttrType(FloatT)  { return USESYM(float64);  }
-  static t_symbol* maxAttrType(LongT)   { return USESYM(long);  }
-  static t_symbol* maxAttrType(BufferT) { return USESYM(symbol);  }
-  static t_symbol* maxAttrType(EnumT)   { return USESYM(long);  }
-  
-  // Sets up a single attribute
-  // TODO: static assert on T?
-  
   static std::string lowerCase(const char *str)
   {
     std::string result(str);
     std::transform(result.begin(),result.end(),result.begin(),[](unsigned char c){return std::tolower(c);});
     return result;
   }
-    
+  
+  // Sets up a single attribute
+  // TODO: static assert on T?
+
   template <size_t N, typename T>
   struct SetupAttribute
   {
@@ -329,6 +324,12 @@ private:
     }
   };
   
+  // Get Symbols for attribute types
+  
+  static t_symbol* maxAttrType(FloatT)  { return USESYM(float64);  }
+  static t_symbol* maxAttrType(LongT)   { return USESYM(long);  }
+  static t_symbol* maxAttrType(BufferT) { return USESYM(symbol);  }
+  static t_symbol* maxAttrType(EnumT)   { return USESYM(long);  }
   
 public:
   Client mClient;
