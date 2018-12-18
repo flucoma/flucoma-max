@@ -115,10 +115,14 @@ public:
     class_addmethod(c, (method)callDSP, "dsp64", A_CANT, 0);
   }
   
-  static void callDSP(Wrapper *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags) { x->dsp(dsp64, count, samplerate, maxvectorsize, flags); }
+  static void callDSP(Wrapper *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
+  {
+    x->dsp(dsp64, count, samplerate, maxvectorsize, flags);
+  }
   
-  static void callPerform(Wrapper *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam) {
-      x->perform(dsp64, ins, numins, outs, numouts, vec_size, flags, userparam);
+  static void callPerform(Wrapper *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam)
+  {
+    x->perform(dsp64, ins, numins, outs, numouts, vec_size, flags, userparam);
   }
 
   void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
@@ -127,8 +131,7 @@ public:
     Wrapper* wrapper = static_cast<Wrapper*>(this);
 
     audioInputConnections.resize(client.audioChannelsIn());
-    std::copy(count,count + client.audioChannelsIn(),audioInputConnections.begin());
-    
+    std::copy(count, count + client.audioChannelsIn(), audioInputConnections.begin());
     audioOutputConnections.resize(client.audioChannelsOut());
     std::copy(count + client.audioChannelsIn(),count + client.audioChannelsIn() + client.audioChannelsOut(),audioOutputConnections.begin());
     mInputs.clear();
