@@ -288,7 +288,7 @@ public:
   {
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     impl::FluidMaxBase<Client>::setup(getClass());
-    processParameters(params, typename Client::ParamIndexList());
+    Client::template iterateParameters<SetupAttribute>(params);
     class_register(CLASS_BOX, getClass());
   }
   
@@ -316,24 +316,20 @@ private:
   }
     
   template <size_t N, typename T>
-  static void setupAttribute(const T &attr)
+  struct SetupAttribute
   {
-    std::string name = lowerCase(attr.name);
-    method setterMethod = (method) &impl::Setter<Client, T, N>::set;
-    method getterMethod = (method) &impl::Getter<Client, T, N>::get;
+    void operator()(const T &attr)
+    {
+      std::string name = lowerCase(attr.name);
+      method setterMethod = (method) &impl::Setter<Client, T, N>::set;
+      method getterMethod = (method) &impl::Getter<Client, T, N>::get;
       
-    t_object *maxAttr = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
-    class_addattr(getClass(), maxAttr);
-  }
+      t_object *maxAttr = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
+      class_addattr(getClass(), maxAttr);
+    }
+  };
   
-  // Process the tuple of parameter descriptors
   
-  template <size_t... Is>
-  static void processParameters(typename Client::ParamType& params, std::index_sequence<Is...>)
-  {
-    (void)std::initializer_list<int>{ (setupAttribute<Is>(std::get<Is>(params).first), 0)...};
-  }
-    
 public:
   Client mClient;
 };
