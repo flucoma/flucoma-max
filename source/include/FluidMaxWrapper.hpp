@@ -18,6 +18,11 @@
 namespace fluid {
 namespace client {
 
+// Forward declaration
+    
+template <typename Client>
+class FluidMaxWrapper;
+    
 namespace impl {
   
 template <typename Client, typename T, size_t N> struct Setter;
@@ -32,9 +37,9 @@ template <typename Client, typename T, size_t N> struct Getter;
 template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
 struct SetValue
 {
-  static void set(Client &x, t_object *attr, long ac, t_atom *av)
+  static void set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    x.template setter<N>()(Method(av));
+    x->mClient.template setter<N>()(Method(av));
   }
 };
 
@@ -52,11 +57,11 @@ struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_
 template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
 struct GetValue
 {
-  static void get(Client &x, t_object *attr, long *ac, t_atom **av)
+  static void get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
     char alloc;
     atom_alloc(ac, av, &alloc);
-    (Method)(*av, x.template get<N>());
+    (Method)(*av, x->mClient.template get<N>());
   }
 };
 
@@ -322,6 +327,7 @@ private:
     (void)std::initializer_list<int>{ (setupAttribute<Is>(std::get<Is>(params).first), 0)...};
   }
     
+public:
   Client mClient;
 };
 
