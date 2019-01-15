@@ -5,13 +5,14 @@ mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 var w = box.rect[2] - box.rect[0];
 var h = box.rect[3] - box.rect[1];
-var vz = 10.;
+var vz = 1.;
 var nchan = 1;
 var bufsize = 1.;
 var dsbufamp = [0];
 var groups = [0];
 var groupscolours = [[0.4,0.4,0.4],[0.5,0.,0.],[0.,0.5,0.],[0.,0.,0.5]];
 var ngroup = 1;
+var isBipolar = 0;
 
 function loadbang(){
 	bang();
@@ -54,6 +55,12 @@ function bang()
 	mgraphics.redraw();
 }
 
+function bipolar(flag)
+{
+	isBipolar = (flag != 0);
+	downsamplebuffer();
+}
+
 function vzoom(x){
 	vz = x;
 	bang();
@@ -85,19 +92,24 @@ function downsamplebuffer(){
 	var samperpix = Math.floor(bufsize/(w-1));
 	dsbufamp.length = 0;
 	for(x = 1; x <= nchan; x++){
-		for(u = 0; u<w; u++){
-			var accum = 0;
-			bank = buf.peek(x, u*samperpix, samperpix);
-			for(v = 0; v<samperpix; v++){
-				accum = Math.max(accum, Math.abs(bank[v]));
-			}
-			dsbufamp.push(accum);
-		}}
-		bang();
-	}
+		if (isBipolar) {
 
-	function onresize(){
-		w = box.rect[2] - box.rect[0];
-		h = box.rect[3] - box.rect[1];
-		downsamplebuffer();
+		} else {
+			for(u = 0; u<w; u++){
+				var accum = 0;
+				bank = buf.peek(x, u*samperpix, samperpix);
+				for(v = 0; v<samperpix; v++){
+					accum = Math.max(accum, Math.abs(bank[v]));
+				}
+				dsbufamp.push(accum);
+			}
+		}
 	}
+	bang();
+}
+
+function onresize(){
+	w = box.rect[2] - box.rect[0];
+	h = box.rect[3] - box.rect[1];
+	downsamplebuffer();
+}
