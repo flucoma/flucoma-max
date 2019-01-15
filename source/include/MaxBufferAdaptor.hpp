@@ -35,6 +35,8 @@ namespace client {
       return *this;
     }
     
+    t_symbol* const name() { return mName; }
+    
     bool exists() const override { return getBuffer();}
     
     bool valid() const override
