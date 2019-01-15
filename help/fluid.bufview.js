@@ -26,12 +26,23 @@ function paint(){
 		rectangle(0,0,w,h);
 		fill();
 		// wave
-		for (v = 1; v <= nchan; v++){
-			set_source_rgb(groupscolours[groups[v-1]]);
-			for (u = 0; u < w; u++){
-				move_to(u,v*h/nchan);
-				line_to(u,v*h/nchan - Math.min(dsbufamp[u+(w*(v-1))]*(h/nchan)*vz,h/nchan));
-				stroke();
+		if (isBipolar) {
+			for (v = 1; v <= nchan; v++){
+				set_source_rgb(groupscolours[groups[v-1]]);
+				for (u = 0; u < w; u++){
+					move_to(u,h*(v - 0.5)/nchan);
+					line_to(u,h*(v - 0.5)/nchan - Math.max(Math.min(dsbufamp[u+(w*(v-1))]*(h/nchan)*vz*0.5, h*0.5/nchan),h * -0.5/nchan));
+					stroke();
+				}
+			}
+		} else {
+			for (v = 1; v <= nchan; v++){
+				set_source_rgb(groupscolours[groups[v-1]]);
+				for (u = 0; u < w; u++){
+					move_to(u,v*h/nchan);
+					line_to(u,v*h/nchan - Math.min(dsbufamp[u+(w*(v-1))]*(h/nchan)*vz, h/nchan));
+					stroke();
+				}
 			}
 		}
 	}
@@ -62,7 +73,7 @@ function bipolar(flag)
 }
 
 function vzoom(x){
-	vz = x;
+	vz = Math.max(x, 0.);
 	bang();
 }
 
@@ -104,9 +115,9 @@ function downsamplebuffer(){
 					}
 				}
 				if (Math.abs(accumN)> accum) {
-					dsbufamp.push(Math.min(1.0,(accumN / 2.0) + 0.5));
+					dsbufamp.push(accumN);
 				} else {
-					dsbufamp.push(Math.max(-1.0,(accum / 2.0) + 0.5));
+					dsbufamp.push(accum);
 				}
 			}
 		} else {
