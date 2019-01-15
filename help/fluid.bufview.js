@@ -93,7 +93,22 @@ function downsamplebuffer(){
 	dsbufamp.length = 0;
 	for(x = 1; x <= nchan; x++){
 		if (isBipolar) {
-
+			for(u = 0; u<w; u++){
+				var accum = 0, accumN = 0;
+				bank = buf.peek(x, u*samperpix, samperpix);
+				for(v = 0; v<samperpix; v++){
+					if (bank[v] >= 0) {
+						accum = Math.max(accum, bank[v]);
+					} else {
+						accumN = Math.min(accumN, bank[v]);
+					}
+				}
+				if (Math.abs(accumN)> accum) {
+					dsbufamp.push(Math.min(1.0,(accumN / 2.0) + 0.5));
+				} else {
+					dsbufamp.push(Math.max(-1.0,(accum / 2.0) + 0.5));
+				}
+			}
 		} else {
 			for(u = 0; u<w; u++){
 				var accum = 0;
