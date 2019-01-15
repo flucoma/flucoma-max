@@ -108,8 +108,12 @@ function downsamplebuffer(){
 		if (isBipolar) {
 			for(u = 0; u<w; u++){
 				var accum = 0, accumN = 0;
-				bank = buf.peek(x, u*samperpix, samperpix);
-				for(v = 0; v<samperpix; v++){
+				bank = buf.peek(x, Math.floor(u*samperpix), nsamps);
+				// compensating for Max's api not returning arrays of 1
+				if (!Array.isArray(bank)) {
+					bank = [bank];
+				}
+				for(v = 0; v<nsamps; v++){
 					if (bank[v] >= 0) {
 						accum = Math.max(accum, bank[v]);
 					} else {
@@ -126,24 +130,17 @@ function downsamplebuffer(){
 			for(u = 0; u<w; u++){
 				var accum = 0;
 				bank = buf.peek(x, Math.floor(u*samperpix), nsamps);
-				// post(Array.isArray(bank) + '\n')
+				// compensating for Max's api not returning arrays of 1
 				if (!Array.isArray(bank)) {
-					// post("yeah");
 					bank = [bank];
 				}
-				// post(bank + '\n');
-				// post(nsamps + '\t' + Math.floor(u*samperpix) + '\t' + bank + '\n');
 				for(v = 0; v<nsamps; v++){
 					accum = Math.max(accum, Math.abs(bank[v]));
-					// post(bank[v] + '\n');
 				}
-				// post(accum + '\n');
 				dsbufamp.push(accum);
 			}
 		}
 	}
-	// post(dsbufamp + '\n');
-	outlet(0,dsbufamp);
 	bang();
 }
 

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1434.0, 1083.0 ],
+		"rect" : [ 34.0, 79.0, 1243.0, 1083.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -167,7 +167,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1434.0, 1057.0 ],
+						"rect" : [ 34.0, 105.0, 1243.0, 1057.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -216,7 +216,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 109.0, 833.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "256"
+									"text" : "1532"
 								}
 
 							}
@@ -227,9 +227,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 129.0, 776.0, 39.0, 22.0 ],
+									"patching_rect" : [ 129.0, 776.0, 69.0, 22.0 ],
 									"style" : "",
-									"text" : "zl len"
+									"text" : "zl 8192 len"
 								}
 
 							}
@@ -503,7 +503,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 125.0, 258.5, 766.0, 465.0 ]
+									"patching_rect" : [ 125.0, 258.5, 766.0, 466.0 ]
 								}
 
 							}
@@ -674,9 +674,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
