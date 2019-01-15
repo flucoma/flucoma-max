@@ -99,8 +99,10 @@ function setbuffer(buffer){
 }
 
 function downsamplebuffer(){
-	var u,v,x,bank;
-	var samperpix = Math.floor(bufsize/(w-1));
+	var u,v,x, bank;
+	var samperpix = bufsize/w;
+	var nsamps = Math.max(Math.floor(samperpix),1);
+	post(samperpix + ' ' + nsamps + '\n');
 	dsbufamp.length = 0;
 	for(x = 1; x <= nchan; x++){
 		if (isBipolar) {
@@ -123,14 +125,25 @@ function downsamplebuffer(){
 		} else {
 			for(u = 0; u<w; u++){
 				var accum = 0;
-				bank = buf.peek(x, u*samperpix, samperpix);
-				for(v = 0; v<samperpix; v++){
-					accum = Math.max(accum, Math.abs(bank[v]));
+				bank = buf.peek(x, Math.floor(u*samperpix), nsamps);
+				// post(Array.isArray(bank) + '\n')
+				if (!Array.isArray(bank)) {
+					// post("yeah");
+					bank = [bank];
 				}
+				// post(bank + '\n');
+				// post(nsamps + '\t' + Math.floor(u*samperpix) + '\t' + bank + '\n');
+				for(v = 0; v<nsamps; v++){
+					accum = Math.max(accum, Math.abs(bank[v]));
+					// post(bank[v] + '\n');
+				}
+				// post(accum + '\n');
 				dsbufamp.push(accum);
 			}
 		}
 	}
+	// post(dsbufamp + '\n');
+	outlet(0,dsbufamp);
 	bang();
 }
 
