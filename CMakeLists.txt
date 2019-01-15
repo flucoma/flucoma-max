@@ -6,10 +6,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 # set(CMAKE_NO_SYSTEM_FROM_IMPORTED ON)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx -msse -msse2 -msse3 -msse4")
 #set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libc++")
-SET(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
+set(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
 set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Minimum OS X deployment version")
+set(CMAKE_XCODE_GENERATE_SCHEME ON)
 
-set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+# set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 
 # Fetch the correct verion of the max-api
@@ -45,10 +46,7 @@ endif()
 file(COPY ${FLUID_ABS_PATH}/AudioFiles/ DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/media/)
 include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
 
-add_library(
-	FLUID_MAX INTERFACE
-)
-
+add_library( FLUID_MAX INTERFACE )
 target_sources(
 	FLUID_MAX INTERFACE
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxClass_Base.h"
@@ -57,9 +55,8 @@ target_sources(
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxBufferAdaptor.hpp"
 )
 
-# set_target_properties (FLUID_MAX PROPERTIES
-#     FOLDER MaxWrapper
-# )
+# Make sure to build targets from fluid_decomposition
+# add_subdirectory(${FLUID_ABS_PATH} ${FLUID_ABS_PATH}/build)
 
 # Generate a project for every folder in the "source/projects" folder
 SUBDIRLIST(PROJECT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/source/projects)

@@ -18,31 +18,31 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/package-info.json.in")
 
 	message("Reading ${CMAKE_CURRENT_SOURCE_DIR}/package-info.json")
 	include("${CMAKE_CURRENT_LIST_DIR}/cmakepp.cmake")
-	
+
 	file(READ "${CMAKE_CURRENT_SOURCE_DIR}/package-info.json" PKGINFOFILE)
 	json_deserialize("${PKGINFOFILE}")
 	ans(res)
-	
+
 	map_keys("${res}")
 	ans(keys)
-	
+
 	set(has_reverse_domain false)
 	foreach (key ${keys})
 		if (key STREQUAL "package_extra")
 			nav(res.package_extra)
 			ans(extra)
 			map_keys("${extra}")
-			ans(extra_keys)						
+			ans(extra_keys)
 			foreach (extra_key ${extra_keys})
 				if (extra_key STREQUAL "reverse_domain")
 					nav(extra.reverse_domain)
-					ans(AUTHOR_DOMAIN)			
+					ans(AUTHOR_DOMAIN)
 				endif()
 				if (extra_key STREQUAL "copyright")
 					nav(extra.copyright)
-					ans(COPYRIGHT_STRING)			
+					ans(COPYRIGHT_STRING)
 				endif()
-			endforeach ()			
+			endforeach ()
 		endif ()
 	endforeach ()
 endif ()
@@ -61,7 +61,7 @@ if (APPLE)
 	if (NOT DEFINED EXCLUDE_FROM_COLLECTIVES)
 		set(EXCLUDE_FROM_COLLECTIVES "no")
 	endif()
-	
+
 	set(BUNDLE_IDENTIFIER "\${PRODUCT_NAME:rfc1034identifier}")
 	configure_file("${CMAKE_CURRENT_LIST_DIR}/Info.plist.in" "${CMAKE_CURRENT_LIST_DIR}/Info.plist" @ONLY)
 endif ()
@@ -78,4 +78,3 @@ MACRO(SUBDIRLIST result curdir)
   ENDFOREACH()
   SET(${result} ${dirlist})
 ENDMACRO()
-

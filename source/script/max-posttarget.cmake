@@ -1,22 +1,22 @@
- # Copyright (c) 2016, Cycling '74
+# Bits of this Copyright (c) 2016, Cycling '74
 # Usage of this file and its contents is governed by the MIT License
 
-# if (${C74_CXX_STANDARD} EQUAL 98)
-# 	if (APPLE)
-# 		set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=gnu++98 -stdlib=libstdc++")
-# 		set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -stdlib=libstdc++")
-# 		set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_MODULE_LINKER_FLAGS} -stdlib=libstdc++")
-# 	endif ()
-# else ()
-
-	# set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD 11)
-	# set_property(TARGET ${PROJECT_NAME} PROPERTY CXX_STANDARD_REQUIRED ON)
-# endif ()
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
+add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
+target_link_libraries(${PROJECT_NAME} PUBLIC FLUID_DECOMPOSITION  FLUID_MAX)
 
-target_link_libraries(${PROJECT_NAME} PUBLIC  FLUID_MAX)
+target_include_directories( ${PROJECT_NAME}
+	SYSTEM PRIVATE
+	"${C74_MAX_INCLUDES}"
+	"${C74_MSP_INCLUDES}"
+	"${C74_JIT_INCLUDES}"
+	PRIVATE
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
+)
 
+get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
+source_group(TREE ${FLUID_PATH}/include FILES ${HEADERS})
 
 if ("${PROJECT_NAME}" MATCHES ".*_tilde")
 	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${PROJECT_NAME}")
@@ -35,17 +35,33 @@ set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${EXTERN_OUTPUT_NA
 
 ### Output ###
 if (APPLE)
-	target_link_libraries(${PROJECT_NAME} "-framework JitterAPI")
-  target_link_libraries(${PROJECT_NAME} "-framework MaxAudioAPI")
-	set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS "-Wl,-F\"${C74_MSP_INCLUDES}\" -F\"${C74_JIT_INCLUDES}\" ")
+	find_library(JITTER_LIBRARY "JitterAPI" HINTS ${C74_MAX_API_DIR})
 
-	set_property(TARGET ${PROJECT_NAME}
-				 PROPERTY BUNDLE True)
-	set_property(TARGET ${PROJECT_NAME}
-				 PROPERTY BUNDLE_EXTENSION "mxo")
-	set_target_properties(${PROJECT_NAME} PROPERTIES XCODE_ATTRIBUTE_WRAPPER_EXTENSION "mxo")
-	set_target_properties(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_BUNDLE_VERSION "${GIT_VERSION_TAG}")
-    set_target_properties(${PROJECT_NAME} PROPERTIES MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_LIST_DIR}/Info.plist.in)
+
+	target_link_libraries(${PROJECT_NAME} PRIVATE
+		"-framework JitterAPI"
+		"-framework MaxAudioAPI"
+	)
+
+	set_target_properties(${PROJECT_NAME} PROPERTIES
+		BUNDLE True
+		LINK_FLAGS "-Wl,-F\"${C74_MSP_INCLUDES}\" -F\"${C74_JIT_INCLUDES}\" "
+		BUNDLE_EXTENSION "mxo"
+		XCODE_ATTRIBUTE_WRAPPER_EXTENSION "mxo"
+		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_LIST_DIR}/Info.plist.in
+		MACOSX_BUNDLE_BUNDLE_VERSION "${GIT_VERSION_TAG}"
+		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"
+)
+	#
+	# set_property(TARGET ${PROJECT_NAME}
+	# 			 PROPERTY )
+	# set_property(TARGET ${PROJECT_NAME}
+	# 			 PROPERTY )
+	# set_target_properties(${PROJECT_NAME}
+	# set_target_properties(${PROJECT_NAME} PROPERTIES )
+	# set_target_properties(${PROJECT_NAME} PROPERTIES )
+	#
+  #   set_target_properties(${PROJECT_NAME} PROPERTIES )
 elseif (WIN32)
 	target_link_libraries(${PROJECT_NAME} ${MaxAPI_LIB})
 	target_link_libraries(${PROJECT_NAME} ${MaxAudio_LIB})
