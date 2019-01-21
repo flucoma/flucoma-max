@@ -272,7 +272,47 @@ struct NonRealTime
   {
     class_addmethod(c, (method)deferProcess, "process", A_GIMME, 0);
   }
-  
+
+  bool validateBufferSpec(BufferProcessSpec& b)
+  {
+    BufferAdaptor::Access buf{b.buffer};
+    t_object* maxObj = (t_object*)static_cast<Wrapper*>(this);
+    
+    const char* name = static_cast<MaxBufferAdaptor*>(b.buffer)->name()->s_name;
+    
+    if(!buf.exists())
+    {
+      object_error(maxObj,"Buffer %s doesn't exist", name);
+      return false;
+    }
+    
+    if(b.startFrame > buf.numFrames())
+    {
+      object_error(maxObj,"Buffer %s offset (%d) greater than size (%d) ", name, b.startFrame, buf.numFrames());
+      return false;
+    }
+    
+    if(b.nFrames > 0 && b.startFrame + b.nFrames  > buf.numFrames())
+    {
+      object_error(maxObj,"Buffer %s offset plus length (%d) greater than size (%d) ", name, b.startFrame + b.nFrames, buf.numFrames());
+      return false;
+    }
+    
+    if(b.startChan > buf.numChans())
+    {
+      object_error(maxObj,"Buffer %s offset channel (%d) greater than available channels (%d) ", name, b.startChan, buf.numChans());
+      return false;
+    }
+    
+    if(b.nChans > 0 && b.startChan + b.nChans  > buf.numChans())
+    {
+      object_error(maxObj,"Buffer %s channel offset plus number of channels (%d) greater than available channels (%d) ", name, b.startChan + b.nChans, buf.numFrames());
+      return false;
+    }
+    
+    return true;
+  }
+
   void process(t_symbol* s, long ac, t_atom* av)
   {
     std::vector<MaxBufferAdaptor> buffersIn;
@@ -283,27 +323,69 @@ struct NonRealTime
     
     auto& wrapper = static_cast<Wrapper&>(*this);
     auto& client = wrapper.mClient;
-
-    if(ac != client.audioBuffersIn() + client.audioBuffersOut())
-      object_error((t_object *)&wrapper, "Wrong number of buffers");
     
+    std::vector<std::pair<long,long>> argsShape;
+    argsShape.reserve(ac);
+    
+    //Work out where the buffer names are, and how many other parameters are supplied
+    for(size_t i = 0; i < ac; ++i)
+    {
+      if(atom_gettype(av + i) == A_SYM) {
+        if(argsShape.size() > 0)
+          argsShape.back().second = i - 1 - argsShape.back().first;
+        argsShape.push_back({i,0});
+      }
+      else if (i == ac - 1)
+      {
+        if(argsShape.size() > 0)
+          argsShape.back().second = i - argsShape.back().first;
+      }
+    }
+    
+    if(argsShape.size() != client.audioBuffersIn() + client.audioBuffersOut())
+    {
+      object_error((t_object *)&wrapper, "Wrong number of buffer arguemnts to process message. Expected %d input buffers and %d output buffers", client.audioBuffersIn(),client.audioBuffersOut());
+      return;
+    }
+
     buffersIn.reserve(client.audioBuffersIn());
     buffersOut.reserve(client.audioBuffersOut());
-    
-    for (int i = 0; i < client.audioBuffersIn(); ++i)
+
+    size_t argPosition = 0;
+
+    for(size_t i = 0; i < client.audioBuffersIn();++i)
     {
-      buffersIn.emplace_back(wrapper.getMaxObject(), atom_getsym(av + i));
+      buffersIn.emplace_back(wrapper.getMaxObject(), atom_getsym(av + argsShape[i].first));
       inputs.emplace_back();
-      inputs[i].buffer = &buffersIn[i];
+      inputs.back().buffer = &buffersIn.back();
+      switch (argsShape[i].second)
+      {
+        case 4: inputs.back().nChans     = atom_getlong(av + argsShape[i].first + 4);
+        case 3: inputs.back().startChan  = atom_getlong(av + argsShape[i].first + 3);
+        case 2: inputs.back().nFrames    = atom_getlong(av + argsShape[i].first + 2);
+        case 1: inputs.back().startFrame = atom_getlong(av + argsShape[i].first + 1);
+        default: break;
+      }
+      if(!validateBufferSpec(inputs.back())) return;
     }
     
-    for (int i = client.audioBuffersIn(), j=0; i < client.audioBuffersIn() + client.audioBuffersOut(); ++i,++j)
+    if(client.audioBuffersOut())
     {
-      buffersOut.emplace_back(wrapper.getMaxObject(), atom_getsym(av + i));
-      outputs.emplace_back();
-      outputs[j].buffer= &buffersOut[j];
+      for(size_t i = client.audioBuffersIn(); i < client.audioBuffersIn() + client.audioBuffersOut(); ++i)
+      {
+        if(argsShape[i].second != 0)
+        {
+            object_error((t_object *)&wrapper,"Could not parse output buffer argument to process message: no numbers allowed");
+            return;
+        }
+        buffersOut.emplace_back(wrapper.getMaxObject(), atom_getsym(av + argsShape[i].first));
+        outputs.emplace_back();
+        outputs.back().buffer= &buffersOut.back();
+        if(!validateBufferSpec(outputs.back())) return ;
+      }
+      
     }
-    
+
     Result res = client.process(inputs, outputs);
     if(!res.ok())
     {
