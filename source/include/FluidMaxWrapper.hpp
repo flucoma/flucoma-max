@@ -135,8 +135,9 @@ struct Getter<Client, EnumT, N> : public GetValue<Client, N, t_atom_long, &atom_
 
 
 template <typename Client, size_t N>
-struct Getter<Client, BufferT, N> {
-    static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
+struct Getter<Client, BufferT, N>
+{
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
     char alloc;
     atom_alloc(ac, av, &alloc);
@@ -146,7 +147,20 @@ struct Getter<Client, BufferT, N> {
   }
 };
 
+template<typename Client, size_t, typename> struct Notify
+{
+  static void notify(Client& c, t_symbol *s, t_symbol *msg, void *sender, void *data) {}
+};
 
+template<typename Client, size_t N>
+struct Notify<Client,N,BufferT>
+{
+  static void notify(Client& c, t_symbol *s, t_symbol *msg, void *sender, void *data)
+  {
+    if(auto p = static_cast<MaxBufferAdaptor*>(c.template get<N>().get()))
+      p->notify(s,msg,sender,data);
+  }
+};
 
 template<typename Client>
 t_max_err getLatency(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
@@ -411,11 +425,13 @@ public:
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     impl::FluidMaxBase<Client>::setup(getClass());
     
+    class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
+    
     CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(),"warnings",0,"onoff","Report Warnings");
     
-    Client::template iterateParameters<SetupAttribute>(params);
+    Client::template iterateParameterDescriptors<SetupAttribute>(params);
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
@@ -434,6 +450,28 @@ private:
     std::transform(result.begin(),result.end(),result.begin(),[](unsigned char c){return std::tolower(c);});
     return result;
   }
+  
+  static t_max_err doNotify(FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
+  {
+    x->notify(s, msg, sender, data);
+    return MAX_ERR_NONE;
+  }
+  
+  void notify(t_symbol *s, t_symbol *msg, void *sender, void *data)
+  {
+    mClient.template forEachParam<notifyAttribute>(client(),s,msg,sender,data);
+  }
+  
+  template<size_t N, typename T>
+  struct notifyAttribute
+  {
+    void operator()(Client& c, t_symbol *s, t_symbol *msg, void *sender, void *data)
+    {
+       impl::Notify<Client,N,T>::notify(c, s, msg, sender, data);
+    }
+  };
+  
+  
   
   // Sets up a single attribute
   // TODO: static assert on T?
@@ -458,6 +496,8 @@ private:
   static t_symbol* maxAttrType(LongT)   { return USESYM(long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(EnumT)   { return USESYM(long); }
+  
+  Client& client() { return mClient; }
   
 public:
   void* mNRTDoneOutlet;
