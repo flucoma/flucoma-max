@@ -393,6 +393,8 @@ public:
       dsp_setup(impl::MaxBase::getMSPObject(), mClient.audioChannelsIn());
 
     object_obex_store(this, _sym_dumpout, (t_object*)outlet_new(this, nullptr));
+    
+    attr_args_process((t_object*)this, ac, av);
   
     if(isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this); 
     
