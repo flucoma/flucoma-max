@@ -9,11 +9,8 @@ namespace client {
  class MaxBufferAdaptor: public BufferAdaptor 
   {
   public:
-    MaxBufferAdaptor(t_object* x, t_symbol* name) :mHostObject(x),mName(name), mSamps(nullptr), mRank(1)
-    {
-      mBufref = buffer_ref_new(mHostObject, mName);
-    }
-    
+    MaxBufferAdaptor(t_object* x, t_symbol* name) :mHostObject(x),mName(name), mSamps(nullptr), mRank(1), mBufref{buffer_ref_new(mHostObject, mName)} {}
+     
     ~MaxBufferAdaptor()
     {
       release();
@@ -57,18 +54,14 @@ namespace client {
         atom_setfloat(&args[0], 0.);
         atom_setlong(&args[1], rank * channels);
         t_symbol* setSizeMsg = gensym("setsize");
-       
-        
-        object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
-        
+        auto res = object_method_typed(getBuffer(), setSizeMsg, 2, args, nullptr);
         t_atom newsize;
         atom_setlong(&newsize, frames);
         t_symbol* sampsMsg = gensym("sizeinsamps");
         object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
-        buffer_setdirty(buffer);
         acquire();
-        assert(frames == numFrames() && channels * rank == numChans());
         mRank = rank;
+        assert(frames == numFrames() && channels == numChans());
       }
     }
     
@@ -85,13 +78,16 @@ namespace client {
     {
       t_object *buffer = getBuffer();
       if(buffer)
-      mSamps = buffer_locksamples(getBuffer());
+        mSamps = buffer_locksamples(buffer);
     }
     
     void release()override
     {
       if (mSamps)
+      {
         buffer_unlocksamples(getBuffer());
+        mSamps = nullptr;
+      }
     }
     
     FluidTensorView<float,1> samps(size_t channel, size_t rankIdx = 0) override
