@@ -77,26 +77,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 19,
+					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 340.0, 916.0, 261.0 ],
+					"patching_rect" : [ 143.0, 340.0, 916.0, 275.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be sliced through transient identification. The different channels of multichannel buffers will be summed.\nWhere in the srcBuf should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel should be processed.\nFor multichannel srcBuf, how many channel should be summed.\nThe index of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positives.\nThe window size in sample within which positive detections will be clumped together to avoid overdetecting in time. No slice will be shorter than this duration."
+					"text" : "The index of the buffer to use as the source material to be sliced through transient identification. The different channels of multichannel buffers will be summed.\nWhere in the srcBuf should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel should be processed.\nFor multichannel srcBuf, how many channel should be summed.\nThe index of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positives.\nThe window size in sample within which positive detections will be clumped together to avoid overdetecting in time.\nThe minimum duration of a slice in samples."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 14,
+					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 194.0 ],
+					"patching_rect" : [ 39.0, 340.0, 92.0, 275.0 ],
 					"style" : "",
-					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ntransBuf\norder\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
+					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ntransBuf\n\norder\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce\nminSlice"
 				}
 
 			}
@@ -213,6 +213,19 @@
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "minslice",
+									"id" : "obj-20",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 356.0, 170.0, 150.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-19",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -300,7 +313,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 380.0, 139.0, 163.0, 20.0 ],
+									"patching_rect" : [ 380.0, 107.0, 163.0, 20.0 ],
 									"style" : "",
 									"text" : "optional: change parameters"
 								}
@@ -353,7 +366,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 356.0, 139.0, 20.0, 20.0 ],
+									"patching_rect" : [ 356.0, 107.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 1216.0, 359.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -657,7 +670,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 19.5, 578.0, 122.0, 22.0 ],
 									"style" : "",
-									"text" : "4684.578726"
+									"text" : "4468.765815"
 								}
 
 							}
@@ -927,9 +940,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 115.5, 446.0, 228.0, 22.0 ],
+									"patching_rect" : [ 115.5, 446.0, 212.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.buftransientslice~ @debounce 4410"
+									"text" : "fluid.buftransientslice~ @minslice 441"
 								}
 
 							}
@@ -941,7 +954,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.0, 165.0, 150.0, 22.0 ],
+									"patching_rect" : [ 356.0, 133.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -954,7 +967,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 361.75, 403.0, 150.0, 22.0 ],
+									"patching_rect" : [ 356.0, 394.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -999,6 +1012,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-20", 0 ]
 								}
 
 							}
@@ -1348,6 +1368,32 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "minslice",
+									"id" : "obj-19",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 617.0, 112.0, 150.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "debounce",
+									"id" : "obj-16",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 617.0, 147.0, 150.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-21",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -1613,21 +1659,21 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 198.0, 582.0, 50.0, 89.0 ],
 									"style" : "",
-									"text" : "245 278 359 2413 3791 3964"
+									"text" : "16 1130 2437 2440 2928 3599"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-31",
-									"linecount" : 5,
+									"linecount" : 6,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 577.0, 54.0, 76.0 ],
+									"patching_rect" : [ 50.0, 577.0, 55.0, 89.0 ],
 									"style" : "",
-									"text" : "0. 238. 2406. 3784. 3957. 30000."
+									"text" : "0. 9. 1123. 2430. 2921. 3592. 30000."
 								}
 
 							}
@@ -1847,9 +1893,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 62.0, 222.0, 130.0, 22.0 ],
+									"patching_rect" : [ 62.0, 222.0, 205.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.buftransientslice~"
+									"text" : "fluid.buftransientslice~ @minslice 25"
 								}
 
 							}
@@ -1898,8 +1944,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-31", 1 ],
 									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-19", 0 ]
 								}
 
 							}

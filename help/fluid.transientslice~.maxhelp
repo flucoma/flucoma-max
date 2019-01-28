@@ -67,26 +67,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 12,
+					"linecount" : 13,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 119.0, 340.0, 916.0, 167.0 ],
+					"patching_rect" : [ 119.0, 340.0, 916.0, 181.0 ],
 					"style" : "",
-					"text" : "The order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positives.\nThe window size in sample within with positive detections will be clumped together to avoid overdetecting in time. No slice will be shorter than this duration."
+					"text" : "The order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positives.\nThe window size in sample within with positive detections will be clumped together to avoid overdetecting in time.\nThe minimum duration of a slice in samples."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 12,
+					"linecount" : 13,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 167.0 ],
+					"patching_rect" : [ 39.0, 340.0, 92.0, 181.0 ],
 					"style" : "",
-					"text" : "order\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce"
+					"text" : "order\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce\nminSlice"
 				}
 
 			}
@@ -172,7 +172,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -203,6 +203,19 @@
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "minslice",
+									"id" : "obj-12",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 132.0, 203.0, 150.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-51",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -219,7 +232,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 160.0, 209.0, 150.0, 20.0 ],
+									"patching_rect" : [ 160.0, 172.5, 150.0, 20.0 ],
 									"style" : "",
 									"text" : "change settings"
 								}
@@ -250,7 +263,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 132.0, 208.0, 20.0, 20.0 ],
+									"patching_rect" : [ 132.0, 171.5, 20.0, 20.0 ],
 									"presentation_rect" : [ 1231.0, 374.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -728,9 +741,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 113.0, 446.0, 366.0, 22.0 ],
+									"patching_rect" : [ 113.0, 446.0, 357.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.transientslice~ @order 80 @blocksize 1024 @debounce 4410"
+									"text" : "fluid.transientslice~ @order 80 @blocksize 1024 @minslice 4410"
 								}
 
 							}
@@ -753,6 +766,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-16", 0 ],
+									"source" : [ "obj-12", 0 ]
 								}
 
 							}
@@ -1102,6 +1122,19 @@
 						"showontab" : 1,
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"attr" : "minslice",
+									"id" : "obj-20",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 290.0, 68.0, 150.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-29",
 									"maxclass" : "comment",
@@ -1528,6 +1561,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-20", 0 ]
 								}
 
 							}
