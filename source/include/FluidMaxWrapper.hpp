@@ -74,14 +74,57 @@ struct Setter<Client, LongT, N> : public SetValue<Client, N, t_atom_long, &atom_
 template <typename Client, size_t N>
 struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong> {};
 
-//MaxBufferAdaptor* getBuffer(t_atom* av)
-//{
-//  return new MaxBufferAdaptor(atom_getsymbol(av));
-//}
+template <typename Client, size_t N>
+struct Setter<Client, FloatPairsArrayT, N> {
+  static Result* result()
+  {
+    static Result res;
+    return &res;
+  }
+  
+  
+  
+  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
+  {
+    
+    using type = typename FloatPairsArrayT::type;
+    
+    type& param = x->mClient.template get<N>();
+    
+    assert(ac = param.size() * 2 && "Array parameter is wrong length");
+    
+    for(auto&& a:param)
+    {
+      a.first  = atom_getfloat(av++);
+      a.second = atom_getfloat(av++);
+    }
+    
+    x->mClient.template setter<N>(x->mVerbose ? result() : nullptr) (param);
+    
+  
+    if(x->mVerbose && !result()->ok())
+    {
+      switch(result()->status())
+      {
+        case Result::Status::kWarning:
+          object_warn((t_object*)&x,result()->message().c_str());
+          break;
+        case Result::Status::kError:
+          object_error((t_object*)&x,result()->message().c_str());
+          break;
+        default: {}
+      }
+    }
+    return MAX_ERR_NONE;
+  }
+};
+
 
 template<typename Client, size_t N>
 struct Setter<Client, BufferT, N >
 {
+  using type = typename BufferT::type;
+  
   
   static Result* result()
   {
@@ -91,7 +134,7 @@ struct Setter<Client, BufferT, N >
 
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    x->mClient.template setter<N>(x->mVerbose ? result() : nullptr) (typename BufferT::type(new MaxBufferAdaptor((t_object*)x, atom_getsym(av))));
+    x->mClient.template setter<N>(x->mVerbose ? result() : nullptr) (type(new MaxBufferAdaptor((t_object*)x, atom_getsym(av))));
     if(x->mVerbose && !result()->ok())
     {
       switch(result()->status())
@@ -147,6 +190,28 @@ struct Getter<Client, BufferT, N>
   }
 };
 
+template <typename Client, size_t N>
+struct Getter<Client, FloatPairsArrayT, N>
+{
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
+  {
+    char alloc;
+    atom_alloc(ac, av, &alloc);
+    auto& param = x->mClient.template get<N>();
+    assert(*ac == param.size() * 2 && "Array parameter is unexpected length");
+    for(auto&& a:param)
+    {
+      atom_setfloat(*av++, a.first);
+      atom_setfloat(*av++, a.second);
+    }
+    return MAX_ERR_NONE;
+  }
+};
+
+
+
+
+
 template<typename Client, size_t, typename> struct Notify
 {
   static void notify(Client& c, t_symbol *s, t_symbol *msg, void *sender, void *data) {}
@@ -169,6 +234,7 @@ t_max_err getLatency(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_ato
   atom_alloc(ac, av, &alloc);
   atom_setlong(*av,x->mClient.latency());
 }
+
 
 // Broken things
 /*
@@ -580,6 +646,7 @@ private:
   static t_symbol* maxAttrType(LongT)   { return USESYM(long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(EnumT)   { return USESYM(long); }
+  static t_symbol* maxAttrType(FloatPairsArrayT) {return USESYM(float64);}
   
   Client& client() { return mClient; }
   
