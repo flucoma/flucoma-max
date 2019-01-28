@@ -11,7 +11,7 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NRTClientWrapper<TransientClient<double,float>, decltype(TransientParams), TransientParams>>("fluid.buftransients~", TransientParams);
+  makeMaxWrapper<NRTStreamAdaptor<TransientClient<double,float>>>("fluid.buftransients~", TransientParams);
 }
 
 
