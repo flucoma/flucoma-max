@@ -305,7 +305,7 @@ public:
     std::copy(count + client.audioChannelsIn(),count + client.audioChannelsIn() + client.audioChannelsOut(),audioOutputConnections.begin());
     
     mInputs = std::vector<ViewType>(client.audioChannelsIn(), ViewType(nullptr,0,0));
-    mOutputs = std::vector<ViewType>(client.audioChannelsIn(), ViewType(nullptr,0,0));
+    mOutputs = std::vector<ViewType>(client.audioChannelsOut(), ViewType(nullptr,0,0));
     
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
   }
