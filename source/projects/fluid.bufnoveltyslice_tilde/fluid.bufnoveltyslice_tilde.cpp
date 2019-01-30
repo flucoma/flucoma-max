@@ -1,4 +1,4 @@
-#define EIGEN_USE_BLAS
+
 
 #include "clients/nrt/NoveltyClient.hpp"
 #include  "MaxNonRealTimeBase.hpp"
