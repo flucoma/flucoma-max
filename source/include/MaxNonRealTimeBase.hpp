@@ -127,6 +127,7 @@ namespace {
       if(mBufref)
       {
         buffer_ref_set(mBufref,s);
+        mName = s;
       }
     }
     
@@ -448,7 +449,10 @@ namespace {
     void set(t_symbol* s)
     {
       if(mData)
+      {
         mData->set(s);
+        mName = s;
+      }
     }
     
     
