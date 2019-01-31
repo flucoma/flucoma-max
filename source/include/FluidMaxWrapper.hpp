@@ -47,7 +47,7 @@ struct SetValue
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     result()->reset();
-    x->mClient.template setter<N>(x->mVerbose?result():nullptr)(Method(av));
+    x->mClient.template set<N>(Method(av),x->mVerbose?result():nullptr);
     if(x->mVerbose && !result()->ok())
     {
       switch(result()->status())
@@ -134,7 +134,7 @@ struct Setter<Client, BufferT, N >
 
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    x->mClient.template setter<N>(x->mVerbose ? result() : nullptr) (type(new MaxBufferAdaptor((t_object*)x, atom_getsym(av))));
+    x->mClient.template set<N>(type(new MaxBufferAdaptor((t_object*)x, atom_getsym(av))),x->mVerbose ? result() : nullptr);
     if(x->mVerbose && !result()->ok())
     {
       switch(result()->status())
