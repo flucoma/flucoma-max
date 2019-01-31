@@ -319,9 +319,8 @@
 , 							{
 								"box" : 								{
 									"autopopulate" : 1,
-									"depth" : 1,
 									"id" : "obj-1",
-									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -344,7 +343,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 65.0, 755.0, 50.0, 35.0 ],
 									"style" : "",
-									"text" : "421.44855"
+									"text" : "576.145125"
 								}
 
 							}
@@ -1013,9 +1012,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1672,9 +1671,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",

@@ -171,7 +171,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -330,9 +330,8 @@
 , 							{
 								"box" : 								{
 									"autopopulate" : 1,
-									"depth" : 1,
 									"id" : "obj-4",
-									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -473,7 +472,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "int" ],
-									"patching_rect" : [ 231.5, 169.0, 173.0, 23.0 ],
+									"patching_rect" : [ 227.5, 168.0, 173.0, 23.0 ],
 									"style" : ""
 								}
 
@@ -565,7 +564,7 @@
 									"outlettype" : [ "signal", "signal" ],
 									"patching_rect" : [ 291.5, 400.0, 243.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.transients~ @order 20 @blocksize 256"
+									"text" : "fluid.transients~ @order 20 @blocksize 512"
 								}
 
 							}
@@ -835,9 +834,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",

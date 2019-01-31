@@ -102,7 +102,6 @@ function downsamplebuffer(){
 	var u,v,x, bank;
 	var samperpix = bufsize/w;
 	var nsamps = Math.max(Math.floor(samperpix),1);
-	post(samperpix + ' ' + nsamps + '\n');
 	dsbufamp.length = 0;
 	for(x = 1; x <= nchan; x++){
 		if (isBipolar) {

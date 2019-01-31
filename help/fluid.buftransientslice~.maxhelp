@@ -450,7 +450,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 556.0, 817.0, 140.0, 22.0 ],
 									"style" : "",
-									"text" : "285.804989"
+									"text" : "54.263039"
 								}
 
 							}
@@ -463,7 +463,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 151.5, 702.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "0"
+									"text" : "73"
 								}
 
 							}
@@ -670,7 +670,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 19.5, 578.0, 122.0, 22.0 ],
 									"style" : "",
-									"text" : "4468.765815"
+									"text" : "4691.036517"
 								}
 
 							}
@@ -1259,9 +1259,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1659,21 +1659,21 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 198.0, 582.0, 50.0, 89.0 ],
 									"style" : "",
-									"text" : "16 1130 2437 2440 2928 3599"
+									"text" : "137 591 903 2163 2776 3940"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-31",
-									"linecount" : 6,
+									"linecount" : 7,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 577.0, 55.0, 89.0 ],
+									"patching_rect" : [ 50.0, 577.0, 55.0, 102.0 ],
 									"style" : "",
-									"text" : "0. 9. 1123. 2430. 2921. 3592. 30000."
+									"text" : "0. 130. 584. 896. 2156. 2769. 3933. 30000."
 								}
 
 							}
@@ -2152,9 +2152,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
