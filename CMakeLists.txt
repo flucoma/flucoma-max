@@ -49,8 +49,8 @@ include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
 add_library( FLUID_MAX INTERFACE )
 target_sources(
 	FLUID_MAX INTERFACE
-	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxClass_Base.h"
-	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxNonRealTimeBase.hpp"
+	# "${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxClass_Base.h"
+	# "${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxNonRealTimeBase.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/FluidMaxWrapper.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxBufferAdaptor.hpp"
 )
