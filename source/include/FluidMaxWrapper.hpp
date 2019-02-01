@@ -24,7 +24,51 @@ template <typename Client>
 class FluidMaxWrapper;
     
 namespace impl {
+
+
+template<typename Client, size_t ParamIdx, size_t ArgIdx, typename T, T Method(const t_atom *av)>
+struct FetchValue
+{
+using Params = typename Client::ParamType;
+ static T value(const long ac, t_atom *av, Params& params)
+ {
+    return ArgIdx < ac ? Method(av) : Client::template ParameterDefaultAt<ParamIdx>(params);
+ }
+};
+
+template<typename Client, size_t ParamIdx, size_t ArgIdx, typename T>
+struct Fetcher;
+
+template<typename Client, size_t ParamIdx,size_t ArgIdx>
+struct Fetcher<Client, ParamIdx, ArgIdx, FloatT>:public FetchValue<Client, ParamIdx,ArgIdx, t_atom_float, atom_getfloat>{};
+
+template<typename Client, size_t ParamIdx, size_t ArgIdx>
+struct Fetcher<Client, ParamIdx, ArgIdx, LongT> :public FetchValue<Client, ParamIdx,ArgIdx, t_atom_long,  atom_getlong>{};
+
+//sorry Alex, can't avoid a pack expansion
+template<typename Client>
+struct ClientFactory
+{
+  using Params = typename Client::ParamType;
   
+  static Client create(const long ac, t_atom* av, Params& params)
+  {
+    using FixedParamIndices = typename Client::FixedParams;
+    using ArgIndices = std::make_index_sequence<Client::FixedParams::size()>;
+  
+    return createImpl(ac, av,params, FixedParamIndices{},ArgIndices{});
+  }
+  
+private:
+  template<size_t...Is, size_t...Js>
+  static Client createImpl(const long ac, t_atom* av, Params& params,  std::index_sequence<Is...>, std::index_sequence<Js...>)
+  {
+    return Client{Fetcher<Client, Is, Js, typename Client::template ParamDescriptorTypeAt<Is> >::value(ac, av + Js, params)...};
+  }       
+  
+};
+
+
 template <typename Client, typename T, size_t N> struct Setter;
 template <typename Client, typename T, size_t N> struct Getter;
 
@@ -537,8 +581,10 @@ class FluidMaxWrapper : public impl::FluidMaxBase<Client>
 public:
   
   using ClientType = Client;
+  using ParamType = typename Client::ParamType;
   
-  FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
+  
+  FluidMaxWrapper(t_symbol*, long ac, t_atom *av):mClient{impl::ClientFactory<Client>::create(ac,av,*getParams())}
   {
     if (mClient.audioChannelsIn())
       dsp_setup(impl::MaxBase::getMSPObject(), mClient.audioChannelsIn());
@@ -565,6 +611,12 @@ public:
   {
     void *x = object_alloc(getClass());
     new(x) FluidMaxWrapper(sym, ac, av);
+    
+    if(ac > Client::NumFixedParams)
+    {
+      object_warn((t_object*)x, "Too many arguments. Got %d, expect at most %d",*sym->s_name,ac,Client::NumFixedParams);
+    }
+    
     return x;
   }
   
@@ -573,9 +625,10 @@ public:
     x->~FluidMaxWrapper();
   }
   
-  static void makeClass(const char *className, typename Client::ParamType& params)
+  static void makeClass(const char *className, ParamType& params)
   {
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
+    getParams(&params);
     impl::FluidMaxBase<Client>::setup(getClass());
     
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
@@ -584,13 +637,19 @@ public:
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(),"warnings",0,"onoff","Report Warnings");
     
-    Client::template iterateAdjustableParameterDescriptors<SetupAttribute>(params);
+    Client::template iterateMutableParameterDescriptors<SetupAttribute>(params);
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
   
 private:
-    
+  
+  static ParamType* getParams(ParamType* setParam = nullptr)
+  {
+    static ParamType* p = nullptr;
+    return (p = setParam ? setParam : p);
+  }
+  
   static t_class *getClass(t_class *setClass = nullptr)
   {
     static t_class *C = nullptr;
