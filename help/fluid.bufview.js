@@ -10,7 +10,8 @@ var nchan = 1;
 var bufsize = 1.;
 var dsbufamp = [0];
 var groups = [0];
-var groupscolours = [[0.4,0.4,0.4],[0.5,0.,0.],[0.,0.5,0.],[0.,0.,0.5]];
+var bc = [0.1, 0.1, 0.1]
+var groupscolours = [[0.8,0.8,0.8],[0.5,0.,0.],[0.,0.5,0.],[0.,0.,0.5],[0.5,0.5,0.],[0.,0.5,0.5],[0.5,0.,0.5]];
 var ngroup = 1;
 var isBipolar = 0;
 
@@ -22,7 +23,7 @@ function paint(){
 	var u,v;
 	with (mgraphics) {
 		// background
-		set_source_rgb(0.1,0.1,0.1);
+		set_source_rgb(bc);
 		rectangle(0,0,w,h);
 		fill();
 		// wave
@@ -82,7 +83,31 @@ function getgroups(){
 }
 
 function nextgroup(x){
-	ngroup = Math.max(Math.min(3,Math.floor(x)),1);
+	ngroup = Math.max(Math.min((groupscolours.length - 1),Math.floor(x)),1);
+}
+
+function setMaxGroups(nbarrays){
+	if (groupscolours.length <= nbarrays) {
+		for (i = groupscolours.length; i <= nbarrays; i++) {
+			groupscolours[i] = [1.,1.,1.]
+		}
+	}
+}
+
+function setbg(r, g, b) {
+	bc[0] = r;
+	bc[1] = g;
+	bc[2] = b;
+	bang()
+}
+
+function setgroupcolor(i, r, g, b) {
+	if (i < groupscolours.length) {
+		groupscolours[i][0] = r;
+		groupscolours[i][1] = g;
+		groupscolours[i][2] = b;
+		bang()
+	}
 }
 
 function setbuffer(buffer){
