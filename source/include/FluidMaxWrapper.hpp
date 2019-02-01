@@ -504,7 +504,10 @@ struct MaxBase
 // Templates and specilisations for all possible base options
     
 template <class Wrapper, typename NRT, typename RT>
-struct FluidMaxBaseImpl : public MaxBase { /* This shouldn't happen, but not sure how to throw an error if it does */ };
+struct FluidMaxBaseImpl : public MaxBase
+{
+  static_assert(isRealTime<FluidMaxBaseImpl>::value || isNonRealTime<FluidMaxBaseImpl>::value, "This object seems to be neither real-time nor non-real-time! Check that your Client inherits from Audio[In/Out], Control[In/Out] or Offline[In/Out]");
+};
 
 template<class Wrapper>
 struct FluidMaxBaseImpl<Wrapper, std::true_type, std::false_type> : public MaxBase, public NonRealTime<Wrapper> {};
@@ -581,7 +584,7 @@ public:
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(),"warnings",0,"onoff","Report Warnings");
     
-    Client::template iterateParameterDescriptors<SetupAttribute>(params);
+    Client::template iterateAdjustableParameterDescriptors<SetupAttribute>(params);
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
@@ -632,6 +635,7 @@ private:
     void operator()(const T &attr)
     {
       std::string name = lowerCase(attr.name);
+      std::cout<<name<<'\n';
       method setterMethod = (method) &impl::Setter<Client, T, N>::set;
       method getterMethod = (method) &impl::Getter<Client, T, N>::get;
       
