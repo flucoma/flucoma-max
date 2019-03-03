@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 334.0, -968.0, 1212.0, 934.0 ],
+		"rect" : [ 310.0, 79.0, 704.0, 881.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,12 +49,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 334.0, -942.0, 1212.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 704.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -89,7 +89,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 86.5, 488.5, 254.0, 20.0 ],
-									"presentation_rect" : [ 87.0, 491.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "filters"
 								}
@@ -105,7 +104,6 @@
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 									"patching_rect" : [ 63.0, 728.0, 438.0, 73.0 ],
-									"presentation_rect" : [ 63.0, 729.0, 0.0, 0.0 ],
 									"style" : "",
 									"voffset" : 1.0
 								}
@@ -121,7 +119,6 @@
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 									"patching_rect" : [ 63.0, 650.0, 438.0, 73.0 ],
-									"presentation_rect" : [ 63.0, 651.0, 0.0, 0.0 ],
 									"style" : "",
 									"voffset" : 1.0
 								}
@@ -136,7 +133,6 @@
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 									"patching_rect" : [ 63.0, 573.0, 438.0, 73.0 ],
-									"presentation_rect" : [ 63.0, 574.0, 0.0, 0.0 ],
 									"style" : "",
 									"voffset" : 1.0
 								}
@@ -162,7 +158,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 567.0, 273.5, 204.0, 22.0 ],
-									"presentation_rect" : [ 62.0, 465.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "filterupdate 1, process didact-source"
 								}
@@ -176,7 +171,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 963.0, 516.0, 113.0, 22.0 ],
-									"presentation_rect" : [ 963.0, 518.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "name didact-dest 3"
 								}
@@ -185,14 +179,12 @@
 , 							{
 								"box" : 								{
 									"buffername" : "didact-dest",
-									"chanoffset" : 3,
 									"id" : "obj-41",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 									"patching_rect" : [ 724.0, 728.0, 438.0, 73.0 ],
-									"presentation_rect" : [ 722.0, 728.0, 0.0, 0.0 ],
 									"style" : "",
 									"voffset" : 1.0
 								}
@@ -208,7 +200,6 @@
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 									"patching_rect" : [ 724.0, 650.0, 438.0, 73.0 ],
-									"presentation_rect" : [ 724.0, 650.0, 0.0, 0.0 ],
 									"style" : "",
 									"voffset" : 1.0
 								}
@@ -222,7 +213,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 230.0, 516.0, 77.0, 22.0 ],
-									"presentation_rect" : [ 880.0, 246.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "name filter 3"
 								}
@@ -236,7 +226,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 151.0, 516.0, 77.0, 22.0 ],
-									"presentation_rect" : [ 805.0, 247.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "name filter 2"
 								}
@@ -250,7 +239,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 70.0, 516.0, 77.0, 22.0 ],
-									"presentation_rect" : [ 725.0, 247.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "name filter 1"
 								}
@@ -279,7 +267,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -553,8 +541,8 @@
 												"name" : "max6box",
 												"default" : 												{
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -895,8 +883,8 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 63.0, 309.0, 323.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @envbuf didact-dest @filterbuf filter @rank 3"
@@ -1171,8 +1159,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1244,12 +1232,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 704.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1441,6 +1429,7 @@
 , 							{
 								"box" : 								{
 									"buffername" : "didact-source",
+									"chanoffset" : 0,
 									"id" : "obj-15",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -1585,8 +1574,8 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 63.0, 309.0, 242.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @envbuf didact-dest @rank 2"
@@ -1763,8 +1752,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1964,12 +1953,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 704.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2350,8 +2339,8 @@
 									"id" : "obj-39",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 220.0, 802.0, 803.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @hopsize 256 @winsize 1024 @fftsize 2048 @iterations 100 @filterbuf guit-dicts-sum @filterupdate 2 @rank 2 @resynthbuf guit-audio"
@@ -2505,8 +2494,8 @@
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 108.0, 151.0, 698.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @hopsize 256 @winsize 1024 @fftsize 2048 @iterations 100 @filterbuf guit-dicts @rank 10 @resynthbuf guit-audio"
@@ -2742,8 +2731,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2815,12 +2804,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 310.0, 131.0, 704.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3088,7 +3077,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 215.0, 391.0, 93.0, 22.0 ],
 									"style" : "",
-									"text" : "2482.672339"
+									"text" : "21859.16"
 								}
 
 							}
@@ -3162,8 +3151,8 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 93.0, 266.0, 710.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @resynthbuf resynth @filterbuf filt @envbuf env @rank 5 @iterations 100 @winsize 512 @hopsize 256 @fftsize 1024"
@@ -3177,9 +3166,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 224.0, 85.0, 22.0 ],
+									"patching_rect" : [ 104.0, 100.0, 142.0, 22.0 ],
 									"style" : "",
-									"text" : "process synth"
+									"text" : "sourcebuf synth, process"
 								}
 
 							}
@@ -3230,7 +3219,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3545,7 +3534,7 @@
 									"shape" : 1,
 									"size" : 5,
 									"style" : "",
-									"values" : [ 1, 1, 1, 1, 1 ]
+									"values" : [ 1, 0, 0, 0, 1 ]
 								}
 
 							}
@@ -3942,8 +3931,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4015,12 +4004,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 704.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4448,8 +4437,8 @@
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 42.0, 238.0, 723.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @resynthbuf resynth2 @filterbuf filt2 @envbuf env2 @rank 4 @iterations 50 @winsize 512 @hopsize 256 @fftsize 1024"
@@ -4610,8 +4599,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4675,14 +4664,14 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "fluid.bufnmf.noiseplay.pfft.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.bufnmf.polyplay.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -4693,18 +4682,6 @@
 			}
 , 			{
 				"name" : "fluid.bufcompose~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vlessthan~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vtimes~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vminus~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
