@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1212.0, 934.0 ],
+		"rect" : [ 34.0, 79.0, 1231.0, 881.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -190,12 +190,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 34.0, 105.0, 1231.0, 855.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1075,13 +1075,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-6",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 46.0, 306.0, 72.0, 22.0 ],
+									"patching_rect" : [ 46.0, 306.0, 76.0, 35.0 ],
 									"style" : "",
-									"text" : "process src"
+									"text" : "srcbuf src, process"
 								}
 
 							}
@@ -1116,11 +1117,11 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 46.0, 650.0, 378.0, 22.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 46.0, 651.0, 410.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufhpss~ @harmbuf harm @percbuf perc @hsize 17 @psize 37"
+									"text" : "fluid.bufhpss~ @harmsbuf harm @percbuf perc @hsize 17 @psize 37"
 								}
 
 							}
@@ -1733,7 +1734,7 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "fluid.hpss.gui.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1

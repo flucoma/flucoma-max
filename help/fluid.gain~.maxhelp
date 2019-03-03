@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1212.0, 934.0 ],
+		"rect" : [ 34.0, 79.0, 1231.0, 881.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -165,12 +165,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 34.0, 131.0, 1231.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -207,7 +207,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 595.0, 373.0, 50.0, 22.0 ],
+									"patching_rect" : [ 602.0, 351.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -230,7 +230,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 69.0, 526.0, 82.0, 20.0 ],
+									"patching_rect" : [ 69.0, 301.0, 82.0, 20.0 ],
 									"style" : "",
 									"text" : "null-summing"
 								}
@@ -241,11 +241,11 @@
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 665.0, 433.0, 147.0, 22.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "" ],
+									"patching_rect" : [ 694.0, 433.0, 147.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.gain~ 256 @gain 0.1"
+									"text" : "fluid.gain~ @gain 0.1"
 								}
 
 							}
@@ -256,7 +256,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 687.0, 373.0, 42.0, 22.0 ],
+									"patching_rect" : [ 807.0, 359.0, 42.0, 22.0 ],
 									"style" : "",
 									"text" : "*~ 0.1"
 								}
@@ -282,7 +282,7 @@
 									"maxclass" : "scope~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 154.200012, 595.0, 300.0, 126.0 ],
+									"patching_rect" : [ 212.200012, 217.0, 300.0, 126.0 ],
 									"range" : [ 0.0, 256.0 ],
 									"style" : ""
 								}
@@ -295,7 +295,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 175.0, 268.0, 43.0, 22.0 ],
+									"patching_rect" : [ 249.700012, 137.0, 43.0, 22.0 ],
 									"style" : "",
 									"text" : "sig~ 1"
 								}
@@ -306,9 +306,9 @@
 									"id" : "obj-12",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 130.0, 327.0, 89.0, 22.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "" ],
+									"patching_rect" : [ 179.700012, 170.0, 89.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.gain~ 256"
 								}
@@ -342,26 +342,27 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-25",
-									"linecount" : 8,
+									"linecount" : 6,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 323.200012, 100.0, 454.0, 114.0 ],
+									"patching_rect" : [ 325.200012, 101.0, 454.0, 87.0 ],
 									"style" : "",
-									"text" : "Simple RT proof of \nconcept. \n\nArgument: window size \n(determines latency) \n\nApplies gain to signal\neither via signal 2, or using 'gain' attribute if only 1 sig connected "
+									"text" : "Simple RT proof of \nconcept. \n\n\nApplies gain to signal\neither via signal 2, or using 'gain' attribute if only 1 sig connected "
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 679.0, 320.0, 55.0, 22.0 ],
+									"patching_rect" : [ 845.0, 288.0, 55.0, 35.0 ],
 									"style" : "",
-									"text" : "cycle~ 2"
+									"text" : "cycle~ 0.2"
 								}
 
 							}
@@ -372,7 +373,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 158.0, 112.0, 100.0, 22.0 ],
+									"patching_rect" : [ 69.0, 123.0, 100.0, 22.0 ],
 									"style" : "",
 									"text" : "count~ 0 256 1 1"
 								}
@@ -389,7 +390,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "float" ],
-									"patching_rect" : [ 69.0, 494.0, 74.0, 22.0 ],
+									"patching_rect" : [ 69.0, 269.0, 74.0, 22.0 ],
 									"sig" : 0.0,
 									"style" : ""
 								}
@@ -402,22 +403,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 69.0, 437.0, 138.0, 22.0 ],
+									"patching_rect" : [ 69.0, 217.0, 129.700012, 22.0 ],
 									"style" : "",
 									"text" : "-~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 50.0, 288.0, 93.0, 22.0 ],
-									"style" : "",
-									"text" : "delay~ 256 256"
 								}
 
 							}
@@ -426,11 +414,11 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 512.0, 433.0, 147.0, 22.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "signal", "" ],
+									"patching_rect" : [ 478.700012, 433.0, 147.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.gain~ 256 @gain 0.1"
+									"text" : "fluid.gain~ @gain 0.1"
 								}
 
 							}
@@ -452,7 +440,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"order" : 1,
 									"source" : [ "obj-10", 0 ]
 								}
@@ -461,7 +449,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"order" : 1,
+									"order" : 0,
 									"source" : [ "obj-12", 0 ]
 								}
 
@@ -469,7 +457,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 1 ],
-									"order" : 0,
+									"order" : 1,
 									"source" : [ "obj-12", 0 ]
 								}
 
@@ -499,13 +487,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-8", 1 ],
 									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 0 ],
-									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -560,14 +541,6 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "fluid.gain~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vminus~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vtimes~.mxo",
 				"type" : "iLaX"
 			}
  ],

@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 518.0, 104.0, 1212.0, 934.0 ],
+		"rect" : [ 100.0, 79.0, 831.0, 881.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,12 +49,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 0.0, 26.0, 831.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -467,7 +467,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -736,8 +736,8 @@
 									"id" : "obj-15",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 82.0, 245.0, 407.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnoveltyslice~ @transbuf segments @kernelsize 31 @threshold 0.3"
@@ -1096,12 +1096,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 4,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
+						"rect" : [ 100.0, 131.0, 831.0, 829.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1519,7 +1519,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 81.0, 458.0, 161.0, 56.0 ],
-									"size" : 2.0,
+									"size" : 11.0,
 									"style" : ""
 								}
 
@@ -1627,7 +1627,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1900,7 +1900,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 29.0, 403.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "0"
+									"text" : "11"
 								}
 
 							}
@@ -2012,7 +2012,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2676,7 +2676,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 5,
+											"revision" : 4,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2942,13 +2942,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-17",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 82.0, 71.0, 72.0, 22.0 ],
+									"patching_rect" : [ 82.0, 71.0, 90.0, 35.0 ],
 									"style" : "",
-									"text" : "process src"
+									"text" : "sourcebuf src, process"
 								}
 
 							}
@@ -2957,8 +2958,8 @@
 									"id" : "obj-15",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 81.0, 296.0, 392.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnoveltyslice~ @transbuf indices @kernelsize 31 @threshold 0.5"
@@ -3549,22 +3550,6 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "fluid.bufnoveltyslice~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vplus~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vtimes~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vrminus~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vlessthan~.mxo",
 				"type" : "iLaX"
 			}
  ],

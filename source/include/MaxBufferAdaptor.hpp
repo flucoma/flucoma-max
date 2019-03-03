@@ -34,7 +34,10 @@ namespace client {
     
     t_symbol* const name() { return mName; }
     
-    bool exists() const override { return getBuffer();}
+    bool exists() const override {
+      //return getBuffer(); <--Doesn't work on 0-size buffers
+      return buffer_ref_exists(mBufref); 
+    }
     
     bool valid() const override
     {
@@ -50,15 +53,21 @@ namespace client {
       {
         //Do this in two stages so we can set length in samps rather than ms
         release();
+        buffer_edit_begin(buffer);
+
         t_atom args[2];
         atom_setfloat(&args[0], 0.);
         atom_setlong(&args[1], rank * channels);
         t_symbol* setSizeMsg = gensym("setsize");
-        auto res = object_method_typed(getBuffer(), setSizeMsg, 2, args, nullptr);
+        auto res = object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
+        object_method(buffer, gensym("dirty"));
         t_atom newsize;
         atom_setlong(&newsize, frames);
         t_symbol* sampsMsg = gensym("sizeinsamps");
         object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
+        
+        object_method(buffer, gensym("dirty"));
+        buffer_edit_end(buffer, 1);
         acquire();
         mRank = rank;
         assert(frames == numFrames() && channels == numChans());
@@ -70,6 +79,7 @@ namespace client {
       if(mBufref)
       {
         buffer_ref_set(mBufref,s);
+        mName = s;
       }
     }
     
@@ -148,6 +158,10 @@ namespace client {
     
     void swap(MaxBufferAdaptor&& other)
     {
+    
+      release();
+      object_free(mBufref);
+      
       mSamps = other.mSamps;
       mBufref = other.mBufref;
       mRank = other.mRank;

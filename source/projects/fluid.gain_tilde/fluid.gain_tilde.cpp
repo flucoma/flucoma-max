@@ -5,11 +5,13 @@
 // */
 //
 //Main client code:
-#include "FluidMaxWrapper.hpp"
+
 #include <clients/rt/GainClient.hpp>
+
+#include "FluidMaxWrapper.hpp"
 
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<GainClient<double>>("fluid.gain~", GainParams);
+  makeMaxWrapper<GainClient,double,double>("fluid.gain~", GainParams);
 }

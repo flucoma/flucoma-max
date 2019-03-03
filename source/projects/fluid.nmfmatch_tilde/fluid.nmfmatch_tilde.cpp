@@ -4,5 +4,5 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NMFMatch<double>>("fluid.nmfmatch", NMFMatchParams);
+  makeMaxWrapper<NMFMatch, double, double>("fluid.nmfmatch~", NMFMatchParams);
 }
