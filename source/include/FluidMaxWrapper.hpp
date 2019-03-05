@@ -19,11 +19,12 @@
 namespace fluid {
 namespace client {
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 // Forward declaration
     
 template <typename Client,typename Params>
 class FluidMaxWrapper;
-    
+//////////////////////////////////////////////////////////////////////////////////////////////////
 namespace impl {
 
 template <typename Client,typename Params>
@@ -46,7 +47,7 @@ void printResult(FluidMaxWrapper<Client, Params>* x)
   }
 }
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template<size_t ParamIdx, typename T, T Method(const t_atom *av)>
 struct FetchValue
 {
@@ -65,6 +66,7 @@ struct Fetcher<ParamIdx, FloatT>:public FetchValue<ParamIdx, t_atom_float, atom_
 
 template<size_t ParamIdx>
 struct Fetcher<ParamIdx, LongT> :public FetchValue<ParamIdx, t_atom_long,  atom_getlong>{};
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Client, typename Params, typename T, size_t N> struct Setter;
 template <typename Client, typename Params, typename T, size_t N> struct Getter;
@@ -95,6 +97,7 @@ struct Setter<Client, Params, LongT, N> : public SetValue<Client, Params, N, t_a
 template <typename Client, typename Params, size_t N>
 struct Setter<Client, Params, EnumT, N> : public SetValue<Client, Params, N, t_atom_long, &atom_getlong> {};
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename Client, typename Params, size_t N>
 struct Setter<Client, Params, FloatPairsArrayT, N> {
   static t_max_err set(FluidMaxWrapper<Client,Params>* x, t_object *attr, long ac, t_atom *av)
@@ -113,7 +116,7 @@ struct Setter<Client, Params, FloatPairsArrayT, N> {
     return MAX_ERR_NONE;
   }
 };
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Client, typename Params, size_t N>
 struct Setter<Client, Params, FFTParamsT, N> {
@@ -131,7 +134,7 @@ struct Setter<Client, Params, FFTParamsT, N> {
   }
 };
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename Client,typename Params, size_t N>
 struct Setter<Client,Params, BufferT, N >
 {
@@ -149,7 +152,7 @@ struct Setter<Client,Params, BufferT, N >
   }
 };
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 // Getters
 
 template<typename Client,typename Params, size_t N, typename T, t_max_err Method(t_atom *av, T)>
@@ -172,7 +175,7 @@ struct Getter<Client,Params, LongT, N> : public GetValue<Client,Params, N, t_ato
 
 template <typename Client, typename Params, size_t N>
 struct Getter<Client,Params, EnumT, N> : public GetValue<Client,Params, N, t_atom_long, &atom_setlong> {};
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Client, typename Params,size_t N>
 struct Getter<Client,Params, BufferT, N>
@@ -187,7 +190,7 @@ struct Getter<Client,Params, BufferT, N>
     return MAX_ERR_NONE;
   }
 };
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename Client, typename Params, size_t N>
 struct Getter<Client,Params, FloatPairsArrayT, N>
 {
@@ -206,7 +209,7 @@ struct Getter<Client,Params, FloatPairsArrayT, N>
     return MAX_ERR_NONE;
   }
 };
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename Client, typename Params, size_t N>
 struct Getter<Client,Params, FFTParamsT, N>
 {
@@ -226,7 +229,7 @@ struct Getter<Client,Params, FFTParamsT, N>
   }
 };
 
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 template<typename Client,typename Params, size_t, typename> struct Notify
 {
@@ -243,6 +246,8 @@ struct Notify<Client, Params, N,BufferT>
   }
 };
 
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template<typename Wrapper>
 t_max_err getLatency(Wrapper* x, t_object *attr, long *ac, t_atom **av)
 {
@@ -251,7 +256,7 @@ t_max_err getLatency(Wrapper* x, t_object *attr, long *ac, t_atom **av)
   atom_setlong(*av,x->client().latency());
   return MAX_ERR_NONE;
 }
-
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 template<class Wrapper>
 class RealTime
@@ -348,7 +353,7 @@ private:
   std::vector<t_atom> mControlAtoms;
   void* mControlClock;
 };
-  
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template <class Wrapper>
 struct NonRealTime
 {
@@ -402,7 +407,7 @@ struct NonRealTimeAndRealTime : public RealTime<Wrapper>, public NonRealTime<Wra
     NonRealTime<Wrapper>::setup(c);
   }
 };
-  
+//////////////////////////////////////////////////////////////////////////////////////////////////
 // Max base type
   
 struct MaxBase
@@ -411,7 +416,7 @@ struct MaxBase
   t_pxobject* getMSPObject() { return &mObject; }
   t_pxobject mObject;
 };
-  
+//////////////////////////////////////////////////////////////////////////////////////////////////
 // Templates and specilisations for all possible base options
     
 template <class Wrapper, typename NRT, typename RT>
@@ -433,7 +438,7 @@ struct FluidMaxBaseImpl<Wrapper, std::true_type, std::true_type> : public MaxBas
 ///Move to client layer, so all hosts can use this
 //template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
 //template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
-  
+ //////////////////////////////////////////////////////////////////////////////////////////////////
 template <typename Client, typename Params>
 using FluidMaxBase = FluidMaxBaseImpl<FluidMaxWrapper<Client, Params>, isNonRealTime<Client>, isRealTime<Client>>;
 
@@ -610,6 +615,7 @@ private:
   Client mClient;
 };
 
+//////////////////////////////////////////////////////////////////////////////////////////////////
 template <template <typename...> class Client,  typename...Rest,typename Params>
 void makeMaxWrapper(const char *classname, Params& params)
 {
