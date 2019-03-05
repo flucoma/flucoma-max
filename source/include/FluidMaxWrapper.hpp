@@ -359,7 +359,7 @@ struct NonRealTime
 {
   static void setup(t_class *c)
   {
-    class_addmethod(c, (method)deferProcess, "process", A_GIMME, 0);
+    class_addmethod(c, (method)deferProcess, "bang",A_GIMME, 0);
   }
 
 
