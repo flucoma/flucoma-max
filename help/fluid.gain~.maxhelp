@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1231.0, 881.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -170,7 +170,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1231.0, 855.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -218,7 +218,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 602.0, 532.0, 150.0, 20.0 ],
+									"patching_rect" : [ 602.0, 583.0, 150.0, 20.0 ],
 									"style" : "",
 									"text" : "attribute + float or audio in"
 								}
@@ -515,7 +515,16 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"order" : 0,
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
+									"order" : 1,
 									"source" : [ "obj-8", 0 ]
 								}
 

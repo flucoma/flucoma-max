@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -49,12 +49,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 831.0, 829.0 ],
+						"rect" : [ 0.0, 26.0, 831.0, 855.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -467,7 +467,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1096,12 +1096,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 131.0, 831.0, 829.0 ],
+						"rect" : [ 100.0, 105.0, 831.0, 855.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1130,6 +1130,20 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"attr" : "fft",
+									"displaymode" : 3,
+									"id" : "obj-8",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 188.0, 224.0, 278.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"attr" : "filtersize",
 									"id" : "obj-35",
@@ -1519,7 +1533,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 81.0, 458.0, 161.0, 56.0 ],
-									"size" : 11.0,
+									"size" : 2.0,
 									"style" : ""
 								}
 
@@ -1627,7 +1641,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1900,7 +1914,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 29.0, 403.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "11"
+									"text" : "0"
 								}
 
 							}
@@ -1909,7 +1923,7 @@
 									"autopopulate" : 1,
 									"depth" : 1,
 									"id" : "obj-5",
-									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2012,7 +2026,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2676,7 +2690,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3020,32 +3034,6 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fftsize",
-									"id" : "obj-8",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 188.0, 248.0, 150.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "hopsize",
-									"id" : "obj-9",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 188.0, 224.0, 150.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"attr" : "threshold",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
@@ -3057,31 +3045,11 @@
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"attr" : "winsize",
-									"id" : "obj-11",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 188.0, 200.0, 150.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"source" : [ "obj-11", 0 ]
 								}
 
 							}
@@ -3449,13 +3417,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-15", 0 ],
-									"source" : [ "obj-9", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-82", 1 ],
 									"source" : [ "obj-93", 0 ]
 								}
@@ -3550,6 +3511,22 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "fluid.bufnoveltyslice~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vplus~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vtimes~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vrminus~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vlessthan~.mxo",
 				"type" : "iLaX"
 			}
  ],

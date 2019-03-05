@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1212.0, 934.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -169,7 +169,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 908.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -542,7 +542,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fftsettings",
+									"attr" : "fft",
 									"displaymode" : 3,
 									"id" : "obj-18",
 									"maxclass" : "attrui",

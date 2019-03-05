@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1212.0, 955.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 929.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -183,15 +183,15 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 963.0, 516.0, 113.0, 22.0 ],
+									"patching_rect" : [ 963.0, 516.0, 119.0, 22.0 ],
 									"style" : "",
-									"text" : "name didact-dest 3"
+									"text" : "name didact-dest2 3"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "didact-dest",
+									"buffername" : "didact-dest2",
 									"chanoffset" : 3,
 									"id" : "obj-41",
 									"maxclass" : "waveform~",
@@ -206,7 +206,7 @@
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "didact-dest",
+									"buffername" : "didact-dest2",
 									"chanoffset" : 2,
 									"id" : "obj-40",
 									"maxclass" : "waveform~",
@@ -554,9 +554,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -757,15 +757,15 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 732.0, 10.0, 116.0, 22.0 ],
+									"patching_rect" : [ 732.0, 10.0, 123.0, 22.0 ],
 									"style" : "",
-									"text" : "name didact-source"
+									"text" : "name didact-source2"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "didact-source",
+									"buffername" : "didact-source2",
 									"id" : "obj-15",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -797,9 +797,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 837.0, 516.0, 113.0, 22.0 ],
+									"patching_rect" : [ 837.0, 516.0, 119.0, 22.0 ],
 									"style" : "",
-									"text" : "name didact-dest 2"
+									"text" : "name didact-dest2 2"
 								}
 
 							}
@@ -810,15 +810,15 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 720.0, 516.0, 113.0, 22.0 ],
+									"patching_rect" : [ 720.0, 516.0, 119.0, 22.0 ],
 									"style" : "",
-									"text" : "name didact-dest 1"
+									"text" : "name didact-dest2 1"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "didact-dest",
+									"buffername" : "didact-dest2",
 									"id" : "obj-18",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -873,9 +873,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 561.0, 145.5, 130.0, 22.0 ],
+									"patching_rect" : [ 561.0, 145.5, 137.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ didact-dest 1 2"
+									"text" : "buffer~ didact-dest2 1 2"
 								}
 
 							}
@@ -899,9 +899,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 63.0, 309.0, 436.0, 22.0 ],
+									"patching_rect" : [ 63.0, 309.0, 449.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf didact-source @envbuf didact-dest @filtbuf filter @rank 3"
+									"text" : "fluid.bufnmf~ @srcbuf didact-source2 @envbuf didact-dest2 @filtbuf filter @rank 3"
 								}
 
 							}
@@ -912,9 +912,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 63.0, 180.0, 523.0, 22.0 ],
+									"patching_rect" : [ 63.0, 180.0, 530.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstgain 1, dstbuf didact-source, srcbuf lowsine, bang, srcbuf hisine, dststartat 44100, bang"
+									"text" : "reset, dstgain 1, dstbuf didact-source2, srcbuf lowsine, bang, srcbuf hisine, dststartat 44100, bang"
 								}
 
 							}
@@ -925,9 +925,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 561.0, 118.0, 123.0, 22.0 ],
+									"patching_rect" : [ 561.0, 118.0, 130.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ didact-source"
+									"text" : "buffer~ didact-source2"
 								}
 
 							}
@@ -1179,9 +1179,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1258,7 +1258,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 929.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1305,7 +1305,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 434.0, 78.0, 97.0, 22.0 ],
+									"patching_rect" : [ 375.0, 442.5, 97.0, 22.0 ],
 									"style" : "",
 									"text" : "sizeinsamps 1 1"
 								}
@@ -1475,7 +1475,6 @@
 , 							{
 								"box" : 								{
 									"buffername" : "didact-source",
-									"chanoffset" : 0,
 									"id" : "obj-15",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -1791,9 +1790,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1998,7 +1997,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 929.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2793,9 +2792,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2872,7 +2871,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 929.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3140,7 +3139,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 215.0, 391.0, 93.0, 22.0 ],
 									"style" : "",
-									"text" : "2392.209296"
+									"text" : "3912.04781"
 								}
 
 							}
@@ -3584,7 +3583,7 @@
 									"shape" : 1,
 									"size" : 5,
 									"style" : "",
-									"values" : [ 0, 0, 0, 1, 0 ]
+									"values" : [ 0, 1, 0, 0, 0 ]
 								}
 
 							}
@@ -3973,9 +3972,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4052,7 +4051,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 929.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 1056.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4661,9 +4660,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
