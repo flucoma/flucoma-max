@@ -517,7 +517,11 @@ public:
     class_register(CLASS_BOX, getClass());
   }
   
-  static void doReset(FluidMaxWrapper* x) { x->params().reset(); }
+  static void doReset(FluidMaxWrapper* x)
+  {
+    x->params().reset();
+    x->params().template forEachParam<touchAttribute>(x);
+  }
   
   Result& messages() {return mResult; }
   bool verbose()  { return mVerbose; }
@@ -562,6 +566,15 @@ private:
     void operator()(typename T::type& attr, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
     {
        impl::Notify<Client,P,N,T>::notify(x, s, msg, sender, data);
+    }
+  };
+  
+  template<size_t N, typename T>
+  struct touchAttribute
+  {
+    void operator()(typename T::type& attr, FluidMaxWrapper* x)
+    {
+      object_attr_touch((t_object *)x, gensym(FluidMaxWrapper::lowerCase(x->params().template name<N>()).c_str()));
     }
   };
   
