@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 320.0, -1115.0, 1231.0, 945.0 ],
+		"rect" : [ 34.0, 79.0, 1231.0, 945.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -487,9 +487,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 179.0, 376.5, 430.0, 35.0 ],
+									"patching_rect" : [ 179.0, 376.5, 395.0, 35.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, startat 0, nframes 44100, dststartchan 1, process, srcbuf stereopiano, nchans 1, dststartchan 0, process"
+									"text" : "reset, dstbuf dst, srcbuf monosynth, startat 0, nframes 44100, dststartchan 1, bang, srcbuf stereopiano, nchans 1, dststartchan 0, bang"
 								}
 
 							}
@@ -501,9 +501,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 144.0, 254.5, 465.0, 49.0 ],
+									"patching_rect" : [ 144.0, 254.5, 383.0, 49.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, startat 441000, nchans 2, gain 0.6, process, srcbuf stereopiano, startat 0, nframes 80000, startchan 1, gain 0.5, dststartat 22050, dstgain 1., process"
+									"text" : "reset, dstbuf dst, srcbuf monosynth, startat 441000, nchans 2, gain 0.6, bang, srcbuf stereopiano, startat 0, nframes 78000, startchan 1, gain 0.5, dststartat 22050, dstgain 1., bang"
 								}
 
 							}
@@ -587,14 +587,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 156.5, 422.0, 49.0 ],
+									"patching_rect" : [ 93.0, 156.5, 456.0, 35.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, nframes 9000, nchans 1, gain 0.5, process, srcbuf stereopiano, startat 30000, nframes 44100, nchans 1, gain 0.9, dstgain 1., process"
+									"text" : "reset, dstbuf dst, srcbuf monosynth, nframes 9000, nchans 1, gain 0.5, bang, srcbuf stereopiano, startat 30000, nframes 44100, nchans 1, gain 0.9, dstgain 1., bang"
 								}
 
 							}
@@ -605,9 +605,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 64.0, 459.0, 22.0 ],
+									"patching_rect" : [ 40.0, 64.0, 428.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, process, dstgain 1., srcbuf stereopiano, process"
+									"text" : "reset, dstbuf dst, srcbuf monosynth, bang, dstgain 1., srcbuf stereopiano, bang"
 								}
 
 							}
@@ -956,14 +956,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-21",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 14.0, 88.0, 196.0, 35.0 ],
+									"patching_rect" : [ 14.0, 88.0, 205.0, 22.0 ],
 									"style" : "",
-									"text" : "srcbuf monosynth, startchan 0, process"
+									"text" : "srcbuf monosynth, startchan 0, bang"
 								}
 
 							}
@@ -974,9 +973,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 220.0, 88.0, 177.0, 22.0 ],
+									"patching_rect" : [ 220.0, 88.0, 162.0, 22.0 ],
 									"style" : "",
-									"text" : "dstgain 1., startchan 1, process"
+									"text" : "dstgain 1., startchan 1, bang"
 								}
 
 							}
@@ -987,9 +986,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 426.0, 88.0, 308.0, 22.0 ],
+									"patching_rect" : [ 426.0, 88.0, 293.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf pile, srcbuf stereopiano, nchans 1, process"
+									"text" : "reset, dstbuf pile, srcbuf stereopiano, nchans 1, bang"
 								}
 
 							}
@@ -1402,7 +1401,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 320.0, -1089.0, 1231.0, 919.0 ],
+						"rect" : [ 0.0, 26.0, 1231.0, 919.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1438,7 +1437,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 175.5, 426.0, 180.0, 22.0 ],
-									"presentation_rect" : [ 153.0, 512.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "reset, srcbuf side, dstbuf hpside"
 								}
@@ -1464,9 +1462,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 88.5, 738.0, 221.0, 22.0 ],
+									"patching_rect" : [ 88.5, 738.0, 206.0, 22.0 ],
 									"style" : "",
-									"text" : "gain -0.707107, dststartchan 1, process"
+									"text" : "gain -0.707107, dststartchan 1, bang"
 								}
 
 							}
@@ -1477,9 +1475,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 233.0, 773.0, 189.0, 22.0 ],
+									"patching_rect" : [ 233.0, 773.0, 174.0, 22.0 ],
 									"style" : "",
-									"text" : "srcbuf hpside, dstgain 1., process"
+									"text" : "srcbuf hpside, dstgain 1., bang"
 								}
 
 							}
@@ -1490,9 +1488,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 331.666656, 808.0, 253.0, 22.0 ],
+									"patching_rect" : [ 331.666656, 808.0, 237.0, 22.0 ],
 									"style" : "",
-									"text" : "gain 0.707107, srcbuf mid, nchans 2, process"
+									"text" : "gain 0.707107, srcbuf mid, nchans 2, bang"
 								}
 
 							}
@@ -1516,9 +1514,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 233.0, 202.0, 651.0, 22.0 ],
+									"patching_rect" : [ 233.0, 202.0, 620.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstgain 1., dstbuf side, srcbuf stereoinput, gain 0.707107, nchans 1, process, startchan 1, gain -0.707107, process"
+									"text" : "reset, dstgain 1., dstbuf side, srcbuf stereoinput, gain 0.707107, nchans 1, bang, startchan 1, gain -0.707107, bang"
 								}
 
 							}
@@ -1529,9 +1527,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 28.0, 235.0, 312.0, 22.0 ],
+									"patching_rect" : [ 28.0, 235.0, 281.0, 22.0 ],
 									"style" : "",
-									"text" : "dstbuf mid, gain 0.707107, process, startchan 0, process"
+									"text" : "dstbuf mid, gain 0.707107, bang, startchan 0, bang"
 								}
 
 							}
@@ -1839,9 +1837,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 98.0, 468.0, 230.0, 22.0 ],
+									"patching_rect" : [ 98.0, 468.0, 215.0, 22.0 ],
 									"style" : "",
-									"text" : "dstgain 1., dststartat $1, gain $2, process"
+									"text" : "dstgain 1., dststartat $1, gain $2, bang"
 								}
 
 							}
@@ -2319,8 +2317,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",

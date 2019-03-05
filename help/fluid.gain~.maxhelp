@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -165,12 +165,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 131.0, 1231.0, 829.0 ],
+						"rect" : [ 34.0, 105.0, 1231.0, 855.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -308,9 +308,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 179.700012, 170.0, 89.0, 22.0 ],
+									"patching_rect" : [ 179.700012, 170.0, 66.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.gain~ 256"
+									"text" : "fluid.gain~"
 								}
 
 							}
@@ -541,6 +541,14 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "fluid.gain~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vminus~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vtimes~.mxo",
 				"type" : "iLaX"
 			}
  ],

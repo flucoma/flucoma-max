@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 88.0, 79.0, 1231.0, 881.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 934.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -49,12 +49,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1231.0, 829.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -83,30 +83,6 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 316.0, 695.0, 34.0, 34.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 313.0, 245.0, 100.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-61",
 									"maxclass" : "newobj",
@@ -275,8 +251,8 @@
 									"id" : "obj-14",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "list" ],
 									"patching_rect" : [ 85.0, 631.0, 290.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.nmfmatch~ @filterbuf didact-filters @maxrank 2"
@@ -554,9 +530,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 63.0, 279.0, 187.0, 22.0 ],
+									"patching_rect" : [ 63.0, 279.0, 128.0, 22.0 ],
 									"style" : "",
-									"text" : "sourcebuf didact-source, process"
+									"text" : "process didact-source"
 								}
 
 							}
@@ -565,8 +541,8 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 63.0, 309.0, 251.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @filterbuf didact-filters @rank 2"
@@ -681,16 +657,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-20", 0 ],
-									"order" : 0,
-									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-49", 0 ],
-									"order" : 1,
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -854,8 +821,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1044,12 +1011,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1231.0, 829.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -2255,8 +2222,8 @@
 									"id" : "obj-72",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "list" ],
 									"patching_rect" : [ 1291.5, 187.0, 338.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.nmfmatch~ @maxrank 3 @filterbuf 3dicts @iterations 20"
@@ -2648,8 +2615,8 @@
 									"id" : "obj-18",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 102.0, 394.5, 405.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @rank 10 @filterbuf golcar-dicts @resynthbuf golcar-sounds"
@@ -3698,8 +3665,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3771,12 +3738,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1231.0, 829.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3923,8 +3890,8 @@
 									"id" : "obj-43",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "signal", "signal", "signal", "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "signal", "signal", "signal" ],
 									"patching_rect" : [ 48.5, 400.0, 560.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.hpss~ @hopsize 256 @modeflag 1 @htf1 0.005869 @hta1 -9.6875 @htf2 0.006609 @hta2 -4.375"
@@ -4272,8 +4239,9 @@
 								"box" : 								{
 									"id" : "obj-67",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
+									"numinlets" : 3,
+									"numoutlets" : 8,
+									"outlettype" : [ "signal", "signal", "signal", "signal", "signal", "signal", "signal", "signal" ],
 									"patching_rect" : [ 48.642853, 554.5, 440.285706, 22.0 ],
 									"style" : "",
 									"text" : "poly~ fluid.nmfmatch.polyfilter 8"
@@ -4325,8 +4293,8 @@
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "list" ],
 									"patching_rect" : [ 616.86731, 400.0, 267.0, 35.0 ],
 									"style" : "",
 									"text" : "fluid.nmfmatch~ @filterbuf guit-dicts2 @hopsize 256 @winsize 1024 @fftsize 2048 @maxrank 8"
@@ -4410,8 +4378,8 @@
 									"id" : "obj-16",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 268.377502, 108.0, 698.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @hopsize 256 @winsize 1024 @fftsize 2048 @iterations 50 @filterbuf guit-dicts2 @resynthbuf guit-audio2 @rank 8"
@@ -4524,6 +4492,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-67", 2 ],
+									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-5", 1 ],
 									"source" : [ "obj-25", 0 ]
 								}
@@ -4581,6 +4556,15 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
+									"order" : 0,
+									"source" : [ "obj-38", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-67", 1 ],
+									"order" : 1,
 									"source" : [ "obj-38", 0 ]
 								}
 
@@ -4659,6 +4643,62 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-67", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-67", 7 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-67", 6 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-28", 0 ],
+									"source" : [ "obj-67", 5 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-30", 0 ],
+									"source" : [ "obj-67", 4 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-35", 0 ],
+									"source" : [ "obj-67", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-67", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-67", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-67", 0 ],
 									"source" : [ "obj-7", 0 ]
 								}
@@ -4683,8 +4723,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4756,12 +4796,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1231.0, 829.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4790,6 +4830,20 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-59",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 950.0, 79.0, 35.0, 22.0 ],
+									"presentation_rect" : [ 950.0, 82.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "read"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-28",
 									"maxclass" : "message",
@@ -4851,7 +4905,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5088,8 +5142,8 @@
 												"name" : "max6box",
 												"default" : 												{
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5342,7 +5396,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 279.0, 770.5, 870.0, 74.0 ],
 									"style" : "",
-									"text" : "What is happening: a dictionary of 89 ranks is provided, pretrained on a chromatic scale of a grand piano. It gives one activation per note. On the left we can see the activations unprocessed, on an amplitude scale of 0 to 20. On the right, there is an attempt to be creative with that information, scaling and gating the activations, and resynthesising with simple sine waves. A midi piano could be used isntead of the right-hand side notation.\n\nFor the inquisitive mind, the training patch has been provided below."
+									"text" : "What is happening: a dictionary of 88 ranks is provided, pretrained on a chromatic scale of a grand piano. It gives one activation per note. On the left we can see the activations unprocessed, on an amplitude scale of 0 to 20. On the right, there is an attempt to be creative with that information, scaling and gating the activations, and resynthesising with simple sine waves. A midi piano could be used instead of the right-hand side notation.\n\nFor the inquisitive mind, the training patch has been provided below."
 								}
 
 							}
@@ -5502,7 +5556,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5569,7 +5623,7 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 3,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5957,8 +6011,8 @@
 																	"id" : "obj-3",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "bang", "" ],
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
 																	"patching_rect" : [ 154.0, 817.0, 757.0, 22.0 ],
 																	"style" : "",
 																	"text" : "fluid.bufnmf~ @hopsize 256 @winsize 4096 @fftsize 4096 @iterations 100 @filterbuf pno-dicts @rank 88 @envbuf pno-acts @filterupdate 1"
@@ -5983,8 +6037,8 @@
 																	"id" : "obj-57",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "bang", "" ],
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
 																	"patching_rect" : [ 236.0, 358.0, 651.0, 22.0 ],
 																	"style" : "",
 																	"text" : "fluid.bufnmf~ @hopsize 256 @winsize 4096 @fftsize 4096 @iterations 100 @rank 2 @filterbuf temp @resynthbuf temp2"
@@ -6316,8 +6370,8 @@
 																"name" : "max6box",
 																"default" : 																{
 																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -6462,7 +6516,7 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 3,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -6786,8 +6840,8 @@
 																	"id" : "obj-3",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "bang", "" ],
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
 																	"patching_rect" : [ 112.0, 768.0, 885.0, 22.0 ],
 																	"style" : "",
 																	"text" : "fluid.bufnmf~ @hopsize 256 @winsize 4096 @fftsize 4096 @iterations 100 @filterbuf pno-dicts @rank 89 @resynthbuf pno-audio @envbuf pno-acts @filterupdate 1"
@@ -6812,8 +6866,8 @@
 																	"id" : "obj-57",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "bang", "" ],
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
 																	"patching_rect" : [ 118.0, 441.0, 543.0, 22.0 ],
 																	"style" : "",
 																	"text" : "fluid.bufnmf~ @hopsize 256 @winsize 4096 @fftsize 4096 @iterations 100 @rank 1 @filterbuf temp"
@@ -7103,8 +7157,8 @@
 																"name" : "max6box",
 																"default" : 																{
 																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -7175,7 +7229,7 @@
 														"appversion" : 														{
 															"major" : 7,
 															"minor" : 3,
-															"revision" : 4,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -7326,8 +7380,8 @@
 																	"id" : "obj-2",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "bang", "" ],
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
 																	"patching_rect" : [ 50.0, 200.0, 700.0, 22.0 ],
 																	"style" : "",
 																	"text" : "fluid.bufnmf~ @hopsize 256 @winsize 1024 @fftsize 2048 @iterations 100 @filterbuf pno-dicts @rank 88 @resynthbuf pno-audio"
@@ -7522,8 +7576,8 @@
 												"name" : "max6box",
 												"default" : 												{
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7673,7 +7727,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -8688,7 +8742,7 @@
 										"followglobaltempo" : 0,
 										"formantcorrection" : 0,
 										"mode" : "basic",
-										"originallength" : [ 10195.047619, "ticks" ],
+										"originallength" : [ 254400.0, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
 										"quality" : "basic",
@@ -8721,8 +8775,8 @@
 									"id" : "obj-17",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "list" ],
 									"patching_rect" : [ 279.0, 153.0, 603.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.nmfmatch~ @maxrank 88 @hopsize 512 @winsize 4096 @fftsize 4096 @iterations 10 @filterbuf pno-dicts"
@@ -8739,6 +8793,19 @@
 									"patching_rect" : [ 913.0, 153.0, 186.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ pno-dicts piano-dicts.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-49",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 351.0, 67.0, 37.0, 22.0 ],
+									"style" : "",
+									"text" : "open"
 								}
 
 							}
@@ -9044,6 +9111,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-49", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"source" : [ "obj-50", 0 ]
 								}
@@ -9118,6 +9192,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-59", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
 									"order" : 1,
 									"source" : [ "obj-60", 0 ]
@@ -9185,8 +9266,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9258,12 +9339,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 88.0, 131.0, 1231.0, 829.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 908.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -9292,19 +9373,6 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-49",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 34.0, 392.0, 100.0, 22.0 ],
-									"style" : "",
-									"text" : "getattr"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-55",
 									"maxclass" : "comment",
@@ -9701,9 +9769,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 25.0, 51.5, 303.0, 22.0 ],
+									"patching_rect" : [ 25.0, 58.5, 142.0, 22.0 ],
 									"style" : "",
-									"text" : "sourcebuf guit, nframes 88200, numchans 1, process"
+									"text" : "process guit 0 88200 0 1"
 								}
 
 							}
@@ -9738,9 +9806,9 @@
 									"id" : "obj-70",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 25.0, 86.0, 698.0, 22.0 ],
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 25.0, 87.5, 698.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @hopsize 256 @winsize 1024 @fftsize 2048 @iterations 100 @filterbuf guit-dicts @rank 10 @resynthbuf guit-audio"
 								}
@@ -9772,7 +9840,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -10853,7 +10921,7 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -11483,7 +11551,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 1473.0, 285.5, 203.0, 144.0 ],
+									"patching_rect" : [ 1476.0, 299.0, 47.0, 141.0 ],
 									"setminmax" : [ 0.0, 20.0 ],
 									"size" : 2,
 									"style" : ""
@@ -11519,13 +11587,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-17",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 1326.0, 227.0, 388.0, 22.0 ],
+									"numoutlets" : 1,
+									"outlettype" : [ "list" ],
+									"patching_rect" : [ 1382.0, 249.0, 468.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 2 @filterbuf guit-dicts-sum @fftsettings 1024 512 2048"
+									"text" : "fluid.nmfmatch~ @maxrank 2 @filterbuf guit-dicts-sum @hopsize 256 @winsize 1024 @fftsize 2048"
 								}
 
 							}
@@ -12040,8 +12109,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -12104,7 +12173,37 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
+				"name" : "fluid.nmfmatch.polyfilter.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.bufview.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "fluid.nmfmatch~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vtimes~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vdiv~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vpow~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vplus~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -12120,6 +12219,18 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "vabs~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vminus~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "vgreaterthan~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "fluid.hpss~.mxo",
 				"type" : "iLaX"
 			}
@@ -12129,8 +12240,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
