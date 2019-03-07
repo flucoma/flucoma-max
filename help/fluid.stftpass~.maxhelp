@@ -199,13 +199,24 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-31",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 202.0, 39.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-29",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 718.0, 52.0, 213.0, 33.0 ],
-									"presentation_rect" : [ 719.0, 50.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "add comments on max/round/clip behaviour"
 								}
@@ -220,7 +231,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 435.0, 137.0, 128.0, 22.0 ],
-									"presentation_rect" : [ 434.0, 134.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -525,7 +535,7 @@
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 203.0, 179.0, 106.0, 22.0 ],
 									"style" : "",
-									"text" : "delay~ 1024 1024"
+									"text" : "delay~ 2048 1024"
 								}
 
 							}
@@ -756,6 +766,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 1 ],
+									"source" : [ "obj-27", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-25", 0 ],
+									"source" : [ "obj-31", 0 ]
 								}
 
 							}
