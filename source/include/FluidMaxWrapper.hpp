@@ -84,6 +84,7 @@ struct SetValue
     x->messages().reset();
     x->params().template set<N>(Method(av),x->verbose()?&x->messages():nullptr);
     printResult(x);
+    object_attr_touch((t_object*)x, gensym("latency"));
     return MAX_ERR_NONE;
   }
 };
@@ -130,6 +131,7 @@ struct Setter<Client, Params, FFTParamsT, N> {
     x->messages().reset();
     x->params().template set<N>(param,x->verbose() ? &x->messages() : nullptr);
     printResult(x);
+    object_attr_touch((t_object *)x, gensym("latency"));
     return MAX_ERR_NONE;
   }
 };
