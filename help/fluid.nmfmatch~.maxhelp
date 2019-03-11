@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,6 +84,19 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 354.0, 647.0, 62.0, 22.0 ],
+									"style" : "",
+									"text" : "zl change"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"attr" : "latency",
 									"id" : "obj-62",
 									"maxclass" : "attrui",
@@ -97,7 +110,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "filtbuf",
+									"attr" : "dictbuf",
 									"id" : "obj-30",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -110,7 +123,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "iters",
+									"attr" : "niter",
 									"id" : "obj-42",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -383,7 +396,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "float" ],
-									"patching_rect" : [ 354.0, 657.0, 63.0, 22.0 ],
+									"patching_rect" : [ 354.0, 674.0, 63.0, 22.0 ],
 									"style" : "",
 									"text" : "unpack f f"
 								}
@@ -396,9 +409,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 354.0, 623.0, 248.0, 22.0 ],
+									"patching_rect" : [ 354.0, 623.0, 254.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 2 4096 @filtbuf didact-filters"
+									"text" : "fluid.nmfmatch~ 2 4096 @dictbuf didact-filters"
 								}
 
 							}
@@ -673,9 +686,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 63.0, 309.0, 364.0, 22.0 ],
+									"patching_rect" : [ 63.0, 309.0, 371.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf didact-source @filtbuf didact-filters @rank 2"
+									"text" : "fluid.bufnmf~ @srcbuf didact-source @dictbuf didact-filters @rank 2"
 								}
 
 							}
@@ -794,7 +807,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-49", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -845,6 +858,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-29", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-49", 0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -1052,6 +1072,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1061,8 +1082,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1257,6 +1277,19 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-39",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1292.5, 181.0, 62.0, 22.0 ],
+									"style" : "",
+									"text" : "zl change"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-12",
 									"maxclass" : "newobj",
@@ -2528,9 +2561,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 1291.5, 187.0, 239.0, 22.0 ],
+									"patching_rect" : [ 1292.5, 147.0, 247.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 3 @filtbuf 3dicts @iters 20"
+									"text" : "fluid.nmfmatch~ 3 @dictbuf 3dicts @niter 20"
 								}
 
 							}
@@ -2896,9 +2929,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 102.0, 394.5, 498.0, 22.0 ],
+									"patching_rect" : [ 102.0, 394.5, 505.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf monosum @rank 10 @filtbuf golcar-dicts @resynthbuf golcar-sounds"
+									"text" : "fluid.bufnmf~ @srcbuf monosum @rank 10 @dictbuf golcar-dicts @resynthbuf golcar-sounds"
 								}
 
 							}
@@ -3423,6 +3456,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-88", 0 ],
+									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-4", 0 ]
 								}
@@ -3687,7 +3727,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-88", 0 ],
+									"destination" : [ "obj-39", 0 ],
 									"source" : [ "obj-72", 0 ]
 								}
 
@@ -3949,6 +3989,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3958,8 +3999,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -4037,6 +4077,19 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 616.86731, 436.0, 62.0, 22.0 ],
+									"style" : "",
+									"text" : "zl change"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-12",
 									"maxclass" : "button",
@@ -4571,9 +4624,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 616.86731, 400.0, 316.0, 22.0 ],
+									"patching_rect" : [ 616.86731, 400.0, 323.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 8 @filtbuf guit-dicts2 @fft 1024 256 2048"
+									"text" : "fluid.nmfmatch~ 8 @dictbuf guit-dicts2 @fft 1024 256 2048"
 								}
 
 							}
@@ -4643,9 +4696,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 268.377502, 108.0, 695.0, 22.0 ],
+									"patching_rect" : [ 268.377502, 108.0, 702.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf guit @nframes 88200 @fft 1024 256 2048 @iters 50 @filtbuf guit-dicts2 @resynthbuf guit-audio2 @rank 8"
+									"text" : "fluid.bufnmf~ @srcbuf guit @nframes 88200 @fft 1024 256 2048 @niter 50 @dictbuf guit-dicts2 @resynthbuf guit-audio2 @rank 8"
 								}
 
 							}
@@ -4825,16 +4878,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-32", 0 ],
-									"order" : 0,
-									"source" : [ "obj-38", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-67", 1 ],
-									"order" : 1,
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-38", 0 ]
 								}
 
@@ -4894,6 +4938,22 @@
 								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
 									"source" : [ "obj-51", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-32", 0 ],
+									"order" : 0,
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-67", 1 ],
+									"order" : 1,
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -5005,6 +5065,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -5014,8 +5075,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -5064,7 +5124,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5093,6 +5153,19 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-61",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 279.0, 181.0, 62.0, 22.0 ],
+									"style" : "",
+									"text" : "zl change"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-59",
 									"maxclass" : "message",
@@ -5452,6 +5525,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -5461,8 +5535,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -6343,9 +6416,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 154.0, 817.0, 678.0, 22.0 ],
+																	"patching_rect" : [ 154.0, 817.0, 671.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 4096 256 -1 @iters 100 @filtbuf pno-dicts @rank 88 @envbuf pno-acts @filtupdate 1"
+																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 4096 256 -1 @niter 100 @dictbuf pno-dicts @rank 88 @actbuf pno-acts @dictflag 1"
 																}
 
 															}
@@ -6369,9 +6442,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 236.0, 358.0, 465.0, 22.0 ],
+																	"patching_rect" : [ 236.0, 358.0, 472.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @fft 4096 256 -1 @iters 100 @rank 2 @filtbuf temp @resynthbuf temp2"
+																	"text" : "fluid.bufnmf~ @fft 4096 256 -1 @niter 100 @rank 2 @dictbuf temp @resynthbuf temp2"
 																}
 
 															}
@@ -6714,6 +6787,7 @@
 , 															{
 																"name" : "max6message",
 																"default" : 																{
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"bgfillcolor" : 																	{
 																		"type" : "gradient",
 																		"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -6723,8 +6797,7 @@
 																		"proportion" : 0.39,
 																		"autogradient" : 0
 																	}
-,
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 																}
 ,
 																"parentstyle" : "max6box",
@@ -7154,9 +7227,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 112.0, 768.0, 806.0, 22.0 ],
+																	"patching_rect" : [ 113.0, 769.0, 799.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 4096 256 -1 @iters 100 @filtbuf pno-dicts @rank 89 @resynthbuf pno-audio @envbuf pno-acts @filtupdate 1"
+																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 4096 256 -1 @niter 100 @dictbuf pno-dicts @rank 89 @resynthbuf pno-audio @actbuf pno-acts @dictflag 1"
 																}
 
 															}
@@ -7180,9 +7253,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 118.0, 441.0, 576.0, 22.0 ],
+																	"patching_rect" : [ 118.0, 442.0, 583.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @fft 4096 256 -1 @iters 100 @rank 1 @filtbuf temp @nframes 132300 @srcbuf pianosource"
+																	"text" : "fluid.bufnmf~ @fft 4096 256 -1 @niter 100 @rank 1 @dictbuf temp @nframes 132300 @srcbuf pianosource"
 																}
 
 															}
@@ -7488,6 +7561,7 @@
 , 															{
 																"name" : "max6message",
 																"default" : 																{
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"bgfillcolor" : 																	{
 																		"type" : "gradient",
 																		"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -7497,8 +7571,7 @@
 																		"proportion" : 0.39,
 																		"autogradient" : 0
 																	}
-,
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 																}
 ,
 																"parentstyle" : "max6box",
@@ -7668,9 +7741,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 50.0, 200.0, 647.0, 22.0 ],
+																	"patching_rect" : [ 51.0, 199.0, 654.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 1024 256 2048 @iters 100 @filtbuf pno-dicts @rank 88 @resynthbuf pno-audio"
+																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 1024 256 2048 @niter 100 @dictbuf pno-dicts @rank 88 @resynthbuf pno-audio"
 																}
 
 															}
@@ -7867,6 +7940,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -7876,8 +7950,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -9049,9 +9122,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 279.0, 153.0, 372.0, 22.0 ],
+									"patching_rect" : [ 279.0, 153.0, 379.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 88 @fft 4096 512 4096 @iters 10 @filtbuf pno-dicts"
+									"text" : "fluid.nmfmatch~ 88 @fft 4096 512 4096 @niter 10 @dictbuf pno-dicts"
 								}
 
 							}
@@ -9149,16 +9222,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"order" : 0,
-									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"order" : 1,
+									"destination" : [ "obj-61", 0 ],
 									"source" : [ "obj-17", 0 ]
 								}
 
@@ -9487,6 +9551,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"order" : 0,
+									"source" : [ "obj-61", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"order" : 1,
+									"source" : [ "obj-61", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"order" : 0,
 									"source" : [ "obj-7", 1 ]
@@ -9557,6 +9637,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -9566,8 +9647,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -9645,6 +9725,19 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 1382.0, 274.0, 62.0, 22.0 ],
+									"style" : "",
+									"text" : "zl change"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "newobj",
@@ -10092,9 +10185,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 25.0, 86.0, 695.0, 22.0 ],
+									"patching_rect" : [ 25.0, 86.0, 702.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf guit @nframes 88200 @fft 1024 256 2048 @iters 100 @filtbuf guit-dicts @rank 10 @resynthbuf guit-audio"
+									"text" : "fluid.bufnmf~ @srcbuf guit @nframes 88200 @fft 1024 256 2048 @niter 100 @dictbuf guit-dicts @rank 10 @resynthbuf guit-audio"
 								}
 
 							}
@@ -11768,7 +11861,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "float" ],
-									"patching_rect" : [ 1326.0, 298.0, 63.0, 22.0 ],
+									"patching_rect" : [ 1326.0, 320.0, 63.0, 22.0 ],
 									"style" : "",
 									"text" : "unpack f f"
 								}
@@ -11875,9 +11968,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 1382.0, 249.0, 336.0, 22.0 ],
+									"patching_rect" : [ 1382.0, 249.0, 343.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 2 @filtbuf guit-dicts-sum @fft 1024 256 2048"
+									"text" : "fluid.nmfmatch~ 2 @dictbuf guit-dicts-sum @fft 1024 256 2048"
 								}
 
 							}
@@ -11990,16 +12083,9 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-37", 0 ],
 									"order" : 0,
-									"source" : [ "obj-17", 0 ]
+									"source" : [ "obj-13", 0 ]
 								}
 
 							}
@@ -12007,6 +12093,20 @@
 								"patchline" : 								{
 									"destination" : [ "obj-50", 0 ],
 									"order" : 1,
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-17", 0 ]
 								}
 
@@ -12409,6 +12509,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -12418,8 +12519,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -12540,6 +12640,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -12549,8 +12650,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
