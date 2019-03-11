@@ -54,7 +54,7 @@ struct FetchValue
  template <typename Params>
   T operator()(const long ac, t_atom *av, Params& params, long& currentCount)
  {
-    return currentCount++ < ac ? Method(av) : params.template defaultAt<ParamIdx>();
+    return currentCount < ac ? Method(av + currentCount++) : params.template defaultAt<ParamIdx>();
  }
 };
 
@@ -581,7 +581,7 @@ private:
   Params& initParamsFromAttributeArgs(long ac, t_atom* av)
   {
      //Process arguments for instantiation parameters
-     if(long numArgs = attr_args_offset(ac, av) > 0)
+     if(long numArgs = attr_args_offset(ac, av))
      {
       long argCount{0};
       mParams.template setFixedParameterValues<impl::Fetcher>(true, numArgs,av,mParams,argCount);
@@ -591,7 +591,6 @@ private:
      //return params so this can be called in client initaliser
      return mParams;
   }
-  
   
   // Sets up a single attribute
   // TODO: static assert on T?
