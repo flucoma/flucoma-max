@@ -4,6 +4,9 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_EXTENSIONS OFF)
 # set(CMAKE_NO_SYSTEM_FROM_IMPORTED ON)
+
+
+if(APPLE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx -msse -msse2 -msse3 -msse4")
 
 # We shouldn't have to do this, bah:
@@ -14,6 +17,12 @@ set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
 set(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
 set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Minimum OS X deployment version")
 set(CMAKE_XCODE_GENERATE_SCHEME ON)
+endif()
+
+if(WIN32)
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++14")
+endif() 
+
 
 # set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
@@ -26,10 +35,12 @@ set(CMAKE_XCODE_GENERATE_SCHEME ON)
 #)
 project (fluid_decomposition_max LANGUAGES CXX)
 
+if(APPLE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wno-gnu-zero-variadic-macro-arguments")
+endif()
 
 # Misc setup and subroutines
-include(${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake)
+include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
 set(FLUID_PATH ~/fluid_decomposition CACHE PATH "The top level of the fluid_decomposition repo")
 
@@ -44,11 +55,11 @@ if (NOT (EXISTS "${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake"))
 endif()
 
 
-if (NOT (EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/media/))
-	file(MAKE_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/media/)
+if (NOT (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/media/"))
+	file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/media/")
 endif()
 
-file(COPY ${FLUID_ABS_PATH}/AudioFiles/ DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/media/)
+file(COPY "${FLUID_ABS_PATH}/AudioFiles/" DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/media/")
 include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
 
 add_library( FLUID_MAX INTERFACE )
@@ -64,10 +75,10 @@ target_sources(
 # add_subdirectory(${FLUID_ABS_PATH} ${FLUID_ABS_PATH}/build)
 
 # Generate a project for every folder in the "source/projects" folder
-SUBDIRLIST(PROJECT_DIRS ${CMAKE_CURRENT_SOURCE_DIR}/source/projects)
+SUBDIRLIST(PROJECT_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/source/projects")
 foreach (project_dir ${PROJECT_DIRS})
 	if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/source/projects/${project_dir}/CMakeLists.txt")
 		message("Generating: ${project_dir}")
-		add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/source/projects/${project_dir})
+		add_subdirectory("${CMAKE_CURRENT_SOURCE_DIR}/source/projects/${project_dir}")
 	endif ()
 endforeach ()
