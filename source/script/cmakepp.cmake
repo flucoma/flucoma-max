@@ -1,36 +1,36 @@
- ## cmakepp 
+ ## cmakepp
 ##
 ## An enhancement suite for CMake
-## 
-## 
+##
+##
 ## The MIT License (MIT)
-## 
+##
 ## Copyright (c) 2015 Tobias Becker
-## 
+##
 ## Permission is hereby granted, free of charge, to any person obtaining a copy of
 ## this software and associated documentation files (the "Software"), to deal in
 ## the Software without restriction, including without limitation the rights to
 ## use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of
 ## the Software, and to permit persons to whom the Software is furnished to do so,
 ## subject to the following conditions:
-## 
+##
 ## The above copyright notice and this permission notice shall be included in all
 ## copies or substantial portions of the Software.
-## 
+##
 ## THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 ## IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS
 ## FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR
 ## COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER
 ## IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 ## CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-## 
-## 
-## 
 ##
-## This file is the entry point for cmakepp. If you want to use the functions 
+##
+##
+##
+## This file is the entry point for cmakepp. If you want to use the functions
 ## just include this file.
 ##
-## it can also be used as a module file with cmake's find_package() 
+## it can also be used as a module file with cmake's find_package()
 cmake_minimum_required(VERSION 2.8.7)
 get_property(is_included GLOBAL PROPERTY cmakepp_include_guard)
 if(is_included)
@@ -60,18 +60,18 @@ file(TO_CMAKE_PATH "${cmakepp_tmp_dir}" cmakepp_tmp_dir)
 function(cmakepp_config key)
 	return("${cmakepp_tmp_dir}")
 endfunction()
-## create invoke later functions 
+## create invoke later functions
 # function(task_enqueue callable)
 #   ## semicolon encode before string_encode_semicolon exists
 #   string(ASCII  31 us)
 #   string(REPLACE ";" "${us}" callable "${callable}")
-#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}") 
+#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}")
 #   return()
 # endfunction()
 
 
 
-## this file should not have the extension .cmake 
+## this file should not have the extension .cmake
 ## because it needs to be included manually and last
 ## adds a callable as a task which is to be invoked later
 function(task_enqueue callable)
@@ -79,8 +79,8 @@ function(task_enqueue callable)
   ## semicolon encode before string_encode_semicolon exists
   string(ASCII  31 us)
   string(REPLACE ";" "${us}" callable "${callable}")
-  set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}") 
-  
+  set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}")
+
   if(cmakepp_is_loaded)
     function(task_enqueue callable)
       task_new("${callable}")
@@ -101,17 +101,17 @@ function(task_enqueue callable)
 endfunction()
 
 # initial version of task_enqueue which is used before cmakepp is loaded
-# ## create invoke later functions 
+# ## create invoke later functions
 # function(task_enqueue callable)
 #   ## semicolon encode before string_encode_semicolon exists
 #   string(ASCII  31 us)
 #   string(REPLACE ";" "${us}" callable "${callable}")
-#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}") 
+#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}")
 #   return()
 # endfunction()
 
 
-## includes all cmake files of cmakepp 
+## includes all cmake files of cmakepp
 
 
 
@@ -122,7 +122,7 @@ function(ast str language)
   # set default root definition to expr
   set(root_definition ${ARGN})
   if(NOT root_definition)
-    
+
     map_get("${language}"  root_definition)
     ans(root_definition)
   endif()
@@ -154,15 +154,15 @@ endfunction()
     if(NOT ast_evaluators)
       message(FATAL_ERROR "no ast_evaluators given")
     endif()
-  
+
     #message("evaluator prefix ${ast_evaluators}... ${ARGN}")
     map_get(${ast}  types)
     ans(types)
     is_map("${ast_evaluators}" )
     ans(ismap)
     while(true)
-      list_pop_front( types)    
-      ans(type) 
+      list_pop_front( types)
+      ans(type)
       map_tryget(${ast_evaluators}  "${type}")
       ans(eval_command)
      # message("eval command ist ${eval_command}")
@@ -237,7 +237,7 @@ function(ast_eval_identifier ast scope)
     message("is a cmake var")
     return_ref(${identifier})
   endif()
-  return()  
+  return()
   endfunction()
 
 
@@ -280,10 +280,10 @@ function(ast_parse stream definition_id )
  # map_get(${ast_language} parsers parsers)
   map_get("${ast_definitions}"  "${definition_id}")
   ans(definition)
- 
+
   map_tryget(${definition}  node)
   ans(create_node)
-  map_get(${definition}  parser)  
+  map_get(${definition}  parser)
   ans(parser)
   map_get(${ast_parsers}  "${parser}")
   ans(parser_command)
@@ -293,7 +293,7 @@ function(ast_parse stream definition_id )
   #message("trying to parse ${definition_id} with ${parser} parser")
   if(peek)
     token_stream_push(${stream})
-  endif()  
+  endif()
   #eval("${parser_command}(\"${definition}\" \"${stream}\" \"${create_node}\")")
 
   __ast_call_parser("${parser}" "${definition}" "${stream}" "${create_node}")
@@ -301,7 +301,7 @@ function(ast_parse stream definition_id )
   if(peek)
     token_stream_pop(${stream})
   endif()
- 
+
  #if(node)
  #  message(FORMAT "parsed {node.types}")
  #else()
@@ -320,10 +320,10 @@ function(ast_parse_any )#definition stream create_node definition_id
   ans(any)
 #  address_get(${any})
 #  ans(any)
-  
+
   # try to parse any of the definitions contained in "any" property
   set(node false)
-  foreach(def ${any})    
+  foreach(def ${any})
     ast_parse(${stream} "${def}")
     ans(node)
     if(node)
@@ -335,12 +335,12 @@ function(ast_parse_any )#definition stream create_node definition_id
   is_address("${node}")
   ans(is_map)
   if(is_map)
-  
+
     map_append(${node} types ${definition_id})
   endif()
-  
-  
-  
+
+
+
   return_ref(node)
 endfunction()
 
@@ -379,7 +379,7 @@ endfunction()
 
 
  function(ast_parse_list )#definition stream create_node
- 
+
    # message("parsing list")
     token_stream_push(${stream})
 
@@ -392,12 +392,12 @@ endfunction()
     map_get(${definition}  element)
     ans(element)
    # message(" ${begin} <${element}> <${separator}> ${end}")
-    
+
     #message("create node ${create_node}")
     if(begin)
       ast_parse(${stream} ${begin})
       ans(begin_ast)
-      
+
       if(NOT begin_ast)
         token_stream_pop(${stream})
         return(false)
@@ -426,7 +426,7 @@ endfunction()
           endif()
         endif()
       endif()
-      
+
       ast_parse(${stream} ${element})
       ans(element_ast)
 
@@ -441,7 +441,7 @@ endfunction()
 
      # message("appending child ${element_ast}")
 
-      
+
 
     endwhile()
     #message("done ${create_node}")
@@ -554,7 +554,7 @@ function(ast_parse_sequence )#definition stream create_node definition_id
   # deref ref array
 #  address_get(${sequence} )
 #  ans(sequence)
-  
+
   # save current stream
   #message("push")
   token_stream_push(${stream})
@@ -567,7 +567,7 @@ function(ast_parse_sequence )#definition stream create_node definition_id
   foreach(def ${sequence})
     ast_parse(${stream} "${def}")
     ans(res)
-    if(res) 
+    if(res)
       is_map(${res} )
       ans(ismap)
       if(ismap)
@@ -578,7 +578,7 @@ function(ast_parse_sequence )#definition stream create_node definition_id
       token_stream_pop(${stream})
       return(false)
     endif()
-   
+
   endforeach()
   token_stream_commit(${stream})
   # return result
@@ -588,7 +588,7 @@ function(ast_parse_sequence )#definition stream create_node definition_id
   map_new()
   ans(node)
   map_set(${node} types ${definition_id})
-  
+
   map_set(${node} children ${ast_sequence})
   return(${node})
 endfunction()
@@ -609,7 +609,7 @@ endfunction()
     if(NOT token)
       return(false)
     endif()
-    
+
     #message(FORMAT "parsed {definition.name}: {token.data}")
     if(NOT create_node)
       return(true)
@@ -626,7 +626,7 @@ endfunction()
       #message("data after replace ${data}")
       map_set_hidden(${token} data "${data}")
     endif()
-    
+
     map_set_hidden(${token} types ${definition_id})
     return(${token})
 
@@ -660,7 +660,7 @@ endfunction()
 
     ast("${str}" ${language} "${expr}")
     #return("gna")
-    ans(ast) 
+    ans(ast)
    # address_print(${ast})
     ast_eval(${ast} ${context} ${language})
     ans(res)
@@ -682,7 +682,7 @@ function(expr_compile_assignment) # scope, ast
 
   map_tryget(${lvalue_ast}  types)
   ans(types)
-  list_extract(types lvalue_type) 
+  list_extract(types lvalue_type)
   set(res)
 
 
@@ -724,7 +724,7 @@ function(expr_compile_assignment) # scope, ast
   map_set(\"\${assignment_scope}\" \"\${assignment_key}\" \"\${rvalue}\" )
   set_ans_ref(rvalue)
   # end of expr_compile_assignment")
-  return_ref(res)   
+  return_ref(res)
 endfunction()
 
 
@@ -732,7 +732,7 @@ endfunction()
 
 function(expr_compile_bind)
   set(res "
-  # expr_compile_bind 
+  # expr_compile_bind
   set(this \"\${left}\")
   # end of expr_compile_bind")
   return_ref(res)
@@ -742,7 +742,7 @@ endfunction()
 
 
 function(expr_compile_call)
-  map_tryget(${ast}  children) 
+  map_tryget(${ast}  children)
   ans(argument_asts)
   set(arguments)
   set(evaluation)
@@ -764,7 +764,7 @@ function(expr_compile_call)
   endforeach()
 
   set(res "
-  # expr_compile_call 
+  # expr_compile_call
   ${evaluation}
   call(\"\${left}\"(${arguments}))
   # end of expr_compile_call")
@@ -782,13 +782,13 @@ function(expr_compile_cmake_identifier)
   ans(identifier)
   map_get(${identifier}  data)
   ans(identifier)
-  
+
   set(res "
   #expr_compile_cmake_identifier
   if(COMMAND \"${identifier}\")
     set_ans(\"${identifier}\")
-  else() 
-    set_ans_ref(\"${identifier}\") 
+  else()
+    set_ans_ref(\"${identifier}\")
   endif()
   # end of expr_compile_cmake_identifier")
   return_ref(res)
@@ -803,7 +803,7 @@ function(expr_compile_coalescing)
   ast_eval(${expr_ast} ${context})
   ans(expr)
   set(res "
-  # expr_compile_coalescing 
+  # expr_compile_coalescing
   if(NOT left)
     ${expr}
   endif()
@@ -819,7 +819,7 @@ function(expr_compile_expression)
   map_get(${ast}  children)
   ans(children)
   set(result "")
-  
+
   list(LENGTH children len)
   if(len GREATER 1)
 
@@ -835,7 +835,7 @@ function(expr_compile_expression)
       map_set(${context} left ${rvalue})
       map_set(${context} left_ast ${rvalue_ast})
     endforeach()
-    
+
     map_append_string(${context} code "
 #expr_compile_expression
 function(${symbol})
@@ -870,7 +870,7 @@ function(expr_compile_expression_statement) # context, ast
   # expr_compile_statement
   ${statement}
   # end of expr_compile_statement")
-  return_ref(res)  
+  return_ref(res)
 endfunction()
 
 
@@ -895,7 +895,7 @@ function(expr_compile_function) # context, ast
     ans(identifier)
     list(APPEND identifiers "${identifier}")
     set(signature_vars "${signature_vars} ${identifier}")
-  endforeach()  
+  endforeach()
   #message("signature_identifiers ${identifiers}")
 
   map_tryget(${body_ast} types)
@@ -903,7 +903,7 @@ function(expr_compile_function) # context, ast
 
   list_contains(body_types closure)
   ans(is_closure)
-  
+
   if(is_closure)
    map_tryget(${body_ast} children)
     ans(body_ast)
@@ -920,26 +920,26 @@ function(expr_compile_function) # context, ast
 map_append_string(${context} code "#expr_compile_function
 function(\"${symbol}\"${signature_vars})
   map_new()
-  ans(local)  
+  ans(local)
   map_capture(\"\${local}\" this global${signature_vars})
   ${body}
   return_ans()
 endfunction()
 #end of expr_compile_function")
-  
+
 
   set(res "set_ans(\"${symbol}\")")
 
-  return_ref(res)  
+  return_ref(res)
 endfunction()
 
 
 
 
 function(expr_compile_identifier)# ast context
-  
+
 #message("ast: ${ast}")
-  
+
   map_tryget(${ast}  data)
   ans(data)
   set(res "
@@ -976,7 +976,7 @@ endfunction()
 
 
 function(expr_compile_list)
-  map_tryget(${ast}  children) 
+  map_tryget(${ast}  children)
   ans(element_asts)
   set(arguments)
   set(evaluation)
@@ -1102,13 +1102,13 @@ function(expr_compile_number) # scope, ast
   ans(data)
   make_symbol()
   ans(symbol)
-  
- 
+
+
   set(res "
   # expr_compile_number
   set_ans(\"${data}\")
   # end of expr_compile_number")
-  return_ref(res)  
+  return_ref(res)
 endfunction()
 
 
@@ -1152,7 +1152,7 @@ function(expr_compile_statements) # scope, ast
   ans(data)
   make_symbol()
   ans(symbol)
-  
+
   make_symbol()
   ans(symbol)
 
@@ -1163,11 +1163,11 @@ function(\"${symbol}\")
   return_ans()
 endfunction()
 # end of expr_compile_statements")
-  
+
   set(res "${symbol}()")
 
 #  message("${res}")
-  return_ref(res)  
+  return_ref(res)
 endfunction()
 
 
@@ -1179,19 +1179,19 @@ function(expr_compile_string) # scope, ast
   ans(data)
   make_symbol()
   ans(symbol)
-  
- 
+
+
   set(res "
   # expr_compile_string
   set_ans(\"${data}\")
   # end of expr_compile_string")
-  return_ref(res)  
+  return_ref(res)
 endfunction()
 
 
 
 
-## file containing data from resources/expr.json 
+## file containing data from resources/expr.json
 function(expr_definition)
 map()
  key("name")
@@ -1889,7 +1889,7 @@ endfunction()
 
 
 function(expr_eval_call)
-  map_tryget(${ast}  children) 
+  map_tryget(${ast}  children)
   ans(argument_asts)
   set(arguments)
   foreach(argument_ast ${argument_asts})
@@ -1916,7 +1916,7 @@ function(expr_eval_cmake_identifier)
   ans(identifier)
 
   if(NOT "${identifier}" AND COMMAND "${identifier}")
-    
+
   else()
     set(identifier "${${identifier}}")
   endif()
@@ -1965,7 +1965,7 @@ endfunction()
 function(expr_eval_string) # scope, ast
   map_tryget(${ast}  data)
   ans(data)
-  return_ref(data)  
+  return_ref(data)
 endfunction()
 
 
@@ -2000,7 +2000,7 @@ function(expr_compile str)
       ans(context)
       map_new()
       ans(scope)
-      map_set(${context} scope ${scope})    
+      map_set(${context} scope ${scope})
       ast_eval(${ast} ${context} ${language})
       ans(symbol)
       map_tryget(${context}  code)
@@ -2138,18 +2138,18 @@ endfunction()
 
 
 
-  function(lang target context)    
+  function(lang target context)
     #message("target ${target}")
     obj_get(${context} phases)
     ans(phases)
 
-   
+
 
     # get target value from
     obj_has(${context} "${target}")
     ans(has_target)
     if(NOT has_target)
-      message(FATAL_ERROR "missing target '${target}'")        
+      message(FATAL_ERROR "missing target '${target}'")
     endif()
     obj_get(${context} "${target}")
     ans(current_target)
@@ -2160,14 +2160,14 @@ endfunction()
 
     # check if phase
     list_contains(phases "${current_target}")
-    ans(isphase)    
+    ans(isphase)
     # if not a phase just return value
     if(NOT isphase)
       return_ref("current_target")
     endif()
 
 
-    # target is phase 
+    # target is phase
     map_tryget("${current_target}" name)
     ans(name)
 
@@ -2222,11 +2222,11 @@ endfunction()
     endforeach()
     # call curried function - note that context is available to be modified
     set(func_call "${func}(${arguments_string})")
- 
+
     #message("lang: target '${target}'  func call ${func_call}")
    set_ans("")
     eval("${func_call}")
-    ans(res)    
+    ans(res)
    # message("res '${res}'")
     obj_set(${context} "${target}" "${res}")
 
@@ -2253,12 +2253,12 @@ endfunction()
     ans(ctx)
     language("${language}")
     ans(language)
-    
+
     obj_setprototype("${ctx}" "${language}")
     lang("${target}" "${ctx}")
     ans(res)
 
-    
+
     return_ref(res)
   endfunction()
 
@@ -2306,7 +2306,7 @@ function(language name)
       return()
     endif()
     map_set(${language_map} "${name}" ${language})
-    
+
     map_get(${language}  name)
     ans(name)
     map_set(${language_map} "${name}" ${language})
@@ -2338,7 +2338,7 @@ endfunction()
 
 function(language_initialize language)
   # sets up the language object
-    
+
   map_tryget(${language}  initialized)
   ans(initialized)
   if(initialized)
@@ -2357,7 +2357,7 @@ function(language_initialize language)
     map_get(${definitions}  ${key})
     ans(definition)
     map_set(${definition} name ${key} )
-  endforeach()  
+  endforeach()
 
   #
   token_definitions(${language})
@@ -2381,7 +2381,7 @@ function(language_initialize language)
 
   # setup self reference
   map_set(${language} global ${language})
-  
+
 
   # setup outputs
   foreach(phase ${phases})
@@ -2427,7 +2427,7 @@ function(language_initialize language)
         ans(val)
         if(NOT val)
           map_set(${language} "${input}" "missing")
-        
+
          # message("missing input: ${input}")
         endif()
 
@@ -2505,7 +2505,7 @@ function(script str)
     endif()
     map_tryget("${lang}" md5)
     ans(language_hash)
-    string(MD5 script_language_hash "${str}${language_hash}")  
+    string(MD5 script_language_hash "${str}${language_hash}")
     cmakepp_config(temp_dir)
     ans(temp_dir)
     set(obj_file "${temp_dir}/expressions/expr_${script_language_hash}.cmake")
@@ -2572,13 +2572,13 @@ endfunction()
 
 
 
-# parses str into a linked list of tokens 
+# parses str into a linked list of tokens
 # using token_definitions
 function(tokens_parse token_definitions str)
   map_new()
   ans(first_token)
   set(last_token ${first_token})
-  while(true) 
+  while(true)
     # recursion anker
     string_isempty( "${str}")
     ans(isempty)
@@ -2604,7 +2604,7 @@ function(tokens_parse token_definitions str)
         if(NOT hasExcept OR NOT "_${match}" MATCHES "_(${except})")
 
           #message(FORMAT "matched {token_definition.name}  match: '${match}' ")
-          #message("stream ${str}")     
+          #message("stream ${str}")
           string(LENGTH "${match}" len)
           string(SUBSTRING "${str}" "${len}" -1 str)
           token_new(${token_definition} "${match}")
@@ -2634,7 +2634,7 @@ endfunction()
 
 
 
-# returns the token definitions of a language 
+# returns the token definitions of a language
 function(token_definitions language)
   map_get(${language}  definitions)
   ans(definitions)
@@ -2781,12 +2781,12 @@ endfunction()
       return()
     endif()
 #    message(FORMAT "current token '{current.data}'  is a {current.definition.name}, expected {definition.name}")
-    
+
     map_tryget(${current}  definition)
     ans(definition)
-    
+
     if(${definition} STREQUAL ${token_definition})
-   
+
       map_tryget(${current}  next)
       ans(next)
       map_set_hidden(${stream} current ${next})
@@ -2882,7 +2882,7 @@ endmacro()
       call("${compute_key}"(${args}))
       ans(cache_key)
     endif()
-    
+
     cmakepp_config(temp_dir)
     ans(temp_dir)
 
@@ -3005,7 +3005,7 @@ function(file_cache_update cache_key)
   qm_serialize("${ARGN}")
   ans(ser)
   file(WRITE "${path}" "${ser}")
-  return()  
+  return()
 endfunction()
 
 
@@ -3052,12 +3052,12 @@ endfunction()
       map_clone_deep("${value}")
       ans(value)
     endif()
-#    
+#
     return_ref(value)
   endfunction()
 
 
-  
+
 
 
 
@@ -3102,7 +3102,7 @@ endmacro()
 
     memory_cache_key("${cache_key}")
     ans(key)
-    
+
     map_set_hidden(memory_cache_entries "${key}" "${value}")
   endfunction()
 
@@ -3153,7 +3153,7 @@ macro(string_cache_return_hit cache_location key)
     string_cache_get("${cache_location}" "${key}")
     return_ans()
   endif()
-endmacro()  
+endmacro()
 
 
 
@@ -3178,9 +3178,9 @@ endfunction()
 
 ## `(<direcotry> [--algorthm <checksum algorithm> = "MD5"])-><checksum>`
 ##
-## calculates the checksum for the specified directory 
+## calculates the checksum for the specified directory
 ## just like checksum_layout however also factors in the file's contents
-## 
+##
   function(checksum_dir dir)
     set(args ${ARGN})
     list_extract_labelled_keyvalue(args --algorithm)
@@ -3201,7 +3201,7 @@ endfunction()
 ##
 ## calculates the checksum for the specified file delegates the
 ## call to `CMake`'s file(<algorithm>) function
-## 
+##
 function(checksum_file file)
 
   path_qualify(file)
@@ -3225,9 +3225,9 @@ endfunction()
 ## `(<base dir> <file...>)-><checksum>`
 ##
 ## create a checksum from specified files relative to <dir>
-## the checksum is influenced by the files relative paths 
-## and the file content 
-## 
+## the checksum is influenced by the files relative paths
+## and the file content
+##
 function(checksum_files dir)
   set(args ${ARGN})
   list_extract_labelled_keyvalue(args --algorithm)
@@ -3238,7 +3238,7 @@ function(checksum_files dir)
     list(REMOVE_DUPLICATES args)
     list(SORT args)
   endif()
-  
+
   set(checksums)
   foreach(file ${ARGN})
     if(EXISTS "${dir}/${file}")
@@ -3260,11 +3260,11 @@ endfunction()
 
 
 ## `(<glob ignore expressions...> [--algorithm <hash algorithm> = "MD5"])-><checksum>`
-## 
+##
 ## calculates the checksum for the specified glob ignore expressIONS
 ## uses checksum_files internally. the checksum is unique to file content
 ## and relative file structure
-## 
+##
 function(checksum_glob_ignore)
     set(args ${ARGN})
     list_extract_labelled_keyvalue(args --algorithm)
@@ -3280,7 +3280,7 @@ function(checksum_glob_ignore)
         path_qualify(file)
         path_relative("${pwd}" "${file}")
         ans(file)
-        list(APPEND normalized_files ${file})      
+        list(APPEND normalized_files ${file})
     endforeach()
 
 
@@ -3293,11 +3293,11 @@ endfunction()
 
 
 ## `(<directory> [--algorithm <hash algorithm> "MD5"])-><checksum>`
-## 
+##
 ## this method generates the checksum for the specified directory
 ## it is done by taking every file's relative path into consideration
 ## and generating the hash.  The file's content does not influence the hash
-## 
+##
 function(checksum_layout dir)
     path_qualify(dir)
 
@@ -3313,7 +3313,7 @@ function(checksum_layout dir)
         string(REPLACE "//" "/" files "${files}")
         list(SORT files)
     endif()
-    
+
     checksum_string("${files}" ${algorithm})
     ans(checksum_dir)
 
@@ -3328,9 +3328,9 @@ endfunction()
 ## `(<any> [--algorithm <hash algorithm> = "MD5"])-><checksum>`
 ##
 ## this function takes any value and generates its hash
-## the difference to string hash is that it serializes the specified object 
-## which lets you create the hash for the whoile object graph.  
-## 
+## the difference to string hash is that it serializes the specified object
+## which lets you create the hash for the whoile object graph.
+##
 function(checksum_object obj)
   json("${obj}")
   ans(json)
@@ -3344,10 +3344,10 @@ endfunction()
 ## `(<string> [--algorithm <hash algorithm> = MD5])-><checksum>`
 ## `<hash algorithm> ::= "MD5"|"SHA1"|"SHA224"|"SHA256"|"SHA384"|"SHA512"`
 ##
-## this function takes any string and computes the hash value of it using the 
+## this function takes any string and computes the hash value of it using the
 ## hash algorithm specified (which defaults to  MD5)
 ## returns the checksum
-## 
+##
 function(checksum_string str)
   set(args ${ARGN})
   list_extract_labelled_value(args --algorithm)
@@ -3363,7 +3363,7 @@ endfunction()
 
 
 function(Object)
-	#formats the current object 
+	#formats the current object
 	proto_declarefunction(to_string)
 
 	function(${to_string} )
@@ -3372,16 +3372,16 @@ function(Object)
 		obj_keys(${this} keys)
 
 		foreach(key ${keys})
-			obj_get(${this}  ${key})				
+			obj_get(${this}  ${key})
 			ans(value)
 			map_has(${this}  ${key})
-			ans(is_own)	
+			ans(is_own)
 			if(value)
 				is_function(function_found ${value})
 				is_object(object_found ${value})
 			endif()
-			
-			
+
+
 			if(function_found)
 				set(value "[function]")
 			elseif(object_found)
@@ -3404,7 +3404,7 @@ function(Object)
 			set(nextValue "${is_own}${key}: ${value}")
 
 			if(res)
-				set(res "${res}\n ${nextValue}, ")	
+				set(res "${res}\n ${nextValue}, ")
 			else()
 				set(res " ${nextValue}, ")
 			endif()
@@ -3450,7 +3450,7 @@ endfunction()
 function(cmake_ast_function_parse target end)
   map_tryget(${end} value)
   ans(value)
-  
+
   if(NOT "${value}" MATCHES "^(endfunction)|(endmacro)$")
     return()
   endif()
@@ -3484,19 +3484,19 @@ function(cmake_ast_function_parse target end)
 
   ## body ends directly before endfunction/endmacro
   set(body_end ${end})
-  
+
 
   ## set the extracted vars
-  map_set(${begin} command_type "${command_type}")  
+  map_set(${begin} command_type "${command_type}")
   map_set(${begin} invocation_type command_definition)
   map_set(${begin} name_token ${name_token})
   map_set(${begin} name "${name}")
   map_set(${begin} signature_begin ${signature_begin})
   map_set(${begin} signature_end ${signature_end})
-  map_set(${begin} body_begin ${body_begin}) 
+  map_set(${begin} body_begin ${body_begin})
   map_set(${begin} body_end ${body_end})
 
-  ## 
+  ##
   map_append(${target} command_definitions ${begin})
   map_set(${target} "command-${name}" ${begin})
   return_ref(begin)
@@ -3520,7 +3520,7 @@ function(cmake_ast_nesting_pairs)
   map_set(${nesting_start_end_pairs} else endif)
   map_set(${nesting_start_end_pairs} macro endmacro)
   map_set(${nesting_start_end_pairs} foreach endforeach)
- 
+
  return_ref(nesting_start_end_pairs)
 endfunction()
 
@@ -3529,11 +3529,11 @@ endfunction()
 
 ## `(<code:<cmake code>|<cmake token...>>)-><cmake ast>`
 ##
-## generates the an ast for the cmake code 
+## generates the an ast for the cmake code
 function(cmake_ast_parse code)
   cmake_ast_nesting_pairs()
   ans(nesting_start_end_pairs)
-  
+
   map_values(${nesting_start_end_pairs})
   ans(endings)
   map_keys(${nesting_start_end_pairs})
@@ -3560,8 +3560,8 @@ function(cmake_ast_parse code)
     if(NOT current_invocation)
       break()
     endif()
-    
-    
+
+
     map_append(${current_nesting} command_invocations ${current_invocation})
     map_tryget(${current_invocation} value)
     ans(invocation_value)
@@ -3580,7 +3580,7 @@ function(cmake_ast_parse code)
       list(REMOVE_AT nestings 0)
       list(GET nestings 0 current_nesting)
 
-      if("${begin}" STREQUAL "${root_nesting}")  
+      if("${begin}" STREQUAL "${root_nesting}")
         message(FORMAT "unbalanced code nesting for {current_invocation.value} @{current_invocation.line}:{current_invocation.column}")
         error( "unbalanced code nesting for {current_invocation.value} @{current_invocation.line}:{current_invocation.column}")
         return()
@@ -3593,7 +3593,7 @@ function(cmake_ast_parse code)
 
       map_tryget(${nesting_start_end_pairs} ${begin_value})
       ans(current_closings)
-      
+
       list_contains(current_closings ${end_value})
       ans(correct_closing)
       if(NOT correct_closing)
@@ -3601,7 +3601,7 @@ function(cmake_ast_parse code)
         error("invalid closing for {current_invocation.value} @{current_invocation.line}:{current_invocation.column}")
         return()
       endif()
-            
+
       map_set(${begin} invocation_nesting_end ${end})
       map_set(${end} invocation_nesting_begin ${begin})
     endif()
@@ -3659,17 +3659,17 @@ function(cmake_ast_variable_parse target invocation_token)
   map_tryget(${name_token} literal_value)
   ans(name)
 
-  ## get the beginning of values 
-  ## the first token after name 
+  ## get the beginning of values
+  ## the first token after name
   map_tryget(${name_token} next)
   ans(values_begin)
   ## get the ending of values
-  ## the ) 
+  ## the )
   cmake_token_range_find_next_by_type(${invocation_token} "(nesting)")
   ans(nesting)
   map_tryget(${nesting} end)
   ans(values_end)
-  
+
   ## set the values
   map_set(${invocation_token} invocation_type variable)
   map_set(${invocation_token} name_token ${name_token})
@@ -3691,7 +3691,7 @@ endfunction()
 ## the comand line interface to cmakelists.  tries to find the CMakelists.txt in current or parent directories
 ## if init is specified a new cmakelists file is created in the current directory
 ## *flags*:
-##  * 
+##  *
 ## *commands*:
 ##  * `init` saves an initial cmake file at the current location
 ##  * `target <target name> <target command> | "add" <target name>` target commands:
@@ -3700,9 +3700,9 @@ endfunction()
 ##    * `includes "append"|"set"|"remove" <path>....` adds the specified directories to the target_include_directories of the specified target
 ##    * `links "append"|"set"|"remove" <target name>...` adds the specified target names to the target_link_libraries of the specified target
 ##    * `type <target type>` sets the type of the specified target to the specified target type
-##    * `rename <target name>` renames the specified target 
-## 
-## `<target type> ::= "library"|"executable"|"custom_target"|"test"`  
+##    * `rename <target name>` renames the specified target
+##
+## `<target type> ::= "library"|"executable"|"custom_target"|"test"`
 function(cmakelists_cli)
   set(args ${ARGN})
   list_pop_front(args)
@@ -3731,7 +3731,7 @@ function(cmakelists_cli)
     ans(cmakelists)
   endif()
 
-  
+
   set(save false)
   if("${command}" STREQUAL "init")
     set(save true)
@@ -3803,7 +3803,7 @@ function(cmakelists_cli)
           cmakelists_paths("${cmakelists}" ${args})
           ans(args)
           list_modify(result ${flag} --remove-duplicates --sort ${args})
-          set(save true) 
+          set(save true)
           map_set(${target} target_include_directories PUBLIC ${result})
           cmakelists_target_update(${cmakelists} ${target})
       endif()
@@ -3827,7 +3827,7 @@ function(cmakelists_cli)
           set(save true)
           map_set(${target} target_link_libraries ${result})
           cmakelists_target_update(${cmakelists} ${target})
-                          
+
       endif()
     elseif("${command}" STREQUAL "sources")
 
@@ -3852,7 +3852,7 @@ function(cmakelists_cli)
           set(save true)
           map_set(${target} target_source_files ${result})
           cmakelists_target_update(${cmakelists} ${target})
-                          
+
       endif()
 
     endif()
@@ -3876,20 +3876,20 @@ function(cmakelists_target_modify cmakelists target target_property)
   if(NOT target)
     return()
   endif()
-  
+
   list_pop_front(args)
   ans(command)
 
   map_tryget(${target} "${target_property}")
   ans(result)
-  
+
   if(command)
     set(flag "--${command}")
     list_modify(result ${flag} --remove-duplicates ${args})
     print_vars(result command args target.target_name target_property)
     map_set(${target} "${target_property}" ${result})
     cmakelists_target_update(${cmakelists} ${target})
-  endif()        
+  endif()
   return_ref(result)
 endfunction()
 
@@ -3900,7 +3900,7 @@ endfunction()
 ##
 ## closes the specified cmakelists file.  This causes it to be written to its path
 ## returns true on success
-function(cmakelists_close cmakelists) 
+function(cmakelists_close cmakelists)
   map_tryget(${cmakelists} path)
   ans(cmakelists_path)
   cmakelists_serialize("${cmakelists}")
@@ -3927,7 +3927,7 @@ endfunction()
 
     cmake_token_range("${source}")
 
-    ans_extract(begin end)    
+    ans_extract(begin end)
     map_set(${cmakelists} begin ${begin})
     map_set(${cmakelists} end ${end} )
     map_set(${cmakelists} range ${begin} ${end})
@@ -3943,7 +3943,7 @@ endfunction()
 ## `([<path>])-><cmakelists>|<null>`
 ##
 ## opens a the closests cmakelists file (anchor file) found in current or parent directory
-## returns nothing if no cmakelists file is found. 
+## returns nothing if no cmakelists file is found.
 function(cmakelists_open)
   file_find_anchor("CMakeLists.txt" ${ARGN})
   ans(cmakelists_path)
@@ -3962,7 +3962,7 @@ endfunction()
 
 ## `(<cmakelists> <file>... [--glob] )-> <relative path>...`
 ##
-## qualifies the paths relative to the cmakelists directory 
+## qualifies the paths relative to the cmakelists directory
 ## if `--glob` is specified then the `<file>...` will be treated
 ## as glob expressions
 function(cmakelists_paths cmakelists)
@@ -4012,8 +4012,8 @@ endfunction()
 
 ## `(<cmakelists> <target:<target name regex>|<cmake target>)-><cmake target> v {target_invocations: <target invocations>}`
 ##
-## tries to find the single target identified by the regex and returns it. 
-## 
+## tries to find the single target identified by the regex and returns it.
+##
 ## ```
 ## <target> ::= {
 ##    target_name: <string>
@@ -4062,10 +4062,10 @@ endfunction()
 
 
 ## `(<cmakelists> <cmake target>)-><bool>`
-## 
+##
 ## updates the cmakelists tokens to reflect changes in the target
 ## @todo extrac functions
-## 
+##
 function(cmakelists_target_update cmakelists target)
   cmakelists_target("${cmakelists}" "${target}")
   ans(target)
@@ -4082,7 +4082,7 @@ function(cmakelists_target_update cmakelists target)
     error("target name not specified" --function cmakelists_target_update)
     return(false)
   endif()
-  
+
   map_tryget(${target} target_type)
   ans(target_type)
 
@@ -4102,10 +4102,10 @@ function(cmakelists_target_update cmakelists target)
     map_tryget(${new_target} target_invocations)
     ans(target_invocations)
     map_set_hidden(${target} target_invocations ${target_invocations})
-    
+
   endif()
 
-  ## sets the target type  
+  ## sets the target type
   map_tryget(${target_invocations} target_source_files)
   ans(target_definition_invocation)
   map_tryget(${target_definition_invocation} invocation_token)
@@ -4120,10 +4120,10 @@ function(cmakelists_target_update cmakelists target)
 
 
 
-  foreach(current_property 
-    target_source_files 
-    target_link_libraries 
-    target_include_directories 
+  foreach(current_property
+    target_source_files
+    target_link_libraries
+    target_include_directories
     target_compile_options
     target_compile_definitions
     )
@@ -4140,7 +4140,7 @@ function(cmakelists_target_update cmakelists target)
         map_tryget(${target_definition_invocation} arguments_end_token)
         ans(insertion_point)
         cmake_token_range_filter("${insertion_point}" type MATCHES "(new_line)|(eof)")
-        ans_extract(insertion_point)         
+        ans_extract(insertion_point)
         cmake_token_range_insert("${insertion_point}" "\n${indentation}${current_property}()")
         ans_extract(invocation_token)
         cmake_token_range_filter("${invocation_token}" type STREQUAL "command_invocation")
@@ -4160,7 +4160,7 @@ function(cmakelists_target_update cmakelists target)
       cmake_invocation_remove("${invocation}")
     endif()
 
-  endforeach()    
+  endforeach()
   return(true)
 endfunction()
 
@@ -4168,7 +4168,7 @@ endfunction()
 
 
 ## `(<cmakelists> <variable path>)-><any>...`
-## 
+##
 ## see list_modify
 ## modifies a variable returns the value of the variable
 function(cmakelists_variable cmakelists variable_path)
@@ -4182,7 +4182,7 @@ endfunction()
 
 
 ## `(...)->...`
-## 
+##
 ## wrapper for cmakelists_cli
 function(cml)
   set(args ${ARGN})
@@ -4203,16 +4203,16 @@ function(cmake_arguments_quote_if_necessary)
   set(result)
   foreach(arg ${ARGN})
     if("_${arg}" MATCHES "_${regex_cmake_value_needs_quotes}")
-      string(REGEX REPLACE 
-        "${regex_cmake_value_quote_escape_chars}" 
-        "\\\\\\0" #prepends a '\' before each matched cahr 
+      string(REGEX REPLACE
+        "${regex_cmake_value_quote_escape_chars}"
+        "\\\\\\0" #prepends a '\' before each matched cahr
         arg "${arg}"
         )
     endif()
     set(arg "\"${arg}\"")
 
     list(APPEND result "${arg}")
-    
+
   endforeach()
   return_ref(result)
 endfunction()
@@ -4233,10 +4233,10 @@ endfunction()
 ## <operating system descriptor> ::= {
 ##  name: <string>
 ##  version: <string>
-##  family: "Windows"|"Unix"|"MacOS"|...  
+##  family: "Windows"|"Unix"|"MacOS"|...
 ## }
 ## ```
-## 
+##
 ## returns the environment of cmake
 ## the results are cached (--update-cache if necesssary)
 function(cmake_environment)
@@ -4250,7 +4250,7 @@ function(cmake_environment)
         cmake_minimum_required(VERSION 2.8.12)
         include(${cmakepp_path})
         #get_cmake_property(_cmake_variables VARIABLES)
-        set(vars 
+        set(vars
           CMAKE_GENERATOR
           CMAKE_SIZEOF_VOID_P
           CMAKE_SYSTEM
@@ -4270,7 +4270,7 @@ function(cmake_environment)
           map_set(\${result} \${var} \${\${var}})
         endforeach()
         cmake_write(\"${output_file}\" \"\${result}\")
-      ")  
+      ")
 
 
       pushd(build --create)
@@ -4278,7 +4278,7 @@ function(cmake_environment)
         ans_extract(error)
         ans(stdout)
       popd()
-    
+
     if(error)
       poptmp()
       message(FATAL_ERROR "${stdout}")
@@ -4287,28 +4287,28 @@ function(cmake_environment)
     ans(res)
     poptmp()
     set(result)
-    
+
     site_name(host_name)
-    assign(!result.host_name = host_name)     
-    assign(!result.architecture = res.CMAKE_HOST_SYSTEM_PROCESSOR) 
-    
+    assign(!result.host_name = host_name)
+    assign(!result.architecture = res.CMAKE_HOST_SYSTEM_PROCESSOR)
+
   #  map_tryget(${res} CMAKE_SIZEOF_VOID_P)
    # ans(byte_size_voidp)
    # math(EXPR architecture "${byte_size_voidp} * 8")
    # assign(!result.architecture = architecture)
-    
-    assign(!result.os.name = res.CMAKE_HOST_SYSTEM_NAME)   
-    assign(!result.os.version = res.CMAKE_HOST_SYSTEM_VERSION) 
+
+    assign(!result.os.name = res.CMAKE_HOST_SYSTEM_NAME)
+    assign(!result.os.version = res.CMAKE_HOST_SYSTEM_VERSION)
     if(WIN32)
-      assign(!result.os.family = 'Windows')   
+      assign(!result.os.family = 'Windows')
     elseif(MAC)
-      assign(!result.os.family = 'MacOS')   
+      assign(!result.os.family = 'MacOS')
     elseif(UNIX)
-      assign(!result.os.family = 'Unix')  
+      assign(!result.os.family = 'Unix')
     endif()
     return_ref(result)
   endfunction()
-  
+
   define_cache_function(_cmake_environment_inner => cmake_environment
     --generate-key "[]()checksum_string({{CMAKE_COMMAND}})"
   )
@@ -4412,7 +4412,7 @@ function(test)
   fwrite("src/dir1/impl4.cpp" "")
   fwrite("src/dir2/impl5.cpp" "")
 
-  
+
 endfunction()
 
 
@@ -4422,7 +4422,7 @@ function(generator_cmake_source_group name)
   ans(files)
 
 
-  set(template "## 
+  set(template "##
 
 
     ")
@@ -4441,7 +4441,7 @@ endfunction()
 
 
 
-    function(is_cmake_function code) 
+    function(is_cmake_function code)
       if("${code}" MATCHES "function.*endfunction")
         return(true)
       endif()
@@ -4482,7 +4482,7 @@ endfunction()
 
 
     function(cmake_function_signature code)
-      regex_cmake()  
+      regex_cmake()
       string(REGEX MATCHALL "${regex_cmake_function_begin}" functions "${code}")
       list_pop_front(functions)
       ans(function)
@@ -4530,7 +4530,7 @@ endfunction()
     foreach(line ${lines})
       map_tryget(${line} type)
       ans(type)
-      
+
       if("${type}" STREQUAL "comment")
         map_tryget(${line} comment_depth)
         ans(depth)
@@ -4543,8 +4543,8 @@ endfunction()
         endif()
       endif()
     endforeach()
-    
-    return_ref(markdown)  
+
+    return_ref(markdown)
   endfunction()
 
 
@@ -4561,7 +4561,7 @@ function(cmake_script_parse content)
   ans(ignore_newlines)
   list_extract_flag(args --first-function-header)
   ans(return_first_function_header)
-  set(res)  
+  set(res)
   set(non_empty_script_found false)
 
   while(true)
@@ -4571,7 +4571,7 @@ function(cmake_script_parse content)
     ans(line)
     string_take_regex(content "\n")
     list(LENGTH content len)
-   
+
     if(NOT len)
       break()
     endif()
@@ -4600,7 +4600,7 @@ function(cmake_script_parse content)
       map_set(${current} script "${line}")
       set(CMAKE_MATCH_3)
       if("${line}" MATCHES "^([^\\(]+)(\\(.*\\))(.*)")
-        map_set(${current} function_name "${CMAKE_MATCH_1}")   
+        map_set(${current} function_name "${CMAKE_MATCH_1}")
         map_set(${current} function_call "${CMAKE_MATCH_2}")
         set(function_name "${CMAKE_MATCH_1}")
         set(function_call "${CMAKE_MATCH_2}")
@@ -4618,7 +4618,7 @@ function(cmake_script_parse content)
             string_encode_semicolon("${arg}")
             ans(arg)
             map_append(${current} function_args "${arg}")
-         
+
           endwhile()
         if("${CMAKE_MATCH_3}" MATCHES "^[ ]*#(.*)[ ]*$")
           map_set(${current} comment "${CMAKE_MATCH_1}")
@@ -4651,7 +4651,7 @@ endfunction()
 
 
 
-## `(<start:<token>> <end:<token>> [<limit:<uint>>])-><token>...` 
+## `(<start:<token>> <end:<token>> [<limit:<uint>>])-><token>...`
 ##
 ## returns the tokens which match type
 ## maximum tokens retunred is limit if specified
@@ -4673,7 +4673,7 @@ function(cmake_token_range_find_by_type start end type)
     endif()
     map_tryget(${current} next)
     ans(current)
-  endwhile()  
+  endwhile()
   return_ref(result)
 endfunction()
 
@@ -4714,13 +4714,13 @@ function(cmake_token_range_find_invocations range identifier )
     map_tryget(${current} next)
     ans(current)
   endwhile()
-  return_ref(result)  
+  return_ref(result)
 endfunction()
 
 
 
 
-## `(<start:<token>> <token type> [<value:<regex>>])-><token>`  
+## `(<start:<token>> <token type> [<value:<regex>>])-><token>`
 ##
 ## returns the next token that has the specified token type
 ## or null
@@ -4772,12 +4772,12 @@ endfunction()
 
 ## `(<cmake code> [--extended])-><cmake token>...`
 ##
-## this function parses cmake code and returns a list linked list of tokens 
+## this function parses cmake code and returns a list linked list of tokens
 ##
 ## ```
-## <token> ::= { 
+## <token> ::= {
 ##  type: "command_invocation"|"bracket_comment"|"line_comment"|"quoted_argument"|"unquoted_argument"|"nesting"|"nesting_end"|"file"
-##  value: <string> the actual string as is in the source code 
+##  value: <string> the actual string as is in the source code
 ##  [literal_value : <string>] # the value which actually is meant (e.g. "asd" -> asd  | # I am A comment -> ' I am A comment')
 ##  next: <token>
 ##  previous: <token>
@@ -4788,7 +4788,7 @@ endfunction()
 ## <extended token> ::= (<token>|<nesting token>) v {
 ##  line:<uint> # the line in which the token is found
 ##  column: <uint> # the column in which the token starts
-##  length: <uint> # the length of the token 
+##  length: <uint> # the length of the token
 ## }
 ## ```
 function(cmake_tokens_parse code)
@@ -4804,7 +4804,7 @@ function(cmake_tokens_parse code)
   set(previous)
   set(tokens)
 
-  
+
 
   ## encode list to remove unwanted codes
   string_encode_list("${code}") # string replace \r ""?
@@ -4815,7 +4815,7 @@ function(cmake_tokens_parse code)
   #if(error)
   #  throw("could not parse '{error}'" --function cmake_tokens_parse)
   #endif()
-  
+
   while(true)
     list(LENGTH literal_values literals_left)
     if(NOT literals_left)
@@ -4863,7 +4863,7 @@ function(cmake_tokens_parse code)
         cmake_string_unescape("${literal}")
         ans(literal_value)
         set(literal_value "${literal_value}")
-      
+
         if(NOT nestings AND "${literal}_" MATCHES "^${regex_cmake_identifier}_$")
           if("_${literal_values}" MATCHES "^_(${regex_cmake_space};)?${regex_cmake_nesting_start_char};")
             set(type command_invocation)
@@ -4872,7 +4872,7 @@ function(cmake_tokens_parse code)
       elseif("${literal}_" MATCHES "^\"(.*)\"_$")
         set(type quoted_argument)
         cmake_string_unescape("${CMAKE_MATCH_1}")
-        ans(literal_value)   
+        ans(literal_value)
         set(literal_value "${literal_value}")
       else()
         throw("unknown token '{literal}'")
@@ -4882,7 +4882,7 @@ function(cmake_tokens_parse code)
     map_set(${token} type "${type}")
     map_set(${token} value "${literal}")
     map_set(${token} literal_value "${literal_value}")
-    
+
     if(extended) #these are computed values which make parsing slow
       if(nestings)
         list(GET nestings 0 current_nesting)
@@ -4918,9 +4918,9 @@ function(cmake_tokens_parse code)
   endif()
 
   list(APPEND tokens ${eof})
-    
+
   return_ref(tokens)
-endfunction() 
+endfunction()
 
 
 
@@ -4929,11 +4929,11 @@ endfunction()
 
 ## `(<cmake token range>|<cmake token>...|<cmake code>)-><cmake token range>`
 ##
-## coerces the input to become a token range 
+## coerces the input to become a token range
 ## if the input already is a token range it is returned
 ## if the input is a list of tokens the token range will be extracted
 ## if the input is a string it is assumed to be cmake code and parsed to return a token range
-function(cmake_token_range )    
+function(cmake_token_range )
   cmake_tokens("${ARGN}")
   rethrow()
   ans(range)
@@ -4949,7 +4949,7 @@ endfunction()
 
 
 ## `(<start:<cmake token>> <end:<cmake token>>?)-><cmake code>`
-## 
+##
 ## generates the cmake code corresponding to the cmake token range
 function(cmake_token_range_serialize range)
   cmake_token_range_to_list("${range}")
@@ -4978,7 +4978,7 @@ function(cmake_token_range_to_list range)
   while(true)
     if(NOT current OR "${current}" STREQUAL "${end}")
       break()
-    endif() 
+    endif()
     list(APPEND tokens ${current})
     map_tryget(${current} next)
     ans(current)
@@ -4993,8 +4993,8 @@ endfunction()
 function(cmake_token_range_targets_filter range target_name)
   cmake_token_range("${range}")
   ans(range)
-  cmake_invocation_filter_token_range("${range}" 
-    invocation_identifier MATCHES "^(add_custom_target)|(add_test)|(add_library)|(add_executable)|(target_link_libraries)|(target_include_directories)|(target_compile_options)|(target_compile_definitions)$" 
+  cmake_invocation_filter_token_range("${range}"
+    invocation_identifier MATCHES "^(add_custom_target)|(add_test)|(add_library)|(add_executable)|(target_link_libraries)|(target_include_directories)|(target_compile_options)|(target_compile_definitions)$"
     AND invocation_arguments MATCHES "^${target_name}(;|$)"
     )
   ans(target_invocations)
@@ -5032,13 +5032,13 @@ function(cmake_token_range_targets_filter range target_name)
       set(type target_source_files)
       map_set(${target} target_type ${CMAKE_MATCH_1})
     elseif("${invocation_identifier}" STREQUAL "target_link_libraries")
-      set(type target_link_libraries)      
+      set(type target_link_libraries)
     elseif("${invocation_identifier}" STREQUAL "target_include_directories")
-      set(type target_include_directories)      
+      set(type target_include_directories)
     elseif("${invocation_identifier}" STREQUAL "target_compile_options")
-      set(type target_compile_options)      
+      set(type target_compile_options)
     elseif("${invocation_identifier}" STREQUAL "target_compile_definitions")
-      set(type target_compile_definitions)      
+      set(type target_compile_definitions)
     endif()
     map_set(${target} ${type} ${values})
     map_set(${target_invocations} "${type}" ${target_invocation} )
@@ -5062,7 +5062,7 @@ endmacro()
 
 
 ## `(<&cmake token>)-><cmake token>`
-## 
+##
 ## the token ref contains the previous token after invocation
 macro(cmake_token_go_back token_ref)
   map_tryget(${${token_ref}} previous)
@@ -5077,20 +5077,20 @@ endmacro()
 ## `(<cmake token range> <predicate> [--reverse] [--skip <uint>] [--take <uint>])-><cmake token>...`
 ##
 ## filters the specified token range for tokens matching the predicate (access to value and type)
-## e.g. `cmake_token_range_filter("set(a b c d)" type MATCHES "^argument$" AND value MATCHES "[abd]" --reverse --skip 1 --take 1 )` 
-## <% 
-##   cmake_token_range_filter("set(a b c d)" type MATCHES "^argument$" AND value MATCHES "[abd]" --reverse --skip 1 --take 1 ) 
+## e.g. `cmake_token_range_filter("set(a b c d)" type MATCHES "^argument$" AND value MATCHES "[abd]" --reverse --skip 1 --take 1 )`
+## <%
+##   cmake_token_range_filter("set(a b c d)" type MATCHES "^argument$" AND value MATCHES "[abd]" --reverse --skip 1 --take 1 )
 ##   ans(res)
 ##   #template_out_json(${res})
 ## %>
-## 
+##
 function(cmake_token_range_filter range )
   arguments_encoded_list(1 ${ARGC})
   ans(args)
-  
+
   list_extract_flag(args --reverse)
   ans(reverse)
-  
+
   cmake_token_range("${range}")
   if(reverse)
     ans_extract(end current)
@@ -5140,7 +5140,7 @@ function(cmake_token_range_filter range )
     endif()
   endwhile()
   return_ref(result)
-endfunction() 
+endfunction()
 
 
 
@@ -5148,7 +5148,7 @@ endfunction()
 
 
 
-## `(...)->...` 
+## `(...)->...`
 ##
 ## convenience function
 ## same as cmake_token_range_filter however returns the token values
@@ -5177,10 +5177,10 @@ function(cmake_token_range_insert where what)
 
   if(previous)
     map_set_hidden(${previous} next ${begin})
-    map_set_hidden(${begin} previous ${previous})  
+    map_set_hidden(${begin} previous ${previous})
   endif()
   map_set_hidden(${end} next ${where})
-  map_set_hidden(${where} previous ${end}) 
+  map_set_hidden(${where} previous ${end})
 
   return(${begin} ${end})
 endfunction()
@@ -5208,7 +5208,7 @@ endfunction()
 
 
 ## `(<range:<cmake token range>> <replace_range:<cmake token range>>)-><cmake token range>`
-## 
+##
 ## replaces the specified range with the specified replace range
 ## returns the replace range
 function(cmake_token_range_replace range replace_range)
@@ -5231,7 +5231,7 @@ endfunction()
 
 
 
-  
+
 function(cmake_token_eof)
   map_new()
   ans(token)
@@ -5246,7 +5246,7 @@ endfunction()
 
 ## `(<cmake token range> <section_name:<string>>)-><cmake token range>`
 ##
-## finds the correct comment section or returns nothing 
+## finds the correct comment section or returns nothing
 function(cmake_token_range_comment_section_find range regex_section_name)
 
   set(regex_section_begin_specific "^[# ]*<section[ ]+name[ ]*=[ ]*\"${regex_section_name}\"[ ]*>[ #]*$")
@@ -5302,7 +5302,7 @@ function(cmake_token_range_comment_section_find range regex_section_name)
     error("unbalanced section close")
     return()
   endif()
-  
+
   ## advance twice: comment->newline->begin of section
   cmake_token_advance(section_begin_token)
   cmake_token_advance(section_begin_token)
@@ -5327,11 +5327,11 @@ endfunction()
       if(NOT section)
         break()
       endif()
-      list(APPEND sections ${section}) 
+      list(APPEND sections ${section})
 
       map_tryget(${section_end} next)
       ans(current)
-    endwhile()  
+    endwhile()
 
     return_ref(sections)
 
@@ -5354,7 +5354,7 @@ function(cmake_token_range_comment_section_navigate range path)
     if(NOT section)
       error("could not find section '${section_identifier}'")
       return()
-    endif() 
+    endif()
     set(range ${section})
   endforeach()
 
@@ -5414,7 +5414,7 @@ function(cmake_invocation_filter_token_range range)
     if(reverse)
       set(end)
     endif()
-    
+
     map_tryget("${invocation_token}" line)
     ans(line)
     cmake_token_range_filter("${invocation_token};${end}" type STREQUAL "nesting" --take 1)
@@ -5425,7 +5425,7 @@ function(cmake_invocation_filter_token_range range)
     map_tryget(${arguments_end_token} next)
     ans(arguments_after_end_token)
 
-    cmake_token_range_filter_values("${invocation_token};${arguments_after_end_token}" 
+    cmake_token_range_filter_values("${invocation_token};${arguments_after_end_token}"
       type MATCHES "(command_invocation)|(nesting)|(argument)")
     ans(invocation)
 
@@ -5437,7 +5437,7 @@ function(cmake_invocation_filter_token_range range)
     ans(invocation_identifier)
     list_pop_front(invocation_arguments)
     list_pop_back(invocation_arguments)
-    
+
 
     list(LENGTH args predicate_exists)
     if(predicate_exists)
@@ -5457,18 +5457,18 @@ function(cmake_invocation_filter_token_range range)
       else()
         cmake_token_advance(arguments_begin_token)
         map_capture_new(
-          invocation_identifier 
-          invocation_arguments 
-          invocation_token 
-          arguments_begin_token 
+          invocation_identifier
+          invocation_arguments
+          invocation_token
+          arguments_begin_token
           arguments_end_token
         )
         ans_append(result)
         if(${take} GREATER 0)
           math(EXPR take "${take} - 1")
         endif()
-      endif() 
-    endif() 
+      endif()
+    endif()
 
     if(reverse)
       map_tryget(${invocation_token} previous )
@@ -5485,7 +5485,7 @@ endfunction()
 
 
 ## `(<invocation:<command invocation>>)->[<start:<token>> <end:<token>>]`
-## 
+##
 ## returns the token range of the invocations arguments given an invocation token
 function(cmake_invocation_get_arguments_range invocation)
   cmake_token_range_find_next_by_type("${invocation}" nesting)
@@ -5531,7 +5531,7 @@ function(cmake_invocation_token_set_arguments invocation_token)
 
   list(LENGTH ARGN count)
   string(LENGTH "${ARGN}" len)
-  
+
 
   if(${len} LESS 70 OR ${count} LESS 2)
     string_combine(" " ${arguments})
@@ -5563,14 +5563,14 @@ endfunction()
 function(cmake_token_range_variable range var_name)
   set(args ${ARGN})
 
-  cmake_invocation_filter_token_range("${range}" 
-    invocation_identifier STREQUAL "set" 
-    AND invocation_arguments MATCHES "^${var_name}"  
-    --take 1 
+  cmake_invocation_filter_token_range("${range}"
+    invocation_identifier STREQUAL "set"
+    AND invocation_arguments MATCHES "^${var_name}"
+    --take 1
     )
   ans(invocation)
 
-  
+
   if(NOT invocation)
     messagE(FATAL_ERROR "could not find 'set(${var_name} ...)'")
   endif()
@@ -5593,7 +5593,7 @@ endfunction()
 function(cmake_token_range_variable_navigate range variable_path)
   cmake_token_range("${range}")
   ans(range)
-  set(args ${ARGN}) 
+  set(args ${ARGN})
 
   string(REGEX MATCH "[^\\.]+$" variable_name "${variable_path}")
   string(REGEX REPLACE "\\.?[^\\.]+$" "" section_path "${variable_path}" )
@@ -5601,10 +5601,10 @@ function(cmake_token_range_variable_navigate range variable_path)
   ans(section)
 
   if(NOT section)
-    return()  
+    return()
   endif()
   cmake_token_range_variable("${section}" "${variable_name}" ${args})
-  return_ans()  
+  return_ans()
 endfunction()
 
 
@@ -5647,7 +5647,7 @@ endmacro()
 # same function as cmakes original add_library
 # emits the event add_library with all parameters of the add_library call
 # emits the event on_target_added library with all parameters of the call added
-# registers the target globally so it can be iterated via 
+# registers the target globally so it can be iterated via
 macro(add_library)
   _add_library(${ARGN})
   event_emit(add_library ${ARGN})
@@ -5656,7 +5656,7 @@ macro(add_library)
   target_register(${ARGN})
 
 
-  
+
 endmacro()
 
 
@@ -5683,14 +5683,14 @@ macro(find_package)
   set_ans("")
   event_emit(on_find_package ${ARGN})
   if(__ans)
-    ## an event returns a cmake package map 
+    ## an event returns a cmake package map
     ## which contains the correct variables
     ## also it contains a hidden field called find_package_return_value
     ## which is the return value for find_package
 
     scope_import_map("${__ans}")
     map_tryget("${__ans}" find_package_return_value)
-  else()  
+  else()
     _find_package(${ARGN})
     set_ans("")
   endif()
@@ -5729,7 +5729,7 @@ endmacro()
 macro(project)
   set(parent_project_name "${PROJECT_NAME}")
   _project(${ARGN})
-  set(project_name "${PROJECT_NAME}") 
+  set(project_name "${PROJECT_NAME}")
   project_register(${ARGN})
   event_emit("project" ${ARGN})
 endmacro()
@@ -5764,7 +5764,7 @@ function(target_include_directories target)
 if(NOT COMMAND _target_include_directories)
   cmake_parse_arguments("" "SYSTEM;BEFORE;PUBLIC;INTERFACE;PRIVATE" "" "" ${ARGN} )
   message(DEBUG "using fallback version of target_include_directories, consider upgrading to cmake >= 2.8.10")
-  
+
   if(_SYSTEM OR _BEFORE OR _INTERFACE OR _PRIVATE)
     message(FATAL_ERROR "shim for target_include_directories does not support SYSTEM, PRIVATE, INTERFACE or BEFORE upgrade to cmake >= 2.8.10")
   endif()
@@ -5782,7 +5782,7 @@ else()
   _target_include_directories(${target} ${ARGN})
 endif()
   event_emit(target_include_directories ${ARGN})
-  
+
 endfunction()
 
 
@@ -5794,17 +5794,17 @@ macro(target_link_libraries)
   _target_link_libraries(${ARGN})
   target_link_libraries_register(${ARGN})
   event_emit(target_link_libraries ${ARGN})
-  
+
 endmacro()
 
 function(target_link_libraries_register target)
-  
+
 endfunction()
 
 
 
 
-# prints the list of known targets 
+# prints the list of known targets
 function(print_targets)
   target_list()
   ans(res)
@@ -5834,7 +5834,7 @@ endfunction()
 
 
 
-# 
+#
 function(project_register name)
   map_new()
   ans(pmap)
@@ -5864,7 +5864,7 @@ function(project_object)
       set(name "${PROJECT_NAME}")
     endif()
   endif()
-  
+
   map_tryget(global project_map)
   ans(res)
   if(NOT res)
@@ -5962,10 +5962,10 @@ function(target_register target_name)
     map_set(${tgt} name "${target_name}")
     map_set(${tgt} project_name ${project_name})
     map_append(global targets ${tgt})
-    map_append(global target_names ${target_name}) 
+    map_append(global target_names ${target_name})
     map_get(global target_map)
     ans(target_map)
-    map_set(${target_map} ${target_name} ${tgt}) 
+    map_set(${target_map} ${target_name} ${tgt})
     project_object()
     ans(proj)
     if(proj)
@@ -5997,15 +5997,15 @@ endfunction()
 
 
 
-## 
+##
 ## executes the cmakepp command line as a separate process
 ##
-## 
+##
 function(cmakepp)
   cmakepp_config(base_dir)
   ans(base_dir)
   cmake("-P" "${base_dir}/cmakepp.cmake" ${ARGN})
-  return_ans()    
+  return_ans()
 endfunction()
 
 
@@ -6121,7 +6121,7 @@ endfunction()
 
 
 
-## cmakepp_compile() 
+## cmakepp_compile()
 ##
 ## compiles cmakepp into a single file which is faster to include
 function(cmakepp_compile target_file)
@@ -6138,8 +6138,8 @@ function(cmakepp_compile target_file)
 
       file(GLOB_RECURSE files "${base_dir}/cmake/**.cmake")
 
-      foreach(file ${files} ) 
-        file(READ  "${file}" content)      
+      foreach(file ${files} )
+        file(READ  "${file}" content)
         file(APPEND "${target_file}" "\n\n\n${content}\n\n")
       endforeach()
     elseif("_${line}" STREQUAL "_include(\"\${cmakepp_base_dir}/cmake/task/task_enqueue.cmake\")")
@@ -6157,13 +6157,13 @@ endfunction()
 
 
 
-## 
+##
 ## goes through all of cmakepp's README.md.in files and generates them
 function(cmakepp_compile_docs)
   cmakepp_config(base_dir)
   ans(base_dir)
   file(GLOB_RECURSE template_paths "${base_dir}/**README.md.in")
-  
+
   foreach(template_path ${template_paths})
       get_filename_component(template_dir "${template_path}" PATH)
       set(output_file "${template_dir}/README.md")
@@ -6178,7 +6178,7 @@ endfunction()
 
 
 
-## 
+##
 ##
 ## invokes the cmakepp project command line interface
 function(cmakepp_project_cli)
@@ -6244,7 +6244,7 @@ function(cmakepp_project_cli)
   if(NOT cmd)
     set(cmd run)
   endif()
-  
+
   if("${cmd}" STREQUAL "init")
     list_pop_front(args)
     ans(path)
@@ -6321,22 +6321,22 @@ endfunction()
 
 
 
-## sets up the cmakepp environment 
+## sets up the cmakepp environment
 ## creates aliases
 ##    icmake - interactive cmakepp
-##    cmakepp - commandline interface to cmakepp 
+##    cmakepp - commandline interface to cmakepp
 ##    pkg - package manager command line interface
 function(cmakepp_setup_environment)
   cmakepp_config(base_dir)
   ans(base_dir)
-  
-  message(STATUS "creating alias `icmakepp`")  
+
+  message(STATUS "creating alias `icmakepp`")
   alias_create("icmakepp" "cmake -P ${base_dir}/cmakepp.cmake icmake")
-  message(STATUS "creating alias `cmakepp`")  
+  message(STATUS "creating alias `cmakepp`")
   alias_create("cmakepp" "cmake -P ${base_dir}/cmakepp.cmake")
-  message(STATUS "creating alias `pkg`")  
+  message(STATUS "creating alias `pkg`")
   alias_create("pkg" "cmake -P ${base_dir}/cmakepp.cmake cmakepp_project_cli")
-  message(STATUS "creating alias `cml`")  
+  message(STATUS "creating alias `cml`")
   alias_create("cml" "cmake -P ${base_dir}/cmakepp.cmake cmakelists_cli")
   message(STATUS "setting CMAKEPP_PATH to ${base_dir}/cmakepp.cmake ")
 
@@ -6357,8 +6357,8 @@ function(cmakepp_tool)
   pushd("${path}")
     cd("build" --create)
     cmake(
-      -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=bin 
-      -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG=bin 
+      -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=bin
+      -DCMAKE_RUNTIME_OUTPUT_DIRECTORY_DEBUG=bin
       .. --process-handle)
     ans(handle)
 
@@ -6505,7 +6505,7 @@ endfunction()
     set(${__lst} ${${__lst}} PARENT_SCOPE)
     return()
   endfunction()
-  
+
 
 
 
@@ -6557,7 +6557,7 @@ endfunction()
 ## ie index_range(5 3) => 5 4
 ## (do not confuse this function with the `range_` functions)
 function(index_range start_index end_index)
-  
+
   if(${start_index} EQUAL ${end_index})
     return()
   endif()
@@ -6569,9 +6569,9 @@ function(index_range start_index end_index)
   else()
     set(increment 1)
     math(EXPR end_index "${end_index} - 1")
-  
+
   endif()
-  
+
   foreach(i RANGE ${start_index} ${end_index} ${increment})
     list(APPEND result ${i})
   endforeach()
@@ -6585,11 +6585,11 @@ endfunction()
 
 
 ## `(<linked list> <where: <linked list node> = <linked list>.tail >  <any>... )-><linked list node>`
-## 
+##
 ## inserts a new linked list node after `where`. if where is null then the tail of the list is used.
 ## the arguments passed after where are used as the value of the new node
 function(linked_list_insert_after linked_list where)
-  
+
   linked_list_node_new(${ARGN})
   ans(node)
 
@@ -6601,7 +6601,7 @@ function(linked_list_insert_after linked_list where)
       map_set(${linked_list} tail ${node})
       return(${node})
     endif()
-  endif() 
+  endif()
 
   map_tryget(${where} next)
   ans(next)
@@ -6638,7 +6638,7 @@ function(linked_list_insert_before linked_list where)
       map_set(${linked_list} tail ${node})
       return(${node})
     endif()
-  endif() 
+  endif()
 
   map_tryget(${where} previous)
   ans(previous)
@@ -6661,9 +6661,9 @@ endfunction()
 
 
 ## `()-><linked list>`
-## 
-## creates a new linked list 
-## 
+##
+## creates a new linked list
+##
 ## ```
 ## <linked list node> ::= <null> | {
 ##   head: <linked list node>|<null>
@@ -6672,12 +6672,12 @@ endfunction()
 ## ```
 function(linked_list_new)
   map_new()
-  ans(linked_list) 
+  ans(linked_list)
 
   map_set(${linked_list} head)
   map_set(${linked_list} tail)
 
-  return_ref(linked_list)  
+  return_ref(linked_list)
 endfunction()
 
 
@@ -6686,9 +6686,9 @@ endfunction()
 
 
 ## `(<any>...)-><linked list node>`
-## 
+##
 ## creates a new linked list node which contains the value specified
-## 
+##
 function(linked_list_node_new)
   map_new()
   ans(node)
@@ -6709,7 +6709,7 @@ function(linked_list_peek_back linked_list)
 
   if("${ARGN}" STREQUAL "--node")
     return(${tail})
-  endif() 
+  endif()
 
   address_get("${tail}")
   return_ans()
@@ -6727,7 +6727,7 @@ function(linked_list_peek_front linked_list)
 
   if("${ARGN}" STREQUAL "--node")
     return(${head})
-  endif()    
+  endif()
 
   address_get("${head}")
   return_ans()
@@ -6756,7 +6756,7 @@ endfunction()
 
 
 
-function(linked_list_pop_front linked_list) 
+function(linked_list_pop_front linked_list)
   map_tryget("${linked_list}" head)
   ans(head)
   if(NOT head)
@@ -6779,7 +6779,7 @@ endfunction()
     linked_list_insert_after("${linked_list}" "" ${ARGN})
     return_ans()
   endfunction()
-  
+
 
 
 
@@ -6810,13 +6810,13 @@ endfunction()
     endif()
 
     return()
-  endfunction() 
+  endfunction()
 
 
 
 
 ## `(<linked list> <where:<linked list node>> <any>...)-><linked list node>`
-##  
+##
 ## replaces the specified linked list node and returns new node
 function(linked_list_replace linked_list where)
   map_import_properties(${where} previous next)
@@ -6861,10 +6861,10 @@ endfunction()
 
 
 
-## `(<list&> <predicate:<[](<any>)->bool>>)-><bool>` 
+## `(<list&> <predicate:<[](<any>)->bool>>)-><bool>`
 ##
-## returns true iff predicate holds for all elements of `<list>` 
-## 
+## returns true iff predicate holds for all elements of `<list>`
+##
 function(list_all __list_all_lst __list_all_predicate)
   function_import("${__list_all_predicate}" as __list_all_predicate REDEFINE)
   foreach(it ${${__list_all_lst}})
@@ -6902,10 +6902,10 @@ endfunction()
 
 
 
-## 
+##
 ##
 ## returns all elements whose index are specfied
-## 
+##
 function(list_at __list_at_lst)
   set(__list_at_result)
   foreach(__list_at_idx ${ARGN})
@@ -6940,15 +6940,15 @@ endfunction()
 
 
 ## `(<list&> <query...>)-><bool>`
-##  
+##
 ## `<query> := <value>|'!'<value>|<value>'?'`
-## 
-## * checks to see that every value specified is contained in the list 
+##
+## * checks to see that every value specified is contained in the list
 ## * if the value is preceded by a `!` checks that the value is not in the list
 ## * if the value is succeeded by a `?` the value may or may not be contained
 ##
 ## returns true if all queries match
-## 
+##
 function(list_check_items __lst)
   set(lst ${${__lst}})
   set(result 0)
@@ -7047,7 +7047,7 @@ endfunction()
 
 ## `(<list&> <element:<any...>>)-><bool>`
 ##
-## returns true if list contains every element specified 
+## returns true if list contains every element specified
 ##
 function(list_contains __list_contains_lst)
 	foreach(arg ${ARGN})
@@ -7065,7 +7065,7 @@ endfunction()
 
 function(list_contains_any __lst)
     if("${ARGC}" EQUAL "1")
-    ## no items specified 
+    ## no items specified
     return(true)
   endif()
 
@@ -7082,7 +7082,7 @@ function(list_contains_any __lst)
       return(true)
     endif()
 
-  endforeach() 
+  endforeach()
   return(false)
 endfunction()
 
@@ -7091,7 +7091,7 @@ endfunction()
 
 ## `(<list&> <predicate:<[](<any>)-><bool>>> )-><uint>`
 ##
-## counts all element for which the predicate holds 
+## counts all element for which the predicate holds
 function(list_count __list_count_lst __list_count_predicate)
   function_import("${__list_count_predicate}" as __list_count_predicate REDEFINE)
   set(__list_count_counter 0)
@@ -7099,7 +7099,7 @@ function(list_count __list_count_lst __list_count_predicate)
     __list_count_predicate("${__list_count_item}")
     ans(__list_count_match)
     if(__list_count_match)
-      math(EXPR __list_count_counter "${__list_count_counter} + 1") 
+      math(EXPR __list_count_counter "${__list_count_counter} + 1")
     endif()
   endforeach()
   return("${__list_count_counter}")
@@ -7178,9 +7178,9 @@ function(list_equal)
 	else()
 		set(lambda "${_COMPARATOR}")
 	endif()
-	# import function string 
+	# import function string
 	function_import("${lambda}" as __list_equal_comparator REDEFINE)
-		
+
 	set(res)
 	# compare list
 	math(EXPR single_count "${single_count} - 1")
@@ -7298,15 +7298,15 @@ endfunction()
 
 
 
-## extracts any of the specified labelled values and returns as soon 
+## extracts any of the specified labelled values and returns as soon
 ## the first labelled value is found
-## lst contains its original elements without the labelled value 
+## lst contains its original elements without the labelled value
 function(list_extract_any_labelled_value __list_extract_any_labelled_value_lst)
   set(__list_extract_any_labelled_value_res)
   foreach(label ${ARGN})
     list_extract_labelled_value(${__list_extract_any_labelled_value_lst} ${label})
     ans(__list_extract_any_labelled_value_res)
-    if(NOT "${__list_extract_any_labelled_value_res}_" STREQUAL "_")    
+    if(NOT "${__list_extract_any_labelled_value_res}_" STREQUAL "_")
       break()
     endif()
   endforeach()
@@ -7319,15 +7319,15 @@ endfunction()
 
 
   #extracts a single flag from a list returning true if it was found
-  # false otherwise. 
+  # false otherwise.
   # if flag exists multiple time online the first instance of the flag is removed
   # from the list
  function(list_extract_flag __list_extract_flag flag)
     list(FIND "${__list_extract_flag}" "${flag}" idx)
     if(${idx} LESS 0)
-      return(false)     
+      return(false)
     endif()
-    list(REMOVE_AT "${__list_extract_flag}" "${idx}") 
+    list(REMOVE_AT "${__list_extract_flag}" "${idx}")
     set("${__list_extract_flag}" "${${__list_extract_flag}}" PARENT_SCOPE)
     return(true)
 endfunction()
@@ -7355,7 +7355,7 @@ endfunction()
 
 
 
- ## extracts a flag from the list if it is found 
+ ## extracts a flag from the list if it is found
  ## returns the flag itself (usefull for forwarding flags)
   macro(list_extract_flag_name __lst __flag)
     list_extract_flag("${__lst}" "${__flag}")
@@ -7392,7 +7392,7 @@ endfunction()
 
 
 
-# searchs for label in lst. if label is found 
+# searchs for label in lst. if label is found
 # the label and its following value is removed
 # and returned
 # if label is found but no value follows ${ARGN} is returned
@@ -7411,7 +7411,7 @@ function(list_extract_labelled_value lst label)
   # find label in list
   list_find(${lst} "${label}")
   ans(pos)
-  
+
   if("${pos}" LESS 0)
     return()
   endif()
@@ -7430,7 +7430,7 @@ function(list_extract_labelled_value lst label)
 
   list_pop_front(vals)
   ans(flag)
-    
+
 
   # special treatment for [] values
   if("_${vals}" MATCHES "^_\\[.*\\]$")
@@ -7443,7 +7443,7 @@ function(list_extract_labelled_value lst label)
     set(vals ${ARGN})
   endif()
 
-  
+
   set(${lst} ${${lst}} PARENT_SCOPE)
 
 
@@ -7489,9 +7489,9 @@ endfunction()
 
 
 ## returns the index of the one of the specified items
-## if no element is found then -1 is returned 
+## if no element is found then -1 is returned
 ## no guarantee is made on which item's index
-## is returned 
+## is returned
 function(list_find_any __list_find_any_lst )
   foreach(__list_find_any_item ${ARGN})
     list(FIND ${__list_find_any_lst} ${__list_find_any_item} __list_find_any_idx)
@@ -7507,7 +7507,7 @@ endfunction()
 
 
 ## returns a map of all found flags specified as ARGN
-##  
+##
 function(list_find_flags __list_find_flags_lst)
   map_new()
   ans(__list_find_flags_result)
@@ -7531,7 +7531,7 @@ function(list_fold lst aggregator)
   set(rst ${${lst}})
   list_pop_front(rst)
   ans(left)
-  
+
   if("${rst}_" STREQUAL "_")
     return(${left})
   endif()
@@ -7558,7 +7558,7 @@ function(list_fold lst aggregator)
   set(rst ${${lst}})
   list_pop_front(rst)
   ans(left)
-  
+
   if("${rst}_" STREQUAL "_")
     return(${left})
   endif()
@@ -7614,7 +7614,7 @@ macro(list_get_lean __lst_ref)
     list(GET "${__lst_ref}" ${ARGN})
   else()
     set(__ans)
-  endif() 
+  endif()
 endmacro()
 
 
@@ -7655,7 +7655,7 @@ function(list_intersect)
   if(__list_intersect_elements_to_remove)
     foreach(__list_operation_item ${__list_intersect_rest_elements})
       list(REMOVE_ITEM __list_intersect_elements_to_remove ${__list_operation_item})
-    endforeach()  
+    endforeach()
   endif()
   # remove elements and return result
   if(__list_intersect_elements_to_remove)
@@ -7722,7 +7722,7 @@ endfunction()
 
 
 
-## advances the iterator using list_iterator_next 
+## advances the iterator using list_iterator_next
 ## and breaks the current loop when the iterator is done
 macro(list_iterator_break it_ref)
   list_iterator_next(${it_ref})
@@ -7734,9 +7734,9 @@ endmacro()
 
 
 
-## advances the iterator specified 
+## advances the iterator specified
 ## and returns true if it is on a valid element (else false)
-## sets the fields 
+## sets the fields
 ## ${it_ref}.index
 ## ${it_ref}.length
 ## ${it_ref}.list_ref
@@ -7745,7 +7745,7 @@ function(list_iterator_next it_ref)
   list(GET ${it_ref} 0 list_ref)
   list(GET ${it_ref} 1 length)
   list(GET ${it_ref} 2 index)
-  math(EXPR index "${index} + 1")    
+  math(EXPR index "${index} + 1")
   #print_vars(list_ref length index)
   set(${it_ref} ${list_ref} ${length} ${index} PARENT_SCOPE)
   set(${it_ref}.index ${index} PARENT_SCOPE)
@@ -7774,7 +7774,7 @@ endmacro()
 
 
 
-## returns the maximum value in the list 
+## returns the maximum value in the list
 ## using the specified comparerer function
 function(list_max lst comparer)
   list_fold(${lst} "${comparer}")
@@ -7787,7 +7787,7 @@ endfunction()
 
 
 
-    
+
 function(list_modify __list_name)
   set(args ${ARGN})
   list_extract_flag(args --append)
@@ -7850,7 +7850,7 @@ function(list_normalize_index __lst index )
   if("${idx}" STREQUAL "*")
     set(idx ${length})
   endif()
-  
+
   if(${idx} LESS 0)
     math(EXPR idx "${length} ${idx} + 1")
   endif()
@@ -7871,7 +7871,7 @@ endfunction()
 
 
 # returns true if value could be parsed
-function(list_parse_descriptor descriptor)  
+function(list_parse_descriptor descriptor)
   cmake_parse_arguments("" "" "UNUSED_ARGS;ERROR;CUTOFFS" "" ${ARGN})
   set(args ${_UNPARSED_ARGUMENTS})
   scope_import_map(${descriptor})
@@ -7896,16 +7896,16 @@ function(list_parse_descriptor descriptor)
   # remove first arg as its the flag used to start this value
   list_pop_front( value_args)
   ans(used_label)
-  
+
   # list length
   list(LENGTH value_args len)
 
   if("${cut_off}" STREQUAL "*")
     set(cut_off -1)
   endif()
-  
+
   math_min(${len} ${cut_off})
-  ans(cut_off)  
+  ans(cut_off)
   list_slice(value_args "${cut_off}" -1)
   ans(tmp)
 
@@ -7915,7 +7915,7 @@ function(list_parse_descriptor descriptor)
   if(_UNUSED_ARGS)
     set(${_UNUSED_ARGS} ${unused_args} PARENT_SCOPE)
   endif()
-  
+
   list_slice(value_args 0 "${cut_off}")
   ans(value_args)
 
@@ -8015,7 +8015,7 @@ function(list_pop_front  __list_pop_front_lst)
 
   list(GET ${__list_pop_front_lst} 0 res)
 
-  if(${len} EQUAL 1) 
+  if(${len} EQUAL 1)
     set(${__list_pop_front_lst} )
   else()
     list(REMOVE_AT "${__list_pop_front_lst}" 0)
@@ -8034,7 +8034,7 @@ macro(list_pop_front  __list_pop_front_lst)
   if(NOT "${__list_pop_front_length}" EQUAL 0)
     list(GET ${__list_pop_front_lst} 0 __ans)
 
-    if(${__list_pop_front_length} EQUAL 1) 
+    if(${__list_pop_front_length} EQUAL 1)
       set(${__list_pop_front_lst})
     else()
       list(REMOVE_AT "${__list_pop_front_lst}" 0)
@@ -8058,7 +8058,7 @@ endfunction()
 
 # adds a value at the beginning of the list
 function(list_push_front __list_push_front_lst value)
-  set(${__list_push_front_lst} ${value} ${${__list_push_front_lst}} PARENT_SCOPE)   
+  set(${__list_push_front_lst} ${value} ${${__list_push_front_lst}} PARENT_SCOPE)
   return(true)
 endfunction()
 
@@ -8134,7 +8134,7 @@ endfunction()
 
 
 
-# removes all items at all specified indices from list 
+# removes all items at all specified indices from list
 function(list_remove_at __list_remove_at_lst)
   if(NOT "${__list_remove_at_lst}")
     return()
@@ -8153,7 +8153,7 @@ function(list_remove_at __list_remove_at_lst)
 
   set("${__list_remove_at_lst}" "${${__list_remove_at_lst}}" PARENT_SCOPE)
 
-  return_ref("${__list_remove_at_lst}")  
+  return_ref("${__list_remove_at_lst}")
 
 endfunction()
 
@@ -8181,7 +8181,7 @@ function(list_replace_at __list_replace_at_lst i new_value)
   if(NOT "${i}" LESS "${len}")
     return(false)
   endif()
-  list(INSERT ${__list_replace_at_lst} ${i} ${new_value}) 
+  list(INSERT ${__list_replace_at_lst} ${i} ${new_value})
   math(EXPR i_plusone "${i} + 1" )
   list(REMOVE_AT ${__list_replace_at_lst} ${i_plusone})
   set(${__list_replace_at_lst} ${${__list_replace_at_lst}} PARENT_SCOPE)
@@ -8215,21 +8215,21 @@ endfunction()
       math(EXPR __start_index "${__start_index} + ${__insert_count}")
       math(EXPR __end_index "${__end_index} + ${__insert_count}")
     endif()
-    
+
     ## generate index list of elements to remove
     index_range(${__start_index} ${__end_index})
     ans(__indices)
 
     ## get number of elements to remove
     list(LENGTH __indices __remove_count)
-    
+
     ## get slice which is to be removed and remove it
     set(__removed_elements)
     if(__remove_count)
       list(GET ${__list_ref} ${__indices} __removed_elements)
       list(REMOVE_AT ${__list_ref} ${__indices})
     endif()
-    
+
 
     ## set result
     set(${__list_ref} ${${__list_ref}} PARENT_SCOPE)
@@ -8278,7 +8278,7 @@ function(list_select __list_select_lst __list_select_selector)
     __list_select_selector(${__list_select_current_arg})
     list(APPEND __res ${__ans})
   endforeach()
-  return_ref(__res)  
+  return_ref(__res)
 endfunction()
 
 
@@ -8299,7 +8299,7 @@ endfunction()
 
 
 # sets the lists value at index to the specified value
-# the index is normalized -> negativ indices count down from back of list 
+# the index is normalized -> negativ indices count down from back of list
   function(list_set_at __list_set_lst index value)
     if("${index}" EQUAL -1)
       #insert element at end
@@ -8322,7 +8322,7 @@ endfunction()
 
 
 # retruns a portion of the list specified.
-# negative indices count from back of list 
+# negative indices count from back of list
 #
 function(list_slice __list_slice_lst start_index end_index)
   # indices equal => select nothing
@@ -8408,18 +8408,18 @@ function(list_sort __list_sort_lst comparator)
   return_ref(${__list_sort_lst})
 endfunction()
 
-   ## the quicksort routine expects a function called 
+   ## the quicksort routine expects a function called
    ## __quicksort_compare to be defined
  macro(__quicksort __list_sort_lst lo hi)
   if("${lo}" LESS "${hi}")
     ## choose pivot
     set(p_idx ${lo})
-    ## get value of pivot 
+    ## get value of pivot
     list(GET ${__list_sort_lst} ${p_idx} p_val)
-    
+
     list_swap(${__list_sort_lst} ${p_idx} ${hi})
     math(EXPR upper "${hi} - 1")
-    
+
     ## store index p
     set(p ${lo})
     foreach(i RANGE ${lo} ${upper})
@@ -8564,7 +8564,7 @@ function(list_union)
   set(__list_union_result)
   foreach(__list_union_list ${ARGN})
     list(APPEND __list_union_result ${${__list_union_list}})
-  endforeach() 
+  endforeach()
 
   list(REMOVE_DUPLICATES __list_union_result)
   return_ref(__list_union_result)
@@ -8646,7 +8646,7 @@ function(is_range)
   if("_${ARGN}_" MATCHES "^_[0-9:\\$,\\-]*_$")
     return(true)
   endif()
-  return(false)    
+  return(false)
 endfunction()
 
 
@@ -8673,8 +8673,8 @@ endfunction()
 
   ## list_range_indices(<list&> <range ...>)
   ## returns the indices for the range for the specified list
-  ## e.g. 
-  ## 
+  ## e.g.
+  ##
   function(list_range_indices __lst)
     list(LENGTH ${__lst} len)
     range_indices("${len}" ${ARGN})
@@ -8690,7 +8690,7 @@ endfunction()
 ## writes the specified varargs to the list
 ## at the beginning of the specified partial range
 ## fails if the range is a  multi range
-## e.g. 
+## e.g.
 ## set(lstB a b c)
 ## list_range_partial_write(lstB "[]" 1 2 3)
 ## -> lst== [a b c 1 2 3]
@@ -8723,7 +8723,7 @@ endfunction()
     if(NOT insertion_count)
       set(${__lst} ${${__lst}} PARENT_SCOPE)
       return()
-    endif() 
+    endif()
 
     list(GET partial_range 6 reverse)
     if(reverse)
@@ -8774,8 +8774,8 @@ endfunction()
 
   ## replaces the specified range with the specified arguments
   ## the varags are taken and fill up the range to replace_count
-  ## e.g. set(list a b c d e) 
-  ## list_range_replace(list "4 0 3:1:-2" 1 2 3 4 5) --> list is equal to  2 4 c 3 1 
+  ## e.g. set(list a b c d e)
+  ## list_range_replace(list "4 0 3:1:-2" 1 2 3 4 5) --> list is equal to  2 4 c 3 1
   ##
   function(list_range_replace lst_ref range)
     set(lst ${${lst_ref}})
@@ -8791,10 +8791,10 @@ endfunction()
 
     range_indices("${len}" ":")
     ans(indices)
-    
+
     range_indices("${len}" "${range}")
     ans(indices_to_replace)
-    
+
     list(LENGTH indices_to_replace replace_count)
     message("indices_to_replace '${indices_to_replace}' count: ${replace_count}")
 
@@ -8821,7 +8821,7 @@ endfunction()
 
       if(${index} GREATER ${len})
         message(FATAL_ERROR "invalid index '${index}' - list is only ${len} long")
-      elseif(${index} EQUAL ${len}) 
+      elseif(${index} EQUAL ${len})
         message("appending to '${current_value}' to list")
         list(APPEND lst "${current_value}")
       else()
@@ -8852,7 +8852,7 @@ endfunction()
 
 
   ## sets every element included in range to specified value
-  ## 
+  ##
   function(list_range_set __lst __range __value)
     list_range_indices(${__lst} "${__range}")
     ans(indices)
@@ -8901,7 +8901,7 @@ endfunction()
 
 
 ## `(<index:<uint>...>)-><instanciated range...>`
-## 
+##
 ## returns the best ranges from the specified indices
 ## e.g range_from_indices(1 2 3) -> [1:3]
 ##     range_from_indices(1 2) -> 1 2
@@ -8915,7 +8915,7 @@ function(range_from_indices)
   list(LENGTH ARGN index_count)
   if(${index_count} EQUAL 0)
     return()
-  endif() 
+  endif()
 
 
   set(indices_in_partial_range)
@@ -8936,7 +8936,7 @@ function(range_from_indices)
     endif()
 
     if(increment)
-      math(EXPR expected "${end}${increment}")    
+      math(EXPR expected "${end}${increment}")
     else()
       set(expected ${i})
     endif()
@@ -8950,12 +8950,12 @@ function(range_from_indices)
       set(indices_in_partial_range)
 
     endif()
-    set(end ${i}) 
+    set(end ${i})
     list(APPEND indices_in_partial_range ${i})
   endforeach()
 
   __range_from_indices_create_range()
-  
+
 
 
   string(REPLACE ";" " " range "${range}")
@@ -8984,11 +8984,11 @@ endmacro()
 
 
 
-## `(<length:<int>> <~range...>)-><index:<uint>...>` 
+## `(<length:<int>> <~range...>)-><index:<uint>...>`
 ##
 ## returns the list of indices for the specified range
-## length may be negative which causes a failure if any anchors are used (`$` or `n`) 
-## 
+## length may be negative which causes a failure if any anchors are used (`$` or `n`)
+##
 ## if the length is valid  (`>-1`) only valid indices are returned or failure occurs
 ##
 ## a length of 0 always returns no indices
@@ -9004,14 +9004,14 @@ function(range_indices length)
   if("${length}" LESS 0)
     set(length 0)
   endif()
-  
+
   range_instanciate("${length}" ${ARGN})
   ans(range)
 
-  ## foreach partial range in range 
-  ## get the begin and end and increment 
-  ## use cmake's foreach loop to enumerate the range 
-  ## and save the indices 
+  ## foreach partial range in range
+  ## get the begin and end and increment
+  ## use cmake's foreach loop to enumerate the range
+  ## and save the indices
   ## remove a index at front and or back if the inclusivity warrants it
   ## return the indices
   set(indices)
@@ -9020,7 +9020,7 @@ function(range_indices length)
     list(GET partial 0 1 2 partial_range)
     foreach(i RANGE ${partial_range})
       list(APPEND indices ${i})
-    endforeach() 
+    endforeach()
     list(GET partial 3 begin_inclusivity)
     list(GET partial 4 end_inclusivity)
     if(NOT end_inclusivity)
@@ -9055,7 +9055,7 @@ endfunction()
 
 
 ## `(<length:<int>> <~range...>)-><instanciated range...>`
-## 
+##
 ## instanciates a range.  A uninstanciated range contains anchors
 ## these are removed when a length is specified (`n`)
 ## returns a valid range  with no anchors
@@ -9102,7 +9102,7 @@ function(range_instanciate length)
       message(FATAL_ERROR "invalid range begin: ${begin}")
     endif()
 
-    list(APPEND result "${begin}:${end}:${increment}:${begin_inclusivity}:${end_inclusivity}:${range_length}:${reverse}")  
+    list(APPEND result "${begin}:${end}:${increment}:${begin_inclusivity}:${end_inclusivity}:${range_length}:${reverse}")
   endforeach()
  # message("res ${result}")
   return_ref(result)
@@ -9117,13 +9117,13 @@ endfunction()
 ## parses a range string and normalizes it to have the following form:
 ## `<range> ::= <begin>":"<end>":"<increment>":"<begin inclusivity:<bool>>":"<end inclusivity:<bool>>":"<length>":"<reverse:<bool>>
 ## these `<range>`s can be used to generate a index list which can in turn be used to address lists.
-##  
-##   * a list of `<range>`s is a  `<range>`  
-##   * `$` the last element 
+##
+##   * a list of `<range>`s is a  `<range>`
+##   * `$` the last element
 ##   * `n` the element after the last element ($+1)
 ##   * `-<n>` a begin or end starting with `-` is transformed into `$-<n>`
-##   * `"["` `"("` `")"` and `"]"`  signify the inclusivity.  
-## 
+##   * `"["` `"("` `")"` and `"]"`  signify the inclusivity.
+##
 function(range_parse)
   ## normalize input by replacing certain characters
   string(REPLACE " " ";" range "${ARGN}")
@@ -9134,7 +9134,7 @@ function(range_parse)
   string(REPLACE "[" "<" range "${range}")
   string(REPLACE "]" ">" range "${range}")
 
-  ## if there is more than one range group 
+  ## if there is more than one range group
   ## recursively invoke range_parse
   list(LENGTH range group_count)
   set(ranges)
@@ -9171,7 +9171,7 @@ function(range_parse)
     set(begin_inclusivity false)
   else()
    set(begin_inclusivity true)
-   set(default_begin_inclusivity true) 
+   set(default_begin_inclusivity true)
   endif()
 
   if("${end_inclusivity}" STREQUAL "<")
@@ -9206,11 +9206,11 @@ function(range_parse)
 
   ## split list at ":"
   string(REPLACE  ":" ";" range "${range}")
-  
-  ## normalize range and simplify elements
-  
 
-  ## single number is transformed to i;i;1 
+  ## normalize range and simplify elements
+
+
+  ## single number is transformed to i;i;1
   list(LENGTH range part_count)
   if(${part_count} EQUAL 1)
     set(range ${range} ${range} 1)
@@ -9255,7 +9255,7 @@ function(range_parse)
   endif()
 
   ## create math expression to calculate begin and end if anchors are used
-  ## negative begin or end is transformed into $-i 
+  ## negative begin or end is transformed into $-i
   set(begin_negative false)
   set(end_negative false)
   if(${begin} LESS 0)
@@ -9277,7 +9277,7 @@ function(range_parse)
   endif()
 
   ## calculate length of range (number of elements that are spanned)
-  ## depending on the orientation of the range 
+  ## depending on the orientation of the range
   if(NOT reverse)
     set(length "${end}-${begin}")
     if(end_inclusivity)
@@ -9296,7 +9296,7 @@ function(range_parse)
     endif()
   endif()
 
-  ## simplify some typical ranges 
+  ## simplify some typical ranges
   string(REPLACE "n-n" "0" length "${length}")
   string(REPLACE "n-$" "1" length "${length}")
   string(REPLACE "$-n" "0-1" length "${length}")
@@ -9315,7 +9315,7 @@ function(range_parse)
   if(NOT "${length}" MATCHES "\\$|n" )
     math(EXPR length "${length}")
   else()
-     # 
+     #
   endif()
 
   ## set the range string and return it
@@ -9343,7 +9343,7 @@ function(range_partial_unpack ref)
     list(GET parts 5 length)
 
     set(${ref}.inclusive_begin ${inclusive_begin} PARENT_SCOPE)
-    set(${ref}.inclusive_end ${inclusive_end} PARENT_SCOPE)    
+    set(${ref}.inclusive_end ${inclusive_end} PARENT_SCOPE)
     set(${ref}.begin ${begin} PARENT_SCOPE)
     set(${ref}.end ${end} PARENT_SCOPE)
     set(${ref}.increment ${increment} PARENT_SCOPE)
@@ -9388,8 +9388,8 @@ endfunction()
 
 
 ## `(<listA&:<any...> <listB&:<any...>>)-><any..>`
-## 
-## 
+##
+##
 function(set_difference __set_difference_listA __set_difference_listB)
   if("${${__set_difference_listA}}_" STREQUAL "_")
     return()
@@ -9412,7 +9412,7 @@ endfunction()
 
 
 # retruns true iff lhs and rhs are the same set (ignoring duplicates)
-# the null set is only equal to the null set 
+# the null set is only equal to the null set
 # the order of the set (as implied in being a set) does not matter
 function(set_isequal __set_equal_lhs __set_equal_rhs)
   set_issubset(${__set_equal_lhs} ${__set_equal_rhs})
@@ -9421,7 +9421,7 @@ function(set_isequal __set_equal_lhs __set_equal_rhs)
   ans(__set_equal_rhsIsInLhs)
   if(__set_equal_lhsIsInRhs AND __set_equal_rhsIsInLhs)
     return(true)
-  endif() 
+  endif()
   return(false)
 endfunction()
 
@@ -9468,7 +9468,7 @@ function(structured_list_parse structure_map)
 
   if(NOT structure_map)
     return_ref(result)
-  endif() 
+  endif()
 
   # get all keys
   map_keys(${structure_map} )
@@ -9488,7 +9488,7 @@ function(structured_list_parse structure_map)
       list(APPEND descriptors ${current_descriptor})
       map_tryget(${current_descriptor}  "labels")
       ans(labels)
-      list(APPEND cutoffs ${labels})        
+      list(APPEND cutoffs ${labels})
     endif()
   endforeach()
 
@@ -9641,7 +9641,7 @@ function(cached arg)
     endif()
 
 
-    map_tryget(global_cache_entries "${cache_key}")    
+    map_tryget(global_cache_entries "${cache_key}")
     ans(res)
     return_ref(res)
 
@@ -9669,7 +9669,7 @@ function(cmake)
   wrap_executable(cmake "${CMAKE_COMMAND}")
   cmake(${ARGN})
   return_ans()
-endfunction() 
+endfunction()
 
 
 
@@ -9700,8 +9700,8 @@ endfunction()
 
 
 ## commandline_args_get([--no-script])-> <string...>
-## 
-## returns the command line arguments with which cmake 
+##
+## returns the command line arguments with which cmake
 ## was without the executable
 ##
 ## --no-script flag removes the script file from the command line args
@@ -9731,15 +9731,15 @@ endfunction()
 # returns the list of command line arguments
 function(commandline_arg_string)
   set(args)
-  foreach(i RANGE 3 ${CMAKE_ARGC})  
+  foreach(i RANGE 3 ${CMAKE_ARGC})
     set(current ${CMAKE_ARGV${i}})
     string(REPLACE \\ / current "${current}")
     set(args "${args} ${current}")
-    
-  endforeach()  
+
+  endforeach()
 
   return_ref(args)
-endfunction() 
+endfunction()
 
 
 
@@ -9748,7 +9748,7 @@ endfunction()
 
 # extracts the specified values from the command line (see list extract)
 # returns the rest of the command line
-# the first three arguments of commandline_get are cmake command, -P, script file 
+# the first three arguments of commandline_get are cmake command, -P, script file
 # these are ignored
 function(commandline_extract)
   commandline_get()
@@ -9768,17 +9768,17 @@ endfunction()
 # returns the list of command line arguments
 function(commandline_get)
   set(args)
-  foreach(i RANGE ${CMAKE_ARGC})  
+  foreach(i RANGE ${CMAKE_ARGC})
     set(current ${CMAKE_ARGV${i}})
     string(REPLACE \\ / current "${current}")
-    list(APPEND args "${current}")    
-  endforeach()  
+    list(APPEND args "${current}")
+  endforeach()
 
   return_ref(args)
-endfunction() 
+endfunction()
 
 
-## 
+##
 ##
 ## returns script | configure | build
 function(cmake_mode)
@@ -9792,15 +9792,15 @@ endfunction()
 # returns the list of command line arguments
 function(commandline_string)
   set(args)
-  foreach(i RANGE ${CMAKE_ARGC})  
+  foreach(i RANGE ${CMAKE_ARGC})
     set(current ${CMAKE_ARGV${i}})
     string(REPLACE \\ / current "${current}")
     set(args "${args} ${current}")
-    
-  endforeach()  
+
+  endforeach()
 
   return_ref(args)
-endfunction() 
+endfunction()
 
 
 
@@ -9833,7 +9833,7 @@ function(dbg)
   if("${len}" EQUAL 1)
     is_map("${args}")
     ans(ismap)
-    if(ismap)  
+    if(ismap)
       if(indented)
         json_indented("${args}")
       else()
@@ -9866,7 +9866,7 @@ endfunction()
     if("${n}" EQUAL 0)
       return(0)
     endif()
-    
+
     while(${rest} GREATER 0)
       math(EXPR c "${rest} % 16")
       math(EXPR rest "(${rest} - ${c})>> 4")
@@ -9896,13 +9896,13 @@ endfunction()
     list(REVERSE converted)
     string_combine("" ${converted})
     return_ans()
-  endfunction() 
+  endfunction()
 
 
 
 
 ## `()->`
-## 
+##
 ## defines a function called alias which caches its results
 ##
 function(define_cache_function generate_value)
@@ -9926,7 +9926,7 @@ function(define_cache_function generate_value)
   if(NOT select_value)
       set(select_value "[]()set_ans('{{ARGN}}')")
   endif()
-  
+
 
   list_extract_labelled_value(args --cache-dir)
   ans(cache_dir)
@@ -9944,7 +9944,7 @@ function(define_cache_function generate_value)
   if(refresh)
     rm(-r "${cache_dir}")
   endif()
-    
+
   callable_function("${generate_key}")
   ans(generate_key)
   callable_function("${generate_value}")
@@ -9961,7 +9961,7 @@ function(define_cache_function generate_value)
       ${generate_key}(\${args})
       ans(cache_key)
       set(cache_path \"${cache_dir}/\${cache_key}\")
-      
+
       map_has(memory_cache \"\${cache_path}\")
       ans(has_entry)
 
@@ -10031,7 +10031,7 @@ endfunction()
 # eval will not modify ans (the code evaluated may modify ans)
 # vars starting with __eval should not be used in code
 function(eval __eval_code)
-  
+
   # one file per execution of cmake (if this file were in memory it would probably be faster...)
   fwrite_temp("" ".cmake")
   ans(__eval_temp_file)
@@ -10040,8 +10040,8 @@ function(eval __eval_code)
 # speedup: statically write filename so eval boils down to 3 function calls
  file(WRITE "${__eval_temp_file}" "
 function(eval __eval_code)
-  file(WRITE ${__eval_temp_file} \"\${__eval_code}\")
-  include(${__eval_temp_file})
+  file(WRITE \"${__eval_temp_file} \" \"\${__eval_code}\")
+  include(\"${__eval_temp_file}\")
   set(__ans \${__ans} PARENT_SCOPE)
 endfunction()
   ")
@@ -10095,7 +10095,7 @@ endfunction()
 
 
 
-# macro version of eval function which causes set(PARENT_SCOPE ) statements to access 
+# macro version of eval function which causes set(PARENT_SCOPE ) statements to access
 # scope of invokation
 macro(eval_ref __eval_code_ref)
   fwrite_temp("" ".cmake")
@@ -10114,7 +10114,7 @@ endmacro()
 
 
 
-# evaluates a truth expression 'if' and returns true or false 
+# evaluates a truth expression 'if' and returns true or false
 function(eval_truth)
   if(${ARGN})
     return(true)
@@ -10125,10 +10125,10 @@ endfunction()
 
 
 
-## 
-## 
+##
+##
 ## for special cases eval unique will create a new file for every code
-## 
+##
 function(eval_unique __unique_eval_code)
   mk_temp()
   ans(dir)
@@ -10154,13 +10154,13 @@ endfunction()
 ## catches an exception using the specified exception handler
 ## if no exception handler is specified the catch function returns nothing
 ## which is not an exception
-## the exception handler may throw a new exception 
+## the exception handler may throw a new exception
 ## which can be caught as well
 function(catch)
   set(exception "${__ans}")
   is_exception("${exception}")
   ans(is_exception)
-  
+
   if(NOT is_exception)
     _return()
   endif()
@@ -10177,7 +10177,7 @@ function(catch)
 
   arguments_anonymous_function(0 ${ARGC})
   ans(exception_handler)
-  
+
   if(NOT exception_handler)
     return()
   endif()
@@ -10208,9 +10208,9 @@ endfunction()
 
 ##
 ##
-## an exception is map `<exception> ::= { message: <string> }` of $type `exception` 
+## an exception is map `<exception> ::= { message: <string> }` of $type `exception`
 ## if checked in an if statement it evaluates to false because it ends with -NOTFOUND
-## 
+##
 function(exception_new message)
   address_new()
   ans(error)
@@ -10243,8 +10243,8 @@ endfunction()
 
 
 
-## `(<fail:<bool>> )->` 
-## 
+## `(<fail:<bool>> )->`
+##
 ## rethrows if the last return value was an exception
 ## else changes nothing
 ## if you pass true the exception will be treated as a fatal error
@@ -10269,7 +10269,7 @@ endmacro()
 
 ## `(<exception> | <any>)->`
 ##
-## may be used in functions.  causes the function to 
+## may be used in functions.  causes the function to
 ## return with an exception which can be caught
 macro(throw)
   exception("${ARGN}")
@@ -10324,7 +10324,7 @@ endfunction()
       foreach(successor ${successors})
         gs_push(${successor})
       endforeach()
-      
+
     endwhile()
   endfunction()
 
@@ -10362,16 +10362,16 @@ function(hex2dec str)
     foreach(i RANGE 0 ${len})
       string_char_at("${str}" "${i}")
       ans(c)
-      
+
 
       hex2dec("${c}")
       ans(c)
       if("${c}_" STREQUAL "_")
-        
+
         # illegal char
         return()
       endif()
-      
+
       math(EXPR result "${result} + (2 << ((${len}-${i})*4)) * ${c}")
     endforeach()
     math(EXPR result "${result} >> 1")
@@ -10458,11 +10458,11 @@ endfunction()
 
 
 
-## 
+##
 ##
 ## returns an identifier of the form `__{ARGN}_{unique}`
-## the idetnfier will not be a defined function 
-## nor a defined variable, nor a existing global 
+## the idetnfier will not be a defined function
+## nor a defined variable, nor a existing global
 ## property.  it is unique to the execution of cmake
 ## and can be used as a function name
 function(identifier)
@@ -10498,7 +10498,7 @@ endfunction()
 
 
 
-#include guard returns if the file was already included 
+#include guard returns if the file was already included
 # usage :  at top of file write include_guard(${CMAKE_CURRENT_LIST_FILE})
 macro(include_guard __include_guard_file)
   #string(MAKE_C_IDENTIFIER "${__include_guard_file}" __include_guard_file)
@@ -10561,8 +10561,8 @@ endfunction()
 # turns the lazy cmake code into valid cmake
 #
 function(lazy_cmake cmake_code)
-# normalize cmake 
-  # 
+# normalize cmake
+  #
   string(STRIP "${cmake_code}" cmake_code )
   if(NOT "${cmake_code}" MATCHES "[ ]*[a-zA-Z0-9_]+\\(.*\\)[ ]*")
     string(REGEX REPLACE "[ ]*([a-zA-Z0-9_]+)[ ]*(.*)" "\\1(\\2)" cmd "${cmake_code}")
@@ -10605,7 +10605,7 @@ function(math_max a b)
     return(${a})
   else()
     return(${b})
-  endif() 
+  endif()
 endfunction()
 
 
@@ -10617,7 +10617,7 @@ function(math_min a b)
     return(${a})
   else()
     return(${b})
-  endif() 
+  endif()
 endfunction()
 
 
@@ -10719,7 +10719,7 @@ function(message)
 	_message(${modifier} "${indent}" "${text}")
 	status_line_restore()
 
-	
+
 	return()
 endfunction()
 
@@ -10730,8 +10730,8 @@ endfunction()
 
 
 
-  
-  function(message_indent msg) 
+
+  function(message_indent msg)
     message_indent_get()
     ans(indent)
     _message("${indent}${msg}")
@@ -10782,12 +10782,12 @@ endfunction()
 
 
 function(message_indent_push)
-  
+
   set(new_level ${ARGN})
   if("${new_level}_" STREQUAL "_")
     set(new_level +1)
   endif()
-  
+
   if("${new_level}" MATCHES "[+\\-]")
     message_indent_level()
     ans(previous_level)
@@ -10842,7 +10842,7 @@ function(pkg)
 endfunction()
 
 
-  
+
 
 
 
@@ -10945,7 +10945,7 @@ endfunction()
 
 macro(promote var_name)
   set(${var_name} ${${var_name}} PARENT_SCOPE)
-endmacro()  
+endmacro()
 
 
 
@@ -11038,7 +11038,7 @@ endmacro()
 ## do_something()
 ## ans_extract(value1 value2)
 ## ans(rest)
-## ``` 
+## ```
 macro(ans_extract)
   ans(__ans_extract_list)
   list_extract(__ans_extract_list ${ARGN})
@@ -11056,7 +11056,7 @@ endmacro()
 
 
 
-## 
+##
 ##
 ## when not to use: if your data degrades when evaluated by a macro
 ## for example escapes are resolved
@@ -11182,7 +11182,7 @@ endmacro()
 
 
 
-#returns a value 
+#returns a value
 # expects a variable called result to exist in function signature
 # may only be used inside functions
 macro(return_value)
@@ -11207,7 +11207,7 @@ function(scope_resolve key)
 
   obj_get("${this}" "${key}")
   return_ans()
-endfunction()   
+endfunction()
 
 
 
@@ -11256,9 +11256,9 @@ endfunction()
 function(status_line)
   map_set(global status "${ARGN}")
   string_pad("${ARGN}" 100)
-  ans(str)  
+  ans(str)
   echo_append("\r${str}\r")
-endfunction()  
+endfunction()
 
 
 
@@ -11498,11 +11498,11 @@ function(target_get_properties target)
     if(isset)
         get_property(value TARGET ${target} PROPERTY ${property})
         key("${property}")
-        val("${value}")    
+        val("${value}")
     endif()
   endforeach()
   end()
-  
+
   ans(res)
   return_ref(res)
 endfunction()
@@ -11576,7 +11576,7 @@ function(topsort get_hash expand)
 
     map_tryget("${visited}" "${hash}")
     ans(mark)
-    
+
     if("${mark}" STREQUAL "temp")
       #cycle found
       return(true)
@@ -11615,8 +11615,8 @@ function(topsort get_hash expand)
     # get hash for node
     __topsort_get_hash("${node}")
     ans(hash)
-    
-    # get marking      
+
+    # get marking
     map_tryget("${visited}" "${hash}")
     ans(mark)
     if(NOT mark)
@@ -11648,7 +11648,7 @@ endfunction()
 # MAX
 # Multi value args
 # LABELS
-# DEFAULT 
+# DEFAULT
 
 function(value_descriptor_parse id)
   set(ismap)
@@ -11671,7 +11671,7 @@ function(value_descriptor_parse id)
     map_new()
     ans(descriptor)
   endif()
-  
+
   # set default values
   map_navigate_set_if_missing("descriptor.labels" "${id}")
   map_navigate_set_if_missing("descriptor.displayName" "${id}")
@@ -11700,7 +11700,7 @@ function(value_descriptor_parse id)
 
 
 #  message("_MAX ${_MAX}")
-  if("_${_MAX}" MATCHES "^_[0-9]+|\\*$")        
+  if("_${_MAX}" MATCHES "^_[0-9]+|\\*$")
     map_navigate_set(descriptor.max "${_MAX}")
   endif()
 
@@ -11814,7 +11814,7 @@ endmacro()
   function(cpp_class_header_generate class_def)
     data("${class_def}")
     ans(class_def)
-  
+
 
     indent_level_push(0)
     set(source)
@@ -11851,10 +11851,10 @@ function(datetime)
 
 
   string(REGEX REPLACE "([0-9][0-9][0-9][0-9])\\-([0-9][0-9])\\-([0-9][0-9])T([0-9][0-9]):([0-9][0-9]):([0-9][0-9])"
-   "\\1;\\2;\\3;\\4;\\5;\\6" 
-   timestamp 
+   "\\1;\\2;\\3;\\4;\\5;\\6"
+   timestamp
    "${timestamp}")
-  
+
   list_extract(timestamp yyyy MM dd hh mm ss)
   set(ms 0)
 
@@ -11877,10 +11877,10 @@ function(datetime)
     ans(time)
     shell_env_get("date")
     ans(date)
-    
+
     string(REGEX REPLACE "([0-9][0-9])\\.([0-9][0-9])\\.([0-9][0-9][0-9][0-9]).*" "\\1;\\2;\\3" date "${date}")
     list_extract(date dd MM yyyy)
-    
+
 
     string(REGEX REPLACE "([0-9][0-9]):([0-9][0-9]):([0-9][0-9]),([0-9][0-9]).*" "\\1;\\2;\\3;\\4" time "${time}")
     list_extract(time hh mm ss ms)
@@ -11898,7 +11898,7 @@ function(datetime)
     set(mm)
     set(ss)
     set(ms)
-    
+
     map_capture(${dt} yyyy MM dd hh mm ss ms)
 
     return("${dt}")
@@ -11934,9 +11934,9 @@ endfunction()
 
 
 
-# creates a breakpoint 
+# creates a breakpoint
 # usage: breakpoint(${CMAKE_CURRENT_LIST_FILE} ${CMAKE_CURRENT_LIST_LINE})
-function(breakpoint file line) 
+function(breakpoint file line)
   if(NOT DEBUG_CMAKE)
     return()
   endif()
@@ -11950,10 +11950,10 @@ function(breakpoint file line)
       break()
     endif()
 
-    
+
     if("${cmd}" MATCHES "^\\$.*")
       string(SUBSTRING "${cmd}" 1 -1 var)
-      
+
 
       get_cmake_property(_variableNames VARIABLES)
       foreach(v ${_variableNames})
@@ -11964,7 +11964,7 @@ function(breakpoint file line)
       endforeach()
 
     endif()
-    
+
 
 
 
@@ -11981,13 +11981,13 @@ function(performance_init)
   map_set(global __performance ${perfmap})
 
   function(performance_init)
-      
+
   endfunction()
 
 endfunction()
 
 function(performance_sample file line)
-  
+
   map_get(global __performance)
 
 endfunction()
@@ -12032,7 +12032,7 @@ function(print_function func)
 	function_lines_get( "${func}")
   ans(lines)
 	set(i "0")
-	foreach(line ${lines})		
+	foreach(line ${lines})
 		message(STATUS "LINE ${i}: ${line}")
 		math(EXPR i "${i} + 1")
 	endforeach()
@@ -12101,7 +12101,7 @@ endfunction()
       endif()
 
       echo_append_padded("${current_length}" "${val}")
-    endforeach()  
+    endforeach()
     message(" ")
   endforeach()
  endfunction()
@@ -12187,10 +12187,10 @@ function(eval_predicate)
       endif()
     ")
     eval("${__eval_predicate_code}")
-    
+
 
     set(__ans "${__ans}" PARENT_SCOPE)
-_return() 
+_return()
 
 
   ##womething is wrong here
@@ -12236,7 +12236,7 @@ endmacro()
 ## tries to get the `<event>` identified by `<event-id>`
 ## if it does not exist a new `<event>` is created by  @markdown_see_function("event_new(...)")
 function(event )
-  set(event_id ${ARGN}) 
+  set(event_id ${ARGN})
   set(event)
   if(event_id)
     event_get("${event_id}")
@@ -12278,7 +12278,7 @@ endfunction()
 ## `(<event-id...>)-><event tracker>`
 ##
 ## sets up a function which listens only to the specified events
-## 
+##
 function(events_track)
   function_new()
   ans(function_name)
@@ -12323,10 +12323,10 @@ function(event_addhandler event handler)
   event_handler("${handler}")
   ans(handler)
 
-  ## then only append function 
+  ## then only append function
   map_append_unique("${event}" handlers "${handler}")
- 
-  return(${handler})  
+
+  return(${handler})
 endfunction()
 
 
@@ -12358,7 +12358,7 @@ function(event_clear event)
 
   foreach(handler ${handlers})
     event_removehandler("${event}" "${handler}")
-  endforeach()  
+  endforeach()
 
   return()
 endfunction()
@@ -12371,17 +12371,17 @@ endfunction()
 ## `(<~event> <args:<any...>>)-><any...>`
 ##
 ## emits the specified event. goes throug all event handlers registered to
-## this event and 
+## this event and
 ## if event handlers are added during an event they will be called as well
 ##
-## if a event calls event_cancel() 
+## if a event calls event_cancel()
 ## all further event handlers are disregarded
 ##
 ## returns the accumulated result of the single event handlers
 function(event_emit event)
   is_event("${event}")
   ans(is_event)
-  
+
   if(NOT is_event)
     event_get("${event}")
     ans(event)
@@ -12397,12 +12397,12 @@ function(event_emit event)
 
   set(previous_handlers)
   # loop aslong as new event handlers are appearing
-  # 
+  #
   address_new()
   ans(__current_event_cancel)
   address_set(${__current_event_cancel} false)
   while(true)
-    ## 
+    ##
     map_tryget(${event} handlers)
     ans(handlers)
     list_remove(handlers ${previous_handlers} "")
@@ -12410,7 +12410,7 @@ function(event_emit event)
 
     list_length(handlers)
     ans(length)
-    if(NOT "${length}" GREATER 0) 
+    if(NOT "${length}" GREATER 0)
       break()
     endif()
 
@@ -12429,15 +12429,15 @@ function(event_emit event)
   endwhile()
 
   return_ref(result)
-endfunction() 
+endfunction()
 
 
 
 
 
 ## `(<~event>)-><event>`
-##  
-## returns the `<event>` identified by `<event-id>` 
+##
+## returns the `<event>` identified by `<event-id>`
 ## if the event does not exist `<null>` is returned.
 function(event_get event)
   events()
@@ -12449,7 +12449,7 @@ function(event_get event)
   if(is_event)
     return_ref(event)
   endif()
-  
+
   map_tryget(${events} "${event}")
   return_ans()
 endfunction()
@@ -12458,7 +12458,7 @@ endfunction()
 
 
 
-## `(<~callable>)-><event handler>` 
+## `(<~callable>)-><event handler>`
 ##
 ## creates an <event handler> from the specified callable
 ## and returns it. a `event_handler` is also a callable
@@ -12509,11 +12509,11 @@ endfunction()
 ## creates an registers a new event which is identified by
 ## `<event-id>` if the id is not specified a unique id is generated
 ## and used.
-## 
-## returns a new <event> object: 
+##
+## returns a new <event> object:
 ## {
 ##   event_id:<event-id>
-##   handlers: <callable...> 
+##   handlers: <callable...>
 ##   ... (psibbly cancellable, aggregations)
 ## }
 ## also defines a global function called `<event-id>` which can be used to emit the event
@@ -12534,7 +12534,7 @@ function(event_new)
   ans(event)
 
   callable("${event}")
-  ans(event)  
+  ans(event)
 
 
   curry3(() => event_addhandler("${event_id}" /*))
@@ -12560,7 +12560,7 @@ function(event_new)
   ans(events)
   map_set(${events} "${event_id}" ${event})
 
-  return(${event})  
+  return(${event})
 endfunction()
 
 ## faster version (does not use curry but a custom implementation)
@@ -12604,7 +12604,7 @@ function(event_new)
   ")
 
   callable("${event_id}")
-  ans(event)  
+  ans(event)
 
   ## set event's properties
   map_set(${event} event_id "${event_id}")
@@ -12618,7 +12618,7 @@ function(event_new)
   ans(events)
   map_set(${events} "${event_id}" ${event})
 
-  return(${event})  
+  return(${event})
 endfunction()
 
 
@@ -12636,7 +12636,7 @@ function(event_removehandler event handler)
 
   event("${event}")
   ans(event)
-  
+
   if(NOT event)
     return(false)
   endif()
@@ -12648,9 +12648,9 @@ function(event_removehandler event handler)
 
   map_remove_item("${event}" handlers "${handler}")
   ans(success)
-  
+
   return_truth("${success}")
-  
+
 endfunction()
 
 
@@ -12695,22 +12695,22 @@ endfunction()
 ## and `end index` to be the index of the last function parameter to parse (commonly ${ARGC})
 ## var args are named arguments which will be set to be available in the function scope
 ##
-## named arguments passed to function have a higher precedence than positional arguments 
+## named arguments passed to function have a higher precedence than positional arguments
 ##
 ## __sideffects__:
 ## * `arguments_expression_result` is a address of an object containing all parsed data
 ## * scope operations may modify the parent scope of the function
-## 
+##
 ##
 macro(arguments_expression begin end)
   ## eval arguments expression
-  ## see interpret_cmake_function_parameters 
+  ## see interpret_cmake_function_parameters
   set(_argn_ ${ARGV})
   arguments_expression_eval_cached(
    interpret_cmake_function_parameters
-   "" 
-   "_argn_" 
-   ${begin} 
+   ""
+   "_argn_"
+   ${begin}
    ${end}
   )
   ans(arguments_expression_result)
@@ -12727,10 +12727,10 @@ macro(arguments_expression begin end)
     else()
       list_pop_front(__positionals)
       encoded_list_decode("${__ans}")
-      ans(${arg})  
+      ans(${arg})
     endif()
 
-    
+
   endforeach()
   ## return the rest of the positional values which were not assign
   set(__ans ${__positionals})
@@ -12775,17 +12775,17 @@ endmacro()
 
 
 
-## 
+##
 ##
 ## sets __ans in parent scope
 macro(arguments_expression_eval_cached type arguments argn start end)
-  arguments_expression_compile_cached("${type}" "${arguments}" "${argn}" "${start}" "${end}")  
+  arguments_expression_compile_cached("${type}" "${arguments}" "${argn}" "${start}" "${end}")
   if(__ans)
     map_tryget("${__ans}" macro_identifier)
     set(__ans "${__ans}()")
     set(__code__code "${__ans}")
     eval_ref(__code__code)
-    
+
   endif()
 endmacro()
 
@@ -12880,10 +12880,10 @@ function(cmakepp_compile_scope_expressions line)
 
 
 
-  set(current_begin ${first_enabled_token})  
+  set(current_begin ${first_enabled_token})
   set(scope_depth 0)
   ## loop through all invocations. and count function/endfunctions
-  ## break when end of scope found 
+  ## break when end of scope found
   while(true)
     cmake_invocation_filter_token_range("${current_begin};" \${invocation_identifier} MATCHES "^(endfunction)|(function)$" --take 1)
     ans(invocation)
@@ -12927,7 +12927,7 @@ endfunction()
 ## this macro enables all expressions in the current scope
 ## it will only work in a CMake file scioe or inside a cmake function scope.
 ## You CANNOT use it in a loop, if statement, macro etc (everything that has a begin/end)
-## Every expression inside that scope (and its subscopes) will be evaluated.  
+## Every expression inside that scope (and its subscopes) will be evaluated.
 ##
 ## **Implementation Note**:
 ## This is achieved by parsing the while cmake file (and thus potentially takes very long)
@@ -12967,7 +12967,7 @@ endfunction()
 ## `(<cmakepp code>)-><cmake code>`
 ##
 ## `<cmakepp code> ::= superset of cmake code with added expression syntax in $[...] `
-## 
+##
 ## compiles the specified cmakepp code to pure cmake code
 ## replacing `$[...]` with the result of the cmakepp expression syntax (see `expr(...)`)
 ## e.g.
@@ -13031,7 +13031,7 @@ function(cmakepp_expr_compile content)
 
       if("${token}_" STREQUAL "${bracket_open_code}_")
         math(EXPR depth "${depth} + 1")
-        
+
       elseif("${token}_" STREQUAL "${bracket_close_code}_")
         if(${depth} EQUAL ${is_expression})
           set(expression_end true)
@@ -13071,7 +13071,7 @@ function(cmakepp_expr_compile content)
          ans(value)
          next_id()
          ans(ref)
-        
+
          set(argument_value "\${${ref}}")
          set(compiled_code "${compiled_code}${current_compiled_code}set(${ref} ${value})\n")
          set(current_arguments "${current_arguments}${argument_value}")
@@ -13173,7 +13173,7 @@ function(ast_reduce_code_inner ast)
   ans(current_code)
 
   set(code "${pre_code}${code}${current_code}${post_code}")
-  
+
 
   map_tryget("${ast}" pre_code)
   ans(pre_code)
@@ -13290,7 +13290,7 @@ list(APPEND ${ref} \${__ans} )
   endforeach()
 
 #  _message("${code}")
-  
+
   map_set("${ast}" ref "${ref}")
   map_set("${ast}" value "\${${ref}}")
   map_set("${ast}" code "${code}")
@@ -13356,13 +13356,13 @@ function(interpret_assign tokens)
 
 
   set(code "set(${ref} ${rhs_value})\n")
-  # tokens 
-  # expression_type 
-  # value_type 
-  # ref 
+  # tokens
+  # expression_type
+  # value_type
+  # ref
   # code
-  # value 
-  # const 
+  # value
+  # const
   # pure_value
   # children
 
@@ -13391,8 +13391,8 @@ endfunction()
 
 
   ##
-  ## 
-  ## <lhs rvalue>::<rhs rvalue>(<parameter>...)  
+  ##
+  ## <lhs rvalue>::<rhs rvalue>(<parameter>...)
   ##  => calls the function pointed to by rvalue  using lhs_ rvalue as its first argument
   ## then appending the other parameters
   ## e.g  `'123'::string_length()->3`
@@ -13482,7 +13482,7 @@ endfunction()
       "${lhs};${callable};${parameters}" #"${lhs};${callable};${parameters}"
       )
     ans(ast)
-    return_ref(ast)    
+    return_ref(ast)
 
   endfunction()
 
@@ -13524,7 +13524,7 @@ function(interpret_call tokens)
   ans(parameter_tokens)
 
   interpret_elements("${parameter_tokens}" "comma" "interpret_ellipsis;interpret_reference_parameter;interpret_expression")
-  ans(parameter_asts) 
+  ans(parameter_asts)
 
   ## create code for calling the function
   next_id()
@@ -13579,7 +13579,7 @@ function(interpret_call_create_code output_ref callable_ast parameter_asts)
       map_tryget("${parameter}" value)
       ans(parameter_value)
       set(parameters_string "${parameters_string} \"${parameter_value}\"")
-    endif()   
+    endif()
   endforeach()
 
   ## remove initial space
@@ -13605,7 +13605,7 @@ function(cmake_string_escape3 str)
     string(REGEX REPLACE "([ \"\\(\\)#\\^])" "\\\\\\1" str "${str}")
     string(REPLACE "\t" "\\t" str "${str}")
     string(REPLACE "\n" "\\n" str "${str}")
-    string(REPLACE "\r" "\\r" str "${str}")  
+    string(REPLACE "\r" "\\r" str "${str}")
   endif()
   return_ref(str)
 endfunction()
@@ -13636,7 +13636,7 @@ endfunction()
 
 
 function(interpret_cmake_function_parameters tokens)
-  
+
 
   interpret_elements("${tokens}" "comma" "interpret_key_value;interpret_rvalue")
   ans(members)
@@ -13662,11 +13662,11 @@ function(interpret_cmake_function_parameters tokens)
     elseif("${member_type}" STREQUAL "ellipsis")
       map_tryget("${member}" value)
       ans(member_value)
-      set(code "${code}address_append(${value} \"${member_value}\")\n")      
-    else() ## normal rvalue      
+      set(code "${code}address_append(${value} \"${member_value}\")\n")
+    else() ## normal rvalue
       map_tryget("${member}" value)
       ans(member_value)
-      set(code "${code}encoded_list(\"${member_value}\")\naddress_append(${value} \"\${__ans}\")\n")      
+      set(code "${code}encoded_list(\"${member_value}\")\naddress_append(${value} \"\${__ans}\")\n")
     endif()
 
   endforeach()
@@ -13716,7 +13716,7 @@ endfunction()
     interpret_lvalue("${lhs_tokens}")
     rethrow()
     ans(lvalue)
-      
+
     map_tryget("${lvalue}" ref)
     ans(lvalue_ref)
     map_tryget("${lvalue}" value)
@@ -13745,14 +13745,14 @@ endfunction()
 
 
 function(interpret_elements tokens separator_type element_types)
-    
-  
+
+
   ## initialize variables
   set(elements)         # stores all single elements
   set(current_tokens)   # set list of current tokens
 
 
-  ## loop through all tokens 
+  ## loop through all tokens
   ## and collection non-separators inside `current_tokens`
   ## if a separator or `end` is reached parse the `current_tokens`
   ## to obtain an element
@@ -13769,7 +13769,7 @@ function(interpret_elements tokens separator_type element_types)
 
         if(NOT element)
             throw("failed to interpret element" --function interpret_elements)
-        endif() 
+        endif()
 
         set(current_tokens)
         list(APPEND elements "${element}")
@@ -13783,7 +13783,7 @@ function(interpret_elements tokens separator_type element_types)
     endforeach()
   endif()
 
-  return_ref(elements)  
+  return_ref(elements)
 endfunction()
 
 
@@ -13806,14 +13806,14 @@ function(interpret_ellipsis tokens)
   list_select_property(dots type)
   ans(dot_types)
 
-  if(NOT "${dot_types}" STREQUAL "dot;dot;dot")    
+  if(NOT "${dot_types}" STREQUAL "dot;dot;dot")
     throw("not ellipsis: ${dot_types}")
   endif()
 
   if(NOT tokens)
     throw("no left hand rvalue")
   endif()
-  
+
 
   interpret_rvalue("${tokens}")
   rethrow()
@@ -13887,10 +13887,10 @@ endfunction()
 
 function(interpret_expression_types tokens types)
   foreach(type ${types})
-    eval("${type}(\"${tokens}\")")    
+    eval("${type}(\"${tokens}\")")
     ans(ast)
     if(ast)
-      return(${ast})  
+      return(${ast})
     endif()
   endforeach()
   throw("no expression could be interpreted" --function interpret_expression_types)
@@ -13947,7 +13947,7 @@ function(interpret_indexation tokens)
 
   map_set(${ast} indexation_lhs ${lhs})
   map_set(${ast} indexation_elements ${elements})
-  compile_indexation("${ast}")  
+  compile_indexation("${ast}")
   return_ref(ast)
 endfunction()
 
@@ -13969,7 +13969,7 @@ function(interpret_interpolation tokens)
     interpret_literal("${token}")
     ans(literal)
     if(NOT literal)
-      ## something other than a literal 
+      ## something other than a literal
       ## causes this not to be a literal
       throw("tokens contained an invalid token: {token}" --function interpret_interpolation)
     endif()
@@ -13982,12 +13982,12 @@ function(interpret_interpolation tokens)
     ans(literal_code)
     map_tryget("${literal}" value)
     ans(literal_value)
-    set(value "${value}${literal_value}")    
+    set(value "${value}${literal_value}")
   endforeach()
  #   print_vars(value )
 
   ## single literal is retunred directly
-  ## 
+  ##
   list(LENGTH literals length)
   if("${length}" LESS 2)
     return_ref(literals)
@@ -13996,7 +13996,7 @@ function(interpret_interpolation tokens)
 
   next_id()
   ans(ref)
-  
+
   set(code "set(${ref} \"${value}\")\n")
 
 
@@ -14124,7 +14124,7 @@ function(interpret_list list_token)
   if(elements)
     string(SUBSTRING "${value}" 1 -1 value)
   endif()
-  
+
   next_id()
   ans(ref)
   set(code "set(${ref} \"${value}\")\n")
@@ -14156,12 +14156,12 @@ function(interpret_literal token)
  # json_print(${token})
   list(LENGTH token length)
   if(NOT "${length}" EQUAL 1)
-    throw("only one token is acceptable, got ${length}" --function interpret_literal)  
+    throw("only one token is acceptable, got ${length}" --function interpret_literal)
   endif()
   map_tryget("${token}" type)
   ans(type)
   if(NOT "${type}" MATCHES "^((unquoted)|(quoted)|(number)|(separated))$")
-    throw("invalid type for `literal`: `${type}`" --function interpret_literal)  
+    throw("invalid type for `literal`: `${type}`" --function interpret_literal)
   endif()
 
   map_tryget("${token}" value)
@@ -14187,7 +14187,7 @@ function(interpret_literal token)
     else()
       set(result_type double_quoted_string)
     endif()
-    string(REGEX REPLACE "(\\\\)([\"'])" "\\2" result_value "${CMAKE_MATCH_2}")  
+    string(REGEX REPLACE "(\\\\)([\"'])" "\\2" result_value "${CMAKE_MATCH_2}")
   elseif("${type}" STREQUAL "number")
     set(result_type number)
   endif()
@@ -14264,8 +14264,8 @@ function(interpret_navigation_lvalue tokens)
   ans(type)
   if(NOT "${type}" STREQUAL "dot")
     throw("expected second to last token to be a `.`" --function interpret_navigation_rvalue)
-  endif()  
-  
+  endif()
+
   if(NOT lhs_tokens)
     throw("no lvalue tokens" --function interpret_navigation_rvalue)
   endif()
@@ -14302,13 +14302,13 @@ function(interpret_navigation_lvalue tokens)
 
 
   ast_new(
-    "${tokens}"  # tokens 
-    "navigation_lvalue"      # expression_type 
-    "any"         # value_type 
-    "${ref}"      # ref 
+    "${tokens}"  # tokens
+    "navigation_lvalue"      # expression_type
+    "any"         # value_type
+    "${ref}"      # ref
     "${code}"     # code
-    "\${${ref}}"  # value 
-    "false"      # const 
+    "\${${ref}}"  # value
+    "false"      # const
     "false"          # pure_value
     "${rhs};${lhs}"    # children
     )
@@ -14343,8 +14343,8 @@ function(interpret_navigation_rvalue tokens)
   ans(type)
   if(NOT "${type}" STREQUAL "dot")
     throw("expected second to last token to be a `.`" --function interpret_navigation_rvalue)
-  endif()  
-  
+  endif()
+
   if(NOT tokens)
     throw("no lvalue tokens" --function interpret_navigation_rvalue)
   endif()
@@ -14371,12 +14371,12 @@ if(__ans)
   message(FATAL_ERROR object_get_not_supported_currently)
 else()
   get_property(${ref} GLOBAL PROPERTY \"${lhs_value}.${rhs_value}\")
-endif()    
+endif()
 ")
 
   ast_new(
     "${tokens}"
-    "navigation_rvalue"  
+    "navigation_rvalue"
     "any"           # return type
     "${ref}"        # ref
     "${code}"       # code
@@ -14475,7 +14475,7 @@ function(interpret_paren paren_token)
   endif()
 
   map_tryget("${paren_token}" tokens)
-  ans(tokens) 
+  ans(tokens)
 
   interpret_expression("${tokens}")
   rethrow() ## rethrow if inner is invalid
@@ -14483,7 +14483,7 @@ function(interpret_paren paren_token)
 
   map_tryget("${inner_expression}" ref)
   ans(ref)
-  
+
   map_tryget("${inner_expression}" value)
   ans(value)
 
@@ -14492,7 +14492,7 @@ function(interpret_paren paren_token)
 
   map_tryget("${inner_expression}" value_type)
   ans(value_type)
-  
+
   map_tryget("${inner_expression}" pure_value)
   ans(pure_value)
 
@@ -14623,7 +14623,7 @@ function(interpret_rvalue tokens)
     return(${ast})
   endif()
   ans_append(inner_exceptions)
-  
+
   interpret_bind_call("${tokens}")
   ans(ast)
   if(ast)
@@ -14693,7 +14693,7 @@ endfunction()
   function(interpret_rvalue_dereference tokens)
     if(NOT tokens)
       throw("no tokens given" --function interpret_rvalue_dereference)
-    endif() 
+    endif()
 
 
 
@@ -14707,7 +14707,7 @@ endfunction()
 function(interpret_rvalue_reference tokens)
   if(NOT tokens)
     throw("no tokens given" --function interpret_rvalue_reference)
-  endif() 
+  endif()
 
 
   set(rvalue_tokens ${tokens})
@@ -14723,7 +14723,7 @@ endfunction()
 ## interpret an lvalue
 ## needs a rvalue
 function(interpret_scope_lvalue tokens)
-  
+
   if(NOT tokens)
     throw("missing tokens" --function interpret_scope_lvalue)
   endif()
@@ -14744,7 +14744,7 @@ function(interpret_scope_lvalue tokens)
     throw("expected one identifier token got ${identifier_token_count}" --function interpret_scope_lvalue)
   endif()
 
-  
+
   interpret_rvalue("${identifier_token}")
   rethrow()
   ans(identifier)
@@ -14764,13 +14764,13 @@ function(interpret_scope_lvalue tokens)
   ## set both in scope and in parent scope
   set(post_code "set(\"${identifier_value}\" \${${identifier_value}} PARENT_SCOPE)\n")
 
-  # tokens 
-  # expression_type 
-  # value_type 
-  # ref 
+  # tokens
+  # expression_type
+  # value_type
+  # ref
   # code
-  # value 
-  # const 
+  # value
+  # const
   # pure_value
   # children
 
@@ -14800,7 +14800,7 @@ function(interpret_scope_rvalue tokens)
   #print_vars(tokens)
   list(LENGTH tokens count)
   if(NOT ${count} EQUAL 2)
-    throw("expected 2 tokens (got {count}) " --function interpret_scope_rvalue)    
+    throw("expected 2 tokens (got {count}) " --function interpret_scope_rvalue)
   endif()
 
   list(GET tokens 0 dollar)
@@ -14861,7 +14861,7 @@ function(interpret_scope_rvalue tokens)
     "${identifier}" # children
 
     )
-  
+
   ans(ast)
 
   return_ref(ast)
@@ -14872,7 +14872,7 @@ endfunction()
 
 function(interpret_separation tokens separator_type separator_char pre_element post_element)
 
-    
+
     ## initialize variables
     set(elements)         # stores all single elements
     set(current_tokens)   # set list of current tokens
@@ -14881,7 +14881,7 @@ function(interpret_separation tokens separator_type separator_char pre_element p
     set(code)             # set derived code
 
 
-    ## loop through all tokens 
+    ## loop through all tokens
     ## and collection non-separators inside `current_tokens`
     ## if a separator or `end` is reached parse the `current_tokens`
     ## to obtain an element
@@ -14897,7 +14897,7 @@ function(interpret_separation tokens separator_type separator_char pre_element p
 
         if(NOT element)
             throw("failed to interpret element")
-        endif() 
+        endif()
         set(current_tokens)
         list(APPEND elements "${element}")
 
@@ -14960,7 +14960,7 @@ function(interpret_statements tokens)
   ans(last_argument)
 
 
-  
+
   set(ast ${separation})
   map_set(${ast} argument "${last_argument}")
 
@@ -14971,14 +14971,14 @@ endfunction()
 
 
 
-## `(<expression type> <arguments:<any>...> <expression>)-><any> 
+## `(<expression type> <arguments:<any>...> <expression>)-><any>
 ##
-## evaluets the specified expression using as the type of expression 
+## evaluets the specified expression using as the type of expression
 ## specified.  also passes allong arguments to the parser
 function(expr_eval type arguments)
   set(argn "${ARGN}")
   arguments_expression_eval_cached("${type}" "${arguments}" argn 2 ${ARGC})
-  
+
   rethrow()
 
 endfunction()
@@ -14993,7 +14993,7 @@ endfunction()
 ## parsers and caches the expression. returns the AST for the specified
 ## expression.  See `ast_new`
 function(expr_parse type arguments)
-  
+
   set(argn "${ARGN}")
   arguments_expression_parse_cached("${type}" "${arguments}" "argn" 2 ${ARGC})
   return_ans()
@@ -15008,7 +15008,7 @@ macro(arguments_create_tokens __start_idx __end_idx)
   arguments_tokenize("${__start_idx}" "${__end_idx}")
   tokens_create("${token_strings}" "${token_types}")
 endmacro()
- 
+
 
 
 
@@ -15035,14 +15035,14 @@ macro(arguments_tokenize first last)
     set(token_chars "{},:=&\\*\\$\\.\\-\\+\\|\\^%#@!\\?\\/~<>")
 
     set(token_regex "([^\"';${token_chars}]*)|||([\"']([^\"'\\]|([\\]['\"])|([\\][\\])|([\\]))*[\"'])|('.?')|[ \t]+||||||{|}|,|:|=|&|\\*|\\$|\\.|\\-|\\+|\\||\\^|%|#|@|!|\\?|\\/|~|\n|<|>|([^ \t{},:=&\\*\\$\\.\\-\\+\\|\\^%#@!\\?\\/~<>\n]+)")
-    
-    
+
+
     string(REGEX MATCHALL "${token_regex}" token_strings "${input}")
     string(REGEX REPLACE "${token_regex}" "" error "${input}")
    # messaGE("${token_strings}")
     if(NOT error)
 
-      set(type_list 
+      set(type_list
         invalid         # 0
         number          # 1
         quoted          # 2
@@ -15051,7 +15051,7 @@ macro(arguments_tokenize first last)
         bracket_close   # 5
         paren_open      # 6
         paren_close     # 7
-        semicolon       # 8 
+        semicolon       # 8
         brace_open      # 9
         brace_close     # 10
         comma           # 11
@@ -15081,13 +15081,13 @@ macro(arguments_tokenize first last)
         white_space     # 35
         unquoted        # 36
         )
-      
+
       ## replace the token_strings with their respective indices in the type_list
       ## use the index indicator  so that normal numbers are not confused
-      ## with token indices 
+      ## with token indices
       set(token_codes ${token_strings})
       string(REGEX REPLACE  ";[0-9]+;" ";1;"  token_codes "${token_codes}" )
-      string(REGEX REPLACE "[\"']([^\"'\\]|([\\][\"'])|([\\][\\])|([\\]))*[\"']" "2" token_codes "${token_codes}")  
+      string(REGEX REPLACE "[\"']([^\"'\\]|([\\][\"'])|([\\][\\])|([\\]))*[\"']" "2" token_codes "${token_codes}")
       string(REGEX REPLACE "'.?'" "3" token_codes "${token_codes}")
       string(REGEX REPLACE "" "4" token_codes "${token_codes}")
       string(REGEX REPLACE "" "5" token_codes "${token_codes}")
@@ -15175,7 +15175,7 @@ endfunction()
     foreach(i RANGE 0 ${last_index})
       list(GET typelist ${i} type)
       list(GET tokenlist ${i} value)
-    
+
       map_new()
       ans(token)
       map_set("${token}" value "${value}")
@@ -15224,14 +15224,14 @@ endfunction()
 
 
 
-function(ast_new 
-  tokens 
-  expression_type 
-  value_type 
-  ref 
+function(ast_new
+  tokens
+  expression_type
+  value_type
+  ref
   code
-  value 
-  const 
+  value
+  const
   pure_value
   children
 
@@ -15303,7 +15303,7 @@ endfunction()
 
 ## `archive_isvalid(<path>)-> <bool>`
 ##
-## returns true if the specified path identifies an archive 
+## returns true if the specified path identifies an archive
 ## file
 function(archive_isvalid file)
   mime_type("${file}")
@@ -15350,7 +15350,7 @@ function(archive_ls archive)
 
     string(REGEX MATCHALL "(^|\n)([^\n]+)(\n|$)" files "${files}")
     string(REGEX REPLACE "(\r|\n)" "" files "${files}")
-    
+
     string_cache_update(archive_ls_cache "${key}" "${files}")
     return_ref(files)
 
@@ -15418,7 +15418,7 @@ function(archive_read_file archive file)
   fread("${temp_dir}/${file}")
   ans(content)
   rm("${temp_dir}")
-  return_ref(content) 
+  return_ref(content)
 endfunction()
 
 
@@ -15446,11 +15446,11 @@ endfunction()
 
 
 # compresses all files specified in glob expressions (relative to pwd) into ${target_file} tgz file
-# usage: compress(<file> [<glob> ...]) - 
-# 
+# usage: compress(<file> [<glob> ...]) -
+#
 function(compress target_file)
   set(args ${ARGN})
-  
+
   list_extract_labelled_value(args --format)
   ans(format)
 
@@ -15497,7 +15497,7 @@ endfunction()
 
 
 
-## returns true if the specified file is a tar archive 
+## returns true if the specified file is a tar archive
 function(file_istarfile file)
 	path_qualify(file)
 	if(NOT EXISTS "${file}")
@@ -15515,7 +15515,7 @@ function(file_istarfile file)
 	endif()
 
 	return(true)
-	
+
 endfunction()
 
 
@@ -15526,8 +15526,8 @@ endfunction()
 
 
 
-# tar command 
-# use cvzf to compress files relative to pwd() to a tgz file 
+# tar command
+# use cvzf to compress files relative to pwd() to a tgz file
 # use xzf to uncompress a tgz file to the pwd()
 function(tar)
   cmake(-E tar ${ARGN})
@@ -15553,7 +15553,7 @@ function(uncompress file)
   ans(types)
 
   if("${types}" MATCHES "application/x-gzip")
-    dir_ensure_exists(".")  
+    dir_ensure_exists(".")
     path_qualify(file)
     tar_lean(xzf "${file}" ${ARGN})
     ans_extract(error)
@@ -15600,7 +15600,7 @@ endfunction()
 
 
 
-## ensures that the directory specified exists 
+## ensures that the directory specified exists
 ## the directory is qualified with path()
 function(dir_ensure_exists path)
   path("${path}")
@@ -15650,7 +15650,7 @@ endfunction()
 
     cmake(-E compare_files "${lhs}" "${rhs}" --exit-code)
     ans(error)
-    
+
     if(error)
       return(false)
     endif()
@@ -15663,13 +15663,13 @@ endfunction()
 
 ##
 ##
-## tries to deserialize a file file.*  
+## tries to deserialize a file file.*
 function(fopen_data file)
   glob_path("${file}")
   ans(file)
 
   if(NOT EXISTS "${file}" OR IS_DIRECTORY "${file}")
-    glob("${file}.*") 
+    glob("${file}.*")
     ans(file)
     list(LENGTH file len)
     if(NOT ${len} EQUAL 1)
@@ -15723,7 +15723,7 @@ function(fread_data path)
   set(args ${ARGN})
 
   path_qualify(path)
-  
+
   list_pop_front(args)
   ans(mime_type)
 
@@ -15781,11 +15781,11 @@ function(fread_lines path)
   ans(no_hex_conversion)
 
 
-  file(STRINGS "${path}" res 
-    ${limit_count} 
-    ${limit_input} 
-    ${limit_output} 
-    ${length_minimum} 
+  file(STRINGS "${path}" res
+    ${limit_count}
+    ${limit_input}
+    ${limit_output}
+    ${length_minimum}
     ${length_maximum}
     ${newline_cosume}
     ${regex}
@@ -15801,12 +15801,12 @@ endfunction()
 
 
   ## this is a hard hack to read unicode 16 files
-  ##  it reads the file by lines and concatenates the result which removes all linebreaks  
+  ##  it reads the file by lines and concatenates the result which removes all linebreaks
   ## please don't use this :)
   function(fread_unicode16 path)
     path("${path}")
     ans(path)
-    file(STRINGS "${path}" lines)  
+    file(STRINGS "${path}" lines)
     string(REPLACE ";" "" res "${lines}")
    # string(CONCAT res ${lines})
     return_ref(res)
@@ -15833,7 +15833,7 @@ endfunction()
 
 
 
-# writs argn to the speicified file creating it if it does not exist and 
+# writs argn to the speicified file creating it if it does not exist and
 # overwriting it if it does.
 function(fwrite path)
   path_qualify(path)
@@ -15852,7 +15852,7 @@ endfunction()
   ## fails if no format could be chosen
   ##
   ## format:  if you do not specify a format by passing a mime-type
-  ##          or type flag the mime-type is chosen by analysing the 
+  ##          or type flag the mime-type is chosen by analysing the
   ##          file extension - e.g. *.qm files serialize to quickmap
   ##          *.json files serialize to json
   ##
@@ -15983,7 +15983,7 @@ function(file_map_write fm)
     endif()
   endfunction()
   function(fmw_dir_end)
-    if(NOT "${map_length}" EQUAL 0)    
+    if(NOT "${map_length}" EQUAL 0)
       popd()
     endif()
   endfunction()
@@ -15992,7 +15992,7 @@ function(file_map_write fm)
   endfunction()
 
   function(fmw_file)
-    map_get(${context} current_key) 
+    map_get(${context} current_key)
     ans(key)
     fwrite("${key}" "${node}")
   endfunction()
@@ -16008,7 +16008,7 @@ function(file_map_write fm)
   function_import_table(${file_map_write_cbs} file_map_write_callback)
 
   # function definition
-  function(file_map_write fm)            
+  function(file_map_write fm)
     obj("${fm}")
     ans(fm)
 
@@ -16016,7 +16016,7 @@ function(file_map_write fm)
     ans(context)
     dfs_callback(file_map_write_callback ${fm} ${ARGN})
     map_tryget(${context} files)
-    return_ans()  
+    return_ans()
   endfunction()
   #delegate
   file_map_write(${fm} ${ARGN})
@@ -16027,7 +16027,7 @@ function(file_map_read)
   path("${ARGN}")
   ans(path)
   message("path ${path}")
-  
+
   file(GLOB_RECURSE paths RELATIVE "${path}" ${path}/**)
 
   message("paths ${paths}")
@@ -16042,10 +16042,10 @@ endfunction()
 
 
 
-## 
-## 
+##
+##
 ## creates a temporary file containing the specified content
-## returns the path for that file 
+## returns the path for that file
 function(fwrite_temp content)
   set(ext ${ARGN})
 
@@ -16077,12 +16077,12 @@ endfunction()
 ## **scope**
 ## * `pwd()` influences the relative paths
 ## **returns**
-## * list of files matching the specified glob expressions 
+## * list of files matching the specified glob expressions
 function(glob)
   set(args ${ARGN})
   list_extract_flag(args --relative)
   ans(relative)
-  
+
   list_extract_flag(args --recurse)
   ans(recurse)
 
@@ -16150,7 +16150,7 @@ endfunction()
 
   ## glob_ignore(<glob ignore expression...> [--relative] [--recurse]) -> <path...>
   ##
-  ## 
+  ##
   function(glob_ignore)
     set(args ${ARGN})
     list_extract_flag_name(args --relative)
@@ -16174,15 +16174,15 @@ endfunction()
     endif()
     return_ref(included_paths)
   endfunction()
-  
+
 
 
 
 
 
 ## `(<directory> <glob expression>)-><qualified director>`
-## 
-## 
+##
+##
 ## finds the closest parent dir (or dir itself)
 ## that contains any of the specified glob expressions
 ## (also see file_glob for syntax)
@@ -16207,7 +16207,7 @@ endfunction()
 
   ## glob_paths(<unqualified glob path>) -> <qualified glob path.>
   ##
-  ## 
+  ##
   function(glob_path glob)
     string_take_regex(glob "[^\\*\\[{]+")
     ans(path)
@@ -16231,7 +16231,7 @@ endfunction()
 
   ## glob_paths(<unqualified glob path...>) -> <qualified glob path...>
   ##
-  ## 
+  ##
  function(glob_paths)
   set(result)
   foreach(path ${ARGN})
@@ -16262,7 +16262,7 @@ function(glob_up n)
 
   set(globs ${args})
 
-  # /tld is appended because only its parent dirs are gotten 
+  # /tld is appended because only its parent dirs are gotten
   path_parent_dirs("${path}/tld" ${n})
   ans(parent_dirs)
 
@@ -16304,7 +16304,7 @@ endfunction()
 ## `()-><qualified path>`
 ##
 ## returns the current users home directory on all OSs
-## 
+##
 function(home_dir)
   shell_get()
   ans(shell)
@@ -16322,7 +16322,7 @@ function(home_dir)
     ans(res)
   else()
     message(FATAL_ERROR "supported shells: cmd & bash")
-  endif() 
+  endif()
   eval("
     function(home_dir)
       set(__ans \"${res}\" PARENT_SCOPE)
@@ -16336,7 +16336,7 @@ endfunction()
 
 
 ##
-## 
+##
 ## returns true if the specified file is a temp file (created by fwrite_temp)
 function(is_temp_file file)
   if("${file}" MATCHES ".*\\/fwrite_temp[^ ]*")
@@ -16348,11 +16348,11 @@ endfunction()
 
 
 
-## `(<target:<path>> <link:<path>>?)-><bool>` 
+## `(<target:<path>> <link:<path>>?)-><bool>`
 ##
 ## creates a symlink from `<link>` to `<target>` on all operating systems
 ## (Windows requires NTFS filesystem)
-## if `<link>` is omitted then the link will be created in the local directory 
+## if `<link>` is omitted then the link will be created in the local directory
 ## with the same name as the target
 ##
 function(ln)
@@ -16378,7 +16378,7 @@ function(ln_Linux target)
   execute_process(COMMAND ln -s "${target}" "${link}" RESULT_VARIABLE error ERROR_VARIABLE stderr)
   if(error)
     return(false)
-  endif() 
+  endif()
   return(true)
 endfunction()
 
@@ -16475,7 +16475,7 @@ function(mime_type_from_extension extension)
   foreach(mime_type ${mime_types})
     map_tryget("${mime_type}" name)
     ans(mime_type_name)
-    list(APPEND mime_type_names "${mime_type_name}")  
+    list(APPEND mime_type_names "${mime_type_name}")
   endforeach()
 
   return_ref(mime_type_names)
@@ -16486,7 +16486,7 @@ endfunction()
 
 
 
-## mime_type_from_filename() -> 
+## mime_type_from_filename() ->
 ##
 ## returns the mimetype for the specified filename
 ##
@@ -16717,7 +16717,7 @@ endfunction()
 
 
 
-# changes the current directory 
+# changes the current directory
 function(cd)
   set(args ${ARGN})
   list_extract_flag(args --create)
@@ -16775,7 +16775,7 @@ function(poptmp)
   ans(pwd)
   if(NOT "${pwd}" MATCHES "mktemp")
     message(FATAL_ERROR "cannot poptmp - path ${pwd} is not temporary ")
-  endif() 
+  endif()
   rm(-r "${pwd}")
   popd()
   return_ans()
@@ -16784,7 +16784,7 @@ endfunction()
 
 
 
-# pushes the specfied directory (or .) onto the 
+# pushes the specfied directory (or .) onto the
 # directory stack
 function(pushd)
   pwd()
@@ -16802,7 +16802,7 @@ endfunction()
 
 ## `(<?parent dir>)-><qualified path>, path_stack is pushed`
 ##
-## pushes a temporary directory on top of the pathstack 
+## pushes a temporary directory on top of the pathstack
 function(pushtmp)
   mktemp(${ARGN})
   ans(dir)
@@ -16843,10 +16843,10 @@ function(cp)
   if(NOT IS_DIRECTORY "${target}" )
     if(NOT "${len}" EQUAL "1")
       message(FATAL_ERROR "wrong usage for cp() exactly one source file needs to be specified")
-    endif() 
+    endif()
     path("${args}")
     ans(source)
-    # this just has to be terribly slow... 
+    # this just has to be terribly slow...
     # i am missing a direct
     cmake_lean(-E "copy" "${source}" "${target}")
     ans_extract(error)
@@ -16859,8 +16859,8 @@ function(cp)
 
   paths(${args})
   ans(paths)
-  file(COPY ${paths} DESTINATION "${target}") 
-  
+  file(COPY ${paths} DESTINATION "${target}")
+
 
   return()
 endfunction()
@@ -16870,9 +16870,9 @@ endfunction()
 
 
 
-  ## cp_content(<source dir> <target dir> <glob ignore expression...>) -> <path...> 
-  ## 
-  ## copies the content of source dir to target_dir respecting 
+  ## cp_content(<source dir> <target dir> <glob ignore expression...>) -> <path...>
+  ##
+  ## copies the content of source dir to target_dir respecting
   ## the globging expressions if none are given
   ## returns the copied paths if globbing expressiosnw were used
   ## else returns the qualified target_dir
@@ -16915,10 +16915,10 @@ endfunction()
 
   ## cp_glob(<target dir> <glob. ..> )-> <path...>
   ##
-  ## 
+  ##
   function(cp_glob target_dir)
     set(args ${ARGN})
-    
+
     list_extract_flag_name(args --recurse)
     ans(recurse)
 
@@ -16934,7 +16934,7 @@ endfunction()
       path_component(${path} --parent-dir)
       ans(relative_dir)
       file(COPY "${pwd}/${path}" DESTINATION "${target_dir}/${relative_dir}")
-     
+
     endforeach()
     return_ref(paths)
   endfunction()
@@ -16943,7 +16943,7 @@ endfunction()
 
 
 # creates a new directory
-function(mkdir path)    
+function(mkdir path)
   path("${path}")
   ans(path)
   file(MAKE_DIRECTORY "${path}")
@@ -16962,7 +16962,7 @@ function(mkdirs)
   foreach(path ${ARGN})
     mkdir("${path}")
     ans(p)
-    list(APPEND res "${p}")    
+    list(APPEND res "${p}")
   endforeach()
   return_ref(res)
 endfunction()
@@ -16973,7 +16973,7 @@ endfunction()
 
 
 
-# creates a temporary directory 
+# creates a temporary directory
 # you can specify an optional parent directory in which it should be created
 # usage: mktemp([where])-> <absoute path>
 function(mktemp)
@@ -17067,7 +17067,7 @@ function(touch path)
       if(NOT EXISTS "${path}" AND nocreate)
         return_ref(path)
       elseif(NOT EXISTS "${path}")
-        file(WRITE "${path}" "")        
+        file(WRITE "${path}" "")
       else()
         file(APPEND "${path}" "")
       endif()
@@ -17089,7 +17089,7 @@ endfunction()
 ##
 ## returns the fully qualified path name for path
 ## if path is a fully qualified name it returns path
-## else path is interpreted as the relative path 
+## else path is interpreted as the relative path
 function(path path)
   pwd()
   ans(pwd)
@@ -17170,7 +17170,7 @@ endfunction()
 
 
 
-  # combines all dirs to a single path  
+  # combines all dirs to a single path
   function(path_combine )
     set(args ${ARGN})
     list_to_string(args "/")
@@ -17186,7 +17186,7 @@ endfunction()
 # --file-name NAME_WE
 # --file-name-ext NAME
 # --parent-dir PATH
-# @todo: create own components 
+# @todo: create own components
 # e.g. parts dirs extension etc. consider creating an uri type
 function(path_component path path_component)
   if("${path_component}" STREQUAL "--parent-dir")
@@ -17208,14 +17208,14 @@ endfunction()
 
 
 ## `(<path>)-><string>`
-## 
+##
 ## retuns the extension of the specified path
-## 
+##
 function(path_extension path)
   path("${path}")
   ans(path)
   get_filename_component(res "${path}" EXT)
-  return_ref(res)  
+  return_ref(res)
 endfunction()
 
 
@@ -17231,7 +17231,7 @@ function(path_file_name path)
     set(cmd NAME_WE)
   else()
     set(cmd NAME)
-  endif() 
+  endif()
   path("${path}")
   ans(path)
   get_filename_component(res "${path}" ${cmd})
@@ -17256,10 +17256,10 @@ endfunction()
 
 
 
-## `(<path>)-><qualified path>` 
+## `(<path>)-><qualified path>`
 ##
 ## returns the parent directory of the specified file or folder
-## 
+##
 function(path_parent_dir path)
   path_qualify(path)
   get_filename_component(res "${path}" PATH)
@@ -17300,12 +17300,12 @@ function(path_parent_dirs path)
     endif()
     list_pop_back(parts)
     path_combine(${parts})
-    ans(current)      
+    ans(current)
 
     if(isrooted)
       set(current "/${current}")
     endif()
-    
+
     if("_${current}" STREQUAL "_")
       break()
     endif()
@@ -17321,8 +17321,8 @@ endfunction()
 
 
 
-## `(<path>)-><segment>` 
-## 
+## `(<path>)-><segment>`
+##
 ## returns the name of the directory in which the specified file or folder resides
 function(path_parent_dir_name)
   path("${ARGN}")
@@ -17352,24 +17352,24 @@ endmacro()
 ## @todo realpath or abspath?
 ## qualfies a path using the specified base_dir
 ##
-## if path is absolute (starts with / or under windows with <drive letter>:/) 
+## if path is absolute (starts with / or under windows with <drive letter>:/)
 ## it is returned as is
 ##
-## if path starts with a '~' (tilde) the path is 
+## if path starts with a '~' (tilde) the path is
 ## qualfied by prepending the current home directory (on all OSs)
 ##
 ## is neither absolute nor starts with ~
-## the path is relative and it is qualified 
+## the path is relative and it is qualified
 ## by prepending the specified <base dir>
 function(path_qualify_from base_dir path)
   string(REPLACE \\ / path "${path}")
   get_filename_component(realpath "${path}" ABSOLUTE)
-  
+
   ## windows absolute path
   if(WIN32 AND "_${path}" MATCHES "^_[a-zA-Z]:\\/")
     return_ref(realpath)
   endif()
-   
+
    ## posix absolute path
   if("_${path}" MATCHES "^_\\/")
     return_ref(realpath)
@@ -17387,14 +17387,14 @@ function(path_qualify_from base_dir path)
 
   ## relative path
   get_filename_component(realpath "${path}" ABSOLUTE)
-  
+
   return_ref(realpath)
 endfunction()
 
 
 
 
-# returns the path specified by path_rel relative to 
+# returns the path specified by path_rel relative to
 # path_base using parent dir path syntax (../../path/to/x)
 # if necessary
 # e.g. path_rel(c:/dir1/dir2 c:/dir1/dir3/dir4)
@@ -17496,7 +17496,7 @@ endfunction()
 
 
   # splits the speicifed path into its directories and files
-  # e.g. c:/dir1/dir2/file.ext -> ['c:','dir1','dir2','file.ext'] 
+  # e.g. c:/dir1/dir2/file.ext -> ['c:','dir1','dir2','file.ext']
   function(path_split path)
     if("_${path}" MATCHES "^_[\\/]")
       string_substring("${path}" 1)
@@ -17538,7 +17538,7 @@ endfunction()
 # writes the path the map creating submaps for every directory
 
 function(path_to_map map path)
-  
+
   path_split("${path}")
   ans(path_parts)
 
@@ -17548,7 +17548,7 @@ function(path_to_map map path)
     ans(current_part)
 
 
-    
+
     map_tryget(${current} "${current_part}")
     ans(current_map)
 
@@ -17578,7 +17578,7 @@ endfunction()
 ## `(<path>)-><qualified path>`
 ##
 ## varies the specified path until it does not exist
-## this is done  by inserting a random string into the path and doing so until 
+## this is done  by inserting a random string into the path and doing so until
 ## a path is vound whic does not exist
 function(path_vary path)
   path_qualify(path)
@@ -17588,7 +17588,7 @@ function(path_vary path)
   set(rnd)
   while(true)
     set(path "${base}/${name}${rnd}${ext}")
-    
+
     if(NOT EXISTS "${path}")
       return("${path}")
     endif()
@@ -17605,7 +17605,7 @@ endfunction()
 
 
 ## `(<path>)-><bool>`
-## 
+##
 ## unlinks the specified link without removing the links content.
 function(unlink)
   wrap_platform_specific_function(unlink)
@@ -17617,7 +17617,7 @@ endfunction()
 
 function(unlink_Windows symlink)
   path_qualify(symlink)
-  string(REPLACE "/" "\\" symlink "${symlink}") 
+  string(REPLACE "/" "\\" symlink "${symlink}")
   win32_cmd_lean("/C" "rmdir" "${symlink}")
   ans_extract(res)
   if(res)
@@ -17703,7 +17703,7 @@ endfunction()
       map_tryget(${context} ${node})
       ans(ref)
       map_push_back(${context} refstack ${ref})
-      map_append_string(${context} qm 
+      map_append_string(${context} qm
 "math(EXPR ref \"\${base} + ${ref}\")
 set_property(GLOBAL PROPERTY \":\${ref}.__keys__\" \"\")
 ")
@@ -17714,18 +17714,18 @@ set_property(GLOBAL PROPERTY \":\${ref}.__keys__\" \"\")
       map_peek_back(${context} refstack)
       ans(ref)
 
-      map_append_string(${context} qm 
+      map_append_string(${context} qm
 "math(EXPR ref \"\${base} + ${ref}\")
 ")
     endfunction()
-    
+
     function(cmake_obj_keyvalue_begin)
       cmake_ref_format()
       ans(keystring)
       cmake_ref_format(${map_element_key})
       ans(refstring)
-      
-      map_append_string(${context} qm 
+
+      map_append_string(${context} qm
 "set_property(GLOBAL APPEND PROPERTY \"${keystring}.__keys__\" \"${map_element_key}\")
 set_property(GLOBAL PROPERTY \"${refstring}\")
 ")
@@ -17736,7 +17736,7 @@ set_property(GLOBAL PROPERTY \"${refstring}\")
       ans(refstring)
       cmake_string_escape("${node}")
       ans(node)
-      map_append_string(${context} qm 
+      map_append_string(${context} qm
 "set_property(GLOBAL APPEND PROPERTY \"${refstring}\" \"${node}\")
 ")
       return()
@@ -17785,12 +17785,12 @@ set_property(GLOBAL APPEND PROPERTY \"${refstring}\" \":\${value}\")
     function_import_table(${cmake_cbs} cmake_callback)
 
     # function definition
-    function(cmake_serialize)        
+    function(cmake_serialize)
       map_new()
       ans(context)
       map_set(${context} refstack 0)
       map_set(${context} ref_count 0)
-  
+
       dfs_callback(cmake_callback ${ARGN})
       map_tryget(${context} qm)
       ans(res)
@@ -17804,7 +17804,7 @@ ${res}math(EXPR base \"\${base} + ${ref_count} + 1\")
 set_property(GLOBAL PROPERTY \":0\" \${base})
 ")
 
-      return_ref(res)  
+      return_ref(res)
     endfunction()
     #delegate
     cmake_serialize(${ARGN})
@@ -17826,11 +17826,11 @@ endfunction()
 
 
 
-# deserializes a csv string 
+# deserializes a csv string
 # currently expects the first line to be the column headers
 # rows are separated by \n or \r\n
 # every value is delimited by double quoutes ""
-function(csv_deserialize csv) 
+function(csv_deserialize csv)
   set(args ${ARGN})
   list_extract_flag(args --headers)
   ans(first_line_headers)
@@ -17857,12 +17857,12 @@ function(csv_deserialize csv)
 
       string_take(line ",")
       ans(comma)
-        
+
       if(first)
         if(first_line_headers)
           list(APPEND headers "${val}")
         else()
-          list(APPEND headers ${i})            
+          list(APPEND headers ${i})
         endif()
         math(EXPR i "${i} + 1")
       else()
@@ -17877,7 +17877,7 @@ function(csv_deserialize csv)
     elseif(NOT  first_line_headers)
       list(APPEND res ${current_line})
     endif()
-    if(first)        
+    if(first)
       set(first false)
     endif()
 
@@ -17961,12 +17961,12 @@ function(json)
   function_import_table(${json_cbs} json_callback)
 
   # function definition
-  function(json)        
+  function(json)
     map_new()
     ans(context)
     dfs_callback(json_callback ${ARGN})
     map_tryget(${context} json)
-    return_ans()  
+    return_ans()
   endfunction()
   #delegate
   json(${ARGN})
@@ -17977,13 +17977,13 @@ endfunction()
 
 
 function(json2 input)
-  
+
   json2_definition()
   ans(lang)
   language_initialize(${lang})
   address_set(json2_language_definition "${lang}")
-  function(json2 input) 
-    checksum_string("${input}")   
+  function(json2 input)
+    checksum_string("${input}")
     ans(ck)
     file_cache_return_hit("${ck}")
     address_get(json2_language_definition)
@@ -18232,7 +18232,7 @@ function(json3_cached)
   json3_cached("${ARGN}")
   return_ans()
 endfunction()
-## 
+##
 ##
 ## fast json parser
 function(json3 input)
@@ -18302,11 +18302,11 @@ function(json3 input)
       else()
         set_property(GLOBAL APPEND_STRING PROPERTY "${ref}" ";")
       endif()
-    elseif("${token}" STREQUAL "${bracket_open_code}")  
+    elseif("${token}" STREQUAL "${bracket_open_code}")
       list(INSERT ref_stack 0 ${ref})
       address_new()
       ans(ref)
-    elseif("${token}" STREQUAL "${bracket_close_code}")  
+    elseif("${token}" STREQUAL "${bracket_close_code}")
       get_property(values GLOBAL PROPERTY "${ref}")
       list(GET ref_stack 0 ref)
       list(REMOVE_AT ref_stack 0)
@@ -18419,7 +18419,7 @@ endfunction()
 ##   if you want semicolons to appear in cmake then use a json array. You can always use `string_decode_semicolon()`
 ##   to obtain the string as it was in json
 ##   eg. `[1,2,3] => 1;2;3`  `"1;2;3" => 1${semicolon_code}2${semicolon_code}3`
-## 
+##
 function(json_deserialize json)
   json4("${json}")
   return_ans()
@@ -18435,7 +18435,7 @@ function(json_escape value)
 	string(REGEX REPLACE "\n" "\\\\n" value "${value}")
 	string(REGEX REPLACE "\r" "\\\\r" value "${value}")
 	string(REGEX REPLACE "\t" "\\\\t" value "${value}")
-	string(REGEX REPLACE "\\$" "\\\\$" value "${value}")	
+	string(REGEX REPLACE "\\$" "\\\\$" value "${value}")
 	string(REGEX REPLACE ";" "\\\\\\\\;" value "${value}")
 	return_ref(value)
 endfunction()
@@ -18447,7 +18447,7 @@ endfunction()
   ## quickly extracts string properties values from a json string
   ## useful for large json files with unique property keys
   function(json_extract_string_value key data)
-    regex_escaped_string("\"" "\"") 
+    regex_escaped_string("\"" "\"")
     ans(regex)
 
     set(key_value_regex "\"${key}\" *: ${regex}")
@@ -18456,7 +18456,7 @@ endfunction()
     foreach(match ${matches})
       string(REGEX REPLACE "${key_value_regex}" "\\1" match "${match}")
       list(APPEND values "${match}")
-    endforeach() 
+    endforeach()
     return_ref(values)
   endfunction()
 
@@ -18489,7 +18489,7 @@ function(json_format_tokens result tokens)
 	set_indent()
 
 	set(indented "${indentation}")
-	foreach(token ${tokens})		
+	foreach(token ${tokens})
 		if("${token}" STREQUAL "{")
 			increase_indent()
 			set(indented "${indented}{\n${indentation}")
@@ -18550,7 +18550,7 @@ function(json_indented)
     ans(indentation)
     map_append_string(${context} json "[\n")
     map_append_string(${context} indentation " ")
-    
+
   endfunction()
   function(json_array_end_indented)
    # message(POP "json_array_end_indented(${ARGN}) ${context}")
@@ -18573,7 +18573,7 @@ function(json_indented)
     if(comma)
       map_append_string(${context} json ",")
     endif()
-    
+
     map_append_string(${context} json "\n")
   endfunction()
 
@@ -18619,12 +18619,12 @@ function(json_indented)
   function_import_table(${json_cbs} json_indented_callback)
 
   # function definition
-  function(json_indented)        
+  function(json_indented)
     map_new()
     ans(context)
     dfs_callback(json_indented_callback ${ARGN})
     map_tryget(${context} json)
-    return_ans()  
+    return_ans()
   endfunction()
   #delegate
   json_indented(${ARGN})
@@ -18645,7 +18645,7 @@ endfunction()
 
 # reads a json file from the specified location
 # the location may be relative (see explanantion of path() function)
-# returns a map or nothing if reading fails 
+# returns a map or nothing if reading fails
 function(json_read file)
     path("${file}")
     ans(file)
@@ -18682,7 +18682,7 @@ endfunction()
     string(ASCII 12 char)
     string(REPLACE  "\\f" "${char}" str "${str}")
 
-    
+
     string(REPLACE "\\n" "\n" str "${str}")
     string(REPLACE "\\t" "\t" str "${str}")
     string(REPLACE "\\t" "\t" str "${str}")
@@ -18692,13 +18692,13 @@ endfunction()
     string(REPLACE "\\\\" "\\" str "${str}")
 
     return_ref(str)
-      
+
   endfunction()
   # converts the json-string & to a cmake string
   function(json_string_ref_to_cmake __json_string_ref_to_cmake_ref)
     json_string_to_cmake("${${__json_string_ref_to_cmake_ref}}")
     return_ans()
-      
+
   endfunction()
 
 
@@ -18810,7 +18810,7 @@ function(qm_read path)
 
   qm_deserialize_file("${path}")
   return_ans()
-  
+
 endfunction()
 
 
@@ -18846,11 +18846,11 @@ function(qm_serialize)
   function(qm_literal_indented)
     map_tryget(${context} indentation)
     ans(indentation)
-    
+
     cmake_string_escape("${node}")
     ans(node)
     map_append_string(${context} qm "${indentation} val(\"${node}\")\n")
-    
+
     return()
   endfunction()
 
@@ -18865,7 +18865,7 @@ function(qm_serialize)
   function_import_table(${qm_cbs} qm_indented_callback)
 
   # function definition
-  function(qm_serialize)        
+  function(qm_serialize)
     map_new()
     ans(context)
     map_set(${context} qm "#qm/1.0\nref()\n")
@@ -18876,7 +18876,7 @@ function(qm_serialize)
     map_tryget(${context} qm)
     ans(res)
     set(res "${res}end()\n")
-    return_ref(res)  
+    return_ref(res)
   endfunction()
   #delegate
   qm_serialize(${ARGN})
@@ -18917,7 +18917,7 @@ function(qm_serialize_unindented)
   function_import_table(${qm_cbs} qm_unindented_callback)
 
   # function definition
-  function(qm_serialize_unindented)        
+  function(qm_serialize_unindented)
     map_new()
     ans(context)
     map_set(${context} qm "#qm/1.0\nref()\n")
@@ -18928,7 +18928,7 @@ function(qm_serialize_unindented)
     map_tryget(${context} qm)
     ans(res)
     set(res "${res}end()\n")
-    return_ref(res)  
+    return_ref(res)
   endfunction()
   #delegate
   qm_serialize_unindented(${ARGN})
@@ -18961,10 +18961,10 @@ endfunction()
 # ======= ======= =======
 # val1    val2    val3
 # val4    val5    val6
-# not that the = below the header is used as the column width and must be the max length of any value in 
+# not that the = below the header is used as the column width and must be the max length of any value in
 # column including the header
 # returns a list of <row> where row is a map and the headers are the keys   (values are trimmed from whitespace)
-# the example above results in 
+# the example above results in
 # {
 #   "header1":"val1",
 #   "header2":"val2",
@@ -18975,16 +18975,16 @@ function(table_deserialize input)
   string_lines("${input}")
   ans(lines)
   list_pop_front(lines)
-  ans(firstline)  
-  list_pop_front(lines)    
+  ans(firstline)
+  list_pop_front(lines)
   ans(secondline)
-  list_pop_front(lines)    
+  list_pop_front(lines)
   ans(thirdline)
 
   string(REPLACE "=" "." line_match "${thirdline}")
   string_split("${line_match}" " ")
   ans(parts)
-  list(LENGTH parts cols) 
+  list(LENGTH parts cols)
   set(linematch)
   set(first true)
   foreach(part ${parts})
@@ -19014,7 +19014,7 @@ function(table_deserialize input)
       string(STRIP "${col}" col)
       list_get(headers ${idx})
       ans(header)
-      map_set(${l} "${header}" "${col}")        
+      map_set(${l} "${header}" "${col}")
     endforeach()
     list(APPEND result ${i})
   endforeach()
@@ -19027,8 +19027,8 @@ endfunction()
 
 
 # not finished
-function(table_serialize)  
-  objs(${ARGN})  
+function(table_serialize)
+  objs(${ARGN})
   ans(lines)
 
 
@@ -19041,15 +19041,15 @@ function(table_serialize)
   foreach(line ${lines})
     map_keys(${line})
     ans(keys)
-    
-    foreach(key ${keys})  
+
+    foreach(key ${keys})
       map_tryget(${column_layout} ${key})
       ans(res)
-      
+
       map_tryget(${line} ${key})
       ans(val)
       string(LENGTH "${val}" len)
-        
+
       if(${len} GREATER "0${res}")
         map_set(${column_layout} ${key} "${len}")
       endif()
@@ -19074,7 +19074,7 @@ function(table_serialize)
     map_tryget(${column_layout} "${header}")
     ans(size)
     string_pad("${header}" "${size}")
-    ans(header)    
+    ans(header)
     set(res "${res}${header}")
     string_repeat("=" "${size}")
     ans(sep)
@@ -19082,15 +19082,15 @@ function(table_serialize)
   endforeach()
 
   set(res "${res}\n${separator}\n")
-  
+
 
   foreach(line ${lines})
-    set(first true)    
+    set(first true)
     foreach(header ${headers})
       if(first)
         set(first false)
       else()
-        set(res "${res} ")      
+        set(res "${res} ")
       endif()
       map_tryget(${column_layout} "${header}")
       ans(size)
@@ -19116,7 +19116,7 @@ endfunction()
 #   //parent:xml_node
 #   attrs: {  }
 #   value: 'string'
-#   
+#
 # }
 function(xml_node tag value attrs)
   obj("${attrs}")
@@ -19170,13 +19170,13 @@ function(xml_parse_tags xml tag)
 
   set(res)
   foreach(match ${output})
-    string(REGEX REPLACE "${regex}" "\\1" attrs "${match}") 
-    string(REGEX REPLACE "${regex}" "\\2" match "${match}") 
+    string(REGEX REPLACE "${regex}" "\\1" attrs "${match}")
+    string(REGEX REPLACE "${regex}" "\\2" match "${match}")
 
 
     map()
       kv(tag "${tag}")
-      kv(value "${match}")    
+      kv(value "${match}")
       map(attrs)
         string(REGEX MATCHALL "${regex_attrs}" attrs "${attrs}")
         foreach(attr ${attrs})
@@ -19262,8 +19262,8 @@ endmacro()
 
 
 ## `(<start index> <end index>)-> <cmake code>`
-## 
-## captures the cmake code for the calling function and returns it as a string  
+##
+## captures the cmake code for the calling function and returns it as a string
 macro(arguments_cmake_code __args_start __args_end)
   string_codes()
   set(__args_command_invocations)
@@ -19281,7 +19281,7 @@ macro(arguments_cmake_code __args_start __args_end)
         set(__args_invocation_complete true)
       endif()
     else()
-     
+
      if("${__args_current_token}" MATCHES "[ \\$\"\\(\\)#\\^\t\r\n\\\;]")
         ## encoded list encode cmake string...
         ## @ todo this has to be extracted however it does not work correctly because
@@ -19291,7 +19291,7 @@ macro(arguments_cmake_code __args_start __args_end)
         string(REGEX REPLACE "([ \"\\(\\)#\\^])" "\\\\\\1" __args_current_token "${__args_current_token}")
         string(REPLACE "\t" "\\t" __args_current_token "${__args_current_token}")
         string(REPLACE "\n" "\\n" __args_current_token "${__args_current_token}")
-        string(REPLACE "\r" "\\r" __args_current_token "${__args_current_token}")  
+        string(REPLACE "\r" "\\r" __args_current_token "${__args_current_token}")
         set(__args_current_token "\"${__args_current_token}\"")
       #  _message("arg ${__args_current_token}")
       endif()
@@ -19320,10 +19320,10 @@ endmacro()
 ## recreates the invocation arguments which when evaluated are identical
 ## to the arguments passed to the function where this macro was invoked
 macro(arguments_cmake_string __arg_begin __arg_end)
-  set(__arg_res)   
+  set(__arg_res)
   if(${__arg_end} GREATER ${__arg_begin})
     math(EXPR __last_arg_index "${__arg_end} - 1")
-    foreach(i RANGE ${__arg_begin} ${__last_arg_index} )        
+    foreach(i RANGE ${__arg_begin} ${__last_arg_index} )
       cmake_string_escape("${ARGV${i}}")
       set(__arg_res "${__arg_res} \"${__ans}\"")
     endforeach()
@@ -19336,18 +19336,18 @@ endmacro()
 
 
 
-## 
+##
 ##
 ## returns an encoded list for the specified arguments passed to
 ## current function invocation.
-## 
+##
 ## you can only use this inside of a cmake function and not inside a macro
 macro(arguments_encoded_list __arg_begin __arg_end)
-  set(__ans)   
+  set(__ans)
   if(${__arg_end} GREATER ${__arg_begin})
     math(EXPR __last_arg_index "${__arg_end} - 1")
-    foreach(i RANGE ${__arg_begin} ${__last_arg_index})        
-      
+    foreach(i RANGE ${__arg_begin} ${__last_arg_index})
+
       string(REPLACE "[" "" __tmp_encoded_list "${ARGV${i}}")
       string(REPLACE "]" "" __tmp_encoded_list "${__tmp_encoded_list}")
       string(REPLACE ";" "" __tmp_encoded_list "${__tmp_encoded_list}")
@@ -19387,10 +19387,10 @@ macro(arguments_foreach __arg_begin __arg_end __arg_callable)
     callable_function("${__arg_callable}")
     ans(__arg_callable)
     math(EXPR __last_arg_index "${__arg_end} - 1")
-    set(__arg_res)   
+    set(__arg_res)
     eval("
       macro(__arguments_foreach_func)
-        foreach(i RANGE ${__arg_begin} ${__last_arg_index} )        
+        foreach(i RANGE ${__arg_begin} ${__last_arg_index} )
           ${__arg_callable}(\"\${ARGV\${i}}\")
           list(APPEND __arg_res \"\${__ans}\")
         endforeach()
@@ -19440,7 +19440,7 @@ endmacro()
 ## it takes into considerations quoted arguments
 ## todo: start and endindex
 macro(arguments_string __arg_begin __arg_end)
-  set(__arg_res)   
+  set(__arg_res)
   if(${__arg_end} GREATER 0)
     math(EXPR __last_arg_index "${__arg_end} - 1")
     foreach(i RANGE 0 ${__last_arg_index})
@@ -19450,7 +19450,7 @@ macro(arguments_string __arg_begin __arg_end)
       endif()
       set(__arg_res "${__arg_res} ${__current}")
     endforeach()
-    string(SUBSTRING "${__arg_res}" "1" "-1" __ans)  
+    string(SUBSTRING "${__arg_res}" "1" "-1" __ans)
   else()
     set(__ans)
   endif()
@@ -19494,7 +19494,7 @@ function(bind func )
 
   set(evaluate "function(${_as})
 ${bound_args}
-${original_func}(\${ARGN})    
+${original_func}(\${ARGN})
 return_ans()
 endfunction()")
   set_ans("")
@@ -19512,7 +19512,7 @@ endfunction()
 # * a lambda expression (see lambda())
 # * a object with __call__ operation defined
 # * a property reference ie this.method()
-# CANNOT  call 
+# CANNOT  call
 # * a navigation path
 # no output except through return values or referneces
 function(call __function_call_func __function_call_paren_open)
@@ -19522,7 +19522,7 @@ function(call __function_call_func __function_call_paren_open)
 
   list_pop_back(__function_call_args)
   ans(__function_call_paren_close)
-  
+
   if(NOT "_${__function_call_paren_open}${__function_call_paren_close}" STREQUAL "_()")
     message("open ${__function_call_paren_open} close ${__function_call_paren_close}")
     message(WARNING "expected opening and closing parentheses for function '${__function_call_func}' '${ARGN}' '${__function_call_args}'")
@@ -19534,7 +19534,7 @@ function(call __function_call_func __function_call_paren_open)
     return_ans()
   endif()
 
-  
+
 
 
   if(DEFINED "${__function_call_func}")
@@ -19587,7 +19587,7 @@ function(call __function_call_func __function_call_paren_open)
     is_address("${__left}")
     ans(__left_isref)
     if(__left_isref)
-      obj_member_call("${__left}" "${__right}" ${__function_call_args})  
+      obj_member_call("${__left}" "${__right}" ${__function_call_args})
       return_ans()
     endif()
     is_address("${${__left}}")
@@ -19913,8 +19913,8 @@ endfunction()
 ## `(<signarture> <cmake code>)-><function name>`
 ##
 ## defines an anonymous cmake function and returns its reference (name)
-## the code needs to begin with the signature without the name e.g. `(arg1 arg2)` 
-##  
+## the code needs to begin with the signature without the name e.g. `(arg1 arg2)`
+##
 function(function_define_new)
   arguments_cmake_code(0 ${ARGC})
   ans(code)
@@ -20004,10 +20004,10 @@ function(function_import callable)
 
   function_string_get("${callable}")
   ans(function_string)
-  
+
   function_string_rename("${function_string}" "${function_name}")
   ans(function_string)
-  
+
   function_string_import("${function_string}")
 
   return_ref(function_name)
@@ -20035,7 +20035,7 @@ endfunction()
 
 
 function(function_import_global_dispatcher function_name)
-    get_cmake_property(commands COMMANDS)       
+    get_cmake_property(commands COMMANDS)
     list(REMOVE_ITEM commands else if elseif endif while function endwhile endfunction macro endmacro foreach endforeach)
     function_import_dispatcher("${function_name}" ${commands})
     return()
@@ -20045,7 +20045,7 @@ endfunction()
 
 
 # imports the specified map as a function table which is callable via <function_name>
-# whis is a performance enhancement 
+# whis is a performance enhancement
 function(function_import_table map function_name)
   map_keys(${map} )
   ans(keys)
@@ -20059,7 +20059,7 @@ function(function_import_table map function_name)
 set("evl" "function(${function_name} switch)\n${ifs}\nreturn()\nendfunction()")
    # message(${evl})
   set_ans("")
-   
+
     eval("${evl}")
 endfunction()
 
@@ -20075,7 +20075,7 @@ endfunction()
 function(function_lines_get  func)
 	function_string_get( "${func}")
 	ans(function_string)
-	
+
 	string(REPLACE ";" "![[[SEMICOLON]]]"  function_string "${function_string}")
 	string(REPLACE "\n" ";" lines "${function_string}")
 	set(res)
@@ -20130,7 +20130,7 @@ function(function_new )
 
 endfunction()
 
-## faster, but less debug info 
+## faster, but less debug info
 macro(function_new )
 	identifier(function)
 endmacro()
@@ -20146,7 +20146,7 @@ function(function_parse function_ish)
   endif()
   function_string_get( "${function_ish}")
   ans(function_string)
-  
+
   if(NOT function_string)
     return()
   endif()
@@ -20223,7 +20223,7 @@ function(function_string_get func)
 		return()
 	endif()
 
-	
+
 	is_function_ref(is_ref "${func}")
 	if(is_ref)
 		is_address(${func} )
@@ -20259,14 +20259,14 @@ function(function_string_get func)
 	if(is_cmake_func)
 		## todo: just return nothing as func is already correctly defined...
 		set(source "macro(${func})\n ${func}(\${ARGN})\nendmacro()")
-		return_ref(source)		
+		return_ref(source)
 		return()
 	endif()
-	
+
 	if(NOT (is_string OR is_file OR is_cmake_func)  )
 		message(FATAL_ERROR "the following is not a function: '${func}' ")
 	endif()
-	return()	
+	return()
 
 	lambda_parse("${func}")
 	ans(parsed_lambda)
@@ -20293,14 +20293,14 @@ endfunction()
 
 
 # injects code into  function (right after function is called) and returns result
-function(function_string_rename input_function new_name) 
+function(function_string_rename input_function new_name)
 	function_string_get( "${input_function}")
 	ans(function_string)
 	function_signature_regex(regex)
 
 	function_lines_get( "${input_function}")
 	ans(lines)
-	
+
 	foreach(line ${lines})
 		string(REGEX MATCH "${regex}" found "${line}")
 		if(found)
@@ -20377,12 +20377,12 @@ function(is_function result val)
 	if(is_func)
 		return_value(cmake)
 	endif()
-	
+
 	if(is_function_called)
 		return_value(false)
 	endif()
 	is_function_file(is_func "${val}")
-	if(is_func)		
+	if(is_func)
 		return_value(file)
 	endif()
 	set(is_function_called true)
@@ -20412,7 +20412,7 @@ endfunction()
 function(is_function_file result function_file)
 	path("${function_file}")
 	ans(function_file)
-	
+
 	if(NOT EXISTS "${function_file}")
 		return_value(false)
 	endif()
@@ -20427,7 +20427,7 @@ function(is_function_file result function_file)
 	endif()
 	#is_function_string(res ${input})
 	is_function(res "${input}")
-	
+
 	return_value(${res})
 endfunction()
 
@@ -20444,7 +20444,7 @@ function(is_function_ref result func)
   ans(val)
 	is_function(res "${val}")
 	return_value(${res})
-	
+
 endfunction()
 
 
@@ -20503,8 +20503,8 @@ endfunction()
 ## compiles a lambda expression to valid cmake source and returns it
 ## {{a}} -> ${a}
 ## ["["<capture>"]"]["("<arg defs>")"] [(<expression>";")*]
-## 
-## 
+##
+##
 function(lambda2_compile source)
   string_encode_list("${source}")
   ans(source)
@@ -20518,7 +20518,7 @@ function(lambda2_compile source)
     set(capture "${CMAKE_MATCH_2}")
     set(source "${CMAKE_MATCH_3}")
     string(REPLACE " " ";" capture "${capture}")
-  else() 
+  else()
     set(capture)
   endif()
 
@@ -20536,7 +20536,7 @@ function(lambda2_compile source)
 
   lambda2_compile_source("${source}")
   ans(cmake_source)
-    
+
 
 
 
@@ -20554,7 +20554,7 @@ endfunction()
 
   function(lambda2_compile_source source)
     string(ASCII 5 string_token)
-    
+
     ## remove semicolons and brackets
     string_encode_list("${source}")
     ans(source)
@@ -20576,7 +20576,7 @@ endfunction()
       string(REPLACE "," ";" line "${line}")
       set(code "${code}${line}\n")
     endforeach()
-    
+
 
     ## resubistitute all extracted strings
     while(true)
@@ -20639,7 +20639,7 @@ endfunction()
 
     map_tryget(${lambda} capture)
     ans(captures)
-    set(capture_code)    
+    set(capture_code)
     foreach(capture ${captures})
       set(capture_code "${capture_code}\n  set(${capture} \"${${capture}}\")")
     endforeach()
@@ -20655,7 +20655,7 @@ endfunction()
     map_tryget(${lambda} cmake_source)
     ans(cmake_source)
     map_tryget(${lambda} signature)
-    ans(signature) 
+    ans(signature)
     set(source "function(${function_name} ${signature})${capture_code}\n${cmake_source}\nendfunction()")
     eval("${source}")
     map_set(${lambda} cmake_function "${source}")
@@ -20667,15 +20667,15 @@ endfunction()
 
 
 # reads a functions and returns it
-function(load_function result file_name)	
-	file(READ ${file_name} func)	
+function(load_function result file_name)
+	file(READ ${file_name} func)
 	set(${result} ${func} PARENT_SCOPE)
 endfunction()
 
 
 
 
-# allows a single line call with result 
+# allows a single line call with result
 # ie rcall(some_result = obj.getSomeInfo(arg1 arg2))
 function(rcall __rcall_result_name equals __callable)
   set_ans("")
@@ -20691,7 +20691,7 @@ endfunction()
 
 
 function(save_function file_name function_string)
-	
+
 	file(WRITE "${file_name}" "${function_string}")
 endfunction()
 
@@ -20722,11 +20722,11 @@ function(wrap_platform_specific_function function_name)
   os()
   ans(os_name)
   set(specificname "${function_name}_${os_name}")
-  if(NOT COMMAND "${specificname}")      
+  if(NOT COMMAND "${specificname}")
     eval("
     function(${function_name})
-      message(FATAL_ERROR \"operation is not supported on ${os_name} - look at document of '${function_name}' and implement a function with a matching interface called '${specificname}' for you own system\")        
-    endfunction()      
+      message(FATAL_ERROR \"operation is not supported on ${os_name} - look at document of '${function_name}' and implement a function with a matching interface called '${specificname}' for you own system\")
+    endfunction()
     ")
   else()
     eval("
@@ -20735,7 +20735,7 @@ function(wrap_platform_specific_function function_name)
         return_ans()
       endfunction()
     ")
-    
+
   endif()
   return()
 endfunction()
@@ -20762,7 +20762,7 @@ endfunction()
       handler_request(${ARGN})
       ans(request)
       assign(handler = this.find_handler(${request}))
-      list(LENGTH handler handler_count)  
+      list(LENGTH handler handler_count)
 
 
       if(${handler_count} GREATER 1)
@@ -20771,9 +20771,9 @@ endfunction()
 
       if(NOT handler)
         return_data("{error:'no_handler',description:'command runner could not find an appropriate handler for the specified arguments',request:$request}")
-      endif() 
+      endif()
       ## remove first item
-      assign(request.input[0] = '') 
+      assign(request.input[0] = '')
       set(parent_handler ${this})
       assign(result = this.execute_handler(${handler} ${request}))
       return_ref(result)
@@ -20812,7 +20812,7 @@ endfunction()
       return_ref(handler)
     endfunction()
 
-    ## executes the specified handler 
+    ## executes the specified handler
     ## the handler must not be part of this command runner
     ## it takes a handler and a request and returns a response object
     method(execute_handler)
@@ -20827,7 +20827,7 @@ endfunction()
     endfunction()
 
     ## adds a request handler to this command handler
-    ## request handler can be any function/function definition 
+    ## request handler can be any function/function definition
     ## or handler object
     method(add_handler)
     function(${add_handler})
@@ -20837,7 +20837,7 @@ endfunction()
         return()
       endif()
       map_append(${this} handlers ${handler})
-      
+
       return(${handler})
     endfunction()
 
@@ -20942,7 +20942,7 @@ endfunction()
 
 
 
-# returns those handlers in handler_lst which match the specified request  
+# returns those handlers in handler_lst which match the specified request
   function(handler_find handler_lst request)
     set(result)
     foreach(handler ${${handler_lst}})
@@ -20954,7 +20954,7 @@ endfunction()
     endforeach()
 
     return_ref(result)
-  endfunction() 
+  endfunction()
 
 
 
@@ -20999,15 +20999,15 @@ endfunction()
 
 
 
-## creates a handler 
-## 
+## creates a handler
+##
 function(request_handler handler)
   data("${handler}")
   ans(handler)
   is_map(${handler})
   ans(is_map)
-  
-  if(is_map)  
+
+  if(is_map)
     map_tryget(${handler} callable)
     ans(callable)
     if(NOT COMMAND "${callable}")
@@ -21082,7 +21082,7 @@ endfunction()
 
 
 
-## returns the current index level index which can be used to 
+## returns the current index level index which can be used to
 ## restore the index level to a specific point
   function(indent_level_current)
     map_property_length(global __indentlevelstack)
@@ -21180,8 +21180,8 @@ function(test)
   ans(lvl)
   assert(${lvl} EQUAL 1)
 
-  
-  
+
+
 
   indent_level_pop()
 
@@ -21201,7 +21201,7 @@ endfunction()
 
     message_indent_push(+2)
     foreach(item ${${__lst}})
-      message("${i}: ${item}") 
+      message("${i}: ${item}")
       math(EXPR i "${i} + 1")
     endforeach()
     message_indent_pop()
@@ -21209,7 +21209,7 @@ endfunction()
       echo_append("> ")
       call("${input_callback}"())
       ans(selected_index)
-    
+
       string_isnumeric("${selected_index}")
       ans(isnumeric)
       if(isnumeric)
@@ -21239,7 +21239,7 @@ endfunction()
 
   function(listing)
     address_new()
-    return_ans()    
+    return_ans()
   endfunction()
 
 
@@ -21325,7 +21325,7 @@ endfunction()
         ans(indent)
         if(indent)
           set(current_indentation "${current_indentation}  ")
-        
+
         endif()
       endif()
       list(APPEND indented "${line}")
@@ -21403,11 +21403,11 @@ endfunction()
 ## `error(...)-><log entry>`
 ##
 ## Shorthand function for `log(<message> <refs...> --error)
-## 
+##
 ## see [log](#log)
 ##
 function(error)
-  log(--error ${ARGN})  
+  log(--error ${ARGN})
   return_ans()
 endfunction()
 
@@ -21433,8 +21433,8 @@ endfunction()
 ##   * `--info`     flag indicates a info output
 ##   * `--debug`    flag indicates a debug output
 ## * values
-##   * `--error-code <code>` 
-##   * `--level <n>` 
+##   * `--error-code <code>`
+##   * `--level <n>`
 ##   * `--push <section>` depth+1
 ##   * `--pop <section>`  depth-1
 ## * events
@@ -21442,8 +21442,8 @@ endfunction()
 ##
 ## *Examples*
 ## ```
-## log("this is a simple error" --error) => <% 
-##   log("this is a simple error" --error) 
+## log("this is a simple error" --error) => <%
+##   log("this is a simple error" --error)
 ##   template_out_json("${__ans}")
 ## %>
 ## ```
@@ -21503,7 +21503,7 @@ endfunction()
 
 
 ## `log_record_clear()-><void>`
-## 
+##
 ## removes all messages from the log record
 ##
 ##
@@ -21521,7 +21521,7 @@ endfunction()
 ## `log_last_error_entry()-><log entry>`
 ##
 ## returns the last log entry which is an error
-## 
+##
 function(log_last_error_entry)
   address_get(log_record)
   ans(log_record)
@@ -21571,7 +21571,7 @@ endfunction()
 
 ## `log_last_error_print()-><void>`
 ##
-## prints the last error message to the console  
+## prints the last error message to the console
 ##
 function(log_last_error_print)
   log_last_error_entry()
@@ -21666,7 +21666,7 @@ function(map_append_string map key str)
   endif()
   get_property(property_val GLOBAL PROPERTY "${map}.${key}" )
   set_property(GLOBAL PROPERTY "${map}.${key}" "${property_val}${str}")
-endfunction() 
+endfunction()
 
 
 
@@ -21678,16 +21678,16 @@ function(map_append_string map key str)
     set_property(GLOBAL APPEND_STRING PROPERTY "${map}.${key}" "${str}")
   endif()
   set(__ans PARENT_SCOPE)
-endfunction() 
+endfunction()
 
 
 
 
 
-## map_append_unique 
-## 
-## appends values to the <map>.<prop> and ensures 
-## that <map>.<prop> stays unique 
+## map_append_unique
+##
+## appends values to the <map>.<prop> and ensures
+## that <map>.<prop> stays unique
 function(map_append_unique map prop)
   map_tryget("${map}" "${prop}")
   ans(vals)
@@ -21734,11 +21734,11 @@ function(map_get this key)
   set(property_ref "${this}.${key}")
   get_property(property_exists GLOBAL PROPERTY "${property_ref}" SET)
   if(NOT property_exists)
-    message(FATAL_ERROR "map '${this}' does not have key '${key}'")    
+    message(FATAL_ERROR "map '${this}' does not have key '${key}'")
   endif()
-  
+
   get_property(property_val GLOBAL PROPERTY "${property_ref}")
-  return_ref(property_val)  
+  return_ref(property_val)
 endfunction()
 # faster way of accessing map.  however fails if key contains escape sequences, escaped vars or @..@ substitutions
 # if thats the case comment out this macro
@@ -21749,9 +21749,9 @@ macro(map_get __map_get_map __map_get_key)
     get_property(__map_get_property_exists GLOBAL PROPERTY "${__map_get_property_ref}" SET)
     if(NOT __map_get_property_exists)
       json_print("${__map_get_map}")
-      message(FATAL_ERROR "map '${__map_get_map}' does not have key '${__map_get_key}'")    
+      message(FATAL_ERROR "map '${__map_get_map}' does not have key '${__map_get_key}'")
     endif()
-  endif()  
+  endif()
 endmacro()
 
 
@@ -21783,14 +21783,14 @@ endfunction()
 
 
 
-function(map_has this key )  
+function(map_has this key )
   get_property(res GLOBAL PROPERTY "${this}.${key}" SET)
   return(${res})
 endfunction()
 
 # faster way of accessing map.  however fails if key contains escape sequences, escaped vars or @..@ substitutions
 # if thats the case comment out this macro
-macro(map_has this key )  
+macro(map_has this key )
   get_property(__ans GLOBAL PROPERTY "${this}.${key}" SET)
 endmacro()
 
@@ -21820,7 +21820,7 @@ endmacro()
 ## optimized version
 macro(map_new)
   address_new()
-  set_property(GLOBAL PROPERTY "${__ans}.__keys__" "") ## set keys (duck typing for map is that it has property keys)  
+  set_property(GLOBAL PROPERTY "${__ans}.__keys__" "") ## set keys (duck typing for map is that it has property keys)
 endmacro()
 
 
@@ -21933,9 +21933,9 @@ endfunction()
 
 
 
-# emits events parsing a list of map type elements 
+# emits events parsing a list of map type elements
 # expects a callback function that takes the event type string as a first argument
-# follwowing events are called (available context variables are listed as subelements: 
+# follwowing events are called (available context variables are listed as subelements:
 # value
 #   - list_length (may be 0 or 1 which is good for a null check)
 #   - content_length (contains the length of the content)
@@ -21955,7 +21955,7 @@ endfunction()
 #   - list_char_length (length of list content)
 #   - content_length (accumulated length of list elements + semicolon separators)
 #   - list_element (contains current list element)
-#   - list_element_index (contains current index )   
+#   - list_element_index (contains current index )
 # list_element_end
 #   - list_length(number of elements in list)
 #   - node (whole list)
@@ -21992,7 +21992,7 @@ endfunction()
 function(dfs_callback callback)
   # inner function
   function(dfs_callback_inner node)
- 
+
 
     is_map("${node}")
     ans(ismap)
@@ -22002,7 +22002,7 @@ function(dfs_callback callback)
       if(${list_length} LESS 2)
         dfs_callback_emit(value)
       else()
-        dfs_callback_emit(list_begin) 
+        dfs_callback_emit(list_begin)
         set(list_element_index 0)
         foreach(list_element ${node})
           list_push_back(path "${list_element_index}")
@@ -22037,7 +22037,7 @@ function(dfs_callback callback)
 
     dfs_callback_emit(map_begin)
 
-    
+
     set(map_element_index 0)
     foreach(map_element_key ${map_keys})
       map_tryget(${node} ${map_element_key})
@@ -22083,7 +22083,7 @@ endfunction()
 
 
 
-# matches the object list 
+# matches the object list
 function(list_match __list_match_lst )
   map_matches("${ARGN}")
   ans(predicate)
@@ -22145,7 +22145,7 @@ function(map_capture map )
   list_extract_flag(__map_capture_args --notnull)
   ans(__not_null)
   foreach(__map_capture_arg ${__map_capture_args})
-    
+
     if(__reassign AND "${__map_capture_arg}" MATCHES "(.+)[:=](.+)")
       set(__map_capture_arg_key ${CMAKE_MATCH_1})
       set(__map_capture_arg ${CMAKE_MATCH_2})
@@ -22172,11 +22172,11 @@ endfunction()
 ## map_capture_new(a b c)
 ## ans(res)
 ## json_print(${res})
-## --> 
+## -->
 ## {
 ##   "a":1,
 ##   "b":2,
-##   "c":3 
+##   "c":3
 ## }
 function(map_capture_new)
   map_new()
@@ -22300,9 +22300,9 @@ function(map_extract navigation_expressions)
     endif()
   endforeach()
   foreach(arg ${args})
-    set(${arg} PARENT_SCOPE)  
+    set(${arg} PARENT_SCOPE)
   endforeach()
-  
+
 endfunction()
 
 
@@ -22317,7 +22317,7 @@ endfunction()
     ans(it)
     while(true)
       map_iterator_break(it)
-    
+
       map_tryget(${lhs} "${it.key}")
       ans(lvalue)
 
@@ -22369,8 +22369,8 @@ endfunction()
 
 ## `(<map> <key> <any...>)-><any...>`
 ##
-## returns the value stored in map.key or 
-## sets the value at map.key to ARGN and returns 
+## returns the value stored in map.key or
+## sets the value at map.key to ARGN and returns
 ## the value
 function(map_get_default map key)
   map_has("${map}" "${key}")
@@ -22562,7 +22562,7 @@ endfunction()
     if(NOT "${lhs_length}" EQUAL "${rhs_length}")
       return(false)
     endif()
-  
+
     if(${lhs_length} GREATER 1)
       while(true)
         list(LENGTH lhs len)
@@ -22581,7 +22581,7 @@ endfunction()
         endif()
       endwhile()
       return(true)
-    endif() 
+    endif()
 
     is_map("${rhs}")
     ans(rhs_ismap)
@@ -22589,7 +22589,7 @@ endfunction()
     is_map("${lhs}")
     ans(lhs_ismap)
 
-  
+
     if(NOT lhs_ismap OR NOT rhs_ismap)
       return(false)
     endif()
@@ -22621,7 +22621,7 @@ endfunction()
 
 
 
-# returns a function which returns true of all 
+# returns a function which returns true of all
 function(map_matches attrs)
   obj("${attrs}")
   ans(attrs)
@@ -22772,7 +22772,7 @@ endfunction()
 function(map_path_get map)
   set(args ${ARGN})
   set(current "${map}")
-  foreach(arg ${args}) 
+  foreach(arg ${args})
     if(NOT current)
       return()
    endif()
@@ -22799,7 +22799,7 @@ function(map_path_set map path value)
 
   foreach(arg ${path})
     map_tryget("${current}" "${arg}")
-    ans(current) 
+    ans(current)
 
   endforeach()
 
@@ -22880,7 +22880,7 @@ function(map_pop_back map prop)
   list_pop_back(lst)
   ans(res)
   map_set("${map}" "${prop}" ${lst})
-  return_ref(res) 
+  return_ref(res)
 endfunction()
 
 
@@ -22998,7 +22998,7 @@ endfunction()
 
 
 
-# converts a map to a key value list 
+# converts a map to a key value list
 function(map_to_keyvaluelist map)
   map_keys(${map})
   ans(keys)
@@ -23068,7 +23068,7 @@ function(map_values this)
 	foreach(arg ${args})
 		map_get(${this}  ${arg})
     ans(val)
-		list(APPEND res ${val})	
+		list(APPEND res ${val})
 	endforeach()
   return_ref(res)
 endfunction()
@@ -23091,11 +23091,11 @@ endfunction()
 
 
 
-## function which generates a map 
-## out of the passed args 
+## function which generates a map
+## out of the passed args
 ## or just returns the arg if it is already valid
 function(mm)
-  
+
   set(args ${ARGN})
   # assignment
   list(LENGTH args len)
@@ -23128,7 +23128,7 @@ endfunction()
     map_keys("${map}")
     ans(keys)
     set(iterator "${map}" before_start ${keys})
-    return_ref(iterator)    
+    return_ref(iterator)
   endfunction()
 
 
@@ -23138,7 +23138,7 @@ endfunction()
 
 # use this macro inside of a while(true) loop it breaks when the iterator is over
 # e.g. this prints all key values in the map
-# while(true) 
+# while(true)
 #   map_iterator_break(myiterator)
 #   message("${myiterator.key} = ${myiterator.value}")
 # endwhile()
@@ -23155,7 +23155,7 @@ endmacro()
 ## this function moves the map iterator to the next position
 ## and returns true if it was possible
 ## e.g.
-## map_iterator_next(myiterator) 
+## map_iterator_next(myiterator)
 ## ans(ok) ## is true if iterator had a next element
 ## variables ${myiterator.key} and ${myiterator.value} are available
 macro(map_iterator_next it_ref)
@@ -23170,7 +23170,7 @@ macro(map_iterator_next it_ref)
     else()
       set(__ans false)
       set("${it_ref}.end" true)
-    endif() 
+    endif()
   else()
     set("${it_ref}.end" true)
     set(__ans false)
@@ -23212,11 +23212,11 @@ endmacro()
 
 
 
-function(map_clone original type) 
+function(map_clone original type)
   if("${type}" STREQUAL "DEEP")
     map_clone_deep("${original}")
     return_ans()
-  elseif("${type}" STREQUAL "SHALLOW") 
+  elseif("${type}" STREQUAL "SHALLOW")
     map_clone_shallow("${original}")
     return_ans()
   else()
@@ -23231,10 +23231,10 @@ endfunction()
 function(map_clone_deep original)
   map_clone_shallow("${original}")
   ans(result)
-    
+
   is_map("${result}" )
   ans(ismap)
-  if(ismap) 
+  if(ismap)
     map_keys("${result}" )
     ans(keys)
     foreach(key ${keys})
@@ -23341,14 +23341,14 @@ function(map_equal lhs rhs)
 		return(false)
 	endif()
 
-	is_map(${rhs})	
+	is_map(${rhs})
 	ans(rhs_ismap)
 
 	if(NOT rhs_ismap)
 		return(false)
 	endif()
 
-	# if already visited return true as a parent call will correctly 
+	# if already visited return true as a parent call will correctly
 	# determine equality
 	map_tryget(${visited} ${lhs})
 	ans(lhs_isvisited)
@@ -23366,7 +23366,7 @@ function(map_equal lhs rhs)
 	map_set(${visited} ${lhs} true)
 	map_set(${visited} ${rhs} true)
 
-	# compare keys of lhs and rhs	
+	# compare keys of lhs and rhs
 	map_keys(${lhs} )
 	ans(lhs_keys)
 	map_keys(${rhs} )
@@ -23376,7 +23376,7 @@ function(map_equal lhs rhs)
 	set_isequal(lhs_keys rhs_keys)
 	ans(keys_equal)
 
-	if(NOT keys_equal)		
+	if(NOT keys_equal)
 		return(false)
 	endif()
 
@@ -23387,8 +23387,8 @@ function(map_equal lhs rhs)
 		ans(lhs_property_value)
 		map_get(${rhs}  ${key})
 		ans(rhs_property_value)
-		
-		map_equal("${lhs_property_value}" "${rhs_property_value}" ${visited})		
+
+		map_equal("${lhs_property_value}" "${rhs_property_value}" ${visited})
 		ans(val_equal)
 		if(NOT val_equal)
 			return(false)
@@ -23405,7 +23405,7 @@ endfunction()
 
 
 ## compares two maps for value equality
-## lhs and rhs may be objectish 
+## lhs and rhs may be objectish
 function(map_equal_obj lhs rhs)
   obj("${lhs}")
   ans(lhs)
@@ -23422,7 +23422,7 @@ endfunction()
 # on every key value pair in map
 # exmpl: map = {id:'1',val:'3'}
 # map_foreach("${map}" "(k,v)-> message($k $v)")
-# prints 
+# prints
 #  id;1
 #  val;3
 function(map_foreach map action)
@@ -23488,7 +23488,7 @@ function(map_merge )
 
 	map_new()
   ans(res)
-  
+
 	foreach(map ${lst})
 		map_keys(${map} )
 		ans(keys)
@@ -23507,7 +23507,7 @@ function(map_merge )
 				map_union(${existing_val}  ${val})
 				ans(existing_val)
 			else()
-				
+
 				map_set(${res} ${key} ${val})
 			endif()
 		endforeach()
@@ -23530,7 +23530,7 @@ function(map_union)
 	if(NOT res)
 		message(FATAL_ERROR "map_union: no maps passed")
 	endif()
-	# loop through the keys of every map	
+	# loop through the keys of every map
 	foreach(map ${lst})
 		map_keys(${map} )
 		ans(keys)
@@ -23550,18 +23550,18 @@ endfunction()
 
 ## `([!]<expr> <value>|("="|"+=" <expr><call>)) -> <any>`
 ##
-## the assign function allows the user to perform some nonetrivial 
-## operations that other programming languages allow 
+## the assign function allows the user to perform some nonetrivial
+## operations that other programming languages allow
 ##
 ## Examples
-## 
-  function(assign __lvalue __operation __rvalue)    
+##
+  function(assign __lvalue __operation __rvalue)
     ## is a __value
 
     if(NOT "${__operation}" MATCHES "^(=|\\+=)$" )
       ## if no equals sign is present then interpret all
       ## args as a simple literal cmake value
-      ## this allows the user to set an expression to 
+      ## this allows the user to set an expression to
       ## a complicated string with spaces without needing
       ## to single quote it
       set(__value ${__operation} ${__rvalue} ${ARGN})
@@ -23589,7 +23589,7 @@ endfunction()
         if(NOT __value_ref)
           call("${__ref}" ${__args})
           ans(__value)
-      
+
         else()
           map_tryget(${__value} property)
           ans(__prop)
@@ -23614,7 +23614,7 @@ endfunction()
             endforeach()
           endif()
         endif()
-      else()      
+      else()
         ref_nav_get("${${__ref}}" ${__rvalue})
         ans(__value)
       endif()
@@ -23673,7 +23673,7 @@ endfunction()
         endif()
       endforeach()
     endif()
-    
+
     set("${ref_name}" "${current}" PARENT_SCOPE)
   endfunction()
 
@@ -23708,9 +23708,9 @@ function(map_navigate result navigation_expression)
 	string(LENGTH "${ref}" len )
 	string(SUBSTRING "${navigation_expression}" ${len} -1 navigation_expression )
 
-	
 
-	# if ref is a ref to a ref dereference it :D 
+
+	# if ref is a ref to a ref dereference it :D
 	set(not_defined true)
 	if(DEFINED ${ref})
 		set(ref ${${ref}})
@@ -23732,13 +23732,13 @@ function(map_navigate result navigation_expression)
 
 	# match all navigation expression parts
 	string(REGEX MATCHALL  "(\\[([0-9][0-9]*)\\])|(\\.[a-zA-Z0-9_\\-][a-zA-Z0-9_\\-]*)" parts "${navigation_expression}")
-	
-	# loop through parts and try to navigate 
+
+	# loop through parts and try to navigate
 	# if any part of the path is invalid return ""
 	set(current "${ref}")
 	foreach(part ${parts})
 		string(REGEX MATCH "[a-zA-Z0-9_\\-][a-zA-Z0-9_\\-]*" index "${part}")
-		string(SUBSTRING "${part}" 0 1 index_type)	
+		string(SUBSTRING "${part}" 0 1 index_type)
 		if(index_type STREQUAL ".")
 			# get by key
 			map_tryget(${current}  "${index}")
@@ -23770,7 +23770,7 @@ function(map_navigate result navigation_expression)
 	# current  contains the navigated value
 	set(${result} "${current}" PARENT_SCOPE)
 endfunction()
-	
+
 
 
 
@@ -23805,25 +23805,25 @@ function(map_navigate_set navigation_expression)
 		set(${ref} "${args}" PARENT_SCOPE)
 		return()
 	endif()
-	
+
 
 
 
 	# match all navigation expression parts
 	string(REGEX MATCHALL  "(\\[([0-9][0-9]*)\\])|(\\.[a-zA-Z0-9_\\-][a-zA-Z0-9_\\-]*)" parts "${navigation_expression}")
-	
-	# loop through parts and try to navigate 
+
+	# loop through parts and try to navigate
 	# if any part of the path is invalid return ""
 
 	set(current "${${ref}}")
-	
-	
+
+
 	while(parts)
 		list(GET parts 0 part)
 		list(REMOVE_AT parts 0)
-		
+
 		string(REGEX MATCH "[a-zA-Z0-9_\\-][a-zA-Z0-9_\\-]*" index "${part}")
-		string(SUBSTRING "${part}" 0 1 index_type)	
+		string(SUBSTRING "${part}" 0 1 index_type)
 
 
 
@@ -23831,20 +23831,20 @@ function(map_navigate_set navigation_expression)
 		# first one could not be ref so create ref and set output
 		is_address("${current}")
 		ans(isref)
-		
+
 		if(NOT isref)
 			map_new()
     	ans(current)
 			set(${ref} ${current} PARENT_SCOPE)
-		endif()		
-		
+		endif()
+
 		# end of navigation string reached, set value
 		if(NOT parts)
 			map_set(${current} ${index} "${args}")
 			return()
 		endif()
 
-		
+
 		map_tryget(${current}  "${index}")
 		ans(next)
 		# create next element in change
@@ -23861,7 +23861,7 @@ function(map_navigate_set navigation_expression)
 
 		set(current ${next})
 
-		
+
 	endwhile()
 endfunction()
 
@@ -23874,7 +23874,7 @@ function(map_navigate_set_if_missing navigation_expr)
   map_navigate(result ${navigation_expr})
   if(NOT result OR "${result}" STREQUAL "${navigation_expr}")
     map_navigate_set("${navigation_expr}" ${ARGN})
-  endif() 
+  endif()
 endfunction()
 
 
@@ -23910,7 +23910,7 @@ function(nav navigation_expression)
     ans(args)
   elseif("_${first}" STREQUAL _FORMAT)
     list_pop_front( args)
-    format("${args}")  
+    format("${args}")
     ans(args)
   elseif("_${first}" STREQUAL _APPEND OR "_${first}" STREQUAL "_+=")
     list_pop_front(args)
@@ -23928,7 +23928,7 @@ function(nav navigation_expression)
  elseif("_${first}" STREQUAL _ASSIGN OR "_${first}" STREQUAL _= OR "_${first}" STREQUAL _*)
     list_pop_front( args)
     map_navigate(args "${args}")
-    
+
  elseif("_${first}" STREQUAL _CLONE_DEEP)
     list_pop_front( args)
     map_navigate(args "${args}")
@@ -24031,10 +24031,10 @@ function(query_literal)
   query_literal_definition_add(lt query_literal_lt "^<([^=].*)")
   query_literal_definition_add(eq query_literal_eq "^=([^=].*)")
   query_literal_definition_add(match query_literal_match "^\\?/(.+)/$" )
-  query_literal_definition_add(strequal  query_literal_strequal "(.+)")  
+  query_literal_definition_add(strequal  query_literal_strequal "(.+)")
   query_literal_definition_add(where query_literal_where "" )
 
-    
+
   function(query_literal query_literal_instance )
     if("${query_literal_instance}_" STREQUAL "_")
       return()
@@ -24053,7 +24053,7 @@ function(query_literal)
     else()
       # is predicate?
       if(false)
-        
+
       else()
         query_literal_definitions_with_regex()
         ans(definitions)
@@ -24185,12 +24185,12 @@ endfunction()
     is_address("${input}")
     ans(is_ref)
     if(is_ref)
-      map_import_properties(${input} 
+      map_import_properties(${input}
         match
         matchall
         replace
       )
-    else()  
+    else()
       set(match "${input}")
       set(matchall)
     endif()
@@ -24274,7 +24274,7 @@ macro(query_literal_definitions_with_regex)
 endmacro()
 macro(query_literal_definitions)
   map_value(__query_literal_handlers)
-endmacro() 
+endmacro()
 
 function(query_literal_definition_function type)
   map_tryget(__query_literal_handlers "${type}")
@@ -24292,7 +24292,7 @@ endmacro()
 
 
 ##  `(<clauses: <clause: { <selector>:<literal...> }>...> <any...>)-><bool>`
-## 
+##
 ##  queries the specified args for the specified clauses in conjunctive normal form
 function(query_match_cnf clauses)
   data("${clauses}")
@@ -24315,14 +24315,14 @@ endfunction()
 ## `(<query: { <<selector:<navigation expression>> : <query literal>>...  } > <any>)-><any>`
 ##
 ## selects values depending on the specified query
-## example 
+## example
 ## ```
 ## assign(input_data = "{
 ##   a: 'hello world',
 ##   b: 'goodbye world',
 ##   c: {
 ##    d: [1,2,3,4,5]
-##   } 
+##   }
 ## }")
 ## assign(result = query_selection("{a:{regex:{matchall:'[^ ]+'}}" ${input_data}))
 ## assertf("{result.a}" EQUALS  "hello" "world")
@@ -24345,10 +24345,10 @@ function(query_selection query)
     map_tryget(${query} "${selector}")
     ans(literal)
 
-    ## check to see if selector ends with [...] 
+    ## check to see if selector ends with [...]
     ## which indicates that action should be performed
-    ## foreach item 
-    ## 
+    ## foreach item
+    ##
     set(target_property)
 
     if("${selector}" MATCHES "(.+)=>(.+)")
@@ -24528,11 +24528,11 @@ endfunction()
 
 
 ## `(<current value:<any>> ["&"]<navigation expression>)-><any>`
-## navigates the specified value and returns the value the navigation expression 
+## navigates the specified value and returns the value the navigation expression
 ## points to.  If the value does not exist nothing is returned
-## 
+##
 ## if the expression is prepended by an ampersand `&` the current lvalue is returned.
-## 
+##
 ## **Examples**<%
 ##  set(data_input "{a:{b:{c:3},d:[{e:4},{e:5}]}}")
 ##  script("${data_input}")
@@ -24548,11 +24548,11 @@ endfunction()
 ##  set(asdas 123)
 ## %>
 ## let `${data}` be `@json(${data_input})`
-## then 
+## then
 ## * @ref_nav_get_example(a)
 ## * @ref_nav_get_example(a.b.c)
 ## * @ref_nav_get_example(a.b.c.d)
-## * @ref_nav_get_example(a.d[1].e) 
+## * @ref_nav_get_example(a.d[1].e)
 ## * @ref_nav_get_example(a.d[0].e)
 ## * @ref_nav_get_example(a.d)
 ## * @ref_nav_get_example()
@@ -24648,7 +24648,7 @@ function(ref_nav_set base_value expression)
       if(is_ref)
           set(current_ref "${current_value}")
           set(current_property "${current_expression}")
-          set(current_ranges) 
+          set(current_ranges)
       else()
         list_push_front(expression "${current_expression}")
         break()
@@ -24666,7 +24666,7 @@ function(ref_nav_set base_value expression)
 
 
   set(value ${ARGN})
-  
+
   # if the expressions are left and create_path is not specified
   # this will cause an error else the rest of the path is created
   list(LENGTH expression expression_count)
@@ -24695,7 +24695,7 @@ function(ref_nav_set base_value expression)
   endif()
 
   ## either return a new base balue or set the property of the last existing ref
-  if(NOT current_ref)    
+  if(NOT current_ref)
     set(base_value "${current_value}")
   else()
     ref_prop_set("${current_ref}" "${current_property}" "${current_value}")
@@ -24783,7 +24783,7 @@ function(obj_get this key)
   ans(getter)
   if(NOT getter)
     map_get_special("${this}" "getter")
-    ans(getter)    
+    ans(getter)
     if(NOT getter)
       obj_default_getter("${this}" "${key}")
       return_ans()
@@ -24835,7 +24835,7 @@ endfunction()
 
 
 
-# 
+#
 function(obj_member_call this key)
   #message("obj_member_call ${this}.${key}(${ARGN})")
   map_get_special("${this}" "member_call")
@@ -24862,9 +24862,9 @@ function(obj_new)
 	if(NOT has_constructor)
 		set(constructor Object)
 	endif()
-	
 
-	if(NOT COMMAND "${constructor}")	
+
+	if(NOT COMMAND "${constructor}")
 		message(FATAL_ERROR "obj_new: invalid type defined: ${constructor}, expected a cmake function")
 	endif()
 
@@ -24924,7 +24924,7 @@ endfunction()
     ans(has_own_property)
     if(has_own_property)
       map_tryget("${obj}" "${key}")
-      return_ans()  
+      return_ans()
     endif()
 
     map_get_special("${obj}" "prototype")
@@ -24993,7 +24993,7 @@ function(obj_default_member_call this key)
     message(FATAL_ERROR "member does not exists '${this}.${key}'")
   endif()
   # this elevates all values of obj into the execution scope
-  #obj_import("${this}")  
+  #obj_import("${this}")
   call("${member_function}"(${ARGN}))
   return_ans()
 endfunction()
@@ -25027,7 +25027,7 @@ function(obj_injectable_callmember this key)
   set(call_args ${ARGN})
   set(call_key ${key})
   set(call_result)
-  
+
   if(before_call)
     call("${before_call}"())
   endif()
@@ -25065,10 +25065,10 @@ endfunction()
         script("${arg}")
         ans(val)
       else()
-        set(val "${arg}")        
+        set(val "${arg}")
       endif()
       list(APPEND result "${val}")
-    endforeach()  
+    endforeach()
     return_ref(result)
   endfunction()
 
@@ -25083,7 +25083,7 @@ function(new)
 endfunction()
 
 
-  
+
 
 
 
@@ -25151,8 +25151,8 @@ function(obj_declare_call obj out_function_name)
   function_new()
   ans(callfunc)
   map_set_special("${obj}" call "${callfunc}")
-  set("${out_function_name}" "${callfunc}" PARENT_SCOPE)  
-endfunction()  
+  set("${out_function_name}" "${callfunc}" PARENT_SCOPE)
+endfunction()
 
 
 
@@ -25182,7 +25182,7 @@ function(obj_declare_get_keys obj function_ref)
 
 
 
-  function(obj_declare_member_call obj function_ref) 
+  function(obj_declare_member_call obj function_ref)
     function_new()
     ans(func)
     map_set_special(${obj} member_call ${func})
@@ -25192,7 +25192,7 @@ function(obj_declare_get_keys obj function_ref)
 
 
 
-## declares a programmou able property 
+## declares a programmou able property
 ## if one var arg is specified the function is ussed as a getter
 ## if there are more the one args you need to label the getter with --getter and setter with --setter
 ## if no var arg is specified the two functions will be created call
@@ -25371,12 +25371,12 @@ endfunction()
 function(obj_type_get type)
 	if(NOT COMMAND ${type})
 		message(FATAL_ERROR "obj_new: only cmake functions are allowed as types, '${type}' is not function")
-	endif()	
+	endif()
 	set(base)
 	#get_property(base GLOBAL PROPERTY "type_${type}")
 	if(NOT base)
 		map_new()
-		ans(base)		
+		ans(base)
 		set_property(GLOBAL PROPERTY "type_${type}" "${base}")
 		map_set_special("${base}" constructor "${type}")
 	endif()
@@ -25386,7 +25386,7 @@ endfunction()
 
 
 
-## shorthand for obj_declare_property 
+## shorthand for obj_declare_property
 ##
 macro(property)
   obj_declare_property(${this} ${ARGN})
@@ -25547,7 +25547,7 @@ function(this_inherit baseType)
 	map_get_special(${base} constructor)
 	ans(super)
 	function_import("${super}" as base_constructor REDEFINE)
-	clr()	
+	clr()
   set(__current_constructor "${super}")
   obj_setprototype(${this} ${base})
 	base_constructor(${ARGN})
@@ -25600,10 +25600,10 @@ endfunction()
 ## returns a `<dependency changeset>`
 ## ```
 ## <dependency changeset>::={
-##  <<admissable uri>:<dependency constraint>>... 
+##  <<admissable uri>:<dependency constraint>>...
 ## }
-## <change> ::= <admissable uri> [" " <dependency constraint> | "remove"  ] 
-## ``` 
+## <change> ::= <admissable uri> [" " <dependency constraint> | "remove"  ]
+## ```
 ##
 function(package_dependency_changeset)
   is_address("${ARGN}")
@@ -25627,7 +25627,7 @@ endfunction()
 ## }
 ## ```
 ## parses a changeset from the specified console friendly input arguments
-## 
+##
 function(package_dependency_changeset_parse)
   map_new()
   ans(changeset)
@@ -25666,7 +25666,7 @@ function(package_dependency_change_parse)
   endif()
 
   is_address(${action})
-  ans(isref)  
+  ans(isref)
   if(isref)
     set(action add ${action})
   elseif("${action}" MATCHES "^((add)|(remove)|(optional)|(conflict))$")
@@ -25683,7 +25683,7 @@ endfunction()
 
 
 ## `(<package source> <package handle>  [--cache <map>] )-> <dependency configuration>`
-##  
+##
 ## the `<dependency configuration> ::= { <<dependable uri>:<bool>>... }`
 ## is a map which indicates which dependencies MUST BE present and which MAY NOT
 ##
@@ -25693,8 +25693,8 @@ endfunction()
 ##
 ##  **sideffects**
 ## *sets the `dependencies` property of all `package handle`s to the configured dependency using `package_dependency_configuration_set`.
-##  
-function(package_dependency_configuration package_source root_handle)  
+##
+function(package_dependency_configuration package_source root_handle)
   package_dependency_resolve_and_satisfy("${package_source}" "${root_handle}" ${ARGN})
   ans(dependency_problem)
 
@@ -25724,9 +25724,9 @@ endfunction()
 
 
 ## `(<lhs: <dependency configuration>> <rhs:<dependency configuration>>-><changeset>`
-## 
+##
 ## compares two dependency configurations and returns a resulting changeset
-## the `<changeset> ::= { <dependable uri>:"install"|"uninstall"}` 
+## the `<changeset> ::= { <dependable uri>:"install"|"uninstall"}`
 function(package_dependency_configuration_changeset lhs rhs)
     set(package_uris)
     map_keys(${lhs})
@@ -25762,7 +25762,7 @@ function(package_dependency_configuration_changeset lhs rhs)
     endforeach()
 
     return_ref(changeset)
-endfunction()  
+endfunction()
 
 
 
@@ -25770,8 +25770,8 @@ endfunction()
 ##
 ##
 ## takes a specific dependency configuration and a set of package descriptors from
-## a package graph obtained by package_dependency_graph_resolve and updates 
-## the package_handle's dependencies property to contain a single unique package handle 
+## a package graph obtained by package_dependency_graph_resolve and updates
+## the package_handle's dependencies property to contain a single unique package handle
 ## for every admissable_uri. before the dependencies property maps admissable_uri x {package uri x package handle}
 ##
 function(package_dependency_configuration_set configuration)
@@ -25815,7 +25815,7 @@ endfunction()
 
 ## `()-><dependency configuration>`
 ##
-## 
+##
 function(package_dependency_configuration_update package_source project_handle)
   set(args ${ARGN})
   ## get cache if available - else create a new one
@@ -25848,7 +25848,7 @@ endfunction()
 ## <package dependency constraint clause> ::= {
 ##   reason: <string>
 ##   literals: <["!"] <package uri>>...
-## } 
+## }
 ## ```
 ##
 ## creates the specified clause and returns it. expects literals to be package handles
@@ -25877,7 +25877,7 @@ function(package_dependency_constraint_clause_new constraint reason)
     endif()
   endforeach()
 
-  ## add clause to constraint's claues property and set 
+  ## add clause to constraint's claues property and set
   ## the clause's constraint property
   map_set(${clause} constraint ${constraint})
   map_append(${constraint} clauses ${clause})
@@ -25889,12 +25889,12 @@ endfunction()
 
 
 ## `(<dependency problem>) -> <package dependency constraint clause>...`
-## 
+##
 ## **note** this function will be refactored along with `package_dependency_constraint_derive_single_package` and `package_dependency_constraint_derive`
 ## creates cnf clauses for all dependencies in the dependency graph
 ## this is done by walking all package handles of the `dependency_problem.package_graph`
 ## and calling all `package_dependency_constraint_derive_single_package` on each of the
-function(package_dependency_constraint_derive_all dependency_problem) 
+function(package_dependency_constraint_derive_all dependency_problem)
   map_tryget(${dependency_problem} package_graph)
   ans(package_graph)
 
@@ -25903,9 +25903,9 @@ function(package_dependency_constraint_derive_all dependency_problem)
   ans(package_handles)
 
 set(derived_constraints)
-  ## loop through all package handles in dependency graph 
+  ## loop through all package handles in dependency graph
   ## and add their dependency clauses to clauses sequence
-  foreach(package_handle ${package_handles})      
+  foreach(package_handle ${package_handles})
     package_dependency_constraint_derive_single_package("${dependency_problem}" "${package_handle}")
     ans_append(derived_constraints)
   endforeach()
@@ -25931,7 +25931,7 @@ endfunction()
 ## uses the constraint handlers specified in `dependency_problem.constraint_handlers`
 function(package_dependency_constraint_derive_single_dependency
   dependency_problem
-  dependee_handle 
+  dependee_handle
   admissable_uri
   dependency_constraint
   possible_dependencies
@@ -25960,10 +25960,10 @@ function(package_dependency_constraint_derive_single_dependency
     ans(constraint_handlers)
     foreach(handler ${constraint_handlers})
       call2(
-        "${handler}" 
-        "${dependency_problem}" 
-        "${dependee_handle}" 
-        "${admissable_uri}" 
+        "${handler}"
+        "${dependency_problem}"
+        "${dependee_handle}"
+        "${admissable_uri}"
         "${dependency_constraint}"
         "${possible_dependencies}"
         )
@@ -26009,8 +26009,8 @@ endfunction()
 ## `(<clauses:<sequence>> <dependee_handle:<package handle>>)-><void>`
 ##
 ##
-## adds depdency clauses resulting from dependee handle to the 
-## clauses sequence.  Currently only supports  
+## adds depdency clauses resulting from dependee handle to the
+## clauses sequence.  Currently only supports
 ##
 ## **currently only supports true, false and "" constraints**
 function(package_dependency_constraint_derive_single_package dependency_problem dependee_handle)
@@ -26029,9 +26029,9 @@ function(package_dependency_constraint_derive_single_package dependency_problem 
 
   ## todo:  this has to become nicer.....
   ## actually the whole following section is pretty stupid.
-  ## it should just call package_dependency_constraint_derive_single_dependency on 
+  ## it should just call package_dependency_constraint_derive_single_dependency on
   ## every package handle / dependecy problem
-  ## and every constraint handler should then be able to 
+  ## and every constraint handler should then be able to
   ## get its own dependencies, possibley with a helper function
   ## ala get_constraint_and_dependencies()....
   map_new()
@@ -26044,11 +26044,11 @@ function(package_dependency_constraint_derive_single_package dependency_problem 
     "${dependency_problem}"
     "${dependee_handle}"
     "self"
-    "${package_constraint}" 
+    "${package_constraint}"
     "${empty}")
   ans(derived_constraints)
 
-  
+
 
   foreach(admissable_uri ${admissable_uris})
     map_tryget("${constraints}" "${admissable_uri}")
@@ -26057,12 +26057,12 @@ function(package_dependency_constraint_derive_single_package dependency_problem 
     ## gets all dependency handles for admissable_uri
     map_tryget("${dependencies}" "${admissable_uri}")
     ans(dependency_handle_map)
-    
+
     package_dependency_constraint_derive_single_dependency(
       "${dependency_problem}"
-      "${dependee_handle}" 
+      "${dependee_handle}"
       "${admissable_uri}"
-      "${dependency_constraint}" 
+      "${dependency_constraint}"
       "${dependency_handle_map}"
     )
     ans_append(derived_constraints)
@@ -26077,13 +26077,13 @@ endfunction()
 
 
 function(package_dependency_constraint_incompatible
-  dependency_problem 
+  dependency_problem
   dependee
-  admissable_uri 
+  admissable_uri
   dependency_constraint
   possible_dependencies
   )
-  
+
   ## ignore constraints which are not "incompatible" type
   map_tryget(${dependency_constraint} constraint_type)
   ans(constraint_type)
@@ -26101,7 +26101,7 @@ function(package_dependency_constraint_incompatible
   foreach(dependency ${dependencies})
     package_dependency_constraint_clause_new(
       ${constraint}
-      "'{dependee.uri}' is incompatible with '{dependency.uri}'" 
+      "'{dependee.uri}' is incompatible with '{dependency.uri}'"
       "!${dependee}" "!${dependency}")
   endforeach()
 
@@ -26113,9 +26113,9 @@ endfunction()
 
 
 function(package_dependency_constraint_mutually_exclusive
-   dependency_problem 
+   dependency_problem
   dependee_handle
-  admissable_uri 
+  admissable_uri
   dependency_constraint
   possible_dependencies
   )
@@ -26129,7 +26129,7 @@ function(package_dependency_constraint_mutually_exclusive
 
   package_dependency_constraint_new("mutually_exclusive" "${dependee_handle}")
   ans(constraint)
-  
+
   ## loop through all dependencies and add the mutual exclusitivity as a clause to the the cosntraint
   map_values(${possible_dependencies})
   ans(dependencies)
@@ -26139,7 +26139,7 @@ function(package_dependency_constraint_mutually_exclusive
     foreach(rhs ${current_dependencies})
       package_dependency_constraint_clause_new(
         ${constraint}
-        "mutually exclusivivity" 
+        "mutually exclusivivity"
         "!${lhs}" "!${rhs}")
     endforeach()
   endforeach()
@@ -26151,7 +26151,7 @@ endfunction()
 
 
 
-## `(<type:<string>> <package handle>)-> <package dependency constraint>` 
+## `(<type:<string>> <package handle>)-> <package dependency constraint>`
 ##
 ## creates a new dependecy constraint.  The type must be unqiue.
 function(package_dependency_constraint_new type package_handle)
@@ -26168,9 +26168,9 @@ endfunction()
 
 
 function(package_dependency_constraint_optional
-   dependency_problem 
+   dependency_problem
   dependee_handle
-  admissable_uri 
+  admissable_uri
   dependency_constraint
   possible_dependencies)
 
@@ -26193,13 +26193,13 @@ endfunction()
 
 ## creates the dependency required cosntraint for the specified dependee
 function(package_dependency_constraint_required
-  dependency_problem 
+  dependency_problem
   dependee
-  admissable_uri 
+  admissable_uri
   dependency_constraint
   possible_dependencies
   )
-  
+
   ## if constraint_type is not required ignore
   map_tryget(${dependency_constraint} constraint_type)
   ans(type)
@@ -26213,7 +26213,7 @@ function(package_dependency_constraint_required
   package_dependency_constraint_new("required" "${dependee}")
   ans(constraint)
 
-  ## either depndee is not installed 
+  ## either depndee is not installed
   set(clause "!${dependee}")
   foreach(dependency ${dependencies})
     ## or one of the dependencies is installed
@@ -26223,7 +26223,7 @@ function(package_dependency_constraint_required
 
   package_dependency_constraint_clause_new(
     ${constraint}
-    "{dependee.uri} => {admissable_uri} requires one of {possible_dependencies.__keys__}" 
+    "{dependee.uri} => {admissable_uri} requires one of {possible_dependencies.__keys__}"
     ${clause})
 
 
@@ -26235,9 +26235,9 @@ endfunction()
 
 
 function(package_dependency_constraint_root_package
-  dependency_problem 
+  dependency_problem
   dependee_handle
-  admissable_uri 
+  admissable_uri
   dependency_constraint
   possible_dependencies)
 
@@ -26252,7 +26252,7 @@ function(package_dependency_constraint_root_package
 
   if(__root_handle_added)
     return()
-  endif() 
+  endif()
 
 
 
@@ -26271,7 +26271,7 @@ function(package_dependency_constraint_root_package
 
   package_dependency_constraint_clause_new(
     ${constraint}
-    "root package is always required" 
+    "root package is always required"
     "${dependee_handle}")
 
   return(${constraint})
@@ -26281,12 +26281,12 @@ endfunction()
 
 
 ## `()->`
-## 
+##
 ## constrains the semantic version of a dependency
 function(package_dependency_constraint_semantic_version
-  dependency_problem 
+  dependency_problem
   dependee
-  admissable_uri 
+  admissable_uri
   dependency_constraint
   possible_dependencies)
 
@@ -26305,14 +26305,14 @@ function(package_dependency_constraint_semantic_version
   ans(compiled_version_constraint)
 
 
-  ## create the package constraint to return 
+  ## create the package constraint to return
   package_dependency_constraint_new("semantic_version" "${dependee}")
   ans(constraint)
 
 
-  ## loop through all possible dependencies and if the version constraint does not hold 
+  ## loop through all possible dependencies and if the version constraint does not hold
   ## add a incompatibility clause to the cosntraint
-  map_values(${possible_dependencies})  
+  map_values(${possible_dependencies})
   ans(dependencies)
   foreach(dependency ${dependencies})
 
@@ -26368,7 +26368,7 @@ function(package_dependency_graph_resolve package_source)
     endif()
 
     map_set("${context}" "${package_uri}" ${package_handle})
-    
+
     package_dependency_resolve("${package_source}"  "${package_handle}" --cache "${cache}")
     ## flatten the map twice -> results in package handles
     map_flatten(${__ans})
@@ -26415,10 +26415,10 @@ endfunction()
   function(pkg_inst)
     pkg_load()
     ans(project_handle)
-    
+
     default_package_source()
     ans(package_source)
-    
+
     map_tryget(${project_handle} dependency_configuration)
     ans(configuration)
 
@@ -26447,11 +26447,11 @@ endfunction()
       else()
         if(EXISTS "${target}")
           message("deleting ${package_uri} from ${target}")
-          
+
           rm(-r "${target}")
         endif()
       endif()
-    endforeach()  
+    endforeach()
 
     return(${configuration})
 
@@ -26488,10 +26488,10 @@ function(pkg_dep)
   ans(package_source)
   pkg_load()
   ans(project_handle)
- 
+
   project_update_dependencies(${package_source} ${project_handle} ${args})
   ans(res)
- 
+
   pkg_save(${project_handle})
   return_ref(res)
 endfunction()
@@ -26516,9 +26516,9 @@ endfunction()
     endif()
 
     package_dependency_configuration_update(
-      ${package_source} 
-      ${project_handle} 
-      ${ARGN} 
+      ${package_source}
+      ${project_handle}
+      ${ARGN}
       --cache ${cache}
     )
     ans(configuration)
@@ -26546,11 +26546,11 @@ function(package_dependency_problem_complete dependency_problem)
 
   map_tryget(${result} success)
   ans(success)
-  
+
 
   if(success)
     map_tryget(${result} assignments)
-    ans(assignments)  
+    ans(assignments)
     map_tryget(${dependency_problem} cnf)
     ans(cnf)
     literal_to_atom_assignments("${cnf}" "${assignments}")
@@ -26577,11 +26577,11 @@ function(package_dependency_problem_init dependency_problem)
     message(FATAL_ERROR "expected a dependency problem object")
   endif()
 
-  ## create boolean satisfiablitiy problem 
+  ## create boolean satisfiablitiy problem
   ## by getting all clauses
   package_dependency_constraint_derive_all(${dependency_problem})
   ans(clauses)
-  map_set(${dependency_problem} clauses "${clauses}")  
+  map_set(${dependency_problem} clauses "${clauses}")
 
   ## reformulate clause objects to cnf clauses
   sequence_new()
@@ -26614,17 +26614,17 @@ endfunction()
 ## <package dependency problem> ::= {
 ##  package_graph: {<<package uri>:<package handle>>...}
 ##  constraint_handlers: <callable:<(...)-><package dependency constraint>>>...
-##  root_handle: <package handle>   
+##  root_handle: <package handle>
 ##  cnf :  <cnf>          # the conjuntive normal form SAT problem formulation
 ##  dp_result: {...}      # result of the SAT solver
-##  clauses: <package dependency constraint clause 
+##  clauses: <package dependency constraint clause
 ## }
 ## ```
 ## creates a package dependency problem context
 function(package_dependency_problem_new package_graph root_handle)
   set(args ${ARGN})
 
-  set(constraint_handlers 
+  set(constraint_handlers
     package_dependency_constraint_required
     package_dependency_constraint_optional
     package_dependency_constraint_mutually_exclusive
@@ -26634,7 +26634,7 @@ function(package_dependency_problem_new package_graph root_handle)
     )
   map_capture_new(
     package_graph
-    root_handle 
+    root_handle
     constraint_handlers
     )
   return_ans()
@@ -26654,7 +26654,7 @@ function(package_dependency_problem_run package_graph root_handle)
   ans(dependency_problem)
 
 
-  package_dependency_problem_init("${dependency_problem}")  
+  package_dependency_problem_init("${dependency_problem}")
   ans(success)
   if(NOT success)
     message(FATAL_ERROR "failed to initialize dependency_problem")
@@ -26679,7 +26679,7 @@ endfunction()
 
 
 
-## `(<package dependency problem>)-><bool>` 
+## `(<package dependency problem>)-><bool>`
 ##
 ## solves the dependency problem by running the sat solver
 ## returns true on success
@@ -26725,7 +26725,7 @@ function(package_dependency_problem_test project_dependencies constraint_handler
 
 
   assign(problem.constraint_handlers = constraint_handlers)
-  
+
   timer_start(package_dependency_problem_init)
   package_dependency_problem_init("${problem}")
   ans(success)
@@ -26740,7 +26740,7 @@ function(package_dependency_problem_test project_dependencies constraint_handler
 
   sequence_to_list("${res}" "|" ")&(")
   ans(res)
-  
+
   set(res "(${res})")
   message("cnf: ${res}")
   return_ref(res)
@@ -26757,13 +26757,13 @@ endfunction()
 ##
 ##
 ## resolves all dependencies for the specified package_handle
-## keys of `package_handle.package_descriptor.dependencies` are `admissable uri`s 
-## `admissable uri`s are resolved to `dependency handle`s 
-## returns a map of `<admissable_uri>: <dependency handle>` if no dependencies are present 
+## keys of `package_handle.package_descriptor.dependencies` are `admissable uri`s
+## `admissable uri`s are resolved to `dependency handle`s
+## returns a map of `<admissable_uri>: <dependency handle>` if no dependencies are present
 ## an empty map is returned
-## sideffects 
-## sets `<package handle>.dependencies.<admissable uri> = { <<dependable uri>:<dependency handle>>... }` 
-## adds  to `<dependency handle>.dependees.<package uri> = { <admissable_uri>:<package handle> }` 
+## sideffects
+## sets `<package handle>.dependencies.<admissable uri> = { <<dependable uri>:<dependency handle>>... }`
+## adds  to `<dependency handle>.dependees.<package uri> = { <admissable_uri>:<package handle> }`
 function(package_dependency_resolve package_source  package_handle )
   set(args ${ARGN})
   list_extract_labelled_value(args --cache)
@@ -26809,9 +26809,9 @@ function(package_dependency_resolve package_source  package_handle )
   ## todo replace first with latter
   map_set(${package_handle} dependencies ${dependencies})
 
-  ## loop through all admissable uris 
-  ## and assign dependees property 
-  
+  ## loop through all admissable uris
+  ## and assign dependees property
+
   foreach(admissable_uri ${admissable_uris})
     ## get map for admissable_uri
     map_tryget(${dependencies} "${admissable_uri}")
@@ -26819,16 +26819,16 @@ function(package_dependency_resolve package_source  package_handle )
 
     map_keys(${dependency})
     ans(dependable_uris)
-    foreach(dependency_uri ${dependable_uris})      
+    foreach(dependency_uri ${dependable_uris})
       map_tryget(${dependency} ${dependency_uri})
       ans(dependency_handle)
-      
+
       map_tryget(${dependency_handle} dependees)
       ans(dependees)
       if(NOT dependees)
         map_new()
         ans(dependees)
-        map_set(${dependency_handle} dependees ${dependees}) 
+        map_set(${dependency_handle} dependees ${dependees})
       endif()
       map_tryget(${dependees} ${package_uri})
       ans(dependee)
@@ -26855,7 +26855,7 @@ function(package_dependency_resolve_and_satisfy package_source root_handle)
   ans(cache)
   ## get cache if available - else create a new one
   if(NOT cache)
-    ## cache map 
+    ## cache map
     map_new()
     ans(cache)
   endif()
@@ -26867,7 +26867,7 @@ function(package_dependency_resolve_and_satisfy package_source root_handle)
   ## run dependency problem
   package_dependency_problem_run("${package_graph}" "${root_handle}")
   ans(dependency_problem)
-  
+
   return_ref(dependency_problem)
 endfunction()
 
@@ -26875,10 +26875,10 @@ endfunction()
 
 
 ## `(<package handle> <~package changeset>)-> <old changes>`
-## 
+##
 ## modified the dependencies of a package handle
 ## ```
-##  package_handle_update_dependencies(${package_handle} "A" "B conflict") 
+##  package_handle_update_dependencies(${package_handle} "A" "B conflict")
 ##  package handle: <%
 ##    map_new()
 ##   ans(package_handle)
@@ -26897,13 +26897,13 @@ function(package_handle_update_dependencies package_handle)
 
   package_handle_dependencies("${package_handle}")
   ans(dependencies)
-  
+
   map_new()
   ans(diff)
 
   map_keys(${changeset})
   ans(admissable_uris)
-  
+
   foreach(admissable_uri ${admissable_uris})
     ## get previous value
     map_has(${dependencies} "${admissable_uri}")
@@ -26934,7 +26934,7 @@ function(package_handle_update_dependencies package_handle)
       map_set(${dependencies} ${admissable_uri} false)
     elseif("${action}" STREQUAL "optional")
       map_set(${dependencies} "${admissable_uri}")
-    endif()    
+    endif()
 
 
   endforeach()
@@ -27002,7 +27002,7 @@ endfunction()
 
       json_read("${content_dir}/package.cmake")
       ans(pd)
- 
+
       if(NOT pd)
         return()
       endif()
@@ -27021,7 +27021,7 @@ endfunction()
 
 
 
-## 
+##
 ## ensures that the package_descriptor.package_handle exists
 function(package_handle_dependencies package_handle)
   map_tryget(${package_handle} package_descriptor)
@@ -27047,7 +27047,7 @@ endfunction()
 
 function(package_handle_filter __handles uri)
       uri_coerce(uri)
-  
+
       map_tryget(${uri} uri)
       ans(uri_string)
 
@@ -27071,7 +27071,7 @@ function(package_handle_filter __handles uri)
           assign(pid = package_handle.package_descriptor.id)
           if("${pid}_" STREQUAL "${id_query}_")
             list(APPEND result ${package_handle})
-          endif() 
+          endif()
         endforeach()
         return_ref(result)
       endif()
@@ -27087,12 +27087,12 @@ function(package_handle_filter __handles uri)
 
 
 
-## 
-## 
+##
+##
 ## invokes a package descriptors hook in the correct context
 ## the pwd is set to content_dir and the var args are passed along
 ## the result of the hook or nothing is returned
-## 
+##
 ## the scope of the function inherits package_handle and package_descriptor
 function(package_handle_invoke_hook package_handle path)
   assign(package_descriptor = package_handle.package_descriptor)
@@ -27114,7 +27114,7 @@ endfunction()
 
 
 
-## 
+##
 ## checks if every dependencies all_dependencies_materialized are set
 ##
 function(package_handle_is_ready package_handle)
@@ -27165,7 +27165,7 @@ endfunction()
 ## package_source_pull_archive(<~uri> <?target_dir>)-><package handle>
 ##
 ## pulls the specified archive into the specified target dir
-## 
+##
   function(package_source_pull_archive uri)
     set(args ${ARGN})
 
@@ -27236,7 +27236,7 @@ endfunction()
 
     assign(package_handle = source.pull(${source_args} "${temp_dir}"))
     assign(content_dir = package_handle.content_dir)# get content dir because pull may return somtehing different in case --reference is specified
-    
+
     ## possibly generate a filename if ${target_file} is a directory
     if(IS_DIRECTORY "${target_file}")
         set(mimetype ${format})
@@ -27285,10 +27285,10 @@ endfunction()
 
 
   ## package_source_query_archive(<~uri>)->
-  ## 
+  ##
   function(package_source_query_archive uri)
     set(args ${ARGN})
-        
+
     log("querying for local archive at {uri.uri}" --trace --function package_source_query_archive)
 
     list_extract_flag(args --package-handle)
@@ -27380,8 +27380,8 @@ endfunction()
 
 
 ## package_source_resolve_archive(<~uri>)-> <package handle>
-## 
-## resolves the specified uri to a unqiue immutable package handle 
+##
+## resolves the specified uri to a unqiue immutable package handle
 function(package_source_resolve_archive uri)
     uri_coerce(uri)
 
@@ -27398,9 +27398,9 @@ function(package_source_resolve_archive uri)
     ## uncompress package descriptor
     assign(archive_path = package_handle.archive_descriptor.path)
 
-    ## search for the first package.cmake file in the archive 
+    ## search for the first package.cmake file in the archive
     archive_match_files("${archive_path}" "([^;]+/)?package\\.cmake"  --single)
-    ans(package_descriptor_path)    
+    ans(package_descriptor_path)
 
 
     if(package_descriptor_path)
@@ -27510,11 +27510,11 @@ endfunction()
 
     map_tryget("${scm_package_handle}" content_dir)
     ans(scm_content_dir)
-    
+
     if(NOT scm_package_descriptor)
       map_new()
       ans(scm_package_descriptor)
-    endif()  
+    endif()
     map_defaults("${package_descriptor}" "${scm_package_descriptor}")
 
     map_set("${package_handle}" content_dir "${scm_content_dir}")
@@ -27527,9 +27527,9 @@ endfunction()
 
 
 ## `(<~uri> [--package-handle])->`
-## 
 ##
-## 
+##
+##
 function(package_source_query_bitbucket uri)
   set(args ${ARGN})
 
@@ -27636,7 +27636,7 @@ function(package_source_query_bitbucket uri)
       map_tryget(${map} ${key})
       ans(ref)
       set(package_handle)
-      
+
       assign(!package_handle.uri = key)
       assign(!package_handle.query_uri = uri.uri)
       assign(!package_handle.bitbucket_descriptor.remote_ref = ref)
@@ -27716,8 +27716,8 @@ endfunction()
     return()
     uri("${uri}")
     ans(uri)
-    
-    ## query for a valid and single  bitbucket uris 
+
+    ## query for a valid and single  bitbucket uris
     package_source_query_bitbucket("${uri}")
     ans(valid_uri_string)
     list(LENGTH valid_uri_string uri_count)
@@ -27754,7 +27754,7 @@ endfunction()
       http_get("${main_branch_request_uri}" "" --json)
       ans(response)
       assign(main_branch = response.name)
-      set(ref "${main_branch}")  
+      set(ref "${main_branch}")
     endif()
 
     set(path package.cmake)
@@ -27768,7 +27768,7 @@ endfunction()
     ## setup package descriptor default value
 
     map_defaults("${package_descriptor}" "{
-      id:$repo_descriptor.full_name, 
+      id:$repo_descriptor.full_name,
       version:'0.0.0',
       description:$repo_descriptor.description
     }")
@@ -27867,7 +27867,7 @@ function(package_source_pull_cached uri)
     #message(FORMAT "PULL_HIT {uri.uri}")
     assign(package_handle = cache_container.package_handle)
   endif()
-  
+
   cp_dir("${content_dir}" "${target_dir}")
   assign(package_handle.content_dir = target_dir )
 
@@ -27947,14 +27947,14 @@ function(package_source_resolve_cached uri)
   ans(refresh)
   list_extract_flag(args --cache-container)
   ans(return_cache_container)
-  
+
   uri_coerce(uri)
 
   package_source_query_cached("${uri}" ${refresh} --cache-container)
   ans(cache_container)
 
 
-  if("${cache_container}" MATCHES ";")  
+  if("${cache_container}" MATCHES ";")
     error("multiple matches found")
     return()
   endif()
@@ -28013,7 +28013,7 @@ endfunction()
     ans(this)
 
     foreach(source ${sources})
-      composite_package_source_add(${source})      
+      composite_package_source_add(${source})
     endforeach()
     return_ref(this)
   endfunction()
@@ -28087,7 +28087,7 @@ endfunction()
 ## --package-handle  flag specifiec that not a uri but a <package handle> should be returned
 ##
 ## queries the child sources (this.children) for the specified uri
-## this is done by first rating and sorting the sources depending on 
+## this is done by first rating and sorting the sources depending on
 ## the uri so the best source is queryied first
 ## if a source returns a rating of 999 all other sources are disregarded
 function(package_source_query_composite uri)
@@ -28098,9 +28098,9 @@ function(package_source_query_composite uri)
   list_contains(args --package-handle)
   ans(return_package_handle)
 
-  
 
-  ## rate and sort sources for uri    
+
+  ## rate and sort sources for uri
   this_get(children)
   map_values(${children})
   ans(children)
@@ -28110,11 +28110,11 @@ function(package_source_query_composite uri)
 
 
   ## loop through every source and query it for uri
-  ## append results to result. 
+  ## append results to result.
   ## if the rating is 0 break because all following sources will
-  ## also be 0 and this indicates that the source is incompatible 
+  ## also be 0 and this indicates that the source is incompatible
   ## with the uri
-  ## if the rating is 999 break after querying the source as this 
+  ## if the rating is 999 break after querying the source as this
   ## source has indicated that it is solely responsible for this uri
   set(result)
   while(true)
@@ -28127,7 +28127,7 @@ function(package_source_query_composite uri)
 
     map_tryget(${current} rating)
     ans(rating)
-    ## source and all rest sources are incompatible 
+    ## source and all rest sources are incompatible
     if(rating EQUAL 0)
       break()
     endif()
@@ -28140,7 +28140,7 @@ function(package_source_query_composite uri)
     if(return_package_handle)
       foreach(handle ${current_result})
         map_tryget(${source} source_name)
-        ans(source_name) 
+        ans(source_name)
         map_set(${handle} package_source_name ${source_name})
       endforeach()
     endif()
@@ -28161,7 +28161,7 @@ endfunction()
 
 
 ## function used to rate a package source and a a uri
-## default rating is 1 
+## default rating is 1
 ## if a scheme of uri matches the source_name property
 ## of a package source the rating is 999
 ## else package_source's rate_uri function is called
@@ -28210,7 +28210,7 @@ endfunction()
     uri_coerce(uri)
 
     ## query composite returns the best matching package_uris first
-    ## specifiying --package-handle returns the package handle as 
+    ## specifiying --package-handle returns the package handle as
     ## containing the package_uri and the package_source
     package_source_query_composite("${uri}" --package-handle)
     ans(package_handles)
@@ -28225,12 +28225,12 @@ endfunction()
 
       list_pop_front(package_handles)
       ans(package_handle)
-      
+
       map_tryget(${package_handle} package_source_name)
       ans(package_source_name)
 
       assign(package_source = "this.children.${package_source_name}")
-      
+
       if(NOT package_source)
         message(FATAL_ERROR "package handle missing package_source property")
       endif()
@@ -28248,9 +28248,9 @@ endfunction()
 
     endwhile()
     return()
-  endfunction() 
+  endfunction()
 
-  
+
 
 
 
@@ -28261,12 +28261,12 @@ endfunction()
   function(rated_package_sources)
     set(result)
     foreach(source ${ARGN})
-      map_new() 
+      map_new()
       ans(map)
       map_set(${map} source ${source})
       package_source_rate_uri(${source} ${uri})
       ans(rating)
-      map_set(${map} rating ${rating}) 
+      map_set(${map} rating ${rating})
       list(APPEND result ${map})
     endforeach()
     return_ref(result)
@@ -28318,7 +28318,7 @@ function(default_package_source)
 
     path_package_source()
     ans_append(sources)
-    
+
     archive_package_source()
     ans_append(sources)
 
@@ -28335,13 +28335,13 @@ function(default_package_source)
     if(GIT_FOUND)
       github_package_source()
       ans_append(sources)
-    endif()    
+    endif()
 
     if(GIT_FOUND AND HG_FOUND)
       bitbucket_package_source()
       ans_append(sources)
     endif()
-    
+
     if(GIT_FOUND)
       git_package_source()
       ans_append(sources)
@@ -28370,7 +28370,7 @@ function(default_package_source)
     map_get(global default_package_source)
     return_ans()
   endfunction()
-  return_ans()  
+  return_ans()
 endfunction()
 
 
@@ -28425,7 +28425,7 @@ endfunction()
 
 
 ## resolve_package(<~uri>) -> <package handle>
-## 
+##
 function(resolve_package)
   default_package_source()
   ans(source)
@@ -28456,7 +28456,7 @@ endfunction()
 
 
   ## package_source_pull_directory(<~uri> [--reference]) -> <package handle>
-  ## --reference flag 
+  ## --reference flag
   function(package_source_pull_directory uri)
     set(args ${ARGN})
 
@@ -28474,14 +28474,14 @@ endfunction()
       list_pop_front(args)
       ans(target_dir)
       path_qualify(target_dir)
-    
+
       map_tryget(${package_handle} content_dir)
       ans(source_dir)
 
       cp_dir("${source_dir}" "${target_dir}")
-      map_set(${package_handle} content_dir "${target_dir}")  
+      map_set(${package_handle} content_dir "${target_dir}")
     endif()
-    
+
     return_ref(package_handle)
   endfunction()
 
@@ -28501,7 +28501,7 @@ endfunction()
 
     uri_coerce(uri)
 
-    ## return if scheme is either empty or equal to source_name       
+    ## return if scheme is either empty or equal to source_name
     assign(scheme = uri.scheme)
 
     uri_check_scheme("${uri}" "${source_name}?")
@@ -28509,7 +28509,7 @@ endfunction()
     if(NOT scheme_ok)
       error("expected either ${source_name} or nothing as scheme. {uri.uri}")
       return()
-    endif() 
+    endif()
 
     map_tryget(${uri} segments)
     ans(segments)
@@ -28530,7 +28530,7 @@ endfunction()
         ## if query contains an equals it is a map
         ## else it is a value
         map_tryget(${uri} params)
-        ans(query)        
+        ans(query)
       endif()
 
       ## empty query returns nothing
@@ -28543,8 +28543,8 @@ endfunction()
 
       is_map("${query}")
       ans(ismap)
-    
-      ## query may be a * which returns all packages 
+
+      ## query may be a * which returns all packages
       ## or a regex /[regex]/
       ## or a map which will uses the properties to match values
       if(query STREQUAL "*")
@@ -28683,7 +28683,7 @@ endfunction()
     map_set(${package_handle} content_dir "${target_dir}")
 
     return_ref(package_handle)
-  endfunction()   
+  endfunction()
 
 
 
@@ -28723,7 +28723,7 @@ endfunction()
 
     ## get ref and check if it exists
     assign(ref = uri.params.ref)
-    assign(branch = uri.params.branch)  
+    assign(branch = uri.params.branch)
     assign(tag = uri.params.tag)
     assign(rev = uri.params.rev)
 
@@ -28743,7 +28743,7 @@ endfunction()
         revision:$rev,
         type:'rev',
         name:$rev,
-        uri:$remote_uri  
+        uri:$remote_uri
       }")
 
       ans(remote_refs)
@@ -28789,14 +28789,14 @@ endfunction()
     endforeach()
 
 
-    
+
     return_ref(results)
   endfunction()
 
 
 
 
-## returns a pacakge descriptor for the specified git uri 
+## returns a pacakge descriptor for the specified git uri
 ## takes long for valid uris because the whole repo needs to be checked out
 function(package_source_resolve_git uri)
   set(args ${ARGN})
@@ -28807,7 +28807,7 @@ function(package_source_resolve_git uri)
   ans(package_handle)
 
   list(LENGTH package_handle count)
-  
+
   if(NOT "${count}" EQUAL 1)
     error("could not get a unqiue uri for '{uri.uri}' (got {count})")
     return()
@@ -28861,9 +28861,9 @@ endfunction()
 function(package_source_pull_github uri)
   set(args ${ARGN})
   uri_coerce(uri)
-  log("pulling {uri.uri}" --trace --function package_source_pull_github)  
+  log("pulling {uri.uri}" --trace --function package_source_pull_github)
 
-  ## get package descriptor 
+  ## get package descriptor
   package_source_resolve_github("${uri}")
   ans(package_handle)
   if(NOT package_handle)
@@ -28916,7 +28916,7 @@ endfunction()
 ## package_source_query_github([--package-handle])->
 ##
 ##
-## "" => null 
+## "" => null
 ## <github user> => <github user>/*
 ## <github user>/* => repo list
 ## <github user>/<repository> => <github user>/<repository>/branches/<default branch>?hash=<commit sha>
@@ -28932,7 +28932,7 @@ function(package_source_query_github uri)
   ans(return_package_handle)
 
 
-  ## parse uri and extract the two first segments 
+  ## parse uri and extract the two first segments
   uri_coerce(uri)
 
   log("querying for '{uri.uri}'" --trace --function package_source_query_github)
@@ -28949,7 +28949,7 @@ function(package_source_query_github uri)
 
   assign(segments = uri.normalized_segments)
   list_extract(segments user repo ref_type ref)
-  
+
   set(repo_query)
   if("${repo}_" STREQUAL "*_")
     set(repo)
@@ -28988,7 +28988,7 @@ function(package_source_query_github uri)
       format("github:{repository.full_name}/branches/{repository.default_branch}?hash={remote_ref.commit}")
       ans(package_handles)
     endif()
-    
+
   elseif(user)
     ## only  user results in non unique ids which have to be quried again
     github_repository_list("${user}")
@@ -29002,7 +29002,7 @@ function(package_source_query_github uri)
   else()
     ## no user (not queried) too many results
   endif()
-  list(LENGTH package_handles count) 
+  list(LENGTH package_handles count)
   log("'{uri.uri}' resulted in {count} dependable uris" --trace --function package_source_query_github)
 
   if(return_package_handle)
@@ -29030,8 +29030,8 @@ endfunction()
 
   ## package_source_resolve_github() -> <package handle> {}
   ##
-  ## resolves the specifie package uri 
-  ## and if uniquely identifies a package 
+  ## resolves the specifie package uri
+  ## and if uniquely identifies a package
   ## returns its pacakge descriptor
   function(package_source_resolve_github uri)
     uri_coerce(uri)
@@ -29046,7 +29046,7 @@ endfunction()
     if(NOT "${count}" EQUAL 1)
         error("could not resolve '{uri.uri}' to a unique package (got {count})" --function package_source_resolve_github)
         return()
-    endif() 
+    endif()
 
     assign(package_uri = package_handle.uri)
     uri("${package_uri}")
@@ -29080,7 +29080,7 @@ endfunction()
     ans(package_descriptor)
 
 
-    ## map default values on the packge descriptor 
+    ## map default values on the packge descriptor
     ## using the information from repo_descriptor
     assign(default_description = repo_descriptor.description)
 
@@ -29090,7 +29090,7 @@ endfunction()
       description:$default_description
     }")
     ans(package_descriptor)
-    
+
 
 
     ## response
@@ -29123,7 +29123,7 @@ endfunction()
 
 ## package_source_pull_hg
 ##
-## 
+##
   function(package_source_pull_hg uri)
     set(args ${ARGN})
 
@@ -29135,7 +29135,7 @@ endfunction()
     ans(target_dir)
 
     path_qualify(target_dir)
-    
+
     package_source_resolve_hg("${uri}")
     ans(package_handle)
 
@@ -29186,7 +29186,7 @@ endfunction()
       return()
     endif()
 
-    ## get ref 
+    ## get ref
     assign(rev = uri.params.rev)
     assign(ref = uri.params.ref)
     assign(branch = uri.params.branch)
@@ -29229,7 +29229,7 @@ endfunction()
       endif()
     endif()
 
-    popd()    
+    popd()
 
     set(result)
     foreach(ref ${refs})
@@ -29251,14 +29251,14 @@ endfunction()
 
     endforeach()
     return_ref(result)
-  endfunction() 
+  endfunction()
 
 
 
 
 ## package_source_resolve_hg
 ##
-## resolves a uri package to a immutable unqiue uri 
+## resolves a uri package to a immutable unqiue uri
 ##
   function(package_source_resolve_hg uri)
     set(args ${ARGN})
@@ -29409,8 +29409,8 @@ endfunction()
 
 
 ## `(<uri>)-><package handle>`
-## 
-## tries to find the package identified by the uri 
+##
+## tries to find the package identified by the uri
 function(package_source_resolve_host uri)
   uri_coerce(uri)
   package_source_query_host("${uri}" --package-handle)
@@ -29527,10 +29527,10 @@ endfunction()
       list_pop_front(args)
       ans(target_dir)
       path_qualify(target_dir)
-      
+
       map_tryget(${package_handle} content_dir)
       ans(source_dir)
-      
+
       cp_dir("${source_dir}" "${target_dir}")
       map_set(${package_handle} content_dir "${target_dir}")
     endif()
@@ -29546,12 +29546,12 @@ endfunction()
 
   ## package_source_push_managed(<package handle> ) -> <uri string>
   ##
-  ## returns a valid uri if the package was pushed successfully 
+  ## returns a valid uri if the package was pushed successfully
   ## else returns null
   ##
   ## expects a this object to be defined which contains directory and source_name
-  ## --reference flag indicates that the content will not be copied into the the package source 
-  ##             the already existing package dir will be used 
+  ## --reference flag indicates that the content will not be copied into the the package source
+  ##             the already existing package dir will be used
   ## --content-dir <dir> flag indicates where the package content will reside
   ## --package-dir <dir> flag indicates parent dir of content of package
   ## --force     flag indicates that existing package should be overwritten
@@ -29606,7 +29606,7 @@ endfunction()
       if(package_dir)
         assign(id = package_handle.package_descriptor.id)
         assign(version = package_handle.package_descriptor.version)
-        
+
 
         path("${package_dir}/${id}")
         ans(content_dir)
@@ -29652,9 +29652,9 @@ endfunction()
 
 
   ## package_source_query_managed(<~uri>) -> <uri string>
-  ## 
+  ##
   ## expects a this object to be defined which contains directory and source_name
-  ## 
+  ##
   function(package_source_query_managed uri)
     set(args ${ARGN})
 
@@ -29695,7 +29695,7 @@ endfunction()
       return_ref(package_uris)
     else()
       return_ref(filtered_handles)
-    endif() 
+    endif()
 
 
     return()
@@ -29707,7 +29707,7 @@ endfunction()
   ## package_source_resolve_managed(<~uri>) -> <package_handle>
   ##
   ## expects a var called this exist which contains the properties 'directory' and 'source_name'
-  ## 
+  ##
   function(package_source_resolve_managed uri)
     uri_coerce(uri)
 
@@ -29773,7 +29773,7 @@ endfunction()
     if(NOT id)
       message(FATAL_ERROR "no valid package id")
     endif()
-    
+
 
     map_clone_deep("${package_descriptor}")
     ans(new_package_descriptor)
@@ -29794,9 +29794,9 @@ endfunction()
     ans(has_current)
     if(make_current OR NOT has_current)
       map_set(${metadata} ${id} ${package_descriptor})
-    endif()  
+    endif()
     map_set(${metadata} "${id}@${version}" ${package_descriptor})
-    
+
     return_ref(package_descriptor)
   endfunction()
 
@@ -29854,7 +29854,7 @@ endfunction()
 
     package_source_metadata_add_descriptor(${package_descriptor})
     return_ref(package_handle)
-  endfunction() 
+  endfunction()
 
 
 
@@ -29885,7 +29885,7 @@ endfunction()
 
     map_tryget(${metadata} ${ids})
     ans(package_descriptors)
-    
+
     set(result)
     foreach(package_descriptor ${package_descriptors})
       map_import_properties(${package_descriptor} id version)
@@ -29926,7 +29926,7 @@ endfunction()
     if(NOT "${count}" EQUAL 1)
       error("could not uniquely resolve {uri.uri} (got {count}) packages")
       return()
-    endif()    
+    endif()
     return_ref(handles)
   endfunction()
 
@@ -29934,9 +29934,9 @@ endfunction()
 
 
 
-## 
 ##
-## package source to be used for testing purposes 
+##
+## package source to be used for testing purposes
 ## allows easy definition of packages and dependency relationsships
 ## to define a package write "<package id>[@<verion>][ <package descriptor obj>]"
 ## e.g. "A" "A@3.2.1" "A@3.4.1 {cmakepp:{hooks:{on_ready:'[]()message(ready)'}}}"
@@ -29958,7 +29958,7 @@ function(mock_package_source name)
 
       map_new()
       ans(ph)
-      map_set("${ph}" package_descriptor "${pd}") 
+      map_set("${ph}" package_descriptor "${pd}")
       package_handle_update_dependencies("${ph}" "${dep}")
     else()
       if("${arg}" MATCHES "^([^ ]+) (.*)$")
@@ -30023,11 +30023,11 @@ endfunction()
 
 
 
-## `(<admissable_uri> [--cache <map>])-> { <<package uri>:<package handle>>...}` 
+## `(<admissable_uri> [--cache <map>])-> { <<package uri>:<package handle>>...}`
 ##
 ##
 function(package_source_query_resolve package_source admissable_uri)
-  set(args ${ARGN})    
+  set(args ${ARGN})
 
   ## get cache and if none exists create new
   list_extract_labelled_value(args --cache)
@@ -30091,7 +30091,7 @@ function(package_source_query_resolve_all package_source)
     ans(cache)
   endif()
   set(admissable_uris ${args})
-  
+
   map_new()
   ans(result)
 
@@ -30165,7 +30165,7 @@ function(package_source_transfer)
   ans(sink)
 
   assign(package_handle = sink.push(${source} ${source_args} => ${sink_args}))
-    
+
   return_ref(package_handle)
 endfunction()
 
@@ -30175,14 +30175,14 @@ endfunction()
 
 ## package_source_pull(<~uri> <?target_dir:<path>>) -> <package handle>
 ##
-## pulls the content of package specified by uri into the target_dir 
+## pulls the content of package specified by uri into the target_dir
 ## if the package_descriptor contains a content property it will interpreted
-## as a glob/ignore expression list when copy files (see cp_content(...)) 
+## as a glob/ignore expression list when copy files (see cp_content(...))
 ##
-## --reference flag indicates that nothing is to be copied but the source 
-##             directory will be used as content dir 
+## --reference flag indicates that nothing is to be copied but the source
+##             directory will be used as content dir
 ##
-## 
+##
 function(package_source_pull_path uri)
     set(args ${ARGN})
 
@@ -30239,14 +30239,14 @@ function(package_source_push_path)
     endif()
     list_pop_front(source_args)
     ans(source)
-        
+
 
     ## get target dir
     list_pop_front(args)
     ans(target_dir)
     if(NOT target_dir)
         pwd()
-        ans(target_dir)        
+        ans(target_dir)
     endif()
 
     path_qualify(target_dir)
@@ -30287,7 +30287,7 @@ function(package_source_query_path uri)
 
   if(NOT "${host}" STREQUAL "localhost")
     return()
-  endif()   
+  endif()
 
   uri_check_scheme("${uri}" "file?")
   ans(scheme_ok)
@@ -30297,7 +30297,7 @@ function(package_source_query_path uri)
   endif()
 
   map_import_properties(${uri} query)
-  
+
  if(NOT "_${query}" MATCHES "(^_$)|(_hash=[0-9a-zA-Z]+)")
     error("path package source only accepts a hash query in the uri.")
     return()
@@ -30323,14 +30323,14 @@ function(package_source_query_path uri)
     fopen_data("${path}/package")
     ans(package_descriptor)
   endif()
-  
+
 
 
   ## compute hash
   set(content)
 
 
-  
+
   assign(default_id = uri.last_segment)
   map_defaults("${package_descriptor}" "{id:$default_id,version:'0.0.0'}")
   ans(package_descriptor)
@@ -30402,9 +30402,9 @@ endfunction()
 
 ## `()`
 ##
-## returns full rating if 
-## dir/package.cmake exists 
-## and a very high rating for a directory 
+## returns full rating if
+## dir/package.cmake exists
+## and a very high rating for a directory
 ## else it returns 0
 function(package_soure_rate_uri_path uri)
   uri_coerce(uri)
@@ -30457,9 +30457,9 @@ endfunction()
 # </package_descriptor>
 
 function(package_source_query_recipe)
-  
 
- 
+
+
 
 endfunction()
 
@@ -30496,15 +30496,15 @@ endfunction()
     assign(svn_tag = uri.params.tag)
     if(NOT svn_revision STREQUAL "")
       set(svn_revision --revision "${svn_revision}")
-    endif() 
+    endif()
 
     if(NOT svn_branch STREQUAL "")
       set(svn_branch --branch "${svn_branch}")
-    endif() 
+    endif()
 
     if(NOT svn_tag STREQUAL "")
       set(svn_tag --tag "${svn_tag}")
-    endif() 
+    endif()
 
     svn_cached_checkout("${remote_uri}" "${target_dir}" ${revision} ${branch} ${tag})
     ans(success)
@@ -30545,7 +30545,7 @@ function(package_source_query_svn uri)
   list_extract_flag(args --package-handle)
   ans(return_package_handle)
 
-  uri_coerce(uri)  
+  uri_coerce(uri)
 
   svn_uri_analyze("${uri}")
   ans(svn_uri)
@@ -30610,7 +30610,7 @@ endfunction()
       set(ref_type tags)
     endif()
     set(checkout_uri "${base_uri}/${ref_type}/${ref}/package.cmake@${revision}")
-    
+
     fwrite_temp("")
     ans(tmp)
     rm(${tmp})
@@ -30691,7 +30691,7 @@ endfunction()
     endif()
 
     map_set(${package_handle} content_dir ${target_dir})
-    
+
 
     return_ref(package_handle)
 
@@ -30704,12 +30704,12 @@ endfunction()
 
 ## package_source_query_webarchive(<~uri> [--package-handle] [--refresh] <args...>) -> <package uri...>
 ##
-## if uri identifies a package the <package uri> is returned - else nothing is returned  
+## if uri identifies a package the <package uri> is returned - else nothing is returned
 ##
 ## queries the specified uri for a remote <archive> uses `download_cached` to
 ## download it. (else it would have to be downloaded multiple times)
 ##
-##   
+##
 function(package_source_query_webarchive uri)
   set(args ${ARGN})
 
@@ -30730,7 +30730,7 @@ function(package_source_query_webarchive uri)
   assign(uri_string = uri.uri)
   ## remove the last instance of the hash query - if it exists
   ## an edge case were this woudl fail is when another hash is meant
-  ## a solution then would be to prepend the hash with a magic string 
+  ## a solution then would be to prepend the hash with a magic string
   string(REGEX REPLACE "hash=[0-9A-Fa-f]+$" "" uri_string "${uri_string}")
 
   ## use download cached to download a package (pass along vars like --refresh)
@@ -30803,7 +30803,7 @@ endfunction()
 
   function(package_source_resolve_webarchive uri)
     set(args ${ARGN})
-    
+
     uri("${uri}")
     ans(uri)
 
@@ -30821,7 +30821,7 @@ endfunction()
     download_cached("${resource_uri}" --readonly)
     ans(cached_archive_path)
 
-   
+
     if(NOT cached_archive_path)
         error("could not download {resource_uri}" --aftereffect)
         return()
@@ -30871,7 +30871,7 @@ endfunction()
 ##
 ## changes the dependencies of the specified project handle
 ## expects the project_descriptor to contain a valid package source
-## returns the dependency changeset 
+## returns the dependency changeset
 ## **sideffects**
 ## * adds new '<dependency configuration>' `project_handle.project_descriptor.installation_queue`
 ## **events**
@@ -30882,14 +30882,14 @@ function(project_change_dependencies project_handle)
   map_tryget(${project_handle} project_descriptor)
   ans(project_descriptor)
 
-  map_import_properties(${project_descriptor} 
+  map_import_properties(${project_descriptor}
     package_source
     package_cache
     )
   ## check for package source
   if(NOT package_source)
  #   message(FATAL_ERROR "no package source set up in project handle")
-  endif()   
+  endif()
 
   ## get previous_configuration
   map_peek_back(${project_descriptor} installation_queue)
@@ -30900,7 +30900,7 @@ function(project_change_dependencies project_handle)
     ans(previous_configuration)
   endif()
 
-  ## 
+  ##
   package_dependency_configuration_update(
     "${package_source}"
     "${project_handle}"
@@ -30916,7 +30916,7 @@ function(project_change_dependencies project_handle)
 
   ## compute changeset  and return
   package_dependency_configuration_changeset(
-    ${previous_configuration} 
+    ${previous_configuration}
     ${configuration}
   )
   ans(changeset)
@@ -30940,11 +30940,11 @@ endfunction()
 
 
 
-## `(<project package> <package handle>)-><void>` 
+## `(<project package> <package handle>)-><void>`
 ##
 ## updates all dependencies starting at package
 ## **sideffects**
-## * 
+## *
 ## **events**
 ## * project_on_package_all_dependencies_materialized(<project handle> <package handle>)
 ## * project_on_package_and_all_dependencies_materialized(<project handle> <package handle>)
@@ -30961,7 +30961,7 @@ function(project_package_ready_state_update project package)
 
     map_get_map(${current} dependency_descriptor)
     ans(dependency_descriptor)
-          
+
     ## check if all dependencies of package are materialized
     package_handle_is_ready(${current})
     ans(is_ready)
@@ -31003,7 +31003,7 @@ function(project_package_ready_state_update project package)
   return()
 endfunction()
 
-## register event handles to automatically call 
+## register event handles to automatically call
 ## update ready state function
 function(__project_ready_state_register_listeners)
   event_addhandler(project_on_package_dematerialized project_package_ready_state_update)
@@ -31044,7 +31044,7 @@ endfunction()
   function(package_cmake_module_content package module)
     map_import_properties(${package} content_dir)
 
-    map_import_properties(${module} 
+    map_import_properties(${module}
       add_as_subdirectory
       include_dirs
      )
@@ -31176,17 +31176,17 @@ endfunction()
 ##
 ## generates files inside package's content_dir
 ## this is useful for packages which only consist of metadata
-## 
-## reads all keys of `package_descriptor.generate : { <<filename template:<string>>:<file content template|cmake function call> }`. 
+##
+## reads all keys of `package_descriptor.generate : { <<filename template:<string>>:<file content template|cmake function call> }`.
 ## These keys are treated as filenames which are formatted using `format(...)` (this allows for customized filenames)
-## the property value is interpreted as a template see `template_compile`. or if it exists 
+## the property value is interpreted as a template see `template_compile`. or if it exists
 ## as a call to a cmake function.
-## 
+##
 ## **scope**
 ## the following variables are available in the scope for `format` and `template_compile` and calling a function
 ## * `project : <project handle>`
 ## * `package : <package handle>`
-## 
+##
 ## **Example**
 ##
 function(package_file_generator project package)
@@ -31203,13 +31203,13 @@ function(package_file_generator project package)
   set(generated_files)
   regex_cmake()
   foreach(file_name ${file_names})
-    
+
     map_tryget(${generate} ${file_name})
     ans(file_content)
 
     ## ensnure that all scope variables are set
-    ## package 
-    ## project 
+    ## package
+    ## project
     ## package_descriptor
     ## file_name
 
@@ -31217,7 +31217,7 @@ function(package_file_generator project package)
     format("${file_name}")
     ans(relative_file_name)
 
-    path_qualify_from("${content_dir}" "${relative_file_name}") 
+    path_qualify_from("${content_dir}" "${relative_file_name}")
     ans(file_name)
 
     set(custom_command false)
@@ -31262,11 +31262,11 @@ task_enqueue("[]() event_addhandler(project_on_package_ready package_file_genera
 
 
 
-## 
-## 
+##
+##
 ## hooks:
 ##   `package_descriptor.cmakepp.hooks.on_dematerializing(<project handle> <packag handle>)`
-##     this hook is invoked if it exists. it is invoked before the on_load hook 
+##     this hook is invoked if it exists. it is invoked before the on_load hook
 ##     this means that the project's exports were not loaded when the hook is called
 ##     however since cmake files are callable you can specify a local path
 function(on_dematerializing_hook project_handle package_handle)
@@ -31278,25 +31278,25 @@ endfunction()
 
 
 
-## 
 ##
-## imports all files specified in the package_handle's 
+##
+## imports all files specified in the package_handle's
 ## package_descriptor.cmakepp.export property relative
 ## to the package_handle.content_dir.  the files are
 ## included in which they were globbed.
 ##
 ## hooks:
 ##   package_descriptor.cmakepp.hooks.on_load(<project handle> <package handle>):
-##     after files were imported the hook stored under 
+##     after files were imported the hook stored under
 ##     package_descriptor.cmakepp.hooks.on_load is called
 ##     the value of on_load may be anything callable (file,function lambda)
 ##     the functions which were exported in the previous step
-##     can be such callables. 
-## 
+##     can be such callables.
 ##
-## events:  
+##
+## events:
 function(on_loaded_hook project_handle package_handle)
-  
+
 
   log("invoking on loaded hook for {package_handle.uri}" --trace --function on_loaded_hook)
   ## call on_load hook
@@ -31309,13 +31309,13 @@ endfunction()
 
 
 
-## `()->` 
+## `()->`
 ##
 ## **config**
-## 
+##
 ## **hooks**:
 ##   `package_descriptor.cmakepp.hooks.on_materialized(<project handle> <packag handle>)`
-##     this hook is invoked if it exists. it is invoked before the on_load hook 
+##     this hook is invoked if it exists. it is invoked before the on_load hook
 ##     this means that the project's exports were not loaded when the hook is called
 ##     however since cmake files are callable you can specify a local path
 function(on_materialized_hook project_handle package_handle)
@@ -31347,17 +31347,17 @@ endfunction()
 
 
 
-## 
-## 
+##
+##
 ## calls the package_descritpor's `cmakepp.hooks.on_unready` hook if the package is still available
 function(on_unready_hook project_handle package_handle)
   map_tryget(${package_handle} materialization_descriptor)
   ans(is_materialized)
   if(is_materialized)
     package_handle_invoke_hook(
-      "${package_handle}" 
-      hooks.on_unready 
-      ${project_handle} 
+      "${package_handle}"
+      hooks.on_unready
+      ${project_handle}
       ${package_handle}
       )
   endif()
@@ -31370,9 +31370,9 @@ endfunction()
 ## `(<project>)-><bool>`
 ##
 ## @TODO extract dfs algorithm, extreact dependency_load function which works for single dependencies
-## 
+##
 ## loads the specified project and its dependencies
-##  
+##
 ## **events**
 ## * `project_on_loading`
 ## * `project_on_loaded`
@@ -31404,16 +31404,16 @@ function(project_load project_handle)
     path_qualify_from(${project_dir} ${package_dir})
     map_set(${package_handle} content_dir ${package_dir})
   endforeach()
-  
-  
+
+
   event_emit(project_on_loading ${project_handle})
-  
+
   map_new()
   ans(context)
   function(__project_load_recurse)
 
     foreach(package_handle ${ARGN})
-      
+
       map_tryget(${context} ${package_handle})
       ans(state)
       if("${state}_" STREQUAL "visiting_")
@@ -31422,12 +31422,12 @@ function(project_load project_handle)
         event_emit(project_on_package_reload ${project_handle} ${package_handle})
       else()
         map_set(${context} ${package_handle} visiting)
-          
+
         ## pre order callback
         event_emit(project_on_package_loading ${project_handle} ${package_handle})
         set(parent_parent_package ${parent_package})
         set(parent_package ${package_handle})
-        
+
 
         ## expand
         map_tryget(${package_handle} dependencies)
@@ -31437,9 +31437,9 @@ function(project_load project_handle)
           ans(dependencies)
 
           __project_load_recurse(${dependencies})
-          
+
         endif()
-        
+
         map_set(${context} ${package_handle} visited)
 
         ## post order callback
@@ -31455,7 +31455,7 @@ function(project_load project_handle)
   __project_load_recurse(${project_handle} ${materialized_packages})
 
   event_emit(project_on_loaded ${project_handle})
- 
+
   return(true)
 endfunction()
 
@@ -31486,11 +31486,11 @@ endfunction()
 ## `(<project>)-><bool>`
 ##
 ## unloads the specified project and its dependencies
-##  
+##
 ## **events**
 ## * `project_on_unloading`  called before an packages is unloaded
 ## * `project_on_unloaded`  called after all packages were unloaded
-## * `project_on_package_unloading` called before the package's dependencies are unloaded 
+## * `project_on_package_unloading` called before the package's dependencies are unloaded
 ## * `project_on_package_unloaded` called after the package's dependencies are unloaded
 function(project_unload project_handle)
   ## load dependencies
@@ -31505,25 +31505,25 @@ function(project_unload project_handle)
   endforeach()
 
   event_emit(project_on_unloading ${project_handle})
-  
+
   map_new()
   ans(context)
   function(__project_unload_recurse)
 
     foreach(package_handle ${ARGN})
-      
+
       map_tryget(${context} ${package_handle})
       ans(state)
       if("${state}_" STREQUAL "visiting_")
       elseif("${state}_" STREQUAL "visited_")
       else()
         map_set(${context} ${package_handle} visiting)
-          
+
         ## pre order callback
         event_emit(project_on_package_unloading ${project_handle} ${package_handle})
         set(parent_parent_package ${parent_package})
         set(parent_package ${package_handle})
-        
+
 
         ## expand
         map_tryget(${package_handle} dependencies)
@@ -31533,9 +31533,9 @@ function(project_unload project_handle)
           ans(dependencies)
 
           __project_unload_recurse(${dependencies})
-          
+
         endif()
-        
+
         map_set(${context} ${package_handle} visited)
 
         ## post order callback
@@ -31552,7 +31552,7 @@ function(project_unload project_handle)
 
 
   event_emit(project_on_unloaded ${project_handle})
- 
+
   return(true)
 endfunction()
 
@@ -31580,7 +31580,7 @@ endfunction()
 
 
 ## `(<project handle> <materialization handle>)-><bool>`
-## 
+##
 ## checks wether an expected materialization actually exists and is valid
 ## return true if it is
 function(package_materialization_check project_handle package_handle)
@@ -31611,20 +31611,20 @@ endfunction()
 ## `(<project handle> <package uri>)-><package handle>`
 ##
 ## **sideeffects**
-## * removes `project_handle.project_descriptor.package_installations.<package_uri>` 
+## * removes `project_handle.project_descriptor.package_installations.<package_uri>`
 ## * removes `package_handle.materialization_descriptor`
-## 
+##
 ##
 ## **events**:
 ## * `[pwd=package content dir]project_on_package_dematerializing(<project handle> <package handle>)`
 ## * `[pwd=package content dir]project_on_package_dematerialized(<project handle> <package handle>)`
-## 
+##
 function(project_dematerialize project_handle package_uri)
   map_import_properties(${project_handle} project_descriptor)
   map_tryget(${project_handle} uri)
   ans(project_uri)
 
-  map_import_properties(${project_descriptor} 
+  map_import_properties(${project_descriptor}
     package_source
     package_cache
     package_materializations
@@ -31642,7 +31642,7 @@ function(project_dematerialize project_handle package_uri)
     ans(content_dir)
     pushd(${content_dir})
       event_emit(project_on_package_dematerializing ${project_handle} ${project_handle})
-        map_remove(${package_materializations} ${project_uri})    
+        map_remove(${package_materializations} ${project_uri})
         map_remove(${project_handle} materialization_descriptor)
       event_emit(project_on_package_dematerialized ${project_handle} ${project_handle})
     popd()
@@ -31669,7 +31669,7 @@ function(project_dematerialize project_handle package_uri)
 
   if(NOT materialization_handle)
     return()
-  endif() 
+  endif()
 
   map_tryget(${project_handle} content_dir)
   ans(project_dir)
@@ -31682,7 +31682,7 @@ function(project_dematerialize project_handle package_uri)
 
   ## emit events before and after removing package
   ## should also work if package doesnot exist anymore
-  pushd("${package_content_dir}" --create)  
+  pushd("${package_content_dir}" --create)
 
     event_emit(project_on_package_dematerializing ${project_handle} ${package_handle})
 
@@ -31699,7 +31699,7 @@ function(project_dematerialize project_handle package_uri)
 
     event_emit(project_on_package_dematerialized ${project_handle} ${package_handle})
   popd()
-  return(${package_handle})  
+  return(${package_handle})
 endfunction()
 
 
@@ -31741,8 +31741,8 @@ endfunction()
 ## * removes missing materializations from `project_descriptor.package_materializations`
 ## * removes missing materializations from `package_handle.materialization_descriptor`
 ##
-## checks all materializations of a project 
-## if a materialization is missing it is removed from the 
+## checks all materializations of a project
+## if a materialization is missing it is removed from the
 ## map of materializations
 ## returns all invalid materialization handles
 function(project_materialization_check project_handle)
@@ -31762,12 +31762,12 @@ function(project_materialization_check project_handle)
     package_materialization_check("${project_handle}" "${package_handle}")
     ans(ok)
     if(NOT ok)
-      project_dematerialize("${project_handle}" "${package_uri}")    
+      project_dematerialize("${project_handle}" "${package_uri}")
       list(APPEND invalid_materializations ${package_handle})
     endif()
   endforeach()
   return_ref(invalid_materializations)
-endfunction() 
+endfunction()
 
 
 
@@ -31782,14 +31782,14 @@ endfunction()
 ## is not given a target dir will be derived e.g. `<project root>/packages/mypackage-0.2.1-alpha`
 ##
 ## returns the package handle on success
-## 
-## **events**: 
+##
+## **events**:
 ## * `[pwd=target_dir]project_on_package_materializing(<project handle> <package handle>)`
 ## * `[pwd=target_dir]project_on_package_materialized(<project handle> <package handle>)`
 ##
 ## **sideffects**:
 ## * `IN` takes the package from the cache if it exits
-## * adds the specified package to the `package cache` if it does not exist 
+## * adds the specified package to the `package cache` if it does not exist
 ## * `project_handle.project_descriptor.package_materializations.<package uri> = <materialization handle>`
 ## * `package_handle.materialization_descriptor = <materialization handle>`
 ##
@@ -31811,7 +31811,7 @@ function(project_materialize project_handle package_uri)
   map_tryget(${project_handle} project_descriptor)
   ans(project_descriptor)
 
-  map_import_properties(${project_descriptor} 
+  map_import_properties(${project_descriptor}
     package_materializations
     package_source
     package_cache
@@ -31819,8 +31819,8 @@ function(project_materialize project_handle package_uri)
   )
 
   ## special treatment  if package uri is project uri
-  ## project is already materialized however 
-  ## events still need to be emitted / materialization_handle 
+  ## project is already materialized however
+  ## events still need to be emitted / materialization_handle
   ## needs to be created
   if("${project_uri}" STREQUAL "${package_uri}")
     map_tryget(${package_materializations} ${project_uri})
@@ -31863,13 +31863,13 @@ function(project_materialize project_handle package_uri)
     return(${package_handle})
   endif()
 
-  
-  ## generate the content dir for the package 
+
+  ## generate the content dir for the package
   if("${package_content_dir}_" STREQUAL "_")
     project_derive_package_content_dir(${project_handle} ${package_handle})
     ans(package_content_dir)
   endif()
-  
+
 
   ## create materialization handle
   map_new()
@@ -31896,7 +31896,7 @@ function(project_materialize project_handle package_uri)
     call(package_source.pull("${package_uri}" "${package_content_dir}"))
     ans(pull_handle)
     ## todo content dir might not be the same
-    
+
     if(NOT pull_handle)
       map_remove(${package_handle} materialization_descriptor)
       popd()
@@ -31906,7 +31906,7 @@ function(project_materialize project_handle package_uri)
     map_set(${package_materializations} ${package_uri} ${package_handle})
 
     event_emit(project_on_package_materialized ${project_handle} ${package_handle})
-  
+
   popd()
 
 
@@ -31950,7 +31950,7 @@ endfunction()
 function(project_materialize_dependencies project_handle)
   map_tryget(${project_handle} project_descriptor)
   ans(project_descriptor)
-  map_import_properties(${project_descriptor} 
+  map_import_properties(${project_descriptor}
     package_materializations
     dependency_configuration
     installation_queue
@@ -31989,7 +31989,7 @@ function(project_materialize_dependencies project_handle)
         project_dematerialize(${project_handle} ${package_uri})
         ans(package_handle)
       else()
-        message(FATAL_ERROR "project_materialize_dependencies: invalid action `${action}`")    
+        message(FATAL_ERROR "project_materialize_dependencies: invalid action `${action}`")
       endif()
 
       if(NOT package_handle)
@@ -31997,8 +31997,8 @@ function(project_materialize_dependencies project_handle)
       endif()
 
       list(APPEND changed_packages ${package_handle})
-      
-    endforeach() 
+
+    endforeach()
 
     #map_pop_front(${project_descriptor} installation_queue)
     map_set(project_descriptor dependency_configuration ${new_configuration})
@@ -32021,7 +32021,7 @@ endfunction()
 
 ## `(<project>)-><void>`
 ##
-## reads the package descriptor from a project local file if 
+## reads the package descriptor from a project local file if
 ## `project_handle.project_descriptor.project_descriptor_file` is configured
 function(project_package_descriptor_reader project)
   map_get_map(${project} package_descriptor)
@@ -32058,7 +32058,7 @@ endfunction()
 
 
 ## `(<project>)-><void>`
-##  
+##
 ## writes the package_descriptor to a package_descriptor_file
 ## it it is configured. does not overwrite package_descriptor_file
 ## if it was newly set
@@ -32076,7 +32076,7 @@ function(project_package_descriptor_writer project)
   path_qualify_from("${content_dir}" "${package_descriptor_file}")
   ans(package_descriptor_file)
 
-    
+
   map_tryget(${project_handle} package_descriptor)
   ans(package_descriptor)
 
@@ -32109,14 +32109,14 @@ function(project_register_extensions)
 
   event_addhandler(project_on_close project_unloader)
   event_addhandler(project_on_close project_package_descriptor_writer)
-  
+
   event_addhandler(project_on_package_ready project_loader)
   event_addhandler(project_on_package_ready on_ready_hook)
   event_addhandler(project_on_package_ready package_dependency_symlinker)
 
   event_addhandler(project_on_package_dematerializing on_dematerializing_hook)
   event_addhandler(project_on_package_materialized on_materialized_hook)
-  
+
   event_addhandler(project_on_package_loaded cmake_export_handler)
   event_addhandler(project_on_package_loaded on_loaded_hook)
   event_addhandler(project_on_package_loaded project_cmake_export_module)
@@ -32143,13 +32143,13 @@ task_enqueue(project_register_extensions)
 
 ## `(<project handle> <package handle> [---unlink])-><void>`
 ##
-## adds a symlink from dependees package folder to dependencies content folder 
+## adds a symlink from dependees package folder to dependencies content folder
 ## the symlink is relative to the package folder and configured in the package's dependency constraints using the symlink property
-## 
+##
 ## `{ id:'mypkg', dependencies:'some-dependency':{symlink:'pkg1'}}` this will cause the content of some-dependency to be symlinked to <package root>/pkg1
-## 
+##
 ## the symlinker is automatically executed when a package becomes ready (and unready)
-## 
+##
 function(package_dependency_symlinker project package)
   set(args ${ARGN})
   list_extract_flag(args --unlink)
@@ -32160,7 +32160,7 @@ function(package_dependency_symlinker project package)
   if(NOT dependencies)
     return()
   endif()
-  
+
   map_keys(${dependencies})
   ans(dependency_uris)
 
@@ -32191,12 +32191,12 @@ function(package_dependency_symlinker project package)
       map_keys("${symlink}")
       ans(links)
 
-      foreach(link ${links})          
+      foreach(link ${links})
         map_tryget("${symlink}" "${link}")
         ans(target)
 
         ## dependency
-        ## project 
+        ## project
         ## package
         format("${link}")
         ans(relative_link)
@@ -32288,14 +32288,14 @@ endfunction()
 
 
 
-## `(<content_dir> [<~project handle>])-><project handle>` 
+## `(<content_dir> [<~project handle>])-><project handle>`
 ##
 ## opens the specified project by setting default values for the existing or new project handle and setting its content_dir property to the fully qualified path specified.
 ## if no project handle was given a new one is created.
 ## if the state of the project handle is `unknown` it was never opened before. It is first transitioned to `closed` after emitting the `project_on_new` event.
-## then the project handle is transitioned from `closed` to `open` first the `project_on_opening` event is emitted followed by `project_on_open`.  Afterwards the state is changed to `open` and then the `project_on_opened` event us emitted.  
-## returns the project handle of the project on success. fails if the project handle is in a state other than `unknown` or `closed`. 
-## 
+## then the project handle is transitioned from `closed` to `open` first the `project_on_opening` event is emitted followed by `project_on_open`.  Afterwards the state is changed to `open` and then the `project_on_opened` event us emitted.
+## returns the project handle of the project on success. fails if the project handle is in a state other than `unknown` or `closed`.
+##
 ## *note* that the default project does not contain a package source. it will have to be configured once manually for every new project
 ##
 ##
@@ -32308,9 +32308,9 @@ endfunction()
 ##  * `project_on_state_leave(<project handle>)`
 ##  * extensions also emit events.
 ##
-## **assumes** 
+## **assumes**
 ## * `project_handle.project_descriptor.state` is either `unknown`(null) or `closed`
-## 
+##
 ## **ensures**
 ## * `content_dir` is set to the absolute path of the project
 ## * `project_descriptor.state` is set to `open`
@@ -32334,7 +32334,7 @@ function(project_open content_dir)
 
   ## setup scope
   set(project_dir "${content_dir}")
-  
+
 
   ## emit events
 
@@ -32347,10 +32347,10 @@ function(project_open content_dir)
     project_state_change("${project_handle}" closed)
   endif()
 
-  
+
   ## open starting
   event_emit(project_on_opening ${project_handle})
-  
+
   ## open
   event_emit(project_on_open ${project_handle})
   project_state_change("${project_handle}" opened)
@@ -32366,30 +32366,30 @@ endfunction()
 
 
 ## `(<package handle> | <project dir> | <project file>)-><project handle>`
-## 
-##  Opens a project at `<project dir>` which defaults to the current directory (see `pwd()`). 
-##  If a project file is specified it is openend and the project dir is derived.  
-## 
+##
+##  Opens a project at `<project dir>` which defaults to the current directory (see `pwd()`).
+##  If a project file is specified it is openend and the project dir is derived.
+##
 ##  Checks wether the project is consistent and if not acts accordingly. Loads the project and all its dependencies
 ##  also loads all materialized packages which are not part of the project's dependency graph
-## 
-## **returns** 
-## * `<project handle>` the handle to the current project (contains the `project_descriptor`) 
-## 
+##
+## **returns**
+## * `<project handle>` the handle to the current project (contains the `project_descriptor`)
+##
 ## **events**
 ## * `project_on_opening(<project handle>)` emitted when the `<project handle>` exists but nothing is loaded yet
 ## * `project_on_open(<project handle>)` emitted  so that custom handlers can perform actions like loading, initializing, etc
 ## * `project_on_opened(<project handle>)` emitted after the project was checked and loaded
-## * events have access to the follwowing in their scope: 
+## * events have access to the follwowing in their scope:
 ##   * `project_dir:<qualified path>` the location of this projects root directory
-##   * `project_handle:<project handle>` the handle to the project 
+##   * `project_handle:<project handle>` the handle to the project
 function(project_read)
   project_constants()
   path("${ARGN}")
   ans(location)
   if(EXISTS "${location}" AND NOT IS_DIRECTORY "${location}")
     set(project_file "${location}")
-  else()    
+  else()
     file_find_anchor("${project_constants_project_file}" ${location})
     ans(project_file)
   endif()
@@ -32441,12 +32441,12 @@ function(project_write project_handle)
   ans(project_file)
   fwrite_data("${project_file}" "${project_handle}")
   return_ref(project_file)
-endfunction() 
+endfunction()
 
 
 
 
-## `()->() *package constants are set` 
+## `()->() *package constants are set`
 ##
 ## defines constants which are used in project management
 macro(project_constants)
@@ -32496,7 +32496,7 @@ endfunction()
 
 
 ## `()-><project handle>`
-## 
+##
 ## creates the default project handle:
 ## ```
 ## {
@@ -32538,7 +32538,7 @@ function(project_handle_default)
   map_set(${project_handle} uri "project:root")
   map_set(${project_handle} package_descriptor "${package_descriptor}")
   map_set(${project_handle} project_descriptor "${project_descriptor}")
-  
+
   return_ref(project_handle)
 endfunction()
 
@@ -32552,11 +32552,11 @@ function(project_install project_handle)
   set(args ${ARGN})
   project_change_dependencies(${project_handle} ${args})
   ans(changeset)
- 
+
 
   project_materialize_dependencies(${project_handle})
   ans(changes_handles)
-  
+
   return(${changeset})
 endfunction()
 
@@ -32583,7 +32583,7 @@ endfunction()
 
 
 function(project_state_assert project_handle)
-  project_state_matches("${project_handle}" "${ARGN}")  
+  project_state_matches("${project_handle}" "${ARGN}")
   ans(is_match)
   if(NOT is_match)
     message(FATAL_ERROR FORMAT "invalid project state (expected '${ARGN}' actual '{project_handle.project_descriptor.state}')")
@@ -32687,7 +32687,7 @@ endfunction()
     map_tryget(${definition} element)
     ans(element)
     map_tryget(${definition} separator)
-    ans(separator)         
+    ans(separator)
 
     # create copy of input string
     address_get(${rstring})
@@ -32739,15 +32739,15 @@ endfunction()
         endif()
         return()
       endif()
-      
+
       list(APPEND result_list "${res}")
-    endwhile()    
+    endwhile()
 
     # set rstring
     address_get(${str})
     ans(str)
     address_set(${rstring} "${str}")
-    
+
     list(LENGTH return_list len)
     if(NOT len)
       #return("")
@@ -32794,8 +32794,8 @@ endfunction()
 
 
 function(parse_object rstring)
-  
-    # create a copy from rstring 
+
+    # create a copy from rstring
     address_get(${rstring})
     ans(str)
     address_set_new("${str}")
@@ -32807,12 +32807,12 @@ function(parse_object rstring)
 
     map_tryget(${definition} end)
     ans(end_id)
-    
+
     map_tryget(${definition} keyvalue)
     ans(keyvalue_id)
 
     map_tryget(${definition} separator)
-    ans(separator_id)         
+    ans(separator_id)
 
     if(begin_id)
       parse_string(${str} ${begin_id})
@@ -32875,13 +32875,13 @@ function(parse_object rstring)
       endif()
 
       if("${object_value}_" STREQUAL "_")
-        
+
         set(object_value "")
       endif()
-      
+
       map_set("${result_object}" "${object_key}" "${object_value}")
 
-    endwhile()    
+    endwhile()
 
 
     # if every element was  found set rstring to rest of string
@@ -32963,7 +32963,7 @@ endfunction()
 
  #   message("parsing '${parser_id}' parser (regex: '${regex}') for '${str}'")
     # try to take regex from string
-    
+
     map_tryget(${definition} ignore_regex)
     ans(ignore_regex)
    # message("ignore: ${ignore_regex}")
@@ -32986,7 +32986,7 @@ endfunction()
 
     map_tryget(${definition} replace)
     ans(replace)
-    if(replace)        
+    if(replace)
         string_eval("${replace}")
         ans(replace)
         #message("replace ${replace}")
@@ -33017,8 +33017,8 @@ endfunction()
 
 
 
-  function(parse_sequence rstring) 
-    # create a copy from rstring 
+  function(parse_sequence rstring)
+    # create a copy from rstring
     address_get(${rstring})
     ans(str)
     address_set_new("${str}")
@@ -33041,7 +33041,7 @@ endfunction()
 
         map_set(${definition} "parser" "sequence")
         map_set(${definition} "sequence" "${expression}")
-        
+
 #        json_print(${definition})
         parse_sequence("${rstring}")
         ans(res)
@@ -33054,7 +33054,7 @@ endfunction()
         map_set(${set_map} "${key}" true)
         return(true)
 
-      endif()      
+      endif()
 
 
 
@@ -33068,7 +33068,7 @@ endfunction()
         map_set("${res_map}" "${key}" "${expression}")
         return(true)
       endif()
-      
+
       # null coalescing
       if("${expression}" MATCHES "[^@]*\\|")
         string_split_at_first(left right "${expression}" "|")
@@ -33110,7 +33110,7 @@ endfunction()
           return(true)
         endif()
 
-      endif() 
+      endif()
 
 
 
@@ -33143,7 +33143,7 @@ endfunction()
    #     message("setting at ${key}")
         map_set("${res_map}" "${key}" "${res}")
       endif()
-      
+
       if(NOT ${len} EQUAL 0)
         map_set(${set_map} "${key}" "true")
 
@@ -33193,7 +33193,7 @@ endfunction()
 #      if("${sequence_id}" MATCHES "^@")
 #        string(SUBSTRING "${sequence_id}" 1 -1 sequence_id)
 #        map_set("${result_map}" "${sequence_key}" "${sequence_id}")
-#     
+#
 #      else()
 #        set(ignore false)
 #        set(optional false)
@@ -33235,14 +33235,14 @@ endfunction()
       function_import_table(${parsers} __call_string_parser)
     endif()
 
-    # 
+    #
     map_get("${definitions}" "${definition_id}")
     ans(definition)
-    
+
     #
     map_get("${definition}" parser)
     ans(parser_id)
-    
+
     #
   #  message(FORMAT "${parser_id} parser parsing ${definition_id}..")
     message_indent_push()
@@ -33253,7 +33253,7 @@ endfunction()
    #list(LENGTH res len)
  #  if(len)
    #  message("parsed '${res}' with ${parser_id} parser")
-   #endif()   
+   #endif()
     return_ref(res)
   endfunction()
 
@@ -33280,7 +33280,7 @@ endfunction()
 
 
 
-  function(fallback_data_read dirs id)    
+  function(fallback_data_read dirs id)
     set(maps )
     foreach(dir ${dirs})
       file_data_read("${dir}" "${id}")
@@ -33383,7 +33383,7 @@ endfunction()
 function(file_data_path dir id)
   path("${dir}/${id}.cmake")
   ans(path)
-  return_ref(path)    
+  return_ref(path)
 endfunction()
 
 
@@ -33392,7 +33392,7 @@ endfunction()
 
 
 function(file_data_read dir id)
-  file_data_path("${dir}" "${id}")      
+  file_data_path("${dir}" "${id}")
   ans(path)
   if(NOT EXISTS "${path}")
     return()
@@ -33422,8 +33422,8 @@ function(file_data_set dir id nav)
 endfunction()
 
 
-   
-  
+
+
 
 
 
@@ -33442,7 +33442,7 @@ endfunction()
 
 
 
-  ## same as file_data_write except that an <obj> is parsed 
+  ## same as file_data_write except that an <obj> is parsed
   function(file_data_write_obj dir id obj)
     obj("${obj}")
     ans(obj)
@@ -33461,7 +33461,7 @@ endfunction()
 ## for example git normally uses an anchorfile in every repository
 ## (in that cast the `.git` folder)
 ## also alot of projects use a local file system and in the project;'s
-## root folder there exists an anchor file e.g. `.cps` `.cps/project.scmake` 
+## root folder there exists an anchor file e.g. `.cps` `.cps/project.scmake`
 ##
 function(file_find_anchor search_file)
   set(search ${ARGN})
@@ -33574,11 +33574,11 @@ endfunction()
 
     file(GLOB store_keys RELATIVE "${store_dir}" ${globs})
     string(REGEX REPLACE "([a-fA-F0-9]+)-([a-fA-F0-9]+)-([a-fA-F0-9]+)" "\\2" keys "${store_keys}")
-  
+
     list_remove_duplicates(keys)
     return_ref(keys)
   endfunction()
-  
+
 
 
 
@@ -33597,7 +33597,7 @@ endfunction()
     else()
       map_tryget(${index} selector)
       ans(selector)
-    endif()  
+    endif()
     callable("${selector}")
     ans(selector)
     map_set(${index} selector "${selector}")
@@ -33613,7 +33613,7 @@ function(indexed_store_keys)
   this_get(store_dir)
   file(GLOB keys RELATIVE "${store_dir}" "${store_dir}/*" )
   string(REGEX REPLACE "[a-fA-F0-9]+-([a-fA-F0-9]+)-[a-fA-F0-9]+" "\\1" keys "${keys}")
-  
+
   list_remove_duplicates(keys)
   return_ref(keys)
 endfunction()
@@ -33739,11 +33739,11 @@ endfunction()
     foreach(key ${keys})
       key_value_store_load("${key}")
       ans_append(values)
-    endforeach()  
+    endforeach()
     return_ref(values)
   endfunction()
 
-  
+
 
 
 
@@ -33766,7 +33766,7 @@ endfunction()
   function(key_value_store_save)
     this_get(store_dir)
     assign(key = this.key(${ARGN}))
-    qm_write("${store_dir}/${key}" ${ARGN})    
+    qm_write("${store_dir}/${key}" ${ARGN})
     return_ref(key)
   endfunction()
 
@@ -33776,7 +33776,7 @@ endfunction()
 ## signature user_data_clear(<id:identifier>^"--all")
 ### removes the user data associated to identifier id
 ## WARNING: if --all flag is specified instead of an id all user data is deleted
-## 
+##
 function(user_data_clear)
   set(args ${ARGN})
   list_extract_flag(args --all)
@@ -33804,7 +33804,7 @@ endfunction()
 
 ## returns the <qualified directory> where the user data is stored
 # this is the home dir/.cmakepp
-function(user_data_dir)    
+function(user_data_dir)
   home_dir()
   ans(home_dir)
   set(storage_dir "${home_dir}/.cmakepp")
@@ -33857,7 +33857,7 @@ endfunction()
 ## returns the user data path for the specified id
 ## id can be any string that is also usable as a valid filename
 ## it is located in %HOME_DIR%/.cmakepp
-function(user_data_path id)  
+function(user_data_path id)
   if(NOT id)
     message(FATAL_ERROR "no id specified")
   endif()
@@ -33873,7 +33873,7 @@ endfunction()
 
 
 ### returns the user data stored under the index id
-## user data may be any kind of data  
+## user data may be any kind of data
 function(user_data_read id)
   user_data_path("${id}")
   ans(storage_file)
@@ -33889,7 +33889,7 @@ endfunction()
 
 
 
-## sets and persists data for the current user specified by identified by <id> 
+## sets and persists data for the current user specified by identified by <id>
 ## nav can be empty or a "." which will set the data at the root level
 ## else it can be a navigation expressions which (see map_navigate_set)
 ## e.g. user_data_set(common_directories cmakepp.base_dir /home/user/mydir)
@@ -33918,7 +33918,7 @@ endfunction()
 
 
 
-## writes all var args into user data, accepts any typ of data 
+## writes all var args into user data, accepts any typ of data
 ## maps are serialized
 function(user_data_write id)
   user_data_path("${id}")
@@ -33932,7 +33932,7 @@ endfunction()
 
 
 
-  ## same as user_data_write except that an <obj> is parsed 
+  ## same as user_data_write except that an <obj> is parsed
   function(user_data_write_obj id obj)
     obj("${obj}")
     ans(obj)
@@ -34097,10 +34097,10 @@ endfunction()
     fwrite("${path}/script.ps1" "${code}")
     ans(script_file)
     win32_powershell(
-      -NoLogo                   # no info output 
+      -NoLogo                   # no info output
       -NonInteractive           # no interaction
-      -ExecutionPolicy ByPass   # bypass execution policy 
-     # -NoNewWindow              
+      -ExecutionPolicy ByPass   # bypass execution policy
+     # -NoNewWindow
       #-WindowStyle Hidden       # hide window
       -File "${script_file}"    # the file to execute
       ${ARGN}                   # add further args to command line
@@ -34145,7 +34145,7 @@ endfunction()
 
 
 ## wraps the windows wmic command (windows XP and higher )
-# since wmic does outputs unicode and does not take forward slash paths the usage is more complicated 
+# since wmic does outputs unicode and does not take forward slash paths the usage is more complicated
 # and wrap_executable does not work
 function(win32_wmic)
   pwd()
@@ -34154,12 +34154,12 @@ function(win32_wmic)
   ans(tmp)
   file(TO_NATIVE_PATH "${tmp}" out)
 
-  execute_process(COMMAND wmic /output:${out} ${ARGN} RESULT_VARIABLE res WORKING_DIRECTORY "${pwd}")  
+  execute_process(COMMAND wmic /output:${out} ${ARGN} RESULT_VARIABLE res WORKING_DIRECTORY "${pwd}")
   if(NOT "${res}" EQUAL 0 )
     return()
   endif()
 
-  fread_unicode16("${tmp}")        
+  fread_unicode16("${tmp}")
   return_ans()
 endfunction()
 
@@ -34173,7 +34173,7 @@ function(win32_wmic_call_create command)
   path("${command}")
   ans(cmd)
   pwd()
-  ans(cwd)  
+  ans(cwd)
   set(args)
 
 
@@ -34197,7 +34197,7 @@ function(win32_wmic_call_create command)
   string(REGEX REPLACE "${pidregex}" "\\1" pid "${pid_match}")
   if(NOT "${ret}" EQUAL 0)
     return()
-  endif() 
+  endif()
   process_handle(${pid})
   ans(res)
   map_set(${res} status running)
@@ -34209,11 +34209,11 @@ endfunction()
 
 ## async(<callable>(<args...)) -> <process handle>
 ##
-## executes a callable asynchroniously 
+## executes a callable asynchroniously
 ##
-## todo: 
+## todo:
 ##   capture necessary scope vars
-##   include further files for custom functions     
+##   include further files for custom functions
 ##   environment vars
   function(async callable)
     cmakepp_config(base_dir)
@@ -34292,7 +34292,7 @@ endfunction()
     string_combine(" " ${args})
     ans(res)
     string_decode_list("${res}")
-    ans(res)    
+    ans(res)
     return_ref(res)
   endfunction()
 
@@ -34300,11 +34300,11 @@ endfunction()
 
 
 
-## escapes a command line quoting arguments as needed 
-function(command_line_args_escape) 
+## escapes a command line quoting arguments as needed
+function(command_line_args_escape)
   set(whitespace_regex "( )")
   set(result)
-  
+
   string(ASCII  31 us)
 
   foreach(arg ${ARGN})
@@ -34326,7 +34326,7 @@ function(command_line_args_escape)
 
     list(APPEND result "${arg}")
 
-  endforeach()    
+  endforeach()
   return_ref(result)
 endfunction()
 
@@ -34334,8 +34334,8 @@ endfunction()
 
 
 
-## command_line_parse 
-## parses the sepcified cmake style  command list which starts with COMMAND 
+## command_line_parse
+## parses the sepcified cmake style  command list which starts with COMMAND
 ## or parses a single command line call
 ## returns a command line object:
 ## {
@@ -34363,7 +34363,7 @@ function(command_line_parse)
     ans(arg_string)
 
 
-    set(command_line "\"${command}\" ${arg_string}")      
+    set(command_line "\"${command}\" ${arg_string}")
   else()
     if(arg_count)
      message(FATAL_ERROR "either use a single command string or a list of 'COMMAND <command> <arg1> <arg2> ...'")
@@ -34386,12 +34386,12 @@ endfunction()
     ans(uri)
 
     map_tryget(${uri} rest)
-    ans(rest)   
+    ans(rest)
 
 
     uri_to_localpath("${uri}")
     ans(command)
-    
+
     set(args)
     while(true)
       string_take_commandline_arg(rest)
@@ -34428,7 +34428,7 @@ function(command_line_to_string)
   endfunction()
 
 
-  
+
 
 
 
@@ -34436,13 +34436,13 @@ function(command_line_to_string)
 ## `(<process start info> [--process-handle] [--exit-code] [--async] [--silent-fail] [--success-callback <callable>]  [--error-callback <callable>] [--state-changed-callback <callable>])-><process handle>|<exit code>|<stdout>|<null>`
 ##
 ## *options*
-## * `--process-handle` 
-## * `--exit-code` 
-## * `--async` 
-## * `--silent-fail` 
-## * `--success-callback <callable>[exit_code](<process handle>)` 
-## * `--error-callback <callable>[exit_code](<process handle>)` 
-## * `--state-changed-callback <callable>[old_state;new_state](<process handle>)` 
+## * `--process-handle`
+## * `--exit-code`
+## * `--async`
+## * `--silent-fail`
+## * `--success-callback <callable>[exit_code](<process handle>)`
+## * `--error-callback <callable>[exit_code](<process handle>)`
+## * `--state-changed-callback <callable>[old_state;new_state](<process handle>)`
 ## * `--lean`
 ## *example*
 ## ```
@@ -34523,7 +34523,7 @@ function(execute)
     endif()
 
 
-    
+
     map_tryget(${process_handle} exit_code)
     ans(exit_code)
 
@@ -34561,7 +34561,7 @@ endfunction()
 
 ## `(<cmake code> [--pure] <args...>)-><execute result>`
 ##
-## equivalent to `execute(...)->...` runs the specified code using `cmake -P`.  
+## equivalent to `execute(...)->...` runs the specified code using `cmake -P`.
 ## prepends the current `cmakepp.cmake` to the script  (this default behaviour can be stopped by adding `--pure`)
 ##
 ## all not specified `args` are forwarded to `execute`
@@ -34580,7 +34580,7 @@ function(execute_script script)
   fwrite_temp("${script}" ".cmake")
   ans(script_file)
   ## execute add callback to delete temporary file
-  execute("${CMAKE_COMMAND}" -P "${script_file}"  --on-terminated-callback "[]() rm(${script_file})" ${args}) 
+  execute("${CMAKE_COMMAND}" -P "${script_file}"  --on-terminated-callback "[]() rm(${script_file})" ${args})
   return_ans()
 endfunction()
 
@@ -34624,7 +34624,7 @@ endfunction()
 
 
 
-# wraps the linux ps command into an executable 
+# wraps the linux ps command into an executable
 function(linux_ps)
   wrap_executable(linux_ps ps)
   linux_ps(${ARGN})
@@ -34708,12 +34708,12 @@ function(process_info_Linux handle)
 
   map_tryget(${handle} pid)
   ans(pid)
-  
+
 
   linux_ps_info_capture(${pid} ${handle} comm)
 
 
-  return_ref(handle)    
+  return_ref(handle)
 endfunction()
 
 
@@ -34752,12 +34752,12 @@ endfunction()
     ans(error)
 
     return_truth("${error}" EQUAL 0)
-  endfunction() 
+  endfunction()
 
 
 
 
-# linux specific implementation of process_list 
+# linux specific implementation of process_list
 # returns a list of <process handle> which only contains pid
 
 
@@ -34789,8 +34789,8 @@ endfunction()
 
       process_handle("${pid}")
       ans(handle)
-      #map_capture(${handle} tty hh mm ss cmd) 
-      
+      #map_capture(${handle} tty hh mm ss cmd)
+
       list(APPEND handles ${handle})
     endforeach()
     return_ref(handles)
@@ -34802,7 +34802,7 @@ endfunction()
 
 
 # process_fork implementation specific to linux
-# uses bash and nohup to start a process 
+# uses bash and nohup to start a process
 function(process_start_Linux process_handle)
   process_handle_register(${process_handle})
   map_tryget(${process_handle} start_info)
@@ -34823,7 +34823,7 @@ function(process_start_Linux process_handle)
 
   set(command_string "${command} ${command_arguments_string}")
 
-  # define output files        
+  # define output files
   fwrite_temp("")
   ans(stdout)
   fwrite_temp("")
@@ -34834,15 +34834,15 @@ function(process_start_Linux process_handle)
   ans(pid_out)
 
   process_handle_change_state(${process_handle} starting)
-  # create a temporary shell script 
-  # which starts bash with the specified command 
-  # output of the command is stored in stdout file 
-  # error of the command is stored in stderr file 
-  # return_code is stored in return_code file 
+  # create a temporary shell script
+  # which starts bash with the specified command
+  # output of the command is stored in stdout file
+  # error of the command is stored in stderr file
+  # return_code is stored in return_code file
   # and the created process id is stored in pid_out
   shell_tmp_script("( bash -c \"(cd ${working_directory}; ${command_string} > ${stdout} 2> ${stderr})\" ; echo $? > ${return_code}) & echo $! > ${pid_out}")
   ans(script)
-  ## execute the script in bash with nohup 
+  ## execute the script in bash with nohup
   ## which causes the script to run detached from process
   bash_lean(-c "nohup ${script} > /dev/null 2> /dev/null")
   ans(error)
@@ -34867,7 +34867,7 @@ function(process_start_Linux process_handle)
   map_set(${process_handle} stdout_file ${stdout})
   map_set(${process_handle} stderr_file ${stderr})
   map_set(${process_handle} return_code_file ${return_code})
-  
+
 
   process_refresh_handle("${process_handle}")
 
@@ -34880,21 +34880,21 @@ endfunction()
 
 ## `(<process handle>)-><process handle>`
 ##
-## executes the specified command with the specified arguments in the 
+## executes the specified command with the specified arguments in the
 ## current working directory
-## creates and registers a process handle which is then returned 
+## creates and registers a process handle which is then returned
 ## this function accepts arguments as encoded lists. this allows you to include
-## arguments which contain semicolon and other special string chars. 
+## arguments which contain semicolon and other special string chars.
 ## the process id of processes start with `process_execute` is always -1
 ## because `CMake`'s `execute_process` does not return it. This is not too much of a problem
 ## because the process will always be terminated as soon as the function returns
-## 
+##
 ## **parameters**
-##   * `<command>` the executable (may contain spaces) 
-##   * `<arg...>` the arguments - may be an encoded list 
+##   * `<command>` the executable (may contain spaces)
+##   * `<arg...>` the arguments - may be an encoded list
 ## **scope**
 ##   * `pwd()` used as the working-directory
-## **events** 
+## **events**
 ##   * `on_process_handle_created` global event is emitted when the process_handle is ready
 ##   * `process_handle.on_state_changed`
 ##
@@ -34902,14 +34902,14 @@ endfunction()
 ## ```
 ## <process handle> ::= {
 ##   pid: "-1"|"0"
-##     
+##
 ## }
-## ``` 
+## ```
 function(process_execute process_handle)
   process_handle_register(${process_handle})
 
   map_tryget(${process_handle} start_info)
-  ans(process_start_info)  
+  ans(process_start_info)
 
   ## the pid is -1 by default for non async processes
   map_set(${process_handle} pid -1)
@@ -34942,7 +34942,7 @@ function(process_execute process_handle)
     ans(argument)
     set(command_arguments_string "${command_arguments_string} ${argument}")
   endforeach()
-  
+
 
   map_tryget(${process_start_info} timeout)
   ans(timeout)
@@ -35005,7 +35005,7 @@ function(process_handle handlish)
     if(NOT handle)
       map_new()
       ans(handle)
-      map_set(${handle} pid "${handlish}")          
+      map_set(${handle} pid "${handlish}")
       map_set(${handle} state "unknown")
       map_set(__process_handles ${handlish} ${handle})
     endif()
@@ -35019,7 +35019,7 @@ endfunction()
 
 
 
-## transforms a list of <process handle?!> into a list of <process handle>  
+## transforms a list of <process handle?!> into a list of <process handle>
 function(process_handles)
   set(handles)
   foreach(arg ${ARGN})
@@ -35056,11 +35056,11 @@ function(process_handle_change_state process_handle new_state)
     if(error)
       map_tryget("${process_handle}" on_error)
       ans(on_error_event)
-      event_emit("${on_error_event}" ${process_handle})  
+      event_emit("${on_error_event}" ${process_handle})
     else()
       map_tryget("${process_handle}" on_success)
       ans(on_success_event)
-      event_emit("${on_success_event}" ${process_handle})  
+      event_emit("${on_success_event}" ${process_handle})
     endif()
     map_tryget("${process_handle}" on_terminated)
     ans(on_terminated_event)
@@ -35087,7 +35087,7 @@ endfunction()
 ## returns a new process handle which has the following layout:
 ## ```
 ## <process handle> ::= {
-##   pid: <pid>  
+##   pid: <pid>
 ##   start_info: <process start info>
 ##   state: "unknown"|"running"|"terminated"
 ##   stdout: <text>
@@ -35095,9 +35095,9 @@ endfunction()
 ##   exit_code: <integer>|<error string>
 ##   command: <executable>
 ##   command_args: <encoded list>
-##   on_state_change: <event>[old_state, new_state](${process_handle}) 
+##   on_state_change: <event>[old_state, new_state](${process_handle})
 ## }
-## ``` 
+## ```
 function(process_handle_new start_info)
   map_new()
   ans(process_handle)
@@ -35155,8 +35155,8 @@ endfunction()
 
 
 ## returns true iff the process identified by <handlish> is running
-function(process_isrunning)    
-  wrap_platform_specific_function(process_isrunning)    
+function(process_isrunning)
+  wrap_platform_specific_function(process_isrunning)
   process_isrunning(${ARGN})
   return_ans()
 endfunction()
@@ -35222,7 +35222,7 @@ function(process_refresh_handle handle)
   process_handle_change_state("${handle}" "${state}")
   ans(state_changed)
 
-  
+
 
 
 
@@ -35252,7 +35252,7 @@ endfunction()
 
 
 
-## starts a process and returns a handle which can be used to controll it.  
+## starts a process and returns a handle which can be used to controll it.
 ##
 # {
 #   <pid:<unique identifier>> // some sort of unique identifier which can be used to identify the processs
@@ -35277,13 +35277,13 @@ endfunction()
 
 
 
-## `(<command string>|<object>)-><process start info>` 
-## `<command string> ::= "COMMAND"? <command> <arg...>` 
+## `(<command string>|<object>)-><process start info>`
+## `<command string> ::= "COMMAND"? <command> <arg...>`
 ##
 ## creates a new process_start_info with the following fields
 ## ```
 ## <process start info> ::= {
-##   command: <executable> 
+##   command: <executable>
 ##   command_arguments: <encoded list>
 ##   working_directory: <directory>
 ##   timeout: <n>
@@ -35293,7 +35293,7 @@ endfunction()
 ## *example*
 ##  * `process_start_info_new(COMMAND cmake -E echo "asd bsd" csd) -> <% process_start_info_new(COMMAND cmake -E echo "asd;bsd")
 ##  ans(info)
-##  template_out_json(${info}) %>` 
+##  template_out_json(${info}) %>`
 function(process_start_info_new)
   arguments_encoded_list(0 ${ARGC})
   ans(arguments_list)
@@ -35322,9 +35322,9 @@ function(process_start_info_new)
 
   map_new()
   ans(process_start_info)
-  map_set(${process_start_info} command "${command}")  
+  map_set(${process_start_info} command "${command}")
   map_set(${process_start_info} command_arguments "${arguments_list}")
-  map_set(${process_start_info} working_directory "${working_directory}")  
+  map_set(${process_start_info} working_directory "${working_directory}")
   map_set(${process_start_info} timeout "${timeout}")
 
   return_ref(process_start_info)
@@ -35464,16 +35464,16 @@ endfunction()
 ## waits for all specified <process handles> to finish returns them in the order
 ## in which they completed
 ##
-## `--timeout <n>`    if value is specified the function will return all 
+## `--timeout <n>`    if value is specified the function will return all
 ##                    finished processes after n seconds
 ##
-## `--idle-callback <callable>`   
+## `--idle-callback <callable>`
 ##                    if value is specified it will be called at least once
-##                    and between every query if a task is still running 
+##                    and between every query if a task is still running
 ##
 ##
 ## `--task-complete-callback <callable>`
-##                    if value is specified it will be called whenever a 
+##                    if value is specified it will be called whenever a
 ##                    task completes.
 ##
 ## *Example*
@@ -35514,22 +35514,22 @@ function(process_wait_all)
     ans(current_process)
     process_refresh_handle(${current_process})
     ans(is_running)
-    
+
     #message(FORMAT "{current_process.pid} is_running {is_running} {current_process.state} ")
 
     if(NOT is_running)
       if("${current_process}_" STREQUAL "_${timeout_process_handle}")
         set(running_processes)
-      else()          
+      else()
 
-        list(APPEND complete_processes ${current_process})          
+        list(APPEND complete_processes ${current_process})
         if(NOT quietly)
-          list(LENGTH complete_processes complete_count)           
+          list(LENGTH complete_processes complete_count)
           if(task_complete_callback)
-            call2("${task_complete_callback}" "${current_process}") 
+            call2("${task_complete_callback}" "${current_process}")
           endif()
-        endif() 
-      endif()        
+        endif()
+      endif()
     else()
       ## insert into back
       list(APPEND running_processes ${current_process})
@@ -35555,7 +35555,7 @@ endfunction()
     set(args ${ARGN})
 
     list_extract_flag(args --quietly)
-    ans(quietly)    
+    ans(quietly)
 
     process_handles(${args})
     ans(processes)
@@ -35563,7 +35563,7 @@ endfunction()
 
     if(NOT quietly)
       list(LENGTH processes len)
-      echo_append("waiting for any of ${len} processes to finish.")  
+      echo_append("waiting for any of ${len} processes to finish.")
     endif()
 
     set(timeout_process_handle)
@@ -35585,7 +35585,7 @@ endfunction()
       endif()
 
       if(NOT isrunning)
-        if("${process}_" STREQUAL "${timeout_process_handle}_")      
+        if("${process}_" STREQUAL "${timeout_process_handle}_")
           echo(".. timeout")
           return()
         endif()
@@ -35597,7 +35597,7 @@ endfunction()
         list(APPEND processes ${process})
       endif()
 
-    endwhile()   
+    endwhile()
   endfunction()
 
 
@@ -35606,19 +35606,19 @@ endfunction()
 
 ## `(<n:<int>|"*"> <process handle>... [--idle-callback:<callable>])-><process handle>...`
 ##
-## waits for at least <n> processes to complete 
+## waits for at least <n> processes to complete
 ##
-## returns: 
+## returns:
 ##  * at least `n` terminated processes
-## 
-## arguments: 
-## * `n` an integer the number of processes to return (lower bound) if `n` is clamped to the number of processes. if `n` is * it is replaced with the number of processes 
+##
+## arguments:
+## * `n` an integer the number of processes to return (lower bound) if `n` is clamped to the number of processes. if `n` is * it is replaced with the number of processes
 ## * `--idle-callback` is called after every time a processes state was polled. It is guaranteed to be called once per process handle. it has access to the following scope variables
 ##    * `terminated_count` number of terminated processes
 ##    * `running_count` number of running processes
 ##    * `wait_time` time that was waited
 ##    * `wait_counter` number of times the waiting loop iterated
-##    * `running_processes` list of running processes 
+##    * `running_processes` list of running processes
 ##    * `current_process` the current process being polled
 ##    * `is_running` the running state of the current process
 ##    * `terminated_processes` the list of terminated processes
@@ -35626,7 +35626,7 @@ endfunction()
 function(process_wait_n n)
   arguments_extract_typed_values(0 ${ARGC}
     <n:<string>>
-    [--idle-callback:<callable>] # 
+    [--idle-callback:<callable>] #
     [--timeout:<int>?]
   )
   ans(process_handles)
@@ -35638,10 +35638,10 @@ function(process_wait_n n)
 
   timer_start(__process_wait_timer)
   set(wait_counter 0)
-  
+
   if("${n}" STREQUAL "*")
     list(LENGTH running_processes n)
-  endif()  
+  endif()
 
   set(terminated_count 0)
 
@@ -35659,7 +35659,7 @@ function(process_wait_n n)
     while(queue)
       list_pop_front(queue)
       ans(current_process)
-    
+
 
       process_refresh_handle(${current_process})
       ans(is_running)
@@ -35668,7 +35668,7 @@ function(process_wait_n n)
         list(REMOVE_ITEM running_processes ${current_process})
         list(APPEND terminated_processes ${current_process})
       endif()
-      
+
       ## status vars
       timer_elapsed(__process_wait_timer)
       ans(wait_time)
@@ -35743,7 +35743,7 @@ function(process_info_Windows handlish)
   ans(csv)
 
 
-  csv_deserialize("${csv}" --headers)  
+  csv_deserialize("${csv}" --headers)
   ans(res)
 
   map_rename(${res} PID pid)
@@ -35758,9 +35758,9 @@ endfunction()
 
 
 ## platform specific implementation for process_isrunning under windows
-function(process_isrunning_Windows handlish)    
-  process_handle("${handlish}")    
-  ans(handle)    
+function(process_isrunning_Windows handlish)
+  process_handle("${handlish}")
+  ans(handle)
   map_tryget(${handle} state)
   ans(state)
   if("${state}_" STREQUAL "terminated_" )
@@ -35769,7 +35769,7 @@ function(process_isrunning_Windows handlish)
 
   map_tryget(${handle} pid)
   ans(pid)
-  
+
   win32_tasklist_bare(-FI "PID eq ${pid}" -FI "STATUS eq Running")
   ans_extract(error)
   ans(res)
@@ -35869,7 +35869,7 @@ endfunction()
 
     ## creates a temporary batch file
     ## which gets the process id (get the parent process id wmic....)
-    ## output pid to file output command_string to 
+    ## output pid to file output command_string to
     fwrite_temp("
       @echo off
       cd \"${working_directory}\"
@@ -35899,16 +35899,16 @@ endfunction()
       endif()
     endwhile()
     map_set(${process_handle} pid "${pid}")
-    
+
     process_handle_change_state(${process_handle} running)
 
-    
+
     ## set the output files for process_handle
     map_set(${process_handle} stdout_file ${outputfile})
     map_set(${process_handle} stderr_file ${errorfile})
     map_set(${process_handle} return_code_file  ${returncodefile})
 
-    assign(!process_handle.windows.process_data_dir = dir) 
+    assign(!process_handle.windows.process_data_dir = dir)
 
     return_ref(process_handle)
   endfunction()
@@ -35922,7 +35922,7 @@ endfunction()
 #
 # creates a function called ${alias} which wraps the executable specified in ${executable}
 # <args...> will be set as command line arguments for every call
-# the alias function's varargs will be passed on as command line arguments. 
+# the alias function's varargs will be passed on as command line arguments.
 #
 # Warning: --async is a bit experimental
 #
@@ -35932,17 +35932,17 @@ endfunction()
 # <no flag>       if no flag is specified then the function will fail if the return code is not 0
 #                 if it succeeds the return value is the stdout
 #
-# --process-handle        flag the function will return a the execution 
-#                 result object (see execute()) 
+# --process-handle        flag the function will return a the execution
+#                 result object (see execute())
 # --exit-code     flag the function will return the exit code
 # --async         will execute the executable asynchroniously and
 #                 return a <process handle>
-# --async-wait    will execute the executable asynchroniously 
+# --async-wait    will execute the executable asynchroniously
 #                 but will not return until the task is finished
 #                 printing a status indicator
 # --lean          lean call to executable (little overhead - no events etc)
-# 
-# else only the application output will be returned 
+#
+# else only the application output will be returned
 # and if the application terminates with an exit code != 0 a fatal error will be raised
 function(wrap_executable alias executable)
   arguments_encoded_list(0 ${ARGC})
@@ -35951,7 +35951,7 @@ function(wrap_executable alias executable)
   list_pop_front(arguments)
   list_pop_front(arguments)
 
-  eval("  
+  eval("
     function(${alias})
       arguments_encoded_list(0 \${ARGC})
       ans(arguments)
@@ -35978,8 +35978,8 @@ function(wrap_executable_bare alias executable)
       #message(\"\${ARGN}\")
       execute_process(COMMAND \"${executable}\" ${ARGN} \${ARGN}
         WORKING_DIRECTORY  \"\${cwd}\"
-        OUTPUT_VARIABLE stdout 
-        ERROR_VARIABLE stdout 
+        OUTPUT_VARIABLE stdout
+        ERROR_VARIABLE stdout
         RESULT_VARIABLE error
       )
       list(INSERT stdout 0 \${error})
@@ -35997,8 +35997,8 @@ endfunction()
     string_split_at_last(ref prop "${propref}" ".")
     return_ref(prop)
   endfunction()
-  
- 
+
+
 
 
 
@@ -36044,7 +36044,7 @@ endfunction()
 ## end() -> <current value>
 ##
 ## ends the current key, ref or map and returns the value
-## 
+##
 function(end)
   stack_pop(quickmap)
   ans(ref)
@@ -36052,7 +36052,7 @@ function(end)
   if(NOT ref)
     message(FATAL_ERROR "end() not possible ")
   endif()
-    
+
   string_take_address(ref)
   ans(current_ref)
 
@@ -36087,7 +36087,7 @@ function(key key)
 
   string_take_address(current_key)
   ans(current_ref)
- 
+
   #is_map("${current_ref}")
   is_address("${current_ref}")
   ans(ismap)
@@ -36152,7 +36152,7 @@ endfunction()
 
 
 ## map() -> <address>
-## 
+##
 ## begins a new map returning its address
 ## map needs to be ended via end()
 function(map)
@@ -36171,8 +36171,8 @@ endfunction()
 
 
 
-## ref() -> <address> 
-## 
+## ref() -> <address>
+##
 ## begins a new reference value and returns its address
 ## ref needs to be ended via end() call
 function(ref)
@@ -36182,7 +36182,7 @@ function(ref)
   address_new()
   ans(ref)
   val(${ref})
-  stack_push(quickmap ${ref})   
+  stack_push(quickmap ${ref})
   return_ref(ref)
 endfunction()
 
@@ -36213,11 +36213,11 @@ function(val)
   set(args ${ARGN})
   stack_peek(quickmap)
   ans(current_ref)
-  
+
   if(NOT current_ref)
     return()
   endif()
-  ## todo check if map 
+  ## todo check if map
   address_append("${current_ref}" ${args})
   return_ref(args)
 endfunction()
@@ -36273,7 +36273,7 @@ endmacro()
 
 
 function(address_new)
-	address_set(":0" 0)	
+	address_set(":0" 0)
 	function(address_new)
 		address_get(":0" )
 		ans(index)
@@ -36442,7 +36442,7 @@ function(address_type_matches ref expectedType)
 	if(NOT isref)
 		return(false)
 	endif()
-	
+
 	address_type_get(${ref})
   ans(type)
 	if(NOT "${type}" STREQUAL "${expectedType}" )
@@ -36470,21 +36470,21 @@ endfunction()
 macro(is_address ref)
   if("_${ref}" MATCHES "^_:[^;]+$")
     set(__ans true)
-  else()  
+  else()
     set(__ans false)
   endif()
 endmacro()
 
 
 ## correcter
-## the version above cannot be used because 
-## is_address gets arbirtray data - and since macros evaluate 
-## arguments a invalid ref could be ssen as valid 
+## the version above cannot be used because
+## is_address gets arbirtray data - and since macros evaluate
+## arguments a invalid ref could be ssen as valid
 ## or especially \\ fails because it beomes \ and causes an error
 function(is_address ref)
   if("_${ref}" MATCHES "^_:[^;]+$")
     set(__ans true PARENT_SCOPE)
-  else()  
+  else()
     set(__ans false PARENT_SCOPE)
   endif()
 endfunction()
@@ -36526,7 +36526,7 @@ endfunction()
     foreach(arg ${ARGN})
       list_contains(values "${arg}")
       ans(res)
-      if(NOT res) 
+      if(NOT res)
         list(APPEND values "${arg}")
         list(APPEND added_values "${arg}")
       endif()
@@ -36608,7 +36608,7 @@ function(reg_entry_parse query line)
       string(REGEX REPLACE "${regex}" "\\3" value "${line}")
       string_decode_semicolon("${value}")
       ans(value)
-      
+
     else()
  # _message("line ${line}")
       set(key "${line}")
@@ -36657,7 +36657,7 @@ endfunction()
     if(error)
       return()
     endif()
-    
+
     string_encode_semicolon("${output}")
     ans(output)
     string(REPLACE "\n" ";" lines ${output})
@@ -36687,7 +36687,7 @@ endfunction()
     ans(res)
     foreach(entry ${entries})
       scope_import_map(${entry})
-      if(NOT "${value}_" STREQUAL "_")        
+      if(NOT "${value}_" STREQUAL "_")
         map_set("${res}" "${value_name}" "${value}")
       endif()
     endforeach()
@@ -36699,13 +36699,13 @@ endfunction()
 
 
 
-  ## reads the specified value from the windows registry  
+  ## reads the specified value from the windows registry
   function(reg_read_value key value_name)
     reg_query_values("${key}")
     ans(res)
     map_tryget(${res} "${value_name}")
     ans(res)
-    
+
     return_ref(res)
   endfunction()
 
@@ -36745,7 +36745,7 @@ endfunction()
 
 
 
-  ## sets the specified windows registry value 
+  ## sets the specified windows registry value
   ## value may contain semicolons
   function(reg_write_value key value_name value)
     string_encode_semicolon("${value}")
@@ -36782,7 +36782,7 @@ macro(regex_cmake)
   string_codes()
 
 #http://www.cmake.org/cmake/help/v3.0/manual/cmake-language.7.html#grammar-token-regex_cmake_escape_sequence
-  
+
   ## characters
   set(regex_cmake_newline "\n")
   set(regex_cmake_space_chars " \t")
@@ -36799,14 +36799,14 @@ macro(regex_cmake)
   set(regex_cmake_line_comment "#([^${regex_cmake_newline}]*)")
   set(regex_cmake_line_comment.comment CMAKE_MATCH_1)
   set(regex_cmake_line_comment_no_group "#([^${regex_cmake_newline}]*)")
-  
+
   # bracket_comment
   set(regex_cmake_bracket_comment "#\\[\\[(.*)\\]\\]")
   set(regex_cmake_bracket_comment_no_group "#${bracket_open_code}${bracket_open_code}.*${bracket_close_code}${bracket_close_code}")
- 
+
   # identifier
   set(regex_cmake_identifier "[A-Za-z_][A-Za-z0-9_]*")
-  
+
   # nesting
   set(regex_cmake_nesting_start_char "\\(")
   set(regex_cmake_nesting_end_char "\\)")
@@ -36814,7 +36814,7 @@ macro(regex_cmake)
   # quoted_argment
   set(regex_quoted_argument "\"([^\"\\]|([\\][\"])|([\\][\\])|([\\]))*\"")
   set(regex_quoted_argument_group "\"(([^\"\\]|([\\][\"])|([\\][\\])|([\\]))*)\"")
-  
+
   # unquoted_argument
   set(regex_unquoted_argument "[^#\\\\\" \t\n\\(\\)]+")
 
@@ -36826,10 +36826,10 @@ macro(regex_cmake)
   set(regex_cmake_token "(${regex_cmake_bracket_comment_no_group})|(${regex_cmake_line_comment_no_group})|(${regex_quoted_argument})|${regex_unquoted_argument}|${regex_cmake_space}|${regex_cmake_newline}|${regex_cmake_nesting_start_char}|${regex_cmake_nesting_end_char}")
 
 
-  set(regex_cmake_line_ending "(${regex_cmake_line_comment})?(${regex_cmake_newline})")   
+  set(regex_cmake_line_ending "(${regex_cmake_line_comment})?(${regex_cmake_newline})")
   set(regex_cmake_separation "(${regex_cmake_space})|(${regex_cmake_line_ending})")
 
-  
+
   ## misc
 
   # if a value matches this it needs to be put in quotes
@@ -36841,7 +36841,7 @@ macro(regex_cmake)
   set(regex_cmake_flag "-?-?[A-Za-z_][A-Za-z0-9_\\-]*")
   set(regex_cmake_double_dash_flag "\\-\\-[a-zA-Z0-9][a-zA-Z0-9\\-]*")
   set(regex_cmake_single_dash_flag "\\-[a-zA-Z0-9][a-zA-Z0-9\\-]*")
-  
+
 ## todo: quoted, unquoated, etc
   set(regex_cmake_argument_string ".*")
   set(regex_cmake_command_invocation "(${regex_cmake_space})*(${regex_cmake_identifier})(${regex_cmake_space})*\\((${regex_cmake_argument_string})\\)")
@@ -36855,11 +36855,11 @@ macro(regex_cmake)
   set(regex_cmake_function_signature "(^|${cmake_regex_newline})((${regex_cmake_space})?)(${regex_cmake_identifier})((${regex_cmake_space})?)\\([${regex_cmake_space_chars}${regex_cmake_newline}]*(${regex_cmake_identifier})(.*)\\)")
   set(regex_cmake_function_signature.name CMAKE_MATCH_7)
   set(regex_cmake_function_signature.args CMAKE_MATCH_8)
-  
- 
+
+
 
   endif()
-  
+
 endmacro()
 
 
@@ -36886,7 +36886,7 @@ endmacro()
 
 
 
-## returns the regex for a delimited string 
+## returns the regex for a delimited string
 ## allows escaping delimiter with '\' backslash
 function(regex_delimited_string)
   set(delimiters ${ARGN})
@@ -36910,7 +36910,7 @@ function(regex_delimited_string)
     ans(delimiter_end)
   endif()
 
-  
+
   if("${delimiter_end}_" STREQUAL "_")
     set(delimiter_end "${delimiter_begin}")
   endif()
@@ -36959,7 +36959,7 @@ endmacro()
 
 
 macro(regex_json)
-  
+
   if(NOT __regex_json_defined)
     set(__regex_json_defined)
     set(regex_json_string_literal "\"([^\"\\]|([\\][\"])|([\\][\\])|([\\]))*\"")
@@ -36967,7 +36967,7 @@ macro(regex_json)
     set(regex_json_bool_literal "(true)|(false)")
     set(regex_json_null_literal "null")
     set(regex_json_literal "(${regex_json_string_literal})|(${regex_json_number_literal})|${regex_json_bool_literal}|(${regex_json_null_literal})")
-  
+
     set(regex_json_string_token "\"(([\\][\\]\")|(\\\\.)|[^\"\\])*\"")
 
     set(regex_json_number_token "[0-9\\.eE\\+\\-]+")
@@ -37000,7 +37000,7 @@ endmacro()
 
 
 
-  ## match replace with easier syntax 
+  ## match replace with easier syntax
   ## $0-$9 is replaces with the corresponding regex match group
   function(regex_match_replace match replace)
     set(CMAKE_MATCH_0)
@@ -37021,7 +37021,7 @@ endmacro()
         endforeach()
         return_ref(result)
       endif()
-    endif() 
+    endif()
     return()
   endfunction()
 
@@ -37038,7 +37038,7 @@ endmacro()
 
 
 
-# contains common regular expression 
+# contains common regular expression
 macro(regex_uri)
   if(NOT __regex_uri_included)
     set(__regex_uri_included true)
@@ -37061,7 +37061,7 @@ macro(regex_uri)
     set(mark "[${mark_range}]")
     set(unreserved_range "${alpha_range}${mark_range}")
     set(unreserved "[${unreserved_range}]")
-    set(hex_range "${0-9A-Fa-f}") 
+    set(hex_range "${0-9A-Fa-f}")
     set(hex "[${hex_range}]")
     set(escaped "%${hex}${hex}")
 
@@ -37076,7 +37076,7 @@ macro(regex_uri)
     set(scheme_delimiter ":")
 
     set(scheme_regex "${alpha}[${alphanum_range}${scheme_mark_range}]*")
-    
+
     set(net_root_regex "//")
     set(abs_root_regex "/")
 
@@ -37098,7 +37098,7 @@ macro(regex_uri)
     set(fragment_delimiter_regex "#")
     set(fragment_regex "${fragment_delimiter_regex}${fragment_char_regex}*")
 
-  #  ";" | ":" | "&" | "=" | "+" | "$" | "," 
+  #  ";" | ":" | "&" | "=" | "+" | "$" | ","
     set(dns_user_info_char "(${unreserved}|${escaped}|[;:&=+$,])")
     set(dns_user_info_separator "@")
     set(dns_user_info_regex "(${dns_user_info_char}+)${dns_user_info_separator}")
@@ -37126,11 +37126,11 @@ endmacro()
       set(args ${ARGN})
       list_pop_back(args)
       ans(target_dir)
-      ## copy sample to test dir 
+      ## copy sample to test dir
       ## and compile cmakepp to test dir
-      cmakepp_config(base_dir)  
+      cmakepp_config(base_dir)
       ans(base_dir)
-      
+
       glob("${base_dir}/samples/${sample}*")
       ans(sample_dir )
       cp_dir("${sample_dir}" "${target_dir}")
@@ -37140,15 +37140,15 @@ endmacro()
 
 
 ## `(<f:<cnf>> <clauses:{<<index>:<literal index...>...>}> <assignments:{<<literal index>:<bool>...>} <decisions:<literal index>...>)`
-## 
+##
 ## propagates the unit clauses in the cnf consisting of clauses
-## 
+##
 ## propagates assignment values for the specified `<decisions>`
 ## sets literal assignments in <assignments>
 ## returns the indices of the deduced literals
 ## returns "conflict" if an assignment conflicts with an existing one in <assignments>
-## returns "unsatisfied" if cnf is unsatisfiable 
-## 
+## returns "unsatisfied" if cnf is unsatisfiable
+##
 function(bcp f clauses assignments)
   #map_import_properties(${f} literal_inverse_map) ## simplification inverse = i+-1
 
@@ -37158,7 +37158,7 @@ function(bcp f clauses assignments)
   # if("${deduced_assignments}" MATCHES "(conflict)|(unsatisfied)")
   #   return_ref(deduced_assignments)
   # endif()
-  
+
   # set(all_deductions ${deduced_assignments})
  #set(propagation_queue ${deduced_assignments} ${ARGN})
  set(propagation_queue ${ARGN})
@@ -37181,7 +37181,7 @@ function(bcp f clauses assignments)
     endif()
 
 
-    
+
     list_pop_front(propagation_queue)
     ans(li)
 
@@ -37272,7 +37272,7 @@ endfunction()
 ##
 ## returns unsatisfied if a clause is unsatisfieable
 ## returns indices of unit_clauses' literal
-## else returns nothing 
+## else returns nothing
 ## sideffect updates clauses map removes unit clauses
 function(bcp_extract_unit_clauses f clauses)
  # map_import_properties(${f})
@@ -37297,7 +37297,7 @@ function(bcp_extract_unit_clauses f clauses)
       map_remove(${clauses} ${ci})
       list(APPEND unit_literals ${clause})
     else()
-      ## update clause 
+      ## update clause
       map_set(${clauses} ${ci} ${clause})
     endif()
 
@@ -37309,10 +37309,10 @@ endfunction()
 
 
 
-## `(...)->...` 
+## `(...)->...`
 ##
-## 
-## assigns all pure literals (and there inverse) 
+##
+## assigns all pure literals (and there inverse)
 ## removes all clauses an containing one from clauses
 ## returns all indices of pure literals
 ## returns conflict if a pure literal assignment conflicts with an existing one
@@ -37356,10 +37356,10 @@ function(bcp_pure_literals_assign f clauses assignments)
 
     list_contains_any(clause ${pure_literals})
     ans(contains_any)
-  
+
     if(contains_any)
       map_remove(${clauses} ${ci})
-    endif()      
+    endif()
   endforeach()
   return_ref(pure_literals)
 endfunction()
@@ -37380,7 +37380,7 @@ function(bcp_pure_literals_find f clauses)
     return()
   endif()
 
-  ## loop through all literals of all clauses and check if its inverse was 
+  ## loop through all literals of all clauses and check if its inverse was
   ## not found append it to pure_literals (which are returned)
   list(REMOVE_DUPLICATES clause_literals)
   set(pure_literals)
@@ -37417,7 +37417,7 @@ function(bcp_simplify_clause f clause li value)
   list(FIND clause ${li} found)
 
   if("${found}" LESS 0)
-    ## literal not found in clause -> no change 
+    ## literal not found in clause -> no change
     ## if clause was unsatisfied it stays unsatisfied
     return_ref(clause)
   endif()
@@ -37443,7 +37443,7 @@ endfunction()
 
 ## `()->`
 ##
-## takes a set of clauses and simplifies them by 
+## takes a set of clauses and simplifies them by
 ## setting li to value
 ## removes all li that are false from clauses
 ## removes clauses which are satisfied
@@ -37478,8 +37478,8 @@ endfunction()
 
 ## `(<clause map: <sequence>>)-> <cnf>`
 ##
-##  
-## 
+##
+##
 ## creates a conjunctive normal form from the specified input
 ## ```
 ## <cnf> ::= {
@@ -37488,16 +37488,16 @@ endfunction()
 ##   clause_map : { <<clause index>:<clause>>... }
 ##   clause_atom_map : { <<clause index> : <atom index>... >...}
 ##   clause_literal_map : { <<clause index> : <literal index>...>...}
-##   
+##
 ##   a_n : <uint> # the number of atoms
-##   a_last : <int>  # a_n - 1 
+##   a_last : <int>  # a_n - 1
 ##   atom_map : { <<atom index>:<atom>>... }
 ##   atom_clause_map  : { <<atom index>:<clause index>...>...}
 ##   atom_literal_map :  {}
 ##   atom_literal_negated_map : {}
 ##   atom_literal_identity_map : {}
 ##   atom_index_map : {}
-##   
+##
 ##   l_n : <uint>
 ##   l_last : <int>
 ##   literal_map : {}
@@ -37558,7 +37558,7 @@ function(cnf clause_map)
 
       sequence_add(${literal_atom_map} ${ai})
       sequence_add(${literal_atom_map} ${ai})
-      
+
       sequence_add(${atom_literal_negated_map} ${li_neg})
       sequence_add(${atom_literal_identity_map} ${li})
 
@@ -37589,7 +37589,7 @@ function(cnf clause_map)
     map_set(${clause_atom_map} ${ci})
     map_set(${clause_literal_map} ${ci})
     foreach(literal ${clause})
-      
+
       map_tryget(${literal_index_map} "${literal}")
       ans(li)
 
@@ -37632,7 +37632,7 @@ function(cnf clause_map)
     atom_literal_identity_map
     atom_index_map
 
-    l_n 
+    l_n
     l_last
     literal_map
     literal_atom_map
@@ -37664,13 +37664,13 @@ endfunction()
 ##
 ##
 ##
-function(create_watch_list f assignments)   
+function(create_watch_list f assignments)
   map_new()
   ans(watch_list)
-  
+
   map_tryget(${f} c_last)
   ans(c_last)
-    
+
   foreach(ci RANGE 0 ${c_last})
     update_watch_list_clause("${f}" "${watch_list}" "${assignments}" "${ci}")
   endforeach()
@@ -37703,8 +37703,8 @@ function(dp_naive f)
       return_ans()
     endif()
 
-    ## propagate decision 
-    ## if a conflict occurs backtrack 
+    ## propagate decision
+    ## if a conflict occurs backtrack
     ## when backtracking is impossible the algorithm terminates with failure
     while(true)
 
@@ -37714,7 +37714,7 @@ function(dp_naive f)
         break()
       endif()
 
-      ## backtrack 
+      ## backtrack
       dp_naive_resolve_conflict()
       ans(resolved)
 
@@ -37730,7 +37730,7 @@ endfunction()
 
 
 function(dp_naive_finish outcome)
-  
+
   if("${outcome}" STREQUAL "satsifiable")
     map_peek_back(${context} decision_stack)
     ans(dl)
@@ -37763,7 +37763,7 @@ endfunction()
 function(dp_naive_init f)
   map_import_properties(${f} clause_literal_map)
   ## add decision layer NULL to decision stack
-  
+
   map_new()
   ans(assignments)
   map_duplicate(${clause_literal_map})
@@ -37849,7 +37849,7 @@ function(dp_naive_bcp)
 
   map_import_properties(${dl} decision value clauses assignments)
   map_set(${assignments} ${decision} ${value})
-  
+
   #print_vars(clauses assignments)
   bcp("${f}" "${clauses}" "${assignments}" ${decision})
   ans(result)
@@ -37871,7 +37871,7 @@ endfunction()
 function(dp_naive_resolve_conflict)
   map_import_properties(${context} f)
 
-  ## undo decisions until a decision is found which was not 
+  ## undo decisions until a decision is found which was not
   ## tried the `other way` ie inversing the literals value
   set(conflicting_decision)
   while(true)
@@ -37917,9 +37917,9 @@ endfunction()
 
 ##
 ##
-## updates the watch list 
+## updates the watch list
 ## removes newly assigned literal
-## add watches to next unassigned literal 
+## add watches to next unassigned literal
 function(update_watch_list f watch_list assignments new_assignment)
 
   map_tryget("${watch_list}" ${new_assignment})
@@ -37948,7 +37948,7 @@ function(update_watch_list_clause f watch_list assignments watched_clause)
 
   map_tryget(${clause_literals} ${watched_clause})
   ans(watched_clause_literals)
-  
+
   ## loop through all literals for watched clause
   ## get the currently watched literals from watch clause
   set(current_watch_count 0)
@@ -38003,7 +38003,7 @@ endfunction()
 
 
 
-## takes a literal assignment model 
+## takes a literal assignment model
 ## returns the atom assignments
 function(literal_to_atom_assignments f literal_assignments)
   map_tryget(${f} l_last)
@@ -38039,7 +38039,7 @@ function(literal_to_atom_assignments f literal_assignments)
 
       map_set(${atom_assignments} ${atom_name} ${value})
     endif()
-  endforeach()  
+  endforeach()
   return_ref(atom_assignments)
 endfunction()
 
@@ -38071,13 +38071,13 @@ endfunction()
 
 
 
-function(create_watch_list f assignments)   
+function(create_watch_list f assignments)
   map_new()
   ans(watch_list)
-  
+
   map_tryget(${f} c_last)
   ans(c_last)
-    
+
   foreach(ci RANGE 0 ${c_last})
     update_watch_list_clause("${f}" "${watch_list}" "${assignments}" "${ci}")
   endforeach()
@@ -38090,9 +38090,9 @@ endfunction()
 
 
 
-  ## updates the watch list 
+  ## updates the watch list
   ## removes newly assigned literal
-  ## add watches to next unassigned literal 
+  ## add watches to next unassigned literal
   function(update_watch_list f watch_list assignments new_assignment)
 
     map_tryget("${watch_list}" ${new_assignment})
@@ -38121,7 +38121,7 @@ function(update_watch_list_clause f watch_list assignments watched_clause)
 
   map_tryget(${clause_literals} ${watched_clause})
   ans(watched_clause_literals)
-  
+
   ## loop through all literals for watched clause
   ## get the currently watched literals from watch clause
   set(current_watch_count 0)
@@ -38251,7 +38251,7 @@ endif()
  if(NOT ${cmp} STREQUAL 0)
   return(${cmp})
 endif()
- 
+
  semver_component_compare( ${left_patch} ${right_patch})
  ans(cmp)
  if(NOT ${cmp} STREQUAL 0)
@@ -38295,9 +38295,9 @@ ans(cmp)
 
 
 
-    
+
  endwhile()
- 
+
  return(0)
 
 endfunction()
@@ -38320,7 +38320,7 @@ endfunction()
       return(1)
     elseif(right_empty AND NOT left_empty)
       return(-1)
-    endif() 
+    endif()
 
 
     string_isnumeric( "${left}")
@@ -38336,7 +38336,7 @@ endfunction()
     endif()
 
 
-   
+
     if(left_numeric AND right_numeric)
       if(${left} LESS ${right})
         return(1)
@@ -38390,7 +38390,7 @@ endfunction()
 
 function(semver_constraint_compile constraint)
   set(ops "\\(\\)\\|,!=~><")
-    
+
   if("${constraint}" STREQUAL "*")
     set(constraint ">=0.0.0")
   endif()
@@ -38492,7 +38492,7 @@ function(semver_constraint_evaluate_element constraint version)
   string(REGEX MATCH "${constraint_operator_regexp}" has_operator "${constraint}")
   if(has_operator)
     string(REGEX REPLACE "${constraint_regexp}" "\\1" operator "${constraint}")
-    string(REGEX REPLACE "${constraint_regexp}" "\\2" argument "${constraint}")      
+    string(REGEX REPLACE "${constraint_regexp}" "\\2" argument "${constraint}")
   else()
     set(operator "=")
     set(argument "${constraint}")
@@ -38500,7 +38500,7 @@ function(semver_constraint_evaluate_element constraint version)
 
   # check for equality
   if(${operator} STREQUAL "=")
-    semver_normalize("${argument}")    
+    semver_normalize("${argument}")
     semver_format("${argument}")
     ans(argument)
     semver_compare( "${version}" "${argument}")
@@ -38513,7 +38513,7 @@ function(semver_constraint_evaluate_element constraint version)
 
   # check if version is greater than constraint
   if(${operator} STREQUAL ">")
-    semver_normalize("${argument}")    
+    semver_normalize("${argument}")
     semver_format("${argument}")
     ans(argument)
     semver_compare( "${version}" "${argument}")
@@ -38526,7 +38526,7 @@ function(semver_constraint_evaluate_element constraint version)
 
   # cheick  if version is less than constraint
   if(${operator} STREQUAL "<")
-    semver_normalize("${argument}")    
+    semver_normalize("${argument}")
     semver_format("${argument}")
     ans(argument)
     semver_compare( "${version}" "${argument}")
@@ -38538,7 +38538,7 @@ function(semver_constraint_evaluate_element constraint version)
   endif()
 
   if(${operator} STREQUAL "!")
-    semver_normalize("${argument}")    
+    semver_normalize("${argument}")
     semver_format("${argument}")
     ans(argument)
     semver_compare( "${version}" "${argument}")
@@ -38556,7 +38556,7 @@ function(semver_constraint_evaluate_element constraint version)
     math(EXPR upper "${upper} + 1" )
     string(REGEX REPLACE "(.*)([0-9]+)" "\\1${upper}" upper "${argument}")
     string(REGEX REPLACE "(.*)([0-9]+)" "\\1\\2" lower "${argument}")
-    
+
     semver_constraint_evaluate_element( ">${lower}" "${version}")
     ans(lower_ok_gt)
     semver_constraint_evaluate_element( "=${lower}" "${version}")
@@ -38610,7 +38610,7 @@ endfunction()
 
 # returns true if semver a is more up to date than semver b
   function(semver_gt  a b)
-    semver_compare( "${a}" "${b}") 
+    semver_compare( "${a}" "${b}")
     ans(res)
     ans(res)
     if(${res} LESS 0)
@@ -38641,7 +38641,7 @@ endfunction()
 # validity:
 # it has a major, minor and patch version field with valid numeric values [0-9]+
 # accepts both a version string or a object
-# 
+#
 function(semver_isvalid version)
   # get version object
   semver("${version}")
@@ -38689,7 +38689,7 @@ endfunction()
 
 # returns a normalized version for a string or a object
 # sets all missing version numbers to 0
-# even an empty string is transformed to a version: it will be version 0.0.0 
+# even an empty string is transformed to a version: it will be version 0.0.0
 function(semver_normalize version)
   semver("${version}")
   ans(version)
@@ -38703,21 +38703,21 @@ function(semver_normalize version)
   ans(current)
   if(NOT current)
     nav(version.major 0)
-  endif() 
+  endif()
 
 
   nav(version.minor)
   ans(current)
   if(NOT current)
     nav(version.minor 0)
-  endif() 
+  endif()
 
 
   nav(version.patch)
   ans(current)
   if(NOT current)
     nav(version.patch 0)
-  endif() 
+  endif()
 
   return(${version})
 endfunction()
@@ -38752,7 +38752,7 @@ function(semver_parse version_string)
  set(semver_major_regex "[0-9]+")
  set(semver_minor_regex "[0-9]+")
  set(semver_patch_regex "[0-9]+")
- set(semver_identifiers_regex "${semver_identifier_regex}(\\.${semver_identifier_regex})*") 
+ set(semver_identifiers_regex "${semver_identifier_regex}(\\.${semver_identifier_regex})*")
  set(semver_prerelease_regex "${semver_identifiers_regex}")
  set(semver_metadata_regex "${semver_identifiers_regex}")
  set(semver_version_regex "(${semver_major_regex})\\.(${semver_minor_regex})\\.(${semver_patch_regex})")
@@ -38787,7 +38787,7 @@ function(semver_parse version_string)
   ans(parts)
   list_pop_front(parts)
   ans(version_prerelease)
-  
+
   # get version numbers
   string(REGEX REPLACE "^${semver_version_regex}$" "\\1" version_major "${version_number}")
   string(REGEX REPLACE "^${semver_version_regex}$" "\\2" version_minor "${version_number}")
@@ -38925,7 +38925,7 @@ endfunction()
       endif()
 
       map_append( "${map}" "${idx}" ${ARGN} )
-      
+
     endfunction()
 
 
@@ -38941,7 +38941,7 @@ endfunction()
       endif()
 
       map_append_string( "${map}" "${idx}" ${ARGN} )
-      
+
     endfunction()
 
 
@@ -39049,11 +39049,11 @@ endfunction()
 
 
 # creates a systemwide alias callend ${name} which executes the specified command_string
-#  you have to restart you shell/re-login under windows for changes to take effect 
+#  you have to restart you shell/re-login under windows for changes to take effect
 function(alias_create name command_string)
 
 
-  if(WIN32)      
+  if(WIN32)
     cmakepp_config(bin_dir)
     ans(bin_dir)
     set(path "${bin_dir}/${name}.bat")
@@ -39106,17 +39106,17 @@ function(alias_list)
 
   path("${CMAKE_CURRENT_LIST_DIR}/../bin")
   ans(path)
-  
+
 
 
   if(WIN32)
     #file_extended_glob("${path}" "*.bat" "!cps.*" "!cutil.*")
     ans(cmds)
   set(theRegex "([^\\/])+\\.bat")
-  
+
   list_select(cmds "[](it)regex_search({{it}} {{theRegex}})")
   ans(cmds)
-  
+
   string(REPLACE ".bat" "" cmds "${cmds}")
 
   return_ref(cmds)
@@ -39271,7 +39271,7 @@ endfunction()
 
 
 
-# reads a line from the console.  
+# reads a line from the console.
 #  uses .bat file on windows else uses shell script file .sh
 function(read_line)
   fwrite_temp("" ".txt")
@@ -39295,7 +39295,7 @@ function(read_line)
   # read value file
   file(READ "${value_file}" line)
 
-  # strip trailing '\n' which might get added by the shell script. as there is no way to input \n at the end 
+  # strip trailing '\n' which might get added by the shell script. as there is no way to input \n at the end
   # manually this does not change for any system
   if("${line}" MATCHES "(\n|\r\n)$")
     string(REGEX REPLACE "(\n|\r\n)$" "" line "${line}")
@@ -39318,7 +39318,7 @@ endfunction()
 # runs a shell script on the current platform
 # not that
 function(shell cmd)
-  
+
   shell_get()
   ans(shell)
   if("${shell}" STREQUAL "cmd")
@@ -39384,7 +39384,7 @@ function(shell_env_get key)
   ans(shell)
 
   if(WIN32)
-    
+
   endif()
 
   if("${shell}" STREQUAL "cmd")
@@ -39399,12 +39399,12 @@ function(shell_env_get key)
   endif()
 
 
-    # strip trailing '\n' which might get added by the shell script. as there is no way to input \n at the end 
+    # strip trailing '\n' which might get added by the shell script. as there is no way to input \n at the end
     # manually this does not change for any system
     if("${res}" MATCHES "(\n|\r\n)+$")
       string(REGEX REPLACE "(\n|\r\n)+$" "" res "${res}")
     endif()
-    
+
   return_ref(res)
 endfunction()
 
@@ -39422,7 +39422,7 @@ endfunction()
 
 
 
-# sets a system wide environment variable 
+# sets a system wide environment variable
 # the variable will not be available until a new console is started
 function(shell_env_set key value)
   if(WIN32)
@@ -39430,11 +39430,11 @@ function(shell_env_set key value)
     #message("environment variable '${key}' was written, it will be available as soon as you restart your shell")
     return()
   endif()
-  
+
 
   shell_get()
   ans(shell)
-    
+
   if("${shell}" STREQUAL "bash")
     path("~/.bashrc")
     ans(path)
@@ -39505,7 +39505,7 @@ endfunction()
 
 
 
-# 
+#
 function(shell_path_add path)
   set(args ${ARGN})
   list_extract_flag(args "--prepend")
@@ -39678,7 +39678,7 @@ function(queue_isempty stack)
   math(EXPR res "${back} - ${front}")
   if(res)
     return(false)
-  endif()  
+  endif()
   return(true)
 endfunction()
 
@@ -39741,7 +39741,7 @@ function(queue_pop queue)
     map_set_hidden("${queue}" "${back}" "${ARGN}")
     math(EXPR back "${back} + 1")
     map_set_hidden("${queue}" back "${back}")
-    
+
   endfunction()
 
 
@@ -39787,7 +39787,7 @@ function(stack_enumerate stack)
   if(NOT current_index)
     return()
   endif()
-  
+
  # math(EXPR current_index "${current_index} - 1")
   set(res)
   foreach(i RANGE 1 ${current_index})
@@ -39818,7 +39818,7 @@ endfunction()
 
   function(stack_new)
     address_new(stack)
-    ans(stack)   
+    ans(stack)
     map_set_hidden("${stack}" front 0)
     map_set_hidden("${stack}" back 0)
     return(${stack})
@@ -39859,7 +39859,7 @@ endfunction()
 function(stack_push stack)
   map_tryget("${stack}" back)
   ans(current_index)
-  
+
   # increase stack pointer
   if(NOT current_index)
     set(current_index 0)
@@ -39900,7 +39900,7 @@ endfunction()
 
 
 
-## generates the ascii table and stores it in the global ascii_table variable  
+## generates the ascii table and stores it in the global ascii_table variable
   function(ascii_generate_table)
     foreach(i RANGE 1 255)
       string(ASCII ${i} c)
@@ -39942,9 +39942,9 @@ endfunction()
 
 ## **`delimiters()->[delimiter_begin, delimiter_end]`**
 ##
-## parses delimiters and retruns a list of length 2 containing the specified delimiters. 
+## parses delimiters and retruns a list of length 2 containing the specified delimiters.
 ## The usefullness of this function becomes apparent when you use [string_take_delimited](#string_take_delimited)
-## 
+##
 ##
 function(delimiters)
   set(delimiters ${ARGN})
@@ -39968,7 +39968,7 @@ function(delimiters)
     ans(delimiter_end)
   endif()
 
-  
+
   if("${delimiter_end}_" STREQUAL "_")
     set(delimiter_end "${delimiter_begin}")
   endif()
@@ -39984,14 +39984,14 @@ function(cmake_string_escape str)
   string(REPLACE "\"" "\\\"" str "${str}")
   string(REPLACE "(" "\\(" str "${str}")
   string(REPLACE ")" "\\)" str "${str}")
-  string(REPLACE "$" "\\$" str "${str}") 
-  string(REPLACE "#" "\\#" str "${str}") 
-  string(REPLACE "^" "\\^" str "${str}") 
+  string(REPLACE "$" "\\$" str "${str}")
+  string(REPLACE "#" "\\#" str "${str}")
+  string(REPLACE "^" "\\^" str "${str}")
   string(REPLACE "\t" "\\t" str "${str}")
   string(REPLACE ";" "\\;" str "${str}")
   string(REPLACE "\n" "\\n" str "${str}")
   string(REPLACE "\r" "\\r" str "${str}")
-  
+
   #string(REPLACE "\0" "\\0" str "${str}") unnecessary because cmake does not support nullcahr in string
   string(REPLACE " " "\\ " str "${str}")
   return_ref(str)
@@ -40005,7 +40005,7 @@ function(cmake_string_escape2 str)
     string(REGEX REPLACE "([; \"\\(\\)#\\^])" "\\\\\\1" str "${str}")
     string(REPLACE "\t" "\\t" str "${str}")
     string(REPLACE "\n" "\\n" str "${str}")
-    string(REPLACE "\r" "\\r" str "${str}")  
+    string(REPLACE "\r" "\\r" str "${str}")
   endif()
   return_ref(str)
 endfunction()
@@ -40018,7 +40018,7 @@ function(cmake_string_escape3 str)
     string(REGEX REPLACE "([ \"\\(\\)#\\^])" "\\\\\\1" str "${str}")
     string(REPLACE "\t" "\\t" str "${str}")
     string(REPLACE "\n" "\\n" str "${str}")
-    string(REPLACE "\r" "\\r" str "${str}")  
+    string(REPLACE "\r" "\\r" str "${str}")
   endif()
   return_ref(str)
 endfunction()
@@ -40076,7 +40076,7 @@ endfunction()
 # decodes encoded brakcets in a string
 function(string_decode_bracket str)
     string_codes()
-    string(REPLACE "${bracket_open_code}" "["  str "${str}") 
+    string(REPLACE "${bracket_open_code}" "["  str "${str}")
     string(REPLACE "${bracket_close_code}" "]"  str "${str}")
     return_ref(str)
 endfunction()
@@ -40101,7 +40101,7 @@ endfunction()
 
 
 # decodes an encoded empty string
-function(string_decode_empty str) 
+function(string_decode_empty str)
     string_codes()
   if("${str}" STREQUAL "${empty_code}")
     return("")
@@ -40187,7 +40187,7 @@ endfunction()
 # encodes brackets
 function(string_encode_bracket str)
   string_codes()
-  string(REPLACE "[" "${bracket_open_code}" str "${str}") 
+  string(REPLACE "[" "${bracket_open_code}" str "${str}")
   string(REPLACE "]" "${bracket_close_code}" str "${str}")
   return_ref(str)
 endfunction()
@@ -40334,7 +40334,7 @@ endfunction()
     ans(arg)
     return_ref(arg)
     if("${arg}_" MATCHES "(^_$)|(;)|(\")")
-      set(arg "\"${arg}\"") 
+      set(arg "\"${arg}\"")
     endif()
     return_ref(arg)
   endfunction()
@@ -40345,7 +40345,7 @@ endfunction()
 ## [**`format(<template string>)-><string>`**](<%="${template_path}"%>)
 ##
 ## this function utilizes [`assign(...)`](#assign) to evaluate expressions which are enclosed in handlebars: `{` `}`
-## 
+##
 ##
 ## *Examples*
 ## ```cmake
@@ -40358,7 +40358,7 @@ endfunction()
 ## ...
 ## ```
 ## *Note:* You may not use ASCII-29 since it is used interally in this function. If you don't know what this means - don't worry
-## 
+##
 ##
 function(format)
   string(ASCII 29 delimiter)
@@ -40380,7 +40380,7 @@ endfunction()
 
 # matches the first occurens of regex and returns it
 function(regex_search str regex)
-  string(REGEX MATCH "${regex}" res "${str}")  
+  string(REGEX MATCH "${regex}" res "${str}")
   return_ref(res)
 endfunction()
 
@@ -40413,13 +40413,13 @@ function(string_char_at input index)
   string(LENGTH "${input}" len)
   string_normalize_index("${input}" ${index})
   ans(index)
-  
-  if(${index} LESS 0 OR ${index} EQUAL ${len} OR ${index} GREATER ${len}) 
+
+  if(${index} LESS 0 OR ${index} EQUAL ${len} OR ${index} GREATER ${len})
     return()
   endif()
-  
+
   string(SUBSTRING "${input}" ${index} 1 res)
-  
+
   return_ref(res)
 endfunction()
 
@@ -40428,27 +40428,27 @@ endfunction()
 
 ## `(<str:<string>> <index:<int>> <char:<string>>)-><string>`
 ##
-## Sets the character at the specified position (index) to the input 'char'. 
+## Sets the character at the specified position (index) to the input 'char'.
 ## Indexing of strings starts at 0. Indices less than -1 are translated into "length - |index|"
-## 
+##
 ## **Examples**
 ##  set(str "example")
 ##  string_set_char_at("${str}" 0 "E") # => "Example"
-## 
+##
 ##
 function(string_char_at_set input index char)
   string(LENGTH "${input}" len)
   string_normalize_index("${input}" ${index})
   ans(index)
 
-  if(${index} LESS 0 OR ${index} EQUAL ${len} OR ${index} GREATER ${len}) 
+  if(${index} LESS 0 OR ${index} EQUAL ${len} OR ${index} GREATER ${len})
     return()
   endif()
 
   string(SUBSTRING "${input}" 0 ${index} pre_str)
   MATH(EXPR index "${index} + 1")
   string(SUBSTRING "${input}" ${index} -1 post_str)
-  
+
   set(res "${pre_str}${char}${post_str}")
 
   return_ref(res)
@@ -40593,11 +40593,11 @@ endmacro()
 
 
 ## returns true if the given string is empty
-## normally because cmake evals false, no,  
+## normally because cmake evals false, no,
 ## which destroys tests for real emtpiness
 ##
 ##
- function(string_isempty  str)    
+ function(string_isempty  str)
     if( "_" STREQUAL "_${str}" )
       return(true)
     endif()
@@ -40630,8 +40630,8 @@ endfunction()
 
   #splits the specified string into lines
   ## normally the string would have to be semicolon encoded
-  ## to correctly display lines with semicolons 
-  function(string_lines input)      
+  ## to correctly display lines with semicolons
+  function(string_lines input)
     string_split("${input}" "\n" ";" )
     #string(REPLACE "\n" ";" input "${input}")
     return_ans(lines)
@@ -40724,26 +40724,26 @@ endfunction()
 ## if the string is longer then nothing is padded
 ## if no delimiter is specified than " " (space) is used
 ## if --prepend is specified the padding is inserted into front of string
-function(string_pad str len)  
+function(string_pad str len)
   set(delimiter ${ARGN})
   list_extract_flag(delimiter --prepend)
   ans(prepend)
   if("${delimiter}_" STREQUAL "_")
     set(delimiter " ")
-  endif()  
-  string(LENGTH "${str}" actual)  
+  endif()
+  string(LENGTH "${str}" actual)
   if(${actual} LESS ${len})
 
-    math(EXPR n "${len} - ${actual}") 
+    math(EXPR n "${len} - ${actual}")
 
     string_repeat("${delimiter}" ${n})
     ans(padding)
-    
+
     if(prepend)
       set(str "${padding}${str}")
     else()
-      set(str "${str}${padding}")    
-    endif()    
+      set(str "${str}${padding}")
+    endif()
   endif()
   return_ref(str)
 endfunction()
@@ -40754,7 +40754,7 @@ endfunction()
 
   function(string_random)
     set(args ${ARGN})
-    message(FATAL_ERROR "not implemented")    
+    message(FATAL_ERROR "not implemented")
   endfunction()
 
 
@@ -40893,13 +40893,13 @@ function(string_slice str start_index end_index)
 
   return_ref(result)
 endfunction()
-  
+
 
 
 
 
 # splits a string by regex storing the resulting list in ${result}
-#todo: this should also handle strings containing 
+#todo: this should also handle strings containing
 function(string_split  string_subject split_regex)
 	string(REGEX REPLACE ${split_regex} ";" res "${string_subject}")
   return_ref(res)
@@ -40952,10 +40952,10 @@ endfunction()
   function(string_split_parts str length)
     address_new()
     ans(first_node)
-    
+
     set(current_node ${first_node})
-    while(true)      
-      string(LENGTH "${str}" len)       
+    while(true)
+      string(LENGTH "${str}" len)
       if(${len} LESS ${length})
         address_set(${current_node} "${str}")
         set(str)
@@ -40971,8 +40971,8 @@ endfunction()
         set(current_node ${new_node})
       else()
         return_ref(first_node)
-      endif()     
-      
+      endif()
+
     endwhile()
 
   endfunction()
@@ -40993,12 +40993,12 @@ endfunction()
 
 
 # wraps the substring command
-# optional parameter end 
+# optional parameter end
 function(string_substring str start)
   set(len ${ARGN})
   if(NOT len)
     set(len -1)
-  endif() 
+  endif()
   string_normalize_index("${str}" "${start}")
   ans(start)
 
@@ -41024,7 +41024,7 @@ function(string_take str_name match)
 
 
   return_ref(match)
- 
+
 endfunction()
 
 
@@ -41033,11 +41033,11 @@ endfunction()
 
 ## string_take_address
 ##
-## takes an address from the string ref  
+## takes an address from the string ref
 function(string_take_address str_ref)
   string_take_regex("${str_ref}" ":[1-9][0-9]*")
   ans(res)
-  set(${str_ref} ${${str_ref}} PARENT_SCOPE)   
+  set(${str_ref} ${${str_ref}} PARENT_SCOPE)
   return_ref(res)
 endfunction()
 
@@ -41046,7 +41046,7 @@ endfunction()
 
 
 ## takes a string which is delimited by any of the specified
-## delimiters 
+## delimiters
 ## string_take_any_delimited(<string&> <delimiters:<delimiter...>>)
   function(string_take_any_delimited str_ref)
     foreach(delimiter ${ARGN})
@@ -41070,8 +41070,8 @@ endfunction()
 ## if the beginning of the str_name is a delimited string
 ## the undelimited string is returned  and removed from str_name
 ## you can specify the delimiter (default is doublequote "")
-## you can also specify begin and end delimiter 
-## the delimiters may only be one char 
+## you can also specify begin and end delimiter
+## the delimiters may only be one char
 ## the delimiters are removed from the result string
 ## escaped delimiters are unescaped
 function(string_take_delimited __string_take_delimited_string_ref )
@@ -41089,7 +41089,7 @@ function(string_take_delimited __string_take_delimited_string_ref )
   ans(res)
   # unescape string
   string(REPLACE "\\${delimiter_end}" "${delimiter_end}" res "${res}")
-  return_ref(res) 
+  return_ref(res)
 endfunction()
 
 ## faster version
@@ -41137,7 +41137,7 @@ endfunction()
 #   if("${${str_name}}" MATCHES "^(${regex})(.*)$")
 #     set(${str_name} "${CMAKE_MATCH_2}" PARENT_SCOPE)
 #     set(__ans "${CMAKE_MATCH_1}" PARENT_SCOPE)
-    
+
 #     endif()
 #   else()
 #     set(__ans PARENT_SCOPE)
@@ -41149,12 +41149,12 @@ endfunction()
 
 
 ## fasterversion
-## also does not work.... 
+## also does not work....
 # function(string_take_regex str_name regex)
 #   if("${${str_name}}" MATCHES "^(${regex})")
 #     set(__ans "${CMAKE_MATCH_1}" PARENT_SCOPE)
 #     string(REGEX REPLACE "^(${regex})" "" "${str_name}" "${${str_name}}")
-#     set(${str_name} "${${str_name}}" PARENT_SCOPE)    
+#     set(${str_name} "${${str_name}}" PARENT_SCOPE)
 #   else()
 #     set(__ans PARENT_SCOPE)
 #   endif()
@@ -41243,14 +41243,14 @@ function(string_to_title str)
   encoded_list("${str}")
   ans(str_encoded)
   string(REGEX MATCHALL "(${ws})|(${other})" tokens "${str_encoded}")
-  
+
   foreach(token ${tokens})
     if("${token}" MATCHES  "^([^a-zA-Z0-9]*)([a-zA-Z])([a-z]*[']?[a-z]*)([:?!',)]*)$")
       set(pre ${CMAKE_MATCH_1})
       set(first_letter ${CMAKE_MATCH_2})
       set(lc_letters ${CMAKE_MATCH_3})
       set(post ${CMAKE_MATCH_4})
-      
+
       list(FIND small "${first_letter}${lc_letters}" index)
       if(index GREATER -1)
          if(is_subsentence)
@@ -41261,7 +41261,7 @@ function(string_to_title str)
       else()
          string(TOUPPER ${first_letter} first_letter)
       endif()
-      
+
       if("${post}" MATCHES "[^,')]")
         set(is_subsentence true)
       else()
@@ -41334,7 +41334,7 @@ endfunction()
 
 
 
-## `(<task>|<promise>|<any>)-><promise>` 
+## `(<task>|<promise>|<any>)-><promise>`
 ##
 ## transforms the input into a promise
 ## if the input is a promise it is directly retunred
@@ -41345,7 +41345,7 @@ function(promise)
   is_promise("${promise}")
   ans(is_promise)
   if(NOT is_promise)
-    
+
     is_task("${promise}")
     ans(is_task)
     if(is_task)
@@ -41358,7 +41358,7 @@ function(promise)
   endif()
   task_queue_global()
   ans(task_queue)
-  map_set_default("${promise}" task_queue "${task_queue}")  
+  map_set_default("${promise}" task_queue "${task_queue}")
 
   return_ref(promise)
 endfunction()
@@ -41378,7 +41378,7 @@ function(promise_from_value)
   map_set("${promise}" value "${ARGN}")
   return_ref(promise)
 endfunction()
-  
+
 function(promise_from_task)
   promise_new()
   ans(promise)
@@ -41391,7 +41391,7 @@ function(promise_from_task)
   endif()
 
   map_set("${promise}" task "${task}")
-  
+
   return(${promise})
 endfunction()
 
@@ -41444,7 +41444,7 @@ function(promise_all)
         promise_resolve("${promise_all}" "\${values}")
       endif()
       )
-    
+
   endforeach()
   return_ref(promise_all)
 endfunction()
@@ -41462,16 +41462,16 @@ function(continuation_resolve promise continuation)
   if(continuation_is_resolved)
     return()
   endif()
-  
+
   map_tryget("${continuation}" task)
   ans(continuation_task)
 
 
   map_tryget("${promise}" value)
   ans(value)
-  ## decide depending on value and continuation_task 
+  ## decide depending on value and continuation_task
   ## what to do.
-  if(continuation_task)  
+  if(continuation_task)
     # task_anonymous("" ()
     #   #message("resolving ${promise}'s task continuation ${continuation} with ${value}")
     #   map_set(${continuation_task} arguments ${value})
@@ -41505,7 +41505,7 @@ function(continuation_resolve promise continuation)
   endif()
 
 
-  ## use the task_queue provided by the continuation 
+  ## use the task_queue provided by the continuation
   ## if that fails use the task queue from the previous promise
   ## if that failes use the global task queue
   map_tryget("${continuation}" task_queue)
@@ -41567,7 +41567,7 @@ endfunction()
 
 
 
-## `(<promise> <promise>|<any>...)-><bool>` 
+## `(<promise> <promise>|<any>...)-><bool>`
 ##
 ## if input is a promise then the promise will be resolved after the input
 ## promise is resolved
@@ -41633,7 +41633,7 @@ endmacro()
 
 ## `(<promise> <continuation:<promise>>)-><promise>`
 ##
-## adds the continuation to the specified promise. 
+## adds the continuation to the specified promise.
 ## when the promise is resolved it will schedule continuation to be executed
 function(promise_then promise continuation)
   promise("${promise}")
@@ -41677,7 +41677,7 @@ endfunction()
 
 ## `(<promise> [--ticks <uint>] [--timeout <uint>])-><any>...`
 ##
-## waits for the specified promise to complete. causes the execution of 
+## waits for the specified promise to complete. causes the execution of
 ## the promises task queue.
 ## --ticks and --timout indicate constaints on how long the tasks will run
 function(promise_wait promise)
@@ -41732,7 +41732,7 @@ endfunction()
 
 
 
-## this file should not have the extension .cmake 
+## this file should not have the extension .cmake
 ## because it needs to be included manually and last
 ## adds a callable as a task which is to be invoked later
 function(task_enqueue callable)
@@ -41740,8 +41740,8 @@ function(task_enqueue callable)
   ## semicolon encode before string_encode_semicolon exists
   string(ASCII  31 us)
   string(REPLACE ";" "${us}" callable "${callable}")
-  set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}") 
-  
+  set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}")
+
   if(cmakepp_is_loaded)
     function(task_enqueue callable)
       task_new("${callable}")
@@ -41762,12 +41762,12 @@ function(task_enqueue callable)
 endfunction()
 
 # initial version of task_enqueue which is used before cmakepp is loaded
-# ## create invoke later functions 
+# ## create invoke later functions
 # function(task_enqueue callable)
 #   ## semicolon encode before string_encode_semicolon exists
 #   string(ASCII  31 us)
 #   string(REPLACE ";" "${us}" callable "${callable}")
-#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}") 
+#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}")
 #   return()
 # endfunction()
 
@@ -41787,10 +41787,10 @@ endfunction()
 
 
 
-## `(<task>)-><true>` 
+## `(<task>)-><true>`
 ##
 ## invokes the specified task
-## scope: 
+## scope:
 ## * `task` instance of the task currently being invoked
 ## * `task_queue` if invoked in a task_queue
 ## * `arguments` contains the arguments for the specified task
@@ -41803,7 +41803,7 @@ function(task_invoke task)
   ans(res)
 
   map_set(${task} return_value ${res})
-  return_ref(res)    
+  return_ref(res)
 endfunction()
 
 
@@ -41831,7 +41831,7 @@ endfunction()
 
 
 ## `(<~callable> <any>...)-><task>`
-## 
+##
 ## creates a new task accepting a callable and arguments vor its invocation
 ##
 ## ```
@@ -41856,7 +41856,7 @@ function(task_new callable)
   map_set_special(${task} $type task)
   task_queue_global()
   ans(default_task_queue)
-  map_set("${task}" task_queue "${default_task_queue}")  
+  map_set("${task}" task_queue "${default_task_queue}")
   map_set("${task}" callable "${callable}")
   map_set("${task}" arguments "${ARGN}")
   return(${task})
@@ -41885,7 +41885,7 @@ endfunction()
 
 
 
-## 
+##
 ##
 ## returns true iff the task queue is empty
 function(task_queue_is_empty task_queue)
@@ -41901,7 +41901,7 @@ endfunction()
 
 
 
-## 
+##
 ##
 ## creates a new task queue which is a linked list of tasks.
 function(task_queue_new)
@@ -41946,7 +41946,7 @@ endfunction()
 
 
 
-## 
+##
 ##
 ## runs the task queue until it is either empty, maximum number of ticks reached or times out
 ## returns the number of tasks that where run
@@ -41999,22 +41999,22 @@ endfunction()
 
 ##
 ##
-## executes the next task in the task queue 
-## returns the executed task. 
+## executes the next task in the task queue
+## returns the executed task.
 ## returns nothing if the task queue is empty
 function(task_queue_tick task_queue)
-  
+
   linked_list_pop_front("${task_queue}")
   ans(task)
   if(NOT task)
     return()
   endif()
-  
+
   map_tryget("${task_queue}" can_tick)
   ans(can_tick)
   if(can_tick)
     call2("${can_tick}" "${task_queue}")
-    ans(can_tick)    
+    ans(can_tick)
     if(NOT can_tick)
       return()
     endif()
@@ -42050,14 +42050,14 @@ endfunction()
     ans(task)
     task_start("${task}")
     return_ref(task)
-  endfunction() 
+  endfunction()
 
 
 
 
 
 ## `(<task>)-><task state>`
-## 
+##
 ## ```
 ## <task state> ::= "completed"|"running"
 ## ```
@@ -42127,7 +42127,7 @@ endfunction()
 function(markdown_include_sourcecode path)
   path("${path}")
   ans(qualified_path)
-  if(EXISTS "${qualified_path}")  
+  if(EXISTS "${qualified_path}")
     fread("${path}")
     ans(res)
     else()
@@ -42144,7 +42144,7 @@ endfunction()
 
 function(markdown_link id name)
   ## get link
-  return("[${name}](#${id})")  
+  return("[${name}](#${id})")
 endfunction()
 
 
@@ -42255,7 +42255,7 @@ function(template_shell command)
         ans(shell_base_dir)
         address_set(template_shell_base_dir "${shell_base_dir}")
     endif()
-    
+
     set(args ${ARGN})
     list_extract_flag(args --echo)
     ans(echo)
@@ -42311,7 +42311,7 @@ endfunction()
 ##
 ## `()-><template output:<address>>`
 ##
-## fails if not executed inside of a template else returns the 
+## fails if not executed inside of a template else returns the
 ## template output ref
 ##
 function(template_guard)
@@ -42319,7 +42319,7 @@ function(template_guard)
   ans(ref)
   if(NOT ref)
     message(FATAL_ERROR "call may only occure inside of a template")
-  endif()  
+  endif()
   return(${ref})
 endfunction()
 
@@ -42329,7 +42329,7 @@ endfunction()
 
 
 ## `(<string...>) -> <void>`
-## 
+##
 ## writes the specified string(s) to the templates output stream
 ## fails if not called inside a template
 ##
@@ -42365,13 +42365,13 @@ function(template_out_format)
   ans(res)
   template_out("${res}")
   return()
-endfunction() 
+endfunction()
 
 
 
 
 ## `(<structured data...>) -> <void>`
-## 
+##
 ## writes the serialized data to the templates output
 ## fails if not called inside a template
 ##
@@ -42388,14 +42388,14 @@ endfunction()
 
 ## `(<input:<string>>)-><cmake code>`
 ##
-##  
+##
 ## creates and returns cmake code from specified template string
 ## the syntax is as follows
 ## * `<%%` `%%>` encloses cmake code
 ## * `<%%%` and `%%%>` escape `<%%` and `%%>` resp.
 ## * shorthands
-##     * `<%%=` runs the function specified if possible (only single line function calls allowed) or formats the following nonspace string using the `format()` function (allows things like `<%%="${var} {format.expression[3].navigation.key}%%>`) 
-##     * single line function calls are `func(.....)` but not `func(... \n ....)` 
+##     * `<%%=` runs the function specified if possible (only single line function calls allowed) or formats the following nonspace string using the `format()` function (allows things like `<%%="${var} {format.expression[3].navigation.key}%%>`)
+##     * single line function calls are `func(.....)` but not `func(... \n ....)`
 ##     * `@@<cmake function call>` is replaced with `<%%= <cmake function call> %%>`
 ##     * `@@<navigation expression>` is replaced with `<%%= {<navigation expression>}%%>`
 ##
@@ -42454,13 +42454,13 @@ function(template_compile input)
 
 
 
-  string(REGEX REPLACE 
+  string(REGEX REPLACE
     "${shorthand_indicator_code}(${regex_cmake_function})"
     "${delimiter_code}=\\1${delimiter_code}"
     input
     "${input}"
   )
-  string(REGEX REPLACE 
+  string(REGEX REPLACE
     "${shorthand_indicator_code}([^ ${shorthand_indicator_code}${delimiter_code}\r\n]+)"
     "${delimiter_code}=\"{\\1}\"${delimiter_code}"
     input
@@ -42476,8 +42476,8 @@ function(template_compile input)
   string(REPLACE "${delimiter_end_escape_code}" "${delimiter_end}"  fragments "${fragments}")
   string(REPLACE "${shorthand_indicator_escape_code}" "${shorthand_indicator}"  fragments "${fragments}")
   string(REPLACE "${shorthand_indicator_code}" "${shorthand_indicator}" fragments "${fragments}")
-  
-  
+
+
   address_new()
   ans(result)
   address_append_string("${result}" "template_begin()")
@@ -42509,8 +42509,8 @@ function(template_compile input)
         set(code "set(${output_var} \"${output}\")\n")
       endif()
 
-      ## special case <%= 
-      if("${code}" MATCHES "^=(.*)")  
+      ## special case <%=
+      if("${code}" MATCHES "^=(.*)")
         set(code "${CMAKE_MATCH_1}")
         if("${code}" MATCHES "${regex_cmake_function}")
           set(code "set(__ans) \n ${code} \n template_out(\"\${__ans}\")")
@@ -42520,7 +42520,7 @@ function(template_compile input)
       else()
 
       endif()
-      
+
       address_append_string("${result}" "\n${code}")
 
     else()
@@ -42546,7 +42546,7 @@ endfunction()
 
 ##
 ## `(<file path>)-> <cmake code>`
-## 
+##
 ## reads the contents of the specified path and generates a template from it
 ## * return
 ##   * the generated template code
@@ -42564,10 +42564,10 @@ endfunction()
 ## `(<template file:<file path>> <?output file:<file path>>)-><file path>`
 ##
 ## compiles the specified template file to the speciefied output file
-## if no output file is given the template file is expected to end with `.in`) and the 
+## if no output file is given the template file is expected to end with `.in`) and the
 ## output file will be set to the same path without the `.in` ending
 ##
-## Uses  see [`template_run_file`](#template_run_file) internally. 
+## Uses  see [`template_run_file`](#template_run_file) internally.
 ##
 ## returns the path to which it was compiled
 ##
@@ -42611,10 +42611,10 @@ endfunction()
 
 ##
 ## `(<template_path:<file path>>)-><generated content:string>`
-##  
+##
 ## opens the specified template and runs it in its directory
 ## keeps track of recursive template calling
-## * returns 
+## * returns
 ##    * the output of the template
 ## * scope
 ##    * `pwd()` is set to the templates path
@@ -42622,10 +42622,10 @@ endfunction()
 ##    * `${template_dir}` is set to the directory of the current template
 ##    * `${root_template_dir}` is set to the directory of the first template run
 ##    * `${root_template_path}` is set to the path of the first template run
-##    * `${parent_template_dir}` is set to the calling templates dir 
+##    * `${parent_template_dir}` is set to the calling templates dir
 ##    * `${parent_template_path}`  is set to the calling templates path
-## 
-## 
+##
+##
 function(template_run_file template_path)
   template_compile_file("${template_path}")
   ans(template)
@@ -42665,10 +42665,10 @@ endfunction()
 # if RESULT is set then the assertion will not cause the program to fail but return the true or false
 # if ACCU is set result is treated as a list and if an assertion fails the failure message is added to the end of result
 # examples
-# 
+#
 # assert("3" STREQUAL "3") => nothing happens
 # assert("3" STREQUAL "b") => FATAL_ERROR assertion failed: '"3" STREQUAL "b"'
-# assert(EXISTS "none/existent/path") => FATAL_ERROR assertion failed 'EXISTS "none/existent/path"' 
+# assert(EXISTS "none/existent/path") => FATAL_ERROR assertion failed 'EXISTS "none/existent/path"'
 # assert(EQUALS a b) => FATAL_ERROR assertion failed ''
 # assert(<assertion> MESSAGE "hello") => if assertion fails prints "hello"
 # assert(<assertion> RESULT res) => sets result to false if assertion fails or to true if it holds
@@ -42687,7 +42687,7 @@ function(assert)
 	cmake_parse_arguments("${prefix}" "${options}" "${oneValueArgs}" "${multiValueArgs}" ${ARGN})
 	#_UNPARSED_ARGUMENTS
 	set(result)
- 
+
 
 	#if no message type is set set FATAL_ERROR
 	# so execution halts on failing assertion
@@ -42717,7 +42717,7 @@ function(assert)
 		list(APPEND _UNPARSED_ARGUMENTS ${vars})
 	endif()
 
-	# 
+	#
 	if(_EQUALS OR _ARE_EQUAL OR _AREEQUAL)
 		if(NOT _MESSAGE)
 		set(_MESSAGE "assertion failed: lists not equal [${_UNPARSED_ARGUMENTS}]")
@@ -42815,7 +42815,7 @@ function(assert)
 		set(_MESSAGE "assertion failed: list does not contain '${_CONTAINS}' list:(${_UNPARSED_ARGUMENTS})")
 		endif()
 		list(FIND _UNPARSED_ARGUMENTS "${_CONTAINS}" idx)
-		
+
 		if(${idx} LESS 0)
 			if(_MISSING)
 				set(result true)
@@ -42858,7 +42858,7 @@ function(assert)
 		endif()
 	endif()
 
-	# depending on wether to accumulate the results or not 
+	# depending on wether to accumulate the results or not
 	# set result to a boolean or append to result list
 	if(_ACCU)
 		set(lst ${_RESULT})
@@ -42946,7 +42946,7 @@ endfunction()
         endif()
 
 
-        
+
         map_match(\"\${uut}\" \"\${expected}\")
         ans(res)
         if(NOT res)
@@ -42968,14 +42968,14 @@ endfunction()
 
 
   ## defines a test function
-  ## improved version.  use this 
+  ## improved version.  use this
   function(define_test_function2 function_name uut)
     arguments_cmake_string(2 ${ARGC})
     ans(predefined_args)
 
     #list_extract_flag(predefined_args --timer)
     #ans(timer)
-    ## store predefined_args in a ref which is restored 
+    ## store predefined_args in a ref which is restored
     ## in function definition
     ## this is necessary because else the args would have to be escaped
     address_new()
@@ -42983,7 +42983,7 @@ endfunction()
     address_set(${predefined_address} "${predefined_args}")
 
 
-    ## define the test function 
+    ## define the test function
     ## which executes the uut and compares
     ## it structurally to the expected value
     define_function("${function_name}" (expected)
@@ -43006,7 +43006,7 @@ endfunction()
 
       set(__ans)
       set(___code "${uut}(\${predefined_args} \${arguments})")
-      
+
       if(use_timer)
         set(___code "timer_start(t1)\n\${___code}\nans(result)\ntimer_print_elapsed(t1)\nreturn_ref(result)\n")
       endif()
@@ -43023,7 +43023,7 @@ endfunction()
         echo_append("actual: ")
         json_print(\${result})
         echo_append("expected: ")
-        json_print(\${expected})  
+        json_print(\${expected})
       endif()
       assert(res MESSAGE "values do not match")
 
@@ -43057,7 +43057,7 @@ function(test_execute test)
 
   #initialize variables which test can use
 
-  get_filename_component(test_name "${test}" NAME_WE) 
+  get_filename_component(test_name "${test}" NAME_WE)
 
   # intialize message listener
 
@@ -43070,13 +43070,13 @@ function(test_execute test)
   file(REMOVE_RECURSE "${test_dir}")
   get_filename_component(test_dir "${test_dir}" REALPATH)
   path_qualify(test)
-  message(STATUS "test directory is ${test_dir}")  
+  message(STATUS "test directory is ${test_dir}")
   pushd("${test_dir}" --create)
   timer_start("test duration")
 
 
   call("${test}"())
-  
+
   set(time)
   timer_elapsed("test duration")
   ans(time)
@@ -43120,13 +43120,13 @@ endfunction()
 
 ##
 ##
-## runs all tests specified in glob expressions in parallel 
+## runs all tests specified in glob expressions in parallel
 function(test_execute_glob_parallel)
   list_extract_flag(args --no-status)
   ans(no_status)
   set(args ${ARGN})
 
-  ## get all test files 
+  ## get all test files
   cd("${CMAKE_CURRENT_BINARY_DIR}")
   glob_ignore("${args}")
   ans(test_files)
@@ -43139,14 +43139,14 @@ function(test_execute_glob_parallel)
   address_set(tests_succeeded)
   address_set(tests_completed)
 
-  ## 
+  ##
   set(processes)
 
   ## status callback  shows a status message with current progress and a spinner
   set(status_callback)
   if(NOT no_status)
     function_new()
-    ans(status_callback)  
+    ans(status_callback)
     function(${status_callback})
       address_get(tests_failed)
       ans(tests_failed)
@@ -43193,12 +43193,12 @@ function(test_execute_glob_parallel)
   ## init time for all tests
   timer_start(test_time_sum)
 
-  ## start every test in parallel 
+  ## start every test in parallel
   foreach(test_file ${test_files})
     ## start test in a async process and add it to the process list
     cmakepp("test_execute" "${test_file}" --async)  # wrapped execute()
     ans(process)
-    list(APPEND processes ${process})    
+    list(APPEND processes ${process})
 
     ## add a property to process handle which is passed on to callback
     map_set(${process} test_file ${test_file})
@@ -43206,8 +43206,8 @@ function(test_execute_glob_parallel)
     ## add a listener to on_terminated event from process handle
     assign(success = process.on_terminated.add(${test_complete_callback}))
 
-    ## since starting a process is relatively slow I added a process wait -1 
-    ## here that gathers all completed processes 
+    ## since starting a process is relatively slow I added a process wait -1
+    ## here that gathers all completed processes
     ## -1 indicates that it will take only the finished processes
     process_wait_n(-1 ${processes} ${status_callback})
     ans(complete)
@@ -43218,7 +43218,7 @@ function(test_execute_glob_parallel)
   endforeach()
 
 
-      
+
   ## wait for all remaining processes (* indicates that all processes are to be waited for)
   process_wait_n(* ${processes} ${status_callback})
 
@@ -43261,7 +43261,7 @@ endfunction()
 
 function(test_create file)
 
-  get_filename_component(test_name "${test}" NAME_WE) 
+  get_filename_component(test_name "${test}" NAME_WE)
   # setup a directory for the test
   string_normalize("${test_name}")
   ans(test_dir)
@@ -43270,9 +43270,9 @@ function(test_create file)
   set(test_dir "${temp_dir}/tests/${test_dir}")
   file(REMOVE_RECURSE "${test_dir}")
   get_filename_component(test_dir "${test_dir}" REALPATH)
-  
+
   map_capture_new(test_dir test_name)
-  return_ans()  
+  return_ans()
 endfunction()
 
 
@@ -43297,7 +43297,7 @@ function(timers_print_all)
   ans(timers)
   foreach(timer ${timers})
     timer_print_elapsed("${timer}")
-  endforeach()  
+  endforeach()
   return()
 endfunction()
 
@@ -43315,14 +43315,14 @@ endfunction()
 
 
 # returns the time elapsed since timer identified by id was started
-function(timer_elapsed id)      
+function(timer_elapsed id)
   millis()
   ans(now)
   map_get(__timers ${id})
   ans(then)
   # so this has to be done because cmake can't handle numbers which are too large
   string_trim_to_difference(then now)
-  map_tryget(__timers __prejudice)      
+  map_tryget(__timers __prejudice)
   ans(prejudice)
   ## if now and the are equal null is returned so here it normalized
   if(NOT now)
@@ -43353,13 +43353,13 @@ endfunction()
 
 
 ## starts a timer identified by id
-## 
+##
 function(timer_start id)
   map_set_hidden(__timers __prejudice 0)
 
   # actual implementation of timer_start
   function(timer_start id)
-    return_reset()      
+    return_reset()
     millis()
     ans(millis)
     map_set(__timers ${id} ${millis})
@@ -43367,14 +43367,14 @@ function(timer_start id)
 
 
 
-  ## this is run the first time a timer is started: 
-  ## it calculates a prejudice value 
+  ## this is run the first time a timer is started:
+  ## it calculates a prejudice value
   ## (the time it takes from timer_start to timer_elapsed to run)
   ## this prejudice value is then subtracted everytime elapse is run
   ## thus minimizing the error
 
   #foreach(i RANGE 0 3)
-    timer_start(initial)  
+    timer_start(initial)
     timer_elapsed(initial)
     ans(prejudice)
 
@@ -43397,7 +43397,7 @@ endfunction()
 
 # compiles a tool (single cpp file with main method)
 # and create a cmake function (if the tool is not yet compiled)
-# expects tool to print cmake code to stdout. this code will 
+# expects tool to print cmake code to stdout. this code will
 # be evaluated and the result is returned  by the tool function
 # the tool function's name is name
 # currently only allows default headers
@@ -43455,15 +43455,15 @@ function(compile_tool name src)
     ans(log)
     popd()
 
-    if(NOT "${error}" STREQUAL "0")        
+    if(NOT "${error}" STREQUAL "0")
       message(FATAL_ERROR "failed to compile tool :\n ${log}")
       rm("${dir}")
     endif()
 
 
   endif()
-  
-        
+
+
   wrap_executable_bare("__${name}" "${dir}/build/bin/${name}")
 
   eval("
@@ -43493,10 +43493,10 @@ endfunction()
 ##
 ##
 macro(arguments_extract_typed_values __start_arg_index __end_arg_index)
-  # set(__arg_res)   
+  # set(__arg_res)
   # if(${__end_arg_index} GREATER ${__start_arg_index})
   #   math(EXPR __last_arg_index "${__end_arg_index} - 1")
-  #   foreach(i RANGE ${__start_arg_index} ${__last_arg_index} )        
+  #   foreach(i RANGE ${__start_arg_index} ${__last_arg_index} )
   #     encoded_list("${ARGV${i}}")
   #     list(APPEND __arg_res "${__ans}")
   #     #message("argv: '${ARGV${i}}' -> '${__ans}'")
@@ -43543,7 +43543,7 @@ endmacro()
 
 
         #print_vars(__letsv_identifier __letsv_optional)
-      else() 
+      else()
         message(FATAL_ERROR "invalid __letsv_type __letsv_def: '${__letsv_type}' (needs to be inside angular brackets)")
       endif()
 
@@ -43567,7 +43567,7 @@ endmacro()
       endif()
 
       if(NOT __letsv_optional AND NOT "${__letsv_value}_" STREQUAL "_" )
-        if(__letsv_type AND NOT "${__letsv_type}" MATCHES "^(any)|(string)$" AND COMMAND "t_${__letsv_type}")  
+        if(__letsv_type AND NOT "${__letsv_type}" MATCHES "^(any)|(string)$" AND COMMAND "t_${__letsv_type}")
           eval("t_${__letsv_type}(\"${__letsv_value}\")")
           ans_extract(__letsv_success)
           ans(__letsv_value_parsed)
@@ -43581,7 +43581,7 @@ endmacro()
       else()
         ## optional
       endif()
-        
+
 
 
       set(__ans ${__letsv_identifier} ${__letsv_value} PARENT_SCOPE)
@@ -43604,7 +43604,7 @@ function(list_extract_typed_values __lst)
   regex_cmake()
   string(REGEX MATCHALL "(^|;)<.*>($|;)" __letv_positionals "${ARGN}")
   string(REGEX MATCHALL "(^|;)\\[.*\\]($|;)" __letv_nonpositionals "${ARGN}")
-  set(names)    
+  set(names)
   foreach(__letv_arg ${__letv_nonpositionals} ${__letv_positionals})
     list_extract_typed_value(${__lst} "${__letv_arg}")
     ans_extract(__letv_name)
@@ -43624,7 +43624,7 @@ endfunction()
 ## prompts the user for input on the console
 function(prompt type)
 
-  
+
   query_type(prompt_input "${type}")
   return_ans()
 endfunction()
@@ -43656,7 +43656,7 @@ endfunction()
 
 
 
-    ## parses a property 
+    ## parses a property
   function(property_def prop)
     data("${prop}")
     ans(prop)
@@ -43693,7 +43693,7 @@ endfunction()
 
 
   function(query_fundamental input_callback type)
-      
+
       call("${input_callback}"(${type}))
       ans(res)
       return_ref(res)
@@ -43746,7 +43746,7 @@ endfunction()
     return_ref(res)
   endfunction()
 
-  
+
 
 
 
@@ -43771,10 +43771,10 @@ endfunction()
       ans(res)
     else()
       query_properties("${input_callback}" "${type}")
-      ans(res)      
+      ans(res)
     endif()
     return_ref(res)
-  endfunction()  
+  endfunction()
 
 
 
@@ -43813,13 +43813,13 @@ function(type_def)
       else()
         map_set("${type}" "anonymous" false)
       endif()
-    
+
       map_tryget(data_type_map "${type_name}")
       ans(registered_type)
       if(NOT registered_type)
         map_set(data_type_map "${type_name}" "${type}")
       endif()
-      
+
       map_tryget("${type}" properties)
       ans(props)
       is_map("${props}")
@@ -43878,7 +43878,7 @@ function(type_def)
     regex:'true|false'
   }")
 
-  
+
   type_def(${ARGN})
   return_ans()
 endfunction()
@@ -43892,7 +43892,7 @@ endfunction()
       return(true true)
     else()
       return(true false)
-    endif()    
+    endif()
   endfunction()
 
 
@@ -43942,7 +43942,7 @@ endfunction()
 
     string_take_regex_replace(input "${dns_user_info_regex}" "\\1")
     ans(user_info)
-    
+
     set(host_port "${input}")
 
 
@@ -44040,10 +44040,10 @@ endfunction()
 
 
 
-## 
-## checks to see if all specified items are in list 
+##
+## checks to see if all specified items are in list
 ## using list_check_items
-## 
+##
 function(uri_check_scheme uri)
   uri_coerce(uri)
   map_tryget(${uri} schemes)
@@ -44086,11 +44086,11 @@ endmacro()
 
 
 
-## encodes a string to uri format 
-## if you can pass decimal character codes  which are encoded 
+## encodes a string to uri format
+## if you can pass decimal character codes  which are encoded
 ## if you do not pass any codes  the characters  recommended by rfc2396
 ## are encoded
-function(uri_encode str ) 
+function(uri_encode str )
 
   if(NOT ARGN)
     uri_recommended_to_escape()
@@ -44200,12 +44200,12 @@ endfunction()
 
 ## normalizes the input for the uri
 ## expects <uri> to have a property called input
-## ensures a property called uri is added to <uri> which contains a valid uri string 
+## ensures a property called uri is added to <uri> which contains a valid uri string
 function(uri_normalize_input input_uri)
   set(flags ${ARGN})
 
 
-  # options  
+  # options
   set(handle_windows_paths true)
   set(default_file_scheme true)
   set(driveletter_separator :)
@@ -44230,11 +44230,11 @@ function(uri_normalize_input input_uri)
 
   set(delimiters "${delimiter}")
 
-    # if string is delimited encode whitespace 
+    # if string is delimited encode whitespace
     if(NOT "${delimited}_" STREQUAL "_")
       set(rest "${input}")
       set(input "${delimited}")
-      
+
       if(ignore_leading_whitespace)
         string_take_whitespace(input)
       endif()
@@ -44245,7 +44245,7 @@ function(uri_normalize_input input_uri)
       endif()
     endif()
 
-    
+
 
     # the whole uri is delimited by a space or end of string
     set(CMAKE_MATCH_1)
@@ -44269,7 +44269,7 @@ function(uri_normalize_input input_uri)
         # replace backward slash with forward slash
         # for windows paths - non standard behaviour
         string(REPLACE \\ /  uri "${uri}")
-      endif()  
+      endif()
 
 
       if("_${uri}" MATCHES "^_/" AND NOT "_${uri}" MATCHES "^_//")
@@ -44286,7 +44286,7 @@ function(uri_normalize_input input_uri)
       endif()
 
     endif()
-    
+
     # the rest is not part of input_uri
     map_capture(${input_uri} uri rest delimited_rest delimiters windows_absolute_path)
     return_ref(input_uri)
@@ -44299,7 +44299,7 @@ endfunction()
 
 
   function(uri_params_deserialize query)
-      
+
     string(REPLACE "&" "\;" query_assignments "${query}")
     set(query_assignments ${query_assignments})
     string(ASCII 21 c)
@@ -44310,9 +44310,9 @@ endfunction()
       set(value ${value})
       list_pop_front(value)
       ans(key)
-      set(path "${key}")      
+      set(path "${key}")
 
-      string(REPLACE "[]" "${c}" path "${path}")      
+      string(REPLACE "[]" "${c}" path "${path}")
       string(REGEX REPLACE "\\[([^0-9]+)\\]" ".\\1" path "${path}")
       string(REPLACE "${c}" "[]" path "${path}")
 
@@ -44320,7 +44320,7 @@ endfunction()
       uri_decode("${path}")
       ans(path)
       uri_decode("${value}")
-      ans(value)  
+      ans(value)
 
 
       ref_nav_set("${query_data}" "!${path}" "${value}")
@@ -44361,14 +44361,14 @@ endfunction()
   # function definition
   function(uri_params_serialize obj )
     obj("${obj}")
-    ans(obj)  
+    ans(obj)
     map_new()
     ans(context)
     dfs_callback(uri_params_serialize_callback ${obj})
     map_tryget(${context} assignments)
     ans(assignments)
     string_combine("&" ${assignments})
-    return_ans()  
+    return_ans()
   endfunction()
   #delegate
   uri_params_serialize(${ARGN})
@@ -44387,11 +44387,11 @@ endfunction()
 #  authority: # is the authority part if uri has a net_root
 #  abs_root: # is / if the uri is a absolute path
 #  segments: # an array of uri segments (folder)
-#  file: # the last segment 
-#  file_name: # the last segment without extension 
-#  extension: # extension of file 
+#  file: # the last segment
+#  file_name: # the last segment without extension
+#  extension: # extension of file
 #  rest: # the ret of the input string which is not part of the uri
-#  query: # the query part of the uri 
+#  query: # the query part of the uri
 #  fragment # fragment part of uri
 # }
 ##
@@ -44527,14 +44527,14 @@ function(uri_parse str)
 
 
   map_capture(${res}
-    
-    scheme 
+
+    scheme
     scheme_specific_part
     net_path
-    authority 
-    path      
-    query 
-    fragment 
+    authority
+    path
+    query
+    fragment
 
     ${notnull}
   )
@@ -44546,7 +44546,7 @@ function(uri_parse str)
     uri_parse_authority(${res})
     uri_parse_path(${res})
     uri_parse_file(${res})
-    uri_parse_query(${res})      
+    uri_parse_query(${res})
   endif()
 
 
@@ -44620,7 +44620,7 @@ endfunction()
 
   function(uri_parse_path uri)
     map_get("${uri}" path)
-    ans(path)    
+    ans(path)
 
     set(segments)
     set(encoded_segments)
@@ -44629,11 +44629,11 @@ endfunction()
     ans(slash)
     set(leading_slash ${slash})
 
-    while(true) 
+    while(true)
       string_take_regex(path "${segment_char}+" )
       ans(segment)
 
-  
+
 
 
       if("${segment}_" STREQUAL "_")
@@ -44657,7 +44657,7 @@ endfunction()
 
 
     set(normalized_segments)
-    set(current_segments ${segments})   
+    set(current_segments ${segments})
 
     while(true)
       list_pop_front(current_segments)
@@ -44721,7 +44721,7 @@ endfunction()
 
 
 
-  ## tries to interpret the uri as a local path and replaces it 
+  ## tries to interpret the uri as a local path and replaces it
   ## with a normalized local path (ie file:// ...)
   ## returns a new uri
   function(uri_qualify_local_path uri)
@@ -44741,9 +44741,9 @@ endfunction()
     ## check if path path is going to be local
     eval_truth(
        "${scheme}_" MATCHES "(^_$)|(^file_$)" # scheme is file
-       AND normalized_host STREQUAL "localhost" # and host is localhost 
+       AND normalized_host STREQUAL "localhost" # and host is localhost
        AND NOT "${uri_string}" MATCHES "^[^/]+:" # and input uri is not scp like ssh syntax
-     ) 
+     )
     ans(is_local)
 
     ## special handling of local path
@@ -44767,13 +44767,13 @@ endfunction()
 
 ## characters specified in rfc2396
 ## 37 %  (percent)
-## 126 ~ (tilde) 
-## 1-32 (control chars) (nul is not allowed) 
+## 126 ~ (tilde)
+## 1-32 (control chars) (nul is not allowed)
 ## 127 (del)
 ## 32 (space)
 ## 35 (#) sharp fragment identifer
-## 60 (<) 62 (>) 34 (") delimiters 
-## unwise 
+## 60 (<) 62 (>) 34 (") delimiters
+## unwise
 ## 123 { 125 } 124 | 92 \ 94 ^ 91 [ 93 ] 96 `
 
 function(uri_recommended_to_escape)
@@ -44781,8 +44781,8 @@ function(uri_recommended_to_escape)
   index_range(1 31)
   ans(dec_codes)
 
-  
-  list(APPEND dec_codes 
+
+  list(APPEND dec_codes
     32   # space
     34   # "
     35   # #
@@ -44790,8 +44790,8 @@ function(uri_recommended_to_escape)
     62   # >
     91   # [
     93   # ]
-    94   # ^ 
-    96   # ` 
+    94   # ^
+    96   # `
     123  # {
     124  # |
     125  # }
@@ -44827,7 +44827,7 @@ endfunction()
   function(uri_set_schemes uri)
     uri("${uri}")
     ans(uri)
-    
+
 
 
     map_set(${uri} schemes ${ARGN})
@@ -44873,7 +44873,7 @@ endfunction()
 
 
 
-## formats an <uri~> to a localpath 
+## formats an <uri~> to a localpath
 function(uri_to_localpath uri)
   uri("${uri}")
   ans(uri)
@@ -44962,7 +44962,7 @@ function(git)
   return_ans()
 
 
-endfunction()  
+endfunction()
 
 
 
@@ -44970,7 +44970,7 @@ endfunction()
 
 
 ## returns the git base dir (the directory in which .git is located)
-function(git_base_dir)  
+function(git_base_dir)
   git_dir("${ARGN}")
   ans(res)
   path_component("${res}" --parent-dir)
@@ -44981,14 +44981,14 @@ endfunction()
 
 
 
-  ## git_cached_clone(<remote uri:<~uri>> <?target_dir> [--readonly] ([--file <>]|[--read<>]) [--ref <git ref>])-> 
+  ## git_cached_clone(<remote uri:<~uri>> <?target_dir> [--readonly] ([--file <>]|[--read<>]) [--ref <git ref>])->
     function(git_cached_clone remote_uri)
       set(args ${ARGN})
 
 
       list_extract_flag(args --readonly)
       ans(readonly)
-      
+
       list_extract_labelled_value(args --ref)
       ans(git_ref)
 
@@ -45067,12 +45067,12 @@ endfunction()
             if(error)
               message(FATAL_ERROR "failed to update submodules for  ${git_ref}")
             endif()
-          popd()   
+          popd()
           set(result "${target_dir}")
         endif()
        popd()
 
-      return_ref(result)      
+      return_ref(result)
 
     endfunction()
 
@@ -45091,7 +45091,7 @@ function(git_dir)
   git(rev-parse --show-toplevel)
   ans(res)
   message("${res}")
-  
+
   popd()
   string(STRIP "${res}" res)
   set(res "${res}/.git")
@@ -45123,7 +45123,7 @@ endfunction()
 
 
 
-# reads a single file from a git repository@branch using the 
+# reads a single file from a git repository@branch using the
 # repository relative path ${path}. returns the contents of the file
 function(git_read_single_file repository branch path )
   mktemp()
@@ -45131,7 +45131,7 @@ function(git_read_single_file repository branch path )
 
   set(branch_arg)
   if(branch)
-    set(branch_arg --branch "${branch}") 
+    set(branch_arg --branch "${branch}")
   endif()
 
   git_lean(clone --no-checkout ${branch_arg} --depth 1 "${repository}" "${tmp_dir}")
@@ -45159,14 +45159,14 @@ function(git_read_single_file repository branch path )
   popd()
   rm(-r "${tmp_dir}")
 
-  
+
   if(error)
     return()
   endif()
-  
+
 
   return_ref(res)
-  
+
 endfunction()
 
 
@@ -45231,7 +45231,7 @@ function(git_remote_exists uri)
 
   git_lean(ls-remote "${uri}")
   ans_extract(error)
-  
+
   if(error)
     return(false)
   endif()
@@ -45291,7 +45291,7 @@ endfunction()
 
 
 
-# returns a list of ref maps containing the fields 
+# returns a list of ref maps containing the fields
 # name type and revision
 function(git_remote_refs uri)
   git_uri("${uri}")
@@ -45317,7 +45317,7 @@ function(git_remote_refs uri)
       list_extract(parts revision ref)
       git_ref_parse("${ref}")
       ans(ref_map)
-      
+
       map_set("${ref_map}" uri "${uri}")
       if(ref_map)
         map_set(${ref_map} revision ${revision})
@@ -45325,7 +45325,7 @@ function(git_remote_refs uri)
         #address_print(${ref_map})
       endif()
     endif()
-  endforeach()   
+  endforeach()
   return_ref(res)
 endfunction()
 
@@ -45409,7 +45409,7 @@ endfunction()
 ##
   function(hg_cached_clone remote_uri)
       set(args ${ARGN})
-      
+
       ### extract options
       list_extract_labelled_value(args --ref)
       ans(ref)
@@ -45425,7 +45425,7 @@ endfunction()
 
       if(file AND read)
         message(FATAL_ERROR "--file and --read is not allowed")
-      endif() 
+      endif()
 
       list_pop_front(args)
       ans(target_dir)
@@ -45440,7 +45440,7 @@ endfunction()
 
       set(repo_cache_dir "${cache_dir}/hg_cache/${cache_key}")
 
-      ## initial clone of repo 
+      ## initial clone of repo
       if(NOT EXISTS "${repo_cache_dir}")
         hg(clone "${remote_uri}" "${repo_cache_dir}" --exit-code)
         ans(error)
@@ -45495,7 +45495,7 @@ endfunction()
   ans(is_hg_constraint)
   if(is_hg_constraint)
     return("${ARGN}")
-  endif() 
+  endif()
 
   package_query("${ARGN}")
   ans(pq)
@@ -45513,7 +45513,7 @@ endfunction()
   return (${constraint})
  endfunction()
 
- 
+
 function(line_info)
   set(t1 ${CMAKE_CURRENT_LIST_FILE})
   set(t2 ${CMAKE_CURRENT_LIST_LINE})
@@ -45534,7 +45534,7 @@ function(hg_get_refs)
   ans(branches)
   string_split("${branches}" "\n")
   hg(tags)
-  ans(tags)  
+  ans(tags)
   string_split("${tags}" "\n")
   ans(tags)
 
@@ -45544,13 +45544,13 @@ function(hg_get_refs)
     hg_parse_ref("${ref}")
     ans(ref)
     map_set("${ref}" type "tag")
-    list(APPEND refs "${ref}") 
+    list(APPEND refs "${ref}")
   endforeach()
   foreach(ref ${branches}  )
     hg_parse_ref("${ref}" )
     ans(ref)
     map_set("${ref}" type "branch")
-    list(APPEND refs "${ref}") 
+    list(APPEND refs "${ref}")
   endforeach()
   return_ref(refs)
 endfunction()
@@ -45699,9 +45699,9 @@ function(svn)
   # to prohibit non utf 8 decode errors
   set(ENV{LANG} C)
   set(ENV{LC_MESSAGES} C)
-  
+
   wrap_executable(svn "${Subversion_SVN_EXECUTABLE}")
-  
+
   svn(${ARGN})
   return_ans()
 endfunction()
@@ -45716,7 +45716,7 @@ function(svn_cached_checkout uri)
 
   list_extract_flag(args --refresh)
   ans(refresh)
-  
+
   list_extract_flag(args --readonly)
   ans(readonly)
 
@@ -45732,7 +45732,7 @@ function(svn_cached_checkout uri)
   ans(target_dir)
   path_qualify(target_dir)
 
-  
+
   svn_uri_analyze(${uri} ${revision} ${branch} ${tag})
   ans(svn_uri)
 
@@ -45748,13 +45748,13 @@ function(svn_cached_checkout uri)
   elseif("${ref_type}" STREQUAL "tag")
     set(ref_type tags)
   endif()
-  
+
   cmakepp_config(cache_dir)
   ans(cache_dir)
 
   string(MD5 cache_key "${base_uri}@${revision}@${ref_type}@${ref}")
   set(cached_path "${cache_dir}/svn_cache/${cache_key}")
-  
+
   if(EXISTS "${cached_path}" AND NOT refresh)
     if(readonly)
       return_ref(cached_path)
@@ -45767,7 +45767,7 @@ function(svn_cached_checkout uri)
   set(checkout_uri "${base_uri}/${ref_type}/${ref}@${revision}")
   svn_remote_exists("${checkout_uri}")
   ans(remote_exists)
-  
+
   if(NOT remote_exists)
     return()
   endif()
@@ -45837,11 +45837,11 @@ function(svn_info uri)
     map_tryget(${res} stdout)
     ans(xml)
 
-    xml_parse_attrs("${xml}" entry path)    
+    xml_parse_attrs("${xml}" entry path)
     ans(path)
-    xml_parse_attrs("${xml}" entry revision)    
+    xml_parse_attrs("${xml}" entry revision)
     ans(revision)
-    xml_parse_attrs("${xml}" entry kind)    
+    xml_parse_attrs("${xml}" entry kind)
     ans(kind)
     xml_parse_values("${xml}" url)
     ans(url)
@@ -45905,7 +45905,7 @@ endfunction()
 
 
 
-  ## svn_uri_analyze(<input:<?uri>> [--revision <rev>] [--branch <branch>] [--tag <tag>])-> 
+  ## svn_uri_analyze(<input:<?uri>> [--revision <rev>] [--branch <branch>] [--tag <tag>])->
   ## {
   ##   input: <string>
   ##   uri: <uri string>
@@ -45916,7 +45916,7 @@ endfunction()
   ##   revision: <rev>
   ## }
   ##
-  ## 
+  ##
   function(svn_uri_analyze input)
     set(args ${ARGN})
 
@@ -45969,13 +45969,13 @@ endfunction()
         string_take_regex(uri_rel_path "[^/]+")
         ans(uri_ref)
       endif()
-      
+
       if(uri_ref_type STREQUAL "${branches_dir}")
         set(uri_branch ${uri_ref})
       endif()
       if(uri_ref_type STREQUAL "${tags_dir}")
         set(uri_tag "${uri_ref}")
-      endif()      
+      endif()
 
     endif()
 
@@ -46002,7 +46002,7 @@ endfunction()
       set(ref ${uri_ref})
     endif()
 
-    
+
     if(args_branch)
       set(ref_type branch)
       set(ref ${args_branch})
@@ -46049,7 +46049,7 @@ endfunction()
 
     if(revision STREQUAL "HEAD")
       set(revision)
-    endif() 
+    endif()
 
 
     set(params)
@@ -46095,7 +46095,7 @@ endfunction()
     elseif("${ref_type}" STREQUAL "tag")
       set(ref_type tags)
     endif()
-    
+
     set(checkout_uri "${base_uri}/${ref_type}/${ref}@${revision}")
     return_ref(checkout_uri)
 
@@ -46106,8 +46106,8 @@ endfunction()
 
 
 ## bitbucket_api()
-## 
-## 
+##
+##
 function(bitbucket_api)
 
   set(bitbucket_api_token)
@@ -46184,7 +46184,7 @@ function(bitbucket_remote_refs user repo ref_type_query ref_name_query )
   endif()
   set(branches)
   set(tags)
-  
+
   if("${ref_type_query}_" STREQUAL "*_" OR "${ref_type_query}_" STREQUAL "branches_")
     map_tryget(${refs} branches)
     ans(branches)
@@ -46209,13 +46209,13 @@ function(bitbucket_remote_refs user repo ref_type_query ref_name_query )
       ans_append(refs)
     endif()
   endforeach()
-  
+
   foreach(tag ${tags})
     map_tryget(${tag} name)
     ans(ref)
     map_tryget(${tag} changeset)
     ans(commit)
-    set(ref_type "tags")  
+    set(ref_type "tags")
 
 
     if("${ref_name_query}_" STREQUAL "*_" OR "${ref_name_query}_" STREQUAL "${ref}_")
@@ -46261,7 +46261,7 @@ endfunction()
 
     list_remove_duplicates(names)
     list_remove(names ssh https) ## hack because of the way that json_extract_string_value works I have to remove other names
-    
+
     return_ref(names)
   endfunction()
 
@@ -46269,7 +46269,7 @@ endfunction()
 
 
 macro(check_host url)
- 
+
   # expect webservice to be reachable
   http_get("${url}" --exit-code)
   ans(error)
@@ -46304,7 +46304,7 @@ endmacro()
       string(REGEX REPLACE ":([a-zA-Z][a-zA-Z0-9_]*)" "\\1" name "${replace}")
       string(REPLACE "${replace}" "\${${name}}" uri_string "${uri_string}")
       set(function_args "${function_args} ${name}")
-    endforeach()    
+    endforeach()
 
     set(code "
       function(${function}${function_args})
@@ -46359,20 +46359,20 @@ function(download uri)
   ans(filename)
 
   if(IS_DIRECTORY "${target_path}")
-    set(target_path "${target_path}/${filename}")    
+    set(target_path "${target_path}/${filename}")
   endif()
-  
-  file(DOWNLOAD 
-    "${uri_string}" "${target_path}" 
-    STATUS status 
+
+  file(DOWNLOAD
+    "${uri_string}" "${target_path}"
+    STATUS status
    # LOG log
     ${show_progress}
-    TLS_VERIFY OFF 
+    TLS_VERIFY OFF
     ${args})
 
 
   list_extract(status code message)
-  if(NOT "${code}" STREQUAL 0)    
+  if(NOT "${code}" STREQUAL 0)
     error("failed to download: {message} (code {code})")
     rm("${target_path}")
     return()
@@ -46395,13 +46395,13 @@ endfunction()
     ans(refresh)
     list_extract_flag(args --readonly)
     ans(readonly)
-    
+
     cmakepp_config(cache_dir)
     ans(cache_dir)
 
     string(MD5 cache_key "${uri}")
     set(cached_path "${cache_dir}/download_cache/${cache_key}")
-   
+
     if(EXISTS "${cached_path}" AND NOT refresh)
       if(readonly)
         glob("${cached_path}/**")
@@ -46429,8 +46429,8 @@ endfunction()
 
 
 ## github_api()
-## 
-## 
+##
+##
 function(github_api)
   set(github_api_token)
   if(NOT "$ENV{GITHUB_DEVEL_TOKEN_ID}_" STREQUAL "_" )
@@ -46503,7 +46503,7 @@ function(github_remote_refs user repo ref_query)
     github_api("repos/${user}/${repo}/branches" --json --silent-fail)
     ans(branches)
 
-    foreach(branch ${branches})  
+    foreach(branch ${branches})
       assign(ref = branch.name)
       assign(commit = branch.commit.sha)
       set(ref_type "branches")
@@ -46533,10 +46533,10 @@ endfunction()
 
 
 
-  
+
 ## github_repository(<user> <repo>)-> {
 ##  full_name:
-##  default_branch: 
+##  default_branch:
 ## }
 ##
 ##  returns a github repository object if the repo exists
@@ -46577,7 +46577,7 @@ function(github_repository_list user)
     endif()
     assign(content = res.content)
 
-    
+
     ## this is a quick way to get all full_name fields of the unparsed json
     ## parsing large json files would be much too slow
     json_extract_string_value(full_name "${content}")
@@ -46591,7 +46591,7 @@ function(github_repository_list user)
       ans(default_branch)
       map_capture_new(full_name default_branch)
       ans_append(repos)
-    endforeach() 
+    endforeach()
     return_ref(repos)
 endfunction()
 
@@ -46606,13 +46606,13 @@ endfunction()
 ## http_get(<~uri> <?content:<structured data>> [--progress] [--response] [--exit-code] )-> <http response>
 ##
 ##
-## flags: 
-##   --json         flag deserializes the content and returns it 
+## flags:
+##   --json         flag deserializes the content and returns it
 ##   --show-progress     flag prints the progress of the download to the console
 ##   --response     flag
 ##   --exit-code  flag
 ##   --silent-fail  flag
-##  
+##
 function(http_get uri)
   set(args ${ARGN})
   list_extract_flag(args --json)
@@ -46630,7 +46630,7 @@ function(http_get uri)
   if(show_progress)
     set(show_progress SHOW_PROGRESS)
   endif()
-  
+
   path_temp()
   ans(target_path)
 
@@ -46657,15 +46657,15 @@ function(http_get uri)
     set(uri "${modified_uri}")
   endif()
 
-  ## actual request - uses file DOWNLOAD which 
-  ## uses cUrl internally 
-  file(DOWNLOAD 
-    "${uri}" 
-    "${target_path}" 
-    STATUS status 
+  ## actual request - uses file DOWNLOAD which
+  ## uses cUrl internally
+  file(DOWNLOAD
+    "${uri}"
+    "${target_path}"
+    STATUS status
     ${log}
     ${show_progress}
-    TLS_VERIFY OFF 
+    TLS_VERIFY OFF
     ${args}
   )
 
@@ -46701,7 +46701,7 @@ function(http_get uri)
   rm("${target_path}")
 
   ## if the response is not to be returnd
-  ## check if deserialization is wished and 
+  ## check if deserialization is wished and
   ## and return content
   if(NOT return_response)
     if(return_json)
@@ -46766,17 +46766,17 @@ endfunction()
 ##   http_reason_phrase:
 ##   http_headers:{}
 ##   http_request:{
-##      http_version:	
-##      http_request_url:	
+##      http_version:
+##      http_request_url:
 ##      http_method:
-##      http_headers:{}	
+##      http_headers:{}
 ##   }
 ## }
 function(http_last_response_parse http_log)
 	string_encode_semicolon("${http_log}")
 	ans(http_log)
 	http_regexes()
-	
+
 	string(REGEX MATCHALL "(${http_request_header_regex})" requests "${http_log}")
 	string(REGEX MATCHALL "(${http_response_header_regex})" responses "${http_log}")
 
@@ -46797,19 +46797,19 @@ endfunction()
 
 
 
-## http_put() -> 
+## http_put() ->
 ##
 ## flags:
 ##   --response     						flag will return the http response object
 ##
 ##   --json											flag will deserialize the result data
 ##
-##   --exit-code    						flag will return the http clients return code 
+##   --exit-code    						flag will return the http clients return code
 ##															non-zero indicates an error
-##   --show-progress 						flag causes a console message which indicates 
+##   --show-progress 						flag causes a console message which indicates
 ##															the progress of the operation
 ##
-##   --raw           					 	flag witll cause input to be sent raw 
+##   --raw           					 	flag witll cause input to be sent raw
 ##															if flag is not specified the input is serialized
 ##															to json before sending
 ##
@@ -46818,15 +46818,15 @@ endfunction()
 ##   --silent-fail						 	flag causes function to return nothing if it fails
 ##															(only usable if --response was not set)
 ##
-##   --timeout <n>						 	value 
+##   --timeout <n>						 	value
 ##
-##   --inactivity-timeout <n>  	value 
-## 
+##   --inactivity-timeout <n>  	value
+##
 ## events:
 ##   on_http_put(<uri> <content>)-> <uri?>:
 ##     event is called before put request is performed
-##     user may cancel event and return a modified uri 
-##     which is used to perform the request 
+##     user may cancel event and return a modified uri
+##     which is used to perform the request
 function(http_put uri)
 	set(args ${ARGN})
 
@@ -46835,7 +46835,7 @@ function(http_put uri)
 
 	list_extract_labelled_value(args --timeout)
 	ans(timeout)
-	
+
 	list_extract_labelled_value(args --inactivity-timeout)
 	ans(inactivity_timeout)
 
@@ -46880,8 +46880,8 @@ function(http_put uri)
 
 	endif()
 
-	## emit on_http_put event 
-	## 
+	## emit on_http_put event
+	##
 	event_emit(on_http_put ${uri} ${content})
 	ans(modified_uri)
 	if(modified_uri)
@@ -46900,11 +46900,11 @@ function(http_put uri)
 	endif()
 
 	## upload a file (this actaully does a http put request)
-	file(UPLOAD 
-		"${content_file}" 
-		"${uri}" 
-		STATUS client_result 
-		LOG http_log 
+	file(UPLOAD
+		"${content_file}"
+		"${uri}"
+		STATUS client_result
+		LOG http_log
 		${show_progress}
 		${timeout}
 		${inactivity_timeout}
@@ -46924,7 +46924,7 @@ function(http_put uri)
 	if("${http_log}" MATCHES  "Response:\n(.*)\n\nDebug:\n")
 		set(response_content "${CMAKE_MATCH_1}")
 	endif()
-	
+
 	if(NOT return_response AND client_status)
 		error("http_put failed: ${client_message} - ${client_status}")
 		if(NOT silent_fail)
@@ -46974,7 +46974,7 @@ function(http_request_header_parse http_request)
   string(REGEX REPLACE "${http_request_line_regex}" "\\3" http_version "${http_request_line}")
 
 
-  
+
   http_headers_parse("${http_request_headers}")
   ans(http_headers)
 
@@ -47026,7 +47026,7 @@ endfunction()
 
 
 
-## this file should not have the extension .cmake 
+## this file should not have the extension .cmake
 ## because it needs to be included manually and last
 ## adds a callable as a task which is to be invoked later
 function(task_enqueue callable)
@@ -47034,8 +47034,8 @@ function(task_enqueue callable)
   ## semicolon encode before string_encode_semicolon exists
   string(ASCII  31 us)
   string(REPLACE ";" "${us}" callable "${callable}")
-  set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}") 
-  
+  set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}")
+
   if(cmakepp_is_loaded)
     function(task_enqueue callable)
       task_new("${callable}")
@@ -47056,12 +47056,12 @@ function(task_enqueue callable)
 endfunction()
 
 # initial version of task_enqueue which is used before cmakepp is loaded
-# ## create invoke later functions 
+# ## create invoke later functions
 # function(task_enqueue callable)
 #   ## semicolon encode before string_encode_semicolon exists
 #   string(ASCII  31 us)
 #   string(REPLACE ";" "${us}" callable "${callable}")
-#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}") 
+#   set_property(GLOBAL APPEND PROPERTY __initial_invoke_later_list "${callable}")
 #   return()
 # endfunction()
 
@@ -47070,7 +47070,7 @@ endfunction()
 parse_command_line(command_line_args "${command_line_args}") # parses quoted command line args
 map_set(global "command_line_args" ${command_line_args})
 map_set(global "unused_command_line_args" ${command_line_args})
-## todo... change this 
+## todo... change this
 # setup cmakepp config
 map()
 	kv(base_dir
@@ -47079,10 +47079,10 @@ map()
 		DISPLAY_NAME "cmakepp installation dir"
 		DEFAULT "${CMAKE_CURRENT_LIST_DIR}"
 		)
-  kv(keep_temp 
-    LABELS --keep-tmp --keep-temp -kt 
-    MIN 0 MAX 0 
-    DESCRIPTION "does not delete temporary files after") 
+  kv(keep_temp
+    LABELS --keep-tmp --keep-temp -kt
+    MIN 0 MAX 0
+    DESCRIPTION "does not delete temporary files after")
   kv(temp_dir
   	LABELS --temp-dir
   	MIN 1 MAX 1
@@ -47109,7 +47109,7 @@ end()
 ans(cmakepp_config_definition)
 cd("${CMAKE_SOURCE_DIR}")
 # setup config_function for cmakepp
-config_setup("cmakepp_config" ${cmakepp_config_definition})
+config_setup("cmakepp_config" "${cmakepp_config_definition}")
 ## run all currently enqueued tasks
 set(cmakepp_is_loaded true)
 task_enqueue("[]()") ## dummy
