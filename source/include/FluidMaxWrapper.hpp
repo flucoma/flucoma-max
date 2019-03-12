@@ -14,6 +14,7 @@
 
 #include <MaxBufferAdaptor.hpp>
 
+#include <cctype>  //std::tolower
 #include <tuple>
 #include <utility>
 
