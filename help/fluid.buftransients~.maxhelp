@@ -396,7 +396,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "padding",
+									"attr" : "padsize",
 									"id" : "obj-5",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
