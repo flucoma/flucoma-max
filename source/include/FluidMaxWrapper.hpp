@@ -409,8 +409,12 @@ public:
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
+    
+	//Change for MSVC, which didn't like the macro version
+	t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
+	class_addattr(getClass(), a);
 
-    CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
+    //CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
 
