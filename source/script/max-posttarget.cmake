@@ -63,6 +63,8 @@ if (APPLE)
 	#
   #   set_target_properties(${PROJECT_NAME} PROPERTIES )
 elseif (WIN32)
+	target_sources(${PROJECT_NAME} PRIVATE "${C74_MAX_INCLUDES}/common/commonsyms.c" )
+	target_compile_options(${PROJECT_NAME} PRIVATE /arch:AVX)
 	target_link_libraries(${PROJECT_NAME} ${MaxAPI_LIB})
 	target_link_libraries(${PROJECT_NAME} ${MaxAudio_LIB})
 	target_link_libraries(${PROJECT_NAME} ${Jitter_LIB})
