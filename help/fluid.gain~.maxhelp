@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 33.0, 79.0, 1212.0, 990.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -170,7 +170,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 33.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -200,6 +200,19 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-21",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 627.0, 434.0, 50.0, 22.0 ],
+									"style" : "",
+									"text" : "gain $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"attr" : "gain",
 									"id" : "obj-17",
 									"maxclass" : "attrui",
@@ -207,7 +220,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 321.0, 345.0, 150.0, 22.0 ],
-									"presentation_rect" : [ 321.0, 341.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -221,7 +233,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 321.0, 368.0, 150.0, 22.0 ],
-									"presentation_rect" : [ 318.0, 354.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -532,7 +543,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 1 ],
+									"destination" : [ "obj-21", 0 ],
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -541,6 +552,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-8", 1 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
