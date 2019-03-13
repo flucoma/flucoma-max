@@ -16,7 +16,7 @@ target_include_directories( ${PROJECT_NAME}
 )
 
 get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
-source_group(TREE ${FLUID_PATH}/include FILES ${HEADERS})
+source_group(TREE "${FLUID_PATH}/include" FILES ${HEADERS})
 
 if ("${PROJECT_NAME}" MATCHES ".*_tilde")
 	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${PROJECT_NAME}")
