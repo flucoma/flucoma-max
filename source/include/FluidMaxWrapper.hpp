@@ -466,8 +466,8 @@ class FluidMaxWrapper : public impl::FluidMaxBase<C>
 public:
   
   using Client = C;
-  using ParamDescriptors = typename C::Params;
-  using Params = ParameterSet<ParamDescriptors>;
+  using ParamDescType = typename C::ParamDescType;
+  using ParamSetType = typename C::ParamSetType;
   
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
     : mParams(C::getParameterDescriptor())
@@ -499,8 +499,8 @@ public:
     void *x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
 
-    if (attr_args_offset(ac, av) > Params::NumFixedParams)
-    { object_warn((t_object *) x, "Too many arguments. Got %d, expect at most %d", ac, Params::NumFixedParams); }
+    if (attr_args_offset(ac, av) > ParamSetType::NumFixedParams)
+    { object_warn((t_object *) x, "Too many arguments. Got %d, expect at most %d", ac, ParamSetType::NumFixedParams); }
 
     return x;
   }
@@ -512,7 +512,7 @@ public:
   
   static void makeClass(const char *className)
   {
-    const ParamDescriptors& p = Client::getParameterDescriptor();
+    const ParamDescType& p = Client::getParameterDescriptor();
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     impl::FluidMaxBase<C>::setup(getClass());
     
@@ -524,7 +524,7 @@ public:
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
 
-    Params::template iterateMutableParameterDescriptors<SetupAttribute>(p.descriptors());
+    ParamSetType::template iterateMutableParameterDescriptors<SetupAttribute>(p.descriptors());
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
@@ -538,7 +538,7 @@ public:
   Result &messages() { return mResult; }
   bool    verbose() { return mVerbose; }
   Client &client() { return mClient; }
-  Params &params() { return mParams; }
+  ParamSetType &params() { return mParams; }
 
 private:
 
@@ -584,7 +584,7 @@ private:
     }
   };
 
-  Params &initParamsFromAttributeArgs(long ac, t_atom *av)
+  ParamSetType &initParamsFromAttributeArgs(long ac, t_atom *av)
   {
     // Process arguments for instantiation parameters
     if (long numArgs = attr_args_offset(ac, av))
@@ -625,12 +625,12 @@ private:
   static t_symbol *maxAttrType(FloatPairsArrayT) { return _sym_atom; }
   static t_symbol *maxAttrType(FFTParamsT) { return _sym_atom; }
 
-  Result mResult;
-  void * mNRTDoneOutlet;
-  void * mControlOutlet;
-  bool   mVerbose;
-  Params mParams;
-  Client mClient;
+  Result        mResult;
+  void *        mNRTDoneOutlet;
+  void *        mControlOutlet;
+  bool          mVerbose;
+  ParamSetType  mParams;
+  Client        mClient;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
