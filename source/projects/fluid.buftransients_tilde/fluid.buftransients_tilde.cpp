@@ -11,7 +11,7 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NRTTransients<float>>("fluid.buftransients~");
+  makeMaxWrapper<NRTTransients>("fluid.buftransients~");
 }
 
 

@@ -9,5 +9,5 @@ void ext_main(void *r)
 {
   using namespace fluid::client;
   
-  makeMaxWrapper<NRTSines,double, float>("fluid.bufsines~", NRTSineParams);
+  makeMaxWrapper<NRTSines>("fluid.bufsines~");
 }

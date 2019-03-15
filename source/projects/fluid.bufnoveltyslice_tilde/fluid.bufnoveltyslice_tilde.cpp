@@ -5,7 +5,7 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NoveltyClient,double,float>("fluid.bufnoveltyslice~", NoveltyParams); 
+  makeMaxWrapper<NoveltyClient>("fluid.bufnoveltyslice~"); 
  
 }
 

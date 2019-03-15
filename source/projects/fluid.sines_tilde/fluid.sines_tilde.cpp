@@ -11,5 +11,5 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<SinesClient<double>>("fluid.sines~");
+  makeMaxWrapper<SinesClient>("fluid.sines~");
 }

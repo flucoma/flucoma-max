@@ -635,10 +635,28 @@ private:
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-template <class Client>
+template<typename RT>
+struct InputTypeWrapper
+{};
+    
+template<>
+struct InputTypeWrapper<std::true_type>
+{
+    using type = double;
+};
+    
+template<>
+struct InputTypeWrapper<std::false_type>
+{
+    using type = float;
+};
+    
+template <template <typename T> class Client>
 void makeMaxWrapper(const char *classname)
 {
-  FluidMaxWrapper<Client>::makeClass(classname);
+  using InputType = typename InputTypeWrapper<isRealTime<Client<double>>>::type;
+    
+  FluidMaxWrapper<Client<InputType>>::makeClass(classname);
 }
 
 } // namespace client
