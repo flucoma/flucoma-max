@@ -1,10 +1,11 @@
 #pragma once
 
-#include <commonsyms.h>
 #include <ext.h>
 #include <ext_obex.h>
 #include <ext_obex_util.h>
 #include <z_dsp.h>
+
+#include <commonsyms.h>
 
 #include <clients/common/FluidBaseClient.hpp>
 #include <clients/common/OfflineClient.hpp>
@@ -22,13 +23,14 @@ namespace client {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // Forward declaration
 
-template <typename Client, typename Params>
+template <typename Client>
 class FluidMaxWrapper;
+    
 //////////////////////////////////////////////////////////////////////////////////////////////////
 namespace impl {
 
-template <typename Client, typename Params>
-void printResult(FluidMaxWrapper<Client, Params> *x)
+template <typename Client>
+void printResult(FluidMaxWrapper<Client>* x)
 {
   if (!x) return;
 
@@ -67,9 +69,9 @@ struct Fetcher<ParamIdx, LongT> : public FetchValue<ParamIdx, t_atom_long, atom_
 {};
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-template <typename Client, typename Params, typename T, size_t N>
+template <typename Client, typename T, size_t N>
 struct Setter;
-template <typename Client, typename Params, typename T, size_t N>
+template <typename Client, typename T, size_t N>
 struct Getter;
 
 /// Specialisations for managing the compile-time dispatch of Max attributes to Fluid Parameters
@@ -77,10 +79,11 @@ struct Getter;
 
 // Setters
 
-template <typename Client, typename Params, size_t N, typename T, T Method(const t_atom *av)>
+
+template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
 struct SetValue
 {
-  static t_max_err set(FluidMaxWrapper<Client, Params> *x, t_object *attr, long ac, t_atom *av)
+  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     x->messages().reset();
     x->params().template set<N>(Method(av), x->verbose() ? &x->messages() : nullptr);
@@ -89,24 +92,25 @@ struct SetValue
     return MAX_ERR_NONE;
   }
 };
-
-template <typename Client, typename Params, size_t N>
-struct Setter<Client, Params, FloatT, N> : public SetValue<Client, Params, N, t_atom_float, &atom_getfloat>
+    
+template <typename Client, size_t N>
+struct Setter<Client, FloatT, N> : public SetValue<Client, N, t_atom_float, &atom_getfloat>
 {};
 
-template <typename Client, typename Params, size_t N>
-struct Setter<Client, Params, LongT, N> : public SetValue<Client, Params, N, t_atom_long, &atom_getlong>
+template <typename Client, size_t N>
+struct Setter<Client, LongT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong>
 {};
 
-template <typename Client, typename Params, size_t N>
-struct Setter<Client, Params, EnumT, N> : public SetValue<Client, Params, N, t_atom_long, &atom_getlong>
+template <typename Client, size_t N>
+struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong>
 {};
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-template <typename Client, typename Params, size_t N>
-struct Setter<Client, Params, FloatPairsArrayT, N>
+    
+template <typename Client, size_t N>
+struct Setter<Client, FloatPairsArrayT, N>
 {
-  static t_max_err set(FluidMaxWrapper<Client, Params> *x, t_object *attr, long ac, t_atom *av)
+  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     using type  = typename FloatPairsArrayT::type;
     type &param = x->params().template get<N>();
@@ -122,12 +126,13 @@ struct Setter<Client, Params, FloatPairsArrayT, N>
     return MAX_ERR_NONE;
   }
 };
+    
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-template <typename Client, typename Params, size_t N>
-struct Setter<Client, Params, FFTParamsT, N>
+template <typename Client, size_t N>
+struct Setter<Client, FFTParamsT, N>
 {
-  static t_max_err set(FluidMaxWrapper<Client, Params> *x, t_object *attr, long ac, t_atom *av)
+  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     using type  = typename FFTParamsT::type;
     type &param = x->params().template get<N>();
@@ -143,10 +148,11 @@ struct Setter<Client, Params, FFTParamsT, N>
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-template <typename Client, typename Params, size_t N>
-struct Setter<Client, Params, BufferT, N>
+
+template<typename Client, size_t N>
+struct Setter<Client, BufferT, N >
 {
-  static t_max_err set(FluidMaxWrapper<Client, Params> *x, t_object *attr, long ac, t_atom *av)
+  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     using type = typename BufferT::type;
     auto b     = static_cast<MaxBufferAdaptor *>(x->params().template get<N>().get());
@@ -164,10 +170,10 @@ struct Setter<Client, Params, BufferT, N>
 //////////////////////////////////////////////////////////////////////////////////////////////////
 // Getters
 
-template <typename Client, typename Params, size_t N, typename T, t_max_err Method(t_atom *av, T)>
+template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
 struct GetValue
 {
-  static t_max_err get(FluidMaxWrapper<Client, Params> *x, t_object *attr, long *ac, t_atom **av)
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
     char alloc;
     atom_alloc(ac, av, &alloc);
@@ -176,23 +182,24 @@ struct GetValue
   }
 };
 
-template <typename Client, typename Params, size_t N>
-struct Getter<Client, Params, FloatT, N> : public GetValue<Client, Params, N, double, &atom_setfloat>
+template <typename Client, size_t N>
+struct Getter<Client, FloatT, N> : public GetValue<Client,N, double, &atom_setfloat>
 {};
 
-template <typename Client, typename Params, size_t N>
-struct Getter<Client, Params, LongT, N> : public GetValue<Client, Params, N, t_atom_long, &atom_setlong>
+template <typename Client, size_t N>
+struct Getter<Client, LongT, N> : public GetValue<Client, N, t_atom_long, &atom_setlong>
 {};
 
-template <typename Client, typename Params, size_t N>
-struct Getter<Client, Params, EnumT, N> : public GetValue<Client, Params, N, t_atom_long, &atom_setlong>
+template <typename Client, size_t N>
+struct Getter<Client, EnumT, N> : public GetValue<Client, N, t_atom_long, &atom_setlong>
 {};
+    
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-template <typename Client, typename Params, size_t N>
-struct Getter<Client, Params, BufferT, N>
+template <typename Client, size_t N>
+struct Getter<Client, BufferT, N>
 {
-  static t_max_err get(FluidMaxWrapper<Client, Params> *x, t_object *attr, long *ac, t_atom **av)
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
     char alloc;
     atom_alloc(ac, av, &alloc);
@@ -202,11 +209,13 @@ struct Getter<Client, Params, BufferT, N>
     return MAX_ERR_NONE;
   }
 };
-//////////////////////////////////////////////////////////////////////////////////////////////////
-template <typename Client, typename Params, size_t N>
-struct Getter<Client, Params, FloatPairsArrayT, N>
+
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+
+template <typename Client, size_t N>
+struct Getter<Client, FloatPairsArrayT, N>
 {
-  static t_max_err get(FluidMaxWrapper<Client, Params> *x, t_object *attr, long *ac, t_atom **av)
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
     char alloc;
     atom_alloc_array(4, ac, av, &alloc);
@@ -221,13 +230,15 @@ struct Getter<Client, Params, FloatPairsArrayT, N>
     return MAX_ERR_NONE;
   }
 };
+    
 //////////////////////////////////////////////////////////////////////////////////////////////////
-template <typename Client, typename Params, size_t N>
-struct Getter<Client, Params, FFTParamsT, N>
+
+template <typename Client, size_t N>
+struct Getter<Client, FFTParamsT, N>
 {
   using type = typename FFTParamsT::type;
 
-  static t_max_err get(FluidMaxWrapper<Client, Params> *x, t_object *attr, long *ac, t_atom **av)
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
     char alloc;
     atom_alloc_array(3, ac, av, &alloc);
@@ -243,16 +254,16 @@ struct Getter<Client, Params, FFTParamsT, N>
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-template <typename Client, typename Params, size_t, typename>
+template<typename Client, size_t, typename>
 struct Notify
 {
-  static void notify(FluidMaxWrapper<Client, Params> *, t_symbol *, t_symbol *, void *, void *) {}
+  static void notify(FluidMaxWrapper<Client>*, t_symbol*, t_symbol*, void*, void*) {}
 };
 
-template <typename Client, typename Params, size_t N>
-struct Notify<Client, Params, N, BufferT>
+template<typename Client, size_t N>
+struct Notify<Client, N, BufferT>
 {
-  static void notify(FluidMaxWrapper<Client, Params> *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
+  static void notify(FluidMaxWrapper<Client>* x, t_symbol *s, t_symbol *msg, void *sender, void *data)
   {
     if (auto p = static_cast<MaxBufferAdaptor *>(x->params().template get<N>().get())) p->notify(s, msg, sender, data);
   }
@@ -437,29 +448,30 @@ struct FluidMaxBaseImpl<Wrapper, std::true_type, std::true_type> : public MaxBas
 {};
 
 // Base class selection
-/// Move to client layer, so all hosts can use this
-// template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
-// template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
-//////////////////////////////////////////////////////////////////////////////////////////////////
-template <typename Client, typename Params>
-using FluidMaxBase = FluidMaxBaseImpl<FluidMaxWrapper<Client, Params>, isNonRealTime<Client>, isRealTime<Client>>;
+///Move to client layer, so all hosts can use this
+//template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
+//template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
+ //////////////////////////////////////////////////////////////////////////////////////////////////
+template <typename Client>
+using FluidMaxBase = FluidMaxBaseImpl<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>;
 
 } // namespace impl
-
-template <typename C, typename P>
-class FluidMaxWrapper : public impl::FluidMaxBase<C, P>
+  
+template <typename C>
+class FluidMaxWrapper : public impl::FluidMaxBase<C>
 {
-  friend impl::RealTime<FluidMaxWrapper<C, P>>;
-  friend impl::NonRealTime<FluidMaxWrapper<C, P>>;
-
+  friend impl::RealTime<FluidMaxWrapper<C>>;
+  friend impl::NonRealTime<FluidMaxWrapper<C>>;
+    
 public:
-  using Client           = C;
-  using Params           = ParameterSet<P>;
-  using ParamDescriptors = P;
-
-  FluidMaxWrapper(t_symbol *, long ac, t_atom *av)
-      : mParams(*getParamDescriptors())
-      , mClient{initParamsFromAttributeArgs(ac, av)}
+  
+  using Client = C;
+  using ParamDescriptors = typename C::Params;
+  using Params = ParameterSet<ParamDescriptors>;
+  
+  FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
+    : mParams(*getParamDescriptors())
+    , mClient{initParamsFromAttributeArgs(ac,av)}
   {
     if (mClient.audioChannelsIn())
     {
@@ -492,19 +504,23 @@ public:
 
     return x;
   }
-
-  static void destroy(FluidMaxWrapper *x) { x->~FluidMaxWrapper(); }
-
-  static void makeClass(const char *className, const ParamDescriptors &p)
+  
+  static void destroy(FluidMaxWrapper * x)
   {
-    getClass(class_new(className, (method) create, (method) destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
+    x->~FluidMaxWrapper();
+  }
+  
+  static void makeClass(const char *className)
+  {
+    const ParamDescriptors& p = Client::getParameterDescriptor();
+    getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     getParamDescriptors(&p);
-    impl::FluidMaxBase<C, P>::setup(getClass());
-
-    class_addmethod(getClass(), (method) doNotify, "notify", A_CANT, 0);
-    class_addmethod(getClass(), (method) object_obex_dumpout, "dumpout", A_CANT, 0);
-    class_addmethod(getClass(), (method) doReset, "reset", 0);
-
+    impl::FluidMaxBase<C>::setup(getClass());
+    
+    class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
+    class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
+    class_addmethod(getClass(), (method)doReset, "reset",0);
+    
     CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
@@ -561,7 +577,7 @@ private:
   {
     void operator()(typename T::type &attr, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
     {
-      impl::Notify<Client, P, N, T>::notify(x, s, msg, sender, data);
+      impl::Notify<Client,N,T>::notify(x, s, msg, sender, data);
     }
   };
 
@@ -596,10 +612,11 @@ private:
   {
     void operator()(const T &attr)
     {
-      std::string name         = lowerCase(attr.name);
-      method      setterMethod = (method) &impl::Setter<Client, P, T, N>::set;
-      method      getterMethod = (method) &impl::Getter<Client, P, T, N>::get;
-      t_object *  a            = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
+      std::string   name            = lowerCase(attr.name);
+      method        setterMethod    = (method) &impl::Setter<Client, T, N>::set;
+      method        getterMethod    = (method) &impl::Getter<Client, T, N>::get;
+      t_object*     a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
+
       class_addattr(getClass(), a);
       CLASS_ATTR_LABEL(getClass(), name.c_str(), 0, attr.displayName);
     }
@@ -623,10 +640,11 @@ private:
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-template <template <typename...> class Client, typename... Rest, typename Params>
-void makeMaxWrapper(const char *classname, Params &params)
+
+template <class Client>
+void makeMaxWrapper(const char *classname)
 {
-  FluidMaxWrapper<Client<ParameterSet<Params>, Rest...>, Params>::makeClass(classname, params);
+  FluidMaxWrapper<Client>::makeClass(classname);
 }
 
 } // namespace client
