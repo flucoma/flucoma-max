@@ -1,10 +1,11 @@
 #pragma once
 
-#include <commonsyms.h>
 #include <ext.h>
 #include <ext_obex.h>
 #include <ext_obex_util.h>
 #include <z_dsp.h>
+
+#include <commonsyms.h>
 
 #include <clients/common/FluidBaseClient.hpp>
 #include <clients/common/OfflineClient.hpp>
