@@ -470,7 +470,7 @@ public:
   using Params = ParameterSet<ParamDescriptors>;
   
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
-    : mParams(*getParamDescriptors())
+    : mParams(C::getParameterDescriptor())
     , mClient{initParamsFromAttributeArgs(ac,av)}
   {
     if (mClient.audioChannelsIn())
@@ -514,7 +514,6 @@ public:
   {
     const ParamDescriptors& p = Client::getParameterDescriptor();
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
-    getParamDescriptors(&p);
     impl::FluidMaxBase<C>::setup(getClass());
     
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
@@ -542,11 +541,6 @@ public:
   Params &params() { return mParams; }
 
 private:
-  static ParamDescriptors *getParamDescriptors(const ParamDescriptors *setParam = nullptr)
-  {
-    static const ParamDescriptors *p = nullptr;
-    return (p = setParam ? setParam : p);
-  }
 
   static t_class *getClass(t_class *setClass = nullptr)
   {
