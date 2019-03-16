@@ -21,13 +21,15 @@ namespace fluid {
 namespace client {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+    
 // Forward declaration
 
 template <typename Client>
 class FluidMaxWrapper;
     
-//////////////////////////////////////////////////////////////////////////////////////////////////
 namespace impl {
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Client>
 void printResult(FluidMaxWrapper<Client>* x)
@@ -47,6 +49,7 @@ void printResult(FluidMaxWrapper<Client>* x)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+    
 template <size_t ParamIdx, typename T, T Method(const t_atom *av)>
 struct FetchValue
 {
@@ -67,6 +70,7 @@ struct Fetcher<ParamIdx, FloatT> : public FetchValue<ParamIdx, t_atom_float, ato
 template <size_t ParamIdx>
 struct Fetcher<ParamIdx, LongT> : public FetchValue<ParamIdx, t_atom_long, atom_getlong>
 {};
+    
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Client, typename T, size_t N>
@@ -78,7 +82,6 @@ struct Getter;
 /// We need set + get specialisations for each allowed type (Float,Long, Buffer, Enum, FloatArry, LongArray, BufferArray)
 
 // Setters
-
 
 template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
 struct SetValue
@@ -167,6 +170,7 @@ struct Setter<Client, BufferT, N >
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+    
 // Getters
 
 template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
@@ -269,6 +273,7 @@ struct Notify<Client, N, BufferT>
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+    
 template <typename Wrapper>
 t_max_err getLatency(Wrapper *x, t_object *attr, long *ac, t_atom **av)
 {
@@ -277,15 +282,13 @@ t_max_err getLatency(Wrapper *x, t_object *attr, long *ac, t_atom **av)
   atom_setlong(*av, x->client().latency());
   return MAX_ERR_NONE;
 }
+    
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <class Wrapper>
 class RealTime
 {
   using ViewType = FluidTensorView<double, 1>;
-
-  //  using Client = typename Wrapper::Client;
-  //  using Params = typename Wrapper::Params;
 
 public:
   static void setup(t_class *c)
@@ -300,15 +303,13 @@ public:
     x->dsp(dsp64, count, samplerate, maxvectorsize, flags);
   }
 
-  static void callPerform(Wrapper *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size,
-                          long flags, void *userparam)
+  static void callPerform(Wrapper *x, t_object *dsp64, double **ins, long numins, double **outs, long numouts, long vec_size, long flags, void *userparam)
   {
     x->perform(dsp64, ins, numins, outs, numouts, vec_size, flags, userparam);
   }
 
   void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
   {
-
     Wrapper *wrapper = static_cast<Wrapper *>(this);
     auto &   client  = wrapper->client();
 
@@ -337,8 +338,7 @@ public:
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
   }
 
-  void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags,
-               void *userparam)
+  void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
   {
     auto &client = static_cast<Wrapper *>(this)->mClient;
     for (int i = 0; i < numins; ++i)
@@ -374,7 +374,9 @@ private:
   std::vector<t_atom>   mControlAtoms;
   void *                mControlClock;
 };
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
+
 template <class Wrapper>
 struct NonRealTime
 {
@@ -397,13 +399,15 @@ struct NonRealTime
       }
       return;
     }
-    wrapper.bang();
+    wrapper.doneBang();
   }
 
   static void deferProcess(Wrapper *x, t_symbol *s, long ac, t_atom *av) { defer(x, (method) &callProcess, s, ac, av); }
 
   static void callProcess(Wrapper *x, t_symbol *s, short ac, t_atom *av) { x->process(s, ac, av); }
 };
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <class Wrapper>
 struct NonRealTimeAndRealTime : public RealTime<Wrapper>, public NonRealTime<Wrapper>
@@ -414,17 +418,21 @@ struct NonRealTimeAndRealTime : public RealTime<Wrapper>, public NonRealTime<Wra
     NonRealTime<Wrapper>::setup(c);
   }
 };
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
+
 // Max base type
 
 struct MaxBase
 {
-  t_object *  getMaxObject() { return (t_object *) &mObject; }
-  t_pxobject *getMSPObject() { return &mObject; }
-  t_pxobject  mObject;
+  t_object*     getMaxObject() { return (t_object *) &mObject; }
+  t_pxobject*   getMSPObject() { return &mObject; }
+  t_pxobject    mObject;
 };
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
-// Templates and specilisations for all possible base options
+
+// Templates and specialisations for all possible base options
 
 template <class Wrapper, typename NRT, typename RT>
 struct FluidMaxBaseImpl : public MaxBase
@@ -446,31 +454,27 @@ template <class Wrapper>
 struct FluidMaxBaseImpl<Wrapper, std::true_type, std::true_type> : public MaxBase, public NonRealTimeAndRealTime<Wrapper>
 {};
 
-// Base class selection
-///Move to client layer, so all hosts can use this
-//template<typename T> using isRealTime = typename std::is_base_of<Audio,T>::type;
-//template<typename T> using isNonRealTime = typename std::is_base_of<Offline, T>::type;
- //////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
 template <typename Client>
 using FluidMaxBase = FluidMaxBaseImpl<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>;
 
 } // namespace impl
   
-template <typename C>
-class FluidMaxWrapper : public impl::FluidMaxBase<C>
+template <typename Client>
+class FluidMaxWrapper : public impl::FluidMaxBase<Client>
 {
-  friend impl::RealTime<FluidMaxWrapper<C>>;
-  friend impl::NonRealTime<FluidMaxWrapper<C>>;
+  friend impl::RealTime<FluidMaxWrapper<Client>>;
+  friend impl::NonRealTime<FluidMaxWrapper<Client>>;
     
 public:
   
-  using Client = C;
-  using ParamDescType = typename C::ParamDescType;
-  using ParamSetType = typename C::ParamSetType;
+  using ParamDescType = typename Client::ParamDescType;
+  using ParamSetType = typename Client::ParamSetType;
   
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
-    : mParams(C::getParameterDescriptor())
-    , mClient{initParamsFromAttributeArgs(ac,av)}
+    : mParams(Client::getParameterDescriptor())
+    , mClient{initParamsFromArgs(ac,av)}
   {
     if (mClient.audioChannelsIn())
     {
@@ -480,8 +484,6 @@ public:
 
     object_obex_store(this, _sym_dumpout, (t_object *) outlet_new(this, nullptr));
 
-    attr_args_process((t_object *) this, ac, av);
-
     if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
 
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
@@ -489,7 +491,7 @@ public:
     for (int i = 0; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
   }
 
-  void bang() { outlet_bang(mNRTDoneOutlet); }
+  void doneBang() { outlet_bang(mNRTDoneOutlet); }
 
   void controlOut(long ac, t_atom *av) { outlet_list(mControlOutlet, nullptr, ac, av); }
 
@@ -513,7 +515,7 @@ public:
   {
     const ParamDescType& p = Client::getParameterDescriptor();
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
-    impl::FluidMaxBase<C>::setup(getClass());
+    impl::FluidMaxBase<Client>::setup(getClass());
     
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
@@ -583,7 +585,7 @@ private:
     }
   };
 
-  ParamSetType &initParamsFromAttributeArgs(long ac, t_atom *av)
+  ParamSetType &initParamsFromArgs(long ac, t_atom *av)
   {
     // Process arguments for instantiation parameters
     if (long numArgs = attr_args_offset(ac, av))
@@ -617,12 +619,12 @@ private:
 
   // Get Symbols for attribute types
 
-  static t_symbol *maxAttrType(FloatT) { return USESYM(float64); }
-  static t_symbol *maxAttrType(LongT) { return USESYM(long); }
-  static t_symbol *maxAttrType(BufferT) { return USESYM(symbol); }
-  static t_symbol *maxAttrType(EnumT) { return USESYM(long); }
-  static t_symbol *maxAttrType(FloatPairsArrayT) { return _sym_atom; }
-  static t_symbol *maxAttrType(FFTParamsT) { return _sym_atom; }
+  static t_symbol* maxAttrType(FloatT) { return USESYM(float64); }
+  static t_symbol* maxAttrType(LongT) { return USESYM(long); }
+  static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
+  static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
+  static t_symbol* maxAttrType(FloatPairsArrayT) { return _sym_atom; }
+  static t_symbol* maxAttrType(FFTParamsT) { return _sym_atom; }
 
   Result        mResult;
   void *        mNRTDoneOutlet;
@@ -634,20 +636,16 @@ private:
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-template<typename RT>
+template<typename RT = std::true_type>
 struct InputTypeWrapper
-{};
-    
-template<>
-struct InputTypeWrapper<std::true_type>
 {
-    using type = double;
+  using type = double;
 };
     
 template<>
 struct InputTypeWrapper<std::false_type>
 {
-    using type = float;
+  using type = float;
 };
     
 template <template <typename T> class Client>
@@ -660,4 +658,3 @@ void makeMaxWrapper(const char *classname)
 
 } // namespace client
 } // namespace fluid
-
