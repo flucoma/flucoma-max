@@ -523,7 +523,7 @@ public:
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
 
-    ParamSetType::template iterateMutableParameterDescriptors<SetupAttribute>(p.descriptors());
+    ParamSetType::template iterateMutableParameterDescriptors<SetupAttribute>(p);
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
