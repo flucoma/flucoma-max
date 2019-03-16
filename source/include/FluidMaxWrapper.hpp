@@ -112,8 +112,7 @@ struct Setter<Client, FloatPairsArrayT, N>
 {
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    using type  = typename FloatPairsArrayT::type;
-    type &param = x->params().template get<N>();
+    auto &param = x->params().template get<N>().value;
     assert(ac = param.size() * 2 && "Array parameter is wrong length");
     for (auto &&a : param)
     {
@@ -219,7 +218,7 @@ struct Getter<Client, FloatPairsArrayT, N>
   {
     char alloc;
     atom_alloc_array(4, ac, av, &alloc);
-    auto &param = x->params().template get<N>();
+    auto &param = x->params().template get<N>().value;
     //    assert(*ac == param.size() * 2 && "Array parameter is unexpected length");
     t_atom *arr = *av;
     for (auto &&a : param)
