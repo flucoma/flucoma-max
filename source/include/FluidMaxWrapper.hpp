@@ -568,7 +568,7 @@ private:
   template <size_t N, typename T>
   struct notifyAttribute
   {
-    void operator()(T &attr, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
+    void operator()(typename T::type &attr, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
     {
       impl::Notify<Client,N,T>::notify(x, s, msg, sender, data);
     }
@@ -577,7 +577,7 @@ private:
   template <size_t N, typename T>
   struct touchAttribute
   {
-    void operator()(T &attr, FluidMaxWrapper *x)
+    void operator()(typename T::type &attr, FluidMaxWrapper *x)
     {
       object_attr_touch((t_object *) x, gensym(FluidMaxWrapper::lowerCase(x->params().template name<N>()).c_str()));
     }
