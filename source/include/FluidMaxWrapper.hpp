@@ -498,8 +498,8 @@ public:
     void *x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
 
-    if (attr_args_offset(ac, av) > ParamSetType::NumFixedParams)
-    { object_warn((t_object *) x, "Too many arguments. Got %d, expect at most %d", ac, ParamSetType::NumFixedParams); }
+    if (attr_args_offset(ac, av) > ParamDescType::NumFixedParams)
+    { object_warn((t_object *) x, "Too many arguments. Got %d, expect at most %d", ac, ParamDescType::NumFixedParams); }
 
     return x;
   }
@@ -523,7 +523,7 @@ public:
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
 
-    ParamSetType::template iterateMutableParameterDescriptors<SetupAttribute>(p);
+    p.template iterateMutable<SetupAttribute>();
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
