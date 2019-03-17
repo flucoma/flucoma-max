@@ -32,7 +32,7 @@ namespace impl {
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Client>
-void printResult(FluidMaxWrapper<Client>* x)
+void printResult(FluidMaxWrapper<Client>* x, Result& r)
 {
   if (!x) return;
 
@@ -40,8 +40,8 @@ void printResult(FluidMaxWrapper<Client>* x)
   {
     switch (x->messages().status())
     {
-    case Result::Status::kWarning: object_warn((t_object *) x, x->messages().message().c_str()); break;
-    case Result::Status::kError: object_error((t_object *) x, x->messages().message().c_str()); break;
+    case Result::Status::kWarning: object_warn((t_object *) x, r.message().c_str()); break;
+    case Result::Status::kError: object_error((t_object *) x, r.message().c_str()); break;
     default: {
     }
     }
@@ -90,7 +90,7 @@ struct SetValue
   {
     x->messages().reset();
     x->params().template set<N>(Method(av), x->verbose() ? &x->messages() : nullptr);
-    printResult(x);
+    printResult(x, x->messages());
     object_attr_touch((t_object *) x, gensym("latency"));
     return MAX_ERR_NONE;
   }
@@ -126,7 +126,7 @@ struct Setter<Client, FloatPairsArrayT, N>
       
     x->messages().reset();
     x->params().template set<N>(type(f1, a1, f2, a2), x->verbose() ? &x->messages() : nullptr);
-    printResult(x);
+    printResult(x, x->messages());
     return MAX_ERR_NONE;
   }
 };
@@ -144,7 +144,7 @@ struct Setter<Client, FFTParamsT, N>
     t_atom_long fft(atom_getlong(av++));
     x->messages().reset();
     x->params().template set<N>(type(win, hop, fft), x->verbose() ? &x->messages() : nullptr);
-    printResult(x);
+    printResult(x, x->messages());
     object_attr_touch((t_object *) x, gensym("latency"));
     return MAX_ERR_NONE;
   }
@@ -161,7 +161,7 @@ struct Setter<Client, BufferT, N >
     x->messages().reset();
     x->params().template set<N>(type(new MaxBufferAdaptor((t_object *) x, atom_getsym(av))),
                                   x->verbose() ? &x->messages() : nullptr);
-    printResult(x);
+    printResult(x, x->messages());
     return MAX_ERR_NONE;
   }
 };
@@ -479,7 +479,10 @@ public:
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
     }
 
-    mParams.keepConstrained(true);
+    auto results = mParams.keepConstrained(true);
+      
+    for (auto &r : results)
+      printResult(this, r);
       
     object_obex_store(this, _sym_dumpout, (t_object *) outlet_new(this, nullptr));
 
