@@ -62,7 +62,7 @@ public:
     if (buffer)
     {
       // Do this in two stages so we can set length in samps rather than ms
-      buffer_unlocksamples(getBuffer());
+      unlockSamps();
       buffer_edit_begin(buffer);
 
       t_atom args[2];
@@ -78,8 +78,7 @@ public:
 
       object_method(buffer, gensym("dirty"));
       buffer_edit_end(buffer, 1);
-      t_object *buffer = getBuffer();
-      if (buffer) mSamps = buffer_locksamples(buffer);
+      lockSamps();
       mRank = rank;
       assert(frames == numFrames() && channels == numChans());
     }
@@ -91,8 +90,7 @@ public:
       
     if (lock)
     {
-      t_object *buffer = getBuffer();
-      if (buffer) mSamps = buffer_locksamples(buffer);
+      lockSamps();
       return true;
     }
       
@@ -101,12 +99,7 @@ public:
 
   void release() override
   {
-    if (mSamps)
-    {
-      buffer_unlocksamples(getBuffer());
-      mSamps = nullptr;
-    }
-      
+    unlockSamps();
     releaseLock();
   }
 
@@ -136,6 +129,21 @@ public:
 
 private:
     
+  void lockSamps()
+  {
+    t_object *buffer = getBuffer();
+    if (buffer) mSamps = buffer_locksamples(buffer);
+  }
+    
+  void unlockSamps()
+  {
+    if (mSamps)
+    {
+      buffer_unlocksamples(getBuffer());
+      mSamps = nullptr;
+    }
+  }
+
   bool tryLock()
   {
     return compareExchange(false, true);
