@@ -183,7 +183,7 @@ private:
   float *       mSamps;
   t_buffer_ref *mBufref;
   size_t        mRank;
-  mutable std::atomic<bool> mLock;
+  std::atomic<bool> mLock;
 };
 } // namespace client
 } // namespace fluid
