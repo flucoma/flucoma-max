@@ -115,15 +115,17 @@ struct Setter<Client, FloatPairsArrayT, N>
 {
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
+    using type  = typename FloatPairsArrayT::type;
     auto &param = x->params().template get<N>().value;
     assert(ac = param.size() * 2 && "Array parameter is wrong length");
-    for (auto &&a : param)
-    {
-      a.first  = atom_getfloat(av++);
-      a.second = atom_getfloat(av++);
-    }
+      
+    double f1 = atom_getfloat(av++);
+    double a1 = atom_getfloat(av++);
+    double f2 = atom_getfloat(av++);
+    double a2 = atom_getfloat(av++);
+      
     x->messages().reset();
-    x->params().template set<N>(param, x->verbose() ? &x->messages() : nullptr);
+    x->params().template set<N>(type(f1, a1, f2, a2), x->verbose() ? &x->messages() : nullptr);
     printResult(x);
     return MAX_ERR_NONE;
   }
@@ -137,12 +139,11 @@ struct Setter<Client, FFTParamsT, N>
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     using type  = typename FFTParamsT::type;
-    type &param = x->params().template get<N>();
-    param.setWin(atom_getlong(av++));
-    param.setHop(atom_getlong(av++));
-    param.setFFT(atom_getlong(av++));
+    t_atom_long win(atom_getlong(av++));
+    t_atom_long hop(atom_getlong(av++));
+    t_atom_long fft(atom_getlong(av++));
     x->messages().reset();
-    x->params().template set<N>(param, x->verbose() ? &x->messages() : nullptr);
+    x->params().template set<N>(type(win, hop, fft), x->verbose() ? &x->messages() : nullptr);
     printResult(x);
     object_attr_touch((t_object *) x, gensym("latency"));
     return MAX_ERR_NONE;
@@ -241,8 +242,8 @@ struct Getter<Client, FFTParamsT, N>
   {
     char alloc;
     atom_alloc_array(3, ac, av, &alloc);
-    type &  param = x->params().template get<N>();
-    t_atom *arr   = *av;
+    const type& param = x->params().template get<N>();
+    t_atom *arr = *av;
     atom_setlong(arr++, param.winSize());
     atom_setlong(arr++, param.hopRaw());
     atom_setlong(arr++, param.fftRaw());
@@ -566,7 +567,7 @@ private:
   template <size_t N, typename T>
   struct notifyAttribute
   {
-    void operator()(typename T::type &attr, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
+    void operator()(const typename T::type &attr, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
     {
       impl::Notify<Client,N,T>::notify(x, s, msg, sender, data);
     }
@@ -575,7 +576,7 @@ private:
   template <size_t N, typename T>
   struct touchAttribute
   {
-    void operator()(typename T::type &attr, FluidMaxWrapper *x)
+    void operator()(const typename T::type &attr, FluidMaxWrapper *x)
     {
       object_attr_touch((t_object *) x, gensym(FluidMaxWrapper::lowerCase(x->params().template name<N>()).c_str()));
     }
