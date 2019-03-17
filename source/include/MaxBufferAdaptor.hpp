@@ -112,8 +112,8 @@ public:
 
   FluidTensorView<float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) override
   {
-    auto s = FluidTensorView<float, 2>(this->mSamps, 0, numFrames(), numChans() * this->mRank);
-    return s(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
+    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans() * this->mRank};
+    return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
   }
 
   t_max_err notify(t_symbol *s, t_symbol *msg, void *sender, void *data)
