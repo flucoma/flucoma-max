@@ -16,6 +16,7 @@ public:
       , mSamps(nullptr)
       , mRank(1)
       , mBufref{buffer_ref_new(mHostObject, mName)}
+      , mLock(false)
   {}
 
   ~MaxBufferAdaptor()
