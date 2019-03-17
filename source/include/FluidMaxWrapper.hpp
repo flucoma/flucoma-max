@@ -479,6 +479,8 @@ public:
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
     }
 
+    mParams.keepConstrained(true);
+      
     object_obex_store(this, _sym_dumpout, (t_object *) outlet_new(this, nullptr));
 
     if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
