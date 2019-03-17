@@ -148,7 +148,7 @@ private:
     
   bool compareExchange(bool compare, bool exchange)
   {
-    mLock.compare_exchange_strong(compare, exchange);
+    return mLock.compare_exchange_strong(compare, exchange);
   }
     
   t_object *getBuffer() const { return buffer_ref_getobject(mBufref); }
