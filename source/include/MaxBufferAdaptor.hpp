@@ -3,6 +3,7 @@
 #include <clients/common/BufferAdaptor.hpp>
 #include <data/FluidTensor.hpp>
 #include <ext_buffer.h>
+#include <atomic>
 
 namespace fluid {
 namespace client {
@@ -19,6 +20,8 @@ public:
 
   ~MaxBufferAdaptor()
   {
+    while (!tryLock());
+
     release();
     if (mBufref) object_free(mBufref);
   }
@@ -58,7 +61,7 @@ public:
     if (buffer)
     {
       // Do this in two stages so we can set length in samps rather than ms
-      release();
+      buffer_unlocksamples(getBuffer());
       buffer_edit_begin(buffer);
 
       t_atom args[2];
@@ -74,25 +77,25 @@ public:
 
       object_method(buffer, gensym("dirty"));
       buffer_edit_end(buffer, 1);
-      acquire();
+      t_object *buffer = getBuffer();
+      if (buffer) mSamps = buffer_locksamples(buffer);
       mRank = rank;
       assert(frames == numFrames() && channels == numChans());
     }
   }
 
-  void set(t_symbol *s)
+  bool acquire() override
   {
-    if (mBufref)
+    bool lock = tryLock();
+      
+    if (lock)
     {
-      buffer_ref_set(mBufref, s);
-      mName = s;
+      t_object *buffer = getBuffer();
+      if (buffer) mSamps = buffer_locksamples(buffer);
+      return true;
     }
-  }
-
-  void acquire() override
-  {
-    t_object *buffer = getBuffer();
-    if (buffer) mSamps = buffer_locksamples(buffer);
+      
+    return false;
   }
 
   void release() override
@@ -102,6 +105,8 @@ public:
       buffer_unlocksamples(getBuffer());
       mSamps = nullptr;
     }
+      
+    releaseLock();
   }
 
   FluidTensorView<float, 1> samps(size_t channel, size_t rankIdx = 0) override
@@ -128,19 +133,29 @@ public:
 
   size_t rank() const override { return valid() ? mRank : 0; }
 
-protected:
-  bool equal(BufferAdaptor *rhs) const override
+private:
+    
+  bool tryLock()
   {
-    MaxBufferAdaptor *x = static_cast<MaxBufferAdaptor *>(rhs);
-    if (x && x->mBufref) { return mName == x->mName; }
-    return false;
+    return compareExchange(false, true);
   }
-
+  
+  void releaseLock()
+  {
+    compareExchange(true, false);
+  }
+    
+  bool compareExchange(bool compare, bool exchange)
+  {
+    mLock.compare_exchange_strong(compare, exchange);
+  }
+    
   t_object *getBuffer() const { return buffer_ref_getobject(mBufref); }
 
   void swap(MaxBufferAdaptor &&other)
   {
-
+    while (!tryLock());
+      
     release();
     object_free(mBufref);
 
@@ -150,6 +165,7 @@ protected:
 
     other.mSamps  = nullptr;
     other.mBufref = nullptr;
+    releaseLock();
   }
 
   t_object *mHostObject;
@@ -158,6 +174,7 @@ protected:
   float *       mSamps;
   t_buffer_ref *mBufref;
   size_t        mRank;
+  mutable std::atomic<bool> mLock;
 };
 } // namespace client
 } // namespace fluid

@@ -157,12 +157,8 @@ struct Setter<Client, BufferT, N >
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
     using type = typename BufferT::type;
-    auto b     = static_cast<MaxBufferAdaptor *>(x->params().template get<N>().get());
     x->messages().reset();
-    if (b)
-      b->set(atom_getsym(av));
-    else
-      x->params().template set<N>(type(new MaxBufferAdaptor((t_object *) x, atom_getsym(av))),
+    x->params().template set<N>(type(new MaxBufferAdaptor((t_object *) x, atom_getsym(av))),
                                   x->verbose() ? &x->messages() : nullptr);
     printResult(x);
     return MAX_ERR_NONE;
