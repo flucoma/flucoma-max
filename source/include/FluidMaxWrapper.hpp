@@ -473,7 +473,7 @@ public:
   using ParamSetType = typename Client::ParamSetType;
   
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
-    : mParams(Client::getParameterDescriptor())
+    : mParams(Client::getParameterDescriptors())
     , mClient{initParamsFromArgs(ac,av)}
   {
     if (mClient.audioChannelsIn())
@@ -513,7 +513,7 @@ public:
   
   static void makeClass(const char *className)
   {
-    const ParamDescType& p = Client::getParameterDescriptor();
+    const ParamDescType& p = Client::getParameterDescriptors();
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     impl::FluidMaxBase<Client>::setup(getClass());
     
