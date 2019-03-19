@@ -88,24 +88,17 @@ struct Setter
   {
       return BufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
   }
-
-  template <size_t... Is>
-  static typename T::type makeVal(std::array<ParamLiteralType<T>, argSize> &a, std::index_sequence<Is...>)
-  {
-    return typename T::type{a[Is]...};
-  }
     
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    std::array<ParamLiteralType<T>, argSize> a;
+    ParamArraySetter<T, argSize> a;
       
     x->messages().reset();
       
     for (auto i = 0; i < argSize; i++)
         a[i] = fromAtom((t_object *) x, av + i, a[0]);
       
-    auto val = makeVal(a, std::make_index_sequence<argSize>());
-    x->params().template set<N>(std::move(val), x->verbose() ? &x->messages() : nullptr);
+    x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
     printResult(x, x->messages());
     object_attr_touch((t_object *) x, gensym("latency"));
     return MAX_ERR_NONE;
