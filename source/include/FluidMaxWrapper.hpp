@@ -91,7 +91,7 @@ struct Setter
     
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    ParamArraySetter<T, argSize> a;
+    ParamLiteralConvertor<T, argSize> a;
       
     x->messages().reset();
       
@@ -112,6 +112,8 @@ struct Setter
 template<typename Client, typename T, size_t N>
 struct Getter
 {
+  static constexpr size_t argSize = Client::getParameterDescriptors().template get<N>().fixedSize;
+    
   static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
   static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
   
@@ -123,55 +125,20 @@ struct Getter
 
   static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
   {
-    char alloc;
-    atom_alloc(ac, av, &alloc);
-    toAtom(*av, x->params().template get<N>());
-    return MAX_ERR_NONE;
-  }
-};
+    ParamLiteralConvertor<T, argSize> a;
 
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-template <typename Client, size_t N>
-struct Getter<Client, FloatPairsArrayT, N>
-{
-  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
-  {
     char alloc;
-    atom_alloc_array(4, ac, av, &alloc);
-    auto &param = x->params().template get<N>().value;
-    //    assert(*ac == param.size() * 2 && "Array parameter is unexpected length");
-    t_atom *arr = *av;
-    for (auto &&a : param)
-    {
-      atom_setfloat(arr++, a.first);
-      atom_setfloat(arr++, a.second);
-    }
+    atom_alloc_array(argSize, ac, av, &alloc);
+
+    a.set(x->params().template get<N>());
+      
+    for (auto i = 0; i < argSize; i++)
+      toAtom(*av, a[i]);
+      
     return MAX_ERR_NONE;
   }
 };
     
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-template <typename Client, size_t N>
-struct Getter<Client, FFTParamsT, N>
-{
-  using type = typename FFTParamsT::type;
-
-  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
-  {
-    char alloc;
-    atom_alloc_array(3, ac, av, &alloc);
-    const type& param = x->params().template get<N>();
-    t_atom *arr = *av;
-    atom_setlong(arr++, param.winSize());
-    atom_setlong(arr++, param.hopRaw());
-    atom_setlong(arr++, param.fftRaw());
-
-    return MAX_ERR_NONE;
-  }
-};
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 template<typename Client, size_t, typename>
