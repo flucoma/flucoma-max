@@ -86,57 +86,25 @@ struct Setter
       return BufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
   }
 
+  template <size_t... Is>
+  static typename T::type makeVal(std::vector<ParamLiteralType<T>> &v, std::index_sequence<Is...>)
+  {
+    return typename T::type{v[Is]...};
+  }
+    
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    using type = typename T::type;
-      
-    x->messages().reset();
-    x->params().template set<N>(fromAtom((t_object *) x, av, type()), x->verbose() ? &x->messages() : nullptr);
-    printResult(x, x->messages());
-    object_attr_touch((t_object *) x, gensym("latency"));
-    return MAX_ERR_NONE;
-  }
-};
-    
-//////////////////////////////////////////////////////////////////////////////////////////////////
-    
-/// Specialisations for managing the compile-time dispatch of Max attributes to Fluid Parameters
-/// We need set + get specialisations for several types
-    
-template <typename Client, size_t N>
-struct Setter<Client, FloatPairsArrayT, N>
-{
-  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
-  {
-    using type  = typename FloatPairsArrayT::type;
-    auto &param = x->params().template get<N>().value;
-    assert(ac = param.size() * 2 && "Array parameter is wrong length");
-      
-    double f1 = atom_getfloat(av++);
-    double a1 = atom_getfloat(av++);
-    double f2 = atom_getfloat(av++);
-    double a2 = atom_getfloat(av++);
-      
-    x->messages().reset();
-    x->params().template set<N>(type(f1, a1, f2, a2), x->verbose() ? &x->messages() : nullptr);
-    printResult(x, x->messages());
-    return MAX_ERR_NONE;
-  }
-};
-    
-//////////////////////////////////////////////////////////////////////////////////////////////////
+    constexpr size_t argSize = Client::getParameterDescriptors().template get<N>().fixedSize;
 
-template <typename Client, size_t N>
-struct Setter<Client, FFTParamsT, N>
-{
-  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
-  {
-    using type  = typename FFTParamsT::type;
-    t_atom_long win(atom_getlong(av++));
-    t_atom_long hop(atom_getlong(av++));
-    t_atom_long fft(atom_getlong(av++));
+    std::vector<ParamLiteralType<T>> v;
+      
     x->messages().reset();
-    x->params().template set<N>(type(win, hop, fft), x->verbose() ? &x->messages() : nullptr);
+      
+    for (auto i = 0; i < argSize; i++)
+        v.push_back(Setter::fromAtom((t_object *) x, av + i, ParamLiteralType<T>()));
+      
+    auto val = makeVal(v, std::make_index_sequence<argSize>());
+    x->params().template set<N>(std::move(val), x->verbose() ? &x->messages() : nullptr);
     printResult(x, x->messages());
     object_attr_touch((t_object *) x, gensym("latency"));
     return MAX_ERR_NONE;
@@ -567,10 +535,10 @@ private:
   {
     void operator()(const T &attr)
     {
-      std::string   name            = lowerCase(attr.name);
-      method        setterMethod    = (method) &impl::Setter<Client, T, N>::set;
-      method        getterMethod    = (method) &impl::Getter<Client, T, N>::get;
-      t_object*     a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
+      std::string       name            = lowerCase(attr.name);
+      method            setterMethod    = (method) &impl::Setter<Client, T, N>::set;
+      method            getterMethod    = (method) &impl::Getter<Client, T, N>::get;
+      t_object*         a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
 
       class_addattr(getClass(), a);
       CLASS_ATTR_LABEL(getClass(), name.c_str(), 0, attr.displayName);
