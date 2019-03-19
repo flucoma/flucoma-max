@@ -73,42 +73,35 @@ struct Fetcher<ParamIdx, LongT> : public FetchValue<ParamIdx, t_atom_long, atom_
     
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
-template <typename Client, typename T, size_t N>
-struct Setter;
-template <typename Client, typename T, size_t N>
-struct Getter;
-
-/// Specialisations for managing the compile-time dispatch of Max attributes to Fluid Parameters
-/// We need set + get specialisations for each allowed type (Float,Long, Buffer, Enum, FloatArry, LongArray, BufferArray)
-
-// Setters
-
-template<typename Client, size_t N, typename T, T Method(const t_atom *av)>
-struct SetValue
+// Setter
+    
+template<typename Client, typename T, size_t N>
+struct Setter
 {
+  static auto fromAtom(t_object * x, t_atom *a, LongT::type) { return atom_getlong(a); }
+  static auto fromAtom(t_object * x, t_atom *a, FloatT::type) { return atom_getfloat(a); }
+  
+  static auto fromAtom(t_object * x, t_atom *a, BufferT::type)
+  {
+      return BufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
+  }
+
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
+    using type = typename T::type;
+      
     x->messages().reset();
-    x->params().template set<N>(Method(av), x->verbose() ? &x->messages() : nullptr);
+    x->params().template set<N>(fromAtom((t_object *) x, av, type()), x->verbose() ? &x->messages() : nullptr);
     printResult(x, x->messages());
     object_attr_touch((t_object *) x, gensym("latency"));
     return MAX_ERR_NONE;
   }
 };
     
-template <typename Client, size_t N>
-struct Setter<Client, FloatT, N> : public SetValue<Client, N, t_atom_float, &atom_getfloat>
-{};
-
-template <typename Client, size_t N>
-struct Setter<Client, LongT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong>
-{};
-
-template <typename Client, size_t N>
-struct Setter<Client, EnumT, N> : public SetValue<Client, N, t_atom_long, &atom_getlong>
-{};
-
 //////////////////////////////////////////////////////////////////////////////////////////////////
+    
+/// Specialisations for managing the compile-time dispatch of Max attributes to Fluid Parameters
+/// We need set + get specialisations for several types
     
 template <typename Client, size_t N>
 struct Setter<Client, FloatPairsArrayT, N>
@@ -151,66 +144,31 @@ struct Setter<Client, FFTParamsT, N>
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
+    
+// Getter
 
-template<typename Client, size_t N>
-struct Setter<Client, BufferT, N >
+template<typename Client, typename T, size_t N>
+struct Getter
 {
-  static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
+  static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
+  static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
+  
+  static auto toAtom(t_atom *a, BufferT::type v)
   {
-    using type = typename BufferT::type;
-    x->messages().reset();
-    x->params().template set<N>(type(new MaxBufferAdaptor((t_object *) x, atom_getsym(av))),
-                                  x->verbose() ? &x->messages() : nullptr);
-    printResult(x, x->messages());
+    auto b = static_cast<MaxBufferAdaptor *>(v.get());
+    atom_setsym(a, b ? b->name() : nullptr);
+  }
+
+  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
+  {
+    char alloc;
+    atom_alloc(ac, av, &alloc);
+    toAtom(*av, x->params().template get<N>());
     return MAX_ERR_NONE;
   }
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-    
-// Getters
-
-template<typename Client, size_t N, typename T, t_max_err Method(t_atom *av, T)>
-struct GetValue
-{
-  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
-  {
-    char alloc;
-    atom_alloc(ac, av, &alloc);
-    (Method)(*av, x->params().template get<N>());
-    return MAX_ERR_NONE;
-  }
-};
-
-template <typename Client, size_t N>
-struct Getter<Client, FloatT, N> : public GetValue<Client,N, double, &atom_setfloat>
-{};
-
-template <typename Client, size_t N>
-struct Getter<Client, LongT, N> : public GetValue<Client, N, t_atom_long, &atom_setlong>
-{};
-
-template <typename Client, size_t N>
-struct Getter<Client, EnumT, N> : public GetValue<Client, N, t_atom_long, &atom_setlong>
-{};
-    
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-template <typename Client, size_t N>
-struct Getter<Client, BufferT, N>
-{
-  static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
-  {
-    char alloc;
-    atom_alloc(ac, av, &alloc);
-    auto b = static_cast<MaxBufferAdaptor *>(x->params().template get<N>().get());
-    atom_setsym(*av, b ? b->name() : nullptr);
-    //    (Method)(*av, x->mClient.template get<N>());
-    return MAX_ERR_NONE;
-  }
-};
-
-    //////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <typename Client, size_t N>
 struct Getter<Client, FloatPairsArrayT, N>
