@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -91,7 +91,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 513.0, 182.0, 150.0, 22.0 ],
-									"presentation_rect" : [ 513.0, 182.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -163,7 +162,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 325.0, 410.0, 107.0, 22.0 ],
 									"style" : "",
-									"text" : "127.60249"
+									"text" : "131.774942"
 								}
 
 							}
@@ -1050,8 +1049,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1256,7 +1255,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1311,7 +1310,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "numchans",
+									"attr" : "nchans",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1817,7 +1816,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 81.0, 458.0, 161.0, 56.0 ],
-									"size" : 8.0,
+									"size" : 2.0,
 									"style" : ""
 								}
 
@@ -2198,7 +2197,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 29.0, 403.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "8"
+									"text" : "0"
 								}
 
 							}
@@ -3735,8 +3734,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3828,8 +3827,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
