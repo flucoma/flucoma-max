@@ -500,10 +500,24 @@ private:
       method            setterMethod    = (method) &impl::Setter<Client, T, N>::set;
       method            getterMethod    = (method) &impl::Getter<Client, T, N>::get;
       t_object*         a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
-
       class_addattr(getClass(), a);
       CLASS_ATTR_LABEL(getClass(), name.c_str(), 0, attr.displayName);
+      decorateAttr(attr,name);
     }
+    
+    template<typename U>
+    void decorateAttr(const U &attr, std::string name)
+    {}
+    
+    void decorateAttr(const EnumT& attr, std::string name)
+    {
+      std::stringstream enumstrings;
+      std::cout << "here";
+      for(int i = 0; i < attr.numOptions;++i) enumstrings << attr.strings[i] << ' ';
+      CLASS_ATTR_STYLE(getClass(), name.c_str(),0,"enum");
+      CLASS_ATTR_ENUMINDEX(getClass(), name.c_str(), 0, enumstrings.str().c_str());
+    }
+    
   };
 
   // Get Symbols for attribute types
