@@ -14,6 +14,7 @@
 
 #include <MaxBufferAdaptor.hpp>
 
+#include <array>
 #include <tuple>
 #include <utility>
 
@@ -78,6 +79,8 @@ struct Fetcher<ParamIdx, LongT> : public FetchValue<ParamIdx, t_atom_long, atom_
 template<typename Client, typename T, size_t N>
 struct Setter
 {
+  static constexpr size_t argSize = Client::getParameterDescriptors().template get<N>().fixedSize;
+
   static auto fromAtom(t_object * x, t_atom *a, LongT::type) { return atom_getlong(a); }
   static auto fromAtom(t_object * x, t_atom *a, FloatT::type) { return atom_getfloat(a); }
   
@@ -87,23 +90,21 @@ struct Setter
   }
 
   template <size_t... Is>
-  static typename T::type makeVal(std::vector<ParamLiteralType<T>> &v, std::index_sequence<Is...>)
+  static typename T::type makeVal(std::array<ParamLiteralType<T>, argSize> &a, std::index_sequence<Is...>)
   {
-    return typename T::type{v[Is]...};
+    return typename T::type{a[Is]...};
   }
     
   static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
   {
-    constexpr size_t argSize = Client::getParameterDescriptors().template get<N>().fixedSize;
-
-    std::vector<ParamLiteralType<T>> v;
+    std::array<ParamLiteralType<T>, argSize> a;
       
     x->messages().reset();
       
     for (auto i = 0; i < argSize; i++)
-        v.push_back(Setter::fromAtom((t_object *) x, av + i, ParamLiteralType<T>()));
+        a[i] = fromAtom((t_object *) x, av + i, a[0]);
       
-    auto val = makeVal(v, std::make_index_sequence<argSize>());
+    auto val = makeVal(a, std::make_index_sequence<argSize>());
     x->params().template set<N>(std::move(val), x->verbose() ? &x->messages() : nullptr);
     printResult(x, x->messages());
     object_attr_touch((t_object *) x, gensym("latency"));
