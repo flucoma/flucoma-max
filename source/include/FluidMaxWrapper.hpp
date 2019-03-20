@@ -275,10 +275,11 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
     {
       ParamLiteralConvertor<T, argSize> a;
-      
+      a.set(Client::getParameterDescriptors().template get<N>().defaultValue);
+
       x->messages().reset();
       
-      for (auto i = 0; i < argSize; i++)
+      for (auto i = 0; i < argSize && i < ac; i++)
         a[i] = fromAtom((t_object *) x, av + i, a[0]);
       
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
@@ -316,7 +317,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       a.set(x->params().template get<N>());
       
       for (auto i = 0; i < argSize; i++)
-        toAtom(*av, a[i]);
+        toAtom(*av + i, a[i]);
       
       return MAX_ERR_NONE;
     }
