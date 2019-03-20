@@ -215,7 +215,10 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   
   friend impl::RealTime<FluidMaxWrapper<Client>>;
   friend impl::NonRealTime<FluidMaxWrapper<Client>>;
-    
+
+  template <size_t N>
+  static constexpr auto paramDescriptor() { return Client::getParameterDescriptors().template get<N>(); }
+
   static void printResult(FluidMaxWrapper<Client>* x, Result& r)
   {
     if (!x) return;
@@ -234,25 +237,25 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   
   //////////////////////////////////////////////////////////////////////////////////////////////////
   
-  template <size_t ParamIdx, typename T, T Method(const t_atom *av)>
+  template <size_t N, typename T, T Method(const t_atom *av)>
   struct FetchValue
   {
-    template <typename Params>
-    T operator()(const long ac, t_atom *av, Params &params, long &currentCount)
+    T operator()(const long ac, t_atom *av, long &currentCount)
     {
-      return currentCount < ac ? Method(av + currentCount++) : params.template defaultValue<ParamIdx>();
+      auto defaultValue = paramDescriptor<N>().defaultValue;
+      return currentCount < ac ? Method(av + currentCount++) : defaultValue;
     }
   };
   
-  template <size_t ParamIdx, typename T>
+  template <size_t N, typename T>
   struct Fetcher;
   
-  template <size_t ParamIdx>
-  struct Fetcher<ParamIdx, FloatT> : public FetchValue<ParamIdx, t_atom_float, atom_getfloat>
+  template <size_t N>
+  struct Fetcher<N, FloatT> : public FetchValue<N, t_atom_float, atom_getfloat>
   {};
   
-  template <size_t ParamIdx>
-  struct Fetcher<ParamIdx, LongT> : public FetchValue<ParamIdx, t_atom_long, atom_getlong>
+  template <size_t N>
+  struct Fetcher<N, LongT> : public FetchValue<N, t_atom_long, atom_getlong>
   {};
   
   //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -262,7 +265,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   template<typename T, size_t N>
   struct Setter
   {
-    static constexpr size_t argSize = Client::getParameterDescriptors().template get<N>().fixedSize;
+    static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
     
     static auto fromAtom(t_object * x, t_atom *a, LongT::type) { return atom_getlong(a); }
     static auto fromAtom(t_object * x, t_atom *a, FloatT::type) { return atom_getfloat(a); }
@@ -275,7 +278,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
     {
       ParamLiteralConvertor<T, argSize> a;
-      a.set(Client::getParameterDescriptors().template get<N>().defaultValue);
+      a.set(paramDescriptor<N>().defaultValue);
 
       x->messages().reset();
       
@@ -296,7 +299,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   template<typename T, size_t N>
   struct Getter
   {
-    static constexpr size_t argSize = Client::getParameterDescriptors().template get<N>().fixedSize;
+    static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
     
     static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
     static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
@@ -459,7 +462,8 @@ private:
   {
     void operator()(const typename T::type &attr, FluidMaxWrapper *x)
     {
-      object_attr_touch((t_object *) x, gensym(FluidMaxWrapper::lowerCase(x->params().template name<N>()).c_str()));
+      const char* name = paramDescriptor<N>().name;
+      object_attr_touch((t_object *) x, gensym(FluidMaxWrapper::lowerCase(name).c_str()));
     }
   };
 
@@ -469,7 +473,7 @@ private:
     if (long numArgs = attr_args_offset(ac, av))
     {
       long argCount{0};
-      mParams.template setFixedParameterValues<Fetcher>(true, numArgs, av, mParams, argCount);
+      mParams.template setFixedParameterValues<Fetcher>(true, numArgs, av, argCount);
     }
     // process in-box attributes for mutable params
     attr_args_process((t_object *) this, ac, av);
