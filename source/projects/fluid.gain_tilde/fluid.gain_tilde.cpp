@@ -13,5 +13,5 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<GainClient,double,double>("fluid.gain~", GainParams);
+  makeMaxWrapper<GainClient>("fluid.gain~");
 }

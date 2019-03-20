@@ -6,7 +6,7 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NMFClient,double,float>("fluid.bufnmf~", NMFParams);
+  makeMaxWrapper<NMFClient>("fluid.bufnmf~");
 }
 
 

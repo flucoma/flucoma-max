@@ -5,7 +5,7 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NRTTransientSlice,double,float>("fluid.buftransientslice~", NRTTransientSliceParams);
+  makeMaxWrapper<NRTTransientSlice>("fluid.buftransientslice~");
 }
 
 

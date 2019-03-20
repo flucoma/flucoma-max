@@ -4,5 +4,5 @@
 void ext_main(void *r)
 {
   using namespace fluid::client;
-  makeMaxWrapper<BufferComposeClient, double,float>("fluid.bufcompose~", BufComposeParams);
+  makeMaxWrapper<BufferComposeClient>("fluid.bufcompose~");
 }
