@@ -14,7 +14,6 @@
 
 #include <MaxBufferAdaptor.hpp>
 
-#include <array>
 #include <tuple>
 #include <utility>
 
@@ -57,7 +56,7 @@ struct FetchValue
   template <typename Params>
   T operator()(const long ac, t_atom *av, Params &params, long &currentCount)
   {
-    return currentCount < ac ? Method(av + currentCount++) : params.template defaultAt<ParamIdx>();
+    return currentCount < ac ? Method(av + currentCount++) : params.template defaultValue<ParamIdx>();
   }
 };
 
