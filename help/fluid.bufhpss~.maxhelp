@@ -231,7 +231,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 309.5, 846.0, 47.0, 22.0 ],
-									"presentation_rect" : [ 308.5, 846.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "set res"
 								}
@@ -299,7 +298,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 668.5, 164.5, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "0.161295"
+									"text" : "7113.11764"
 								}
 
 							}
@@ -312,7 +311,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 544.5, 164.5, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "0.005101"
+									"text" : "224.93653"
 								}
 
 							}
@@ -426,7 +425,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 771.5, 141.5, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "18.125001"
+									"text" : "0."
 								}
 
 							}
@@ -712,7 +711,7 @@
 									"autopopulate" : 1,
 									"depth" : 1,
 									"id" : "obj-109",
-									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -840,7 +839,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 260.5, 187.0, 150.0, 22.0 ],
+									"patching_rect" : [ 260.5, 187.0, 183.0, 22.0 ],
 									"style" : ""
 								}
 

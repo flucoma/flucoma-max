@@ -650,7 +650,7 @@
 									"autopopulate" : 1,
 									"depth" : 1,
 									"id" : "obj-11",
-									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1550,7 +1550,7 @@
 									"autopopulate" : 1,
 									"depth" : 1,
 									"id" : "obj-27",
-									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1666,7 +1666,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 663.5, 499.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "7113.11764"
+									"text" : "0.161295"
 								}
 
 							}
@@ -1679,7 +1679,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 539.5, 499.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "224.93653"
+									"text" : "0.005101"
 								}
 
 							}
@@ -1839,7 +1839,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 782.5, 472.067627, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "0."
+									"text" : "-21.875"
 								}
 
 							}
@@ -2838,7 +2838,7 @@
 									"autopopulate" : 1,
 									"depth" : 1,
 									"id" : "obj-39",
-									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -2954,7 +2954,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 692.5, 237.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "7113.11764"
+									"text" : "0.161295"
 								}
 
 							}
@@ -2967,7 +2967,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 568.5, 237.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "224.93653"
+									"text" : "0.005101"
 								}
 
 							}
@@ -3081,7 +3081,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 795.5, 214.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "0."
+									"text" : "-30.937499"
 								}
 
 							}
@@ -3146,7 +3146,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 700.5, 841.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "7113.11764"
+									"text" : "0.161295"
 								}
 
 							}
@@ -3159,7 +3159,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 576.5, 841.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "224.93653"
+									"text" : "0.005101"
 								}
 
 							}
@@ -3273,7 +3273,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 803.5, 818.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "0."
+									"text" : "20.625"
 								}
 
 							}
@@ -3771,6 +3771,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
 									"order" : 1,
+									"source" : [ "obj-44", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"order" : 1,
 									"source" : [ "obj-44", 1 ]
 								}
 
@@ -3786,6 +3794,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-38", 3 ],
+									"order" : 0,
 									"source" : [ "obj-44", 2 ]
 								}
 
