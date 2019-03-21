@@ -207,7 +207,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 912.0, 203.0, 278.0, 22.0 ],
-									"presentation_rect" : [ 913.0, 203.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -221,7 +220,7 @@
 									"outlettype" : [ "signal", "" ],
 									"patching_rect" : [ 912.0, 229.0, 170.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.stftpass~ 4096 @fft 1000"
+									"text" : "fluid.stftpass~ 4096 @fft 2000"
 								}
 
 							}
@@ -312,7 +311,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 125.0, 129.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "1024"
+									"text" : "1000"
 								}
 
 							}
@@ -615,7 +614,7 @@
 									"outlettype" : [ "signal", "" ],
 									"patching_rect" : [ 323.0, 179.0, 193.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.stftpass~ 4096 @fft 1024 256"
+									"text" : "fluid.stftpass~ 4096 @fft 1000 100"
 								}
 
 							}
