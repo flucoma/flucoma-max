@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, -1024.0, 1212.0, 990.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -171,7 +171,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, -998.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -201,6 +201,19 @@
 						"showontab" : 1,
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 491.0, 98.0, 238.0, 74.0 ],
+									"style" : "",
+									"text" : "Many options with some working settings. Each column is a detection function, each row a soundfile. Some algorythm are not working well on some files, hence the lack of presets."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
@@ -447,131 +460,131 @@
 									"patching_rect" : [ 495.0, 179.0, 127.0, 107.0 ],
 									"preset_data" : [ 										{
 											"number" : 1,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.2, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 66, 5, "<invalid>", "number", "int", 0, 5, "<invalid>", "umenu", "int", 2 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.2, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 66, 5, "obj-48", "number", "int", 0, 5, "obj-63", "umenu", "int", 2 ]
 										}
 , 										{
 											"number" : 2,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 8, 5, "<invalid>", "flonum", "float", 2.0, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 50, 5, "<invalid>", "number", "int", 1, 5, "<invalid>", "umenu", "int", 2 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 8, 5, "obj-45", "flonum", "float", 2.0, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 50, 5, "obj-48", "number", "int", 1, 5, "obj-63", "umenu", "int", 2 ]
 										}
 , 										{
 											"number" : 3,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.06, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 55, 5, "<invalid>", "number", "int", 2, 5, "<invalid>", "umenu", "int", 2 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.06, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 55, 5, "obj-48", "number", "int", 2, 5, "obj-63", "umenu", "int", 2 ]
 										}
 , 										{
 											"number" : 4,
-											"data" : [ 5, "<invalid>", "number", "int", 256, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 3, 5, "<invalid>", "flonum", "float", 1.4, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 40, 5, "<invalid>", "number", "int", 3, 5, "<invalid>", "umenu", "int", 2 ]
+											"data" : [ 5, "obj-7", "number", "int", 256, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 3, 5, "obj-45", "flonum", "float", 1.4, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 40, 5, "obj-48", "number", "int", 3, 5, "obj-63", "umenu", "int", 2 ]
 										}
 , 										{
 											"number" : 8,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 9, 5, "<invalid>", "flonum", "float", 0.2, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 7, 5, "<invalid>", "umenu", "int", 2 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 9, 5, "obj-45", "flonum", "float", 0.2, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 7, 5, "obj-63", "umenu", "int", 2 ]
 										}
 , 										{
 											"number" : 9,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 9, 5, "<invalid>", "flonum", "float", 0.1, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 8, 5, "<invalid>", "umenu", "int", 2 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 9, 5, "obj-45", "flonum", "float", 0.1, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 8, 5, "obj-63", "umenu", "int", 2 ]
 										}
 , 										{
 											"number" : 10,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.15, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 9, 5, "<invalid>", "umenu", "int", 2 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.15, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 9, 5, "obj-63", "umenu", "int", 2 ]
 										}
 , 										{
 											"number" : 11,
-											"data" : [ 5, "<invalid>", "number", "int", 1024, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 11, 5, "<invalid>", "flonum", "float", 4.0, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 0, 5, "<invalid>", "umenu", "int", 3 ]
+											"data" : [ 5, "obj-7", "number", "int", 1024, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 11, 5, "obj-45", "flonum", "float", 4.0, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 0, 5, "obj-63", "umenu", "int", 3 ]
 										}
 , 										{
 											"number" : 13,
-											"data" : [ 5, "<invalid>", "number", "int", 1024, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.05, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 2, 5, "<invalid>", "umenu", "int", 3 ]
+											"data" : [ 5, "obj-7", "number", "int", 1024, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.05, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 2, 5, "obj-63", "umenu", "int", 3 ]
 										}
 , 										{
 											"number" : 14,
-											"data" : [ 5, "<invalid>", "number", "int", 1024, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.8, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 3, 5, "<invalid>", "umenu", "int", 3 ]
+											"data" : [ 5, "obj-7", "number", "int", 1024, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.8, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 3, 5, "obj-63", "umenu", "int", 3 ]
 										}
 , 										{
 											"number" : 17,
-											"data" : [ 5, "<invalid>", "number", "int", 1024, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 11, 5, "<invalid>", "flonum", "float", 0.1, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 6, 5, "<invalid>", "umenu", "int", 3 ]
+											"data" : [ 5, "obj-7", "number", "int", 1024, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 11, 5, "obj-45", "flonum", "float", 0.1, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 6, 5, "obj-63", "umenu", "int", 3 ]
 										}
 , 										{
 											"number" : 18,
-											"data" : [ 5, "<invalid>", "number", "int", 1024, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.3, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 7, 5, "<invalid>", "umenu", "int", 3 ]
+											"data" : [ 5, "obj-7", "number", "int", 1024, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.3, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 7, 5, "obj-63", "umenu", "int", 3 ]
 										}
 , 										{
 											"number" : 19,
-											"data" : [ 5, "<invalid>", "number", "int", 1024, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.3, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 8, 5, "<invalid>", "umenu", "int", 3 ]
+											"data" : [ 5, "obj-7", "number", "int", 1024, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.3, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 8, 5, "obj-63", "umenu", "int", 3 ]
 										}
 , 										{
 											"number" : 20,
-											"data" : [ 5, "<invalid>", "number", "int", 1024, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.25, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 9, 5, "<invalid>", "umenu", "int", 3 ]
+											"data" : [ 5, "obj-7", "number", "int", 1024, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.25, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 9, 5, "obj-63", "umenu", "int", 3 ]
 										}
 , 										{
 											"number" : 21,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.14, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 0, 5, "<invalid>", "umenu", "int", 5 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.14, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 0, 5, "obj-63", "umenu", "int", 5 ]
 										}
 , 										{
 											"number" : 22,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.8, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 1, 5, "<invalid>", "umenu", "int", 5 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.8, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 1, 5, "obj-63", "umenu", "int", 5 ]
 										}
 , 										{
 											"number" : 23,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.15, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 2, 5, "<invalid>", "umenu", "int", 5 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.15, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 2, 5, "obj-63", "umenu", "int", 5 ]
 										}
 , 										{
 											"number" : 24,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 3.5, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 3, 5, "<invalid>", "umenu", "int", 5 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 3.5, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 3, 5, "obj-63", "umenu", "int", 5 ]
 										}
 , 										{
 											"number" : 26,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.04, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 5, 5, "<invalid>", "umenu", "int", 5 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.04, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 5, 5, "obj-63", "umenu", "int", 5 ]
 										}
 , 										{
 											"number" : 30,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.13, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 9, 5, "<invalid>", "umenu", "int", 5 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.13, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 9, 5, "obj-63", "umenu", "int", 5 ]
 										}
 , 										{
 											"number" : 31,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.14, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 0, 5, "<invalid>", "umenu", "int", 6 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.14, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 0, 5, "obj-63", "umenu", "int", 6 ]
 										}
 , 										{
 											"number" : 40,
-											"data" : [ 5, "<invalid>", "number", "int", 128, 5, "<invalid>", "number", "int", 128, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.14, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 9, 5, "<invalid>", "umenu", "int", 6 ]
+											"data" : [ 5, "obj-7", "number", "int", 128, 5, "obj-8", "number", "int", 128, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.14, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 9, 5, "obj-63", "umenu", "int", 6 ]
 										}
 , 										{
 											"number" : 43,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.107, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 2, 5, "<invalid>", "umenu", "int", 8 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.107, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 2, 5, "obj-63", "umenu", "int", 8 ]
 										}
 , 										{
 											"number" : 44,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.22, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 3, 5, "<invalid>", "umenu", "int", 8 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.22, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 3, 5, "obj-63", "umenu", "int", 8 ]
 										}
 , 										{
 											"number" : 47,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.08, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 6, 5, "<invalid>", "umenu", "int", 8 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.08, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 6, 5, "obj-63", "umenu", "int", 8 ]
 										}
 , 										{
 											"number" : 49,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.22, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 8, 5, "<invalid>", "umenu", "int", 8 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.22, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 8, 5, "obj-63", "umenu", "int", 8 ]
 										}
 , 										{
 											"number" : 50,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.22, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 9, 5, "<invalid>", "umenu", "int", 8 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.22, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 9, 5, "obj-63", "umenu", "int", 8 ]
 										}
 , 										{
 											"number" : 60,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 512, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 0.84, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 8, 5, "<invalid>", "umenu", "int", 10 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 512, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 0.84, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 8, 5, "obj-63", "umenu", "int", 10 ]
 										}
 , 										{
 											"number" : 61,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 1024, 5, "obj-28", "number", "int", 5, 5, "<invalid>", "flonum", "float", 1.8, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 0, 5, "<invalid>", "umenu", "int", 11 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 1024, 5, "obj-39", "number", "int", 5, 5, "obj-45", "flonum", "float", 1.8, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 0, 5, "obj-63", "umenu", "int", 11 ]
 										}
 , 										{
 											"number" : 62,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 2048, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 1.0, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 1, 5, "<invalid>", "umenu", "int", 11 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 2048, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 1.0, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 1, 5, "obj-63", "umenu", "int", 11 ]
 										}
 , 										{
 											"number" : 63,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 2048, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.005, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 2, 5, "<invalid>", "umenu", "int", 11 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 2048, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.005, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 2, 5, "obj-63", "umenu", "int", 11 ]
 										}
 , 										{
 											"number" : 66,
-											"data" : [ 5, "<invalid>", "number", "int", 2048, 5, "<invalid>", "number", "int", 2048, 5, "obj-28", "number", "int", 7, 5, "<invalid>", "flonum", "float", 0.001, 5, "obj-38", "number", "int", 64, 5, "<invalid>", "number", "int", 0, 5, "obj-26", "number", "int", 45, 5, "<invalid>", "number", "int", 5, 5, "<invalid>", "umenu", "int", 11 ]
+											"data" : [ 5, "obj-7", "number", "int", 2048, 5, "obj-8", "number", "int", 2048, 5, "obj-39", "number", "int", 7, 5, "obj-45", "flonum", "float", 0.001, 5, "obj-38", "number", "int", 64, 5, "obj-31", "number", "int", 0, 5, "obj-41", "number", "int", 45, 5, "obj-48", "number", "int", 5, 5, "obj-63", "umenu", "int", 11 ]
 										}
  ],
 									"style" : ""
@@ -781,7 +794,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 899.0, 198.0, 163.0, 20.0 ],
+									"patching_rect" : [ 879.0, 212.0, 163.0, 20.0 ],
 									"style" : "",
 									"text" : "optional: change paremeters"
 								}
@@ -886,7 +899,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 874.0, 202.0, 20.0, 20.0 ],
+									"patching_rect" : [ 467.0, 98.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 1231.0, 374.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
