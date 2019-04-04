@@ -39,12 +39,112 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 315.0, 954.0, 20.0 ],
+					"style" : "",
+					"text" : "the maximum size of the potential FFT window."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 315.0, 65.0, 20.0 ],
+					"style" : "",
+					"text" : "#1 (int)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 143.0, 618.0, 916.0, 20.0 ],
+					"style" : "",
+					"text" : "Resets to factory default."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 618.0, 62.0, 20.0 ],
+					"style" : "",
+					"text" : "reset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-2",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 596.0, 76.0, 20.0 ],
+					"style" : "",
+					"text" : "messages:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 441.0, 69.0, 20.0 ],
+					"style" : "",
+					"text" : "attributes:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-17",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 196.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "i/o:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 293.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments (optional):"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-11",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 45.0, 218.0, 48.0, 33.0 ],
+					"patching_rect" : [ 39.0, 218.0, 48.0, 33.0 ],
 					"style" : "",
 					"text" : "in [0]\nout [0]"
 				}
@@ -59,33 +159,33 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 95.0, 218.0, 702.0, 47.0 ],
 					"style" : "",
-					"text" : "The audio input\nThe audio output\nThe latency between the input and the output is blockSize samples"
+					"text" : "The audio input\nThe audio output\nThe latency between the input and the output is windowSize samples"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 4,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 340.0, 916.0, 60.0 ],
+					"patching_rect" : [ 107.0, 463.0, 954.0, 87.0 ],
 					"style" : "",
-					"text" : "The size of the buffered window to be analysed, in samples. It will add that much latency to the signal. This is not modulatable.\nHow much the buffered window moves forward, in samples. This is not modulatable.\nHow large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize argument, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. The -1 default value will default to windowSize. This is not modulatable"
+					"text" : "up to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. The hopSize is how much the buffered window moves forward, in samples. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. \nThe default values are 1024 -1 -1, where -1 implies default behaviours: a hopSize of half the windowSize, and a FFTSize of the next power of 2 above the windowSize.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 3,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 47.0 ],
+					"patching_rect" : [ 39.0, 463.0, 65.0, 87.0 ],
 					"style" : "",
-					"text" : "winSize\nhopSize\nfftSize"
+					"text" : "fftsettings\n\n\n\nwarnings\nlatency"
 				}
 
 			}
@@ -169,7 +269,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -204,9 +304,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 916.0, 771.0, 68.0, 22.0 ],
+									"patching_rect" : [ 897.0, 715.0, 109.0, 22.0 ],
 									"style" : "",
-									"text" : "prepend fft"
+									"text" : "prepend fftsettings"
 								}
 
 							}
@@ -217,7 +317,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 916.0, 747.0, 34.0, 22.0 ],
+									"patching_rect" : [ 897.0, 691.0, 34.0, 22.0 ],
 									"style" : "",
 									"text" : "+ 10"
 								}
@@ -230,7 +330,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 916.0, 719.0, 81.0, 22.0 ],
+									"patching_rect" : [ 897.0, 667.0, 81.0, 22.0 ],
 									"style" : "",
 									"text" : "random 9910"
 								}
@@ -243,7 +343,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 916.0, 667.0, 128.0, 22.0 ],
+									"patching_rect" : [ 897.0, 643.0, 128.0, 22.0 ],
 									"style" : "",
 									"text" : "metro 1000 @active 1"
 								}
@@ -315,7 +415,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-33",
 									"maxclass" : "attrui",
@@ -334,9 +434,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 912.0, 229.0, 170.0, 22.0 ],
+									"patching_rect" : [ 912.0, 229.0, 211.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.stftpass~ 4096 @fft 2000"
+									"text" : "fluid.stftpass~ 4096 @fftsettings 2000"
 								}
 
 							}
@@ -381,27 +481,26 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-29",
-									"linecount" : 2,
+									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 718.0, 52.0, 213.0, 33.0 ],
+									"patching_rect" : [ 700.0, 57.5, 213.0, 74.0 ],
 									"style" : "",
-									"text" : "add comments on max/round/clip behaviour"
+									"text" : "play with these, and enjoy the clipping: windows have to be smaller than fft size if set, and fft size has to be smaller than the argument of the object (maxFFTSize)"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-28",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 804.0, 244.5, 65.0, 35.0 ],
+									"patching_rect" : [ 477.0, 203.0, 80.0, 22.0 ],
 									"style" : "",
-									"text" : "latency 1024"
+									"text" : "latency 1000"
 								}
 
 							}
@@ -412,7 +511,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 718.0, 137.0, 65.0, 22.0 ],
+									"patching_rect" : [ 490.5, 149.0, 65.0, 22.0 ],
 									"style" : "",
 									"text" : "getlatency"
 								}
@@ -447,13 +546,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-23",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 872.0, 100.0, 217.0, 60.0 ],
+									"patching_rect" : [ 958.0, 74.0, 222.0, 47.0 ],
 									"style" : "",
-									"text" : "-1 as hop is overlap of 2\n-1 as fftsize next power of 2 of winsize\n\nif only 1 arg, -1 and ==window"
+									"text" : "Default values are\n-1 as hop is overlap of 2\n-1 as fftsize next power of 2 of winsize"
 								}
 
 							}
@@ -728,15 +827,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 323.0, 179.0, 193.0, 22.0 ],
+									"patching_rect" : [ 323.0, 179.0, 234.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.stftpass~ 4096 @fft 1000 100"
+									"text" : "fluid.stftpass~ 4096 @fftsettings 1000 100"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-18",
 									"maxclass" : "attrui",
@@ -1083,7 +1182,56 @@
 				"type" : "iLaX"
 			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "max6box",
+				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6inlet",
+				"default" : 				{
+					"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6message",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "gradient",
+						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "max6box",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6outlet",
+				"default" : 				{
+					"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

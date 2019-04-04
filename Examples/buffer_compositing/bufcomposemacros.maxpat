@@ -691,7 +691,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 91.0, 255.5, 91.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend srcbuf"
+													"text" : "prepend source"
 												}
 
 											}
@@ -704,7 +704,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 360.5, 280.5, 123.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend dststartchan"
+													"text" : "prepend deststartchan"
 												}
 
 											}
@@ -717,7 +717,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 184.0, 255.5, 91.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend dstbuf"
+													"text" : "prepend destination"
 												}
 
 											}
@@ -1343,7 +1343,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 156.0, 255.0, 91.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend srcbuf"
+													"text" : "prepend source"
 												}
 
 											}
@@ -1356,7 +1356,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 249.0, 255.0, 91.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend dstbuf"
+													"text" : "prepend destination"
 												}
 
 											}
@@ -1526,7 +1526,7 @@
 													"outlettype" : [ "bang", "" ],
 													"patching_rect" : [ 142.0, 301.0, 176.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.bufcompose~ @dstgain 1."
+													"text" : "fluid.bufcompose~ @destgain 1."
 												}
 
 											}
@@ -1884,7 +1884,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 247.0, 254.0, 91.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend dstbuf"
+													"text" : "prepend destination"
 												}
 
 											}
@@ -1897,7 +1897,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 154.0, 254.0, 91.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend srcbuf"
+													"text" : "prepend source"
 												}
 
 											}
@@ -1910,7 +1910,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 451.0, 245.0, 107.0, 22.0 ],
 													"style" : "",
-													"text" : "prepend dststartat"
+													"text" : "prepend deststartframe"
 												}
 
 											}

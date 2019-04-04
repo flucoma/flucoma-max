@@ -39,6 +39,121 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 143.0, 740.0, 916.0, 20.0 ],
+					"style" : "",
+					"text" : "Resets to factory default."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 740.0, 62.0, 20.0 ],
+					"style" : "",
+					"text" : "reset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-25",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 718.0, 76.0, 20.0 ],
+					"style" : "",
+					"text" : "messages:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 453.0, 961.0, 33.0 ],
+					"style" : "",
+					"text" : "maxRank: \tThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of elements of the list output.\n(optional) the maximum size of the potential FFT window."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 453.0, 65.0, 33.0 ],
+					"style" : "",
+					"text" : "#1 (int)\n#2 (int)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 507.0, 69.0, 20.0 ],
+					"style" : "",
+					"text" : "attributes:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-20",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 354.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "i/o:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 431.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 376.0, 48.0, 33.0 ],
+					"style" : "",
+					"text" : "in [0]\nout [0]"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-1",
 					"maxclass" : "newobj",
@@ -110,7 +225,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "dictbuf",
+									"attr" : "bases",
 									"id" : "obj-30",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -123,7 +238,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "niter",
+									"attr" : "numiter",
 									"id" : "obj-42",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -149,7 +264,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-38",
 									"maxclass" : "attrui",
@@ -411,7 +526,7 @@
 									"outlettype" : [ "list", "" ],
 									"patching_rect" : [ 354.0, 623.0, 254.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 2 4096 @dictbuf didact-filters"
+									"text" : "fluid.nmfmatch~ 2 4096 @bases didact-filters"
 								}
 
 							}
@@ -443,7 +558,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 625.0, 133.0, 294.0, 20.0 ],
+									"patching_rect" : [ 699.0, 131.0, 294.0, 20.0 ],
 									"style" : "",
 									"text" : "watch for clearly different filters - ideally a spike each."
 								}
@@ -528,7 +643,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 603.0, 133.0, 20.0, 20.0 ],
+									"patching_rect" : [ 677.0, 131.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 1234.0, 435.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -544,7 +659,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 603.0, 12.0, 116.0, 22.0 ],
+									"patching_rect" : [ 677.0, 10.0, 116.0, 22.0 ],
 									"style" : "",
 									"text" : "name didact-source"
 								}
@@ -558,7 +673,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 603.0, 56.5, 438.0, 62.0 ],
+									"patching_rect" : [ 677.0, 54.5, 438.0, 62.0 ],
 									"style" : ""
 								}
 
@@ -572,7 +687,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 845.0, 159.5, 50.0, 22.0 ],
+									"patching_rect" : [ 919.0, 157.5, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -584,7 +699,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 720.0, 159.5, 119.0, 22.0 ],
+									"patching_rect" : [ 794.0, 157.5, 119.0, 22.0 ],
 									"style" : "",
 									"text" : "name didact-filters 2"
 								}
@@ -597,7 +712,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 603.0, 159.5, 119.0, 22.0 ],
+									"patching_rect" : [ 677.0, 157.5, 119.0, 22.0 ],
 									"style" : "",
 									"text" : "name didact-filters 1"
 								}
@@ -612,7 +727,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 603.0, 259.0, 440.0, 62.0 ],
+									"patching_rect" : [ 677.0, 257.0, 440.0, 62.0 ],
 									"style" : ""
 								}
 
@@ -625,7 +740,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 603.0, 194.5, 440.0, 62.0 ],
+									"patching_rect" : [ 677.0, 192.5, 440.0, 62.0 ],
 									"style" : ""
 								}
 
@@ -688,7 +803,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 63.0, 309.0, 371.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf didact-source @dictbuf didact-filters @rank 2"
+									"text" : "fluid.bufnmf~ @source didact-source @bases didact-filters @rank 2"
 								}
 
 							}
@@ -699,9 +814,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 63.0, 180.0, 523.0, 22.0 ],
+									"patching_rect" : [ 63.0, 180.0, 590.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstgain 1, dstbuf didact-source, srcbuf lowsine, bang, srcbuf hisine, dststartat 44100, bang"
+									"text" : "reset, destgain 1, destination didact-source, source lowsine, bang, source hisine, deststartframe 44100, bang"
 								}
 
 							}
@@ -1052,9 +1167,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1100,7 +1215,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 60.0, 784.0, 122.0, 22.0 ],
+					"patching_rect" : [ 46.0, 903.0, 122.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1111,19 +1226,6 @@
 ,
 					"style" : "",
 					"text" : "p \"Didactic Example\""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-11",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 376.0, 48.0, 33.0 ],
-					"style" : "",
-					"text" : "in [0]\nout [0]"
 				}
 
 			}
@@ -1143,26 +1245,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 9,
+					"linecount" : 12,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 456.0, 1014.0, 127.0 ],
+					"patching_rect" : [ 143.0, 529.0, 1020.0, 167.0 ],
 					"style" : "",
-					"text" : "The signal input to the factorisation process.\nThe server index of the buffer containing the different dictionaries that the input signal will be matched against. Dictionaries must be (fft size / 2) + 1 frames. If the buffer has more than maxRank channels, the excess will be ignored.\nThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of output channelsfor the ugen.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU intensive, lower numbers will be more unpredictable in quality.\nThe number of samples that are analysed at a time. A lower number yields greater temporal resolution, at the expense of spectral resoultion, and vice-versa.\nThe window hope size. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap will create audible artefacts. Default = winSize / 2\nThe FFT/IFFT size. It should be at least 4 samples long, at least the size of the window, and a power of 2. Making it larger allows an oversampling of the spectral precision. Default = winSize"
+					"text" : "The server index of the buffer containing the different bases that the input signal will be matched against. Bases must be (fft size / 2) + 1 frames. If the buffer has more than maxRank channels, the excess will be ignored.\nThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of output channelsfor the ugen. This cannot be modulated.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU intensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 9,
+					"linecount" : 12,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 456.0, 92.0, 127.0 ],
+					"patching_rect" : [ 39.0, 529.0, 92.0, 167.0 ],
 					"style" : "",
-					"text" : "in\ndictBufNum\n\nmaxRank\nnIter\n\nwinSize\nhopSize\nfftSize"
+					"text" : "in\nbases\n\nnumiter\n\nfftsettings\n\n\n\n\nwarnings\nlatency"
 				}
 
 			}
@@ -1199,7 +1301,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 652.0, 910.0, 56.0 ],
+					"patching_rect" : [ 39.0, 772.0, 910.0, 56.0 ],
 					"style" : "",
 					"text" : "[1] - Lee, Daniel D., and H. Sebastian Seung. 1999. ‘Learning the Parts of Objects by Non-Negative Matrix Factorization’. Nature 401 (6755): 788–91. https://doi.org/10.1038/44565.\n[2] - Smaragdis and Brown, Non-Negative Matrix Factorization for Polyphonic Music Transcription.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
 				}
@@ -1208,13 +1310,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-13",
-					"linecount" : 15,
+					"linecount" : 16,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1149.0, 208.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1149.0, 221.0 ],
 					"style" : "",
-					"text" : "The FluidNMFMatch object matches an incoming audio signal against a set of spectral templates using an slimmed-down version of Nonnegative Matrix Factorisation (NMF)1\n\nIt outputs at kr the degree of detected match for each template (the activation amount, in NMF-terms). The spectral templates are presumed to have been produced by the offline NMF process (FluidBufNMF), and must be the correct size with respect to the FFT settings being used (FFT size / 2 + 1 frames long). The rank of the decomposition is determined by the number of channels in the supplied buffer of templates, up to a maximum set by the maxRank parameter.\n\nNMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored. It works iteratively, by trying to find a combination of amplitudes ('activations') that yield the original magnitude spectrogram of the audio input when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes and the activations correspond to channel envelopes.\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
+					"text" : "The FluidNMFMatch object matches an incoming audio signal against a set of spectral templates using an slimmed-down version of Nonnegative Matrix Factorisation (NMF)1\n\nIt outputs at kr the degree of detected match for each template (the activation amount, in NMF-terms). The spectral templates are presumed to have been produced by the offline NMF process (FluidBufNMF), and must be the correct size with respect to the FFT settings being used (FFT size / 2 + 1 frames long). The rank of the decomposition is determined by the number of channels in the supplied buffer of templates, up to a maximum set by the maxRank parameter.\n\nNMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored. It works iteratively, by trying to find a combination of amplitudes ('activations') that yield the original magnitude spectrogram of the audio input when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
 				}
 
 			}
@@ -1310,9 +1412,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 361.75, 1222.0, 284.0, 35.0 ],
+									"patching_rect" : [ 361.75, 1222.0, 300.0, 35.0 ],
 									"style" : "",
-									"text" : "startchan $1, dstbuf 3dicts, srcbuf golcar-dicts, bang, dstbuf 3audios, srcbuf golcar-sounds, bang"
+									"text" : "startchan $1, destination 3dicts, source golcar-dicts, bang, destination 3audios, source golcar-sounds, bang"
 								}
 
 							}
@@ -1349,9 +1451,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 424.5, 302.0, 73.0, 22.0 ],
+									"patching_rect" : [ 424.5, 302.0, 93.0, 22.0 ],
 									"style" : "",
-									"text" : "pak startat i"
+									"text" : "pak startframe i"
 								}
 
 							}
@@ -1362,9 +1464,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 517.0, 307.0, 83.0, 22.0 ],
+									"patching_rect" : [ 517.0, 307.0, 97.0, 22.0 ],
 									"style" : "",
-									"text" : "pak nframes i"
+									"text" : "pak numframes i"
 								}
 
 							}
@@ -1375,7 +1477,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 288.5, 303.0, 125.0, 22.0 ],
+									"patching_rect" : [ 288.5, 273.0, 125.0, 22.0 ],
 									"style" : "",
 									"text" : "pack sizeinsamps 1 1"
 								}
@@ -2561,9 +2663,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 1292.5, 147.0, 247.0, 22.0 ],
+									"patching_rect" : [ 1292.5, 147.0, 259.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 3 @dictbuf 3dicts @niter 20"
+									"text" : "fluid.nmfmatch~ 3 @bases 3dicts @numiter 20"
 								}
 
 							}
@@ -2588,9 +2690,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 375.0, 1282.0, 237.0, 22.0 ],
+									"patching_rect" : [ 375.0, 1282.0, 259.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufcompose~ @dstgain 1 @nchans 1"
+									"text" : "fluid.bufcompose~ @destgain 1 @numchans 1"
 								}
 
 							}
@@ -2614,9 +2716,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 489.0, 1185.0, 105.0, 22.0 ],
+									"patching_rect" : [ 489.0, 1185.0, 111.0, 22.0 ],
 									"style" : "",
-									"text" : "pak dststartchan i"
+									"text" : "pak deststartchan i"
 								}
 
 							}
@@ -2779,9 +2881,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 43.0, 319.0, 242.0, 35.0 ],
+									"patching_rect" : [ 43.0, 319.0, 288.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.bufcompose~ @srcbuf soundscape @dstbuf monosum @nchans 1 @dstgain 1"
+									"text" : "fluid.bufcompose~ @source soundscape @destination monosum @numchans 1 @destgain 1"
 								}
 
 							}
@@ -2792,7 +2894,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 288.5, 331.0, 104.0, 22.0 ],
+									"patching_rect" : [ 367.700012, 351.0, 104.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ monosum"
 								}
@@ -2931,7 +3033,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 102.0, 394.5, 505.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf monosum @rank 10 @dictbuf golcar-dicts @resynthbuf golcar-sounds"
+									"text" : "fluid.bufnmf~ @source monosum @rank 10 @bases golcar-dicts @resynth golcar-sounds"
 								}
 
 							}
@@ -3969,9 +4071,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4017,7 +4119,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 314.0, 784.0, 101.0, 22.0 ],
+					"patching_rect" : [ 300.0, 903.0, 101.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4218,13 +4320,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-43",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "signal", "signal", "signal", "" ],
 									"patching_rect" : [ 48.5, 400.0, 479.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.hpss~ @fft 1024 256 -1 @modeflag 1 @hthresh 0.005869 -9.6875 0.006609 -4.375"
+									"text" : "fluid.hpss~ @fftsettings 1024 256 -1 @maskingmode 1 @harmthresh 0.005869 -9.6875 0.006609 -4.375"
 								}
 
 							}
@@ -4620,13 +4723,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-38",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
 									"patching_rect" : [ 616.86731, 400.0, 323.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 8 @dictbuf guit-dicts2 @fft 1024 256 2048"
+									"text" : "fluid.nmfmatch~ 8 @bases guit-dicts2 @fftsettings 1024 256 2048"
 								}
 
 							}
@@ -4692,13 +4796,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-16",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 268.377502, 108.0, 702.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf guit @nframes 88200 @fft 1024 256 2048 @niter 50 @dictbuf guit-dicts2 @resynthbuf guit-audio2 @rank 8"
+									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @numiter 50 @bases guit-dicts2 @resynth guit-audio2 @rank 8"
 								}
 
 							}
@@ -5045,9 +5150,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5093,7 +5198,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 537.0, 784.0, 136.0, 22.0 ],
+					"patching_rect" : [ 523.0, 903.0, 136.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -5210,9 +5315,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 703.0, 110.0, 131.0, 22.0 ],
+									"patching_rect" : [ 703.0, 110.0, 128.0, 22.0 ],
 									"style" : "",
-									"text" : "dictbuf pno-dict-shuffle"
+									"text" : "bases pno-dict-shuffle"
 								}
 
 							}
@@ -5225,7 +5330,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 361.0, 110.0, 98.0, 22.0 ],
 									"style" : "",
-									"text" : "dictbuf pno-dicts"
+									"text" : "bases pno-dicts"
 								}
 
 							}
@@ -5292,9 +5397,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 345.0, 286.0, 105.0, 22.0 ],
+													"patching_rect" : [ 345.0, 286.0, 111.0, 22.0 ],
 													"style" : "",
-													"text" : "pak dststartchan i"
+													"text" : "pak deststartchan i"
 												}
 
 											}
@@ -5318,9 +5423,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 44.0, 327.0, 406.0, 22.0 ],
+													"patching_rect" : [ 44.0, 327.0, 450.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.bufcompose~ @srcbuf pno-dicts @dstbuf pno-dict-shuffle @nchans 1"
+													"text" : "fluid.bufcompose~ @source pno-dicts @destination pno-dict-shuffle @numchans 1"
 												}
 
 											}
@@ -5505,9 +5610,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -6052,9 +6157,9 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 269.5, 471.0, 105.0, 22.0 ],
+																	"patching_rect" : [ 269.5, 471.0, 111.0, 22.0 ],
 																	"style" : "",
-																	"text" : "pak dststartchan i"
+																	"text" : "pak deststartchan i"
 																}
 
 															}
@@ -6340,9 +6445,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 178.0, 545.0, 287.0, 22.0 ],
+																	"patching_rect" : [ 178.0, 545.0, 313.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufcompose~ @srcbuf temp @dstbuf pno-dicts"
+																	"text" : "fluid.bufcompose~ @source temp @destination pno-dicts"
 																}
 
 															}
@@ -6416,9 +6521,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 154.0, 817.0, 671.0, 22.0 ],
+																	"patching_rect" : [ 154.0, 817.0, 775.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 4096 256 -1 @niter 100 @dictbuf pno-dicts @rank 88 @actbuf pno-acts @dictflag 1"
+																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @numiter 100 @bases pno-dicts @rank 88 @activations pno-acts @basesmode 1"
 																}
 
 															}
@@ -6442,9 +6547,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 236.0, 358.0, 472.0, 22.0 ],
+																	"patching_rect" : [ 236.0, 358.0, 508.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @fft 4096 256 -1 @niter 100 @rank 2 @dictbuf temp @resynthbuf temp2"
+																	"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @numiter 100 @rank 2 @bases temp @resynth temp2"
 																}
 
 															}
@@ -6767,9 +6872,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
+																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -6953,9 +7058,9 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 157.0, 491.0, 105.0, 22.0 ],
+																	"patching_rect" : [ 157.0, 491.0, 111.0, 22.0 ],
 																	"style" : "",
-																	"text" : "pak dststartchan i"
+																	"text" : "pak deststartchan i"
 																}
 
 															}
@@ -7151,9 +7256,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 118.0, 545.0, 287.0, 22.0 ],
+																	"patching_rect" : [ 118.0, 545.0, 313.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufcompose~ @srcbuf temp @dstbuf pno-dicts"
+																	"text" : "fluid.bufcompose~ @source temp @destination pno-dicts"
 																}
 
 															}
@@ -7227,9 +7332,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 113.0, 769.0, 799.0, 22.0 ],
+																	"patching_rect" : [ 113.0, 769.0, 887.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 4096 256 -1 @niter 100 @dictbuf pno-dicts @rank 89 @resynthbuf pno-audio @actbuf pno-acts @dictflag 1"
+																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @numiter 100 @bases pno-dicts @rank 89 @resynth pno-audio @activations pno-acts @basesmode 1"
 																}
 
 															}
@@ -7253,9 +7358,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 118.0, 442.0, 583.0, 22.0 ],
+																	"patching_rect" : [ 118.0, 442.0, 657.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @fft 4096 256 -1 @niter 100 @rank 1 @dictbuf temp @nframes 132300 @srcbuf pianosource"
+																	"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @numiter 100 @rank 1 @bases temp @numframes 132300 @source pianosource"
 																}
 
 															}
@@ -7541,9 +7646,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
+																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -7741,9 +7846,9 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 2,
 																	"outlettype" : [ "bang", "" ],
-																	"patching_rect" : [ 51.0, 199.0, 654.0, 22.0 ],
+																	"patching_rect" : [ 51.0, 199.0, 694.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @srcbuf pianosource @fft 1024 256 2048 @niter 100 @dictbuf pno-dicts @rank 88 @resynthbuf pno-audio"
+																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 1024 256 2048 @numiter 100 @bases pno-dicts @rank 88 @resynth pno-audio"
 																}
 
 															}
@@ -7920,9 +8025,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -9122,9 +9227,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 279.0, 153.0, 379.0, 22.0 ],
+									"patching_rect" : [ 279.0, 153.0, 433.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 88 @fft 4096 512 4096 @niter 10 @dictbuf pno-dicts"
+									"text" : "fluid.nmfmatch~ 88 @fftsettings 4096 512 4096 @numiter 10 @bases pno-dicts"
 								}
 
 							}
@@ -9617,9 +9722,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9665,7 +9770,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 417.0, 784.0, 118.0, 22.0 ],
+					"patching_rect" : [ 403.0, 903.0, 118.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -9696,7 +9801,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -9757,9 +9862,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 320.0, 473.0, 123.0, 22.0 ],
+									"patching_rect" : [ 320.0, 473.0, 130.0, 22.0 ],
 									"style" : "",
-									"text" : "prepend dststartchan"
+									"text" : "prepend deststartchan"
 								}
 
 							}
@@ -9822,9 +9927,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 373.0, 524.0, 462.0, 22.0 ],
+									"patching_rect" : [ 373.0, 524.0, 512.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufcompose~ @dstbuf guit-dicts-sum @dstgain 1 @srcbuf guit-dicts @nchans 1"
+									"text" : "fluid.bufcompose~ @destination guit-dicts-sum @destgain 1 @source guit-dicts @numchans 1"
 								}
 
 							}
@@ -10185,9 +10290,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 25.0, 86.0, 702.0, 22.0 ],
+									"patching_rect" : [ 25.0, 86.0, 758.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf guit @nframes 88200 @fft 1024 256 2048 @niter 100 @dictbuf guit-dicts @rank 10 @resynthbuf guit-audio"
+									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @numiter 100 @bases guit-dicts @rank 10 @resynth guit-audio"
 								}
 
 							}
@@ -11968,9 +12073,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 1382.0, 249.0, 343.0, 22.0 ],
+									"patching_rect" : [ 1382.0, 249.0, 379.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 2 @dictbuf guit-dicts-sum @fft 1024 256 2048"
+									"text" : "fluid.nmfmatch~ 2 @bases guit-dicts-sum @fftsettings 1024 256 2048"
 								}
 
 							}
@@ -12489,9 +12594,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -12537,7 +12642,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 192.0, 784.0, 120.0, 22.0 ],
+					"patching_rect" : [ 178.0, 903.0, 120.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -12620,9 +12725,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

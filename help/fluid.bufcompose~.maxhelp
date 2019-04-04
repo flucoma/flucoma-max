@@ -39,13 +39,40 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
+					"id" : "obj-4",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 302.0, 211.0, 20.0 ],
+					"patching_rect" : [ 39.0, 302.0, 42.0, 33.0 ],
 					"style" : "",
-					"text" : "This method triggers the compositing."
+					"text" : "bang\nreset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 366.0, 69.0, 20.0 ],
+					"style" : "",
+					"text" : "attributes:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 302.0, 214.0, 33.0 ],
+					"style" : "",
+					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
 				}
 
 			}
@@ -56,47 +83,35 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 282.0, 66.0, 20.0 ],
+					"patching_rect" : [ 39.0, 282.0, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "message:"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 282.0, 1628.0, 20.0 ],
-					"style" : "",
-					"text" : "process srcBufA <startAtA> <nFramesA> <startChanA> <nChansA> <srcGainA> <dstStartAtA> <dstStartChanA> srcBufB <startAtB><nFramesB><startChanB><nChansB> <srcGainB> <dstStartAtB> <dstStartChanB> dstBuf"
+					"text" : "messages:"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 17,
+					"linecount" : 13,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 140.0, 340.0, 916.0, 234.0 ],
+					"patching_rect" : [ 140.0, 388.0, 916.0, 181.0 ],
 					"style" : "",
-					"text" : "The bufNum of the first source buffer.\nThe starting point (in samples) from which to copy in the first source buffer.\nThe duration (in samples) to copy from the first source buffer.\nThe first channel from which to copy in the first source buffer.\nThe number of channels from which to copy in the first source buffer. This parameter will wrap around the number of channels in the source buffer.\nThe gain applied to the samples to be copied from the first source buffer.\nThe time offset (in samples) in the destination buffer to start writing the first source at. The destination buffer will be resized if the portion to copy is overflowing.\nThe channel offest in the destination buffer to start writing the first source at. The destination buffer will be resized if the number of channels to copy is overflowing.\nThe bufNum of the second source buffer.\nThe starting point (in samples) from which to copy in the second source buffer.\nThe duration (in samples) to copy from the second source buffer.\nThe first channel from which to copy in the second source buffer.\nThe number of channels from which to copy in the second source buffer. This parameter will wrap around the number of channels in the source buffer.\nThe gain applied to the samples to be copied from the second source buffer.\nThe time offset (in samples) in the destination buffer to start writing the second source at. The destination buffer will be resized if the portion to copy is overflowing.\nThe channel offest in the destination buffer to start writing the second source at. The destination buffer will be resized if the number of channels to copy is overflowing.\nThe bufNum of the destination buffer."
+					"text" : "The name of the source buffer.\nThe starting point (in samples) from which to copy in the source buffer.\nThe duration (in samples) to copy from the source buffer. The default (-1) copies the full lenght of the buffer.\nThe first channel from which to copy in the source buffer.\nThe number of channels from which to copy in the source buffer. This parameter will wrap around the number of channels in the source buffer. The default (-1) copies all of the buffer's channel.\nThe gain applied to the samples to be copied from the source buffer.\nThe name of the destination buffer.\nThe time offset (in samples) in the destination buffer to start writing the source at. The destination buffer will be resized if the portion to copy is overflowing.\nThe channel offest in the destination buffer to start writing the source at. The destination buffer will be resized if the number of channels to copy is overflowing.\nThe gain applied to the samples in the region of the destination buffer over which the source is to be copied. The default value (0) will overwrite that section of the destination buffer, and a value of 1.0 would sum the source to the material that was present.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 17,
+					"linecount" : 13,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 234.0 ],
+					"patching_rect" : [ 39.0, 388.0, 97.0, 181.0 ],
 					"style" : "",
-					"text" : "srcBufA\nstartAtA\nnFramesA\nstartChanA\nnChansA\nsrcGainA\ndstStartAtA\ndstStartChanA\nsrcBufB\nstartAtB\nnFramesB\nstartChanB\nnChansB\nsrcGainB\ndstStartAtB\ndstStartChanB\ndstBuf"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\n\ngain\ndestination\ndestStartFrame\ndestStartChan\ndestGain\n\nwarnings"
 				}
 
 			}
@@ -107,9 +122,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 718.0, 794.0, 87.0 ],
+					"patching_rect" : [ 39.0, 662.0, 794.0, 87.0 ],
 					"style" : "",
-					"text" : "Discussion:\nIt is important to understand the rules used for determining the final desintinaiton buffer dimensions to get the most out of this object. The destination buffer will be resized to the maxima of the requsted source numFrames and numChannels, independently of whether the source buffers are that big or not. Frames will be written up to the limit of actually available samples (meaning you can create zero padding);channels will be written modulo the available channels, taking into account the channel offsets, meaning you can have channels repeat or loop into the desintation buffer's channels. See the examples below."
+					"text" : "Discussion:\nIt is important to understand the rules used for determining the final desintinaiton buffer dimensions to get the most out of this object. The destination buffer will be resized to the maxima of the requsted source numFrames and numChannels, independently of whether the source buffers are that big or not. Frames will be written up to the limit of actually available samples (meaning you can create zero padding);channels will be written modulo the available channels, taking into account the channel offsets, meaning you can have channels repeat or loop into the desintation buffer's channels. See the examples in the tabs."
 				}
 
 			}
@@ -155,13 +170,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
-					"linecount" : 10,
+					"linecount" : 9,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 846.0, 141.0 ],
+					"patching_rect" : [ 39.0, 119.0, 890.0, 127.0 ],
 					"style" : "",
-					"text" : "A FluidBufCompose object provides a flexible utility for combining the contents of buffers on the server. It can be used for thing like mixing down multichannel buffers, or converting from left-right stereo to mid-side. We use it extensively in our example code.\n\nAt its most simple, the object copies the content of two source buffers into a destination buffer. The flexibility comes from the various flags controlling which portions and channels of the sources to use, and by applying gains (which can be positive or negative) to the source data.\n\nIt is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe algorithm takes two buffers in, and writes the composited information at the provided dstBuf. These buffer arguments can all point to the same buffer, which gives great flexibility in transforming and reshaping."
+					"text" : "A FluidBufCompose object provides a flexible utility for combining the contents of buffers on the server. It can be used for thing like mixing down multichannel buffers, or converting from left-right stereo to mid-side. It is used extensively in all the example code of Fluid Decomposition Toolbox as part of the FluCoMa project.1\n\nAt its most simple, the object copies the content of a source buffer into a destination buffer. The flexibility comes from the various flags controlling which portions and channels of the source to use, and by applying gains (which can be positive or negative) to the source data and the portion of the destination that would be overwritten.\n\nThe algorithm takes a source buffer, and writes the information at the provided destination buffer. These buffer arguments can all point to the same buffer, which gives great flexibility in transforming and reshaping."
 				}
 
 			}
@@ -232,7 +247,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 52.0, 558.0, 103.0, 22.0 ],
 									"style" : "",
-									"text" : "44100."
+									"text" : "515088."
 								}
 
 							}
@@ -251,7 +266,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "srcbuf",
+									"attr" : "source",
 									"id" : "obj-26",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -264,7 +279,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "startat",
+									"attr" : "startframe",
 									"id" : "obj-27",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -277,7 +292,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nframes",
+									"attr" : "numframes",
 									"id" : "obj-32",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -303,7 +318,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nchans",
+									"attr" : "numchans",
 									"id" : "obj-21",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -329,7 +344,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "dstbuf",
+									"attr" : "destination",
 									"id" : "obj-24",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -487,9 +502,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 179.0, 376.5, 395.0, 35.0 ],
+									"patching_rect" : [ 179.0, 376.5, 427.0, 35.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, startat 0, nframes 44100, dststartchan 1, bang, srcbuf stereopiano, nchans 1, dststartchan 0, bang"
+									"text" : "reset, destination dst, source monosynth, startframe 0, numframes 44100, deststartchan 1, bang, source stereopiano, numchans 1, deststartchan 0, bang"
 								}
 
 							}
@@ -501,9 +516,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 144.0, 254.5, 383.0, 49.0 ],
+									"patching_rect" : [ 144.0, 254.5, 393.0, 49.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, startat 441000, nchans 2, gain 0.6, bang, srcbuf stereopiano, startat 0, nframes 78000, startchan 1, gain 0.5, dststartat 22050, dstgain 1., bang"
+									"text" : "reset, destination dst, source monosynth, startframe 441000, numchans 2, gain 0.6, bang, source stereopiano, startframe 0, numframes 78000, startchan 1, gain 0.5, deststartframe 22050, destgain 1., bang"
 								}
 
 							}
@@ -529,7 +544,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 40.0, 501.0, 103.0, 22.0 ],
 									"style" : "",
-									"text" : "1000."
+									"text" : "11680."
 								}
 
 							}
@@ -592,9 +607,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 156.5, 456.0, 35.0 ],
+									"patching_rect" : [ 93.0, 156.5, 521.0, 35.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, nframes 9000, nchans 1, gain 0.5, bang, srcbuf stereopiano, startat 30000, nframes 44100, nchans 1, gain 0.9, dstgain 1., bang"
+									"text" : "reset, destination dst, source monosynth, numframes 9000, numchans 1, gain 0.5, bang, source stereopiano, startframe 30000, numframes 44100, numchans 1, gain 0.9, destgain 1., bang"
 								}
 
 							}
@@ -605,9 +620,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 64.0, 428.0, 22.0 ],
+									"patching_rect" : [ 40.0, 64.0, 465.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf dst, srcbuf monosynth, bang, dstgain 1., srcbuf stereopiano, bang"
+									"text" : "reset, destination dst, source monosynth, bang, destgain 1., source stereopiano, bang"
 								}
 
 							}
@@ -639,7 +654,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "dststartat",
+									"attr" : "deststartframe",
 									"id" : "obj-7",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -652,7 +667,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "dststartchan",
+									"attr" : "deststartchan",
 									"id" : "obj-19",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -665,7 +680,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "dstgain",
+									"attr" : "destgain",
 									"id" : "obj-20",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -960,9 +975,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 14.0, 88.0, 205.0, 22.0 ],
+									"patching_rect" : [ 14.0, 88.0, 208.0, 22.0 ],
 									"style" : "",
-									"text" : "srcbuf monosynth, startchan 0, bang"
+									"text" : "source monosynth, startchan 0, bang"
 								}
 
 							}
@@ -973,9 +988,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 220.0, 88.0, 162.0, 22.0 ],
+									"patching_rect" : [ 220.0, 88.0, 169.0, 22.0 ],
 									"style" : "",
-									"text" : "dstgain 1., startchan 1, bang"
+									"text" : "destgain 1., startchan 1, bang"
 								}
 
 							}
@@ -986,9 +1001,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 426.0, 88.0, 293.0, 22.0 ],
+									"patching_rect" : [ 426.0, 88.0, 338.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf pile, srcbuf stereopiano, nchans 1, bang"
+									"text" : "reset, destination pile, source stereopiano, numchans 1, bang"
 								}
 
 							}
@@ -1190,14 +1205,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-17",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 220.0, 171.0, 112.0, 35.0 ],
+									"patching_rect" : [ 220.0, 171.0, 204.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufcompose~ @dstbuf pile"
+									"text" : "fluid.bufcompose~ @destination pile"
 								}
 
 							}
@@ -1401,7 +1415,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1436,9 +1450,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 175.5, 426.0, 180.0, 22.0 ],
+									"patching_rect" : [ 175.5, 426.0, 208.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, srcbuf side, dstbuf hpside"
+									"text" : "reset, source side, destination hpside"
 								}
 
 							}
@@ -1449,7 +1463,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "bang", "bang", "bang", "bang" ],
-									"patching_rect" : [ 191.0, 676.0, 473.0, 22.0 ],
+									"patching_rect" : [ 191.0, 676.0, 313.0, 22.0 ],
 									"style" : "",
 									"text" : "b 4"
 								}
@@ -1462,9 +1476,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 88.5, 738.0, 206.0, 22.0 ],
+									"patching_rect" : [ 88.5, 738.0, 212.0, 22.0 ],
 									"style" : "",
-									"text" : "gain -0.707107, dststartchan 1, bang"
+									"text" : "gain -0.707107, deststartchan 1, bang"
 								}
 
 							}
@@ -1475,9 +1489,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 233.0, 773.0, 174.0, 22.0 ],
+									"patching_rect" : [ 233.0, 773.0, 182.0, 22.0 ],
 									"style" : "",
-									"text" : "srcbuf hpside, dstgain 1., bang"
+									"text" : "source hpside, destgain 1., bang"
 								}
 
 							}
@@ -1488,9 +1502,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 331.666656, 808.0, 237.0, 22.0 ],
+									"patching_rect" : [ 331.666656, 808.0, 255.0, 22.0 ],
 									"style" : "",
-									"text" : "gain 0.707107, srcbuf mid, nchans 2, bang"
+									"text" : "gain 0.707107, source mid, numchans 2, bang"
 								}
 
 							}
@@ -1501,9 +1515,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 485.0, 838.5, 137.0, 22.0 ],
+									"patching_rect" : [ 485.0, 838.5, 139.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf destination"
+									"text" : "reset, destination output"
 								}
 
 							}
@@ -1514,9 +1528,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 233.0, 202.0, 620.0, 22.0 ],
+									"patching_rect" : [ 233.0, 202.0, 670.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstgain 1., dstbuf side, srcbuf stereoinput, gain 0.707107, nchans 1, bang, startchan 1, gain -0.707107, bang"
+									"text" : "reset, destgain 1., destination side, source stereoinput, gain 0.707107, numchans 1, bang, startchan 1, gain -0.707107, bang"
 								}
 
 							}
@@ -1527,9 +1541,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 28.0, 235.0, 281.0, 22.0 ],
+									"patching_rect" : [ 28.0, 235.0, 305.0, 22.0 ],
 									"style" : "",
-									"text" : "dstbuf mid, gain 0.707107, bang, startchan 0, bang"
+									"text" : "destination mid, gain 0.707107, bang, startchan 0, bang"
 								}
 
 							}
@@ -1837,9 +1851,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 98.0, 468.0, 215.0, 22.0 ],
+									"patching_rect" : [ 98.0, 468.0, 247.0, 22.0 ],
 									"style" : "",
-									"text" : "dstgain 1., dststartat $1, gain $2, bang"
+									"text" : "destgain 1., deststartframe $1, gain $2, bang"
 								}
 
 							}
@@ -1889,7 +1903,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 366.5, 419.0, 87.0, 22.0 ],
+									"patching_rect" : [ 404.5, 428.0, 87.0, 22.0 ],
 									"style" : "",
 									"text" : "sizeinsamps 1"
 								}
@@ -1898,7 +1912,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-21",
-									"items" : [ "stereopiano", ",", "mid", ",", "side", ",", "hpside", ",", "destination" ],
+									"items" : [ "stereopiano", ",", "mid", ",", "side", ",", "hpside", ",", "output" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1955,9 +1969,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 206.0, 642.0, 119.0, 22.0 ],
+									"patching_rect" : [ 206.0, 642.0, 95.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ destination 1"
+									"text" : "buffer~ output 1"
 								}
 
 							}
@@ -2031,7 +2045,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 366.5, 443.0, 97.0, 22.0 ],
+									"patching_rect" : [ 404.5, 452.0, 97.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ hpside 1"
 								}
@@ -2316,9 +2330,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2393,7 +2407,56 @@
 				"type" : "iLaX"
 			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "max6box",
+				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6inlet",
+				"default" : 				{
+					"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6message",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "gradient",
+						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "max6box",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6outlet",
+				"default" : 				{
+					"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

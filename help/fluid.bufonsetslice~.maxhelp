@@ -39,6 +39,58 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-19",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 271.0, 42.0, 33.0 ],
+					"style" : "",
+					"text" : "bang\nreset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 109.0, 271.0, 214.0, 33.0 ],
+					"style" : "",
+					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 251.0, 73.0, 20.0 ],
+					"style" : "",
+					"text" : "messages:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 318.0, 69.0, 20.0 ],
+					"style" : "",
+					"text" : "attributes:"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -89,7 +141,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "bang" ],
-									"patching_rect" : [ 601.0, 218.0, 51.0, 22.0 ],
+									"patching_rect" : [ 653.0, 223.0, 51.0, 22.0 ],
 									"style" : "",
 									"text" : "urn 600"
 								}
@@ -268,7 +320,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 712.0, 301.0, 60.0, 22.0 ],
+									"patching_rect" : [ 764.0, 306.0, 60.0, 22.0 ],
 									"style" : "",
 									"text" : "loadbang"
 								}
@@ -284,7 +336,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 195.0, 569.0, 50.0, 89.0 ],
 									"style" : "",
-									"text" : "4950 12050 17100 19000 19550 23550"
+									"text" : "6000 16900 18300 19900 23050 26650"
 								}
 
 							}
@@ -298,7 +350,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 577.0, 55.0, 102.0 ],
 									"style" : "",
-									"text" : "0. 4864. 11968. 17024. 18944. 19456. 23488. 30000."
+									"text" : "0. 5952. 16832. 18240. 19840. 22976. 26560. 30000."
 								}
 
 							}
@@ -348,7 +400,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "int" ],
-									"patching_rect" : [ 601.0, 190.0, 40.0, 22.0 ],
+									"patching_rect" : [ 653.0, 195.0, 40.0, 22.0 ],
 									"style" : "",
 									"text" : "uzi"
 								}
@@ -374,7 +426,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 601.0, 250.0, 32.0, 22.0 ],
+									"patching_rect" : [ 653.0, 255.0, 32.0, 22.0 ],
 									"style" : "",
 									"text" : "* 50"
 								}
@@ -387,7 +439,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "int" ],
-									"patching_rect" : [ 601.0, 328.0, 50.0, 22.0 ],
+									"patching_rect" : [ 653.0, 333.0, 50.0, 22.0 ],
 									"style" : "",
 									"text" : "t i 1"
 								}
@@ -400,7 +452,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 601.0, 369.0, 81.0, 22.0 ],
+									"patching_rect" : [ 653.0, 374.0, 81.0, 22.0 ],
 									"style" : "",
 									"text" : "peek~ spikes"
 								}
@@ -413,7 +465,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 601.0, 293.0, 27.0, 22.0 ],
+									"patching_rect" : [ 653.0, 298.0, 27.0, 22.0 ],
 									"style" : "",
 									"text" : "iter"
 								}
@@ -426,7 +478,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 712.0, 334.0, 83.0, 22.0 ],
+									"patching_rect" : [ 764.0, 339.0, 83.0, 22.0 ],
 									"style" : "",
 									"text" : "samps 30000"
 								}
@@ -439,7 +491,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 692.0, 369.0, 85.0, 22.0 ],
+									"patching_rect" : [ 744.0, 374.0, 85.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ spikes"
 								}
@@ -505,9 +557,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 62.0, 222.0, 502.0, 22.0 ],
+									"patching_rect" : [ 62.0, 222.0, 567.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufonsetslice~ @srcbuf spikes @indbuf slicepoints @debounce 2 @fft 128 @thresh 0.1"
+									"text" : "fluid.bufonsetslice~ @source spikes @indices slicepoints @debounce 2 @fftsettings 128 @threshold 0.1"
 								}
 
 							}
@@ -595,7 +647,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-29", 0 ],
-									"midpoints" : [ 610.5, 284.5, 235.5, 284.5 ],
+									"midpoints" : [ 662.5, 284.5, 235.5, 284.5 ],
 									"order" : 1,
 									"source" : [ "obj-28", 0 ]
 								}
@@ -671,7 +723,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
-									"midpoints" : [ 111.5, 166.0, 701.5, 166.0 ],
+									"midpoints" : [ 111.5, 166.0, 753.5, 166.0 ],
 									"order" : 0,
 									"source" : [ "obj-40", 2 ]
 								}
@@ -680,7 +732,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
-									"midpoints" : [ 91.5, 177.0, 610.5, 177.0 ],
+									"midpoints" : [ 91.5, 177.0, 662.5, 177.0 ],
 									"source" : [ "obj-40", 1 ]
 								}
 
@@ -781,64 +833,27 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 112.0, 267.0, 487.0, 20.0 ],
-					"style" : "",
-					"text" : "This is the method that calls for the slicing to be calculated on a given source buffer."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 1,
-					"id" : "obj-24",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 44.0, 247.0, 66.0, 20.0 ],
-					"style" : "",
-					"text" : "message:"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 112.0, 247.0, 424.0, 20.0 ],
-					"style" : "",
-					"text" : "process <srcBuf>  optional: <startAt> <nFrames> <startChan> <nChans> "
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 13,
+					"linecount" : 29,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 340.0, 1040.0, 181.0 ],
+					"patching_rect" : [ 109.0, 340.0, 1100.0, 395.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\nWhere in the srcBuf should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel should be processed.\nFor multichannel srcBuf, how many channel should be summed.\nThe index of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe granularity of the window in which the algorithm looks for change, in samples. A small number will be sensitive to short term changes, and a large number should look for long term changes.\nThe normalised threshold, between 0 an 1, on the novelty curve to consider it a segmentation point.\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\nThe window size. As novelty estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty\nThe window hope size. As novelty estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap will create audible artefacts.\nThe inner FFT/IFFT size. It should be at least 4 samples long, at least the size of the window, and a power of 2. Making it larger allows an oversampling of the spectral precision."
+					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\t\t\nWhere in the source should the slicing process start, in sample.\t\t\nHow many frames should be processed.\t\t\nFor multichannel sources, which channel should be processed.\t\t\nFor multichannel sources, how many channel should be summed.\t\t\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\t\t\n\tThe function used to derive a difference curve between spectral frames. It can be any of the following:\n  0- \tEnergy\tthresholds on (sum of squares of magnitudes / nBins) (like Onsets \\power)\n  1- \tHFC\tthresholds on (sum of (squared magnitudes * binNum) / nBins)\n  2- \tSpectralFlux\tthresholds on (diffence in magnitude between consecutive frames, half rectified)\n  3- 3\tMKL\tthresholds on (sum of log of magnitude ratio per bin) (or equivalent: sum of difference of the log magnitude per bin) (like Onsets \\mkl)\n  4- \tIS\t(WILL PROBABLY BE REMOVED) Itakura - Saito divergence (see literature)\n  5- \tCosine\tthresholds on (cosine distance between comparison frames)\n  6- \tPhaseDev\ttakes the past 2 frames, projects to the current, as anticipated if it was a steady state, then compute the sum of the differences, on which it thresholds (like Onsets \\phase)\n  7- \tWPhaseDev\tsame as PhaseDev, but weighted by the magnitude in order to remove chaos noise floor (like Onsets \\wphase)\n  8- \tComplexDev\tsame as PhaseDev, but in the complex domain - the anticipated amp is considered steady, and the phase is projected, then a complex subtraction is done with the actual present frame. The sum of magnitudes is used to threshold (like Onsets \\complex)\n  9- \tRComplexDev\tsame as above, but rectified (like Onsets \\rcomplex)\nThe thresholding of a new slice. Value ranges are different for each function, from 0 upwards.\t\t\nThe minimum duration of a slice in number of hopSize.\t\t\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\t\t\nFor certain functions (HFC, SpectralFlux, MKL, Cosine), the distance does not have to be computed between consecutive frames. By default (0) it is, otherwise this sets the distane between the comparison window in samples.\t\t\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral differencing relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral differencing relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 13,
+					"linecount" : 29,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 181.0 ],
+					"patching_rect" : [ 39.0, 340.0, 78.0, 395.0 ],
 					"style" : "",
-					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ntransBuf\nkernelSize\nthresh\nfilterSize\nwinSize\n\nhopSize\nfftSize"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nfunction\n\n\n\n\n\n\n\n\n\n\n\nthreshold\ndebounce\nfilterSize\nframeDelta\n\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
@@ -848,9 +863,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 67.0, 288.0, 20.0 ],
+					"patching_rect" : [ 39.0, 67.0, 252.0, 20.0 ],
 					"style" : "",
-					"text" : "Buffer-Based Spectral Onset Detection-Based Slicer"
+					"text" : "Spectral Difference-Based Audio Buffer Slicer"
 				}
 
 			}
@@ -884,12 +899,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 846.0, 20.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1134.0, 60.0 ],
 					"style" : "",
-					"text" : "yes"
+					"text" : "This object implements many spectral-based onset detection functions, most of them taken from the literature. (http://www.dafx.ca/proceedings/papers/p_133.pdf). It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return a buffer which contains indices (in sample) of estimated starting points of different slices."
 				}
 
 			}
@@ -923,7 +939,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -953,7 +969,7 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-5",
 									"maxclass" : "attrui",
@@ -1002,9 +1018,8 @@
 , 							{
 								"box" : 								{
 									"autopopulate" : 1,
-									"depth" : 1,
 									"id" : "obj-1",
-									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1046,7 +1061,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "indbuf",
+									"attr" : "indices",
 									"id" : "obj-7",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1059,7 +1074,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nchans",
+									"attr" : "numchans",
 									"id" : "obj-8",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1072,7 +1087,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "startat",
+									"attr" : "startframe",
 									"id" : "obj-48",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1085,7 +1100,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nframes",
+									"attr" : "numframes",
 									"id" : "obj-38",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1098,7 +1113,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "srcbuf",
+									"attr" : "source",
 									"id" : "obj-37",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1137,7 +1152,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "thresh",
+									"attr" : "threshold",
 									"id" : "obj-60",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1189,7 +1204,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "filtsize",
+									"attr" : "filtersize",
 									"id" : "obj-14",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1713,9 +1728,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 145.5, 476.0, 370.0, 22.0 ],
+									"patching_rect" : [ 145.5, 476.0, 378.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufonsetslice~ @debounce 10 @srcbuf src @indbuf slicestarts"
+									"text" : "fluid.bufonsetslice~ @debounce 10 @source src @indices slicestarts"
 								}
 
 							}

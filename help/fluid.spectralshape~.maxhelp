@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 31.0, 79.0, 1212.0, 990.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,133 @@
 		"subpatcher_template" : "",
 		"showontab" : 1,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 108.5, 387.0, 299.0, 33.0 ],
+					"presentation_rect" : [ 505.0, 749.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "The audio to be processed.\nA list of seven descriptors. The latency is winSize."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 108.5, 455.0, 954.0, 20.0 ],
+					"style" : "",
+					"text" : "the maximum size of the potential FFT window."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 40.5, 455.0, 65.0, 20.0 ],
+					"style" : "",
+					"text" : "#1 (int)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 108.5, 643.0, 143.0, 20.0 ],
+					"style" : "",
+					"text" : "Resets to factory default."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 643.0, 62.0, 20.0 ],
+					"style" : "",
+					"text" : "reset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-17",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 621.0, 76.0, 20.0 ],
+					"style" : "",
+					"text" : "messages:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-19",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 40.5, 483.0, 69.0, 20.0 ],
+					"style" : "",
+					"text" : "attributes:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-20",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 40.5, 365.0, 66.0, 20.0 ],
+					"style" : "",
+					"text" : "i/o:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 40.5, 433.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments (optional):"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-21",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 40.5, 387.0, 48.0, 33.0 ],
+					"style" : "",
+					"text" : "in [0]\nout [0]"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-1",
@@ -204,7 +331,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-5",
 									"maxclass" : "attrui",
@@ -883,9 +1010,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -903,7 +1030,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -913,7 +1039,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -947,53 +1074,27 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-11",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 376.0, 48.0, 33.0 ],
-					"style" : "",
-					"text" : "in [0]\nout [0]"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-8",
-					"linecount" : 2,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 89.0, 376.0, 702.0, 33.0 ],
-					"style" : "",
-					"text" : "The audio input\nA list giving the activation amount for each dictionary component."
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 9,
+					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 456.0, 1014.0, 127.0 ],
+					"patching_rect" : [ 108.5, 505.0, 1071.0, 100.0 ],
 					"style" : "",
-					"text" : "The signal input to the factorisation process.\nThe server index of the buffer containing the different dictionaries that the input signal will be matched against. Dictionaries must be (fft size / 2) + 1 frames. If the buffer has more than maxRank channels, the excess will be ignored.\nThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of output channelsfor the ugen.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU intensive, lower numbers will be more unpredictable in quality.\nThe number of samples that are analysed at a time. A lower number yields greater temporal resolution, at the expense of spectral resoultion, and vice-versa.\nThe window hope size. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap will create audible artefacts. Default = winSize / 2\nThe FFT/IFFT size. It should be at least 4 samples long, at least the size of the window, and a power of 2. Making it larger allows an oversampling of the spectral precision. Default = winSize"
+					"text" : "up to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 9,
+					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 456.0, 92.0, 127.0 ],
+					"patching_rect" : [ 40.5, 505.0, 67.0, 100.0 ],
 					"style" : "",
-					"text" : "in\ndictBufNum\n\nmaxRank\nnIter\n\nwinSize\nhopSize\nfftSize"
+					"text" : "fftSettings\n\n\n\n\nwarnings\nlatency"
 				}
 
 			}
@@ -1003,9 +1104,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 67.0, 377.0, 20.0 ],
+					"patching_rect" : [ 39.0, 67.0, 265.0, 20.0 ],
 					"style" : "",
-					"text" : "something"
+					"text" : "Seven Spectral Shape Descriptors in Real-Time"
 				}
 
 			}
@@ -1030,7 +1131,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 652.0, 910.0, 56.0 ],
+					"patching_rect" : [ 39.0, 677.0, 910.0, 56.0 ],
 					"style" : "",
 					"text" : "\n\n[1] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
 				}
@@ -1039,12 +1140,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-13",
+					"linecount" : 17,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1149.0, 20.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1155.0, 234.0 ],
 					"style" : "",
-					"text" : "somethingelse"
+					"text" : "This class implements seven of the most popular spectral shape descriptors, computed on a linear scale for both amplitude and frequency. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe descriptors are:\n• the four first statistical moments (https://en.wikipedia.org/wiki/Moment_(mathematics) ), more commonly known as:\n  • the spectral centroid (1) in spectral bins as units. This is the point that splits the spectrum in 2 halves of equal energy. It is the weighted average of the magnitude spectrum.\n  • the spectral spread (2) in spectral bins. This is the standard deviation of the spectrum envelop, or the average of the distance to the centroid.\n  • the normalised skewness (3) as ratio. This indicates how tilted is the spectral curve in relation to the middle of the spectral frame, i.e. half of the Nyquist frequency. If it is below the bin representing that frequency, i.e. the central bin of the magnitude spectrum, it is positive.\n  • the normalised kurtosis (4) as ratio. This indicates how focused is the spectral curve. If it is peaky, it is high.\n• the rolloff (5) in bin number. This indicates the bin under which 95% of the energy is included.\n• the flatness (6) in dB. This is the ratio of geometric mean of the magnitude, over the arithmetic mean of the magnitudes. It yields a very approximate measure on how noisy a signal is.\n• the crest (7) in dB. This is the ratio of the loudest magnitude over the RMS of the whole frame. A high number is an indication of a loud peak poking out from the overal spectral curve.\n\nThe drawings in Peeters 2003 (http://recherche.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf) are useful, as are the commented examples below. For the mathematically-inclined reader, the tutorials and code offered here (https://www.audiocontentanalysis.org/) are interesting to further the understanding.\n\nThe process will return the seven values as a list, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the server signal vector size."
 				}
 
 			}
@@ -1078,7 +1180,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 31.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1108,6 +1210,117 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-20",
+									"linecount" : 4,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 635.958374, 535.5, 576.0, 60.0 ],
+									"style" : "",
+									"text" : "Fourth, equally spaced sines. This example shows a similar result to the brickwall spectral bandpass above. If we move the central frequency nearer the half-Nyquist, around 8800, we can observe that the linear spread is kept the same, since there is the same linear distance in Hz between our frequencies. Skewness is a good indication here of where we are in the spectrum with the shape."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"linecount" : 7,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 635.958374, 397.0, 576.0, 100.0 ],
+									"style" : "",
+									"text" : "Third, noises bands: a second-order bandpass filter on whitenoise, centred on 330Hz with one octave bandwidth, gives us a centroid quite high. This is due to the exponential behaviour of the filter, with a gentle slope. Observe the spectral analyser on the left. At first it seems quite centred, but then flip the argument logfreq to 0 (linear) and observe how high the spectrum goes. \n\nIf we set it to a brickwall spectral filter tuned on the same frequencies, we have a much narrower register, and our centroid and spread, as well as the kurtosis and flatness, agrees with this reading."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"linecount" : 8,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 635.958374, 246.0, 576.0, 114.0 ],
+									"style" : "",
+									"text" : "Second, broadband noises: white noise has a linear repartition of energy, so we would expect a centroid in the middle bin (aka half-Nyquist) with a spread covering the full range (+/- a quarter-Nyquist), with a skewness almost null since we are centered, and a very low Kurtosis since we are flat. The rolloff should be almost at Nyquist, the flatness as high as it gets, and the crest quite low.\n\nOn the other hand, pink noise has a drop of 3dB per octave across the spectrum, so we would, by comparison, expect a lower centroid, a slighly higher skewness and kurtosis, a lower rolloff, a slighly lower flatness and a higher crest for the larger low-end energy."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgcolor2" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_color1" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+									"bgfillcolor_proportion" : 0.39,
+									"bgfillcolor_type" : "color",
+									"gradient" : 1,
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 615.958374, 535.5, 18.0, 22.0 ],
+									"style" : "",
+									"text" : "6",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgcolor2" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_color1" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+									"bgfillcolor_proportion" : 0.39,
+									"bgfillcolor_type" : "color",
+									"gradient" : 1,
+									"id" : "obj-3",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 615.958374, 465.5, 18.0, 22.0 ],
+									"style" : "",
+									"text" : "5",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgcolor2" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_angle" : 270.0,
+									"bgfillcolor_autogradient" : 0.0,
+									"bgfillcolor_color" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_color1" : [ 1.0, 0.756863, 0.0, 1.0 ],
+									"bgfillcolor_color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+									"bgfillcolor_proportion" : 0.39,
+									"bgfillcolor_type" : "color",
+									"gradient" : 1,
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 615.958374, 397.0, 18.0, 22.0 ],
+									"style" : "",
+									"text" : "4",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 1.0, 0.756863, 0.0, 1.0 ],
 									"bgcolor2" : [ 1.0, 0.756863, 0.0, 1.0 ],
 									"bgfillcolor_angle" : 270.0,
@@ -1123,8 +1336,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 630.958374, 307.5, 29.5, 22.0 ],
-									"presentation_rect" : [ 629.958374, 309.0, 0.0, 0.0 ],
+									"patching_rect" : [ 615.958374, 317.5, 18.0, 22.0 ],
 									"style" : "",
 									"text" : "3",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -1148,8 +1360,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 630.958374, 230.0, 18.0, 22.0 ],
-									"presentation_rect" : [ 630.958374, 230.0, 0.0, 0.0 ],
+									"patching_rect" : [ 615.958374, 246.0, 18.0, 22.0 ],
 									"style" : "",
 									"text" : "2",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -1173,7 +1384,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 635.958374, 39.0, 18.0, 22.0 ],
+									"patching_rect" : [ 615.958374, 39.0, 18.0, 22.0 ],
 									"style" : "",
 									"text" : "1",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -1187,7 +1398,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 655.958374, 39.0, 558.0, 181.0 ],
+									"patching_rect" : [ 635.958374, 39.0, 578.0, 181.0 ],
 									"style" : "",
 									"text" : "First, a sine wave. At 220, the centroid is on the frequency, the spread is narrow, but as wide as the FFT Hann window ripples, the skewness is high as we are low and therefore far left of the middle bin (aka half-Nyquist), the Kurtosis is incredibly high as we have a very peaky spectrum. The rolloff is slightly higher than the frequency, taking into account the FFT windowing ripples, the flatness is incredibly low, as we have one peak and not much else, and the crest is quite high, because most of the energy is in a few peaky bins.\n\nChange the frequency of the [cycle~] to 440. The skewness has changed (we are nearer the middle of the spectrogram) and the Kurtosis too, although it is still so high it is quite in the same order of magnitude. The rest is stable, as expected.\n\nChange the frequency to 11000. The kurtosis is still in the thousand, but skewness is almost null, as expected."
 								}
@@ -1582,9 +1793,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 163.083374, 97.0, 208.0, 52.0 ],
+									"patching_rect" : [ 163.083374, 98.0, 210.0, 52.0 ],
 									"style" : "",
-									"text" : "filterdesign @topology butterworth @response bandpass @order 4 @frequency 220 440"
+									"text" : "filterdesign @topology butterworth @response bandpass @order 2 @frequency 220 440"
 								}
 
 							}
@@ -1683,7 +1894,6 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-9",
-									"logamp" : 0,
 									"logfreq" : 1,
 									"maxclass" : "spectroscope~",
 									"numinlets" : 2,
@@ -1764,7 +1974,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-5",
 									"maxclass" : "attrui",
@@ -1962,9 +2172,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 37.333374, 411.0, 62.0, 23.0 ],
+									"patching_rect" : [ 37.333374, 411.0, 106.0, 23.0 ],
 									"style" : "",
-									"text" : "getattr fft"
+									"text" : "getattr fftsettings"
 								}
 
 							}
@@ -1976,9 +2186,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "" ],
-									"patching_rect" : [ 219.333344, 544.0, 244.0, 23.0 ],
+									"patching_rect" : [ 219.333344, 544.0, 289.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.spectralshape~ @fft 1024 512 1024"
+									"text" : "fluid.spectralshape~ @fftsettings 1024 512 1024"
 								}
 
 							}
@@ -2010,6 +2220,14 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"midpoints" : [ 625.458374, 424.5, 605.270874, 424.5, 605.270874, 203.0, 28.083374, 203.0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"midpoints" : [ 92.333374, 849.0, 328.833374, 849.0 ],
 									"source" : [ "obj-105", 0 ]
@@ -2019,7 +2237,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-105", 0 ],
-									"midpoints" : [ 285.50001, 805.25, 92.333374, 805.25 ],
+									"midpoints" : [ 285.500011, 805.25, 92.333374, 805.25 ],
 									"source" : [ "obj-107", 4 ]
 								}
 
@@ -2035,7 +2253,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-110", 0 ],
-									"midpoints" : [ 243.00001, 706.75, 92.333374, 706.75 ],
+									"midpoints" : [ 243.000011, 706.75, 92.333374, 706.75 ],
 									"source" : [ "obj-107", 1 ]
 								}
 
@@ -2242,6 +2460,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"midpoints" : [ 625.458374, 493.5, 605.270874, 493.5, 605.270874, 203.0, 28.083374, 203.0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"source" : [ "obj-35", 0 ]
 								}
@@ -2287,7 +2513,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 1 ],
-									"midpoints" : [ 645.458374, 208.0, 43.958374, 208.0 ],
+									"midpoints" : [ 625.458374, 203.0, 43.958374, 203.0 ],
 									"source" : [ "obj-49", 0 ]
 								}
 
@@ -2296,6 +2522,22 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"midpoints" : [ 625.458374, 270.0, 605.270874, 270.0, 605.270874, 203.0, 28.083374, 203.0 ],
+									"source" : [ "obj-52", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"midpoints" : [ 625.458374, 341.5, 605.270874, 341.5, 605.270874, 203.0, 28.083374, 203.0 ],
+									"source" : [ "obj-53", 0 ]
 								}
 
 							}
@@ -2346,6 +2588,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"midpoints" : [ 625.458374, 559.5, 605.270874, 559.5, 605.270874, 203.0, 28.083374, 203.0 ],
+									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-107", 0 ],
 									"source" : [ "obj-85", 0 ]
 								}
@@ -2355,9 +2605,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2375,7 +2625,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2385,7 +2634,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2451,9 +2701,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2471,7 +2721,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2481,7 +2730,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",

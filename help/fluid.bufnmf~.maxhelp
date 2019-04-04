@@ -39,6 +39,58 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-19",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 570.0, 42.0, 33.0 ],
+					"style" : "",
+					"text" : "bang\nreset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 86.0, 570.0, 214.0, 33.0 ],
+					"style" : "",
+					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 550.0, 73.0, 20.0 ],
+					"style" : "",
+					"text" : "messages:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-15",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 16.0, 617.0, 69.0, 20.0 ],
+					"style" : "",
+					"text" : "attributes:"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-6",
 					"maxclass" : "newobj",
@@ -170,9 +222,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 567.0, 273.5, 92.0, 22.0 ],
+									"patching_rect" : [ 567.0, 273.5, 116.0, 22.0 ],
 									"style" : "",
-									"text" : "dictflag 1, bang"
+									"text" : "basesmode 1, bang"
 								}
 
 							}
@@ -192,6 +244,7 @@
 , 							{
 								"box" : 								{
 									"buffername" : "didact-dest2",
+									"chanoffset" : 3,
 									"id" : "obj-41",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -874,7 +927,7 @@
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 561.0, 145.5, 137.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ didact-dest2 1 2"
+									"text" : "buffer~ didact-dest2 1 3"
 								}
 
 							}
@@ -885,9 +938,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 63.0, 279.0, 92.0, 22.0 ],
+									"patching_rect" : [ 63.0, 279.0, 116.0, 22.0 ],
 									"style" : "",
-									"text" : "dictflag 2, bang"
+									"text" : "basesmode 2, bang"
 								}
 
 							}
@@ -898,9 +951,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 63.0, 309.0, 452.0, 22.0 ],
+									"patching_rect" : [ 63.0, 309.0, 476.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf didact-source2 @actbuf didact-dest2 @dictbuf filter @rank 3"
+									"text" : "fluid.bufnmf~ @source didact-source2 @activations didact-dest2 @bases filter @rank 3"
 								}
 
 							}
@@ -911,9 +964,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 63.0, 180.0, 530.0, 22.0 ],
+									"patching_rect" : [ 63.0, 180.0, 596.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstgain 1, dstbuf didact-source2, srcbuf lowsine, bang, srcbuf hisine, dststartat 44100, bang"
+									"text" : "reset, destgain 1, destination didact-source2, source lowsine, bang, source hisine, deststartframe 44100, bang"
 								}
 
 							}
@@ -1226,7 +1279,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 599.0, 1052.0, 139.0, 22.0 ],
+					"patching_rect" : [ 599.0, 1088.0, 139.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1328,7 +1381,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 576.0, 195.5, 254.0, 20.0 ],
+									"patching_rect" : [ 687.0, 195.5, 254.0, 20.0 ],
 									"style" : "",
 									"text" : "watch for a clear different between activations"
 								}
@@ -1413,7 +1466,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 554.0, 195.5, 20.0, 20.0 ],
+									"patching_rect" : [ 665.0, 195.5, 20.0, 20.0 ],
 									"presentation_rect" : [ 1234.0, 435.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -1464,9 +1517,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 57.0, 471.0, 431.0, 22.0 ],
+									"patching_rect" : [ 57.0, 471.0, 467.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstgain 1, dstbuf didact-source, srcbuf lowsine, bang, srcbuf hisine, bang"
+									"text" : "reset, destgain 1, destination didact-source, source lowsine, bang, source hisine, bang"
 								}
 
 							}
@@ -1477,7 +1530,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 558.0, 10.0, 116.0, 22.0 ],
+									"patching_rect" : [ 669.0, 10.0, 116.0, 22.0 ],
 									"style" : "",
 									"text" : "name didact-source"
 								}
@@ -1491,7 +1544,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 558.0, 54.5, 438.0, 113.0 ],
+									"patching_rect" : [ 669.0, 54.5, 438.0, 113.0 ],
 									"style" : ""
 								}
 
@@ -1505,7 +1558,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 796.0, 222.0, 50.0, 22.0 ],
+									"patching_rect" : [ 907.0, 222.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1517,7 +1570,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 671.0, 222.0, 113.0, 22.0 ],
+									"patching_rect" : [ 782.0, 222.0, 113.0, 22.0 ],
 									"style" : "",
 									"text" : "name didact-dest 2"
 								}
@@ -1530,7 +1583,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 554.0, 222.0, 113.0, 22.0 ],
+									"patching_rect" : [ 665.0, 222.0, 113.0, 22.0 ],
 									"style" : "",
 									"text" : "name didact-dest 1"
 								}
@@ -1545,7 +1598,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 558.0, 396.0, 438.0, 113.0 ],
+									"patching_rect" : [ 669.0, 396.0, 438.0, 113.0 ],
 									"style" : ""
 								}
 
@@ -1558,7 +1611,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 558.0, 279.0, 438.0, 113.0 ],
+									"patching_rect" : [ 669.0, 279.0, 438.0, 113.0 ],
 									"style" : ""
 								}
 
@@ -1619,9 +1672,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 63.0, 309.0, 362.0, 22.0 ],
+									"patching_rect" : [ 63.0, 309.0, 388.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf didact-source @actbuf didact-dest @rank 2"
+									"text" : "fluid.bufnmf~ @source didact-source @activations didact-dest @rank 2"
 								}
 
 							}
@@ -1632,9 +1685,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 63.0, 180.0, 523.0, 22.0 ],
+									"patching_rect" : [ 63.0, 180.0, 590.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstgain 1, dstbuf didact-source, srcbuf lowsine, bang, srcbuf hisine, dststartat 44100, bang"
+									"text" : "reset, destgain 1, destination didact-source, source lowsine, bang, source hisine, deststartframe 44100, bang"
 								}
 
 							}
@@ -1865,7 +1918,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 16.0, 1051.0, 118.0, 22.0 ],
+					"patching_rect" : [ 16.0, 1087.0, 118.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1881,64 +1934,27 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-7",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 84.0, 596.0, 487.0, 20.0 ],
-					"style" : "",
-					"text" : "This is the method that calls for the factorisation to be calculated on a given source buffer."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 1,
-					"id" : "obj-24",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 576.0, 66.0, 20.0 ],
-					"style" : "",
-					"text" : "message:"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 84.0, 576.0, 338.0, 20.0 ],
-					"style" : "",
-					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 25,
+					"linecount" : 27,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 113.449341, 639.0, 1360.0, 342.0 ],
+					"patching_rect" : [ 96.0, 639.0, 1109.0, 382.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the srcBuf should the NMF process start, in sample.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel should be processed first.\nFor multichannel srcBuf, how many channel should be processed.\nThe index of the buffer where the different reconstructed ranks will be reconstructed. The buffer will be resized to rank * numChannelsProcessed channels and sourceDuration lenght. If nil is provided, the reconstruction will not happen.\nThe index of the buffer where the different dictionaries will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no dictionary will be returned.\nThis flag decides of how the dictionnary buffer passed as the previous argument is treated.\nThe dictionaries are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (fftSize / 2 + 1) lenght.\nThe passed buffer is considered as seed for the dictionaries. Its dimensions should match the values above. The resulting dictionaries will replace the seed ones.\nThe passed buffer is considered as a template for the dictionaries, and will therefore not change. Its dictionaries should match the values above.\nThe index of the buffer where the different activations will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no activation will be returned.\nThis flag decides of how the activation buffer passed as the previous argument is treated.\nThe activations are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (sourceDuration / hopsize + 1) lenght.\nThe passed buffer is considered as seed for the activations. Its dimensions should match the values above. The resulting activations will replace the seed ones.\nThe passed buffer is considered as a template for the activations, and will therefore not change. Its dimensions should match the values above.\nThe number of elements the NMF algorithm will try to divide the spectrogram of the source in.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU expensive, lower numbers will be more unpredictable in quality.\nThis allows to choose between the different methods of sorting the ranks in order to get similar sonic qualities on a given rank (not implemented yet)\nThe window size. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty\nThe window hope size. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap will create audible artefacts.\nThe inner FFT/IFFT size. It should be at least 4 samples long, at least the size of the window, and a power of 2. Making it larger allows an oversampling of the spectral precision.\nThe inner FFT/IFFT windowing type (not implemented yet)\nThe NMF process needs to seed its starting point. If specified, the same values will be used. The default of -1 will randomly assign them. (not implemented yet)"
+					"text" : "The name of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\t\nWhere in the srcBuf should the NMF process start, in sample.\t\nHow many frames should be processed.\t\nFor multichannel srcBuf, which channel should be processed first.\t\nFor multichannel srcBuf, how many channel should be processed.\t\nThe name of the buffer where the different reconstructed ranks will be reconstructed. The buffer will be resized to rank * numChannelsProcessed channels and sourceDuration lenght. If nil is provided, the reconstruction will not happen.\t\nThe name of the buffer where the different bases will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no bases will be returned.\t\nThis flag decides of how the basis buffer passed as the previous argument is treated.\t\n  0- \tThe bases are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (fftSize / 2 + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the bases. Its dimensions should match the values above. The resulting bases will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the bases, and will therefore not change. Its bases should match the values above.\nThe index of the buffer where the different activations will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no activation will be returned.\t\nThis flag decides of how the activation buffer passed as the previous argument is treated.\t\n  0- \tThe activations are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (sourceDuration / hopsize + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the activations. Its dimensions should match the values above. The resulting activations will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the activations, and will therefore not change. Its dimensions should match the values above.\nThe number of elements the NMF algorithm will try to divide the spectrogram of the source in.\t\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU expensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 24,
+					"linecount" : 27,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 639.0, 92.0, 328.0 ],
+					"patching_rect" : [ 16.0, 639.0, 78.0, 382.0 ],
 					"style" : "",
-					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ndstBuf\ndictBuf\ndictFlag\n0\n1\n2\nactBuf\nactFlag\n0\n1\n2\nrank\nnIter\nsortFlag\nwinSize\nhopSize\nfftSize\nwinType\nrandSeed"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ndestination\n\nbases\nbasesMode\n\n\n\nactivations\nactMode\n\n\n\n\nrank\nnumIter\n\nfftSettings\n\n\n\n\nwarnings\n"
 				}
 
 			}
@@ -1975,7 +1991,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 988.0, 902.0, 56.0 ],
+					"patching_rect" : [ 16.0, 1045.0, 902.0, 56.0 ],
 					"style" : "",
 					"text" : "[1] - Lee, Daniel D., and H. Sebastian Seung. 1999. ‘Learning the Parts of Objects by Non-Negative Matrix Factorization’. Nature 401 (6755): 788–91. https://doi.org/10.1038/44565.\n[2] - Smaragdis and Brown, Non-Negative Matrix Factorization for Polyphonic Music Transcription.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).\n"
 				}
@@ -1984,13 +2000,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
-					"linecount" : 33,
+					"linecount" : 32,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 100.0, 1004.0, 449.0 ],
+					"patching_rect" : [ 16.0, 100.0, 1190.0, 435.0 ],
 					"style" : "",
-					"text" : "The FluidBufNMF object decomposes the spectrum of a sound into a number of components using Non-Negative Matrix Factorisation (NMF)1 . NMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored.\n\nThe algorithm takes a buffer in and divides it into a number of components, determined by the rank argument. It works iteratively, by trying to find a combination of spectral templates ('dictionaries') and envelopes ('activations') that yield the original magnitude spectrogram when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe object can return either or all of the following:\n• a spectral contour of each component in the form of a magnitude spectrogram (called a dictionary in NMF lingo);\n• an amplitude envelope of each component in the form of gains for each consecutive frame of the underlying spectrogram (called an activation in NMF lingo);\n• an audio reconstruction of each components in the time domain.\n\nThe dictionaries and activations can be used to make a kind of vocoder based on what NMF has 'learned' from the original data. Alternatively, taking the matrix product of a dictionary and an activation will yield a synthetic magnitude spectrogram of a component (which could be reconsructed, given some phase informaiton from somewhere).\n\nSome additional options and flexibility can be found through combinations of the dictFlag and actFlag arguments. If these flags are set to 1, the object expects to be supplied with pre-formed spectra (or envelopes) that will be used as seeds for the decomposition, providing more guided results. When set to 2, the supplied buffers won't be updated, so become templates to match against instead. Note that having both dictionaries and activations set to 2 doesn't make sense, so the object will complain.\n\nIf supplying pre-formed data, it's up to the user to make sure that the supplied buffers are the right size:\n• dictionaries must be (fft size / 2) + 1 frames and (rank * input channels) channels\n• activations must be (input frames / hopSize) + 1 frames and (rank * input channels) channels\n\nIn this implementation, the components are reconstructed by masking the ogriginal spectrum, such that they will sum to yield the original sound.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes that are learned from the data, and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
+					"text" : "The FluidBufNMF object decomposes the spectrum of a sound into a number of components using Non-Negative Matrix Factorisation (NMF)1 . NMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored.\n\nThe algorithm takes a buffer in and divides it into a number of components, determined by the rank argument. It works iteratively, by trying to find a combination of spectral templates ('bases') and envelopes ('activations') that yield the original magnitude spectrogram when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe object can return either or all of the following:\n- a spectral contour of each component in the form of a magnitude spectrogram (called a basis in NMF lingo);\n- an amplitude envelope of each component in the form of gains for each consecutive frame of the underlying spectrogram (called an activation in NMF lingo);\n- an audio reconstruction of each components in the time domain.\n\nThe bases and activations can be used to make a kind of vocoder based on what NMF has 'learned' from the original data. Alternatively, taking the matrix product of a basis and an activation will yield a synthetic magnitude spectrogram of a component (which could be reconsructed, given some phase informaiton from somewhere).\n\nSome additional options and flexibility can be found through combinations of the basesMode and actMode arguments. If these flags are set to 1, the object expects to be supplied with pre-formed spectra (or envelopes) that will be used as seeds for the decomposition, providing more guided results. When set to 2, the supplied buffers won't be updated, so become templates to match against instead. Note that having both bases and activations set to 2 doesn't make sense, so the object will complain.\n\nIf supplying pre-formed data, it's up to the user to make sure that the supplied buffers are the right size:\n\n- bases must be (fft size / 2) + 1 frames and (rank * input channels) channels\n- activations must be (input frames / hopSize) + 1 frames and (rank * input channels) channels\n\nIn this implementation, the components are reconstructed by masking the original spectrum, such that they will sum to yield the original sound.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes that are learned from the data, and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
 				}
 
 			}
@@ -2072,9 +2088,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 325.0, 604.0, 123.0, 22.0 ],
+									"patching_rect" : [ 325.0, 604.0, 130.0, 22.0 ],
 									"style" : "",
-									"text" : "prepend dststartchan"
+									"text" : "prepend deststartchan"
 								}
 
 							}
@@ -2111,7 +2127,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 182.0, 666.0, 24.0, 24.0 ],
+									"patching_rect" : [ 217.0, 714.0, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -2315,7 +2331,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 325.0, 714.0, 36.0, 22.0 ],
+									"patching_rect" : [ 282.0, 709.0, 36.0, 22.0 ],
 									"style" : "",
 									"text" : "sel 9"
 								}
@@ -2405,9 +2421,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 378.0, 655.0, 462.0, 22.0 ],
+									"patching_rect" : [ 378.0, 655.0, 514.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufcompose~ @dstbuf guit-dicts-sum @dstgain 1 @srcbuf guit-dicts @nchans 1"
+									"text" : "fluid.bufcompose~ @destination guit-dicts-sum @destgain 1 @source guit-dicts @numchans 1"
 								}
 
 							}
@@ -2418,9 +2434,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 217.0, 741.0, 690.0, 22.0 ],
+									"patching_rect" : [ 217.0, 741.0, 756.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf guit @fft 1024 256 2048 @niter 100 @dictbuf guit-dicts-sum @dictflag 2 @rank 2 @resynthbuf guit-audio"
+									"text" : "fluid.bufnmf~ @source guit @fftsettings 1024 256 2048 @numiter 100 @bases guit-dicts-sum @basesmode 2 @rank 2 @resynth guit-audio"
 								}
 
 							}
@@ -2560,9 +2576,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 105.0, 90.0, 702.0, 22.0 ],
+									"patching_rect" : [ 105.0, 90.0, 760.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf guit @nframes 88200 @fft 1024 256 2048 @niter 100 @dictbuf guit-dicts @rank 10 @resynthbuf guit-audio"
+									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @numiter 100 @bases guit-dicts @rank 10 @resynth guit-audio"
 								}
 
 							}
@@ -2840,7 +2856,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 455.0, 1051.0, 109.0, 22.0 ],
+					"patching_rect" : [ 455.0, 1087.0, 109.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2871,7 +2887,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2909,7 +2925,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 196.949341, 397.0, 81.0, 22.0 ],
 									"style" : "",
-									"text" : "2504.665349"
+									"text" : "3639.717848"
 								}
 
 							}
@@ -2960,14 +2976,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 528.5, 123.5, 150.0, 22.0 ],
+									"patching_rect" : [ 578.5, 123.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "actbuf",
+									"attr" : "activations",
 									"id" : "obj-55",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -2980,20 +2996,20 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "actflag",
+									"attr" : "actmode",
 									"id" : "obj-57",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 366.5, 99.5, 150.0, 22.0 ],
+									"patching_rect" : [ 366.5, 99.5, 174.0, 22.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "dictbuf",
+									"attr" : "bases",
 									"id" : "obj-58",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -3006,20 +3022,20 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "dictflag",
+									"attr" : "basesmode",
 									"id" : "obj-59",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 366.5, 147.5, 150.0, 22.0 ],
+									"patching_rect" : [ 366.5, 147.5, 174.0, 22.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "niter",
+									"attr" : "numiter",
 									"id" : "obj-60",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -3032,26 +3048,26 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "startat",
+									"attr" : "startframe",
 									"id" : "obj-61",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 528.5, 75.5, 150.0, 22.0 ],
+									"patching_rect" : [ 578.5, 75.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nframes",
+									"attr" : "numframes",
 									"id" : "obj-47",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 528.5, 52.0, 150.0, 22.0 ],
+									"patching_rect" : [ 578.5, 52.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -3071,7 +3087,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "resynthbuf",
+									"attr" : "resynth",
 									"id" : "obj-53",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -3084,26 +3100,26 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "srcbuf",
+									"attr" : "source",
 									"id" : "obj-43",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 528.5, 28.0, 150.0, 22.0 ],
+									"patching_rect" : [ 578.5, 28.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nchans",
+									"attr" : "numchans",
 									"id" : "obj-42",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 528.5, 99.5, 150.0, 22.0 ],
+									"patching_rect" : [ 578.5, 99.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -3116,21 +3132,21 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 528.5, 171.5, 122.0, 22.0 ],
+									"patching_rect" : [ 578.5, 171.5, 122.0, 22.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-36",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 528.5, 147.5, 278.0, 22.0 ],
+									"patching_rect" : [ 578.5, 147.5, 278.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -3437,9 +3453,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 93.0, 266.0, 624.0, 22.0 ],
+									"patching_rect" : [ 93.0, 266.0, 688.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf synth @resynthbuf resynth @dictbuf filt @actbuf env @rank 5 @niter 100 @fft 512 256 1024"
+									"text" : "fluid.bufnmf~ @source synth @resynth resynth @bases filt @activations env @rank 5 @numiter 100 @fftsettings 512 256 1024"
 								}
 
 							}
@@ -4015,7 +4031,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 538.0, 252.0, 102.5, 252.0 ],
+									"midpoints" : [ 588.0, 252.0, 102.5, 252.0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -4098,7 +4114,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 538.0, 171.0, 525.0, 171.0, 525.0, 252.0, 102.5, 252.0 ],
+									"midpoints" : [ 588.0, 171.0, 572.0, 171.0, 572.0, 252.0, 102.5, 252.0 ],
 									"source" : [ "obj-36", 0 ]
 								}
 
@@ -4152,7 +4168,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 538.0, 123.0, 525.0, 123.0, 525.0, 252.0, 102.5, 252.0 ],
+									"midpoints" : [ 588.0, 123.0, 571.0, 123.0, 571.0, 252.0, 102.5, 252.0 ],
 									"source" : [ "obj-42", 0 ]
 								}
 
@@ -4160,7 +4176,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 538.0, 51.0, 521.0, 51.0, 521.0, 252.0, 318.0, 252.0, 318.0, 252.0, 102.5, 252.0 ],
+									"midpoints" : [ 588.0, 51.0, 571.0, 51.0, 571.0, 252.0, 318.0, 252.0, 318.0, 252.0, 102.5, 252.0 ],
 									"source" : [ "obj-43", 0 ]
 								}
 
@@ -4175,7 +4191,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 538.0, 75.0, 525.0, 75.0, 525.0, 252.0, 102.5, 252.0 ],
+									"midpoints" : [ 588.0, 75.0, 570.0, 75.0, 570.0, 252.0, 102.5, 252.0 ],
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -4253,7 +4269,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 538.0, 99.0, 525.0, 99.0, 525.0, 252.0, 102.5, 252.0 ],
+									"midpoints" : [ 588.0, 99.0, 572.0, 99.0, 572.0, 252.0, 102.5, 252.0 ],
 									"source" : [ "obj-61", 0 ]
 								}
 
@@ -4261,7 +4277,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 538.0, 147.0, 525.0, 147.0, 525.0, 252.0, 102.5, 252.0 ],
+									"midpoints" : [ 588.0, 147.0, 570.0, 147.0, 570.0, 252.0, 102.5, 252.0 ],
 									"source" : [ "obj-62", 0 ]
 								}
 
@@ -4353,7 +4369,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 150.0, 1051.0, 106.0, 22.0 ],
+					"patching_rect" : [ 150.0, 1087.0, 106.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4420,9 +4436,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.0, 180.0, 277.0, 22.0 ],
+									"patching_rect" : [ 42.0, 180.0, 331.0, 22.0 ],
 									"style" : "",
-									"text" : "startat 0, nframes -1, startchan 0, nchans -1, bang"
+									"text" : "startframe 0, numframes -1, startchan 0, numchans -1, bang"
 								}
 
 							}
@@ -4608,9 +4624,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 26.0, 50.0, 623.0, 22.0 ],
+									"patching_rect" : [ 26.0, 50.0, 689.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, dstbuf stereosource, dstgain 1., srcbuf synth, bang, srcbuf guit, startat 550000, gain 0.6, dststartchan 1, bang"
+									"text" : "reset, destination stereosource, destgain 1., source synth, bang, source guit, startframe 550000, gain 0.6, deststartchan 1, bang"
 								}
 
 							}
@@ -4646,9 +4662,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 3.0, 146.0, 315.0, 22.0 ],
+									"patching_rect" : [ 3.0, 146.0, 369.0, 22.0 ],
 									"style" : "",
-									"text" : "startat 8810, nframes 44100, startchan 1, nchans 1, bang"
+									"text" : "startframe 8810, numframes 44100, startchan 1, numchans 1, bang"
 								}
 
 							}
@@ -4736,9 +4752,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 421.0, 180.0, 282.0, 22.0 ],
+									"patching_rect" : [ 421.0, 180.0, 286.0, 22.0 ],
 									"style" : "",
-									"text" : "dictbuf filt1, actbuf env1, resynthbuf resynth1, bang"
+									"text" : "bases filt1, activations env1, resynth resynth1, bang"
 								}
 
 							}
@@ -4823,13 +4839,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-5",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 42.0, 238.0, 678.0, 22.0 ],
+									"patching_rect" : [ 42.0, 238.0, 376.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @srcbuf stereosource @resynthbuf resynth2 @dictbuf filt2 @actbuf env2 @rank 4 @niter 50 @fft 512 256 1024"
+									"text" : "fluid.bufnmf~ @source stereosource @resynth resynth2 @bases filt2 @activations env2 @rank 4 @numiter 50 @fftsettings 512 256 1024"
 								}
 
 							}
@@ -5041,7 +5058,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 281.449341, 1051.0, 122.0, 22.0 ],
+					"patching_rect" : [ 281.449341, 1087.0, 122.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -5096,7 +5113,56 @@
 				"type" : "iLaX"
 			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "max6box",
+				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6inlet",
+				"default" : 				{
+					"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6message",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "gradient",
+						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "max6box",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6outlet",
+				"default" : 				{
+					"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

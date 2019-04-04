@@ -1254,7 +1254,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 50.0, 654.333374, 474.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @rank 10 @fft 1024 32 @srcbuf bells @resynthbuf decomp.bells.finetime"
+									"text" : "fluid.bufnmf~ @rank 10 @fft 1024 32 @source bells @resynthbuf decomp.bells.finetime"
 								}
 
 							}
@@ -1267,7 +1267,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 50.0, 431.333374, 402.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @rank 10 @srcbuf bells @resynthbuf decomp.bells.defaults"
+									"text" : "fluid.bufnmf~ @rank 10 @source bells @resynthbuf decomp.bells.defaults"
 								}
 
 							}
@@ -1280,7 +1280,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 50.0, 541.333374, 490.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @rank 10 @fft 8192 1024 @srcbuf bells @resynthbuf decomp.bells.finespec"
+									"text" : "fluid.bufnmf~ @rank 10 @fft 8192 1024 @source bells @resynthbuf decomp.bells.finespec"
 								}
 
 							}
@@ -1293,7 +1293,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 50.0, 328.666656, 508.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @rank 10 @fft 4096 1024 @srcbuf drums @resynthbuf decomp.drums.finespec"
+									"text" : "fluid.bufnmf~ @rank 10 @fft 4096 1024 @source drums @resynthbuf decomp.drums.finespec"
 								}
 
 							}
@@ -1306,7 +1306,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 50.0, 227.666656, 478.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @rank 10 @fft 128 1 @srcbuf drums @resynthbuf decomp.drums.finetime"
+									"text" : "fluid.bufnmf~ @rank 10 @fft 128 1 @source drums @resynthbuf decomp.drums.finetime"
 								}
 
 							}
@@ -1319,7 +1319,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 50.0, 134.666656, 420.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @rank 10 @srcbuf drums @resynthbuf decomp.drums.defaults"
+									"text" : "fluid.bufnmf~ @rank 10 @source drums @resynthbuf decomp.drums.defaults"
 								}
 
 							}

@@ -39,13 +39,27 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
+					"id" : "obj-4",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 306.0, 487.0, 20.0 ],
+					"patching_rect" : [ 39.0, 302.0, 42.0, 33.0 ],
 					"style" : "",
-					"text" : "This is the method that calls for the HPSS to be calculated on a given source buffer."
+					"text" : "bang\nreset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 302.0, 214.0, 33.0 ],
+					"style" : "",
+					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
 				}
 
 			}
@@ -56,60 +70,61 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 286.0, 66.0, 20.0 ],
+					"patching_rect" : [ 39.0, 282.0, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "message:"
+					"text" : "messages:"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-19",
+					"fontface" : 1,
+					"id" : "obj-15",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 286.0, 338.0, 20.0 ],
+					"patching_rect" : [ 39.0, 359.0, 69.0, 20.0 ],
 					"style" : "",
-					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
+					"text" : "attributes:"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 30,
+					"linecount" : 31,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 137.0, 336.0, 1665.0, 409.0 ],
+					"patching_rect" : [ 132.0, 381.0, 1061.0, 422.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material. The channels of multichannel buffers will be processed sequentially.\nWhere in the srcBuf should the NMF process start, in samples.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel to start processing at.\nFor multichannel srcBuf, how many channels should be processed.\nThe index of the buffer where the extracted harmonic component will be reconstructed.\nThe index of the buffer where the extracted percussive component will be reconstructed.\nThe index of the buffer where the residual component will be reconstructed in mode 2.\nThe size, in spectral frames, of the median filter for the harmonic component. Must be an odd number, >= 3.\nThe size, in spectral bins, of the median filter for the percussive component. Must be an odd number, >=3\nThe way the masking is applied to the original spectrogram. (0,1,2)\nThe traditional soft mask used in Fitzgerald's original method of 'Wiener-inspired' filtering. Complimentary, soft masks are made for the harmonic and percussive parts by allocating some fraction of a point in time-frequency to each. This provides the fewest artefacts, but the weakest separation. The two resulting buffers will sum to exactly the original material.\nRelative mode - Better separation, with more artefacts. The harmonic mask is constructed using a binary decision, based on whether a threshold is exceeded at a given time-frequency point (these are set using htf1, hta1, htf2, hta2, see below). The percussive mask is then formed as the inverse of the harmonic one, meaning that as above, the two components will sum to the original sound.\nInter-dependent mode - Thresholds can be varied independently, but are coupled in effect. Binary masks are made for each of the harmonic and percussive components, and the masks are converted to soft at the end so that everything null sums even if the params are independent, that is what makes it harder to control. These aren't guranteed to cover the whole sound; in this case the 'leftovers' will placed into a third buffer.\nIn modes 1 and 2, the frequency of the low part of the threshold for the harmonic filter (0-1)\nIn modes 1 and 2, the threshold of the low part for the harmonic filter. That threshold applies to all frequencies up to htf1: how much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic.\nIn modes 1 and 2, the frequency of the hight part of the threshold for the harmonic filter. (0-1)\nIn modes 1 and 2, the threshold of the high part for the harmonic filter. That threshold applies to all frequencies above htf2. The threshold between htf1 and htf2 is interpolated between hta1 and hta2. How much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic.\nIn mode 2, the frequency of the low part of the threshold for the percussive filter. (0-1)\nIn mode 2, the threshold of the low part for the percussive filter. That threshold applies to all frequencies up to ptf1. How much more powerful (in dB) the percussive median filter needs to be than the harmonic median filter for this bin to be counted as percussive.\nIn mode 2, the frequency of the hight part of the threshold for the percussive filter. (0-1)\nIn mode 2, the threshold of the high part for the percussive filter. That threshold applies to all frequencies above ptf2. The threshold between ptf1 and ptf2 is interpolated between pta1 and pta2. How much more powerful (in dB) the percussive median filter needs to be than the harmonic median filter for this bin to be counted as percussive.\nThe window size in samples. As HPSS relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty\nThe window hop size in samples. As HPSS relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts.\nThe inner FFT/IFFT size. It should be at least 4 samples long; at least the size of the window; and a power of 2. Making it larger than the window size provides interpolation in frequency."
+					"text" : "The index of the buffer to use as the source material. The channels of multichannel buffers will be processed sequentially.\nWhere in the buffer should the HPSS process start, in samples.\nHow many frames should be processed.\nFor multichannel source, which channel to start processing at.\nFor multichannel source, how many channels should be processed.\nThe name of the buffer where the extracted harmonic component will be reconstructed.\nThe name of the buffer where the extracted percussive component will be reconstructed.\nThe name of the buffer where the residual component will be reconstructed in mode 2.\nThe size, in spectral frames, of the median filter for the harmonic component. Must be an odd number, >= 3.\nThe size, in spectral bins, of the median filter for the percussive component. Must be an odd number, >=3\nThe way the masking is applied to the original spectrogram. (0,1,2):\n  0- The traditional soft mask used in Fitzgerald's original method of 'Wiener-inspired' filtering. Complimentary, soft masks are made for the harmonic and percussive parts by allocating some fraction of a point in time-frequency to each. This provides the fewest artefacts, but the weakest separation. The two resulting buffers will sum to exactly the original material.\n  1- Relative mode - Better separation, with more artefacts. The harmonic mask is constructed using a binary decision, based on whether a threshold is exceeded at a given time-frequency point (these are set using htf1, hta1, htf2, hta2, see below). The percussive mask is then formed as the inverse of the harmonic one, meaning that as above, the two components will sum to the original sound.\n  2- Inter-dependent mode - Thresholds can be varied independently, but are coupled in effect. Binary masks are made for each of the harmonic and percussive components, and the masks are converted to soft at the end so that everything null sums even if the params are independent, that is what makes it harder to control. These aren't guranteed to cover the whole sound; in this case the 'leftovers' will placed into a third buffer.\nIn modes 1 and 2, a list of exactly 4 float defining a threshold filter for the harmonic part: (amp-freq-amp-freq) Amplitudes are in dB, frequencies are normalised spectrum (0-1 where 1 is nyquist) The first threshold applies to all frequencies up to it: how much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic. The second threshold applies to all frequencies above it. The threshold between htf1 and htf2 is interpolated between both and values. How much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic.\nIn mode 2, a list of exactly 4 float defining a threshold filter for the percussive part. The values are behaving exactly as for harmThresh.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As HPSS relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As HPSS relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nThe default values are 1024 -1 -1, where -1 implies default behaviours: a hopSize of half the windowSize, and a FFTSize of the next power of 2 above the windowSize.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 25,
+					"linecount" : 31,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 336.0, 92.0, 342.0 ],
+					"patching_rect" : [ 39.0, 381.0, 91.0, 422.0 ],
 					"style" : "",
-					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\nharmBuf\npercBuf\nresBuf\nharmFiltSize\npercFiltSize\nmodeFlag\n0\n1\n2\nhtf1\nhta1\nhtf2\nhta2\nptf1\npta1\nptf2\npta2\nwinSize\nhopSize\nfftSize"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nharmonic\npercussive\nresidual\nharmFilterSize\npercFilterSize\nmaskingMode\n\n\n\n\n\n\n\n\nharmThresh\n\n\n\npercThresh\nfftSettings\n\n\n\n\n\nwarnings"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-14",
-					"linecount" : 10,
+					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 768.0, 794.0, 141.0 ],
+					"patching_rect" : [ 39.0, 804.0, 1161.0, 100.0 ],
 					"style" : "",
-					"text" : "Discussion:\nHPSS works by using median filters on the spectral magnitudes of a sound. It hinges on a simple modelling assumption that tonal components will tend to yield concentrations of energy across time, spread out in frequency, and percussive components will manifest as concentrations of energy across frequency, spread out in time. By using median filters across time and frequency respectively, we get initial esitmates of the tonal-ness / transient-ness of a point in time and frequency. These are then combined into 'masks' that are applied to the orginal spectral data in order to produce a separation.\n\nThe modeFlag parameter provides different approaches to combinging estimates and producing masks. Some settings (especially in modes 1 & 2) will provide better separation but with more artefacts. These can, in principle, be ameliorated by applying smoothing filters to the masks before transforming back to the time-domain (not yet implemented)."
+					"text" : "Discussion:\nHPSS works by using median filters on the spectral magnitudes of a sound. It hinges on a simple modelling assumption that tonal components will tend to yield concentrations of energy across time, spread out in frequency, and percussive components will manifest as concentrations of energy across frequency, spread out in time. By using median filters across time and frequency respectively, we get initial esitmates of the tonal-ness / transient-ness of a point in time and frequency. These are then combined into 'masks' that are applied to the orginal spectral data in order to produce a separation.\n\nThe maskingMode parameter provides different approaches to combinging estimates and producing masks. Some settings (especially in modes 1 & 2) will provide better separation but with more artefacts. These can, in principle, be ameliorated by applying smoothing filters to the masks before transforming back to the time-domain (not yet implemented)."
 				}
 
 			}
@@ -146,7 +161,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 31.0, 922.0, 758.0, 68.0 ],
+					"patching_rect" : [ 39.0, 922.0, 758.0, 68.0 ],
 					"style" : "",
 					"text" : "[1] - Fitzgerald, Derry. 2010. ‘Harmonic/Percussive Separation Using Median Filtering’. In Proceedings DaFx 10. https://arrow.dit.ie/argcon/67.\n[2] - Driedger, Jonathan, Meinard Uller, and Sascha Disch. 2014. ‘Extending Harmonic-Percussive Separation of Audio Signals’. In Proc. ISMIR. http://www.terasoft.com.tw/conf/ismir2014/proceedings/T110_127_Paper.pdf.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
 				}
@@ -195,7 +210,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -251,7 +266,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "pthresh",
+									"attr" : "percthresh",
 									"displaymode" : 4,
 									"id" : "obj-130",
 									"maxclass" : "attrui",
@@ -270,9 +285,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 765.0, 355.0, 98.0, 22.0 ],
+									"patching_rect" : [ 765.0, 355.0, 119.0, 22.0 ],
 									"style" : "",
-									"text" : "prepend hthresh"
+									"text" : "prepend harmthresh"
 								}
 
 							}
@@ -462,9 +477,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 773.0, 959.5, 98.0, 22.0 ],
+									"patching_rect" : [ 776.0, 874.5, 115.0, 22.0 ],
 									"style" : "",
-									"text" : "prepend pthresh"
+									"text" : "prepend percthresh"
 								}
 
 							}
@@ -475,7 +490,7 @@
 									"numinlets" : 4,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 773.0, 920.5, 63.0, 22.0 ],
+									"patching_rect" : [ 776.0, 835.5, 63.0, 22.0 ],
 									"style" : "",
 									"text" : "pack f f f f"
 								}
@@ -661,7 +676,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "resbuf",
+									"attr" : "residual",
 									"id" : "obj-111",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -709,9 +724,8 @@
 , 							{
 								"box" : 								{
 									"autopopulate" : 1,
-									"depth" : 1,
 									"id" : "obj-109",
-									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -741,7 +755,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-87",
 									"maxclass" : "attrui",
@@ -755,7 +769,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "percbuf",
+									"attr" : "percussive",
 									"id" : "obj-53",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -768,7 +782,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "harmbuf",
+									"attr" : "harmonic",
 									"id" : "obj-57",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -781,7 +795,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nchans",
+									"attr" : "numchans",
 									"id" : "obj-58",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -794,7 +808,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "startat",
+									"attr" : "startframe",
 									"id" : "obj-60",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -807,7 +821,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nframes",
+									"attr" : "numframes",
 									"id" : "obj-65",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -820,7 +834,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "srcbuf",
+									"attr" : "source",
 									"id" : "obj-69",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -833,13 +847,13 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "modeflag",
+									"attr" : "maskingmode",
 									"id" : "obj-5",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 260.5, 187.0, 183.0, 22.0 ],
+									"patching_rect" : [ 260.5, 187.0, 187.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -859,7 +873,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "pfiltsize",
+									"attr" : "percfiltersize",
 									"id" : "obj-74",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -872,7 +886,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "hfiltsize",
+									"attr" : "harmfiltersize",
 									"id" : "obj-79",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -885,7 +899,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "hthresh",
+									"attr" : "harmthresh",
 									"displaymode" : 4,
 									"id" : "obj-82",
 									"maxclass" : "attrui",
@@ -1321,9 +1335,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 37.0, 565.0, 394.0, 22.0 ],
+									"patching_rect" : [ 37.0, 565.0, 428.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufhpss~ @srcbuf src @harmbuf harm @percbuf perc @resbuf res"
+									"text" : "fluid.bufhpss~ @source src @harmonic harm @percussive perc @residual res"
 								}
 
 							}
@@ -1837,8 +1851,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1912,7 +1926,56 @@
 				"type" : "iLaX"
 			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "max6box",
+				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6inlet",
+				"default" : 				{
+					"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6message",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "gradient",
+						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "max6box",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6outlet",
+				"default" : 				{
+					"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

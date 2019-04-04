@@ -40,11 +40,25 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"fontface" : 1,
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 193.0, 66.0, 20.0 ],
+					"presentation_rect" : [ 36.0, 192.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "i/o:"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
 					"id" : "obj-24",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 282.0, 66.0, 20.0 ],
+					"patching_rect" : [ 39.0, 283.0, 66.0, 20.0 ],
 					"style" : "",
 					"text" : "message:"
 				}
@@ -183,7 +197,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1211.0, 910.0 ],
+						"rect" : [ 0.0, 26.0, 1211.0, 910.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -234,7 +248,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 996.0, 66.0, 50.0, 22.0 ],
-									"presentation_rect" : [ 953.0, 73.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -249,7 +262,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 915.0, 63.0, 50.0, 22.0 ],
-									"presentation_rect" : [ 872.0, 70.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -264,7 +276,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 857.0, 61.0, 50.0, 22.0 ],
-									"presentation_rect" : [ 814.0, 68.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -292,7 +303,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 753.0, 182.0, 50.0, 22.0 ],
-									"presentation_rect" : [ 753.0, 181.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -305,7 +315,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 753.0, 212.0, 105.0, 22.0 ],
-									"presentation_rect" : [ 753.0, 211.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "setMaxGroups $1"
 								}
@@ -513,8 +522,8 @@
 									"id" : "obj-20",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 872.0, 621.0, 108.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufcompose~"
@@ -940,9 +949,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

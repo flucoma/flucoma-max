@@ -185,7 +185,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 476.0, 799.0, 107.0, 22.0 ],
 					"style" : "",
-					"text" : "prepend dststartat"
+					"text" : "prepend deststartframe"
 				}
 
 			}
@@ -237,7 +237,7 @@
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 465.0, 826.0, 270.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufcompose~ @srcbuf source @dstbuf dest"
+					"text" : "fluid.bufcompose~ @source source @destination dest"
 				}
 
 			}

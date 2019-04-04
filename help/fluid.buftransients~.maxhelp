@@ -39,13 +39,27 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
+					"id" : "obj-19",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 314.0, 527.0, 20.0 ],
+					"patching_rect" : [ 39.0, 298.0, 42.0, 33.0 ],
 					"style" : "",
-					"text" : "This is the method that calls for the transient extraction to be performed on a given source buffer."
+					"text" : "bang\nreset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 109.0, 298.0, 214.0, 33.0 ],
+					"style" : "",
+					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
 				}
 
 			}
@@ -56,21 +70,22 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 294.0, 66.0, 20.0 ],
+					"patching_rect" : [ 39.0, 278.0, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "message:"
+					"text" : "messages:"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-19",
+					"fontface" : 1,
+					"id" : "obj-15",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 294.0, 338.0, 20.0 ],
+					"patching_rect" : [ 39.0, 345.0, 69.0, 20.0 ],
 					"style" : "",
-					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
+					"text" : "attributes:"
 				}
 
 			}
@@ -81,35 +96,22 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 340.0, 916.0, 275.0 ],
+					"patching_rect" : [ 119.0, 384.0, 1030.0, 275.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the srcBuf should the NMF process start, in sample.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel should be processed first.\nFor multichannel srcBuf, how many channel should be processed.\nThe index of the buffer where the extracted transient component will be reconstructed.\nThe index of the buffer where the estimated continuous component will be reconstructed.\nThe order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positive.\nThe window size in sample within which positive detections will be clumped together to avoid overdetecting in time."
+					"text" : "The name of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the srcBuf should the NMF process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer where the extracted transient component will be reconstructed.\nThe name of the buffer where the estimated continuous component will be reconstructed.\nThe order in samples of the impulse response filter used to model the estimated continuous signal. It is how many previous samples are used by the algorithm to predict the next one as reference for the model. The higher the order, the more accurate is its spectral definition, not unlike fft, improving low frequency resolution, but it differs in that it is not conected to its temporal resolution.\nThe size in samples of frame on which it the algorithm is operating. High values are more cpu intensive, and also determines the maximum transient size, which will not be allowed to be more than half that lenght in size.\nThe size of the handles on each sides of the block simply used for analysis purpose and avoid boundary issues.\nThe nervousness of the bespoke detection function with values from -10 to 10. It allows to decide how peaks are amplified or smoothed before the thresholding. High values increase the sensitivity to small variations.\nThe threshold of the onset of the smoothed error function. It allows tight start of the identification of the anomaly as it proceeds forward.\nThe threshold of the offset of the smoothed error function. As it proceeds backwards in time, it allows tight ending of the identification of the anomaly.\nThe averaging window of the error detection function. It needs smoothing as it is very jittery. The longer the window, the less precise, but the less false positive.\nThe window size in sample within which positive detections will be clumped together to avoid overdetecting in time.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 15,
+					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 92.0, 208.0 ],
+					"patching_rect" : [ 39.0, 384.0, 78.0, 275.0 ],
 					"style" : "",
-					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\ntransBuf\nresBuf\norder\nblockSize\npadSize\nskew\nthreshFwd\nthreshBack\nwinSize\ndebounce"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-14",
-					"linecount" : 6,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 718.0, 794.0, 87.0 ],
-					"style" : "",
-					"text" : "Discussion:\nIt is important to understand the rules used for determining the final desintinaiton buffer dimensions to get the most out of this object. The destination buffer will be resized to the maxima of the requsted source numFrames and numChannels, independently of whether the source buffers are that big or not. Frames will be written up to the limit of actually available samples (meaning you can create zero padding);channels will be written modulo the available channels, taking into account the channel offsets, meaning you can have channels repeat or loop into the desintation buffer's channels. See the examples below."
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ntransients\nresidual\norder\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce\nwarnings"
 				}
 
 			}
@@ -155,11 +157,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
-					"linecount" : 12,
+					"linecount" : 10,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 846.0, 167.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1031.0, 141.0 ],
 					"style" : "",
 					"text" : "This class triggers a transient extractor on buffers on the non-real-time thread of the server. It implements declicking algorithm from chapter 5 of the classic Digital Audio Restoration by Godsill, Simon J., Rayner, Peter J.W. with some bespoke improvements on the detection function tracking. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe algorithm will take a buffer in, and will divide it in two outputs:\n• the transients, estimated from the signal and extracted from it;\n• the remainder of the material, as estimated by the algorithm.\n\nThe whole process is based on the assumption that a transient is an element that is deviating from the surrounding material, as sort of click or anomaly. The algorithm then estimates what should have happened if the signal had followed its normal path, and resynthesises this estimate, removing the anomaly which is considered as the transient. More information on signal estimation, and on its musicianly usage, are availabe in The Fluid Corpus Manipulation Project overview file."
 				}
@@ -195,7 +197,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -260,9 +262,8 @@
 , 							{
 								"box" : 								{
 									"autopopulate" : 1,
-									"depth" : 1,
 									"id" : "obj-66",
-									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -305,7 +306,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "resbuf",
+									"attr" : "residual",
 									"id" : "obj-56",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -318,7 +319,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "transbuf",
+									"attr" : "transients",
 									"id" : "obj-54",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -331,7 +332,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nchans",
+									"attr" : "numchans",
 									"id" : "obj-51",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -344,7 +345,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "startat",
+									"attr" : "startframe",
 									"id" : "obj-48",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -357,7 +358,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nframes",
+									"attr" : "numframes",
 									"id" : "obj-38",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -370,7 +371,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "srcbuf",
+									"attr" : "source",
 									"id" : "obj-37",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1023,9 +1024,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 64.0, 685.0, 356.0, 22.0 ],
+									"patching_rect" : [ 64.0, 685.0, 377.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.buftransients~ @srcbuf src @resbuf clean @transbuf spikes"
+									"text" : "fluid.buftransients~ @source src @residual clean @transients spikes"
 								}
 
 							}
@@ -1442,8 +1443,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1514,7 +1515,56 @@
 				"type" : "iLaX"
 			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "max6box",
+				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6inlet",
+				"default" : 				{
+					"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6message",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "gradient",
+						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "max6box",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6outlet",
+				"default" : 				{
+					"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

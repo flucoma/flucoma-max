@@ -21,7 +21,7 @@ namespace fluid {
 namespace client {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
-    
+
 namespace impl {
 
 template <typename Wrapper>
@@ -32,7 +32,7 @@ t_max_err getLatency(Wrapper *x, t_object *attr, long *ac, t_atom **av)
   atom_setlong(*av, x->client().latency());
   return MAX_ERR_NONE;
 }
-    
+
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 template <class Wrapper>
@@ -46,6 +46,7 @@ public:
     class_dspinit(c);
     class_addmethod(c, (method) callDSP, "dsp64", A_CANT, 0);
     class_addattr(c, attribute_new("latency", USESYM(long), 0, (method) getLatency<Wrapper>, nullptr));
+    CLASS_ATTR_LABEL(c, "latency", 0, "Latency");
   }
 
   static void callDSP(Wrapper *x, t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
@@ -207,12 +208,12 @@ struct FluidMaxBase<Wrapper, std::true_type, std::true_type> : public MaxBase, p
 //////////////////////////////////////////////////////////////////////////////////////////////////
 
 } // namespace impl
-  
+
 template <typename Client>
 class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>
 {
   using WrapperBase = impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>;
-  
+
   friend impl::RealTime<FluidMaxWrapper<Client>>;
   friend impl::NonRealTime<FluidMaxWrapper<Client>>;
 
@@ -222,7 +223,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   static void printResult(FluidMaxWrapper<Client>* x, Result& r)
   {
     if (!x) return;
-    
+
     if (x->verbose() && !x->messages().ok())
     {
       switch (x->messages().status())
@@ -234,9 +235,9 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       }
     }
   }
-  
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  
+
   template <size_t N, typename T, T Method(const t_atom *av)>
   struct FetchValue
   {
@@ -246,94 +247,94 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       return currentCount < ac ? Method(av + currentCount++) : defaultValue;
     }
   };
-  
+
   template <size_t N, typename T>
   struct Fetcher;
-  
+
   template <size_t N>
   struct Fetcher<N, FloatT> : public FetchValue<N, t_atom_float, atom_getfloat>
   {};
-  
+
   template <size_t N>
   struct Fetcher<N, LongT> : public FetchValue<N, t_atom_long, atom_getlong>
   {};
-  
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  
+
   // Setter
-  
+
   template<typename T, size_t N>
   struct Setter
   {
     static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
-    
+
     static auto fromAtom(t_object * x, t_atom *a, LongT::type) { return atom_getlong(a); }
     static auto fromAtom(t_object * x, t_atom *a, FloatT::type) { return atom_getfloat(a); }
-    
+
     static auto fromAtom(t_object * x, t_atom *a, BufferT::type)
     {
       return BufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
-    
+
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
     {
       ParamLiteralConvertor<T, argSize> a;
       a.set(paramDescriptor<N>().defaultValue);
 
       x->messages().reset();
-      
+
       for (auto i = 0; i < argSize && i < ac; i++)
         a[i] = fromAtom((t_object *) x, av + i, a[0]);
-      
+
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
       printResult(x, x->messages());
       object_attr_touch((t_object *) x, gensym("latency"));
       return MAX_ERR_NONE;
     }
   };
-  
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  
+
   // Getter
-  
+
   template<typename T, size_t N>
   struct Getter
   {
     static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
-    
+
     static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
     static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
-    
+
     static auto toAtom(t_atom *a, BufferT::type v)
     {
       auto b = static_cast<MaxBufferAdaptor *>(v.get());
       atom_setsym(a, b ? b->name() : nullptr);
     }
-    
+
     static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
     {
       ParamLiteralConvertor<T, argSize> a;
-      
+
       char alloc;
       atom_alloc_array(argSize, ac, av, &alloc);
-      
+
       a.set(x->params().template get<N>());
-      
+
       for (auto i = 0; i < argSize; i++)
         toAtom(*av + i, a[i]);
-      
+
       return MAX_ERR_NONE;
     }
   };
-  
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
-  
+
   template<size_t, typename>
   struct Notify
   {
     static void notify(FluidMaxWrapper<Client>*, t_symbol*, t_symbol*, void*, void*) {}
   };
-  
+
   template<size_t N>
   struct Notify<N, BufferT>
   {
@@ -342,12 +343,12 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       if (auto p = static_cast<MaxBufferAdaptor *>(x->params().template get<N>().get())) p->notify(s, msg, sender, data);
     }
   };
-  
+
 public:
-  
+
   using ParamDescType = typename Client::ParamDescType;
   using ParamSetType = typename Client::ParamSetType;
-  
+
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
     : mParams(Client::getParameterDescriptors())
     , mClient{initParamsFromArgs(ac,av)}
@@ -359,10 +360,10 @@ public:
     }
 
     auto results = mParams.keepConstrained(true);
-      
+
     for (auto &r : results)
       printResult(this, r);
-      
+
     object_obex_store(this, _sym_dumpout, (t_object *) outlet_new(this, nullptr));
 
     if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
@@ -386,22 +387,22 @@ public:
 
     return x;
   }
-  
+
   static void destroy(FluidMaxWrapper * x)
   {
     x->~FluidMaxWrapper();
   }
-  
+
   static void makeClass(const char *className)
   {
     const ParamDescType& p = Client::getParameterDescriptors();
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     WrapperBase::setup(getClass());
-    
+
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
-    
+
     CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
@@ -497,11 +498,11 @@ private:
       CLASS_ATTR_LABEL(getClass(), name.c_str(), 0, attr.displayName);
       decorateAttr(attr,name);
     }
-    
+
     template<typename U>
     void decorateAttr(const U &attr, std::string name)
     {}
-    
+
     void decorateAttr(const EnumT& attr, std::string name)
     {
       std::stringstream enumstrings;
@@ -510,7 +511,7 @@ private:
       CLASS_ATTR_STYLE(getClass(), name.c_str(),0,"enum");
       CLASS_ATTR_ENUMINDEX(getClass(), name.c_str(), 0, enumstrings.str().c_str());
     }
-    
+
   };
 
   // Get Symbols for attribute types
@@ -537,18 +538,18 @@ struct InputTypeWrapper
 {
   using type = double;
 };
-    
+
 template<>
 struct InputTypeWrapper<std::false_type>
 {
   using type = float;
 };
-    
+
 template <template <typename T> class Client>
 void makeMaxWrapper(const char *classname)
 {
   using InputType = typename InputTypeWrapper<isRealTime<Client<double>>>::type;
-    
+
   FluidMaxWrapper<Client<InputType>>::makeClass(classname);
 }
 

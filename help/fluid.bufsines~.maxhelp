@@ -39,77 +39,79 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
+					"id" : "obj-4",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 306.0, 668.0, 20.0 ],
+					"patching_rect" : [ 39.0, 306.0, 42.0, 33.0 ],
 					"style" : "",
-					"text" : "This is the method that calls for the sinusoidal estimation to be calculated on a given source buffer and to be resynthesised."
+					"text" : "bang\nreset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-20",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 109.0, 306.0, 214.0, 33.0 ],
+					"style" : "",
+					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"fontface" : 1,
-					"id" : "obj-24",
+					"id" : "obj-7",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 286.0, 66.0, 20.0 ],
+					"patching_rect" : [ 39.0, 286.0, 73.0, 20.0 ],
 					"style" : "",
-					"text" : "message:"
+					"text" : "messages:"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-19",
+					"fontface" : 1,
+					"id" : "obj-9",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 286.0, 338.0, 20.0 ],
+					"patching_rect" : [ 39.0, 353.0, 69.0, 20.0 ],
 					"style" : "",
-					"text" : "process srcBuf <startAt> <nFrames> <startChan> <nChans> "
+					"text" : "attributes:"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 17,
+					"linecount" : 19,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 143.0, 339.0, 1062.0, 234.0 ],
+					"patching_rect" : [ 115.0, 375.0, 1068.0, 261.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the srcBuf should the process start, in sample.\nHow many frames should be processed.\nFor multichannel srcBuf, which channel should be processed first.\nFor multichannel srcBuf, how many channel should be processed.\nThe index of the buffer where the extracted sinusoidal component will be reconstructed.\nThe index of the buffer where the residual of the sinusoidal component will be reconstructed.\nThe width in bins of the fragment of the fft window that is considered a normal deviation for a potential continuous sinusoidal track. It has an effect on CPU cost: the widest is more accurate but more computationally expensive.\nThe normalised threshold, between 0 an 1, to consider a peak as a sinusoidal component from the normalized cross-correlation.\nThe minimum duration, in spectral frames, for a sinusoidal track to be accepted as a partial. It allows to remove space-monkeys, but is more CPU intensive and might reject quick pitch material.\nThe weight of the magnitude proximity of a peak when trying to associate it to an existing track (relative to freqWeight - suggested between 0 to 1)\nThe weight of the frequency proximity of a peak when trying to associate it to an existing track (relative to magWeight - suggested between 0 to 1)\nThe window size. As sinusoidal estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty\nThe window hope size. As sinusoidal estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap will create audible artefacts.\nThe inner FFT/IFFT size. It should be at least 4 samples long, at least the size of the window, and a power of 2. Making it larger allows an oversampling of the spectral precision."
+					"text" : "The name of the buffer to use as the source material to be decomposed through the sinusoidal modelling process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer where the extracted sinusoidal component will be reconstructed.\nThe name of the buffer where the residual of the sinusoidal component will be reconstructed.\nThe width in bins of the fragment of the fft window that is considered a normal deviation for a potential continuous sinusoidal track. It has an effect on CPU cost: the widest is more accurate but more computationally expensive.\nThe normalised threshold, between 0 an 1, to consider a peak as a sinusoidal component from the normalized cross-correlation.\nThe minimum duration, in spectral frames, for a sinusoidal track to be accepted as a partial. It allows to remove space-monkeys, but is more CPU intensive and might reject quick pitch material.\nThe weight of the magnitude proximity of a peak when trying to associate it to an existing track (relative to freqWeight - suggested between 0 to 1)\nThe weight of the frequency proximity of a peak when trying to associate it to an existing track (relative to magWeight - suggested between 0 to 1)\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 15,
+					"linecount" : 19,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 339.0, 92.0, 208.0 ],
+					"patching_rect" : [ 39.0, 375.0, 83.0, 261.0 ],
 					"style" : "",
-					"text" : "srcBuf\nstartAt\nnFrames\nstartChan\nnChans\nsineBuf\nresBuf\nbandwidth\nthresh\nminTrackLen\nmagWeight\nfreqWeight\nwinSize\nhopSize\nfftSize"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-14",
-					"linecount" : 6,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 717.0, 794.0, 87.0 ],
-					"style" : "",
-					"text" : "Discussion:\nIt is important to understand the rules used for determining the final desintinaiton buffer dimensions to get the most out of this object. The destination buffer will be resized to the maxima of the requsted source numFrames and numChannels, independently of whether the source buffers are that big or not. Frames will be written up to the limit of actually available samples (meaning you can create zero padding);channels will be written modulo the available channels, taking into account the channel offsets, meaning you can have channels repeat or loop into the desintation buffer's channels. See the examples below."
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nsines\nresidual\nbandwidth\n\nthreshold\nminTrackLen\nmagWeight\nfreqWeight\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
@@ -195,7 +197,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -225,7 +227,7 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"attr" : "fft",
+									"attr" : "fftsettings",
 									"displaymode" : 3,
 									"id" : "obj-53",
 									"maxclass" : "attrui",
@@ -239,7 +241,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "resbuf",
+									"attr" : "residual",
 									"id" : "obj-56",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -252,7 +254,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "sinesbuf",
+									"attr" : "sines",
 									"id" : "obj-54",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -265,7 +267,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nchans",
+									"attr" : "numchans",
 									"id" : "obj-51",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -278,7 +280,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "startat",
+									"attr" : "startframe",
 									"id" : "obj-33",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -291,7 +293,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "nframes",
+									"attr" : "numframes",
 									"id" : "obj-34",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -304,7 +306,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "srcbuf",
+									"attr" : "source",
 									"id" : "obj-37",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -356,7 +358,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "bw",
+									"attr" : "bandwidth",
 									"id" : "obj-27",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -369,7 +371,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "thresh",
+									"attr" : "threshold",
 									"id" : "obj-41",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -443,9 +445,8 @@
 , 							{
 								"box" : 								{
 									"autopopulate" : 1,
-									"depth" : 1,
 									"id" : "obj-11",
-									"items" : [ "-credits.txt", ",", "filters", ",", "filters/piano-dicts.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -608,7 +609,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 721.0, 85.0, 22.0 ],
 									"style" : "",
-									"text" : "1025.6"
+									"text" : "3367.04464"
 								}
 
 							}
@@ -657,9 +658,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 514.0, 704.0, 72.0, 22.0 ],
+									"patching_rect" : [ 514.0, 704.0, 47.0, 22.0 ],
 									"style" : "",
-									"text" : "set residual"
+									"text" : "set res"
 								}
 
 							}
@@ -670,9 +671,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 514.0, 670.0, 58.0, 22.0 ],
+									"patching_rect" : [ 514.0, 670.0, 45.0, 22.0 ],
 									"style" : "",
-									"text" : "set sines"
+									"text" : "set sin"
 								}
 
 							}
@@ -785,9 +786,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 582.0, 331.5, 93.0, 22.0 ],
+									"patching_rect" : [ 582.0, 331.5, 68.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ residual"
+									"text" : "buffer~ res"
 								}
 
 							}
@@ -798,9 +799,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 582.0, 294.5, 79.0, 22.0 ],
+									"patching_rect" : [ 582.0, 294.5, 67.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ sines"
+									"text" : "buffer~ sin"
 								}
 
 							}
@@ -811,9 +812,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 82.0, 545.0, 518.0, 22.0 ],
+									"patching_rect" : [ 82.0, 545.0, 533.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufsines~ @thresh 0.3 @srcbuf src @sinesbuf sines @resbuf residual @fft 1024 512 8192"
+									"text" : "fluid.bufsines~ @threshold 0.3 @source src @sines sin @residual res @fftsettings 1024 512 8192"
 								}
 
 							}
@@ -1035,8 +1036,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1103,7 +1104,56 @@
 				"type" : "iLaX"
 			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "max6box",
+				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6inlet",
+				"default" : 				{
+					"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6message",
+				"default" : 				{
+					"bgfillcolor" : 					{
+						"type" : "gradient",
+						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+				}
+,
+				"parentstyle" : "max6box",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6outlet",
+				"default" : 				{
+					"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

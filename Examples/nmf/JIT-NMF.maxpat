@@ -918,7 +918,7 @@
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 44.5, 493.5, 404.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufnmf~ @rank 3 @fft 512 256 1024 @srcbuf input @nframes 22500"
+					"text" : "fluid.bufnmf~ @rank 3 @fft 512 256 1024 @source input @nframes 22500"
 				}
 
 			}
