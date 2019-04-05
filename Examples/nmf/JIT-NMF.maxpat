@@ -58,7 +58,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 58.29425, 588.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "85.76868"
+					"text" : "70.077856"
 				}
 
 			}
@@ -519,9 +519,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 62.29425, 444.0, 101.0, 22.0 ],
+					"patching_rect" : [ 62.29425, 444.0, 121.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf startat %d"
+					"text" : "sprintf startframe %d"
 				}
 
 			}
@@ -762,9 +762,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 172.0, 444.0, 163.0, 22.0 ],
+					"patching_rect" : [ 195.0, 444.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf resynthbuf resynth%d"
+					"text" : "sprintf resynth resynth%d"
 				}
 
 			}
@@ -916,9 +916,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 44.5, 493.5, 404.0, 22.0 ],
+					"patching_rect" : [ 44.5, 493.5, 464.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufnmf~ @rank 3 @fft 512 256 1024 @source input @nframes 22500"
+					"text" : "fluid.bufnmf~ @rank 3 @fftsettings 512 256 1024 @source input @numframes 22500"
 				}
 
 			}
@@ -1418,9 +1418,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1438,7 +1438,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1448,7 +1447,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
