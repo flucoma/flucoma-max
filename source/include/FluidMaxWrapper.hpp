@@ -62,7 +62,10 @@ public:
   void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
   {
     Wrapper *wrapper = static_cast<Wrapper *>(this);
+    
+    wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
     auto &   client  = wrapper->client();
+    client.sampleRate(samplerate);
 
     audioInputConnections.resize(client.audioChannelsIn());
     std::copy(count, count + client.audioChannelsIn(), audioInputConnections.begin());
@@ -346,6 +349,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
 
 public:
 
+  using ClientType    = Client;
   using ParamDescType = typename Client::ParamDescType;
   using ParamSetType = typename Client::ParamSetType;
 
