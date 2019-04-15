@@ -55,7 +55,7 @@ public:
     //      return getBuffer();
   }
 
-  void resize(size_t frames, size_t channels, size_t rank) override
+  void resize(size_t frames, size_t channels, size_t rank,double sampleRate) override
   {
     t_object *buffer = getBuffer();
 
@@ -75,7 +75,10 @@ public:
       atom_setlong(&newsize, frames);
       t_symbol *sampsMsg = gensym("sizeinsamps");
       object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
-
+      t_atom sr;
+      atom_setfloat(&sr,sampleRate);
+      t_symbol *srMsg = gensym("sr");
+      object_method_typed(buffer,srMsg,1,&sr,nullptr); 
       object_method(buffer, gensym("dirty"));
       buffer_edit_end(buffer, 1);
       lockSamps();
@@ -126,6 +129,8 @@ public:
   size_t numChans() const override { return valid() ? buffer_getchannelcount(getBuffer()) / mRank : 0; }
 
   size_t rank() const override { return valid() ? mRank : 0; }
+  
+  double sampleRate() const override { return valid() ? buffer_getsamplerate(getBuffer()) : 0; }
 
 private:
     
