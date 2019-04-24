@@ -354,8 +354,9 @@ public:
   using ParamSetType = typename Client::ParamSetType;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
-    : mParams(Client::getParameterDescriptors())
-    , mClient{initParamsFromArgs(ac,av)}
+    : mParams(Client::getParameterDescriptors()),
+      mParamSnapshot(Client::getParameterDescriptors()),
+      mClient{initParamsFromArgs(ac,av)}
   {
     if (mClient.audioChannelsIn())
     {
@@ -418,7 +419,7 @@ public:
 
   static void doReset(FluidMaxWrapper *x)
   {
-    x->params().reset();
+    x->mParams = ParamSetType{x->mParamSnapshot}; 
     x->params().template forEachParam<touchAttribute>(x);
   }
 
@@ -483,6 +484,7 @@ private:
     // process in-box attributes for mutable params
     attr_args_process((t_object *) this, ac, av);
     // return params so this can be called in client initaliser
+    mParamSnapshot = ParamSetType{mParams};
     return mParams;
   }
 
@@ -532,6 +534,7 @@ private:
   void *        mControlOutlet;
   bool          mVerbose;
   ParamSetType  mParams;
+  ParamSetType  mParamSnapshot;
   Client        mClient;
 };
 
