@@ -419,7 +419,7 @@ public:
 
   static void doReset(FluidMaxWrapper *x)
   {
-    x->mParams = ParamSetType{x->mParamSnapshot}; 
+    x->mParams.reset();  // = ParamSetType{x->mParamSnapshot};
     x->params().template forEachParam<touchAttribute>(x);
   }
 
@@ -484,7 +484,7 @@ private:
     // process in-box attributes for mutable params
     attr_args_process((t_object *) this, ac, av);
     // return params so this can be called in client initaliser
-    mParamSnapshot = ParamSetType{mParams};
+//    mParamSnapshot = ParamSetType{mParams};
     return mParams;
   }
 
