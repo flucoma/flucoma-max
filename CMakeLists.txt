@@ -17,7 +17,9 @@ set(CMAKE_XCODE_GENERATE_SCHEME ON)
 
 # set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-
+if (APPLE)
+	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
+endif() 
 # Fetch the correct verion of the max-api
 #message(STATUS "Updating Git Submodules")
 #execute_process(
@@ -51,14 +53,27 @@ endif()
 file(COPY ${FLUID_ABS_PATH}/AudioFiles/ DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/media/)
 include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
 
+
+get_property(FFT_SOURCES TARGET HISSTools_FFT  PROPERTY INTERFACE_SOURCES)
+get_property(FFT_LINK TARGET HISSTools_FFT  PROPERTY INTERFACE_LINK_LIBRARIES)
+
+add_library(FFTLIB STATIC ${FFT_SOURCES})
+target_link_libraries(
+  FFTLIB PRIVATE ${FFT_LINK}
+)
+target_compile_options(
+  FFTLIB PRIVATE "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
+)
+
 add_library( FLUID_MAX INTERFACE )
 target_sources(
 	FLUID_MAX INTERFACE
-	# "${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxClass_Base.h"
-	# "${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxNonRealTimeBase.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/FluidMaxWrapper.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxBufferAdaptor.hpp"
 )
+
+
+
 
 # Make sure to build targets from fluid_decomposition
 # add_subdirectory(${FLUID_ABS_PATH} ${FLUID_ABS_PATH}/build)

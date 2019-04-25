@@ -4,15 +4,28 @@
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
-target_link_libraries(${PROJECT_NAME} PUBLIC FLUID_DECOMPOSITION  FLUID_MAX)
+target_link_libraries(${PROJECT_NAME}
+PUBLIC FLUID_DECOMPOSITION  FLUID_MAX
+PRIVATE FFTLIB
+)
+
+target_include_directories (
+	${PROJECT_NAME}
+	PRIVATE
+	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
+)
+
+if(MSVC)
+  target_compile_options(${PROJECT_NAME}PRIVATE /W4 /WX)
+else()
+  target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
+endif()
 
 target_include_directories( ${PROJECT_NAME}
 	SYSTEM PRIVATE
 	"${C74_MAX_INCLUDES}"
 	"${C74_MSP_INCLUDES}"
 	"${C74_JIT_INCLUDES}"
-	PRIVATE
-	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
 )
 
 get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
@@ -25,11 +38,11 @@ else ()
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${EXTERN_OUTPUT_NAME}")
 
-# target_compile_features(
-# ${PROJECT_NAME}
-# PUBLIC
-# "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
-# )
+target_compile_options(
+${PROJECT_NAME}
+PUBLIC
+"$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
+)
 
 
 
