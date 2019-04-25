@@ -5,7 +5,7 @@
 
 
 
-void ext_main(void *r)
+void ext_main(void*)
 {
   using namespace fluid::client;
   

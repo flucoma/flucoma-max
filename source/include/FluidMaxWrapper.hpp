@@ -25,11 +25,11 @@ namespace client {
 namespace impl {
 
 template <typename Wrapper>
-t_max_err getLatency(Wrapper *x, t_object *attr, long *ac, t_atom **av)
+t_max_err getLatency(Wrapper *x, t_object */*attr*/, long *ac, t_atom **av)
 {
   char alloc;
   atom_alloc(ac, av, &alloc);
-  atom_setlong(*av, x->client().latency());
+  atom_setlong(*av, static_cast<t_atom_long>(x->client().latency()));
   return MAX_ERR_NONE;
 }
 
@@ -59,7 +59,7 @@ public:
     x->perform(dsp64, ins, numins, outs, numouts, vec_size, flags, userparam);
   }
 
-  void dsp(t_object *dsp64, short *count, double samplerate, long maxvectorsize, long flags)
+  void dsp(t_object *dsp64, short *count, double samplerate, long /*maxvectorsize*/, long /*flags*/)
   {
     Wrapper *wrapper = static_cast<Wrapper *>(this);
     
@@ -92,17 +92,17 @@ public:
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
   }
 
-  void perform(t_object *dsp64, double **ins, long numins, double **outs, long numouts, long sampleframes, long flags, void *userparam)
+  void perform(t_object */*dsp64*/, double **ins, long numins, double **outs, long /*numouts*/, long sampleframes, long /*flags*/, void*/*userparam*/)
   {
     auto &client = static_cast<Wrapper *>(this)->mClient;
-    for (int i = 0; i < numins; ++i)
+    for (auto i = 0u; i < static_cast<size_t>(numins); ++i)
       if (audioInputConnections[i]) mInputs[i].reset(ins[i], 0, sampleframes);
 
-    for (int i = 0; i < client.audioChannelsOut(); ++i)
+    for (auto i = 0u; i < client.audioChannelsOut(); ++i)
       // if(audioOutputConnections[i])
       mOutputs[i].reset(outs[i], 0, sampleframes);
 
-    for (int i = 0; i < client.controlChannelsOut(); ++i) mOutputs[i].reset(&mControlOutputs[i], 0, 1);
+    for (auto i = 0u; i < client.controlChannelsOut(); ++i) mOutputs[i].reset(&mControlOutputs[i], 0, 1);
 
     client.process(mInputs, mOutputs);
 
@@ -113,9 +113,9 @@ public:
   {
     Wrapper *w      = static_cast<Wrapper *>(this);
     auto &   client = w->client();
-    atom_setdouble_array(client.controlChannelsOut(), mControlAtoms.data(), client.controlChannelsOut(),
+    atom_setdouble_array(static_cast<long>(client.controlChannelsOut()), mControlAtoms.data(), static_cast<long>(client.controlChannelsOut()),
                          mControlOutputs.data());
-    w->controlOut(client.controlChannelsOut(), mControlAtoms.data());
+    w->controlOut(static_cast<long>(client.controlChannelsOut()), mControlAtoms.data());
   }
 
 private:
@@ -136,7 +136,7 @@ struct NonRealTime
 {
   static void setup(t_class *c) { class_addmethod(c, (method) deferProcess, "bang", A_GIMME, 0); }
 
-  void process(t_symbol *s, long ac, t_atom *av)
+  void process(t_symbol*/*s*/, long /*ac*/, t_atom */*av*/)
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client  = wrapper.mClient;
@@ -156,7 +156,7 @@ struct NonRealTime
     wrapper.doneBang();
   }
 
-  static void deferProcess(Wrapper *x, t_symbol *s, long ac, t_atom *av) { defer(x, (method) &callProcess, s, ac, av); }
+  static void deferProcess(Wrapper *x, t_symbol *s, long ac, t_atom *av) { defer(x, (method) &callProcess, s, static_cast<short>(ac), av); }
 
   static void callProcess(Wrapper *x, t_symbol *s, short ac, t_atom *av) { x->process(s, ac, av); }
 };
@@ -271,22 +271,22 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   {
     static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
 
-    static auto fromAtom(t_object * x, t_atom *a, LongT::type) { return atom_getlong(a); }
-    static auto fromAtom(t_object * x, t_atom *a, FloatT::type) { return atom_getfloat(a); }
+    static auto fromAtom(t_object* /*x*/, t_atom *a, LongT::type) { return atom_getlong(a); }
+    static auto fromAtom(t_object* /*x*/, t_atom *a, FloatT::type) { return atom_getfloat(a); }
 
     static auto fromAtom(t_object * x, t_atom *a, BufferT::type)
     {
       return BufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
 
-    static t_max_err set(FluidMaxWrapper<Client>* x, t_object *attr, long ac, t_atom *av)
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
     {
       ParamLiteralConvertor<T, argSize> a;
       a.set(paramDescriptor<N>().defaultValue);
 
       x->messages().reset();
 
-      for (auto i = 0; i < argSize && i < ac; i++)
+      for (auto i = 0u; i < argSize && i < static_cast<size_t>(ac); i++)
         a[i] = fromAtom((t_object *) x, av + i, a[0]);
 
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
@@ -314,7 +314,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       atom_setsym(a, b ? b->name() : nullptr);
     }
 
-    static t_max_err get(FluidMaxWrapper<Client>* x, t_object *attr, long *ac, t_atom **av)
+    static t_max_err get(FluidMaxWrapper<Client>* x, t_object */*attr*/, long *ac, t_atom **av)
     {
       ParamLiteralConvertor<T, argSize> a;
 
@@ -323,7 +323,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
 
       a.set(x->params().template get<N>());
 
-      for (auto i = 0; i < argSize; i++)
+      for (auto i = 0u; i < argSize; i++)
         toAtom(*av + i, a[i]);
 
       return MAX_ERR_NONE;
@@ -376,19 +376,19 @@ public:
 
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
 
-    for (int i = 0; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
+    for (auto i = 0u; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
   }
 
   void doneBang() { outlet_bang(mNRTDoneOutlet); }
 
-  void controlOut(long ac, t_atom *av) { outlet_list(mControlOutlet, nullptr, ac, av); }
+  void controlOut(long ac, t_atom *av) { outlet_list(mControlOutlet, nullptr, static_cast<short>(ac), av); }
 
   static void *create(t_symbol *sym, long ac, t_atom *av)
   {
     void *x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
 
-    if (attr_args_offset(ac, av) > ParamDescType::NumFixedParams)
+    if (static_cast<size_t>(attr_args_offset(static_cast<short>(ac), av)) > ParamDescType::NumFixedParams)
     { object_warn((t_object *) x, "Too many arguments. Got %d, expect at most %d", ac, ParamDescType::NumFixedParams); }
 
     return x;
@@ -458,7 +458,7 @@ private:
   template <size_t N, typename T>
   struct notifyAttribute
   {
-    void operator()(const typename T::type &attr, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
+    void operator()(const typename T::type &/*attr*/, FluidMaxWrapper *x, t_symbol *s, t_symbol *msg, void *sender, void *data)
     {
       Notify<N,T>::notify(x, s, msg, sender, data);
     }
@@ -467,7 +467,7 @@ private:
   template <size_t N, typename T>
   struct touchAttribute
   {
-    void operator()(const typename T::type &attr, FluidMaxWrapper *x)
+    void operator()(const typename T::type &/*attr*/, FluidMaxWrapper *x)
     {
       const char* name = paramDescriptor<N>().name;
       object_attr_touch((t_object *) x, gensym(FluidMaxWrapper::lowerCase(name).c_str()));
@@ -477,13 +477,13 @@ private:
   ParamSetType &initParamsFromArgs(long ac, t_atom *av)
   {
     // Process arguments for instantiation parameters
-    if (long numArgs = attr_args_offset(ac, av))
+    if (long numArgs = attr_args_offset(static_cast<short>(ac), av))
     {
       long argCount{0};
       mParams.template setFixedParameterValues<Fetcher>(true, numArgs, av, argCount);
     }
     // process in-box attributes for mutable params
-    attr_args_process((t_object *) this, ac, av);
+    attr_args_process((t_object *) this, static_cast<short>(ac), av);
     // return params so this can be called in client initaliser    
     return mParams;
   }
@@ -506,14 +506,14 @@ private:
     }
 
     template<typename U>
-    void decorateAttr(const U &attr, std::string name)
+    void decorateAttr(const U &/*attr*/, std::string /*name*/)
     {}
 
     void decorateAttr(const EnumT& attr, std::string name)
     {
       std::stringstream enumstrings;
       std::cout << "here";
-      for(int i = 0; i < attr.numOptions;++i) enumstrings << attr.strings[i] << ' ';
+      for(auto i = 0u; i < attr.numOptions;++i) enumstrings << attr.strings[i] << ' ';
       CLASS_ATTR_STYLE(getClass(), name.c_str(),0,"enum");
       CLASS_ATTR_ENUMINDEX(getClass(), name.c_str(), 0, enumstrings.str().c_str());
     }

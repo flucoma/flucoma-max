@@ -1,4 +1,6 @@
 #pragma once
+//We get lots of this warning because C74 macros, and can't (AFAICS) do anything else but mute them:
+#pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
 
 #include <clients/common/BufferAdaptor.hpp>
 #include <data/FluidTensor.hpp>
@@ -14,8 +16,8 @@ public:
       : mHostObject(x)
       , mName(name)
       , mSamps(nullptr)
-      , mRank(1)
       , mBufref{buffer_ref_new(mHostObject, mName)}
+      , mRank(1)
       , mLock(false)
   {}
 
@@ -41,7 +43,7 @@ public:
     return *this;
   }
 
-  t_symbol *const name() { return mName; }
+  t_symbol * name() const { return mName; }
 
   bool exists() const override
   {
@@ -67,12 +69,12 @@ public:
 
       t_atom args[2];
       atom_setfloat(&args[0], 0.);
-      atom_setlong(&args[1], rank * channels);
+      atom_setlong(&args[1], static_cast<t_atom_long>(rank * channels));
       t_symbol *setSizeMsg = gensym("setsize");
-      auto      res        = object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
+      /*auto      res        = */object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
       object_method(buffer, gensym("dirty"));
       t_atom newsize;
-      atom_setlong(&newsize, frames);
+      atom_setlong(&newsize, static_cast<t_atom_long>(frames));
       t_symbol *sampsMsg = gensym("sizeinsamps");
       object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
       t_atom sr;
@@ -124,9 +126,9 @@ public:
     return buffer_ref_notify(mBufref, s, msg, sender, data);
   }
 
-  size_t numFrames() const override { return valid() ? buffer_getframecount(getBuffer()) : 0; }
+  size_t numFrames() const override { return valid() ? static_cast<size_t>(buffer_getframecount(getBuffer())) : 0; }
 
-  size_t numChans() const override { return valid() ? buffer_getchannelcount(getBuffer()) / mRank : 0; }
+  size_t numChans() const override { return valid() ? static_cast<size_t>(buffer_getchannelcount(getBuffer())) / mRank : 0; }
 
   size_t rank() const override { return valid() ? mRank : 0; }
   
