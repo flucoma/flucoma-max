@@ -1,5 +1,9 @@
 cmake_minimum_required(VERSION 3.3)
 
+if (APPLE)
+	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
+endif()
+
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -17,9 +21,6 @@ set(CMAKE_XCODE_GENERATE_SCHEME ON)
 
 # set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-if (APPLE)
-	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
-endif()
 # Fetch the correct verion of the max-api
 #message(STATUS "Updating Git Submodules")
 #execute_process(
@@ -65,6 +66,8 @@ target_link_libraries(
 # target_compile_options(
 #   FFTLIB PRIVATE "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
 # )
+
+set_property(TARGET FFTLIB PROPERTY OSX_ARCHITECTURES x86_64;i386)
 
 # target_compile_options(FFTLIB PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
 
