@@ -45,7 +45,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 108.5, 387.0, 299.0, 33.0 ],
-					"presentation_rect" : [ 505.0, 749.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "The audio to be processed.\nA list of seven descriptors. The latency is winSize."
 				}
@@ -1010,9 +1009,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1030,6 +1029,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1039,8 +1039,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1146,7 +1145,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1155.0, 234.0 ],
 					"style" : "",
-					"text" : "This class implements seven of the most popular spectral shape descriptors, computed on a linear scale for both amplitude and frequency. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe descriptors are:\n• the four first statistical moments (https://en.wikipedia.org/wiki/Moment_(mathematics) ), more commonly known as:\n  • the spectral centroid (1) in spectral bins as units. This is the point that splits the spectrum in 2 halves of equal energy. It is the weighted average of the magnitude spectrum.\n  • the spectral spread (2) in spectral bins. This is the standard deviation of the spectrum envelop, or the average of the distance to the centroid.\n  • the normalised skewness (3) as ratio. This indicates how tilted is the spectral curve in relation to the middle of the spectral frame, i.e. half of the Nyquist frequency. If it is below the bin representing that frequency, i.e. the central bin of the magnitude spectrum, it is positive.\n  • the normalised kurtosis (4) as ratio. This indicates how focused is the spectral curve. If it is peaky, it is high.\n• the rolloff (5) in bin number. This indicates the bin under which 95% of the energy is included.\n• the flatness (6) in dB. This is the ratio of geometric mean of the magnitude, over the arithmetic mean of the magnitudes. It yields a very approximate measure on how noisy a signal is.\n• the crest (7) in dB. This is the ratio of the loudest magnitude over the RMS of the whole frame. A high number is an indication of a loud peak poking out from the overal spectral curve.\n\nThe drawings in Peeters 2003 (http://recherche.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf) are useful, as are the commented examples below. For the mathematically-inclined reader, the tutorials and code offered here (https://www.audiocontentanalysis.org/) are interesting to further the understanding.\n\nThe process will return the seven values as a list, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the server signal vector size."
+					"text" : "This class implements seven of the most popular spectral shape descriptors, computed on a linear scale for both amplitude and frequency. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe descriptors are:\n• the four first statistical moments (https://en.wikipedia.org/wiki/Moment_(mathematics) ), more commonly known as:\n  • the spectral centroid (1) in spectral bins as units. This is the point that splits the spectrum in 2 halves of equal energy. It is the weighted average of the magnitude spectrum.\n  • the spectral spread (2) in spectral bins. This is the standard deviation of the spectrum envelop, or the average of the distance to the centroid.\n  • the normalised skewness (3) as ratio. This indicates how tilted is the spectral curve in relation to the middle of the spectral frame, i.e. half of the Nyquist frequency. If it is below the bin representing that frequency, i.e. the central bin of the magnitude spectrum, it is positive.\n  • the normalised kurtosis (4) as ratio. This indicates how focused is the spectral curve. If it is peaky, it is high.\n• the rolloff (5) in bin number. This indicates the bin under which 95% of the energy is included.\n• the flatness (6) in dB. This is the ratio of geometric mean of the magnitude, over the arithmetic mean of the magnitudes. It yields a very approximate measure on how noisy a signal is.\n• the crest (7) in dB. This is the ratio of the loudest magnitude over the RMS of the whole frame. A high number is an indication of a loud peak poking out from the overal spectral curve.\n\nThe drawings in Peeters 2003 (http://recherche.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf) are useful, as are the commented examples below. For the mathematically-inclined reader, the tutorials and code offered here (https://www.audiocontentanalysis.org/) are interesting to further the understanding.\n\nThe process will return the seven values as a list, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the signal vector size."
 				}
 
 			}
@@ -2605,9 +2604,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2625,6 +2624,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2634,8 +2634,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2701,9 +2700,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2721,6 +2720,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2730,8 +2730,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

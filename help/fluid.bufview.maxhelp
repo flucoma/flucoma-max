@@ -45,7 +45,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 193.0, 66.0, 20.0 ],
-					"presentation_rect" : [ 36.0, 192.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "i/o:"
 				}
@@ -197,7 +196,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1211.0, 910.0 ],
+						"rect" : [ 34.0, 105.0, 1211.0, 910.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -421,7 +420,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 55.0, 767.0, 249.0, 22.0 ],
 									"style" : "",
-									"text" : "6 0"
+									"text" : "0"
 								}
 
 							}
@@ -481,13 +480,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-24",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 901.0, 575.0, 231.0, 22.0 ],
+									"patching_rect" : [ 901.0, 575.0, 261.0, 35.0 ],
 									"style" : "",
-									"text" : "process small 0 -1 0 1 -1 32 1 small small"
+									"text" : "reset, source small, deststartframe 32, gain -1, destination small, deststartchan 1, bang"
 								}
 
 							}
@@ -498,9 +498,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 872.0, 538.0, 254.0, 22.0 ],
+									"patching_rect" : [ 872.0, 538.0, 275.0, 22.0 ],
 									"style" : "",
-									"text" : "process large2 0 -1 0 1 -1 22050 1 large large"
+									"text" : "reset, source large2 large, destination large, bang"
 								}
 
 							}
@@ -949,9 +949,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -969,6 +969,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -978,8 +979,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
