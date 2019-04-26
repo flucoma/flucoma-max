@@ -19,7 +19,7 @@ set(CMAKE_XCODE_GENERATE_SCHEME ON)
 
 if (APPLE)
 	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
-endif() 
+endif()
 # Fetch the correct verion of the max-api
 #message(STATUS "Updating Git Submodules")
 #execute_process(
@@ -61,9 +61,12 @@ add_library(FFTLIB STATIC ${FFT_SOURCES})
 target_link_libraries(
   FFTLIB PRIVATE ${FFT_LINK}
 )
-target_compile_options(
-  FFTLIB PRIVATE "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
-)
+
+# target_compile_options(
+#   FFTLIB PRIVATE "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
+# )
+
+# target_compile_options(FFTLIB PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
 
 add_library( FLUID_MAX INTERFACE )
 target_sources(

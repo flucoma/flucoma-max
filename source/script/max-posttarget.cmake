@@ -38,11 +38,11 @@ else ()
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${EXTERN_OUTPUT_NAME}")
 
-target_compile_options(
-${PROJECT_NAME}
-PUBLIC
-"$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
-)
+# target_compile_options(
+# ${PROJECT_NAME}
+# PUBLIC
+# "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
+# )
 
 
 
