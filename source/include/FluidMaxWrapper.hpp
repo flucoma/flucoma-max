@@ -513,7 +513,7 @@ private:
     {
       std::stringstream enumstrings;
       std::cout << "here";
-      for(auto i = 0u; i < attr.numOptions;++i) enumstrings << attr.strings[i] << ' ';
+      for(auto i = 0u; i < attr.numOptions;++i) enumstrings << '"' << attr.strings[i] << "\" ";
       CLASS_ATTR_STYLE(getClass(), name.c_str(),0,"enum");
       CLASS_ATTR_ENUMINDEX(getClass(), name.c_str(), 0, enumstrings.str().c_str());
     }
