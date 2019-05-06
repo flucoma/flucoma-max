@@ -2918,6 +2918,19 @@
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-27",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 840.0, 18.0, 50.0, 22.0 ],
+									"style" : "",
+									"text" : "replace"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-79",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -4196,6 +4209,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-67", 0 ],
 									"source" : [ "obj-23", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-46", 0 ],
+									"source" : [ "obj-27", 0 ]
 								}
 
 							}
