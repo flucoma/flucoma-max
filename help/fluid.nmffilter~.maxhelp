@@ -45,7 +45,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 143.0, 740.0, 916.0, 20.0 ],
 					"style" : "",
-					"text" : "Resets to factory default."
+					"text" : "Resets the arguments to their instantiation values."
 				}
 
 			}
@@ -668,6 +668,7 @@
 , 							{
 								"box" : 								{
 									"buffername" : "didact-source",
+									"chanoffset" : 0,
 									"id" : "obj-15",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,

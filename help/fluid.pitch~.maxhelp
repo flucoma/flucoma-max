@@ -80,9 +80,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 108.5, 643.0, 143.0, 20.0 ],
+					"patching_rect" : [ 108.5, 643.0, 277.0, 20.0 ],
 					"style" : "",
-					"text" : "Resets to factory default."
+					"text" : "Resets the arguments to their instantiation values."
 				}
 
 			}

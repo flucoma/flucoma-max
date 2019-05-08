@@ -308,9 +308,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 195.0, 569.0, 50.0, 89.0 ],
+									"patching_rect" : [ 195.0, 555.5, 50.0, 89.0 ],
 									"style" : "",
-									"text" : "8050 12250 13100 13350 17700 19400"
+									"text" : "5150 7600 21350 22300 28000 29800"
 								}
 
 							}
@@ -322,22 +322,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 577.0, 55.0, 102.0 ],
+									"patching_rect" : [ 49.0, 549.0, 55.0, 102.0 ],
 									"style" : "",
-									"text" : "0. 8000. 12224. 13056. 13312. 17664. 19392. 30000."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 85.0, 543.0, 43.0, 22.0 ],
-									"style" : "",
-									"text" : "zl sort"
+									"text" : "0. 5120. 7552. 21312. 22272. 27968. 29760. 30000."
 								}
 
 							}
@@ -561,13 +548,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-31", 1 ],
-									"source" : [ "obj-18", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
 									"order" : 1,
 									"source" : [ "obj-2", 0 ]
@@ -756,7 +736,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-18", 0 ],
+									"destination" : [ "obj-31", 1 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -847,9 +827,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 109.0, 249.0, 214.0, 33.0 ],
+					"patching_rect" : [ 109.0, 249.0, 277.0, 33.0 ],
 					"style" : "",
-					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
+					"text" : "This method triggers the slicing.\nResets the arguments to their instantiation values."
 				}
 
 			}
@@ -2058,7 +2038,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2795,7 +2775,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "float" ],
 													"patching_rect" : [ 349.0, 77.0, 30.0, 30.0 ],
-													"presentation_rect" : [ 349.0, 77.0, 0.0, 0.0 ],
 													"style" : ""
 												}
 
@@ -3092,7 +3071,7 @@
 								"box" : 								{
 									"autopopulate" : 1,
 									"id" : "obj-5",
-									"items" : [ "-credits.txt", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+									"items" : [ "-credits.txt", ",", "filters", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,

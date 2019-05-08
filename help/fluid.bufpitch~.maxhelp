@@ -2882,9 +2882,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 109.0, 396.0, 214.0, 33.0 ],
+					"patching_rect" : [ 109.0, 396.0, 277.0, 33.0 ],
 					"style" : "",
-					"text" : "This method triggers the analysis.\nResets all attributes to factory default."
+					"text" : "This method triggers the analysis.\nResets the arguments to their instantiation values."
 				}
 
 			}
