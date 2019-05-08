@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1241.0, 1024.0 ],
+						"rect" : [ 0.0, 26.0, 1241.0, 1024.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -156,7 +156,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 424.5, 578.0, 341.0, 20.0 ],
-									"presentation_rect" : [ 473.5, 580.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "minimum freq and pitch detection confidence to accept a grain"
 								}
@@ -170,7 +169,6 @@
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 306.5, 156.5, 75.0, 22.0 ],
-									"presentation_rect" : [ 289.5, 172.0, 0.0, 0.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0
 									}
@@ -2198,9 +2196,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2218,6 +2216,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2227,8 +2226,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2263,12 +2261,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-13",
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1155.0, 20.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1165.0, 60.0 ],
 					"style" : "",
-					"text" : "xx"
+					"text" : "This class implements three popular pitch descriptors, computed as frequency and the confidence in its value. It is part of the Fluid Decomposition Toolkit of the FluCoMa project. [1]\n\nThe process will return a multichannel buffer with two channels per input channel, one for pitch and one for the pitch tracking confidence. Each sample represents a value, which is every hopSize. Its sampling rate is sourceSR / hopSize."
 				}
 
 			}
@@ -2801,9 +2800,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2821,6 +2820,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2830,8 +2830,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2885,7 +2884,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 109.0, 396.0, 214.0, 33.0 ],
 					"style" : "",
-					"text" : "This method triggers the compositing.\nResets all attributes to factory default."
+					"text" : "This method triggers the analysis.\nResets all attributes to factory default."
 				}
 
 			}
@@ -2918,26 +2917,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 12,
+					"linecount" : 15,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 465.0, 1068.0, 167.0 ],
+					"patching_rect" : [ 115.0, 465.0, 1068.0, 208.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer for the 7 spectral features describing the spectral shape.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the destination buffer for the pitch descriptors.\n\tThe algorithm to estimate the pitch. The options are:\n  0 Cepstrum: Returns a pitch estimate as the location of the second highest peak in the Cepstrum of the signal (after DC).\n  1 Harmonic Product Spectrum: Implements the Harmonic Product Spectrum algorithm for pitch detection . See e.g.[2]\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 12,
+					"linecount" : 15,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 465.0, 83.0, 167.0 ],
+					"patching_rect" : [ 39.0, 465.0, 83.0, 208.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nfeatures\nfftSettings\n\n\n\n\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nfeatures\nalgorithm\n\n\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
@@ -2949,7 +2948,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 66.0, 289.0, 20.0 ],
 					"style" : "",
-					"text" : "xx"
+					"text" : "A Selection of Pitch Descriptors on a Buffer"
 				}
 
 			}
@@ -2970,13 +2969,13 @@
 				"box" : 				{
 					"fontsize" : 11.0,
 					"id" : "obj-8",
-					"linecount" : 2,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 832.0, 758.0, 31.0 ],
+					"patching_rect" : [ 39.0, 832.0, 1144.0, 56.0 ],
 					"style" : "",
-					"text" : "[1] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
+					"text" : "[1] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).\n[2] - A. Lerch, \"An Introduction to Audio Content Analysis: Applications in Signal Processing and Music Informatics.\" John Wiley & Sons, 2012.https://onlinelibrary.wiley.com/doi/book/10.1002/9781118393550\n[3] - P. M. Brossier, \"Automatic Annotation of Musical Audio for Interactive Applications.” QMUL, London, UK, 2007."
 				}
 
 			}
@@ -4717,9 +4716,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4737,6 +4736,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4746,8 +4746,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -4812,9 +4811,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4832,6 +4831,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4841,8 +4841,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

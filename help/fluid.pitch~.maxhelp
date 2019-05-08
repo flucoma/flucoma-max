@@ -172,7 +172,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 394.0, 1071.0, 154.0 ],
 					"style" : "",
-					"text" : "The algorithm to estimate the pitch. The options are:\n  0\tCepstrum: TODO.\n  1\tHarmonic Product Spectrum: TODO.\n  2\tYinFFT: TODO.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "\tThe algorithm to estimate the pitch. The options are:\n  0 Cepstrum: Returns a pitch estimate as the location of the second highest peak in the Cepstrum of the signal (after DC).\n  1 Harmonic Product Spectrum: Implements the Harmonic Product Spectrum algorithm for pitch detection . See e.g.[2]\n  2 YinFFT: Implements the frequency domain version of the YIN algorithm, as described in3 See also https://essentia.upf.edu/documentation/reference/streaming_PitchYinFFT.html\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
@@ -218,13 +218,13 @@
 				"box" : 				{
 					"fontsize" : 11.0,
 					"id" : "obj-9",
-					"linecount" : 2,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 703.0, 910.0, 31.0 ],
+					"patching_rect" : [ 39.0, 703.0, 1139.0, 56.0 ],
 					"style" : "",
-					"text" : "[1] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
+					"text" : "[1] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).\n[2] - A. Lerch, \"An Introduction to Audio Content Analysis: Applications in Signal Processing and Music Informatics.\" John Wiley & Sons, 2012.https://onlinelibrary.wiley.com/doi/book/10.1002/9781118393550\n[3] - P. M. Brossier, \"Automatic Annotation of Musical Audio for Interactive Applications.” QMUL, London, UK, 2007."
 				}
 
 			}
@@ -237,7 +237,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1155.0, 47.0 ],
 					"style" : "",
-					"text" : "This class implements three popular pitch descriptors, computed as frequency and the confidence in its value. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return a list with [pitch, confidence] values, which will be repeated if no change happens within the algorithm, i.e. when the hopSize is larger than the signal vector size."
+					"text" : "This class implements three popular pitch descriptors, computed as frequency and the confidence in its value. It is part of the Fluid Decomposition Toolkit of the FluCoMa project. [1]\n\nThe process will return a list with [pitch, confidence] values, which will be repeated if no change happens within the algorithm, i.e. when the hopSize is larger than the signal vector size."
 				}
 
 			}
@@ -880,9 +880,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2463,9 +2463,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2548,9 +2548,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
