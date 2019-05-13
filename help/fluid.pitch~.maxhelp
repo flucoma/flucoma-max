@@ -271,7 +271,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -300,6 +300,18 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "spectroscope~",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 649.0, 282.0, 551.0, 349.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"format" : 6,
 									"id" : "obj-22",
@@ -336,20 +348,6 @@
 									"patching_rect" : [ 338.0, 198.0, 40.0, 22.0 ],
 									"style" : "",
 									"text" : "pink~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontface" : 0,
-									"fontname" : "Arial",
-									"fontsize" : 12.0,
-									"id" : "obj-17",
-									"maxclass" : "spectrumdraw~",
-									"numinlets" : 4,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 661.0, 282.0, 537.0, 315.5 ]
 								}
 
 							}
@@ -686,6 +684,19 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"attr" : "logfreq",
+									"id" : "obj-21",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 673.5, 252.0, 230.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -780,6 +791,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-17", 0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
@@ -880,8 +898,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -959,7 +977,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2463,8 +2481,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -2539,17 +2557,13 @@
 				"name" : "vplus~.mxo",
 				"type" : "iLaX"
 			}
-, 			{
-				"name" : "spectrumdraw~.mxo",
-				"type" : "iLaX"
-			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
