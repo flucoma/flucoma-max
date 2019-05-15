@@ -26,7 +26,7 @@ namespace client {
 namespace impl {
 
 template <typename Wrapper>
-t_max_err getLatency(Wrapper *x, t_object */*attr*/, long *ac, t_atom **av)
+t_max_err getLatency(Wrapper *x, t_object * /*attr*/, long *ac, t_atom **av)
 {
   char alloc;
   atom_alloc(ac, av, &alloc);
@@ -137,7 +137,7 @@ struct NonRealTime
 {
   static void setup(t_class *c) { class_addmethod(c, (method) deferProcess, "bang", A_GIMME, 0); }
 
-  void process(t_symbol*/*s*/, long /*ac*/, t_atom */*av*/)
+  void process(t_symbol* /*s*/, long  /*ac*/, t_atom * /*av*/)
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client  = wrapper.mClient;
