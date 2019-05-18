@@ -1,24 +1,24 @@
 {
-	"author" : "Cycling '74",
-	"description" : "Lightweight reference implementation of a package built around the core Max-API.",
-	"homepatcher" : "max-devkit.maxpat",
-	"max_version_min" : "7.1",
-	"name" : "max-devkit",
+	"author" : "FluCoMa",
+	"description" : "Fluid Decomposition Toolbox",
+	"homepatcher" : "FluCoMa.maxpat",
+	"max_version_min" : "7.0",
+	"name" : "Fluid_Decomposition",
 	"os" : {
 		"macintosh" : {
 			"platform" : [ "ia32", "x64" ],
-			"min_version" : "none"
+			"min_version" : "10.7"
 		},
 		"windows" : {
 			"platform" : [ "ia32", "x64" ],
-			"min_version" : "none"
+			"min_version" : "10"
 		}
 	},
-	"package_extra" : { 
-		"reverse_domain" : "com.cycling74",
-		"copyright" : "Copyright (c) 2016 Cycling '74"
+	"package_extra" : {
+		"reverse_domain" : "org.flucoma",
+		"copyright" : "Copyright (c) 2017-19 University of Huddersfield"
 	},
 	"tags" : [ ],
-	"version" : "@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@",
-	"website" : "http://www.github.com/Cycling74/max-devkit"
+	"version" : "@GIT_VERSION_MAJ",
+	"website" : "http://www.github.com/flucoma/"
 }

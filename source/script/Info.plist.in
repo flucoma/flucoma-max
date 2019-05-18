@@ -12,7 +12,7 @@
 	<string>@AUTHOR_DOMAIN@.@BUNDLE_IDENTIFIER@</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
-	
+
 	<key>CFBundlePackageType</key>
 	<string>iLaX</string>
 	<key>CFBundleSignature</key>
@@ -23,16 +23,16 @@
 		<key>c74excludefromcollectives</key>
 		<string>@EXCLUDE_FROM_COLLECTIVES@</string>
 	</dict>
-	
+
 	<key>CFBundleVersion</key>
-	<string>@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@</string>
+	<string>@GIT_VERSION_MAJ@</string>
 	<key>CFBundleShortVersionString</key>
-	<string>@GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@</string>
+	<string>@GIT_VERSION_MAJ@</string>
 	<key>CFBundleLongVersionString</key>
-	<string>${MACOSX_BUNDLE_EXECUTABLE_NAME} @GIT_VERSION_MAJ@.@GIT_VERSION_MIN@.@GIT_VERSION_SUB@ - @COPYRIGHT_STRING@</string>
+	<string>${MACOSX_BUNDLE_EXECUTABLE_NAME} @GIT_VERSION_MAJ@ - @COPYRIGHT_STRING@</string>
 	<key>NSHumanReadableCopyright</key>
 	<string>@COPYRIGHT_STRING@</string>
-	
+
 	<key>CSResourcesFileMapped</key>
 	<true/>
 	<key>LSRequiresCarbon</key>

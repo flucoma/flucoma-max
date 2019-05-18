@@ -123,7 +123,8 @@ public:
 
   t_max_err notify(t_symbol *s, t_symbol *msg, void *sender, void *data)
   {
-    return buffer_ref_notify(mBufref, s, msg, sender, data);
+    t_symbol *buffer_name = (t_symbol *)object_method((t_object *)sender, gensym("getname"));    
+    return buffer_name == mName ? buffer_ref_notify(mBufref, s, msg, sender, data) : MAX_ERR_NONE;
   }
 
   size_t numFrames() const override { return valid() ? static_cast<size_t>(buffer_getframecount(getBuffer())) : 0; }
