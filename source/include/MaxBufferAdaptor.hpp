@@ -171,15 +171,22 @@ private:
 
   void swap(MaxBufferAdaptor &&other)
   {
+  
+    if(this == &other) return;
+    
     while (!tryLock());
       
     release();
     object_free(mBufref);
-
+    
+    mHostObject = other.mHostObject;
+    mName   = other.mName;
     mSamps  = other.mSamps;
     mBufref = other.mBufref;
     mRank   = other.mRank;
 
+    other.mHostObject = nullptr; 
+    other.mName   = nullptr;
     other.mSamps  = nullptr;
     other.mBufref = nullptr;
     releaseLock();
