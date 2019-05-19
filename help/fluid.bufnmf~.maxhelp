@@ -44,7 +44,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 570.0, 42.0, 33.0 ],
+					"patching_rect" : [ 16.0, 596.0, 42.0, 33.0 ],
 					"style" : "",
 					"text" : "bang\nreset"
 				}
@@ -57,7 +57,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 86.0, 570.0, 277.0, 33.0 ],
+					"patching_rect" : [ 86.0, 596.0, 277.0, 33.0 ],
 					"style" : "",
 					"text" : "This method triggers the factorisation.\nResets the arguments to their instantiation values."
 				}
@@ -70,7 +70,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 550.0, 73.0, 20.0 ],
+					"patching_rect" : [ 16.0, 576.0, 73.0, 20.0 ],
 					"style" : "",
 					"text" : "messages:"
 				}
@@ -83,7 +83,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 617.0, 69.0, 20.0 ],
+					"patching_rect" : [ 16.0, 643.0, 69.0, 20.0 ],
 					"style" : "",
 					"text" : "attributes:"
 				}
@@ -1279,7 +1279,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 599.0, 1088.0, 139.0, 22.0 ],
+					"patching_rect" : [ 599.0, 1114.0, 139.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1918,7 +1918,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 16.0, 1087.0, 118.0, 22.0 ],
+					"patching_rect" : [ 16.0, 1113.0, 118.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1939,7 +1939,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 96.0, 639.0, 1109.0, 368.0 ],
+					"patching_rect" : [ 96.0, 665.0, 1109.0, 368.0 ],
 					"style" : "",
 					"text" : "The name of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\t\nWhere in the srcBuf should the NMF process start, in sample.\t\nHow many frames should be processed.\t\nFor multichannel srcBuf, which channel should be processed first.\t\nFor multichannel srcBuf, how many channel should be processed.\t\nThe name of the buffer where the different reconstructed ranks will be reconstructed. The buffer will be resized to rank * numChannelsProcessed channels and sourceDuration lenght. If nil is provided, the reconstruction will not happen.\t\nThe name of the buffer where the different bases will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no bases will be returned.\t\nThis flag decides of how the basis buffer passed as the previous argument is treated.\t\n  0- \tThe bases are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (fftSize / 2 + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the bases. Its dimensions should match the values above. The resulting bases will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the bases, and will therefore not change. Its bases should match the values above.\nThe index of the buffer where the different activations will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no activation will be returned.\t\nThis flag decides of how the activation buffer passed as the previous argument is treated.\t\n  0- \tThe activations are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (sourceDuration / hopsize + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the activations. Its dimensions should match the values above. The resulting activations will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the activations, and will therefore not change. Its dimensions should match the values above.\nThe number of elements the NMF algorithm will try to divide the spectrogram of the source in.\t\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU expensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n"
 				}
@@ -1952,7 +1952,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 639.0, 78.0, 368.0 ],
+					"patching_rect" : [ 16.0, 665.0, 78.0, 368.0 ],
 					"style" : "",
 					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ndestination\n\nbases\nbasesMode\n\n\n\nactivations\nactMode\n\n\n\n\nrank\nnumIter\n\nfftSettings\n\n\n\n\nwarnings\n"
 				}
@@ -1991,7 +1991,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 1045.0, 902.0, 56.0 ],
+					"patching_rect" : [ 16.0, 1071.0, 1183.0, 56.0 ],
 					"style" : "",
 					"text" : "[1] - Lee, Daniel D., and H. Sebastian Seung. 1999. ‘Learning the Parts of Objects by Non-Negative Matrix Factorization’. Nature 401 (6755): 788–91. https://doi.org/10.1038/44565.\n[2] - Smaragdis and Brown, Non-Negative Matrix Factorization for Polyphonic Music Transcription.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).\n"
 				}
@@ -2856,7 +2856,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 455.0, 1087.0, 109.0, 22.0 ],
+					"patching_rect" : [ 455.0, 1113.0, 109.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4587,7 +4587,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 150.0, 1087.0, 106.0, 22.0 ],
+					"patching_rect" : [ 150.0, 1113.0, 106.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -5276,7 +5276,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 281.449341, 1087.0, 122.0, 22.0 ],
+					"patching_rect" : [ 281.449341, 1113.0, 122.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

@@ -39,6 +39,45 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-7",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 313.0, 954.0, 47.0 ],
+					"style" : "",
+					"text" : "maxFFTSize: How large can the fftSize can be, by allocating memory at instantiation time. The default is 16384.\nthe maximum size of the harmonic filter\nthe maximum size of the percussive filter"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 313.0, 73.0, 47.0 ],
+					"style" : "",
+					"text" : "#1 (int)\n#2 (int, odd)\n#3 (int, odd)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-11",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 291.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments (optional):"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -544,7 +583,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 125.0, 1011.0, 148.0, 22.0 ],
+					"patching_rect" : [ 125.0, 1089.0, 148.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -565,7 +604,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 302.0, 42.0, 33.0 ],
+					"patching_rect" : [ 39.0, 380.0, 42.0, 33.0 ],
 					"style" : "",
 					"text" : "bang\nreset"
 				}
@@ -578,7 +617,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 302.0, 277.0, 33.0 ],
+					"patching_rect" : [ 107.0, 380.0, 277.0, 33.0 ],
 					"style" : "",
 					"text" : "This method triggers the separation.\nResets the arguments to their instantiation values."
 				}
@@ -591,7 +630,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 282.0, 73.0, 20.0 ],
+					"patching_rect" : [ 39.0, 360.0, 73.0, 20.0 ],
 					"style" : "",
 					"text" : "messages:"
 				}
@@ -604,7 +643,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 359.0, 69.0, 20.0 ],
+					"patching_rect" : [ 39.0, 437.0, 69.0, 20.0 ],
 					"style" : "",
 					"text" : "attributes:"
 				}
@@ -617,7 +656,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 132.0, 381.0, 1061.0, 422.0 ],
+					"patching_rect" : [ 132.0, 459.0, 1061.0, 422.0 ],
 					"style" : "",
 					"text" : "The index of the buffer to use as the source material. The channels of multichannel buffers will be processed sequentially.\nWhere in the buffer should the HPSS process start, in samples.\nHow many frames should be processed.\nFor multichannel source, which channel to start processing at.\nFor multichannel source, how many channels should be processed.\nThe name of the buffer where the extracted harmonic component will be reconstructed.\nThe name of the buffer where the extracted percussive component will be reconstructed.\nThe name of the buffer where the residual component will be reconstructed in mode 2.\nThe size, in spectral frames, of the median filter for the harmonic component. Must be an odd number, >= 3.\nThe size, in spectral bins, of the median filter for the percussive component. Must be an odd number, >=3\nThe way the masking is applied to the original spectrogram. (0,1,2):\n  0- The traditional soft mask used in Fitzgerald's original method of 'Wiener-inspired' filtering. Complimentary, soft masks are made for the harmonic and percussive parts by allocating some fraction of a point in time-frequency to each. This provides the fewest artefacts, but the weakest separation. The two resulting buffers will sum to exactly the original material.\n  1- Relative mode - Better separation, with more artefacts. The harmonic mask is constructed using a binary decision, based on whether a threshold is exceeded at a given time-frequency point (these are set using htf1, hta1, htf2, hta2, see below). The percussive mask is then formed as the inverse of the harmonic one, meaning that as above, the two components will sum to the original sound.\n  2- Inter-dependent mode - Thresholds can be varied independently, but are coupled in effect. Binary masks are made for each of the harmonic and percussive components, and the masks are converted to soft at the end so that everything null sums even if the params are independent, that is what makes it harder to control. These aren't guranteed to cover the whole sound; in this case the 'leftovers' will placed into a third buffer.\nIn modes 1 and 2, a list of exactly 4 float defining a threshold filter for the harmonic part: (amp-freq-amp-freq) Amplitudes are in dB, frequencies are normalised spectrum (0-1 where 1 is nyquist) The first threshold applies to all frequencies up to it: how much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic. The second threshold applies to all frequencies above it. The threshold between htf1 and htf2 is interpolated between both and values. How much more powerful (in dB) the harmonic median filter needs to be than the percussive median filter for this bin to be counted as harmonic.\nIn mode 2, a list of exactly 4 float defining a threshold filter for the percussive part. The values are behaving exactly as for harmThresh.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As HPSS relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As HPSS relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nThe default values are 1024 -1 -1, where -1 implies default behaviours: a hopSize of half the windowSize, and a FFTSize of the next power of 2 above the windowSize.\nSwitches the verbose on or off."
 				}
@@ -630,7 +669,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 381.0, 91.0, 422.0 ],
+					"patching_rect" : [ 39.0, 459.0, 91.0, 422.0 ],
 					"style" : "",
 					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nharmonic\npercussive\nresidual\nharmFilterSize\npercFilterSize\nmaskingMode\n\n\n\n\n\n\n\n\nharmThresh\n\n\n\npercThresh\nfftSettings\n\n\n\n\n\nwarnings"
 				}
@@ -643,7 +682,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 804.0, 1161.0, 100.0 ],
+					"patching_rect" : [ 39.0, 882.0, 1161.0, 100.0 ],
 					"style" : "",
 					"text" : "Discussion:\nHPSS works by using median filters on the spectral magnitudes of a sound. It hinges on a simple modelling assumption that tonal components will tend to yield concentrations of energy across time, spread out in frequency, and percussive components will manifest as concentrations of energy across frequency, spread out in time. By using median filters across time and frequency respectively, we get initial esitmates of the tonal-ness / transient-ness of a point in time and frequency. These are then combined into 'masks' that are applied to the orginal spectral data in order to produce a separation.\n\nThe maskingMode parameter provides different approaches to combinging estimates and producing masks. Some settings (especially in modes 1 & 2) will provide better separation but with more artefacts. These can, in principle, be ameliorated by applying smoothing filters to the masks before transforming back to the time-domain (not yet implemented)."
 				}
@@ -678,11 +717,11 @@
 				"box" : 				{
 					"fontsize" : 11.0,
 					"id" : "obj-8",
-					"linecount" : 5,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 922.0, 758.0, 68.0 ],
+					"patching_rect" : [ 39.0, 1000.0, 1161.0, 56.0 ],
 					"style" : "",
 					"text" : "[1] - Fitzgerald, Derry. 2010. ‘Harmonic/Percussive Separation Using Median Filtering’. In Proceedings DaFx 10. https://arrow.dit.ie/argcon/67.\n[2] - Driedger, Jonathan, Meinard Uller, and Sascha Disch. 2014. ‘Extending Harmonic-Percussive Separation of Audio Signals’. In Proc. ISMIR. http://www.terasoft.com.tw/conf/ismir2014/proceedings/T110_127_Paper.pdf.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
 				}
@@ -2413,7 +2452,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 35.0, 1011.0, 72.0, 22.0 ],
+					"patching_rect" : [ 35.0, 1089.0, 72.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

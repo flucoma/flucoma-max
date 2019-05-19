@@ -814,7 +814,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 249.0, 42.0, 33.0 ],
+					"patching_rect" : [ 39.0, 317.0, 42.0, 33.0 ],
 					"style" : "",
 					"text" : "bang\nreset"
 				}
@@ -827,7 +827,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 109.0, 249.0, 277.0, 33.0 ],
+					"patching_rect" : [ 109.0, 317.0, 277.0, 33.0 ],
 					"style" : "",
 					"text" : "This method triggers the slicing.\nResets the arguments to their instantiation values."
 				}
@@ -840,7 +840,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 229.0, 73.0, 20.0 ],
+					"patching_rect" : [ 39.0, 297.0, 73.0, 20.0 ],
 					"style" : "",
 					"text" : "messages:"
 				}
@@ -853,7 +853,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 296.0, 69.0, 20.0 ],
+					"patching_rect" : [ 39.0, 364.0, 69.0, 20.0 ],
 					"style" : "",
 					"text" : "attributes:"
 				}
@@ -1937,7 +1937,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 119.0, 340.0, 1055.0, 208.0 ],
+					"patching_rect" : [ 119.0, 408.0, 1055.0, 208.0 ],
 					"style" : "",
 					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\nWhere in the source should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed.\nFor multichannel source, how many channel should be summed.\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe granularity of the window in which the algorithm looks for change, in samples. A small number will be sensitive to short term changes, and a large number should look for long term changes.\nThe normalised threshold, between 0 an 1, on the novelty curve to consider it a segmentation point.\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As novelty estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As novelty estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
@@ -1950,7 +1950,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 83.0, 208.0 ],
+					"patching_rect" : [ 39.0, 408.0, 83.0, 208.0 ],
 					"style" : "",
 					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nkernSize\nthreshold\nfilterSize\nfftSettings\n\n\n\n\nwarnings"
 				}
