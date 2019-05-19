@@ -85,7 +85,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1155.0, 60.0 ],
 					"style" : "",
-					"text" : "This class implements a spectral shape descriptor where the amplitude is given for a number of equally spread perceptual bands. The spread is based on the Mel scale (https://en.wikipedia.org/wiki/Mel_scale) which is one of the first attempt to mimic pitch perception scientifically. This implementation allows to select the range and number of bands dynamically. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nThe process will return a single multichannel buffer of numBands per input channel. Each frame represents a value, which is every hopSize."
+					"text" : "This class implements a spectral shape descriptor where the amplitude is given for a number of equally spread perceptual bands. The spread is based on the Mel scale (https://en.wikipedia.org/wiki/Mel_scale) which is one of the first attempt to mimic pitch perception scientifically. This implementation allows to select the range and number of bands dynamically. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nThe process will return a single multichannel buffer of maxNumBands per input channel. Each frame represents a value, which is every hopSize."
 				}
 
 			}
@@ -106,7 +106,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

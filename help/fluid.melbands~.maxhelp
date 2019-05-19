@@ -1825,9 +1825,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 295.0, 324.0, 33.0 ],
+					"patching_rect" : [ 107.0, 295.0, 362.0, 33.0 ],
 					"style" : "",
-					"text" : "The audio to be processed.\nA list of maxNumBands amplitudes. The latency is winSize."
+					"text" : "The audio to be processed.\nA list of amplitudes of size maxNumBands. The latency is winSize."
 				}
 
 			}
@@ -1963,7 +1963,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1243.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1243.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2043,7 +2043,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 447.0, 108.0, 173.0, 47.0 ],
-									"presentation_rect" : [ 410.0, 135.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "the spectral shape is proportional to amplitude change"
 								}
@@ -2056,7 +2055,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 119.0, 817.0, 335.0, 20.0 ],
-									"presentation_rect" : [ 119.0, 817.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "sum of all magnitudes is roughly steady throughout the range"
 								}
@@ -2069,7 +2067,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 123.0, 703.0, 203.0, 20.0 ],
-									"presentation_rect" : [ 122.0, 706.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "amplitude and index of loudest band"
 								}
@@ -3158,7 +3155,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 67.0, 351.0, 20.0 ],
+					"patching_rect" : [ 39.0, 67.0, 353.0, 20.0 ],
 					"style" : "",
 					"text" : "A Perceptually Spread Spectral Contour Descriptor in Real-Time\n"
 				}
@@ -3200,7 +3197,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1155.0, 60.0 ],
 					"style" : "",
-					"text" : "This class implements a spectral shape descriptor where the amplitude is given for a number of equally spread perceptual bands. The spread is based on the Mel scale (https://en.wikipedia.org/wiki/Mel_scale) which is one of the first attempt to mimic pitch perception scientifically. This implementation allows to select the range and number of bands dynamically. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nThe process will return a list of size maxNumBands, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the server's kr period."
+					"text" : "This class implements a spectral shape descriptor where the amplitude is given for a number of equally spread perceptual bands. The spread is based on the Mel scale (https://en.wikipedia.org/wiki/Mel_scale) which is one of the first attempt to mimic pitch perception scientifically. This implementation allows to select the range and number of bands dynamically. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nThe process will return a list of size maxNumBands, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the signal vector size."
 				}
 
 			}
