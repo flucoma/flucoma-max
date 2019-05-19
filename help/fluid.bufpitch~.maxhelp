@@ -3046,7 +3046,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1241.0, 1024.0 ],
+						"rect" : [ 34.0, 105.0, 1241.0, 1024.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3661,7 +3661,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 319.0, 352.5, 75.0, 22.0 ],
 									"style" : "",
-									"text" : "86.132812"
+									"text" : "344.53125"
 								}
 
 							}
@@ -3831,7 +3831,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 244.0, 462.5, 150.0, 47.0 ],
 									"style" : "",
-									"text" : "how many frames: the (source's numFrames / hopSize) + 1"
+									"text" : "how many frames: the ((source's numFrames + windowsize) / hopSize) - 1"
 								}
 
 							}
@@ -3934,7 +3934,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 186.0, 462.5, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "87."
+									"text" : "351."
 								}
 
 							}
@@ -4281,7 +4281,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 26.0, 368.0, 85.0, 22.0 ],
 									"style" : "",
-									"text" : "16.276755"
+									"text" : "27.759011"
 								}
 
 							}
