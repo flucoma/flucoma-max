@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
-			"architecture" : "x64",
+			"revision" : 4,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
@@ -177,8 +177,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
-							"architecture" : "x64",
+							"revision" : 4,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -437,8 +437,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 5,
-											"architecture" : "x64",
+											"revision" : 4,
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1822,9 +1822,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1956,9 +1956,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1155.0, 74.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1165.0, 74.0 ],
 					"style" : "",
-					"text" : "This class implements a classic spectral descriptor, the Mel-Frequency Cepstral Coefficients (https://en.wikipedia.org/wiki/Mel-frequency_cepstrum). The input is first decomposed in numBands perceptually space bands, as in FluidMelBands. It is then analysed in numCoefs number of cepstral coefficients. It has the avantage to be amplitude invarient, except for the first coefficient. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nThe process will return a multichannel list of maxNumCoefs, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the signal vector size."
+					"text" : "This class implements a classic spectral descriptor, the Mel-Frequency Cepstral Coefficients (https://en.wikipedia.org/wiki/Mel-frequency_cepstrum). The input is first filtered in to numBands perceptually-spaced bands, as in FluidMelBands. It is then analysed into numCoefs number of cepstral coefficients. It has the avantage of being amplitude invarient, except for the first coefficient. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nThe process will return a multichannel list of maxNumCoefs, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the signal vector size."
 				}
 
 			}
@@ -1981,18 +1981,14 @@
 				"name" : "fluid.mfcc~.mxo",
 				"type" : "iLaX"
 			}
-, 			{
-				"name" : "vtimes~.mxo",
-				"type" : "iLaX"
-			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
