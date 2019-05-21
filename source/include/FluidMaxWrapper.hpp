@@ -136,39 +136,59 @@ struct NonRealTime
 {
   NonRealTime()
   {
-    mClock = clock_new(static_cast<Wrapper *>(this), (method) checkProcess);
+    mQelem = qelem_new(static_cast<Wrapper *>(this), (method) checkProcess);
+    mClock = clock_new(static_cast<Wrapper *>(this), (method) clockTick);
   }
     
   ~NonRealTime()
   {
-    if (mClock)
-      object_free(mClock);
+    qelem_free(mQelem);
+    object_free(mClock);
   }
     
   static void setup(t_class *c)
   {
     class_addmethod(c, (method) deferProcess, "bang", A_GIMME, 0);
+      
+    CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
+    CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 1);
+    CLASS_ATTR_STYLE_LABEL(c, "synchronous", 0, "onoff", "Process Synchronously");
   }
 
-  void process(t_symbol*/*s*/, long /*ac*/, t_atom */*av*/)
+  bool checkResult(Result& res)
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
-    auto &client  = wrapper.mClient;
-
-    Result res = client.process();
+      
     if (!res.ok())
     {
       switch (res.status())
       {
-      case Result::Status::kWarning: object_warn((t_object *) &wrapper, res.message().c_str()); break;
-      case Result::Status::kError: object_error((t_object *) &wrapper, res.message().c_str()); break;
-      default: {
-      }
-      }
-      return;
+        case Result::Status::kWarning: object_warn((t_object *) &wrapper, res.message().c_str()); break;
+        case Result::Status::kError: object_error((t_object *) &wrapper, res.message().c_str()); break;
+        default: {
+        }
+        }
+        return false;
     }
-    //wrapper.doneBang();
-    clock_set(mClock, 50);  // FIX - set at 50ms for now...
+      
+    return true;
+  }
+    
+  void process(t_symbol*/*s*/, long /*ac*/, t_atom */*av*/)
+  {
+    auto &wrapper = static_cast<Wrapper &>(*this);
+    auto &client  = wrapper.mClient;
+    bool synchronous = mSynchronous;
+      
+    client.setSynchronous(synchronous);
+    Result res = client.process();
+    if (checkResult(res))
+    {
+      if (synchronous)
+        wrapper.doneBang();
+      else
+        clockWait();
+    }
   }
 
   static void deferProcess(Wrapper *x, t_symbol *s, long ac, t_atom *av) { defer(x, (method) &callProcess, s, static_cast<short>(ac), av); }
@@ -177,19 +197,33 @@ struct NonRealTime
     
   static void checkProcess(Wrapper *x)
   {
+    Result res;
     auto &client  = x->mClient;
       
-      if (client.checkProgress() == ProcessState::kDone)
+    if (client.checkProgress(res) == ProcessState::kDone)
     {
-      x->doneBang();
+      if (x->checkResult(res))
+        x->doneBang();
     }
     else
-      clock_set(x->mClock, 50);
+      x->clockWait();
+  }
+    
+  static void clockTick(Wrapper *x)
+  {
+    qelem_set(x->mQelem);
+  }
+    
+  void clockWait()
+  {
+    clock_set(mClock, 50);  // FIX - set at 50ms for now...
   }
     
 private:
     
-  void* mClock = nullptr;
+  bool mSynchronous;
+  void *mQelem;
+  void* mClock;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
