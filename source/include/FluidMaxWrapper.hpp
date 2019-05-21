@@ -134,7 +134,21 @@ private:
 template <class Wrapper>
 struct NonRealTime
 {
-  static void setup(t_class *c) { class_addmethod(c, (method) deferProcess, "bang", A_GIMME, 0); }
+  NonRealTime()
+  {
+    mClock = clock_new(static_cast<Wrapper *>(this), (method) checkProcess);
+  }
+    
+  ~NonRealTime()
+  {
+    if (mClock)
+      object_free(mClock);
+  }
+    
+  static void setup(t_class *c)
+  {
+    class_addmethod(c, (method) deferProcess, "bang", A_GIMME, 0);
+  }
 
   void process(t_symbol*/*s*/, long /*ac*/, t_atom */*av*/)
   {
@@ -153,12 +167,29 @@ struct NonRealTime
       }
       return;
     }
-    wrapper.doneBang();
+    //wrapper.doneBang();
+    clock_set(mClock, 50);  // FIX - set at 50ms for now...
   }
 
   static void deferProcess(Wrapper *x, t_symbol *s, long ac, t_atom *av) { defer(x, (method) &callProcess, s, static_cast<short>(ac), av); }
 
   static void callProcess(Wrapper *x, t_symbol *s, short ac, t_atom *av) { x->process(s, ac, av); }
+    
+  static void checkProcess(Wrapper *x)
+  {
+    auto &client  = x->mClient;
+      
+      if (client.checkProgress() == ProcessState::kDone)
+    {
+      x->doneBang();
+    }
+    else
+      clock_set(x->mClock, 50);
+  }
+    
+private:
+    
+  void* mClock = nullptr;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
