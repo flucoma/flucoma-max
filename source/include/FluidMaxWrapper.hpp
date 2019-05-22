@@ -216,12 +216,12 @@ struct NonRealTime
     
   void clockWait()
   {
-    clock_set(mClock, 50);  // FIX - set at 50ms for now...
+    clock_set(mClock, 20);  // FIX - set at 20ms for now...
   }
     
 private:
     
-  bool mSynchronous;
+  bool mSynchronous = true;
   void *mQelem;
   void* mClock;
 };
