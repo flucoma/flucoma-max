@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NRTPitchClient>("fluid.bufpitch~");
+  makeMaxWrapper<NRTThreadedPitchClient>("fluid.bufpitch~");
 }

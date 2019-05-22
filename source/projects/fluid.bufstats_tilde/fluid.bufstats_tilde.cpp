@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<BufferStats>("fluid.bufstats~");
+  makeMaxWrapper<NRTThreadedBufferStats>("fluid.bufstats~");
 }

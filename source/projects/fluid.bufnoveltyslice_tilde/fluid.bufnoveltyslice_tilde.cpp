@@ -5,7 +5,7 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NoveltyClient>("fluid.bufnoveltyslice~"); 
+  makeMaxWrapper<NRTThreadedNoveltyClient>("fluid.bufnoveltyslice~"); 
  
 }
 

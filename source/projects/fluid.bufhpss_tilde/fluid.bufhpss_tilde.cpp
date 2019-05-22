@@ -5,7 +5,7 @@ void ext_main(void*)
 {
   using namespace fluid::client;
 
-  makeMaxWrapper<NRTHPSS>("fluid.bufhpss~");
+  makeMaxWrapper<NRTThreadedHPSS>("fluid.bufhpss~");
 }
 
 

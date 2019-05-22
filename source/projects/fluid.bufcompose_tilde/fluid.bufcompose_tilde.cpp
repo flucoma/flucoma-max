@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<BufferComposeClient>("fluid.bufcompose~");
+  makeMaxWrapper<NRTThreadedBufferCompose>("fluid.bufcompose~");
 }
