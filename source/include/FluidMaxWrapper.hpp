@@ -104,7 +104,7 @@ public:
 
     for (auto i = 0u; i < client.controlChannelsOut(); ++i) mOutputs[i].reset(&mControlOutputs[i], 0, 1);
 
-    client.process(mInputs, mOutputs);
+    client.process(mInputs, mOutputs, mContext);
 
     if (mControlClock) clock_delay(mControlClock, 0);
   }
@@ -127,6 +127,7 @@ private:
   std::vector<double>   mControlOutputs;
   std::vector<t_atom>   mControlAtoms;
   void *                mControlClock;
+  FluidContext          mContext;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -148,8 +149,8 @@ struct NonRealTime
     
   static void setup(t_class *c)
   {
-    class_addmethod(c, (method) deferProcess, "bang", A_GIMME, 0);
-      
+    class_addmethod(c, (method) deferProcess, "bang", 0);
+    class_addmethod(c, (method) callCancel, "cancel", 0);
     CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
     CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 1);
     CLASS_ATTR_STYLE_LABEL(c, "synchronous", 0, "onoff", "Process Synchronously");
@@ -165,35 +166,45 @@ struct NonRealTime
       {
         case Result::Status::kWarning: object_warn((t_object *) &wrapper, res.message().c_str()); break;
         case Result::Status::kError: object_error((t_object *) &wrapper, res.message().c_str()); break;
+        case Result::Status::kCancelled: object_post((t_object *) &wrapper, "Job cancelled"); break;
         default: {
         }
-        }
-        return false;
+      }
+      return false;
     }
       
     return true;
   }
+  
+  void cancel()
+  {
+    auto &wrapper = static_cast<Wrapper &>(*this);
+    auto &client  = wrapper.mClient;
+    client.cancel();
+  }
     
-  void process(t_symbol*/*s*/, long /*ac*/, t_atom */*av*/)
+  void process()
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client  = wrapper.mClient;
     bool synchronous = mSynchronous;
       
     client.setSynchronous(synchronous);
+    
     Result res = client.process();
     if (checkResult(res))
     {
-      if (synchronous)
+      if (synchronous) 
         wrapper.doneBang();
       else
         clockWait();
     }
   }
 
-  static void deferProcess(Wrapper *x, t_symbol *s, long ac, t_atom *av) { defer(x, (method) &callProcess, s, static_cast<short>(ac), av); }
+  static void callCancel(Wrapper *x) { x->cancel(); }
+  static void deferProcess(Wrapper *x) { defer(x, (method) &callProcess, nullptr, 0, nullptr); }
 
-  static void callProcess(Wrapper *x, t_symbol *s, short ac, t_atom *av) { x->process(s, ac, av); }
+  static void callProcess(Wrapper *x, t_symbol*, short, t_atom*) { x->process(); }
     
   static void checkProcess(Wrapper *x)
   {
@@ -206,7 +217,10 @@ struct NonRealTime
         x->doneBang();
     }
     else
+    {
+      x->progress(client.progress()); 
       x->clockWait();
+    }
   }
     
   static void clockTick(Wrapper *x)
@@ -437,12 +451,18 @@ public:
 
     object_obex_store(this, _sym_dumpout, (t_object *) outlet_new(this, nullptr));
 
-    if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
+    if (isNonRealTime<Client>::value)
+    {
+      mProgressOutlet = floatout(this);
+      mNRTDoneOutlet = bangout(this);
+    }
 
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
 
     for (auto i = 0u; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
   }
+
+  void progress(double progress) { outlet_float(mProgressOutlet, progress); }
 
   void doneBang() { outlet_bang(mNRTDoneOutlet); }
 
@@ -597,6 +617,7 @@ private:
   Result        mResult;
   void *        mNRTDoneOutlet;
   void *        mControlOutlet;
+  void *        mProgressOutlet;
   bool          mVerbose;
   ParamSetType  mParams;
   ParamSetType  mParamSnapshot;
