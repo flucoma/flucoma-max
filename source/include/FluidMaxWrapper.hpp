@@ -139,7 +139,10 @@ struct NonRealTime
   void process()
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
-    auto &client  = wrapper.mClient;
+//    auto &client  = wrapper.mClient;
+    
+    auto paramCopy = wrapper.mParams;
+    auto client = typename Wrapper::ClientType{paramCopy};
 
     Result res = client.process();
     if (!res.ok())
