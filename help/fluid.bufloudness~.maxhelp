@@ -139,7 +139,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 816.5, 159.067627, 317.0, 20.0 ],
-									"presentation_rect" : [ 851.5, 157.067627, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "in EBU mode, requesting 100ms sliding window of 400ms"
 								}
@@ -854,7 +853,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 1028.0, 383.0, 59.0, 20.0 ],
-									"presentation_rect" : [ 1029.0, 380.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "truepeak"
 								}
@@ -1294,9 +1292,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 65.0, 471.0, 139.0, 22.0 ],
+									"patching_rect" : [ 65.0, 435.0, 139.0, 22.0 ],
 									"style" : "",
-									"text" : "bipolar 1, setbuffer feats"
+									"text" : "setbuffer feats, bipolar 1"
 								}
 
 							}
@@ -1446,7 +1444,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 27.0, 389.0, 85.0, 22.0 ],
 									"style" : "",
-									"text" : "15.67349"
+									"text" : "27.341699"
 								}
 
 							}
