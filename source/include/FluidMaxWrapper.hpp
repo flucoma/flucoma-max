@@ -371,7 +371,7 @@ public:
     for (auto &r : results)
       printResult(this, r);
 
-    object_obex_store(this, _sym_dumpout, (t_object *) outlet_new(this, nullptr));
+    object_obex_store(this, gensym("dumpout"), (t_object *) outlet_new(this, nullptr));
 
     if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
 
@@ -531,8 +531,8 @@ private:
   static t_symbol* maxAttrType(LongT) { return USESYM(long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
-  static t_symbol* maxAttrType(FloatPairsArrayT) { return _sym_atom; }
-  static t_symbol* maxAttrType(FFTParamsT) { return _sym_atom; }
+  static t_symbol* maxAttrType(FloatPairsArrayT) { return gensym("atom"); }
+  static t_symbol* maxAttrType(FFTParamsT) { return gensym("atom"); }
 
   Result        mResult;
   void *        mNRTDoneOutlet;
