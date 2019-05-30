@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2188,7 +2188,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 408.0, 83.0, 208.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nkernSize\nthreshold\nfilterSize\nfftSettings\n\n\n\n\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nkerelnSize\nthreshold\nfilterSize\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
