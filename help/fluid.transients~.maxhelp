@@ -148,7 +148,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 430.0, 74.0, 194.0 ],
 					"style" : "",
-					"text" : "order\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce\nwarnings\nlatency"
+					"text" : "order\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwindowsize\nclumplength\nwarnings\nlatency"
 				}
 
 			}
@@ -316,7 +316,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "debounce",
+									"attr" : "clumplength",
 									"id" : "obj-61",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -329,7 +329,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "winsize",
+									"attr" : "windowsize",
 									"id" : "obj-47",
 									"maxclass" : "attrui",
 									"numinlets" : 1,

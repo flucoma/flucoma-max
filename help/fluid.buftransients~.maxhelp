@@ -632,7 +632,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 384.0, 78.0, 275.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ntransients\nresidual\norder\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ntransients\nresidual\norder\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwindowsize\nclumplength\nwarnings"
 				}
 
 			}
@@ -957,7 +957,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "debounce",
+									"attr" : "clumplength",
 									"id" : "obj-26",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -970,7 +970,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "winsize",
+									"attr" : "windowsize",
 									"id" : "obj-27",
 									"maxclass" : "attrui",
 									"numinlets" : 1,

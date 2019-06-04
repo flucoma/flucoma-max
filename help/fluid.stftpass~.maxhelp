@@ -159,7 +159,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 95.0, 218.0, 702.0, 47.0 ],
 					"style" : "",
-					"text" : "The audio input\nThe audio output\nThe latency between the input and the output is windowSize samples"
+					"text" : "The audio input\nThe audio output\nThe latency between the input and the output is windowsize samples"
 				}
 
 			}
@@ -172,7 +172,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 463.0, 954.0, 87.0 ],
 					"style" : "",
-					"text" : "up to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. The hopSize is how much the buffered window moves forward, in samples. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. \nThe default values are 1024 -1 -1, where -1 implies default behaviours: a hopSize of half the windowSize, and a FFTSize of the next power of 2 above the windowSize.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "up to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. The hopSize is how much the buffered window moves forward, in samples. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. \nThe default values are 1024 -1 -1, where -1 implies default behaviours: a hopSize of half the windowsize, and a FFTSize of the next power of 2 above the windowsize.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
@@ -571,7 +571,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 958.0, 74.0, 222.0, 47.0 ],
 									"style" : "",
-									"text" : "Default values are\n-1 as hop is overlap of 2\n-1 as fftsize next power of 2 of winsize"
+									"text" : "Default values are\n-1 as hop is overlap of 2\n-1 as fftsize next power of 2 of windowsize."
 								}
 
 							}

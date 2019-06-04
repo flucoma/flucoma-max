@@ -95,7 +95,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 256.0, 881.0, 355.0, 20.0 ],
 					"style" : "",
-					"text" : "factorise the input in the best combination of the 3 defined ranks"
+					"text" : "factorise the input in the best combination of the 3 defined components"
 				}
 
 			}
@@ -108,7 +108,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 827.0, 630.0, 175.0, 47.0 ],
 					"style" : "",
-					"text" : "trains a 1 rank nmf, updating the filter each time, 'improving' the definition of the class"
+					"text" : "trains a 1 component nmf, updating the filter each time, 'improving' the definition of the class"
 				}
 
 			}
@@ -209,7 +209,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-79",
-									"items" : [ "rank1", ",", "rank2", ",", "rank3" ],
+									"items" : [ "component1", ",", "component2", ",", "component3" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1418,7 +1418,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 1129.0, 118.5, 453.0, 248.0 ],
 					"style" : "",
-					"text" : "• to train the classifier\n    • put in train mode at #3, then\n    • for each class you desire (this patch has 3 rank/class)\n        • assign a rank to train at #4\n        • play a few instance of the class to define (at #1)\n        • copy the trained dictionary by pressing #5\n    • once finished training, put #3 in play mode\n \n• to set the thresholds\n    • play the class, and look at its value at the bottom . We peek at the 2nd activation, as it is in the middle of the buffer.\n    • set the threshold as low as possible to not get cross talk from the other. To test simultaneous hits in 2 of the 3 class, open the patcher beside #1\n    • you can also observe the activations by opening the patcher #7 or peeking in the activations4 buffer. Other ideas of what to do with the values are included in the patcher.\n\n• to delete the training, doubleclick #8"
+					"text" : "• to train the classifier\n    • put in train mode at #3, then\n    • for each class you desire (this patch has 3 components/class)\n        • assign a component to train at #4\n        • play a few instance of the class to define (at #1)\n        • copy the trained dictionary by pressing #5\n    • once finished training, put #3 in play mode\n \n• to set the thresholds\n    • play the class, and look at its value at the bottom . We peek at the 2nd activation, as it is in the middle of the buffer.\n    • set the threshold as low as possible to not get cross talk from the other. To test simultaneous hits in 2 of the 3 class, open the patcher beside #1\n    • you can also observe the activations by opening the patcher #7 or peeking in the activations4 buffer. Other ideas of what to do with the values are included in the patcher.\n\n• to delete the training, doubleclick #8"
 				}
 
 			}
@@ -1913,7 +1913,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-22",
-					"items" : [ "rank", ",", 1, ",", 2, ",", 3 ],
+					"items" : [ "components", ",", 1, ",", 2, ",", 3 ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -1946,7 +1946,7 @@
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 726.0, 604.0, 692.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufnmf~ @rank 1 @numiter 100 @bases filter-temp4 @basesmode 1 @fftsettings 128 64 @numframes 128 @source input"
+					"text" : "fluid.bufnmf~ @components 1 @iterations 100 @bases filter-temp4 @basesmode 1 @fftsettings 128 64 @numframes 128 @source input"
 				}
 
 			}
@@ -9427,7 +9427,7 @@
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 194.0, 857.0, 806.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufnmf~ @rank 3 @numiter 100 @activations activations4 @bases filters4 @basesmode 2 @fftsettings 128 64 @numframes 128 @source input"
+					"text" : "fluid.bufnmf~ @components 3 @iterations 100 @activations activations4 @bases filters4 @basesmode 2 @fftsettings 128 64 @numframes 128 @source input"
 				}
 
 			}

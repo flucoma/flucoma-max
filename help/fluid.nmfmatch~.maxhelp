@@ -83,7 +83,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 453.0, 961.0, 33.0 ],
 					"style" : "",
-					"text" : "maxRank: \tThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of elements of the list output.\n(optional) the maximum size of the potential FFT window."
+					"text" : "maxComponents: \tThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of elements of the list output.\n(optional) the maximum size of the potential FFT window."
 				}
 
 			}
@@ -238,7 +238,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "numiter",
+									"attr" : "iterations",
 									"id" : "obj-42",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -754,7 +754,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 63.0, 257.0, 176.0, 20.0 ],
 									"style" : "",
-									"text" : "decompose in 2 ranks with nmf"
+									"text" : "decompose in 2 components with nmf"
 								}
 
 							}
@@ -804,7 +804,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 63.0, 309.0, 371.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source didact-source @bases didact-filters @rank 2"
+									"text" : "fluid.bufnmf~ @source didact-source @bases didact-filters @components 2"
 								}
 
 							}
@@ -1252,7 +1252,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 143.0, 529.0, 1020.0, 167.0 ],
 					"style" : "",
-					"text" : "The server index of the buffer containing the different bases that the input signal will be matched against. Bases must be (fft size / 2) + 1 frames. If the buffer has more than maxRank channels, the excess will be ignored.\nThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of elements in the output list. This cannot be modulated.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU intensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "The server index of the buffer containing the different bases that the input signal will be matched against. Bases must be (fft size / 2) + 1 frames. If the buffer has more than maxComponents channels, the excess will be ignored.\nThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of elements in the output list. This cannot be modulated.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU intensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
@@ -1265,7 +1265,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 529.0, 92.0, 167.0 ],
 					"style" : "",
-					"text" : "in\nbases\n\nnumiter\n\nfftsettings\n\n\n\n\nwarnings\nlatency"
+					"text" : "in\nbases\n\niterations\n\nfftsettings\n\n\n\n\nwarnings\nlatency"
 				}
 
 			}
@@ -1317,7 +1317,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1149.0, 221.0 ],
 					"style" : "",
-					"text" : "The FluidNMFMatch object matches an incoming audio signal against a set of spectral templates using an slimmed-down version of Nonnegative Matrix Factorisation (NMF)1\n\nIt outputs at kr the degree of detected match for each template (the activation amount, in NMF-terms). The spectral templates are presumed to have been produced by the offline NMF process (FluidBufNMF), and must be the correct size with respect to the FFT settings being used (FFT size / 2 + 1 frames long). The rank of the decomposition is determined by the number of channels in the supplied buffer of templates, up to a maximum set by the maxRank parameter.\n\nNMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored. It works iteratively, by trying to find a combination of amplitudes ('activations') that yield the original magnitude spectrogram of the audio input when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
+					"text" : "The FluidNMFMatch object matches an incoming audio signal against a set of spectral templates using an slimmed-down version of Nonnegative Matrix Factorisation (NMF)1\n\nIt outputs at kr the degree of detected match for each template (the activation amount, in NMF-terms). The spectral templates are presumed to have been produced by the offline NMF process (FluidBufNMF), and must be the correct size with respect to the FFT settings being used (FFT size / 2 + 1 frames long). The rank (number of components) of the decomposition is determined by the number of channels in the supplied buffer of templates, up to a maximum set by the maxComponents parameter.\n\nNMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored. It works iteratively, by trying to find a combination of amplitudes ('activations') that yield the original magnitude spectrogram of the audio input when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
 				}
 
 			}
@@ -2034,7 +2034,7 @@
 									"presentation_linecount" : 2,
 									"presentation_rect" : [ 99.0, 241.0, 477.0, 33.0 ],
 									"style" : "",
-									"text" : "edit the groups: shift-click on a track below to add or remove to this colour-coded group - including all ranks in a group is needed for now otherwise the object is creating NaNs"
+									"text" : "edit the groups: shift-click on a track below to add or remove to this colour-coded group - including all components in a group is needed for now otherwise the object is creating NaNs"
 								}
 
 							}
@@ -2666,7 +2666,7 @@
 									"outlettype" : [ "list", "" ],
 									"patching_rect" : [ 1292.5, 147.0, 259.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 3 @bases 3dicts @numiter 20"
+									"text" : "fluid.nmfmatch~ 3 @bases 3dicts @iterations 20"
 								}
 
 							}
@@ -3034,7 +3034,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 102.0, 394.5, 505.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source monosum @rank 10 @bases golcar-dicts @resynth golcar-sounds"
+									"text" : "fluid.bufnmf~ @source monosum @components 10 @bases golcar-dicts @resynth golcar-sounds"
 								}
 
 							}
@@ -3191,7 +3191,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "rank",
+									"attr" : "components",
 									"id" : "obj-65",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -4804,7 +4804,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 268.377502, 108.0, 702.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @numiter 50 @bases guit-dicts2 @resynth guit-audio2 @rank 8"
+									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @iterations 50 @bases guit-dicts2 @resynth guit-audio2 @components 8"
 								}
 
 							}
@@ -5413,7 +5413,7 @@
 													"numoutlets" : 0,
 													"patching_rect" : [ 309.0, 89.0, 114.0, 60.0 ],
 													"style" : "",
-													"text" : "here we assign each rank to another position, for fun"
+													"text" : "here we assign each component to another position, for fun"
 												}
 
 											}
@@ -5669,7 +5669,7 @@
 									}
 ,
 									"style" : "",
-									"text" : "p rankshuffler"
+									"text" : "p componentshuffler"
 								}
 
 							}
@@ -5866,7 +5866,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 279.0, 770.5, 870.0, 74.0 ],
 									"style" : "",
-									"text" : "What is happening: a dictionary of 88 ranks is provided, pretrained on a chromatic scale of a grand piano. It gives one activation per note. On the left we can see the activations unprocessed, on an amplitude scale of 0 to 20. On the right, there is an attempt to be creative with that information, scaling and gating the activations, and resynthesising with simple sine waves. A midi piano could be used instead of the right-hand side notation.\n\nFor the inquisitive mind, the training patch has been provided below."
+									"text" : "What is happening: a dictionary of 88 bases is provided, pretrained on a chromatic scale of a grand piano. It gives one activation per note. On the left we can see the activations unprocessed, on an amplitude scale of 0 to 20. On the right, there is an attempt to be creative with that information, scaling and gating the activations, and resynthesising with simple sine waves. A midi piano could be used instead of the right-hand side notation.\n\nFor the inquisitive mind, the training patch has been provided below."
 								}
 
 							}
@@ -6332,7 +6332,7 @@
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 294.0, 704.0, 150.0, 74.0 ],
 																	"style" : "",
-																	"text" : "then with the 89 channel preseed dictionary, a 89 rank nmf is run again, updating the dictionaries. It takes a few hours."
+																	"text" : "then with the 89 channel preseed dictionary, a 89 components nmf is run again, updating the dictionaries. It takes a few hours."
 																}
 
 															}
@@ -6345,7 +6345,7 @@
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 294.5, 51.0, 534.0, 33.0 ],
 																	"style" : "",
-																	"text" : "this will iterate through each note to create a double rank nmf dictionary, to pretrain the dictionaries, dismissing the one with the attack and keeping the one with the resonance"
+																	"text" : "this will iterate through each note to create a double components nmf dictionary, to pretrain the dictionaries, dismissing the one with the attack and keeping the one with the resonance"
 																}
 
 															}
@@ -6524,7 +6524,7 @@
 																	"outlettype" : [ "bang", "" ],
 																	"patching_rect" : [ 154.0, 817.0, 775.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @numiter 100 @bases pno-dicts @rank 88 @activations pno-acts @basesmode 1"
+																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @iterations 100 @bases pno-dicts @components 88 @activations pno-acts @basesmode 1"
 																}
 
 															}
@@ -6550,7 +6550,7 @@
 																	"outlettype" : [ "bang", "" ],
 																	"patching_rect" : [ 236.0, 358.0, 508.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @numiter 100 @rank 2 @bases temp @resynth temp2"
+																	"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @iterations 100 @components 2 @bases temp @resynth temp2"
 																}
 
 															}
@@ -6931,7 +6931,7 @@
 													}
 ,
 													"style" : "",
-													"text" : "p prebuildingTonalRankDictPerNote"
+													"text" : "p prebuildingTonalBasisPerNote"
 												}
 
 											}
@@ -7142,7 +7142,7 @@
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 252.0, 655.0, 150.0, 74.0 ],
 																	"style" : "",
-																	"text" : "then with the 89 channel preseed dictionary, a 89 rank nmf is run again, updating the dictionaries. It takes a few hours."
+																	"text" : "then with the 89 channel preseed dictionary, a 89 components nmf is run again, updating the dictionaries. It takes a few hours."
 																}
 
 															}
@@ -7155,7 +7155,7 @@
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 178.0, 105.0, 150.0, 60.0 ],
 																	"style" : "",
-																	"text" : "this will iterate through each note to create a single rank nmf dictionary, to pretrain the dictionaries"
+																	"text" : "this will iterate through each note to create a single component nmf dictionary, to pretrain the dictionaries"
 																}
 
 															}
@@ -7335,7 +7335,7 @@
 																	"outlettype" : [ "bang", "" ],
 																	"patching_rect" : [ 113.0, 769.0, 887.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @numiter 100 @bases pno-dicts @rank 89 @resynth pno-audio @activations pno-acts @basesmode 1"
+																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @iterations 100 @bases pno-dicts @components 89 @resynth pno-audio @activations pno-acts @basesmode 1"
 																}
 
 															}
@@ -7361,7 +7361,7 @@
 																	"outlettype" : [ "bang", "" ],
 																	"patching_rect" : [ 118.0, 442.0, 657.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @numiter 100 @rank 1 @bases temp @numframes 132300 @source pianosource"
+																	"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @iterations 100 @components 1 @bases temp @numframes 132300 @source pianosource"
 																}
 
 															}
@@ -7705,7 +7705,7 @@
 													}
 ,
 													"style" : "",
-													"text" : "p prebuildingSingleRankDictPerNote"
+													"text" : "p prebuildingSingleBasisDictPerNote"
 												}
 
 											}
@@ -7773,7 +7773,7 @@
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 168.0, 109.5, 555.0, 33.0 ],
 																	"style" : "",
-																	"text" : "pressing this button started a process of trying to separate in 88 components. Since the seed is random, that was not very helpful. Moreover, the winSize was too small to capture the fundamentals"
+																	"text" : "pressing this button started a process of trying to separate in 88 components. Since the seed is random, that was not very helpful. Moreover, the windowsize was too small to capture the fundamentals"
 																}
 
 															}
@@ -7849,7 +7849,7 @@
 																	"outlettype" : [ "bang", "" ],
 																	"patching_rect" : [ 51.0, 199.0, 694.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 1024 256 2048 @numiter 100 @bases pno-dicts @rank 88 @resynth pno-audio"
+																	"text" : "fluid.bufnmf~ @source pianosource @fftsettings 1024 256 2048 @iterations 100 @bases pno-dicts @components 88 @resynth pno-audio"
 																}
 
 															}
@@ -9230,7 +9230,7 @@
 									"outlettype" : [ "list", "" ],
 									"patching_rect" : [ 279.0, 153.0, 433.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.nmfmatch~ 88 @fftsettings 4096 512 4096 @numiter 10 @bases pno-dicts"
+									"text" : "fluid.nmfmatch~ 88 @fftsettings 4096 512 4096 @iterations 10 @bases pno-dicts"
 								}
 
 							}
@@ -10070,7 +10070,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 301.0, 555.0, 218.0, 33.0 ],
 									"style" : "",
-									"text" : "wait for it to finish. The pick is in rank 1 (channel 1 of the buffer guit-dicts-sum)"
+									"text" : "wait for it to finish. The pick is in component 1 (channel 1 of the buffer guit-dicts-sum)"
 								}
 
 							}
@@ -10082,7 +10082,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.5, 29.5, 415.0, 20.0 ],
 									"style" : "",
-									"text" : "press to start the process of finding the pick rank like in the BufNMF help file"
+									"text" : "press to start the process of finding the pick component like in the BufNMF help file"
 								}
 
 							}
@@ -10293,7 +10293,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 25.0, 86.0, 758.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @numiter 100 @bases guit-dicts @rank 10 @resynth guit-audio"
+									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @iterations 100 @bases guit-dicts @components 10 @resynth guit-audio"
 								}
 
 							}

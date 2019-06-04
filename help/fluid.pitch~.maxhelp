@@ -46,7 +46,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 276.0, 299.0, 33.0 ],
 					"style" : "",
-					"text" : "The audio to be processed.\nA list of [pitch, confidence]. The latency is winSize."
+					"text" : "The audio to be processed.\nA list of [pitch, confidence]. The latency is windowsize."
 				}
 
 			}
@@ -172,7 +172,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 394.0, 1071.0, 154.0 ],
 					"style" : "",
-					"text" : "\tThe algorithm to estimate the pitch. The options are:\n  0 Cepstrum: Returns a pitch estimate as the location of the second highest peak in the Cepstrum of the signal (after DC).\n  1 Harmonic Product Spectrum: Implements the Harmonic Product Spectrum algorithm for pitch detection . See e.g.[2]\n  2 YinFFT: Implements the frequency domain version of the YIN algorithm, as described in3 See also https://essentia.upf.edu/documentation/reference/streaming_PitchYinFFT.html\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "\tThe algorithm to estimate the pitch. The options are:\n  0 Cepstrum: Returns a pitch estimate as the location of the second highest peak in the Cepstrum of the signal (after DC).\n  1 Harmonic Product Spectrum: Implements the Harmonic Product Spectrum algorithm for pitch detection . See e.g.[2]\n  2 YinFFT: Implements the frequency domain version of the YIN algorithm, as described in3 See also https://essentia.upf.edu/documentation/reference/streaming_PitchYinFFT.html\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}

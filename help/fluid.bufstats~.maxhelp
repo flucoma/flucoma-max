@@ -911,7 +911,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 478.0, 128.5, 562.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufonsetslice~ @debounce 10 @function 9 @threshold 0.4 @filtersize 7 @source src @indices idx"
+									"text" : "fluid.bufonsetslice~ @minslicelength 10 @function 9 @threshold 0.4 @filtersize 7 @source src @indices idx"
 								}
 
 							}

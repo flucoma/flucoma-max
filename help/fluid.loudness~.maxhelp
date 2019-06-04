@@ -407,7 +407,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 678.333374, 414.5, 67.0, 22.0 ],
 									"style" : "",
-									"text" : "winsize $1"
+									"text" : "windowsize $1"
 								}
 
 							}
@@ -622,7 +622,7 @@
 									"outlettype" : [ "list", "" ],
 									"patching_rect" : [ 260.333374, 457.0, 331.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.loudness~ 19200 @winsize 17640 @hopsize 4410"
+									"text" : "fluid.loudness~ 19200 @windowsize 17640 @hopsize 4410"
 								}
 
 							}
@@ -1188,7 +1188,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 276.0, 299.0, 33.0 ],
 					"style" : "",
-					"text" : "The audio to be processed.\nA list of [loudness, truepeak]. The latency is winSize."
+					"text" : "The audio to be processed.\nA list of [loudness, truepeak]. The latency is windowsize."
 				}
 
 			}
@@ -1200,7 +1200,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 344.0, 954.0, 20.0 ],
 					"style" : "",
-					"text" : "maxWinSize: How large can the winSize be, by allocating memory at instantiation time."
+					"text" : "maxWindowSize: How large can the windowsize be, by allocating memory at instantiation time."
 				}
 
 			}
@@ -1327,7 +1327,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 394.0, 74.0, 87.0 ],
 					"style" : "",
-					"text" : "kWeighting\ntruePeak\nwinSize\nhopSize\nwarnings\nlatency"
+					"text" : "kWeighting\ntruePeak\nwindowsize\nhopSize\nwarnings\nlatency"
 				}
 
 			}
@@ -1875,7 +1875,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "winsize",
+									"attr" : "windowsize",
 									"id" : "obj-23",
 									"maxclass" : "attrui",
 									"numinlets" : 1,

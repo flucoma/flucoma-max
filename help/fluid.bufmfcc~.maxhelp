@@ -502,7 +502,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 774.0, 183.0, 365.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufmfcc~ 5 @source srcstereo @features feats @numcoefs 5"
+									"text" : "fluid.bufmfcc~ 5 @source srcstereo @features feats @numcoeffs 5"
 								}
 
 							}
@@ -748,7 +748,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 115.0, 465.0, 1068.0, 221.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the destination buffer for the maxNumCoefs coefficients describing the spectral shape.\nThe number of cepstral coefficients to be outputed. It is limited by the maxNumCoefs parameter. When the number is smaller than the maximum, the output is zero-padded.\nThe number of bands that will be perceptually equally distributed between minFreq and maxFreq to describe the spectral shape before it is converted to cepstral coefficients.\nThe lower boundary of the lowest band of the model, in Hz.\nThe highest boundary of the highest band of the model, in Hz.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the destination buffer for the maxNumCoefs coefficients describing the spectral shape.\nThe number of cepstral coefficients to be outputed. It is limited by the maxNumCoefs parameter. When the number is smaller than the maximum, the output is zero-padded.\nThe number of bands that will be perceptually equally distributed between minFreq and maxFreq to describe the spectral shape before it is converted to cepstral coefficients.\nThe lower boundary of the lowest band of the model, in Hz.\nThe highest boundary of the highest band of the model, in Hz.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
@@ -967,7 +967,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "numcoefs",
+									"attr" : "numcoeffs",
 									"id" : "obj-18",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1548,7 +1548,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "numcoefs",
+									"attr" : "numcoeffs",
 									"id" : "obj-23",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
