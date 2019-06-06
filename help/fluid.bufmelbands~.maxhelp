@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 354.0, -1084.0, 1212.0, 990.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,13 +39,53 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-13",
+					"id" : "obj-6",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1155.0, 20.0 ],
+					"patching_rect" : [ 109.0, 314.0, 954.0, 33.0 ],
 					"style" : "",
-					"text" : "xx"
+					"text" : "The maximum number of Mel bands that can be modelled. This sets the number of channels of the output buffer per channel of input buffer.\nmaxFFTSize: How large can the fftSize can be, by allocating memory at instantiation time. The default is 16384."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 314.0, 65.0, 33.0 ],
+					"style" : "",
+					"text" : "#1 (int)\n#2 (int)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 292.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments (optional):"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-13",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 119.0, 1155.0, 60.0 ],
+					"style" : "",
+					"text" : "This class implements a spectral shape descriptor where the amplitude is given for a number of equally spread perceptual bands. The spread is based on the Mel scale (https://en.wikipedia.org/wiki/Mel_scale) which is one of the first attempt to mimic pitch perception scientifically. This implementation allows to select the range and number of bands dynamically. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nThe process will return a single multichannel buffer of maxNumBands per input channel. Each frame represents a value, which is every hopSize."
 				}
 
 			}
@@ -96,27 +136,40 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-27",
+									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.0, 448.0, 95.0, 22.0 ],
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 189.0, 436.0, 60.0, 22.0 ],
 									"style" : "",
-									"text" : "loadmess 0.004"
+									"text" : "loadbang"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-25",
+									"id" : "obj-4",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 479.0, 495.0, 111.0, 22.0 ],
+									"patching_rect" : [ 32.0, 480.5, 56.0, 22.0 ],
 									"style" : "",
-									"text" : "loadmess bipolar 1"
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-27",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 32.0, 403.0, 95.0, 22.0 ],
+									"style" : "",
+									"text" : "loadmess 0.007"
 								}
 
 							}
@@ -127,7 +180,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.0, 500.0, 63.0, 22.0 ],
+									"patching_rect" : [ 32.0, 455.0, 63.0, 22.0 ],
 									"style" : "",
 									"text" : "vzoom $1"
 								}
@@ -142,7 +195,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 32.0, 476.0, 50.0, 22.0 ],
+									"patching_rect" : [ 32.0, 431.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -434,9 +487,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 774.0, 183.0, 327.0, 22.0 ],
+									"patching_rect" : [ 774.0, 183.0, 321.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufspectralshape~ @source srcstereo @features feats"
+									"text" : "fluid.bufmelbands~ 10 @source srcstereo @features feats"
 								}
 
 							}
@@ -473,6 +526,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-113", 0 ]
 								}
@@ -494,7 +554,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -503,13 +563,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-25", 0 ]
 								}
 
 							}
@@ -524,6 +577,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
 									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-46", 0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -545,8 +605,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -662,26 +722,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 12,
+					"linecount" : 15,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 465.0, 1068.0, 167.0 ],
+					"patching_rect" : [ 115.0, 465.0, 1068.0, 208.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer for the 7 spectral features describing the spectral shape.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer for the Mel Band magnitude describing the spectral shape.\nThe number of bands that will be perceptually equally distributed between minFreq and maxFreq. It should be near the value of the first argument, and the other values will be zero'd.\nThe lower boundary of the lowest band of the model, in Hz.\nThe highest boundary of the highest band of the model, in Hz.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 12,
+					"linecount" : 15,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 465.0, 83.0, 167.0 ],
+					"patching_rect" : [ 39.0, 465.0, 83.0, 208.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nfeatures\nfftSettings\n\n\n\n\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nfeatures\nnumBands\nminFreq\nmaxFreq\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
@@ -691,9 +751,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 66.0, 289.0, 20.0 ],
+					"patching_rect" : [ 39.0, 66.0, 346.0, 20.0 ],
 					"style" : "",
-					"text" : "xx"
+					"text" : "A Perceptually Spread Spectral Contour Descriptor on a Buffer"
 				}
 
 			}
@@ -706,7 +766,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 40.0, 263.0, 33.0 ],
 					"style" : "",
-					"text" : "Fluid.BufMFCC"
+					"text" : "FluidBufMelBands"
 				}
 
 			}
@@ -754,7 +814,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 354.0, -1058.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -784,6 +844,44 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-25",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 16.0, 508.0, 56.0, 22.0 ],
+									"style" : "",
+									"text" : "deferlow"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 123.0, 464.0, 60.0, 22.0 ],
+									"style" : "",
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 868.5, 449.0, 150.0, 20.0 ],
+									"style" : "",
+									"text" : "number of channels"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-30",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -801,9 +899,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 820.0, 449.0, 50.0, 22.0 ],
+									"patching_rect" : [ 816.5, 449.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "120"
+									"text" : "10"
 								}
 
 							}
@@ -817,19 +915,6 @@
 									"patching_rect" : [ 763.5, 409.5, 103.0, 22.0 ],
 									"style" : "",
 									"text" : "info~ feats"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 317.5, 164.0, 33.0 ],
-									"style" : "",
-									"text" : "try with a huge (i.e. 44100) hop size and/or window size"
 								}
 
 							}
@@ -853,22 +938,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 449.0, 95.0, 22.0 ],
+									"patching_rect" : [ 16.0, 435.5, 95.0, 22.0 ],
 									"style" : "",
 									"text" : "loadmess 0.004"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-25",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 463.0, 496.0, 111.0, 22.0 ],
-									"style" : "",
-									"text" : "loadmess bipolar 1"
 								}
 
 							}
@@ -879,7 +951,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 16.0, 501.0, 63.0, 22.0 ],
+									"patching_rect" : [ 16.0, 484.5, 63.0, 22.0 ],
 									"style" : "",
 									"text" : "vzoom $1"
 								}
@@ -894,7 +966,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 16.0, 477.0, 50.0, 22.0 ],
+									"patching_rect" : [ 16.0, 459.5, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -947,7 +1019,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 129.0, 293.5, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 221.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -960,7 +1032,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 129.0, 245.5, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 173.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -973,7 +1045,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 129.0, 221.5, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 149.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -986,7 +1058,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 129.0, 198.0, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 126.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -999,7 +1071,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 129.0, 173.5, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 101.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1012,7 +1084,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 129.0, 269.5, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 197.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1036,7 +1108,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 342.5, 39.5, 150.0, 20.0 ],
+									"patching_rect" : [ 459.5, 45.5, 150.0, 20.0 ],
 									"style" : "",
 									"text" : "select a source"
 								}
@@ -1055,7 +1127,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 315.0, 39.5, 20.0, 20.0 ],
+									"patching_rect" : [ 432.0, 45.5, 20.0, 20.0 ],
 									"presentation_rect" : [ 1215.0, 327.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -1074,7 +1146,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 315.0, 65.5, 182.0, 22.0 ],
+									"patching_rect" : [ 432.0, 71.5, 182.0, 22.0 ],
 									"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/fluid_decomposition/AudioFiles/",
 									"prefix_mode" : 2,
 									"style" : ""
@@ -1090,7 +1162,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 396.5, 101.5, 104.0, 23.0 ],
+									"patching_rect" : [ 513.5, 107.5, 104.0, 23.0 ],
 									"style" : "",
 									"text" : "prepend replace"
 								}
@@ -1102,7 +1174,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 63.0, 418.5, 99.0, 20.0 ],
+									"patching_rect" : [ 63.0, 412.5, 99.0, 20.0 ],
 									"style" : "",
 									"text" : "bang when done"
 								}
@@ -1114,7 +1186,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 621.0, 45.0, 164.0, 20.0 ],
+									"patching_rect" : [ 738.0, 51.0, 164.0, 20.0 ],
 									"style" : "",
 									"text" : "choose and play"
 								}
@@ -1138,7 +1210,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 57.0, 72.0, 150.0, 20.0 ],
+									"patching_rect" : [ 57.0, 32.0, 150.0, 20.0 ],
 									"style" : "",
 									"text" : "trigger the process"
 								}
@@ -1150,7 +1222,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.5, 141.0, 163.0, 20.0 ],
+									"patching_rect" : [ 158.5, 72.5, 163.0, 20.0 ],
 									"style" : "",
 									"text" : "optional: change parameters"
 								}
@@ -1169,7 +1241,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 124.5, 141.0, 20.0, 20.0 ],
+									"patching_rect" : [ 129.0, 71.5, 20.0, 20.0 ],
 									"presentation_rect" : [ 1216.0, 359.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -1191,7 +1263,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 33.0, 65.5, 20.0, 20.0 ],
+									"patching_rect" : [ 33.0, 25.5, 20.0, 20.0 ],
 									"presentation_rect" : [ 1215.0, 387.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -1213,7 +1285,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 588.0, 43.5, 20.0, 20.0 ],
+									"patching_rect" : [ 705.0, 49.5, 20.0, 20.0 ],
 									"presentation_rect" : [ 1219.0, 420.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -1231,7 +1303,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 209.0, 469.5, 85.0, 22.0 ],
 									"style" : "",
-									"text" : "26.532779"
+									"text" : "12.342214"
 								}
 
 							}
@@ -1242,7 +1314,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 29.0, 94.0, 24.0, 24.0 ],
+									"patching_rect" : [ 29.0, 54.0, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -1267,7 +1339,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 29.0, 141.0, 34.0, 22.0 ],
+									"patching_rect" : [ 29.0, 101.0, 34.0, 22.0 ],
 									"style" : "",
 									"text" : "t b b"
 								}
@@ -1280,7 +1352,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 629.0, 84.0, 33.0, 22.0 ],
+									"patching_rect" : [ 746.0, 90.0, 33.0, 22.0 ],
 									"style" : "",
 									"text" : "stop"
 								}
@@ -1293,7 +1365,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 594.0, 84.0, 34.0, 22.0 ],
+									"patching_rect" : [ 711.0, 90.0, 34.0, 22.0 ],
 									"style" : "",
 									"text" : "start"
 								}
@@ -1305,7 +1377,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 594.0, 175.0, 37.0, 22.0 ],
+									"patching_rect" : [ 711.0, 181.0, 37.0, 22.0 ],
 									"style" : "",
 									"text" : "dac~"
 								}
@@ -1318,7 +1390,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 594.0, 126.0, 69.0, 22.0 ],
+									"patching_rect" : [ 711.0, 132.0, 69.0, 22.0 ],
 									"style" : "",
 									"text" : "play~ src 2"
 								}
@@ -1331,7 +1403,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 468.5, 128.5, 50.0, 22.0 ],
+									"patching_rect" : [ 585.5, 134.5, 50.0, 22.0 ],
 									"style" : "",
 									"text" : "replace"
 								}
@@ -1344,7 +1416,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 453.5, 167.5, 87.0, 22.0 ],
+									"patching_rect" : [ 570.5, 173.5, 87.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ src 1 1"
 								}
@@ -1357,7 +1429,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 29.0, 409.5, 24.0, 24.0 ],
+									"patching_rect" : [ 29.0, 403.5, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -1369,7 +1441,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 453.5, 227.0, 87.0, 22.0 ],
+									"patching_rect" : [ 570.5, 233.0, 87.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ feats 1"
 								}
@@ -1382,9 +1454,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 29.0, 376.0, 271.0, 22.0 ],
+									"patching_rect" : [ 29.0, 376.0, 287.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufmelbands~ @source src @features feats"
+									"text" : "fluid.bufmelbands~ 10 @source src @features feats"
 								}
 
 							}
@@ -1396,7 +1468,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 787.0, 234.0, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 293.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1409,7 +1481,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 787.0, 208.0, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 269.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1422,7 +1494,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 787.0, 262.0, 150.0, 22.0 ],
+									"patching_rect" : [ 129.0, 245.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1431,6 +1503,14 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
+									"order" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-36", 1 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -1439,7 +1519,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
-									"order" : 1,
+									"order" : 2,
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1488,7 +1568,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
+									"destination" : [ "obj-25", 0 ],
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -1525,6 +1605,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-23", 0 ]
 								}
 
 							}
@@ -1651,8 +1738,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -1727,10 +1814,6 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.bufspectralshape~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "fluid.bufcompose~.mxo",
 				"type" : "iLaX"
 			}
@@ -1739,8 +1822,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,

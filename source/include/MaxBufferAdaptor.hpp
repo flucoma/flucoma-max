@@ -17,7 +17,6 @@ public:
       , mName(name)
       , mSamps(nullptr)
       , mBufref{buffer_ref_new(mHostObject, mName)}
-      , mRank(1)
       , mLock(false)
   {}
 
@@ -57,7 +56,7 @@ public:
     //      return getBuffer();
   }
 
-  void resize(size_t frames, size_t channels, size_t rank,double sampleRate) override
+  void resize(size_t frames, size_t channels,double sampleRate) override
   {
     t_object *buffer = getBuffer();
 
@@ -69,7 +68,7 @@ public:
 
       t_atom args[2];
       atom_setfloat(&args[0], 0.);
-      atom_setlong(&args[1], static_cast<t_atom_long>(rank * channels));
+      atom_setlong(&args[1], static_cast<t_atom_long>(channels));
       t_symbol *setSizeMsg = gensym("setsize");
       /*auto      res        = */object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
       object_method(buffer, gensym("dirty"));
@@ -84,7 +83,6 @@ public:
       object_method(buffer, gensym("dirty"));
       buffer_edit_end(buffer, 1);
       lockSamps();
-      mRank = rank;
       assert(frames == numFrames() && channels == numChans());
     }
   }
@@ -108,29 +106,28 @@ public:
     releaseLock();
   }
 
-  FluidTensorView<float, 1> samps(size_t channel, size_t rankIdx = 0) override
+  FluidTensorView<float, 1> samps(size_t channel) override
   {
-    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans() * this->mRank};
+    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
 
-    return v.col(rankIdx + channel * mRank);
+    return v.col(channel);
   }
 
   FluidTensorView<float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) override
   {
-    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans() * this->mRank};
+    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
   }
 
   t_max_err notify(t_symbol *s, t_symbol *msg, void *sender, void *data)
   {
-    return buffer_ref_notify(mBufref, s, msg, sender, data);
+    t_symbol *buffer_name = (t_symbol *)object_method((t_object *)sender, gensym("getname"));    
+    return buffer_name == mName ? buffer_ref_notify(mBufref, s, msg, sender, data) : MAX_ERR_NONE;
   }
 
   size_t numFrames() const override { return valid() ? static_cast<size_t>(buffer_getframecount(getBuffer())) : 0; }
 
-  size_t numChans() const override { return valid() ? static_cast<size_t>(buffer_getchannelcount(getBuffer())) / mRank : 0; }
-
-  size_t rank() const override { return valid() ? mRank : 0; }
+  size_t numChans() const override { return valid() ? static_cast<size_t>(buffer_getchannelcount(getBuffer())) : 0; }
   
   double sampleRate() const override { return valid() ? buffer_getsamplerate(getBuffer()) : 0; }
 
@@ -170,15 +167,21 @@ private:
 
   void swap(MaxBufferAdaptor &&other)
   {
+  
+    if(this == &other) return;
+    
     while (!tryLock());
       
     release();
     object_free(mBufref);
-
+    
+    mHostObject = other.mHostObject;
+    mName   = other.mName;
     mSamps  = other.mSamps;
     mBufref = other.mBufref;
-    mRank   = other.mRank;
 
+    other.mHostObject = nullptr; 
+    other.mName   = nullptr;
     other.mSamps  = nullptr;
     other.mBufref = nullptr;
     releaseLock();
@@ -189,7 +192,6 @@ private:
 
   float *       mSamps;
   t_buffer_ref *mBufref;
-  size_t        mRank;
   std::atomic<bool> mLock;
 };
 } // namespace client

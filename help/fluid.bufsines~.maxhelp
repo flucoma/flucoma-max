@@ -39,6 +39,43 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 344.0, 954.0, 20.0 ],
+					"style" : "",
+					"text" : "maxFFTSize: How large can the fftSize can be, by allocating memory at instantiation time. The default is 16384."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 344.0, 65.0, 20.0 ],
+					"style" : "",
+					"text" : "#1 (int)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 322.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments (optional):"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"hidden" : 1,
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -565,7 +602,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 306.0, 42.0, 33.0 ],
+					"patching_rect" : [ 39.0, 397.0, 42.0, 33.0 ],
 					"style" : "",
 					"text" : "bang\nreset"
 				}
@@ -578,7 +615,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 109.0, 306.0, 277.0, 33.0 ],
+					"patching_rect" : [ 109.0, 397.0, 277.0, 33.0 ],
 					"style" : "",
 					"text" : "This method triggers the process.\nResets the arguments to their instantiation values."
 				}
@@ -591,7 +628,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 286.0, 73.0, 20.0 ],
+					"patching_rect" : [ 39.0, 377.0, 73.0, 20.0 ],
 					"style" : "",
 					"text" : "messages:"
 				}
@@ -604,7 +641,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 353.0, 69.0, 20.0 ],
+					"patching_rect" : [ 39.0, 444.0, 69.0, 20.0 ],
 					"style" : "",
 					"text" : "attributes:"
 				}
@@ -617,9 +654,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 375.0, 1068.0, 261.0 ],
+					"patching_rect" : [ 115.0, 466.0, 1068.0, 261.0 ],
 					"style" : "",
-					"text" : "The name of the buffer to use as the source material to be decomposed through the sinusoidal modelling process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer where the extracted sinusoidal component will be reconstructed.\nThe name of the buffer where the residual of the sinusoidal component will be reconstructed.\nThe width in bins of the fragment of the fft window that is considered a normal deviation for a potential continuous sinusoidal track. It has an effect on CPU cost: the widest is more accurate but more computationally expensive.\nThe normalised threshold, between 0 an 1, to consider a peak as a sinusoidal component from the normalized cross-correlation.\nThe minimum duration, in spectral frames, for a sinusoidal track to be accepted as a partial. It allows to remove space-monkeys, but is more CPU intensive and might reject quick pitch material.\nThe weight of the magnitude proximity of a peak when trying to associate it to an existing track (relative to freqWeight - suggested between 0 to 1)\nThe weight of the frequency proximity of a peak when trying to associate it to an existing track (relative to magWeight - suggested between 0 to 1)\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The name of the buffer to use as the source material to be decomposed through the sinusoidal modelling process. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer where the extracted sinusoidal component will be reconstructed.\nThe name of the buffer where the residual of the sinusoidal component will be reconstructed.\nThe width in bins of the fragment of the fft window that is considered a normal deviation for a potential continuous sinusoidal track. It has an effect on CPU cost: the widest is more accurate but more computationally expensive.\nThe normalised threshold, between 0 an 1, to consider a peak as a sinusoidal component from the normalized cross-correlation.\nThe minimum duration, in spectral frames, for a sinusoidal track to be accepted as a partial. It allows to remove space-monkeys, but is more CPU intensive and might reject quick pitch material.\nThe weight of the magnitude proximity of a peak when trying to associate it to an existing track (relative to freqWeight - suggested between 0 to 1)\nThe weight of the frequency proximity of a peak when trying to associate it to an existing track (relative to magWeight - suggested between 0 to 1)\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
@@ -630,7 +667,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 375.0, 83.0, 261.0 ],
+					"patching_rect" : [ 39.0, 466.0, 83.0, 261.0 ],
 					"style" : "",
 					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nsines\nresidual\nbandwidth\n\nthreshold\nminTrackLen\nmagWeight\nfreqWeight\nfftSettings\n\n\n\n\nwarnings"
 				}

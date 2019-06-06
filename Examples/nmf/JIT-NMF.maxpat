@@ -427,7 +427,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 522.0, 836.0, 547.0, 47.0 ],
 					"style" : "",
-					"text" : "what is happening: a circular buffer is doing a fake real time - every half second, it sends a frame to be proceesed by NMF~, requesting 3 ranks. Because this latter process is randomly seeded and not sorted, the 3 ranks are not getting similar results each time, hence the random pan"
+					"text" : "what is happening: a circular buffer is doing a fake real time - every half second, it sends a frame to be proceesed by NMF~, requesting 3 components. Because this latter process is randomly seeded and not sorted, the 3 components are not getting similar results each time, hence the random pan"
 				}
 
 			}
@@ -918,7 +918,7 @@
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 44.5, 493.5, 464.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufnmf~ @rank 3 @fftsettings 512 256 1024 @source input @numframes 22500"
+					"text" : "fluid.bufnmf~ @components 3 @fftsettings 512 256 1024 @source input @numframes 22500"
 				}
 
 			}

@@ -111,7 +111,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 340.0, 78.0, 275.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\n\norder\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwinSize\ndebounce\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\n\norder\n\n\nblockSize\n\npadSize\nskew\n\nthreshFwd\nthreshBack\nwindowsize\nclumplength\nwarnings"
 				}
 
 			}
@@ -332,7 +332,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "minslice",
+									"attr" : "minslicelength",
 									"id" : "obj-6",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -462,7 +462,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "debounce",
+									"attr" : "clumplength",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -475,7 +475,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "winsize",
+									"attr" : "windowsize",
 									"id" : "obj-13",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1014,7 +1014,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 115.5, 446.0, 399.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.buftransientslice~ @minslice 4410 @source src @indices slicestarts"
+									"text" : "fluid.buftransientslice~ @minslicelength 4410 @source src @indices slicestarts"
 								}
 
 							}
@@ -1899,7 +1899,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 62.0, 222.0, 406.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.buftransientslice~ @source spikes @indices slicepoints @minslice 45"
+									"text" : "fluid.buftransientslice~ @source spikes @indices slicepoints @minslicelength 45"
 								}
 
 							}

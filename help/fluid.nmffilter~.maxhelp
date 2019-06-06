@@ -83,7 +83,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 453.0, 961.0, 33.0 ],
 					"style" : "",
-					"text" : "maxRank: \tThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of audio output of the object.\n(optional) the maximum size of the potential FFT window."
+					"text" : "maxComponents: \tThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of audio output of the object.\n(optional) the maximum size of the potential FFT window."
 				}
 
 			}
@@ -327,7 +327,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "numiter",
+									"attr" : "iterations",
 									"id" : "obj-42",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -691,9 +691,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 63.0, 257.0, 176.0, 20.0 ],
+									"patching_rect" : [ 63.0, 257.0, 210.0, 20.0 ],
 									"style" : "",
-									"text" : "decompose in 2 ranks with nmf"
+									"text" : "decompose in 2 components with nmf"
 								}
 
 							}
@@ -741,9 +741,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 63.0, 309.0, 371.0, 22.0 ],
+									"patching_rect" : [ 63.0, 309.0, 411.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source didact-source @bases didact-filters @rank 2"
+									"text" : "fluid.bufnmf~ @source didact-source @bases didact-filters @components 2"
 								}
 
 							}
@@ -1090,8 +1090,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1109,6 +1109,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1118,8 +1119,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1160,7 +1160,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 89.0, 376.0, 702.0, 33.0 ],
 					"style" : "",
-					"text" : "The audio input\nEach rank resynthesised has its audio output."
+					"text" : "The audio input\nEach component resynthesised has its audio output."
 				}
 
 			}
@@ -1173,7 +1173,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 143.0, 529.0, 1020.0, 167.0 ],
 					"style" : "",
-					"text" : "The server index of the buffer containing the different bases that the input signal will be matched against. Bases must be (fft size / 2) + 1 frames. If the buffer has more than maxRank channels, the excess will be ignored.\nThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of audio output of the object. This cannot be modulated.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU intensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "The server index of the buffer containing the different bases that the input signal will be matched against. Bases must be (fft size / 2) + 1 frames. If the buffer has more than maxComponents channels, the excess will be ignored.\nThe maximum number of elements the NMF algorithm will try to divide the spectrogram of the source in. This dictates the number of audio output of the object. This cannot be modulated.\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU intensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
@@ -1186,7 +1186,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 529.0, 92.0, 167.0 ],
 					"style" : "",
-					"text" : "in\n\nbases\nnumiter\n\nfftsettings\n\n\n\n\nwarnings\nlatency"
+					"text" : "in\n\nbases\niterations\n\nfftsettings\n\n\n\n\nwarnings\nlatency"
 				}
 
 			}
@@ -1236,9 +1236,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1124.0, 221.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1142.0, 221.0 ],
 					"style" : "",
-					"text" : "The FluidNMFFilter object decomposes and resynthesises an incoming audio signal against a set of spectral templates using an slimmed-down version of Nonnegative Matrix Factorisation (NMF)1\n\nIt outputs the resynthesis of the best factorisation. The spectral templates are presumed to have been produced by the offline NMF process (FluidBufNMF), and must be the correct size with respect to the FFT settings being used (FFT size / 2 + 1 frames long). The rank of the decomposition is determined by the number of channels in the supplied buffer of templates, up to a maximum set by the maxRank parameter.\n\nNMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored. It works iteratively, by trying to find a combination of amplitudes ('activations') that yield the original magnitude spectrogram of the audio input when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
+					"text" : "The FluidNMFFilter object decomposes and resynthesises an incoming audio signal against a set of spectral templates using an slimmed-down version of Nonnegative Matrix Factorisation (NMF)1\n\nIt outputs the resynthesis of the best factorisation. The spectral templates are presumed to have been produced by the offline NMF process (FluidBufNMF), and must be the correct size with respect to the FFT settings being used (FFT size / 2 + 1 frames long). The rank (number of components) of the decomposition is determined by the number of channels in the supplied buffer of templates, up to a maximum set by the maxComponents parameter.\n\nNMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored. It works iteratively, by trying to find a combination of amplitudes ('activations') that yield the original magnitude spectrogram of the audio input when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
 				}
 
 			}
@@ -1272,7 +1272,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2389,13 +2389,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-16",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 475.377502, 440.0, 557.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source circular @fftsettings 1024 256 2048 @numiter 50 @bases temp-dicts2 @rank 3"
+									"text" : "fluid.bufnmf~ @source circular @fftsettings 1024 256 2048 @iterations 50 @bases temp-dicts2 @components 3"
 								}
 
 							}
@@ -2650,8 +2651,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2669,6 +2670,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2678,8 +2680,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2728,7 +2729,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2816,7 +2817,7 @@
 									"outlettype" : [ "int" ],
 									"patching_rect" : [ 384.5, 440.0, 35.0, 22.0 ],
 									"style" : "",
-									"text" : ">= 1"
+									"text" : ">= 4"
 								}
 
 							}
@@ -2955,9 +2956,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 64.5, 646.0, 261.0, 20.0 ],
+									"patching_rect" : [ 64.5, 646.0, 287.0, 20.0 ],
 									"style" : "",
-									"text" : "play the sound - the lowest ranks are delayed"
+									"text" : "play the sound - the lowest components are delayed"
 								}
 
 							}
@@ -3002,9 +3003,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.5, 29.5, 415.0, 20.0 ],
+									"patching_rect" : [ 50.5, 29.5, 449.0, 20.0 ],
 									"style" : "",
-									"text" : "press to start the process of finding the pick rank like in the BufNMF help file"
+									"text" : "press to start the process of finding the pick component like in the BufNMF help file"
 								}
 
 							}
@@ -3188,9 +3189,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 25.0, 86.0, 758.0, 22.0 ],
+									"patching_rect" : [ 25.0, 86.0, 810.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @numiter 100 @bases guit-dicts @rank 10 @resynth guit-audio"
+									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @iterations 100 @bases guit-dicts @components 10 @resynth guit-audio"
 								}
 
 							}
@@ -4458,8 +4459,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4477,6 +4478,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4486,8 +4488,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -4555,8 +4556,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4574,6 +4575,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4583,8 +4585,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

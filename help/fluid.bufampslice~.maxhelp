@@ -39,43 +39,6 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 217.0, 954.0, 20.0 ],
-					"style" : "",
-					"text" : "maxFFTSize: How large can the fftSize can be, by allocating memory at instantiation time. The default is 16384."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 217.0, 65.0, 20.0 ],
-					"style" : "",
-					"text" : "#1 (int)"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontface" : 1,
-					"id" : "obj-7",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 195.0, 134.0, 20.0 ],
-					"style" : "",
-					"text" : "arguments (optional):"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-19",
 					"linecount" : 2,
 					"maxclass" : "comment",
@@ -609,7 +572,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 62.0, 222.0, 567.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufonsetslice~ @source spikes @indices slicepoints @minslicelength 2 @fftsettings 128 @threshold 0.1"
+									"text" : "fluid.bufonsetslice~ @source spikes @indices slicepoints @debounce 2 @fftsettings 128 @threshold 0.1"
 								}
 
 							}
@@ -905,7 +868,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 109.0, 340.0, 1100.0, 395.0 ],
 					"style" : "",
-					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\t\t\nWhere in the source should the slicing process start, in sample.\t\t\nHow many frames should be processed.\t\t\nFor multichannel sources, which channel should be processed.\t\t\nFor multichannel sources, how many channel should be summed.\t\t\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\t\t\n\tThe function used to derive a difference curve between spectral frames. It can be any of the following:\n  0- \tEnergy\tthresholds on (sum of squares of magnitudes / nBins) (like Onsets \\power)\n  1- \tHFC\tthresholds on (sum of (squared magnitudes * binNum) / nBins)\n  2- \tSpectralFlux\tthresholds on (diffence in magnitude between consecutive frames, half rectified)\n  3- 3\tMKL\tthresholds on (sum of log of magnitude ratio per bin) (or equivalent: sum of difference of the log magnitude per bin) (like Onsets \\mkl)\n  4- \tIS\t(WILL PROBABLY BE REMOVED) Itakura - Saito divergence (see literature)\n  5- \tCosine\tthresholds on (cosine distance between comparison frames)\n  6- \tPhaseDev\ttakes the past 2 frames, projects to the current, as anticipated if it was a steady state, then compute the sum of the differences, on which it thresholds (like Onsets \\phase)\n  7- \tWPhaseDev\tsame as PhaseDev, but weighted by the magnitude in order to remove chaos noise floor (like Onsets \\wphase)\n  8- \tComplexDev\tsame as PhaseDev, but in the complex domain - the anticipated amp is considered steady, and the phase is projected, then a complex subtraction is done with the actual present frame. The sum of magnitudes is used to threshold (like Onsets \\complex)\n  9- \tRComplexDev\tsame as above, but rectified (like Onsets \\rcomplex)\nThe thresholding of a new slice. Value ranges are different for each function, from 0 upwards.\t\t\nThe minimum duration of a slice in number of hopSize.\t\t\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\t\t\nFor certain functions (HFC, SpectralFlux, MKL, Cosine), the distance does not have to be computed between consecutive frames. By default (0) it is, otherwise this sets the distane between the comparison window in samples.\t\t\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral differencing relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral differencing relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\t\t\nWhere in the source should the slicing process start, in sample.\t\t\nHow many frames should be processed.\t\t\nFor multichannel sources, which channel should be processed.\t\t\nFor multichannel sources, how many channel should be summed.\t\t\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\t\t\n\tThe function used to derive a difference curve between spectral frames. It can be any of the following:\n  0- \tEnergy\tthresholds on (sum of squares of magnitudes / nBins) (like Onsets \\power)\n  1- \tHFC\tthresholds on (sum of (squared magnitudes * binNum) / nBins)\n  2- \tSpectralFlux\tthresholds on (diffence in magnitude between consecutive frames, half rectified)\n  3- 3\tMKL\tthresholds on (sum of log of magnitude ratio per bin) (or equivalent: sum of difference of the log magnitude per bin) (like Onsets \\mkl)\n  4- \tIS\t(WILL PROBABLY BE REMOVED) Itakura - Saito divergence (see literature)\n  5- \tCosine\tthresholds on (cosine distance between comparison frames)\n  6- \tPhaseDev\ttakes the past 2 frames, projects to the current, as anticipated if it was a steady state, then compute the sum of the differences, on which it thresholds (like Onsets \\phase)\n  7- \tWPhaseDev\tsame as PhaseDev, but weighted by the magnitude in order to remove chaos noise floor (like Onsets \\wphase)\n  8- \tComplexDev\tsame as PhaseDev, but in the complex domain - the anticipated amp is considered steady, and the phase is projected, then a complex subtraction is done with the actual present frame. The sum of magnitudes is used to threshold (like Onsets \\complex)\n  9- \tRComplexDev\tsame as above, but rectified (like Onsets \\rcomplex)\nThe thresholding of a new slice. Value ranges are different for each function, from 0 upwards.\t\t\nThe minimum duration of a slice in number of hopSize.\t\t\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\t\t\nFor certain functions (HFC, SpectralFlux, MKL, Cosine), the distance does not have to be computed between consecutive frames. By default (0) it is, otherwise this sets the distane between the comparison window in samples.\t\t\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral differencing relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral differencing relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
@@ -918,7 +881,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 340.0, 78.0, 395.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nfunction\n\n\n\n\n\n\n\n\n\n\n\nthreshold\nminslicelength\nfilterSize\nframeDelta\n\nfftSettings\n\n\n\n\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nfunction\n\n\n\n\n\n\n\n\n\n\n\nthreshold\ndebounce\nfilterSize\nframeDelta\n\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
@@ -1004,7 +967,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1033,19 +996,6 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 941.0, 228.0, 50.0, 22.0 ],
-									"style" : "",
-									"text" : "replace"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "newobj",
@@ -1230,7 +1180,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "minslicelength",
+									"attr" : "debounce",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1269,7 +1219,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "minslicelength",
+									"attr" : "debounce",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1821,7 +1771,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 145.5, 476.0, 378.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufonsetslice~ @minslicelength 10 @source src @indices slicestarts"
+									"text" : "fluid.bufonsetslice~ @debounce 10 @source src @indices slicestarts"
 								}
 
 							}
@@ -1858,13 +1808,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-14", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
-									"source" : [ "obj-17", 0 ]
 								}
 
 							}

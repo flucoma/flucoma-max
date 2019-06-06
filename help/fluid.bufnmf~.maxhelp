@@ -44,7 +44,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 570.0, 42.0, 33.0 ],
+					"patching_rect" : [ 16.0, 596.0, 42.0, 33.0 ],
 					"style" : "",
 					"text" : "bang\nreset"
 				}
@@ -57,7 +57,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 86.0, 570.0, 277.0, 33.0 ],
+					"patching_rect" : [ 86.0, 596.0, 277.0, 33.0 ],
 					"style" : "",
 					"text" : "This method triggers the factorisation.\nResets the arguments to their instantiation values."
 				}
@@ -70,7 +70,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 550.0, 73.0, 20.0 ],
+					"patching_rect" : [ 16.0, 576.0, 73.0, 20.0 ],
 					"style" : "",
 					"text" : "messages:"
 				}
@@ -83,7 +83,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 617.0, 69.0, 20.0 ],
+					"patching_rect" : [ 16.0, 643.0, 69.0, 20.0 ],
 					"style" : "",
 					"text" : "attributes:"
 				}
@@ -890,7 +890,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 63.0, 257.0, 251.0, 20.0 ],
 									"style" : "",
-									"text" : "decompose in 3 ranks with nmf with fixed dict"
+									"text" : "decompose in 3 components with nmf with fixed dict"
 								}
 
 							}
@@ -953,7 +953,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 63.0, 309.0, 476.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source didact-source2 @activations didact-dest2 @bases filter @rank 3"
+									"text" : "fluid.bufnmf~ @source didact-source2 @activations didact-dest2 @bases filter @components 3"
 								}
 
 							}
@@ -1279,7 +1279,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 599.0, 1088.0, 139.0, 22.0 ],
+					"patching_rect" : [ 599.0, 1114.0, 139.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1624,7 +1624,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 63.0, 257.0, 176.0, 20.0 ],
 									"style" : "",
-									"text" : "decompose in 2 ranks with nmf"
+									"text" : "decompose in 2 components with nmf"
 								}
 
 							}
@@ -1674,7 +1674,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 63.0, 309.0, 388.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source didact-source @activations didact-dest @rank 2"
+									"text" : "fluid.bufnmf~ @source didact-source @activations didact-dest @components 2"
 								}
 
 							}
@@ -1918,7 +1918,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 16.0, 1087.0, 118.0, 22.0 ],
+					"patching_rect" : [ 16.0, 1113.0, 118.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1939,9 +1939,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 96.0, 639.0, 1109.0, 368.0 ],
+					"patching_rect" : [ 96.0, 665.0, 1109.0, 368.0 ],
 					"style" : "",
-					"text" : "The name of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\t\nWhere in the srcBuf should the NMF process start, in sample.\t\nHow many frames should be processed.\t\nFor multichannel srcBuf, which channel should be processed first.\t\nFor multichannel srcBuf, how many channel should be processed.\t\nThe name of the buffer where the different reconstructed ranks will be reconstructed. The buffer will be resized to rank * numChannelsProcessed channels and sourceDuration lenght. If nil is provided, the reconstruction will not happen.\t\nThe name of the buffer where the different bases will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no bases will be returned.\t\nThis flag decides of how the basis buffer passed as the previous argument is treated.\t\n  0- \tThe bases are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (fftSize / 2 + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the bases. Its dimensions should match the values above. The resulting bases will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the bases, and will therefore not change. Its bases should match the values above.\nThe index of the buffer where the different activations will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no activation will be returned.\t\nThis flag decides of how the activation buffer passed as the previous argument is treated.\t\n  0- \tThe activations are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to rank * numChannelsProcessed channels and (sourceDuration / hopsize + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the activations. Its dimensions should match the values above. The resulting activations will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the activations, and will therefore not change. Its dimensions should match the values above.\nThe number of elements the NMF algorithm will try to divide the spectrogram of the source in.\t\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU expensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n"
+					"text" : "The name of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\t\nWhere in the srcBuf should the NMF process start, in sample.\t\nHow many frames should be processed.\t\nFor multichannel srcBuf, which channel should be processed first.\t\nFor multichannel srcBuf, how many channel should be processed.\t\nThe name of the buffer where the different reconstructed components will be reconstructed. The buffer will be resized to components * numChannelsProcessed channels and sourceDuration lenght. If nil is provided, the reconstruction will not happen.\t\nThe name of the buffer where the different bases will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no bases will be returned.\t\nThis flag decides of how the basis buffer passed as the previous argument is treated.\t\n  0- \tThe bases are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to components * numChannelsProcessed channels and (fftSize / 2 + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the bases. Its dimensions should match the values above. The resulting bases will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the bases, and will therefore not change. Its bases should match the values above.\nThe index of the buffer where the different activations will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no activation will be returned.\t\nThis flag decides of how the activation buffer passed as the previous argument is treated.\t\n  0- \tThe activations are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to components * numChannelsProcessed channels and (sourceDuration / hopsize + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the activations. Its dimensions should match the values above. The resulting activations will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the activations, and will therefore not change. Its dimensions should match the values above.\nThe number of elements the NMF algorithm will try to divide the spectrogram of the source in.\t\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU expensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n"
 				}
 
 			}
@@ -1952,9 +1952,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 639.0, 78.0, 368.0 ],
+					"patching_rect" : [ 16.0, 665.0, 78.0, 368.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ndestination\n\nbases\nbasesMode\n\n\n\nactivations\nactMode\n\n\n\n\nrank\nnumIter\n\nfftSettings\n\n\n\n\nwarnings\n"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ndestination\n\nbases\nbasesMode\n\n\n\nactivations\nactMode\n\n\n\n\ncomponents\nnumIter\n\nfftSettings\n\n\n\n\nwarnings\n"
 				}
 
 			}
@@ -1991,7 +1991,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 16.0, 1045.0, 902.0, 56.0 ],
+					"patching_rect" : [ 16.0, 1071.0, 1183.0, 56.0 ],
 					"style" : "",
 					"text" : "[1] - Lee, Daniel D., and H. Sebastian Seung. 1999. ‘Learning the Parts of Objects by Non-Negative Matrix Factorization’. Nature 401 (6755): 788–91. https://doi.org/10.1038/44565.\n[2] - Smaragdis and Brown, Non-Negative Matrix Factorization for Polyphonic Music Transcription.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).\n"
 				}
@@ -2006,7 +2006,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 100.0, 1190.0, 435.0 ],
 					"style" : "",
-					"text" : "The FluidBufNMF object decomposes the spectrum of a sound into a number of components using Non-Negative Matrix Factorisation (NMF)1 . NMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored.\n\nThe algorithm takes a buffer in and divides it into a number of components, determined by the rank argument. It works iteratively, by trying to find a combination of spectral templates ('bases') and envelopes ('activations') that yield the original magnitude spectrogram when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe object can return either or all of the following:\n- a spectral contour of each component in the form of a magnitude spectrogram (called a basis in NMF lingo);\n- an amplitude envelope of each component in the form of gains for each consecutive frame of the underlying spectrogram (called an activation in NMF lingo);\n- an audio reconstruction of each components in the time domain.\n\nThe bases and activations can be used to make a kind of vocoder based on what NMF has 'learned' from the original data. Alternatively, taking the matrix product of a basis and an activation will yield a synthetic magnitude spectrogram of a component (which could be reconsructed, given some phase informaiton from somewhere).\n\nSome additional options and flexibility can be found through combinations of the basesMode and actMode arguments. If these flags are set to 1, the object expects to be supplied with pre-formed spectra (or envelopes) that will be used as seeds for the decomposition, providing more guided results. When set to 2, the supplied buffers won't be updated, so become templates to match against instead. Note that having both bases and activations set to 2 doesn't make sense, so the object will complain.\n\nIf supplying pre-formed data, it's up to the user to make sure that the supplied buffers are the right size:\n\n- bases must be (fft size / 2) + 1 frames and (rank * input channels) channels\n- activations must be (input frames / hopSize) + 1 frames and (rank * input channels) channels\n\nIn this implementation, the components are reconstructed by masking the original spectrum, such that they will sum to yield the original sound.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes that are learned from the data, and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
+					"text" : "The FluidBufNMF object decomposes the spectrum of a sound into a number of components using Non-Negative Matrix Factorisation (NMF)1 . NMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored.\n\nThe algorithm takes a buffer in and divides it into a number of components, determined by the components argument. It works iteratively, by trying to find a combination of spectral templates ('bases') and envelopes ('activations') that yield the original magnitude spectrogram when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe object can return either or all of the following:\n- a spectral contour of each component in the form of a magnitude spectrogram (called a basis in NMF lingo);\n- an amplitude envelope of each component in the form of gains for each consecutive frame of the underlying spectrogram (called an activation in NMF lingo);\n- an audio reconstruction of each components in the time domain.\n\nThe bases and activations can be used to make a kind of vocoder based on what NMF has 'learned' from the original data. Alternatively, taking the matrix product of a basis and an activation will yield a synthetic magnitude spectrogram of a component (which could be reconsructed, given some phase informaiton from somewhere).\n\nSome additional options and flexibility can be found through combinations of the basesMode and actMode arguments. If these flags are set to 1, the object expects to be supplied with pre-formed spectra (or envelopes) that will be used as seeds for the decomposition, providing more guided results. When set to 2, the supplied buffers won't be updated, so become templates to match against instead. Note that having both bases and activations set to 2 doesn't make sense, so the object will complain.\n\nIf supplying pre-formed data, it's up to the user to make sure that the supplied buffers are the right size:\n\n- bases must be (fft size / 2) + 1 frames and (components * input channels) channels\n- activations must be (input frames / hopSize) + 1 frames and (components * input channels) channels\n\nIn this implementation, the components are reconstructed by masking the original spectrum, such that they will sum to yield the original sound.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes that are learned from the data, and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
 				}
 
 			}
@@ -2218,7 +2218,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 692.0, 411.0, 404.0, 100.0 ],
 									"style" : "",
-									"text" : "what is happening: We split 2 seconds of guitar in 10 ranks, find the one that has the highest log_centroid, which we estimate to be the best guess of where the pick sound is. We then take the activation of that pick sound and place it in a buffer on channel 1, and sum all the others to the other channel. This 2 channel buffer becomes our new, fixed template dictionnary, and we run 20 seconds of sound and we know where things will go."
+									"text" : "what is happening: We split 2 seconds of guitar in 10 components, find the one that has the highest log_centroid, which we estimate to be the best guess of where the pick sound is. We then take the activation of that pick sound and place it in a buffer on channel 1, and sum all the others to the other channel. This 2 channel buffer becomes our new, fixed template dictionnary, and we run 20 seconds of sound and we know where things will go."
 								}
 
 							}
@@ -2436,7 +2436,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 217.0, 741.0, 756.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source guit @fftsettings 1024 256 2048 @numiter 100 @bases guit-dicts-sum @basesmode 2 @rank 2 @resynth guit-audio"
+									"text" : "fluid.bufnmf~ @source guit @fftsettings 1024 256 2048 @iterations 100 @bases guit-dicts-sum @basesmode 2 @components 2 @resynth guit-audio"
 								}
 
 							}
@@ -2578,7 +2578,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 105.0, 90.0, 760.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @numiter 100 @bases guit-dicts @rank 10 @resynth guit-audio"
+									"text" : "fluid.bufnmf~ @source guit @numframes 88200 @fftsettings 1024 256 2048 @iterations 100 @bases guit-dicts @components 10 @resynth guit-audio"
 								}
 
 							}
@@ -2856,7 +2856,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 455.0, 1087.0, 109.0, 22.0 ],
+					"patching_rect" : [ 455.0, 1113.0, 109.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3176,7 +3176,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "numiter",
+									"attr" : "iterations",
 									"id" : "obj-60",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -3215,7 +3215,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "rank",
+									"attr" : "components",
 									"id" : "obj-52",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -3596,7 +3596,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 93.0, 266.0, 688.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source synth @resynth resynth @bases filt @activations env @rank 5 @numiter 100 @fftsettings 512 256 1024"
+									"text" : "fluid.bufnmf~ @source synth @resynth resynth @bases filt @activations env @components 5 @iterations 100 @fftsettings 512 256 1024"
 								}
 
 							}
@@ -4587,7 +4587,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 150.0, 1087.0, 106.0, 22.0 ],
+					"patching_rect" : [ 150.0, 1113.0, 106.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -4706,7 +4706,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 170.0, 334.0, 117.0, 20.0 ],
 									"style" : "",
-									"text" : "play whichever rank"
+									"text" : "play whichever component"
 								}
 
 							}
@@ -5064,7 +5064,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 42.0, 238.0, 376.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.bufnmf~ @source stereosource @resynth resynth2 @bases filt2 @activations env2 @rank 4 @numiter 50 @fftsettings 512 256 1024"
+									"text" : "fluid.bufnmf~ @source stereosource @resynth resynth2 @bases filt2 @activations env2 @components 4 @iterations 50 @fftsettings 512 256 1024"
 								}
 
 							}
@@ -5276,7 +5276,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 281.449341, 1087.0, 122.0, 22.0 ],
+					"patching_rect" : [ 281.449341, 1113.0, 122.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

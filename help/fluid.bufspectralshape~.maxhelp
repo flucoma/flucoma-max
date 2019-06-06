@@ -39,6 +39,43 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 109.0, 422.0, 954.0, 20.0 ],
+					"style" : "",
+					"text" : "maxFFTSize: How large can the fftSize can be, by allocating memory at instantiation time. The default is 16384."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 422.0, 65.0, 20.0 ],
+					"style" : "",
+					"text" : "#1 (int)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-24",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 400.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments (optional):"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-13",
 					"linecount" : 17,
 					"maxclass" : "comment",
@@ -46,7 +83,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1155.0, 234.0 ],
 					"style" : "",
-					"text" : "This class implements seven of the most popular spectral shape descriptors, computed on a linear scale for both amplitude and frequency. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe descriptors are:\n• the four first statistical moments (https://en.wikipedia.org/wiki/Moment_(mathematics) ), more commonly known as:\n  • the spectral centroid (1) in spectral bins as units. This is the point that splits the spectrum in 2 halves of equal energy. It is the weighted average of the magnitude spectrum.\n  • the spectral spread (2) in spectral bins. This is the standard deviation of the spectrum envelop, or the average of the distance to the centroid.\n  • the normalised skewness (3) as ratio. This indicates how tilted is the spectral curve in relation to the middle of the spectral frame, i.e. half of the Nyquist frequency. If it is below the bin representing that frequency, i.e. the central bin of the magnitude spectrum, it is positive.\n  • the normalised kurtosis (4) as ratio. This indicates how focused is the spectral curve. If it is peaky, it is high.\n• the rolloff (5) in bin number. This indicates the bin under which 95% of the energy is included.\n• the flatness (6) in dB. This is the ratio of geometric mean of the magnitude, over the arithmetic mean of the magnitudes. It yields a very approximate measure on how noisy a signal is.\n• the crest (7) in dB. This is the ratio of the loudest magnitude over the RMS of the whole frame. A high number is an indication of a loud peak poking out from the overal spectral curve.\n\nThe drawings in Peeters 2003 (http://recherche.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf) are useful, as are the commented examples below. For the mathematically-inclined reader, the tutorials and code offered here (https://www.audiocontentanalysis.org/) are interesting to further the understanding.\n\nThe process will return a multichannel buffer with the seven channels per input channel, each containing the 7 shapes. Each sample represents a value, which is every hopSize."
+					"text" : "This class implements seven of the most popular spectral shape descriptors, computed on a linear scale for both amplitude and frequency. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe descriptors are:\n• the four first statistical moments (https://en.wikipedia.org/wiki/Moment_(mathematics) ), more commonly known as:\n  • the spectral centroid (1) in Hz. This is the point that splits the spectrum in 2 halves of equal energy. It is the weighted average of the magnitude spectrum.\n  • the spectral spread (2) in Hz. This is the standard deviation of the spectrum envelop, or the average of the distance to the centroid.\n  • the normalised skewness (3) as ratio. This indicates how tilted is the spectral curve in relation to the middle of the spectral frame, i.e. half of the Nyquist frequency. If it is below the bin representing that frequency, i.e. the central bin of the magnitude spectrum, it is positive.\n  • the normalised kurtosis (4) as ratio. This indicates how focused is the spectral curve. If it is peaky, it is high.\n• the rolloff (5) in Hz. This indicates the bin under which 95% of the energy is included.\n• the flatness (6) in dB. This is the ratio of geometric mean of the magnitude, over the arithmetic mean of the magnitudes. It yields a very approximate measure on how noisy a signal is.\n• the crest (7) in dB. This is the ratio of the loudest magnitude over the RMS of the whole frame. A high number is an indication of a loud peak poking out from the overal spectral curve.\n\nThe drawings in Peeters 2003 (http://recherche.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf) are useful, as are the commented examples below. For the mathematically-inclined reader, the tutorials and code offered here (https://www.audiocontentanalysis.org/) are interesting to further the understanding.\n\nThe process will return a multichannel buffer with the seven channels per input channel, each containing the 7 shapes. Each sample represents a value, which is every hopSize."
 				}
 
 			}
@@ -67,7 +104,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 938.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -128,9 +165,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 417.0, 372.0, 95.0, 22.0 ],
+									"patching_rect" : [ 417.0, 372.0, 102.0, 22.0 ],
 									"style" : "",
-									"text" : "loadmess 0.003"
+									"text" : "loadmess 0.0004"
 								}
 
 							}
@@ -169,7 +206,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 417.0, 400.0, 50.0, 22.0 ],
+									"patching_rect" : [ 417.0, 400.0, 58.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -587,8 +624,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -655,7 +692,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 396.0, 42.0, 33.0 ],
+					"patching_rect" : [ 39.0, 488.0, 42.0, 33.0 ],
 					"style" : "",
 					"text" : "bang\nreset"
 				}
@@ -668,7 +705,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 109.0, 396.0, 277.0, 33.0 ],
+					"patching_rect" : [ 109.0, 488.0, 277.0, 33.0 ],
 					"style" : "",
 					"text" : "This method triggers the analysis.\nResets the arguments to their instantiation values."
 				}
@@ -681,7 +718,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 376.0, 73.0, 20.0 ],
+					"patching_rect" : [ 39.0, 468.0, 73.0, 20.0 ],
 					"style" : "",
 					"text" : "messages:"
 				}
@@ -694,7 +731,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 443.0, 69.0, 20.0 ],
+					"patching_rect" : [ 39.0, 535.0, 69.0, 20.0 ],
 					"style" : "",
 					"text" : "attributes:"
 				}
@@ -707,9 +744,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 465.0, 1068.0, 167.0 ],
+					"patching_rect" : [ 116.0, 557.0, 1111.0, 167.0 ],
 					"style" : "",
-					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer for the 7 spectral features describing the spectral shape.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As sinusoidal modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As sinusoidal modelling relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The index of the buffer to use as the source material to be described through the various descriptors. The different channels of multichannel buffers will be processing sequentially.\nWhere in the source should the process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed first.\nFor multichannel source, how many channel should be processed.\nThe name of the buffer for the 7 spectral features describing the spectral shape.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral shape modelling relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectrum relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
@@ -720,7 +757,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 465.0, 83.0, 167.0 ],
+					"patching_rect" : [ 39.0, 557.0, 83.0, 167.0 ],
 					"style" : "",
 					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nfeatures\nfftSettings\n\n\n\n\nwarnings"
 				}
@@ -795,7 +832,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 938.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -882,9 +919,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 463.0, 398.0, 95.0, 22.0 ],
+									"patching_rect" : [ 463.0, 398.0, 102.0, 22.0 ],
 									"style" : "",
-									"text" : "loadmess 0.004"
+									"text" : "loadmess 0.0001"
 								}
 
 							}
@@ -923,7 +960,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 463.0, 426.0, 50.0, 22.0 ],
+									"patching_rect" : [ 463.0, 426.0, 63.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -1260,7 +1297,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 209.0, 469.5, 85.0, 22.0 ],
 									"style" : "",
-									"text" : "34.703034"
+									"text" : "46.243302"
 								}
 
 							}
@@ -1629,8 +1666,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1713,8 +1750,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

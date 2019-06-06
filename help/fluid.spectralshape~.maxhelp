@@ -46,7 +46,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 108.5, 387.0, 299.0, 33.0 ],
 					"style" : "",
-					"text" : "The audio to be processed.\nA list of seven descriptors. The latency is winSize."
+					"text" : "The audio to be processed.\nA list of seven descriptors. The latency is windowsize."
 				}
 
 			}
@@ -248,20 +248,6 @@
 							}
 , 							{
 								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-14",
-									"linecount" : 9,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 815.333374, 556.5, 163.0, 137.0 ],
-									"style" : "",
-									"text" : "centroid (converted in Hz)\n\nspread (converted in Hz)\n\n\n\n\n\nrolloff (converted in Hz)"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"format" : 6,
 									"id" : "obj-13",
 									"maxclass" : "flonum",
@@ -383,45 +369,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-129",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 637.333374, 486.0, 50.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-23",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 637.333374, 456.0, 92.0, 22.0 ],
-									"style" : "",
-									"text" : "loadmess 1024"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "int", "float", "int", "int" ],
-									"patching_rect" : [ 736.333374, 460.0, 67.0, 22.0 ],
-									"style" : "",
-									"text" : "dspstate~"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-85",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -436,34 +383,6 @@
 , 							{
 								"box" : 								{
 									"fontsize" : 13.0,
-									"id" : "obj-110",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 590.333374, 556.5, 117.0, 23.0 ],
-									"style" : "",
-									"text" : "expr $f1 * $f3 / $f2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-109",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 603.333374, 526.0, 117.0, 23.0 ],
-									"style" : "",
-									"text" : "expr $f1 * $f3 / $f2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
 									"id" : "obj-107",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -472,20 +391,6 @@
 									"patching_rect" : [ 222.333344, 482.0, 104.0, 23.0 ],
 									"style" : "",
 									"text" : "unpack f f f f f f f"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-105",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 575.333374, 583.5, 117.0, 23.0 ],
-									"style" : "",
-									"text" : "expr $f1 * $f3 / $f2"
 								}
 
 							}
@@ -519,20 +424,6 @@
 							}
 , 							{
 								"box" : 								{
-									"format" : 6,
-									"id" : "obj-57",
-									"maxclass" : "flonum",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 726.333374, 661.5, 87.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-50",
 									"linecount" : 13,
@@ -541,7 +432,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 410.333374, 547.5, 133.0, 195.0 ],
 									"style" : "",
-									"text" : "centroid (in bins)\n\nspread (in bins)\n\nskewness (ratio)\n\nkurtosis (ratio)\n\nrolloff (in bins)\n\nflatness (ratio, in dB)\n\ncrest (ratio, in dB)"
+									"text" : "centroid (in Hz)\n\nspread (in Hz)\n\nskewness (ratio)\n\nkurtosis (ratio)\n\nrolloff (in Hz)\n\nflatness (ratio, in dB)\n\ncrest (ratio, in dB)"
 								}
 
 							}
@@ -569,34 +460,6 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 322.333374, 604.5, 87.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"format" : 6,
-									"id" : "obj-34",
-									"maxclass" : "flonum",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 726.333374, 583.5, 87.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"format" : 6,
-									"id" : "obj-31",
-									"maxclass" : "flonum",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 726.333374, 556.5, 87.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -734,45 +597,9 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-57", 0 ],
-									"midpoints" : [ 584.833374, 610.5, 735.833374, 610.5 ],
-									"source" : [ "obj-105", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-105", 0 ],
-									"midpoints" : [ 288.500011, 520.25, 584.833374, 520.25 ],
-									"order" : 0,
-									"source" : [ "obj-107", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-109", 0 ],
-									"midpoints" : [ 231.833344, 510.0, 612.833374, 510.0 ],
-									"order" : 0,
-									"source" : [ "obj-107", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
 									"midpoints" : [ 231.833344, 543.25, 331.833374, 543.25 ],
-									"order" : 1,
 									"source" : [ "obj-107", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-110", 0 ],
-									"midpoints" : [ 246.000011, 515.75, 599.833374, 515.75 ],
-									"order" : 0,
-									"source" : [ "obj-107", 1 ]
 								}
 
 							}
@@ -780,7 +607,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
 									"midpoints" : [ 246.000011, 572.25, 331.833374, 572.25 ],
-									"order" : 1,
 									"source" : [ "obj-107", 1 ]
 								}
 
@@ -789,7 +615,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"midpoints" : [ 288.500011, 658.25, 331.833374, 658.25 ],
-									"order" : 1,
 									"source" : [ "obj-107", 4 ]
 								}
 
@@ -828,46 +653,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-31", 0 ],
-									"midpoints" : [ 612.833374, 553.75, 735.833374, 553.75 ],
-									"source" : [ "obj-109", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-34", 0 ],
-									"midpoints" : [ 599.833374, 582.0, 735.833374, 582.0 ],
-									"source" : [ "obj-110", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-105", 1 ],
-									"order" : 2,
-									"source" : [ "obj-129", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-109", 1 ],
-									"order" : 0,
-									"source" : [ "obj-129", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-110", 1 ],
-									"order" : 1,
-									"source" : [ "obj-129", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-15", 0 ]
 								}
@@ -882,30 +667,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-105", 2 ],
-									"order" : 2,
-									"source" : [ "obj-17", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-109", 2 ],
-									"order" : 0,
-									"source" : [ "obj-17", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-110", 2 ],
-									"order" : 1,
-									"source" : [ "obj-17", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-30", 1 ],
 									"source" : [ "obj-2", 1 ]
 								}
@@ -915,13 +676,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-85", 0 ],
 									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-129", 0 ],
-									"source" : [ "obj-23", 0 ]
 								}
 
 							}
@@ -1010,8 +764,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1080,7 +834,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 108.5, 505.0, 1071.0, 100.0 ],
 					"style" : "",
-					"text" : "up to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "up to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
@@ -1145,7 +899,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1155.0, 234.0 ],
 					"style" : "",
-					"text" : "This class implements seven of the most popular spectral shape descriptors, computed on a linear scale for both amplitude and frequency. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe descriptors are:\n• the four first statistical moments (https://en.wikipedia.org/wiki/Moment_(mathematics) ), more commonly known as:\n  • the spectral centroid (1) in spectral bins as units. This is the point that splits the spectrum in 2 halves of equal energy. It is the weighted average of the magnitude spectrum.\n  • the spectral spread (2) in spectral bins. This is the standard deviation of the spectrum envelop, or the average of the distance to the centroid.\n  • the normalised skewness (3) as ratio. This indicates how tilted is the spectral curve in relation to the middle of the spectral frame, i.e. half of the Nyquist frequency. If it is below the bin representing that frequency, i.e. the central bin of the magnitude spectrum, it is positive.\n  • the normalised kurtosis (4) as ratio. This indicates how focused is the spectral curve. If it is peaky, it is high.\n• the rolloff (5) in bin number. This indicates the bin under which 95% of the energy is included.\n• the flatness (6) in dB. This is the ratio of geometric mean of the magnitude, over the arithmetic mean of the magnitudes. It yields a very approximate measure on how noisy a signal is.\n• the crest (7) in dB. This is the ratio of the loudest magnitude over the RMS of the whole frame. A high number is an indication of a loud peak poking out from the overal spectral curve.\n\nThe drawings in Peeters 2003 (http://recherche.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf) are useful, as are the commented examples below. For the mathematically-inclined reader, the tutorials and code offered here (https://www.audiocontentanalysis.org/) are interesting to further the understanding.\n\nThe process will return the seven values as a list, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the signal vector size."
+					"text" : "This class implements seven of the most popular spectral shape descriptors, computed on a linear scale for both amplitude and frequency. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe descriptors are:\n• the four first statistical moments (https://en.wikipedia.org/wiki/Moment_(mathematics) ), more commonly known as:\n  • the spectral centroid (1) in Hz. This is the point that splits the spectrum in 2 halves of equal energy. It is the weighted average of the magnitude spectrum.\n  • the spectral spread (2) in Hz. This is the standard deviation of the spectrum envelop, or the average of the distance to the centroid.\n  • the normalised skewness (3) as ratio. This indicates how tilted is the spectral curve in relation to the middle of the spectral frame, i.e. half of the Nyquist frequency. If it is below the bin representing that frequency, i.e. the central bin of the magnitude spectrum, it is positive.\n  • the normalised kurtosis (4) as ratio. This indicates how focused is the spectral curve. If it is peaky, it is high.\n• the rolloff (5) in Hz. This indicates the bin under which 95% of the energy is included.\n• the flatness (6) in dB. This is the ratio of geometric mean of the magnitude, over the arithmetic mean of the magnitudes. It yields a very approximate measure on how noisy a signal is.\n• the crest (7) in dB. This is the ratio of the loudest magnitude over the RMS of the whole frame. A high number is an indication of a loud peak poking out from the overal spectral curve.\n\nThe drawings in Peeters 2003 (http://recherche.ircam.fr/anasyn/peeters/ARTICLES/Peeters_2003_cuidadoaudiofeatures.pdf) are useful, as are the commented examples below. For the mathematically-inclined reader, the tutorials and code offered here (https://www.audiocontentanalysis.org/) are interesting to further the understanding.\n\nThe process will return the seven values as a list, which will be repeated if no change happens within the algorythm, i.e. when the hopSize is larger than the signal vector size."
 				}
 
 			}
@@ -1179,7 +933,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1866,19 +1620,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-14",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "int", "int", "int" ],
-									"patching_rect" : [ 34.833374, 617.0, 67.0, 22.0 ],
-									"style" : "",
-									"text" : "unpack i i i"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"attr" : "logfreq",
 									"id" : "obj-16",
 									"maxclass" : "attrui",
@@ -2000,32 +1741,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-129",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 82.833374, 645.0, 50.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 4,
-									"outlettype" : [ "int", "float", "int", "int" ],
-									"patching_rect" : [ 142.0, 645.0, 67.0, 22.0 ],
-									"style" : "",
-									"text" : "dspstate~"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-85",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -2040,34 +1755,6 @@
 , 							{
 								"box" : 								{
 									"fontsize" : 13.0,
-									"id" : "obj-110",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 82.833374, 735.5, 117.0, 23.0 ],
-									"style" : "",
-									"text" : "expr $f1 * $f3 / $f2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-109",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 97.0, 707.0, 117.0, 23.0 ],
-									"style" : "",
-									"text" : "expr $f1 * $f3 / $f2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
 									"id" : "obj-107",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -2076,20 +1763,6 @@
 									"patching_rect" : [ 219.333344, 673.0, 104.0, 23.0 ],
 									"style" : "",
 									"text" : "unpack f f f f f f f"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-105",
-									"maxclass" : "newobj",
-									"numinlets" : 3,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 82.833374, 813.5, 117.0, 23.0 ],
-									"style" : "",
-									"text" : "expr $f1 * $f3 / $f2"
 								}
 
 							}
@@ -2166,20 +1839,6 @@
 , 							{
 								"box" : 								{
 									"fontsize" : 13.0,
-									"id" : "obj-35",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 37.333374, 411.0, 106.0, 23.0 ],
-									"style" : "",
-									"text" : "getattr fftsettings"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -2227,33 +1886,25 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-13", 0 ],
-									"midpoints" : [ 92.333374, 849.0, 328.833374, 849.0 ],
-									"source" : [ "obj-105", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-105", 0 ],
-									"midpoints" : [ 285.500011, 805.25, 92.333374, 805.25 ],
-									"source" : [ "obj-107", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-109", 0 ],
-									"midpoints" : [ 228.833344, 701.0, 106.5, 701.0 ],
+									"destination" : [ "obj-11", 0 ],
+									"midpoints" : [ 228.833344, 716.25, 328.833374, 716.25 ],
 									"source" : [ "obj-107", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-110", 0 ],
-									"midpoints" : [ 243.000011, 706.75, 92.333374, 706.75 ],
+									"destination" : [ "obj-12", 0 ],
+									"midpoints" : [ 243.000011, 762.75, 328.833374, 762.75 ],
 									"source" : [ "obj-107", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"midpoints" : [ 285.500011, 848.75, 328.833374, 848.75 ],
+									"source" : [ "obj-107", 4 ]
 								}
 
 							}
@@ -2291,55 +1942,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"midpoints" : [ 106.5, 735.75, 328.833374, 735.75 ],
-									"source" : [ "obj-109", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 0 ],
-									"midpoints" : [ 92.333374, 763.0, 328.833374, 763.0 ],
-									"source" : [ "obj-110", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-38", 1 ],
 									"source" : [ "obj-123", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-105", 1 ],
-									"order" : 1,
-									"source" : [ "obj-129", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-109", 1 ],
-									"order" : 0,
-									"source" : [ "obj-129", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-110", 1 ],
-									"order" : 2,
-									"source" : [ "obj-129", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-129", 0 ],
-									"source" : [ "obj-14", 2 ]
 								}
 
 							}
@@ -2354,30 +1958,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-16", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-105", 2 ],
-									"order" : 1,
-									"source" : [ "obj-17", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-109", 2 ],
-									"order" : 0,
-									"source" : [ "obj-17", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-110", 2 ],
-									"order" : 2,
-									"source" : [ "obj-17", 1 ]
 								}
 
 							}
@@ -2462,20 +2042,6 @@
 									"destination" : [ "obj-7", 0 ],
 									"midpoints" : [ 625.458374, 493.5, 605.270874, 493.5, 605.270874, 203.0, 28.083374, 203.0 ],
 									"source" : [ "obj-3", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-14", 0 ],
-									"source" : [ "obj-35", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-35", 1 ]
 								}
 
 							}
@@ -2605,8 +2171,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2701,8 +2267,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

@@ -133,14 +133,18 @@ private:
 template <class Wrapper>
 struct NonRealTime
 {
-  static void setup(t_class *c) { class_addmethod(c, (method) deferProcess, "bang", A_GIMME, 0); }
+  static void setup(t_class *c) { class_addmethod(c, (method) deferProcess, "bang", 0); }
 
-  void process(t_symbol* /*s*/, long  /*ac*/, t_atom * /*av*/)
+  void process()
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
-    auto &client  = wrapper.mClient;
-
+    auto &client = wrapper.client();
+    auto paramCopy = wrapper.mParams;
+    
+//    auto client = typename Wrapper::ClientType{paramCopy};
+    client.setParams(paramCopy);
     Result res = client.process();
+    client.setParams(wrapper.mParams);
     if (!res.ok())
     {
       switch (res.status())
@@ -155,9 +159,9 @@ struct NonRealTime
     wrapper.doneBang();
   }
 
-  static void deferProcess(Wrapper *x, t_symbol *s, long ac, t_atom *av) { defer(x, (method) &callProcess, s, static_cast<short>(ac), av); }
+  static void deferProcess(Wrapper *x) { defer(x, (method) &callProcess, nullptr, 0, nullptr); }
 
-  static void callProcess(Wrapper *x, t_symbol *s, short ac, t_atom *av) { x->process(s, ac, av); }
+  static void callProcess(Wrapper *x, t_symbol /**s*/, long /*ac*/, t_atom /**av*/) { x->process(); }
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
