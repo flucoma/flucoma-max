@@ -5,8 +5,6 @@
 #include <ext_obex_util.h>
 #include <z_dsp.h>
 
-#include <commonsyms.h>
-
 #include <clients/common/FluidBaseClient.hpp>
 #include <clients/common/OfflineClient.hpp>
 #include <clients/common/ParameterSet.hpp>
@@ -14,6 +12,7 @@
 
 #include <MaxBufferAdaptor.hpp>
 
+#include <cctype>  //std::tolower
 #include <tuple>
 #include <utility>
 
@@ -25,7 +24,7 @@ namespace client {
 namespace impl {
 
 template <typename Wrapper>
-t_max_err getLatency(Wrapper *x, t_object */*attr*/, long *ac, t_atom **av)
+t_max_err getLatency(Wrapper *x, t_object * /*attr*/, long *ac, t_atom **av)
 {
   char alloc;
   atom_alloc(ac, av, &alloc);
@@ -92,7 +91,7 @@ public:
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
   }
 
-  void perform(t_object */*dsp64*/, double **ins, long numins, double **outs, long /*numouts*/, long sampleframes, long /*flags*/, void*/*userparam*/)
+  void perform(t_object * /*dsp64*/, double **ins, long numins, double **outs, long /*numouts*/, long sampleframes, long /*flags*/, void* /*userparam*/)
   {
     auto &client = static_cast<Wrapper *>(this)->mClient;
     for (auto i = 0u; i < static_cast<size_t>(numins); ++i)
@@ -374,7 +373,7 @@ public:
     for (auto &r : results)
       printResult(this, r);
 
-    object_obex_store(this, _sym_dumpout, (t_object *) outlet_new(this, nullptr));
+    object_obex_store(this, gensym("dumpout"), (t_object *) outlet_new(this, nullptr));
 
     if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
 
@@ -412,8 +411,12 @@ public:
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
+    
+	//Change for MSVC, which didn't like the macro version
+	t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
+	class_addattr(getClass(), a);
 
-    CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
+    //CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
 
@@ -530,8 +533,8 @@ private:
   static t_symbol* maxAttrType(LongT) { return USESYM(long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
-  static t_symbol* maxAttrType(FloatPairsArrayT) { return _sym_atom; }
-  static t_symbol* maxAttrType(FFTParamsT) { return _sym_atom; }
+  static t_symbol* maxAttrType(FloatPairsArrayT) { return gensym("atom"); }
+  static t_symbol* maxAttrType(FFTParamsT) { return gensym("atom"); }
 
   Result        mResult;
   void *        mNRTDoneOutlet;

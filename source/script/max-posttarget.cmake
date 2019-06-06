@@ -4,6 +4,7 @@
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
+
 target_link_libraries(${PROJECT_NAME}
 PUBLIC FLUID_DECOMPOSITION  FLUID_MAX
 PRIVATE FFTLIB
@@ -16,7 +17,7 @@ target_include_directories (
 )
 
 if(MSVC)
-  target_compile_options(${PROJECT_NAME}PRIVATE /W4 /WX)
+  target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
 else()
   target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
 endif()
@@ -76,9 +77,11 @@ if (APPLE)
 	#
   #   set_target_properties(${PROJECT_NAME} PROPERTIES )
 elseif (WIN32)
-	target_link_libraries(${PROJECT_NAME} ${MaxAPI_LIB})
-	target_link_libraries(${PROJECT_NAME} ${MaxAudio_LIB})
-	target_link_libraries(${PROJECT_NAME} ${Jitter_LIB})
+	# target_sources(${PROJECT_NAME} PRIVATE "${C74_MAX_INCLUDES}/common/commonsyms.c" )
+	target_compile_options(${PROJECT_NAME} PRIVATE /arch:AVX)
+	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
+	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAudio_LIB})
+	target_link_libraries(${PROJECT_NAME} PRIVATE ${Jitter_LIB})
 
 	if (CMAKE_SIZEOF_VOID_P EQUAL 8)
 		set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".mxe64")
