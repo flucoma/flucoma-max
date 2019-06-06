@@ -5,8 +5,6 @@
 #include <ext_obex_util.h>
 #include <z_dsp.h>
 
-#include <commonsyms.h>
-
 #include <clients/common/FluidBaseClient.hpp>
 #include <clients/common/OfflineClient.hpp>
 #include <clients/common/ParameterSet.hpp>
@@ -93,7 +91,7 @@ public:
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
   }
 
-  void perform(t_object */*dsp64*/, double **ins, long numins, double **outs, long /*numouts*/, long sampleframes, long /*flags*/, void*/*userparam*/)
+  void perform(t_object * /*dsp64*/, double **ins, long numins, double **outs, long /*numouts*/, long sampleframes, long /*flags*/, void* /*userparam*/)
   {
     auto &client = static_cast<Wrapper *>(this)->mClient;
     for (auto i = 0u; i < static_cast<size_t>(numins); ++i)
