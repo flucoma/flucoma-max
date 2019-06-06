@@ -25,7 +25,7 @@ endif()
 
 if(WIN32)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++14")
-endif() 
+endif()
 
 
 # set_property(GLOBAL PROPERTY USE_FOLDERS ON)
@@ -74,9 +74,15 @@ target_link_libraries(
   FFTLIB PRIVATE ${FFT_LINK}
 )
 
-# target_compile_options(
-#   FFTLIB PRIVATE "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
-# )
+if(WIN32)
+ target_compile_options(
+   FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: /arch:AVX>
+ )
+else(WIN32)
+target_compile_options(
+   FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>
+)
+endif(WIN32)
 
 set_property(TARGET FFTLIB PROPERTY OSX_ARCHITECTURES x86_64;i386)
 
