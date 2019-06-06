@@ -18,7 +18,7 @@ target_include_directories (
 
 if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
-else()
+else(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
 endif()
 
@@ -39,11 +39,15 @@ else ()
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${EXTERN_OUTPUT_NAME}")
 
-# target_compile_options(
-# ${PROJECT_NAME}
-# PUBLIC
-# "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
-# )
+if(WIN32)
+ target_compile_options(
+   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: /arch:AVX>
+ )
+else(WIN32)
+target_compile_options(
+   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>
+)
+endif(WIN32)
 
 
 
@@ -77,7 +81,6 @@ if (APPLE)
 	#
   #   set_target_properties(${PROJECT_NAME} PROPERTIES )
 elseif (WIN32)
-	# target_sources(${PROJECT_NAME} PRIVATE "${C74_MAX_INCLUDES}/common/commonsyms.c" )
 	target_compile_options(${PROJECT_NAME} PRIVATE /arch:AVX)
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAudio_LIB})
@@ -102,5 +105,5 @@ endif ()
 #		POST_BUILD
 #		COMMAND rm "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${EXTERN_OUTPUT_NAME}.ilk"
 #		COMMENT "ilk file cleanup"
-#	)
-#endif ()
+#)
+# endif ()
