@@ -170,7 +170,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 394.0, 1071.0, 154.0 ],
+					"patching_rect" : [ 107.0, 394.0, 1075.0, 154.0 ],
 					"style" : "",
 					"text" : "\tThe algorithm to estimate the pitch. The options are:\n  0 Cepstrum: Returns a pitch estimate as the location of the second highest peak in the Cepstrum of the signal (after DC).\n  1 Harmonic Product Spectrum: Implements the Harmonic Product Spectrum algorithm for pitch detection . See e.g.[2]\n  2 YinFFT: Implements the frequency domain version of the YIN algorithm, as described in3 See also https://essentia.upf.edu/documentation/reference/streaming_PitchYinFFT.html\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
@@ -300,6 +300,45 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"attr" : "unit",
+									"id" : "obj-52",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 338.0, 81.0, 164.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "maxfreq",
+									"id" : "obj-43",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 338.0, 56.5, 164.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "minfreq",
+									"id" : "obj-23",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 338.0, 33.0, 164.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-17",
 									"maxclass" : "spectroscope~",
@@ -451,7 +490,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 338.0, 32.0, 204.0, 22.0 ],
+									"patching_rect" : [ 338.0, 9.0, 204.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -517,7 +556,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 338.0, 80.0, 150.0, 22.0 ],
+									"patching_rect" : [ 338.0, 129.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -530,7 +569,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 338.0, 104.0, 122.0, 22.0 ],
+									"patching_rect" : [ 338.0, 153.0, 122.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -544,7 +583,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 338.0, 56.0, 278.0, 22.0 ],
+									"patching_rect" : [ 338.0, 105.0, 278.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -811,6 +850,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-24", 0 ]
 								}
 
@@ -855,7 +901,21 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-43", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-52", 0 ]
 								}
 
 							}
@@ -918,6 +978,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -927,8 +988,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2501,6 +2561,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2510,8 +2571,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2582,6 +2642,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2591,8 +2652,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

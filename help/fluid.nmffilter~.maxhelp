@@ -1236,7 +1236,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1142.0, 221.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1146.0, 221.0 ],
 					"style" : "",
 					"text" : "The FluidNMFFilter object decomposes and resynthesises an incoming audio signal against a set of spectral templates using an slimmed-down version of Nonnegative Matrix Factorisation (NMF)1\n\nIt outputs the resynthesis of the best factorisation. The spectral templates are presumed to have been produced by the offline NMF process (FluidBufNMF), and must be the correct size with respect to the FFT settings being used (FFT size / 2 + 1 frames long). The rank (number of components) of the decomposition is determined by the number of channels in the supplied buffer of templates, up to a maximum set by the maxComponents parameter.\n\nNMF has been a popular technique in signal processing research for things like source separation and transcription2 , although its creative potential is so far relatively unexplored. It works iteratively, by trying to find a combination of amplitudes ('activations') that yield the original magnitude spectrogram of the audio input when added together. By and large, there is no unique answer to this question (i.e. there are different ways of accounting for an evolving spectrum in terms of some set of templates and envelopes). In its basic form, NMF is a form of unsupervised learning: it starts with some random data and then converges towards something that minimizes the distance between its generated data and the original:it tends to converge very quickly at first and then level out. Fewer iterations mean less processing, but also less predictable results.\n\nThe whole process can be related to a channel vocoder where, instead of fixed bandpass filters, we get more complex filter shapes and the activations correspond to channel envelopes.\n\nMore information on possible musicianly uses of NMF are availabe in The Fluid Corpus Manipulation Project overview file.\n\nFluidBufNMF is part of the Fluid Decomposition Toolkit of the FluCoMa project.3"
 				}
@@ -1272,7 +1272,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2365,12 +2365,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-27",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 493.877502, 287.0, 383.0, 20.0 ],
+									"patching_rect" : [ 492.877502, 276.0, 432.0, 33.0 ],
 									"style" : "",
-									"text" : "process the last second of sound, extracting 3 complementary spectra"
+									"text" : "After at least one second, click here to process the last second of sound, extracting 3 complementary spectra"
 								}
 
 							}
@@ -2394,7 +2395,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 475.377502, 440.0, 557.0, 22.0 ],
+									"patching_rect" : [ 475.377502, 440.0, 557.0, 35.0 ],
 									"style" : "",
 									"text" : "fluid.bufnmf~ @source circular @fftsettings 1024 256 2048 @iterations 50 @bases temp-dicts2 @components 3"
 								}
@@ -2729,7 +2730,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
