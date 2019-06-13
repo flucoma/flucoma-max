@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -83,6 +83,18 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-45",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 456.0, 76.0, 24.0, 24.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontsize" : 24.0,
 									"id" : "obj-44",
@@ -131,7 +143,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 391.0, 802.0, 55.0, 102.0 ],
 									"style" : "",
-									"text" : "0. 192. 11840. 23808. 29056. 30000. 30000. 30000."
+									"text" : "0. 3648. 12224. 14656. 20480. 24384. 25088. 30000."
 								}
 
 							}
@@ -164,14 +176,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 427.0, 726.0, 66.0, 35.0 ],
+									"patching_rect" : [ 427.0, 726.0, 97.0, 22.0 ],
 									"style" : "",
-									"text" : "peek~ slicepoints"
+									"text" : "peek~ indiceses"
 								}
 
 							}
@@ -442,7 +453,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 195.0, 555.5, 50.0, 89.0 ],
 									"style" : "",
-									"text" : "800 10050 14350 14550 14750 27650"
+									"text" : "3650 12250 14700 20500 24400 25100"
 								}
 
 							}
@@ -456,7 +467,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 49.0, 549.0, 55.0, 102.0 ],
 									"style" : "",
-									"text" : "0. 768. 10048. 14336. 14528. 14720. 27648. 30000."
+									"text" : "0. 3648. 12224. 14656. 20480. 24384. 25088. 30000."
 								}
 
 							}
@@ -650,9 +661,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 62.0, 222.0, 413.0, 22.0 ],
+									"patching_rect" : [ 62.0, 222.0, 562.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnoveltyslice~ @source spikes @indices slicepoints @fftsettings 128"
+									"text" : "fluid.bufnoveltyslice~ @source spikes @indices slicepoints @kernelsize 3 @filtersize 1 @fftsettings 128"
 								}
 
 							}
@@ -665,6 +676,19 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 402.0, 430.0, 150.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "threshold",
+									"id" : "obj-42",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 555.0, 430.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -921,8 +945,31 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-42", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
 									"source" : [ "obj-43", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"order" : 1,
+									"source" : [ "obj-45", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"order" : 0,
+									"source" : [ "obj-45", 0 ]
 								}
 
 							}
@@ -981,9 +1028,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1220,7 +1267,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 325.0, 410.0, 107.0, 22.0 ],
 									"style" : "",
-									"text" : "126.755957"
+									"text" : "127.114029"
 								}
 
 							}
@@ -1333,7 +1380,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 82.0, 139.0, 98.0, 22.0 ],
 									"style" : "",
-									"text" : "filtersize 0, bang"
+									"text" : "filtersize 1, bang"
 								}
 
 							}
@@ -1880,9 +1927,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 120.0, 208.0, 98.0, 22.0 ],
+									"patching_rect" : [ 120.0, 208.0, 105.0, 22.0 ],
 									"style" : "",
-									"text" : "filtersize 8, bang"
+									"text" : "filtersize 12, bang"
 								}
 
 							}
@@ -1893,9 +1940,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 82.0, 245.0, 475.0, 22.0 ],
+									"patching_rect" : [ 82.0, 245.0, 482.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnoveltyslice~ @source guit @indices segments @kernelsize 31 @threshold 0.3"
+									"text" : "fluid.bufrtnoveltyslice~ @source guit @indices segments @kernelsize 31 @threshold 0.1"
 								}
 
 							}
@@ -2104,9 +2151,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2175,7 +2222,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 119.0, 408.0, 1055.0, 208.0 ],
 					"style" : "",
-					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\nWhere in the source should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed.\nFor multichannel source, how many channel should be summed.\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe granularity of the window in which the algorithm looks for change, in samples. A small number will be sensitive to short term changes, and a large number should look for long term changes.\nThe normalised threshold, between 0 an 1, on the novelty curve to consider it a segmentation point.\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As novelty estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As novelty estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\nWhere in the source should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed.\nFor multichannel source, how many channel should be summed.\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe granularity of the window in which the algorithm looks for change, in samples. A small number will be sensitive to short term changes, and a large number should look for long term changes.\nThe normalised threshold, between 0 an 1, on the novelty curve to consider it a segmentation point.\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As novelty estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As novelty estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
@@ -2303,6 +2350,19 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 664.0, 320.0, 436.0, 22.0 ],
+									"style" : "",
+									"text" : "fluid.bufnoveltyslice~ @source src @indices ind @kernelsize 31 @threshold 0.5"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
@@ -3215,9 +3275,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4344,9 +4404,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 76.0, 298.0, 436.0, 22.0 ],
+									"patching_rect" : [ 76.0, 298.0, 443.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufnoveltyslice~ @source src @indices ind @kernelsize 31 @threshold 0.5"
+									"text" : "fluid.bufrtnoveltyslice~ @source src @indices ind @kernelsize 31 @threshold 0.3"
 								}
 
 							}
@@ -4848,9 +4908,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4917,7 +4977,7 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "fluid.bufnoveltyslice~.mxo",
+				"name" : "fluid.bufrtnoveltyslice~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -4937,7 +4997,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.bufrtnoveltyslice~.mxo",
+				"name" : "fluid.bufnoveltyslice~.mxo",
 				"type" : "iLaX"
 			}
  ],
@@ -4945,9 +5005,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
