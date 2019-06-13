@@ -310,7 +310,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 195.0, 555.5, 50.0, 89.0 ],
 									"style" : "",
-									"text" : "550 8550 16050 22300 26150 26850"
+									"text" : "3350 5850 7700 9250 18650 19150"
 								}
 
 							}
@@ -324,7 +324,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 49.0, 549.0, 55.0, 102.0 ],
 									"style" : "",
-									"text" : "0. 512. 8512. 16000. 22272. 26112. 26816. 30000."
+									"text" : "0. 3328. 5824. 7680. 9216. 18624. 19136. 30000."
 								}
 
 							}
@@ -876,7 +876,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1933,26 +1933,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 15,
+					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 119.0, 408.0, 1055.0, 208.0 ],
+					"patching_rect" : [ 119.0, 408.0, 1055.0, 275.0 ],
 					"style" : "",
-					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\nWhere in the source should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed.\nFor multichannel source, how many channel should be summed.\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe granularity of the window in which the algorithm looks for change, in samples. A small number will be sensitive to short term changes, and a large number should look for long term changes.\nThe normalised threshold, between 0 an 1, on the novelty curve to consider it a segmentation point.\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As novelty estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As novelty estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\nWhere in the source should the slicing process start, in sample.\nHow many frames should be processed.\nFor multichannel source, which channel should be processed.\nFor multichannel source, how many channel should be summed.\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\nThe feature on which novelty is computed.\n  0: \tSpectrum\t: The magnitude of the full spectrum.\n  1:\t MFCC\t: 13 Mel-Frequency Cepstrum Coefficients.\n  2: \tPitch\t: The pitch and its confidence.\n  3: \tLoudness\t: The TruePeak and Loudness.\nThe granularity of the window in which the algorithm looks for change, in samples. A small number will be sensitive to short term changes, and a large number should look for long term changes.\nThe normalised threshold, between 0 an 1, on the novelty curve to consider it a segmentation point.\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As novelty estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As novelty estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 15,
+					"linecount" : 20,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 408.0, 83.0, 208.0 ],
+					"patching_rect" : [ 39.0, 408.0, 83.0, 275.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nkernelSize\nthreshold\nfilterSize\nfftSettings\n\n\n\n\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nfeature\n\n\n\n\nkernelSize\nthreshold\nfilterSize\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
@@ -2068,6 +2068,32 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "feature",
+									"id" : "obj-61",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 413.5, 4.5, 199.0, 22.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-59",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 765.0, 565.0, 218.0, 22.0 ],
+									"style" : "",
+									"text" : "2043.356009 2542.585034"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -2099,7 +2125,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 200.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 220.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2112,7 +2138,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 152.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 172.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2125,7 +2151,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 128.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 148.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2138,7 +2164,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 105.0, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 125.0, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2151,7 +2177,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 80.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 100.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2164,7 +2190,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 56.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 76.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2177,7 +2203,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 176.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 196.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2190,7 +2216,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 8.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 28.5, 199.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2203,7 +2229,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 32.5, 150.0, 22.0 ],
+									"patching_rect" : [ 413.5, 52.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2216,7 +2242,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 248.5, 122.0, 22.0 ],
+									"patching_rect" : [ 413.5, 268.5, 122.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2230,7 +2256,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.5, 224.5, 278.0, 22.0 ],
+									"patching_rect" : [ 413.5, 244.5, 278.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -2612,7 +2638,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 81.0, 458.0, 161.0, 56.0 ],
-									"size" : 17.0,
+									"size" : 2.0,
 									"style" : ""
 								}
 
@@ -3063,7 +3089,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 29.0, 403.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "17"
+									"text" : "0"
 								}
 
 							}
@@ -4108,7 +4134,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 76.0, 298.0, 442.0, 22.0 ],
+									"patching_rect" : [ 76.0, 295.0, 442.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufnoveltyslice~ @source src @indices ind @kernelsize 31 @threshold 0.25"
 								}
@@ -4235,7 +4261,16 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-59", 1 ],
+									"order" : 0,
+									"source" : [ "obj-20", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-65", 0 ],
+									"order" : 1,
 									"source" : [ "obj-20", 1 ]
 								}
 
@@ -4469,6 +4504,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-60", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-61", 0 ]
 								}
 
 							}

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 354.0, -1084.0, 1212.0, 990.0 ],
+		"rect" : [ 34.0, 79.0, 1212.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -119,7 +119,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 202.0, 66.0, 20.0 ],
+					"patching_rect" : [ 39.0, 219.0, 66.0, 20.0 ],
 					"style" : "",
 					"text" : "i/o:"
 				}
@@ -145,7 +145,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 224.0, 48.0, 33.0 ],
+					"patching_rect" : [ 39.0, 241.0, 48.0, 33.0 ],
 					"style" : "",
 					"text" : "in [0]\nout [0]"
 				}
@@ -158,35 +158,35 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 83.0, 224.0, 648.0, 33.0 ],
+					"patching_rect" : [ 83.0, 241.0, 968.0, 33.0 ],
 					"style" : "",
-					"text" : "The audio input\nImpulses at detected transients. The latency between the input and the output is (blockSize + padSize - order) samples."
+					"text" : "The audio input\nAn audio stream with impulses at detected transients. The latency between the input and the output is (windowSize + ((((kernelSize - 1) / 2) + (filterSize - 1)) * hopSize) at maximum."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 24,
+					"linecount" : 14,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 119.0, 399.0, 1055.0, 328.0 ],
+					"patching_rect" : [ 119.0, 399.0, 1055.0, 194.0 ],
 					"style" : "",
-					"text" : "The function used to derive a difference curve between spectral frames. It can be any of the following:\n  0- \tEnergy\tthresholds on (sum of squares of magnitudes / nBins) (like Onsets \\power)\n  1- \tHFC\tthresholds on (sum of (squared magnitudes * binNum) / nBins)\n  2- \tSpectralFlux\tthresholds on (diffence in magnitude between consecutive frames, half rectified)\n  3- 3\tMKL\tthresholds on (sum of log of magnitude ratio per bin) (or equivalent: sum of difference of the log magnitude per bin) (like Onsets \\mkl)\n  4- \tIS\t(WILL PROBABLY BE REMOVED) Itakura - Saito divergence (see literature)\n  5- \tCosine\tthresholds on (cosine distance between comparison frames)\n  6- \tPhaseDev\ttakes the past 2 frames, projects to the current, as anticipated if it was a steady state, then compute the sum of the differences, on which it thresholds (like Onsets \\phase)\n  7- \tWPhaseDev\tsame as PhaseDev, but weighted by the magnitude in order to remove chaos noise floor (like Onsets \\wphase)\n  8- \tComplexDev\tsame as PhaseDev, but in the complex domain - the anticipated amp is considered steady, and the phase is projected, then a complex subtraction is done with the actual present frame. The sum of magnitudes is used to threshold (like Onsets \\complex)\n  9- \tRComplexDev\tsame as above, but rectified (like Onsets \\rcomplex)\nThe thresholding of a new slice. Value ranges are different for each function, from 0 upwards.\t\t\nThe minimum duration of a slice in number of hopSize.\t\t\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\t\t\nFor certain functions (HFC, SpectralFlux, MKL, Cosine), the distance does not have to be computed between consecutive frames. By default (0) it is, otherwise this sets the distane between the comparison window in samples.\t\t\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral differencing relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral differencing relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "The feature on which novelty is computed.\n  0: \tSpectrum\t: The magnitude of the full spectrum.\n  1:\t MFCC\t: 13 Mel-Frequency Cepstrum Coefficients.\n  2: \tPitch\t: The pitch and its confidence.\n  3: \tLoudness\t: The TruePeak and Loudness.\nThe granularity of the window in which the algorithm looks for change, in samples. A small number will be sensitive to short term changes, and a large number should look for long term changes.\nThe normalised threshold, between 0 an 1, on the novelty curve to consider it a segmentation point.\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As novelty estimation relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As novelty estimation relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 24,
+					"linecount" : 14,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 399.0, 92.0, 328.0 ],
+					"patching_rect" : [ 39.0, 399.0, 92.0, 194.0 ],
 					"style" : "",
-					"text" : "function\n\n\n\n\n\n\n\n\n\n\n\nthreshold\nminslicelength\nfilterSize\nframeDelta\n\nfftSettings\n\n\n\n\nwarnings\nlatency"
+					"text" : "feature\n\n\n\n\nkernelSize\nthreshold\nfilterSize\nfftSettings\n\n\n\n\nwarnings"
 				}
 
 			}
@@ -198,7 +198,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 67.0, 275.0, 20.0 ],
 					"style" : "",
-					"text" : "xxx"
+					"text" : "Spectral Difference-Based Real-Time Audio Slicer"
 				}
 
 			}
@@ -232,12 +232,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1082.0, 20.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1082.0, 74.0 ],
 					"style" : "",
-					"text" : "xxx"
+					"text" : "This class implements a real-time slicer using an algorithm assessing novelty in the signal to estimate the slicing points. A novelty curve is being derived from running a kernel across the diagonal of the similarity matrix, and looking for peak of changes. It implements the seminal results published in 'Automatic Audio Segmentation Using a Measure of Audio Novelty' by J Foote. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return an audio steam with sample-long impulses at estimated starting points of the different slices."
 				}
 
 			}
@@ -271,7 +272,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 354.0, -1058.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -302,14 +303,38 @@
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-5",
+									"id" : "obj-10",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 567.0, 333.0, 29.5, 22.0 ],
+									"patching_rect" : [ 149.0, 335.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "1"
+									"text" : "4608"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "playbar",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "int" ],
+									"patching_rect" : [ 433.0, 388.0, 320.0, 16.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 193.0, 192.0, 24.0, 24.0 ],
+									"style" : ""
 								}
 
 							}
@@ -334,7 +359,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 881.5, 416.5, 194.0, 22.0 ],
+									"patching_rect" : [ 881.5, 320.5, 194.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -360,7 +385,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 881.5, 344.5, 150.0, 22.0 ],
+									"patching_rect" : [ 881.5, 344.5, 194.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -386,7 +411,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 881.5, 464.5, 122.0, 22.0 ],
+									"patching_rect" : [ 881.5, 440.5, 122.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -400,7 +425,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 881.5, 440.5, 278.0, 22.0 ],
+									"patching_rect" : [ 881.5, 416.5, 278.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -412,9 +437,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 475.0, 518.0, 353.0, 22.0 ],
+									"patching_rect" : [ 475.0, 518.0, 346.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.rtnoveltyslice~ @threshold 0.3 @kernelsize 31 @filtersize 4"
+									"text" : "fluid.noveltyslice~ @threshold 0.2 @kernelsize 31 @filtersize 3"
 								}
 
 							}
@@ -499,7 +524,7 @@
 										"followglobaltempo" : 0,
 										"formantcorrection" : 0,
 										"mode" : "basic",
-										"originallength" : [ 21789.931973, "ticks" ],
+										"originallength" : [ 54826.797279, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
 										"quality" : "basic",
@@ -531,7 +556,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 407.0, 555.5, 45.0, 45.0 ],
+									"patching_rect" : [ 407.0, 596.5, 45.0, 45.0 ],
 									"style" : ""
 								}
 
@@ -543,9 +568,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 252.0, 501.0, 105.0, 22.0 ],
+									"patching_rect" : [ 248.0, 552.0, 113.0, 22.0 ],
 									"style" : "",
-									"text" : "delay~ 1100 1072"
+									"text" : "delay~ 10000 9216"
 								}
 
 							}
@@ -559,8 +584,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-17", 1 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 1 ],
+									"order" : 1,
+									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -574,13 +607,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 1 ],
+									"order" : 0,
 									"source" : [ "obj-22", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 1 ],
+									"destination" : [ "obj-17", 0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -594,8 +628,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-66", 0 ],
-									"source" : [ "obj-5", 0 ]
+									"destination" : [ "obj-22", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}
@@ -638,7 +672,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-17", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-67", 0 ]
 								}
 
@@ -647,6 +681,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-69", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-66", 0 ],
+									"source" : [ "obj-7", 0 ]
 								}
 
 							}
@@ -668,9 +709,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -784,7 +825,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 677.5, 211.5, 194.0, 22.0 ],
+									"patching_rect" : [ 677.5, 139.5, 194.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -797,7 +838,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 677.5, 187.5, 150.0, 22.0 ],
+									"patching_rect" : [ 677.5, 211.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -810,7 +851,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 677.5, 139.5, 150.0, 22.0 ],
+									"patching_rect" : [ 677.5, 163.5, 174.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -823,7 +864,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 677.5, 163.5, 150.0, 22.0 ],
+									"patching_rect" : [ 677.5, 187.5, 150.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -960,7 +1001,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 111.0, 266.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "128"
+									"text" : "1088"
 								}
 
 							}
@@ -986,7 +1027,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 357.0, 346.0, 79.0, 22.0 ],
 									"style" : "",
-									"text" : "latency 128"
+									"text" : "latency 1088"
 								}
 
 							}
@@ -1150,9 +1191,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 271.0, 313.0, 387.0, 22.0 ],
+									"patching_rect" : [ 271.0, 313.0, 373.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.rtnoveltyslice~ @threshold 0.001 @fftsettings 128 @kernelsize 31"
+									"text" : "fluid.noveltyslice~ @threshold 0.01 @fftsettings 128 @kernelsize 31"
 								}
 
 							}
@@ -1355,9 +1396,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1420,7 +1461,7 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "fluid.rtnoveltyslice~.mxo",
+				"name" : "fluid.noveltyslice~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -1440,9 +1481,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
