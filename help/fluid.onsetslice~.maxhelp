@@ -173,7 +173,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 119.0, 399.0, 1055.0, 328.0 ],
 					"style" : "",
-					"text" : "The function used to derive a difference curve between spectral frames. It can be any of the following:\n  0- \tEnergy\tthresholds on (sum of squares of magnitudes / nBins) (like Onsets \\power)\n  1- \tHFC\tthresholds on (sum of (squared magnitudes * binNum) / nBins)\n  2- \tSpectralFlux\tthresholds on (diffence in magnitude between consecutive frames, half rectified)\n  3- 3\tMKL\tthresholds on (sum of log of magnitude ratio per bin) (or equivalent: sum of difference of the log magnitude per bin) (like Onsets \\mkl)\n  4- \tIS\t(WILL PROBABLY BE REMOVED) Itakura - Saito divergence (see literature)\n  5- \tCosine\tthresholds on (cosine distance between comparison frames)\n  6- \tPhaseDev\ttakes the past 2 frames, projects to the current, as anticipated if it was a steady state, then compute the sum of the differences, on which it thresholds (like Onsets \\phase)\n  7- \tWPhaseDev\tsame as PhaseDev, but weighted by the magnitude in order to remove chaos noise floor (like Onsets \\wphase)\n  8- \tComplexDev\tsame as PhaseDev, but in the complex domain - the anticipated amp is considered steady, and the phase is projected, then a complex subtraction is done with the actual present frame. The sum of magnitudes is used to threshold (like Onsets \\complex)\n  9- \tRComplexDev\tsame as above, but rectified (like Onsets \\rcomplex)\nThe thresholding of a new slice. Value ranges are different for each function, from 0 upwards.\t\t\nThe minimum duration of a slice in number of hopSize.\t\t\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\t\t\nFor certain functions (HFC, SpectralFlux, MKL, Cosine), the distance does not have to be computed between consecutive frames. By default (0) it is, otherwise this sets the distane between the comparison window in samples.\t\t\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral differencing relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral differencing relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
+					"text" : "The metric used to derive a difference curve between spectral frames. It can be any of the following:\n  0- \tEnergy\tthresholds on (sum of squares of magnitudes / nBins) (like Onsets \\power)\n  1- \tHFC\tthresholds on (sum of (squared magnitudes * binNum) / nBins)\n  2- \tSpectralFlux\tthresholds on (diffence in magnitude between consecutive frames, half rectified)\n  3- 3\tMKL\tthresholds on (sum of log of magnitude ratio per bin) (or equivalent: sum of difference of the log magnitude per bin) (like Onsets \\mkl)\n  4- \tIS\t(WILL PROBABLY BE REMOVED) Itakura - Saito divergence (see literature)\n  5- \tCosine\tthresholds on (cosine distance between comparison frames)\n  6- \tPhaseDev\ttakes the past 2 frames, projects to the current, as anticipated if it was a steady state, then compute the sum of the differences, on which it thresholds (like Onsets \\phase)\n  7- \tWPhaseDev\tsame as PhaseDev, but weighted by the magnitude in order to remove chaos noise floor (like Onsets \\wphase)\n  8- \tComplexDev\tsame as PhaseDev, but in the complex domain - the anticipated amp is considered steady, and the phase is projected, then a complex subtraction is done with the actual present frame. The sum of magnitudes is used to threshold (like Onsets \\complex)\n  9- \tRComplexDev\tsame as above, but rectified (like Onsets \\rcomplex)\nThe thresholding of a new slice. Value ranges are different for each metric, from 0 upwards.\t\t\nThe minimum duration of a slice in number of hopSize.\t\t\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\t\t\nFor certain metrics (HFC, SpectralFlux, MKL, Cosine), the distance does not have to be computed between consecutive frames. By default (0) it is, otherwise this sets the distane between the comparison window in samples.\t\t\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral differencing relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral differencing relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
 
 			}
@@ -186,7 +186,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 399.0, 92.0, 328.0 ],
 					"style" : "",
-					"text" : "function\n\n\n\n\n\n\n\n\n\n\n\nthreshold\nminslicelength\nfilterSize\nframeDelta\n\nfftSettings\n\n\n\n\nwarnings\nlatency"
+					"text" : "metric\n\n\n\n\n\n\n\n\n\n\n\nthreshold\nminslicelength\nfilterSize\nframeDelta\n\nfftSettings\n\n\n\n\nwarnings\nlatency"
 				}
 
 			}
@@ -238,7 +238,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 1082.0, 60.0 ],
 					"style" : "",
-					"text" : "This class implements many spectral based onset detection functions, most of them taken from the literature. (http://www.dafx.ca/proceedings/papers/p_133.pdf). It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return an audio steam with sample-long impulses at estimated starting points of the different slices."
+					"text" : "This class implements many spectral based onset detection metrics, most of them taken from the literature. (http://www.dafx.ca/proceedings/papers/p_133.pdf). It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return an audio steam with sample-long impulses at estimated starting points of the different slices."
 				}
 
 			}
@@ -310,7 +310,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 491.0, 98.0, 238.0, 74.0 ],
 									"style" : "",
-									"text" : "Many options with some working settings. Each column is a detection function, each row a soundfile. Some algorythm are not working well on some files, hence the lack of presets."
+									"text" : "Many options with some working settings. Each column is a detection metric, each row a soundfile. Some algorythm are not working well on some files, hence the lack of presets."
 								}
 
 							}
@@ -547,7 +547,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 649.0, 204.0, 69.0, 22.0 ],
 									"style" : "",
-									"text" : "function $1"
+									"text" : "metric $1"
 								}
 
 							}
@@ -720,7 +720,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "function",
+									"attr" : "metric",
 									"id" : "obj-54",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -872,7 +872,7 @@
 									"outlettype" : [ "signal", "" ],
 									"patching_rect" : [ 457.0, 470.0, 448.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.onsetslice~ @function 0 @threshold 1 @fftsettings 128 -1 -1 @minslicelength 100"
+									"text" : "fluid.onsetslice~ @metric 0 @threshold 1 @fftsettings 128 -1 -1 @minslicelength 100"
 								}
 
 							}
