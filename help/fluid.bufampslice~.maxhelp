@@ -39,12 +39,49 @@
 		"showontab" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 107.0, 264.0, 954.0, 20.0 ],
+					"style" : "",
+					"text" : "maxSize: How large can the buffer be for time-critical conditions, by allocating memory at instantiation time. This cannot be modulated."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 264.0, 65.0, 20.0 ],
+					"style" : "",
+					"text" : "#1 (int)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"id" : "obj-7",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 39.0, 242.0, 134.0, 20.0 ],
+					"style" : "",
+					"text" : "arguments (optional):"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-19",
 					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 271.0, 42.0, 33.0 ],
+					"patching_rect" : [ 39.0, 313.0, 42.0, 33.0 ],
 					"style" : "",
 					"text" : "bang\nreset"
 				}
@@ -57,7 +94,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 109.0, 271.0, 277.0, 33.0 ],
+					"patching_rect" : [ 109.0, 313.0, 277.0, 33.0 ],
 					"style" : "",
 					"text" : "This method triggers the slicing.\nResets the arguments to their instantiation values."
 				}
@@ -70,7 +107,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 251.0, 73.0, 20.0 ],
+					"patching_rect" : [ 39.0, 293.0, 73.0, 20.0 ],
 					"style" : "",
 					"text" : "messages:"
 				}
@@ -83,7 +120,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 318.0, 69.0, 20.0 ],
+					"patching_rect" : [ 39.0, 360.0, 69.0, 20.0 ],
 					"style" : "",
 					"text" : "attributes:"
 				}
@@ -570,9 +607,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 62.0, 222.0, 567.0, 22.0 ],
+									"patching_rect" : [ 62.0, 222.0, 589.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufonsetslice~ @source spikes @indices slicepoints @debounce 2 @fftsettings 128 @threshold 0.1"
+									"text" : "fluid.bufonsetslice~ @source spikes @indices slicepoints @minslicelength 2 @fftsettings 128 @threshold 0.1"
 								}
 
 							}
@@ -798,8 +835,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -862,26 +899,26 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-18",
-					"linecount" : 29,
+					"linecount" : 27,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 109.0, 340.0, 1100.0, 395.0 ],
+					"patching_rect" : [ 145.0, 382.0, 1100.0, 368.0 ],
 					"style" : "",
-					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\t\t\nWhere in the source should the slicing process start, in sample.\t\t\nHow many frames should be processed.\t\t\nFor multichannel sources, which channel should be processed.\t\t\nFor multichannel sources, how many channel should be summed.\t\t\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\t\t\n\tThe function used to derive a difference curve between spectral frames. It can be any of the following:\n  0- \tEnergy\tthresholds on (sum of squares of magnitudes / nBins) (like Onsets \\power)\n  1- \tHFC\tthresholds on (sum of (squared magnitudes * binNum) / nBins)\n  2- \tSpectralFlux\tthresholds on (diffence in magnitude between consecutive frames, half rectified)\n  3- 3\tMKL\tthresholds on (sum of log of magnitude ratio per bin) (or equivalent: sum of difference of the log magnitude per bin) (like Onsets \\mkl)\n  4- \tIS\t(WILL PROBABLY BE REMOVED) Itakura - Saito divergence (see literature)\n  5- \tCosine\tthresholds on (cosine distance between comparison frames)\n  6- \tPhaseDev\ttakes the past 2 frames, projects to the current, as anticipated if it was a steady state, then compute the sum of the differences, on which it thresholds (like Onsets \\phase)\n  7- \tWPhaseDev\tsame as PhaseDev, but weighted by the magnitude in order to remove chaos noise floor (like Onsets \\wphase)\n  8- \tComplexDev\tsame as PhaseDev, but in the complex domain - the anticipated amp is considered steady, and the phase is projected, then a complex subtraction is done with the actual present frame. The sum of magnitudes is used to threshold (like Onsets \\complex)\n  9- \tRComplexDev\tsame as above, but rectified (like Onsets \\rcomplex)\nThe thresholding of a new slice. Value ranges are different for each function, from 0 upwards.\t\t\nThe minimum duration of a slice in number of hopSize.\t\t\nThe size of a smoothing filter that is applied on the novelty curve. A larger filter filter size allows for cleaner cuts on very sharp changes.\t\t\nFor certain functions (HFC, SpectralFlux, MKL, Cosine), the distance does not have to be computed between consecutive frames. By default (0) it is, otherwise this sets the distane between the comparison window in samples.\t\t\nup to 3 integers (windowSize hopSize FFTSize) The windowSize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral differencing relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral differencing relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowSize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off."
+					"text" : "The name of the buffer to use as the source material to be sliced through novelty identification. The different channels of multichannel buffers will be summed.\t\t\nWhere in the source should the slicing process start, in sample.\t\t\nHow many frames should be processed.\t\t\nFor multichannel sources, which channel should be processed.\t\t\nFor multichannel sources, how many channel should be summed.\t\t\nThe name of the buffer where the indices (in sample) of the estimated starting points of slices will be written. The first and last points are always the boundary points of the analysis.\t\t\nThe number of samples the absolute envelope follower will take to reach the next value when raising.\nThe number of samples the absolute envelope follower will take to reach the next value when falling.\nThe threshold in dB of the absolute envelope follower to trigger an onset, aka to go ON when in OFF state.\nThe threshold in dB of the absolute envelope follower to trigger an offset, , aka to go ON when in OFF state.\nThe length in samples that the Slice will stay ON. Changes of states during that period will be ignored.\nThe length in samples that the Slice will stay OFF. Changes of states during that period will be ignored.\nThe length in samples that the absolute envelope have to be above the threshold to consider it a valid transition to ON. The Slice will start at the first sample when the condition is met. Therefore, this affects the latency.\nThe length in samples that the absolute envelope have to be below the threshold to consider it a valid transition to OFF. The Slice will end at the first sample when the condition is met. Therefore, this affects the latency.\nThe length of the buffer kept before an onset to allow the algorithm, once a new Slice is detected, to go back in time (up to that many samples) to find the minimum amplitude as the Slice onset point. This affects the latency of the algorithm.\nThe length of the buffer kept after an offset to allow the algorithm, once the Slice is considered finished, to wait further in time (up to that many samples) to find a minimum amplitude as the Slice offset point. This affects the latency of the algorithm.\nThe number of samples the relative envelope follower will take to reach the next value when raising. Typically, this will be faster than absRampUp.\nThe number of samples the relative envelope follower will take to reach the next value when falling. Typically, this will be faster than absRampDown.\nThe threshold in dB of the relative envelope follower to trigger an onset, aka to go ON when in OFF state. It is computed on the difference between the two envelope followers.\nThe threshold in dB of the relative envelope follower to reset, aka to allow the differential envelop to trigger again.\nThe frequency of the fourth-order Linkwitz–Riley high-pass filter (https://en.wikipedia.org/wiki/Linkwitz%E2%80%93Riley_filter).This is done first on the signal to minimise low frequency intermodulation with very fast ramp lengths.\nSwitches the verbose on or off."
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-16",
-					"linecount" : 29,
+					"linecount" : 27,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 340.0, 78.0, 395.0 ],
+					"patching_rect" : [ 39.0, 382.0, 104.0, 368.0 ],
 					"style" : "",
-					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nfunction\n\n\n\n\n\n\n\n\n\n\n\nthreshold\ndebounce\nfilterSize\nframeDelta\n\nfftSettings\n\n\n\n\nwarnings"
+					"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\nindices\nabsRampUp\nabsRampDown\nabsThreshOn\nabsThreshOff\nminslicelength\nminSilenceLength\nminLengthAbove\n\nminLengthBelow\n\nlookBack\n\nlookAhead\n\nrelRampUp\nrelRampDown\nrelThreshOn\nrelThreshOff\nhighPassFreq\n\nwarnings"
 				}
 
 			}
@@ -906,7 +943,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 41.0, 237.0, 33.0 ],
 					"style" : "",
-					"text" : "Fluid.BufOnsetSlice"
+					"text" : "Fluid.BufAmpSlice"
 				}
 
 			}
@@ -927,13 +964,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-5",
-					"linecount" : 4,
+					"linecount" : 7,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 39.0, 119.0, 1134.0, 60.0 ],
+					"patching_rect" : [ 39.0, 119.0, 1134.0, 100.0 ],
 					"style" : "",
-					"text" : "This object implements many spectral-based onset detection functions, most of them taken from the literature. (http://www.dafx.ca/proceedings/papers/p_133.pdf). It is part of the Fluid Decomposition Toolkit of the FluCoMa project.1\n\nThe process will return a buffer which contains indices (in sample) of estimated starting points of different slices."
+					"text" : "This class implements an amplitude-based slicer, with various customisable options and conditions to detect absolute and relative amplitude changes as onsets and offsets. It is part of the Fluid Decomposition Toolkit of the FluCoMa project.[1]\n\nFluidAmpSlice is based on two envelop followers on a highpassed version of the signal: one absolute, and one relative. Each have features that will interact, including independent Schmidt triggers and state-aware time contraints. The example code below is unfolding the various possibilites in order of complexity.\n\nThe process will return a two-channel buffer with the addresses of the onset on the first channel, and the address of the offset on the second channel."
 				}
 
 			}
@@ -1180,7 +1217,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "debounce",
+									"attr" : "minslicelength",
 									"id" : "obj-10",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1219,7 +1256,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "debounce",
+									"attr" : "minslicelength",
 									"id" : "obj-12",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -1765,13 +1802,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-2",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 145.5, 476.0, 378.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufonsetslice~ @debounce 10 @source src @indices slicestarts"
+									"text" : "fluid.bufonsetslice~ @minslicelength 10 @source src @indices slicestarts"
 								}
 
 							}
@@ -2107,8 +2145,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2180,8 +2218,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
