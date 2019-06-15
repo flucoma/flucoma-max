@@ -197,7 +197,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1212.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1212.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -730,7 +730,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 151.5, 702.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "0"
+									"text" : "11"
 								}
 
 							}
@@ -924,7 +924,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 19.5, 578.0, 122.0, 22.0 ],
 									"style" : "",
-									"text" : "1241.308143"
+									"text" : "933.028105"
 								}
 
 							}
@@ -1012,7 +1012,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 115.5, 446.0, 399.0, 22.0 ],
+									"patching_rect" : [ 115.5, 446.0, 431.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.buftransientslice~ @minslicelength 4410 @source src @indices slicestarts"
 								}
@@ -1354,9 +1354,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1374,7 +1374,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1384,7 +1383,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1689,21 +1689,21 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 195.0, 569.0, 50.0, 89.0 ],
 									"style" : "",
-									"text" : "7650 10500 12000 12400 16000 22150"
+									"text" : "5850 6850 8900 9300 15200 21400"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-31",
-									"linecount" : 7,
+									"linecount" : 6,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 49.0, 569.0, 55.0, 102.0 ],
+									"patching_rect" : [ 49.0, 569.0, 55.0, 89.0 ],
 									"style" : "",
-									"text" : "0. 7643. 10493. 11993. 12393. 15993. 22143. 30000."
+									"text" : "5843. 6843. 8893. 9293. 15193. 21393."
 								}
 
 							}
@@ -1897,7 +1897,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 62.0, 222.0, 406.0, 22.0 ],
+									"patching_rect" : [ 62.0, 222.0, 438.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.buftransientslice~ @source spikes @indices slicepoints @minslicelength 45"
 								}
@@ -2124,9 +2124,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2144,7 +2144,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2154,7 +2153,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2197,9 +2197,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2217,7 +2217,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2227,7 +2226,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",

@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1243.0, 964.0 ],
+						"rect" : [ 34.0, 105.0, 1243.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -91,7 +91,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 489.333344, 391.0, 138.0, 22.0 ],
 									"style" : "",
-									"text" : "expr pow($i1\\, 2) * 0.001"
+									"text" : "expr pow($i1\\, 2) * 0.007"
 								}
 
 							}
@@ -112,7 +112,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 531.0, -1014.0, 840.0, 945.0 ],
+										"rect" : [ 531.0, 79.0, 840.0, 945.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -189,7 +189,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 605.0, 61.0, 99.0, 545.0 ],
 													"style" : "",
-													"text" : "81.464096 148.175185 220.581186 299.168256 384.464053 477.041279 577.521526 686.579451 804.947301 933.42 1072.859661 1224.203017 1388.466071 1566.751736 1760.257078 1970.281352 2198.234726 2445.64775 2714.181632 3005.639393 3321.977969 3665.321358 4037.974873 4442.440626 4881.434326 5357.903514 5875.047351 6436.338103 7045.54445 7706.756794 8424.414719 9203.336805 10048.752977 10966.339622 11962.257702 13043.194122 14216.406626 15489.772526 16871.841598 18371.893484"
+													"text" : "138.829204 208.574775 284.119434 365.945355 454.574801 550.57346 654.554056 767.180256 889.170912 1021.304644 1164.424811 1319.444894 1487.354329 1669.224817 1866.217169 2079.588713 2310.701317 2561.03 2832.172776 3125.86 3443.966207 3788.521796 4161.725917 4565.960592 5003.805897 5478.056433 5991.739162 6548.132725 7150.788371 7803.552624 8510.59183 9276.418752 10105.921373 11004.394094 11977.571526 13031.665091 14173.40267 15410.071539 16749.564888 18200.432196"
 												}
 
 											}
@@ -202,20 +202,21 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 360.0, 221.0, 109.0, 22.0 ],
 													"style" : "",
-													"text" : "3816.968836"
+													"text" : "3804.482872"
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-2",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 289.0, 221.0, 67.0, 22.0 ],
+													"patching_rect" : [ 289.0, 221.0, 67.0, 35.0 ],
 													"style" : "",
-													"text" : "31.748874"
+													"text" : "113.891964"
 												}
 
 											}
@@ -343,7 +344,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 245.999939, 334.0, 99.0, 22.0 ],
 													"style" : "",
-													"text" : "92.322438"
+													"text" : "90.014412"
 												}
 
 											}
@@ -369,7 +370,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 245.999939, 283.5, 99.0, 22.0 ],
 													"style" : "",
-													"text" : "3785.22"
+													"text" : "3690.590908"
 												}
 
 											}
@@ -1342,7 +1343,7 @@
 										"followglobaltempo" : 0,
 										"formantcorrection" : 0,
 										"mode" : "basic",
-										"originallength" : [ 28800.0, "ticks" ],
+										"originallength" : [ 9881.512925, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
 										"quality" : "basic",
@@ -1912,9 +1913,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1981,7 +1982,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 295.0, 362.0, 33.0 ],
+					"patching_rect" : [ 107.0, 295.0, 380.0, 33.0 ],
 					"style" : "",
 					"text" : "The audio to be processed.\nA list of amplitudes of size maxNumBands. The latency is windowsize."
 				}
@@ -2119,7 +2120,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1243.0, 964.0 ],
+						"rect" : [ 0.0, 26.0, 1243.0, 964.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2728,7 +2729,7 @@
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 222.333344, 531.0, 366.666656, 156.0 ],
-									"setminmax" : [ 0.0, 1.0 ],
+									"setminmax" : [ 0.0, 0.1 ],
 									"size" : 40,
 									"style" : ""
 								}
@@ -3237,9 +3238,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3306,7 +3307,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 107.0, 447.0, 1071.0, 154.0 ],
+					"patching_rect" : [ 107.0, 447.0, 1075.0, 154.0 ],
 					"style" : "",
 					"text" : "The number of bands that will be perceptually equally distributed between minFreq and maxFreq. It is limited by the maxNumBands parameter. When the number is smaller than the maximum, the output is zero-padded.\nThe lower boundary of the lowest band of the model, in Hz.\nThe highest boundary of the highest band of the model, in Hz.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As spectral description relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As spectral description relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n(read only) Reports the object's latency."
 				}
@@ -3405,9 +3406,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
