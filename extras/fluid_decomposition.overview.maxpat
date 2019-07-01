@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 273.0, 122.0, 1003.0, 777.0 ],
+		"rect" : [ 282.0, 156.0, 1003.0, 777.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,14 +39,12 @@
 		"showontab" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontname" : "Lato Light",
-					"fontsize" : 18.0,
 					"id" : "obj-58",
 					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 90.0, 822.0, 93.0 ],
+					"patching_rect" : [ 10.0, 90.0, 588.0, 60.0 ],
 					"style" : "helpfile_label",
 					"text" : "The Fluid Decomposition toolbox provides an open-ended, loosely coupled set of objects to break up and analyse sound in terms of slices (segments in time), layers (superositions in time and frequency) and objects (configurable or discoverable patterns in sound). Almost all objects have audio-rate and buffer-based versions"
 				}
@@ -61,7 +59,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 690.5, 14.5, 232.0, 64.0 ],
+					"patching_rect" : [ 690.5, 14.5, 234.0, 64.0 ],
 					"style" : "",
 					"text" : "play with sonic slices, layers and objects"
 				}
@@ -76,7 +74,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 859.0, 433.0, 131.0, 87.0 ],
-					"presentation_rect" : [ 754.0, 473.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Copy, slice, stack, mix concatenate. \n\nAll the things you've wanted to do with buffers...",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -91,7 +88,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 859.0, 702.0, 125.0, 20.0 ],
-					"presentation_rect" : [ 897.0, 733.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Statistics of buffers",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -107,7 +103,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 859.0, 630.0, 125.0, 33.0 ],
-					"presentation_rect" : [ 897.0, 653.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Summary measures of spectral shape",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -123,7 +118,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 534.0, 702.0, 98.0, 47.0 ],
-					"presentation_rect" : [ 554.0, 737.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Mel Frequency Ceptstral Coefficients",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -139,7 +133,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 534.0, 624.0, 124.0, 33.0 ],
-					"presentation_rect" : [ 554.0, 657.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Energy across Mel bands ",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -155,7 +148,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 159.0, 710.0, 100.0, 33.0 ],
-					"presentation_rect" : [ 172.0, 722.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "A suite of pitch estimators",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -171,7 +163,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 159.0, 624.0, 108.0, 60.0 ],
-					"presentation_rect" : [ 172.0, 662.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Report amplitude and peak, or r128 loudness and true peak",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -202,7 +193,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 17.0, 583.0, 130.0, 35.0 ],
-					"presentation_rect" : [ 32.0, 669.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Descriptors"
 				}
@@ -218,7 +208,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 707.0, 392.0, 76.0, 35.0 ],
-					"presentation_rect" : [ 425.0, 533.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "Utility"
 				}
@@ -292,7 +281,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
-					"patching_rect" : [ 359.0, 274.0, 105.0, 22.0 ],
+					"patching_rect" : [ 359.0, 244.0, 105.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.noveltyslice~"
 				}
@@ -336,7 +325,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 509.0, 244.0, 125.0, 47.0 ],
+					"patching_rect" : [ 509.0, 244.0, 128.0, 47.0 ],
 					"style" : "",
 					"text" : "Slice by estimated novelty on a choice of features",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -680,7 +669,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 359.0, 244.0, 122.0, 22.0 ],
+					"patching_rect" : [ 359.0, 274.0, 122.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.bufnoveltyslice~"
 				}
@@ -812,7 +801,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 9.0, 578.0, 985.0, 189.0 ],
-					"presentation_rect" : [ 20.0, 622.0, 0.0, 0.0 ],
 					"proportion" : 0.39,
 					"style" : ""
 				}
@@ -851,7 +839,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 699.0, 392.0, 295.0, 174.0 ],
-					"presentation_rect" : [ 400.0, 523.0, 0.0, 0.0 ],
 					"proportion" : 0.39,
 					"style" : ""
 				}
