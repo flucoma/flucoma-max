@@ -5,11 +5,11 @@
 			"major" : 7,
 			"minor" : 3,
 			"revision" : 4,
-			"architecture" : "x64",
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 321.0, 131.0, 937.0, 741.0 ],
+		"rect" : [ 106.0, 191.0, 937.0, 741.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -70,7 +70,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -230,7 +230,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -565,7 +565,7 @@
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 345.0, 406.0, 243.509338, 69.0 ],
-									"presentation_rect" : [ 338.0, 354.0, 243.509338, 69.0 ]
+									"presentation_rect" : [ 345.0, 406.0, 243.509338, 69.0 ]
 								}
 
 							}
@@ -590,7 +590,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -677,7 +677,7 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+													"items" : [ "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -788,9 +788,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1181,9 +1181,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1256,7 +1256,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -1337,7 +1337,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -1680,7 +1680,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -2235,7 +2235,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -2322,7 +2322,7 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+													"items" : [ "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -2433,9 +2433,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2498,7 +2498,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 232.756271, 57.567627 ]
+									"patching_rect" : [ 10.0, 10.0, 232.756287, 57.567627 ]
 								}
 
 							}
@@ -2512,8 +2512,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 322.5, 522.0, 359.5, 22.0 ],
-									"presentation_rect" : [ 0.0, 0.0, 0.0, 22.0 ],
+									"patching_rect" : [ 322.5, 522.0, 360.0, 22.0 ],
 									"style" : "",
 									"text_width" : 84.0
 								}
@@ -2578,9 +2577,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 55.0, 266.375, 150.0, 20.0 ],
+									"patching_rect" : [ 56.0, 266.75, 150.0, 20.0 ],
 									"style" : "",
-									"text" : "select a source"
+									"text" : "select a source",
+									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
 							}
@@ -2674,7 +2674,7 @@
 										"followglobaltempo" : 0,
 										"formantcorrection" : 0,
 										"mode" : "basic",
-										"originallength" : [ 54826.797279, "ticks" ],
+										"originallength" : [ 54826.796875, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
 										"quality" : "basic",
@@ -2705,9 +2705,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 484.0, 288.0, 267.0, 20.0 ],
+									"patching_rect" : [ 485.0, 288.375, 267.0, 20.0 ],
 									"style" : "",
-									"text" : "change the threshold according to the frequency"
+									"text" : "change the threshold according to the frequency",
+									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
 							}
@@ -2768,8 +2769,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 95.5, 686.0, 152.0 ],
-									"presentation_rect" : [ 11.0, 87.567627, 0.0, 0.0 ],
+									"patching_rect" : [ 10.0, 91.567627, 686.0, 152.0 ],
 									"style" : "",
 									"text" : "in mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are. \n\nIn modes 1 and 2, a binary mask is used instead, where a component is designated as being harmonic or percussive if the respective median filter output exceeds some threshold. This yields greater separation, but can have more audible artefacts. \n\nfluid.hpss~ lets you adjust this threshold with respect to frequency, to enable fine-tuning. In mode 1, just use the harmthresh attribute, which will internally make a comlpemntary threshold for the percussive part – gurranteeing that the two components still sum to the source. ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -2928,7 +2928,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-55", 0 ],
-									"midpoints" : [ 385.0, 311.989578, 339.875, 311.989578 ],
+									"midpoints" : [ 385.0, 311.989563, 339.875, 311.989563 ],
 									"source" : [ "obj-63", 0 ]
 								}
 
@@ -2944,9 +2944,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3018,11 +3018,11 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 321.0, 157.0, 937.0, 715.0 ],
+						"rect" : [ 106.0, 217.0, 937.0, 715.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3061,8 +3061,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 588.5, 504.0, 301.333344, 22.0 ],
-									"presentation_rect" : [ 642.5, 501.0, 0.0, 0.0 ],
+									"patching_rect" : [ 588.5, 504.0, 302.0, 22.0 ],
 									"style" : "",
 									"text_width" : 84.0
 								}
@@ -3089,7 +3088,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -3604,8 +3603,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 601.375, 418.520813, 327.0, 41.0 ],
-									"presentation_rect" : [ 601.375, 415.520813, 0.0, 0.0 ],
+									"patching_rect" : [ 601.375, 425.187469, 327.0, 41.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -3620,8 +3618,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 601.375, 295.479156, 251.5, 118.041672 ],
-									"presentation_rect" : [ 646.375, 295.479156, 0.0, 0.0 ]
+									"patching_rect" : [ 601.375, 300.145813, 251.5, 118.041672 ]
 								}
 
 							}
@@ -3632,8 +3629,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 601.375, 261.5, 37.0, 22.0 ],
-									"presentation_rect" : [ 646.375, 261.5, 0.0, 0.0 ],
+									"patching_rect" : [ 601.375, 271.166656, 37.0, 22.0 ],
 									"style" : "",
 									"text" : "clear"
 								}
@@ -3646,8 +3642,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 646.5, 261.5, 60.0, 22.0 ],
-									"presentation_rect" : [ 691.5, 261.5, 0.0, 0.0 ],
+									"patching_rect" : [ 646.5, 271.166656, 60.0, 22.0 ],
 									"style" : "",
 									"text" : "loadbang"
 								}
@@ -3675,7 +3670,8 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 68.567627, 249.0, 21.0 ],
 									"style" : "",
-									"text" : "use mode 2 for more extreme separation "
+									"text" : "use mode 2 for more extreme separation ",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -3700,7 +3696,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -3741,7 +3737,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "signal" ],
 													"patching_rect" : [ 329.0, 81.0, 30.0, 30.0 ],
-													"presentation_rect" : [ 327.0, 78.0, 0.0, 0.0 ],
 													"style" : ""
 												}
 
@@ -3754,7 +3749,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 249.0, 35.0, 34.0, 22.0 ],
-													"presentation_rect" : [ 249.0, 37.0, 0.0, 0.0 ],
 													"style" : "",
 													"text" : "3 $1"
 												}
@@ -4122,7 +4116,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -4637,7 +4631,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 274.375, 420.520813, 327.0, 41.0 ],
+									"patching_rect" : [ 274.375, 425.187469, 327.0, 41.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -4652,7 +4646,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 319.375, 300.479156, 251.5, 118.041672 ]
+									"patching_rect" : [ 319.375, 305.145813, 251.5, 118.041672 ]
 								}
 
 							}
@@ -4677,7 +4671,7 @@
 											"major" : 7,
 											"minor" : 3,
 											"revision" : 4,
-											"architecture" : "x64",
+											"architecture" : "x86",
 											"modernui" : 1
 										}
 ,
@@ -4764,7 +4758,7 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundfielGolcarWithDog.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
+													"items" : [ "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -4875,9 +4869,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4940,7 +4934,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 232.756271, 57.567627 ]
+									"patching_rect" : [ 10.0, 10.0, 232.756287, 57.567627 ]
 								}
 
 							}
@@ -4954,7 +4948,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 278.5, 504.0, 301.333344, 22.0 ],
+									"patching_rect" : [ 278.5, 504.0, 302.0, 22.0 ],
 									"style" : "",
 									"text_width" : 84.0
 								}
@@ -5021,7 +5015,8 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 44.0, 248.375, 150.0, 20.0 ],
 									"style" : "",
-									"text" : "select a source"
+									"text" : "select a source",
+									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
 							}
@@ -5115,7 +5110,7 @@
 										"followglobaltempo" : 0,
 										"formantcorrection" : 0,
 										"mode" : "basic",
-										"originallength" : [ 9881.512925, "ticks" ],
+										"originallength" : [ 9881.512695, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
 										"quality" : "basic",
@@ -5146,9 +5141,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 460.0, 236.0, 267.0, 20.0 ],
+									"patching_rect" : [ 458.0, 248.375, 267.0, 20.0 ],
 									"style" : "",
-									"text" : "change the threshold according to the frequency"
+									"text" : "change the threshold according to the frequency",
+									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
 							}
@@ -5165,7 +5161,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 422.0, 232.5, 20.0, 20.0 ],
+									"patching_rect" : [ 420.0, 244.875, 20.0, 20.0 ],
 									"presentation_rect" : [ 1215.0, 387.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -5181,7 +5177,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 319.375, 266.5, 37.0, 22.0 ],
+									"patching_rect" : [ 319.375, 275.041656, 37.0, 22.0 ],
 									"style" : "",
 									"text" : "clear"
 								}
@@ -5194,7 +5190,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 364.5, 266.5, 60.0, 22.0 ],
+									"patching_rect" : [ 364.5, 275.041656, 60.0, 22.0 ],
 									"style" : "",
 									"text" : "loadbang"
 								}
@@ -5220,7 +5216,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 288.0, 526.5, 137.166664, 526.5 ],
+									"midpoints" : [ 288.0, 526.5, 137.166656, 526.5 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -5242,7 +5238,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 0 ],
-									"midpoints" : [ 656.0, 288.989578, 610.875, 288.989578 ],
+									"midpoints" : [ 656.0, 293.656219, 610.875, 293.656219 ],
 									"source" : [ "obj-13", 0 ]
 								}
 
@@ -5250,7 +5246,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 598.0, 528.5, 137.166664, 528.5 ],
+									"midpoints" : [ 598.0, 528.5, 137.166656, 528.5 ],
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -5312,7 +5308,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 96.0, 449.5, 137.166664, 449.5 ],
+									"midpoints" : [ 96.0, 449.5, 137.166656, 449.5 ],
 									"source" : [ "obj-3", 1 ]
 								}
 
@@ -5320,7 +5316,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 321.0, 561.0, 137.166664, 561.0 ],
+									"midpoints" : [ 321.0, 561.0, 137.166656, 561.0 ],
 									"source" : [ "obj-36", 0 ]
 								}
 
@@ -5336,7 +5332,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 283.875, 465.0, 137.166664, 465.0 ],
+									"midpoints" : [ 283.875, 465.0, 137.166656, 465.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -5358,7 +5354,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 1 ],
-									"midpoints" : [ 137.166664, 599.75, 114.833333, 599.75 ],
+									"midpoints" : [ 137.166656, 599.75, 114.833336, 599.75 ],
 									"source" : [ "obj-40", 0 ]
 								}
 
@@ -5374,7 +5370,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 21.5, 381.0, 137.166664, 381.0 ],
+									"midpoints" : [ 21.5, 381.0, 137.166656, 381.0 ],
 									"order" : 0,
 									"source" : [ "obj-43", 0 ]
 								}
@@ -5383,7 +5379,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 473.125, 565.5, 137.166664, 565.5 ],
+									"midpoints" : [ 473.125, 565.5, 137.166656, 565.5 ],
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -5398,7 +5394,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-55", 0 ],
-									"midpoints" : [ 374.0, 293.989578, 328.875, 293.989578 ],
+									"midpoints" : [ 374.0, 298.656219, 328.875, 298.656219 ],
 									"source" : [ "obj-63", 0 ]
 								}
 
@@ -5421,9 +5417,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5496,7 +5492,7 @@
 							"major" : 7,
 							"minor" : 3,
 							"revision" : 4,
-							"architecture" : "x64",
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
@@ -5566,16 +5562,16 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-2::obj-10" : [ "live.text[6]", "live.text", 0 ],
-			"obj-3::obj-46::obj-10" : [ "live.text[2]", "live.text", 0 ],
-			"obj-1::obj-2::obj-9" : [ "live.text[10]", "live.text", 0 ],
-			"obj-2::obj-2::obj-10" : [ "live.text[7]", "live.text", 0 ],
-			"obj-3::obj-46::obj-8" : [ "live.text", "live.text", 0 ],
-			"obj-1::obj-2::obj-8" : [ "live.text[11]", "live.text", 0 ],
-			"obj-2::obj-2::obj-8" : [ "live.text[9]", "live.text", 0 ],
-			"obj-1::obj-2::obj-5" : [ "live.text[12]", "live.text", 0 ],
 			"obj-3::obj-46::obj-9" : [ "live.text[1]", "live.text", 0 ],
-			"obj-2::obj-2::obj-9" : [ "live.text[8]", "live.text", 0 ]
+			"obj-1::obj-2::obj-9" : [ "live.text[10]", "live.text", 0 ],
+			"obj-1::obj-2::obj-10" : [ "live.text[6]", "live.text", 0 ],
+			"obj-3::obj-46::obj-8" : [ "live.text", "live.text", 0 ],
+			"obj-2::obj-2::obj-8" : [ "live.text[9]", "live.text", 0 ],
+			"obj-3::obj-46::obj-10" : [ "live.text[2]", "live.text", 0 ],
+			"obj-1::obj-2::obj-5" : [ "live.text[12]", "live.text", 0 ],
+			"obj-2::obj-2::obj-9" : [ "live.text[8]", "live.text", 0 ],
+			"obj-2::obj-2::obj-10" : [ "live.text[7]", "live.text", 0 ],
+			"obj-1::obj-2::obj-8" : [ "live.text[11]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -5618,9 +5614,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
