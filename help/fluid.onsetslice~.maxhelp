@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 462.0, 167.0, 718.0, 644.0 ],
+		"rect" : [ 100.0, 100.0, 718.0, 644.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -36,7 +36,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"isolateaudio" : 1,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -73,7 +74,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 462.0, 193.0, 718.0, 618.0 ],
+						"rect" : [ 0.0, 26.0, 718.0, 618.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -132,7 +133,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 93.0, 545.5, 150.0, 33.0 ],
-									"presentation_rect" : [ 99.0, 558.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "turn audio; source in left, clicks in right",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -147,9 +147,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 56.0, 467.0, 79.0, 22.0 ],
-									"presentation_rect" : [ 56.0, 447.0, 0.0, 0.0 ],
 									"style" : "",
-									"text" : "2048"
+									"text" : "1024"
 								}
 
 							}
@@ -225,7 +224,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-7",
@@ -279,7 +277,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 209.0, 329.0, 30.0, 30.0 ],
-													"presentation_rect" : [ 316.5, 293.0, 0.0, 0.0 ],
 													"style" : ""
 												}
 
@@ -957,7 +954,6 @@
 														"tags" : "",
 														"style" : "",
 														"subpatcher_template" : "",
-														"visible" : 1,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"comment" : "",
@@ -1472,7 +1468,6 @@
 														"tags" : "",
 														"style" : "",
 														"subpatcher_template" : "",
-														"visible" : 1,
 														"boxes" : [ 															{
 																"box" : 																{
 																	"id" : "obj-6",
@@ -1883,7 +1878,6 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 299.5, 244.0, 30.0, 30.0 ],
-																	"presentation_rect" : [ 299.5, 244.0, 0.0, 0.0 ],
 																	"style" : ""
 																}
 
@@ -4142,7 +4136,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 718.0, 618.0 ],
+						"rect" : [ 100.0, 126.0, 718.0, 618.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
