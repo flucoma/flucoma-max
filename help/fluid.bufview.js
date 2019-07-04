@@ -5,7 +5,7 @@ mgraphics.relative_coords = 0;
 mgraphics.autofill = 0;
 var w = box.rect[2] - box.rect[0];
 var h = box.rect[3] - box.rect[1];
-var vz = 1.;
+var vz = [1.];
 var nchan = 1;
 var bufsize = 1.;
 var dsbufamp = [0];
@@ -32,7 +32,7 @@ function paint(){
 				set_source_rgb(groupscolours[groups[v-1]]);
 				for (u = 0; u < w; u++){
 					move_to(u,h*(v - 0.5)/nchan);
-					line_to(u,h*(v - 0.5)/nchan - Math.max(Math.min(dsbufamp[u+(w*(v-1))]*(h/nchan)*vz*0.5, h*0.5/nchan),h * -0.5/nchan));
+					line_to(u,h*(v - 0.5)/nchan - Math.max(Math.min(dsbufamp[u+(w*(v-1))]*(h/nchan)*vz[(v-1) % vz.length]*0.5, h*0.5/nchan),h * -0.5/nchan));
 					stroke();
 				}
 			}
@@ -41,7 +41,7 @@ function paint(){
 				set_source_rgb(groupscolours[groups[v-1]]);
 				for (u = 0; u < w; u++){
 					move_to(u,v*h/nchan);
-					line_to(u,v*h/nchan - Math.min(dsbufamp[u+(w*(v-1))]*(h/nchan)*vz, h/nchan));
+					line_to(u,v*h/nchan - Math.min(dsbufamp[u+(w*(v-1))]*(h/nchan)*vz[(v-1) % vz.length], h/nchan));
 					stroke();
 				}
 			}
@@ -67,14 +67,16 @@ function bang()
 	mgraphics.redraw();
 }
 
+
 function bipolar(flag)
 {
 	isBipolar = (flag != 0);
 	downsamplebuffer();
 }
 
-function vzoom(x){
-	vz = Math.max(x, 0.);
+function vzoom(){	
+	vz = arrayfromargs(arguments); 
+	vz = vz.map(function(x){return Math.max(x,0);}); ;
 	bang();
 }
 
