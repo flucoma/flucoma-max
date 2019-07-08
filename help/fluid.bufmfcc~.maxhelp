@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"revision" : 5,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -68,12 +68,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 257.0, 209.0, 927.0, 648.0 ],
+						"rect" : [ 0.0, 26.0, 927.0, 648.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -122,7 +122,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 23.0, 546.5, 69.0, 33.0 ],
-									"presentation_rect" : [ 26.0, 548.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "channel 2 \nMFCCs",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -151,8 +150,7 @@
 									"maxclass" : "live.line",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 100.5, 297.0, 9.0, 175.0 ],
-									"presentation_rect" : [ 58.0, 418.5, 0.0, 0.0 ]
+									"patching_rect" : [ 100.5, 297.0, 9.0, 175.0 ]
 								}
 
 							}
@@ -180,8 +178,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"revision" : 5,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -725,9 +723,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -799,12 +797,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 927.0, 648.0 ],
+						"rect" : [ 257.0, 209.0, 927.0, 648.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -839,7 +837,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 6.0, 562.0, 50.0, 20.0 ],
-									"presentation_rect" : [ 3.0, 561.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "coeff N ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -878,8 +875,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"revision" : 5,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1111,9 +1108,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1184,8 +1181,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"revision" : 5,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1279,7 +1276,7 @@
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
 													"patching_rect" : [ 73.5, 140.833344, 133.0, 22.0 ],
-													"prefix" : "MacOS:/Users/owen/Documents/Max 7/Packages/flucoma-max-devkit/media/",
+													"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/media/",
 													"presentation" : 1,
 													"presentation_rect" : [ 2.5, 2.833344, 282.0, 22.0 ],
 													"style" : "",
@@ -1383,9 +1380,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1768,9 +1765,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 308.0, 310.0, 270.0, 35.0 ],
+									"patching_rect" : [ 308.0, 310.0, 315.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.bufmfcc~ 13 @source bufmfcc_help_src1 @features bufmfcc_help_mfcc1 @nchans 1"
+									"text" : "fluid.bufmfcc~ 13 @source bufmfcc_help_src1 @features bufmfcc_help_mfcc1 @numchans 1"
 								}
 
 							}
@@ -1929,9 +1926,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2019,12 +2016,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 927.0, 648.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2087,7 +2084,7 @@
 			}
 , 			{
 				"name" : "fluid.bufview.js",
-				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -2111,9 +2108,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

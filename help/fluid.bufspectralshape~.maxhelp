@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"revision" : 5,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -68,8 +68,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -121,7 +121,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.5, 500.0, 33.0, 20.0 ],
-									"presentation_rect" : [ 12.5, 500.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "ch 2",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -149,8 +148,7 @@
 									"maxclass" : "live.line",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 58.0, 445.0, 5.0, 128.0 ],
-									"presentation_rect" : [ 19.0, 447.666656, 0.0, 0.0 ]
+									"patching_rect" : [ 58.0, 445.0, 5.0, 128.0 ]
 								}
 
 							}
@@ -173,7 +171,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 100.0, 553.0, 59.0, 20.0 ],
-									"presentation_rect" : [ 60.666668, 553.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "crest(dB)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -188,7 +185,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 84.5, 535.0, 75.0, 20.0 ],
-									"presentation_rect" : [ 45.166668, 534.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "flatness(dB)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -203,7 +199,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 97.5, 517.0, 62.0, 20.0 ],
-									"presentation_rect" : [ 58.166668, 516.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "rolloff(Hz)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -218,7 +213,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 76.5, 500.0, 83.0, 20.0 ],
-									"presentation_rect" : [ 37.166668, 499.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "kurtosis(ratio)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -233,7 +227,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 65.0, 482.0, 95.0, 20.0 ],
-									"presentation_rect" : [ 25.666666, 481.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "skewness(ratio)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -248,7 +241,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 64.5, 463.0, 96.0, 20.0 ],
-									"presentation_rect" : [ 25.166666, 462.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "spread (Hz)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -263,7 +255,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 79.5, 445.0, 79.0, 20.0 ],
-									"presentation_rect" : [ 40.166668, 444.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "centroid (Hz)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -381,8 +372,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"revision" : 5,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -781,13 +772,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-10",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 819.0, 470.0, 102.0, 22.0 ],
+									"patching_rect" : [ 819.0, 470.0, 134.0, 35.0 ],
 									"style" : "",
-									"text" : "play~ srcstereo 2"
+									"text" : "play~ bufspecsh_help_src2 2"
 								}
 
 							}
@@ -900,9 +892,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -920,6 +912,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -929,8 +922,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -974,8 +966,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -1014,7 +1006,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 35.0, 496.0, 59.0, 20.0 ],
-									"presentation_rect" : [ 57.5, 496.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "crest(dB)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -1029,7 +1020,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 19.5, 475.0, 75.0, 20.0 ],
-									"presentation_rect" : [ 57.5, 476.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "flatness(dB)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -1044,7 +1034,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 32.5, 454.5, 62.0, 20.0 ],
-									"presentation_rect" : [ 57.5, 448.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "rolloff(Hz)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -1059,7 +1048,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 11.5, 432.5, 83.0, 20.0 ],
-									"presentation_rect" : [ 57.5, 431.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "kurtosis(ratio)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -1074,7 +1062,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ -0.5, 409.0, 95.0, 20.0 ],
-									"presentation_rect" : [ 57.5, 408.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "skewness(ratio)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -1089,7 +1076,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.5, 387.0, 79.0, 20.0 ],
-									"presentation_rect" : [ 57.5, 388.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "spread (Hz)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ],
@@ -1123,8 +1109,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"revision" : 5,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1286,8 +1272,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"revision" : 5,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1381,7 +1367,7 @@
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
 													"patching_rect" : [ 73.5, 140.833344, 133.0, 22.0 ],
-													"prefix" : "MacOS:/Users/owen/Documents/Max 7/Packages/flucoma-max-devkit/media/",
+													"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/media/",
 													"presentation" : 1,
 													"presentation_rect" : [ 2.5, 2.833344, 282.0, 22.0 ],
 													"style" : "",
@@ -1485,9 +1471,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1505,6 +1491,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1514,8 +1501,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -1760,9 +1746,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 782.0, 436.0, 69.0, 22.0 ],
+									"patching_rect" : [ 782.0, 436.0, 166.0, 22.0 ],
 									"style" : "",
-									"text" : "play~ src 2"
+									"text" : "play~ bufspecsh_help_src1 2"
 								}
 
 							}
@@ -1910,9 +1896,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1930,6 +1916,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1939,8 +1926,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2000,12 +1986,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 964.0, 587.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2062,7 +2048,7 @@
 			}
 , 			{
 				"name" : "fluid.bufview.js",
-				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -2092,9 +2078,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2112,6 +2098,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2121,8 +2108,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

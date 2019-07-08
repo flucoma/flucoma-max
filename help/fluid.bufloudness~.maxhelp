@@ -4,8 +4,8 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"revision" : 5,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
@@ -68,8 +68,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -108,7 +108,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 299.5, 527.0, 37.0, 20.0 ],
-									"presentation_rect" : [ 300.5, 558.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "peak",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -122,7 +121,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 277.5, 451.0, 59.0, 20.0 ],
-									"presentation_rect" : [ 278.5, 482.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "loudness",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -244,9 +242,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 348.0, 209.0, 172.0, 22.0 ],
+									"patching_rect" : [ 348.0, 209.0, 243.0, 22.0 ],
 									"style" : "",
-									"text" : "bipolar 1, setbuffer stereofeats"
+									"text" : "bipolar 1, setbuffer bufloudness_help_loud2"
 								}
 
 							}
@@ -310,9 +308,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 13.5, 153.0, 332.0, 49.0 ],
+									"patching_rect" : [ 13.5, 153.0, 332.5, 49.0 ],
 									"style" : "",
-									"text" : "fluid.bufcompose~ @source ufloudness_help_src3 @startframe 555000 @numframes 468335 @deststartchan 1 @destination bufloudness_help_src2"
+									"text" : "fluid.bufcompose~ @source bufloudness_help_src3 @startframe 555000 @numframes 468335 @deststartchan 1 @destination bufloudness_help_src2"
 								}
 
 							}
@@ -611,9 +609,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -685,8 +683,8 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
@@ -738,8 +736,8 @@
 										"appversion" : 										{
 											"major" : 7,
 											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"revision" : 5,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
@@ -1098,9 +1096,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1158,7 +1156,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 283.5, 457.0, 37.0, 20.0 ],
-									"presentation_rect" : [ 6.5, 610.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "peak",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -1290,7 +1287,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 17.0, 198.5, 286.5, 49.0 ],
+									"patching_rect" : [ 17.0, 198.5, 287.0, 49.0 ],
 									"style" : "",
 									"text" : "fluid.bufcompose~ @source bufloudness_help_sine @destination bufloudness_help_src1 @deststartframe 8192 @numframes 1024"
 								}
@@ -1809,9 +1806,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1899,12 +1896,12 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"revision" : 5,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 928.0, 658.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1967,7 +1964,7 @@
 			}
 , 			{
 				"name" : "fluid.bufview.js",
-				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -1991,9 +1988,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
