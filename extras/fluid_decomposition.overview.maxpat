@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 282.0, 156.0, 1003.0, 777.0 ],
+		"rect" : [ 62.0, 88.0, 1005.0, 815.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,19 @@
 		"showontab" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-10",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 22.75, 777.0, 961.0, 33.0 ],
+					"style" : "helpfile_label",
+					"text" : "This toolbox was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899)."
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-58",
 					"linecount" : 4,
 					"maxclass" : "comment",
@@ -46,7 +59,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 90.0, 588.0, 60.0 ],
 					"style" : "helpfile_label",
-					"text" : "The Fluid Decomposition toolbox provides an open-ended, loosely coupled set of objects to break up and analyse sound in terms of slices (segments in time), layers (superositions in time and frequency) and objects (configurable or discoverable patterns in sound). Almost all objects have audio-rate and buffer-based versions"
+					"text" : "The Fluid Decomposition toolbox provides an open-ended, loosely coupled set of objects to break up and analyse sound in terms of slices (segments in time), layers (superositions in time and frequency) and objects (configurable or discoverable patterns in sound). Almost all objects have audio-rate and buffer-based versions."
 				}
 
 			}
@@ -102,7 +115,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 859.0, 630.0, 125.0, 33.0 ],
+					"patching_rect" : [ 859.0, 631.0, 125.0, 33.0 ],
 					"style" : "",
 					"text" : "Summary measures of spectral shape",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -192,7 +205,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 17.0, 583.0, 130.0, 35.0 ],
+					"patching_rect" : [ 17.0, 580.0, 130.0, 35.0 ],
 					"style" : "",
 					"text" : "Descriptors"
 				}
@@ -238,7 +251,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 509.0, 457.0, 144.0, 47.0 ],
 					"style" : "",
-					"text" : "Decompose into 'harmoinc' and 'percussive layers",
+					"text" : "Decompose into 'harmonic' and 'percussive' layers",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -753,7 +766,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 724.0, 467.0, 108.0, 22.0 ],
+					"patching_rect" : [ 724.0, 468.0, 108.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.bufcompose~"
 				}
