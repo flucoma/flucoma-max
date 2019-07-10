@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 383.0, 236.0, 822.0, 500.0 ],
+		"rect" : [ 117.0, 114.0, 822.0, 500.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -850,7 +850,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 383.0, 262.0, 822.0, 474.0 ],
+						"rect" : [ 0.0, 26.0, 822.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2811,9 +2811,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 60.0, 222.0, 437.0, 22.0 ],
+									"patching_rect" : [ 60.0, 222.0, 486.0, 22.0 ],
 									"style" : "",
-									"text" : "source bufcompose_help_src8, destgain 1., deststartchan 0., numchans 2, bang"
+									"text" : "source bufcompose_help_src8, gain 0.7, destgain 1., deststartchan 0., numchans 2, bang"
 								}
 
 							}
@@ -3473,7 +3473,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 822.0, 474.0 ],
+						"rect" : [ 117.0, 140.0, 822.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3565,7 +3565,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 443.0, 266.0, 20.0, 20.0 ],
+									"patching_rect" : [ 490.0, 266.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 439.0, 242.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -3587,7 +3587,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 215.0, 266.0, 20.0, 20.0 ],
+									"patching_rect" : [ 262.0, 266.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 232.5, 249.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -3663,7 +3663,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 468.0, 266.0, 24.0, 24.0 ],
+									"patching_rect" : [ 515.0, 266.0, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -3675,7 +3675,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 240.0, 266.0, 196.0, 22.0 ],
+									"patching_rect" : [ 287.0, 266.0, 196.0, 22.0 ],
 									"style" : "",
 									"text" : "destination bufcompose_help_dst1"
 								}
@@ -3690,7 +3690,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 21.5, 221.0, 322.0, 33.0 ],
 									"style" : "helpfile_label",
-									"text" : "use the source and destination attributes to set these bufers, and bang to process"
+									"text" : "use the source and destination attributes to set these buffers, and bang to process"
 								}
 
 							}
@@ -3705,7 +3705,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 21.5, 188.0, 314.0, 36.0 ],
 									"style" : "",
-									"text" : "fluid.bufcompose copies from a source buffer~ to a destination buffer~"
+									"text" : "fluid.bufcompose copies from a source buffer~ to a destination buffer~ at a given gain"
 								}
 
 							}
@@ -3795,9 +3795,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 31.5, 266.0, 174.0, 22.0 ],
+									"patching_rect" : [ 31.5, 266.0, 223.0, 22.0 ],
 									"style" : "",
-									"text" : "source bufcompose_help_src1"
+									"text" : "source bufcompose_help_src1, gain 0.5"
 								}
 
 							}
@@ -3839,7 +3839,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 249.5, 299.0, 41.0, 299.0 ],
+									"midpoints" : [ 296.5, 299.0, 41.0, 299.0 ],
 									"source" : [ "obj-38", 0 ]
 								}
 
@@ -3847,7 +3847,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 477.5, 309.0, 41.0, 309.0 ],
+									"midpoints" : [ 524.5, 309.0, 41.0, 309.0 ],
 									"source" : [ "obj-44", 0 ]
 								}
 
@@ -4602,18 +4602,18 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-11::obj-4::obj-2" : [ "live.text[4]", "live.text", 0 ],
-			"obj-14::obj-44::obj-1" : [ "live.text[11]", "live.text", 0 ],
-			"obj-16::obj-4::obj-1" : [ "live.text[8]", "live.text", 0 ],
-			"obj-16::obj-4::obj-2" : [ "live.text[6]", "live.text", 0 ],
-			"obj-13::obj-4::obj-1" : [ "live.text", "live.text", 0 ],
 			"obj-13::obj-4::obj-2" : [ "live.text[1]", "live.text", 0 ],
-			"obj-14::obj-44::obj-2" : [ "live.text[10]", "live.text", 0 ],
-			"obj-16::obj-4::obj-3" : [ "live.text[7]", "live.text", 0 ],
 			"obj-13::obj-4::obj-3" : [ "live.text[2]", "live.text", 0 ],
+			"obj-14::obj-44::obj-1" : [ "live.text[11]", "live.text", 0 ],
+			"obj-16::obj-4::obj-3" : [ "live.text[7]", "live.text", 0 ],
 			"obj-11::obj-4::obj-1" : [ "live.text[5]", "live.text", 0 ],
-			"obj-11::obj-4::obj-3" : [ "live.text[3]", "live.text", 0 ],
-			"obj-14::obj-44::obj-3" : [ "live.text[9]", "live.text", 0 ]
+			"obj-16::obj-4::obj-2" : [ "live.text[6]", "live.text", 0 ],
+			"obj-16::obj-4::obj-1" : [ "live.text[8]", "live.text", 0 ],
+			"obj-13::obj-4::obj-1" : [ "live.text", "live.text", 0 ],
+			"obj-14::obj-44::obj-2" : [ "live.text[10]", "live.text", 0 ],
+			"obj-11::obj-4::obj-2" : [ "live.text[4]", "live.text", 0 ],
+			"obj-14::obj-44::obj-3" : [ "live.text[9]", "live.text", 0 ],
+			"obj-11::obj-4::obj-3" : [ "live.text[3]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
