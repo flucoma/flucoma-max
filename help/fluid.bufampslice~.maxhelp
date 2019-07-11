@@ -4014,9 +4014,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 132.0, 248.5, 430.0, 22.0 ],
+													"patching_rect" : [ 132.0, 248.5, 400.0, 22.0 ],
 													"style" : "",
-													"text" : "expr sin($f1 * 3.141593 * 640 / 44100) * abs(sin($f1 *3.14159265359 / 22050.))"
+													"text" : "expr sin($f1 * 3.141593 * 640 / 44100) * abs(sin($f1 * 3.141593 / 22050.))"
 												}
 
 											}
