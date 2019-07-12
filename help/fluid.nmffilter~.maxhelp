@@ -778,9 +778,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 42.0, 364.0, 210.0, 20.0 ],
+									"patching_rect" : [ 42.0, 364.0, 236.0, 20.0 ],
 									"style" : "",
-									"text" : "decompose in 2 components with nmf",
+									"text" : "decompose in 2 components with bufnmf~",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
