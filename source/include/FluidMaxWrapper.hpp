@@ -10,7 +10,7 @@
 #include <clients/common/ParameterSet.hpp>
 #include <clients/common/ParameterTypes.hpp>
 
-#include <MaxBufferAdaptor.hpp>
+#include "MaxBufferAdaptor.hpp"
 
 #include <cctype>  //std::tolower
 #include <tuple>
@@ -61,7 +61,7 @@ public:
   void dsp(t_object *dsp64, short *count, double samplerate, long /*maxvectorsize*/, long /*flags*/)
   {
     Wrapper *wrapper = static_cast<Wrapper *>(this);
-    
+
     wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
     auto &   client  = wrapper->client();
     client.sampleRate(samplerate);
@@ -140,7 +140,7 @@ struct NonRealTime
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client = wrapper.client();
     auto paramCopy = wrapper.mParams;
-    
+
 //    auto client = typename Wrapper::ClientType{paramCopy};
     client.setParams(paramCopy);
     Result res = client.process();
@@ -411,7 +411,7 @@ public:
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
-    
+
 	//Change for MSVC, which didn't like the macro version
 	t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
 	class_addattr(getClass(), a);
@@ -427,7 +427,7 @@ public:
 
   static void doReset(FluidMaxWrapper *x)
   {
-    x->mParams = x->mParamSnapshot; 
+    x->mParams = x->mParamSnapshot;
     x->params().template forEachParam<touchAttribute>(x);
   }
 
@@ -491,7 +491,7 @@ private:
     }
     // process in-box attributes for mutable params
     attr_args_process((t_object *) this, static_cast<short>(ac), av);
-    // return params so this can be called in client initaliser    
+    // return params so this can be called in client initaliser
     return mParams;
   }
 

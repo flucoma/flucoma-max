@@ -1,7 +1,7 @@
 #include <clients/rt/SinesClient.hpp>
 #include <clients/nrt/FluidNRTClientWrapper.hpp>
 
-#include <FluidMaxWrapper.hpp>
+#include "FluidMaxWrapper.hpp" //nb: this include is order-sensitive because of macro name clashes in Eigen and C74
 
 
 
