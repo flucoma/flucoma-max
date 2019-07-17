@@ -31,14 +31,11 @@ public:
   MaxBufferAdaptor(const MaxBufferAdaptor &) = delete;
   MaxBufferAdaptor &operator=(const MaxBufferAdaptor &other) = delete;
 
-  MaxBufferAdaptor(MaxBufferAdaptor &&other) //: MaxBufferView(other.mHostObject, other.mName)
-  {
-    swap(std::move(other));
-  }
+  MaxBufferAdaptor(MaxBufferAdaptor &&x) noexcept { *this = std::move(x); }
 
-  MaxBufferAdaptor &operator=(MaxBufferAdaptor &&other)
+  MaxBufferAdaptor &operator=(MaxBufferAdaptor &&x) noexcept
   {
-    swap(std::move(other));
+    if(this != &x) swap(std::move(x));
     return *this;
   }
 
@@ -79,7 +76,7 @@ public:
       t_atom sr;
       atom_setfloat(&sr,sampleRate);
       t_symbol *srMsg = gensym("sr");
-      object_method_typed(buffer,srMsg,1,&sr,nullptr); 
+      object_method_typed(buffer,srMsg,1,&sr,nullptr);
       object_method(buffer, gensym("dirty"));
       buffer_edit_end(buffer, 1);
       lockSamps();
@@ -90,13 +87,13 @@ public:
   bool acquire() override
   {
     bool lock = tryLock();
-      
+
     if (lock)
     {
       lockSamps();
       return true;
     }
-      
+
     return false;
   }
 
@@ -121,24 +118,24 @@ public:
 
   t_max_err notify(t_symbol *s, t_symbol *msg, void *sender, void *data)
   {
-    t_symbol *buffer_name = (t_symbol *)object_method((t_object *)sender, gensym("getname"));    
+    t_symbol *buffer_name = (t_symbol *)object_method((t_object *)sender, gensym("getname"));
     return buffer_name == mName ? buffer_ref_notify(mBufref, s, msg, sender, data) : MAX_ERR_NONE;
   }
 
   size_t numFrames() const override { return valid() ? static_cast<size_t>(buffer_getframecount(getBuffer())) : 0; }
 
   size_t numChans() const override { return valid() ? static_cast<size_t>(buffer_getchannelcount(getBuffer())) : 0; }
-  
+
   double sampleRate() const override { return valid() ? buffer_getsamplerate(getBuffer()) : 0; }
 
 private:
-    
+
   void lockSamps()
   {
     t_object *buffer = getBuffer();
     if (buffer) mSamps = buffer_locksamples(buffer);
   }
-    
+
   void unlockSamps()
   {
     if (mSamps)
@@ -152,35 +149,35 @@ private:
   {
     return compareExchange(false, true);
   }
-  
+
   void releaseLock()
   {
     compareExchange(true, false);
   }
-    
+
   bool compareExchange(bool compare, bool exchange)
   {
     return mLock.compare_exchange_strong(compare, exchange);
   }
-    
+
   t_object *getBuffer() const { return buffer_ref_getobject(mBufref); }
 
-  void swap(MaxBufferAdaptor &&other)
+  void swap(MaxBufferAdaptor &&other) noexcept
   {
-  
+
     if(this == &other) return;
-    
+
     while (!tryLock());
-      
+
     release();
     object_free(mBufref);
-    
+
     mHostObject = other.mHostObject;
     mName   = other.mName;
     mSamps  = other.mSamps;
     mBufref = other.mBufref;
 
-    other.mHostObject = nullptr; 
+    other.mHostObject = nullptr;
     other.mName   = nullptr;
     other.mSamps  = nullptr;
     other.mBufref = nullptr;
@@ -196,4 +193,3 @@ private:
 };
 } // namespace client
 } // namespace fluid
-
