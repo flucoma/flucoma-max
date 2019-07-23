@@ -407,7 +407,7 @@
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 208.5, 1044.0, 487.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufnmf~ @source source @resynth resynth @rank 3 @bases bases @basesmode 2"
+					"text" : "fluid.bufnmf~ @source source @resynth resynth @components 3 @bases bases @basesmode 2"
 				}
 
 			}

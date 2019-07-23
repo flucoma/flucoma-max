@@ -4,6 +4,7 @@
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
+
 target_link_libraries(${PROJECT_NAME}
 PUBLIC FLUID_DECOMPOSITION  FLUID_MAX
 PRIVATE FFTLIB
@@ -16,8 +17,8 @@ target_include_directories (
 )
 
 if(MSVC)
-  target_compile_options(${PROJECT_NAME}PRIVATE /W4 /WX)
-else()
+  target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
+else(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
 endif()
 
@@ -38,11 +39,15 @@ else ()
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${EXTERN_OUTPUT_NAME}")
 
-# target_compile_options(
-# ${PROJECT_NAME}
-# PUBLIC
-# "$<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>"
-# )
+if(WIN32)
+ target_compile_options(
+   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: /arch:AVX>
+ )
+else(WIN32)
+target_compile_options(
+   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
+)
+endif(WIN32)
 
 
 
@@ -76,9 +81,10 @@ if (APPLE)
 	#
   #   set_target_properties(${PROJECT_NAME} PROPERTIES )
 elseif (WIN32)
-	target_link_libraries(${PROJECT_NAME} ${MaxAPI_LIB})
-	target_link_libraries(${PROJECT_NAME} ${MaxAudio_LIB})
-	target_link_libraries(${PROJECT_NAME} ${Jitter_LIB})
+	target_compile_options(${PROJECT_NAME} PRIVATE /arch:AVX)
+	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
+	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAudio_LIB})
+	target_link_libraries(${PROJECT_NAME} PRIVATE ${Jitter_LIB})
 
 	if (CMAKE_SIZEOF_VOID_P EQUAL 8)
 		set_target_properties(${PROJECT_NAME} PROPERTIES SUFFIX ".mxe64")
@@ -99,5 +105,5 @@ endif ()
 #		POST_BUILD
 #		COMMAND rm "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${EXTERN_OUTPUT_NAME}.ilk"
 #		COMMENT "ilk file cleanup"
-#	)
-#endif ()
+#)
+# endif ()

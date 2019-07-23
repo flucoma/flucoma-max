@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
-			"architecture" : "x64",
+			"revision" : 4,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+		"rect" : [ 377.0, 355.0, 320.0, 226.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,11 +42,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 125.0, 243.0, 44.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
+					"patching_rect" : [ 8.0, 169.0, 44.0, 22.0 ],
 					"style" : "",
 					"text" : "out~ 1"
 				}
@@ -59,7 +55,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 334.0, 237.0, 58.0, 22.0 ],
+					"patching_rect" : [ 198.0, 140.0, 58.0, 22.0 ],
 					"style" : "",
 					"text" : "thispoly~"
 				}
@@ -72,7 +68,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 125.0, 103.0, 81.0, 22.0 ],
+					"patching_rect" : [ 8.0, 37.0, 81.0, 22.0 ],
 					"style" : "",
 					"text" : "prepend start"
 				}
@@ -85,11 +81,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 125.0, 71.0, 30.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"attr_comment" : ""
-					}
-,
+					"patching_rect" : [ 8.0, 5.0, 30.0, 22.0 ],
 					"style" : "",
 					"text" : "in 1"
 				}
@@ -102,7 +94,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 125.0, 214.0, 29.5, 22.0 ],
+					"patching_rect" : [ 8.0, 140.0, 182.5, 22.0 ],
 					"style" : "",
 					"text" : "*~"
 				}
@@ -115,9 +107,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "bang" ],
-					"patching_rect" : [ 125.0, 174.0, 86.0, 22.0 ],
+					"patching_rect" : [ 8.0, 103.0, 144.0, 22.0 ],
 					"style" : "",
-					"text" : "play~ asource"
+					"text" : "play~ bufpitch_help_src2"
 				}
 
 			}
@@ -128,9 +120,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "bang" ],
-					"patching_rect" : [ 218.5, 174.0, 62.0, 22.0 ],
+					"patching_rect" : [ 171.5, 103.0, 140.0, 22.0 ],
 					"style" : "",
-					"text" : "play~ env"
+					"text" : "play~ bufpitch_help_env"
 				}
 
 			}
@@ -141,9 +133,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "start" ],
-					"patching_rect" : [ 187.5, 144.0, 50.0, 22.0 ],
+					"patching_rect" : [ 8.0, 71.0, 182.5, 22.0 ],
 					"style" : "",
-					"text" : "t s start"
+					"text" : "t l start"
 				}
 
 			}
@@ -230,6 +222,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -239,8 +232,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

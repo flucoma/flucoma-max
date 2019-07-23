@@ -19,6 +19,6 @@
 		"copyright" : "Copyright (c) 2017-19 University of Huddersfield"
 	},
 	"tags" : [ ],
-	"version" : "@GIT_VERSION_MAJ",
+	"version" : "@GIT_VERSION_MAJ@",
 	"website" : "http://www.github.com/flucoma/"
 }
