@@ -156,6 +156,7 @@ struct NonRealTime
       }
       return;
     }
+         
     wrapper.doneBang();
   }
 
@@ -281,6 +282,11 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
     {
       return BufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
+    
+    static auto fromAtom(t_object *x , t_atom *a, InputBufferT::type)
+    {
+      return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
+    }
 
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
     {
@@ -316,6 +322,12 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       auto b = static_cast<MaxBufferAdaptor *>(v.get());
       atom_setsym(a, b ? b->name() : nullptr);
     }
+    
+    static auto toAtom(t_atom *a, InputBufferT::type v)
+    {
+      auto b = static_cast<const MaxBufferAdaptor *>(v.get());
+      atom_setsym(a, b ? b->name() : nullptr);
+    }
 
     static t_max_err get(FluidMaxWrapper<Client>* x, t_object */*attr*/, long *ac, t_atom **av)
     {
@@ -347,6 +359,15 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
     static void notify(FluidMaxWrapper<Client>* x, t_symbol *s, t_symbol *msg, void *sender, void *data)
     {
       if (auto p = static_cast<MaxBufferAdaptor *>(x->params().template get<N>().get())) p->notify(s, msg, sender, data);
+    }
+  };
+  
+  template<size_t N>
+  struct Notify<N, InputBufferT>
+  {
+    static void notify(FluidMaxWrapper<Client>* x, t_symbol *s, t_symbol *msg, void *sender, void *data)
+    {
+      if (auto p = static_cast<const MaxBufferAdaptor *>(x->params().template get<N>().get())) p->notify(s, msg, sender, data);
     }
   };
 
@@ -413,8 +434,8 @@ public:
     class_addmethod(getClass(), (method)doReset, "reset",0);
 
 	//Change for MSVC, which didn't like the macro version
-	t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
-	class_addattr(getClass(), a);
+	  t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
+	  class_addattr(getClass(), a);
 
     //CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
@@ -531,6 +552,7 @@ private:
   static t_symbol* maxAttrType(FloatT) { return USESYM(float64); }
   static t_symbol* maxAttrType(LongT) { return USESYM(long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
+  static t_symbol* maxAttrType(InputBufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
   static t_symbol* maxAttrType(FloatPairsArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(FFTParamsT) { return gensym("atom"); }
