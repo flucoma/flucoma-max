@@ -124,20 +124,18 @@ public:
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
   }
   
-  const FluidTensorView<float, 1> samps(size_t channel) const override
+  FluidTensorView<const float, 1> samps(size_t channel) const override
   {
-    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
+    FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
 
     return v.col(channel);
   }
 
-  const FluidTensorView<float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) const override
+  FluidTensorView<const float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) const override
   {
-    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
+    FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
   }
-
-  
 
   t_max_err notify(t_symbol *s, t_symbol *msg, void *sender, void *data) const
   {
@@ -218,8 +216,8 @@ private:
   t_object *mHostObject;
   t_symbol *mName;
 
-  mutable float *       mSamps;
-  t_buffer_ref *mBufref;
+  mutable float* mSamps;
+  t_buffer_ref* mBufref;
   mutable std::atomic<bool> mLock;
 };
 } // namespace client
