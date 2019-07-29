@@ -45,7 +45,7 @@ if(WIN32)
  )
 else(WIN32)
 target_compile_options(
-   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>
+   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
 )
 endif(WIN32)
 

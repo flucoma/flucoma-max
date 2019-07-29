@@ -915,6 +915,19 @@
 										"subpatcher_template" : "",
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "start", "" ],
+													"patching_rect" : [ 10.0, 289.0, 47.0, 22.0 ],
+													"style" : "",
+													"text" : "t start l"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-5",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -934,7 +947,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 10.0, 281.0, 30.0, 30.0 ],
+													"patching_rect" : [ 10.0, 343.0, 30.0, 30.0 ],
 													"style" : ""
 												}
 
@@ -1036,6 +1049,20 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"source" : [ "obj-1", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-15", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-10", 1 ]
 												}
@@ -1057,7 +1084,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-15", 0 ],
+													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-14", 0 ]
 												}
 
@@ -1793,9 +1820,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 243.0, 175.0, 22.0 ],
+									"patching_rect" : [ 10.0, 243.0, 181.0, 22.0 ],
 									"style" : "",
-									"text" : "buffer~ bufhelp_help_residual1"
+									"text" : "buffer~ bufsines_help_residual1"
 								}
 
 							}
@@ -1820,9 +1847,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 308.0, 375.5, 497.0, 35.0 ],
+									"patching_rect" : [ 308.0, 375.5, 496.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.bufsines~ @threshold 0.3 @source bufsines_help_src1 @sines bufsines_help_sines1 @residual bufhelp_help_residual1 @fftsettings 1024 512 8192"
+									"text" : "fluid.bufsines~ @threshold 0.3 @source bufsines_help_src1 @sines bufsines_help_sines1 @residual bufsines_help_residual1 @fftsettings 1024 512 8192"
 								}
 
 							}
@@ -2117,8 +2144,8 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-2::obj-24::obj-28" : [ "live.tab[2]", "live.tab", 0 ],
-			"obj-1::obj-24::obj-28" : [ "live.tab[1]", "live.tab", 0 ]
+			"obj-1::obj-24::obj-28" : [ "live.tab[1]", "live.tab", 0 ],
+			"obj-2::obj-24::obj-28" : [ "live.tab[2]", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

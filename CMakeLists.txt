@@ -11,7 +11,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 
 if(APPLE)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx -msse -msse2 -msse3 -msse4")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx")
 
 # We shouldn't have to do this, bah:
 #TODO find way of guranteeing libc++ on OS X CLI (hence >=C++11) without brute forcing CMake like this
@@ -80,7 +80,7 @@ if(WIN32)
  )
 else(WIN32)
 target_compile_options(
-   FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx -msse -msse2 -msse3 -msse4>
+   FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
 )
 endif(WIN32)
 

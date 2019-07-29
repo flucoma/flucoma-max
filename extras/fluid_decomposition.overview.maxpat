@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 62.0, 88.0, 1015.0, 780.0 ],
+		"rect" : [ 226.0, 148.0, 1015.0, 780.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -409,8 +409,7 @@
 					"presentation_linecount" : 4,
 					"presentation_rect" : [ 9.0, 100.0, 591.0, 60.0 ],
 					"style" : "helpfile_label",
-					"text" : "The Fluid Decomposition toolbox provides an open-ended, loosely coupled set of objects to break up and analyse sound in terms of slices (segments in time), layers (superositions in time and frequency) and objects (configurable or discoverable patterns in sound). Almost all objects have audio-rate and buffer-based versions.",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "The Fluid Decomposition toolbox provides an open-ended, loosely coupled set of objects to break up and analyse sound in terms of slices (segments in time), layers (superositions in time and frequency) and objects (configurable or discoverable patterns in sound). Almost all objects have audio-rate and buffer-based versions."
 				}
 
 			}
