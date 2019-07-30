@@ -2,6 +2,7 @@
 //We get lots of this warning because C74 macros, and can't (AFAICS) do anything else but mute them:
 #pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
 
+
 #include <clients/common/BufferAdaptor.hpp>
 #include <data/FluidTensor.hpp>
 #include <ext_buffer.h>
@@ -53,7 +54,7 @@ public:
     //      return getBuffer();
   }
 
-  void resize(size_t frames, size_t channels,double sampleRate) override
+  const Result resize(size_t frames, size_t channels,double sampleRate) override
   {
     t_object *buffer = getBuffer();
 
@@ -62,7 +63,6 @@ public:
       // Do this in two stages so we can set length in samps rather than ms
       unlockSamps();
       buffer_edit_begin(buffer);
-
       t_atom args[2];
       atom_setfloat(&args[0], 0.);
       atom_setlong(&args[1], static_cast<t_atom_long>(channels));
@@ -80,11 +80,19 @@ public:
       object_method(buffer, gensym("dirty"));
       buffer_edit_end(buffer, 1);
       lockSamps();
+      
+      if(frames != numFrames() || channels != numChans() )
+        return {Result::Status::kError, "Could not resize"};
+      
       assert(frames == numFrames() && channels == numChans());
+      
+      return {};
+      
     }
+    return {Result::Status::kError,"Resize on null buffer"};
   }
 
-  bool acquire() override
+  bool acquire() const override
   {
     bool lock = tryLock();
 
@@ -97,7 +105,7 @@ public:
     return false;
   }
 
-  void release() override
+  void release() const  override
   {
     unlockSamps();
     releaseLock();
@@ -115,8 +123,21 @@ public:
     FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
   }
+  
+  FluidTensorView<const float, 1> samps(size_t channel) const override
+  {
+    FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
 
-  t_max_err notify(t_symbol *s, t_symbol *msg, void *sender, void *data)
+    return v.col(channel);
+  }
+
+  FluidTensorView<const float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) const override
+  {
+    FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
+    return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
+  }
+
+  t_max_err notify(t_symbol *s, t_symbol *msg, void *sender, void *data) const
   {
     t_symbol *buffer_name = (t_symbol *)object_method((t_object *)sender, gensym("getname"));
     return buffer_name == mName ? buffer_ref_notify(mBufref, s, msg, sender, data) : MAX_ERR_NONE;
@@ -128,15 +149,23 @@ public:
 
   double sampleRate() const override { return valid() ? buffer_getsamplerate(getBuffer()) : 0; }
 
+  std::string asString() const override { return mName->s_name; }
+  
+  void refresh() override
+  {
+    t_object *buffer = getBuffer();
+    if(buffer) object_method(buffer, gensym("dirty"));
+  }
+  
 private:
 
-  void lockSamps()
+  void lockSamps() const
   {
     t_object *buffer = getBuffer();
     if (buffer) mSamps = buffer_locksamples(buffer);
   }
 
-  void unlockSamps()
+  void unlockSamps() const
   {
     if (mSamps)
     {
@@ -145,17 +174,17 @@ private:
     }
   }
 
-  bool tryLock()
+  bool tryLock() const
   {
     return compareExchange(false, true);
   }
 
-  void releaseLock()
+  void releaseLock() const
   {
     compareExchange(true, false);
   }
 
-  bool compareExchange(bool compare, bool exchange)
+  bool compareExchange(bool compare, bool exchange) const
   {
     return mLock.compare_exchange_strong(compare, exchange);
   }
@@ -187,9 +216,9 @@ private:
   t_object *mHostObject;
   t_symbol *mName;
 
-  float *       mSamps;
-  t_buffer_ref *mBufref;
-  std::atomic<bool> mLock;
+  mutable float* mSamps;
+  t_buffer_ref* mBufref;
+  mutable std::atomic<bool> mLock;
 };
 } // namespace client
 } // namespace fluid
