@@ -266,16 +266,13 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   struct Fetcher<N, LongT> : public FetchValue<N, t_atom_long, atom_getlong>
   {};
 
+
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
-  // Setter
-
-  template<typename T, size_t N>
-  struct Setter
+  // ParamsToAtoms
+  struct ParamAtomConverter
   {
-    static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
-
-    static auto fromAtom(t_object* /*x*/, t_atom *a, LongT::type) { return atom_getlong(a); }
+    static auto fromAtom(t_object* /*x*/, t_atom *a, LongT::type)  { return atom_getlong(a); }
     static auto fromAtom(t_object* /*x*/, t_atom *a, FloatT::type) { return atom_getfloat(a); }
 
     static auto fromAtom(t_object * x, t_atom *a, BufferT::type)
@@ -287,6 +284,33 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
     {
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
+    
+    static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
+    static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
+
+    static auto toAtom(t_atom *a, BufferT::type v)
+    {
+      auto b = static_cast<MaxBufferAdaptor *>(v.get());
+      atom_setsym(a, b ? b->name() : nullptr);
+    }
+    
+    static auto toAtom(t_atom *a, InputBufferT::type v)
+    {
+      auto b = static_cast<const MaxBufferAdaptor *>(v.get());
+      atom_setsym(a, b ? b->name() : nullptr);
+    }
+    
+  };
+  
+  
+  //////////////////////////////////////////////////////////////////////////////////////////////////
+
+  // Setter
+
+  template<typename T, size_t N>
+  struct Setter
+  {
+    static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
 
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
     {
@@ -296,7 +320,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       x->messages().reset();
 
       for (auto i = 0u; i < argSize && i < static_cast<size_t>(ac); i++)
-        a[i] = fromAtom((t_object *) x, av + i, a[0]);
+        a[i] = ParamAtomConverter::fromAtom((t_object *) x, av + i, a[0]);
 
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
       printResult(x, x->messages());
@@ -314,21 +338,6 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   {
     static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
 
-    static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
-    static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
-
-    static auto toAtom(t_atom *a, BufferT::type v)
-    {
-      auto b = static_cast<MaxBufferAdaptor *>(v.get());
-      atom_setsym(a, b ? b->name() : nullptr);
-    }
-    
-    static auto toAtom(t_atom *a, InputBufferT::type v)
-    {
-      auto b = static_cast<const MaxBufferAdaptor *>(v.get());
-      atom_setsym(a, b ? b->name() : nullptr);
-    }
-
     static t_max_err get(FluidMaxWrapper<Client>* x, t_object */*attr*/, long *ac, t_atom **av)
     {
       ParamLiteralConvertor<T, argSize> a;
@@ -339,7 +348,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       a.set(x->params().template get<N>());
 
       for (auto i = 0u; i < argSize; i++)
-        toAtom(*av + i, a[i]);
+        ParamAtomConverter::toAtom(*av + i, a[i]);
 
       return MAX_ERR_NONE;
     }
@@ -393,7 +402,7 @@ public:
 
     for (auto &r : results)
       printResult(this, r);
-
+    
     object_obex_store(this, gensym("dumpout"), (t_object *) outlet_new(this, nullptr));
 
     if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
@@ -426,12 +435,15 @@ public:
   static void makeClass(const char *className)
   {
     const ParamDescType& p = Client::getParameterDescriptors();
+    const auto& m = Client::getMessageDescriptors();
     getClass(class_new(className, (method)create, (method)destroy, sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     WrapperBase::setup(getClass());
 
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
+
+    m.template iterate<SetupMessage>();
 
 	//Change for MSVC, which didn't like the macro version
 	  t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
@@ -516,9 +528,40 @@ private:
     return mParams;
   }
 
+  template<size_t N>
+  static void invokeMessage(FluidMaxWrapper *x, t_symbol* s, long ac, t_atom* av)
+  {
+    using IndexList = typename Client::MessageSetType::template MessageTypeAt<N>::IndexList;
+    invokeMessageImpl<N>(x,s,ac,av,IndexList());
+  }
+  
+  template<size_t N, size_t...Is>
+  static void invokeMessageImpl(FluidMaxWrapper *x, t_symbol* s, long ac, t_atom* av,std::index_sequence<Is...>)
+  {
+    using ArgTuple = typename Client::MessageSetType::template MessageTypeAt<N>::ArgumentTypes;
+    ArgTuple args;
+    (void)std::initializer_list<int>{(std::get<Is>(args) = (Is <= ac ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
+    auto res = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
+    
+    t_atom out;
+    ParamAtomConverter::toAtom(&out,res);
+    object_obex_dumpout(x, s, 1, &out);
+  }
+
+
+  //Sets up a single message
+  template <size_t N, typename T>
+  struct SetupMessage
+  {
+    void operator()(const T& message)
+    {
+      class_addmethod(getClass(), (method)invokeMessage<N>, message.name,A_GIMME, 0);
+    }
+  };
+
+
   // Sets up a single attribute
   // TODO: static assert on T?
-
   template <size_t N, typename T>
   struct SetupAttribute
   {
@@ -560,6 +603,7 @@ private:
   Result        mResult;
   void *        mNRTDoneOutlet;
   void *        mControlOutlet;
+  void *        mDumpOutlet;
   bool          mVerbose;
   ParamSetType  mParams;
   ParamSetType  mParamSnapshot;
