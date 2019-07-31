@@ -151,8 +151,9 @@ struct NonRealTime
     class_addmethod(c, (method) deferProcess, "bang", 0);
     class_addmethod(c, (method) callCancel, "cancel", 0);
     CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
-    CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 1);
-    CLASS_ATTR_STYLE_LABEL(c, "synchronous", 0, "onoff", "Process Synchronously");
+    CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 2);
+    CLASS_ATTR_ENUMINDEX(c, "synchronous", 0, "Sync Async Immediate");
+    CLASS_ATTR_LABEL(c, "synchronous", 0, "Synchronous Processing Mode ");
   }
 
   bool checkResult(Result& res)
@@ -182,14 +183,30 @@ struct NonRealTime
     client.cancel();
   }
     
+  template<size_t N, typename T>
+  struct BufferImmediate
+  {
+    void operator()(typename T::type& param, bool immediate)
+    {
+      if (param)
+      {
+        auto b = static_cast<MaxBufferAdaptor*>(param.get());
+        b->immediate(immediate);
+      }
+    }
+  };
+    
   void process()
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client  = wrapper.mClient;
-    bool synchronous = mSynchronous;
+    long syncMode = mSynchronous;
+    bool synchronous = syncMode != 1;
+      
+    wrapper.mParams.template forEachParamType<BufferT, BufferImmediate>(syncMode == 2);
       
     client.setSynchronous(synchronous);
-    
+      
     Result res = client.process();
     if (checkResult(res))
     {
@@ -201,8 +218,15 @@ struct NonRealTime
   }
 
   static void callCancel(Wrapper *x) { x->cancel(); }
-  static void deferProcess(Wrapper *x) { defer(x, (method) &callProcess, nullptr, 0, nullptr); }
-
+    
+  static void deferProcess(Wrapper *x)
+  {
+    if (x->mSynchronous != 2)
+      defer(x, (method) &callProcess, nullptr, 0, nullptr);
+    else
+      callProcess(x, nullptr, 0, nullptr);
+  }
+    
   static void callProcess(Wrapper *x, t_symbol*, short, t_atom*) { x->process(); }
     
   static void checkProcess(Wrapper *x)
@@ -234,7 +258,7 @@ struct NonRealTime
     
 private:
     
-  bool mSynchronous = true;
+  long mSynchronous = 0;
   void *mQelem;
   void* mClock;
 };
