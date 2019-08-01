@@ -285,6 +285,11 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
     
+    static auto fromAtom(t_object*, t_atom* a, StringT::type)
+    {
+      return StringT::type(atom_getsym(a)->s_name);
+    }
+    
     static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
     static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
 
@@ -298,6 +303,11 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
     {
       auto b = static_cast<const MaxBufferAdaptor *>(v.get());
       atom_setsym(a, b ? b->name() : nullptr);
+    }
+    
+    static auto toAtom(t_atom *a, StringT::type v)
+    {
+      atom_setsym(a,gensym(v.c_str()));
     }
     
   };
@@ -531,14 +541,14 @@ private:
   template<size_t N>
   static void invokeMessage(FluidMaxWrapper *x, t_symbol* s, long ac, t_atom* av)
   {
-    using IndexList = typename Client::MessageSetType::template MessageTypeAt<N>::IndexList;
+    using IndexList = typename Client::MessageSetType::template MessageDescriptorAt<Client,N>::IndexList;
     invokeMessageImpl<N>(x,s,ac,av,IndexList());
   }
   
   template<size_t N, size_t...Is>
   static void invokeMessageImpl(FluidMaxWrapper *x, t_symbol* s, long ac, t_atom* av,std::index_sequence<Is...>)
   {
-    using ArgTuple = typename Client::MessageSetType::template MessageTypeAt<N>::ArgumentTypes;
+    using ArgTuple = typename Client::MessageSetType::template MessageDescriptorAt<Client,N>::ArgumentTypes;
     ArgTuple args;
     (void)std::initializer_list<int>{(std::get<Is>(args) = (Is <= ac ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
     auto res = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
