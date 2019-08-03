@@ -5,5 +5,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NRTOnsetSlice>("fluid.bufonsetslice~");
+  makeMaxWrapper<NRTThreadingOnsetSlice>("fluid.bufonsetslice~");
 }

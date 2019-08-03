@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NRTAmpSlice>("fluid.bufampslice~");
+  makeMaxWrapper<NRTThreadedAmpSlice>("fluid.bufampslice~");
 }

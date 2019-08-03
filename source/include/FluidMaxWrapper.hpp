@@ -103,7 +103,7 @@ public:
 
     for (auto i = 0u; i < client.controlChannelsOut(); ++i) mOutputs[i].reset(&mControlOutputs[i], 0, 1);
 
-    client.process(mInputs, mOutputs);
+    client.process(mInputs, mOutputs, mContext);
 
     if (mControlClock) clock_delay(mControlClock, 0);
   }
@@ -126,6 +126,7 @@ private:
   std::vector<double>   mControlOutputs;
   std::vector<t_atom>   mControlAtoms;
   void *                mControlClock;
+  FluidContext          mContext;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -133,36 +134,109 @@ private:
 template <class Wrapper>
 struct NonRealTime
 {
-  static void setup(t_class *c) { class_addmethod(c, (method) deferProcess, "bang", 0); }
+  NonRealTime()
+  {
+    mQelem = qelem_new(static_cast<Wrapper *>(this), (method) checkProcess);
+    mClock = clock_new(static_cast<Wrapper *>(this), (method) clockTick);
+  }
+    
+  ~NonRealTime()
+  {
+    qelem_free(mQelem);
+    object_free(mClock);
+  }
+    
+  static void setup(t_class *c)
+  {
+    class_addmethod(c, (method) deferProcess, "bang", 0);
+    class_addmethod(c, (method) callCancel, "cancel", 0);
+    CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
+    CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 1);
+    CLASS_ATTR_STYLE_LABEL(c, "synchronous", 0, "onoff", "Process Synchronously");
+  }
 
-  void process()
+  bool checkResult(Result& res)
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
-    auto &client = wrapper.client();
-    auto paramCopy = wrapper.mParams;
-
-//    auto client = typename Wrapper::ClientType{paramCopy};
-    client.setParams(paramCopy);
-    Result res = client.process();
-    client.setParams(wrapper.mParams);
+      
     if (!res.ok())
     {
       switch (res.status())
       {
-      case Result::Status::kWarning: object_warn((t_object *) &wrapper, res.message().c_str()); break;
-      case Result::Status::kError: object_error((t_object *) &wrapper, res.message().c_str()); break;
-      default: {
+        case Result::Status::kWarning: object_warn((t_object *) &wrapper, res.message().c_str()); break;
+        case Result::Status::kError: object_error((t_object *) &wrapper, res.message().c_str()); break;
+        case Result::Status::kCancelled: object_post((t_object *) &wrapper, "Job cancelled"); break;
+        default: {
+        }
       }
-      }
-      return;
+      return false;
     }
-         
-    wrapper.doneBang();
+      
+    return true;
+  }
+  
+  void cancel()
+  {
+    auto &wrapper = static_cast<Wrapper &>(*this);
+    auto &client  = wrapper.mClient;
+    client.cancel();
+  }
+    
+  void process()
+  {
+    auto &wrapper = static_cast<Wrapper &>(*this);
+    auto &client  = wrapper.mClient;
+    bool synchronous = mSynchronous;
+      
+    client.setSynchronous(synchronous);
+    
+    Result res = client.process();
+    if (checkResult(res))
+    {
+      if (synchronous) 
+        wrapper.doneBang();
+      else
+        clockWait();
+    }
   }
 
+  static void callCancel(Wrapper *x) { x->cancel(); }
   static void deferProcess(Wrapper *x) { defer(x, (method) &callProcess, nullptr, 0, nullptr); }
 
-  static void callProcess(Wrapper *x, t_symbol /**s*/, long /*ac*/, t_atom /**av*/) { x->process(); }
+  static void callProcess(Wrapper *x, t_symbol*, short, t_atom*) { x->process(); }
+    
+  static void checkProcess(Wrapper *x)
+  {
+    Result res;
+    auto &client  = x->mClient;
+      
+    if (client.checkProgress(res) == ProcessState::kDone)
+    {
+      if (x->checkResult(res))
+        x->doneBang();
+    }
+    else
+    {
+      x->progress(client.progress()); 
+      x->clockWait();
+    }
+  }
+    
+  static void clockTick(Wrapper *x)
+  {
+    qelem_set(x->mQelem);
+  }
+    
+  void clockWait()
+  {
+    clock_set(mClock, 20);  // FIX - set at 20ms for now...
+  }
+    
+private:
+    
+  bool mSynchronous = true;
+  void *mQelem;
+  void* mClock;
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -415,12 +489,18 @@ public:
     
     object_obex_store(this, gensym("dumpout"), (t_object *) outlet_new(this, nullptr));
 
-    if (isNonRealTime<Client>::value) mNRTDoneOutlet = bangout(this);
+    if (isNonRealTime<Client>::value)
+    {
+      mProgressOutlet = floatout(this);
+      mNRTDoneOutlet = bangout(this);
+    }
 
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
 
     for (auto i = 0u; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
   }
+
+  void progress(double progress) { outlet_float(mProgressOutlet, progress); }
 
   void doneBang() { outlet_bang(mNRTDoneOutlet); }
 
@@ -614,6 +694,7 @@ private:
   void *        mNRTDoneOutlet;
   void *        mControlOutlet;
   void *        mDumpOutlet;
+  void *        mProgressOutlet;
   bool          mVerbose;
   ParamSetType  mParams;
   ParamSetType  mParamSnapshot;
