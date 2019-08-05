@@ -210,12 +210,15 @@ struct NonRealTime
     Result res;
     auto &client  = x->mClient;
       
-    if (client.checkProgress(res) == ProcessState::kDone)
+    ProcessState state = client.checkProgress(res);
+      
+    if (state == ProcessState::kDone || state == ProcessState::kDoneStillProcessing)
     {
       if (x->checkResult(res))
         x->doneBang();
     }
-    else
+      
+    if (state != ProcessState::kDone)
     {
       x->progress(client.progress()); 
       x->clockWait();
