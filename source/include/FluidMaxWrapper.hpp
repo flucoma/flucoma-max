@@ -630,12 +630,30 @@ private:
   {
     using ArgTuple = typename Client::MessageSetType::template MessageDescriptorAt<Client,N>::ArgumentTypes;
     ArgTuple args;
+    //Read in arguments
     (void)std::initializer_list<int>{(std::get<Is>(args) = (Is <= ac ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
-    auto res = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
     
+    auto result = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
+    
+    if(result.ok())
+      messageOutput(x, s, result);
+    else
+      printResult(x,result);
+  }
+
+  template<typename T>
+  static void messageOutput(FluidMaxWrapper *x, t_symbol* s, MessageResult<T> r)
+  {
     t_atom out;
-    ParamAtomConverter::toAtom(&out,res);
+    ParamAtomConverter::toAtom(&out,static_cast<T>(r));
     object_obex_dumpout(x, s, 1, &out);
+  }
+
+  static void messageOutput(FluidMaxWrapper *x, t_symbol* s,MessageResult<void>)
+  {
+    t_atom out;
+    atom_setsym(&out,s);
+    object_obex_dumpout(x, nullptr, 1,&out);
   }
 
 
