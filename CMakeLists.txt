@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.3)
+cmake_minimum_required(VERSION 3.11)
 
 if (APPLE)
 	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
@@ -38,6 +38,35 @@ endif()
 #)
 project (fluid_decomposition_max LANGUAGES CXX)
 
+
+include(FetchContent)
+
+set(FETCHCONTENT_QUIET FALSE)
+
+FetchContent_Declare(
+  fluid_decomposition
+  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
+  GIT_PROGRESS TRUE
+)
+
+FetchContent_Declare(
+  fluid_manipulation
+  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_manipulation.git
+  GIT_PROGRESS TRUE
+)
+
+FetchContent_GetProperties(fluid_decomposition)
+if(NOT fluid_decomposition_POPULATED)
+  FetchContent_Populate(fluid_decomposition)
+  add_subdirectory(${fluid_decomposition_SOURCE_DIR} ${fluid_decomposition_BINARY_DIR})
+endif()
+
+FetchContent_GetProperties(fluid_manipulation)
+if(NOT fluid_manipulation_POPULATED)
+  FetchContent_Populate(fluid_manipulation)
+  add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})
+endif()
+
 if(APPLE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wno-gnu-zero-variadic-macro-arguments")
 endif()
@@ -45,46 +74,47 @@ endif()
 # Misc setup and subroutines
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
-set(FLUID_PATH ~/fluid_decomposition CACHE PATH "The top level of the fluid_decomposition repo")
+# set(FLUID_PATH ~/fluid_decomposition CACHE PATH "The top level of the fluid_decomposition repo")
+# set(FLUID_M_PATH ~/dev/fluid_manipulation/fluid_manipulation CACHE PATH "The top level of the fluid_decomposition repo")
 
-get_filename_component(FLUID_ABS_PATH ${FLUID_PATH} ABSOLUTE)
-message(${FLUID_ABS_PATH})
+# get_filename_component(FLUID_ABS_PATH ${FLUID_PATH} ABSOLUTE)
+# message(${FLUID_ABS_PATH})
 # if (NOT DEFINED ${FLUID_DECOMP_PATH})
 # 	message(FATAL_ERROR "Please set the path to the fluid_decomposition sources with -DFLUID_DECOMP_PATH=<path>")
 # endif()
 
-if (NOT (EXISTS "${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake"))
-	message(FATAL_ERROR "Can't find the fluid_decomposition CMake targets file at ${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake. Please go to ${FLUID_ABS_PATH}/build and run CMake")
-endif()
+# if (NOT (EXISTS "${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake"))
+# 	message(FATAL_ERROR "Can't find the fluid_decomposition CMake targets file at ${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake. Please go to ${FLUID_ABS_PATH}/build and run CMake")
+# endif()
 
 
-if (NOT (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/media/"))
-	file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/media/")
-endif()
+# if (NOT (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/media/"))
+# 	file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/media/")
+# endif()
+#
+# file(COPY "${FLUID_ABS_PATH}/AudioFiles/" DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/media/")
+# include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
 
-file(COPY "${FLUID_ABS_PATH}/AudioFiles/" DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/media/")
-include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
 
-
-get_property(FFT_SOURCES TARGET HISSTools_FFT  PROPERTY INTERFACE_SOURCES)
-get_property(FFT_LINK TARGET HISSTools_FFT  PROPERTY INTERFACE_LINK_LIBRARIES)
-
-add_library(FFTLIB STATIC ${FFT_SOURCES})
-target_link_libraries(
-  FFTLIB PRIVATE ${FFT_LINK}
-)
-
-if(WIN32)
- target_compile_options(
-   FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: /arch:AVX>
- )
-else(WIN32)
-target_compile_options(
-   FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
-)
-endif(WIN32)
-
-set_property(TARGET FFTLIB PROPERTY OSX_ARCHITECTURES x86_64;i386)
+# get_property(FFT_SOURCES TARGET HISSTools_FFT  PROPERTY INTERFACE_SOURCES)
+# get_property(FFT_LINK TARGET HISSTools_FFT  PROPERTY INTERFACE_LINK_LIBRARIES)
+#
+# add_library(FFTLIB STATIC ${FFT_SOURCES})
+# target_link_libraries(
+#   FFTLIB PRIVATE ${FFT_LINK}
+# )
+#
+# if(WIN32)
+#  target_compile_options(
+#    FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: /arch:AVX>
+#  )
+# else(WIN32)
+# target_compile_options(
+#    FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
+# )
+# endif(WIN32)
+#
+# set_property(TARGET FFTLIB PROPERTY OSX_ARCHITECTURES x86_64;i386)
 
 # target_compile_options(FFTLIB PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
 
@@ -94,7 +124,6 @@ target_sources(
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/FluidMaxWrapper.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxBufferAdaptor.hpp"
 )
-
 
 
 
