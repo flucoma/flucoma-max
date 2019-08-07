@@ -6,5 +6,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<CorpusClient>("fluid.corpus~");
+  makeMaxWrapper<NRTThreadedCorpus>("fluid.corpus~");
 }
