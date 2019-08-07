@@ -384,6 +384,22 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       atom_setsym(a,gensym(v.c_str()));
     }
     
+    static auto toAtom(t_atom *a, FluidTensor<std::string,1> v)
+    {
+      for(auto& s:v)
+        atom_setsym(a++,gensym(s.c_str()));
+    }
+    
+    static auto toAtom(t_atom *a, FluidTensor<double,1> v)
+    {
+      for(auto& x:v) atom_setfloat(a++,x);
+    }
+    
+    static auto toAtom(t_atom *a, FluidTensor<intptr_t,1> v)
+    {
+      for(auto& x:v) atom_setlong(a++,x);
+    }
+    
   };
   
   
@@ -631,7 +647,7 @@ private:
     using ArgTuple = typename Client::MessageSetType::template MessageDescriptorAt<Client,N>::ArgumentTypes;
     ArgTuple args;
     //Read in arguments
-    (void)std::initializer_list<int>{(std::get<Is>(args) = (Is <= ac ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
+    (void)std::initializer_list<int>{(std::get<Is>(args) = (Is <= static_cast<size_t>(ac) ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
     
     auto result = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
     
@@ -641,19 +657,28 @@ private:
       printResult(x,result);
   }
 
+
+  template <typename T>
+  static size_t ResultSize(MessageResult<T>) { return 1; }
+
+  template <typename T>
+  static size_t ResultSize(MessageResult<FluidTensor<T,1>>& x) { return static_cast<FluidTensor<T,1>>(x).size(); }
+
+
   template<typename T>
   static void messageOutput(FluidMaxWrapper *x, t_symbol* s, MessageResult<T> r)
   {
-    t_atom out;
-    ParamAtomConverter::toAtom(&out,static_cast<T>(r));
-    object_obex_dumpout(x, s, 1, &out);
+    size_t resultSize = ResultSize(r);
+    std::vector<t_atom> out(resultSize);
+    ParamAtomConverter::toAtom(out.data(),static_cast<T>(r));
+    object_obex_dumpout(x, s, static_cast<long>(resultSize), out.data());
   }
 
   static void messageOutput(FluidMaxWrapper *x, t_symbol* s,MessageResult<void>)
   {
-    t_atom out;
-    atom_setsym(&out,s);
-    object_obex_dumpout(x, nullptr, 1,&out);
+//    t_atom out;
+//    atom_setsym(&out,s);
+    object_obex_dumpout(x, s, 0,nullptr);
   }
 
 
