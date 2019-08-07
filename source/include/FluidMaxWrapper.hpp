@@ -651,10 +651,8 @@ private:
     
     auto result = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
     
-    if(result.ok())
+    if(x->checkResult(result))
       messageOutput(x, s, result);
-    else
-      printResult(x,result);
   }
 
 
