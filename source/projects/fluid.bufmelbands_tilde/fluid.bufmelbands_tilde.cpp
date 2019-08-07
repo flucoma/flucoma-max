@@ -3,5 +3,5 @@
 
 void ext_main(void *) {
   using namespace fluid::client;
-  makeMaxWrapper<NRTMelBandsClient>("fluid.bufmelbands~");
+  makeMaxWrapper<NRTThreadedMelBandsClient>("fluid.bufmelbands~");
 }
