@@ -46,6 +46,7 @@ endif()
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
 set(FLUID_PATH ~/fluid_decomposition CACHE PATH "The top level of the fluid_decomposition repo")
+set(FLUID_M_PATH ~/dev/fluid_manipulation/fluid_manipulation CACHE PATH "The top level of the fluid_decomposition repo")
 
 get_filename_component(FLUID_ABS_PATH ${FLUID_PATH} ABSOLUTE)
 message(${FLUID_ABS_PATH})
@@ -94,7 +95,6 @@ target_sources(
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/FluidMaxWrapper.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxBufferAdaptor.hpp"
 )
-
 
 
 
