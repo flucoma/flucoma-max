@@ -70,7 +70,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 736.0, 93.0, 183.0, 22.0 ],
-					"presentation_rect" : [ 741.5, 96.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "testPassString \"Hello Max\" 7 8 9"
 				}
