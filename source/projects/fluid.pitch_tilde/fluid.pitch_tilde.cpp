@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<PitchClient>("fluid.pitch~");
+  makeMaxWrapper<RTPitchClient>("fluid.pitch~");
 }

@@ -5,5 +5,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<TransientsSlice>("fluid.transientslice~");
+  makeMaxWrapper<RTTransientSliceClient>("fluid.transientslice~");
 }

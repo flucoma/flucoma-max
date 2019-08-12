@@ -5,5 +5,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<HPSSClient>("fluid.hpss~");
+  makeMaxWrapper<RTHPSS>("fluid.hpss~");
 }

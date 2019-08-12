@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<MFCCClient>("fluid.mfcc~");
+  makeMaxWrapper<RTMFCCClient>("fluid.mfcc~");
 }

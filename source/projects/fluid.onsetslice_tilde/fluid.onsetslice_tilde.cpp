@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<OnsetSlice>("fluid.onsetslice~");
+  makeMaxWrapper<RTOnsetSliceClient>("fluid.onsetslice~");
 }

@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<SpectralShapeClient>("fluid.spectralshape~");
+  makeMaxWrapper<RTSpectralShapeClient>("fluid.spectralshape~");
 }

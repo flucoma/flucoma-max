@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<NoveltySlice>("fluid.noveltyslice~");
+  makeMaxWrapper<RTNoveltySliceClient>("fluid.noveltyslice~");
 }

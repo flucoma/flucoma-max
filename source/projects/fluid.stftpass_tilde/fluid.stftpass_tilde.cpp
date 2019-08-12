@@ -11,5 +11,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<BaseSTFTClient>("fluid.stftpass~");
+  makeMaxWrapper<RTSTFTPassClient>("fluid.stftpass~");
 }

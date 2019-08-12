@@ -11,5 +11,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<TransientClient>("fluid.transients~");
+  makeMaxWrapper<RTTransientClient>("fluid.transients~");
 }

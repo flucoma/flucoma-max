@@ -4,5 +4,5 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<LoudnessClient>("fluid.loudness~");
+  makeMaxWrapper<RTLoudnessClient>("fluid.loudness~");
 }
