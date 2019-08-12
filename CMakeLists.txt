@@ -38,22 +38,42 @@ endif()
 #)
 project (fluid_decomposition_max LANGUAGES CXX)
 
-
 include(FetchContent)
 
 set(FETCHCONTENT_QUIET FALSE)
 
+if(DEFINED FLUID_PATH)
+get_filename_component(FLUID_PATH ${FLUID_PATH} ABSOLUTE)
+message(${FLUID_PATH})
+FetchContent_Declare(
+  fluid_decomposition
+  # URL ${FLUID_PATH}
+  DOWNLOAD_COMMAND ""
+  SOURCE_DIR "${FLUID_PATH}/"
+)
+else()
 FetchContent_Declare(
   fluid_decomposition
   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
   GIT_PROGRESS TRUE
 )
+endif()
 
+if(DEFINED FLUID_M_PATH)
+get_filename_component(FLUID_M_PATH ${FLUID_M_PATH} ABSOLUTE)
+FetchContent_Declare(
+  fluid_manipulation
+  # URL ${FLUID_M_PATH}
+  DOWNLOAD_COMMAND ""
+  SOURCE_DIR "${FLUID_M_PATH}/"
+)
+else()
 FetchContent_Declare(
   fluid_manipulation
   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_manipulation.git
   GIT_PROGRESS TRUE
 )
+endif()
 
 FetchContent_GetProperties(fluid_decomposition)
 if(NOT fluid_decomposition_POPULATED)
@@ -74,49 +94,7 @@ endif()
 # Misc setup and subroutines
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
-# set(FLUID_PATH ~/fluid_decomposition CACHE PATH "The top level of the fluid_decomposition repo")
-# set(FLUID_M_PATH ~/dev/fluid_manipulation/fluid_manipulation CACHE PATH "The top level of the fluid_decomposition repo")
-
-# get_filename_component(FLUID_ABS_PATH ${FLUID_PATH} ABSOLUTE)
-# message(${FLUID_ABS_PATH})
-# if (NOT DEFINED ${FLUID_DECOMP_PATH})
-# 	message(FATAL_ERROR "Please set the path to the fluid_decomposition sources with -DFLUID_DECOMP_PATH=<path>")
-# endif()
-
-# if (NOT (EXISTS "${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake"))
-# 	message(FATAL_ERROR "Can't find the fluid_decomposition CMake targets file at ${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake. Please go to ${FLUID_ABS_PATH}/build and run CMake")
-# endif()
-
-
-# if (NOT (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/media/"))
-# 	file(MAKE_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/media/")
-# endif()
-#
-# file(COPY "${FLUID_ABS_PATH}/AudioFiles/" DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/media/")
-# include("${FLUID_ABS_PATH}/build/fluid_decomposition-exports.cmake")
-
-
-# get_property(FFT_SOURCES TARGET HISSTools_FFT  PROPERTY INTERFACE_SOURCES)
-# get_property(FFT_LINK TARGET HISSTools_FFT  PROPERTY INTERFACE_LINK_LIBRARIES)
-#
-# add_library(FFTLIB STATIC ${FFT_SOURCES})
-# target_link_libraries(
-#   FFTLIB PRIVATE ${FFT_LINK}
-# )
-#
-# if(WIN32)
-#  target_compile_options(
-#    FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: /arch:AVX>
-#  )
-# else(WIN32)
-# target_compile_options(
-#    FFTLIB PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
-# )
-# endif(WIN32)
-#
-# set_property(TARGET FFTLIB PROPERTY OSX_ARCHITECTURES x86_64;i386)
-
-# target_compile_options(FFTLIB PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
+set_property(TARGET HISSTools_FFT PROPERTY OSX_ARCHITECTURES x86_64;i386)
 
 add_library( FLUID_MAX INTERFACE )
 target_sources(
@@ -124,8 +102,6 @@ target_sources(
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/FluidMaxWrapper.hpp"
 	"${CMAKE_CURRENT_SOURCE_DIR}/source/include/MaxBufferAdaptor.hpp"
 )
-
-
 
 # Make sure to build targets from fluid_decomposition
 # add_subdirectory(${FLUID_ABS_PATH} ${FLUID_ABS_PATH}/build)
