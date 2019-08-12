@@ -293,9 +293,9 @@ struct FluidMaxBase<Wrapper, std::true_type, std::true_type> : public MaxBase, p
 } // namespace impl
 
 template <typename Client>
-class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>
+class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typename Client::isNonRealTime, typename Client::isRealTime>
 {
-  using WrapperBase = impl::FluidMaxBase<FluidMaxWrapper<Client>, isNonRealTime<Client>, isRealTime<Client>>;
+  using WrapperBase = impl::FluidMaxBase<FluidMaxWrapper<Client>, typename Client::isNonRealTime, typename Client::isRealTime>;
 
   friend impl::RealTime<FluidMaxWrapper<Client>>;
   friend impl::NonRealTime<FluidMaxWrapper<Client>>;
@@ -660,14 +660,14 @@ private:
   template<size_t N>
   static void invokeMessage(FluidMaxWrapper *x, t_symbol* s, long ac, t_atom* av)
   {
-    using IndexList = typename Client::MessageSetType::template MessageDescriptorAt<Client,N>::IndexList;
+    using IndexList = typename Client::MessageSetType::template MessageDescriptorAt<N>::IndexList;
     invokeMessageImpl<N>(x,s,ac,av,IndexList());
   }
   
   template<size_t N, size_t...Is>
   static void invokeMessageImpl(FluidMaxWrapper *x, t_symbol* s, long ac, t_atom* av,std::index_sequence<Is...>)
   {
-    using ArgTuple = typename Client::MessageSetType::template MessageDescriptorAt<Client,N>::ArgumentTypes;
+    using ArgTuple = typename Client::MessageSetType::template MessageDescriptorAt<N>::ArgumentTypes;
     ArgTuple args;
     //Read in arguments
     (void)std::initializer_list<int>{(std::get<Is>(args) = (Is <= static_cast<size_t>(ac) ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
