@@ -10,6 +10,8 @@
 #include <clients/common/ParameterSet.hpp>
 #include <clients/common/ParameterTypes.hpp>
 
+#include <clients/nrt/FluidSharedInstanceAdaptor.hpp>
+
 #include "MaxBufferAdaptor.hpp"
 
 #include <cctype>  //std::tolower
@@ -340,6 +342,15 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   struct Fetcher<N, LongT> : public FetchValue<N, t_atom_long, atom_getlong>
   {};
 
+  template <size_t N>
+  struct Fetcher<N, StringT>
+  {
+    std::string operator()(const long ac, t_atom *av, long &currentCount)
+    {
+      auto defaultValue = paramDescriptor<N>().defaultValue;
+      return {currentCount < ac ? atom_getsym(av + currentCount++)->s_name : defaultValue};
+    }
+  };
 
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -362,6 +373,13 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
     static auto fromAtom(t_object*, t_atom* a, StringT::type)
     {
       return StringT::type(atom_getsym(a)->s_name);
+    }
+    
+    template<typename T>
+    static std::enable_if_t<IsSharedClient<T>::value, typename T::ClientWeakPointer> toAtom(t_object*,t_atom* a, typename T::type)
+    {
+        std::string name(atom_getsym(a)->s_name);
+        return T::type::lookup(name);
     }
     
     static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
@@ -400,6 +418,11 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       for(auto& x:v) atom_setlong(a++,x);
     }
     
+    template<typename T>
+    static std::enable_if_t<IsSharedClient<T>::value> toAtom(t_atom* a, typename T::type v)
+    {
+        atom_setsym(a, gensym(v.name()));
+    }
   };
   
   
@@ -756,12 +779,12 @@ struct InputTypeWrapper<std::false_type>
   using type = float;
 };
 
-template <template <typename T> class Client>
+template <class Client>
 void makeMaxWrapper(const char *classname)
 {
-  using InputType = typename InputTypeWrapper<isRealTime<Client<double>>>::type;
+//  using InputType = typename InputTypeWrapper<isRealTime<Client<double>>>::type;
 
-  FluidMaxWrapper<Client<InputType>>::makeClass(classname);
+  FluidMaxWrapper<Client>::makeClass(classname);
 }
 
 } // namespace client
