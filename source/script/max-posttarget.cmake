@@ -6,8 +6,7 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
 
 target_link_libraries(${PROJECT_NAME}
-PUBLIC FLUID_DECOMPOSITION  FLUID_MANIP FLUID_MAX
-PRIVATE FFTLIB
+  PUBLIC FLUID_DECOMPOSITION  FLUID_MANIP FLUID_MAX 
 )
 
 target_include_directories (
@@ -15,8 +14,6 @@ target_include_directories (
 	PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
 )
-
-
 
 if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
