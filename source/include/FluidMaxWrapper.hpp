@@ -376,10 +376,11 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     }
     
     template<typename T>
-    static std::enable_if_t<IsSharedClient<T>::value, typename T::ClientWeakPointer> toAtom(t_object*,t_atom* a, typename T::type)
+    static std::enable_if_t<IsSharedClient<typename T::element_type>::value, T> fromAtom(t_object*,t_atom* a, T)
     {
+        static_assert(std::is_const<typename T::element_type>::value, "You need to use a const pointer to another client type.");
         std::string name(atom_getsym(a)->s_name);
-        return T::type::lookup(name);
+        return T::element_type::SharedType::lookup(name);
     }
     
     static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
