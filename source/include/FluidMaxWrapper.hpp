@@ -360,8 +360,14 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   // ParamsToAtoms
   struct ParamAtomConverter
   {
-    static auto fromAtom(t_object* /*x*/, t_atom *a, LongT::type)  { return atom_getlong(a); }
-    static auto fromAtom(t_object* /*x*/, t_atom *a, FloatT::type) { return atom_getfloat(a); }
+    
+    template<typename T>
+    static std::enable_if_t<std::is_integral<T>::value, T>
+    fromAtom(t_object* /*x*/, t_atom *a, T)  { return atom_getlong(a); }
+
+    template<typename T>
+    static std::enable_if_t<std::is_floating_point<T>::value, T>
+    fromAtom(t_object* /*x*/, t_atom *a, T) { return atom_getfloat(a); }
 
     static auto fromAtom(t_object * x, t_atom *a, BufferT::type)
     {
@@ -379,15 +385,20 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     }
     
     template<typename T>
-    static std::enable_if_t<IsSharedClient<typename T::element_type::Client>::value, T> fromAtom(t_object*,t_atom* a, T)
+    static std::enable_if_t<IsSharedClient<T>::value,T>
+    fromAtom(t_object*,t_atom* a, T)
     {
-        static_assert(std::is_const<typename T::element_type>::value, "You need to use a const pointer to another client type.");
-        std::string name(atom_getsym(a)->s_name);
-        return std::decay_t<typename T::element_type>::Client::SharedType::lookup(name);
+        return {atom_getsym(a)->s_name};
     }
     
-    static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
-    static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
+    
+    template<typename T>
+    static std::enable_if_t<std::is_integral<T>::value>
+    toAtom(t_atom *a, T v) { atom_setlong(a, v); }
+    
+    template<typename T>
+    static std::enable_if_t<std::is_floating_point<T>::value>
+    toAtom(t_atom *a, T v) { atom_setfloat(a, v); }
 
     static auto toAtom(t_atom *a, BufferT::type v)
     {
@@ -423,9 +434,18 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     }
     
     template<typename T>
-    static std::enable_if_t<IsSharedClient<T>::value> toAtom(t_atom* a, typename T::type v)
+    static std::enable_if_t<IsSharedClient<T>::value>
+    toAtom(t_atom* a, T v)
     {
-        atom_setsym(a, gensym(v.name()));
+          atom_setsym(a, gensym(v.name()));
+      //  else
+      //    atom_setsym(a, gensym("<undefined object>"));
+    }
+    
+    template<typename...Ts,size_t...Is>
+    static void toAtom(t_atom* a, std::tuple<Ts...>&& x, std::index_sequence<Is...>, std::array<size_t,sizeof...(Ts)> offsets)
+    {
+       (void)std::initializer_list<int>{(toAtom(a + offsets[Is],std::get<Is>(x)),0)...};
     }
   };
   
@@ -684,25 +704,46 @@ private:
 
 
   template <typename T>
-  static size_t ResultSize(MessageResult<T>) { return 1; }
+  static size_t ResultSize(T) { return 1; }
 
   template <typename T>
-  static size_t ResultSize(MessageResult<FluidTensor<T,1>>& x) { return static_cast<FluidTensor<T,1>>(x).size(); }
+  static size_t ResultSize(FluidTensor<T,1>& x) { return static_cast<FluidTensor<T,1>>(x).size(); }
+
+
+  template <typename...Ts, size_t...Is>
+  static std::tuple<std::array<size_t, sizeof...(Ts)>,size_t> ResultSize(std::tuple<Ts...>&& x,std::index_sequence<Is...>)
+  {
+    size_t size = 0;
+    std::array<size_t, sizeof...(Ts)> offsets;
+    (void) std::initializer_list<int>{(offsets[Is] = size, size += ResultSize(std::get<Is>(x)), 0)...};
+    return std::make_tuple(offsets,size);
+  }
 
 
   template<typename T>
-  static void messageOutput(FluidMaxWrapper *x, t_symbol* s, MessageResult<T> r)
+  static std::enable_if_t<!isSpecialization<T,std::tuple>::value>
+  messageOutput(FluidMaxWrapper *x, t_symbol* s, MessageResult<T> r)
   {
-    size_t resultSize = ResultSize(r);
+    size_t resultSize = ResultSize(static_cast<T>(r));
     std::vector<t_atom> out(resultSize);
     ParamAtomConverter::toAtom(out.data(),static_cast<T>(r));
     object_obex_dumpout(x, s, static_cast<long>(resultSize), out.data());
   }
 
+  template<typename...Ts>
+  static void messageOutput(FluidMaxWrapper *x, t_symbol* s, MessageResult<std::tuple<Ts...>> r)
+  {
+    auto indices = std::index_sequence_for<Ts...>();
+    size_t resultSize;
+    std::array<size_t, sizeof...(Ts)> offsets;
+    std::tie(offsets,resultSize) = ResultSize(static_cast<std::tuple<Ts...>>(r), indices);
+    std::vector<t_atom> out(resultSize);
+    ParamAtomConverter::toAtom(out.data(),static_cast<std::tuple<Ts...>>(r),indices,offsets);
+    object_obex_dumpout(x, s, static_cast<long>(resultSize), out.data());
+  }
+
   static void messageOutput(FluidMaxWrapper *x, t_symbol* s,MessageResult<void>)
   {
-//    t_atom out;
-//    atom_setsym(&out,s);
     object_obex_dumpout(x, s, 0,nullptr);
   }
 
