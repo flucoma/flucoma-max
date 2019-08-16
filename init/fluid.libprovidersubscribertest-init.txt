@@ -1,0 +1,2 @@
+max objectfile fluid.subscribertest fluid.libprovidersubscribertest fluid.subscribertest;
+max objectfile fluid.providertest fluid.libprovidersubscribertest fluid.providertest;
