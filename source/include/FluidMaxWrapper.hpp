@@ -799,6 +799,11 @@ private:
   static t_symbol* maxAttrType(FloatPairsArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(FFTParamsT) { return gensym("atom"); }
 
+  template<typename T>
+  static std::enable_if_t<IsSharedClient<typename T::type>::value, t_symbol*>
+  maxAttrType(T) { return USESYM(symbol); }
+
+
   Result        mResult;
   void *        mNRTDoneOutlet;
   void *        mControlOutlet;
