@@ -561,7 +561,23 @@ public:
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
 
     for (auto i = 0u; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
+     
+    Client::getParameterDescriptors().template iterate<AddListener>(this,mParams);
+    
   }
+  
+  template<size_t N,typename T>
+  struct AddListener
+  {
+    void operator()(const T& param, FluidMaxWrapper *x, ParamSetType& paramSet)
+    {
+      paramSet.template addListener<N>([x, &param]()
+      {
+        object_attr_touch((t_object*)(x), gensym(param.name));
+      });
+    }
+  };
+
 
   void progress(double progress) { outlet_float(mProgressOutlet, progress); }
 
