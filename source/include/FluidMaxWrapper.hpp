@@ -303,6 +303,9 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   template <size_t N>
   static constexpr auto paramDescriptor() { return Client::getParameterDescriptors().template get<N>(); }
 
+  template <size_t N>
+  static constexpr auto makeValue() { return Client::getParameterDescriptors().template makeValue<N>(); }
+
   static void printResult(FluidMaxWrapper<Client>* x, Result& r)
   {
     if (!x) return;
@@ -439,7 +442,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
     {
       ParamLiteralConvertor<T, argSize> a;
-      a.set(paramDescriptor<N>().defaultValue);
+      a.set(makeValue<N>());
 
       x->messages().reset();
 
