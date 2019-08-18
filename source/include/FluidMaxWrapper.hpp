@@ -389,7 +389,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
 
-    static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
+    static void doSet(FluidMaxWrapper<Client>* x, t_symbol*, short ac, t_atom* av)
     {
       ParamLiteralConvertor<T, argSize> a;
       a.set(paramDescriptor<N>().defaultValue);
@@ -402,6 +402,11 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
       printResult(x, x->messages());
       object_attr_touch((t_object *) x, gensym("latency"));
+    }
+
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
+    {
+      defer(x, (method)doSet, nullptr, static_cast<short>(std::min(ac,(long)std::numeric_limits<short>::max)), av);
       return MAX_ERR_NONE;
     }
   };
