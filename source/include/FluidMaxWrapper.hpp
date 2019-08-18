@@ -153,6 +153,10 @@ struct NonRealTime
     CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
     CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 1);
     CLASS_ATTR_STYLE_LABEL(c, "synchronous", 0, "onoff", "Process Synchronously");
+    
+    CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
+    CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
+    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Enable Queue for Async   Processing");
   }
 
   bool checkResult(Result& res)
@@ -189,6 +193,7 @@ struct NonRealTime
     bool synchronous = mSynchronous;
       
     client.setSynchronous(synchronous);
+    client.setQueueEnabled(mQueueEnabled);
     
     Result res = client.process();
     if (checkResult(res))
@@ -236,8 +241,8 @@ struct NonRealTime
   }
     
 private:
-    
-  bool mSynchronous = true;
+  long mSynchronous = true;
+  long mQueueEnabled = false;
   void *mQelem;
   void* mClock;
 };
