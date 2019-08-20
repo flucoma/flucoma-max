@@ -150,10 +150,14 @@ struct NonRealTime
   {
     class_addmethod(c, (method) deferProcess, "bang", 0);
     class_addmethod(c, (method) callCancel, "cancel", 0);
+    
     CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
     CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 2);
     CLASS_ATTR_ENUMINDEX(c, "synchronous", 0, "Sync Async Immediate");
-    CLASS_ATTR_LABEL(c, "synchronous", 0, "Synchronous Processing Mode ");
+    
+    CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
+    CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
+    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Enable Queue for Async   Processing");
   }
 
   bool checkResult(Result& res)
@@ -206,7 +210,8 @@ struct NonRealTime
     wrapper.mParams.template forEachParamType<BufferT, BufferImmediate>(syncMode == 2);
       
     client.setSynchronous(synchronous);
-      
+    client.setQueueEnabled(mQueueEnabled);
+    
     Result res = client.process();
     if (checkResult(res))
     {
@@ -221,14 +226,21 @@ struct NonRealTime
     
   static void deferProcess(Wrapper *x)
   {
+    x->mClient.enqueue(x->mParams);
+    
     if (x->mSynchronous != 2)
+    {
       defer(x, (method) &callProcess, nullptr, 0, nullptr);
+    }
     else
+    {
       callProcess(x, nullptr, 0, nullptr);
+    }
   }
     
   static void callProcess(Wrapper *x, t_symbol*, short, t_atom*) { x->process(); }
-    
+
+
   static void checkProcess(Wrapper *x)
   {
     Result res;
@@ -259,9 +271,9 @@ struct NonRealTime
     clock_set(mClock, 20);  // FIX - set at 20ms for now...
   }
     
-private:
-    
+protected:
   long mSynchronous = 0;
+  long mQueueEnabled = 0;
   void *mQelem;
   void* mClock;
 };
@@ -389,7 +401,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
 
-    static void doSet(FluidMaxWrapper<Client>* x, t_symbol*, short ac, t_atom* av)
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
     {
       ParamLiteralConvertor<T, argSize> a;
       a.set(paramDescriptor<N>().defaultValue);
@@ -402,11 +414,6 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
       printResult(x, x->messages());
       object_attr_touch((t_object *) x, gensym("latency"));
-    }
-
-    static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
-    {
-      defer(x, (method)doSet, nullptr, static_cast<short>(std::min(ac,(long)std::numeric_limits<short>::max)), av);
       return MAX_ERR_NONE;
     }
   };
@@ -545,9 +552,9 @@ public:
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
 
-	//Change for MSVC, which didn't like the macro version
-	  t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
-	  class_addattr(getClass(), a);
+    //Change for MSVC, which didn't like the macro version
+      t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
+      class_addattr(getClass(), a);
 
     //CLASS_ATTR_LONG(getClass(), "warnings", 0, FluidMaxWrapper, mVerbose);
     CLASS_ATTR_FILTER_CLIP(getClass(), "warnings", 0, 1);
@@ -637,7 +644,7 @@ private:
     void operator()(const T &attr)
     {
       std::string       name            = lowerCase(attr.name);
-      method            setterMethod    = (method) &Setter<T, N>::set;
+      method       setterMethod    = (method) &Setter<T, N>::set;
       method            getterMethod    = (method) &Getter<T, N>::get;
       t_object*         a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
       class_addattr(getClass(), a);
