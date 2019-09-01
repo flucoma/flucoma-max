@@ -42,7 +42,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 286.0, 747.0, 156.0, 20.0 ],
+					"patching_rect" : [ 608.0, 753.0, 156.0, 20.0 ],
 					"style" : "",
 					"text" : "add data to corpus"
 				}
@@ -54,7 +54,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 452.9375, 747.0, 156.0, 20.0 ],
+					"patching_rect" : [ 774.9375, 753.0, 156.0, 20.0 ],
 					"style" : "",
 					"text" : "make corpus"
 				}
@@ -67,7 +67,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 729.0, 751.0, 156.0, 47.0 ],
+					"patching_rect" : [ 1051.0, 757.0, 156.0, 47.0 ],
 					"style" : "",
 					"text" : "delete corpus and dataset, remake dataset pointing to non-existent corpus"
 				}
@@ -80,7 +80,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 149.0, 540.0, 618.0, 33.0 ],
+					"patching_rect" : [ 471.0, 546.0, 618.0, 33.0 ],
 					"style" : "",
 					"text" : "That that we can make a fluid.dataset pointing to a fluid.corpus that doesn't yet exist, and things still work (once it exists)"
 				}
@@ -105,7 +105,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 101.0, 540.0, 24.0, 24.0 ],
+					"patching_rect" : [ 423.0, 546.0, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -117,7 +117,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 140.0, 777.0, 150.0, 47.0 ],
+					"patching_rect" : [ 462.0, 822.0, 150.0, 47.0 ],
 					"style" : "",
 					"text" : "acess corpus via dataset \n\nshould be thing 84 85"
 				}
@@ -130,7 +130,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1120.9375, 633.5, 30.0, 22.0 ],
+					"patching_rect" : [ 1442.9375, 639.5, 30.0, 22.0 ],
 					"style" : "",
 					"text" : "set"
 				}
@@ -143,7 +143,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "bang", "bang", "bang", "bang", "bang" ],
-					"patching_rect" : [ 101.0, 587.0, 1038.9375, 22.0 ],
+					"patching_rect" : [ 423.0, 593.0, 1038.9375, 22.0 ],
 					"style" : "",
 					"text" : "t b b b b b"
 				}
@@ -157,7 +157,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 721.9375, 633.5, 391.0, 62.0 ],
+					"patching_rect" : [ 1043.9375, 639.5, 391.0, 62.0 ],
 					"style" : "",
 					"text" : "script delete tmpCorpus, script delete tmpDataset, script newobject newobj @text \"fluid.subscribertest @provider blah\" @patching_position 101. 705. @varname tmpDataset, script connect lookupMessage 0 tmpDataset 0, script connect tmpDataset 2 lookupResult 1"
 				}
@@ -170,7 +170,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 721.9375, 710.0, 69.0, 22.0 ],
+					"patching_rect" : [ 1043.9375, 716.0, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"style" : "",
 					"text" : "thispatcher"
@@ -185,7 +185,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 452.9375, 633.5, 244.0, 62.0 ],
+					"patching_rect" : [ 774.9375, 639.5, 244.0, 62.0 ],
 					"style" : "",
 					"text" : "script newobject newobj @text \"fluid.providertest blah\" @patching_position 310 705. @varname tmpCorpus, script connect addMessage 0 tmpCorpus 0"
 				}
@@ -198,7 +198,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 452.9375, 710.0, 69.0, 22.0 ],
+					"patching_rect" : [ 774.9375, 716.0, 69.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"style" : "",
 					"text" : "thispatcher"
@@ -208,14 +208,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-22",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 140.0, 747.0, 119.0, 35.0 ],
+					"patching_rect" : [ 462.0, 753.0, 119.0, 49.0 ],
 					"style" : "",
-					"text" : "providerLookup thing 85 84",
+					"text" : "providerLookupFromMessage thing 85 84",
 					"varname" : "lookupResult"
 				}
 
@@ -227,7 +227,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 101.0, 633.5, 123.0, 22.0 ],
+					"patching_rect" : [ 423.0, 639.5, 123.0, 22.0 ],
 					"style" : "",
 					"text" : "providerLookup thing",
 					"varname" : "lookupMessage"
@@ -241,7 +241,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 310.0, 633.5, 121.0, 22.0 ],
+					"patching_rect" : [ 632.0, 639.5, 121.0, 22.0 ],
 					"style" : "",
 					"text" : "addPoint thing 85 84",
 					"varname" : "addMessage"
@@ -344,7 +344,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 263.875, 356.0, 112.0, 35.0 ],
+					"patching_rect" : [ 263.875, 356.0, 115.0, 35.0 ],
 					"style" : "",
 					"text" : "providerLookup bar 3 4"
 				}
@@ -385,7 +385,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 556.625, 361.0, 112.0, 35.0 ],
+					"patching_rect" : [ 556.625, 361.0, 115.0, 35.0 ],
 					"style" : "",
 					"text" : "providerLookup bar 1 2"
 				}
@@ -503,7 +503,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 101.0, 705.0, 194.0, 22.0 ],
+					"patching_rect" : [ 423.0, 711.0, 194.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.subscribertest @provider blah",
 					"varname" : "tmpDataset"
@@ -517,10 +517,23 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 310.0, 705.0, 124.0, 22.0 ],
+					"patching_rect" : [ 632.0, 711.0, 124.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.providertest blah",
 					"varname" : "tmpCorpus"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-27",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 134.875, 584.0, 225.0, 22.0 ],
+					"style" : "",
+					"text" : "providerLookupFromMessage blah thing"
 				}
 
 			}
@@ -652,6 +665,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"source" : [ "obj-27", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-9", 1 ],
 					"source" : [ "obj-3", 2 ]
 				}
@@ -660,7 +680,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"midpoints" : [ 365.484375, 620.75, 319.5, 620.75 ],
+					"midpoints" : [ 687.484375, 626.75, 641.5, 626.75 ],
 					"source" : [ "obj-31", 1 ]
 				}
 
@@ -675,7 +695,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
-					"midpoints" : [ 875.453125, 620.25, 731.4375, 620.25 ],
+					"midpoints" : [ 1197.453125, 626.25, 1053.4375, 626.25 ],
 					"source" : [ "obj-31", 3 ]
 				}
 
@@ -683,7 +703,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-23", 0 ],
-					"midpoints" : [ 620.46875, 620.25, 462.4375, 620.25 ],
+					"midpoints" : [ 942.46875, 626.25, 784.4375, 626.25 ],
 					"source" : [ "obj-31", 2 ]
 				}
 
@@ -699,7 +719,7 @@
 				"patchline" : 				{
 					"color" : [ 0.8, 0.8, 0.8, 1.0 ],
 					"destination" : [ "obj-22", 0 ],
-					"midpoints" : [ 1130.4375, 739.75, 149.5, 739.75 ],
+					"midpoints" : [ 1452.4375, 745.75, 471.5, 745.75 ],
 					"source" : [ "obj-33", 0 ]
 				}
 
