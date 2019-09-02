@@ -360,6 +360,15 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   // ParamsToAtoms
   struct ParamAtomConverter
   {
+    static std::string getString(t_atom* a)
+    {
+      switch(atom_gettype(a))
+      {
+        case A_LONG:  return std::to_string(atom_getlong(a));
+        case A_FLOAT: return std::to_string(atom_getfloat(a));
+        default: return {atom_getsym(a)->s_name};
+      }
+    }
     
     template<typename T>
     static std::enable_if_t<std::is_integral<T>::value, T>
@@ -381,7 +390,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     
     static auto fromAtom(t_object*, t_atom* a, StringT::type)
     {
-      return StringT::type(atom_getsym(a)->s_name);
+      return getString(a);
     }
     
     template<typename T>
