@@ -719,7 +719,7 @@ private:
     using ArgTuple = typename Client::MessageSetType::template MessageDescriptorAt<N>::ArgumentTypes;
     ArgTuple args;
     //Read in arguments
-    (void)std::initializer_list<int>{(std::get<Is>(args) = (Is <= static_cast<size_t>(ac) ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
+    (void)std::initializer_list<int>{(std::get<Is>(args) = (Is < static_cast<size_t>(ac) ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
     
     auto result = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
     
