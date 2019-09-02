@@ -722,8 +722,8 @@ private:
   template <typename T>
   static size_t ResultSize(T) { return 1; }
 
-  template <typename T>
-  static size_t ResultSize(FluidTensor<T,1>& x) { return static_cast<FluidTensor<T,1>>(x).size(); }
+  template <template <typename,size_t> class Tensor, typename T>
+  static size_t ResultSize(Tensor<T,1>&& x) { return static_cast<FluidTensor<T,1>>(x).size(); }
 
 
   template <typename...Ts, size_t...Is>
