@@ -717,15 +717,26 @@ private:
   static void invokeMessageImpl(FluidMaxWrapper *x, t_symbol* s, long ac, t_atom* av,std::index_sequence<Is...>)
   {
     using ArgTuple = typename Client::MessageSetType::template MessageDescriptorAt<N>::ArgumentTypes;
-    ArgTuple args;
-    //Read in arguments
-    (void)std::initializer_list<int>{(std::get<Is>(args) = (Is < static_cast<size_t>(ac) ? ParamAtomConverter::fromAtom((t_object*)x, av + Is,std::get<Is>(args)) : typename std::tuple_element<Is, ArgTuple>::type{}) ,0)...};
     
+    //Read in arguments
+    ArgTuple args{setArg<ArgTuple, Is>(x,ac,av)...};
+
     auto result = x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
     
     if(x->checkResult(result))
       messageOutput(x, s, result);
   }
+
+  
+  template<typename Tuple, size_t N>
+  static auto setArg(FluidMaxWrapper *x, long ac, t_atom* av)
+  {
+    if(N < ac)
+      return  ParamAtomConverter::fromAtom((t_object*)x, av + N,typename std::tuple_element<N, Tuple>::type{});
+    else
+      return typename std::tuple_element<N, Tuple>::type{};
+  }
+
 
 
   template <typename T>
