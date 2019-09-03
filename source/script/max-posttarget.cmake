@@ -48,6 +48,15 @@ else(WIN32)
 target_compile_options(
    ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
 )
+
+# target_compile_options(
+#    ${PROJECT_NAME} PRIVATE -fsanitize=address -fno-omit-frame-pointer -shared-libasan
+# )
+# 
+# target_link_libraries (
+#   ${PROJECT_NAME} PUBLIC -fsanitize=address -shared-libasan
+# )
+
 endif(WIN32)
 
 
@@ -70,6 +79,7 @@ if (APPLE)
 		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_LIST_DIR}/Info.plist.in
 		MACOSX_BUNDLE_BUNDLE_VERSION "${GIT_VERSION_TAG}"
 		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"
+    # XCODE_SCHEME_ENVIRONMENT "DYLD_INSERT_LIBRARIES=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/lib/darwin/libclang_rt.asan_osx_dynamic.dylib; ASAN_OPTIONS=detect_stack_use_after_return=1"
 )
 	#
 	# set_property(TARGET ${PROJECT_NAME}
