@@ -643,7 +643,7 @@ public:
   }
 
   Result &messages() { return mResult; }
-  bool    verbose() { return mVerbose; }
+  long    verbose() { return mVerbose; }
   Client &client() { return mClient; }
   ParamSetType &params() { return mParams; }
 
