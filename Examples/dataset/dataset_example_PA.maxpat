@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1612.0, 885.0 ],
+		"rect" : [ 125.0, -1028.0, 1612.0, 885.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,13 +38,13 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-42",
+					"id" : "obj-37",
 					"maxclass" : "number",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1343.0, 125.0, 50.0, 22.0 ],
+					"patching_rect" : [ 1303.0, 111.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -163,7 +163,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1314.0, 486.5, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "1"
+					"text" : "2"
 				}
 
 			}
@@ -1116,7 +1116,7 @@
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 7.5, 793.0, 175.0, 22.0 ],
 					"style" : "",
-					"text" : "buffer~ tmp.point @samps 182"
+					"text" : "buffer~ tmp.point @samps 168"
 				}
 
 			}
@@ -1129,7 +1129,7 @@
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 7.5, 760.0, 208.0, 22.0 ],
 					"style" : "",
-					"text" : "buffer~ tmp.centroids @samps 182 5"
+					"text" : "buffer~ tmp.centroids @samps 168 5"
 				}
 
 			}
@@ -1201,7 +1201,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 441.0, 110.0, 741.0, 637.0 ],
+						"rect" : [ 441.0, 110.0, 534.0, 637.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1228,37 +1228,8 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-11",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 512.0, 529.0, 186.0, 49.0 ],
-									"style" : "",
-									"text" : "send datapoint buffer and label out to dataset"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-10",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 479.0, 374.5, 186.0, 49.0 ],
-									"style" : "",
-									"text" : "flatten 13 rows of stats to single row => 1 x 182 buffer"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
@@ -1286,46 +1257,14 @@
 							}
 , 							{
 								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-6",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 512.0, 474.5, 186.0, 49.0 ],
+									"id" : "obj-98",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 54.0, 360.0, 29.5, 22.0 ],
 									"style" : "",
-									"text" : "use polybuffer number for data point label"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-5",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 471.0, 259.5, 186.0, 49.0 ],
-									"style" : "",
-									"text" : "get stats from MFCCs => 13 x 14 buffer"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-2",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 471.0, 167.0, 178.0, 49.0 ],
-									"style" : "",
-									"text" : "get mfccs for this buffer => 13 x (n hops) buffer"
+									"text" : "+ 1"
 								}
 
 							}
@@ -1391,7 +1330,7 @@
 									"outlettype" : [ "bang", "bang", "int" ],
 									"patching_rect" : [ 54.0, 321.0, 53.0, 22.0 ],
 									"style" : "",
-									"text" : "uzi 13 0"
+									"text" : "uzi 12 0"
 								}
 
 							}
@@ -1673,7 +1612,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-97", 0 ],
+									"destination" : [ "obj-98", 0 ],
 									"order" : 1,
 									"source" : [ "obj-84", 2 ]
 								}
@@ -1697,6 +1636,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-90", 0 ],
 									"source" : [ "obj-97", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-97", 0 ],
+									"source" : [ "obj-98", 0 ]
 								}
 
 							}
@@ -1739,7 +1685,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 1246.0, 364.0, 118.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kmeans~ 182 5"
+					"text" : "fluid.kmeans~ 168 5"
 				}
 
 			}
@@ -1874,22 +1820,6 @@
 					"patching_rect" : [ 27.5, 467.0, 137.0, 61.0 ],
 					"style" : "",
 					"text" : "dataset takes name, and num dimensions",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bubble" : 1,
-					"bubbletextmargin" : 10,
-					"id" : "obj-39",
-					"linecount" : 6,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 235.5, 290.0, 137.0, 101.0 ],
-					"style" : "",
-					"text" : "we're only analysing the even-numbered buffers, so we can test with odd numbered",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -2253,36 +2183,6 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-11",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 512.0, 529.0, 186.0, 49.0 ],
-									"style" : "",
-									"text" : "send datapoint buffer and label out to dataset"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-10",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 479.0, 374.5, 186.0, 49.0 ],
-									"style" : "",
-									"text" : "flatten 13 rows of stats to single row => 1 x 182 buffer"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -2309,46 +2209,14 @@
 							}
 , 							{
 								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-6",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 512.0, 474.5, 186.0, 49.0 ],
+									"id" : "obj-98",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 54.0, 360.0, 29.5, 22.0 ],
 									"style" : "",
-									"text" : "use polybuffer number for data point label"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-5",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 471.0, 259.5, 186.0, 49.0 ],
-									"style" : "",
-									"text" : "get stats from MFCCs => 13 x 14 buffer"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"bubbletextmargin" : 11,
-									"id" : "obj-2",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 471.0, 167.0, 178.0, 49.0 ],
-									"style" : "",
-									"text" : "get mfccs for this buffer => 13 x (n hops) buffer"
+									"text" : "+ 1"
 								}
 
 							}
@@ -2414,7 +2282,7 @@
 									"outlettype" : [ "bang", "bang", "int" ],
 									"patching_rect" : [ 54.0, 321.0, 53.0, 22.0 ],
 									"style" : "",
-									"text" : "uzi 13 0"
+									"text" : "uzi 12 0"
 								}
 
 							}
@@ -2696,7 +2564,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-97", 0 ],
+									"destination" : [ "obj-98", 0 ],
 									"order" : 1,
 									"source" : [ "obj-84", 2 ]
 								}
@@ -2720,6 +2588,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-90", 0 ],
 									"source" : [ "obj-97", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-97", 0 ],
+									"source" : [ "obj-98", 0 ]
 								}
 
 							}
@@ -2761,9 +2636,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 593.0, 317.5, 107.0, 22.0 ],
+					"patching_rect" : [ 593.0, 317.5, 106.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~ 182"
+					"text" : "fluid.kdtree~ 168"
 				}
 
 			}
@@ -2789,9 +2664,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 179.5, 490.0, 172.0, 22.0 ],
+					"patching_rect" : [ 179.5, 490.0, 171.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ mfccstats 182"
+					"text" : "fluid.dataset~ mfccstats 168"
 				}
 
 			}
@@ -2812,7 +2687,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 441.0, 110.0, 741.0, 637.0 ],
+						"rect" : [ 40.0, 99.0, 741.0, 637.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2878,7 +2753,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 486.0, 350.5, 186.0, 49.0 ],
 									"style" : "",
-									"text" : "flatten 13 rows of stats to single row => 1 x 182 buffer"
+									"text" : "flatten 12 rows of stats to single row => 1 x 168 buffer"
 								}
 
 							}
@@ -2928,13 +2803,13 @@
 									"bubble" : 1,
 									"bubbletextmargin" : 11,
 									"id" : "obj-5",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 486.0, 235.5, 186.0, 49.0 ],
+									"patching_rect" : [ 486.0, 235.5, 192.0, 63.0 ],
 									"style" : "",
-									"text" : "get stats from MFCCs => 13 x 14 buffer"
+									"text" : "get stats from MFCCs => 12 (removing the amp) x 14 buffer"
 								}
 
 							}
@@ -2950,6 +2825,19 @@
 									"patching_rect" : [ 486.0, 154.5, 178.0, 49.0 ],
 									"style" : "",
 									"text" : "get mfccs for this buffer => 13 x (n hops) buffer"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-98",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"patching_rect" : [ 88.0, 327.0, 29.5, 22.0 ],
+									"style" : "",
+									"text" : "+ 1"
 								}
 
 							}
@@ -3015,7 +2903,7 @@
 									"outlettype" : [ "bang", "bang", "int" ],
 									"patching_rect" : [ 54.0, 292.0, 53.0, 22.0 ],
 									"style" : "",
-									"text" : "uzi 13 0"
+									"text" : "uzi 12 0"
 								}
 
 							}
@@ -3236,7 +3124,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-97", 0 ],
+									"destination" : [ "obj-98", 0 ],
 									"order" : 1,
 									"source" : [ "obj-84", 2 ]
 								}
@@ -3260,6 +3148,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-90", 0 ],
 									"source" : [ "obj-97", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-97", 0 ],
+									"source" : [ "obj-98", 0 ]
 								}
 
 							}
@@ -3289,7 +3184,7 @@
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 7.5, 729.0, 201.0, 22.0 ],
 					"style" : "",
-					"text" : "buffer~ tmp.flatpoint @samps 182 1"
+					"text" : "buffer~ tmp.flatpoint @samps 168 1"
 				}
 
 			}
@@ -3303,32 +3198,6 @@
 					"patching_rect" : [ 179.5, 443.0, 105.0, 22.0 ],
 					"style" : "",
 					"text" : "prepend addPoint"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-37",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 179.5, 369.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "* 2"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-36",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 158.5, 306.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "/ 2"
 				}
 
 			}
@@ -3810,7 +3679,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-36", 0 ],
+					"destination" : [ "obj-33", 0 ],
 					"source" : [ "obj-28", 0 ]
 				}
 
@@ -3856,21 +3725,23 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-37", 0 ],
+					"destination" : [ "obj-108", 0 ],
 					"source" : [ "obj-33", 2 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-33", 0 ],
-					"source" : [ "obj-36", 0 ]
+					"destination" : [ "obj-22", 1 ],
+					"order" : 1,
+					"source" : [ "obj-37", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-108", 0 ],
+					"destination" : [ "obj-70", 0 ],
+					"order" : 0,
 					"source" : [ "obj-37", 0 ]
 				}
 
@@ -3893,22 +3764,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
 					"source" : [ "obj-40", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-22", 1 ],
-					"order" : 1,
-					"source" : [ "obj-42", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-70", 0 ],
-					"order" : 0,
-					"source" : [ "obj-42", 0 ]
 				}
 
 			}
