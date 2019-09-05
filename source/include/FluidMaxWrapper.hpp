@@ -151,13 +151,13 @@ struct NonRealTime
     class_addmethod(c, (method) deferProcess, "bang", 0);
     class_addmethod(c, (method) callCancel, "cancel", 0);
     
-    CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
-    CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 2);
-    CLASS_ATTR_ENUMINDEX(c, "synchronous", 0, "Sync Async Immediate");
+    CLASS_ATTR_LONG(c, "blocking", 0, Wrapper, mSynchronous);
+    CLASS_ATTR_FILTER_CLIP(c, "blocking", 0, 2);
+    CLASS_ATTR_ENUMINDEX(c, "blocking", 0, "Non-Blocking \"Blocking (low priority)\" \"Blocking (high priority)\"");
     
     CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
     CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
-    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Enable Queue for Async   Processing");
+    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Enable Queue for Async Processing");
   }
 
   bool checkResult(Result& res)
@@ -272,7 +272,7 @@ struct NonRealTime
   }
     
 protected:
-  long mSynchronous = 0;
+  long mSynchronous = 1;
   long mQueueEnabled = 0;
   void *mQelem;
   void* mClock;
