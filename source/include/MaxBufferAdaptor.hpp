@@ -16,6 +16,7 @@ public:
   MaxBufferAdaptor(t_object *x, t_symbol *name)
       : mHostObject(x)
       , mName(name)
+      , mImmediate(false)
       , mSamps(nullptr)
       , mBufref{buffer_ref_new(mHostObject, mName)}
       , mLock(false)
@@ -40,7 +41,7 @@ public:
     return *this;
   }
 
-  t_symbol * name() const { return mName; }
+  t_symbol* name() const { return mName; }
 
   bool exists() const override
   {
@@ -54,41 +55,67 @@ public:
     //      return getBuffer();
   }
 
-  const Result resize(size_t frames, size_t channels,double sampleRate) override
+  void immediate(bool immediate)
+  {
+    mImmediate = immediate;
+  }
+    
+  const Result resize(size_t frames, size_t channels, double newSampleRate) override
   {
     t_object *buffer = getBuffer();
-
+    
     if (buffer)
     {
-      // Do this in two stages so we can set length in samps rather than ms
-      unlockSamps();
-      buffer_edit_begin(buffer);
-      t_atom args[2];
-      atom_setfloat(&args[0], 0.);
-      atom_setlong(&args[1], static_cast<t_atom_long>(channels));
-      t_symbol *setSizeMsg = gensym("setsize");
-      /*auto      res        = */object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
-      object_method(buffer, gensym("dirty"));
-      t_atom newsize;
-      atom_setlong(&newsize, static_cast<t_atom_long>(frames));
-      t_symbol *sampsMsg = gensym("sizeinsamps");
-      object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
-      t_atom sr;
-      atom_setfloat(&sr,sampleRate);
-      t_symbol *srMsg = gensym("sr");
-      object_method_typed(buffer,srMsg,1,&sr,nullptr);
-      object_method(buffer, gensym("dirty"));
-      buffer_edit_end(buffer, 1);
-      lockSamps();
-      
-      if(frames != numFrames() || channels != numChans() )
-        return {Result::Status::kError, "Could not resize"};
-      
-      assert(frames == numFrames() && channels == numChans());
-      
-      return {};
-      
+      if (!mImmediate)
+      {
+        // Do this in two stages so we can set length in samps rather than ms
+        unlockSamps();
+        buffer_edit_begin(buffer);
+        t_atom args[2];
+        atom_setfloat(&args[0], 0.);
+        atom_setlong(&args[1], static_cast<t_atom_long>(channels));
+        t_symbol *setSizeMsg = gensym("setsize");
+        /*auto      res        = */object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
+        object_method(buffer, gensym("dirty"));
+        t_atom newsize;
+        atom_setlong(&newsize, static_cast<t_atom_long>(frames));
+        t_symbol *sampsMsg = gensym("sizeinsamps");
+        object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
+        t_atom sr;
+        atom_setfloat(&sr, newSampleRate);
+        t_symbol *srMsg = gensym("sr");
+        object_method_typed(buffer,srMsg,1,&sr,nullptr);
+        object_method(buffer, gensym("dirty"));
+        buffer_edit_end(buffer, 1);
+        lockSamps();
+        
+        if(frames != numFrames() || channels != numChans() )
+          return {Result::Status::kError, "Could not resize"};
+        
+        assert(frames == numFrames() && channels == numChans());
+        
+        return {};
+      }
+      else
+      {
+        if (channels > numChans())
+          return {Result::Status::kError, "Not enough channels in buffer"};
+        if (frames > numFrames())
+          return {Result::Status::kError, "Not enough space in buffer"};
+        
+        if (sampleRate() != newSampleRate)
+        {
+          t_atom sr;
+          atom_setfloat(&sr, newSampleRate);
+          t_symbol *srMsg = gensym("sr");
+          object_method_typed(buffer,srMsg,1,&sr,nullptr);
+          object_method(buffer, gensym("dirty"));
+        }
+        
+        return {};
+      }
     }
+    
     return {Result::Status::kError,"Resize on null buffer"};
   }
 
@@ -216,6 +243,7 @@ private:
   t_object *mHostObject;
   t_symbol *mName;
 
+  bool mImmediate;
   mutable float* mSamps;
   t_buffer_ref* mBufref;
   mutable std::atomic<bool> mLock;

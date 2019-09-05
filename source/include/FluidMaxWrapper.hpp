@@ -152,9 +152,14 @@ struct NonRealTime
   {
     class_addmethod(c, (method) deferProcess, "bang", 0);
     class_addmethod(c, (method) callCancel, "cancel", 0);
-    CLASS_ATTR_LONG(c, "synchronous", 0, Wrapper, mSynchronous);
-    CLASS_ATTR_FILTER_CLIP(c, "synchronous", 0, 1);
-    CLASS_ATTR_STYLE_LABEL(c, "synchronous", 0, "onoff", "Process Synchronously");
+    
+    CLASS_ATTR_LONG(c, "blocking", 0, Wrapper, mSynchronous);
+    CLASS_ATTR_FILTER_CLIP(c, "blocking", 0, 2);
+    CLASS_ATTR_ENUMINDEX(c, "blocking", 0, "Non-Blocking \"Blocking (low priority)\" \"Blocking (high priority)\"");
+    
+    CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
+    CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
+    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Enable Queue for Async Processing");
   }
 
   bool checkResult(Result& res)
@@ -184,13 +189,30 @@ struct NonRealTime
     client.cancel();
   }
     
+  template<size_t N, typename T>
+  struct BufferImmediate
+  {
+    void operator()(typename T::type& param, bool immediate)
+    {
+      if (param)
+      {
+        auto b = static_cast<MaxBufferAdaptor*>(param.get());
+        b->immediate(immediate);
+      }
+    }
+  };
+    
   void process()
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client  = wrapper.mClient;
-    bool synchronous = mSynchronous;
+    long syncMode = mSynchronous;
+    bool synchronous = syncMode != 1;
+      
+    wrapper.mParams.template forEachParamType<BufferT, BufferImmediate>(syncMode == 2);
       
     client.setSynchronous(synchronous);
+    client.setQueueEnabled(mQueueEnabled);
     
     Result res = client.process();
     if (checkResult(res))
@@ -203,21 +225,38 @@ struct NonRealTime
   }
 
   static void callCancel(Wrapper *x) { x->cancel(); }
-  static void deferProcess(Wrapper *x) { defer(x, (method) &callProcess, nullptr, 0, nullptr); }
-
-  static void callProcess(Wrapper *x, t_symbol*, short, t_atom*) { x->process(); }
     
+  static void deferProcess(Wrapper *x)
+  {
+    x->mClient.enqueue(x->mParams);
+    
+    if (x->mSynchronous != 2)
+    {
+      defer(x, (method) &callProcess, nullptr, 0, nullptr);
+    }
+    else
+    {
+      callProcess(x, nullptr, 0, nullptr);
+    }
+  }
+    
+  static void callProcess(Wrapper *x, t_symbol*, short, t_atom*) { x->process(); }
+
+
   static void checkProcess(Wrapper *x)
   {
     Result res;
     auto &client  = x->mClient;
       
-    if (client.checkProgress(res) == ProcessState::kDone)
+    ProcessState state = client.checkProgress(res);
+      
+    if (state == ProcessState::kDone || state == ProcessState::kDoneStillProcessing)
     {
       if (x->checkResult(res))
         x->doneBang();
     }
-    else
+      
+    if (state != ProcessState::kDone)
     {
       x->progress(client.progress()); 
       x->clockWait();
@@ -234,9 +273,9 @@ struct NonRealTime
     clock_set(mClock, 20);  // FIX - set at 20ms for now...
   }
     
-private:
-    
-  bool mSynchronous = true;
+protected:
+  long mSynchronous = 1;
+  long mQueueEnabled = 0;
   void *mQelem;
   void* mClock;
 };
