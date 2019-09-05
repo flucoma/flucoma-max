@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 125.0, -1028.0, 1612.0, 885.0 ],
+		"rect" : [ 128.0, -1069.0, 1612.0, 885.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,45 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-102",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1444.0, 433.0, 34.0, 22.0 ],
+					"style" : "",
+					"text" : "print"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-39",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 392.0, 744.0, 517.0, 22.0 ],
+					"style" : "",
+					"text" : "script replace mydatasetobject newex 180 490 226 12 fluid.dataset~ mfccstats 96 @warnings 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-36",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 392.0, 776.0, 69.0, 22.0 ],
+					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+					"style" : "",
+					"text" : "thispatcher"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
@@ -1340,7 +1379,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1366.0, 358.0, 142.75, 61.0 ],
+					"patching_rect" : [ 1444.0, 357.0, 142.75, 61.0 ],
 					"style" : "",
 					"text" : "args = point dimension, num classes",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -1395,7 +1434,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1314.0, 486.5, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "2"
+					"text" : "0"
 				}
 
 			}
@@ -2436,9 +2475,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1246.0, 364.0, 112.0, 22.0 ],
+					"patching_rect" : [ 1246.0, 364.0, 185.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kmeans~ 96 5"
+					"text" : "fluid.kmeans~ 96 5 @warnings 1"
 				}
 
 			}
@@ -2884,9 +2923,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 705.5, 274.0, 109.0, 22.0 ],
+					"patching_rect" : [ 705.5, 274.0, 115.0, 22.0 ],
 					"style" : "",
-					"text" : "knn tmp.flatpoint 5"
+					"text" : "knn tmp.flatpoint 10"
 				}
 
 			}
@@ -2911,9 +2950,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 593.0, 317.5, 99.0, 22.0 ],
+					"patching_rect" : [ 593.0, 317.5, 177.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~ 96"
+					"text" : "fluid.kdtree~ 96 @warnings 1"
 				}
 
 			}
@@ -2925,7 +2964,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.5, 519.0, 50.0, 35.0 ],
+					"patching_rect" : [ 293.5, 519.0, 50.0, 35.0 ],
 					"style" : "",
 					"text" : "addPoint"
 				}
@@ -2933,15 +2972,17 @@
 			}
 , 			{
 				"box" : 				{
-					"fontface" : 1,
+					"fontname" : "Arial",
+					"fontsize" : 12.0,
 					"id" : "obj-104",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 179.5, 490.0, 164.0, 22.0 ],
+					"patching_rect" : [ 179.5, 490.0, 226.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ mfccstats 96"
+					"text" : "fluid.dataset~ mfccstats 96 @warnings 1",
+					"varname" : "mydatasetobject"
 				}
 
 			}
@@ -4126,7 +4167,23 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-22", 1 ],
+					"order" : 1,
 					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"order" : 0,
+					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-36", 0 ],
+					"source" : [ "obj-39", 0 ]
 				}
 
 			}
@@ -4196,7 +4253,16 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-102", 0 ],
+					"order" : 0,
+					"source" : [ "obj-64", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-19", 0 ],
+					"order" : 1,
 					"source" : [ "obj-64", 2 ]
 				}
 
@@ -4239,8 +4305,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-62" : [ "live.tab", "live.tab", 0 ],
-			"obj-15" : [ "live.text", "live.text", 0 ]
+			"obj-15" : [ "live.text", "live.text", 0 ],
+			"obj-62" : [ "live.tab", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
