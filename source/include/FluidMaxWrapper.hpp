@@ -141,31 +141,32 @@ struct NonRealTime
     mQelem = qelem_new(static_cast<Wrapper *>(this), (method) checkProcess);
     mClock = clock_new(static_cast<Wrapper *>(this), (method) clockTick);
   }
-    
+
   ~NonRealTime()
   {
     qelem_free(mQelem);
     object_free(mClock);
   }
-    
+
   static void setup(t_class *c)
   {
     class_addmethod(c, (method) deferProcess, "bang", 0);
     class_addmethod(c, (method) callCancel, "cancel", 0);
-    
+
     CLASS_ATTR_LONG(c, "blocking", 0, Wrapper, mSynchronous);
     CLASS_ATTR_FILTER_CLIP(c, "blocking", 0, 2);
-    CLASS_ATTR_ENUMINDEX(c, "blocking", 0, "Non-Blocking \"Blocking (low priority)\" \"Blocking (high priority)\"");
-    
+    CLASS_ATTR_ENUMINDEX(c, "blocking", 0, "Non-Blocking \"Blocking (Low Priority)\" \"Blocking (High Priority)\"");
+    CLASS_ATTR_LABEL(c, "blocking", 0, "Blocking");
+
     CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
     CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
-    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Enable Queue for Async Processing");
+    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Non-Blocking Queue Flag");
   }
 
   bool checkResult(Result& res)
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
-      
+
     if (!res.ok())
     {
       switch (res.status())
@@ -178,17 +179,17 @@ struct NonRealTime
       }
       return false;
     }
-      
+
     return true;
   }
-  
+
   void cancel()
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client  = wrapper.mClient;
     client.cancel();
   }
-    
+
   template<size_t N, typename T>
   struct BufferImmediate
   {
@@ -201,23 +202,23 @@ struct NonRealTime
       }
     }
   };
-    
+
   void process()
   {
     auto &wrapper = static_cast<Wrapper &>(*this);
     auto &client  = wrapper.mClient;
     long syncMode = mSynchronous;
-    bool synchronous = syncMode != 1;
-      
+    bool synchronous = syncMode > 0;
+
     wrapper.mParams.template forEachParamType<BufferT, BufferImmediate>(syncMode == 2);
-      
+
     client.setSynchronous(synchronous);
     client.setQueueEnabled(mQueueEnabled);
-    
+
     Result res = client.process();
     if (checkResult(res))
     {
-      if (synchronous) 
+      if (synchronous)
         wrapper.doneBang();
       else
         clockWait();
@@ -225,11 +226,11 @@ struct NonRealTime
   }
 
   static void callCancel(Wrapper *x) { x->cancel(); }
-    
+
   static void deferProcess(Wrapper *x)
   {
     x->mClient.enqueue(x->mParams);
-    
+
     if (x->mSynchronous != 2)
     {
       defer(x, (method) &callProcess, nullptr, 0, nullptr);
@@ -239,7 +240,7 @@ struct NonRealTime
       callProcess(x, nullptr, 0, nullptr);
     }
   }
-    
+
   static void callProcess(Wrapper *x, t_symbol*, short, t_atom*) { x->process(); }
 
 
@@ -247,32 +248,32 @@ struct NonRealTime
   {
     Result res;
     auto &client  = x->mClient;
-      
+
     ProcessState state = client.checkProgress(res);
-      
+
     if (state == ProcessState::kDone || state == ProcessState::kDoneStillProcessing)
     {
       if (x->checkResult(res))
         x->doneBang();
     }
-      
+
     if (state != ProcessState::kDone)
     {
-      x->progress(client.progress()); 
+      x->progress(client.progress());
       x->clockWait();
     }
   }
-    
+
   static void clockTick(Wrapper *x)
   {
     qelem_set(x->mQelem);
   }
-    
+
   void clockWait()
   {
     clock_set(mClock, 20);  // FIX - set at 20ms for now...
   }
-    
+
 protected:
   long mSynchronous = 1;
   long mQueueEnabled = 0;
@@ -421,7 +422,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     {
       return BufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
-    
+
     static auto fromAtom(t_object *x , t_atom *a, InputBufferT::type)
     {
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
@@ -565,7 +566,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
       if (auto p = static_cast<MaxBufferAdaptor *>(x->params().template get<N>().get())) p->notify(s, msg, sender, data);
     }
   };
-  
+
   template<size_t N>
   struct Notify<N, InputBufferT>
   {
