@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 35.0, 79.0, 1341.0, 829.0 ],
+		"rect" : [ 117.0, 144.0, 1341.0, 829.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 35.0, 105.0, 1341.0, 803.0 ],
+						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3705,7 +3705,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
+						"rect" : [ 117.0, 170.0, 1341.0, 803.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3808,7 +3808,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 90.5, 556.5, 33.0 ],
 									"style" : "",
-									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to prcess in Max's main thread, equivalent to using the [defer] object. ",
+									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to process in Max's main thread, equivalent to using the [defer] object. ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -4031,7 +4031,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "p \"queue attribute\""
+					"text" : "p \"queue flag\""
 				}
 
 			}
@@ -4193,7 +4193,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 108.0, 534.0, 94.0 ],
 									"style" : "",
-									"text" : "Here is a simple object to help demonstrate the options for (a)synchronous processing in the fluid decomposition toolkit's non-realtime objects. \n\nfluid.bufthreaddemo~ has two attributes. 'time' denotes how long the objects takes to 'process'; result is a buffer~ to output to. The object's processing consists simply of waiting for 'time' milliseconds, and then writing this number into the output buffer",
+									"text" : "Here is a simple object to help demonstrate the options for (a)synchronous processing in the fluid decomposition toolkit's non-realtime objects. \n\nfluid.bufthreaddemo~ has two attributes. 'time' denotes how long the objects takes to 'process'; result is a buffer~ to output to. The object's processing consists simply of waiting for 'time' milliseconds, and then writing this number into the output buffer.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -4357,7 +4357,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 11.5, 65.5, 356.0, 21.0 ],
 									"style" : "",
-									"text" : "Choosing a thread with the synchronous attribute"
+									"text" : "Choosing a thread with the 'blocking' attribute"
 								}
 
 							}
@@ -4484,7 +4484,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 36.0, 457.0, 50.0, 22.0 ],
-									"style" : ""
+									"style" : "",
+									"text" : "3000."
 								}
 
 							}
@@ -4655,7 +4656,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "p \"synchronous attribute\""
+					"text" : "p \"blocking behaviour\""
 				}
 
 			}
