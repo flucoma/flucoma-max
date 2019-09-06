@@ -6,7 +6,10 @@ target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
 
 target_link_libraries(${PROJECT_NAME}
-  PUBLIC FLUID_DECOMPOSITION  FLUID_MANIP FLUID_MAX 
+  PUBLIC
+  FLUID_DECOMPOSITION
+  # FLUID_MANIP 
+  FLUID_MAX
 )
 
 target_include_directories (
@@ -31,8 +34,8 @@ target_include_directories( ${PROJECT_NAME}
 get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
 source_group(TREE "${fluid_decomposition_SOURCE_DIR}/include" FILES ${HEADERS})
 
-get_property(HEADERS TARGET FLUID_MANIP PROPERTY INTERFACE_SOURCES)
-source_group(TREE "${fluid_manipulation_SOURCE_DIR}/include" FILES ${HEADERS})
+# get_property(HEADERS TARGET FLUID_MANIP PROPERTY INTERFACE_SOURCES)
+# source_group(TREE "${fluid_manipulation_SOURCE_DIR}/include" FILES ${HEADERS})
 
 if ("${PROJECT_NAME}" MATCHES ".*_tilde")
 	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${PROJECT_NAME}")

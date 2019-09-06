@@ -59,21 +59,21 @@ FetchContent_Declare(
 )
 endif()
 
-if(DEFINED FLUID_M_PATH)
-get_filename_component(FLUID_M_PATH ${FLUID_M_PATH} ABSOLUTE)
-FetchContent_Declare(
-  fluid_manipulation
-  # URL ${FLUID_M_PATH}
-  DOWNLOAD_COMMAND ""
-  SOURCE_DIR "${FLUID_M_PATH}/"
-)
-else()
-FetchContent_Declare(
-  fluid_manipulation
-  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_manipulation.git
-  GIT_PROGRESS TRUE
-)
-endif()
+# if(DEFINED FLUID_M_PATH)
+# get_filename_component(FLUID_M_PATH ${FLUID_M_PATH} ABSOLUTE)
+# FetchContent_Declare(
+#   fluid_manipulation
+#   # URL ${FLUID_M_PATH}
+#   DOWNLOAD_COMMAND ""
+#   SOURCE_DIR "${FLUID_M_PATH}/"
+# )
+# else()
+# FetchContent_Declare(
+#   fluid_manipulation
+#   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_manipulation.git
+#   GIT_PROGRESS TRUE
+# )
+# endif()
 
 FetchContent_GetProperties(fluid_decomposition)
 if(NOT fluid_decomposition_POPULATED)
@@ -81,11 +81,11 @@ if(NOT fluid_decomposition_POPULATED)
   add_subdirectory(${fluid_decomposition_SOURCE_DIR} ${fluid_decomposition_BINARY_DIR})
 endif()
 
-FetchContent_GetProperties(fluid_manipulation)
-if(NOT fluid_manipulation_POPULATED)
-  FetchContent_Populate(fluid_manipulation)
-  add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})
-endif()
+# FetchContent_GetProperties(fluid_manipulation)
+# if(NOT fluid_manipulation_POPULATED)
+#   FetchContent_Populate(fluid_manipulation)
+#   add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})
+# endif()
 
 if(APPLE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -pedantic -Wno-gnu-zero-variadic-macro-arguments")
@@ -105,6 +105,13 @@ target_sources(
 
 # Make sure to build targets from fluid_decomposition
 # add_subdirectory(${FLUID_ABS_PATH} ${FLUID_ABS_PATH}/build)
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
+#install bits
+foreach(PACKAGE_DIRECTORY docs;examples;externals;extras;help;init;javascript;patchers)
+  install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION .)
+endforeach(PACKAGE_DIRECTORY)
+install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION ./media)
+install(FILES License.md icon.png package-info.json QuickStart.md DESTINATION .)
 
 # Generate a project for every folder in the "source/projects" folder
 SUBDIRLIST(PROJECT_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/source/projects")
