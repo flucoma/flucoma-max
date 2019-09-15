@@ -32,7 +32,11 @@ function msg_int(v) {
   } else if (!iters) { //otherwise if we are in the first iteration (aka no past) just make another pass with a threshold half the size, to get a first pair
     prevVal = v;
     prevThresh = startThresh;
-    curThresh = prevThresh*0.5;
+		if (prevVal <  goal) {
+				curThresh = prevThresh * 0.5;
+		} else {
+				curThresh = prevThresh * 2;
+		}
     iters += 1;
 		outlet(1,iters);
     outlet(0,curThresh);
