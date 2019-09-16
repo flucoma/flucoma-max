@@ -2,4 +2,5 @@ max objectfile fluid.dataset~ fluid.libmanipulation fluid.dataset~;
 max objectfile fluid.corpus~ fluid.libmanipulation fluid.corpus~;
 max objectfile fluid.kdtree~ fluid.libmanipulation fluid.kdtree~;
 max objectfile fluid.kmeans~ fluid.libmanipulation fluid.kmeans~;
-max objectfile fluid.knn~ fluid.libmanipulation fluid.knn~;
+max objectfile fluid.knn~ fluid.libmanipulation fluid.knnclas~;
+max objectfile fluid.knn~ fluid.libmanipulation fluid.knnreg~;
