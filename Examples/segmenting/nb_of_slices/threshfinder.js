@@ -11,7 +11,6 @@ var curThresh;
 
 function reset(v) {
 	iters=0;//resets the interation count
-	post(v);
 	if (!v) {
 		startThresh = 0.1;
 	} else if (v < 0.000001){
