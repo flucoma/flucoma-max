@@ -44,7 +44,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 549.0, 520.200012, 120.0, 33.0 ],
-					"presentation_rect" : [ 886.0, 532.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "how long did the job take?"
 				}
@@ -58,7 +57,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 860.0, 357.799988, 70.0, 33.0 ],
-					"presentation_rect" : [ 1116.0, 361.799988, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "iteration number"
 				}
@@ -72,7 +70,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 798.0, 400.0, 70.0, 114.0 ],
-					"presentation_rect" : [ 1053.300049, 403.799988, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "this bang will flash if we reach 100 iterations without a conclusive threshold"
 				}
@@ -277,7 +274,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 549.0, 492.0, 108.0, 22.0 ],
 					"style" : "",
-					"text" : "364.343764"
+					"text" : "2505.672847"
 				}
 
 			}
@@ -339,10 +336,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "int", "bang" ],
-					"patching_rect" : [ 840.600098, 180.5, 143.0, 22.0 ],
+					"outlettype" : [ "float", "bang" ],
+					"patching_rect" : [ 840.600098, 180.5, 111.0, 22.0 ],
 					"style" : "",
-					"text" : "t i b"
+					"text" : "t f b"
 				}
 
 			}
@@ -1451,7 +1448,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
-					"midpoints" : [ 974.100098, 415.75, 647.5, 415.75 ],
+					"midpoints" : [ 942.100098, 415.75, 647.5, 415.75 ],
 					"source" : [ "obj-26", 1 ]
 				}
 
@@ -1650,9 +1647,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

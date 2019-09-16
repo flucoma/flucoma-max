@@ -11,55 +11,62 @@ var curThresh;
 
 function reset(v) {
 	iters=0;//resets the interation count
-  if (!v) {
-    startThresh = 0.1;
-  } else {
-    startThresh = v;
-  }
-  outlet(1,iters);
+	post(v);
+	if (!v) {
+		startThresh = 0.1;
+	} else if (v < 0.000001){
+		error("threshfinder: starting threshold has to be between 0.000001 and 0.999999\n");
+		return;
+	} else if (v > 0.999999) {
+		error("threshfinder: starting threshold has to be between 0.000001 and 0.999999\n");
+		return;
+	} else {
+		startThresh = v;
+	}
+	outlet(1,iters);
 	outlet(0,startThresh);//sends the initial thresh out
 }
 
 function setGoal(v) {
-  goal = v;
+	goal = v;
 }
 
 function msg_int(v) {
-  var dVal, dThresh, nThresh;
-  if (iters > 100) { //if we reach the max number of iterations, stops and tell us so
-    outlet(1,"failed");
-    return;
-  } else if (!iters) { //otherwise if we are in the first iteration (aka no past) just make another pass with a threshold half the size, to get a first pair
-    prevVal = v;
-    prevThresh = startThresh;
+	var dVal, dThresh, nThresh;
+	if (iters > 100) { //if we reach the max number of iterations, stops and tell us so
+		outlet(1,"failed");
+		return;
+	} else if (!iters) { //otherwise if we are in the first iteration (aka no past) just make another pass with a threshold half the size, to get a first pair
+		prevVal = v;
+		prevThresh = startThresh;
 		if (prevVal <  goal) {
-				curThresh = prevThresh * 0.5;
+			curThresh = prevThresh * 0.5;
 		} else {
-				curThresh = prevThresh * 2;
+			curThresh = prevThresh * 2;
 		}
-    iters += 1;
+		iters += 1;
 		outlet(1,iters);
-    outlet(0,curThresh);
-  } else { // for all other passes, we have 2 values
-    if (!(goal - v)){ //if we have reached the target then call it a victory
-      outlet(1,"done");
-      return;
-    } else { // otherwise
+		outlet(0,curThresh);
+	} else { // for all other passes, we have 2 values
+		if (!(goal - v)){ //if we have reached the target then call it a victory
+			outlet(1,"done");
+			return;
+		} else { // otherwise
 			// what are the different results with the different thresholds of the last 2 iterations
 			dVal = v - prevVal;
-      dThresh = curThresh - prevThresh;
+			dThresh = curThresh - prevThresh;
 			if (dVal != 0)  { // if there is a significan difference, make a line between the 2 and interpolates what would be a line towards the goal
-				nThresh = Math.max(0.000001,((dThresh / dVal) * (goal - v)) + curThresh);
+				nThresh = Math.max(0.000001,Math.min(0.999999,((dThresh / dVal) * (goal - v)) + curThresh));
 			} else { //otherwise, changes the threshold further in the same direction, to push for a change
-				nThresh = Math.max(0.000001,dThresh + curThresh);
+				nThresh = Math.max(0.000001,Math.min(0.999999,dThresh + curThresh));
 			}
 			//passes the values to the various memories for the next iteration computations
-      prevThresh = curThresh;
-      curThresh = nThresh;
-      prevVal = v;
-      iters += 1;
-      outlet(1,iters);
-      outlet(0,nThresh);
-    }
-  }
+			prevThresh = curThresh;
+			curThresh = nThresh;
+			prevVal = v;
+			iters += 1;
+			outlet(1,iters);
+			outlet(0,nThresh);
+		}
+	}
 }
