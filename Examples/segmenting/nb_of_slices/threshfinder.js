@@ -2,7 +2,8 @@
 // This code was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).::
 outlets = 2;
 
-var goal=10; // the number of slices it aims to create (change with the setGoal function)
+var target=10; // the number of slices it aims to create (change with the setTarget function)
+var tolerance=0; // the error tolerated (plus or minus) around the target number of slice
 var startThresh = 0.1; // the default threshold to start with (change with the argument to reset)
 var prevThresh=0;
 var prevVal=0;
@@ -26,8 +27,20 @@ function reset(v) {
 	outlet(0,startThresh);//sends the initial thresh out
 }
 
-function setGoal(v) {
-	goal = v;
+function setTarget(v) {
+	if (v<1){
+		error("threshfinder: the target number of slices should be positive\n");
+		return;
+	}
+	target = Math.floor(v);
+}
+
+function setTolerance(v) {
+	if (v<1){
+		error("threshfinder: the tolerance should be positive\n");
+		return;
+	}
+	tolerance = Math.floor(v);
 }
 
 function msg_int(v) {
@@ -38,7 +51,7 @@ function msg_int(v) {
 	} else if (!iters) { //otherwise if we are in the first iteration (aka no past) just make another pass with a threshold half the size, to get a first pair
 		prevVal = v;
 		prevThresh = startThresh;
-		if (prevVal <  goal) {
+		if (prevVal <  target) {
 			curThresh = prevThresh * 0.5;
 		} else {
 			curThresh = prevThresh * 2;
@@ -47,15 +60,15 @@ function msg_int(v) {
 		outlet(1,iters);
 		outlet(0,curThresh);
 	} else { // for all other passes, we have 2 values
-		if (!(goal - v)){ //if we have reached the target then call it a victory
+		if (Math.abs(target - v) <= tolerance){ //if we have reached the target within the tolerance then call it a victory
 			outlet(1,"done");
 			return;
 		} else { // otherwise
 			// what are the different results with the different thresholds of the last 2 iterations
 			dVal = v - prevVal;
 			dThresh = curThresh - prevThresh;
-			if (dVal != 0)  { // if there is a significan difference, make a line between the 2 and interpolates what would be a line towards the goal
-				nThresh = Math.max(0.000001,Math.min(0.999999,((dThresh / dVal) * (goal - v)) + curThresh));
+			if (dVal != 0)  { // if there is a significan difference, make a line between the 2 and interpolates what would be a line towards the target
+				nThresh = Math.max(0.000001,Math.min(0.999999,((dThresh / dVal) * (target - v)) + curThresh));
 			} else { //otherwise, changes the threshold further in the same direction, to push for a change
 				nThresh = Math.max(0.000001,Math.min(0.999999,dThresh + curThresh));
 			}

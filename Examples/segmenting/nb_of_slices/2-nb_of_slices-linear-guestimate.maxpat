@@ -38,13 +38,54 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-58",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 638.0, 169.5, 154.0, 33.0 ],
+					"presentation_rect" : [ 642.800049, 166.999985, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "the tolerance is how much\nerror is acceptable (+/-)"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 638.0, 201.5, 50.0, 22.0 ],
+					"presentation_rect" : [ 658.300049, 177.999985, 0.0, 0.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-50",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 638.0, 225.999985, 95.0, 22.0 ],
+					"presentation_rect" : [ 655.300049, 205.400009, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "setTolerance $1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-49",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1137.0, 134.300003, 29.5, 22.0 ],
-					"presentation_rect" : [ 1137.0, 135.300003, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "0.8"
 				}
@@ -288,7 +329,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 549.0, 492.0, 108.0, 22.0 ],
 					"style" : "",
-					"text" : "2813.550991"
+					"text" : "389.640113"
 				}
 
 			}
@@ -415,9 +456,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 594.400024, 231.400009, 69.0, 22.0 ],
+					"patching_rect" : [ 513.300049, 143.400009, 77.0, 22.0 ],
 					"style" : "",
-					"text" : "setGoal $1"
+					"text" : "setTarget $1"
 				}
 
 			}
@@ -476,7 +517,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 669.900024, 208.999985, 150.0, 33.0 ],
+					"patching_rect" : [ 588.800049, 120.999985, 150.0, 33.0 ],
 					"style" : "",
 					"text" : "enter the number of slices you want to get out of it"
 				}
@@ -551,7 +592,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 647.900024, 204.999985, 20.0, 20.0 ],
+					"patching_rect" : [ 566.800049, 116.999985, 20.0, 20.0 ],
 					"presentation_rect" : [ 158.5, 294.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -615,7 +656,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 594.400024, 177.999985, 79.0, 22.0 ],
+					"patching_rect" : [ 513.300049, 89.999985, 79.0, 22.0 ],
 					"style" : "",
 					"text" : "loadmess 10"
 				}
@@ -1157,7 +1198,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 594.400024, 204.999985, 50.0, 22.0 ],
+					"patching_rect" : [ 513.300049, 116.999985, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1548,8 +1589,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-2", 0 ],
+					"source" : [ "obj-50", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-53", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-50", 0 ],
+					"source" : [ "obj-55", 0 ]
 				}
 
 			}
