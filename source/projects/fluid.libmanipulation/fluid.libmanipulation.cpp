@@ -5,7 +5,6 @@
 #include <clients/nrt/KMeansClient.hpp>
 #include <clients/nrt/KNNClasClient.hpp>
 #include <clients/nrt/KNNRegClient.hpp>
-#include <clients/nrt/TestClient.hpp>
 #include "FluidMaxWrapper.hpp" //nb: this include is order-sensitive because of macro name clashes in Eigen and C74
 
 
