@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 397.0, 273.0, 695.0, 471.0 ],
+		"rect" : [ 100.0, 100.0, 695.0, 471.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,13 +38,128 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-21",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 403.0, 358.0, 158.0, 20.0 ],
+					"style" : "",
+					"text" : "addPointLabel ID data label"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-16",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 403.0, 386.0, 284.0, 22.0 ],
+					"presentation_rect" : [ 404.0, 389.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "addPointLabel myDataPoint tmp.datapoint myLabel"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 205.0, 257.0, 279.0, 20.0 ],
+					"presentation_rect" : [ 206.0, 259.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "query the size"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 191.0, 228.0, 279.0, 20.0 ],
+					"presentation_rect" : [ 191.0, 231.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "delete all points"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-34",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 241.5, 366.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 205.0, 366.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-31",
+					"maxclass" : "newobj",
+					"numinlets" : 3,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 205.0, 343.0, 92.0, 22.0 ],
+					"style" : "",
+					"text" : "route clear size"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 170.5, 257.0, 32.0, 22.0 ],
+					"style" : "",
+					"text" : "size"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 140.0, 228.0, 37.0, 22.0 ],
+					"style" : "",
+					"text" : "clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-20",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 123.5, 379.0, 32.0, 22.0 ],
-					"presentation_rect" : [ 123.0, 379.0, 0.0, 0.0 ],
+					"patching_rect" : [ 135.5, 386.0, 32.0, 22.0 ],
 					"style" : "",
 					"text" : "fill 2"
 				}
@@ -57,7 +172,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 60.0, 379.0, 37.0, 22.0 ],
+					"patching_rect" : [ 72.0, 386.0, 37.0, 22.0 ],
 					"style" : "",
 					"text" : "clear"
 				}
@@ -70,7 +185,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.0, 379.0, 32.0, 22.0 ],
+					"patching_rect" : [ 27.0, 386.0, 32.0, 22.0 ],
 					"style" : "",
 					"text" : "fill 1"
 				}
@@ -83,7 +198,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 262.0, 193.0, 279.0, 20.0 ],
-					"presentation_rect" : [ 262.0, 191.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "delete a point: supply label (must be existing label)"
 				}
@@ -97,7 +211,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 290.0, 152.0, 370.0, 33.0 ],
-					"presentation_rect" : [ 286.0, 146.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "retreive a point: supply label and buffer for data (must be existing label)"
 				}
@@ -111,7 +224,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 285.0, 116.0, 356.0, 33.0 ],
-					"presentation_rect" : [ 282.0, 110.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "edit a point: supply label and buffer with data (must be right size, existing label)"
 				}
@@ -137,7 +249,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 20.0, 420.0, 192.0, 22.0 ],
+					"patching_rect" : [ 32.0, 427.0, 192.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ tmp.datapoint @samps 42"
 				}
@@ -162,7 +274,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 250.0, 298.0, 150.0, 33.0 ],
+					"patching_rect" : [ 232.0, 298.0, 150.0, 33.0 ],
 					"style" : "",
 					"text" : "args: name, data point size"
 				}
@@ -236,8 +348,29 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-31", 0 ],
+					"source" : [ "obj-1", 2 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-16", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-18", 0 ]
 				}
 
 			}
@@ -250,8 +383,29 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-2", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-20", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-34", 0 ],
+					"source" : [ "obj-31", 1 ]
 				}
 
 			}
