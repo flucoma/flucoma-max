@@ -38,13 +38,64 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-21",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 1176.75, 440.5, 150.0, 47.0 ],
+					"style" : "",
+					"text" : "K = finds the k nearest neighnours, then yield the majority class"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-19",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1176.75, 491.0, 96.0, 22.0 ],
+					"style" : "",
+					"text" : "regress buffer K"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 905.5, 446.0, 258.0, 22.0 ],
+					"style" : "",
+					"text" : "index simple2data buffer_with_1D-output_data"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "bang", "float", "" ],
+					"patching_rect" : [ 970.5, 502.0, 113.0, 22.0 ],
+					"style" : "",
+					"text" : "fluid.knnregressor~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-58",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 254.0, 190.0, 61.0, 22.0 ],
-					"presentation_rect" : [ 254.0, 192.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "frgb 0 0 0"
 				}
@@ -106,13 +157,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-47",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 474.0, 516.0, 50.0, 22.0 ],
+					"patching_rect" : [ 474.0, 516.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "4. 5."
+					"text" : "9.7 5.65"
 				}
 
 			}
@@ -598,6 +650,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-15", 1 ],
 					"source" : [ "obj-2", 0 ]
 				}
@@ -842,6 +901,10 @@
 			}
  ],
 		"dependency_cache" : [ 			{
+				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "fluid.libmanipulation.mxo",
 				"type" : "iLaX"
 			}
