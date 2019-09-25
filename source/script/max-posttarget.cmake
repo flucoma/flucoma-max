@@ -15,12 +15,14 @@ target_include_directories (
 	PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
 	"${FLUID_M_PATH}/include/"
+	"${FLUID_M_PATH}/thirdparty"
 )
 
 if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
 else(MSVC)
-  target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
+  #target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
+	target_compile_options(${PROJECT_NAME} PRIVATE -Wall)
 endif()
 
 target_include_directories( ${PROJECT_NAME}
@@ -52,7 +54,7 @@ target_compile_options(
 # target_compile_options(
 #    ${PROJECT_NAME} PRIVATE -fsanitize=address -fno-omit-frame-pointer -shared-libasan
 # )
-# 
+#
 # target_link_libraries (
 #   ${PROJECT_NAME} PUBLIC -fsanitize=address -shared-libasan
 # )
