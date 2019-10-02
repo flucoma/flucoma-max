@@ -36,7 +36,7 @@ function setTarget(v) {
 }
 
 function setTolerance(v) {
-	if (v<1){
+	if (v<0){
 		error("threshfinder: the tolerance should be positive\n");
 		return;
 	}
