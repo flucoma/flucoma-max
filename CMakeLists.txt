@@ -1,14 +1,23 @@
 cmake_minimum_required(VERSION 3.11)
+################################################################################
+# Paths
+set(MAX_SDK_PATH "" CACHE PATH "Path to the Max SDK")
+if(NOT MAX_SDK_PATH)
+  message(FATAL_ERROR "Max SDK Path is not set")
+endif()
+
+set(FLUID_PATH "" CACHE PATH "Optional path to the Fluid Decomposition repo")
+# set(FLUID_M_PATH "" CACHE PATH "Optional path to the Fluid fluid_manipulation repo")
 
 if (APPLE)
 	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
 endif()
 
+################################################################################
+# A bunch of settings I'd like to defer to targets
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_EXTENSIONS OFF)
-# set(CMAKE_NO_SYSTEM_FROM_IMPORTED ON)
-
 
 if(APPLE)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx")
@@ -24,39 +33,32 @@ set(CMAKE_XCODE_GENERATE_SCHEME ON)
 endif()
 
 if(WIN32)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++14")
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++14")
 endif()
-
-
-# set_property(GLOBAL PROPERTY USE_FOLDERS ON)
-
-# Fetch the correct verion of the max-api
-#message(STATUS "Updating Git Submodules")
-#execute_process(
-#	COMMAND				git submodule update --init --recursive
-#	WORKING_DIRECTORY	"${CMAKE_CURRENT_SOURCE_DIR}"
-#)
+################################################################################
+# Main Action
 project (fluid_decomposition_max LANGUAGES CXX)
 
+################################################################################
+# Fetch / link to dependencies
 include(FetchContent)
 
 set(FETCHCONTENT_QUIET FALSE)
 
-if(DEFINED FLUID_PATH)
-get_filename_component(FLUID_PATH ${FLUID_PATH} ABSOLUTE)
-message(${FLUID_PATH})
-FetchContent_Declare(
-  fluid_decomposition
-  # URL ${FLUID_PATH}
-  DOWNLOAD_COMMAND ""
-  SOURCE_DIR "${FLUID_PATH}/"
-)
+if(FLUID_PATH)
+  get_filename_component(FLUID_PATH ${FLUID_PATH} ABSOLUTE)
+  message(${FLUID_PATH})
+  FetchContent_Declare(
+    fluid_decomposition
+    DOWNLOAD_COMMAND ""
+    SOURCE_DIR "${FLUID_PATH}/"
+  )
 else()
-FetchContent_Declare(
-  fluid_decomposition
-  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
-  GIT_PROGRESS TRUE
-)
+  FetchContent_Declare(
+    fluid_decomposition
+    GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
+    GIT_PROGRESS TRUE
+  )
 endif()
 
 # if(DEFINED FLUID_M_PATH)
@@ -94,6 +96,7 @@ endif()
 # Misc setup and subroutines
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
+# only on Max do we need UBs
 set_property(TARGET HISSTools_FFT PROPERTY OSX_ARCHITECTURES x86_64;i386)
 
 add_library( FLUID_MAX INTERFACE )
@@ -106,6 +109,8 @@ target_sources(
 # Make sure to build targets from fluid_decomposition
 # add_subdirectory(${FLUID_ABS_PATH} ${FLUID_ABS_PATH}/build)
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
+
+################################################################################
 #install bits
 foreach(PACKAGE_DIRECTORY docs;examples;externals;extras;help;init;javascript;patchers)
   install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION .)
