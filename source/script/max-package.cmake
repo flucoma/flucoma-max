@@ -8,8 +8,6 @@ project(${THIS_FOLDER_NAME})
 # Set version variables based on the current Git tag
 include("${CMAKE_CURRENT_LIST_DIR}/git-rev.cmake")
 
-
-
 # Update package-info.json, if present
 if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/package-info.json.in")
 	message("Building _____ ${GIT_TAG} _____")
@@ -17,8 +15,6 @@ if (EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/package-info.json.in")
 	configure_file("${CMAKE_CURRENT_SOURCE_DIR}/package-info.json.in" "${CMAKE_CURRENT_SOURCE_DIR}/package-info.json" @ONLY)
 
 	message("Reading ${CMAKE_CURRENT_SOURCE_DIR}/package-info.json")
-	# include("${CMAKE_CURRENT_LIST_DIR}/cmakepp.cmake")
-
 	file(READ "${CMAKE_CURRENT_SOURCE_DIR}/package-info.json" PKGINFOFILE)
 # 	json_deserialize("${PKGINFOFILE}")
 # 	ans(res)

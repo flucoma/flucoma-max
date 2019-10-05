@@ -1,14 +1,21 @@
 # Bits of this Copyright (c) 2016, Cycling '74
 # Usage of this file and its contents is governed by the MIT License
 
-
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
-add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
+
+set_target_properties(${PROJECT_NAME}
+  PROPERTIES
+    CXX_STANDARD 14
+    CXX_STANDARD_REQUIRED ON
+    CXX_EXTENSIONS OFF
+)
+
+# add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
   FLUID_DECOMPOSITION
-  # FLUID_MANIP 
+  # FLUID_MANIP
   FLUID_MAX
 )
 
@@ -20,8 +27,8 @@ target_include_directories (
 
 if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
-else(MSVC)
-  target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wconversion)
+else()
+  target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wno-conversion -Wno-c++11-narrowing -Wno-sign-compare)
 endif()
 
 target_include_directories( ${PROJECT_NAME}
@@ -54,12 +61,9 @@ target_compile_options(
 )
 endif(WIN32)
 
-
-
 ### Output ###
 if (APPLE)
 	find_library(JITTER_LIBRARY "JitterAPI" HINTS ${C74_MAX_API_DIR})
-
 
 	target_link_libraries(${PROJECT_NAME} PRIVATE
 		"-framework JitterAPI"
@@ -74,17 +78,8 @@ if (APPLE)
 		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_LIST_DIR}/Info.plist.in
 		MACOSX_BUNDLE_BUNDLE_VERSION "${GIT_VERSION_TAG}"
 		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"
+    OSX_ARCHITECTURES "x86_64;i386"
 )
-	#
-	# set_property(TARGET ${PROJECT_NAME}
-	# 			 PROPERTY )
-	# set_property(TARGET ${PROJECT_NAME}
-	# 			 PROPERTY )
-	# set_target_properties(${PROJECT_NAME}
-	# set_target_properties(${PROJECT_NAME} PROPERTIES )
-	# set_target_properties(${PROJECT_NAME} PROPERTIES )
-	#
-  #   set_target_properties(${PROJECT_NAME} PROPERTIES )
 elseif (WIN32)
 	target_compile_options(${PROJECT_NAME} PRIVATE /arch:AVX)
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
