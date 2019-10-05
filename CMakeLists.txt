@@ -15,29 +15,33 @@ endif()
 
 ################################################################################
 # A bunch of settings I'd like to defer to targets
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_EXTENSIONS OFF)
-
-if(APPLE)
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx")
-
-# We shouldn't have to do this, bah:
-#TODO find way of guranteeing libc++ on OS X CLI (hence >=C++11) without brute forcing CMake like this
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
-set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
-
-set(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
-set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Minimum OS X deployment version")
-set(CMAKE_XCODE_GENERATE_SCHEME ON)
-endif()
-
-if(WIN32)
-  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++14")
-endif()
+# set(CMAKE_CXX_STANDARD_REQUIRED ON)
+# set(CMAKE_CXX_STANDARD 14)
+# set(CMAKE_CXX_EXTENSIONS OFF)
+#
+# if(APPLE)
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -mavx")
+#
+# # We shouldn't have to do this, bah:
+# #TODO find way of guranteeing libc++ on OS X CLI (hence >=C++11) without brute forcing CMake like this
+# set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -stdlib=libc++")
+# set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -stdlib=libc++ -lc++abi")
+#
+# set(CMAKE_XCODE_ATTRIBUTE_CLANG_CXX_LIBRARY "libc++")
+# set(CMAKE_OSX_DEPLOYMENT_TARGET "10.7" CACHE STRING "Minimum OS X deployment version")
+# set(CMAKE_XCODE_GENERATE_SCHEME ON)
+# endif()
+#
+# if(WIN32)
+#   set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /std:c++14")
+# endif()
 ################################################################################
 # Main Action
 project (fluid_decomposition_max LANGUAGES CXX)
+
+set(AUTHOR_DOMAIN "org.flucoma")
+string(TIMESTAMP "%Y" THISYEAR)
+set(COPYRIGHT_STRING "Copyright (c) 2017-${THISYEAR} University of Huddersfield")
 
 ################################################################################
 # Fetch / link to dependencies
@@ -98,6 +102,8 @@ include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
 # only on Max do we need UBs
 set_property(TARGET HISSTools_FFT PROPERTY OSX_ARCHITECTURES x86_64;i386)
+set_property(TARGET HISSTools_AudioFile PROPERTY OSX_ARCHITECTURES x86_64;i386)
+
 
 add_library( FLUID_MAX INTERFACE )
 target_sources(
