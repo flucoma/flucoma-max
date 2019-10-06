@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 117.0, 144.0, 1341.0, 829.0 ],
+		"rect" : [ 117.0, 144.0, 748.0, 578.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
+						"rect" : [ 117.0, 170.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3705,7 +3705,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 117.0, 170.0, 1341.0, 803.0 ],
+						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4051,7 +4051,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
+						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4296,7 +4296,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
+						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4484,8 +4484,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 36.0, 457.0, 50.0, 22.0 ],
-									"style" : "",
-									"text" : "3000."
+									"style" : ""
 								}
 
 							}
