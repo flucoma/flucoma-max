@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 757.0, 568.0 ],
+		"rect" : [ 100.0, 100.0, 825.0, 568.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,6 +41,17 @@
 		"showontab" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 153.0, 376.0, 234.0, 22.0 ],
+					"text" : "fluid_decomposition.blocking fluid.bufnmf~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -56,7 +67,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 757.0, 542.0 ],
+						"rect" : [ 0.0, 26.0, 825.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -314,7 +325,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "bang" ],
 													"patching_rect" : [ 230.157532000000003, 209.0, 30.0, 30.0 ]
 												}
 
@@ -1488,9 +1499,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2040,9 +2051,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 																}
 ,
 																"parentstyle" : "",
@@ -2371,9 +2382,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 																}
 ,
 																"parentstyle" : "",
@@ -3763,9 +3774,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4288,9 +4299,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4427,8 +4438,8 @@
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 309.0, 364.25, 417.0, 35.0 ],
 									"text" : "fluid.bufnmf~ @source bufnmf_help_src4 @resynth bufnmf_help_resynth4 @components 5"
 								}
@@ -4604,9 +4615,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4681,7 +4692,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 757.0, 542.0 ],
+						"rect" : [ 0.0, 26.0, 825.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5162,8 +5173,8 @@
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 59.0, 214.5, 659.0, 40.0 ],
 									"text" : "fluid.bufnmf~ @source bufnmf_help_src2 @bases bufnmf_help_bases2 @activations bufnmf_help_act2 @components 5"
 								}
@@ -5357,9 +5368,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5455,7 +5466,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 757.0, 542.0 ],
+						"rect" : [ 100.0, 126.0, 825.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -6499,9 +6510,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -6705,8 +6716,8 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 29.0, 355.499969000000021, 85.0, 23.0 ],
 									"text" : "fluid.bufnmf~"
 								}
@@ -6832,7 +6843,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 757.0, 542.0 ],
+						"rect" : [ 0.0, 26.0, 825.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6864,7 +6875,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 135.0, 375.0, 50.0, 22.0 ],
+					"patching_rect" : [ 208.0, 406.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -6889,7 +6900,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 290.673461999999972, 57.567627000000002 ]
+					"patching_rect" : [ 10.0, 10.0, 290.64801025390625, 57.599853515625 ]
 				}
 
 			}
@@ -6992,7 +7003,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 99.0, 665.0, 1146.0, 368.0 ],
+									"patching_rect" : [ 99.0, 665.0, 1148.0, 382.0 ],
 									"text" : "The name of the buffer to use as the source material to be decomposed through the NMF process. The different channels of multichannel buffers will be processing sequentially.\t\nWhere in the srcBuf should the NMF process start, in sample.\t\nHow many frames should be processed.\t\nFor multichannel srcBuf, which channel should be processed first.\t\nFor multichannel srcBuf, how many channel should be processed.\t\nThe name of the buffer where the different reconstructed components will be reconstructed. The buffer will be resized to components * numChannelsProcessed channels and sourceDuration lenght. If nil is provided, the reconstruction will not happen.\t\nThe name of the buffer where the different bases will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no bases will be returned.\t\nThis flag decides of how the basis buffer passed as the previous argument is treated.\t\n  0- \tThe bases are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to components * numChannelsProcessed channels and (fftSize / 2 + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the bases. Its dimensions should match the values above. The resulting bases will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the bases, and will therefore not change. Its bases should match the values above.\nThe index of the buffer where the different activations will be written to and/or read from: the behaviour is set in the following argument. If nil is provided, no activation will be returned.\t\nThis flag decides of how the activation buffer passed as the previous argument is treated.\t\n  0- \tThe activations are seeded randomly, and the resulting ones will be written after the process in the passed buffer. The buffer is resized to components * numChannelsProcessed channels and (sourceDuration / hopsize + 1) lenght.\n  1- \tThe passed buffer is considered as seed for the activations. Its dimensions should match the values above. The resulting activations will replace the seed ones.\n  2- \tThe passed buffer is considered as a template for the activations, and will therefore not change. Its dimensions should match the values above.\nThe number of elements the NMF algorithm will try to divide the spectrogram of the source in.\t\nThe NMF process is iterative, trying to converge to the smallest error in its factorisation. The number of iterations will decide how many times it tries to adjust its estimates. Higher numbers here will be more CPU expensive, lower numbers will be more unpredictable in quality.\nup to 3 integers (windowsize hopSize FFTSize) The windowsize is the size of the buffered window to be analysed, in samples. It will add that much latency to the signal. As NMF relies on spectral frames, we need to decide what precision we give it spectrally and temporally, in line with Gabor Uncertainty principles. http://www.subsurfwiki.org/wiki/Gabor_uncertainty The hopSize is how much the buffered window moves forward, in samples. As NMF relies on spectral frames, we need to move the window forward. It can be any size but low overlap may create audible artefacts. The FFTSize is how large will the FFT be, zero-padding the buffer to the right size, which should be bigger than the windowsize, bigger than 4 samples, and should be a power of 2. This is a way to oversample the FFT for extra precision. Making it larger than the window size provides interpolation in frequency.\nSwitches the verbose on or off.\n"
 								}
 
@@ -7004,7 +7015,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 16.0, 665.0, 78.0, 368.0 ],
+									"patching_rect" : [ 16.0, 665.0, 78.0, 382.0 ],
 									"text" : "source\nstartFrame\nnumFrames\nstartChan\nnumChans\ndestination\n\nbases\nbasesMode\n\n\n\nactivations\nactMode\n\n\n\n\ncomponents\nnumIter\n\nfftSettings\n\n\n\n\nwarnings\n"
 								}
 
@@ -7040,7 +7051,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 16.0, 1071.0, 1183.0, 56.0 ],
+									"patching_rect" : [ 16.0, 1071.0, 1183.0, 68.0 ],
 									"text" : "[1] - Lee, Daniel D., and H. Sebastian Seung. 1999. ‘Learning the Parts of Objects by Non-Negative Matrix Factorization’. Nature 401 (6755): 788–91. https://doi.org/10.1038/44565.\n[2] - Smaragdis and Brown, Non-Negative Matrix Factorization for Polyphonic Music Transcription.\n[3] - This was made possible thanks to the FluCoMa project ( http://www.flucoma.org/ ) funded by the European Research Council ( https://erc.europa.eu/ ) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).\n"
 								}
 
@@ -7074,9 +7085,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -7151,7 +7162,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 757.0, 542.0 ],
+						"rect" : [ 0.0, 26.0, 825.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7949,9 +7960,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8358,9 +8369,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -8546,8 +8557,8 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 19.0, 473.5, 518.0, 22.0 ],
 									"text" : "fluid.bufnmf~ @source didact-source2 @activations didact-dest2 @bases filter @components 3"
 								}
@@ -8611,9 +8622,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9039,7 +9050,8 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 0,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 67.0, 414.0, 430.0, 22.0 ],
 									"text" : "fluid.bufnmf~ @source didact-source @activations didact-dest @components 2"
 								}
@@ -9230,9 +9242,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9307,7 +9319,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 757.0, 542.0 ],
+						"rect" : [ 0.0, 26.0, 825.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -10013,8 +10025,8 @@
 													"id" : "obj-62",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 50.0, 128.93334999999999, 411.0, 22.0 ],
 													"text" : "fluid.bufstats~ @source bufnmf_help_features5 @stats bufnmf_help_stats5"
 												}
@@ -10061,8 +10073,8 @@
 													"id" : "obj-15",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 50.0, 100.0, 643.0, 22.0 ],
 													"text" : "fluid.bufspectralshape~ @source bufnmf_help_resynth5 @features bufnmf_help_features5 @fftsettings 1024 256 2048"
 												}
@@ -10088,7 +10100,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "bang" ],
 													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
 												}
 
@@ -10496,8 +10508,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 28.666664000000001, 373.0, 498.0, 49.0 ],
 									"text" : "fluid.bufnmf~ @source bufnmf_help_src5 @fftsettings 1024 256 2048 @iterations 100 @bases bufnmf_help_summedbases5 @basesmode 2 @components 2 @resynth bufnmf_help_resynth5"
 								}
@@ -10533,8 +10545,8 @@
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 28.666664000000001, 204.0, 498.0, 35.0 ],
 									"text" : "fluid.bufnmf~ @source bufnmf_help_src5 @numframes 88200 @components 10 @bases bufnmf_help_bases5 @resynth bufnmf_help_resynth5 @fftsettings 1024 256 2048"
 								}
@@ -10655,9 +10667,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -10732,7 +10744,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 757.0, 542.0 ],
+						"rect" : [ 0.0, 26.0, 825.0, 542.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -11813,8 +11825,8 @@
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 98.5, 226.0, 481.0, 22.0 ],
 									"text" : "fluid.bufnmf~ @source bufnmf_help_src3 @resynth bufnmf_help_dst3 @components 12"
 								}
@@ -12044,9 +12056,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -12107,37 +12119,45 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-17::obj-37::obj-3" : [ "live.text", "live.text", 0 ],
+			"obj-1::obj-60::obj-3" : [ "live.text[20]", "live.text[20]", 0 ],
+			"obj-1::obj-3::obj-10" : [ "live.text[31]", "live.text", 0 ],
+			"obj-17::obj-37::obj-8" : [ "live.text[17]", "live.text", 0 ],
 			"obj-11::obj-32" : [ "live.tab[2]", "live.tab", 0 ],
-			"obj-5::obj-14::obj-2" : [ "live.text[10]", "live.text[2]", 0 ],
-			"obj-11::obj-34" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-17::obj-37::obj-9" : [ "live.text[18]", "live.text", 0 ],
+			"obj-5::obj-14::obj-3" : [ "live.text[9]", "live.text[2]", 0 ],
+			"obj-17::obj-37::obj-3" : [ "live.text", "live.text", 0 ],
+			"obj-1::obj-3::obj-4" : [ "live.text[22]", "live.text[2]", 0 ],
 			"obj-5::obj-14::obj-4" : [ "live.text[7]", "live.text[2]", 0 ],
-			"obj-1::obj-3::obj-5" : [ "live.text[28]", "live.text[2]", 0 ],
-			"obj-17::obj-37::obj-7" : [ "live.text[16]", "live.text", 0 ],
 			"obj-1::obj-3::obj-3" : [ "live.text[29]", "live.text[2]", 0 ],
-			"obj-5::obj-14::obj-10" : [ "live.text[12]", "live.text", 0 ],
+			"obj-17::obj-37::obj-7" : [ "live.text[16]", "live.text", 0 ],
+			"obj-11::obj-34" : [ "live.gain~", "live.gain~", 0 ],
+			"obj-5::obj-14::obj-1" : [ "live.text[11]", "live.text[2]", 0 ],
 			"obj-17::obj-37::obj-4" : [ "live.text[13]", "live.text", 0 ],
 			"obj-17::obj-37::obj-5" : [ "live.text[14]", "live.text", 0 ],
-			"obj-1::obj-3::obj-4" : [ "live.text[22]", "live.text[2]", 0 ],
 			"obj-17::obj-37::obj-6" : [ "live.text[15]", "live.text", 0 ],
-			"obj-5::obj-14::obj-3" : [ "live.text[9]", "live.text[2]", 0 ],
 			"obj-1::obj-60::obj-4" : [ "live.text[21]", "live.text[20]", 0 ],
+			"obj-1::obj-3::obj-5" : [ "live.text[28]", "live.text[2]", 0 ],
+			"obj-5::obj-14::obj-5" : [ "live.text[8]", "live.text[2]", 0 ],
+			"obj-1::obj-3::obj-1" : [ "live.text[23]", "live.text[2]", 0 ],
 			"obj-17::obj-37::obj-15" : [ "live.text[24]", "live.text", 0 ],
 			"obj-17::obj-37::obj-10" : [ "live.text[19]", "live.text", 0 ],
-			"obj-1::obj-3::obj-10" : [ "live.text[31]", "live.text", 0 ],
 			"obj-17::obj-37::obj-16" : [ "live.text[25]", "live.text", 0 ],
 			"obj-17::obj-37::obj-17" : [ "live.text[26]", "live.text", 0 ],
-			"obj-17::obj-37::obj-18" : [ "live.text[27]", "live.text", 0 ],
-			"obj-5::obj-14::obj-1" : [ "live.text[11]", "live.text[2]", 0 ],
-			"obj-11::obj-28" : [ "live.tab[1]", "live.tab", 0 ],
-			"obj-5::obj-14::obj-5" : [ "live.text[8]", "live.text[2]", 0 ],
 			"obj-1::obj-60::obj-13" : [ "live.text[2]", "live.text[2]", 0 ],
-			"obj-1::obj-60::obj-3" : [ "live.text[20]", "live.text[20]", 0 ],
-			"obj-17::obj-37::obj-8" : [ "live.text[17]", "live.text", 0 ],
+			"obj-17::obj-37::obj-18" : [ "live.text[27]", "live.text", 0 ],
 			"obj-1::obj-3::obj-2" : [ "live.text[30]", "live.text[2]", 0 ],
-			"obj-17::obj-37::obj-9" : [ "live.text[18]", "live.text", 0 ],
-			"obj-1::obj-3::obj-1" : [ "live.text[23]", "live.text[2]", 0 ],
+			"obj-5::obj-14::obj-10" : [ "live.text[12]", "live.text", 0 ],
+			"obj-5::obj-14::obj-2" : [ "live.text[10]", "live.text[2]", 0 ],
+			"obj-11::obj-28" : [ "live.tab[1]", "live.tab", 0 ],
+			"obj-3::obj-39" : [ "live.text[32]", "live.text", 0 ],
 			"parameterbanks" : 			{
+
+			}
+,
+			"parameter_overrides" : 			{
+				"obj-3::obj-39" : 				{
+					"parameter_longname" : "live.text[32]"
+				}
 
 			}
 
@@ -12183,6 +12203,25 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "fluid_decomposition.blocking.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.bufnmf~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufspectralshape~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufstats~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "fluid.bufcompose~.mxo",
 				"type" : "iLaX"
 			}
@@ -12191,9 +12230,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
