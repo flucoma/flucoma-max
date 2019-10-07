@@ -3,14 +3,12 @@
 
 target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
 
-set_target_properties(${PROJECT_NAME}
-  PROPERTIES
+set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
     CXX_EXTENSIONS OFF
+    # FOLDER "bollcks"
 )
-
-# add_dependencies (${PROJECT_NAME} FLUID_DECOMPOSITION)
 
 target_link_libraries(${PROJECT_NAME}
   PUBLIC
@@ -26,9 +24,12 @@ target_include_directories (
 )
 
 if(MSVC)
-  target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
+  target_compile_options(${PROJECT_NAME} PRIVATE /W3 )
 else()
-  target_compile_options(${PROJECT_NAME} PRIVATE -Wall -Wextra -Wpedantic -Wreturn-type -Wno-conversion -Wno-c++11-narrowing -Wno-sign-compare)
+  target_compile_options(${PROJECT_NAME} PRIVATE
+    -Wall -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wpedantic -Wreturn-type
+      -Wno-conversion -Wno-c++11-narrowing -Wno-sign-compare #quiten it down a bit, until we do a Big IntFix
+  )
 endif()
 
 target_include_directories( ${PROJECT_NAME}
@@ -40,7 +41,9 @@ target_include_directories( ${PROJECT_NAME}
 
 get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
 source_group(TREE "${fluid_decomposition_SOURCE_DIR}/include" FILES ${HEADERS})
-
+get_property(HEADERS TARGET FLUID_MAX PROPERTY INTERFACE_SOURCES)
+source_group("Max Wrapper" FILES ${HEADERS})
+source_group("" FILES "${PROJECT_NAME}.cpp")
 # get_property(HEADERS TARGET FLUID_MANIP PROPERTY INTERFACE_SOURCES)
 # source_group(TREE "${fluid_manipulation_SOURCE_DIR}/include" FILES ${HEADERS})
 
@@ -77,6 +80,7 @@ if (APPLE)
 		XCODE_ATTRIBUTE_WRAPPER_EXTENSION "mxo"
 		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_LIST_DIR}/Info.plist.in
 		MACOSX_BUNDLE_BUNDLE_VERSION "${GIT_VERSION_TAG}"
+    XCODE_GENERATE_SCHEME ON  
 		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"
     OSX_ARCHITECTURES "x86_64;i386"
 )
