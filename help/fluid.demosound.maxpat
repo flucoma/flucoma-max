@@ -1213,7 +1213,7 @@
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 154.0, 279.0, 100.0, 22.0 ],
-									"prefix" : "choses:/Applications/Max.app/Contents/Resources/C74/media/msp/",
+									"prefix" : "",
 									"presentation" : 1,
 									"presentation_rect" : [ 32.0, 3.0, 147.64183, 22.0 ],
 									"style" : "AudioStatus_Menu",
