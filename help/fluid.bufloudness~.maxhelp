@@ -244,7 +244,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 348.0, 209.0, 243.0, 22.0 ],
 									"style" : "",
-									"text" : "bipolar 1, setbuffer bufloudness_help_loud2"
+									"text" : "setbuffer bufloudness_help_loud2, bipolar 1"
 								}
 
 							}
@@ -306,8 +306,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 13.5, 153.0, 332.5, 49.0 ],
 									"style" : "",
 									"text" : "fluid.bufcompose~ @source bufloudness_help_src3 @startframe 555000 @numframes 468335 @deststartchan 1 @destination bufloudness_help_src2"
@@ -503,8 +503,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 348.0, 153.0, 326.0, 49.0 ],
 									"style" : "",
 									"text" : "fluid.bufloudness~ 17640 @source bufloudness_help_src2 @features bufloudness_help_loud2 @windowsize 17640 @hopsize 4410"
@@ -609,9 +609,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1096,9 +1096,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1272,8 +1272,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 17.0, 198.5, 287.0, 49.0 ],
 									"style" : "",
 									"text" : "fluid.bufcompose~ @source bufloudness_help_sine @destination bufloudness_help_src1 @deststartframe 8192 @numframes 1024"
@@ -1537,8 +1537,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 334.0, 198.5, 360.0, 49.0 ],
 									"style" : "",
 									"text" : "fluid.bufloudness~ 17640 @source bufloudness_help_src1 @features bufloudness_help_loud1 @windowsize 17640 @hopsize 4410"
@@ -1771,9 +1771,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1953,9 +1953,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
