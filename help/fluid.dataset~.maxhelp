@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 695.0, 471.0 ],
+		"rect" : [ 114.0, 124.0, 695.0, 471.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,38 +38,11 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 403.0, 358.0, 158.0, 20.0 ],
-					"style" : "",
-					"text" : "addPointLabel ID data label"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-16",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 403.0, 386.0, 284.0, 22.0 ],
-					"presentation_rect" : [ 404.0, 389.0, 0.0, 0.0 ],
-					"style" : "",
-					"text" : "addPointLabel myDataPoint tmp.datapoint myLabel"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 205.0, 257.0, 279.0, 20.0 ],
-					"presentation_rect" : [ 206.0, 259.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "query the size"
 				}
@@ -82,7 +55,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 191.0, 228.0, 279.0, 20.0 ],
-					"presentation_rect" : [ 191.0, 231.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "delete all points"
 				}
@@ -350,13 +322,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-31", 0 ],
 					"source" : [ "obj-1", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-16", 0 ]
 				}
 
 			}
