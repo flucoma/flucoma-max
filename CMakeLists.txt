@@ -14,6 +14,8 @@ set(FLUID_PARAMDUMP_PATH "" CACHE PATH "Optional path to fluid_paramdump")
 
 if (APPLE)
 	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
+  set(CMAKE_XCODE_GENERATE_SCHEME ON)
+  set(CMAKE_XCODE_SCHEME_EXECUTABLE "/Applications/Max.app")
 endif()
 
 ################################################################################
