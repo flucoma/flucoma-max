@@ -32,52 +32,50 @@ include(FetchContent)
 
 set(FETCHCONTENT_QUIET FALSE)
 
+FetchContent_Declare(
+  fluid_decomposition
+  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
+  GIT_PROGRESS TRUE
+)
+
 if(FLUID_PATH)
-  get_filename_component(FLUID_PATH ${FLUID_PATH} ABSOLUTE)
-  message(STATUS ${FLUID_PATH})
-  FetchContent_Declare(
-    fluid_decomposition
-    DOWNLOAD_COMMAND ""
-    SOURCE_DIR "${FLUID_PATH}/"
-  )
-else()
-  FetchContent_Declare(
-    fluid_decomposition
-    GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
-    GIT_PROGRESS TRUE
+  get_filename_component(
+    FETCHCONTENT_SOURCE_DIR_FLUID_DECOMPOSITION ${FLUID_PATH} ABSOLUTE
   )
 endif()
 
-# if(DEFINED FLUID_M_PATH)
-# get_filename_component(FLUID_M_PATH ${FLUID_M_PATH} ABSOLUTE)
-# FetchContent_Declare(
-#   fluid_manipulation
-#   # URL ${FLUID_M_PATH}
-#   DOWNLOAD_COMMAND ""
-#   SOURCE_DIR "${FLUID_M_PATH}/"
-# )
-# else()
+FetchContent_GetProperties(fluid_decomposition)
+if(NOT fluid_decomposition_POPULATED)
+  FetchContent_Populate(fluid_decomposition)
+  add_subdirectory(${fluid_decomposition_SOURCE_DIR} ${fluid_decomposition_BINARY_DIR})
+endif()
+
+
 # FetchContent_Declare(
 #   fluid_manipulation
 #   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_manipulation.git
 #   GIT_PROGRESS TRUE
 # )
+# if(FLUID_M_PATH)
+# get_filename_component(
+#   FETCHCONTENT_SOURCE_DIR_FLUID_MANIPULATION ${FLUID_M_PATH} ABSOLUTE
+# )
+# endif()
+# FetchContent_GetProperties(fluid_manipulation)
+# if(NOT fluid_manipulation_POPULATED)
+#   FetchContent_Populate(fluid_manipulation)
+#   add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})
 # endif()
 
 if(DOCS)
+  FetchContent_Declare(
+    fluid_paramdump
+    GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_paramdump.git
+    GIT_PROGRESS TRUE
+  )
   if(FLUID_PARAMDUMP_PATH)
-    get_filename_component(FLUID_PARAMDUMP_PATH_FULL ${FLUID_PARAMDUMP_PATH} ABSOLUTE)
-    message(STATUS ${FLUID_PARAMDUMP_PATH_FULL})
-    FetchContent_Declare(
-      fluid_paramdump
-      DOWNLOAD_COMMAND ""
-      SOURCE_DIR "${FLUID_PARAMDUMP_PATH_FULL}/"
-    )
-  else()
-    FetchContent_Declare(
-      fluid_paramdump
-      GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_paramdump.git
-      GIT_PROGRESS TRUE
+    get_filename_component(
+      FETCHCONTENT_SOURCE_DIR_FLUID_PARAMDUMP ${FLUID_PARAMDUMP_PATH} ABSOLUTE
     )
   endif()
 
@@ -94,21 +92,7 @@ if(DOCS)
     TARGET COPY_DOCS POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${fluid_paramdump_SOURCE_DIR}/maxref" "${CMAKE_CURRENT_SOURCE_DIR}/docs"
   )
-
 endif()
-
-
-FetchContent_GetProperties(fluid_decomposition)
-if(NOT fluid_decomposition_POPULATED)
-  FetchContent_Populate(fluid_decomposition)
-  add_subdirectory(${fluid_decomposition_SOURCE_DIR} ${fluid_decomposition_BINARY_DIR})
-endif()
-
-# FetchContent_GetProperties(fluid_manipulation)
-# if(NOT fluid_manipulation_POPULATED)
-#   FetchContent_Populate(fluid_manipulation)
-#   add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})
-# endif()
 
 # Misc setup and subroutines
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
@@ -135,8 +119,6 @@ foreach (project_dir ${PROJECT_DIRS})
     source_group("" FILES "${project_dir}.cpp")
 	endif ()
 endforeach ()
-
-
 
 ################################################################################
 #install bits
