@@ -80,10 +80,13 @@ if (APPLE)
 		XCODE_ATTRIBUTE_WRAPPER_EXTENSION "mxo"
 		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_LIST_DIR}/Info.plist.in
 		MACOSX_BUNDLE_BUNDLE_VERSION "${GIT_VERSION_TAG}"
-    XCODE_GENERATE_SCHEME ON  
+    XCODE_GENERATE_SCHEME ON
 		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"
     OSX_ARCHITECTURES "x86_64;i386"
-)
+    OSX_DEPLOYMENT_TARGET "10.7"
+  )
+  #If we target 10.7 (actually < 10.9), we have to manually include this:
+  target_compile_options(${PROJECT_NAME} PRIVATE -stdlib=libc++)
 elseif (WIN32)
 	target_compile_options(${PROJECT_NAME} PRIVATE /arch:AVX)
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
