@@ -5,3 +5,4 @@ max objectfile fluid.kdtree~ fluid.libmanipulation fluid.kdtree~;
 max objectfile fluid.kmeans~ fluid.libmanipulation fluid.kmeans~;
 max objectfile fluid.knnclassifier~ fluid.libmanipulation fluid.knnclassifier~;
 max objectfile fluid.knnregressor~ fluid.libmanipulation fluid.knnregressor~;
+max objectfile fluid.knn~ fluid.libmanipulation fluid.knn~;
