@@ -38,12 +38,24 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-62",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 744.0, 699.0, 150.0, 33.0 ],
+					"style" : "",
+					"text" : "not yet possible as no multi multi"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-68",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 940.0, 855.0, 155.0, 20.0 ],
-					"presentation_rect" : [ 937.0, 855.0, 0.0, 0.0 ],
+					"patching_rect" : [ 739.0, 803.0, 155.0, 20.0 ],
 					"style" : "",
 					"text" : "camera to amp/pitch"
 				}
@@ -55,8 +67,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 940.0, 789.0, 155.0, 20.0 ],
-					"presentation_rect" : [ 972.5, 811.0, 0.0, 0.0 ],
+					"patching_rect" : [ 988.5, 753.0, 155.0, 20.0 ],
 					"style" : "",
 					"text" : "or boring brightness"
 				}
@@ -69,7 +80,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 932.5, 704.0, 155.0, 47.0 ],
+					"patching_rect" : [ 802.5, 739.5, 155.0, 47.0 ],
 					"style" : "",
 					"text" : "polyphony estimator - how many source - mels to components"
 				}
@@ -776,8 +787,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2119,8 +2130,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
