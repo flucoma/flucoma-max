@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+		"rect" : [ 721.0, 529.0, 640.0, 480.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +37,34 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-11",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 367.0, 156.0, 180.0, 47.0 ],
+					"presentation_rect" : [ 367.0, 156.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "get the distance to  nearestneighbours: pass buffer of target data, num neighours"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 210.0, 152.0, 155.0, 22.0 ],
+					"presentation_rect" : [ 15.0, 179.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "kNearestDist tmp.kdpoint 2"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-14",
 					"linecount" : 2,
@@ -81,8 +109,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 284.0, 161.0, 171.0, 47.0 ],
-					"presentation_rect" : [ 284.0, 166.0, 0.0, 0.0 ],
+					"patching_rect" : [ 276.0, 96.0, 171.0, 47.0 ],
 					"style" : "",
 					"text" : "get nearestneighbours: pass buffer of target data, num neighours"
 				}
@@ -108,8 +135,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 241.0, 121.0, 171.0, 33.0 ],
-					"presentation_rect" : [ 241.0, 125.0, 0.0, 0.0 ],
+					"patching_rect" : [ 218.0, 55.0, 171.0, 33.0 ],
 					"style" : "",
 					"text" : "build tree: pass dataset name (must be right dimensionality)"
 				}
@@ -122,10 +148,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 163.0, 166.0, 105.0, 22.0 ],
-					"presentation_rect" : [ 234.0, 120.0, 0.0, 0.0 ],
+					"patching_rect" : [ 140.0, 100.0, 134.0, 22.0 ],
 					"style" : "",
-					"text" : "knn tmp.kdpoint 2"
+					"text" : "kNearest tmp.kdpoint 2"
 				}
 
 			}
@@ -174,7 +199,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 72.0, 121.0, 151.0, 22.0 ],
+					"patching_rect" : [ 49.0, 55.0, 151.0, 22.0 ],
 					"style" : "",
 					"text" : "index kdtree_help_dataset"
 				}
@@ -192,6 +217,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
 					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
