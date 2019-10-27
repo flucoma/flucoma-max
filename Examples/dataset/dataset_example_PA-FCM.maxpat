@@ -92,7 +92,21 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-35",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 19.0, 74.0, 29.5, 22.0 ],
+									"style" : "",
+									"text" : "1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
@@ -339,7 +353,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 782.5, 137.0, 20.0, 20.0 ],
+									"patching_rect" : [ 207.0, 135.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 782.0, 137.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -544,7 +558,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 994.0, 566.0, 158.0, 22.0 ],
-									"presentation_rect" : [ 1044.0, 582.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "kNearestDist tmp.flatpoint 5"
 								}
@@ -562,7 +575,6 @@
 									"outlettype" : [ "", "", "float" ],
 									"parameter_enable" : 1,
 									"patching_rect" : [ 845.0, 643.0, 160.0, 22.0 ],
-									"presentation_rect" : [ 845.0, 642.0, 0.0, 0.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.tab[3]",
@@ -585,7 +597,6 @@
 									"numinlets" : 2,
 									"numoutlets" : 0,
 									"patching_rect" : [ 887.0, 866.0, 45.0, 45.0 ],
-									"presentation_rect" : [ 887.0, 865.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -598,7 +609,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "start", "" ],
 									"patching_rect" : [ 887.0, 798.0, 47.0, 22.0 ],
-									"presentation_rect" : [ 887.0, 797.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "t start l"
 								}
@@ -612,7 +622,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 887.0, 765.5, 74.0, 22.0 ],
-									"presentation_rect" : [ 887.0, 764.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "prepend set"
 								}
@@ -626,7 +635,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
 									"patching_rect" : [ 887.0, 832.0, 40.0, 22.0 ],
-									"presentation_rect" : [ 887.0, 831.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "play~"
 								}
@@ -641,7 +649,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 887.0, 722.0, 113.0, 35.0 ],
-									"presentation_rect" : [ 887.0, 721.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "combine sounds. n @triggers 1"
 								}
@@ -668,7 +675,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 981.0, 683.0, 58.0, 22.0 ],
-									"presentation_rect" : [ 981.0, 682.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "zl lookup"
 								}
@@ -682,7 +688,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 957.0, 540.0, 137.0, 22.0 ],
-									"presentation_rect" : [ 1044.0, 552.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "kNearest tmp.flatpoint 5"
 								}
@@ -696,7 +701,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 832.0, 444.0, 93.0, 22.0 ],
-									"presentation_rect" : [ 832.0, 443.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "index mfccstats"
 								}
@@ -711,7 +715,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 931.5, 596.5, 93.0, 22.0 ],
-									"presentation_rect" : [ 931.5, 595.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fluid.kdtree~ 96"
 								}
@@ -725,7 +728,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 619.0, 566.0, 177.0, 22.0 ],
-									"presentation_rect" : [ 651.0, 584.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "kNearestDist tmp.flatpoint.std 5"
 								}
@@ -743,7 +745,6 @@
 									"outlettype" : [ "", "", "float" ],
 									"parameter_enable" : 1,
 									"patching_rect" : [ 452.0, 643.0, 160.0, 22.0 ],
-									"presentation_rect" : [ 452.0, 644.0, 0.0, 0.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.tab[2]",
@@ -766,7 +767,6 @@
 									"numinlets" : 2,
 									"numoutlets" : 0,
 									"patching_rect" : [ 494.0, 866.0, 45.0, 45.0 ],
-									"presentation_rect" : [ 494.0, 867.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -779,7 +779,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "start", "" ],
 									"patching_rect" : [ 494.0, 798.0, 47.0, 22.0 ],
-									"presentation_rect" : [ 494.0, 799.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "t start l"
 								}
@@ -793,7 +792,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 494.0, 765.5, 74.0, 22.0 ],
-									"presentation_rect" : [ 494.0, 766.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "prepend set"
 								}
@@ -807,7 +805,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
 									"patching_rect" : [ 494.0, 832.0, 40.0, 22.0 ],
-									"presentation_rect" : [ 494.0, 833.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "play~"
 								}
@@ -822,7 +819,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 494.0, 722.0, 113.0, 35.0 ],
-									"presentation_rect" : [ 494.0, 723.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "combine sounds. n @triggers 1"
 								}
@@ -849,7 +845,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 588.0, 683.0, 58.0, 22.0 ],
-									"presentation_rect" : [ 588.0, 684.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "zl lookup"
 								}
@@ -863,7 +858,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 587.0, 540.0, 157.0, 22.0 ],
-									"presentation_rect" : [ 651.0, 554.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "kNearest tmp.flatpoint.std 5"
 								}
@@ -877,7 +871,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 441.0, 444.0, 109.0, 22.0 ],
-									"presentation_rect" : [ 439.0, 445.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "index stdmfccstats"
 								}
@@ -892,7 +885,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 538.5, 596.5, 93.0, 22.0 ],
-									"presentation_rect" : [ 538.5, 597.5, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fluid.kdtree~ 96"
 								}
@@ -906,7 +898,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 214.599976, 566.0, 189.0, 22.0 ],
-									"presentation_rect" : [ 268.0, 587.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "kNearestDist tmp.flatpoint.scale 5"
 								}
@@ -1115,9 +1106,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 587.0, 58.0, 203.0, 22.0 ],
+									"patching_rect" : [ 587.0, 58.0, 191.0, 22.0 ],
 									"style" : "",
-									"text" : "scalePoint tmp.point tmp.point.scale"
+									"text" : "scalePoint tmp.point tmp.point.std"
 								}
 
 							}
@@ -1874,6 +1865,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-96", 0 ],
+									"source" : [ "obj-35", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-4", 0 ]
 								}
@@ -2057,7 +2055,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2067,7 +2064,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -6464,11 +6462,11 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-130::obj-20" : [ "live.tab[3]", "live.tab", 0 ],
 			"obj-15" : [ "live.text", "live.text", 0 ],
-			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
+			"obj-130::obj-5" : [ "live.tab[2]", "live.tab", 0 ],
 			"obj-62" : [ "live.tab", "live.tab", 0 ],
-			"obj-130::obj-5" : [ "live.tab[2]", "live.tab", 0 ]
+			"obj-130::obj-20" : [ "live.tab[3]", "live.tab", 0 ],
+			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
