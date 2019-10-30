@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, -1024.0, 1852.0, 990.0 ],
+		"rect" : [ 34.0, -1144.0, 1616.0, 893.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -65,7 +65,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, -1024.0, 1212.0, 990.0 ],
+						"rect" : [ 73.0, -1123.0, 1212.0, 990.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -92,7 +92,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-66",
@@ -101,7 +100,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 97.599976, 227.0, 24.0, 24.0 ],
-									"presentation_rect" : [ 195.0, 232.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -548,9 +546,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 994.0, 566.0, 158.0, 22.0 ],
+									"patching_rect" : [ 994.0, 566.0, 142.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearestDist tmp.flatpoint 5"
+									"text" : "kNearestDist tmp.point 5"
 								}
 
 							}
@@ -678,9 +676,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 957.0, 540.0, 137.0, 22.0 ],
+									"patching_rect" : [ 957.0, 540.0, 121.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest tmp.flatpoint 5"
+									"text" : "kNearest tmp.point 5"
 								}
 
 							}
@@ -718,9 +716,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 619.0, 566.0, 177.0, 22.0 ],
+									"patching_rect" : [ 619.0, 566.0, 161.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearestDist tmp.flatpoint.std 5"
+									"text" : "kNearestDist tmp.point.std 5"
 								}
 
 							}
@@ -848,9 +846,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 587.0, 540.0, 157.0, 22.0 ],
+									"patching_rect" : [ 587.0, 540.0, 141.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest tmp.flatpoint.std 5"
+									"text" : "kNearest tmp.point.std 5"
 								}
 
 							}
@@ -888,9 +886,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 214.599976, 566.0, 189.0, 22.0 ],
+									"patching_rect" : [ 214.599976, 566.0, 173.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearestDist tmp.flatpoint.scale 5"
+									"text" : "kNearestDist tmp.point.scale 5"
 								}
 
 							}
@@ -1018,9 +1016,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 181.599976, 540.0, 169.0, 22.0 ],
+									"patching_rect" : [ 181.599976, 540.0, 153.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest tmp.flatpoint.scale 5"
+									"text" : "kNearest tmp.point.scale 5"
 								}
 
 							}
@@ -2042,9 +2040,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -6469,11 +6467,11 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-15" : [ "live.text", "live.text", 0 ],
-			"obj-130::obj-5" : [ "live.tab[2]", "live.tab", 0 ],
-			"obj-62" : [ "live.tab", "live.tab", 0 ],
 			"obj-130::obj-20" : [ "live.tab[3]", "live.tab", 0 ],
-			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ]
+			"obj-15" : [ "live.text", "live.text", 0 ],
+			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
+			"obj-130::obj-5" : [ "live.tab[2]", "live.tab", 0 ],
+			"obj-62" : [ "live.tab", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
