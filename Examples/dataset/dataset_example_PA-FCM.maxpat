@@ -94,6 +94,19 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-44",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 994.0, 182.0, 154.0, 33.0 ],
+									"style" : "",
+									"text" : "to query a new item below\ndo #3, #4, #7"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-66",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -2040,8 +2053,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
@@ -6467,9 +6480,9 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
 			"obj-130::obj-20" : [ "live.tab[3]", "live.tab", 0 ],
 			"obj-15" : [ "live.text", "live.text", 0 ],
-			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
 			"obj-130::obj-5" : [ "live.tab[2]", "live.tab", 0 ],
 			"obj-62" : [ "live.tab", "live.tab", 0 ]
 		}
