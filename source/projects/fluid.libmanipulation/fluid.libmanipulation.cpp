@@ -9,6 +9,7 @@
 #include <clients/nrt/KNNClient.hpp>
 #include <clients/nrt/ScalingClient.hpp>
 #include <clients/nrt/StandardizingClient.hpp>
+#include <clients/rt/AudioTransportClient.hpp>
 #include "FluidMaxWrapper.hpp" //nb: this include is order-sensitive because of macro name clashes in Eigen and C74
 
 
@@ -25,4 +26,6 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedKNNClient>("fluid.knn~");
   makeMaxWrapper<NRTThreadedScalingClient>("fluid.scale~");
   makeMaxWrapper<NRTThreadedStandardizingClient>("fluid.standardize~");
+  makeMaxWrapper<RTAudioTransportClient>("fluid.audiotransport~");
+  makeMaxWrapper<NRTThreadedAudioTransportClient>("fluid.bufaudiotransport~");
 }
