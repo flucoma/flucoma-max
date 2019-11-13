@@ -6,7 +6,7 @@ max objectfile fluid.kmeans~ fluid.libmanipulation fluid.kmeans~;
 max objectfile fluid.knnclassifier~ fluid.libmanipulation fluid.knnclassifier~;
 max objectfile fluid.knnregressor~ fluid.libmanipulation fluid.knnregressor~;
 max objectfile fluid.knn~ fluid.libmanipulation fluid.knn~;
-max objectfile fluid.scale~ fluid.libmanipulation fluid.scale~;
+max objectfile fluid.normalize~ fluid.libmanipulation fluid.normalize~;
 max objectfile fluid.standardize~ fluid.libmanipulation fluid.standardize~;
 max objectfile fluid.audiotransport~ fluid.libmanipulation fluid.audiotransport~;
 max objectfile fluid.bufaudiotransport~ fluid.libmanipulation fluid.bufaudiotransport~;
