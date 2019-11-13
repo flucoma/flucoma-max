@@ -450,7 +450,7 @@
 													}
 ,
 													"text" : "harmonic",
-													"texton" : "hsrmonic",
+													"texton" : "harmonic",
 													"varname" : "live.text[1]"
 												}
 
@@ -1225,7 +1225,7 @@
 													}
 ,
 													"text" : "harmonic",
-													"texton" : "hsrmonic",
+													"texton" : "harmonic",
 													"varname" : "live.text[1]"
 												}
 

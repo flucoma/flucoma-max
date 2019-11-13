@@ -73,7 +73,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 134.0, 154.0, 826.0, 589.0 ],
+						"rect" : [ 0.0, 26.0, 826.0, 589.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1259,7 +1259,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 826.0, 589.0 ],
+						"rect" : [ 134.0, 154.0, 826.0, 589.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1309,7 +1309,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 359.0, 403.0, 72.0, 22.0 ],
 									"style" : "",
-									"text" : "-25.3"
+									"text" : "-25.170478"
 								}
 
 							}
@@ -1322,7 +1322,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 279.0, 403.0, 72.0, 22.0 ],
 									"style" : "",
-									"text" : "-37.356173"
+									"text" : "-36.018796"
 								}
 
 							}
@@ -1366,9 +1366,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 249.5, 523.0, 248.0, 21.0 ],
+									"patching_rect" : [ 249.5, 523.0, 255.0, 21.0 ],
 									"style" : "",
-									"text" : "highest loudness and peak since last rest"
+									"text" : "highest loudness and peak since last reset"
 								}
 
 							}
@@ -1999,6 +1999,13 @@
 , 			{
 				"name" : "interfacecolor.js",
 				"bootpath" : "C74:/interfaces",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.patchpath.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
