@@ -109,7 +109,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-44",
@@ -417,7 +416,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 794.599976, 59.0, 20.0, 20.0 ],
+									"patching_rect" : [ 817.0, 58.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 794.599976, 62.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -1087,9 +1086,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 463.0, 58.0, 122.0, 22.0 ],
+									"patching_rect" : [ 463.0, 58.0, 105.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.standardize~ 96"
+									"text" : "fluid.standardize~"
 								}
 
 							}
@@ -1113,9 +1112,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 542.25, 28.0, 163.0, 22.0 ],
+									"patching_rect" : [ 542.25, 28.0, 197.0, 22.0 ],
 									"style" : "",
-									"text" : "scale mfccstats stdmfccstats"
+									"text" : "standardize mfccstats stdmfccstats"
 								}
 
 							}
@@ -1126,9 +1125,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 587.0, 58.0, 191.0, 22.0 ],
+									"patching_rect" : [ 587.0, 58.0, 225.0, 22.0 ],
 									"style" : "",
-									"text" : "scalePoint tmp.point tmp.point.std"
+									"text" : "standardizePoint tmp.point tmp.point.std"
 								}
 
 							}
@@ -1139,9 +1138,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 61.25, 58.0, 112.0, 22.0 ],
+									"patching_rect" : [ 61.25, 58.0, 95.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.normalize~ 96"
+									"text" : "fluid.normalize~"
 								}
 
 							}
@@ -2071,9 +2070,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2091,6 +2090,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2100,8 +2100,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -5109,7 +5108,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 374.0, 553.0, 77.0, 22.0 ],
 					"style" : "",
-					"text" : "addPoint"
+					"text" : "size 750"
 				}
 
 			}
@@ -6481,11 +6480,11 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
-			"obj-130::obj-20" : [ "live.tab[3]", "live.tab", 0 ],
-			"obj-62" : [ "live.tab", "live.tab", 0 ],
 			"obj-130::obj-5" : [ "live.tab[2]", "live.tab", 0 ],
-			"obj-15" : [ "live.text", "live.text", 0 ]
+			"obj-62" : [ "live.tab", "live.tab", 0 ],
+			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
+			"obj-15" : [ "live.text", "live.text", 0 ],
+			"obj-130::obj-20" : [ "live.tab[3]", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
