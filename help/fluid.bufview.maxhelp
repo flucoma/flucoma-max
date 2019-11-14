@@ -2,15 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
-			"architecture" : "x64",
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 4,
+			"architecture" : "x86",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
-		"rect" : [ 213.0, 139.0, 1191.0, 712.0 ],
+		"rect" : [ 213.0, 139.0, 1228.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,12 +47,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 392.0, 27.2999267578125, 170.0, 23.0 ],
+					"patching_rect" : [ 392.0, 27.299927, 170.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "helpstarter",
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter fluid.bufview.js"
 				}
 
@@ -66,6 +66,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 193.0, 66.0, 20.0 ],
+					"style" : "",
 					"text" : "i/o:"
 				}
 
@@ -78,6 +79,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 283.0, 66.0, 20.0 ],
+					"style" : "",
 					"text" : "message:"
 				}
 
@@ -90,6 +92,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 215.0, 48.0, 33.0 ],
+					"style" : "",
 					"text" : "in [0]\nout [0]"
 				}
 
@@ -102,6 +105,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 89.0, 215.0, 702.0, 33.0 ],
+					"style" : "",
 					"text" : "many messages, see below\nan array of group IDs as int when queried"
 				}
 
@@ -114,6 +118,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 143.0, 305.0, 1014.0, 87.0 ],
+					"style" : "",
 					"text" : "sets the buffer (name) to visualise.\nreturns an array of num_chan items, each being the ID (int) of the group associated with the respective channel \nsets the ID of the next group to link the next shift-clicked channel.\nsets the vertical zoom, in effect multiplying the value to visualise.\nsets the amplitude visualisation to bipolar. Unipolar (absolute values) is the default.\ntriggers the redraw (needed if the buffer is updated)"
 				}
 
@@ -126,6 +131,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 305.0, 103.0, 87.0 ],
+					"style" : "",
 					"text" : "setbuffer (name)\ngetgroups\nnextgroup (int)\nvzoom (float)\nbipolar (bool)\nbang"
 				}
 
@@ -138,6 +144,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 119.0, 519.0, 47.0 ],
+					"style" : "",
 					"text" : "a versatile buffer viewer in javascript, with grouping possibilities, vaguely derived from warpy2.js, which was deemed required when dealing with more complex buffers in the Fluid Corpus Manipulation Project. [1] It downsamples using the maximum value in each given pixel."
 				}
 
@@ -150,6 +157,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 39.0, 93.0, 92.0, 24.0 ],
+					"style" : "",
 					"text" : "Description"
 				}
 
@@ -163,15 +171,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
-							"architecture" : "x64",
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 4,
+							"architecture" : "x86",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
-						"rect" : [ 213.0, 165.0, 1191.0, 686.0 ],
+						"rect" : [ 213.0, 165.0, 1228.0, 705.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -207,6 +214,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 805.0, 175.0, 97.0, 22.0 ],
+									"style" : "",
 									"text" : "join @triggers -1"
 								}
 
@@ -218,6 +226,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 769.0, 83.0, 86.0, 20.0 ],
+									"style" : "",
 									"text" : "Group number"
 								}
 
@@ -230,7 +239,8 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 805.0, 112.0, 50.0, 22.0 ]
+									"patching_rect" : [ 805.0, 112.0, 50.0, 22.0 ],
+									"style" : ""
 								}
 
 							}
@@ -242,7 +252,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 162.0, 157.0, 92.0, 22.0 ],
-									"presentation_linecount" : 2,
+									"style" : "",
 									"text" : "setbuffer large2"
 								}
 
@@ -255,6 +265,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 478.0, 157.0, 85.0, 22.0 ],
+									"style" : "",
 									"text" : "prepend setbg"
 								}
 
@@ -280,6 +291,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 805.0, 204.0, 129.0, 22.0 ],
+									"style" : "",
 									"text" : "prepend setgroupcolor"
 								}
 
@@ -305,6 +317,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 66.0, 165.0, 21.0 ],
+									"style" : "",
 									"text" : "multichannel buffer viewing"
 								}
 
@@ -334,7 +347,8 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 657.0, 127.0, 50.0, 22.0 ]
+									"patching_rect" : [ 657.0, 127.0, 50.0, 22.0 ],
+									"style" : ""
 								}
 
 							}
@@ -346,6 +360,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 657.0, 157.0, 105.0, 22.0 ],
+									"style" : "",
 									"text" : "setMaxGroups $1"
 								}
 
@@ -357,6 +372,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 612.0, 438.0, 232.0, 20.0 ],
+									"style" : "",
 									"text" : "compose stereo buffers for experimenting"
 								}
 
@@ -368,6 +384,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 628.5, 181.0, 20.0 ],
+									"style" : "",
 									"text" : "respective group ID per channel"
 								}
 
@@ -380,6 +397,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 602.5, 249.0, 22.0 ],
+									"style" : "",
 									"text" : "1 1"
 								}
 
@@ -393,7 +411,8 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 327.0, 127.0, 50.0, 22.0 ]
+									"patching_rect" : [ 327.0, 127.0, 50.0, 22.0 ],
+									"style" : ""
 								}
 
 							}
@@ -405,7 +424,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 260.0, 121.0, 24.0, 24.0 ]
+									"patching_rect" : [ 260.0, 121.0, 24.0, 24.0 ],
+									"style" : ""
 								}
 
 							}
@@ -417,6 +437,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 260.0, 157.0, 63.0, 22.0 ],
+									"style" : "",
 									"text" : "bipolar $1"
 								}
 
@@ -429,6 +450,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 145.0, 124.0, 88.0, 22.0 ],
+									"style" : "",
 									"text" : "setbuffer small"
 								}
 
@@ -442,6 +464,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 641.0, 501.0, 261.0, 35.0 ],
+									"style" : "",
 									"text" : "reset, source small, deststartframe 32, gain -1, destination small, deststartchan 1, bang"
 								}
 
@@ -454,6 +477,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 612.0, 464.0, 275.0, 22.0 ],
+									"style" : "",
 									"text" : "reset, source large2 large, destination large, bang"
 								}
 
@@ -466,6 +490,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 612.0, 304.0, 60.0, 22.0 ],
+									"style" : "",
 									"text" : "loadbang"
 								}
 
@@ -478,6 +503,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 612.0, 547.0, 108.0, 22.0 ],
+									"style" : "",
 									"text" : "fluid.bufcompose~"
 								}
 
@@ -490,6 +516,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 781.0, 364.5, 160.0, 22.0 ],
+									"style" : "",
 									"text" : "sizeinsamps 22050, fill sin 7"
 								}
 
@@ -502,6 +529,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 781.0, 388.5, 85.0, 22.0 ],
+									"style" : "",
 									"text" : "buffer~ large2"
 								}
 
@@ -514,6 +542,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 957.0, 364.5, 222.0, 22.0 ],
+									"style" : "",
 									"text" : "sizeinsamps 64, fill 1, apply triangle half"
 								}
 
@@ -526,6 +555,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 612.0, 364.5, 167.0, 22.0 ],
+									"style" : "",
 									"text" : "sizeinsamps 44100, fill sin 24"
 								}
 
@@ -538,6 +568,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 957.0, 388.5, 79.0, 22.0 ],
+									"style" : "",
 									"text" : "buffer~ small"
 								}
 
@@ -550,6 +581,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 612.0, 390.5, 78.0, 22.0 ],
+									"style" : "",
 									"text" : "buffer~ large"
 								}
 
@@ -562,6 +594,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 319.0, 598.5, 352.0, 60.0 ],
+									"style" : "",
 									"text" : "click behaviour: shift-click on a channel to group/ungroup.\n\nIf grey, it will be grouped to the ID last sent to [nextgroup].\nIf already group/coloured, will goes back to default group (0)"
 								}
 
@@ -574,6 +607,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 327.0, 157.0, 81.0, 22.0 ],
+									"style" : "",
 									"text" : "nextgroup $1"
 								}
 
@@ -586,6 +620,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 122.0, 100.0, 87.0, 22.0 ],
+									"style" : "",
 									"text" : "setbuffer large"
 								}
 
@@ -598,6 +633,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 410.0, 157.0, 64.0, 22.0 ],
+									"style" : "",
 									"text" : "getgroups"
 								}
 
@@ -610,6 +646,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 128.0, 63.0, 22.0 ],
+									"style" : "",
 									"text" : "vzoom $1"
 								}
 
@@ -623,7 +660,8 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 100.0, 50.0, 22.0 ]
+									"patching_rect" : [ 50.0, 100.0, 50.0, 22.0 ],
+									"style" : ""
 								}
 
 							}
@@ -904,10 +942,13 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
-					"text" : "p basic"
+					"style" : "",
+					"text" : "p basic",
+					"varname" : "basic_tab"
 				}
 
 			}
@@ -923,7 +964,118 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 321.751983642578125, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 321.751984, 57.599854 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpname.js",
+					"id" : "obj-7",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "fluid.bufview.js" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 10.0, 321.751984, 57.599854 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 4,
+							"architecture" : "x86",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 0.0, 26.0, 1228.0, 705.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"showontab" : 1,
+						"boxes" : [  ],
+						"lines" : [  ]
+					}
+,
+					"patching_rect" : [ 205.0, 205.0, 50.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"style" : "",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p ?",
+					"varname" : "q_tab"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpname.js",
+					"id" : "obj-10",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "fluid.bufview.js" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 10.0, 321.751984, 57.599854 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpname.js",
+					"id" : "obj-12",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "fluid.bufview.js" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 10.0, 321.751984, 57.599854 ]
 				}
 
 			}
