@@ -71,7 +71,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1248.0, 635.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "getLabel \"0\""
+					"text" : "write"
 				}
 
 			}
@@ -784,9 +784,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 971.0, 548.0, 167.0, 22.0 ],
+					"patching_rect" : [ 971.0, 548.0, 186.0, 22.0 ],
 					"style" : "",
-					"text" : "write /Users/pa/Desktop/caca"
+					"text" : "write /Users/pa/Desktop/test.json"
 				}
 
 			}
