@@ -38,6 +38,32 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-71",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1339.0, 525.5, 50.0, 22.0 ],
+					"style" : "",
+					"text" : "train"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-65",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 1246.0, 237.0, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-42",
 					"maxclass" : "number",
 					"numinlets" : 1,
@@ -72,13 +98,13 @@
 					"bubbleside" : 2,
 					"bubbletextmargin" : 10,
 					"id" : "obj-84",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1225.25, 182.0, 142.75, 62.0 ],
+					"patching_rect" : [ 1210.5, 155.0, 168.0, 76.0 ],
 					"style" : "",
-					"text" : "train args: dataset, number iterations",
+					"text" : "train args: dataset, number of classes, number iterations",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -92,7 +118,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1376.0, 470.5, 148.0, 61.0 ],
+					"patching_rect" : [ 1412.0, 470.5, 148.0, 61.0 ],
 					"style" : "",
 					"text" : "assigned class in response to 'predict' message",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -161,9 +187,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1314.0, 486.5, 50.0, 22.0 ],
+					"patching_rect" : [ 1281.0, 486.5, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "3"
+					"text" : "4"
 				}
 
 			}
@@ -174,7 +200,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1345.0, 443.0, 77.0, 22.0 ],
+					"patching_rect" : [ 1312.0, 443.0, 77.0, 22.0 ],
 					"style" : "",
 					"text" : "route predict"
 				}
@@ -1724,9 +1750,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1246.0, 257.0, 111.0, 22.0 ],
+					"patching_rect" : [ 1246.0, 268.0, 128.0, 22.0 ],
 					"style" : "",
-					"text" : "train mfccstats 100"
+					"text" : "train mfccstats $1 100"
 				}
 
 			}
@@ -1737,9 +1763,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1246.0, 364.0, 118.0, 22.0 ],
+					"patching_rect" : [ 1246.0, 364.0, 85.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kmeans~ 182 5"
+					"text" : "fluid.kmeans~"
 				}
 
 			}
@@ -3773,6 +3799,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-71", 1 ],
+					"source" : [ "obj-19", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-73", 1 ],
 					"source" : [ "obj-19", 0 ]
 				}
@@ -3962,6 +3995,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-66", 0 ],
+					"source" : [ "obj-65", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
 					"source" : [ "obj-66", 0 ]
 				}
@@ -4005,8 +4045,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-62" : [ "live.tab", "live.tab", 0 ],
-			"obj-15" : [ "live.text", "live.text", 0 ]
+			"obj-15" : [ "live.text", "live.text", 0 ],
+			"obj-62" : [ "live.tab", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
