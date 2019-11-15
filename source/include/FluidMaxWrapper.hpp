@@ -841,6 +841,8 @@ private:
     void operator()(const T& message)
     {
       class_addmethod(getClass(), (method)invokeMessage<N>, message.name,A_GIMME, 0);
+      class_addmethod(getClass(), (method)invokeMessage<N>, lowerCase(message.name).c_str(),A_GIMME, 0);
+      
     }
   };
 
