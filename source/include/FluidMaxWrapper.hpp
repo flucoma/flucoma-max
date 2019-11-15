@@ -15,6 +15,7 @@
 #include "MaxBufferAdaptor.hpp"
 
 #include <cctype>  //std::tolower
+#include <deque>
 #include <tuple>
 #include <utility>
 
@@ -346,15 +347,15 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   template <size_t N>
   static constexpr auto makeValue() { return Client::getParameterDescriptors().template makeValue<N>(); }
 
-  static void printResult(FluidMaxWrapper<Client>* x, Result& r)
+  static void printResult(FluidMaxWrapper<Client>* x, Result& r,bool alwaysWarn = false)
   {
     if (!x) return;
 
-    if (x->verbose() && !x->messages().ok())
+    if (!r.ok())
     {
-      switch (x->messages().status())
+      switch (r.status())
       {
-        case Result::Status::kWarning: object_warn((t_object *) x, r.message().c_str()); break;
+        case Result::Status::kWarning: if(alwaysWarn || x->verbose()) object_warn((t_object *) x, r.message().c_str()); break;
         case Result::Status::kError: object_error((t_object *) x, r.message().c_str()); break;
         default: {
         }
@@ -583,7 +584,8 @@ public:
   using ParamSetType = typename Client::ParamSetType;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
-    : mParams(Client::getParameterDescriptors()),
+    : mMessages{},
+      mParams(Client::getParameterDescriptors()),
       mParamSnapshot(Client::getParameterDescriptors()),
       mClient{initParamsFromArgs(ac,av)}
   {
@@ -591,6 +593,12 @@ public:
     {
       dsp_setup(impl::MaxBase::getMSPObject(), mClient.audioChannelsIn());
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
+    }
+
+    while(mMessages.size() > 0)
+    {
+      printResult(this,mMessages.front(),true);
+      mMessages.pop_front();
     }
 
     auto results = mParams.keepConstrained(true);
@@ -738,7 +746,8 @@ private:
     if (long numArgs = attr_args_offset(static_cast<short>(ac), av))
     {
       long argCount{0};
-      mParams.template setFixedParameterValues<Fetcher>(true, numArgs, av, argCount);
+      auto results = mParams.template setFixedParameterValues<Fetcher>(true, numArgs, av, argCount);
+      for(auto& r: results) mMessages.push_back(r); 
     }
     // process in-box attributes for mutable params
     attr_args_process((t_object *) this, static_cast<short>(ac), av);
@@ -879,7 +888,7 @@ private:
   static std::enable_if_t<IsSharedClient<typename T::type>::value, t_symbol*>
   maxAttrType(T) { return USESYM(symbol); }
 
-
+  std::deque<Result> mMessages;
   Result        mResult;
   void *        mNRTDoneOutlet;
   void *        mControlOutlet;
