@@ -680,6 +680,7 @@ public:
     CLASS_ATTR_STYLE_LABEL(getClass(), "warnings", 0, "onoff", "Report Warnings");
 
     p.template iterateMutable<SetupAttribute>();
+    p.template iterateFixed<SetupReadOnlyAttribute>();
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
@@ -873,7 +874,19 @@ private:
     }
 
   };
-
+  
+  template <size_t N, typename T>
+  struct SetupReadOnlyAttribute
+  {
+    void operator()(const T &attr)
+    {
+      std::string       name            = lowerCase(attr.name);
+      method            getterMethod    = (method) &Getter<T, N>::get;
+      t_object*         a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, nullptr);
+      class_addattr(getClass(), a);
+      CLASS_ATTR_LABEL(getClass(), name.c_str(), 0, attr.displayName);
+    }
+  };
   // Get Symbols for attribute types
 
   static t_symbol* maxAttrType(FloatT) { return USESYM(float64); }
@@ -883,6 +896,7 @@ private:
   static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
   static t_symbol* maxAttrType(FloatPairsArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(FFTParamsT) { return gensym("atom"); }
+  static t_symbol* maxAttrType(StringT) { return USESYM(symbol); }
 
   template<typename T>
   static std::enable_if_t<IsSharedClient<typename T::type>::value, t_symbol*>
