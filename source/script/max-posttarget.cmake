@@ -18,6 +18,11 @@ target_include_directories (
 	"${FLUID_M_PATH}/thirdparty"
 )
 
+file(GLOB_RECURSE FLUID_MANIPULATION_HEADERS CONFIGURE_DEPENDS "${FLUID_M_PATH}/include/**/*.hpp")
+
+target_sources(${PROJECT_NAME} PUBLIC ${FLUID_MANIPULATION_HEADERS})
+
+
 if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W4 )
 else(MSVC)
