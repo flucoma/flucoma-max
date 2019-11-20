@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 520.0, 175.0, 745.0, 540.0 ],
+		"rect" : [ 100.0, 100.0, 745.0, 540.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -73,7 +73,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 109.0, 154.0, 640.0, 480.0 ],
+						"rect" : [ 100.0, 126.0, 745.0, 514.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -108,8 +108,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 359.0, 276.0, 36.0, 23.0 ],
-									"text" : "write"
+									"patching_rect" : [ 358.0, 301.0, 163.0, 23.0 ],
+									"text" : "write /tmp/helpdataset.json"
 								}
 
 							}
@@ -120,8 +120,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 308.0, 276.0, 35.0, 23.0 ],
-									"text" : "read"
+									"patching_rect" : [ 310.0, 266.0, 162.0, 23.0 ],
+									"text" : "read /tmp/helpdataset.json"
 								}
 
 							}
@@ -356,8 +356,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 38.0, 160.0, 287.0, 23.0 ],
-									"text" : "updatePoint myDataPoint dataset.help.datapoint"
+									"patching_rect" : [ 38.0, 160.0, 286.0, 23.0 ],
+									"text" : "updatepoint myDataPoint dataset.help.datapoint"
 								}
 
 							}
@@ -368,8 +368,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 63.0, 196.0, 266.0, 23.0 ],
-									"text" : "getPoint myDataPoint dataset.help.datapoint"
+									"patching_rect" : [ 63.0, 196.0, 264.0, 23.0 ],
+									"text" : "getpoint myDataPoint dataset.help.datapoint"
 								}
 
 							}
@@ -380,8 +380,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 84.0, 237.0, 152.0, 23.0 ],
-									"text" : "deletePoint myDataPoint"
+									"patching_rect" : [ 84.0, 237.0, 150.0, 23.0 ],
+									"text" : "deletepoint myDataPoint"
 								}
 
 							}
@@ -413,7 +413,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 369.0, 348.5, 100.0, 24.0 ]
+									"patching_rect" : [ 369.0, 348.0, 100.0, 24.0 ]
 								}
 
 							}
@@ -566,7 +566,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 109.0, 154.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 745.0, 514.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
