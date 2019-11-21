@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 93.0, 410.0, 672.0, 576.0 ],
+		"rect" : [ 93.0, 100.0, 696.0, 804.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -73,7 +73,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 93.0, 436.0, 672.0, 550.0 ],
+						"rect" : [ 93.0, 126.0, 696.0, 778.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -103,13 +103,83 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 10.0, 81.0, 235.0, 21.0 ],
+									"text" : "index a fluid.dataset~ for fast searching"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 183.5, 279.0, 242.0, 21.0 ],
+									"presentation_linecount" : 2,
+									"text" : "return dimensionality of indexed data set"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-31",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 235.0, 372.5, 254.0, 36.0 ],
+									"text" : "read to JSON (args absolute path) – won't overwrite"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 214.5, 337.5, 225.0, 21.0 ],
+									"text" : "read from JSON (args absolute path) "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-27",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 168.5, 329.0, 35.0, 23.0 ],
+									"text" : "read"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-30",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 183.5, 379.0, 36.0, 23.0 ],
+									"text" : "write"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-11",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 330.0, 230.0, 188.0, 50.0 ],
-									"text" : "get the distance to  nearestneighbours: pass buffer of target data, num neighours"
+									"patching_rect" : [ 278.0, 225.0, 191.0, 50.0 ],
+									"text" : "get the distances to  nearestneighbours: pass buffer of target data, num neighours"
 								}
 
 							}
@@ -120,8 +190,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 163.0, 230.0, 165.0, 23.0 ],
-									"text" : "kNearestDist tmp.kdpoint 2"
+									"patching_rect" : [ 111.0, 225.0, 160.0, 23.0 ],
+									"text" : "knearestnist tmp.kdpoint 2"
 								}
 
 							}
@@ -132,7 +202,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 228.0, 368.0, 150.0, 36.0 ],
+									"patching_rect" : [ 183.5, 611.0, 150.0, 36.0 ],
 									"text" : "indices of nearest neighbours"
 								}
 
@@ -144,7 +214,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 167.0, 368.0, 50.0, 23.0 ]
+									"patching_rect" : [ 123.5, 611.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -155,7 +225,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 157.0, 326.0, 63.0, 23.0 ],
+									"patching_rect" : [ 129.0, 571.0, 63.0, 23.0 ],
 									"text" : "route knn"
 								}
 
@@ -168,7 +238,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.5, 173.0, 252.0, 36.0 ],
-									"text" : "get nearestneighbours: pass buffer of target data, num neighours"
+									"text" : "get nearest neighbours: pass buffer of target data, num neighours"
 								}
 
 							}
@@ -179,7 +249,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 56.0, 464.0, 193.0, 23.0 ],
+									"patching_rect" : [ 438.0, 701.0, 193.0, 23.0 ],
 									"text" : "buffer~ tmp.kdpoint @samps 42"
 								}
 
@@ -203,19 +273,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 93.0, 178.0, 142.0, 23.0 ],
-									"text" : "kNearest tmp.kdpoint 2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 302.0, 292.0, 171.0, 21.0 ],
-									"text" : "args: point size"
+									"patching_rect" : [ 93.0, 178.0, 140.0, 23.0 ],
+									"text" : "knearest tmp.kdpoint 2"
 								}
 
 							}
@@ -226,7 +285,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 41.0, 422.0, 226.0, 23.0 ],
+									"patching_rect" : [ 438.0, 665.0, 226.0, 23.0 ],
 									"text" : "fluid.dataset~ kdtree_help_dataset 42"
 								}
 
@@ -238,8 +297,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 83.0, 289.0, 98.0, 23.0 ],
-									"text" : "fluid.kdtree~ 42"
+									"patching_rect" : [ 68.0, 543.0, 80.0, 23.0 ],
+									"text" : "fluid.kdtree~"
 								}
 
 							}
@@ -273,22 +332,25 @@
 							}
 , 							{
 								"box" : 								{
-									"border" : 0,
-									"filename" : "helpargs.js",
-									"id" : "obj-4",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.kdtree~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 183.0, 284.0, 100.0, 24.0 ]
+									"patching_rect" : [ 138.0, 279.0, 32.0, 23.0 ],
+									"text" : "cols"
 								}
 
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 1 ],
 									"source" : [ "obj-10", 0 ]
@@ -312,7 +374,21 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-27", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-30", 0 ]
 								}
 
 							}
@@ -373,7 +449,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 672.0, 550.0 ],
+						"rect" : [ 0.0, 26.0, 696.0, 778.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -422,12 +498,6 @@
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpargs.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1

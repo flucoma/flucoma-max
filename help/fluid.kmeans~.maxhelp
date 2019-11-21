@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 752.0, 598.0 ],
+		"rect" : [ 100.0, 100.0, 672.0, 747.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -73,7 +73,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 752.0, 572.0 ],
+						"rect" : [ 100.0, 126.0, 672.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -103,11 +103,96 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-24",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 255.0, 348.5, 298.0, 36.0 ],
+									"presentation_linecount" : 2,
+									"text" : "return the cluster most closely matching a data point (args: buffer with datapoint)"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 255.0, 307.0, 298.0, 36.0 ],
+									"presentation_linecount" : 2,
+									"text" : "args: dataset name, number of clusters, <optional buffer~ with seeding cluster centroids>"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 255.0, 269.0, 294.0, 36.0 ],
+									"presentation_linecount" : 2,
+									"text" : "learn clusters from fluid.dataset, write results to fluid.labelset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 216.0, 183.0, 294.0, 50.0 ],
+									"presentation_linecount" : 3,
+									"text" : "args: dataset name, number of clusters, number of iterations (default 100),  <optional buffer~ with seeding cluster centroids>"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 216.0, 157.0, 294.0, 21.0 ],
+									"text" : "learn clusters from fluid.dataset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 336.0, 421.0, 294.0, 21.0 ],
+									"text" : "read from json (args: absolute path)"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 336.0, 394.0, 294.0, 21.0 ],
+									"text" : "write to json (args: absolute path), won't overwrite"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-21",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 59.0, 374.0, 21.0 ],
+									"patching_rect" : [ 19.0, 60.0, 374.0, 21.0 ],
 									"text" : "Learns clusters from a Dataset, using the K Means algorithm "
 								}
 
@@ -119,7 +204,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 275.0, 335.0, 32.0, 23.0 ],
+									"patching_rect" : [ 169.0, 444.0, 32.0, 23.0 ],
 									"text" : "cols"
 								}
 
@@ -131,8 +216,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 235.0, 283.0, 170.0, 23.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 129.0, 392.0, 170.0, 23.0 ],
 									"text" : "write /tmp/kmeans.help.json"
 								}
 
@@ -144,7 +228,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 255.0, 310.0, 168.0, 23.0 ],
+									"patching_rect" : [ 149.0, 419.0, 168.0, 23.0 ],
 									"text" : "read /tmp/kmeans.help.json"
 								}
 
@@ -156,7 +240,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 134.0, 476.5, 123.0, 38.0 ],
+									"patching_rect" : [ 28.0, 585.5, 125.0, 38.0 ],
 									"text" : "print \"training done\" @popup 1"
 								}
 
@@ -169,7 +253,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 204.0, 452.0, 50.0, 23.0 ]
+									"patching_rect" : [ 98.0, 561.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -180,7 +264,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 204.0, 423.0, 81.0, 23.0 ],
+									"patching_rect" : [ 98.0, 532.0, 81.0, 23.0 ],
 									"text" : "route predict"
 								}
 
@@ -192,7 +276,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 475.0, 423.0, 259.0, 23.0 ],
+									"patching_rect" : [ 369.0, 532.0, 259.0, 23.0 ],
 									"text" : "buffer~ kmeans.seedpoints.help @samps 3"
 								}
 
@@ -204,7 +288,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 175.0, 256.0, 182.0, 23.0 ],
+									"patching_rect" : [ 69.0, 355.0, 182.0, 23.0 ],
 									"text" : "predict kmeans.datapoint.help"
 								}
 
@@ -216,8 +300,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 151.0, 226.0, 296.0, 23.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 45.0, 238.0, 296.0, 23.0 ],
 									"text" : "cluster kmeans.dataset.help kmeans.labelset.help"
 								}
 
@@ -229,8 +312,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 134.0, 194.0, 157.0, 23.0 ],
-									"text" : "train kmeans.dataset.help"
+									"patching_rect" : [ 28.0, 161.0, 168.0, 23.0 ],
+									"text" : "train kmeans.dataset.help 4"
 								}
 
 							}
@@ -241,7 +324,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 475.0, 455.0, 249.0, 23.0 ],
+									"patching_rect" : [ 369.0, 564.0, 249.0, 23.0 ],
 									"text" : "buffer~ kmeans.datapoint.help @samps 3"
 								}
 
@@ -253,7 +336,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 475.0, 511.0, 214.0, 23.0 ],
+									"patching_rect" : [ 369.0, 620.0, 214.0, 23.0 ],
 									"text" : "fluid.labelset~ kmeans.labelset.help"
 								}
 
@@ -265,7 +348,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 475.0, 482.0, 221.0, 23.0 ],
+									"patching_rect" : [ 369.0, 591.0, 221.0, 23.0 ],
 									"text" : "fluid.dataset~ kmeans.dataset.help 3"
 								}
 
@@ -277,7 +360,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 134.0, 394.0, 89.0, 23.0 ],
+									"patching_rect" : [ 28.0, 503.0, 89.0, 23.0 ],
 									"text" : "fluid.kmeans~"
 								}
 
@@ -294,7 +377,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 620.0, 125.0 ]
+									"patching_rect" : [ 19.0, 11.0, 620.0, 125.0 ]
 								}
 
 							}
@@ -412,7 +495,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 752.0, 572.0 ],
+						"rect" : [ 0.0, 26.0, 672.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
