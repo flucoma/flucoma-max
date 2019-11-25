@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 632.0, 546.0 ],
+		"rect" : [ 510.0, 155.0, 632.0, 546.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -73,7 +73,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 632.0, 520.0 ],
+						"rect" : [ 510.0, 181.0, 632.0, 520.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -166,11 +166,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 22.0, 91.0, 150.0, 36.0 ],
+									"patching_rect" : [ 22.0, 91.0, 219.0, 21.0 ],
 									"text" : "Used for classification and clustering"
 								}
 
