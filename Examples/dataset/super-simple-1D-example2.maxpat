@@ -51,19 +51,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-50",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 883.0, 136.0, 50.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 					"fontname" : "Arial Bold",
 					"hint" : "",
@@ -75,7 +62,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 883.0, 101.0, 20.0, 20.0 ],
+					"patching_rect" : [ 883.0, 135.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 887.0, 140.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -91,9 +78,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 883.0, 164.0, 224.0, 22.0 ],
+					"patching_rect" : [ 883.0, 165.0, 185.0, 22.0 ],
 					"style" : "",
-					"text" : "cluster simple1data simple1label $1 100"
+					"text" : "predict simple1data simple1label"
 				}
 
 			}
@@ -141,7 +128,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1248.0, 635.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "getLabel \"0\""
+					"text" : "write"
 				}
 
 			}
@@ -281,7 +268,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 370.0, 473.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "20. 30. 40."
+					"text" : "30. 30. 40. 40."
 				}
 
 			}
@@ -294,7 +281,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 290.0, 429.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "\"4\" \"3\" \"2\""
+					"text" : "\"4\" \"5\" \"3\" \"6\""
 				}
 
 			}
@@ -500,7 +487,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 875.0, 370.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "cluster"
+					"text" : "predict 5 5"
 				}
 
 			}
@@ -576,9 +563,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1126.5, 276.0, 147.0, 22.0 ],
+					"patching_rect" : [ 1126.5, 276.0, 174.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf predict simplepoint"
+					"text" : "sprintf predictPoint simplepoint"
 				}
 
 			}
@@ -706,9 +693,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 371.0, 337.0, 86.0, 22.0 ],
+					"patching_rect" : [ 371.0, 337.0, 76.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~ 1"
+					"text" : "fluid.kdtree~"
 				}
 
 			}
@@ -1056,13 +1043,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-5", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-30", 0 ],
-					"source" : [ "obj-50", 0 ]
 				}
 
 			}
