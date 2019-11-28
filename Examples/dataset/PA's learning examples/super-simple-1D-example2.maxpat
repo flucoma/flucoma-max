@@ -216,7 +216,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 971.0, 548.0, 167.0, 22.0 ],
 					"style" : "",
-					"text" : "write /Users/pa/Desktop/caca"
+					"text" : "write /Users/pa/Desktop/test.json"
 				}
 
 			}
