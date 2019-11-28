@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1612.0, 885.0 ],
+		"rect" : [ 138.0, -956.0, 1612.0, 885.0 ],
 		"bglocked" : 1,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -43,9 +43,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1339.0, 525.5, 50.0, 22.0 ],
+					"patching_rect" : [ 1250.0, 543.5, 139.0, 22.0 ],
 					"style" : "",
-					"text" : "train"
+					"text" : "train 44 22 100 74 135"
 				}
 
 			}
@@ -200,9 +200,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1312.0, 443.0, 77.0, 22.0 ],
+					"patching_rect" : [ 1312.0, 443.0, 105.0, 22.0 ],
 					"style" : "",
-					"text" : "route predict"
+					"text" : "route predictPoint"
 				}
 
 			}
@@ -1186,27 +1186,14 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-68",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1380.5, 182.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "9"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-69",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1380.5, 257.0, 115.0, 22.0 ],
+					"patching_rect" : [ 1380.5, 257.0, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "predict tmp.flatpoint"
+					"text" : "predictPoint tmp.flatpoint"
 				}
 
 			}
@@ -2787,9 +2774,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 593.0, 317.5, 107.0, 22.0 ],
+					"patching_rect" : [ 593.0, 317.5, 82.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~ 182"
+					"text" : "fluid.kdtree~"
 				}
 
 			}
@@ -4009,13 +3996,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-70", 0 ],
-					"source" : [ "obj-68", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-64", 0 ],
 					"midpoints" : [ 1390.0, 304.0, 1255.5, 304.0 ],
 					"source" : [ "obj-69", 0 ]
@@ -4045,8 +4025,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-15" : [ "live.text", "live.text", 0 ],
-			"obj-62" : [ "live.tab", "live.tab", 0 ]
+			"obj-62" : [ "live.tab", "live.tab", 0 ],
+			"obj-15" : [ "live.text", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

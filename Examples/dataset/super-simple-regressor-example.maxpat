@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 4,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 120.0, -1016.0, 1668.0, 982.0 ],
+		"rect" : [ -22.0, 79.0, 1668.0, 982.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -690,9 +690,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 829.75, 325.0, 173.0, 22.0 ],
+					"patching_rect" : [ 829.75, 325.0, 247.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf regress simplePoint %d"
+					"text" : "sprintf regress simplePoint simpleOutput %d"
 				}
 
 			}
@@ -905,9 +905,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1020.5, 413.0, 178.0, 22.0 ],
+					"patching_rect" : [ 1020.5, 413.0, 104.0, 22.0 ],
 					"style" : "",
-					"text" : "index simpleInput simpleOutput"
+					"text" : "index simpleInput"
 				}
 
 			}
@@ -918,9 +918,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1020.5, 450.0, 113.0, 22.0 ],
+					"patching_rect" : [ 1020.5, 450.0, 62.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knnregressor~"
+					"text" : "fluid.knn~"
 				}
 
 			}
@@ -1510,14 +1510,14 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "big_urn.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset",
+				"bootpath" : "~/dev/flucoma-max/master/Examples/dataset",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.bufview.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"bootpath" : "~/dev/flucoma-max/master/help",
 				"patcherrelativepath" : "../../help",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -1535,9 +1535,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1555,6 +1555,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1564,8 +1565,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

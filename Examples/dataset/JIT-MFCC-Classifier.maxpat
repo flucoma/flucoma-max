@@ -44,7 +44,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 673.5, 920.0, 24.0, 24.0 ],
-					"presentation_rect" : [ 673.5, 921.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -58,7 +57,6 @@
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 707.0, 920.0, 50.0, 22.0 ],
-					"presentation_rect" : [ 707.0, 921.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -71,7 +69,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 707.0, 882.0, 63.0, 22.0 ],
-					"presentation_rect" : [ 707.0, 883.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "route size"
 				}
@@ -377,9 +374,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1124.0, 834.0, 137.0, 22.0 ],
+					"patching_rect" : [ 1124.0, 834.0, 191.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classify entry %d"
+					"text" : "sprintf classify entry JIT-labels %d"
 				}
 
 			}
@@ -390,9 +387,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 900.5, 885.0, 109.0, 22.0 ],
+					"patching_rect" : [ 900.5, 885.0, 62.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knnclassifier~"
+					"text" : "fluid.knn~"
 				}
 
 			}
@@ -1133,7 +1130,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 530.0, 361.0, 640.0, 480.0 ],
+						"rect" : [ 529.0, 360.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1160,7 +1157,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -8611,9 +8607,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -8631,6 +8627,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -8640,8 +8637,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
