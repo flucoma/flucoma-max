@@ -2,15 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 672.0, 747.0 ],
+		"rect" : [ 479.0, 107.0, 672.0, 747.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -52,6 +51,7 @@
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter.js fluid.kmeans~"
 				}
 
@@ -65,15 +65,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 672.0, 721.0 ],
+						"rect" : [ 479.0, 133.0, 672.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -103,13 +102,57 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-25",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 62.5, 269.0, 20.0, 20.0 ],
+									"presentation_rect" : [ 158.5, 294.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-6",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 6.0, 161.0, 20.0, 20.0 ],
+									"presentation_rect" : [ 920.0, 320.067627, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-24",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 255.0, 348.5, 298.0, 36.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 285.5, 348.5, 298.0, 36.0 ],
+									"style" : "",
 									"text" : "return the cluster most closely matching a data point (args: buffer with datapoint)"
 								}
 
@@ -117,13 +160,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-22",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 255.0, 307.0, 298.0, 36.0 ],
-									"presentation_linecount" : 2,
-									"text" : "args: dataset name, number of clusters, <optional buffer~ with seeding cluster centroids>"
+									"patching_rect" : [ 255.0, 307.0, 298.0, 21.0 ],
+									"style" : "",
+									"text" : "args: dataset name, number of clusters"
 								}
 
 							}
@@ -134,9 +176,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 255.0, 269.0, 294.0, 36.0 ],
-									"presentation_linecount" : 2,
-									"text" : "learn clusters from fluid.dataset, write results to fluid.labelset"
+									"patching_rect" : [ 255.0, 269.0, 301.0, 36.0 ],
+									"style" : "",
+									"text" : "return a fluid.labelset with the assigned cluster for each point"
 								}
 
 							}
@@ -148,7 +190,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 216.0, 183.0, 294.0, 50.0 ],
-									"presentation_linecount" : 3,
+									"style" : "",
 									"text" : "args: dataset name, number of clusters, number of iterations (default 100),  <optional buffer~ with seeding cluster centroids>"
 								}
 
@@ -156,11 +198,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 216.0, 157.0, 294.0, 21.0 ],
-									"text" : "learn clusters from fluid.dataset"
+									"patching_rect" : [ 216.0, 148.0, 437.0, 36.0 ],
+									"style" : "",
+									"text" : "First, fit guesses clusters from fluid.dataset, returns a list of the number of elements per cluster"
 								}
 
 							}
@@ -171,6 +215,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 336.0, 421.0, 294.0, 21.0 ],
+									"style" : "",
 									"text" : "read from json (args: absolute path)"
 								}
 
@@ -182,6 +227,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 336.0, 394.0, 294.0, 21.0 ],
+									"style" : "",
 									"text" : "write to json (args: absolute path), won't overwrite"
 								}
 
@@ -193,6 +239,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 19.0, 60.0, 374.0, 21.0 ],
+									"style" : "",
 									"text" : "Learns clusters from a Dataset, using the K Means algorithm "
 								}
 
@@ -205,6 +252,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 169.0, 444.0, 32.0, 23.0 ],
+									"style" : "",
 									"text" : "cols"
 								}
 
@@ -217,6 +265,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 129.0, 392.0, 170.0, 23.0 ],
+									"style" : "",
 									"text" : "write /tmp/kmeans.help.json"
 								}
 
@@ -229,6 +278,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 149.0, 419.0, 168.0, 23.0 ],
+									"style" : "",
 									"text" : "read /tmp/kmeans.help.json"
 								}
 
@@ -241,6 +291,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 585.5, 125.0, 38.0 ],
+									"style" : "",
 									"text" : "print \"training done\" @popup 1"
 								}
 
@@ -253,7 +304,8 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 98.0, 561.0, 50.0, 23.0 ]
+									"patching_rect" : [ 98.0, 561.0, 50.0, 23.0 ],
+									"style" : ""
 								}
 
 							}
@@ -265,6 +317,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 98.0, 532.0, 81.0, 23.0 ],
+									"style" : "",
 									"text" : "route predict"
 								}
 
@@ -277,6 +330,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 369.0, 532.0, 259.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ kmeans.seedpoints.help @samps 3"
 								}
 
@@ -288,8 +342,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 69.0, 355.0, 182.0, 23.0 ],
-									"text" : "predict kmeans.datapoint.help"
+									"patching_rect" : [ 69.0, 355.0, 214.0, 23.0 ],
+									"style" : "",
+									"text" : "predictPoint kmeans.datapoint.help"
 								}
 
 							}
@@ -300,8 +355,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 238.0, 296.0, 23.0 ],
-									"text" : "cluster kmeans.dataset.help kmeans.labelset.help"
+									"patching_rect" : [ 45.0, 238.0, 299.0, 23.0 ],
+									"style" : "",
+									"text" : "predict kmeans.dataset.help kmeans.labelset.help"
 								}
 
 							}
@@ -312,8 +368,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 28.0, 161.0, 168.0, 23.0 ],
-									"text" : "train kmeans.dataset.help 4"
+									"patching_rect" : [ 28.0, 161.0, 155.0, 23.0 ],
+									"style" : "",
+									"text" : "fit kmeans.dataset.help 4"
 								}
 
 							}
@@ -325,6 +382,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 369.0, 564.0, 249.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ kmeans.datapoint.help @samps 3"
 								}
 
@@ -337,6 +395,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 369.0, 620.0, 214.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.labelset~ kmeans.labelset.help"
 								}
 
@@ -349,6 +408,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 369.0, 591.0, 221.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.dataset~ kmeans.dataset.help 3"
 								}
 
@@ -361,6 +421,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 28.0, 503.0, 89.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.kmeans~"
 								}
 
@@ -445,6 +506,55 @@
 								}
 
 							}
+ ],
+						"styles" : [ 							{
+								"name" : "max6box",
+								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6inlet",
+								"default" : 								{
+									"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6message",
+								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgfillcolor" : 									{
+										"type" : "gradient",
+										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+
+								}
+,
+								"parentstyle" : "max6box",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6outlet",
+								"default" : 								{
+									"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
  ]
 					}
 ,
@@ -454,9 +564,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -474,7 +586,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 298.112030029296875, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 298.11203, 57.599854 ]
 				}
 
 			}
@@ -487,14 +599,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 0.0, 26.0, 672.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -532,9 +643,11 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}

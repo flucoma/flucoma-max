@@ -51,19 +51,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-50",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 868.0, 121.0, 50.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-56",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -163,7 +150,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 868.0, 86.0, 20.0, 20.0 ],
+					"patching_rect" : [ 868.0, 124.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 872.0, 125.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -179,9 +166,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 868.0, 149.0, 224.0, 22.0 ],
+					"patching_rect" : [ 868.0, 149.0, 185.0, 22.0 ],
 					"style" : "",
-					"text" : "cluster simple1data simple1label $1 100"
+					"text" : "predict simple1data simple1label"
 				}
 
 			}
@@ -192,9 +179,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 936.0, 253.0, 142.0, 22.0 ],
+					"patching_rect" : [ 936.0, 253.0, 128.0, 22.0 ],
 					"style" : "",
-					"text" : "train simple1data $1 100"
+					"text" : "fit simple1data $1 100"
 				}
 
 			}
@@ -220,7 +207,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 370.0, 473.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "0."
+					"text" : "0. 10. 10."
 				}
 
 			}
@@ -233,7 +220,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 290.0, 429.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "\"3\""
+					"text" : "\"7\" \"8\" \"6\""
 				}
 
 			}
@@ -448,7 +435,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 875.0, 370.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "cluster"
+					"text" : "predict 5 5"
 				}
 
 			}
@@ -524,9 +511,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1126.5, 276.0, 147.0, 22.0 ],
+					"patching_rect" : [ 1126.5, 276.0, 174.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf predict simplepoint"
+					"text" : "sprintf predictPoint simplepoint"
 				}
 
 			}
@@ -667,9 +654,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 371.0, 337.0, 86.0, 22.0 ],
+					"patching_rect" : [ 371.0, 337.0, 76.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~ 1"
+					"text" : "fluid.kdtree~"
 				}
 
 			}
@@ -1016,13 +1003,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
 					"source" : [ "obj-5", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-30", 0 ],
-					"source" : [ "obj-50", 0 ]
 				}
 
 			}
