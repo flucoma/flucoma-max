@@ -2,15 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
-		"rect" : [ 93.0, 100.0, 696.0, 804.0 ],
+		"rect" : [ 100.0, 100.0, 696.0, 804.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -52,6 +51,7 @@
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter.js fluid.kdtree~"
 				}
 
@@ -65,15 +65,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
-						"rect" : [ 93.0, 126.0, 696.0, 778.0 ],
+						"rect" : [ 100.0, 126.0, 696.0, 778.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -108,6 +107,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 81.0, 235.0, 21.0 ],
+									"style" : "",
 									"text" : "index a fluid.dataset~ for fast searching"
 								}
 
@@ -119,7 +119,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 183.5, 279.0, 242.0, 21.0 ],
-									"presentation_linecount" : 2,
+									"style" : "",
 									"text" : "return dimensionality of indexed data set"
 								}
 
@@ -132,6 +132,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 235.0, 372.5, 254.0, 36.0 ],
+									"style" : "",
 									"text" : "read to JSON (args absolute path) – won't overwrite"
 								}
 
@@ -143,6 +144,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 214.5, 337.5, 225.0, 21.0 ],
+									"style" : "",
 									"text" : "read from JSON (args absolute path) "
 								}
 
@@ -155,6 +157,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 168.5, 329.0, 35.0, 23.0 ],
+									"style" : "",
 									"text" : "read"
 								}
 
@@ -167,6 +170,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 183.5, 379.0, 36.0, 23.0 ],
+									"style" : "",
 									"text" : "write"
 								}
 
@@ -179,6 +183,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 278.0, 225.0, 191.0, 50.0 ],
+									"style" : "",
 									"text" : "get the distances to  nearestneighbours: pass buffer of target data, num neighours"
 								}
 
@@ -191,6 +196,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 111.0, 225.0, 160.0, 23.0 ],
+									"style" : "",
 									"text" : "knearestnist tmp.kdpoint 2"
 								}
 
@@ -203,6 +209,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 183.5, 611.0, 150.0, 36.0 ],
+									"style" : "",
 									"text" : "indices of nearest neighbours"
 								}
 
@@ -214,7 +221,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 123.5, 611.0, 50.0, 23.0 ]
+									"patching_rect" : [ 123.5, 611.0, 50.0, 23.0 ],
+									"style" : ""
 								}
 
 							}
@@ -226,6 +234,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 129.0, 571.0, 63.0, 23.0 ],
+									"style" : "",
 									"text" : "route knn"
 								}
 
@@ -238,6 +247,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.5, 173.0, 252.0, 36.0 ],
+									"style" : "",
 									"text" : "get nearest neighbours: pass buffer of target data, num neighours"
 								}
 
@@ -250,6 +260,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 438.0, 701.0, 193.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ tmp.kdpoint @samps 42"
 								}
 
@@ -262,6 +273,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.5, 129.5, 198.0, 36.0 ],
+									"style" : "",
 									"text" : "build tree: pass dataset name (must be right dimensionality)"
 								}
 
@@ -274,6 +286,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 93.0, 178.0, 140.0, 23.0 ],
+									"style" : "",
 									"text" : "knearest tmp.kdpoint 2"
 								}
 
@@ -286,6 +299,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 438.0, 665.0, 226.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.dataset~ kdtree_help_dataset 42"
 								}
 
@@ -298,6 +312,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 68.0, 543.0, 80.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.kdtree~"
 								}
 
@@ -310,6 +325,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 73.5, 136.0, 161.0, 23.0 ],
+									"style" : "",
 									"text" : "index kdtree_help_dataset"
 								}
 
@@ -338,6 +354,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 138.0, 279.0, 32.0, 23.0 ],
+									"style" : "",
 									"text" : "cols"
 								}
 
@@ -408,9 +425,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -428,7 +447,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 271.90399169921875, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 271.903992, 57.599854 ]
 				}
 
 			}
@@ -441,14 +460,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 0.0, 26.0, 696.0, 778.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -486,9 +504,11 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}
