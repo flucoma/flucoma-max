@@ -10,3 +10,4 @@ max objectfile fluid.normalize~ fluid.libmanipulation fluid.normalize~;
 max objectfile fluid.standardize~ fluid.libmanipulation fluid.standardize~;
 max objectfile fluid.audiotransport~ fluid.libmanipulation fluid.audiotransport~;
 max objectfile fluid.bufaudiotransport~ fluid.libmanipulation fluid.bufaudiotransport~;
+max objectfile fluid.bufnmfcross~ fluid.libmanipulation fluid.bufnmfcross~;
