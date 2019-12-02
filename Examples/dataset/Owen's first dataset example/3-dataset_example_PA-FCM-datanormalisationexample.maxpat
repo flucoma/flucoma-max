@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1306.0, 546.5, 144.0, 22.0 ],
 					"style" : "",
-					"text" : "train 47 162 192 270 79"
+					"text" : "fit 80 152 142 186 190"
 				}
 
 			}
@@ -122,7 +122,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-44",
@@ -733,9 +732,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 832.0, 444.0, 93.0, 22.0 ],
+									"patching_rect" : [ 832.0, 444.0, 74.0, 22.0 ],
 									"style" : "",
-									"text" : "index mfccstats"
+									"text" : "fit mfccstats"
 								}
 
 							}
@@ -903,9 +902,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 441.0, 444.0, 109.0, 22.0 ],
+									"patching_rect" : [ 441.0, 444.0, 90.0, 22.0 ],
 									"style" : "",
-									"text" : "index stdmfccstats"
+									"text" : "fit stdmfccstats"
 								}
 
 							}
@@ -1073,9 +1072,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 26.599976, 444.0, 128.0, 22.0 ],
+									"patching_rect" : [ 26.599976, 444.0, 109.0, 22.0 ],
 									"style" : "",
-									"text" : "index scaledmfccstats"
+									"text" : "fit scaledmfccstats"
 								}
 
 							}
@@ -2084,9 +2083,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2169,19 +2168,6 @@
 					"patching_rect" : [ 7.5, 828.0, 200.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ tmp.point.scale @samps 96"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-36",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 366.0, 525.0, 85.0, 22.0 ],
-					"style" : "",
-					"text" : "route getPoint"
 				}
 
 			}
@@ -3591,7 +3577,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1314.0, 486.5, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "4"
+					"text" : "0"
 				}
 
 			}
@@ -4606,9 +4592,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1246.0, 257.0, 121.0, 22.0 ],
+					"patching_rect" : [ 1246.0, 257.0, 107.0, 22.0 ],
 					"style" : "",
-					"text" : "train mfccstats 5 100"
+					"text" : "fit mfccstats 5 100"
 				}
 
 			}
@@ -4720,7 +4706,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 506.5, 55.905945, 150.0, 33.0 ],
 					"style" : "",
-					"text" : "index our dataset using the KD tree ",
+					"text" : "fit our dataset using the KD tree ",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -5080,9 +5066,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 495.0, 96.0, 93.0, 22.0 ],
+					"patching_rect" : [ 495.0, 96.0, 74.0, 22.0 ],
 					"style" : "",
-					"text" : "index mfccstats"
+					"text" : "fit mfccstats"
 				}
 
 			}
@@ -5107,9 +5093,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 374.0, 553.0, 77.0, 22.0 ],
+					"patching_rect" : [ 325.0, 527.0, 77.0, 22.0 ],
 					"style" : "",
-					"text" : "addPoint"
+					"text" : "size 750"
 				}
 
 			}
@@ -6135,7 +6121,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-36", 0 ],
+					"destination" : [ "obj-122", 1 ],
 					"source" : [ "obj-104", 2 ]
 				}
 
@@ -6323,13 +6309,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-122", 1 ],
-					"source" : [ "obj-36", 1 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-22", 1 ],
 					"order" : 1,
 					"source" : [ "obj-37", 0 ]
@@ -6483,8 +6462,8 @@
 		"parameters" : 		{
 			"obj-130::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
 			"obj-130::obj-5" : [ "live.tab[2]", "live.tab", 0 ],
-			"obj-62" : [ "live.tab", "live.tab", 0 ],
 			"obj-130::obj-20" : [ "live.tab[3]", "live.tab", 0 ],
+			"obj-62" : [ "live.tab", "live.tab", 0 ],
 			"obj-15" : [ "live.text", "live.text", 0 ]
 		}
 ,

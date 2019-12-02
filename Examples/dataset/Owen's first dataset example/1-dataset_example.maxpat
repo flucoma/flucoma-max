@@ -38,14 +38,28 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-67",
+					"linecount" : 5,
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 701.0, 466.0, 50.0, 76.0 ],
+					"style" : "",
+					"text" : "\"2\" \"336\" \"290\" \"488\" \"446\""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-71",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1250.0, 543.5, 139.0, 22.0 ],
+					"patching_rect" : [ 1250.0, 543.5, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "train 44 22 100 74 135"
+					"text" : "fit 44 22 100 74 135"
 				}
 
 			}
@@ -98,13 +112,13 @@
 					"bubbleside" : 2,
 					"bubbletextmargin" : 10,
 					"id" : "obj-84",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1210.5, 155.0, 168.0, 76.0 ],
+					"patching_rect" : [ 1210.5, 155.0, 168.0, 62.0 ],
 					"style" : "",
-					"text" : "train args: dataset, number of classes, number iterations",
+					"text" : "fit args: dataset, number of classes, number iterations",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -1737,9 +1751,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1246.0, 268.0, 128.0, 22.0 ],
+					"patching_rect" : [ 1246.0, 268.0, 114.0, 22.0 ],
 					"style" : "",
-					"text" : "train mfccstats $1 100"
+					"text" : "fit mfccstats $1 100"
 				}
 
 			}
@@ -1851,7 +1865,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 506.5, 55.905945, 150.0, 33.0 ],
 					"style" : "",
-					"text" : "index our dataset using the KD tree ",
+					"text" : "fit our dataset using the KD tree ",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -2216,7 +2230,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 705.5, 274.0, 291.0, 22.0 ],
 					"style" : "",
-					"text" : "kNearest tmp.flatpoint 5, kNearestDist tmp.flatpoint 1"
+					"text" : "kNearest tmp.flatpoint 5, kNearestDist tmp.flatpoint 5"
 				}
 
 			}
@@ -2760,9 +2774,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 495.0, 96.0, 93.0, 22.0 ],
+					"patching_rect" : [ 495.0, 96.0, 74.0, 22.0 ],
 					"style" : "",
-					"text" : "index mfccstats"
+					"text" : "fit mfccstats"
 				}
 
 			}
@@ -2783,12 +2797,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-122",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.5, 519.0, 50.0, 35.0 ],
+					"patching_rect" : [ 271.5, 531.0, 80.0, 22.0 ],
 					"style" : "",
 					"text" : "addPoint"
 				}
@@ -3773,6 +3786,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-17", 1 ],
+					"order" : 1,
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -3781,6 +3795,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-59", 0 ],
 					"source" : [ "obj-18", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-67", 1 ],
+					"order" : 0,
+					"source" : [ "obj-18", 0 ]
 				}
 
 			}

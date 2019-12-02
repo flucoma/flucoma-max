@@ -408,9 +408,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 868.0, 602.0, 251.0, 22.0 ],
+					"patching_rect" : [ 868.0, 602.0, 278.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classify simplepoint simple2Labels %d"
+					"text" : "sprintf classifyPoint simplepoint simple2Labels %d"
 				}
 
 			}
@@ -592,9 +592,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 644.5, 593.0, 187.0, 22.0 ],
+					"patching_rect" : [ 644.5, 593.0, 168.0, 22.0 ],
 					"style" : "",
-					"text" : "index simple2data simple2Labels"
+					"text" : "fit simple2data simple2Labels"
 				}
 
 			}
@@ -987,9 +987,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

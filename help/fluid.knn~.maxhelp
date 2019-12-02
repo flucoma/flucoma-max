@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
 		"rect" : [ 90.0, 100.0, 632.0, 432.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -52,6 +51,7 @@
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter.js fluid.knn~"
 				}
 
@@ -65,14 +65,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 90.0, 126.0, 632.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -108,8 +107,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 241.0, 300.0, 334.0, 50.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 276.0, 303.0, 334.0, 50.0 ],
+									"style" : "",
 									"text" : "args: buffer name with data point, \nfluid dataset of target data, \nnumber  of neighbours to consider"
 								}
 
@@ -121,8 +120,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 241.0, 267.5, 334.0, 36.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 276.0, 270.5, 334.0, 36.0 ],
+									"style" : "",
 									"text" : "map a data point to a value based on nearest neighbours"
 								}
 
@@ -134,8 +133,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 245.0, 199.0, 334.0, 50.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 280.0, 202.0, 334.0, 50.0 ],
+									"style" : "",
 									"text" : "args: buffer name with data point, \nfluid.labelset of class labels, \nnumber  of neighbours to consider"
 								}
 
@@ -146,8 +145,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 245.0, 173.0, 334.0, 21.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 280.0, 176.0, 334.0, 21.0 ],
+									"style" : "",
 									"text" : "return class of a data point based on nearest neighbours"
 								}
 
@@ -159,6 +158,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 203.0, 119.0, 150.0, 21.0 ],
+									"style" : "",
 									"text" : "index structure of data"
 								}
 
@@ -170,6 +170,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 203.0, 141.0, 150.0, 21.0 ],
+									"style" : "",
 									"text" : "args: dataset name"
 								}
 
@@ -181,6 +182,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 71.0, 385.0, 21.0 ],
+									"style" : "",
 									"text" : "Learn data structure with K-Nearest Neighbours algorithm"
 								}
 
@@ -193,6 +195,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 145.0, 355.0, 65.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.knn~"
 								}
 
@@ -220,8 +223,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 176.0, 177.0, 51.0, 23.0 ],
-									"text" : "classify"
+									"patching_rect" : [ 176.0, 177.0, 83.0, 23.0 ],
+									"style" : "",
+									"text" : "classifyPoint"
 								}
 
 							}
@@ -233,6 +237,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 150.0, 119.0, 40.0, 23.0 ],
+									"style" : "",
 									"text" : "index"
 								}
 
@@ -244,8 +249,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 187.0, 274.0, 52.0, 23.0 ],
-									"text" : "regress"
+									"patching_rect" : [ 187.0, 274.0, 83.0, 23.0 ],
+									"style" : "",
+									"text" : "regressPoint"
 								}
 
 							}
@@ -280,9 +286,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -300,7 +308,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 215.432022094726562, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 215.432022, 57.599854 ]
 				}
 
 			}
@@ -313,14 +321,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 0.0, 26.0, 632.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -358,9 +365,11 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}

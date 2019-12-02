@@ -43,9 +43,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1303.0, 540.0, 145.0, 22.0 ],
+					"patching_rect" : [ 1303.0, 540.0, 144.0, 22.0 ],
 					"style" : "",
-					"text" : "train 143 190 188 148 81"
+					"text" : "fit 81 189 142 147 191"
 				}
 
 			}
@@ -55,13 +55,13 @@
 					"bubbleside" : 2,
 					"bubbletextmargin" : 10,
 					"id" : "obj-84",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1210.5, 174.0, 168.0, 76.0 ],
+					"patching_rect" : [ 1210.5, 174.0, 168.0, 62.0 ],
 					"style" : "",
-					"text" : "train args: dataset, number of classes, number iterations",
+					"text" : "fit args: dataset, number of classes, number iterations",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -176,7 +176,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1282.0, 486.5, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "4"
+					"text" : "1"
 				}
 
 			}
@@ -1669,9 +1669,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1246.0, 257.0, 121.0, 22.0 ],
+					"patching_rect" : [ 1246.0, 257.0, 107.0, 22.0 ],
 					"style" : "",
-					"text" : "train mfccstats 5 100"
+					"text" : "fit mfccstats 5 100"
 				}
 
 			}
@@ -1783,7 +1783,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 506.5, 55.905945, 150.0, 33.0 ],
 					"style" : "",
-					"text" : "index our dataset using the KD tree ",
+					"text" : "fit our dataset using the KD tree ",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -2621,9 +2621,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 495.0, 96.0, 93.0, 22.0 ],
+					"patching_rect" : [ 495.0, 96.0, 74.0, 22.0 ],
 					"style" : "",
-					"text" : "index mfccstats"
+					"text" : "fit mfccstats"
 				}
 
 			}
@@ -2644,12 +2644,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-122",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 301.5, 519.0, 50.0, 35.0 ],
+					"patching_rect" : [ 274.5, 519.0, 76.0, 22.0 ],
 					"style" : "",
 					"text" : "addPoint"
 				}

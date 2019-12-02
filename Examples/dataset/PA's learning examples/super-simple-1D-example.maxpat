@@ -194,7 +194,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 438.0, 516.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "index"
+					"text" : "fit"
 				}
 
 			}
@@ -207,7 +207,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 370.0, 473.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 10. 10."
+					"text" : "0."
 				}
 
 			}
@@ -220,7 +220,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 290.0, 429.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "\"7\" \"8\" \"6\""
+					"text" : "\"7\""
 				}
 
 			}
@@ -641,9 +641,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 371.0, 247.0, 107.0, 22.0 ],
+					"patching_rect" : [ 371.0, 247.0, 88.0, 22.0 ],
 					"style" : "",
-					"text" : "index simple1data"
+					"text" : "fit simple1data"
 				}
 
 			}
@@ -1056,9 +1056,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

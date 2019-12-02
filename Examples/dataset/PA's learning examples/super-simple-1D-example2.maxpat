@@ -91,9 +91,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 951.0, 268.0, 142.0, 22.0 ],
+					"patching_rect" : [ 951.0, 268.0, 128.0, 22.0 ],
 					"style" : "",
-					"text" : "train simple1data $1 100"
+					"text" : "fit simple1data $1 100"
 				}
 
 			}
@@ -214,7 +214,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 971.0, 548.0, 167.0, 22.0 ],
+					"patching_rect" : [ 971.0, 548.0, 185.0, 22.0 ],
 					"style" : "",
 					"text" : "write /Users/pa/Desktop/test.json"
 				}
@@ -255,7 +255,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 438.0, 516.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "index"
+					"text" : "fit"
 				}
 
 			}
@@ -268,7 +268,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 370.0, 473.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "30. 30. 40. 40."
+					"text" : "70."
 				}
 
 			}
@@ -281,7 +281,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 290.0, 429.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "\"4\" \"5\" \"3\" \"6\""
+					"text" : "\"9\""
 				}
 
 			}
@@ -680,9 +680,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 371.0, 247.0, 107.0, 22.0 ],
+					"patching_rect" : [ 371.0, 247.0, 88.0, 22.0 ],
 					"style" : "",
-					"text" : "index simple1data"
+					"text" : "fit simple1data"
 				}
 
 			}
@@ -1103,9 +1103,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

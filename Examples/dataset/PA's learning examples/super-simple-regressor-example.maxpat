@@ -4,12 +4,12 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 4,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ -22.0, 79.0, 1668.0, 982.0 ],
+		"rect" : [ 218.0, 79.0, 1668.0, 982.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -151,7 +151,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 370.0, 461.0, 131.5, 22.0 ],
 					"style" : "",
-					"text" : "getPoint"
+					"text" : "addPoint"
 				}
 
 			}
@@ -164,7 +164,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 191.5, 456.0, 131.5, 22.0 ],
 					"style" : "",
-					"text" : "getPoint"
+					"text" : "addPoint"
 				}
 
 			}
@@ -690,9 +690,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 829.75, 325.0, 247.0, 22.0 ],
+					"patching_rect" : [ 829.75, 325.0, 274.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf regress simplePoint simpleOutput %d"
+					"text" : "sprintf regressPoint simplePoint simpleOutput %d"
 				}
 
 			}
@@ -717,9 +717,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1204.0, 457.0, 81.0, 22.0 ],
+					"patching_rect" : [ 1204.0, 457.0, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "route regress"
+					"text" : "route regressPoint"
 				}
 
 			}
@@ -905,9 +905,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1020.5, 413.0, 104.0, 22.0 ],
+					"patching_rect" : [ 1020.5, 413.0, 85.0, 22.0 ],
 					"style" : "",
-					"text" : "index simpleInput"
+					"text" : "fit simpleInput"
 				}
 
 			}
@@ -1510,15 +1510,15 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "big_urn.js",
-				"bootpath" : "~/dev/flucoma-max/master/Examples/dataset",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/PA's learning examples",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.bufview.js",
-				"bootpath" : "~/dev/flucoma-max/master/help",
-				"patcherrelativepath" : "../../help",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : "../../../help",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
@@ -1536,8 +1536,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

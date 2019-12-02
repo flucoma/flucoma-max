@@ -43,9 +43,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1379.0, 642.0, 75.0, 22.0 ],
+					"patching_rect" : [ 1379.0, 642.0, 84.0, 22.0 ],
 					"style" : "",
-					"text" : "getLabel 2-6"
+					"text" : "getLabel 10-4"
 				}
 
 			}
@@ -110,7 +110,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1282.0, 682.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "size 100"
+					"text" : "getLabel \"1\""
 				}
 
 			}
@@ -244,9 +244,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1076.0, 391.0, 142.0, 22.0 ],
+					"patching_rect" : [ 1076.0, 391.0, 128.0, 22.0 ],
 					"style" : "",
-					"text" : "train simple2data $1 100"
+					"text" : "fit simple2data $1 100"
 				}
 
 			}
@@ -303,7 +303,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1366.0, 265.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "10 4"
+					"text" : "7 4"
 				}
 
 			}
@@ -381,7 +381,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1020.0, 485.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "train 50 50"
+					"text" : "predictPoint 1"
 				}
 
 			}
@@ -420,7 +420,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 424.0, 678.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "index"
+					"text" : "fit"
 				}
 
 			}
@@ -433,7 +433,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 104.0, 621.0, 440.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0.1 0.1 0.1 0.1 0.141421 0.141421 0.141421 0.141421"
+					"text" : "0. 0.1 0.1 0.1 0.141421 0.141421 0.2 0.2 0.2"
 				}
 
 			}
@@ -446,7 +446,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 192.0, 588.5, 251.0, 22.0 ],
 					"style" : "",
-					"text" : "2-3 2-4 1-3 3-3 2-2 1-4 3-4 1-2 3-2"
+					"text" : "14-6 13-6 14-7 14-5 13-7 13-5 12-6 14-8 14-4"
 				}
 
 			}
@@ -697,7 +697,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 811.0, 339.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "2 3"
+					"text" : "14 6"
 				}
 
 			}
@@ -879,9 +879,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 368.0, 389.0, 107.0, 22.0 ],
+					"patching_rect" : [ 368.0, 389.0, 88.0, 22.0 ],
 					"style" : "",
-					"text" : "index simple2data"
+					"text" : "fit simple2data"
 				}
 
 			}
@@ -1414,9 +1414,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

@@ -106,7 +106,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 81.0, 235.0, 21.0 ],
+									"patching_rect" : [ 10.0, 97.0, 235.0, 21.0 ],
 									"style" : "",
 									"text" : "index a fluid.dataset~ for fast searching"
 								}
@@ -195,9 +195,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 111.0, 225.0, 160.0, 23.0 ],
+									"patching_rect" : [ 111.0, 225.0, 162.0, 23.0 ],
 									"style" : "",
-									"text" : "knearestnist tmp.kdpoint 2"
+									"text" : "knearestdist tmp.kdpoint 2"
 								}
 
 							}
@@ -324,9 +324,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 73.5, 136.0, 161.0, 23.0 ],
+									"patching_rect" : [ 73.5, 136.0, 142.0, 23.0 ],
 									"style" : "",
-									"text" : "index kdtree_help_dataset"
+									"text" : "fit kdtree_help_dataset"
 								}
 
 							}
@@ -342,7 +342,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 608.0, 67.0 ]
+									"patching_rect" : [ 10.0, 10.0, 606.0, 82.0 ]
 								}
 
 							}

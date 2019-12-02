@@ -223,7 +223,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 630.5, 700.0, 123.0, 22.0 ],
 					"style" : "",
-					"text" : "classify blue"
+					"text" : "classifyPoint blue"
 				}
 
 			}
@@ -273,9 +273,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 868.0, 600.0, 251.0, 22.0 ],
+					"patching_rect" : [ 868.0, 600.0, 278.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classify simplepoint simple2Labels %d"
+					"text" : "sprintf classifyPoint simplepoint simple2Labels %d"
 				}
 
 			}
@@ -421,7 +421,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 474.0, 516.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "12.75 5.5"
+					"text" : "12.6 4.4"
 				}
 
 			}
@@ -575,9 +575,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 644.5, 593.0, 107.0, 22.0 ],
+					"patching_rect" : [ 644.5, 593.0, 88.0, 22.0 ],
 					"style" : "",
-					"text" : "index simple2data"
+					"text" : "fit simple2data"
 				}
 
 			}
@@ -1198,9 +1198,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 479.0, 107.0, 672.0, 747.0 ],
+		"rect" : [ 100.0, 100.0, 672.0, 747.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -72,7 +72,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 479.0, 133.0, 672.0, 721.0 ],
+						"rect" : [ 100.0, 126.0, 672.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -229,18 +229,6 @@
 									"patching_rect" : [ 336.0, 394.0, 294.0, 21.0 ],
 									"style" : "",
 									"text" : "write to json (args: absolute path), won't overwrite"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-21",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 60.0, 374.0, 21.0 ],
-									"style" : "",
-									"text" : "Learns clusters from a Dataset, using the K Means algorithm "
 								}
 
 							}
@@ -438,7 +426,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 19.0, 11.0, 620.0, 125.0 ]
+									"patching_rect" : [ 19.0, 10.0, 620.0, 125.0 ]
 								}
 
 							}
@@ -510,9 +498,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",

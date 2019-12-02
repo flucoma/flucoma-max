@@ -120,9 +120,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1087.0, 916.0, 81.0, 22.0 ],
+					"patching_rect" : [ 1087.0, 916.0, 108.0, 22.0 ],
 					"style" : "",
-					"text" : "route classify"
+					"text" : "route classifyPoint"
 				}
 
 			}
@@ -363,7 +363,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 984.5, 1024.0, 123.0, 22.0 ],
 					"style" : "",
-					"text" : "index "
+					"text" : "fit "
 				}
 
 			}
@@ -374,9 +374,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1124.0, 834.0, 191.0, 22.0 ],
+					"patching_rect" : [ 1124.0, 834.0, 219.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classify entry JIT-labels %d"
+					"text" : "sprintf classifyPoint entry JIT-labels %d"
 				}
 
 			}
@@ -400,9 +400,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 900.5, 825.0, 164.0, 22.0 ],
+					"patching_rect" : [ 900.5, 825.0, 145.0, 22.0 ],
 					"style" : "",
-					"text" : "index JIT-classifier JIT-labels"
+					"text" : "fit JIT-classifier JIT-labels"
 				}
 
 			}
@@ -8607,9 +8607,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
