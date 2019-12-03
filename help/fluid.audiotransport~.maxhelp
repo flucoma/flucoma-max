@@ -107,7 +107,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 277.0, 195.0, 294.0, 21.0 ],
-									"presentation_rect" : [ 277.0, 196.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "0 is left input, 1 is right, in between is interpolated"
 								}
@@ -227,7 +226,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 620.0, 125.0 ]
+									"patching_rect" : [ 10.0, 10.0, 454.0, 88.0 ]
 								}
 
 							}
@@ -243,8 +242,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 291.0, 381.0, 100.0, 24.0 ],
-									"presentation_rect" : [ 185.0, 285.0, 100.0, 24.0 ]
+									"patching_rect" : [ 291.0, 381.0, 201.242569, 39.0 ],
+									"presentation_rect" : [ 291.0, 381.0, 201.242569, 39.0 ]
 								}
 
 							}
