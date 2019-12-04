@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
 		"rect" : [ 510.0, 155.0, 632.0, 546.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -52,6 +51,7 @@
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter.js fluid.labelset~"
 				}
 
@@ -65,14 +65,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 510.0, 181.0, 632.0, 520.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -109,7 +108,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.0, 400.5, 150.0, 50.0 ],
-									"presentation_linecount" : 3,
+									"style" : "",
 									"text" : "read to JSON (args absolute path) – won't overwrite"
 								}
 
@@ -122,6 +121,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.0, 353.5, 150.0, 36.0 ],
+									"style" : "",
 									"text" : "read from JSON (args absolute path) "
 								}
 
@@ -133,8 +133,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 241.0, 313.0, 74.0, 36.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 241.0, 313.0, 78.0, 36.0 ],
+									"style" : "",
 									"text" : "get number of labels"
 								}
 
@@ -147,6 +147,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 199.0, 313.0, 32.0, 23.0 ],
+									"style" : "",
 									"text" : "size"
 								}
 
@@ -159,6 +160,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 131.0, 484.0, 150.0, 36.0 ],
+									"style" : "",
 									"text" : "return values from rightmost outlet"
 								}
 
@@ -169,7 +171,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 22.0, 91.0, 219.0, 21.0 ],
+									"patching_rect" : [ 19.0, 111.0, 219.0, 21.0 ],
+									"style" : "",
 									"text" : "Used for classification and clustering"
 								}
 
@@ -180,7 +183,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 22.0, 59.0, 199.0, 21.0 ],
+									"patching_rect" : [ 19.0, 88.0, 199.0, 21.0 ],
+									"style" : "",
 									"text" : "Maps IDs (from data) with labels "
 								}
 
@@ -192,6 +196,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 305.0, 232.0, 150.0, 21.0 ],
+									"style" : "",
 									"text" : "returns id"
 								}
 
@@ -203,6 +208,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 218.0, 232.0, 75.0, 21.0 ],
+									"style" : "",
 									"text" : "string label "
 								}
 
@@ -214,6 +220,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 218.0, 198.0, 75.0, 21.0 ],
+									"style" : "",
 									"text" : "string label "
 								}
 
@@ -226,6 +233,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 203.0, 143.0, 150.0, 50.0 ],
+									"style" : "",
 									"text" : "string Id (i.e. from fluid.dataset), string label "
 								}
 
@@ -238,6 +246,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 224.0, 270.0, 74.0, 36.0 ],
+									"style" : "",
 									"text" : "clear object"
 								}
 
@@ -250,6 +259,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 119.0, 452.0, 88.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.labelset~"
 								}
 
@@ -278,6 +288,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 119.0, 151.0, 58.0, 23.0 ],
+									"style" : "",
 									"text" : "addlabel"
 								}
 
@@ -290,6 +301,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 136.0, 198.0, 71.0, 23.0 ],
+									"style" : "",
 									"text" : "deletelabel"
 								}
 
@@ -302,6 +314,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 160.0, 232.0, 54.0, 23.0 ],
+									"style" : "",
 									"text" : "getlabel"
 								}
 
@@ -314,6 +327,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 176.0, 270.0, 37.0, 23.0 ],
+									"style" : "",
 									"text" : "clear"
 								}
 
@@ -326,6 +340,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 199.0, 360.0, 35.0, 23.0 ],
+									"style" : "",
 									"text" : "read"
 								}
 
@@ -338,6 +353,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 189.5, 407.0, 36.0, 23.0 ],
+									"style" : "",
 									"text" : "write"
 								}
 
@@ -401,9 +417,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -421,7 +439,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 299.311981201171875, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 299.311981, 57.599854 ]
 				}
 
 			}
@@ -434,14 +452,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 0.0, 26.0, 632.0, 520.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -479,9 +496,11 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}
