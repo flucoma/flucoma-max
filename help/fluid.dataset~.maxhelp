@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
 		"rect" : [ 100.0, 100.0, 745.0, 540.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -52,6 +51,7 @@
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter.js fluid.dataset~"
 				}
 
@@ -65,14 +65,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 100.0, 126.0, 745.0, 514.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -109,6 +108,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 358.0, 301.0, 163.0, 23.0 ],
+									"style" : "",
 									"text" : "write /tmp/helpdataset.json"
 								}
 
@@ -121,6 +121,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 310.0, 266.0, 162.0, 23.0 ],
+									"style" : "",
 									"text" : "read /tmp/helpdataset.json"
 								}
 
@@ -132,6 +133,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 183.0, 301.0, 89.0, 21.0 ],
+									"style" : "",
 									"text" : "query the size"
 								}
 
@@ -143,6 +145,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 169.0, 272.0, 99.0, 21.0 ],
+									"style" : "",
 									"text" : "delete all points"
 								}
 
@@ -155,7 +158,8 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 232.0, 410.0, 50.0, 23.0 ]
+									"patching_rect" : [ 232.0, 410.0, 50.0, 23.0 ],
+									"style" : ""
 								}
 
 							}
@@ -166,8 +170,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 193.0, 410.0, 24.0, 24.0 ]
+									"patching_rect" : [ 193.0, 410.0, 24.0, 24.0 ],
+									"style" : ""
 								}
 
 							}
@@ -179,6 +183,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 193.0, 387.0, 97.0, 23.0 ],
+									"style" : "",
 									"text" : "route clear size"
 								}
 
@@ -191,6 +196,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 148.5, 301.0, 32.0, 23.0 ],
+									"style" : "",
 									"text" : "size"
 								}
 
@@ -203,6 +209,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 118.0, 272.0, 37.0, 23.0 ],
+									"style" : "",
 									"text" : "clear"
 								}
 
@@ -215,6 +222,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 113.5, 430.0, 32.0, 23.0 ],
+									"style" : "",
 									"text" : "fill 2"
 								}
 
@@ -227,6 +235,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 430.0, 37.0, 23.0 ],
+									"style" : "",
 									"text" : "clear"
 								}
 
@@ -239,6 +248,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 5.0, 430.0, 32.0, 23.0 ],
+									"style" : "",
 									"text" : "fill 1"
 								}
 
@@ -250,6 +260,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 310.0, 236.0, 300.0, 21.0 ],
+									"style" : "",
 									"text" : "delete a point: supply label (must be existing label)"
 								}
 
@@ -262,6 +273,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 338.0, 195.0, 370.0, 36.0 ],
+									"style" : "",
 									"text" : "retreive a point: supply label and buffer for data (must be existing label)"
 								}
 
@@ -274,6 +286,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 333.0, 159.0, 356.0, 36.0 ],
+									"style" : "",
 									"text" : "edit a point: supply label and buffer with data (must be right size, existing label)"
 								}
 
@@ -286,6 +299,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 298.0, 119.5, 356.0, 36.0 ],
+									"style" : "",
 									"text" : "add a point: supply label and buffer with data (must be right size, unique label)"
 								}
 
@@ -298,6 +312,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 5.0, 472.0, 254.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ dataset.help.datapoint @samps 42"
 								}
 
@@ -308,20 +323,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 78.0, 415.0, 21.0 ],
+									"patching_rect" : [ 10.0, 90.0, 415.0, 21.0 ],
+									"style" : "",
 									"text" : "A collection of labels associated with n-dimensional data points"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 210.0, 342.0, 150.0, 36.0 ],
-									"text" : "args: name, data point size"
 								}
 
 							}
@@ -333,6 +337,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 37.0, 348.5, 175.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.dataset~ helpdataset 42"
 								}
 
@@ -345,6 +350,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 15.0, 126.0, 268.0, 23.0 ],
+									"style" : "",
 									"text" : "addpoint myDataPoint dataset.help.datapoint"
 								}
 
@@ -357,6 +363,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 38.0, 160.0, 286.0, 23.0 ],
+									"style" : "",
 									"text" : "updatepoint myDataPoint dataset.help.datapoint"
 								}
 
@@ -369,6 +376,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 63.0, 196.0, 264.0, 23.0 ],
+									"style" : "",
 									"text" : "getpoint myDataPoint dataset.help.datapoint"
 								}
 
@@ -381,6 +389,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 84.0, 237.0, 150.0, 23.0 ],
+									"style" : "",
 									"text" : "deletepoint myDataPoint"
 								}
 
@@ -397,7 +406,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 314.0, 66.0 ]
+									"patching_rect" : [ 10.0, 10.0, 410.0, 78.0 ]
 								}
 
 							}
@@ -413,7 +422,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 369.0, 348.0, 100.0, 24.0 ]
+									"patching_rect" : [ 302.77533, 348.5, 176.449356, 54.0 ],
+									"presentation_rect" : [ 369.0, 348.0, 176.449356, 54.0 ]
 								}
 
 							}
@@ -525,9 +535,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -545,7 +557,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 292.06396484375, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 292.063965, 57.599854 ]
 				}
 
 			}
@@ -558,14 +570,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 0.0, 26.0, 745.0, 514.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -603,9 +614,11 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}
