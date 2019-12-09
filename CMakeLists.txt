@@ -109,7 +109,7 @@ endforeach ()
 #install bits. Max packages bundle Windows and Mac builds together 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
 
-foreach(PACKAGE_DIRECTORY examples;extras;help;init;patchers)
+foreach(PACKAGE_DIRECTORY examples;extras;help;init)
   install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION .)
 endforeach(PACKAGE_DIRECTORY)
 
