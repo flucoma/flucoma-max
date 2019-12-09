@@ -105,8 +105,6 @@ foreach (project_dir ${PROJECT_DIRS})
 	endif ()
 endforeach ()
 
-add_custom_target(MAX_PACKAGE)
-add_dependencies(MAX_PACKAGE ${PROJECT_DIRS} MAKE_MAX_REF)
 ################################################################################
 #install bits. Max packages bundle Windows and Mac builds together 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
