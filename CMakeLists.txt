@@ -111,16 +111,18 @@ add_dependencies(MAX_PACKAGE ${PROJECT_DIRS} MAKE_MAX_REF)
 #install bits. Max packages bundle Windows and Mac builds together 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
 
+set(MAX_INSTALL_PREFIX "." CACHE PATH "Prefix for assembling max package")
+
 foreach(PACKAGE_DIRECTORY examples;extras;help;init)
-  install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION .)
+  install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION ${MAX_INSTALL_PREFIX})
 endforeach(PACKAGE_DIRECTORY)
 
-install(DIRECTORY externals DESTINATION . FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
+install(DIRECTORY externals DESTINATION ${MAX_INSTALL_PREFIX} FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
 
 # install(CODE [[ message(STATUS "${fluid_decomposition_SOURCE_DIR}") ]])
-install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION media)
-install(FILES License.md icon.png package-info.json QuickStart.md DESTINATION .)
+install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION "${MAX_INSTALL_PREFIX}/media")
+install(FILES License.md icon.png package-info.json QuickStart.md DESTINATION ${MAX_INSTALL_PREFIX})
 
 if(DOCS)
-  install(DIRECTORY "${CMAKE_BINARY_DIR}/maxref/" DESTINATION docs PATTERN "*.xml")
+  install(DIRECTORY "${CMAKE_BINARY_DIR}/maxref/" DESTINATION "${MAX_INSTALL_PREFIX}/docs" PATTERN "*.xml")
 endif()
