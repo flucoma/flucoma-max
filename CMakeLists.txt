@@ -110,19 +110,21 @@ endforeach ()
 ################################################################################
 #install bits. Max packages bundle Windows and Mac builds together 
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
-
 set(MAX_INSTALL_PREFIX "." CACHE PATH "Prefix for assembling max package")
+set(FLUID_PACKAGE_NAME FluidCorpusManipulation CACHE STRING "Name for published package")
+set(MAX_PACKAGE_ROOT ${MAX_INSTALL_PREFIX}/${FLUID_PACKAGE_NAME})
+
 
 foreach(PACKAGE_DIRECTORY examples;extras;help;init)
-  install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION ${MAX_INSTALL_PREFIX})
+  install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION ${MAX_PACKAGE_ROOT})
 endforeach(PACKAGE_DIRECTORY)
 
-install(DIRECTORY externals DESTINATION ${MAX_INSTALL_PREFIX} FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
+install(DIRECTORY externals DESTINATION ${MAX_PACKAGE_ROOT} FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
 
 # install(CODE [[ message(STATUS "${fluid_decomposition_SOURCE_DIR}") ]])
-install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION "${MAX_INSTALL_PREFIX}/media")
-install(FILES License.md icon.png package-info.json QuickStart.md DESTINATION ${MAX_INSTALL_PREFIX})
+install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION "${MAX_PACKAGE_ROOT}/media")
+install(FILES License.md icon.png package-info.json QuickStart.md DESTINATION ${MAX_PACKAGE_ROOT})
 
 if(DOCS)
-  install(DIRECTORY "${CMAKE_BINARY_DIR}/maxref/" DESTINATION "${MAX_INSTALL_PREFIX}/docs" PATTERN "*.xml")
+  install(DIRECTORY "${CMAKE_BINARY_DIR}/maxref/" DESTINATION "${MAX_PACKAGE_ROOT}/docs" PATTERN "*.xml")
 endif()
