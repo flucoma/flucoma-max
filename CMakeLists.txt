@@ -37,12 +37,14 @@ FetchContent_Declare(
   fluid_decomposition
   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
   GIT_PROGRESS TRUE
+  GIT_TAG origin/features/buildsystem
 )
 
 FetchContent_Declare(
   fluid_paramdump
   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_paramdump.git
   GIT_PROGRESS TRUE
+  GIT_TAG origin/features/buildsystem
 )
 
 if(FLUID_PATH)
