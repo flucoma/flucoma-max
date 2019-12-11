@@ -46,10 +46,10 @@ source_group("" FILES "${PROJECT_NAME}.cpp")
 # get_property(HEADERS TARGET FLUID_MANIP PROPERTY INTERFACE_SOURCES)
 # source_group(TREE "${fluid_manipulation_SOURCE_DIR}/include" FILES ${HEADERS})
 
-if ("${PROJECT_NAME}" MATCHES ".*_tilde")
-	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${PROJECT_NAME}")
+if ("${THIS_FOLDER_NAME}" MATCHES ".*_tilde")
+	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${THIS_FOLDER_NAME}")
 else ()
-    set(EXTERN_OUTPUT_NAME "${PROJECT_NAME}")
+    set(EXTERN_OUTPUT_NAME "${THIS_FOLDER_NAME}")
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${EXTERN_OUTPUT_NAME}")
 
@@ -102,14 +102,3 @@ elseif (WIN32)
 	set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/wd4814")
 
 endif ()
-
-
-### Post Build ###
-#if (WIN32)
-#	add_custom_command(
-#		TARGET ${PROJECT_NAME}
-#		POST_BUILD
-#		COMMAND rm "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/${EXTERN_OUTPUT_NAME}.ilk"
-#		COMMENT "ilk file cleanup"
-#)
-# endif ()
