@@ -1,7 +1,7 @@
 # Bits of this Copyright (c) 2016, Cycling '74
 # Usage of this file and its contents is governed by the MIT License
 
-target_compile_features(${PROJECT_NAME} PUBLIC cxx_std_14)
+target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_14)
 
 set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD 14
@@ -10,7 +10,7 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 )
 
 target_link_libraries(${PROJECT_NAME}
-  PUBLIC
+  PRIVATE
   FLUID_DECOMPOSITION
   # FLUID_MANIP
   FLUID_MAX
