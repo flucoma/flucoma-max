@@ -61,8 +61,8 @@ public:
   void dsp(t_object *dsp64, short *count, double samplerate, long /*maxvectorsize*/, long /*flags*/)
   {
     Wrapper *wrapper = static_cast<Wrapper *>(this);
-
-    wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
+    wrapper->mRTParams = wrapper->mParams; 
+    wrapper->mClient = typename Wrapper::ClientType{wrapper->mRTParams};
     auto &   client  = wrapper->client();
     client.sampleRate(samplerate);
 
@@ -93,7 +93,11 @@ public:
 
   void perform(t_object * /*dsp64*/, double **ins, long numins, double **outs, long /*numouts*/, long sampleframes, long /*flags*/, void* /*userparam*/)
   {
-    auto &client = static_cast<Wrapper *>(this)->mClient;
+    
+    auto wrapper = static_cast<Wrapper*>(this);
+    auto &client = wrapper->mClient;
+    wrapper->mRTParams = wrapper->mParams;
+    
     for (auto i = 0u; i < static_cast<size_t>(numins); ++i)
       if (audioInputConnections[i]) mInputs[i].reset(ins[i], 0, sampleframes);
 
@@ -494,6 +498,7 @@ public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
     : mParams(Client::getParameterDescriptors()),
       mParamSnapshot(Client::getParameterDescriptors()),
+      mRTParams(Client::getParameterDescriptors()),
       mClient{initParamsFromArgs(ac,av)}
   {
     if (mClient.audioChannelsIn())
@@ -684,6 +689,7 @@ private:
   bool          mVerbose;
   ParamSetType  mParams;
   ParamSetType  mParamSnapshot;
+  ParamSetType  mRTParams;
   Client        mClient;
 };
 
