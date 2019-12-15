@@ -60,7 +60,7 @@ public:
     mImmediate = immediate;
   }
     
-  const Result resize(size_t frames, size_t channels, double newSampleRate) override
+  const Result resize(Index frames, Index channels, double newSampleRate) override
   {
     t_object *buffer = getBuffer();
     
@@ -138,27 +138,27 @@ public:
     releaseLock();
   }
 
-  FluidTensorView<float, 1> samps(size_t channel) override
+  FluidTensorView<float, 1> samps(Index channel) override
   {
     FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
 
     return v.col(channel);
   }
 
-  FluidTensorView<float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) override
+  FluidTensorView<float, 1> samps(Index offset, Index nframes, Index chanoffset) override
   {
     FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
   }
   
-  FluidTensorView<const float, 1> samps(size_t channel) const override
+  FluidTensorView<const float, 1> samps(Index channel) const override
   {
     FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
 
     return v.col(channel);
   }
 
-  FluidTensorView<const float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) const override
+  FluidTensorView<const float, 1> samps(Index offset, Index nframes, Index chanoffset) const override
   {
     FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
@@ -170,9 +170,9 @@ public:
     return buffer_name == mName ? buffer_ref_notify(mBufref, s, msg, sender, data) : MAX_ERR_NONE;
   }
 
-  size_t numFrames() const override { return valid() ? static_cast<size_t>(buffer_getframecount(getBuffer())) : 0; }
+  Index numFrames() const override { return valid() ? static_cast<Index>(buffer_getframecount(getBuffer())) : 0; }
 
-  size_t numChans() const override { return valid() ? static_cast<size_t>(buffer_getchannelcount(getBuffer())) : 0; }
+  Index numChans() const override { return valid() ? static_cast<Index>(buffer_getchannelcount(getBuffer())) : 0; }
 
   double sampleRate() const override { return valid() ? buffer_getsamplerate(getBuffer()) : 0; }
 
