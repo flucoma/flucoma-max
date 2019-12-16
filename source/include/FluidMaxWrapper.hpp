@@ -66,26 +66,26 @@ public:
     auto &   client  = wrapper->client();
     client.sampleRate(samplerate);
 
-    audioInputConnections.resize(IndexCast(client.audioChannelsIn()));
+    audioInputConnections.resize(asUnsigned(client.audioChannelsIn()));
     std::copy(count, count + client.audioChannelsIn(), audioInputConnections.begin());
 
     assert((client.audioChannelsOut() > 0) != (client.controlChannelsOut() > 0) &&
            "Client must *either* be audio out or control out, sorry");
 
-    audioOutputConnections.resize(IndexCast(client.audioChannelsOut()));
+    audioOutputConnections.resize(asUnsigned(client.audioChannelsOut()));
     std::copy(count + client.audioChannelsIn(), count + client.audioChannelsIn() + client.audioChannelsOut(),
               audioOutputConnections.begin());
 
-    mInputs = std::vector<ViewType>(IndexCast(client.audioChannelsIn()), ViewType(nullptr, 0, 0));
+    mInputs = std::vector<ViewType>(asUnsigned(client.audioChannelsIn()), ViewType(nullptr, 0, 0));
 
-    if (client.audioChannelsOut() > 0) mOutputs = std::vector<ViewType>(IndexCast(client.audioChannelsOut()), ViewType(nullptr, 0, 0));
+    if (client.audioChannelsOut() > 0) mOutputs = std::vector<ViewType>(asUnsigned(client.audioChannelsOut()), ViewType(nullptr, 0, 0));
     if (client.controlChannelsOut() > 0)
     {
       mControlClock = mControlClock ? mControlClock : clock_new((t_object *) wrapper, (method) doControlOut);
 
-      mOutputs = std::vector<ViewType>(IndexCast(client.controlChannelsOut()), ViewType(nullptr, 0, 0));
-      mControlOutputs.resize(IndexCast(client.controlChannelsOut()));
-      mControlAtoms.resize(IndexCast(client.controlChannelsOut()));
+      mOutputs = std::vector<ViewType>(asUnsigned(client.controlChannelsOut()), ViewType(nullptr, 0, 0));
+      mControlOutputs.resize(asUnsigned(client.controlChannelsOut()));
+      mControlAtoms.resize(asUnsigned(client.controlChannelsOut()));
     }
 
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
@@ -98,14 +98,14 @@ public:
     auto &client = wrapper->mClient;
     wrapper->mRTParams = wrapper->mParams;
     
-    for (Index i = 0; i < numins; ++i)
-      if (audioInputConnections[IndexCast(i)]) mInputs[IndexCast(i)].reset(ins[i], 0, sampleframes);
+    for (index i = 0; i < numins; ++i)
+      if (audioInputConnections[asUnsigned(i)]) mInputs[asUnsigned(i)].reset(ins[i], 0, sampleframes);
 
-    for (Index i = 0; i < client.audioChannelsOut(); ++i)
+    for (index i = 0; i < client.audioChannelsOut(); ++i)
       // if(audioOutputConnections[i])
-      mOutputs[IndexCast(i)].reset(outs[IndexCast(i)], 0, sampleframes);
+      mOutputs[asUnsigned(i)].reset(outs[asUnsigned(i)], 0, sampleframes);
 
-    for (Index i = 0; i < client.controlChannelsOut(); ++i) mOutputs[IndexCast(i)].reset(&mControlOutputs[IndexCast(i)], 0, 1);
+    for (index i = 0; i < client.controlChannelsOut(); ++i) mOutputs[asUnsigned(i)].reset(&mControlOutputs[asUnsigned(i)], 0, 1);
 
     client.process(mInputs, mOutputs, mContext);
 
@@ -391,7 +391,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   template<typename T, size_t N>
   struct Setter
   {
-    static constexpr Index argSize = paramDescriptor<N>().fixedSize;
+    static constexpr index argSize = paramDescriptor<N>().fixedSize;
 
     static auto fromAtom(t_object* /*x*/, t_atom *a, LongT::type) { return atom_getlong(a); }
     static auto fromAtom(t_object* /*x*/, t_atom *a, FloatT::type) { return atom_getfloat(a); }
@@ -413,7 +413,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
 
       x->messages().reset();
 
-      for (Index i = 0; i < argSize && i < static_cast<Index>(ac); i++)
+      for (index i = 0; i < argSize && i < static_cast<index>(ac); i++)
         a[i] = fromAtom((t_object *) x, av + i, a[0]);
 
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
@@ -430,7 +430,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
   template<typename T, size_t N>
   struct Getter
   {
-    static constexpr Index argSize = paramDescriptor<N>().fixedSize;
+    static constexpr index argSize = paramDescriptor<N>().fixedSize;
 
     static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
     static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
@@ -456,7 +456,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
 
       a.set(x->params().template get<N>());
 
-      for (Index i = 0; i < argSize; i++)
+      for (index i = 0; i < argSize; i++)
         toAtom(*av + i, a[i]);
 
       return MAX_ERR_NONE;
@@ -524,7 +524,7 @@ public:
 
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
 
-    for (Index i = 0; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
+    for (index i = 0; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
   }
 
   void progress(double progress) { outlet_float(mProgressOutlet, progress); }
@@ -666,7 +666,7 @@ private:
     void decorateAttr(const EnumT& attr, std::string name)
     {
       std::stringstream enumstrings;
-      for(Index i = 0; i < attr.numOptions;++i) enumstrings << '"' << attr.strings[i] << "\" ";
+      for(index i = 0; i < attr.numOptions;++i) enumstrings << '"' << attr.strings[i] << "\" ";
       CLASS_ATTR_STYLE(getClass(), name.c_str(),0,"enum");
       CLASS_ATTR_ENUMINDEX(getClass(), name.c_str(), 0, enumstrings.str().c_str());
     }
