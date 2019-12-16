@@ -406,7 +406,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
 
-    static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object* /*attr*/, long ac, t_atom *av)
     {
       ParamLiteralConvertor<T, argSize> a;
       a.set(paramDescriptor<N>().defaultValue);
@@ -447,7 +447,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
       atom_setsym(a, b ? b->name() : nullptr);
     }
 
-    static t_max_err get(FluidMaxWrapper<Client>* x, t_object */*attr*/, long *ac, t_atom **av)
+    static t_max_err get(FluidMaxWrapper<Client>* x, t_object* /*attr*/, long *ac, t_atom **av)
     {
       ParamLiteralConvertor<T, argSize> a;
 
@@ -503,7 +503,8 @@ public:
   {
     if (mClient.audioChannelsIn())
     {
-      dsp_setup(impl::MaxBase::getMSPObject(), mClient.audioChannelsIn());
+	  assert(mClient.audioChannelsIn() <= (std::numeric_limits<long>::max)()); 
+	  dsp_setup(impl::MaxBase::getMSPObject(), static_cast<long>(mClient.audioChannelsIn()));
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
     }
 
@@ -593,7 +594,7 @@ private:
   static std::string lowerCase(const char *str)
   {
     std::string result(str);
-    std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c) { return std::tolower(c); });
+    std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c) { return static_cast<unsigned char>(std::tolower(c)); });
     return result;
   }
 

@@ -1,7 +1,8 @@
 #pragma once
 //We get lots of this warning because C74 macros, and can't (AFAICS) do anything else but mute them:
+#ifdef __clang__
 #pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
-
+#endif
 
 #include <clients/common/BufferAdaptor.hpp>
 #include <data/FluidTensor.hpp>
