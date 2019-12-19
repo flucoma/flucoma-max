@@ -1,7 +1,8 @@
 #pragma once
 //We get lots of this warning because C74 macros, and can't (AFAICS) do anything else but mute them:
+#ifdef __clang__
 #pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
-
+#endif
 
 #include <clients/common/BufferAdaptor.hpp>
 #include <data/FluidTensor.hpp>
@@ -60,7 +61,7 @@ public:
     mImmediate = immediate;
   }
     
-  const Result resize(size_t frames, size_t channels, double newSampleRate) override
+  const Result resize(index frames, index channels, double newSampleRate) override
   {
     t_object *buffer = getBuffer();
     
@@ -138,27 +139,27 @@ public:
     releaseLock();
   }
 
-  FluidTensorView<float, 1> samps(size_t channel) override
+  FluidTensorView<float, 1> samps(index channel) override
   {
     FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
 
     return v.col(channel);
   }
 
-  FluidTensorView<float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) override
+  FluidTensorView<float, 1> samps(index offset, index nframes, index chanoffset) override
   {
     FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
   }
   
-  FluidTensorView<const float, 1> samps(size_t channel) const override
+  FluidTensorView<const float, 1> samps(index channel) const override
   {
     FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
 
     return v.col(channel);
   }
 
-  FluidTensorView<const float, 1> samps(size_t offset, size_t nframes, size_t chanoffset) const override
+  FluidTensorView<const float, 1> samps(index offset, index nframes, index chanoffset) const override
   {
     FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v(Slice(offset, nframes), Slice(chanoffset, 1)).col(0);
@@ -170,9 +171,9 @@ public:
     return buffer_name == mName ? buffer_ref_notify(mBufref, s, msg, sender, data) : MAX_ERR_NONE;
   }
 
-  size_t numFrames() const override { return valid() ? static_cast<size_t>(buffer_getframecount(getBuffer())) : 0; }
+  index numFrames() const override { return valid() ? static_cast<index>(buffer_getframecount(getBuffer())) : 0; }
 
-  size_t numChans() const override { return valid() ? static_cast<size_t>(buffer_getchannelcount(getBuffer())) : 0; }
+  index numChans() const override { return valid() ? static_cast<index>(buffer_getchannelcount(getBuffer())) : 0; }
 
   double sampleRate() const override { return valid() ? buffer_getsamplerate(getBuffer()) : 0; }
 
