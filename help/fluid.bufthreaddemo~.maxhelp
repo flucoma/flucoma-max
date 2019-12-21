@@ -185,7 +185,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 81.0, 171.5, 127.0, 22.0 ],
 													"style" : "",
-													"text" : "zl 32000 group 32000"
+													"text" : "zl 32766 group 32766"
 												}
 
 											}

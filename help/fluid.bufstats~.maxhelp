@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1057.0, 851.0 ],
+		"rect" : [ 100.0, 100.0, 1057.0, 851.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -357,8 +357,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
@@ -841,7 +841,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -888,9 +888,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 148.0, 58.0, 22.0 ],
+													"patching_rect" : [ 50.0, 148.0, 79.0, 22.0 ],
 													"style" : "",
-													"text" : "zl mth"
+													"text" : "zl 32766 mth"
 												}
 
 											}
@@ -901,9 +901,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 124.0, 40.0, 22.0 ],
+													"patching_rect" : [ 50.0, 124.0, 77.0, 22.0 ],
 													"style" : "",
-													"text" : "zl reg"
+													"text" : "zl 32766 reg"
 												}
 
 											}
@@ -1072,9 +1072,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 166.0, 55.0, 22.0 ],
+													"patching_rect" : [ 50.0, 166.0, 79.0, 22.0 ],
 													"style" : "",
-													"text" : "zl mth"
+													"text" : "zl 32766 mth"
 												}
 
 											}
@@ -1085,9 +1085,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 142.0, 40.0, 22.0 ],
+													"patching_rect" : [ 50.0, 142.0, 77.0, 22.0 ],
 													"style" : "",
-													"text" : "zl reg"
+													"text" : "zl 32766 reg"
 												}
 
 											}
@@ -1243,9 +1243,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 199.0, 43.0, 22.0 ],
+													"patching_rect" : [ 50.0, 199.0, 79.0, 22.0 ],
 													"style" : "",
-													"text" : "zl sort"
+													"text" : "zl 32766 sort"
 												}
 
 											}
@@ -1282,9 +1282,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 153.0, 53.0, 22.0 ],
+													"patching_rect" : [ 50.0, 153.0, 90.0, 22.0 ],
 													"style" : "",
-													"text" : "zl group"
+													"text" : "zl 32766 group"
 												}
 
 											}
@@ -1338,7 +1338,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 115.0, 199.0, 30.0, 30.0 ],
+													"patching_rect" : [ 132.0, 199.0, 30.0, 30.0 ],
 													"style" : ""
 												}
 
@@ -1351,7 +1351,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 74.0, 281.0, 30.0, 30.0 ],
+													"patching_rect" : [ 110.0, 262.0, 30.0, 30.0 ],
 													"style" : ""
 												}
 
@@ -1396,7 +1396,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-19", 0 ],
-													"midpoints" : [ 59.5, 186.5, 124.5, 186.5 ],
+													"midpoints" : [ 59.5, 186.5, 141.5, 186.5 ],
 													"order" : 0,
 													"source" : [ "obj-61", 0 ]
 												}
@@ -1989,8 +1989,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
@@ -2775,8 +2775,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -3585,7 +3585,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 717.0, 32.0, 115.0, 34.0 ],
+									"patching_rect" : [ 717.0, 32.0, 115.0, 20.0 ],
 									"style" : "",
 									"text" : "observe the values\n"
 								}
@@ -4238,8 +4238,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -4316,7 +4316,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 105.0, 1057.0, 825.0 ],
+						"rect" : [ 100.0, 126.0, 1057.0, 825.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5550,8 +5550,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -5751,8 +5751,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
