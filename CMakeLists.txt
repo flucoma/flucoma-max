@@ -75,7 +75,7 @@ if(DOCS)
     add_subdirectory(${fluid_paramdump_SOURCE_DIR} ${fluid_paramdump_BINARY_DIR})
   endif()
 
-  add_custom_target(MAX_MAKE_DOCS DEPENDS MAKE_MAX_REF)
+  add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
   add_custom_command(TARGET MAX_MAKE_DOCS POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_BINARY_DIR}/maxref" "${CMAKE_CURRENT_SOURCE_DIR}/docs"
   )
