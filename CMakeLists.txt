@@ -74,10 +74,11 @@ if(DOCS)
     source_group("\\XML Doc Gen" FILES ${DOC_SOURCE})
     add_subdirectory(${fluid_paramdump_SOURCE_DIR} ${fluid_paramdump_BINARY_DIR})
   endif()
-
+  
   add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
   add_custom_command(TARGET MAX_MAKE_DOCS POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "${CMAKE_BINARY_DIR}/maxref" "${CMAKE_CURRENT_SOURCE_DIR}/docs"
+    COMMAND ${CMAKE_COMMAND} -E copy_directory "${FLUID_MAX_REF_PATH}"  "${CMAKE_CURRENT_SOURCE_DIR}/docs"
+    COMMENT "${FLUID_MAX_REF_PATH}"
   )
 endif()
 
@@ -125,5 +126,5 @@ install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION "$
 install(FILES License.md icon.png package-info.json QuickStart.md DESTINATION ${MAX_PACKAGE_ROOT})
 
 if(DOCS)
-  install(DIRECTORY "${CMAKE_BINARY_DIR}/maxref/" DESTINATION "${MAX_PACKAGE_ROOT}/docs" PATTERN "*.xml")
+  install(DIRECTORY "${FLUID_MAX_REF_PATH}" DESTINATION "${MAX_PACKAGE_ROOT}/docs" PATTERN "*.xml")
 endif()
