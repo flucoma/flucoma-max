@@ -12,6 +12,7 @@
 
 #include "MaxBufferAdaptor.hpp"
 
+#include "FluidVersion.hpp"
 #include <cctype>  //std::tolower
 #include <tuple>
 #include <utility>
@@ -558,7 +559,7 @@ public:
     class_addmethod(getClass(), (method)doNotify, "notify",A_CANT, 0);
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
-
+    class_addmethod(getClass(), (method)doVersion,"version",0); 
     //Change for MSVC, which didn't like the macro version
       t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
       class_addattr(getClass(), a);
@@ -576,6 +577,11 @@ public:
   {
     x->mParams = x->mParamSnapshot;
     x->params().template forEachParam<touchAttribute>(x);
+  }
+
+  static void doVersion(FluidMaxWrapper *x)
+  {
+    object_post((t_object*)x,"Fluid Corpus Manipulation Toolkit, version %s",fluidVersion());
   }
 
   Result &messages() { return mResult; }
