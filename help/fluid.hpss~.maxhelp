@@ -75,7 +75,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 937.0, 715.0 ],
+						"rect" : [ 100.0, 126.0, 937.0, 715.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -105,6 +105,25 @@
 						"showontab" : 1,
 						"isolateaudio" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-28",
+									"lockeddragscroll" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.flucomaorg.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 755.75, 662.25, 160.0, 41.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"args" : [ "@file", "Green-Box639.wav" ],
 									"bgmode" : 0,
@@ -412,11 +431,11 @@
 													"presentation_rect" : [ 152.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[2]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -440,11 +459,11 @@
 													"presentation_rect" : [ 78.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[1]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -468,11 +487,11 @@
 													"presentation_rect" : [ 4.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -866,9 +885,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1187,11 +1206,11 @@
 													"presentation_rect" : [ 152.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[7]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -1215,11 +1234,11 @@
 													"presentation_rect" : [ 78.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[8]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -1243,11 +1262,11 @@
 													"presentation_rect" : [ 4.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[9]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -2293,9 +2312,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2370,7 +2389,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 937.0, 715.0 ],
+						"rect" : [ 0.0, 26.0, 937.0, 715.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3099,11 +3118,11 @@
 													"presentation_rect" : [ 226.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[12]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -3238,11 +3257,11 @@
 													"presentation_rect" : [ 152.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[6]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -3266,11 +3285,11 @@
 													"presentation_rect" : [ 78.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[10]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -3294,11 +3313,11 @@
 													"presentation_rect" : [ 4.0, 0.0, 69.0, 20.0 ],
 													"saved_attribute_attributes" : 													{
 														"valueof" : 														{
+															"parameter_shortname" : "live.text",
 															"parameter_enum" : [ "val1", "val2" ],
 															"parameter_type" : 2,
 															"parameter_longname" : "live.text[11]",
-															"parameter_mmax" : 1,
-															"parameter_shortname" : "live.text"
+															"parameter_mmax" : 1
 														}
 
 													}
@@ -4403,9 +4422,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4545,31 +4564,41 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-43::obj-35" : [ "[6]", "Level", 0 ],
+			"obj-3::obj-2::obj-35" : [ "[7]", "Level", 0 ],
 			"obj-1::obj-2::obj-9" : [ "live.text[10]", "live.text", 0 ],
+			"obj-3::obj-46::obj-9" : [ "live.text[1]", "live.text", 0 ],
 			"obj-2::obj-2::obj-10" : [ "live.text[7]", "live.text", 0 ],
+			"obj-1::obj-43::obj-35" : [ "[6]", "Level", 0 ],
+			"obj-2::obj-43::obj-35" : [ "[5]", "Level", 0 ],
+			"obj-1::obj-2::obj-10" : [ "live.text[6]", "live.text", 0 ],
 			"obj-1::obj-2::obj-5" : [ "live.text[12]", "live.text", 0 ],
 			"obj-2::obj-2::obj-8" : [ "live.text[9]", "live.text", 0 ],
-			"obj-3::obj-46::obj-10" : [ "live.text[2]", "live.text", 0 ],
 			"obj-2::obj-43::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-1::obj-2::obj-10" : [ "live.text[6]", "live.text", 0 ],
 			"obj-1::obj-2::obj-8" : [ "live.text[11]", "live.text", 0 ],
+			"obj-3::obj-46::obj-10" : [ "live.text[2]", "live.text", 0 ],
 			"obj-2::obj-2::obj-9" : [ "live.text[8]", "live.text", 0 ],
-			"obj-2::obj-43::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-1::obj-43::obj-21::obj-6" : [ "live.tab[4]", "live.tab[1]", 0 ],
+			"obj-3::obj-2::obj-21::obj-6" : [ "live.tab[5]", "live.tab[1]", 0 ],
 			"obj-3::obj-46::obj-8" : [ "live.text", "live.text", 0 ],
-			"obj-3::obj-46::obj-9" : [ "live.text[1]", "live.text", 0 ],
 			"parameterbanks" : 			{
 
 			}
 ,
 			"parameter_overrides" : 			{
+				"obj-3::obj-2::obj-35" : 				{
+					"parameter_longname" : "[7]"
+				}
+,
 				"obj-1::obj-43::obj-35" : 				{
 					"parameter_longname" : "[6]"
 				}
 ,
 				"obj-1::obj-43::obj-21::obj-6" : 				{
 					"parameter_longname" : "live.tab[4]"
+				}
+,
+				"obj-3::obj-2::obj-21::obj-6" : 				{
+					"parameter_longname" : "live.tab[5]"
 				}
 
 			}
@@ -4620,6 +4649,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "fluid.patchpath.js",
+				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "fluid.hpss.gui.js",
 				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
 				"patcherrelativepath" : ".",
@@ -4639,6 +4675,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "helpstarter.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
@@ -4653,9 +4696,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
