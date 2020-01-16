@@ -129,3 +129,5 @@ The same steps and considerations apply to manually managing the dependencies of
 * `HISSTOOLS_PATH` pointing to the location of the HISSTools Library 
 
 To find out which branches / tags / commits of these we use, look in the top level `CMakeLists.txt` of the  Fluid Corpus Manipulation Library for the `FetchContent_Declare` statements for each dependency. 
+
+> This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).
