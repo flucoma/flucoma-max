@@ -670,6 +670,7 @@ private:
       method       setterMethod    = (method) &Setter<T, N>::set;
       method            getterMethod    = (method) &Getter<T, N>::get;
       t_object*         a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
+      
       class_addattr(getClass(), a);
       CLASS_ATTR_LABEL(getClass(), name.c_str(), 0, attr.displayName);
       decorateAttr(attr,name);
@@ -692,7 +693,7 @@ private:
   // Get Symbols for attribute types
 
   static t_symbol* maxAttrType(FloatT) { return USESYM(float64); }
-  static t_symbol* maxAttrType(LongT) { return USESYM(long); }
+  static t_symbol* maxAttrType(LongT) { return USESYM(atom_long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(InputBufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
