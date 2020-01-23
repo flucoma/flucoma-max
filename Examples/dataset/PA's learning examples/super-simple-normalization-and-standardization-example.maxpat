@@ -100,7 +100,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 1124.0, 690.0, 345.0, 33.0 ],
-									"presentation_rect" : [ 1129.0, 694.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Depending on the random source at the begining, you will get small to large differences between the 3 answers!"
 								}
@@ -152,7 +151,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1112.0, 613.0, 248.0, 22.0 ],
-									"presentation_rect" : [ 846.0, 279.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "knearest querybuf 1, knearestdist querybuf 1"
 								}
@@ -179,7 +177,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1087.0, 435.0, 185.0, 22.0 ],
-									"presentation_rect" : [ 1055.5, 435.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "standardizepoint querybuf stdbuf"
 								}
@@ -193,7 +190,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1087.0, 405.0, 186.0, 22.0 ],
-									"presentation_rect" : [ 1092.5, 415.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "normalizepoint querybuf normbuf"
 								}
@@ -311,7 +307,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 612.0, 750.0, 279.0, 22.0 ],
-									"presentation_rect" : [ 612.0, 750.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fit test-std, knearest stdbuf 2, knearestdist stdbuf 2"
 								}
@@ -325,7 +320,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 635.0, 708.0, 355.0, 33.0 ],
-									"presentation_rect" : [ 635.0, 708.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "find its nearest neighbourg: it should be itself and the distance should be 0, but the 2nd neighbourg will have changed yet again"
 								}
@@ -339,7 +333,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 612.0, 778.0, 76.0, 22.0 ],
-									"presentation_rect" : [ 612.0, 778.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fluid.kdtree~"
 								}
@@ -351,8 +344,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 177.5, 708.0, 272.0, 20.0 ],
-									"presentation_rect" : [ 168.0, 708.0, 0.0, 0.0 ],
+									"patching_rect" : [ 194.5, 710.0, 272.0, 20.0 ],
 									"style" : "",
 									"text" : "normalise the query point above to another buffer"
 								}
@@ -379,7 +371,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 4.0, 897.0, 547.0, 22.0 ],
-									"presentation_rect" : [ 4.0, 897.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "0.007957 -0.007926 0.002749 -0.002775 0.0085 0.000772 0.000099 -0.006221 -0.001727 -0.015594"
 								}
@@ -393,7 +384,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 242.5, 861.0, 70.0, 22.0 ],
-									"presentation_rect" : [ 242.5, 861.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "zl group 10"
 								}
@@ -420,7 +410,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "int" ],
 									"patching_rect" : [ 208.5, 813.0, 53.0, 22.0 ],
-									"presentation_rect" : [ 208.5, 813.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "uzi 10 0"
 								}
@@ -446,8 +435,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 132.5, 732.0, 223.0, 22.0 ],
-									"presentation_rect" : [ 132.5, 732.0, 0.0, 0.0 ],
+									"patching_rect" : [ 149.5, 734.0, 223.0, 22.0 ],
 									"style" : "",
 									"text" : "fit test, standardizepoint querybuf stdbuf"
 								}
@@ -474,7 +462,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 612.0, 477.0, 313.0, 22.0 ],
-									"presentation_rect" : [ 690.0, 512.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fit test-norm, knearest normbuf 2, knearestdist normbuf 2"
 								}
@@ -488,7 +475,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 635.0, 435.0, 341.0, 33.0 ],
-									"presentation_rect" : [ 713.0, 471.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "find its nearest neighbourg: it should be itself and the distance should be 0, but the 2nd neighbourg will have changed"
 								}
@@ -502,7 +488,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 612.0, 505.0, 76.0, 22.0 ],
-									"presentation_rect" : [ 690.0, 541.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fluid.kdtree~"
 								}
@@ -628,7 +613,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 611.0, 340.0, 110.0, 22.0 ],
-									"presentation_rect" : [ 761.0, 356.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "60.53"
 								}
@@ -681,7 +665,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 612.0, 169.0, 282.0, 33.0 ],
-									"presentation_rect" : [ 727.0, 153.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "find its nearest neighbourg: it should be itself and the distance should be 0"
 								}
@@ -798,7 +781,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 43.0, 154.0, 282.0, 20.0 ],
-									"presentation_rect" : [ 42.0, 153.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "get a known point"
 								}
@@ -874,7 +856,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 149.5, 708.0, 20.0, 20.0 ],
+									"patching_rect" : [ 166.5, 710.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 934.0, 220.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -1385,7 +1367,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 637.0, 494.0, 41.0, 20.0 ],
-					"presentation_rect" : [ 638.0, 492.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "query"
 				}
