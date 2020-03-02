@@ -84,7 +84,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 815.0, 489.0 ],
+						"rect" : [ 383.0, 293.0, 815.0, 489.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -327,8 +327,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -392,7 +392,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 313.160004, 57.599854 ]
+									"patching_rect" : [ 10.0, 10.0, 313.187439, 57.567627 ]
 								}
 
 							}
@@ -681,14 +681,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 394.666687, 182.0, 320.0, 49.0 ],
+									"patching_rect" : [ 394.666687, 182.0, 411.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.bufsines~ @source bufsines_help_src2 @sines bufsines_help_sines2 @residual bufsines_help_residual2 @threshold 0.2"
+									"text" : "fluid.bufsines~ @source bufsines_help_src2 @sines bufsines_help_sines2 @residual bufsines_help_residual2 @fftsettings 2048 256 16384"
 								}
 
 							}
@@ -763,8 +763,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -841,7 +841,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 383.0, 293.0, 815.0, 489.0 ],
+						"rect" : [ 0.0, 26.0, 815.0, 489.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1285,8 +1285,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -1570,8 +1570,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -1878,7 +1878,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 308.0, 369.5, 469.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.bufsines~ @source bufsines_help_src1 @sines bufsines_help_sines1 @residual bufsines_help_residual1 @fftsettings 1024 512 8192"
+									"text" : "fluid.bufsines~ @source bufsines_help_src1 @sines bufsines_help_sines1 @residual bufsines_help_residual1 @fftsettings 2048 256 16384"
 								}
 
 							}
@@ -2018,8 +2018,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -2164,8 +2164,8 @@
 		"lines" : [  ],
 		"parameters" : 		{
 			"obj-2::obj-24::obj-28" : [ "live.tab[2]", "live.tab", 0 ],
-			"obj-4::obj-39" : [ "live.text", "live.text", 0 ],
-			"obj-1::obj-24::obj-28" : [ "live.tab[1]", "live.tab", 0 ]
+			"obj-1::obj-24::obj-28" : [ "live.tab[1]", "live.tab", 0 ],
+			"obj-4::obj-39" : [ "live.text", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -2213,8 +2213,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
