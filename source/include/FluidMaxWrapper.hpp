@@ -13,6 +13,7 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <ext.h>
 #include <ext_obex.h>
 #include <ext_obex_util.h>
+#include <ext_atomic.h>
 #include <z_dsp.h>
 
 #include <clients/common/FluidBaseClient.hpp>
@@ -72,8 +73,7 @@ public:
   void dsp(t_object *dsp64, short *count, double samplerate, long /*maxvectorsize*/, long /*flags*/)
   {
     Wrapper *wrapper = static_cast<Wrapper *>(this);
-    wrapper->mRTParams = wrapper->mParams; 
-    wrapper->mClient = typename Wrapper::ClientType{wrapper->mRTParams};
+    wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
     auto &   client  = wrapper->client();
     client.sampleRate(samplerate);
 
@@ -107,7 +107,7 @@ public:
     
     auto wrapper = static_cast<Wrapper*>(this);
     auto &client = wrapper->mClient;
-    wrapper->mRTParams = wrapper->mParams;
+    ATOMIC_INCREMENT(&wrapper->mInPerform);
     
     for (index i = 0; i < numins; ++i)
       if (audioInputConnections[asUnsigned(i)]) mInputs[asUnsigned(i)].reset(ins[i], 0, sampleframes);
@@ -121,6 +121,7 @@ public:
     client.process(mInputs, mOutputs, mContext);
 
     if (mControlClock) clock_delay(mControlClock, 0);
+    ATOMIC_DECREMENT(&wrapper->mInPerform);
   }
 
   void controlData()
@@ -419,6 +420,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, isNon
 
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object* /*attr*/, long ac, t_atom *av)
     {
+      while(x->mInPerform){} //spin-wait
       ParamLiteralConvertor<T, argSize> a;
       a.set(paramDescriptor<N>().defaultValue);
 
@@ -504,12 +506,11 @@ public:
 
   using ClientType    = Client;
   using ParamDescType = typename Client::ParamDescType;
-  using ParamSetType = typename Client::ParamSetType;
+  using ParamSetType  = typename Client::ParamSetType;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom *av)
     : mParams(Client::getParameterDescriptors()),
       mParamSnapshot(Client::getParameterDescriptors()),
-      mRTParams(Client::getParameterDescriptors()),
       mClient{initParamsFromArgs(ac,av)}
   {
     if (mClient.audioChannelsIn())
@@ -707,8 +708,8 @@ private:
   bool          mVerbose;
   ParamSetType  mParams;
   ParamSetType  mParamSnapshot;
-  ParamSetType  mRTParams;
   Client        mClient;
+  t_int32_atomic mInPerform{0};
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
