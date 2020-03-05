@@ -24,6 +24,7 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include "MaxBufferAdaptor.hpp"
 
 #include <FluidVersion.hpp>
+#include <atomic>
 #include <cctype>  //std::tolower
 #include <tuple>
 #include <utility>
@@ -93,7 +94,7 @@ public:
     if (client.controlChannelsOut() > 0)
     {
       mControlClock = mControlClock ? mControlClock : clock_new((t_object *) wrapper, (method) doControlOut);
-
+      mTick.clear();
       mOutputs = std::vector<ViewType>(asUnsigned(client.controlChannelsOut()), ViewType(nullptr, 0, 0));
       mControlOutputs.resize(asUnsigned(client.controlChannelsOut()));
       mControlAtoms.resize(asUnsigned(client.controlChannelsOut()));
@@ -120,19 +121,28 @@ public:
 
     client.process(mInputs, mOutputs, mContext);
 
-    if (mControlClock) clock_delay(mControlClock, 0);
+    if (mControlClock && !mTick.test_and_set())
+    {
+      clock_delay(mControlClock, 0);
+    }
     ATOMIC_DECREMENT(&wrapper->mInPerform);
   }
 
   void controlData()
   {
-    Wrapper *w      = static_cast<Wrapper *>(this);
+    Wrapper *w  = static_cast<Wrapper *>(this);
+    object_post((t_object*) w,"tick");
     auto &   client = w->client();
     atom_setdouble_array(static_cast<long>(client.controlChannelsOut()), mControlAtoms.data(), static_cast<long>(client.controlChannelsOut()),
                          mControlOutputs.data());
     w->controlOut(static_cast<long>(client.controlChannelsOut()), mControlAtoms.data());
+    mTick.clear();
   }
 
+  ~RealTime()
+  {
+    if(mControlClock) freeobject((t_object*) mControlClock);
+  }
 private:
   static void           doControlOut(Wrapper *x) { x->controlData(); }
   std::vector<ViewType> mInputs;
@@ -141,7 +151,8 @@ private:
   std::vector<short>    audioOutputConnections;
   std::vector<double>   mControlOutputs;
   std::vector<t_atom>   mControlAtoms;
-  void *                mControlClock;
+  void*                 mControlClock;
+  std::atomic_flag      mTick;
   FluidContext          mContext;
 };
 
