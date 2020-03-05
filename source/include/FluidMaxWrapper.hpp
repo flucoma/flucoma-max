@@ -121,17 +121,14 @@ public:
 
     client.process(mInputs, mOutputs, mContext);
 
-    if (mControlClock && !mTick.test_and_set())
-    {
-      clock_delay(mControlClock, 0);
-    }
+    if (mControlClock && !mTick.test_and_set()) clock_delay(mControlClock, 0);
+    
     ATOMIC_DECREMENT(&wrapper->mInPerform);
   }
 
   void controlData()
   {
     Wrapper *w  = static_cast<Wrapper *>(this);
-    object_post((t_object*) w,"tick");
     auto &   client = w->client();
     atom_setdouble_array(static_cast<long>(client.controlChannelsOut()), mControlAtoms.data(), static_cast<long>(client.controlChannelsOut()),
                          mControlOutputs.data());
