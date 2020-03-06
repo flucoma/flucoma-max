@@ -12,7 +12,6 @@ set_target_properties(${PROJECT_NAME} PROPERTIES
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
   FLUID_DECOMPOSITION
-  # FLUID_MANIP
   FLUID_MAX
 )
 
@@ -54,15 +53,10 @@ else ()
 endif ()
 set_target_properties(${PROJECT_NAME} PROPERTIES OUTPUT_NAME "${EXTERN_OUTPUT_NAME}")
 
-if(WIN32)
- target_compile_options(
-   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: /arch:AVX>
- )
-else(WIN32)
-target_compile_options(
-   ${PROJECT_NAME} PRIVATE $<$<NOT:$<CONFIG:DEBUG>>: -mavx>
-)
-endif(WIN32)
+#set AVX or whatever
+if(DEFINED FLUID_ARCH)
+  target_compile_options(${PROJECT_NAME} PRIVATE ${FLUID_ARCH})
+endif()
 
 ### Output ###
 if (APPLE)
@@ -87,8 +81,7 @@ if (APPLE)
   )
   #If we target 10.7 (actually < 10.9), we have to manually include this:
   target_compile_options(${PROJECT_NAME} PRIVATE -stdlib=libc++)
-elseif (WIN32)
-	target_compile_options(${PROJECT_NAME} PRIVATE /arch:AVX)
+elseif (WIN32)	
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAudio_LIB})
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${Jitter_LIB})
@@ -101,5 +94,4 @@ elseif (WIN32)
 
 	# warning about constexpr not being const in c++14
 	set_target_properties(${PROJECT_NAME} PROPERTIES COMPILE_FLAGS "/wd4814")
-
 endif ()
