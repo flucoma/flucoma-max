@@ -126,7 +126,7 @@ cmake -DMAX_SDK_PATH=<location of your Max SDK> -DFLUID_PARAMDUMP_PATH=<location
 ### Dependencies of dependencies! 
 The same steps and considerations apply to manually managing the dependencies of the Fluid Corpus Manipulation Library itself. If these aren't explicitly passed whilst running CMake against this build tree, then CMake will download them itself against the tags / commits we develop against. Nevertheless, if you are in the process of making changes to these libraries and running against this (which is much less likely than above), then the CMake variables of interest are: 
 * `EIGEN_PATH` pointing to the location of Eigen on disk 
-* `HISSTOOLS_PATH` pointing to the location of the HISSTools Library 
+* `HISS_PATH` pointing to the location of the HISSTools Library 
 
 To find out which branches / tags / commits of these we use, look in the top level `CMakeLists.txt` of the  Fluid Corpus Manipulation Library for the `FetchContent_Declare` statements for each dependency. 
 
