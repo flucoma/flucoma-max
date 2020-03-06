@@ -132,7 +132,8 @@ install(DIRECTORY externals DESTINATION ${MAX_PACKAGE_ROOT} FILES_MATCHING REGEX
 
 # install(CODE [[ message(STATUS "${fluid_decomposition_SOURCE_DIR}") ]])
 install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION "${MAX_PACKAGE_ROOT}/media")
-install(FILES License.md icon.png package-info.json QuickStart.md DESTINATION ${MAX_PACKAGE_ROOT})
+install(FILES icon.png package-info.json QuickStart.md DESTINATION ${MAX_PACKAGE_ROOT})
+install(FILES ${fluid_decomposition_SOURCE_DIR}/license-executableform.md DESTINATION ${MAX_PACKAGE_ROOT} RENAME license.md)
 
 if(DOCS)
   install(DIRECTORY "${FLUID_MAX_REF_PATH}" DESTINATION "${MAX_PACKAGE_ROOT}/docs" PATTERN "*.xml")
