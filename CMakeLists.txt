@@ -136,5 +136,5 @@ install(FILES icon.png package-info.json QuickStart.md DESTINATION ${MAX_PACKAGE
 install(FILES ${fluid_decomposition_SOURCE_DIR}/license-executableform.md DESTINATION ${MAX_PACKAGE_ROOT} RENAME license.md)
 
 if(DOCS)
-  install(DIRECTORY "${FLUID_MAX_REF_PATH}" DESTINATION "${MAX_PACKAGE_ROOT}/docs" PATTERN "*.xml")
+  install(DIRECTORY "${FLUID_MAX_REF_PATH}/" DESTINATION "${MAX_PACKAGE_ROOT}/docs"  PATTERN "*.xml")
 endif()
