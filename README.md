@@ -130,4 +130,30 @@ The same steps and considerations apply to manually managing the dependencies of
 
 To find out which branches / tags / commits of these we use, look in the top level `CMakeLists.txt` of the  Fluid Corpus Manipulation Library for the `FetchContent_Declare` statements for each dependency. 
 
+# Vector instructions and CPU architecture. 
+Most types of CPU in common use support a range of specialised instructions for processing vectors of numbers at once, which can offer substantial speed gains. For instance, on Intel / AMD chips there have been a succession of such instruction sets (MMX, SSE, AVX and so on).
+
+If you find objects causing 'illegal instruction' segmentation faults, it is likely that our default vector instruction flag isn't supported by your CPU. 
+
+### I'm in a hurry...
+
+And *only building for your own machine*? You want to enable the maximal set of CPU features for your machine without worrying? Using Clang / GCC? 
+
+Pass `-DFLUID_ARCH=-mnative` when you run CMake. This tells the compiler to figure out what instruction sets your personal CPU supports, and enable them. This implies a possible performance gain in return for a portability loss. 
+
+### More Detail 
+By default, on Intel / AMD, we enable AVX instructions (`-mavx` on clang/GCC; `/ARCH:AVX` on MSVC). These should work on all relatively recent CPUs (from, say, 2012 onwards). On Arm (with the Bela in mind), we use the following architecture flags: 
+
+```
+-march=armv7-a -mtune=cortex-a8 -mfloat-abi=hard -mfpu=neon
+```
+
+If your needs are different, then these defaults can be overridden by passing the desired compiler flags to CMake via the `FLUID_ARCH` cache variable. Note that this variable expects you to pass arguments in a form suitable for your compiler, and currently performs no checking or validation. 
+
+* Clang and GCC options are generally the same, see https://clang.llvm.org/docs/ClangCommandLineReference.html
+* See MSVC options here https://docs.microsoft.com/en-us/cpp/build/reference/arch-minimum-cpu-architecture?view=vs-2019
+
+If your Intel / AMD chip is too old to support AVX, it probably still supports SSE. On Mac OS and Linux, `sysctl -a | grep cpu.feat` can be used to produce a list of the various features your CPU supports. 
+
+
 > This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).
