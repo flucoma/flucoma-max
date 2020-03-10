@@ -114,13 +114,15 @@ public:
       if (audioInputConnections[asUnsigned(i)]) mInputs[asUnsigned(i)].reset(ins[i], 0, sampleframes);
 
     for (index i = 0; i < client.audioChannelsOut(); ++i)
-      // if(audioOutputConnections[i])
+    {
+      set_zero64(outs[i], sampleframes);
       mOutputs[asUnsigned(i)].reset(outs[asUnsigned(i)], 0, sampleframes);
+    }
 
     for (index i = 0; i < client.controlChannelsOut(); ++i) mOutputs[asUnsigned(i)].reset(&mControlOutputs[asUnsigned(i)], 0, 1);
 
     client.process(mInputs, mOutputs, mContext);
-
+    
     if (mControlClock && !mTick.test_and_set()) clock_delay(mControlClock, 0);
     
     ATOMIC_DECREMENT(&wrapper->mInPerform);
