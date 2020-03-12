@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 452.0, -923.0, 1017.0, 787.0 ],
+		"rect" : [ 77.0, 97.0, 1017.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1876,9 +1876,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1954,7 +1954,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 452.0, -897.0, 1017.0, 761.0 ],
+						"rect" : [ 77.0, 123.0, 1017.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1983,20 +1983,6 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-6",
-									"linecount" : 80,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 784.0, 47.0, 50.0, 1081.0 ],
-									"style" : "",
-									"text" : "0.00006 0.000073 0.000101 0.000177 0.000187 0.000846 0.001166 0.000494 0.000161 0.000076 0.000083 0.000087 0.000056 0.000051 0.000047 0.000056 0.000046 0.000021 0.000037 0.000036 0.000045 0.000058 0.000046 0.000047 0.000062 0.000046 0.000052 0.00005 0.000032 0.000035 0.000038 0.00004 0.000041 0.000037 0.000032 0.000027 0.000017 0.000017 0.000013 0.000012"
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"bgmode" : 0,
 									"border" : 0,
@@ -2311,9 +2297,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2666,19 +2652,6 @@
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"attr" : "normalize",
-									"id" : "obj-3",
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.333344, 353.0, 150.0, 22.0 ],
-									"style" : ""
-								}
-
-							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -2733,15 +2706,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-58", 0 ],
 									"midpoints" : [ 173.833344, 504.0, 21.5, 504.0 ],
-									"order" : 1,
-									"source" : [ "obj-2", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-6", 1 ],
-									"order" : 0,
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -2751,13 +2715,6 @@
 									"destination" : [ "obj-11", 1 ],
 									"midpoints" : [ 395.0, 282.0, 190.833344, 282.0 ],
 									"source" : [ "obj-23", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-2", 0 ],
-									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -2804,9 +2761,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2950,9 +2907,9 @@
 		"lines" : [  ],
 		"parameters" : 		{
 			"obj-1::obj-50::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-2::obj-1::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ],
 			"obj-1::obj-50::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-2::obj-1::obj-35" : [ "[1]", "Level", 0 ]
+			"obj-2::obj-1::obj-35" : [ "[1]", "Level", 0 ],
+			"obj-2::obj-1::obj-21::obj-6" : [ "live.tab[1]", "live.tab[1]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -3043,9 +3000,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
