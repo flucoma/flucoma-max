@@ -67,7 +67,13 @@ if(NOT fluid_decomposition_POPULATED)
   FetchContent_Populate(fluid_decomposition)
   add_subdirectory(${fluid_decomposition_SOURCE_DIR} ${fluid_decomposition_BINARY_DIR})  
   include(flucoma_version)
+  include(flucoma-buildtools)
 endif()
+
+set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY 
+                TOPLEVEL "${CMAKE_CURRENT_SOURCE_DIR}/externals"
+                SUPERBUILD "${CMAKE_SOURCE_DIR}/max_externals")
+
 
 if(DOCS)
   if(FLUID_PARAMDUMP_PATH)
@@ -128,7 +134,7 @@ foreach(PACKAGE_DIRECTORY examples;extras;help;init)
   install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION ${MAX_PACKAGE_ROOT})
 endforeach(PACKAGE_DIRECTORY)
 
-install(DIRECTORY externals DESTINATION ${MAX_PACKAGE_ROOT} FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
+install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/ DESTINATION ${MAX_PACKAGE_ROOT}/externals FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
 
 # install(CODE [[ message(STATUS "${fluid_decomposition_SOURCE_DIR}") ]])
 install(DIRECTORY "${fluid_decomposition_SOURCE_DIR}/AudioFiles/" DESTINATION "${MAX_PACKAGE_ROOT}/media")
