@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 784.0, 598.0 ],
+		"rect" : [ 104.0, 174.0, 784.0, 598.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1658,7 +1658,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 784.0, 572.0 ],
+						"rect" : [ 104.0, 200.0, 784.0, 572.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2548,7 +2548,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 132.75, 105.0, 297.0, 36.0 ],
 									"style" : "",
-									"text" : "At its most basic, fluid.ampslice~ is like \n[high pass]–[half wave rectify]–[slide~]-[>~]",
+									"text" : "At its most basic, fluid.ampgate~ is like \n[4th-order highpass]–[abs]–[atodb]-[slide]-[>]",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -3052,7 +3052,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 784.0, 572.0 ],
+						"rect" : [ 0.0, 26.0, 784.0, 572.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
