@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 319.0, 229.0, 850.0, 581.0 ],
+		"rect" : [ 100.0, 100.0, 850.0, 581.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -526,7 +526,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 318.77597, 57.599854 ]
+									"patching_rect" : [ 10.0, 10.0, 318.803955, 57.567627 ]
 								}
 
 							}
@@ -670,7 +670,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 449.5, 362.0, 115.5, 26.0 ],
 									"style" : "",
-									"text" : "latency 8820",
+									"text" : "latency 22050",
 									"textcolor" : [ 0.960784, 0.827451, 0.156863, 1.0 ]
 								}
 
@@ -729,9 +729,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 143.5, 311.0, 440.0, 22.0 ],
+									"patching_rect" : [ 143.5, 311.0, 442.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.ampgate~ @rampup 5 @rampdown 50 @onthreshold -12 @offthreshold -12"
+									"text" : "fluid.ampgate~ @rampup 5 @rampdown 25 @onthreshold -12 @offthreshold -12"
 								}
 
 							}
@@ -747,7 +747,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-20", 1 ],
-									"midpoints" : [ 574.0, 338.0, 555.5, 338.0 ],
+									"midpoints" : [ 576.0, 338.0, 555.5, 338.0 ],
 									"source" : [ "obj-1", 1 ]
 								}
 
@@ -959,9 +959,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -979,6 +979,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -988,8 +989,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1038,7 +1038,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "js helpstarter fluid.ampslice~"
+					"text" : "js helpstarter fluid.ampgate~"
 				}
 
 			}
@@ -1236,21 +1236,21 @@
 												"filekind" : "audiofile",
 												"loop" : 1,
 												"content_state" : 												{
-													"followglobaltempo" : [ 0 ],
-													"timestretch" : [ 0 ],
-													"speed" : [ 1.0 ],
-													"play" : [ 0 ],
-													"originaltempo" : [ 120.0 ],
-													"slurtime" : [ 0.0 ],
 													"originallengthms" : [ 0.0 ],
-													"quality" : [ "basic" ],
-													"mode" : [ "basic" ],
-													"pitchshift" : [ 1.0 ],
-													"formantcorrection" : [ 0 ],
-													"basictuning" : [ 440 ],
-													"pitchcorrection" : [ 0 ],
 													"formant" : [ 1.0 ],
-													"originallength" : [ 0.0, "ticks" ]
+													"quality" : [ "basic" ],
+													"originaltempo" : [ 120.0 ],
+													"play" : [ 0 ],
+													"basictuning" : [ 440 ],
+													"followglobaltempo" : [ 0 ],
+													"speed" : [ 1.0 ],
+													"pitchshift" : [ 1.0 ],
+													"originallength" : [ 0.0, "ticks" ],
+													"mode" : [ "basic" ],
+													"slurtime" : [ 0.0 ],
+													"pitchcorrection" : [ 0 ],
+													"timestretch" : [ 0 ],
+													"formantcorrection" : [ 0 ]
 												}
 
 											}
@@ -1279,7 +1279,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 318.77597, 57.599854 ]
+									"patching_rect" : [ 10.0, 10.0, 318.803955, 57.567627 ]
 								}
 
 							}
@@ -1287,12 +1287,13 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-23",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 201.0, 238.0, 517.0, 21.0 ],
+									"patching_rect" : [ 201.0, 222.0, 560.0, 36.0 ],
 									"style" : "",
-									"text" : "an absolute gate for fun - explore the lookahead to allow for tails, but with added latency",
+									"text" : "explore the lookback to allow capture the full attacks. Feel free to explore lookahead to capture more of the tails, but with added latency: the greatest of the lookahead and lookback",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -1306,7 +1307,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.5, 168.0, 372.0, 21.0 ],
 									"style" : "",
-									"text" : "a sort of click on the right, relative envelope mostly, with a gate",
+									"text" : "an absolute gate for fun",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -1370,9 +1371,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 169.0, 263.0, 673.0, 22.0 ],
+									"patching_rect" : [ 169.0, 263.0, 676.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, onthreshold -27, offthreshold -31, rampup 441, rampdown 2205, minsilencelength 1100, highpassfreq 40, lookback 441"
+									"text" : "reset, onthreshold -27, offthreshold -31, rampup 441, rampdown 4410, minsilencelength 4410, highpassfreq 20, lookback 441"
 								}
 
 							}
@@ -1383,7 +1384,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.5, 191.0, 597.0, 22.0 ],
+									"patching_rect" : [ 140.5, 191.0, 599.0, 22.0 ],
 									"style" : "",
 									"text" : "reset, onthreshold -27, offthreshold -31, rampup 441, rampdown 4410, minsilencelength 4410, highpassfreq 20"
 								}
@@ -1761,9 +1762,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1781,6 +1782,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1790,8 +1792,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1839,7 +1840,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 319.0, 255.0, 850.0, 555.0 ],
+						"rect" : [ 100.0, 126.0, 850.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2094,9 +2095,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 255.75, 129.0, 297.0, 36.0 ],
+									"patching_rect" : [ 255.75, 129.0, 301.0, 36.0 ],
 									"style" : "",
-									"text" : "At its most basic, fluid.ampslice~ is like \n[high pass]–[half wave rectify]–[slide~]-[>~]",
+									"text" : "At its most basic, fluid.ampgate~ is like \n[4th-order highpass]–[abs]–[atodb]-[slide]-[>]",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -2112,7 +2113,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 382.75, 175.5, 411.0, 36.0 ],
 									"style" : "",
-									"text" : "by using different 'on' and 'off' thresholds, we add hysterisis, which can help with triggering errors. This is like replacing [>~] with [thresh~]",
+									"text" : "by using different 'on' and 'off' thresholds, we add hysterisis, which can help with triggering errors. This is like replacing [>] with [thresh]",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -2671,9 +2672,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2691,6 +2692,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2700,8 +2702,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2854,9 +2855,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2874,6 +2875,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2883,8 +2885,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
