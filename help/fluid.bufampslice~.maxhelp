@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 131.0, 119.0, 787.0, 598.0 ],
+		"rect" : [ 78.0, 120.0, 787.0, 598.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -137,9 +137,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 252.5, 173.0, 331.0, 36.0 ],
+									"patching_rect" : [ 252.5, 173.0, 335.0, 36.0 ],
 									"style" : "",
-									"text" : "the default settings thresholds on the same value of the difference between a slow and a fast envelope",
+									"text" : "beware of double trigger at the begining of the cycles. A solution: Schmidth triggers",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -2638,7 +2638,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 131.0, 145.0, 787.0, 572.0 ],
+						"rect" : [ 78.0, 146.0, 787.0, 572.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3501,7 +3501,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 324.833344, 275.5, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "23"
+									"text" : "0"
 								}
 
 							}
