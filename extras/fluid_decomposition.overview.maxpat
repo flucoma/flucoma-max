@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 477.0, 45.0, 1015.0, 780.0 ],
+		"rect" : [ 116.0, 45.0, 1003.0, 780.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -39,6 +39,42 @@
 		"subpatcher_template" : "",
 		"showontab" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"button" : 1,
+					"fontname" : "Lato Regular",
+					"htabcolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
+					"id" : "obj-1",
+					"maxclass" : "tab",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "int", "", "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 288.75, 203.0, 137.0, 54.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 353.25, 204.0, 137.0, 54.0 ],
+					"tabcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
+					"tabs" : [ "fluid.ampgate~", "fluid.bufampgate~" ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"annotation" : "",
+					"id" : "obj-15",
+					"linecount" : 3,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 436.0, 213.5, 160.0, 47.0 ],
+					"presentation" : 1,
+					"presentation_linecount" : 4,
+					"presentation_rect" : [ 505.0, 204.0, 112.0, 60.0 ],
+					"text" : "Slice by amplitude envelope threshold with lookahead / lookback",
+					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"fontname" : "Lato Regular",
 					"fontsize" : 14.0,
@@ -263,7 +299,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 180.083344000000011, 402.0, 137.0, 71.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 707.0, 231.5, 137.0, 71.0 ],
+					"presentation_rect" : [ 707.0, 418.5, 137.0, 71.0 ],
 					"tabcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
 					"tabs" : [ "fluid.bufnmf~", "fluid.nmfmatch~", "fluid.nmffilter~" ]
 				}
@@ -282,7 +318,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 180.083344000000011, 318.0, 137.0, 54.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 359.0, 270.0, 137.0, 54.0 ],
+					"presentation_rect" : [ 355.0, 270.0, 137.0, 54.0 ],
 					"tabcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
 					"tabs" : [ "fluid.transientslice~", "fluid.buftransientslice~" ]
 				}
@@ -301,7 +337,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 180.083344000000011, 256.0, 137.0, 54.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 359.0, 207.0, 137.0, 54.0 ],
+					"presentation_rect" : [ 707.0, 270.0, 137.0, 54.0 ],
 					"tabcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
 					"tabs" : [ "fluid.noveltyslice~", "fluid.bufnoveltyslice~" ]
 				}
@@ -339,7 +375,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 180.083344000000011, 132.0, 137.0, 54.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 22.75, 207.0, 137.0, 54.0 ],
+					"presentation_rect" : [ 22.75, 204.0, 137.0, 54.0 ],
 					"tabcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
 					"tabs" : [ "fluid.ampslice~", "fluid.bufampslice~" ]
 				}
@@ -358,7 +394,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 501.000030999999979, 533.333374000000049, 137.0, 54.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 707.0, 415.0, 137.0, 54.0 ],
+					"presentation_rect" : [ 707.0, 214.5, 137.0, 31.0 ],
 					"tabcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
 					"tabs" : [ "fluid.bufcompose~" ]
 				}
@@ -424,7 +460,7 @@
 					"patching_rect" : [ 664.666625999999951, 552.666625999999951, 215.0, 60.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 6,
-					"presentation_rect" : [ 850.0, 403.0, 131.0, 87.0 ],
+					"presentation_rect" : [ 850.0, 171.0, 131.0, 87.0 ],
 					"text" : "Copy, slice, stack, mix concatenate. \n\nAll the things you've wanted to do with buffers...",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -572,7 +608,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 670.333312999999976, 518.166625999999951, 76.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 707.0, 355.0, 76.0, 35.0 ],
+					"presentation_rect" : [ 707.0, 168.0, 76.0, 35.0 ],
 					"text" : "Utility"
 				}
 
@@ -588,7 +624,7 @@
 					"patching_rect" : [ 37.500008000000001, 407.0, 125.0, 60.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 4,
-					"presentation_rect" : [ 850.0, 237.0, 125.0, 60.0 ],
+					"presentation_rect" : [ 850.0, 424.0, 125.0, 60.0 ],
 					"text" : "Use Nonnegative Matrix Factorisation to explore and decompose sounds ",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -656,7 +692,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 64.000007999999994, 373.0, 90.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 707.0, 168.0, 160.0, 35.0 ],
+					"presentation_rect" : [ 707.0, 355.0, 160.0, 35.0 ],
 					"text" : "Objects"
 				}
 
@@ -672,7 +708,7 @@
 					"patching_rect" : [ 36.000008000000001, 322.666655999999989, 125.0, 33.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 2,
-					"presentation_rect" : [ 509.0, 280.5, 125.0, 33.0 ],
+					"presentation_rect" : [ 505.0, 280.5, 125.0, 33.0 ],
 					"text" : "Slice by transient modelling",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -689,7 +725,7 @@
 					"patching_rect" : [ 36.000008000000001, 262.5, 128.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 3,
-					"presentation_rect" : [ 509.0, 210.5, 128.0, 47.0 ],
+					"presentation_rect" : [ 857.0, 273.5, 128.0, 47.0 ],
 					"text" : "Slice by estimated novelty on a choice of features",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -716,14 +752,15 @@
 				"box" : 				{
 					"annotation" : "",
 					"id" : "obj-46",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.083344, 156.0, 160.0, 20.0 ],
+					"patching_rect" : [ 6.083344, 156.0, 160.0, 33.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 170.0, 217.5, 112.0, 33.0 ],
-					"text" : "Slice by amplitude envelope",
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 172.0, 210.5, 112.0, 47.0 ],
+					"text" : "Slice by amplitude envelope onsets with detrending",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
@@ -795,7 +832,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 168.083344000000011, 385.0, 159.999985000000009, 103.666656000000003 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 699.0, 168.0, 295.0, 174.0 ],
+					"presentation_rect" : [ 699.0, 355.0, 295.0, 174.0 ],
 					"proportion" : 0.39
 				}
 
@@ -815,7 +852,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 493.0, 518.166625999999951, 160.333327999999995, 94.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 699.0, 355.0, 295.0, 174.0 ],
+					"presentation_rect" : [ 699.0, 168.0, 295.0, 94.0 ],
 					"proportion" : 0.39
 				}
 
@@ -855,7 +892,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 168.083344000000011, 124.999992000000006, 159.999985000000009, 255.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 9.0, 168.0, 676.0, 174.0 ],
+					"presentation_rect" : [ 9.0, 168.0, 985.0, 174.0 ],
 					"proportion" : 0.39
 				}
 
