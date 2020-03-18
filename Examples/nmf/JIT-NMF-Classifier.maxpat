@@ -81,7 +81,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 229.0, 346.5, 243.0, 20.0 ],
+					"patching_rect" : [ 245.0, 322.5, 243.0, 20.0 ],
 					"style" : "",
 					"text" : "detecting attacks to trigger the classification"
 				}
@@ -1312,8 +1312,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8431,14 +8431,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-8",
-					"linecount" : 2,
+					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "" ],
-					"patching_rect" : [ 212.0, 368.5, 660.5, 35.0 ],
+					"patching_rect" : [ 228.0, 344.5, 493.0, 49.0 ],
 					"style" : "",
-					"text" : "fluid.ampslice~ @absthreshon -47 @absthreshoff -47 @absrampup 2205 @absrampdown 2205 @relthreshon 12 @relthreshoff 9 @relrampup 10 @relrampdown 1666 @minslicelength 4410 @minsilencelength 4410 @highpassfreq 85"
+					"text" : "fluid.ampslice~ @floor -47 @slowrampup 2205 @slowrampdown 2205 @onthreshold 12 @offthreshold 9 @fastrampup 10 @fastrampdown 1666 @minslicelength 4410 @highpassfreq 85"
 				}
 
 			}
@@ -9354,8 +9354,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
