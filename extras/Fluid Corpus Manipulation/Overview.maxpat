@@ -49,7 +49,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 288.75, 203.0, 137.0, 54.0 ],
+					"patching_rect" : [ 335.75, 125.0, 137.0, 54.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 353.25, 204.0, 137.0, 54.0 ],
 					"tabcolor" : [ 0.3, 0.3, 0.3, 1.0 ],
@@ -65,10 +65,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 436.0, 213.5, 160.0, 47.0 ],
+					"patching_rect" : [ 436.0, 213.5, 161.0, 47.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 4,
-					"presentation_rect" : [ 505.0, 204.0, 112.0, 60.0 ],
+					"presentation_rect" : [ 505.0, 204.0, 113.0, 60.0 ],
 					"text" : "Slice by amplitude envelope threshold with lookahead / lookback",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -756,7 +756,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 6.083344, 156.0, 160.0, 33.0 ],
+					"patching_rect" : [ 6.083344, 156.0, 161.0, 33.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 3,
 					"presentation_rect" : [ 172.0, 210.5, 112.0, 47.0 ],
@@ -899,6 +899,13 @@
 			}
  ],
 		"lines" : [ 			{
+				"patchline" : 				{
+					"destination" : [ "obj-86", 0 ],
+					"source" : [ "obj-1", 1 ]
+				}
+
+			}
+, 			{
 				"patchline" : 				{
 					"destination" : [ "obj-86", 0 ],
 					"midpoints" : [ 569.500031000000035, 596.166687000000024, 420.5, 596.166687000000024 ],
