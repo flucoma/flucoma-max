@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, -1144.0, 1852.0, 1110.0 ],
+		"rect" : [ 34.0, 79.0, 1852.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -56,7 +56,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1028.0, 922.0, 89.0, 22.0 ],
+					"patching_rect" : [ 1106.0, 918.0, 89.0, 22.0 ],
 					"style" : "",
 					"text" : "loadmess -180"
 				}
@@ -403,9 +403,9 @@
 					"id" : "obj-152",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 208.5, 1044.0, 487.0, 22.0 ],
+					"numoutlets" : 3,
+					"outlettype" : [ "bang", "float", "" ],
+					"patching_rect" : [ 208.5, 1044.0, 527.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.bufnmf~ @source source @resynth resynth @components 3 @bases bases @basesmode 2"
 				}
@@ -2528,8 +2528,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
