@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 124.0, 140.0, 809.0, 612.0 ],
+		"rect" : [ 70.0, 115.0, 809.0, 612.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 124.0, 166.0, 809.0, 586.0 ],
+						"rect" : [ 70.0, 141.0, 809.0, 586.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -92,19 +92,6 @@
 									"patching_rect" : [ 308.0, 413.0, 427.0, 33.0 ],
 									"style" : "",
 									"text" : "as this is a windowed process, the frequency of the peak is good for that full window, and therefore interesting artefacts appear when the pitch is changing."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-22",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 560.0, 98.0, 74.0, 22.0 ],
-									"style" : "",
-									"text" : "phasor~ 0.1"
 								}
 
 							}
@@ -154,9 +141,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 560.0, 122.0, 77.0, 22.0 ],
+									"patching_rect" : [ 560.0, 122.0, 65.0, 22.0 ],
 									"style" : "",
-									"text" : "triangle~ 0.5"
+									"text" : "cycle~ 0.1"
 								}
 
 							}
@@ -168,7 +155,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 274.25, 424.0, 29.5, 22.0 ],
-									"presentation_rect" : [ 105.0, 415.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "2"
 								}
@@ -297,7 +283,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "" ],
-									"patching_rect" : [ 48.0, 327.0, 482.0, 35.0 ],
+									"patching_rect" : [ 48.0, 327.0, 485.0, 35.0 ],
 									"style" : "",
 									"text" : "fluid.sines~ @detectionthreshold -144 @birthhighthreshold -144 @birthlowthreshold -144 @mintracklen 1 @trackmagrange 200 @trackfreqrange 1000 @trackprob 0"
 								}
@@ -365,7 +351,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 48.0, 382.666626, 45.0, 45.0 ],
+									"patching_rect" : [ 48.0, 401.0, 45.0, 45.0 ],
 									"style" : ""
 								}
 
@@ -418,13 +404,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-9", 2 ],
 									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-18", 0 ],
-									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -1376,8 +1355,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 597.121277, 375.0, 201.242569, 39.0 ],
-									"presentation_rect" : [ 518.0, 453.0, 201.242569, 39.0 ]
+									"patching_rect" : [ 597.0, 375.0, 201.242569, 39.0 ],
+									"presentation_rect" : [ 597.0, 375.0, 201.242569, 39.0 ]
 								}
 
 							}
