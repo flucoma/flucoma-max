@@ -40,6 +40,497 @@
 		"showontab" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 124.0, 166.0, 809.0, 586.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"showontab" : 1,
+						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 308.0, 413.0, 427.0, 33.0 ],
+									"style" : "",
+									"text" : "as this is a windowed process, the frequency of the peak is good for that full window, and therefore interesting artefacts appear when the pitch is changing."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 560.0, 98.0, 74.0, 22.0 ],
+									"style" : "",
+									"text" : "phasor~ 0.1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-21",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 560.0, 170.0, 41.0, 22.0 ],
+									"style" : "",
+									"text" : "+~ 57"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-20",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 560.0, 146.0, 39.0, 22.0 ],
+									"style" : "",
+									"text" : "*~ 12"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 48.0, 242.0, 41.0, 22.0 ],
+									"style" : "",
+									"text" : "mtof~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 560.0, 122.0, 77.0, 22.0 ],
+									"style" : "",
+									"text" : "triangle~ 0.5"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 274.25, 424.0, 29.5, 22.0 ],
+									"presentation_rect" : [ 105.0, 415.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "2"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-16",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 48.0, 183.0, 29.5, 22.0 ],
+									"style" : "",
+									"text" : "1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 140.858582, 183.0, 50.0, 22.0 ],
+									"style" : "",
+									"text" : "sig~ 69"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 48.0, 214.0, 204.717163, 22.0 ],
+									"style" : "",
+									"text" : "selector~ 2 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-8",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 44.0, 139.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-26",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 198.5, 294.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-29",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 279.5, 398.666687, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"style" : "",
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 222.5, 288.0, 293.0, 33.0 ],
+									"style" : "",
+									"text" : "with these settings that tell the process to tolerate everything as a sinusoid, even short and quiet peaks"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "signal", "signal", "" ],
+									"patching_rect" : [ 48.0, 327.0, 482.0, 35.0 ],
+									"style" : "",
+									"text" : "fluid.sines~ @detectionthreshold -144 @birthhighthreshold -144 @birthlowthreshold -144 @mintracklen 1 @trackmagrange 200 @trackfreqrange 1000 @trackprob 0"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 48.0, 295.0, 42.0, 22.0 ],
+									"style" : "",
+									"text" : "*~ 0.1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "signal" ],
+									"patching_rect" : [ 48.0, 269.0, 68.0, 22.0 ],
+									"style" : "",
+									"text" : "cycle~ 440"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 69.0, 133.0, 344.0, 33.0 ],
+									"style" : "",
+									"text" : "as the algorithm resynthesize the sinusoidal peaks, we would expect to get it to work almost perfectly on a sine wave\n"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpname.js",
+									"id" : "obj-11",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.sines~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 242.717163, 57.567627 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"local" : 1,
+									"maxclass" : "ezdac~",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 48.0, 382.666626, 45.0, 45.0 ],
+									"style" : ""
+								}
+
+							}
+ ],
+						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 1 ],
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-16", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"midpoints" : [ 283.75, 454.0, 19.0, 454.0, 19.0, 210.0, 57.5, 210.0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 2 ],
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-18", 0 ],
+									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 1 ],
+									"source" : [ "obj-5", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-12", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-9", 0 ]
+								}
+
+							}
+ ],
+						"styles" : [ 							{
+								"name" : "max6box",
+								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6inlet",
+								"default" : 								{
+									"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6message",
+								"default" : 								{
+									"bgfillcolor" : 									{
+										"type" : "gradient",
+										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+										"angle" : 270.0,
+										"proportion" : 0.39,
+										"autogradient" : 0
+									}
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+,
+								"parentstyle" : "max6box",
+								"multi" : 0
+							}
+, 							{
+								"name" : "max6outlet",
+								"default" : 								{
+									"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+								}
+,
+								"parentstyle" : "",
+								"multi" : 0
+							}
+ ]
+					}
+,
+					"patching_rect" : [ 57.333328, 137.666656, 156.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"style" : "",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p \"a little more explanation\""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -73,7 +564,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 124.0, 166.0, 809.0, 586.0 ],
+						"rect" : [ 0.0, 26.0, 809.0, 586.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -216,7 +707,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Tremblay-AaS-AcousticStrums-M.wav" ],
+									"args" : [ "@file", "Tremblay-AaS-SynthTwoVoices-M.wav" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -230,7 +721,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 10.0, 122.0, 223.0, 122.0 ],
+									"patching_rect" : [ 10.0, 120.0, 223.0, 122.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -768,7 +1259,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 138.621277, 300.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "1792"
+									"text" : "4096"
 								}
 
 							}
@@ -862,13 +1353,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "" ],
-									"patching_rect" : [ 291.371277, 375.0, 401.0, 22.0 ],
+									"patching_rect" : [ 291.371277, 375.0, 300.0, 35.0 ],
 									"style" : "",
-									"text" : "fluid.sines~ @bandwidth 76 @fftsettings 1024 256 16384 @mintracklen 3"
+									"text" : "fluid.sines~ @bandwidth 76 @fftsettings 2048 -1 8192 @mintracklen 2 @detectionthreshold -40"
 								}
 
 							}
@@ -884,8 +1376,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 535.0, 420.0, 201.242569, 39.0 ],
-									"presentation_rect" : [ 535.0, 420.0, 201.242569, 39.0 ]
+									"patching_rect" : [ 597.121277, 375.0, 201.242569, 39.0 ],
+									"presentation_rect" : [ 518.0, 453.0, 201.242569, 39.0 ]
 								}
 
 							}
@@ -1079,9 +1571,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1224,11 +1716,11 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-2::obj-35" : [ "[5]", "Level", 0 ],
 			"obj-1::obj-46::obj-8" : [ "live.text", "live.text", 0 ],
-			"obj-1::obj-46::obj-10" : [ "live.text[2]", "live.text", 0 ],
 			"obj-1::obj-2::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
-			"obj-1::obj-46::obj-9" : [ "live.text[1]", "live.text", 0 ]
+			"obj-1::obj-46::obj-9" : [ "live.text[1]", "live.text", 0 ],
+			"obj-1::obj-46::obj-10" : [ "live.text[2]", "live.text", 0 ],
+			"obj-1::obj-2::obj-35" : [ "[5]", "Level", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -1314,14 +1806,18 @@
 				"name" : "vtimes~.mxo",
 				"type" : "iLaX"
 			}
+, 			{
+				"name" : "vplus~.mxo",
+				"type" : "iLaX"
+			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
