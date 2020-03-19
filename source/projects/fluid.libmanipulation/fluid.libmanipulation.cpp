@@ -1,5 +1,5 @@
 
-#include <clients/nrt/CorpusClient.hpp>
+//#include <clients/nrt/CorpusClient.hpp>
 #include <clients/nrt/DataSetClient.hpp>
 #include <clients/nrt/LabelSetClient.hpp>
 #include <clients/nrt/KDTreeClient.hpp>

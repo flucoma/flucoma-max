@@ -611,7 +611,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, 79.0, 640.0, 480.0 ],
+						"rect" : [ 34.0, 79.0, 275.0, 482.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -655,7 +655,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 514.0, -787.0, 640.0, 480.0 ],
+										"rect" : [ 65.0, 667.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -689,7 +689,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 91.0, 255.5, 91.0, 22.0 ],
+													"patching_rect" : [ 91.0, 255.5, 93.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend source"
 												}
@@ -702,7 +702,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 360.5, 280.5, 123.0, 22.0 ],
+													"patching_rect" : [ 360.5, 280.5, 129.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend deststartchan"
 												}
@@ -715,7 +715,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 184.0, 255.5, 91.0, 22.0 ],
+													"patching_rect" : [ 184.0, 255.5, 115.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend destination"
 												}
@@ -918,8 +918,8 @@
 													"id" : "obj-26",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 79.0, 312.0, 108.0, 22.0 ],
 													"style" : "",
 													"text" : "fluid.bufcompose~"
@@ -1307,7 +1307,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 95.0, -951.0, 733.0, 472.0 ],
+										"rect" : [ 442.0, 79.0, 733.0, 472.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1341,7 +1341,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 156.0, 255.0, 91.0, 22.0 ],
+													"patching_rect" : [ 156.0, 255.0, 93.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend source"
 												}
@@ -1354,7 +1354,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 249.0, 255.0, 91.0, 22.0 ],
+													"patching_rect" : [ 249.0, 255.0, 115.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend destination"
 												}
@@ -1522,9 +1522,9 @@
 													"id" : "obj-26",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 142.0, 301.0, 176.0, 22.0 ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
+													"patching_rect" : [ 142.0, 301.0, 180.0, 22.0 ],
 													"style" : "",
 													"text" : "fluid.bufcompose~ @destgain 1."
 												}
@@ -1847,7 +1847,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 1015.0, -842.0, 758.0, 496.0 ],
+										"rect" : [ 378.0, 79.0, 758.0, 496.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1874,7 +1874,6 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-9",
@@ -1882,7 +1881,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 247.0, 254.0, 91.0, 22.0 ],
+													"patching_rect" : [ 247.0, 254.0, 115.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend destination"
 												}
@@ -1895,7 +1894,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 154.0, 254.0, 91.0, 22.0 ],
+													"patching_rect" : [ 154.0, 254.0, 93.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend source"
 												}
@@ -1908,7 +1907,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 451.0, 245.0, 107.0, 22.0 ],
+													"patching_rect" : [ 451.0, 245.0, 133.0, 22.0 ],
 													"style" : "",
 													"text" : "prepend deststartframe"
 												}
@@ -2124,8 +2123,8 @@
 													"id" : "obj-26",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 142.0, 301.0, 108.0, 22.0 ],
 													"style" : "",
 													"text" : "fluid.bufcompose~"
