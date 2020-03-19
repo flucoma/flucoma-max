@@ -2,15 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
-		"rect" : [ 0.0, 33.0, 890.0, 671.0 ],
+		"rect" : [ 34.0, 79.0, 890.0, 671.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -48,6 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 69.5, 325.0, 151.0, 47.0 ],
+					"style" : "",
 					"text" : "In non-blocking, the middle outlet will report progress",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -55,13 +55,17 @@
 			}
 , 			{
 				"box" : 				{
+					"floatoutput" : 1,
 					"id" : "obj-47",
+					"ignoreclick" : 1,
 					"maxclass" : "slider",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 70.5, 292.0, 118.0, 24.0 ],
+					"size" : 1.0,
+					"style" : "",
 					"varname" : "progress"
 				}
 
@@ -74,6 +78,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 270.5, 198.0, 213.0, 20.0 ],
+					"style" : "",
 					"text" : "Use calling thread (for very small jobs)",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -87,6 +92,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 270.5, 175.0, 205.0, 20.0 ],
+					"style" : "",
 					"text" : "Use Max main thread (for small jobs)",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -100,6 +106,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 270.5, 153.0, 259.0, 20.0 ],
+					"style" : "",
 					"text" : "Use a dedicated worker thread (for longer jobs)",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -112,7 +119,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 92.599853515625, 334.0, 21.0 ],
+					"patching_rect" : [ 10.0, 92.599854, 334.0, 21.0 ],
+					"style" : "",
 					"text" : "By default non-realtime objects use the Max main thread",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -126,6 +134,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 120.5, 198.0, 148.0, 20.0 ],
+					"style" : "",
 					"text" : "2: Blocking (High Priority)"
 				}
 
@@ -138,6 +147,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 120.5, 175.0, 148.0, 20.0 ],
+					"style" : "",
 					"text" : "1: Blocking (Low Priority)"
 				}
 
@@ -150,6 +160,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 120.5, 153.0, 148.0, 20.0 ],
+					"style" : "",
 					"text" : "0: Non-blocking"
 				}
 
@@ -168,11 +179,11 @@
 					"patching_rect" : [ 318.0, 231.0, 187.0, 27.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
-							"parameter_shortname" : "live.text",
-							"parameter_enum" : [ "val1", "val2" ],
-							"parameter_type" : 2,
 							"parameter_longname" : "live.text",
-							"parameter_mmax" : 1
+							"parameter_shortname" : "live.text",
+							"parameter_type" : 2,
+							"parameter_mmax" : 1.0,
+							"parameter_enum" : [ "val1", "val2" ]
 						}
 
 					}
@@ -191,6 +202,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 318.0, 278.0, 148.0, 22.0 ],
+					"style" : "",
 					"text" : "help fluid.bufthreaddemo~"
 				}
 
@@ -204,6 +216,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 318.0, 313.0, 51.0, 22.0 ],
+					"style" : "",
 					"text" : "pcontrol"
 				}
 
@@ -216,6 +229,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 101.5, 132.0, 151.0, 20.0 ],
+					"style" : "",
 					"text" : "Options",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -230,6 +244,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 349.0, 19.0, 58.0, 22.0 ],
+					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -243,6 +258,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 349.0, 72.0, 83.0, 22.0 ],
+					"style" : "",
 					"text" : "t s s"
 				}
 
@@ -256,6 +272,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 30.0, 231.0, 265.0, 22.0 ],
+					"style" : "",
 					"varname" : "blockattr"
 				}
 
@@ -270,6 +287,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 436.0, 59.0, 479.0, 35.0 ],
+					"style" : "",
 					"text" : "script newobject newobj @text $1 @varname fluidobj @patching_position 30 260, script connect blockattr 0 fluidobj 0, script connect fluidobj 1 progress 0"
 				}
 
@@ -284,6 +302,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 436.0, 98.0, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
+					"style" : "",
 					"text" : "thispatcher"
 				}
 
@@ -297,6 +316,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 349.0, 98.0, 57.0, 22.0 ],
+					"style" : "",
 					"text" : "jsargs $1"
 				}
 
@@ -310,6 +330,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 349.0, 46.0, 72.0, 22.0 ],
+					"style" : "",
 					"text" : "patcherargs"
 				}
 
@@ -326,7 +347,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 107.0, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 107.009087, 57.567627 ]
 				}
 
 			}
@@ -337,7 +358,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 69.599853515625, 255.0, 21.0 ],
+					"patching_rect" : [ 10.0, 69.599854, 255.0, 21.0 ],
+					"style" : "",
 					"text" : "Choose with thread to use for processing"
 				}
 
@@ -410,11 +432,7 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-39" : [ "live.text", "live.text", 0 ],
-			"parameterbanks" : 			{
-
-			}
-
+			"obj-39" : [ "live.text", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
