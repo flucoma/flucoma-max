@@ -29,7 +29,7 @@ function source(s)
 		case 0: //resynth
 		{
 			outlet(0, 2, 0, 1);
-			outlet(0, 3, 1, 1);
+			outlet(0, numChans > 1 ? 3 : 2, 1, 1);
 			break;
 		}
 		case 1: //original
