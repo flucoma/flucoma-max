@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 94.0, 142.0, 829.0, 654.0 ],
+		"rect" : [ 100.0, 100.0, 829.0, 654.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -232,21 +232,21 @@
 												"filekind" : "audiofile",
 												"loop" : 1,
 												"content_state" : 												{
-													"originallengthms" : [ 0.0 ],
-													"formant" : [ 1.0 ],
-													"quality" : [ "basic" ],
 													"originaltempo" : [ 120.0 ],
-													"play" : [ 0 ],
-													"basictuning" : [ 440 ],
-													"followglobaltempo" : [ 0 ],
-													"speed" : [ 1.0 ],
-													"pitchshift" : [ 1.0 ],
-													"originallength" : [ 0.0, "ticks" ],
-													"mode" : [ "basic" ],
 													"slurtime" : [ 0.0 ],
+													"play" : [ 0 ],
+													"originallengthms" : [ 0.0 ],
+													"pitchshift" : [ 1.0 ],
+													"formantcorrection" : [ 0 ],
+													"basictuning" : [ 440 ],
 													"pitchcorrection" : [ 0 ],
-													"timestretch" : [ 0 ],
-													"formantcorrection" : [ 0 ]
+													"mode" : [ "basic" ],
+													"formant" : [ 1.0 ],
+													"speed" : [ 1.0 ],
+													"originallength" : [ 0.0, "ticks" ],
+													"quality" : [ "basic" ],
+													"followglobaltempo" : [ 0 ],
+													"timestretch" : [ 0 ]
 												}
 
 											}
@@ -697,8 +697,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -717,7 +717,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -727,7 +726,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -775,7 +775,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 94.0, 168.0, 829.0, 628.0 ],
+						"rect" : [ 100.0, 126.0, 829.0, 628.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -837,9 +837,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 20.0, 184.0, 68.0, 22.0 ],
+									"patching_rect" : [ 20.0, 184.0, 78.0, 22.0 ],
 									"style" : "",
-									"text" : "phasor~ -1"
+									"text" : "phasor~ -1.1"
 								}
 
 							}
@@ -1451,8 +1451,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -1471,7 +1471,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1481,7 +1480,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1628,8 +1628,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
@@ -1648,7 +1648,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1658,7 +1657,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
