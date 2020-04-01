@@ -1,8 +1,19 @@
+/*
+Part of the Fluid Corpus Manipulation Project (http://www.flucoma.org/)
+Copyright 2017-2019 University of Huddersfield.
+Licensed under the BSD-3 License.
+See license.md file in the project root for full license information.
+This project has received funding from the European Research Council (ERC)
+under the European Union’s Horizon 2020 research and innovation programme
+(grant agreement No 725899).
+*/
+
 #pragma once
 
 #include <ext.h>
 #include <ext_obex.h>
 #include <ext_obex_util.h>
+#include <ext_atomic.h>
 #include <z_dsp.h>
 
 #include <clients/common/FluidBaseClient.hpp>
@@ -14,6 +25,8 @@
 
 #include "MaxBufferAdaptor.hpp"
 
+#include <FluidVersion.hpp>
+#include <atomic>
 #include <cctype>  //std::tolower
 #include <deque>
 #include <tuple>
@@ -64,31 +77,30 @@ public:
   void dsp(t_object *dsp64, short *count, double samplerate, long /*maxvectorsize*/, long /*flags*/)
   {
     Wrapper *wrapper = static_cast<Wrapper *>(this);
-
     wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
     auto &   client  = wrapper->client();
     client.sampleRate(samplerate);
 
-    audioInputConnections.resize(client.audioChannelsIn());
+    audioInputConnections.resize(asUnsigned(client.audioChannelsIn()));
     std::copy(count, count + client.audioChannelsIn(), audioInputConnections.begin());
 
     assert((client.audioChannelsOut() > 0) != (client.controlChannelsOut() > 0) &&
            "Client must *either* be audio out or control out, sorry");
 
-    audioOutputConnections.resize(client.audioChannelsOut());
+    audioOutputConnections.resize(asUnsigned(client.audioChannelsOut()));
     std::copy(count + client.audioChannelsIn(), count + client.audioChannelsIn() + client.audioChannelsOut(),
               audioOutputConnections.begin());
 
-    mInputs = std::vector<ViewType>(client.audioChannelsIn(), ViewType(nullptr, 0, 0));
+    mInputs = std::vector<ViewType>(asUnsigned(client.audioChannelsIn()), ViewType(nullptr, 0, 0));
 
-    if (client.audioChannelsOut() > 0) mOutputs = std::vector<ViewType>(client.audioChannelsOut(), ViewType(nullptr, 0, 0));
+    if (client.audioChannelsOut() > 0) mOutputs = std::vector<ViewType>(asUnsigned(client.audioChannelsOut()), ViewType(nullptr, 0, 0));
     if (client.controlChannelsOut() > 0)
     {
       mControlClock = mControlClock ? mControlClock : clock_new((t_object *) wrapper, (method) doControlOut);
-
-      mOutputs = std::vector<ViewType>(client.controlChannelsOut(), ViewType(nullptr, 0, 0));
-      mControlOutputs.resize(client.controlChannelsOut());
-      mControlAtoms.resize(client.controlChannelsOut());
+      mTick.clear();
+      mOutputs = std::vector<ViewType>(asUnsigned(client.controlChannelsOut()), ViewType(nullptr, 0, 0));
+      mControlOutputs.resize(asUnsigned(client.controlChannelsOut()));
+      mControlAtoms.resize(asUnsigned(client.controlChannelsOut()));
     }
 
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform), 0, nullptr);
@@ -96,19 +108,27 @@ public:
 
   void perform(t_object * /*dsp64*/, double **ins, long numins, double **outs, long /*numouts*/, long sampleframes, long /*flags*/, void* /*userparam*/)
   {
-    auto &client = static_cast<Wrapper *>(this)->mClient;
-    for (auto i = 0u; i < static_cast<size_t>(numins); ++i)
-      if (audioInputConnections[i]) mInputs[i].reset(ins[i], 0, sampleframes);
 
-    for (auto i = 0u; i < client.audioChannelsOut(); ++i)
-      // if(audioOutputConnections[i])
-      mOutputs[i].reset(outs[i], 0, sampleframes);
+    auto wrapper = static_cast<Wrapper*>(this);
+    auto &client = wrapper->mClient;
+    ATOMIC_INCREMENT(&wrapper->mInPerform);
+    
+    for (index i = 0; i < numins; ++i)
+      if (audioInputConnections[asUnsigned(i)]) mInputs[asUnsigned(i)].reset(ins[i], 0, sampleframes);
 
-    for (auto i = 0u; i < client.controlChannelsOut(); ++i) mOutputs[i].reset(&mControlOutputs[i], 0, 1);
+    for (index i = 0; i < client.audioChannelsOut(); ++i)
+    {
+      set_zero64(outs[i], sampleframes);
+      mOutputs[asUnsigned(i)].reset(outs[asUnsigned(i)], 0, sampleframes);
+    }
+
+    for (index i = 0; i < client.controlChannelsOut(); ++i) mOutputs[asUnsigned(i)].reset(&mControlOutputs[asUnsigned(i)], 0, 1);
 
     client.process(mInputs, mOutputs, mContext);
 
-    if (mControlClock) clock_delay(mControlClock, 0);
+    if (mControlClock && !mTick.test_and_set()) clock_delay(mControlClock, 0);
+    
+    ATOMIC_DECREMENT(&wrapper->mInPerform);
   }
 
   void controlData()
@@ -118,8 +138,13 @@ public:
     atom_setdouble_array(static_cast<long>(client.controlChannelsOut()), mControlAtoms.data(), static_cast<long>(client.controlChannelsOut()),
                          mControlOutputs.data());
     w->controlOut(static_cast<long>(client.controlChannelsOut()), mControlAtoms.data());
+    mTick.clear();
   }
 
+  ~RealTime()
+  {
+    if(mControlClock) freeobject((t_object*) mControlClock);
+  }
 private:
   static void           doControlOut(Wrapper *x) { x->controlData(); }
   std::vector<ViewType> mInputs;
@@ -128,7 +153,8 @@ private:
   std::vector<short>    audioOutputConnections;
   std::vector<double>   mControlOutputs;
   std::vector<t_atom>   mControlAtoms;
-  void *                mControlClock;
+  void*                 mControlClock;
+  std::atomic_flag      mTick;
   FluidContext          mContext;
 };
 
@@ -401,6 +427,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   // ParamsToAtoms
   struct ParamAtomConverter
   {
+    
     static std::string getString(t_atom* a)
     {
       switch(atom_gettype(a))
@@ -511,13 +538,14 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
 
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
     {
+      while(x->mInPerform){} //spin-wait
       ParamLiteralConvertor<T, argSize> a;
       a.set(makeValue<N>());
 
       x->messages().reset();
 
-      for (auto i = 0u; i < argSize && i < static_cast<size_t>(ac); i++)
-        a[i] = ParamAtomConverter::fromAtom((t_object *) x, av + i, a[0]);
+      for (index i = 0; i < argSize && i < static_cast<index>(ac); i++)
+          a[i] = ParamAtomConverter::fromAtom((t_object *) x, av + i, a[0]);
 
       x->params().template set<N>(a.value(), x->verbose() ? &x->messages() : nullptr);
       printResult(x, x->messages());
@@ -533,9 +561,24 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   template<typename T, size_t N>
   struct Getter
   {
-    static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
+    static constexpr index argSize = paramDescriptor<N>().fixedSize;
 
-    static t_max_err get(FluidMaxWrapper<Client>* x, t_object */*attr*/, long *ac, t_atom **av)
+    static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
+    static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
+
+    static auto toAtom(t_atom *a, BufferT::type v)
+    {
+      auto b = static_cast<MaxBufferAdaptor *>(v.get());
+      atom_setsym(a, b ? b->name() : nullptr);
+    }
+
+    static auto toAtom(t_atom *a, InputBufferT::type v)
+    {
+      auto b = static_cast<const MaxBufferAdaptor *>(v.get());
+      atom_setsym(a, b ? b->name() : nullptr);
+    }
+
+    static t_max_err get(FluidMaxWrapper<Client>* x, t_object* /*attr*/, long *ac, t_atom **av)
     {
       ParamLiteralConvertor<T, argSize> a;
 
@@ -544,8 +587,8 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
 
       a.set(x->params().template get<N>());
 
-      for (auto i = 0u; i < argSize; i++)
-        ParamAtomConverter::toAtom(*av + i, a[i]);
+      for (index i = 0; i < argSize; i++)
+          ParamAtomConverter::toAtom(*av + i, a[i]);
 
       return MAX_ERR_NONE;
     }
@@ -591,7 +634,8 @@ public:
   {
     if (mClient.audioChannelsIn())
     {
-      dsp_setup(impl::MaxBase::getMSPObject(), mClient.audioChannelsIn());
+	  assert(mClient.audioChannelsIn() <= (std::numeric_limits<long>::max)()); 
+	  dsp_setup(impl::MaxBase::getMSPObject(), static_cast<long>(mClient.audioChannelsIn()));
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
     }
 
@@ -617,7 +661,7 @@ public:
 
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
 
-    for (auto i = 0u; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
+    for (index i = 0; i < mClient.audioChannelsOut(); ++i) outlet_new(this, "signal");
      
     Client::getParameterDescriptors().template iterate<AddListener>(this,mParams);
     
@@ -671,6 +715,7 @@ public:
 
     m.template iterate<SetupMessage>();
 
+    class_addmethod(getClass(), (method)doVersion,"version",0); 
 	//Change for MSVC, which didn't like the macro version
 	  t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr, calcoffset(FluidMaxWrapper,mVerbose));
 	  class_addattr(getClass(), a);
@@ -691,6 +736,11 @@ public:
     x->params().template forEachParam<touchAttribute>(x);
   }
 
+  static void doVersion(FluidMaxWrapper *x)
+  {
+    object_post((t_object*)x,"Fluid Corpus Manipulation Toolkit, version %s",fluidVersion());
+  }
+
   Result &messages() { return mResult; }
   long    verbose() { return mVerbose; }
   Client &client() { return mClient; }
@@ -707,7 +757,7 @@ private:
   static std::string lowerCase(const char *str)
   {
     std::string result(str);
-    std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c) { return std::tolower(c); });
+    std::transform(result.begin(), result.end(), result.begin(), [](unsigned char c) { return static_cast<unsigned char>(std::tolower(c)); });
     return result;
   }
 
@@ -858,6 +908,7 @@ private:
       method            setterMethod    = (method) &Setter<T, N>::set;
       method            getterMethod    = (method) &Getter<T, N>::get;
       t_object*         a               = attribute_new(name.c_str(), maxAttrType(attr), 0, getterMethod, setterMethod);
+      
       class_addattr(getClass(), a);
       CLASS_ATTR_LABEL(getClass(), name.c_str(), 0, attr.displayName);
       decorateAttr(attr,name);
@@ -870,7 +921,7 @@ private:
     void decorateAttr(const EnumT& attr, std::string name)
     {
       std::stringstream enumstrings;
-      for(auto i = 0u; i < attr.numOptions;++i) enumstrings << '"' << attr.strings[i] << "\" ";
+      for(index i = 0; i < attr.numOptions;++i) enumstrings << '"' << attr.strings[i] << "\" ";
       CLASS_ATTR_STYLE(getClass(), name.c_str(),0,"enum");
       CLASS_ATTR_ENUMINDEX(getClass(), name.c_str(), 0, enumstrings.str().c_str());
     }
@@ -892,7 +943,7 @@ private:
   // Get Symbols for attribute types
 
   static t_symbol* maxAttrType(FloatT) { return USESYM(float64); }
-  static t_symbol* maxAttrType(LongT) { return USESYM(long); }
+  static t_symbol* maxAttrType(LongT) { return USESYM(atom_long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(InputBufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
@@ -914,6 +965,7 @@ private:
   ParamSetType  mParams;
   ParamSetType  mParamSnapshot;
   Client        mClient;
+  t_int32_atomic mInPerform{0};
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////////////
@@ -937,6 +989,7 @@ void makeMaxWrapper(const char *classname)
 
   FluidMaxWrapper<Client>::makeClass(classname);
 }
+    
 
 } // namespace client
 } // namespace fluid

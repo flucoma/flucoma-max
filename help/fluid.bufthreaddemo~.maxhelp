@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 35.0, 79.0, 1341.0, 829.0 ],
+		"rect" : [ 117.0, 144.0, 748.0, 578.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 35.0, 105.0, 1341.0, 803.0 ],
+						"rect" : [ 117.0, 170.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -84,13 +84,25 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-119",
+									"id" : "obj-14",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1006.0, 411.0, 50.0, 22.0 ],
+									"patching_rect" : [ 1011.5, 398.0, 50.0, 22.0 ],
 									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 98.0, 657.799988, 274.0, 20.0 ],
+									"style" : "",
+									"text" : "latency: 0ms                                                  99ms"
 								}
 
 							}
@@ -173,7 +185,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 81.0, 171.5, 127.0, 22.0 ],
 													"style" : "",
-													"text" : "zl 32000 group 32000"
+													"text" : "zl 32766 group 32766"
 												}
 
 											}
@@ -824,7 +836,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 333.0, 701.0, 421.0, 22.0 ],
+									"patching_rect" : [ 276.0, 727.0, 421.0, 22.0 ],
 									"style" : "",
 									"text" : "https://cycling74.com/articles/event-priority-in-max-scheduler-vs-queue",
 									"textcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -840,7 +852,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 793.5, 740.5, 131.0, 35.0 ],
+									"patching_rect" : [ 736.5, 766.5, 131.0, 35.0 ],
 									"style" : "",
 									"text" : ";\rmax launchbrowser $1"
 								}
@@ -864,7 +876,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 333.0, 727.0, 420.0, 22.0 ],
+									"patching_rect" : [ 276.0, 753.0, 420.0, 22.0 ],
 									"style" : "",
 									"text" : "https://cycling74.com/tutorials/advanced-max-learning-about-threading",
 									"textcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
@@ -877,7 +889,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 226.0, 728.0, 105.0, 20.0 ],
+									"patching_rect" : [ 169.0, 754.0, 105.0, 20.0 ],
 									"style" : "",
 									"text" : "This video tutorial",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -890,7 +902,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 226.0, 701.0, 93.0, 20.0 ],
+									"patching_rect" : [ 169.0, 727.0, 93.0, 20.0 ],
 									"style" : "",
 									"text" : "See this article:",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -904,7 +916,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 226.0, 679.0, 186.0, 21.0 ],
+									"patching_rect" : [ 169.0, 705.0, 186.0, 21.0 ],
 									"style" : "",
 									"text" : "Understading Max's threading "
 								}
@@ -1447,7 +1459,16 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-54", 0 ],
+													"order" : 1,
+													"source" : [ "obj-79", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-56", 0 ],
+													"order" : 0,
 													"source" : [ "obj-79", 0 ]
 												}
 
@@ -2231,7 +2252,16 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-54", 0 ],
+													"order" : 1,
+													"source" : [ "obj-79", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-56", 0 ],
+													"order" : 0,
 													"source" : [ "obj-79", 0 ]
 												}
 
@@ -3015,7 +3045,16 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-54", 0 ],
+													"order" : 1,
+													"source" : [ "obj-79", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-56", 0 ],
+													"order" : 0,
 													"source" : [ "obj-79", 0 ]
 												}
 
@@ -3396,7 +3435,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 211.0, 673.0, 551.0, 90.0 ],
+									"patching_rect" : [ 154.0, 699.0, 551.0, 90.0 ],
 									"proportion" : 0.39,
 									"style" : ""
 								}
@@ -3517,7 +3556,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-119", 1 ],
+									"destination" : [ "obj-14", 1 ],
 									"source" : [ "obj-115", 0 ]
 								}
 
@@ -3540,7 +3579,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-53", 0 ],
 									"hidden" : 1,
-									"midpoints" : [ 342.5, 748.0, 785.75, 748.0, 785.75, 731.5, 803.0, 731.5 ],
+									"midpoints" : [ 285.5, 774.0, 728.75, 774.0, 728.75, 757.5, 746.0, 757.5 ],
 									"source" : [ "obj-51", 0 ]
 								}
 
@@ -3549,7 +3588,7 @@
 								"patchline" : 								{
 									"destination" : [ "obj-53", 0 ],
 									"hidden" : 1,
-									"midpoints" : [ 342.5, 721.25, 803.0, 721.25 ],
+									"midpoints" : [ 285.5, 747.25, 746.0, 747.25 ],
 									"source" : [ "obj-54", 0 ]
 								}
 
@@ -3666,7 +3705,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
+						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3729,9 +3768,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 73.0, 239.0, 343.0, 22.0 ],
+									"patching_rect" : [ 73.0, 239.0, 336.0, 22.0 ],
 									"style" : "",
-									"text" : "blocking 0, time 3000, bang, time 2000, bang, time 1000, bang"
+									"text" : "blocking 0, time 1500, bang, time 1000, bang, time 500, bang"
 								}
 
 							}
@@ -3769,7 +3808,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 90.5, 556.5, 33.0 ],
 									"style" : "",
-									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to prcess in Max's main thread, equivalent to using the [defer] object. ",
+									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to process in Max's main thread, equivalent to using the [defer] object. ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -3820,9 +3859,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 206.0, 343.0, 22.0 ],
+									"patching_rect" : [ 50.0, 206.0, 336.0, 22.0 ],
 									"style" : "",
-									"text" : "blocking 1, time 3000, bang, time 2000, bang, time 1000, bang"
+									"text" : "blocking 1, time 1500, bang, time 1000, bang, time 500, bang"
 								}
 
 							}
@@ -3992,7 +4031,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "p \"queue attribute\""
+					"text" : "p \"queue flag\""
 				}
 
 			}
@@ -4012,7 +4051,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
+						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4154,7 +4193,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 108.0, 534.0, 94.0 ],
 									"style" : "",
-									"text" : "Here is a simple object to help demonstrate the options for (a)synchronous processing in the fluid decomposition toolkit's non-realtime objects. \n\nfluid.bufthreaddemo~ has two attributes. 'time' denotes how long the objects takes to 'process'; result is a buffer~ to output to. The object's processing consists simply of waiting for 'time' milliseconds, and then writing this number into the output buffer",
+									"text" : "Here is a simple object to help demonstrate the options for (a)synchronous processing in the fluid decomposition toolkit's non-realtime objects. \n\nfluid.bufthreaddemo~ has two attributes. 'time' denotes how long the objects takes to 'process'; result is a buffer~ to output to. The object's processing consists simply of waiting for 'time' milliseconds, and then writing this number into the output buffer.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -4257,7 +4296,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 1341.0, 803.0 ],
+						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4318,7 +4357,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 11.5, 65.5, 356.0, 21.0 ],
 									"style" : "",
-									"text" : "Choosing a thread with the synchronous attribute"
+									"text" : "Choosing a thread with the 'blocking' attribute"
 								}
 
 							}
@@ -4616,7 +4655,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "p \"synchronous attribute\""
+					"text" : "p \"blocking behaviour\""
 				}
 
 			}
