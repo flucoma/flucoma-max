@@ -25,7 +25,7 @@ if (APPLE)
 	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
   set(CMAKE_XCODE_GENERATE_SCHEME ON)
   set(CMAKE_XCODE_SCHEME_EXECUTABLE "/Applications/Max.app")
-  set(CMAKE_OSX_DEPLOYMENT_TARGET 10.7)
+  set(CMAKE_OSX_DEPLOYMENT_TARGET 10.8)
 endif()
 
 ################################################################################
@@ -58,7 +58,7 @@ FetchContent_Declare(
 FetchContent_Declare(
   fluid_paramdump
   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_paramdump.git
-  GIT_PROGRESS TRUE  
+  GIT_PROGRESS TRUE
 )
 
 if(FLUID_PATH)
@@ -71,12 +71,12 @@ FetchContent_GetProperties(fluid_decomposition)
 
 if(NOT fluid_decomposition_POPULATED)
   FetchContent_Populate(fluid_decomposition)
-  add_subdirectory(${fluid_decomposition_SOURCE_DIR} ${fluid_decomposition_BINARY_DIR})  
+  add_subdirectory(${fluid_decomposition_SOURCE_DIR} ${fluid_decomposition_BINARY_DIR})
   include(flucoma_version)
   include(flucoma-buildtools)
 endif()
 
-set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY 
+set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY
                 TOPLEVEL "${CMAKE_CURRENT_SOURCE_DIR}/externals"
                 SUPERBUILD "${CMAKE_SOURCE_DIR}/max_externals")
 
@@ -86,12 +86,12 @@ set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY
 #     FETCHCONTENT_SOURCE_DIR_FLUID_MANIPULATION ${FLUID_M_PATH} ABSOLUTE
 #   )
 # endif()
-# 
+#
 # FetchContent_GetProperties(fluid_manipulation)
-# 
+#
 # if(NOT fluid_manipulation_POPULATED)
 #   FetchContent_Populate(fluid_manipulation)
-#   add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})  
+#   add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})
 # endif()
 
 
@@ -109,7 +109,7 @@ if(DOCS)
     source_group("\\XML Doc Gen" FILES ${DOC_SOURCE})
     add_subdirectory(${fluid_paramdump_SOURCE_DIR} ${fluid_paramdump_BINARY_DIR})
   endif()
-  
+
   add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
   add_custom_command(TARGET MAX_MAKE_DOCS POST_BUILD
     COMMAND ${CMAKE_COMMAND} -E copy_directory "${FLUID_MAX_REF_PATH}"  "${CMAKE_CURRENT_SOURCE_DIR}/docs"
@@ -144,7 +144,7 @@ foreach (project_dir ${PROJECT_DIRS})
 endforeach ()
 
 ################################################################################
-#install bits. Max packages bundle Windows and Mac builds together 
+#install bits. Max packages bundle Windows and Mac builds together
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
 set(MAX_INSTALL_PREFIX "." CACHE PATH "Prefix for assembling max package")
 set(FLUID_PACKAGE_NAME FluidCorpusManipulation CACHE STRING "Name for published package")
