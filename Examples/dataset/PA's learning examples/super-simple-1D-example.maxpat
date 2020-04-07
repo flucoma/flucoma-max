@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 136.0, -1024.0, 1591.0, 773.0 ],
+		"rect" : [ 166.0, -864.0, 1591.0, 773.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -84,7 +84,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1218.0, 527.0, 73.0, 22.0 ],
 					"style" : "",
-					"text" : "getLabel $1"
+					"text" : "getlabel $1"
 				}
 
 			}
@@ -233,7 +233,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 520.5, 325.0, 200.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf kNearestDist simplepoint %d"
+					"text" : "sprintf knearestdist simplepoint %d"
 				}
 
 			}
@@ -246,7 +246,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 438.0, 388.0, 161.0, 22.0 ],
 					"style" : "",
-					"text" : "route kNearest kNearestDist"
+					"text" : "route knearest knearestdist"
 				}
 
 			}
@@ -513,7 +513,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1126.5, 276.0, 174.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf predictPoint simplepoint"
+					"text" : "sprintf predictpoint simplepoint"
 				}
 
 			}
@@ -630,7 +630,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 520.5, 291.0, 179.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf kNearest simplepoint %d"
+					"text" : "sprintf knearest simplepoint %d"
 				}
 
 			}
@@ -721,7 +721,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 67.0, 360.0, 179.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addPoint %d simplepoint"
+					"text" : "sprintf addpoint %d simplepoint"
 				}
 
 			}
@@ -758,9 +758,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 67.0, 393.0, 160.0, 22.0 ],
+					"patching_rect" : [ 67.0, 393.0, 150.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ simple1data 1"
+					"text" : "fluid.dataset~ simple1data"
 				}
 
 			}
@@ -1076,7 +1076,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1086,7 +1085,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",

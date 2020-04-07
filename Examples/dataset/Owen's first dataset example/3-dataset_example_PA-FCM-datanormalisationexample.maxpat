@@ -591,7 +591,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 994.0, 566.0, 142.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearestDist tmp.point 5"
+									"text" : "knearestdist tmp.point 5"
 								}
 
 							}
@@ -695,7 +695,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 1020.0, 643.0, 89.0, 22.0 ],
 									"style" : "",
-									"text" : "route kNearest"
+									"text" : "route knearest"
 								}
 
 							}
@@ -721,7 +721,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 957.0, 540.0, 121.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest tmp.point 5"
+									"text" : "knearest tmp.point 5"
 								}
 
 							}
@@ -761,7 +761,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 619.0, 566.0, 161.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearestDist tmp.point.std 5"
+									"text" : "knearestdist tmp.point.std 5"
 								}
 
 							}
@@ -865,7 +865,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 627.0, 643.0, 89.0, 22.0 ],
 									"style" : "",
-									"text" : "route kNearest"
+									"text" : "route knearest"
 								}
 
 							}
@@ -891,7 +891,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 587.0, 540.0, 141.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest tmp.point.std 5"
+									"text" : "knearest tmp.point.std 5"
 								}
 
 							}
@@ -931,7 +931,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 214.599976, 566.0, 173.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearestDist tmp.point.scale 5"
+									"text" : "knearestdist tmp.point.scale 5"
 								}
 
 							}
@@ -1035,7 +1035,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 214.599976, 643.0, 89.0, 22.0 ],
 									"style" : "",
-									"text" : "route kNearest"
+									"text" : "route knearest"
 								}
 
 							}
@@ -1061,7 +1061,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 181.599976, 540.0, 153.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest tmp.point.scale 5"
+									"text" : "knearest tmp.point.scale 5"
 								}
 
 							}
@@ -1269,7 +1269,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 495.0, 182.0, 73.0, 22.0 ],
 									"style" : "",
-									"text" : "sel getPoint"
+									"text" : "sel getpoint"
 								}
 
 							}
@@ -1284,7 +1284,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 345.0, 156.0, 169.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ stdmfccstats 96",
+									"text" : "fluid.dataset~ stdmfccstats",
 									"varname" : "mydatasetobject[3]"
 								}
 
@@ -1298,7 +1298,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 345.0, 132.0, 143.0, 22.0 ],
 									"style" : "",
-									"text" : "getPoint $1 tmp.point.std"
+									"text" : "getpoint $1 tmp.point.std"
 								}
 
 							}
@@ -1375,7 +1375,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 215.599976, 180.0, 73.0, 22.0 ],
 									"style" : "",
-									"text" : "sel getPoint"
+									"text" : "sel getpoint"
 								}
 
 							}
@@ -1390,7 +1390,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 50.0, 156.0, 188.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ scaledmfccstats 96",
+									"text" : "fluid.dataset~ scaledmfccstats",
 									"varname" : "mydatasetobject[2]"
 								}
 
@@ -1404,7 +1404,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.0, 132.0, 155.0, 22.0 ],
 									"style" : "",
-									"text" : "getPoint $1 tmp.point.scale"
+									"text" : "getpoint $1 tmp.point.scale"
 								}
 
 							}
@@ -1494,7 +1494,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 790.5, 185.0, 73.0, 22.0 ],
 									"style" : "",
-									"text" : "sel getPoint"
+									"text" : "sel getpoint"
 								}
 
 							}
@@ -1509,7 +1509,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 656.5, 161.0, 153.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ mfccstats 96",
+									"text" : "fluid.dataset~ mfccstats",
 									"varname" : "mydatasetobject[1]"
 								}
 
@@ -1523,7 +1523,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 656.5, 137.0, 124.0, 22.0 ],
 									"style" : "",
-									"text" : "getPoint $1 tmp.point"
+									"text" : "getpoint $1 tmp.point"
 								}
 
 							}
@@ -2219,7 +2219,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1022.0, 274.0, 158.0, 22.0 ],
 					"style" : "",
-					"text" : "kNearestDist tmp.flatpoint 5"
+					"text" : "knearestdist tmp.flatpoint 5"
 				}
 
 			}
@@ -3590,7 +3590,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1345.0, 443.0, 105.0, 22.0 ],
 					"style" : "",
-					"text" : "route predictPoint"
+					"text" : "route predictpoint"
 				}
 
 			}
@@ -3658,7 +3658,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 860.0, 450.0, 124.0, 22.0 ],
 									"style" : "",
-									"text" : "getPoint $1 tmp.point"
+									"text" : "getpoint $1 tmp.point"
 								}
 
 							}
@@ -4581,7 +4581,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1380.5, 257.0, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "predictPoint tmp.flatpoint"
+					"text" : "predictpoint tmp.flatpoint"
 				}
 
 			}
@@ -4990,7 +4990,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 681.5, 364.0, 89.0, 22.0 ],
 					"style" : "",
-					"text" : "route kNearest"
+					"text" : "route knearest"
 				}
 
 			}
@@ -5055,7 +5055,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 705.5, 274.0, 137.0, 22.0 ],
 					"style" : "",
-					"text" : "kNearest tmp.flatpoint 5"
+					"text" : "knearest tmp.flatpoint 5"
 				}
 
 			}
@@ -5110,7 +5110,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 179.5, 490.0, 226.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ mfccstats 96 @warnings 1",
+					"text" : "fluid.dataset~ mfccstats",
 					"varname" : "mydatasetobject"
 				}
 
@@ -5753,7 +5753,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 179.5, 443.0, 105.0, 22.0 ],
 					"style" : "",
-					"text" : "prepend addPoint"
+					"text" : "prepend addpoint"
 				}
 
 			}

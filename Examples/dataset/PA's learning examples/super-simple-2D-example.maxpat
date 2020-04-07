@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1360.0, 610.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "getLabel 8-0"
+					"text" : "getlabel 8-0"
 				}
 
 			}
@@ -97,7 +97,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1364.0, 563.0, 135.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf getLabel %d-%d"
+					"text" : "sprintf getlabel %d-%d"
 				}
 
 			}
@@ -320,7 +320,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 453.0, 403.0, 161.0, 22.0 ],
 					"style" : "",
-					"text" : "route kNearest kNearestDist"
+					"text" : "route knearest knearestdist"
 				}
 
 			}
@@ -333,7 +333,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 519.5, 324.0, 200.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf kNearestDist simplepoint %d"
+					"text" : "sprintf knearestdist simplepoint %d"
 				}
 
 			}
@@ -346,7 +346,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 519.5, 290.0, 179.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf kNearest simplepoint %d"
+					"text" : "sprintf knearest simplepoint %d"
 				}
 
 			}
@@ -777,7 +777,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1001.0, 453.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "predictPoint 0"
+					"text" : "predictpoint 0"
 				}
 
 			}
@@ -790,7 +790,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1252.5, 359.0, 174.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf predictPoint simplepoint"
+					"text" : "sprintf predictpoint simplepoint"
 				}
 
 			}
@@ -907,7 +907,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 64.0, 305.0, 200.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addPoint %d-%d simplepoint"
+					"text" : "sprintf addpoint %d-%d simplepoint"
 				}
 
 			}
@@ -944,9 +944,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 64.0, 343.0, 160.0, 22.0 ],
+					"patching_rect" : [ 64.0, 343.0, 150.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ simple2data 2"
+					"text" : "fluid.dataset~ simple2data"
 				}
 
 			}
@@ -1378,7 +1378,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1388,7 +1387,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",

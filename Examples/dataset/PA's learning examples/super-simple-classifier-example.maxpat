@@ -123,7 +123,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 219.0, 368.0, 158.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addLabel %d-%d %s"
+					"text" : "sprintf addlabel %d-%d %s"
 				}
 
 			}
@@ -223,7 +223,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 630.5, 700.0, 123.0, 22.0 ],
 					"style" : "",
-					"text" : "classifyPoint blue"
+					"text" : "classifypoint blue"
 				}
 
 			}
@@ -275,7 +275,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 868.0, 600.0, 278.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classifyPoint simplepoint simple2Labels %d"
+					"text" : "sprintf classifypoint simplepoint simple2Labels %d"
 				}
 
 			}
@@ -694,7 +694,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 36.0, 412.600006, 200.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addPoint %d-%d simplepoint"
+					"text" : "sprintf addpoint %d-%d simplepoint"
 				}
 
 			}
@@ -731,9 +731,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 36.0, 485.0, 160.0, 22.0 ],
+					"patching_rect" : [ 36.0, 485.0, 150.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ simple2data 2"
+					"text" : "fluid.dataset~ simple2data"
 				}
 
 			}
@@ -1198,9 +1198,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1218,7 +1218,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1228,7 +1227,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",

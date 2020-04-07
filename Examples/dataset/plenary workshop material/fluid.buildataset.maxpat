@@ -444,7 +444,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 196.75, 719.761902, 153.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ mfccstats 96",
+					"text" : "fluid.dataset~ mfccstats",
 					"varname" : "mydatasetobject"
 				}
 

@@ -189,7 +189,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1313.0, 443.0, 105.0, 22.0 ],
 					"style" : "",
-					"text" : "route predictPoint"
+					"text" : "route predictpoint"
 				}
 
 			}
@@ -257,7 +257,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 860.0, 450.0, 124.0, 22.0 ],
 									"style" : "",
-									"text" : "getPoint $1 tmp.point"
+									"text" : "getpoint $1 tmp.point"
 								}
 
 							}
@@ -1180,7 +1180,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1380.5, 257.0, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "predictPoint tmp.flatpoint"
+					"text" : "predictpoint tmp.flatpoint"
 				}
 
 			}
@@ -2067,7 +2067,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 681.5, 364.0, 89.0, 22.0 ],
 					"style" : "",
-					"text" : "route kNearest"
+					"text" : "route knearest"
 				}
 
 			}
@@ -2132,7 +2132,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 705.5, 274.0, 137.0, 22.0 ],
 					"style" : "",
-					"text" : "kNearest tmp.flatpoint 5"
+					"text" : "knearest tmp.flatpoint 5"
 				}
 
 			}
@@ -2650,7 +2650,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 274.5, 519.0, 76.0, 22.0 ],
 					"style" : "",
-					"text" : "addPoint"
+					"text" : "addpoint"
 				}
 
 			}
@@ -2664,7 +2664,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 179.5, 490.0, 171.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ mfccstats 168"
+					"text" : "fluid.dataset~ mfccstats"
 				}
 
 			}
@@ -3195,7 +3195,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 179.5, 443.0, 105.0, 22.0 ],
 					"style" : "",
-					"text" : "prepend addPoint"
+					"text" : "prepend addpoint"
 				}
 
 			}

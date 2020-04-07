@@ -71,7 +71,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 286.0, 321.0, 158.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addLabel %d-%d %s"
+					"text" : "sprintf addlabel %d-%d %s"
 				}
 
 			}
@@ -410,7 +410,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 868.0, 602.0, 278.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classifyPoint simplepoint simple2Labels %d"
+					"text" : "sprintf classifypoint simplepoint simple2Labels %d"
 				}
 
 			}
@@ -620,7 +620,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 64.0, 348.0, 200.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addPoint %d-%d simplepoint"
+					"text" : "sprintf addpoint %d-%d simplepoint"
 				}
 
 			}
@@ -633,7 +633,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 64.0, 386.0, 160.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ simple2data 2"
+					"text" : "fluid.dataset~ simple2data"
 				}
 
 			}
