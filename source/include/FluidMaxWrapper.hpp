@@ -20,7 +20,7 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <clients/common/OfflineClient.hpp>
 #include <clients/common/ParameterSet.hpp>
 #include <clients/common/ParameterTypes.hpp>
-
+#include <clients/common/FluidNRTClientWrapper.hpp>
 #include <clients/nrt/FluidSharedInstanceAdaptor.hpp>
 
 #include "MaxBufferAdaptor.hpp"
@@ -534,7 +534,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   template<typename T, size_t N>
   struct Setter
   {
-    static constexpr size_t argSize = paramDescriptor<N>().fixedSize;
+    static constexpr index argSize = paramDescriptor<N>().fixedSize;
 
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object */*attr*/, long ac, t_atom *av)
     {
@@ -620,6 +620,14 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     }
   };
 
+  
+  template<typename T>
+  struct IsThreadedShared: std::false_type{};
+  
+  template<typename T>
+  struct IsThreadedShared<NRTThreadingAdaptor<NRTSharedInstanceAdaptor<T>>>:std::true_type{};
+  
+
 public:
 
   using ClientType    = Client;
@@ -667,15 +675,30 @@ public:
     
   }
   
+  ~FluidMaxWrapper()
+  {
+    Client::getParameterDescriptors().template iterate<RemoveListener>(this,mParams);
+  }
+  
   template<size_t N,typename T>
   struct AddListener
   {
     void operator()(const T& param, FluidMaxWrapper *x, ParamSetType& paramSet)
     {
-      paramSet.template addListener<N>([x, &param]()
+      auto listenerFunc = [x, &param]()
       {
         object_attr_touch((t_object*)(x), gensym(param.name));
-      });
+      };
+      paramSet.template addListener<N>(std::move(listenerFunc), x);
+    }
+  };
+
+  template<size_t N,typename T>
+  struct RemoveListener
+  {
+    void operator()(const T&,FluidMaxWrapper *x,ParamSetType& paramSet)
+    {
+      paramSet.template removeListener<N>(x);
     }
   };
 
@@ -713,6 +736,9 @@ public:
     class_addmethod(getClass(), (method)object_obex_dumpout,"dumpout",A_CANT, 0);
     class_addmethod(getClass(), (method)doReset, "reset",0);
 
+
+    makeReferable();
+
     m.template iterate<SetupMessage>();
 
     class_addmethod(getClass(), (method)doVersion,"version",0); 
@@ -739,6 +765,33 @@ public:
   static void doVersion(FluidMaxWrapper *x)
   {
     object_post((t_object*)x,"Fluid Corpus Manipulation Toolkit, version %s",fluidVersion());
+  }
+
+  template<typename CType = Client>
+  static std::enable_if_t<!IsThreadedShared<CType>::value>
+  makeReferable(){ }
+  
+  template<typename CType = Client>
+  static std::enable_if_t<IsThreadedShared<CType>::value>
+  makeReferable(){
+    class_addmethod(getClass(), (method)doSharedClientRefer,"refer",A_SYM,0);
+  }
+
+  static void doSharedClientRefer(FluidMaxWrapper *x, t_symbol* newName)
+  {
+    std::string name(newName->s_name);
+    if(std::string(name) != x->mParams.template get<0>())
+    {
+//      auto newParams = ParamSetType(Client::getParameterDescriptors());
+      Result r = x->mParams.lookup(name);
+      if(r.ok())
+      {
+        Client::getParameterDescriptors().template iterate<RemoveListener>(x,x->mParams);
+        x->mParams.refer(name);
+        x->mClient = Client(x->mParams);
+        Client::getParameterDescriptors().template iterate<AddListener>(x,x->mParams);
+      } else printResult(x,r);
+    }
   }
 
   Result &messages() { return mResult; }
@@ -831,7 +884,7 @@ private:
   template<typename Tuple, size_t N>
   static auto setArg(FluidMaxWrapper *x, long ac, t_atom* av)
   {
-    if(N < ac)
+    if(N < asUnsigned(ac))
       return  ParamAtomConverter::fromAtom((t_object*)x, av + N,typename std::tuple_element<N, Tuple>::type{});
     else
       return typename std::tuple_element<N, Tuple>::type{};
