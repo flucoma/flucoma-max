@@ -144,7 +144,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1526.5, 519.0, 301.0, 22.0 ],
 					"style" : "",
-					"text" : "kNearest entrylinlin-val 5, kNearestDist entrylinlin-val 5"
+					"text" : "knearest entrylinlin-val 5, knearestdist entrylinlin-val 5"
 				}
 
 			}
@@ -183,7 +183,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 1598.0, 604.0, 161.0, 22.0 ],
 					"style" : "",
-					"text" : "route kNearest kNearestDist"
+					"text" : "route knearest knearestdist"
 				}
 
 			}
@@ -432,7 +432,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1269.0, 730.0, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "route regressPoint"
+					"text" : "route regresspoint"
 				}
 
 			}
@@ -538,7 +538,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 991.0, 657.0, 237.0, 22.0 ],
 					"style" : "",
-					"text" : "regressPoint entrylinlin datalinlinSUB-val 2"
+					"text" : "regresspoint entrylinlin datalinlinSUB-val 2"
 				}
 
 			}
@@ -577,7 +577,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 1012.0, 611.0, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ datalinlin 2"
+					"text" : "fluid.dataset~ datalinlin"
 				}
 
 			}
@@ -745,7 +745,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 1137.0, 270.0, 187.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ datalinlinSUB-val 1"
+					"text" : "fluid.dataset~ datalinlinSUB-val"
 				}
 
 			}
@@ -783,7 +783,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 975.0, 337.0, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ datalinlin 2"
+					"text" : "fluid.dataset~ datalinlin"
 				}
 
 			}
@@ -877,7 +877,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 1116.0, 309.0, 168.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ datalinlinSUB 2"
+					"text" : "fluid.dataset~ datalinlinSUB"
 				}
 
 			}
@@ -986,7 +986,7 @@
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 230.5, 946.0, 161.0, 22.0 ],
 									"style" : "",
-									"text" : "route kNearest kNearestDist"
+									"text" : "route knearest knearestdist"
 								}
 
 							}
@@ -1025,7 +1025,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 173.5, 898.0, 278.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest entryloglog 1, kNearestDist entryloglog 1"
+									"text" : "knearest entryloglog 1, knearestdist entryloglog 1"
 								}
 
 							}
@@ -1181,7 +1181,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 219.5, 742.0, 151.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ dataloglog 2"
+									"text" : "fluid.dataset~ dataloglog"
 								}
 
 							}
@@ -2258,7 +2258,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 441.0, 890.0, 262.0, 22.0 ],
 					"style" : "",
-					"text" : "kNearest entrylinlin 1, kNearestDist entrylinlin 1"
+					"text" : "knearest entrylinlin 1, knearestdist entrylinlin 1"
 				}
 
 			}
@@ -2376,7 +2376,7 @@
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 498.0, 954.0, 161.0, 22.0 ],
 					"style" : "",
-					"text" : "route kNearest kNearestDist"
+					"text" : "route knearest knearestdist"
 				}
 
 			}
@@ -2505,7 +2505,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 601.5, 768.0, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ datalinlin 2"
+					"text" : "fluid.dataset~ datalinlin"
 				}
 
 			}
@@ -2531,7 +2531,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 284.0, 206.0, 151.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ dataloglog 2"
+					"text" : "fluid.dataset~ dataloglog"
 				}
 
 			}
@@ -2544,7 +2544,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 266.0, 233.0, 143.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ datalinlin 2"
+					"text" : "fluid.dataset~ datalinlin"
 				}
 
 			}

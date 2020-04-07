@@ -489,10 +489,10 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "kNearest" ],
+													"outlettype" : [ "knearest" ],
 													"patching_rect" : [ 333.0, 449.0, 65.0, 22.0 ],
 													"style" : "",
-													"text" : "t kNearest"
+													"text" : "t knearest"
 												}
 
 											}
@@ -636,7 +636,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 1292.0, 603.0, 89.0, 22.0 ],
 													"style" : "",
-													"text" : "route kNearest"
+													"text" : "route knearest"
 												}
 
 											}
@@ -662,7 +662,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 862.0, 603.0, 89.0, 22.0 ],
 													"style" : "",
-													"text" : "route kNearest"
+													"text" : "route knearest"
 												}
 
 											}
@@ -714,7 +714,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 423.0, 603.0, 89.0, 22.0 ],
 													"style" : "",
-													"text" : "route kNearest"
+													"text" : "route knearest"
 												}
 
 											}
@@ -2762,7 +2762,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 100.0, 311.0, 89.0, 22.0 ],
 									"style" : "",
-									"text" : "route kNearest"
+									"text" : "route knearest"
 								}
 
 							}
@@ -4569,7 +4569,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 1292.0, 603.0, 89.0, 22.0 ],
 													"style" : "",
-													"text" : "route kNearest"
+													"text" : "route knearest"
 												}
 
 											}
@@ -4792,7 +4792,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 862.0, 603.0, 89.0, 22.0 ],
 													"style" : "",
-													"text" : "route kNearest"
+													"text" : "route knearest"
 												}
 
 											}
@@ -4963,7 +4963,7 @@
 													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 872.0, 168.0, 222.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.dataset~ thecorpus-3mfcc-nrm 156"
+													"text" : "fluid.dataset~ thecorpus-3mfcc-nrm"
 												}
 
 											}
@@ -4976,7 +4976,7 @@
 													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 874.0, 199.0, 218.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.dataset~ thecorpus-3mfcc-std 156"
+													"text" : "fluid.dataset~ thecorpus-3mfcc-std"
 												}
 
 											}
@@ -5067,7 +5067,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 423.0, 603.0, 89.0, 22.0 ],
 													"style" : "",
-													"text" : "route kNearest"
+													"text" : "route knearest"
 												}
 
 											}
@@ -6414,7 +6414,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 158.0, 311.0, 89.0, 22.0 ],
 									"style" : "",
-									"text" : "route kNearest"
+									"text" : "route knearest"
 								}
 
 							}
@@ -6957,7 +6957,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 224.0, 149.0, 59.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearest"
+									"text" : "knearest"
 								}
 
 							}
@@ -6970,7 +6970,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 246.0, 178.0, 79.0, 22.0 ],
 									"style" : "",
-									"text" : "kNearestDist"
+									"text" : "knearestdist"
 								}
 
 							}
@@ -10807,7 +10807,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 366.100098, 631.0, 197.0, 22.0 ],
 													"style" : "",
-													"text" : "sprintf addPoint %d #0-entryMFCC"
+													"text" : "sprintf addpoint %d #0-entryMFCC"
 												}
 
 											}
@@ -10845,7 +10845,7 @@
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 688.0, 656.0, 89.0, 22.0 ],
 													"style" : "",
-													"text" : "route addPoint"
+													"text" : "route addpoint"
 												}
 
 											}
@@ -11119,7 +11119,7 @@
 													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 366.100098, 661.0, 198.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.dataset~ thecorpus-3mfcc 156"
+													"text" : "fluid.dataset~ thecorpus-3mfcc"
 												}
 
 											}
@@ -11780,7 +11780,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 1164.25, 397.0, 89.0, 22.0 ],
 									"style" : "",
-									"text" : "route addPoint"
+									"text" : "route addpoint"
 								}
 
 							}
@@ -11836,7 +11836,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 999.25, 331.0, 162.0, 22.0 ],
 									"style" : "",
-									"text" : "sprintf addPoint %d #0-entry"
+									"text" : "sprintf addpoint %d #0-entry"
 								}
 
 							}
@@ -11849,7 +11849,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 999.25, 367.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ thecorpus-desc 36"
+									"text" : "fluid.dataset~ thecorpus-desc"
 								}
 
 							}

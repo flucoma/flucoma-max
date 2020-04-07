@@ -83,7 +83,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 563.0, 813.0, 137.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addLabel %d %s"
+					"text" : "sprintf addlabel %d %s"
 				}
 
 			}
@@ -122,7 +122,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1087.0, 916.0, 108.0, 22.0 ],
 					"style" : "",
-					"text" : "route classifyPoint"
+					"text" : "route classifypoint"
 				}
 
 			}
@@ -376,7 +376,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1124.0, 834.0, 219.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classifyPoint entry JIT-labels %d"
+					"text" : "sprintf classifypoint entry JIT-labels %d"
 				}
 
 			}
@@ -454,7 +454,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 372.0, 813.0, 145.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf addPoint %d entry"
+					"text" : "sprintf addpoint %d entry"
 				}
 
 			}
@@ -467,7 +467,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 372.0, 847.0, 169.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ JIT-classifier 96"
+					"text" : "fluid.dataset~ JIT-classifier"
 				}
 
 			}

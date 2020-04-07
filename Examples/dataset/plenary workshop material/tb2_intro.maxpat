@@ -89,7 +89,7 @@
 									"outlettype" : [ "bang", "" ],
 									"patching_rect" : [ 508.0, 178.0, 73.0, 22.0 ],
 									"style" : "",
-									"text" : "sel getPoint"
+									"text" : "sel getpoint"
 								}
 
 							}
@@ -102,7 +102,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 374.0, 119.0, 124.0, 22.0 ],
 									"style" : "",
-									"text" : "getPoint $1 querybuff"
+									"text" : "getpoint $1 querybuff"
 								}
 
 							}
@@ -128,7 +128,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 374.0, 149.0, 153.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ mfccstats 96"
+									"text" : "fluid.dataset~ mfccstats"
 								}
 
 							}

@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 218.0, 79.0, 1668.0, 982.0 ],
+		"rect" : [ 126.0, -1020.0, 1668.0, 982.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -112,7 +112,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 636.0, 427.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "getPoint $1 simpleInputPoint"
+					"text" : "getpoint $1 simpleInputPoint"
 				}
 
 			}
@@ -151,7 +151,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 370.0, 461.0, 131.5, 22.0 ],
 					"style" : "",
-					"text" : "addPoint"
+					"text" : "addpoint"
 				}
 
 			}
@@ -164,7 +164,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 191.5, 456.0, 131.5, 22.0 ],
 					"style" : "",
-					"text" : "addPoint"
+					"text" : "addpoint"
 				}
 
 			}
@@ -190,7 +190,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 248.666656, 371.0, 194.0, 22.0 ],
 					"style" : "",
-					"text" : "pack addPoint i simpleOutputPoint"
+					"text" : "pack addpoint i simpleOutputPoint"
 				}
 
 			}
@@ -242,7 +242,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 346.0, 427.0, 166.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ simpleOutput 1"
+					"text" : "fluid.dataset~ simpleOutput"
 				}
 
 			}
@@ -692,7 +692,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 829.75, 325.0, 274.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf regressPoint simplePoint simpleOutput %d"
+					"text" : "sprintf regresspoint simplePoint simpleOutput %d"
 				}
 
 			}
@@ -719,7 +719,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1204.0, 457.0, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "route regressPoint"
+					"text" : "route regresspoint"
 				}
 
 			}
@@ -850,7 +850,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 32.0, 371.0, 185.0, 22.0 ],
 					"style" : "",
-					"text" : "pack addPoint i simpleInputPoint"
+					"text" : "pack addpoint i simpleInputPoint"
 				}
 
 			}
@@ -985,7 +985,7 @@
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 182.0, 427.0, 157.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.dataset~ simpleInput 1"
+					"text" : "fluid.dataset~ simpleInput"
 				}
 
 			}
@@ -998,7 +998,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 655.5, 397.0, 173.0, 22.0 ],
 					"style" : "",
-					"text" : "getPoint $1 simpleOutputPoint"
+					"text" : "getpoint $1 simpleOutputPoint"
 				}
 
 			}
@@ -1535,9 +1535,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1555,7 +1555,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1565,7 +1564,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",

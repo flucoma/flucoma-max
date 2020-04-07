@@ -90,7 +90,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 764.219779849052429, 579.600000470876694, 150.0, 33.0 ],
 					"presentation_linecount" : 2,
-					"text" : "Make a fluid.dataset~ this size"
+					"text" : "Make a fluid.dataset~ thissize"
 				}
 
 			}
@@ -327,7 +327,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 478.719779849052429, 590.0, 160.0, 22.0 ],
-					"text" : "substitute addpoint addPoint"
+					"text" : "substitute addpoint addpoint"
 				}
 
 			}
@@ -445,7 +445,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 617.719779849052429, 708.761919260025024, 85.0, 22.0 ],
-					"text" : "route getPoint"
+					"text" : "route getpoint"
 				}
 
 			}
@@ -507,7 +507,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 625.719779849052429, 736.761919260025024, 77.0, 22.0 ],
-					"text" : "addPoint"
+					"text" : "addpoint"
 				}
 
 			}
@@ -521,7 +521,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 478.719779849052429, 672.761919260025024, 158.0, 22.0 ],
-					"text" : "fluid.dataset~ mfccstats 168",
+					"text" : "fluid.dataset~ mfccstats",
 					"varname" : "mydatasetobject"
 				}
 
