@@ -1140,7 +1140,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 587.0, 58.0, 225.0, 22.0 ],
 									"style" : "",
-									"text" : "standardizePoint tmp.point tmp.point.std"
+									"text" : "standardizepoint tmp.point tmp.point.std"
 								}
 
 							}
@@ -1192,7 +1192,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 175.599976, 58.0, 227.0, 22.0 ],
 									"style" : "",
-									"text" : "normalizePoint tmp.point tmp.point.scale"
+									"text" : "normalizepoint tmp.point tmp.point.scale"
 								}
 
 							}

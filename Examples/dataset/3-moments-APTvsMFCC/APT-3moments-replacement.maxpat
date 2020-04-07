@@ -779,7 +779,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1498.75, 460.0, 284.0, 22.0 ],
 													"style" : "",
-													"text" : "standardizePoint #0-entryMFCC #0-entryMFCC-std"
+													"text" : "standardizepoint #0-entryMFCC #0-entryMFCC-std"
 												}
 
 											}
@@ -818,7 +818,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1016.0, 434.0, 279.0, 22.0 ],
 													"style" : "",
-													"text" : "normalizePoint #0-entryMFCC #0-entryMFCC-nrm"
+													"text" : "normalizepoint #0-entryMFCC #0-entryMFCC-nrm"
 												}
 
 											}
@@ -5251,7 +5251,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1498.75, 460.0, 284.0, 22.0 ],
 													"style" : "",
-													"text" : "standardizePoint #0-entryMFCC #0-entryMFCC-std"
+													"text" : "standardizepoint #0-entryMFCC #0-entryMFCC-std"
 												}
 
 											}
@@ -5290,7 +5290,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 1001.0, 442.0, 279.0, 22.0 ],
 													"style" : "",
-													"text" : "normalizePoint #0-entryMFCC #0-entryMFCC-nrm"
+													"text" : "normalizepoint #0-entryMFCC #0-entryMFCC-nrm"
 												}
 
 											}
