@@ -34,7 +34,6 @@ if(MSVC)
 else()
   target_compile_options(${PROJECT_NAME} PRIVATE
     -Wall -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wpedantic -Wreturn-type
-      -Wno-conversion -Wno-c++11-narrowing -Wno-sign-compare #quiten it down a bit, until we do a Big IntFix
   )
 endif()
 
