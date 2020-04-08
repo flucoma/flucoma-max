@@ -4,8 +4,6 @@
 #include <clients/nrt/LabelSetClient.hpp>
 #include <clients/nrt/KDTreeClient.hpp>
 #include <clients/nrt/KMeansClient.hpp>
-#include <clients/nrt/KNNClasClient.hpp>
-#include <clients/nrt/KNNRegClient.hpp>
 #include <clients/nrt/KNNClient.hpp>
 #include <clients/nrt/NormalizeClient.hpp>
 #include <clients/nrt/StandardizeClient.hpp>
@@ -22,8 +20,6 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedLabelSetClient>("fluid.labelset~");
   makeMaxWrapper<NRTThreadedKDTreeClient>("fluid.kdtree~");
   makeMaxWrapper<NRTThreadedKMeansClient>("fluid.kmeans~");
-  makeMaxWrapper<NRTThreadedKNNClasClient>("fluid.knnclassifier~");
-  makeMaxWrapper<NRTThreadedKNNRegClient>("fluid.knnregressor~");
   makeMaxWrapper<NRTThreadedKNNClient>("fluid.knn~");
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
