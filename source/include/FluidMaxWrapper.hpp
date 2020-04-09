@@ -563,21 +563,6 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
   {
     static constexpr index argSize = paramDescriptor<N>().fixedSize;
 
-    static auto toAtom(t_atom *a, LongT::type v) { atom_setlong(a, v); }
-    static auto toAtom(t_atom *a, FloatT::type v) { atom_setfloat(a, v); }
-
-    static auto toAtom(t_atom *a, BufferT::type v)
-    {
-      auto b = static_cast<MaxBufferAdaptor *>(v.get());
-      atom_setsym(a, b ? b->name() : nullptr);
-    }
-
-    static auto toAtom(t_atom *a, InputBufferT::type v)
-    {
-      auto b = static_cast<const MaxBufferAdaptor *>(v.get());
-      atom_setsym(a, b ? b->name() : nullptr);
-    }
-
     static t_max_err get(FluidMaxWrapper<Client>* x, t_object* /*attr*/, long *ac, t_atom **av)
     {
       ParamLiteralConvertor<T, argSize> a;
