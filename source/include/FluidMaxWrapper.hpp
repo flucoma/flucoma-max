@@ -502,7 +502,7 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
     
     template<typename T>
     static std::enable_if_t<std::is_floating_point<T>::value>
-    static auto toAtom(t_atom *a, FluidTensor<T,1> v)
+    toAtom(t_atom *a, FluidTensor<T,1> v)
     {
       for(auto& x:v) atom_setfloat(a++,x);
     }
