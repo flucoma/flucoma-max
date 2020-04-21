@@ -500,12 +500,16 @@ class FluidMaxWrapper : public impl::FluidMaxBase<FluidMaxWrapper<Client>, typen
         atom_setsym(a++,gensym(s.c_str()));
     }
     
-    static auto toAtom(t_atom *a, FluidTensor<double,1> v)
+    template<typename T>
+    static std::enable_if_t<std::is_floating_point<T>::value>
+    static auto toAtom(t_atom *a, FluidTensor<T,1> v)
     {
       for(auto& x:v) atom_setfloat(a++,x);
     }
     
-    static auto toAtom(t_atom *a, FluidTensor<intptr_t,1> v)
+    template<typename T>     
+    static std::enable_if_t<std::is_integral<T>::value> 
+    toAtom(t_atom *a, FluidTensor<T,1> v)
     {
       for(auto& x:v) atom_setlong(a++,x);
     }
