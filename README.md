@@ -49,6 +49,7 @@ Pre-requisites:
 * Python 3
 * Docutils python package (ReST parsing)
 * Jinja python package (template engine)
+* PyYAML >= 5.1 (YAML parsing)
 
 To generate `maxref.xml` documentation for the Max objects requires a further dependency, [flucoma_paramdump](), which we use to combine generated and human-written docs. We then pass `DOCS=ON` to CMake
 ```
