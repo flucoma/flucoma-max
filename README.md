@@ -43,7 +43,7 @@ Also, With CMake you have a choice of which build system you use.
 
 ## Generating Documentation
 
-The documentation partially relies on a system that is shard with other wrappers of the Fluid Corpus Manipulation Project for different creative coding environments.
+The documentation partially relies on a system that is shared with other wrappers of the Fluid Corpus Manipulation Project for different creative coding environments.
 
 Pre-requisites:
 * Python 3
@@ -65,12 +65,12 @@ This process:
 ## Using Manual Dependencies
 
 In some cases you may want to use your own copies of the required libraries. Unless specified, the build system will download these automatically. To bypass this behaviour, use the following cache variables:
-*  `FLUID_PATH`: location of the Fluid Corpus Manipulation Library
+* `FLUID_PATH`: location of the Fluid Corpus Manipulation Library
 * `FLUID_PARAMDUMP_PATH`: location of `flucoma_paramdump` repository  (e.g. for debugging documentation generation)
 * `EIGEN_PATH` location of the Eigen library
 * `HISS_PATH` location of the HISSTools library
 
-For example, use this to us your own copy of the Fluid Corpus Manipulation Library
+For example, use this to use your own copy of the Fluid Corpus Manipulation Library
 ```
 cmake -DMAX_SDK_PATH=<location of your Max SDK> -DFLUID_PATH=<location of Fluid Corpus Manipulation Library> ..
 ```
@@ -85,4 +85,4 @@ The build system generally assumes an x86 cpu with AVX instructions (most modern
 --
 
 
-> This project has received funding from the European Research Council (ERC) under the European Unionâ€™s Horizon 2020 research and innovation programme (grant agreement No 725899).
+> This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).
