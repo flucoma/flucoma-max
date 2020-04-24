@@ -966,6 +966,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-21",
@@ -980,14 +981,16 @@
 							}
 , 							{
 								"box" : 								{
+									"floatoutput" : 1,
 									"id" : "obj-10",
+									"ignoreclick" : 1,
 									"maxclass" : "slider",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 299.5, 702.333374, 268.5, 17.0 ],
-									"presentation_rect" : [ 300.5, 704.333374, 0.0, 0.0 ],
+									"size" : 1.0,
 									"style" : "",
 									"varname" : "progress[5]"
 								}
@@ -995,14 +998,16 @@
 							}
 , 							{
 								"box" : 								{
+									"floatoutput" : 1,
 									"id" : "obj-8",
+									"ignoreclick" : 1,
 									"maxclass" : "slider",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 299.5, 589.333374, 268.5, 17.0 ],
-									"presentation_rect" : [ 296.5, 588.333374, 0.0, 0.0 ],
+									"size" : 1.0,
 									"style" : "",
 									"varname" : "progress[4]"
 								}
@@ -1010,14 +1015,16 @@
 							}
 , 							{
 								"box" : 								{
+									"floatoutput" : 1,
 									"id" : "obj-7",
+									"ignoreclick" : 1,
 									"maxclass" : "slider",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 299.5, 479.333374, 268.5, 17.0 ],
-									"presentation_rect" : [ 297.5, 478.666656, 0.0, 0.0 ],
+									"size" : 1.0,
 									"style" : "",
 									"varname" : "progress[3]"
 								}
@@ -1025,14 +1032,16 @@
 							}
 , 							{
 								"box" : 								{
+									"floatoutput" : 1,
 									"id" : "obj-5",
+									"ignoreclick" : 1,
 									"maxclass" : "slider",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 299.5, 376.666656, 268.5, 17.0 ],
-									"presentation_rect" : [ 300.5, 376.666656, 0.0, 0.0 ],
+									"size" : 1.0,
 									"style" : "",
 									"varname" : "progress[2]"
 								}
@@ -1040,14 +1049,16 @@
 							}
 , 							{
 								"box" : 								{
+									"floatoutput" : 1,
 									"id" : "obj-4",
+									"ignoreclick" : 1,
 									"maxclass" : "slider",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 299.5, 275.666656, 268.5, 17.0 ],
-									"presentation_rect" : [ 302.5, 273.666656, 0.0, 0.0 ],
+									"size" : 1.0,
 									"style" : "",
 									"varname" : "progress[1]"
 								}
@@ -1055,13 +1066,16 @@
 							}
 , 							{
 								"box" : 								{
+									"floatoutput" : 1,
 									"id" : "obj-47",
+									"ignoreclick" : 1,
 									"maxclass" : "slider",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 299.5, 182.666656, 268.5, 17.0 ],
+									"size" : 1.0,
 									"style" : "",
 									"varname" : "progress"
 								}
