@@ -32,11 +32,11 @@ cmake -DMAX_SDK_PATH=<location of your Max SDK> -DDOCS=<ON/OFF> ..
 make install
 ```
 
-This will assemble  Max package in `release-packaging`.
+This will assemble a Max package in `release-packaging`.
 
-An alternative to setting up / running CMake directly on the command line is to install the CMake GUI, or use to use the curses gui `ccmake`.
+An alternative to setting up / running CMake directly on the command line is to install the CMake GUI, or use to use the curses GUI `ccmake`.
 
-Also, With CMake you have a choice of which build system you use.
+Also, with CMake you have a choice of which build system you use.
 * The default on macOS and Linux is `Unix Makefiles`. On macOS you can also use Xcode by passing `-GXcode` to CMake when you first run it.
 * The default on Windows is the latest version of Visual Studio installed. However, Visual Studio can open CMake files directly as projects, which has some upsides. When used this way, CMake variables have to be set via a JSON file that MSVC will use to configure CMake.
 
@@ -85,4 +85,4 @@ The build system generally assumes an x86 cpu with AVX instructions (most modern
 --
 
 
-> This project has received funding from the European Research Council (ERC) under the European Union’s Horizon 2020 research and innovation programme (grant agreement No 725899).
+> This project has received funding from the European Research Council (ERC) under the European Union's Horizon 2020 research and innovation programme (grant agreement No 725899).
