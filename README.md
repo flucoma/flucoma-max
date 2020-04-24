@@ -15,6 +15,7 @@ This repository hosts code for generating the Max objects and documentation reso
 * [Max SDK](https://github.com/Cycling74/max-sdk) (>= 7.3.3) : this is the only dependency we don't (optionally) manage for you, so there must be a version available to point to when you run, using the CMake Variable `MAX_SDK_PATH` (see below). It can live anywhere on your file system, although often it is convenient to install directly into your Max packages folder.
 
 These will be downloaded and configured automatically, unless you pass CMake a source code location on disk for each (see below):
+
 * [Fluid Corpus Manipulation Library]()
 * [Eigen](https://gitlab.com/libeigen/eigen) (3.3.5)
 * [HISSTools Library](https://github.com/AlexHarker/HISSTools_Library)
@@ -37,6 +38,7 @@ This will assemble a Max package in `release-packaging`.
 An alternative to setting up / running CMake directly on the command line is to install the CMake GUI, or use to use the curses GUI `ccmake`.
 
 Also, with CMake you have a choice of which build system you use.
+
 * The default on macOS and Linux is `Unix Makefiles`. On macOS you can also use Xcode by passing `-GXcode` to CMake when you first run it.
 * The default on Windows is the latest version of Visual Studio installed. However, Visual Studio can open CMake files directly as projects, which has some upsides. When used this way, CMake variables have to be set via a JSON file that MSVC will use to configure CMake.
 
@@ -46,6 +48,7 @@ Also, with CMake you have a choice of which build system you use.
 The documentation partially relies on a system that is shared with other wrappers of the Fluid Corpus Manipulation Project for different creative coding environments.
 
 Pre-requisites:
+
 * Python 3
 * Docutils python package (ReST parsing)
 * Jinja python package (template engine)
@@ -58,13 +61,15 @@ cmake -DDOCS=ON ..
 Unless we pass the location on disk of the `flucoma_paramdump`, CMake will again take care of downloading this dependency.
 
 This process:
+
 * has only ever been tested on Mac, so may well not work at all on Windows
 * can sometimes produce spurious warnings in Xcode, but *should* work
 
 
 ## Using Manual Dependencies
 
-In some cases you may want to use your own copies of the required libraries. Unless specified, the build system will download these automatically. To bypass this behaviour, use the following cache variables:
+In some cases you may want to use your own copies of the required libraries. Unless specified, the build system will download these automatically. To bypass this behavior, use the following cache variables:
+
 * `FLUID_PATH`: location of the Fluid Corpus Manipulation Library
 * `FLUID_PARAMDUMP_PATH`: location of `flucoma_paramdump` repository  (e.g. for debugging documentation generation)
 * `EIGEN_PATH` location of the Eigen library
