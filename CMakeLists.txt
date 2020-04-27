@@ -29,7 +29,7 @@ endif()
 
 ################################################################################
 # Main Action
-project (fluid_decomposition_max LANGUAGES CXX)
+project (flucoma-max LANGUAGES CXX)
 
 # XCODE_VERSION Doesn't work before project() call 
 if(APPLE AND XCODE_VERSION VERSION_GREATER_EQUAL 10)
