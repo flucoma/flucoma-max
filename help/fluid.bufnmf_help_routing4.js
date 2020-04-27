@@ -29,7 +29,7 @@ function source(s)
 		case 0: //resynth
 		{
 			outlet(0, 2, 0, 1);
-			outlet(0, 3, 1, 1);
+			outlet(0, numChans > 1 ? 3 : 2, 1, 1);
 			break;
 		}
 		case 1: //original
@@ -41,7 +41,7 @@ function source(s)
 	};
 }
 
-function component(state,index)
+function component(index, state)
 {
 	var nChans = new Buffer(resynthBuffer).channelcount();
 
@@ -49,14 +49,14 @@ function component(state,index)
 	{
 		case 5:
 		{
-			outlet(1, index - 1, 0, state);
-			outlet(1, index - 1, 1, state);
+			outlet(1, index, 0, state);
+			outlet(1, index, 1, state);
 			break;
 		}
 		case 10:
 		{
-			outlet(1, index - 1, 0, state);
-			outlet(1, index + 4, 1, state);
+			outlet(1, index, 0, state);
+			outlet(1, index + 5, 1, state);
 		}
 	};
 }
