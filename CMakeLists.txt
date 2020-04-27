@@ -24,17 +24,18 @@ set(FLUID_PARAMDUMP_PATH "" CACHE PATH "Optional path to fluid_paramdump (needed
 if (APPLE)
   set(CMAKE_XCODE_GENERATE_SCHEME ON)
   set(CMAKE_XCODE_SCHEME_EXECUTABLE "/Applications/Max.app")
-  set(CMAKE_OSX_DEPLOYMENT_TARGET 10.7)
+  set(CMAKE_OSX_DEPLOYMENT_TARGET 10.8)
 endif()
 
 ################################################################################
 # Main Action
-project (fluid_decomposition_max LANGUAGES CXX VERSION 0.2.0)
+project (fluid_decomposition_max LANGUAGES CXX)
 
-if(XCODE_VERSION VERSION_LESS 10)
-  set(FLUID_OSX_ARCHS x86_64;i386)
-else()
+# XCODE_VERSION Doesn't work before project() call 
+if(APPLE AND XCODE_VERSION VERSION_GREATER_EQUAL 10)
   set(FLUID_OSX_ARCHS x86_64)
+else()
+  set(FLUID_OSX_ARCHS x86_64;i386)
 endif()  
 
 set(CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY ON)
