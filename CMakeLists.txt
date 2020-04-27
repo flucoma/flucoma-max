@@ -22,7 +22,6 @@ option(DOCS "Generate Max XML documentation" OFF)
 set(FLUID_PARAMDUMP_PATH "" CACHE PATH "Optional path to fluid_paramdump (needed for docs)")
 
 if (APPLE)
-	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
   set(CMAKE_XCODE_GENERATE_SCHEME ON)
   set(CMAKE_XCODE_SCHEME_EXECUTABLE "/Applications/Max.app")
   set(CMAKE_OSX_DEPLOYMENT_TARGET 10.7)
@@ -31,6 +30,12 @@ endif()
 ################################################################################
 # Main Action
 project (fluid_decomposition_max LANGUAGES CXX VERSION 0.2.0)
+
+if(XCODE_VERSION VERSION_LESS 10)
+  set(FLUID_OSX_ARCHS x86_64;i386)
+else()
+  set(FLUID_OSX_ARCHS x86_64)
+endif()  
 
 set(CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY ON)
 set(AUTHOR_DOMAIN "org.flucoma")
@@ -101,7 +106,7 @@ endif()
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
 # only on Max do we need UBs
-set_property(TARGET HISSTools_FFT PROPERTY OSX_ARCHITECTURES x86_64;i386)
+set_property(TARGET HISSTools_FFT PROPERTY OSX_ARCHITECTURES ${FLUID_OSX_ARCHS})
 
 ################################################################################
 # Max Wrapper
