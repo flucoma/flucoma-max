@@ -45,7 +45,7 @@ target_include_directories( ${PROJECT_NAME}
 )
 
 get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
-source_group(TREE "${fluid_decomposition_SOURCE_DIR}/include" FILES ${HEADERS})
+source_group(TREE "${flucoma-core_SOURCE_DIR}/include" FILES ${HEADERS})
 get_property(HEADERS TARGET FLUID_MAX PROPERTY INTERFACE_SOURCES)
 source_group("Max Wrapper" FILES ${HEADERS})
 source_group("" FILES "${PROJECT_NAME}.cpp")
@@ -66,25 +66,27 @@ endif()
 
 ### Output ###
 if (APPLE)
-	find_library(JITTER_LIBRARY "JitterAPI" HINTS ${C74_MAX_API_DIR})
+  
+	find_library(JITTER_LIBRARY "JitterAPI" HINTS "${C74_MAX_API_DIR}/jit-includes")
+  find_library(MAX_AUDIO_API "MaxAudioAPI" HINTS "${C74_MAX_API_DIR}/msp-includes")
 
 	target_link_libraries(${PROJECT_NAME} PRIVATE
-		"-framework JitterAPI"
-		"-framework MaxAudioAPI"
+		${JITTER_LIBRARY}
+		${MAX_AUDIO_API}
 	)
 
 	set_target_properties(${PROJECT_NAME} PROPERTIES
 		BUNDLE True
-		LINK_FLAGS "-Wl,-F\"${C74_MSP_INCLUDES}\" -F\"${C74_JIT_INCLUDES}\" "
 		BUNDLE_EXTENSION "mxo"
 		XCODE_ATTRIBUTE_WRAPPER_EXTENSION "mxo"
 		MACOSX_BUNDLE_INFO_PLIST ${CMAKE_CURRENT_LIST_DIR}/Info.plist.in
 		MACOSX_BUNDLE_BUNDLE_VERSION "${GIT_VERSION_TAG}"
     XCODE_GENERATE_SCHEME ON
-		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"
-    OSX_ARCHITECTURES "x86_64;i386"
-    OSX_DEPLOYMENT_TARGET "10.7"
+		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"    
   )
+  
+  set_property(TARGET ${PROJECT_NAME} PROPERTY OSX_ARCHITECTURES ${FLUID_OSX_ARCHS})
+    
   #If we target 10.7 (actually < 10.9), we have to manually include this:
   target_compile_options(${PROJECT_NAME} PRIVATE -stdlib=libc++)
 elseif (WIN32)
