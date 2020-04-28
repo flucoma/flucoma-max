@@ -39,7 +39,7 @@ target_include_directories( ${PROJECT_NAME}
 )
 
 get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
-source_group(TREE "${fluid_decomposition_SOURCE_DIR}/include" FILES ${HEADERS})
+source_group(TREE "${flucoma-core_SOURCE_DIR}/include" FILES ${HEADERS})
 get_property(HEADERS TARGET FLUID_MAX PROPERTY INTERFACE_SOURCES)
 source_group("Max Wrapper" FILES ${HEADERS})
 source_group("" FILES "${PROJECT_NAME}.cpp")
