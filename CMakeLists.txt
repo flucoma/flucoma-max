@@ -51,7 +51,7 @@ set(FETCHCONTENT_QUIET FALSE)
 
 FetchContent_Declare(
   flucoma-core
-  GIT_REPOSITORY https://github.com/flucoma/flucoma-core.git
+  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
   GIT_PROGRESS TRUE
 )
 
@@ -63,7 +63,7 @@ FetchContent_Declare(
 
 FetchContent_Declare(
   flucoma-docs
-  GIT_REPOSITORY https://github.com/flucoma/flucoma-docs.git
+  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_paramdump.git
   GIT_PROGRESS TRUE  
 )
 
