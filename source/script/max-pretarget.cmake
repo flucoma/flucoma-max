@@ -28,8 +28,7 @@ set(C74_SCRIPTS "../../script")
 
 set(C74_CXX_STANDARD 0)
 
-if (APPLE)
-	set(CMAKE_OSX_ARCHITECTURES x86_64;i386)
+if (APPLE)	
 	SET( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -include \"${C74_MAX_INCLUDES}/macho-prefix.pch\"")
 endif ()
 

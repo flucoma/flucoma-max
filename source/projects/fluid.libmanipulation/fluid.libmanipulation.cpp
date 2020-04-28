@@ -25,7 +25,7 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedKNNClient>("fluid.knn~");
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
-  makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.pca~");
+  makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
   makeMaxWrapper<RTAudioTransportClient>("fluid.audiotransport~");
   makeMaxWrapper<NRTThreadedAudioTransportClient>("fluid.bufaudiotransport~");
   makeMaxWrapper<NRTNMFCrossClient>("fluid.bufnmfcross~");
