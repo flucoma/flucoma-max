@@ -14,3 +14,4 @@ max objectfile fluid.bufaudiotransport~ fluid.libmanipulation fluid.bufaudiotran
 max objectfile fluid.bufnmfcross~ fluid.libmanipulation fluid.bufnmfcross~;
 max objectfile fluid.nmfmorph~ fluid.libmanipulation fluid.nmfmorph~;
 max objectfile fluid.bufnndsvd~ fluid.libmanipulation fluid.bufnndsvd~;
+max objectfile fluid.nmfmorph~ fluid.libmanipulation fluid.nmfmorph~;

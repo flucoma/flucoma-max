@@ -397,7 +397,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 369.0, 591.0, 221.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ kmeans.dataset.help 3"
+									"text" : "fluid.dataset~ kmeans.dataset.help"
 								}
 
 							}
