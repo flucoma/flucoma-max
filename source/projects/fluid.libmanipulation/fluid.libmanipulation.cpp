@@ -18,7 +18,6 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  //makeMaxWrapper<NRTThreadedCorpus>("fluid.corpus~");
   makeMaxWrapper<NRTThreadedDataSetClient>("fluid.dataset~");
   makeMaxWrapper<NRTThreadedLabelSetClient>("fluid.labelset~");
   makeMaxWrapper<NRTThreadedKDTreeClient>("fluid.kdtree~");
@@ -27,9 +26,4 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
   makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
-  makeMaxWrapper<RTAudioTransportClient>("fluid.audiotransport~");
-  makeMaxWrapper<NRTThreadedAudioTransportClient>("fluid.bufaudiotransport~");
-  makeMaxWrapper<NRTNMFCrossClient>("fluid.bufnmfcross~");
-  makeMaxWrapper<RTNMFMorphClient>("fluid.nmfmorph~");
-  makeMaxWrapper<NRTThreadedNNDSVDClient>("fluid.bufnndsvd~");
 }
