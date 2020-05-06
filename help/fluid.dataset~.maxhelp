@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 745.0, 540.0 ],
+		"rect" : [ 407.0, 114.0, 745.0, 540.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 745.0, 514.0 ],
+						"rect" : [ 0.0, 26.0, 745.0, 514.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -320,7 +320,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 745.0, 514.0 ],
+						"rect" : [ 407.0, 140.0, 745.0, 514.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -349,6 +349,33 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-25",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 63.0, 442.0, 143.0, 23.0 ],
+									"presentation_rect" : [ 151.0, 442.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "fill 1, apply triangle half"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 3,
+									"numoutlets" : 1,
+									"outlettype" : [ "float" ],
+									"patching_rect" : [ 270.0, 472.0, 178.0, 23.0 ],
+									"style" : "",
+									"text" : "peek~ dataset.help.datapoint"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-26",
 									"maxclass" : "message",
@@ -406,7 +433,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 232.0, 410.0, 50.0, 23.0 ],
+									"patching_rect" : [ 216.0, 406.0, 50.0, 23.0 ],
 									"style" : ""
 								}
 
@@ -418,7 +445,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 193.0, 410.0, 24.0, 24.0 ],
+									"patching_rect" : [ 177.0, 406.0, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -430,7 +457,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 193.0, 387.0, 97.0, 23.0 ],
+									"patching_rect" : [ 177.0, 378.0, 97.0, 23.0 ],
 									"style" : "",
 									"text" : "route clear size"
 								}
@@ -464,40 +491,14 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 113.5, 430.0, 32.0, 23.0 ],
-									"style" : "",
-									"text" : "fill 2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-19",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 430.0, 37.0, 23.0 ],
-									"style" : "",
-									"text" : "clear"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-17",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 430.0, 32.0, 23.0 ],
+									"patching_rect" : [ 5.0, 442.0, 54.0, 23.0 ],
 									"style" : "",
-									"text" : "fill 1"
+									"text" : "fill sin 1"
 								}
 
 							}
@@ -559,9 +560,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 5.0, 472.0, 254.0, 23.0 ],
+									"patching_rect" : [ 5.0, 472.0, 263.0, 23.0 ],
 									"style" : "",
-									"text" : "buffer~ dataset.help.datapoint @samps 42"
+									"text" : "buffer~ dataset.help.datapoint @samps 100"
 								}
 
 							}
@@ -584,9 +585,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 37.0, 348.5, 175.0, 23.0 ],
+									"patching_rect" : [ 37.0, 348.5, 159.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ helpdataset 42"
+									"text" : "fluid.dataset~ helpdataset"
 								}
 
 							}
@@ -706,20 +707,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-19", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-20", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
@@ -736,6 +723,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-24", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-25", 0 ]
 								}
 
 							}

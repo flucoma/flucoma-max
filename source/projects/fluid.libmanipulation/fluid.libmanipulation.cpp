@@ -10,6 +10,7 @@
 #include <clients/nrt/PCAClient.hpp>
 #include <clients/rt/AudioTransportClient.hpp>
 #include <clients/nrt/NMFCrossClient.hpp>
+#include <clients/rt/NMFMorphClient.hpp>
 #include <clients/nrt/NNDSVDClient.hpp>
 #include "FluidMaxWrapper.hpp" //nb: this include is order-sensitive because of macro name clashes in Eigen and C74
 
@@ -17,7 +18,6 @@
 void ext_main(void*)
 {
   using namespace fluid::client;
-  //makeMaxWrapper<NRTThreadedCorpus>("fluid.corpus~");
   makeMaxWrapper<NRTThreadedDataSetClient>("fluid.dataset~");
   makeMaxWrapper<NRTThreadedLabelSetClient>("fluid.labelset~");
   makeMaxWrapper<NRTThreadedKDTreeClient>("fluid.kdtree~");
@@ -26,8 +26,4 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
   makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
-  makeMaxWrapper<RTAudioTransportClient>("fluid.audiotransport~");
-  makeMaxWrapper<NRTThreadedAudioTransportClient>("fluid.bufaudiotransport~");
-  makeMaxWrapper<NRTNMFCrossClient>("fluid.bufnmfcross~");
-  makeMaxWrapper<NRTThreadedNNDSVDClient>("fluid.bufnndsvd~");
 }

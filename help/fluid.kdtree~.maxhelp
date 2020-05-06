@@ -300,7 +300,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 438.0, 665.0, 226.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ kdtree_help_dataset 42"
+									"text" : "fluid.dataset~ kdtree_help_dataset"
 								}
 
 							}
