@@ -155,9 +155,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 426.330093, 550.310677, 150.0, 20.0 ],
+					"patching_rect" : [ 426.330078, 550.310669, 150.0, 20.0 ],
 					"style" : "",
-					"text" : "progress per file",
+					"text" : "progress per slice",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
 				}
 
@@ -500,7 +500,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 299.0, 126.0, 628.0, 580.0 ],
+						"rect" : [ 975.0, 148.0, 628.0, 580.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -529,12 +529,38 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 93.0, 497.0, 323.0, 20.0 ],
+									"presentation_rect" : [ 94.0, 497.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "we output a bang when the flatten data is ready in [feature]"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"linecount" : 7,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 271.75, 10.0, 124.0, 100.0 ],
+									"style" : "",
+									"text" : "source: buffername\nstartframe\nnumframes\nfeatures: buffername\nnumchans\nsr\nbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-22",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 415.0, 148.0, 115.0, 22.0 ],
+									"patching_rect" : [ 414.0, 58.0, 115.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ #0_tmpstats"
 								}
@@ -568,32 +594,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-11",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 53.0, 197.0, 29.5, 22.0 ],
-									"style" : "",
-									"text" : "t b l"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "newobj",
-									"numinlets" : 4,
-									"numoutlets" : 4,
-									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 53.0, 163.0, 205.75, 22.0 ],
-									"style" : "",
-									"text" : "buddy 4"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -612,7 +612,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 415.0, 121.0, 115.0, 22.0 ],
+									"patching_rect" : [ 414.0, 31.0, 115.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ #0_tmpmfcc"
 								}
@@ -622,12 +622,12 @@
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 5,
-									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 53.0, 121.0, 268.0, 22.0 ],
+									"numinlets" : 8,
+									"numoutlets" : 8,
+									"outlettype" : [ "", "", "", "", "", "", "", "" ],
+									"patching_rect" : [ 53.0, 121.0, 372.0, 22.0 ],
 									"style" : "",
-									"text" : "routepass source startframe numframes features"
+									"text" : "routepass source startframe numframes features numchans sr bang"
 								}
 
 							}
@@ -673,13 +673,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-3",
-									"linecount" : 5,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 93.0, 10.0, 150.0, 74.0 ],
+									"patching_rect" : [ 93.0, 10.0, 171.0, 47.0 ],
 									"style" : "",
-									"text" : "we get in our source, chunk markers and dest, so unless we have any preprocessing to do, we can just get on with it"
+									"text" : "we get all info about the slice we want to analyse, finishing with a bang"
 								}
 
 							}
@@ -707,40 +707,33 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
-									"midpoints" : [ 249.25, 201.0, 446.5, 201.0 ],
-									"source" : [ "obj-10", 3 ]
+									"midpoints" : [ 213.785714, 201.0, 446.5, 201.0 ],
+									"source" : [ "obj-2", 3 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 187.0, 243.0, 62.5, 243.0 ],
-									"source" : [ "obj-10", 2 ]
+									"midpoints" : [ 365.071429, 245.0, 62.5, 245.0 ],
+									"source" : [ "obj-2", 6 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 124.75, 243.0, 62.5, 243.0 ],
-									"source" : [ "obj-10", 1 ]
+									"midpoints" : [ 163.357143, 158.0, 62.5, 158.0 ],
+									"source" : [ "obj-2", 2 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 73.0, 247.0, 62.5, 247.0 ],
-									"source" : [ "obj-11", 1 ]
+									"midpoints" : [ 112.928571, 150.0, 62.5, 150.0 ],
+									"source" : [ "obj-2", 1 ]
 								}
 
 							}
@@ -748,34 +741,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"midpoints" : [ 62.5, 243.0, 62.5, 243.0 ],
-									"source" : [ "obj-11", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 3 ],
-									"source" : [ "obj-2", 3 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 2 ],
-									"source" : [ "obj-2", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 1 ],
-									"source" : [ "obj-2", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
@@ -1212,6 +1177,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-151", 0 ],
+					"source" : [ "obj-147", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-152", 0 ],
 					"source" : [ "obj-151", 2 ]
 				}
@@ -1379,9 +1351,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
