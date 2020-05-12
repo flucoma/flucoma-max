@@ -8,6 +8,7 @@
 #include <clients/nrt/NormalizeClient.hpp>
 #include <clients/nrt/StandardizeClient.hpp>
 #include <clients/nrt/PCAClient.hpp>
+#include <clients/nrt/MDSClient.hpp>
 #include <clients/rt/AudioTransportClient.hpp>
 #include <clients/nrt/NMFCrossClient.hpp>
 #include <clients/rt/NMFMorphClient.hpp>
@@ -26,4 +27,5 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
   makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
+  makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
 }
