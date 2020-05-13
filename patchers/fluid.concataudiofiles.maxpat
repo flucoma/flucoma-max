@@ -45,7 +45,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 84.244308000000004, 73.007910192012787, 123.0, 22.0 ],
-					"text" : "routepass desintation"
+					"text" : "routepass destination"
 				}
 
 			}
