@@ -1243,7 +1243,7 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 148.0, 126.0, 47.0, 22.0 ],
 									"style" : "",
-									"text" : "zl iter 1"
+									"text" : "zl 32768 iter 1"
 								}
 
 							}
@@ -1530,7 +1530,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 119.5, 269.542114, 47.0, 22.0 ],
 					"style" : "",
-					"text" : "zl iter 1"
+					"text" : "zl 32768 iter 1"
 				}
 
 			}
@@ -1569,7 +1569,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 84.0, 213.95517, 199.63855, 22.0 ],
 					"style" : "",
-					"text" : "zl reg"
+					"text" : "zl 32768 reg"
 				}
 
 			}
