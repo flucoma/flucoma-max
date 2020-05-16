@@ -4,10 +4,12 @@
 #include <clients/nrt/LabelSetClient.hpp>
 #include <clients/nrt/KDTreeClient.hpp>
 #include <clients/nrt/KMeansClient.hpp>
-#include <clients/nrt/KNNClient.hpp>
+#include <clients/nrt/KNNClassifierClient.hpp>
+#include <clients/nrt/KNNRegressorClient.hpp>
 #include <clients/nrt/NormalizeClient.hpp>
 #include <clients/nrt/StandardizeClient.hpp>
 #include <clients/nrt/PCAClient.hpp>
+#include <clients/nrt/MDSClient.hpp>
 #include <clients/rt/AudioTransportClient.hpp>
 #include <clients/nrt/NMFCrossClient.hpp>
 #include <clients/rt/NMFMorphClient.hpp>
@@ -22,8 +24,10 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedLabelSetClient>("fluid.labelset~");
   makeMaxWrapper<NRTThreadedKDTreeClient>("fluid.kdtree~");
   makeMaxWrapper<NRTThreadedKMeansClient>("fluid.kmeans~");
-  makeMaxWrapper<NRTThreadedKNNClient>("fluid.knn~");
+  makeMaxWrapper<NRTThreadedKNNClassifierClient>("fluid.knnclassifier~");
+  makeMaxWrapper<NRTThreadedKNNRegressorClient>("fluid.knnregressor~");
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
   makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
+  makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
 }

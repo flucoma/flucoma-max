@@ -147,6 +147,20 @@ public:
     releaseLock();
   }
 
+
+  FluidTensorView<float, 2> allFrames() override
+  {
+  
+    FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
+    return v.transpose();
+  }
+
+  FluidTensorView<const float, 2> allFrames() const override
+  {
+    FluidTensorView<const float, 2> v{this->mSamps, 0, numFrames(), numChans()};
+    return v.transpose();
+  }
+
   FluidTensorView<float, 1> samps(index channel) override
   {
     FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};

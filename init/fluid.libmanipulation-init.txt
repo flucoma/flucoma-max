@@ -9,3 +9,4 @@ max objectfile fluid.knn~ fluid.libmanipulation fluid.knn~;
 max objectfile fluid.normalize~ fluid.libmanipulation fluid.normalize~;
 max objectfile fluid.standardize~ fluid.libmanipulation fluid.standardize~;
 max objectfile fluid.pca~ fluid.libmanipulation fluid.pca~;
+max objectfile fluid.mds~ fluid.libmanipulation fluid.mds~;
