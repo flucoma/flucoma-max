@@ -102,6 +102,20 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 204.0, 251.0, 38.0, 23.0 ],
+									"presentation_rect" : [ 204.0, 248.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "rows"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-23",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -267,9 +281,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 140.0, 379.0, 100.0, 23.0 ],
+									"patching_rect" : [ 162.0, 406.0, 67.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.normalize~"
+									"text" : "fluid.pca~"
 								}
 
 							}
@@ -279,7 +293,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.normalize~" ],
+									"jsarguments" : [ "fluid.pca~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -374,6 +388,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-6", 0 ]
 								}
 
 							}

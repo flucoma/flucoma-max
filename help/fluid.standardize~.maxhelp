@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 0,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
 		"rect" : [ 34.0, 100.0, 632.0, 432.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -52,6 +51,7 @@
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter.js fluid.standardize~"
 				}
 
@@ -65,14 +65,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 34.0, 126.0, 632.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -103,11 +102,26 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 28.0, 201.0, 76.0, 23.0 ],
+									"presentation_rect" : [ 28.0, 201.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "fittransform"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-23",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 259.0, 282.0, 245.0, 21.0 ],
+									"style" : "",
 									"text" : "return dimensionality of last fitted dataset"
 								}
 
@@ -119,6 +133,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 278.0, 252.0, 198.0, 21.0 ],
+									"style" : "",
 									"text" : "args: buffer name with datapoint"
 								}
 
@@ -131,6 +146,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 278.0, 214.0, 309.0, 36.0 ],
+									"style" : "",
 									"text" : "normalize a point using min/max pre-learned from a dataset using fit"
 								}
 
@@ -142,6 +158,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 212.0, 184.0, 198.0, 21.0 ],
+									"style" : "",
 									"text" : "args: dataset name"
 								}
 
@@ -153,6 +170,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 212.0, 161.0, 209.0, 21.0 ],
+									"style" : "",
 									"text" : "standardize a fluid.dataset in place"
 								}
 
@@ -164,6 +182,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 212.0, 127.0, 345.0, 21.0 ],
+									"style" : "",
 									"text" : "args: dataset in, dataset out"
 								}
 
@@ -175,6 +194,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 212.0, 104.0, 356.0, 21.0 ],
+									"style" : "",
 									"text" : "standardize a fluid.dataset and write to another fluid.dataset "
 								}
 
@@ -186,8 +206,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 208.0, 282.0, 32.0, 23.0 ],
-									"text" : "size"
+									"patching_rect" : [ 208.0, 282.0, 34.0, 23.0 ],
+									"style" : "",
+									"text" : "cols"
 								}
 
 							}
@@ -198,6 +219,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 452.0, 338.0, 294.0, 21.0 ],
+									"style" : "",
 									"text" : "read from json (args: absolute path)"
 								}
 
@@ -209,6 +231,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 452.0, 311.0, 294.0, 21.0 ],
+									"style" : "",
 									"text" : "write to json (args: absolute path), won't overwrite"
 								}
 
@@ -221,6 +244,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 259.0, 307.0, 170.0, 23.0 ],
+									"style" : "",
 									"text" : "write /tmp/kmeans.help.json"
 								}
 
@@ -233,6 +257,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 279.0, 334.0, 168.0, 23.0 ],
+									"style" : "",
 									"text" : "read /tmp/kmeans.help.json"
 								}
 
@@ -245,6 +270,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 158.0, 161.0, 29.5, 23.0 ],
+									"style" : "",
 									"text" : "fit"
 								}
 
@@ -256,8 +282,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 123.0, 104.0, 76.0, 23.0 ],
-									"text" : "standardize"
+									"patching_rect" : [ 123.0, 104.0, 65.0, 23.0 ],
+									"style" : "",
+									"text" : "transform"
 								}
 
 							}
@@ -268,8 +295,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 173.0, 214.0, 104.0, 23.0 ],
-									"text" : "standardizepoint"
+									"patching_rect" : [ 173.0, 214.0, 94.0, 23.0 ],
+									"style" : "",
+									"text" : "transformpoint"
 								}
 
 							}
@@ -280,6 +308,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 16.0, 71.0, 451.0, 21.0 ],
+									"style" : "",
 									"text" : "Scale a dataset to have 0 mean and unit standard deviation in all dimensions"
 								}
 
@@ -292,6 +321,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 123.0, 373.0, 111.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.standardize~"
 								}
 
@@ -314,6 +344,13 @@
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-10", 0 ]
@@ -364,9 +401,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -384,7 +423,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 378.368011474609375, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 378.368011, 57.599854 ]
 				}
 
 			}
@@ -397,14 +436,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 0,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 0.0, 26.0, 632.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -442,9 +480,11 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}
