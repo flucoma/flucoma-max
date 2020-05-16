@@ -128,7 +128,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1248.0, 635.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "write"
+					"text" : "getlabel "
 				}
 
 			}
@@ -204,19 +204,6 @@
 					"style" : "",
 					"text" : "10",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-45",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 971.0, 548.0, 185.0, 22.0 ],
-					"style" : "",
-					"text" : "write /Users/pa/Desktop/test.json"
 				}
 
 			}
@@ -487,7 +474,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 875.0, 370.0, 163.0, 22.0 ],
 					"style" : "",
-					"text" : "predict 5 5"
+					"text" : "predictpoint 1"
 				}
 
 			}
@@ -1014,13 +1001,6 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
-					"source" : [ "obj-45", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
 					"source" : [ "obj-46", 0 ]
 				}
 
@@ -1103,9 +1083,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

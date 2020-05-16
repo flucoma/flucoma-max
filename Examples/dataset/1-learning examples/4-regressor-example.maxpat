@@ -38,6 +38,18 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-64",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 1252.0, 495.0, 55.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-77",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -690,9 +702,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 829.75, 325.0, 274.0, 22.0 ],
+					"patching_rect" : [ 829.75, 325.0, 195.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf regresspoint simplePoint simpleOutput %d"
+					"text" : "sprintf predictpoint simplePoint %d"
 				}
 
 			}
@@ -705,7 +717,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1204.0, 484.5, 133.0, 22.0 ],
+					"patching_rect" : [ 1160.0, 623.5, 133.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -717,9 +729,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 1204.0, 457.0, 109.0, 22.0 ],
+					"patching_rect" : [ 1204.0, 457.0, 103.0, 22.0 ],
 					"style" : "",
-					"text" : "route regresspoint"
+					"text" : "route predictpoint"
 				}
 
 			}
@@ -905,9 +917,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1020.5, 413.0, 85.0, 22.0 ],
+					"patching_rect" : [ 1020.5, 413.0, 159.0, 22.0 ],
 					"style" : "",
-					"text" : "fit simpleInput"
+					"text" : "fit simpleInput simpleOutput"
 				}
 
 			}
@@ -918,9 +930,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1020.5, 450.0, 62.0, 22.0 ],
+					"patching_rect" : [ 1020.5, 450.0, 113.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knn~"
+					"text" : "fluid.knnregressor~"
 				}
 
 			}
@@ -1340,6 +1352,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-64", 1 ],
+					"source" : [ "obj-45", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-48", 0 ]
 				}
@@ -1510,7 +1529,7 @@
  ],
 		"dependency_cache" : [ 			{
 				"name" : "big_urn.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/PA's learning examples",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/1-learning examples",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -1535,9 +1554,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1555,6 +1574,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1564,8 +1584,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

@@ -111,7 +111,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 811.0, 86.0, 200.0, 22.0 ],
 					"style" : "",
-					"text" : "fittransform data2d 1 $1 data1mds1"
+					"text" : "fittransform data2d data1mds1 1 $1"
 				}
 
 			}
@@ -1237,7 +1237,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 623.0, 167.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0.275027 0.316136"
+					"text" : "0. 0.008068 0.185697"
 				}
 
 			}
@@ -1250,7 +1250,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 599.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"3\" \"2\" \"4\""
+					"text" : "\"6\" \"7\" \"15\""
 				}
 
 			}
@@ -1799,8 +1799,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1929,9 +1929,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 253.0, 90.0, 239.0, 22.0 ],
+					"patching_rect" : [ 253.0, 90.0, 173.0, 22.0 ],
 					"style" : "",
-					"text" : "fit data2d 1, fittransform data2d 1 data1pca"
+					"text" : "fittransform data2d data1pca 1"
 				}
 
 			}
@@ -1978,7 +1978,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 623.0, 167.0, 22.0 ],
 					"style" : "",
-					"text" : "0.000001 2.28045 2.798342"
+					"text" : "0. 0.017461 0.02119"
 				}
 
 			}
@@ -1991,7 +1991,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 543.0, 160.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0.238494 0.292656"
+					"text" : "0. 0.01507 0.034242"
 				}
 
 			}
@@ -2004,7 +2004,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 543.0, 166.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0.261884 0.336437"
+					"text" : "0. 0.108477 0.11228"
 				}
 
 			}
@@ -2017,7 +2017,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 516.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"3\" \"4\" \"2\""
+					"text" : "\"6\" \"9\" \"8\""
 				}
 
 			}
@@ -2043,7 +2043,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 599.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"3\" \"4\" \"2\""
+					"text" : "\"6\" \"9\" \"10\""
 				}
 
 			}
@@ -2056,7 +2056,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 517.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"3\" \"4\" \"2\""
+					"text" : "\"6\" \"7\" \"5\""
 				}
 
 			}
@@ -2679,8 +2679,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2811,7 +2811,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 534.0, 91.0, 200.0, 22.0 ],
 					"style" : "",
-					"text" : "fittransform data2d 1 $1 data1mds0"
+					"text" : "fittransform data2d data1mds0 1 $1"
 				}
 
 			}
@@ -3387,8 +3387,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3999,8 +3999,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4715,8 +4715,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5157,8 +5157,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
