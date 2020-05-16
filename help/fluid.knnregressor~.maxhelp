@@ -194,9 +194,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 145.0, 355.0, 65.0, 23.0 ],
+									"patching_rect" : [ 145.0, 355.0, 121.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.knn~"
+									"text" : "fluid.knnregressor~"
 								}
 
 							}
@@ -206,7 +206,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.knn~" ],
+									"jsarguments" : [ "fluid.knnregressor~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
