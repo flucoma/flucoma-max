@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 128.0, 113.0, 855.0, 717.0 ],
+		"rect" : [ 899.0, 123.0, 855.0, 717.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -184,7 +184,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 215.247572, 451.310677, 282.0, 24.0 ],
+					"patching_rect" : [ 259.990295, 451.310669, 282.0, 24.0 ],
 					"style" : "",
 					"text" : "dictionary of generated IDs and slice boundaries",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
@@ -534,7 +534,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 93.0, 497.0, 323.0, 20.0 ],
-									"presentation_rect" : [ 94.0, 497.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "we output a bang when the flatten data is ready in [feature]"
 								}
@@ -560,7 +559,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 414.0, 58.0, 115.0, 22.0 ],
+									"patching_rect" : [ 414.0, 58.0, 129.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ #0_tmpstats"
 								}
@@ -573,7 +572,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 53.0, 446.0, 207.0, 22.0 ],
+									"patching_rect" : [ 53.0, 446.0, 221.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.buf.flatten @source #0_tmpstats"
 								}
@@ -599,7 +598,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 53.0, 336.0, 382.0, 22.0 ],
+									"patching_rect" : [ 53.0, 336.0, 410.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufstats~ @source #0_tmpmfcc @stats #0_tmpstats @blocking 0"
 								}
@@ -612,7 +611,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 414.0, 31.0, 115.0, 22.0 ],
+									"patching_rect" : [ 414.0, 31.0, 129.0, 22.0 ],
 									"style" : "",
 									"text" : "buffer~ #0_tmpmfcc"
 								}
@@ -664,7 +663,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 53.0, 260.0, 380.0, 22.0 ],
+									"patching_rect" : [ 53.0, 260.0, 392.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.bufmfcc~ 13 @blocking 0 @features #0_tmpmfcc @numchans 1"
 								}
@@ -851,14 +850,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 145.747572, 451.310677, 50.5, 22.0 ],
+					"patching_rect" : [ 145.747574, 451.310669, 101.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "dict"
+					"text" : "dict mybigcorpus"
 				}
 
 			}
@@ -1227,7 +1226,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-147", 0 ],
-					"midpoints" : [ 110.296115, 445.810677, 155.247572, 445.810677 ],
+					"midpoints" : [ 110.296115, 445.810677, 155.247574, 445.810677 ],
 					"source" : [ "obj-157", 0 ]
 				}
 
@@ -1277,77 +1276,6 @@
 
 			}
  ],
-		"dependency_cache" : [ 			{
-				"name" : "fluid.audiofilesin.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.concataudiofiles.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.segmentcorpus.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.processsegments.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.buf.flatten.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/plenary workshop material",
-				"patcherrelativepath" : "../dataset/plenary workshop material",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufresize.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/plenary workshop material",
-				"patcherrelativepath" : "../dataset/plenary workshop material",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.dict2dataset.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufcompose~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufonsetslice~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufmfcc~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufstats~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
- ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
@@ -1371,7 +1299,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1381,7 +1308,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
