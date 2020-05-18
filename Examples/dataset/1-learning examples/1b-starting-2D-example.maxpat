@@ -38,14 +38,106 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-95",
-					"linecount" : 4,
+					"id" : "obj-58",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 649.0, 713.0, 239.0, 60.0 ],
+					"patching_rect" : [ 163.0, 426.0, 150.0, 20.0 ],
 					"style" : "",
-					"text" : "we then query with the dataset's point's label. We can save the file and read it. It is a long flat list of labels, then of associated cluster number, here as label"
+					"text" : "distance from target"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-59",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 215.0, 354.0, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "label of the entries"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-56",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 691.5, 896.0, 124.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-53",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 393.0, 658.0, 215.0, 74.0 ],
+					"style" : "",
+					"text" : "Because the process is seeded randomly, the clusters will be in random order. But we get the sensible result, if we ask for 2 clusters, of the data being split in half",
+					"textcolor" : [ 0.0, 0.0, 0.0, 0.5 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 16.0,
+					"id" : "obj-48",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 759.0, 523.0, 90.0, 24.0 ],
+					"style" : "",
+					"text" : "Clustering"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 16.0,
+					"id" : "obj-73",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 649.0, 18.0, 163.0, 24.0 ],
+					"style" : "",
+					"text" : "Nearest Neighbours"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 16.0,
+					"id" : "obj-46",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 7.0, 10.0, 210.0, 24.0 ],
+					"style" : "",
+					"text" : "Making the dataset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-95",
+					"linecount" : 5,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 642.0, 711.0, 239.0, 74.0 ],
+					"style" : "",
+					"text" : "we then look up the cluster corresponding to a point in the dataset. We can save the file and read it. It is a long flat list of labels, then of associated cluster number, here as label"
 				}
 
 			}
@@ -57,7 +149,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 679.0, 807.0, 73.0, 22.0 ],
-					"presentation_rect" : [ 1211.0, 715.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "getlabel 3-7"
 				}
@@ -71,7 +162,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 661.0, 781.0, 75.0, 22.0 ],
-					"presentation_rect" : [ 1177.0, 684.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "getlabel 7-3"
 				}
@@ -119,13 +209,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-83",
-					"linecount" : 11,
+					"linecount" : 6,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 393.0, 565.0, 204.0, 154.0 ],
+					"patching_rect" : [ 393.0, 565.0, 204.0, 87.0 ],
 					"style" : "",
-					"text" : "we query graphically again and get the cluster to which this point would be nearest. Float values are provided here to showcase that the queriying point does not have to be part of the original dataset. Because the process is seeded randomly, the clusters will be in random order. But we get the sensible result, if we ask for 2 clusters, of the data being split in half"
+					"text" : "we query graphically again and get the cluster to which this point would be nearest. Float values are provided here to showcase that the queriying point does not have to be part of the original dataset."
 				}
 
 			}
@@ -145,13 +235,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-77",
-					"linecount" : 3,
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 105.0, 555.0, 150.0, 47.0 ],
+					"patching_rect" : [ 105.0, 555.0, 150.0, 33.0 ],
 					"style" : "",
-					"text" : "we try to cluster the dataset above in an unsupervised way."
+					"text" : "we try to cluster the 2D dataset above."
 				}
 
 			}
@@ -163,7 +253,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 187.0, 465.0, 471.0, 33.0 ],
-					"presentation_rect" : [ 274.0, 615.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "With one request at #3, we get the query back out with a distance of 0 since the point we query exists. If we change to 9 points at #3, we will get the surrounding points"
 				}
@@ -188,10 +277,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 387.5, 136.5, 161.0, 33.0 ],
-					"presentation_rect" : [ 562.0, 146.0, 0.0, 0.0 ],
+					"patching_rect" : [ 387.5, 137.5, 161.0, 33.0 ],
 					"style" : "",
-					"text" : "we speccify the number of neighbourgs"
+					"text" : "we specify the number of neighbours"
 				}
 
 			}
@@ -210,13 +298,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-47",
-					"linecount" : 5,
+					"linecount" : 4,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 88.0, 54.0, 171.0, 74.0 ],
+					"patching_rect" : [ 88.0, 54.0, 207.0, 60.0 ],
 					"style" : "",
-					"text" : "Here we create a 2D dataset. The format is the coordinate x-y (0-0 to 9-9) for the labels with the values of both dimentsion being 0 to 0.9"
+					"text" : "Here we create a 2D dataset. The format is the coordinate x-y (0-0 to 9-9) for the labels with an associated array/list of 2 values (from 0 to 0.9)"
 				}
 
 			}
@@ -228,7 +316,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 652.5, 896.5, 205.0, 35.0 ],
+					"patching_rect" : [ 652.5, 931.5, 205.0, 35.0 ],
 					"style" : "",
 					"text" : ";\rmax openfile viewer /tmp/test2d.json"
 				}
@@ -287,6 +375,7 @@
 				"box" : 				{
 					"id" : "obj-17",
 					"maxclass" : "number",
+					"minimum" : 2,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -373,9 +462,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 387.0, 428.0, 163.0, 22.0 ],
-					"style" : "",
-					"text" : "fit"
+					"patching_rect" : [ 486.0, 378.0, 64.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -387,8 +475,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 163.0, 402.0, 316.0, 22.0 ],
-					"style" : "",
-					"text" : "0."
+					"style" : ""
 				}
 
 			}
@@ -400,8 +487,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 211.0, 376.0, 197.0, 22.0 ],
-					"style" : "",
-					"text" : "2-3"
+					"style" : ""
 				}
 
 			}
@@ -523,7 +609,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 588.0, 57.0, 20.0, 20.0 ],
+					"patching_rect" : [ 360.75, 144.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 144.0, 556.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -545,7 +631,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 354.0, 143.0, 20.0, 20.0 ],
+					"patching_rect" : [ 588.0, 56.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 134.0, 605.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -857,8 +943,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 26.0, 918.0, 163.0, 22.0 ],
-					"style" : "",
-					"text" : "predict 50 50"
+					"style" : ""
 				}
 
 			}
@@ -905,6 +990,7 @@
 				"box" : 				{
 					"id" : "obj-26",
 					"maxclass" : "number",
+					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -960,7 +1046,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 649.0, 395.0, 183.0, 22.0 ],
+					"patching_rect" : [ 617.0, 396.0, 183.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ simplepoint @samps 2 1"
 				}
@@ -1028,6 +1114,51 @@
 					"patching_rect" : [ 64.0, 292.0, 150.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.dataset~ simple2data"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.875034, 0.886275, 0.690563, 1.0 ],
+					"id" : "obj-24",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 7.0, 5.0, 285.0, 323.0 ],
+					"proportion" : 0.39,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.701961, 0.415686, 0.886275, 0.36 ],
+					"id" : "obj-37",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 155.5, 10.0, 653.0, 496.0 ],
+					"proportion" : 0.39,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.92549, 0.364706, 0.341176, 0.36 ],
+					"id" : "obj-43",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 3.0, 511.25, 875.0, 472.75 ],
+					"proportion" : 0.39,
+					"style" : ""
 				}
 
 			}
@@ -1232,6 +1363,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-49", 0 ],
 					"source" : [ "obj-42", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-56", 1 ],
+					"source" : [ "obj-44", 2 ]
 				}
 
 			}
