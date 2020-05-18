@@ -176,9 +176,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1087.0, 435.0, 185.0, 22.0 ],
+									"patching_rect" : [ 1087.0, 435.0, 173.0, 22.0 ],
 									"style" : "",
-									"text" : "standardizepoint querybuf stdbuf"
+									"text" : "transformpoint querybuf stdbuf"
 								}
 
 							}
@@ -189,9 +189,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1087.0, 405.0, 186.0, 22.0 ],
+									"patching_rect" : [ 1087.0, 405.0, 185.0, 22.0 ],
 									"style" : "",
-									"text" : "normalizepoint querybuf normbuf"
+									"text" : "transformpoint querybuf normbuf"
 								}
 
 							}
@@ -230,7 +230,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 648.0, 866.0, 141.0, 22.0 ],
 									"style" : "",
-									"text" : "0.090154 0.098443"
+									"text" : "0.096052"
 								}
 
 							}
@@ -243,7 +243,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 640.0, 837.0, 104.0, 22.0 ],
 									"style" : "",
-									"text" : "point-11 point-10"
+									"text" : "point-10"
 								}
 
 							}
@@ -269,7 +269,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 648.0, 595.0, 110.0, 22.0 ],
 									"style" : "",
-									"text" : "0.733759 0.74573"
+									"text" : "0.668218"
 								}
 
 							}
@@ -282,7 +282,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 640.0, 566.0, 104.0, 22.0 ],
 									"style" : "",
-									"text" : "point-11 point-10"
+									"text" : "point-6"
 								}
 
 							}
@@ -436,9 +436,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 149.5, 734.0, 223.0, 22.0 ],
+									"patching_rect" : [ 149.5, 734.0, 212.0, 22.0 ],
 									"style" : "",
-									"text" : "fit test, standardizepoint querybuf stdbuf"
+									"text" : "fit test, transformpoint querybuf stdbuf"
 								}
 
 							}
@@ -609,14 +609,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 611.0, 340.0, 110.0, 35.0 ],
+									"patching_rect" : [ 611.0, 340.0, 110.0, 22.0 ],
 									"style" : "",
-									"text" : "63.323217 65.422322"
+									"text" : "58.527171"
 								}
 
 							}
@@ -629,7 +628,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 603.0, 311.0, 104.0, 22.0 ],
 									"style" : "",
-									"text" : "point-10 point-11"
+									"text" : "point-6"
 								}
 
 							}
@@ -694,7 +693,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 38.0, 334.0, 274.0, 22.0 ],
 									"style" : "",
-									"text" : "32.9 2.3 47.9 46.4 71.7 6.3 77.4 7.2 64.1 67.6"
+									"text" : "76.7 79.8 46.9 43.4 36.1 44.5 1.7 14.8 22.2 75.8"
 								}
 
 							}
@@ -1019,9 +1018,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 149.5, 460.0, 225.0, 22.0 ],
+									"patching_rect" : [ 149.5, 460.0, 223.0, 22.0 ],
 									"style" : "",
-									"text" : "fit test, normalizepoint querybuf normbuf"
+									"text" : "fit test, transformpoint querybuf normbuf"
 								}
 
 							}
@@ -1300,9 +1299,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1320,6 +1319,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1329,8 +1329,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1618,9 +1617,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1103.0, 531.0, 211.0, 33.0 ],
+					"patching_rect" : [ 1056.0, 531.0, 228.0, 33.0 ],
 					"style" : "",
-					"text" : "fit to get the coeffs, then standardize to another dataset"
+					"text" : "we can fit and standardize to another dataset in one go"
 				}
 
 			}
@@ -1684,7 +1683,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 864.5, 852.0, 547.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
+					"text" : "0.050886 0.05842 0.066294 0.086998 -0.010972 0.071547 0.023746 0.044809 0.00862 -0.002263"
 				}
 
 			}
@@ -1814,9 +1813,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 913.0, 531.0, 177.0, 22.0 ],
+					"patching_rect" : [ 913.0, 531.0, 136.0, 22.0 ],
 					"style" : "",
-					"text" : "fit test, standardize test test-std"
+					"text" : "fittransform test test-std"
 				}
 
 			}
@@ -1893,7 +1892,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 31.5, 852.0, 547.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0. 0. 0. 0. 0. 0. 0. 0. 0."
+					"text" : "0.940314 0.939729 1. 1. 0.319948 1. 0.757172 1. 0.646809 0.574257"
 				}
 
 			}
@@ -1958,7 +1957,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 180.5, 768.0, 29.5, 22.0 ],
 					"style" : "",
-					"text" : "20"
+					"text" : "0"
 				}
 
 			}
@@ -2048,7 +2047,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 18.0, 360.0, 274.0, 22.0 ],
 					"style" : "",
-					"text" : "35.6 81.7 99.7 55.7 25.8 37.6 85.8 37.1 30.3 8.5"
+					"text" : "49.6 66.9 29.1 75.2 4.7 80. 72.4 2.8 27.7 34.5"
 				}
 
 			}
@@ -2517,9 +2516,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 80.0, 531.0, 178.0, 22.0 ],
+					"patching_rect" : [ 80.0, 531.0, 177.0, 22.0 ],
 					"style" : "",
-					"text" : "fit test, normalize test test-norm"
+					"text" : "fit test, transform test test-norm"
 				}
 
 			}
@@ -2800,9 +2799,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2820,6 +2819,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2829,8 +2829,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

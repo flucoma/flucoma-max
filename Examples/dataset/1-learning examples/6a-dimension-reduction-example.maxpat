@@ -43,7 +43,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1138.5, 629.5, 70.0, 22.0 ],
+					"patching_rect" : [ 1154.0, 642.5, 70.0, 22.0 ],
 					"style" : "",
 					"text" : "fit data2d 1"
 				}
@@ -1183,7 +1183,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 623.0, 167.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 2.024892 2.353859"
+					"text" : "6.464976 6.5207 6.5207"
 				}
 
 			}
@@ -1196,7 +1196,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 599.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"1\" \"2\" \"4\""
+					"text" : "\"8\" \"7\" \"9\""
 				}
 
 			}
@@ -1724,9 +1724,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1855,9 +1855,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 253.0, 90.0, 227.0, 22.0 ],
+					"patching_rect" : [ 253.0, 90.0, 161.0, 22.0 ],
 					"style" : "",
-					"text" : "fit data2d 1, fittransform data2d 1 data1d"
+					"text" : "fittransform data2d data1d 1"
 				}
 
 			}
@@ -1904,7 +1904,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 623.0, 167.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 1.734643 2.352805"
+					"text" : "0. 0.850655 0.850655"
 				}
 
 			}
@@ -1917,7 +1917,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 543.0, 160.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0.18286 0.216673"
+					"text" : "0. 0.070711 0.070711"
 				}
 
 			}
@@ -1930,7 +1930,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 543.0, 166.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0.206427 0.21682"
+					"text" : "0.537401 0.542033 0.542033"
 				}
 
 			}
@@ -1943,7 +1943,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 516.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"1\" \"2\" \"4\""
+					"text" : "\"8\" \"7\" \"9\""
 				}
 
 			}
@@ -2006,9 +2006,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 903.0, 667.0, 133.0, 22.0 ],
+					"patching_rect" : [ 903.0, 667.0, 122.0, 22.0 ],
 					"style" : "",
-					"text" : "select standardizepoint"
+					"text" : "select transformpoint"
 				}
 
 			}
@@ -2019,9 +2019,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 897.5, 559.0, 193.0, 22.0 ],
+					"patching_rect" : [ 897.5, 559.0, 182.0, 22.0 ],
 					"style" : "",
-					"text" : "standardizepoint entry2d entry2dS"
+					"text" : "transformpoint entry2d entry2dS"
 				}
 
 			}
@@ -2319,7 +2319,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 693.0, 599.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"1\" \"2\" \"4\""
+					"text" : "\"8\" \"7\" \"9\""
 				}
 
 			}
@@ -2332,7 +2332,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 491.0, 517.0, 83.0, 22.0 ],
 					"style" : "",
-					"text" : "\"1\" \"2\" \"4\""
+					"text" : "\"8\" \"7\" \"9\""
 				}
 
 			}
@@ -3087,9 +3087,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3218,9 +3218,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 534.0, 91.0, 217.0, 22.0 ],
+					"patching_rect" : [ 534.0, 91.0, 159.0, 22.0 ],
 					"style" : "",
-					"text" : "fit data2d, standardize data2d data2dS"
+					"text" : "fittransform data2d data2dS"
 				}
 
 			}
@@ -3775,9 +3775,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3919,9 +3919,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 855.0, 86.0, 251.0, 22.0 ],
+					"patching_rect" : [ 855.0, 86.0, 177.0, 22.0 ],
 					"style" : "",
-					"text" : "fit data2dS 1, fittransform data2dS 1 data1dS"
+					"text" : "fittransform data2dS data1dS 1"
 				}
 
 			}
@@ -4463,9 +4463,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5196,9 +5196,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5754,9 +5754,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
