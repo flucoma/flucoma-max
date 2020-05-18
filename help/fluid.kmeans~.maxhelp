@@ -330,9 +330,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 69.0, 355.0, 214.0, 23.0 ],
+									"patching_rect" : [ 69.0, 355.0, 212.0, 23.0 ],
 									"style" : "",
-									"text" : "predictPoint kmeans.datapoint.help"
+									"text" : "predictpoint kmeans.datapoint.help"
 								}
 
 							}
@@ -430,6 +430,19 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"id" : "obj-21",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 77.0, 312.0, 76.0, 23.0 ],
+									"style" : "",
+									"text" : "fitpredict $1"
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -456,6 +469,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}

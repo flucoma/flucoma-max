@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 226.0, 197.0, 724.0, 489.0 ],
+		"rect" : [ 90.0, 100.0, 632.0, 432.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -45,14 +45,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 289.0, 77.0, 176.0, 22.0 ],
+					"patching_rect" : [ 153.0, 119.0, 144.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "helpstarter.js",
 						"parameter_enable" : 0
 					}
 ,
 					"style" : "",
-					"text" : "js helpstarter.js fluid.normalize~"
+					"text" : "js helpstarter.js fluid.knn~"
 				}
 
 			}
@@ -72,7 +72,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 226.0, 223.0, 724.0, 463.0 ],
+						"rect" : [ 90.0, 126.0, 632.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -102,48 +102,74 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-23",
+									"id" : "obj-13",
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 259.0, 282.0, 245.0, 21.0 ],
+									"patching_rect" : [ 276.0, 303.0, 334.0, 50.0 ],
 									"style" : "",
-									"text" : "return dimensionality of last fitted dataset"
+									"text" : "args: buffer name with data point, \nfluid dataset of target data, \nnumber  of neighbours to consider"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-21",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 278.0, 252.0, 198.0, 21.0 ],
-									"style" : "",
-									"text" : "args: buffer name with datapoint"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-22",
+									"id" : "obj-14",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 278.0, 214.0, 309.0, 36.0 ],
+									"patching_rect" : [ 276.0, 270.5, 334.0, 36.0 ],
 									"style" : "",
-									"text" : "normalize a point using min/max pre-learned from a dataset using fit"
+									"text" : "map a data point to a value based on nearest neighbours"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-20",
+									"id" : "obj-12",
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 212.0, 184.0, 198.0, 21.0 ],
+									"patching_rect" : [ 280.0, 202.0, 334.0, 50.0 ],
+									"style" : "",
+									"text" : "args: buffer name with data point, \nfluid.labelset of class labels, \nnumber  of neighbours to consider"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 280.0, 176.0, 334.0, 21.0 ],
+									"style" : "",
+									"text" : "return class of a data point based on nearest neighbours"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 203.0, 119.0, 150.0, 21.0 ],
+									"style" : "",
+									"text" : "index structure of data"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 203.0, 141.0, 150.0, 21.0 ],
 									"style" : "",
 									"text" : "args: dataset name"
 								}
@@ -151,125 +177,26 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 212.0, 161.0, 198.0, 21.0 ],
-									"style" : "",
-									"text" : "normalize a fluid.dataset in place"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-14",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 212.0, 127.0, 345.0, 21.0 ],
-									"style" : "",
-									"text" : "args: dataset in, dataset out"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 212.0, 104.0, 345.0, 21.0 ],
-									"style" : "",
-									"text" : "normalize a fluid.dataset and write to another fluid.dataset "
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 208.0, 282.0, 34.0, 23.0 ],
-									"style" : "",
-									"text" : "cols"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-15",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 452.0, 338.0, 294.0, 21.0 ],
-									"style" : "",
-									"text" : "read from json (args: absolute path)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 452.0, 311.0, 294.0, 21.0 ],
-									"style" : "",
-									"text" : "write to json (args: absolute path), won't overwrite"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 259.0, 307.0, 170.0, 23.0 ],
-									"style" : "",
-									"text" : "write /tmp/kmeans.help.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-16",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 279.0, 334.0, 168.0, 23.0 ],
-									"style" : "",
-									"text" : "read /tmp/kmeans.help.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 74.0, 382.0, 21.0 ],
-									"style" : "",
-									"text" : "Normalize a dataset using each dimension's maxima and minima"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 10.0, 71.0, 385.0, 21.0 ],
+									"style" : "",
+									"text" : "Learn data structure with K-Nearest Neighbours algorithm"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 140.0, 379.0, 100.0, 23.0 ],
+									"patching_rect" : [ 145.0, 355.0, 117.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.normalize~"
+									"text" : "fluid.knnclassifier~"
 								}
 
 							}
@@ -279,13 +206,14 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.normalize~" ],
+									"jsarguments" : [ "fluid.knnclassifier~" ],
 									"maxclass" : "jsui",
+									"nofsaa" : 1,
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 610.0, 56.0 ]
+									"patching_rect" : [ 10.0, 10.0, 600.0, 59.0 ]
 								}
 
 							}
@@ -296,7 +224,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 158.0, 161.0, 29.5, 23.0 ],
+									"patching_rect" : [ 150.0, 119.0, 29.5, 23.0 ],
 									"style" : "",
 									"text" : "fit"
 								}
@@ -309,85 +237,44 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 45.0, 214.0, 92.0, 23.0 ],
+									"patching_rect" : [ 174.0, 215.5, 66.0, 23.0 ],
 									"style" : "",
-									"text" : "fittransform $1"
+									"text" : "predict $1"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-8",
+									"id" : "obj-4",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 110.0, 104.0, 82.0, 23.0 ],
+									"patching_rect" : [ 174.0, 277.0, 94.0, 23.0 ],
 									"style" : "",
-									"text" : "transform $1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 53.0, 262.0, 110.0, 23.0 ],
-									"style" : "",
-									"text" : "transformpoint $1"
+									"text" : "predictpoint $1"
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-10", 0 ]
+									"destination" : [ "obj-6", 0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-16", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-17", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
+									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-8", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-3", 0 ],
-									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -416,13 +303,13 @@
 					"filename" : "helpname.js",
 					"id" : "obj-4",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.normalize~" ],
+					"jsarguments" : [ "fluid.knn~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 341.720001, 57.599854 ]
+					"patching_rect" : [ 10.0, 10.0, 215.432022, 57.599854 ]
 				}
 
 			}
@@ -442,7 +329,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 724.0, 463.0 ],
+						"rect" : [ 0.0, 26.0, 632.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

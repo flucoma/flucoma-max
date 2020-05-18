@@ -358,7 +358,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 630.5, 700.0, 123.0, 22.0 ],
 					"style" : "",
-					"text" : "classify blue"
+					"text" : "predictpoint blue"
 				}
 
 			}
@@ -408,9 +408,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 868.0, 602.0, 278.0, 22.0 ],
+					"patching_rect" : [ 868.0, 602.0, 193.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classifypoint simplepoint simple2Labels %d"
+					"text" : "sprintf predictpoint simplepoint %d"
 				}
 
 			}
@@ -553,9 +553,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 644.5, 653.0, 62.0, 22.0 ],
+					"patching_rect" : [ 644.5, 653.0, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knn~"
+					"text" : "fluid.knnclassifier~"
 				}
 
 			}

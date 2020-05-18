@@ -45,7 +45,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1379.0, 642.0, 84.0, 22.0 ],
 					"style" : "",
-					"text" : "getlabel 10-4"
+					"text" : "getlabel 12-5"
 				}
 
 			}
@@ -110,7 +110,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1282.0, 682.0, 75.0, 22.0 ],
 					"style" : "",
-					"text" : "getlabel \"1\""
+					"text" : "size 100"
 				}
 
 			}
@@ -173,19 +173,6 @@
 					"style" : "",
 					"text" : "10",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-47",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 1005.0, 595.0, 186.0, 22.0 ],
-					"style" : "",
-					"text" : "write /Users/pa/Desktop/test.json"
 				}
 
 			}
@@ -303,7 +290,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1366.0, 265.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "7 4"
+					"text" : "14 3"
 				}
 
 			}
@@ -433,7 +420,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 104.0, 621.0, 440.0, 22.0 ],
 					"style" : "",
-					"text" : "0. 0.1 0.1 0.1 0.141421 0.141421 0.2 0.2 0.2"
+					"text" : "0.3 0.3 0.316228 0.316228 0.316228 0.316228 0.360555 0.360555 0.360555"
 				}
 
 			}
@@ -446,7 +433,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 192.0, 588.5, 251.0, 22.0 ],
 					"style" : "",
-					"text" : "14-6 13-6 14-7 14-5 13-7 13-5 12-6 14-8 14-4"
+					"text" : "4-5 10-5 4-4 4-6 10-4 10-6 4-3 4-7 10-7"
 				}
 
 			}
@@ -697,7 +684,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 811.0, 339.0, 50.0, 22.0 ],
 					"style" : "",
-					"text" : "14 6"
+					"text" : "7 5"
 				}
 
 			}
@@ -1188,13 +1175,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
-					"source" : [ "obj-47", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-59", 0 ],
 					"source" : [ "obj-48", 0 ]
 				}
@@ -1414,9 +1394,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

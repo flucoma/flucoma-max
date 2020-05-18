@@ -223,7 +223,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 630.5, 700.0, 123.0, 22.0 ],
 					"style" : "",
-					"text" : "classifypoint blue"
+					"text" : "predictpoint blue"
 				}
 
 			}
@@ -273,9 +273,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 868.0, 600.0, 278.0, 22.0 ],
+					"patching_rect" : [ 868.0, 600.0, 193.0, 22.0 ],
 					"style" : "",
-					"text" : "sprintf classifypoint simplepoint simple2Labels %d"
+					"text" : "sprintf predictpoint simplepoint %d"
 				}
 
 			}
@@ -421,7 +421,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 474.0, 516.0, 50.0, 35.0 ],
 					"style" : "",
-					"text" : "12.6 4.4"
+					"text" : "12.55 3.7"
 				}
 
 			}
@@ -523,9 +523,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 644.5, 652.0, 62.0, 22.0 ],
+					"patching_rect" : [ 644.5, 652.0, 109.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knn~"
+					"text" : "fluid.knnclassifier~"
 				}
 
 			}
@@ -575,9 +575,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 644.5, 593.0, 88.0, 22.0 ],
+					"patching_rect" : [ 644.5, 591.0, 168.0, 22.0 ],
 					"style" : "",
-					"text" : "fit simple2data"
+					"text" : "fit simple2data simple2Labels"
 				}
 
 			}
@@ -1198,9 +1198,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1218,6 +1218,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1227,8 +1228,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
