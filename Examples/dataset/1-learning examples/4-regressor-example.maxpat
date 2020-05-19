@@ -38,12 +38,26 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"linecount" : 4,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 653.25, 914.0, 194.0, 60.0 ],
+					"style" : "",
+					"text" : "more reading on KNN regression is available here:\nhttps://scikit-learn.org/stable/modules/neighbors.html#neighbors",
+					"textcolor" : [ 0.0, 0.0, 0.0, 0.5 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-85",
 					"linecount" : 9,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 19.0, 17.0, 633.0, 127.0 ],
+					"patching_rect" : [ 19.0, 17.0, 635.0, 127.0 ],
 					"style" : "",
 					"text" : "In this patch we regress values according to its K nearest neighbours. We first create a sparse dataset (1) where we associate an input (in this case the input to a sin(x) function) to an output (the computed value) in 2 different datasets. We can decide how many points we enter. We use an arbitrary label for each point, in this case, an index. We can see the wave (2) and also query each entry point (3) in both dataset to see that they do not need to be contiguous. Then we fit our [knnregressor] (4), associating each point of the same ID in the input and the output. We can then query with an point value in our input space, and we will be given the regressed output at (6) where we can see the expected value, the regressed one, and the error between the 2. Changing the number of neighbourgs we use to regress (7) show us its influence. We can also compute one value per pixel by pressing the button at (8) and observing the graph at (2) "
 				}
@@ -56,7 +70,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 522.5, 448.0, 150.0, 20.0 ],
-					"presentation_rect" : [ 1080.5, 513.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "error"
 				}
@@ -69,7 +82,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 522.5, 424.0, 150.0, 20.0 ],
-					"presentation_rect" : [ 1106.5, 488.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "regressed value"
 				}
@@ -651,9 +663,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -671,6 +683,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -680,8 +693,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -759,7 +771,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 681.25, 158.0, 85.0, 22.0 ],
-					"presentation_rect" : [ 174.0, 422.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "s refresh-print"
 				}
@@ -1264,7 +1275,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 590.0, 288.0, 107.0, 35.0 ],
+					"patching_rect" : [ 590.0, 288.0, 110.0, 35.0 ],
 					"style" : "",
 					"text" : "sprintf predictpoint simplePoint %d"
 				}
@@ -1795,9 +1806,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1815,6 +1826,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1824,8 +1836,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
