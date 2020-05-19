@@ -38,12 +38,91 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 16.0,
+					"id" : "obj-75",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 775.0, 475.0, 90.0, 24.0 ],
+					"style" : "",
+					"text" : "Clustering"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 16.0,
+					"id" : "obj-73",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 715.0, 19.0, 210.0, 24.0 ],
+					"style" : "",
+					"text" : "Nearest Neighbours"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontsize" : 16.0,
+					"id" : "obj-72",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 14.0, 5.5, 210.0, 24.0 ],
+					"style" : "",
+					"text" : "Making the dataset"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-47",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 355.0, 423.0, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "distance from target"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-46",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 284.0, 351.0, 150.0, 20.0 ],
+					"style" : "",
+					"text" : "label of the entries"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 463.0, 203.5, 72.0, 22.0 ],
+					"style" : "",
+					"text" : "loadmess 3"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-70",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 657.25, 708.0, 214.0, 47.0 ],
+					"patching_rect" : [ 657.25, 745.5, 214.0, 47.0 ],
 					"style" : "",
 					"text" : "we can then query points to get their cluster number. We can also save the labelset to file to read it elsewhere."
 				}
@@ -91,13 +170,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-63",
-					"linecount" : 4,
+					"linecount" : 5,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 136.0, 491.0, 246.0, 60.0 ],
+					"patching_rect" : [ 129.0, 475.0, 268.0, 74.0 ],
 					"style" : "",
-					"text" : "we will try to cluster the dataset above. as it is a line, we can intuitively expect that the low numbers will be togehter and the high numbers will be another cluster"
+					"text" : "we will try to cluster the dataset above. as it is a line, we can intuitively expect that the low numbers will be togehter and the high numbers will be another cluster. The second argument is the number of clusters to find (minimum 2)"
 				}
 
 			}
@@ -121,7 +200,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 600.0, 373.0, 187.0, 60.0 ],
+					"patching_rect" : [ 667.0, 383.0, 187.0, 60.0 ],
 					"style" : "",
 					"text" : "further readings on the messy concept of nearest neighbours: https://scikit-learn.org/stable/modules/neighbors.html"
 				}
@@ -134,9 +213,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 670.0, 96.0, 212.0, 60.0 ],
+					"patching_rect" : [ 635.25, 79.0, 258.0, 60.0 ],
 					"style" : "",
-					"text" : "this is where we ask which is the source. It does not have to be part of the original data. Observe the points and their distance in #5 below"
+					"text" : "this is where we ask the nearest points in the source dataset. It does not have to be part of the original data. Observe the points and their distance in #4 below"
 				}
 
 			}
@@ -147,7 +226,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 412.0, 158.0, 162.0, 33.0 ],
+					"patching_rect" : [ 418.0, 168.5, 162.0, 33.0 ],
 					"style" : "",
 					"text" : "we then request the number of nearest points to find"
 				}
@@ -162,7 +241,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 371.0, 41.0, 237.0, 60.0 ],
 					"style" : "",
-					"text" : "we request [kdtree~] to construct an optimal tree of distances between all points. In this case, it should be a straigh line since we have only one dimension"
+					"text" : "we request [kdtree~] to construct an optimal tree of distances between all points. In this case, it should be a straight line since we have only one dimension"
 				}
 
 			}
@@ -173,9 +252,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 62.0, 30.5, 237.0, 60.0 ],
+					"patching_rect" : [ 62.0, 31.5, 237.0, 60.0 ],
 					"style" : "",
-					"text" : "we create an dataset with 10 consecutive entries: labels are integer (0 1 2 ... 9) and their value is a point in a single dimension, 10 units apart (0 10 20 ... 90)"
+					"text" : "we create a dataset with 10 consecutive entries: labels are integer (0 1 2 ... 9) and their associated value is a point in a single dimension, 10 units apart (0 10 20 ... 90)"
 				}
 
 			}
@@ -187,7 +266,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 496.0, 878.5, 205.0, 35.0 ],
+					"patching_rect" : [ 496.0, 920.5, 205.0, 35.0 ],
 					"style" : "",
 					"text" : ";\rmax openfile viewer /tmp/test1d.json"
 				}
@@ -200,7 +279,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 496.0, 779.0, 123.0, 22.0 ],
+					"patching_rect" : [ 496.0, 821.0, 123.0, 22.0 ],
 					"style" : "",
 					"text" : "read /tmp/test1d.json"
 				}
@@ -210,6 +289,7 @@
 				"box" : 				{
 					"id" : "obj-51",
 					"maxclass" : "number",
+					"minimum" : 2,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
@@ -226,9 +306,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 709.0, 847.0, 75.0, 22.0 ],
-					"style" : "",
-					"text" : "write"
+					"patching_rect" : [ 709.0, 889.0, 75.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -240,7 +319,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 630.0, 760.0, 50.0, 22.0 ],
+					"patching_rect" : [ 630.0, 802.0, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -252,7 +331,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 630.0, 784.0, 73.0, 22.0 ],
+					"patching_rect" : [ 630.0, 826.0, 73.0, 22.0 ],
 					"style" : "",
 					"text" : "getlabel $1"
 				}
@@ -265,7 +344,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 630.0, 823.0, 154.0, 22.0 ],
+					"patching_rect" : [ 630.0, 865.0, 154.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.labelset~ simple1label"
 				}
@@ -285,7 +364,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 630.0, 731.0, 20.0, 20.0 ],
+					"patching_rect" : [ 630.0, 773.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 1169.0, 492.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -349,9 +428,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 426.0, 428.0, 163.0, 22.0 ],
-					"style" : "",
-					"text" : "fit"
+					"patching_rect" : [ 530.0, 373.0, 59.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -363,8 +441,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 355.0, 399.0, 163.0, 22.0 ],
-					"style" : "",
-					"text" : "3. 7."
+					"style" : ""
 				}
 
 			}
@@ -376,8 +453,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 284.0, 373.0, 163.0, 22.0 ],
-					"style" : "",
-					"text" : "\"1\" \"0\""
+					"style" : ""
 				}
 
 			}
@@ -486,7 +562,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 256.0, 373.0, 20.0, 20.0 ],
+					"patching_rect" : [ 399.0, 168.5, 20.0, 20.0 ],
 					"presentation_rect" : [ 407.0, 415.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -508,7 +584,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 648.0, 96.0, 20.0, 20.0 ],
+					"patching_rect" : [ 263.5, 374.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 144.0, 556.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -530,7 +606,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 390.0, 158.0, 20.0, 20.0 ],
+					"patching_rect" : [ 607.5, 119.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 134.0, 605.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -552,7 +628,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 371.0, 16.0, 20.0, 20.0 ],
+					"patching_rect" : [ 371.0, 19.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 143.5, 279.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -691,11 +767,12 @@
 				"box" : 				{
 					"id" : "obj-26",
 					"maxclass" : "number",
+					"minimum" : 1,
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 405.5, 193.0, 50.0, 22.0 ],
+					"patching_rect" : [ 411.5, 203.5, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -707,7 +784,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "int" ],
-					"patching_rect" : [ 695.0, 187.0, 30.0, 22.0 ],
+					"patching_rect" : [ 643.25, 191.0, 30.0, 22.0 ],
 					"style" : "",
 					"text" : "t b i"
 				}
@@ -721,7 +798,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 695.0, 161.0, 50.0, 22.0 ],
+					"patching_rect" : [ 607.5, 145.5, 50.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -902,9 +979,54 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 496.0, 755.0, 124.0, 22.0 ],
+					"patching_rect" : [ 496.0, 797.0, 124.0, 22.0 ],
 					"style" : "",
 					"text" : "write /tmp/test1d.json"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.875034, 0.886275, 0.690563, 1.0 ],
+					"id" : "obj-66",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 7.0, 5.0, 321.0, 336.0 ],
+					"proportion" : 0.39,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.701961, 0.415686, 0.886275, 0.36 ],
+					"id" : "obj-68",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 259.0, 16.0, 628.0, 444.0 ],
+					"proportion" : 0.39,
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"angle" : 270.0,
+					"bgcolor" : [ 0.92549, 0.364706, 0.341176, 0.36 ],
+					"id" : "obj-74",
+					"maxclass" : "panel",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 7.0, 467.0, 875.0, 516.0 ],
+					"proportion" : 0.39,
+					"style" : ""
 				}
 
 			}
@@ -941,6 +1063,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-20", 0 ],
 					"source" : [ "obj-21", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-26", 0 ],
+					"source" : [ "obj-22", 0 ]
 				}
 
 			}
@@ -1219,7 +1348,8 @@
 				"parentstyle" : "",
 				"multi" : 0
 			}
- ]
+ ],
+		"elementcolor" : [ 0.403922, 0.431373, 0.388235, 1.0 ]
 	}
 
 }

@@ -1,6 +1,7 @@
 
 //#include <clients/nrt/CorpusClient.hpp>
 #include <clients/nrt/DataSetClient.hpp>
+#include <clients/nrt/DataSetQueryClient.hpp>
 #include <clients/nrt/LabelSetClient.hpp>
 #include <clients/nrt/KDTreeClient.hpp>
 #include <clients/nrt/KMeansClient.hpp>
@@ -21,6 +22,7 @@ void ext_main(void*)
 {
   using namespace fluid::client;
   makeMaxWrapper<NRTThreadedDataSetClient>("fluid.dataset~");
+  makeMaxWrapper<NRTThreadedDataSetQueryClient>("fluid.datasetquery~");
   makeMaxWrapper<NRTThreadedLabelSetClient>("fluid.labelset~");
   makeMaxWrapper<NRTThreadedKDTreeClient>("fluid.kdtree~");
   makeMaxWrapper<NRTThreadedKMeansClient>("fluid.kmeans~");
