@@ -15,3 +15,5 @@ This patch draws a recognisable function, leaving holes in it, and tries to reco
 This allows to understand the various data preprocessing one can do, and their impact on nearest neighbours. It makes 20 entries of random values, normalize and standardize them, and query the 3 datasets to showcase first what values look like, then searches for nearest entries, demonstrating how their order might be different.
 ### 6a-dimension-reduction-example.maxpat /// 6b-dimension-reduction-example2.maxpat
 In these patch, we explore 2 dimensionality reduction algorithms and their impact on distances and therefore potentially order of nearest neighbours. In the first one (6a) we explore PCA, drawing a simple line in a 2D space, and observing the impact of normalisation, dimensionality reduction, whilst progressively adding noise. In the 2nd one (6b) we start with a predictable 2D curve and observe how PCA compares with various modes of MDS in trying to keep overall and local topologies whilst reducing to 1D.
+### 7-making-subsets-of-datasets.maxpat
+In this patch, we explore conditional dataset pruning, to allow the creation of new, smaller datasets.
