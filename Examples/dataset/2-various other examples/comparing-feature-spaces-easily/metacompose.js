@@ -43,7 +43,6 @@ function anything()
       chancount += args[i+2];
     }
   }
-  
   // process the stats
   bufst.low(args[21]);
   bufst.high(args[22]);
@@ -56,7 +55,7 @@ function anything()
   
   //pickup which stats to copy
   var whichstats = args.slice(14,21);
-  
+
   framecount = 0;
   //for each channel, which is each descriptors
   for (var whichchannel = 1; whichchannel <= statsbuf.channelcount(); whichchannel++) {
@@ -67,7 +66,7 @@ function anything()
         //for each derivative
         for (i = 0; i <= args[23]; i++) {
           // var location = (i*7) + j;
-          // post(framecount + ' ' +j + ' ' + i + ' ' + location + '\n');
+          // post(framecount + ' ' + whichchannel+ ' ' +j + ' ' + i + ' ' + location + '\n');
           outbuf.poke(1, framecount, statsbuf.peek(whichchannel,(i*7) + j,1));
           framecount++;
         }

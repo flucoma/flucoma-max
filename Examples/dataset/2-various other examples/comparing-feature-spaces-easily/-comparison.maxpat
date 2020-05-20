@@ -417,7 +417,6 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Helvetica Neue Light",
@@ -654,7 +653,7 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-15",
-					"items" : [ "Nicol-LoopE-M.wav-1", ",", "Tremblay-AaS-AcousticStrums-M.wav-1", ",", "Tremblay-AaS-SynthTwoVoices-M.wav-1", ",", "Tremblay-ASWINE-ScratchySynth-M.wav-1", ",", "Tremblay-BaB-HumDC-M.wav-1", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav-1", ",", "Tremblay-beatRemember.wav-1", ",", "Tremblay-beatRemember.wav-2", ",", "Tremblay-beatRemember.wav-3", ",", "Tremblay-beatRemember.wav-4", ",", "Tremblay-beatRemember.wav-5", ",", "Tremblay-beatRemember.wav-6", ",", "Tremblay-beatRemember.wav-7", ",", "Tremblay-beatRemember.wav-8", ",", "Tremblay-beatRemember.wav-9", ",", "Tremblay-beatRemember.wav-10", ",", "Tremblay-beatRemember.wav-11", ",", "Tremblay-beatRemember.wav-12", ",", "Tremblay-beatRemember.wav-13", ",", "Tremblay-beatRemember.wav-14", ",", "Tremblay-beatRemember.wav-15", ",", "Tremblay-beatRemember.wav-16", ",", "Tremblay-beatRemember.wav-17", ",", "Tremblay-beatRemember.wav-18", ",", "Tremblay-beatRemember.wav-19", ",", "Tremblay-beatRemember.wav-20", ",", "Tremblay-beatRemember.wav-21", ",", "Tremblay-beatRemember.wav-22", ",", "Tremblay-beatRemember.wav-23", ",", "Tremblay-beatRemember.wav-24", ",", "Tremblay-beatRemember.wav-25", ",", "Tremblay-beatRemember.wav-26", ",", "Tremblay-beatRemember.wav-27", ",", "Tremblay-beatRemember.wav-28", ",", "Tremblay-beatRemember.wav-29", ",", "Tremblay-beatRemember.wav-30", ",", "Tremblay-CF-ChurchBells.wav-1", ",", "Tremblay-FMTri-M.wav-1", ",", "Tremblay-FMTriDist-M.wav-1", ",", "Tremblay-Iterative-M.wav-1", ",", "Tremblay-SA-UprightPianoPedalWide.wav-1", ",", "Tremblay-SlideChoirAdd-M.wav-1", ",", "Tremblay-SlideChoirSin-M.wav-1", ",", "Tremblay-UW-ComplexDescent-M.wav-1", ",", "wwww.wav-1" ],
+					"items" : "<empty>",
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
@@ -888,9 +887,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "int" ],
-									"patching_rect" : [ 971.0, 502.0, 59.0, 22.0 ],
+									"patching_rect" : [ 971.0, 502.0, 53.0, 22.0 ],
 									"style" : "",
-									"text" : "uzi 128 0"
+									"text" : "uzi 64 0"
 								}
 
 							}
@@ -3071,7 +3070,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 40.0, -846.0, 1148.0, 780.0 ],
+						"rect" : [ 677.0, -866.0, 1148.0, 780.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3098,6 +3097,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"comment" : "",
@@ -3208,7 +3208,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 707.0, 551.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "56"
+									"text" : "0"
 								}
 
 							}
@@ -3281,18 +3281,6 @@
 ,
 									"style" : "",
 									"text" : "js metacompose.js thebufcomposeobj theentrystatsobj theentrystatsin theentrystatsout"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-22",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 42.0, 508.0, 24.0, 24.0 ],
-									"style" : ""
 								}
 
 							}
@@ -3758,13 +3746,6 @@
 									"midpoints" : [ 256.5, 260.0, 294.5, 260.0 ],
 									"order" : 0,
 									"source" : [ "obj-2", 4 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-59", 0 ],
-									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -4970,29 +4951,29 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-152::obj-10::obj-20" : [ "live.text[9]", "live.text", 0 ],
-			"obj-152::obj-10::obj-11" : [ "live.text[3]", "live.text", 0 ],
-			"obj-152::obj-10::obj-3" : [ "live.text[2]", "live.text", 0 ],
-			"obj-152::obj-11::obj-29" : [ "live.text[17]", "live.text", 0 ],
-			"obj-152::obj-12::obj-25" : [ "live.text[12]", "live.text", 0 ],
-			"obj-152::obj-10::obj-19" : [ "live.text[8]", "live.text", 0 ],
-			"obj-152::obj-12::obj-3" : [ "live.text[19]", "live.text", 0 ],
+			"obj-152::obj-12::obj-37" : [ "live.text[11]", "live.text", 0 ],
 			"obj-152::obj-11::obj-5" : [ "live.text", "live.text", 0 ],
-			"obj-152::obj-12::obj-20" : [ "live.text[14]", "live.text", 0 ],
 			"obj-152::obj-4::obj-29" : [ "live.text[22]", "live.text", 0 ],
 			"obj-152::obj-10::obj-25" : [ "live.text[10]", "live.text", 0 ],
 			"obj-152::obj-12::obj-23" : [ "live.text[15]", "live.text", 0 ],
 			"obj-152::obj-12::obj-11" : [ "live.text[16]", "live.text", 0 ],
-			"obj-152::obj-10::obj-18" : [ "live.text[1]", "live.text", 0 ],
-			"obj-152::obj-12::obj-37" : [ "live.text[11]", "live.text", 0 ],
 			"obj-152::obj-8::obj-5" : [ "live.text[5]", "live.text", 0 ],
-			"obj-152::obj-12::obj-9" : [ "live.text[18]", "live.text", 0 ],
+			"obj-152::obj-12::obj-3" : [ "live.text[19]", "live.text", 0 ],
 			"obj-152::obj-10::obj-23" : [ "live.text[6]", "live.text", 0 ],
-			"obj-152::obj-12::obj-5" : [ "live.text[20]", "live.text", 0 ],
 			"obj-152::obj-10::obj-5" : [ "live.text[7]", "live.text", 0 ],
 			"obj-152::obj-8::obj-29" : [ "live.text[4]", "live.text", 0 ],
+			"obj-152::obj-11::obj-29" : [ "live.text[17]", "live.text", 0 ],
+			"obj-152::obj-12::obj-20" : [ "live.text[14]", "live.text", 0 ],
+			"obj-152::obj-10::obj-20" : [ "live.text[9]", "live.text", 0 ],
+			"obj-152::obj-10::obj-11" : [ "live.text[3]", "live.text", 0 ],
 			"obj-152::obj-4::obj-5" : [ "live.text[23]", "live.text", 0 ],
-			"obj-152::obj-12::obj-19" : [ "live.text[13]", "live.text", 0 ]
+			"obj-152::obj-10::obj-3" : [ "live.text[2]", "live.text", 0 ],
+			"obj-152::obj-12::obj-19" : [ "live.text[13]", "live.text", 0 ],
+			"obj-152::obj-12::obj-9" : [ "live.text[18]", "live.text", 0 ],
+			"obj-152::obj-10::obj-18" : [ "live.text[1]", "live.text", 0 ],
+			"obj-152::obj-10::obj-19" : [ "live.text[8]", "live.text", 0 ],
+			"obj-152::obj-12::obj-25" : [ "live.text[12]", "live.text", 0 ],
+			"obj-152::obj-12::obj-5" : [ "live.text[20]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -5120,9 +5101,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
