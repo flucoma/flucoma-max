@@ -30,6 +30,14 @@ function bang()
 	var channelCount = (channelMap.length === 1 && channelMap[0] === -1) ? 
 		 sourceBuffer.channelcount() :  channelMap.length; 
 
+	channelMap = channelMap[0] === -1 ? 
+ 			Array.apply(null, {length: sourceBuffer.channelcount()}).map(Number.call, Number)
+			: channelMap; 
+			
+	indexMap = indexMap[0] === -1 ? 
+ 			Array.apply(null, {length: sourceBuffer.framecount()}).map(Number.call, Number)
+			: indexMap; 
+
 	destinationBuffer.send("samps", indexCount, channelCount); 
 	
 	for(var i = 0; i < channelCount; i++)
