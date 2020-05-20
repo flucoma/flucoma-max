@@ -53,7 +53,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 792.0, 644.0, 435.0, 329.0 ],
+						"rect" : [ 792.0, 644.0, 435.0, 454.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -82,13 +82,64 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 69.0, 358.0, 246.0, 20.0 ],
+									"style" : "",
+									"text" : "we can now request only the first 10 outputs"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 65.0, 374.0, 254.0, 22.0 ],
+									"style" : "",
+									"text" : "limit 10, transform simple5data simple5subset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 60.0, 279.0, 356.0, 33.0 ],
+									"style" : "",
+									"text" : "we can also limit the number of rows we will yield from the input to allow quick experiments. This is a very permissive query"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 60.0, 314.0, 301.0, 35.0 ],
+									"style" : "",
+									"text" : "reset, filter 0 > 0, addcolumn 3, transform simple5data simple5subset"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-6",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 51.0, 180.0, 256.0, 33.0 ],
-									"presentation_rect" : [ 263.0, 212.0, 0.0, 0.0 ],
+									"patching_rect" : [ 51.0, 180.0, 259.0, 33.0 ],
 									"style" : "",
 									"text" : "in this example, column 0 must be above 0.87, or column 1 must be below 0.08"
 								}
@@ -101,7 +152,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 31.0, 104.0, 393.0, 20.0 ],
-									"presentation_rect" : [ 261.0, 190.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "in this example, column 0 must be between 0.03 and 0.08"
 								}
@@ -129,7 +179,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 51.0, 215.0, 314.0, 35.0 ],
-									"presentation_rect" : [ 259.0, 230.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "reset, filter 0 > 0.87, or 1 < 0.08, addcolumn 3, transform simple5data simple5subset"
 								}
@@ -157,7 +206,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 17.0, 271.0, 30.0, 30.0 ],
+									"patching_rect" : [ 17.0, 412.0, 30.0, 30.0 ],
 									"style" : ""
 								}
 
@@ -173,7 +222,21 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -181,9 +244,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -201,7 +264,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -211,7 +273,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -276,7 +339,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 394.0, 657.0, 294.0, 251.0 ],
-					"presentation_rect" : [ 383.0, 694.0, 0.0, 0.0 ],
 					"style" : ""
 				}
 
@@ -289,7 +351,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "dictionary" ],
 					"patching_rect" : [ 630.0, 626.0, 90.0, 22.0 ],
-					"presentation_rect" : [ 586.0, 667.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "dict.deserialize"
 				}
@@ -329,7 +390,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 487.0, 553.0, 41.0, 22.0 ],
-					"presentation_rect" : [ 412.5, 589.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "dump"
 				}
@@ -342,7 +402,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 513.0, 376.0, 358.0, 20.0 ],
-					"presentation_rect" : [ 504.0, 369.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "we then transform the source to another dataset"
 				}
@@ -405,7 +464,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 477.0, 284.5, 358.0, 33.0 ],
+					"patching_rect" : [ 477.0, 284.5, 361.0, 33.0 ],
 					"style" : "",
 					"text" : "then we decide which column of the source we will copy when the filter is true. Note that it does not have to be the same column"
 				}
@@ -484,7 +543,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 367.0, 45.0, 410.0, 60.0 ],
+					"patching_rect" : [ 367.0, 45.0, 414.0, 60.0 ],
 					"style" : "",
 					"text" : "we then define a simple query, first by defining a filter: [filter COL COM VAL]\nCOL: the column from the source we will compute\nCOM: the comparator we use\nVAL: the value it compares against"
 				}
@@ -673,7 +732,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 477.0, 319.5, 157.0, 22.0 ],
 					"style" : "",
-					"text" : "addcolumn 0, addrange 2 4"
+					"text" : "addcolumn 0, addrange 2 1"
 				}
 
 			}
@@ -1052,9 +1111,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1072,7 +1131,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1082,7 +1140,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
