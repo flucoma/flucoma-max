@@ -38,12 +38,25 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 442.0, 736.0, 66.0, 22.0 ],
+					"style" : "",
+					"text" : "samps 1 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 536.0, 713.0, 68.0, 22.0 ],
+					"patching_rect" : [ 536.0, 728.0, 68.0, 22.0 ],
 					"style" : "",
 					"text" : "prepend sr"
 				}
@@ -486,7 +499,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 536.0, 764.0, 135.0, 22.0 ],
+					"patching_rect" : [ 705.0, 737.0, 135.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ #0tmp.allspec 1"
 				}
@@ -659,7 +672,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 536.0, 737.0, 123.0, 22.0 ],
+					"patching_rect" : [ 536.0, 776.0, 123.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ #0tmp.spec 1"
 				}
@@ -885,6 +898,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-27", 0 ],
+					"order" : 0,
 					"source" : [ "obj-28", 3 ]
 				}
 
@@ -907,6 +921,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-36", 0 ],
 					"source" : [ "obj-28", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"order" : 1,
+					"source" : [ "obj-28", 3 ]
 				}
 
 			}
@@ -1085,16 +1107,23 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-1", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
+			"obj-25" : [ "live.text[10]", "live.text", 0 ],
+			"obj-23" : [ "live.text[6]", "live.text", 0 ],
+			"obj-5" : [ "live.text[7]", "live.text", 0 ],
 			"obj-20" : [ "live.text[9]", "live.text", 0 ],
 			"obj-11" : [ "live.text[3]", "live.text", 0 ],
 			"obj-3" : [ "live.text[2]", "live.text", 0 ],
-			"obj-19" : [ "live.text[8]", "live.text", 0 ],
-			"obj-25" : [ "live.text[10]", "live.text", 0 ],
 			"obj-18" : [ "live.text[1]", "live.text", 0 ],
-			"obj-23" : [ "live.text[6]", "live.text", 0 ],
-			"obj-5" : [ "live.text[7]", "live.text", 0 ]
+			"obj-19" : [ "live.text[8]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
