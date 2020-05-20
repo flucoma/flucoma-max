@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 892.0, 990.0 ],
+		"rect" : [ 62.0, 88.0, 892.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +38,67 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-8",
+					"linecount" : 10,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 653.25, 624.0, 235.0, 141.0 ],
+					"style" : "",
+					"text" : "When we request more than one neighbour to regress, there are 2 ways to deal with them to generate a single value: by default, we do an average of the neighbours weighted by their relative distances to the target, and we get a smooth-ish interpolation. We can also do a uniform average of the K neighbours instead. Toggle the box at (8) and see how staggered the curve becomes."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "toggle",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 631.5, 289.0, 24.0, 24.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 580.5, 292.0, 48.0, 22.0 ],
+					"style" : "",
+					"text" : "pack i i"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+					"fontname" : "Arial Bold",
+					"hint" : "",
+					"id" : "obj-1",
+					"ignoreclick" : 1,
+					"legacytextcolor" : 1,
+					"maxclass" : "textbutton",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "int" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 661.25, 289.0, 20.0, 20.0 ],
+					"presentation_rect" : [ 669.25, 269.0, 20.0, 20.0 ],
+					"rounded" : 60.0,
+					"style" : "",
+					"text" : "8",
+					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"linecount" : 4,
 					"maxclass" : "comment",
@@ -57,7 +118,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 19.0, 17.0, 635.0, 127.0 ],
+					"patching_rect" : [ 19.0, 17.0, 639.0, 127.0 ],
 					"style" : "",
 					"text" : "In this patch we regress values according to its K nearest neighbours. We first create a sparse dataset (1) where we associate an input (in this case the input to a sin(x) function) to an output (the computed value) in 2 different datasets. We can decide how many points we enter. We use an arbitrary label for each point, in this case, an index. We can see the wave (2) and also query each entry point (3) in both dataset to see that they do not need to be contiguous. Then we fit our [knnregressor] (4), associating each point of the same ID in the input and the output. We can then query with an point value in our input space, and we will be given the regressed output at (6) where we can see the expected value, the regressed one, and the error between the 2. Changing the number of neighbourgs we use to regress (7) show us its influence. We can also compute one value per pixel by pressing the button at (8) and observing the graph at (2) "
 				}
@@ -69,7 +130,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 522.5, 448.0, 150.0, 20.0 ],
+					"patching_rect" : [ 520.5, 477.0, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "error"
 				}
@@ -81,7 +142,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 522.5, 424.0, 150.0, 20.0 ],
+					"patching_rect" : [ 520.5, 453.0, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "regressed value"
 				}
@@ -93,7 +154,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 522.5, 400.0, 150.0, 20.0 ],
+					"patching_rect" : [ 520.5, 429.0, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "expected value"
 				}
@@ -663,9 +724,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -683,7 +744,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -693,7 +753,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -882,7 +943,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 663.5, 244.0, 20.0, 20.0 ],
+					"patching_rect" : [ 661.25, 237.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 873.0, 397.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -926,7 +987,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 632.0, 474.5, 20.0, 20.0 ],
+					"patching_rect" : [ 760.0, 477.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 934.0, 220.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -1143,7 +1204,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
-					"patching_rect" : [ 419.5, 424.0, 42.0, 22.0 ],
+					"patching_rect" : [ 419.5, 453.0, 42.0, 22.0 ],
 					"style" : "",
 					"text" : "fswap"
 				}
@@ -1156,7 +1217,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 419.5, 400.0, 49.0, 22.0 ],
+					"patching_rect" : [ 419.5, 429.0, 49.0, 22.0 ],
 					"style" : "",
 					"text" : "pack f i"
 				}
@@ -1169,7 +1230,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 419.5, 448.0, 72.0, 22.0 ],
+					"patching_rect" : [ 419.5, 477.0, 72.0, 22.0 ],
 					"style" : "",
 					"text" : "peek~ viz 2"
 				}
@@ -1210,7 +1271,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 625.0, 448.0, 133.0, 22.0 ],
+					"patching_rect" : [ 625.0, 477.0, 133.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1222,7 +1283,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 760.0, 400.0, 29.5, 22.0 ],
+					"patching_rect" : [ 760.0, 429.0, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "- 0."
 				}
@@ -1272,12 +1333,12 @@
 					"id" : "obj-17",
 					"linecount" : 2,
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 590.0, 288.0, 110.0, 35.0 ],
+					"patching_rect" : [ 580.5, 315.0, 115.0, 35.0 ],
 					"style" : "",
-					"text" : "sprintf predictpoint simplePoint %d"
+					"text" : "sprintf predictpoint simplePoint %d %d"
 				}
 
 			}
@@ -1290,7 +1351,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 625.0, 424.0, 133.0, 22.0 ],
+					"patching_rect" : [ 625.0, 453.0, 133.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1302,7 +1363,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 610.0, 360.0, 103.0, 22.0 ],
+					"patching_rect" : [ 598.0, 385.0, 103.0, 22.0 ],
 					"style" : "",
 					"text" : "route predictpoint"
 				}
@@ -1330,7 +1391,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 625.0, 400.0, 133.0, 22.0 ],
+					"patching_rect" : [ 625.0, 429.0, 133.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1343,7 +1404,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 724.5, 325.0, 157.0, 49.0 ],
+					"patching_rect" : [ 724.5, 354.0, 157.0, 49.0 ],
 					"style" : "",
 					"text" : "expr sin($f1 /15707.963267948966192) + $f2"
 				}
@@ -1421,7 +1482,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 419.5, 329.0, 113.0, 22.0 ],
+					"patching_rect" : [ 419.5, 358.0, 113.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.knnregressor~"
 				}
@@ -1457,7 +1518,7 @@
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
-					"midpoints" : [ 523.0, 353.5, 619.5, 353.5 ],
+					"midpoints" : [ 523.0, 382.5, 607.5, 382.5 ],
 					"source" : [ "obj-11", 2 ]
 				}
 
@@ -1472,7 +1533,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"midpoints" : [ 599.5, 325.5, 429.0, 325.5 ],
+					"midpoints" : [ 590.0, 354.5, 429.0, 354.5 ],
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -1522,7 +1583,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-29", 1 ],
-					"midpoints" : [ 703.5, 357.0, 459.0, 357.0 ],
+					"midpoints" : [ 703.5, 418.0, 459.0, 418.0 ],
 					"order" : 2,
 					"source" : [ "obj-34", 1 ]
 				}
@@ -1583,7 +1644,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
-					"midpoints" : [ 734.0, 396.0, 634.5, 396.0 ],
+					"midpoints" : [ 734.0, 425.0, 634.5, 425.0 ],
 					"order" : 1,
 					"source" : [ "obj-39", 0 ]
 				}
@@ -1592,9 +1653,16 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-50", 1 ],
-					"midpoints" : [ 734.0, 385.0, 780.0, 385.0 ],
+					"midpoints" : [ 734.0, 406.0, 780.0, 406.0 ],
 					"order" : 0,
 					"source" : [ "obj-39", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -1622,7 +1690,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-29", 0 ],
-					"midpoints" : [ 619.5, 386.0, 429.0, 386.0 ],
+					"midpoints" : [ 607.5, 411.0, 429.0, 411.0 ],
 					"order" : 2,
 					"source" : [ "obj-45", 0 ]
 				}
@@ -1631,7 +1699,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-47", 0 ],
-					"midpoints" : [ 619.5, 422.0, 634.5, 422.0 ],
+					"midpoints" : [ 607.5, 451.0, 634.5, 451.0 ],
 					"order" : 1,
 					"source" : [ "obj-45", 0 ]
 				}
@@ -1640,7 +1708,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-50", 0 ],
-					"midpoints" : [ 619.5, 390.0, 769.5, 390.0 ],
+					"midpoints" : [ 607.5, 411.0, 769.5, 411.0 ],
 					"order" : 0,
 					"source" : [ "obj-45", 0 ]
 				}
@@ -1648,7 +1716,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
+					"destination" : [ "obj-4", 0 ],
 					"source" : [ "obj-48", 0 ]
 				}
 
@@ -1663,7 +1731,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-51", 0 ],
-					"midpoints" : [ 769.5, 448.5, 634.5, 448.5 ],
+					"midpoints" : [ 769.5, 477.5, 634.5, 477.5 ],
 					"source" : [ "obj-50", 0 ]
 				}
 
@@ -1707,6 +1775,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-35", 0 ],
 					"source" : [ "obj-58", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-4", 1 ],
+					"source" : [ "obj-6", 0 ]
 				}
 
 			}
@@ -1806,9 +1881,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1826,7 +1901,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1836,7 +1910,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
