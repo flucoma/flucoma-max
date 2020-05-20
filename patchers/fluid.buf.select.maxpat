@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 252.0, 263.0, 619.0, 315.0 ],
+		"rect" : [ 252.0, 263.0, 525.0, 315.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -104,8 +104,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 295.0, 67.0, 313.0, 22.0 ],
-					"text" : "patcherargs @source @destination @indices @channels"
+					"patching_rect" : [ 295.0, 67.0, 216.0, 22.0 ],
+					"text" : "patcherargs @indices -1 @channels -1"
 				}
 
 			}
@@ -131,7 +131,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 220.0, 198.0, 97.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "fluid.buf.select",
+						"filename" : "fluid.buf.select.js",
 						"parameter_enable" : 0
 					}
 ,
@@ -150,7 +150,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
-					"midpoints" : [ 598.5, 98.5, 295.5, 98.5 ],
+					"midpoints" : [ 501.5, 98.5, 295.5, 98.5 ],
 					"source" : [ "obj-2", 1 ]
 				}
 
