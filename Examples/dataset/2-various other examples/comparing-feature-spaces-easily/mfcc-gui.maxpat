@@ -121,7 +121,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
-					"patching_rect" : [ 469.0, 429.0, 29.5, 22.0 ],
+					"patching_rect" : [ 473.0, 430.0, 29.5, 22.0 ],
 					"style" : "",
 					"text" : "-"
 				}
@@ -280,7 +280,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 469.0, 230.0, 101.0, 22.0 ],
+					"patching_rect" : [ 473.0, 230.0, 101.0, 22.0 ],
 					"style" : "",
 					"text" : "getattr numcoeffs"
 				}
@@ -348,9 +348,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 112.0, 290.0, 296.0, 22.0 ],
+					"patching_rect" : [ 112.0, 292.0, 366.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufmfcc~ @features #0tmp.mfccs @blocking 0"
+					"text" : "fluid.bufmfcc~ @features #0tmp.mfccs @blocking 0 @numchans 1"
 				}
 
 			}
@@ -465,7 +465,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"midpoints" : [ 158.5, 82.5, 478.5, 82.5 ],
+					"midpoints" : [ 158.5, 82.5, 482.5, 82.5 ],
 					"source" : [ "obj-2", 1 ]
 				}
 
@@ -561,7 +561,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"midpoints" : [ 519.5, 281.0, 121.5, 281.0 ],
+					"midpoints" : [ 523.5, 281.0, 121.5, 281.0 ],
 					"source" : [ "obj-7", 1 ]
 				}
 

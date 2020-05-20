@@ -672,9 +672,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 112.0, 286.0, 340.0, 22.0 ],
+					"patching_rect" : [ 112.0, 286.0, 421.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufspectralshape~ @features #0tmp.allspec @blocking 0"
+					"text" : "fluid.bufspectralshape~ @features #0tmp.allspec @blocking 0 @numchans 1"
 				}
 
 			}
@@ -1087,14 +1087,14 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-19" : [ "live.text[8]", "live.text", 0 ],
-			"obj-25" : [ "live.text[10]", "live.text", 0 ],
-			"obj-23" : [ "live.text[6]", "live.text", 0 ],
-			"obj-5" : [ "live.text[7]", "live.text", 0 ],
 			"obj-20" : [ "live.text[9]", "live.text", 0 ],
 			"obj-11" : [ "live.text[3]", "live.text", 0 ],
 			"obj-3" : [ "live.text[2]", "live.text", 0 ],
-			"obj-18" : [ "live.text[1]", "live.text", 0 ]
+			"obj-19" : [ "live.text[8]", "live.text", 0 ],
+			"obj-25" : [ "live.text[10]", "live.text", 0 ],
+			"obj-18" : [ "live.text[1]", "live.text", 0 ],
+			"obj-23" : [ "live.text[6]", "live.text", 0 ],
+			"obj-5" : [ "live.text[7]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
