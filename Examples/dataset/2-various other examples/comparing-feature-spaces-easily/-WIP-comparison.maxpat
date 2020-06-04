@@ -452,7 +452,7 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 1056.914307, 418.796112, 101.0, 22.0 ],
 					"style" : "",
-					"text" : "route boundaries"
+					"text" : "route bounds"
 				}
 
 			}
@@ -3420,7 +3420,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 241.247559, 642.810669, 282.0, 24.0 ],
 					"style" : "",
-					"text" : "dictionary of generated IDs and slice boundaries",
+					"text" : "dictionary of generated IDs and slice bounds",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
 				}
 

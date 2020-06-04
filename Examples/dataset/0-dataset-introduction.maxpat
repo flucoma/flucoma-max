@@ -268,7 +268,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 932.599976, 348.0, 101.0, 22.0 ],
 													"style" : "",
-													"text" : "route boundaries"
+													"text" : "route bounds"
 												}
 
 											}
@@ -2451,7 +2451,7 @@
 													"presentation" : 1,
 													"presentation_rect" : [ 932.599976, 348.0, 101.0, 22.0 ],
 													"style" : "",
-													"text" : "route boundaries"
+													"text" : "route bounds"
 												}
 
 											}

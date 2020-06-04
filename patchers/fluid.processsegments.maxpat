@@ -566,7 +566,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.192982, 45.192986, 245.0, 22.0 ],
 									"style" : "",
-									"text" : "$2 $3, get boundaries, get sr, get numchans"
+									"text" : "$2 $3, get bounds, get sr, get numchans"
 								}
 
 							}
@@ -579,7 +579,7 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 60.692982, 95.192993, 173.0, 22.0 ],
 									"style" : "",
-									"text" : "route boundaries numchans sr"
+									"text" : "route bounds numchans sr"
 								}
 
 							}

@@ -103,7 +103,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 387.747572, 622.52944, 282.0, 24.0 ],
+					"patching_rect" : [ 387.747559, 622.529419, 216.0, 24.0 ],
 					"style" : "",
 					"text" : "clone dictionary into named dataset",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
@@ -184,9 +184,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 259.990295, 451.310669, 282.0, 24.0 ],
+					"patching_rect" : [ 259.990295, 451.310669, 264.0, 24.0 ],
 					"style" : "",
-					"text" : "dictionary of generated IDs and slice boundaries",
+					"text" : "dictionary of generated IDs and slice bounds",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
 				}
 
@@ -293,7 +293,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 250.747572, 121.0, 363.0, 24.0 ],
+					"patching_rect" : [ 250.747574, 121.0, 334.0, 24.0 ],
 					"style" : "",
 					"text" : "When we're done, we can save the data set for future use",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
@@ -304,11 +304,10 @@
 				"box" : 				{
 					"bubble" : 1,
 					"id" : "obj-17",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 250.747572, 70.0, 345.0, 37.0 ],
+					"patching_rect" : [ 250.747574, 70.0, 366.0, 24.0 ],
 					"style" : "",
 					"text" : "We're going to load the sounds into a big flat buffer, head to toe",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]

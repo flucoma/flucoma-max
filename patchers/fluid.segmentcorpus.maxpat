@@ -191,7 +191,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 125.553757, 541.142822, 166.0, 22.0 ],
 									"style" : "",
-									"text" : "replace $3::boundaries $1 $2"
+									"text" : "replace $3::bounds $1 $2"
 								}
 
 							}
@@ -230,7 +230,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 385.5, 98.0, 208.0, 22.0 ],
 									"style" : "",
-									"text" : "get boundaries, get sr, get numchans"
+									"text" : "get bounds, get sr, get numchans"
 								}
 
 							}
@@ -256,7 +256,7 @@
 									"outlettype" : [ "", "", "", "" ],
 									"patching_rect" : [ 385.5, 161.0, 173.0, 22.0 ],
 									"style" : "",
-									"text" : "route boundaries numchans sr"
+									"text" : "route bounds numchans sr"
 								}
 
 							}
@@ -1223,7 +1223,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 50.192982, 53.0, 127.0, 22.0 ],
 									"style" : "",
-									"text" : "$2 $3, get boundaries"
+									"text" : "$2 $3, get bounds"
 								}
 
 							}

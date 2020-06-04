@@ -138,7 +138,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 23.0, 171.0, 166.0, 22.0 ],
-									"text" : "replace $1::boundaries $2 $3"
+									"text" : "replace $1::bounds $2 $3"
 								}
 
 							}
