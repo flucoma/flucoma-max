@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
 		"rect" : [ 824.0, 114.0, 526.0, 432.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -48,14 +47,13 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 3,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
 						"rect" : [ 824.0, 140.0, 526.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -90,7 +88,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 179.0, 280.189873417721515, 98.0, 23.0 ],
+									"patching_rect" : [ 179.0, 280.189873, 98.0, 23.0 ],
+									"style" : "",
 									"text" : "print @popup 1"
 								}
 
@@ -102,10 +101,10 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 237.0, 143.229957805907134, 262.0, 50.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 237.0, 143.229958, 262.0, 50.0 ],
+									"style" : "",
 									"text" : "There aren't ways of selecting offsets, or channels or anything fancy, becaause duct tape. For that sort of thing, see",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
 							}
@@ -117,9 +116,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 237.0, 81.5, 262.0, 50.0 ],
-									"presentation_linecount" : 3,
+									"style" : "",
 									"text" : "Be aware that the maximum list size in Max is 32767. The abstraction won't try to read more than that. ",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
 							}
@@ -127,11 +126,12 @@
 								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 19.0, 125.864978902953567, 65.0, 23.0 ],
-									"text" : "delay 100"
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 19.0, 125.864983, 60.0, 23.0 ],
+									"style" : "",
+									"text" : "deferlow"
 								}
 
 							}
@@ -142,8 +142,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 57.0, 262.0, 21.0 ],
+									"style" : "",
 									"text" : "some duct tape to dump a buffer~ into a list ",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
 							}
@@ -155,6 +156,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 19.0, 95.0, 62.0, 23.0 ],
+									"style" : "",
 									"text" : "loadbang"
 								}
 
@@ -166,7 +168,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 19.0, 187.594936708860757, 37.5, 23.0 ],
+									"patching_rect" : [ 19.0, 187.594937, 37.5, 23.0 ],
+									"style" : "",
 									"text" : "t b l"
 								}
 
@@ -179,8 +182,9 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 19.0, 280.189873417721515, 154.0, 107.0 ],
-									"size" : 32
+									"patching_rect" : [ 19.0, 280.189873, 154.0, 107.0 ],
+									"size" : 32,
+									"style" : ""
 								}
 
 							}
@@ -191,7 +195,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 19.0, 156.729957805907162, 55.0, 23.0 ],
+									"patching_rect" : [ 19.0, 156.729958, 55.0, 23.0 ],
+									"style" : "",
 									"text" : "fill cos 1"
 								}
 
@@ -203,7 +208,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 37.5, 218.459915611814353, 195.0, 23.0 ],
+									"patching_rect" : [ 37.5, 218.459916, 195.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ buf2list.help @samps 32"
 								}
 
@@ -215,7 +221,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 19.0, 249.324894514767948, 200.0, 23.0 ],
+									"patching_rect" : [ 19.0, 249.324895, 200.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.buf2list @buffer buf2list.help",
 									"varname" : "fluid.buf2list"
 								}
@@ -249,7 +256,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 28.5, 275.757383966244731, 188.5, 275.757383966244731 ],
+									"midpoints" : [ 28.5, 275.757384, 188.5, 275.757384 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -299,9 +306,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -319,7 +328,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 268.78399658203125, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 268.783997, 57.599854 ]
 				}
 
 			}
@@ -339,7 +348,7 @@
 			}
 , 			{
 				"name" : "fluid.buf2list.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/patchers",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
