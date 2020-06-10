@@ -214,31 +214,6 @@ struct NonRealTime
     CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Non-Blocking Queue Flag");
   }
 
-  bool checkResult(Result& res)
-  {
-    auto& wrapper = static_cast<Wrapper&>(*this);
-
-    if (!res.ok())
-    {
-      switch (res.status())
-      {
-      case Result::Status::kWarning:
-        object_warn((t_object*) &wrapper, res.message().c_str());
-        break;
-      case Result::Status::kError:
-        object_error((t_object*) &wrapper, res.message().c_str());
-        break;
-      case Result::Status::kCancelled:
-        object_post((t_object*) &wrapper, "Job cancelled");
-        break;
-      default: {
-      }
-      }
-      return false;
-    }
-
-    return true;
-  }
 
   void cancel()
   {
@@ -274,7 +249,7 @@ struct NonRealTime
     client.setQueueEnabled(mQueueEnabled);
 
     Result res = client.process();
-    if (checkResult(res))
+    if (wrapper.checkResult(res))
     {
       if (synchronous)
         wrapper.doneBang();
@@ -417,6 +392,32 @@ class FluidMaxWrapper
   static constexpr auto makeValue()
   {
     return Client::getParameterDescriptors().template makeValue<N>();
+  }
+
+
+bool checkResult(Result& res)
+  {
+
+    if (!res.ok())
+    {
+      switch (res.status())
+      {
+      case Result::Status::kWarning:
+        object_warn((t_object*) this, res.message().c_str());
+        break;
+      case Result::Status::kError:
+        object_error((t_object*) this, res.message().c_str());
+        break;
+      case Result::Status::kCancelled:
+        object_post((t_object*) this, "Job cancelled");
+        break;
+      default: {
+      }
+      }
+      return false;
+    }
+
+    return true;
   }
 
   static void printResult(FluidMaxWrapper<Client>* x, Result& r,
