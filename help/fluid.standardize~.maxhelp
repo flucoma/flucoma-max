@@ -3171,7 +3171,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 212.0, 141.333333333333343, 209.0, 21.0 ],
-									"text" : "standardize a fluid.dataset in place"
+									"text" : "standardize a fluid.dataset"
 								}
 
 							}

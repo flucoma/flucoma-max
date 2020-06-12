@@ -136,7 +136,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 212.0, 161.0, 198.0, 21.0 ],
-									"text" : "normalize a fluid.dataset in place"
+									"text" : "normalize a fluid.dataset"
 								}
 
 							}
