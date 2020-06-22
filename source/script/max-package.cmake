@@ -33,8 +33,8 @@ if (APPLE)
 		set(EXCLUDE_FROM_COLLECTIVES "no")
 	endif()
 
-	set(BUNDLE_IDENTIFIER "\${PRODUCT_NAME:rfc1034identifier}")
-	configure_file("${CMAKE_CURRENT_LIST_DIR}/Info.plist.in" "${CMAKE_CURRENT_LIST_DIR}/Info.plist" @ONLY)
+	# set(BUNDLE_IDENTIFIER "\$(PRODUCT_NAME:rfc1034identifier)")
+	# configure_file("${CMAKE_CURRENT_LIST_DIR}/Info.plist.in" "${CMAKE_CURRENT_LIST_DIR}/Info.plist" @ONLY)
 endif ()
 
 
