@@ -14,28 +14,36 @@ function anything()
   
   //grab settings
   var args = arrayfromargs(messagename,arguments);
-  // post(args);
   
   // link all the buffers into a large buffer of time series
   // make a stack buff with the timeseries
   // finds the size of the stack
-  var inbuf = new Buffer(args[0]);
-  var framecount = inbuf.framecount(); //assumes all buffers have the same number of frames
   var chancount = 0;
   
   if (args[0] != "pass"){ // if loudness
     chancount += (args[1] + 1);
+    var inbuf = new Buffer(args[0]);
   } 
   if (args[4] != "pass"){ // if pitch
-    chancount += (args[5] + 1);    
+    chancount += (args[5] + 1);
+    var inbuf = new Buffer(args[4]);  
   } 
   if (args[8] != "pass"){ // if mfcc
     chancount += (args[9] + args[10] - 1);
+    var inbuf = new Buffer(args[8]);
   } 
   if (args[11] != "pass"){ // if spectralshapes
     var whichshapes = args.slice(12,19);
     chancount += whichshapes.reduce(mySum);
+    var inbuf = new Buffer(args[11]);
   }
+  
+  if (chancount == 0) {
+    error("metacompose: no input to the process\n");
+    return;
+  }
+  
+  var framecount = inbuf.framecount(); //assumes all buffers have the same number of frames so takes the latest
   // resize the stack
   tempbuf.send("sizeinsamps",framecount , chancount);
   
@@ -98,7 +106,7 @@ function anything()
       // if that stat is to be taken
       if (whichstats[j]) {
         //for each derivative
-        for (i = 0; i <= args[23]; i++) {
+        for (i = 0; i <= args[29]; i++) {
           outbuf.poke(1, framecount, statsbuf.peek(whichchannel,(i*7) + j,1));
           framecount++;
         }
