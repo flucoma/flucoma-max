@@ -38,6 +38,45 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-33",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "bang", "bang" ],
+					"patching_rect" : [ 112.0, 185.0, 34.0, 22.0 ],
+					"style" : "",
+					"text" : "t b b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-32",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 175.0, 185.0, 148.0, 22.0 ],
+					"style" : "",
+					"text" : "getattr truepeak @listen 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-25",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 165.0, 216.0, 158.0, 22.0 ],
+					"style" : "",
+					"text" : "getattr kweighting @listen 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-16",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -204,7 +243,7 @@
 					"numoutlets" : 1,
 					"orientation" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 231.0, 220.0, 151.0, 44.0 ],
+					"patching_rect" : [ 352.0, 222.0, 151.0, 44.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 5.0, 89.0, 190.0, 44.0 ],
 					"style" : "",
@@ -257,12 +296,12 @@
 				"box" : 				{
 					"id" : "obj-24",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
+					"numinlets" : 4,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 112.0, 419.0, 155.0, 22.0 ],
+					"patching_rect" : [ 112.0, 419.0, 142.0, 22.0 ],
 					"style" : "",
-					"text" : "pack #0tmp.loudness 0 0"
+					"text" : "pack #0tmp.loudness i i i"
 				}
 
 			}
@@ -362,7 +401,7 @@
 					"numoutlets" : 1,
 					"orientation" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 231.0, 166.0, 151.0, 44.0 ],
+					"patching_rect" : [ 352.0, 168.0, 151.0, 44.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 5.0, 41.0, 190.0, 44.0 ],
 					"style" : "",
@@ -408,7 +447,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-8", 0 ],
+					"destination" : [ "obj-33", 0 ],
 					"source" : [ "obj-14", 1 ]
 				}
 
@@ -438,15 +477,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-22", 1 ],
 					"midpoints" : [ 312.5, 449.0, 362.25, 449.0, 362.25, 362.0, 536.0, 362.0 ],
-					"order" : 0,
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-24", 2 ],
-					"order" : 1,
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -521,7 +551,30 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-24", 2 ],
+					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-25", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
+					"order" : 0,
+					"source" : [ "obj-29", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-24", 1 ],
+					"order" : 1,
 					"source" : [ "obj-29", 0 ]
 				}
 
@@ -542,8 +595,45 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-24", 3 ],
+					"source" : [ "obj-32", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"midpoints" : [ 240.5, 213.0, 222.0, 213.0, 222.0, 276.0, 121.5, 276.0 ],
+					"source" : [ "obj-32", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-25", 0 ],
+					"order" : 1,
+					"source" : [ "obj-33", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-32", 0 ],
+					"order" : 0,
+					"source" : [ "obj-33", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-33", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"midpoints" : [ 361.5, 218.0, 349.0, 218.0, 349.0, 276.0, 121.5, 276.0 ],
 					"source" : [ "obj-4", 0 ]
 				}
 
