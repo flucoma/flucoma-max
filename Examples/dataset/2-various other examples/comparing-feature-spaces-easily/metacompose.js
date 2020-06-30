@@ -37,20 +37,47 @@ function anything()
     chancount += whichshapes.reduce(mySum);
   }
   // resize the stack
-  // tempbuf.send("sizeinsamps",framecount , chancount);
-  // 
-  // // assemble the stack
-  // chancount = 0;
-  // for (var i = 0; i < 12; i += 3) {
-  //   if (args[i] != "pass") {
-  //     bufcp.source(args[i]);
-  //     bufcp.startchan(args[i+1]);
-  //     bufcp.numchans(args[i+2]);
-  //     bufcp.deststartchan(chancount);
-  //     bufcp.bang();
-  //     chancount += args[i+2];
-  //   }
-  // }
+  tempbuf.send("sizeinsamps",framecount , chancount);
+  
+  // assemble the stack
+  chancount = 0;
+  
+  if (args[0] != "pass"){ // if loudness
+    bufcp.source(args[0]);
+    bufcp.startchan(0);
+    bufcp.numchans(args[1] + 1);
+    bufcp.deststartchan(chancount);
+    bufcp.bang();
+    chancount += (args[1] + 1);
+  } 
+  if (args[4] != "pass"){ // if pitch
+    bufcp.source(args[4]);
+    bufcp.startchan(0);
+    bufcp.numchans(args[5] + 1);
+    bufcp.deststartchan(chancount);
+    bufcp.bang();
+    chancount += (args[5] + 1);
+  } 
+  if (args[8] != "pass"){ // if mfcc
+    bufcp.source(args[8]);
+    bufcp.startchan(1 - args[9]);
+    bufcp.numchans(args[9] + args[10] - 1);
+    bufcp.deststartchan(chancount);
+    bufcp.bang();
+    chancount += (args[9] + args[10] - 1);
+  } 
+  if (args[11] != "pass"){ // if spectralshapes
+    bufcp.source(args[11]);
+    bufcp.numchans(1); 
+    for (var shape = 0; shape < 7; shape++){
+      if (whichshapes[shape]) {
+        bufcp.startchan(shape);
+        bufcp.deststartchan(chancount);
+        bufcp.bang();
+        chancount += 1;
+      }
+    }
+  }
   // // process the stats
   // bufst.low(args[21]);
   // bufst.high(args[22]);
@@ -82,7 +109,7 @@ function anything()
   //   }
   // }
   // done bang
-  // outlet(0,"bang");
+  outlet(0,"bang");
 }
 
 private:
