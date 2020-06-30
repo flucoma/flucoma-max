@@ -78,36 +78,33 @@ function anything()
       }
     }
   }
-  // // process the stats
-  // bufst.low(args[21]);
-  // bufst.high(args[22]);
-  // bufst.numderivs(args[23]);
-  // bufst.bang();
-  // 
-  // // resize the output buffer
-  // var outbuf = new Buffer(args[12]);
-  // outbuf.send("sizeinsamps", args[13]);
-  // 
-  // //pickup which stats to copy
-  // var whichstats = args.slice(14,21);
-  // 
-  // framecount = 0;
-  // //for each channel, which is each descriptors
-  // for (var whichchannel = 1; whichchannel <= statsbuf.channelcount(); whichchannel++) {
-  //   //for each stats
-  //   for (var j = 0; j < 7; j++) {
-  //     // if that stat is to be taken
-  //     if (whichstats[j]) {
-  //       //for each derivative
-  //       for (i = 0; i <= args[23]; i++) {
-  //         // var location = (i*7) + j;
-  //         // post(framecount + ' ' + whichchannel+ ' ' +j + ' ' + i + ' ' + location + '\n');
-  //         outbuf.poke(1, framecount, statsbuf.peek(whichchannel,(i*7) + j,1));
-  //         framecount++;
-  //       }
-  //     }
-  //   }
-  // }
+  // process the stats
+  bufst.low(args[27]);
+  bufst.high(args[28]);
+  bufst.numderivs(args[29]);
+  bufst.bang();
+  
+  // resize the output buffer
+  //pickup which stats to copy
+  var whichstats = args.slice(20,27);
+  var outbuf = new Buffer(args[19]);
+  outbuf.send("sizeinsamps", (chancount * (args[29] + 1) * whichstats.reduce(mySum)));
+
+  framecount = 0;
+  //for each channel, which is each descriptors
+  for (var whichchannel = 1; whichchannel <= statsbuf.channelcount(); whichchannel++) {
+    // for each stats
+    for (var j = 0; j < 7; j++) {
+      // if that stat is to be taken
+      if (whichstats[j]) {
+        //for each derivative
+        for (i = 0; i <= args[23]; i++) {
+          outbuf.poke(1, framecount, statsbuf.peek(whichchannel,(i*7) + j,1));
+          framecount++;
+        }
+      }
+    }
+  }
   // done bang
   outlet(0,"bang");
 }

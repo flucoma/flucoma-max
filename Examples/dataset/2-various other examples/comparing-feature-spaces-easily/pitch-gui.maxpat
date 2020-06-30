@@ -367,9 +367,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 112.0, 290.0, 360.0, 22.0 ],
+					"patching_rect" : [ 112.0, 290.0, 404.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.bufpitch~ @features #0tmp.pitch @blocking 0 @numchans 1"
+					"text" : "fluid.bufpitch~ @features #0tmp.pitch @blocking 0 @numchans 1 @unit 1"
 				}
 
 			}
