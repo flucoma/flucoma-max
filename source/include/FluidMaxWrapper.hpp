@@ -1005,6 +1005,7 @@ private:
     using IndexList =
         typename Client::MessageSetType::template MessageDescriptorAt<
             N>::IndexList;
+    x->client().setParams(x->params()); 
     invokeMessageImpl<N>(x, s, ac, av, IndexList());
   }
 
