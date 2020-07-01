@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 1852.0, 1082.0 ],
+		"rect" : [ 34.0, 79.0, 1390.0, 1082.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,12 +38,62 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-57",
+					"linecount" : 13,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 816.747559, 704.766968, 560.0, 181.0 ],
+					"style" : "",
+					"text" : "1. load a folder\n2. bang to make a corpus (getkey gives the number of items)\n3. open that subpatch and make a selection of what descriptors you want, and which stats to use\n4. bang to process the corpus\n5. bang to dump the corpus in the destination dataset\n6. switch dataset target\n7. choose new settings\n8. bang to process\n9. bang to dump\n10. chose a target either from the original corpus (getkeys to populate then listen and select the whole element with the menu) or from another file (will load the size in milliseconds you enter)\n11. copy and process\n12. compare - selecting plays back"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-55",
+					"maxclass" : "number",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 877.0, 207.189331, 50.0, 22.0 ],
+					"style" : ""
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-53",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 877.0, 231.189331, 79.0, 22.0 ],
+					"style" : "",
+					"text" : "size $1, read"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-26",
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 877.0, 185.189331, 203.0, 20.0 ],
+					"style" : "",
+					"text" : "select a target or add your own here"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-116",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1228.0, 538.359253, 150.0, 20.0 ],
-					"presentation_rect" : [ 1229.0, 537.359253, 0.0, 0.0 ],
+					"patching_rect" : [ 1110.0, 559.548584, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "thedataset2's 5 nearests"
 				}
@@ -55,7 +105,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1044.0, 538.359253, 150.0, 20.0 ],
+					"patching_rect" : [ 926.0, 559.548584, 150.0, 20.0 ],
 					"style" : "",
 					"text" : "thedataset's 5 nearests"
 				}
@@ -75,11 +125,10 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1018.085693, 538.359253, 20.0, 20.0 ],
-					"presentation_rect" : [ 1091.085693, 534.359253, 0.0, 0.0 ],
+					"patching_rect" : [ 900.085693, 559.548584, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
-					"text" : "11",
+					"text" : "12",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
 
@@ -87,14 +136,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-111",
-					"items" : [ "2-voices-bottom-a003.wav-1", ",", "blasser-01-001.wav-1", ",", "blasser-01-005.wav-1", ",", "blasser-01-002.wav-2", ",", "blasser-01-003.wav-2" ],
+					"items" : [ "2-voices-bottom-a003.wav-2", ",", "2-voices-bottom-a006.wav-1", ",", "2-voices-bottom-a007.wav-1", ",", "2-voices-bottom-a015.wav-1", ",", "2-voices-bottom-a014.wav-1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 986.0, 568.529419, 193.0, 22.0 ],
-					"presentation_rect" : [ 1145.0, 913.529419, 0.0, 0.0 ],
+					"patching_rect" : [ 868.0, 589.71875, 193.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -102,14 +150,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-99",
-					"items" : [ "2-voices-bottom-a003.wav-1", ",", "2-voices-bottom-a005.wav-1", ",", "blasser-01-001.wav-1", ",", "blasser-01-003.wav-1", ",", "2-voices-top-039.wav-1" ],
+					"items" : [ "2-voices-bottom-a003.wav-2", ",", "2-voices-bottom-a006.wav-1", ",", "2-voices-bottom-a007.wav-1", ",", "2-voices-bottom-a015.wav-1", ",", "2-voices-bottom-a014.wav-1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1190.0, 568.529419, 193.0, 22.0 ],
-					"presentation_rect" : [ 1286.0, 842.810669, 0.0, 0.0 ],
+					"patching_rect" : [ 1072.0, 589.71875, 193.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -477,7 +524,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1106.247559, 277.359222, 53.0, 22.0 ],
+					"patching_rect" : [ 988.247559, 298.548553, 53.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -505,8 +552,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 905.085693, 277.359222, 20.0, 20.0 ],
-					"presentation_rect" : [ 1082.0, 543.0, 0.0, 0.0 ],
+					"patching_rect" : [ 787.085693, 298.548553, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
 					"text" : "11",
@@ -578,7 +624,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 225.247574, 866.854309, 128.0, 22.0 ],
-					"presentation_rect" : [ 225.0, 864.854309, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "destination thedataset"
 				}
@@ -611,7 +656,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1111.0, 210.0, 20.0, 20.0 ],
+					"patching_rect" : [ 993.0, 231.189331, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
 					"text" : "10",
@@ -632,7 +677,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 78.0, 584.310669, 20.0, 20.0 ],
+					"patching_rect" : [ 29.796112, 624.310669, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
 					"text" : "8",
@@ -653,7 +698,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 70.0, 760.310669, 20.0, 20.0 ],
+					"patching_rect" : [ 20.296112, 798.310669, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
 					"text" : "9",
@@ -710,7 +755,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 1195.5, 517.0, 24.0, 24.0 ],
+					"patching_rect" : [ 1077.5, 538.189331, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -735,7 +780,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
-					"patching_rect" : [ 905.085693, 370.0, 34.0, 22.0 ],
+					"patching_rect" : [ 787.085693, 391.189331, 34.0, 22.0 ],
 					"style" : "",
 					"text" : "t b b"
 				}
@@ -748,7 +793,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 872.085693, 416.810669, 56.0, 22.0 ],
+					"patching_rect" : [ 754.085693, 438.0, 56.0, 22.0 ],
 					"style" : "",
 					"text" : "samps 1"
 				}
@@ -761,7 +806,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 976.085693, 338.0, 87.0, 22.0 ],
+					"patching_rect" : [ 858.085693, 359.189331, 87.0, 22.0 ],
 					"style" : "",
 					"text" : "numframes $1"
 				}
@@ -774,7 +819,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 975.247559, 311.0, 31.0, 22.0 ],
+					"patching_rect" : [ 857.247559, 332.189331, 31.0, 22.0 ],
 					"style" : "",
 					"text" : "!- 0."
 				}
@@ -787,7 +832,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1069.585693, 338.0, 81.0, 22.0 ],
+					"patching_rect" : [ 951.585693, 359.189331, 81.0, 22.0 ],
 					"style" : "",
 					"text" : "startframe $1"
 				}
@@ -800,7 +845,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1010.0, 442.810669, 426.0, 22.0 ],
+					"patching_rect" : [ 892.0, 464.0, 426.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.bufcompose~ @source thecorpus @destination thesource @numchans 1"
 				}
@@ -813,7 +858,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 905.085693, 302.0, 24.0, 24.0 ],
+					"patching_rect" : [ 787.085693, 323.189331, 24.0, 24.0 ],
 					"style" : ""
 				}
 
@@ -824,7 +869,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1168.247559, 343.0, 37.0, 22.0 ],
+					"patching_rect" : [ 1050.247559, 364.189331, 37.0, 22.0 ],
 					"style" : "",
 					"text" : "dac~"
 				}
@@ -837,7 +882,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1044.0, 244.810669, 52.0, 22.0 ],
+					"patching_rect" : [ 939.0, 266.0, 52.0, 22.0 ],
 					"style" : "",
 					"text" : "getkeys"
 				}
@@ -1106,7 +1151,7 @@
 						"bgfillcolor_proportion" : 0.39
 					}
 ,
-					"patching_rect" : [ 1198.0, 281.359222, 55.0, 23.0 ],
+					"patching_rect" : [ 1080.0, 302.548553, 55.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1125,13 +1170,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-15",
-					"items" : [ "2-voices-bottom-a001.wav-1", ",", "2-voices-bottom-a002.wav-1", ",", "2-voices-bottom-a003.wav-1", ",", "2-voices-bottom-a003.wav-2", ",", "2-voices-bottom-a004.wav-1", ",", "2-voices-bottom-a005.wav-1", ",", "2-voices-bottom-a005.wav-2", ",", "2-voices-top-001.wav-1", ",", "2-voices-top-002.wav-1", ",", "2-voices-top-003.wav-1", ",", "2-voices-top-038.wav-1", ",", "2-voices-top-039.wav-1", ",", "blasser-01-001.wav-1", ",", "blasser-01-001.wav-2", ",", "blasser-01-002.wav-1", ",", "blasser-01-002.wav-2", ",", "blasser-01-003.wav-1", ",", "blasser-01-003.wav-2", ",", "blasser-01-004.wav-1", ",", "blasser-01-005.wav-1", ",", "blasser-02-001.wav-1", ",", "blasser-02-002.wav-1", ",", "blasser-02-003.wav-1", ",", "blasser-02-004.wav-1", ",", "blasser-02-005.wav-1", ",", "synth-01-long-001.wav-1", ",", "synth-01-long-002.wav-1", ",", "synth-01-long-003.wav-1", ",", "synth-01-long-004.wav-1", ",", "synth-01-long-005.wav-1", ",", "synth-02-001.wav-1", ",", "synth-02-002.wav-1", ",", "synth-02-003.wav-1", ",", "synth-02-004.wav-1", ",", "synth-02-005.wav-1", ",", "synth-03-001.wav-1", ",", "synth-04-nmf_noise-001.wav-1", ",", "synth-04-nmf_noise-002.wav-1", ",", "synth-04-nmf_noise-003.wav-1", ",", "synth-04-nmf_noise-004.wav-1", ",", "synth-04-nmf_noise-005.wav-1", ",", "synth-130213_1131-001.wav-1", ",", "synth-130213_1131-002.wav-1", ",", "synth-130213_1131-003.wav-1", ",", "synth-130213_1131-004.wav-1", ",", "synth-130213_1131-005.wav-1" ],
+					"items" : [ "2-voices-bottom-a001.wav-1", ",", "2-voices-bottom-a002.wav-1", ",", "2-voices-bottom-a003.wav-1", ",", "2-voices-bottom-a003.wav-2", ",", "2-voices-bottom-a004.wav-1", ",", "2-voices-bottom-a005.wav-1", ",", "2-voices-bottom-a005.wav-2", ",", "2-voices-bottom-a006.wav-1", ",", "2-voices-bottom-a007.wav-1", ",", "2-voices-bottom-a008.wav-1", ",", "2-voices-bottom-a009.wav-1", ",", "2-voices-bottom-a010.wav-1", ",", "2-voices-bottom-a011.wav-1", ",", "2-voices-bottom-a012.wav-1", ",", "2-voices-bottom-a013.wav-1", ",", "2-voices-bottom-a014.wav-1", ",", "2-voices-bottom-a015.wav-1", ",", "2-voices-bottom-b001.wav-1", ",", "2-voices-bottom-b001.wav-2", ",", "2-voices-bottom-b002.wav-1", ",", "2-voices-bottom-b002.wav-2", ",", "2-voices-bottom-b002.wav-3", ",", "2-voices-bottom-b003.wav-1", ",", "2-voices-bottom-b003.wav-2", ",", "2-voices-bottom-b003.wav-3", ",", "2-voices-bottom-b003.wav-4", ",", "2-voices-bottom-b003.wav-5", ",", "2-voices-bottom-b004.wav-1", ",", "2-voices-bottom-b004.wav-2", ",", "2-voices-bottom-b004.wav-3", ",", "2-voices-bottom-b004.wav-4", ",", "2-voices-bottom-b005.wav-1", ",", "2-voices-bottom-b005.wav-2", ",", "2-voices-bottom-b005.wav-3", ",", "2-voices-bottom-b006.wav-1", ",", "2-voices-bottom-b006.wav-2", ",", "2-voices-bottom-b006.wav-3", ",", "2-voices-bottom-b007.wav-1", ",", "2-voices-bottom-b007.wav-2", ",", "2-voices-bottom-b007.wav-3", ",", "2-voices-bottom-b007.wav-4", ",", "2-voices-bottom-b007.wav-5", ",", "2-voices-bottom-b007.wav-6", ",", "2-voices-bottom-b008.wav-1", ",", "2-voices-bottom-b008.wav-2", ",", "2-voices-bottom-b009.wav-1", ",", "2-voices-bottom-b009.wav-2", ",", "2-voices-bottom-b009.wav-3", ",", "2-voices-bottom-b009.wav-4", ",", "2-voices-bottom-b009.wav-5", ",", "2-voices-bottom-b010.wav-1", ",", "2-voices-bottom-b010.wav-2", ",", "2-voices-bottom-b011.wav-1", ",", "2-voices-bottom-b012.wav-1", ",", "2-voices-bottom-b013.wav-1", ",", "2-voices-bottom-b013.wav-2", ",", "2-voices-bottom-b014.wav-1", ",", "2-voices-bottom-b014.wav-2", ",", "2-voices-bottom-b014.wav-3", ",", "2-voices-bottom-b015.wav-1", ",", "2-voices-bottom-b016.wav-1", ",", "2-voices-bottom-b016.wav-2", ",", "2-voices-bottom-b017.wav-1", ",", "2-voices-bottom-b017.wav-2", ",", "2-voices-bottom-b018.wav-1", ",", "2-voices-bottom-b019.wav-1", ",", "2-voices-bottom-b020.wav-1", ",", "2-voices-bottom-b021.wav-1", ",", "2-voices-bottom-b021.wav-2", ",", "2-voices-bottom-b022.wav-1", ",", "2-voices-bottom-b023.wav-1", ",", "2-voices-bottom-b024.wav-1", ",", "2-voices-bottom-b025.wav-1", ",", "2-voices-bottom-b026.wav-1", ",", "2-voices-bottom-b027.wav-1", ",", "2-voices-bottom-b028.wav-1", ",", "2-voices-bottom-b029.wav-1", ",", "2-voices-bottom-b030.wav-1", ",", "2-voices-bottom-b031.wav-1", ",", "2-voices-bottom-b032.wav-1", ",", "2-voices-bottom-b033.wav-1", ",", "2-voices-bottom-b034.wav-1", ",", "2-voices-bottom-b035.wav-1", ",", "2-voices-bottom-b036.wav-1", ",", "2-voices-bottom-b037.wav-1", ",", "2-voices-bottom-b038.wav-1", ",", "2-voices-bottom-b039.wav-1", ",", "2-voices-bottom-b040.wav-1", ",", "2-voices-bottom-b041.wav-1", ",", "2-voices-bottom-b041.wav-2", ",", "2-voices-bottom-b042.wav-1", ",", "2-voices-bottom-b043.wav-1", ",", "2-voices-bottom-b043.wav-2", ",", "2-voices-bottom-b043.wav-3", ",", "2-voices-bottom-b044.wav-1", ",", "2-voices-bottom-b045.wav-1", ",", "2-voices-bottom-b046.wav-1", ",", "2-voices-bottom-b047.wav-1", ",", "2-voices-bottom-b048.wav-1", ",", "2-voices-bottom-b048.wav-2", ",", "2-voices-bottom-b049.wav-1", ",", "2-voices-bottom-b050.wav-1", ",", "2-voices-top-001.wav-1", ",", "2-voices-top-002.wav-1", ",", "2-voices-top-003.wav-1", ",", "2-voices-top-038.wav-1", ",", "2-voices-top-039.wav-1", ",", "2-voices-top-040.wav-1", ",", "2-voices-top-041.wav-1", ",", "2-voices-top-042.wav-1", ",", "2-voices-top-043.wav-1", ",", "2-voices-top-044.wav-1", ",", "2-voices-top-045.wav-1", ",", "2-voices-top-046.wav-1", ",", "2-voices-top-047.wav-1", ",", "2-voices-top-048.wav-1", ",", "2-voices-top-049.wav-1", ",", "2-voices-top-050.wav-1", ",", "2-voices-top-051.wav-1", ",", "2-voices-top-052.wav-1", ",", "2-voices-top-053.wav-1", ",", "2-voices-top-054.wav-1", ",", "2-voices-top-055.wav-1", ",", "2-voices-top-056.wav-1", ",", "2-voices-top-057.wav-1", ",", "2-voices-top-058.wav-1", ",", "2-voices-top-059.wav-1", ",", "2-voices-top-060.wav-1", ",", "2-voices-top-061.wav-1", ",", "2-voices-top-074.wav-1", ",", "2-voices-top-075.wav-1", ",", "2-voices-top-081.wav-1", ",", "2-voices-top-082.wav-1", ",", "2-voices-top-083.wav-1", ",", "2-voices-top-084.wav-1", ",", "2-voices-top-085.wav-1", ",", "2-voices-top-086.wav-1", ",", "2-voices-top-087.wav-1", ",", "2-voices-top-088.wav-1", ",", "2-voices-top-089.wav-1", ",", "2-voices-top-090.wav-1", ",", "2-voices-top-091.wav-1", ",", "2-voices-top-092.wav-1", ",", "2-voices-top-093.wav-1", ",", "2-voices-top-094.wav-1", ",", "2-voices-top-095.wav-1", ",", "2-voices-top-096.wav-1", ",", "2-voices-top-097.wav-1", ",", "2-voices-top-098.wav-1", ",", "2-voices-top-099.wav-1", ",", "2-voices-top-100.wav-1", ",", "2-voices-top-101.wav-1", ",", "2-voices-top-102.wav-1", ",", "2-voices-top-103.wav-1", ",", "2-voices-top-104.wav-1", ",", "2-voices-top-105.wav-1", ",", "2-voices-top-106.wav-1", ",", "2-voices-top-107.wav-1", ",", "2-voices-top-108.wav-1", ",", "2-voices-top-109.wav-1", ",", "2-voices-top-110.wav-1", ",", "2-voices-top-111.wav-1", ",", "2-voices-top-112.wav-1", ",", "2-voices-top-113.wav-1", ",", "2-voices-top-114.wav-1", ",", "2-voices-top-115.wav-1", ",", "2-voices-top-116.wav-1", ",", "2-voices-top-117.wav-1", ",", "2-voices-top-118.wav-1", ",", "2-voices-top-119.wav-1", ",", "2-voices-top-120.wav-1", ",", "2-voices-top-121.wav-1", ",", "2-voices-top-127.wav-1", ",", "2-voices-top-128.wav-1", ",", "2-voices-top-129.wav-1", ",", "2-voices-top-130.wav-1", ",", "2-voices-top-131.wav-1", ",", "2-voices-top-132.wav-1", ",", "2-voices-top-133.wav-1", ",", "2-voices-top-134.wav-1", ",", "2-voices-top-135.wav-1", ",", "2-voices-top-136.wav-1", ",", "2-voices-top-137.wav-1", ",", "2-voices-top-138.wav-1", ",", "2-voices-top-139.wav-1", ",", "2-voices-top-140.wav-1", ",", "2-voices-top-141.wav-1", ",", "2-voices-top-142.wav-1", ",", "2-voices-top-143.wav-1", ",", "2-voices-top-144.wav-1", ",", "2-voices-top-145.wav-1", ",", "2-voices-top-146.wav-1", ",", "2-voices-top-147.wav-1", ",", "2-voices-top-148.wav-1", ",", "2-voices-top-149.wav-1", ",", "2-voices-top-150.wav-1", ",", "2-voices-top-151.wav-1", ",", "2-voices-top-152.wav-1", ",", "2-voices-top-153.wav-1", ",", "2-voices-top-154.wav-1", ",", "2-voices-top-155.wav-1", ",", "2-voices-top-156.wav-1", ",", "2-voices-top-157.wav-1", ",", "2-voices-top-158.wav-1", ",", "2-voices-top-159.wav-1", ",", "2-voices-top-160.wav-1", ",", "blasser-01-001.wav-1", ",", "blasser-01-001.wav-2", ",", "blasser-01-002.wav-1", ",", "blasser-01-002.wav-2", ",", "blasser-01-003.wav-1", ",", "blasser-01-003.wav-2", ",", "blasser-01-004.wav-1", ",", "blasser-01-005.wav-1", ",", "blasser-01-006.wav-1", ",", "blasser-01-006.wav-2", ",", "blasser-01-006.wav-3", ",", "blasser-01-007.wav-1", ",", "blasser-01-007.wav-2", ",", "blasser-01-007.wav-3", ",", "blasser-01-008.wav-1", ",", "blasser-01-008.wav-2", ",", "blasser-01-009.wav-1", ",", "blasser-01-010.wav-1", ",", "blasser-01-010.wav-2", ",", "blasser-01-010.wav-3", ",", "blasser-01-011.wav-1", ",", "blasser-01-011.wav-2", ",", "blasser-01-012.wav-1", ",", "blasser-01-012.wav-2", ",", "blasser-01-013.wav-1", ",", "blasser-01-013.wav-2", ",", "blasser-01-014.wav-1", ",", "blasser-01-014.wav-2", ",", "blasser-01-015.wav-1", ",", "blasser-01-016.wav-1", ",", "blasser-01-017.wav-1", ",", "blasser-01-017.wav-2", ",", "blasser-01-018.wav-1", ",", "blasser-01-018.wav-2", ",", "blasser-01-019.wav-1", ",", "blasser-01-019.wav-2", ",", "blasser-01-020.wav-1", ",", "blasser-01-020.wav-2", ",", "blasser-01-021.wav-1", ",", "blasser-01-022.wav-1", ",", "blasser-01-022.wav-2", ",", "blasser-01-022.wav-3", ",", "blasser-01-023.wav-1", ",", "blasser-01-023.wav-2", ",", "blasser-01-023.wav-3", ",", "blasser-01-024.wav-1", ",", "blasser-01-024.wav-2", ",", "blasser-01-025.wav-1", ",", "blasser-01-026.wav-1", ",", "blasser-01-026.wav-2", ",", "blasser-01-027.wav-1", ",", "blasser-01-027.wav-2", ",", "blasser-01-028.wav-1", ",", "blasser-01-029.wav-1", ",", "blasser-01-029.wav-2", ",", "blasser-01-030.wav-1", ",", "blasser-01-031.wav-1", ",", "blasser-01-032.wav-1", ",", "blasser-01-033.wav-1", ",", "blasser-01-033.wav-2", ",", "blasser-01-033.wav-3", ",", "blasser-01-034.wav-1", ",", "blasser-01-034.wav-2", ",", "blasser-01-034.wav-3", ",", "blasser-01-035.wav-1", ",", "blasser-01-036.wav-1", ",", "blasser-01-036.wav-2", ",", "blasser-01-037.wav-1", ",", "blasser-01-038.wav-1", ",", "blasser-01-038.wav-2", ",", "blasser-01-039.wav-1", ",", "blasser-01-040.wav-1", ",", "blasser-01-041.wav-1", ",", "blasser-01-041.wav-2", ",", "blasser-01-042.wav-1", ",", "blasser-01-043.wav-1", ",", "blasser-01-043.wav-2", ",", "blasser-01-044.wav-1", ",", "blasser-01-044.wav-2", ",", "blasser-01-045.wav-1", ",", "blasser-01-046.wav-1", ",", "blasser-01-046.wav-2", ",", "blasser-01-047.wav-1", ",", "blasser-01-047.wav-2", ",", "blasser-01-047.wav-3", ",", "blasser-01-047.wav-4", ",", "blasser-01-047.wav-5", ",", "blasser-01-047.wav-6", ",", "blasser-01-048.wav-1", ",", "blasser-01-048.wav-2", ",", "blasser-01-049.wav-1", ",", "blasser-01-049.wav-2", ",", "blasser-01-049.wav-3", ",", "blasser-01-050.wav-1", ",", "blasser-01-051.wav-1", ",", "blasser-01-052.wav-1", ",", "blasser-01-052.wav-2", ",", "blasser-01-053.wav-1", ",", "blasser-01-053.wav-2", ",", "blasser-01-054.wav-1", ",", "blasser-01-054.wav-2", ",", "blasser-01-055.wav-1", ",", "blasser-01-055.wav-2", ",", "blasser-01-055.wav-3", ",", "blasser-01-056.wav-1", ",", "blasser-01-057.wav-1", ",", "blasser-01-057.wav-2", ",", "blasser-01-058.wav-1", ",", "blasser-01-059.wav-1", ",", "blasser-01-060.wav-1", ",", "blasser-02-001.wav-1", ",", "blasser-02-002.wav-1", ",", "blasser-02-003.wav-1", ",", "blasser-02-004.wav-1", ",", "blasser-02-005.wav-1", ",", "blasser-02-006.wav-1", ",", "blasser-02-007.wav-1", ",", "blasser-02-008.wav-1", ",", "blasser-02-009.wav-1", ",", "blasser-02-010.wav-1", ",", "blasser-02-011.wav-1", ",", "blasser-02-012.wav-1", ",", "blasser-02-013.wav-1", ",", "blasser-02-014.wav-1", ",", "blasser-02-015.wav-1", ",", "blasser-02-016.wav-1", ",", "blasser-02-017.wav-1", ",", "blasser-02-018.wav-1", ",", "blasser-02-019.wav-1", ",", "blasser-02-020.wav-1", ",", "blasser-02-021.wav-1", ",", "blasser-02-022.wav-1", ",", "blasser-02-023.wav-1", ",", "blasser-02-024.wav-1", ",", "blasser-02-025.wav-1", ",", "blasser-02-026.wav-1", ",", "blasser-02-027.wav-1", ",", "blasser-02-028.wav-1", ",", "blasser-02-029.wav-1", ",", "blasser-02-030.wav-1", ",", "blasser-02-031.wav-1", ",", "blasser-02-032.wav-1", ",", "blasser-02-033.wav-1", ",", "blasser-02-034.wav-1", ",", "blasser-02-035.wav-1", ",", "blasser-02-036.wav-1", ",", "blasser-02-037.wav-1", ",", "blasser-02-038.wav-1", ",", "blasser-02-039.wav-1", ",", "blasser-02-040.wav-1", ",", "blasser-02-041.wav-1", ",", "blasser-02-042.wav-1", ",", "blasser-02-043.wav-1", ",", "blasser-02-044.wav-1", ",", "blasser-02-045.wav-1", ",", "blasser-02-046.wav-1", ",", "blasser-02-047.wav-1", ",", "blasser-02-048.wav-1", ",", "blasser-02-049.wav-1", ",", "blasser-02-050.wav-1", ",", "blasser-02-051.wav-1", ",", "synth-01-long-001.wav-1", ",", "synth-01-long-002.wav-1", ",", "synth-01-long-003.wav-1", ",", "synth-01-long-004.wav-1", ",", "synth-01-long-005.wav-1", ",", "synth-01-long-006.wav-1", ",", "synth-01-long-007.wav-1", ",", "synth-01-long-008.wav-1", ",", "synth-01-long-009.wav-1", ",", "synth-01-long-010.wav-1", ",", "synth-01-long-011.wav-1", ",", "synth-01-long-012.wav-1", ",", "synth-01-long-013.wav-1", ",", "synth-01-long-014.wav-1", ",", "synth-01-long-015.wav-1", ",", "synth-01-long-016.wav-1", ",", "synth-01-long-017.wav-1", ",", "synth-01-long-018.wav-1", ",", "synth-01-long-019.wav-1", ",", "synth-01-long-020.wav-1", ",", "synth-01-long-021.wav-1", ",", "synth-01-long-022.wav-1", ",", "synth-01-long-023.wav-1", ",", "synth-01-long-024.wav-1", ",", "synth-01-long-025.wav-1", ",", "synth-01-long-026.wav-1", ",", "synth-01-long-027.wav-1", ",", "synth-01-long-028.wav-1", ",", "synth-01-long-029.wav-1", ",", "synth-01-long-030.wav-1", ",", "synth-01-long-031.wav-1", ",", "synth-01-long-032.wav-1", ",", "synth-01-long-033.wav-1", ",", "synth-01-long-034.wav-1", ",", "synth-01-long-035.wav-1", ",", "synth-01-long-036.wav-1", ",", "synth-01-long-037.wav-1", ",", "synth-01-long-038.wav-1", ",", "synth-01-long-039.wav-1", ",", "synth-02-001.wav-1", ",", "synth-02-002.wav-1", ",", "synth-02-003.wav-1", ",", "synth-02-004.wav-1", ",", "synth-02-005.wav-1", ",", "synth-02-006.wav-1", ",", "synth-02-007.wav-1", ",", "synth-02-008.wav-1", ",", "synth-02-009.wav-1", ",", "synth-03-001.wav-1", ",", "synth-03-002.wav-1", ",", "synth-03-003.wav-1", ",", "synth-03-004.wav-1", ",", "synth-03-005.wav-1", ",", "synth-03-006.wav-1", ",", "synth-03-007.wav-1", ",", "synth-03-008.wav-1", ",", "synth-03-009.wav-1", ",", "synth-03-010.wav-1", ",", "synth-03-011.wav-1", ",", "synth-03-012.wav-1", ",", "synth-03-013.wav-1", ",", "synth-03-014.wav-1", ",", "synth-03-015.wav-1", ",", "synth-03-016.wav-1", ",", "synth-03-017.wav-1", ",", "synth-03-018.wav-1", ",", "synth-03-019.wav-1", ",", "synth-03-020.wav-1", ",", "synth-03-021.wav-1", ",", "synth-03-022.wav-1", ",", "synth-03-023.wav-1", ",", "synth-03-024.wav-1", ",", "synth-03-025.wav-1", ",", "synth-03-026.wav-1", ",", "synth-03-027.wav-1", ",", "synth-03-028.wav-1", ",", "synth-03-029.wav-1", ",", "synth-03-030.wav-1", ",", "synth-03-031.wav-1", ",", "synth-03-032.wav-1", ",", "synth-03-033.wav-1", ",", "synth-03-034.wav-1", ",", "synth-03-035.wav-1", ",", "synth-03-036.wav-1", ",", "synth-03-037.wav-1", ",", "synth-03-038.wav-1", ",", "synth-03-039.wav-1", ",", "synth-03-040.wav-1", ",", "synth-03-041.wav-1", ",", "synth-03-042.wav-1", ",", "synth-03-043.wav-1", ",", "synth-04-001.wav-1", ",", "synth-04-002.wav-1", ",", "synth-04-003.wav-1", ",", "synth-04-004.wav-1", ",", "synth-04-005.wav-1", ",", "synth-04-006.wav-1", ",", "synth-04-007.wav-1", ",", "synth-04-008.wav-1", ",", "synth-04-009.wav-1", ",", "synth-04-010.wav-1", ",", "synth-04-011.wav-1", ",", "synth-04-012.wav-1", ",", "synth-04-013.wav-1", ",", "synth-04-014.wav-1", ",", "synth-04-015.wav-1", ",", "synth-04-016.wav-1", ",", "synth-04-017.wav-1", ",", "synth-04-018.wav-1", ",", "synth-04-019.wav-1", ",", "synth-04-020.wav-1", ",", "synth-04-021.wav-1", ",", "synth-04-022.wav-1", ",", "synth-04-023.wav-1", ",", "synth-04-024.wav-1", ",", "synth-04-025.wav-1", ",", "synth-04-026.wav-1", ",", "synth-04-027.wav-1", ",", "synth-04-028.wav-1", ",", "synth-04-029.wav-1", ",", "synth-04-030.wav-1", ",", "synth-04-031.wav-1", ",", "synth-04-032.wav-1", ",", "synth-04-033.wav-1", ",", "synth-04-034.wav-1", ",", "synth-04-035.wav-1", ",", "synth-04-036.wav-1", ",", "synth-04-037.wav-1", ",", "synth-04-038.wav-1", ",", "synth-04-039.wav-1", ",", "synth-04-040.wav-1", ",", "synth-04-041.wav-1", ",", "synth-04-042.wav-1", ",", "synth-04-nmf_noise-001.wav-1", ",", "synth-04-nmf_noise-002.wav-1", ",", "synth-04-nmf_noise-003.wav-1", ",", "synth-04-nmf_noise-004.wav-1", ",", "synth-04-nmf_noise-005.wav-1", ",", "synth-04-nmf_noise-006.wav-1", ",", "synth-04-nmf_noise-007.wav-1", ",", "synth-04-nmf_noise-008.wav-1", ",", "synth-04-nmf_noise-009.wav-1", ",", "synth-04-nmf_noise-010.wav-1", ",", "synth-04-nmf_noise-011.wav-1", ",", "synth-04-nmf_noise-012.wav-1", ",", "synth-04-nmf_noise-013.wav-1", ",", "synth-04-nmf_noise-014.wav-1", ",", "synth-04-nmf_noise-015.wav-1", ",", "synth-04-nmf_noise-016.wav-1", ",", "synth-04-nmf_noise-017.wav-1", ",", "synth-04-nmf_noise-018.wav-1", ",", "synth-04-nmf_noise-019.wav-1", ",", "synth-04-nmf_noise-020.wav-1", ",", "synth-04-nmf_noise-021.wav-1", ",", "synth-04-nmf_noise-022.wav-1", ",", "synth-04-nmf_noise-023.wav-1", ",", "synth-04-nmf_noise-024.wav-1", ",", "synth-04-nmf_noise-025.wav-1", ",", "synth-04-nmf_noise-026.wav-1", ",", "synth-04-nmf_noise-027.wav-1", ",", "synth-04-nmf_noise-028.wav-1", ",", "synth-04-nmf_noise-029.wav-1", ",", "synth-04-nmf_noise-030.wav-1", ",", "synth-04-nmf_noise-031.wav-1", ",", "synth-04-nmf_noise-032.wav-1", ",", "synth-04-nmf_noise-033.wav-1", ",", "synth-04-nmf_noise-034.wav-1", ",", "synth-04-nmf_noise-035.wav-1", ",", "synth-04-nmf_noise-036.wav-1", ",", "synth-04-nmf_noise-037.wav-1", ",", "synth-04-nmf_noise-038.wav-1", ",", "synth-04-nmf_noise-039.wav-1", ",", "synth-04-nmf_noise-040.wav-1", ",", "synth-04-nmf_noise-041.wav-1", ",", "synth-04-nmf_noise-042.wav-1", ",", "synth-130213_1131-001.wav-1", ",", "synth-130213_1131-002.wav-1", ",", "synth-130213_1131-003.wav-1", ",", "synth-130213_1131-004.wav-1", ",", "synth-130213_1131-005.wav-1", ",", "synth-130213_1131-006.wav-1", ",", "synth-130213_1131-007.wav-1", ",", "synth-130213_1131-008.wav-1", ",", "synth-130213_1131-009.wav-1", ",", "synth-130213_1131-010.wav-1", ",", "synth-130213_1131-011.wav-1", ",", "synth-130213_1131-012.wav-1", ",", "synth-130213_1131-013.wav-1", ",", "synth-130213_1131-014.wav-1", ",", "synth-130213_1131-015.wav-1", ",", "synth-130213_1131-016.wav-1", ",", "synth-130213_1131-017.wav-1", ",", "synth-130213_1131-018.wav-1", ",", "synth-130213_1131-019.wav-1", ",", "synth-130213_1131-020.wav-1", ",", "synth-130213_1131-021.wav-1", ",", "synth-130213_1131-022.wav-1", ",", "synth-130213_1131-023.wav-1", ",", "synth-130213_1131-024.wav-1", ",", "synth-130213_1131-025.wav-1", ",", "synth-130213_1131-026.wav-1", ",", "synth-130213_1131-027.wav-1", ",", "synth-130213_1131-028.wav-1", ",", "synth-130213_1131-029.wav-1", ",", "synth-130213_1131-030.wav-1", ",", "synth-130213_1131-031.wav-1", ",", "synth-130213_1131-032.wav-1", ",", "synth-130213_1131-033.wav-1", ",", "synth-130213_1131-034.wav-1", ",", "synth-130213_1131-035.wav-1", ",", "synth-130213_1131-036.wav-1", ",", "synth-130213_1131-037.wav-1", ",", "synth-130213_1131-038.wav-1", ",", "synth-130213_1131-039.wav-1", ",", "synth-130213_1131-040.wav-1", ",", "synth-130213_1131-041.wav-1", ",", "synth-130213_1131-042.wav-1", ",", "synth-130213_1131-043.wav-1", ",", "synth-130213_1131-044.wav-1", ",", "synth-130213_1131-045.wav-1", ",", "synth-130213_1131-046.wav-1", ",", "synth-130213_1131-047.wav-1", ",", "synth-130213_1131-048.wav-1", ",", "synth-130213_1131-049.wav-1", ",", "synth-130213_1131-050.wav-1", ",", "synth-130213_1131-051.wav-1", ",", "synth-130213_1131-052.wav-1", ",", "synth-130213_1131-053.wav-1", ",", "synth-130213_1131-054.wav-1", ",", "synth-130213_1131-055.wav-1", ",", "synth-130213_1131-056.wav-1", ",", "synth-130213_1131-057.wav-1", ",", "synth-130213_1131-058.wav-1", ",", "synth-130213_1131-059.wav-1", ",", "synth-130213_1131-060.wav-1", ",", "synth-130213_1131-061.wav-1", ",", "synth-130213_1131-062.wav-1", ",", "synth-130213_1131-063.wav-1", ",", "synth-130213_1131-064.wav-1", ",", "synth-130213_1131-065.wav-1", ",", "synth-130213_1131-066.wav-1", ",", "synth-130213_1131-067.wav-1", ",", "synth-130213_1131-068.wav-1", ",", "synth-130213_1131-069.wav-1", ",", "synth-130213_1131-070.wav-1", ",", "synth-130213_1131-071.wav-1", ",", "synth-130213_1131-072.wav-1", ",", "synth-130213_1131-073.wav-1", ",", "synth-130213_1131-074.wav-1", ",", "synth-130213_1131-075.wav-1", ",", "synth-130213_1131-076.wav-1", ",", "synth-130213_1131-077.wav-1", ",", "synth-130213_1131-078.wav-1", ",", "synth-130213_1131-079.wav-1", ",", "synth-130213_1131-080.wav-1", ",", "synth-130213_1131-081.wav-1", ",", "synth-130213_1131-082.wav-1", ",", "synth-130213_1131-083.wav-1", ",", "synth-130213_1131-084.wav-1", ",", "synth-130213_1131-085.wav-1", ",", "synth-130213_1131-086.wav-1", ",", "synth-130213_1131-087.wav-1", ",", "synth-130213_1131-088.wav-1", ",", "synth-130213_1131-089.wav-1", ",", "synth-130213_1131-090.wav-1", ",", "synth-130213_1131-091.wav-1", ",", "synth-130213_1131-092.wav-1", ",", "synth-130213_1131-093.wav-1", ",", "synth-130213_1131-094.wav-1", ",", "synth-130213_1131-095.wav-1", ",", "synth-130213_1131-096.wav-1", ",", "synth-130213_1131-097.wav-1", ",", "synth-130213_1131-098.wav-1", ",", "synth-130213_1131-099.wav-1", ",", "synth-130213_1131-100.wav-1", ",", "synth-130213_1131-101.wav-1", ",", "synth-130213_1131-102.wav-1", ",", "synth-130213_1131-103.wav-1", ",", "synth-130213_1131-104.wav-1", ",", "synth-130213_1131-105.wav-1", ",", "synth-130213_1131-106.wav-1", ",", "synth-130213_1131-107.wav-1", ",", "synth-130213_1131-108.wav-1", ",", "synth-130213_1131-109.wav-1", ",", "synth-130213_1131-110.wav-1", ",", "synth-130213_1131-111.wav-1", ",", "synth-130213_1131-112.wav-1", ",", "synth-130213_1131-113.wav-1", ",", "synth-130213_1131-114.wav-1", ",", "synth-130213_1131-115.wav-1", ",", "synth-130213_1131-116.wav-1", ",", "synth-130213_1131-117.wav-1", ",", "synth-130213_1131-118.wav-1", ",", "synth-130213_1131-119.wav-1", ",", "synth-130213_1131-120.wav-1", ",", "synth-130213_1131-121.wav-1", ",", "synth-130213_1131-122.wav-1", ",", "synth-130213_1131-123.wav-1", ",", "synth-130213_1131-124.wav-1", ",", "synth-130213_1131-125.wav-1", ",", "synth-130213_1131-126.wav-1", ",", "synth-130213_1131-127.wav-1", ",", "synth-130213_1131-128.wav-1", ",", "synth-130213_1131-129.wav-1", ",", "synth-130213_1131-130.wav-1", ",", "synth-130213_1131-131.wav-1", ",", "synth-130213_1131-132.wav-1", ",", "synth-130213_1131-133.wav-1", ",", "synth-130213_1131-134.wav-1", ",", "synth-130213_1131-135.wav-1", ",", "synth-130213_1131-136.wav-1", ",", "synth-130213_1131-137.wav-1", ",", "synth-130213_1131-138.wav-1", ",", "synth-130213_1131-139.wav-1", ",", "synth-130213_1131-140.wav-1", ",", "synth-130213_1131-141.wav-1", ",", "synth-130213_1131-142.wav-1", ",", "synth-130213_1131-143.wav-1", ",", "synth-130213_1131-144.wav-1", ",", "synth-130213_1131-145.wav-1", ",", "synth-130213_1131-146.wav-1", ",", "synth-130213_1131-147.wav-1", ",", "synth-130213_1131-148.wav-1", ",", "synth-130213_1131-149.wav-1", ",", "synth-130213_1131-150.wav-1", ",", "synth-130213_1131-151.wav-1", ",", "synth-130213_1131-152.wav-1", ",", "synth-130213_1131-153.wav-1", ",", "synth-130213_1131-154.wav-1", ",", "synth-130213_1131-155.wav-1", ",", "synth-130213_1131-156.wav-1", ",", "synth-130213_1131-157.wav-1", ",", "synth-130213_1131-158.wav-1", ",", "synth-130213_1131-159.wav-1", ",", "synth-130213_1131-160.wav-1", ",", "synth-130213_1131-161.wav-1", ",", "synth-130213_1131-162.wav-1", ",", "synth-130213_1131-163.wav-1", ",", "synth-130213_1131-164.wav-1", ",", "synth-130213_1131-165.wav-1", ",", "synth-130213_1131-166.wav-1", ",", "synth-130213_1131-167.wav-1", ",", "synth-130213_1131-168.wav-1", ",", "synth-130213_1131-169.wav-1", ",", "synth-130213_1131-170.wav-1", ",", "synth-130213_1131-171.wav-1", ",", "synth-130213_1131-172.wav-1", ",", "synth-130213_1131-173.wav-1", ",", "synth-130213_1131-174.wav-1", ",", "synth-130213_1131-175.wav-1", ",", "synth-130213_1131-176.wav-1", ",", "synth-130213_1131-177.wav-1", ",", "synth-130213_1131-178.wav-1", ",", "synth-130213_1131-179.wav-1", ",", "synth-130213_1131-180.wav-1", ",", "synth-130213_1131-181.wav-1", ",", "synth-130213_1131-182.wav-1", ",", "synth-130213_1131-183.wav-1", ",", "synth-130213_1131-184.wav-1", ",", "synth-130213_1131-185.wav-1", ",", "synth-130213_1131-186.wav-1", ",", "synth-130213_1131-187.wav-1", ",", "synth-130213_1131-188.wav-1", ",", "synth-130213_1131-189.wav-1", ",", "synth-130213_1131-190.wav-1", ",", "synth-130213_1131-191.wav-1", ",", "synth-130213_1131-192.wav-1", ",", "synth-130213_1131-193.wav-1", ",", "synth-130213_1131-194.wav-1", ",", "synth-130213_1131-195.wav-1", ",", "synth-130213_1131-196.wav-1", ",", "synth-130213_1131-197.wav-1", ",", "synth-130213_1131-198.wav-1", ",", "synth-130213_1131-199.wav-1", ",", "synth-130213_1131-200.wav-1", ",", "synth-130213_1131-201.wav-1", ",", "synth-130213_1131-202.wav-1", ",", "synth-130213_1131-203.wav-1", ",", "synth-130213_1131-204.wav-1", ",", "synth-130213_1131-205.wav-1", ",", "synth-130213_1131-206.wav-1", ",", "synth-130213_1131-207.wav-1", ",", "synth-130213_1131-208.wav-1", ",", "synth-130213_1131-209.wav-1", ",", "synth-130213_1131-210.wav-1", ",", "synth-130213_1131-211.wav-1", ",", "synth-130213_1131-212.wav-1", ",", "synth-130213_1131-213.wav-1", ",", "synth-130213_1131-214.wav-1", ",", "synth-130213_1131-215.wav-1", ",", "synth-130213_1131-216.wav-1", ",", "synth-130213_1131-217.wav-1", ",", "synth-130213_1131-218.wav-1", ",", "synth-130213_1131-219.wav-1", ",", "synth-130213_1131-220.wav-1", ",", "synth-130213_1131-221.wav-1", ",", "synth-130213_1131-222.wav-1", ",", "synth-130213_1131-223.wav-1", ",", "synth-130213_1131-224.wav-1", ",", "synth-130213_1131-225.wav-1", ",", "synth-130213_1131-226.wav-1", ",", "synth-130213_1131-227.wav-1", ",", "synth-130213_1131-228.wav-1", ",", "synth-130213_1131-229.wav-1", ",", "synth-130213_1131-230.wav-1", ",", "synth-130213_1131-231.wav-1", ",", "synth-130213_1131-232.wav-1", ",", "synth-130213_1131-233.wav-1", ",", "synth-130213_1131-234.wav-1", ",", "synth-130213_1131-235.wav-1", ",", "synth-130213_1131-236.wav-1", ",", "synth-130213_1131-237.wav-1", ",", "synth-130213_1131-238.wav-1", ",", "synth-130213_1131-239.wav-1", ",", "synth-130213_1131-240.wav-1", ",", "synth-130213_1131-241.wav-1", ",", "synth-130213_1131-242.wav-1", ",", "synth-130213_1131-243.wav-1", ",", "synth-130213_1131-244.wav-1", ",", "synth-130213_1131-245.wav-1", ",", "synth-130213_1131-246.wav-1", ",", "synth-130213_1131-247.wav-1", ",", "synth-130213_1131-248.wav-1", ",", "synth-130213_1131-249.wav-1", ",", "synth-130213_1131-250.wav-1", ",", "synth-130213_1131-251.wav-1", ",", "synth-130213_1131-252.wav-1", ",", "synth-130213_1131-253.wav-1", ",", "synth-130213_1131-254.wav-1", ",", "synth-130213_1131-255.wav-1", ",", "synth-130213_1131-256.wav-1", ",", "synth-130213_1131-257.wav-1", ",", "synth-130213_1131-258.wav-1", ",", "synth-130213_1131-259.wav-1", ",", "synth-130213_1131-260.wav-1", ",", "synth-130213_1131-261.wav-1", ",", "synth-130213_1131-262.wav-1", ",", "synth-130213_1131-263.wav-1", ",", "synth-130213_1131-264.wav-1", ",", "synth-130213_1131-265.wav-1", ",", "synth-130213_1131-266.wav-1", ",", "synth-130213_1131-267.wav-1", ",", "synth-130213_1131-268.wav-1", ",", "synth-130213_1131-269.wav-1", ",", "synth-130213_1131-270.wav-1", ",", "synth-130213_1131-271.wav-1", ",", "synth-130213_1131-272.wav-1", ",", "synth-130213_1131-273.wav-1", ",", "synth-130213_1131-274.wav-1", ",", "synth-130213_1131-275.wav-1", ",", "synth-130213_1131-276.wav-1", ",", "synth-130213_1131-277.wav-1", ",", "synth-130213_1131-278.wav-1", ",", "synth-130213_1131-279.wav-1", ",", "synth-130213_1131-280.wav-1", ",", "synth-130213_1131-281.wav-1", ",", "synth-130213_1131-282.wav-1", ",", "synth-130213_1131-283.wav-1", ",", "synth-130213_1131-284.wav-1", ",", "synth-130213_1131-285.wav-1", ",", "synth-130213_1131-286.wav-1", ",", "synth-130213_1131-287.wav-1", ",", "synth-130213_1131-288.wav-1", ",", "synth-130213_1131-289.wav-1", ",", "synth-130213_1131-290.wav-1", ",", "synth-130213_1131-291.wav-1", ",", "synth-130213_1131-292.wav-1", ",", "synth-130213_1131-293.wav-1", ",", "synth-130213_1131-294.wav-1", ",", "synth-130213_1131-295.wav-1" ],
 					"maxclass" : "umenu",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1111.0, 244.810669, 193.0, 22.0 ],
+					"patching_rect" : [ 993.0, 266.0, 193.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1143,7 +1188,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 872.085693, 442.810669, 127.0, 22.0 ],
+					"patching_rect" : [ 754.085693, 464.0, 127.0, 22.0 ],
 					"style" : "",
 					"text" : "buffer~ thesource 500"
 				}
@@ -1155,7 +1200,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "clear", "" ],
+					"outlettype" : [ "", "clear" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -1202,7 +1247,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 459.0, 943.0, 30.0, 30.0 ],
-									"presentation_rect" : [ 424.0, 943.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -1215,7 +1259,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 429.0, 813.0, 87.0, 22.0 ],
-									"presentation_rect" : [ 429.0, 815.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "route knearest"
 								}
@@ -1229,7 +1272,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 429.0, 907.854309, 98.0, 22.0 ],
-									"presentation_rect" : [ 449.0, 909.854309, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "prepend append"
 								}
@@ -1243,7 +1285,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 429.0, 881.0, 27.0, 22.0 ],
-									"presentation_rect" : [ 449.0, 883.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "iter"
 								}
@@ -1270,7 +1311,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 372.0, 762.0, 215.0, 22.0 ],
-									"presentation_rect" : [ 372.0, 764.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fit thedataset2, knearest theflattarget 5"
 								}
@@ -1284,7 +1324,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 372.0, 789.0, 76.0, 22.0 ],
-									"presentation_rect" : [ 372.0, 791.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "fluid.kdtree~"
 								}
@@ -3092,7 +3131,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1010.0, 482.262146, 108.0, 22.0 ],
+					"patching_rect" : [ 892.0, 503.451477, 108.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3128,7 +3167,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 318.247559, 1024.0, 69.0, 22.0 ],
 					"style" : "",
-					"text" : "cols 16"
+					"text" : "cols 52"
 				}
 
 			}
@@ -3180,7 +3219,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 482.830078, 1024.0, 69.0, 22.0 ],
 					"style" : "",
-					"text" : "cols 48"
+					"text" : "cols 52"
 				}
 
 			}
@@ -3249,7 +3288,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 42.296112, 760.310669, 20.0, 20.0 ],
+					"patching_rect" : [ 20.296112, 776.310669, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
 					"text" : "5",
@@ -3270,7 +3309,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 51.796112, 584.310669, 20.0, 20.0 ],
+					"patching_rect" : [ 29.796112, 602.310669, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
 					"text" : "4",
@@ -3642,20 +3681,6 @@
 			}
 , 			{
 				"box" : 				{
-					"bubble" : 1,
-					"id" : "obj-22",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 178.747574, 216.359222, 96.0, 24.0 ],
-					"style" : "",
-					"text" : "Load a folder",
-					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-21",
 					"maxclass" : "message",
 					"numinlets" : 2,
@@ -3789,9 +3814,9 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 34.0, -1024.0, 1056.0, 201.0 ],
+						"rect" : [ 34.0, -1024.0, 1190.0, 184.0 ],
 						"bglocked" : 0,
-						"openinpresentation" : 0,
+						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
@@ -3817,6 +3842,32 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 723.0, 119.0, 85.0, 22.0 ],
+									"style" : "",
+									"text" : "loadmess 256"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 612.0, 119.0, 92.0, 22.0 ],
+									"style" : "",
+									"text" : "loadmess 1024"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-38",
 									"maxclass" : "newobj",
@@ -3952,7 +4003,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 707.0, 551.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "48"
+									"text" : "52"
 								}
 
 							}
@@ -4113,6 +4164,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 684.0, 178.0, 52.0, 20.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 1101.0, 82.0, 52.0, 20.0 ],
 									"style" : "",
 									"text" : "hopsize"
 								}
@@ -4125,6 +4178,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 684.0, 154.0, 72.0, 20.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 1101.0, 58.0, 72.0, 20.0 ],
 									"style" : "",
 									"text" : "windowsize"
 								}
@@ -4139,6 +4194,8 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 626.0, 178.0, 50.0, 22.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 1043.0, 82.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -4152,6 +4209,8 @@
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 626.0, 152.0, 50.0, 22.0 ],
+									"presentation" : 1,
+									"presentation_rect" : [ 1043.0, 56.0, 50.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -4409,6 +4468,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-50", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-60", 4 ],
 									"source" : [ "obj-18", 4 ]
 								}
@@ -4496,6 +4562,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
 									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-52", 0 ],
+									"source" : [ "obj-22", 0 ]
 								}
 
 							}
@@ -5125,7 +5198,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 1082.5, 610.0, 1448.0, 610.0, 1448.0, 269.0, 1207.5, 269.0 ],
+					"midpoints" : [ 964.5, 631.189331, 1330.0, 631.189331, 1330.0, 290.189331, 1089.5, 290.189331 ],
 					"source" : [ "obj-111", 1 ]
 				}
 
@@ -5474,6 +5547,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-59", 0 ],
+					"source" : [ "obj-53", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-53", 0 ],
+					"source" : [ "obj-55", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-147", 0 ],
 					"source" : [ "obj-60", 0 ]
 				}
@@ -5515,16 +5602,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-75", 0 ],
-					"order" : 0,
-					"source" : [ "obj-74", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-84", 0 ],
-					"order" : 1,
 					"source" : [ "obj-74", 0 ]
 				}
 
@@ -5662,7 +5740,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-13", 0 ],
-					"midpoints" : [ 1286.5, 599.0, 1440.0, 599.0, 1440.0, 274.0, 1207.5, 274.0 ],
+					"midpoints" : [ 1168.5, 620.189331, 1322.0, 620.189331, 1322.0, 295.189331, 1089.5, 295.189331 ],
 					"source" : [ "obj-99", 1 ]
 				}
 
