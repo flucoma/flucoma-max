@@ -1,17 +1,17 @@
+if (jsarguments.length != 7) {
+  error("metacompose needs the name of the statsobject and the name of the 3 temporary destination stats buffer");
+}
+// links to the bufstats and the temp stats buffer
+var bufcp = patcher.getnamed(jsarguments[1]);
+var bufst = patcher.getnamed(jsarguments[2]);
+var tempbuf = new Buffer(jsarguments[3]);
+var statsbuf1 = new Buffer(jsarguments[4]);
+var statsbuf2 = new Buffer(jsarguments[5]);
+var statsbuf3 = new Buffer(jsarguments[6]);
 
 // this scales the Amplitude Pitch Timbre descriptors conditionally to an hypothesised comparative range
 function anything()
 {
-  if (jsarguments.length != 5) {
-    error("metacompose needs the name of the statsobject and the name of the temporary destination stats buffer");
-    return;
-  }
-  // links to the bufstats and the temp stats buffer
-  var bufcp = patcher.getnamed(jsarguments[1]);
-  var bufst = patcher.getnamed(jsarguments[2]);
-  var tempbuf = new Buffer(jsarguments[3]);
-  var statsbuf = new Buffer(jsarguments[4]);
-  
   //grab settings
   var args = arrayfromargs(messagename,arguments);
   
@@ -90,25 +90,61 @@ function anything()
   bufst.low(args[27]);
   bufst.high(args[28]);
   bufst.numderivs(args[29]);
-  bufst.bang();
+  var numStatsFrames = 0;
+  if (args[31] != 0) {
+    bufst.stats(jsarguments[4]);
+    bufst.startframe(args[30]);
+    bufst.numframes(args[31]);
+    bufst.bang();
+    numStatsFrames += 1;
+  }
+  if (args[33] != 0) {
+    bufst.stats(jsarguments[5]);
+    bufst.startframe(args[32]);
+    bufst.numframes(args[33]);
+    bufst.bang();
+    numStatsFrames += 1;
+  }
+  if (args[35] != 0) {
+    bufst.stats(jsarguments[6]);
+    bufst.startframe(args[34]);
+    bufst.numframes(args[35]);
+    bufst.bang();
+    numStatsFrames += 1;
+  }
+  
+  if (numStatsFrames == 0) {
+    error("metacompose: no valid statistics window define\n");
+    return;
+  }
   
   // resize the output buffer
   //pickup which stats to copy
   var whichstats = args.slice(20,27);
   var outbuf = new Buffer(args[19]);
-  outbuf.send("sizeinsamps", (chancount * (args[29] + 1) * whichstats.reduce(mySum)));
-
+  outbuf.send("sizeinsamps", (chancount * (args[29] + 1) * whichstats.reduce(mySum) * numStatsFrames));
+  
   framecount = 0;
   //for each channel, which is each descriptors
-  for (var whichchannel = 1; whichchannel <= statsbuf.channelcount(); whichchannel++) {
+  for (var whichchannel = 1; whichchannel <= (7 * (args[29] + 1)); whichchannel++) {
     // for each stats
     for (var j = 0; j < 7; j++) {
       // if that stat is to be taken
       if (whichstats[j]) {
         //for each derivative
         for (i = 0; i <= args[29]; i++) {
-          outbuf.poke(1, framecount, statsbuf.peek(whichchannel,(i*7) + j,1));
-          framecount++;
+          if (args[31]!= 0) {
+            outbuf.poke(1, framecount, statsbuf1.peek(whichchannel,(i*7) + j,1));
+            framecount++;
+          }
+          if (args[33]!= 0) {
+            outbuf.poke(1, framecount, statsbuf2.peek(whichchannel,(i*7) + j,1));
+            framecount++;
+          }
+          if (args[35]!= 0) {
+            outbuf.poke(1, framecount, statsbuf3.peek(whichchannel,(i*7) + j,1));
+            framecount++;
+          }
         }
       }
     }
