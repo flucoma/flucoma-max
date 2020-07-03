@@ -168,6 +168,7 @@
 			}
 , 			{
 				"box" : 				{
+					"fontsize" : 9.5,
 					"id" : "obj-29",
 					"maxclass" : "live.text",
 					"numinlets" : 1,
@@ -570,8 +571,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-5" : [ "live.text", "live.text", 0 ],
-			"obj-29" : [ "live.text[1]", "live.text", 0 ]
+			"obj-29" : [ "live.text[1]", "live.text", 0 ],
+			"obj-5" : [ "live.text", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
