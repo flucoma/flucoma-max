@@ -15,6 +15,7 @@
 #include <clients/nrt/NMFCrossClient.hpp>
 #include <clients/rt/NMFMorphClient.hpp>
 #include <clients/nrt/NNDSVDClient.hpp>
+#include <clients/nrt/MLPRegressorClient.hpp>
 #include "FluidMaxWrapper.hpp" //nb: this include is order-sensitive because of macro name clashes in Eigen and C74
 
 
@@ -32,4 +33,5 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
   makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
   makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
+  makeMaxWrapper<NRTThreadedMLPRegressorClient>("fluid.mlpregressor~");
 }
