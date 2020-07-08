@@ -27,7 +27,7 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedLabelSetClient>("fluid.labelset~");
   makeMaxWrapper<NRTThreadedKDTreeClient>("fluid.kdtree~");
   makeMaxWrapper<RTKMeansClient>("fluid.kmeans~");
-  makeMaxWrapper<NRTThreadedKNNClassifierClient>("fluid.knnclassifier~");
+  makeMaxWrapper<RTKNNClassifierClient>("fluid.knnclassifier~");
   makeMaxWrapper<NRTThreadedKNNRegressorClient>("fluid.knnregressor~");
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
