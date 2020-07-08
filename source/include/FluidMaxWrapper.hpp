@@ -625,6 +625,30 @@ bool checkResult(Result& res)
       return MAX_ERR_NONE;
     }
   };
+  
+  template<size_t N>
+  struct Setter<LongArrayT,N>
+  {
+    
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
+                         long ac, t_atom* av)
+    {
+      while (x->mInPerform) {} // spin-wait
+
+      x->messages().reset();
+      typename LongArrayT::type& a = x->params().template get<N>();
+      
+      a.resize(ac);
+      
+      using T = typename LongArrayT::type::type;
+      
+      for (index i = 0; i < static_cast<index>(ac); i++)
+        a[i] = ParamAtomConverter::fromAtom((t_object*) x, av + i, T{});
+      object_attr_touch((t_object*) x, gensym("latency"));
+      return MAX_ERR_NONE;
+    }
+  
+  };
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -651,6 +675,31 @@ bool checkResult(Result& res)
       return MAX_ERR_NONE;
     }
   };
+  
+  template <size_t N>
+  struct Getter<LongArrayT, N>
+  {
+    
+    static t_max_err get(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
+                         long* ac, t_atom** av)
+    {
+      
+      typename LongArrayT::type& a = x->params().template get<N>();
+      index argSize = a.size();
+
+      char alloc;
+      atom_alloc_array(argSize, ac, av, &alloc);
+
+      using T = typename LongArrayT::type::type;
+
+      for (index i = 0; i < argSize; i++)
+        ParamAtomConverter::toAtom(*av + i, static_cast<T>(a[i]));
+
+      return MAX_ERR_NONE;
+    }
+  
+  };
+  
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -956,6 +1005,7 @@ private:
     using IndexList =
         typename Client::MessageSetType::template MessageDescriptorAt<
             N>::IndexList;
+    x->client().setParams(x->params()); 
     invokeMessageImpl<N>(x, s, ac, av, IndexList());
   }
 
@@ -1113,6 +1163,7 @@ private:
   static t_symbol* maxAttrType(FloatPairsArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(FFTParamsT) { return gensym("atom"); }
   static t_symbol* maxAttrType(StringT) { return USESYM(symbol); }
+  static t_symbol* maxAttrType(LongArrayT) { return gensym("atom"); }
 
   template <typename T>
   static std::enable_if_t<IsSharedClient<typename T::type>::value, t_symbol*>
