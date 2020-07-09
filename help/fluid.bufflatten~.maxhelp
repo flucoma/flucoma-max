@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 601.0, 552.0 ],
+		"rect" : [ 1105.0, 176.0, 640.0, 589.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,14 +40,21 @@
 		"showontab" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-1",
+					"fontname" : "Arial",
+					"fontsize" : 13.0,
+					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 335.0, 99.0, 87.0, 22.0 ],
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 133.0, 152.0, 177.0, 23.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "helpstarter",
+						"parameter_enable" : 0
+					}
+,
 					"style" : "",
-					"text" : "fluid.buf.flatten"
+					"text" : "js helpstarter fluid.bufflatten~"
 				}
 
 			}
@@ -67,7 +74,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 601.0, 526.0 ],
+						"rect" : [ 1105.0, 202.0, 640.0, 563.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -102,7 +109,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 400.0, 393.0, 166.0, 50.0 ],
+									"patching_rect" : [ 400.0, 435.0, 166.0, 50.0 ],
 									"style" : "",
 									"text" : "output will be 1 channel with (in channels * in frames) samples",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -115,7 +122,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 233.0, 196.5, 313.0, 21.0 ],
+									"patching_rect" : [ 233.0, 238.5, 313.0, 21.0 ],
 									"style" : "",
 									"text" : "input ( here 3 frames, 3 channels) ",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -129,7 +136,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 292.0, 312.0, 313.0, 50.0 ],
+									"patching_rect" : [ 292.0, 354.0, 313.0, 50.0 ],
 									"style" : "",
 									"text" : "Set the source and destination attributes with buffers~ and bang to process. Outputs bang when done",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -143,22 +150,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 239.0, 91.0, 343.0, 50.0 ],
+									"patching_rect" : [ 239.0, 133.0, 343.0, 50.0 ],
 									"style" : "",
 									"text" : "This is frequently useful when you have multidimensional / multichannel data (e.g. MFCCs) that you wish to flatten into a single data point for, e.g, machine learning. ",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-57",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 62.0, 393.0, 21.0 ],
-									"style" : "",
-									"text" : "produce a flat buffer of n-dimensional observations laid end to end ",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -169,7 +163,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 123.0, 130.5, 61.0, 21.0 ],
+									"patching_rect" : [ 123.0, 172.5, 61.0, 21.0 ],
 									"style" : "",
 									"text" : "samples",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -182,7 +176,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 27.0, 206.0, 61.0, 21.0 ],
+									"patching_rect" : [ 27.0, 248.0, 61.0, 21.0 ],
 									"style" : "",
 									"text" : "channels",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -351,7 +345,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 130.5, 104.0, 23.0 ],
+									"patching_rect" : [ 10.0, 172.5, 104.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -376,7 +370,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 190.045456, 127.5, 31.5, 27.0 ],
+									"patching_rect" : [ 190.045456, 169.5, 31.5, 27.0 ],
 									"uparrow" : 0
 								}
 
@@ -391,7 +385,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 41.75, 231.0, 31.5, 27.0 ],
+									"patching_rect" : [ 41.75, 273.0, 31.5, 27.0 ],
 									"rightarrow" : 0,
 									"uparrow" : 0
 								}
@@ -540,7 +534,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 362.0, 78.0, 23.0 ],
+									"patching_rect" : [ 10.0, 404.0, 78.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -717,7 +711,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 95.0, 290.0, 63.0, 23.0 ],
+									"patching_rect" : [ 95.0, 332.0, 63.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -743,7 +737,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "list" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 393.0, 385.0, 48.0 ],
+									"patching_rect" : [ 10.0, 435.0, 385.0, 48.0 ],
 									"range" : 9,
 									"rows" : 1,
 									"style" : ""
@@ -757,7 +751,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 10.0, 91.0, 62.0, 23.0 ],
+									"patching_rect" : [ 10.0, 133.0, 62.0, 23.0 ],
 									"style" : "",
 									"text" : "loadbang"
 								}
@@ -776,7 +770,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "list" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 95.0, 156.5, 132.545455, 130.0 ],
+									"patching_rect" : [ 95.0, 198.5, 132.545456, 130.0 ],
 									"range" : 9,
 									"rows" : 3,
 									"style" : ""
@@ -790,7 +784,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 16.0, 480.0, 159.0, 23.0 ],
+									"patching_rect" : [ 16.0, 522.0, 159.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ buf.flatten.help.dst"
 								}
@@ -803,7 +797,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 16.0, 452.5, 236.0, 23.0 ],
+									"patching_rect" : [ 16.0, 494.5, 236.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ buf.flatten.help.src @samps 3 3"
 								}
@@ -815,11 +809,11 @@
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 10.0, 318.0, 277.0, 38.0 ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 10.0, 360.0, 266.0, 38.0 ],
 									"style" : "",
-									"text" : "fluid.buf.flatten @source buf.flatten.help.src @destination buf.flatten.help.dst"
+									"text" : "fluid.bufflatten~ @source buf.flatten.help.src @destination buf.flatten.help.dst"
 								}
 
 							}
@@ -829,13 +823,13 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.buf.flatten" ],
+									"jsarguments" : [ "fluid.bufflatten~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 618.0, 73.0 ]
+									"patching_rect" : [ 10.0, 10.0, 556.0, 109.0 ]
 								}
 
 							}
@@ -907,13 +901,76 @@
 					"filename" : "helpname.js",
 					"id" : "obj-5",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.buf.flatten" ],
+					"jsarguments" : [ "fluid.bufflatten~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 328.568024, 57.599854 ]
+					"patching_rect" : [ 10.0, 10.0, 328.596802, 57.567627 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patcher" : 					{
+						"fileversion" : 1,
+						"appversion" : 						{
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
+							"architecture" : "x64",
+							"modernui" : 1
+						}
+,
+						"rect" : [ 0.0, 26.0, 640.0, 563.0 ],
+						"bglocked" : 0,
+						"openinpresentation" : 0,
+						"default_fontsize" : 12.0,
+						"default_fontface" : 0,
+						"default_fontname" : "Arial",
+						"gridonopen" : 1,
+						"gridsize" : [ 15.0, 15.0 ],
+						"gridsnaponopen" : 1,
+						"objectsnaponopen" : 1,
+						"statusbarvisible" : 2,
+						"toolbarvisible" : 1,
+						"lefttoolbarpinned" : 0,
+						"toptoolbarpinned" : 0,
+						"righttoolbarpinned" : 0,
+						"bottomtoolbarpinned" : 0,
+						"toolbars_unpinned_last_save" : 0,
+						"tallnewobj" : 0,
+						"boxanimatetime" : 200,
+						"enablehscroll" : 1,
+						"enablevscroll" : 1,
+						"devicewidth" : 0.0,
+						"description" : "",
+						"digest" : "",
+						"tags" : "",
+						"style" : "",
+						"subpatcher_template" : "",
+						"showontab" : 1,
+						"boxes" : [  ],
+						"lines" : [  ]
+					}
+,
+					"patching_rect" : [ 205.0, 205.0, 50.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"description" : "",
+						"digest" : "",
+						"globalpatchername" : "",
+						"style" : "",
+						"tags" : ""
+					}
+,
+					"style" : "",
+					"text" : "p ?",
+					"varname" : "q_tab"
 				}
 
 			}
@@ -932,20 +989,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.buf.flatten.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufresize.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "fluid.buf2list.maxpat",
 				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
 				"patcherrelativepath" : "../patchers",
@@ -953,11 +996,66 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.bufcompose~.mxo",
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.bufflatten~.mxo",
 				"type" : "iLaX"
 			}
  ],
-		"autosave" : 0
+		"autosave" : 0,
+		"styles" : [ 			{
+				"name" : "max6box",
+				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6inlet",
+				"default" : 				{
+					"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6message",
+				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgfillcolor" : 					{
+						"type" : "gradient",
+						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+						"angle" : 270.0,
+						"proportion" : 0.39,
+						"autogradient" : 0
+					}
+
+				}
+,
+				"parentstyle" : "max6box",
+				"multi" : 0
+			}
+, 			{
+				"name" : "max6outlet",
+				"default" : 				{
+					"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+				}
+,
+				"parentstyle" : "",
+				"multi" : 0
+			}
+ ]
 	}
 
 }

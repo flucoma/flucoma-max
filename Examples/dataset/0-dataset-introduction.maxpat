@@ -3245,7 +3245,7 @@
 													"outlettype" : [ "bang" ],
 													"patching_rect" : [ 53.0, 349.0, 342.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.buf.flatten @source #0_tmpstats @destination #0_tmpflat"
+													"text" : "fluid.bufflatten~ @source #0_tmpstats @destination #0_tmpflat"
 												}
 
 											}
@@ -4054,7 +4054,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.buf.flatten.maxpat",
+				"name" : "fluid.bufflatten~",
 				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
 				"patcherrelativepath" : "../../patchers",
 				"type" : "JSON",

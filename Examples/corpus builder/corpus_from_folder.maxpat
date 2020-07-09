@@ -573,7 +573,7 @@
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 53.0, 446.0, 221.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.buf.flatten @source #0_tmpstats"
+									"text" : "fluid.bufflatten~ @source #0_tmpstats"
 								}
 
 							}
