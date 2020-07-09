@@ -382,6 +382,31 @@ class FluidMaxWrapper
   friend impl::RealTime<FluidMaxWrapper<Client>>;
   friend impl::NonRealTime<FluidMaxWrapper<Client>>;
 
+  template<typename T>
+  struct IsModel
+  {
+    using type = std::false_type;
+  };
+
+  template<typename T>
+  struct IsModel<NRTThreadingAdaptor<ClientWrapper<T>>>
+  {
+    using type = typename ClientWrapper<T>::isModelObject;
+  };
+
+
+  template<typename T>
+  struct IsModel<ClientWrapper<T>>
+  {
+    using type = typename ClientWrapper<T>::isModelObject;
+  };
+
+
+  template<typename T>
+  using IsModel_t = typename IsModel<T>::type;
+  
+
+
   template <size_t N>
   static constexpr auto paramDescriptor()
   {
@@ -777,10 +802,14 @@ public:
 
     object_obex_store(this, gensym("dumpout"),
                       (t_object*) outlet_new(this, nullptr));
-
-    if (isNonRealTime<Client>::value)
+    
+    if (isNonRealTime<Client>::value || (IsModel_t<Client>::value && Client::isRealTime::value))
     {
       mProgressOutlet = floatout(this);
+    }
+    
+    if (isNonRealTime<Client>::value)
+    {
       mNRTDoneOutlet = bangout(this);
     }
 
