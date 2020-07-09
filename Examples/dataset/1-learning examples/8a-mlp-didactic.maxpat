@@ -38,6 +38,20 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-38",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 335.5, 877.0, 150.0, 33.0 ],
+					"presentation_rect" : [ 335.0, 877.0, 0.0, 0.0 ],
+					"style" : "",
+					"text" : "https://youtu.be/188B6k_F9jU"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 					"fontname" : "Arial Bold",
 					"hint" : "",
@@ -191,7 +205,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 272.0, 880.0, 150.0, 60.0 ],
+					"patching_rect" : [ 159.0, 881.0, 150.0, 60.0 ],
 					"style" : "",
 					"text" : "https://medium.com/@jayeshbahire/the-xor-problem-in-neural-networks-50006411840b"
 				}
