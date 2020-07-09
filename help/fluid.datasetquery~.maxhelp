@@ -108,7 +108,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 372.0, 473.5, 150.0, 36.0 ],
-									"presentation_rect" : [ 373.0, 471.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "limits the number of returned elements"
 								}
@@ -135,7 +134,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 338.5, 413.0, 32.0, 23.0 ],
-									"presentation_rect" : [ 338.5, 416.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "and"
 								}
@@ -149,7 +147,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 338.5, 438.0, 29.5, 23.0 ],
-									"presentation_rect" : [ 339.5, 437.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "or"
 								}
@@ -239,7 +236,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 272.0, 164.0, 444.0, 65.0 ],
+									"patching_rect" : [ 272.0, 164.0, 448.0, 65.0 ],
 									"style" : "",
 									"text" : "we then define a simple query, first by defining a filter: [filter COL COM VAL]\nCOL: the column from the source we will compute\nCOM: the comparator we use\nVAL: the value it compares against"
 								}
@@ -255,18 +252,6 @@
 									"patching_rect" : [ 37.0, 176.0, 182.0, 94.0 ],
 									"style" : "",
 									"text" : "this is a placeholder. The interface is described and demonstrated in the file\nExamples/Dataset/1-learning examples/7-making-subsets-of-datasets.maxpat"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 90.0, 415.0, 21.0 ],
-									"style" : "",
-									"text" : "makes sub dataset via a query syntax"
 								}
 
 							}
@@ -295,7 +280,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 410.0, 78.0 ]
+									"patching_rect" : [ 10.0, 10.0, 545.0, 121.0 ]
 								}
 
 							}
@@ -311,8 +296,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 167.5, 454.5, 100.0, 24.0 ],
-									"presentation_rect" : [ 302.0, 348.0, 100.0, 24.0 ]
+									"patching_rect" : [ 167.0, 454.0, 100.0, 24.0 ],
+									"presentation_rect" : [ 167.0, 454.0, 100.0, 24.0 ]
 								}
 
 							}
@@ -321,9 +306,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -341,6 +326,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -350,8 +336,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",

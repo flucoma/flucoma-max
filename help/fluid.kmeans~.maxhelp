@@ -206,19 +206,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 63.0, 437.0, 21.0 ],
-									"style" : "",
-									"text" : "kmeans clustering on a fluid.dataset",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.55 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-12",
 									"linecount" : 2,
@@ -315,7 +302,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"outlettype" : [ "list", "float", "" ],
 									"patching_rect" : [ 38.181818, 438.210854, 89.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.kmeans~"
@@ -483,7 +470,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 626.0, 385.0, 150.0, 50.0 ],
+									"patching_rect" : [ 625.0, 394.0, 150.0, 50.0 ],
 									"style" : "",
 									"text" : "sklearn python framework describes k means here:",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.48 ]
@@ -498,7 +485,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 626.0, 516.210854, 139.0, 38.0 ],
+									"patching_rect" : [ 625.0, 525.210876, 139.0, 38.0 ],
 									"style" : "",
 									"text" : ";\rmax launchbrowser $1"
 								}
@@ -523,7 +510,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 626.0, 438.440682, 259.0, 67.0 ],
+									"patching_rect" : [ 625.0, 447.440674, 259.0, 67.0 ],
 									"style" : "",
 									"text" : "https://scikit-learn.org/stable/tutorial/statistical_inference/unsupervised_learning.html#clustering-grouping-observations-together",
 									"textcolor" : [ 0.254902, 0.505882, 0.682353, 1.0 ]
@@ -541,7 +528,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 33.848485, 399.545455, 326.181811, 68.606053 ],
+									"patching_rect" : [ 32.848484, 408.545441, 326.181824, 68.606056 ],
 									"proportion" : 0.5,
 									"style" : ""
 								}
@@ -899,7 +886,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 403.181818, 235.212125, 95.0, 23.0 ],
+									"patching_rect" : [ 402.181824, 244.212128, 95.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -921,7 +908,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 385.681829, 530.030293, 214.0, 23.0 ],
+									"patching_rect" : [ 384.681824, 539.030273, 214.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.labelset~ kmeans.labelset.help"
 								}
@@ -934,7 +921,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 385.681829, 498.909077, 221.0, 23.0 ],
+									"patching_rect" : [ 384.681824, 507.909088, 221.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.dataset~ kmeans.dataset.help"
 								}
@@ -1178,7 +1165,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 54.181818, 373.454545, 181.0, 23.0 ],
+									"patching_rect" : [ 53.181816, 382.454559, 181.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1200,7 +1187,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 567.2803, 255.212124, 214.0, 127.0 ],
+									"patching_rect" : [ 566.280273, 264.212128, 214.0, 127.0 ],
 									"style" : "",
 									"text" : "look up the cluster for each point, and re-plot, mapping colours to cluster numbers. We expect (hope) that the clusters match the quadrants of the plot (but k means is far from perfect: you might need more than one go)",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.73 ]
@@ -1215,7 +1202,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 96.181818, 116.454545, 437.0, 40.0 ],
+									"patching_rect" : [ 95.181816, 125.454544, 437.0, 40.0 ],
 									"style" : "",
 									"text" : "make some clusters of random points, call fitpredict to train kmeans and write clusters into a fluid.labelset",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.73 ]
@@ -1842,7 +1829,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 403.181818, 264.545458, 156.0, 158.0 ],
+									"patching_rect" : [ 402.181824, 273.545471, 156.0, 158.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1854,7 +1841,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 164.090909, 519.511309, 23.0, 23.0 ],
+									"patching_rect" : [ 163.090912, 528.511292, 23.0, 23.0 ],
 									"style" : "",
 									"text" : "t b"
 								}
@@ -1867,7 +1854,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 38.181818, 153.454545, 35.0, 23.0 ],
+									"patching_rect" : [ 37.181816, 162.454544, 35.0, 23.0 ],
 									"style" : "",
 									"text" : "t b b"
 								}
@@ -1880,7 +1867,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "bang", "clear", "clear", "clear" ],
-									"patching_rect" : [ 54.181818, 181.363635, 505.0, 23.0 ],
+									"patching_rect" : [ 53.181816, 190.363632, 505.0, 23.0 ],
 									"style" : "",
 									"text" : "t b clear clear clear"
 								}
@@ -1893,7 +1880,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 38.181818, 123.454545, 24.0, 24.0 ],
+									"patching_rect" : [ 37.181816, 132.454544, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -3066,7 +3053,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 54.181818, 208.454545, 156.0, 158.0 ],
+									"patching_rect" : [ 53.181816, 217.454544, 156.0, 158.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -3084,7 +3071,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 567.2803, 229.75758, 20.0, 20.0 ],
+									"patching_rect" : [ 566.280273, 238.757584, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
 									"text" : "2",
@@ -3105,24 +3092,11 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 70.681818, 125.454545, 20.0, 20.0 ],
+									"patching_rect" : [ 69.681816, 134.454544, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 63.0, 437.0, 21.0 ],
-									"style" : "",
-									"text" : "kmeans clustering on a fluid.dataset",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.55 ]
 								}
 
 							}
@@ -3133,7 +3107,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 33.848484, 516.210876, 125.0, 38.0 ],
+									"patching_rect" : [ 32.848484, 525.210876, 125.0, 38.0 ],
 									"style" : "",
 									"text" : "print \"training done\" @popup 1"
 								}
@@ -3146,7 +3120,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 108.181818, 471.770172, 91.0, 23.0 ],
+									"patching_rect" : [ 107.181816, 480.770172, 91.0, 23.0 ],
 									"style" : "",
 									"text" : "route fitpredict"
 								}
@@ -3159,7 +3133,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 38.181818, 407.545453, 318.0, 23.0 ],
+									"patching_rect" : [ 37.181816, 416.545441, 318.0, 23.0 ],
 									"style" : "",
 									"text" : "fitpredict kmeans.dataset.help kmeans.labelset.help 4"
 								}
@@ -3172,7 +3146,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 385.681829, 466.909077, 184.0, 23.0 ],
+									"patching_rect" : [ 384.681824, 475.909088, 184.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ kmeans.datapoint.help"
 								}
@@ -3184,8 +3158,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 38.181818, 438.210854, 89.0, 23.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 37.181816, 447.210846, 89.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.kmeans~"
 								}
@@ -3203,7 +3177,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 19.0, 10.0, 615.0, 74.0 ]
+									"patching_rect" : [ 19.0, 10.0, 766.0, 113.454544 ]
 								}
 
 							}
@@ -3211,7 +3185,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"midpoints" : [ 117.681818, 512.095286, 43.348484, 512.095286 ],
+									"midpoints" : [ 116.681816, 521.095286, 42.348484, 521.095286 ],
 									"order" : 1,
 									"source" : [ "obj-11", 0 ]
 								}
@@ -3220,7 +3194,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-44", 0 ],
-									"midpoints" : [ 117.681818, 508.042899, 173.590909, 508.042899 ],
+									"midpoints" : [ 116.681816, 517.042899, 172.590912, 517.042899 ],
 									"order" : 0,
 									"source" : [ "obj-11", 0 ]
 								}
@@ -3264,7 +3238,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-61", 1 ],
-									"midpoints" : [ 387.681818, 219.28788, 488.681818, 219.28788 ],
+									"midpoints" : [ 386.681816, 228.28788, 487.681824, 228.28788 ],
 									"source" : [ "obj-36", 2 ]
 								}
 
@@ -3286,7 +3260,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-61", 0 ],
-									"midpoints" : [ 173.590909, 552.511309, 363.136361, 552.511309, 363.136361, 224.212125, 412.681818, 224.212125 ],
+									"midpoints" : [ 172.590912, 561.511309, 362.136361, 561.511309, 362.136361, 233.212125, 411.681824, 233.212125 ],
 									"source" : [ "obj-44", 0 ]
 								}
 

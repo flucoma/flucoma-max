@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 210.0, 80.0, 965.0, 595.0 ],
+		"rect" : [ 210.0, 80.0, 904.0, 595.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,210 +39,6 @@
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-3",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"patcher" : 					{
-						"fileversion" : 1,
-						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 5,
-							"architecture" : "x64",
-							"modernui" : 1
-						}
-,
-						"rect" : [ 210.0, 106.0, 965.0, 569.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
-						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"showontab" : 1,
-						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 89.0, 328.0, 20.0 ],
-									"style" : "",
-									"text" : "Cross Synthesis with Nonnegative Matrix Factorization"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-19",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.bufnmfcross~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 416.0, 75.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-9",
-									"linecount" : 9,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 99.0, 344.0, 741.0, 127.0 ],
-									"style" : "",
-									"text" : "A Buffer whose content will supply the spectral bases used in the hybrid\nA Buffer whose content will supply the temporal activations used in the hybrid\nA Buffer to contain the new sound\nControl the repetition of source templates in the reconstruction by specifying a number of frames within which a template should not be re-used. Units are spectral frames.\nControl the spectral density of the output sound by restricting the number of simultaneous templates that can be used. Units are spectral bins.\nHow many iterations of NMF to run\nas usual (window / hop / fft)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"linecount" : 9,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 12.0, 344.0, 79.0, 127.0 ],
-									"style" : "",
-									"text" : "source\ntarget\noutput\ntimeSparsity\n\npolyphony\n\niterations\nfftsettings"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-6",
-									"linecount" : 9,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 165.0, 890.0, 127.0 ],
-									"style" : "",
-									"text" : "Produces hybridisations of two Buffers by using Nonnegative Maxtrix Factorization (NMF)\n\nSee Driedger, J., Prätzlich, T., & Müller, M. (2015). Let it Bee-Towards NMF-Inspired Audio Mosaicing. ISMIR, 350–356. http://ismir2015.uma.es/articles/13_Paper.pdf\n\nThe process works by attempting to reconstruct the target sound using the timbre of the source sound, resulting in a hybrid whose character depends on how well the target can be represnted by the source's spectral frames.\n\nIn contrast to FluidBufNMF, the size and content of the bases dictionary are fixed in this application to be the spectrogram of the source. Each spectral frame of source is a template: be aware that NMF is O(N^2) in the number of templates, so longer source buffers will take dramatically longer to process."
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 18.0,
-									"id" : "obj-4",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 12.0, 307.0, 104.0, 27.0 ],
-									"style" : "",
-									"text" : "Parameters"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 18.0,
-									"id" : "obj-3",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 120.0, 101.0, 27.0 ],
-									"style" : "",
-									"text" : "Description"
-								}
-
-							}
- ],
-						"lines" : [  ],
-						"styles" : [ 							{
-								"name" : "max6box",
-								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6inlet",
-								"default" : 								{
-									"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6message",
-								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgfillcolor" : 									{
-										"type" : "gradient",
-										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
-										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
-										"proportion" : 0.39,
-										"autogradient" : 0
-									}
-
-								}
-,
-								"parentstyle" : "max6box",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6outlet",
-								"default" : 								{
-									"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
- ]
-					}
-,
-					"patching_rect" : [ 93.0, 134.0, 98.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"globalpatchername" : "",
-						"style" : "",
-						"tags" : ""
-					}
-,
-					"style" : "",
-					"text" : "p \"ugly temp ref\""
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
@@ -276,7 +72,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 965.0, 569.0 ],
+						"rect" : [ 210.0, 106.0, 904.0, 569.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -306,23 +102,11 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 19.0, 90.0, 328.0, 21.0 ],
-									"style" : "",
-									"text" : "Cross Synthesis with Nonnegative Matrix Factorization"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 502.5, 194.067627, 229.0, 21.0 ],
+									"patching_rect" : [ 437.5, 190.067627, 229.0, 21.0 ],
 									"style" : "",
 									"text" : "compose short mono extracts for both",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -335,7 +119,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 496.5, 359.0, 256.0, 21.0 ],
+									"patching_rect" : [ 431.5, 355.0, 256.0, 21.0 ],
 									"style" : "",
 									"text" : "audition source, taget, or processed sound",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -355,7 +139,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 473.0, 359.0, 20.0, 20.0 ],
+									"patching_rect" : [ 408.0, 355.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 1309.0, 510.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -419,7 +203,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 473.0, 226.0, 409.0, 23.0 ],
+									"patching_rect" : [ 408.0, 222.0, 409.0, 23.0 ],
 									"style" : "",
 									"text" : "source tgt-s, destination tgt, bang, source src-s, destination src, bang"
 								}
@@ -438,7 +222,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 473.0, 194.067627, 20.0, 20.0 ],
+									"patching_rect" : [ 408.0, 190.067627, 20.0, 20.0 ],
 									"presentation_rect" : [ 403.0, 456.067627, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -453,7 +237,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 502.5, 22.0, 171.0, 21.0 ],
+									"patching_rect" : [ 600.5, 17.0, 171.0, 21.0 ],
 									"style" : "",
 									"text" : "select a source and a target",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -473,7 +257,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 475.0, 22.0, 20.0, 20.0 ],
+									"patching_rect" : [ 573.0, 17.0, 20.0, 20.0 ],
 									"presentation_rect" : [ 1305.0, 417.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
@@ -590,7 +374,7 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+													"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -701,8 +485,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -749,7 +533,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 473.0, 101.0, 286.0, 25.666656 ],
+									"patching_rect" : [ 571.0, 96.0, 286.0, 25.666656 ],
 									"viewvisibility" : 1
 								}
 
@@ -862,7 +646,7 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+													"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -973,8 +757,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -1021,7 +805,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 473.0, 45.0, 286.0, 25.666656 ],
+									"patching_rect" : [ 571.0, 40.0, 286.0, 25.666656 ],
 									"viewvisibility" : 1
 								}
 
@@ -1033,7 +817,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 473.0, 391.0, 36.0, 23.0 ],
+									"patching_rect" : [ 408.0, 387.0, 36.0, 23.0 ],
 									"style" : "",
 									"text" : "start"
 								}
@@ -1046,7 +830,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 473.0, 425.0, 63.0, 23.0 ],
+									"patching_rect" : [ 408.0, 421.0, 63.0, 23.0 ],
 									"style" : "",
 									"text" : "play~ src"
 								}
@@ -1059,7 +843,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 538.0, 391.0, 36.0, 23.0 ],
+									"patching_rect" : [ 473.0, 387.0, 36.0, 23.0 ],
 									"style" : "",
 									"text" : "start"
 								}
@@ -1072,7 +856,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 538.0, 425.0, 60.0, 23.0 ],
+									"patching_rect" : [ 473.0, 421.0, 60.0, 23.0 ],
 									"style" : "",
 									"text" : "play~ tgt"
 								}
@@ -1085,7 +869,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 600.0, 391.0, 36.0, 23.0 ],
+									"patching_rect" : [ 535.0, 387.0, 36.0, 23.0 ],
 									"style" : "",
 									"text" : "start"
 								}
@@ -1098,7 +882,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 473.0, 128.666656, 80.0, 23.0 ],
+									"patching_rect" : [ 571.0, 123.666656, 80.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ tgt-s"
 								}
@@ -1111,7 +895,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 821.0, 88.0, 53.0, 23.0 ],
+									"patching_rect" : [ 781.0, 439.0, 53.0, 23.0 ],
 									"style" : "",
 									"text" : "replace"
 								}
@@ -1124,7 +908,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 473.0, 291.0, 326.0, 23.0 ],
+									"patching_rect" : [ 408.0, 287.0, 326.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.bufcompose~ @numchans 1 @numframes 44100"
 								}
@@ -1137,7 +921,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 821.0, 113.0, 83.0, 23.0 ],
+									"patching_rect" : [ 781.0, 464.0, 83.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ src 1"
 								}
@@ -1205,7 +989,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 473.0, 474.0, 45.0, 45.0 ],
+									"patching_rect" : [ 408.0, 470.0, 45.0, 45.0 ],
 									"style" : ""
 								}
 
@@ -1217,7 +1001,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 600.0, 425.0, 77.0, 23.0 ],
+									"patching_rect" : [ 535.0, 421.0, 77.0, 23.0 ],
 									"style" : "",
 									"text" : "play~ result"
 								}
@@ -1244,7 +1028,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 821.0, 140.0, 97.0, 23.0 ],
+									"patching_rect" : [ 781.0, 491.0, 97.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ result 1"
 								}
@@ -1257,7 +1041,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 821.0, 36.0, 53.0, 23.0 ],
+									"patching_rect" : [ 781.0, 387.0, 53.0, 23.0 ],
 									"style" : "",
 									"text" : "replace"
 								}
@@ -1270,7 +1054,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 473.0, 72.666656, 83.0, 23.0 ],
+									"patching_rect" : [ 571.0, 67.666656, 83.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ src-s"
 								}
@@ -1283,7 +1067,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 821.0, 61.0, 69.0, 23.0 ],
+									"patching_rect" : [ 781.0, 412.0, 69.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ tgt"
 								}
@@ -1363,7 +1147,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 508.0, 258.0, 186.0, 23.0 ],
+									"patching_rect" : [ 443.0, 254.0, 186.0, 23.0 ],
 									"style" : ""
 								}
 
@@ -1380,7 +1164,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 19.0, 11.0, 416.0, 75.0 ]
+									"patching_rect" : [ 22.0, 10.0, 531.0, 95.0 ]
 								}
 
 							}
@@ -1556,8 +1340,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -1652,7 +1436,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 965.0, 569.0 ],
+						"rect" : [ 0.0, 26.0, 904.0, 569.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1720,7 +1504,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.libmanipulation.mxo",
+				"name" : "fluid.bufnmfcross~.mxo",
 				"type" : "iLaX"
 			}
 , 			{

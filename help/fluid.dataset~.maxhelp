@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 41.0, 84.0, 710.0, 794.0 ],
+		"rect" : [ 100.0, 100.0, 710.0, 794.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 41.0, 110.0, 710.0, 768.0 ],
+						"rect" : [ 0.0, 26.0, 710.0, 768.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -643,9 +643,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -987,7 +987,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 710.0, 768.0 ],
+						"rect" : [ 100.0, 126.0, 710.0, 768.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1259,18 +1259,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 90.0, 415.0, 21.0 ],
-									"style" : "",
-									"text" : "A collection of labels associated with n-dimensional data points"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -1346,7 +1334,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 410.0, 78.0 ]
+									"patching_rect" : [ 10.0, 10.0, 497.0, 107.5 ]
 								}
 
 							}
@@ -1362,8 +1350,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 302.0, 348.0, 100.0, 24.0 ],
-									"presentation_rect" : [ 302.0, 348.0, 100.0, 24.0 ]
+									"patching_rect" : [ 302.0, 348.0, 173.745117, 39.0 ],
+									"presentation_rect" : [ 302.0, 348.0, 173.745117, 39.0 ]
 								}
 
 							}

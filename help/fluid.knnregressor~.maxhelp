@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 79.0, 967.0, 643.0 ],
+		"rect" : [ 100.0, 100.0, 967.0, 732.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 105.0, 967.0, 617.0 ],
+						"rect" : [ 100.0, 126.0, 967.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -89,7 +89,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 215.0, 406.0, 292.0, 21.0 ],
-									"presentation_rect" : [ 236.0, 417.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "Apply learned mapping to a data point in a Buffer"
 								}
@@ -129,7 +128,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.0, 406.0, 174.0, 23.0 ],
-									"presentation_rect" : [ 20.0, 310.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "predictpoint buffer K uniform"
 								}
@@ -143,7 +141,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 22.0, 319.0, 278.0, 23.0 ],
-									"presentation_rect" : [ 19.0, 231.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "predict sourceDataset targetDataset K uniform"
 								}
@@ -177,18 +174,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 56.0, 431.0, 21.0 ],
-									"style" : "",
-									"text" : "Produce continuous mappings between data using K Nearest Neighbours"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"border" : 0,
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
@@ -199,7 +184,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 426.0, 59.0 ]
+									"patching_rect" : [ 10.0, 10.0, 443.0, 79.0 ]
 								}
 
 							}
@@ -239,7 +224,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 967.0, 617.0 ],
+						"rect" : [ 0.0, 26.0, 967.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -274,7 +259,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 593.0, 34.0, 152.0, 23.0 ],
+									"patching_rect" : [ 592.0, 120.0, 152.0, 23.0 ],
 									"style" : "",
 									"text" : "r knnregress.help.redraw"
 								}
@@ -2067,7 +2052,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 593.0, 81.5, 368.0, 330.0 ],
+									"patching_rect" : [ 592.0, 167.5, 368.0, 330.0 ],
 									"varname" : "bpatcher[1]",
 									"viewvisibility" : 1
 								}
@@ -2080,7 +2065,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 716.0, 439.0, 236.0, 23.0 ],
+									"patching_rect" : [ 715.0, 525.0, 236.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.dataset~ knnregress.help.mapping"
 								}
@@ -2093,7 +2078,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 248.0, 491.0, 345.0, 50.0 ],
+									"patching_rect" : [ 247.0, 577.0, 345.0, 50.0 ],
 									"style" : "",
 									"text" : "First we fit our source data and target (ramp to sine), then get the regressor to predict outputs for each test data point (an exponential curve)",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -2106,7 +2091,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 97.0, 409.0, 21.0 ],
+									"patching_rect" : [ 49.0, 183.0, 409.0, 21.0 ],
 									"style" : "",
 									"text" : "Run to demonstrate a simple mapping",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -2119,7 +2104,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 118.0, 574.0, 154.0, 23.0 ],
+									"patching_rect" : [ 117.0, 660.0, 154.0, 23.0 ],
 									"style" : "",
 									"text" : "s knnregress.help.redraw"
 								}
@@ -2132,7 +2117,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 18.0, 97.0, 24.0, 24.0 ],
+									"patching_rect" : [ 17.0, 183.0, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -2144,7 +2129,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 118.0, 545.0, 81.0, 23.0 ],
+									"patching_rect" : [ 117.0, 631.0, 81.0, 23.0 ],
 									"style" : "",
 									"text" : "route predict"
 								}
@@ -2157,7 +2142,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 18.0, 358.0, 34.0, 23.0 ],
+									"patching_rect" : [ 17.0, 444.0, 34.0, 23.0 ],
 									"style" : "",
 									"text" : "t b b"
 								}
@@ -2170,7 +2155,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 18.0, 147.347826, 59.0, 23.0 ],
+									"patching_rect" : [ 17.0, 233.347824, 59.0, 23.0 ],
 									"style" : "",
 									"text" : "t b b"
 								}
@@ -2406,7 +2391,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 58.0, 259.0, 114.0, 23.0 ],
+									"patching_rect" : [ 57.0, 345.0, 114.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2427,7 +2412,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 387.5, 439.0, 290.0, 23.0 ],
+									"patching_rect" : [ 386.5, 525.0, 290.0, 23.0 ],
 									"style" : "",
 									"text" : "fit knnregress.help.source knnregress.help.target"
 								}
@@ -2440,7 +2425,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 58.0, 291.0, 95.0, 23.0 ],
+									"patching_rect" : [ 57.0, 377.0, 95.0, 23.0 ],
 									"style" : "",
 									"text" : "addpoint $2 $1"
 								}
@@ -2453,7 +2438,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 65.0, 224.0, 24.0, 24.0 ],
+									"patching_rect" : [ 64.0, 310.0, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -2465,7 +2450,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 499.0, 250.0, 40.0, 23.0 ],
+									"patching_rect" : [ 498.0, 336.0, 40.0, 23.0 ],
 									"style" : "",
 									"text" : "t l l l"
 								}
@@ -2478,7 +2463,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 389.0, 286.0, 95.0, 23.0 ],
+									"patching_rect" : [ 388.0, 372.0, 95.0, 23.0 ],
 									"style" : "",
 									"text" : "addpoint $2 $1"
 								}
@@ -2491,7 +2476,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "clear" ],
-									"patching_rect" : [ 58.0, 178.0, 353.0, 23.0 ],
+									"patching_rect" : [ 57.0, 264.0, 353.0, 23.0 ],
 									"style" : "",
 									"text" : "t b b clear"
 								}
@@ -2917,8 +2902,8 @@
 												"name" : "max6box",
 												"default" : 												{
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2936,6 +2921,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2945,8 +2931,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -2964,7 +2949,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 225.0, 235.0, 183.0, 23.0 ],
+									"patching_rect" : [ 224.0, 321.0, 183.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2986,7 +2971,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 58.0, 358.0, 157.0, 38.0 ],
+									"patching_rect" : [ 57.0, 444.0, 157.0, 38.0 ],
 									"style" : "",
 									"text" : "fluid.dataset~ knnregress.help.testdata"
 								}
@@ -3000,7 +2985,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 389.0, 358.0, 183.0, 38.0 ],
+									"patching_rect" : [ 388.0, 444.0, 183.0, 38.0 ],
 									"style" : "",
 									"text" : "fluid.dataset~ knnregress.help.source"
 								}
@@ -3014,7 +2999,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 225.0, 358.0, 158.0, 38.0 ],
+									"patching_rect" : [ 224.0, 444.0, 158.0, 38.0 ],
 									"style" : "",
 									"text" : "fluid.dataset~ knnregress.help.target"
 								}
@@ -3027,7 +3012,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 18.0, 486.0, 119.0, 23.0 ],
+									"patching_rect" : [ 17.0, 572.0, 119.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.knnregressor~"
 								}
@@ -3040,7 +3025,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 18.0, 439.0, 365.0, 23.0 ],
+									"patching_rect" : [ 17.0, 525.0, 365.0, 23.0 ],
 									"style" : "",
 									"text" : "predict knnregress.help.testdata knnregress.help.mapping 2 0"
 								}
@@ -3053,21 +3038,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 225.0, 286.0, 95.0, 23.0 ],
+									"patching_rect" : [ 224.0, 372.0, 95.0, 23.0 ],
 									"style" : "",
 									"text" : "addpoint $2 $1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 56.0, 431.0, 21.0 ],
-									"style" : "",
-									"text" : "Produce continuous mappings between data using K Nearest Neighbours"
 								}
 
 							}
@@ -3083,7 +3056,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 426.0, 59.0 ]
+									"patching_rect" : [ 10.0, 10.0, 561.0, 133.0 ]
 								}
 
 							}
@@ -3119,7 +3092,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-90", 0 ],
-									"midpoints" : [ 42.5, 425.5, 397.0, 425.5 ],
+									"midpoints" : [ 41.5, 511.5, 396.0, 511.5 ],
 									"source" : [ "obj-103", 1 ]
 								}
 
@@ -3183,7 +3156,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-62", 0 ],
-									"midpoints" : [ 401.5, 225.0, 508.5, 225.0 ],
+									"midpoints" : [ 400.5, 311.0, 507.5, 311.0 ],
 									"source" : [ "obj-51", 2 ]
 								}
 
@@ -3205,7 +3178,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
-									"midpoints" : [ 529.5, 346.0, 398.5, 346.0 ],
+									"midpoints" : [ 528.5, 432.0, 397.5, 432.0 ],
 									"source" : [ "obj-62", 2 ]
 								}
 
@@ -3213,7 +3186,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
-									"midpoints" : [ 508.5, 321.0, 67.5, 321.0 ],
+									"midpoints" : [ 507.5, 407.0, 66.5, 407.0 ],
 									"source" : [ "obj-62", 0 ]
 								}
 
@@ -3221,7 +3194,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
-									"midpoints" : [ 519.0, 334.0, 234.5, 334.0 ],
+									"midpoints" : [ 518.0, 420.0, 233.5, 420.0 ],
 									"source" : [ "obj-62", 1 ]
 								}
 
@@ -3250,7 +3223,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 397.0, 473.5, 27.5, 473.5 ],
+									"midpoints" : [ 396.0, 559.5, 26.5, 559.5 ],
 									"source" : [ "obj-90", 0 ]
 								}
 
@@ -3260,8 +3233,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3279,6 +3252,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3288,8 +3262,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -3355,7 +3328,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 967.0, 617.0 ],
+						"rect" : [ 0.0, 26.0, 967.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
