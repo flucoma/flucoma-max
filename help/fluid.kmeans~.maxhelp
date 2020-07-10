@@ -1233,7 +1233,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 1113.0, 531.0, 640.0, 480.0 ],
+										"rect" : [ 467.0, -821.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -1342,7 +1342,7 @@
 															"modernui" : 1
 														}
 ,
-														"rect" : [ 1252.0, 166.0, 314.0, 321.0 ],
+														"rect" : [ 1116.0, 160.0, 314.0, 321.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -1378,7 +1378,7 @@
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 51.0, 160.0, 51.0, 22.0 ],
 																	"style" : "",
-																	"text" : "0 255 0"
+																	"text" : "0 155 0"
 																}
 
 															}
@@ -1389,7 +1389,7 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 123.0, 160.0, 51.0, 22.0 ],
+																	"patching_rect" : [ 148.0, 160.0, 51.0, 22.0 ],
 																	"style" : "",
 																	"text" : "0 0 255"
 																}
@@ -1402,9 +1402,9 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 123.0, 127.0, 64.0, 22.0 ],
+																	"patching_rect" : [ 124.0, 127.0, 64.0, 22.0 ],
 																	"style" : "",
-																	"text" : "255 255 0"
+																	"text" : "200 0 200"
 																}
 
 															}
@@ -1641,9 +1641,9 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 113.0, 232.0, 140.0, 22.0 ],
+													"patching_rect" : [ 113.0, 232.0, 175.0, 22.0 ],
 													"style" : "",
-													"text" : "paintoval $1 $2 $3 $4 $5"
+													"text" : "paintoval $1 $2 $3 $4 $5 $6 $7"
 												}
 
 											}
@@ -3483,6 +3483,10 @@
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.*.mxo",
 				"type" : "iLaX"
 			}
 , 			{
