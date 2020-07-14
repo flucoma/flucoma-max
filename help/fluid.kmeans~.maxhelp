@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 901.0, 598.0 ],
+		"rect" : [ 100.0, 100.0, 967.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -39,369 +39,6 @@
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"patcher" : 					{
-						"fileversion" : 1,
-						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 5,
-							"architecture" : "x64",
-							"modernui" : 1
-						}
-,
-						"rect" : [ 0.0, 26.0, 901.0, 572.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 13.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 1,
-						"gridsize" : [ 5.0, 5.0 ],
-						"gridsnaponopen" : 1,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"showontab" : 1,
-						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-31",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 84.0, 504.0, 294.0, 50.0 ],
-									"style" : "",
-									"text" : "All messages will cause output at right outlet when complete. The format is <message name> [<any return values>] "
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-30",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 166.5, 396.0, 294.0, 40.0 ],
-									"style" : "",
-									"text" : "read trained model from json (args: absolute path)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-29",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 114.0, 305.833333, 434.0, 40.0 ],
-									"style" : "",
-									"text" : "report the dimensionality of the data fluid.kmeans was trained on from the right outlet"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-28",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 199.0, 262.0, 434.0, 40.0 ],
-									"style" : "",
-									"text" : "report the cluster that a new data point (in a buffer~) would fall in to (number reported from right outlet)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-27",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 516.5, 233.666667, 323.0, 25.0 ],
-									"style" : "",
-									"text" : "run fit and predict in a single pass, as a convinience"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-26",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 242.5, 187.833333, 455.0, 40.0 ],
-									"style" : "",
-									"text" : "given a fitted kmeans object, determine the clusters for the content of a (possibly new) fluid.dataset, and write these to a fluid.labelset"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-25",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 416.5, 143.0, 455.0, 40.0 ],
-									"style" : "",
-									"text" : "train kmeans on a fluid.dataset, looking for a given number of clusters. Return the number of points in each cluster from the right outlet"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 56.5, 236.0, 449.0, 23.0 ],
-									"style" : "",
-									"text" : "fitpredict <dataset> <labelset> <number of clusters> [<number of iterations>]"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.0, 156.0, 347.0, 23.0 ],
-									"style" : "",
-									"text" : "fit <dataset> <number of clusters> [<number of iterations>]"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-12",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 166.5, 350.666667, 294.0, 40.0 ],
-									"style" : "",
-									"text" : "write trained model to json (args: absolute path)"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-19",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.681818, 316.0, 32.0, 23.0 ],
-									"style" : "",
-									"text" : "cols"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.681818, 356.0, 104.0, 23.0 ],
-									"style" : "",
-									"text" : "write <filename>"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-16",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.5, 396.0, 102.0, 23.0 ],
-									"style" : "",
-									"text" : "read <filename>"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-11",
-									"maxclass" : "newobj",
-									"numinlets" : 7,
-									"numoutlets" : 7,
-									"outlettype" : [ "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 108.181818, 471.770172, 235.0, 23.0 ],
-									"style" : "",
-									"text" : "route fit predict fitpredict cols write read"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-9",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 56.5, 276.0, 128.0, 23.0 ],
-									"style" : "",
-									"text" : "predictpoint <buffer>"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 56.5, 196.0, 173.0, 23.0 ],
-									"style" : "",
-									"text" : "predict <dataset> <labelset>"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 38.181818, 438.210854, 89.0, 23.0 ],
-									"style" : "",
-									"text" : "fluid.kmeans~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.kmeans~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 19.0, 10.0, 615.0, 74.0 ]
-								}
-
-							}
- ],
-						"lines" : [ 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"source" : [ "obj-5", 2 ]
-								}
-
-							}
- ],
-						"styles" : [ 							{
-								"name" : "max6box",
-								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6inlet",
-								"default" : 								{
-									"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6message",
-								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgfillcolor" : 									{
-										"type" : "gradient",
-										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
-										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
-										"proportion" : 0.39,
-										"autogradient" : 0
-									}
-
-								}
-,
-								"parentstyle" : "max6box",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6outlet",
-								"default" : 								{
-									"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
- ]
-					}
-,
-					"patching_rect" : [ 36.0, 123.0, 65.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"fontsize" : 13.0,
-						"globalpatchername" : "",
-						"style" : "",
-						"tags" : ""
-					}
-,
-					"style" : "",
-					"text" : "p interface",
-					"varname" : "basic_tab[1]"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
@@ -435,7 +72,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 901.0, 572.0 ],
+						"rect" : [ 100.0, 126.0, 967.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -470,7 +107,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 625.0, 394.0, 150.0, 50.0 ],
+									"patching_rect" : [ 612.5, 392.0, 150.0, 50.0 ],
 									"style" : "",
 									"text" : "sklearn python framework describes k means here:",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.48 ]
@@ -485,7 +122,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 625.0, 525.210876, 139.0, 38.0 ],
+									"patching_rect" : [ 612.5, 523.210876, 139.0, 38.0 ],
 									"style" : "",
 									"text" : ";\rmax launchbrowser $1"
 								}
@@ -510,27 +147,10 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 625.0, 447.440674, 259.0, 67.0 ],
+									"patching_rect" : [ 612.5, 445.440674, 259.0, 67.0 ],
 									"style" : "",
 									"text" : "https://scikit-learn.org/stable/tutorial/statistical_inference/unsupervised_learning.html#clustering-grouping-observations-together",
 									"textcolor" : [ 0.254902, 0.505882, 0.682353, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"angle" : 270.0,
-									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
-									"border" : 2,
-									"bordercolor" : [ 0.772549, 0.011765, 0.156863, 1.0 ],
-									"id" : "obj-63",
-									"maxclass" : "panel",
-									"mode" : 0,
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 32.848484, 408.545441, 326.181824, 68.606056 ],
-									"proportion" : 0.5,
-									"style" : ""
 								}
 
 							}
@@ -886,7 +506,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 402.181824, 244.212128, 95.0, 23.0 ],
+									"patching_rect" : [ 372.181824, 243.212128, 95.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -908,7 +528,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 384.681824, 539.030273, 214.0, 23.0 ],
+									"patching_rect" : [ 372.181824, 537.030273, 214.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.labelset~ kmeans.labelset.help"
 								}
@@ -921,7 +541,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 384.681824, 507.909088, 221.0, 23.0 ],
+									"patching_rect" : [ 372.181824, 505.909088, 221.0, 23.0 ],
 									"style" : "",
 									"text" : "fluid.dataset~ kmeans.dataset.help"
 								}
@@ -1187,7 +807,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 566.280273, 264.212128, 214.0, 127.0 ],
+									"patching_rect" : [ 536.280273, 263.212128, 214.0, 127.0 ],
 									"style" : "",
 									"text" : "look up the cluster for each point, and re-plot, mapping colours to cluster numbers. We expect (hope) that the clusters match the quadrants of the plot (but k means is far from perfect: you might need more than one go)",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.73 ]
@@ -1829,7 +1449,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 402.181824, 273.545471, 156.0, 158.0 ],
+									"patching_rect" : [ 372.181824, 272.545471, 156.0, 158.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1867,7 +1487,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "bang", "clear", "clear", "clear" ],
-									"patching_rect" : [ 53.181816, 190.363632, 505.0, 23.0 ],
+									"patching_rect" : [ 53.181816, 190.363632, 475.0, 23.0 ],
 									"style" : "",
 									"text" : "t b clear clear clear"
 								}
@@ -3071,7 +2691,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 566.280273, 238.757584, 20.0, 20.0 ],
+									"patching_rect" : [ 536.280273, 237.757584, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"style" : "",
 									"text" : "2",
@@ -3133,9 +2753,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 37.181816, 416.545441, 318.0, 23.0 ],
+									"patching_rect" : [ 37.181816, 416.545441, 309.0, 23.0 ],
 									"style" : "",
-									"text" : "fitpredict kmeans.dataset.help kmeans.labelset.help 4"
+									"text" : "fitpredict kmeans.dataset.help kmeans.labelset.help"
 								}
 
 							}
@@ -3146,7 +2766,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 384.681824, 475.909088, 184.0, 23.0 ],
+									"patching_rect" : [ 372.181824, 473.909088, 184.0, 23.0 ],
 									"style" : "",
 									"text" : "buffer~ kmeans.datapoint.help"
 								}
@@ -3159,9 +2779,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 37.181816, 447.210846, 89.0, 23.0 ],
+									"patching_rect" : [ 37.181816, 447.210846, 189.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.kmeans~"
+									"text" : "fluid.kmeans~ @numclusters 4"
 								}
 
 							}
@@ -3178,6 +2798,23 @@
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 19.0, 10.0, 766.0, 113.454544 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 270.0,
+									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
+									"border" : 2,
+									"bordercolor" : [ 0.772549, 0.011765, 0.156863, 1.0 ],
+									"id" : "obj-63",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 31.848484, 408.545441, 319.181824, 65.665405 ],
+									"proportion" : 0.5,
+									"style" : ""
 								}
 
 							}
@@ -3238,7 +2875,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-61", 1 ],
-									"midpoints" : [ 386.681816, 228.28788, 487.681824, 228.28788 ],
+									"midpoints" : [ 366.681816, 228.28788, 457.681824, 228.28788 ],
 									"source" : [ "obj-36", 2 ]
 								}
 
@@ -3260,7 +2897,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-61", 0 ],
-									"midpoints" : [ 172.590912, 561.511309, 362.136361, 561.511309, 362.136361, 233.212125, 411.681824, 233.212125 ],
+									"midpoints" : [ 172.590912, 561.511309, 357.136361, 561.511309, 357.136361, 237.212125, 381.681824, 237.212125 ],
 									"source" : [ "obj-44", 0 ]
 								}
 
@@ -3297,9 +2934,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3317,7 +2954,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3327,7 +2963,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -3373,7 +3010,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 298.11203, 57.599854 ]
+					"patching_rect" : [ 10.0, 10.0, 298.138092, 57.567627 ]
 				}
 
 			}
@@ -3393,7 +3030,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 901.0, 572.0 ],
+						"rect" : [ 0.0, 26.0, 967.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3487,10 +3124,6 @@
 			}
 , 			{
 				"name" : "jit.*.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.+.mxo",
 				"type" : "iLaX"
 			}
 , 			{

@@ -107,7 +107,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 265.0, 568.0, 343.0, 50.0 ],
+									"patching_rect" : [ 328.0, 568.0, 343.0, 50.0 ],
 									"style" : "",
 									"text" : "First we fit our training data and labels (four points, four labels), then get the classifier to predict labels for our test data",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -1152,7 +1152,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 387.5, 515.0, 304.0, 23.0 ],
+									"patching_rect" : [ 367.0, 515.0, 304.0, 23.0 ],
 									"style" : "",
 									"text" : "fit knnclassify.help.examples knnclassify.help.labels"
 								}
@@ -3241,7 +3241,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3251,7 +3250,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -3331,10 +3331,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 18.0, 562.0, 117.0, 23.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 18.0, 562.0, 300.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.knnclassifier~"
+									"text" : "fluid.knnclassifier~ @numneighbours 4 @weight 0"
 								}
 
 							}
@@ -3362,9 +3362,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 18.0, 515.0, 361.0, 23.0 ],
+									"patching_rect" : [ 18.0, 515.0, 342.0, 23.0 ],
 									"style" : "",
-									"text" : "predict knnclassify.help.testdata knnclassify.help.mapping 2 0"
+									"text" : "predict knnclassify.help.testdata knnclassify.help.mapping"
 								}
 
 							}
@@ -3413,7 +3413,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-90", 0 ],
-									"midpoints" : [ 42.5, 501.5, 397.0, 501.5 ],
+									"midpoints" : [ 42.5, 501.5, 376.5, 501.5 ],
 									"source" : [ "obj-103", 1 ]
 								}
 
@@ -3544,7 +3544,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 397.0, 549.5, 27.5, 549.5 ],
+									"midpoints" : [ 376.5, 549.5, 27.5, 549.5 ],
 									"source" : [ "obj-90", 0 ]
 								}
 
@@ -3573,7 +3573,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3583,7 +3582,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -3747,6 +3747,10 @@
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "jit.*.mxo",
 				"type" : "iLaX"
 			}
 , 			{
