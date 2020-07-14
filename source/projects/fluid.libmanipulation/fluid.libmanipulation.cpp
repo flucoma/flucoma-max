@@ -16,6 +16,7 @@
 #include <clients/rt/NMFMorphClient.hpp>
 #include <clients/nrt/NNDSVDClient.hpp>
 #include <clients/nrt/MLPRegressorClient.hpp>
+#include <clients/nrt/MLPClassifierClient.hpp>
 #include "FluidMaxWrapper.hpp" //nb: this include is order-sensitive because of macro name clashes in Eigen and C74
 
 
@@ -34,4 +35,5 @@ void ext_main(void*)
   makeMaxWrapper<RTPCAClient>("fluid.pca~");
   makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
   makeMaxWrapper<NRTThreadedMLPRegressorClient>("fluid.mlpregressor~");
+  makeMaxWrapper<NRTThreadedMLPClassifierClient>("fluid.mlpclassifier~");
 }
