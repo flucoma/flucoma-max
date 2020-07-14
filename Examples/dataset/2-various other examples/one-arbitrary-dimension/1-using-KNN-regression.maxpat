@@ -44,7 +44,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1145.0, 691.5, 228.0, 35.0 ],
+					"patching_rect" : [ 1143.5, 715.5, 228.0, 35.0 ],
 					"style" : "",
 					"text" : ";\rmax openfile viewer /tmp/regression.json"
 				}
@@ -165,23 +165,21 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1526.5, 519.0, 301.0, 22.0 ],
+					"patching_rect" : [ 1524.0, 519.0, 275.0, 22.0 ],
 					"style" : "",
-					"text" : "knearest entrylinlin-val 5, knearestdist entrylinlin-val 5"
+					"text" : "knearest entrylinlin-val, knearestdist entrylinlin-val"
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-94",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1524.0, 681.5, 164.0, 35.0 ],
-					"style" : "",
-					"text" : "0.015 0.015 0.015 0.015 0.015"
+					"patching_rect" : [ 1524.0, 681.5, 164.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -193,8 +191,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1482.25, 644.5, 134.75, 22.0 ],
-					"style" : "",
-					"text" : "\"10\" \"12\" \"4\" \"5\" \"18\""
+					"style" : ""
 				}
 
 			}
@@ -230,10 +227,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1505.0, 569.0, 76.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 1505.0, 569.0, 184.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~"
+					"text" : "fluid.kdtree~ @numneighbours 5"
 				}
 
 			}
@@ -480,9 +477,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1018.5, 644.5, 373.0, 22.0 ],
+					"patching_rect" : [ 1018.5, 644.5, 353.0, 22.0 ],
 					"style" : "",
-					"text" : "fit datalinlinSUB datalinlinSUB-val, predict datalinlin datalinlin-val 2 0"
+					"text" : "fit datalinlinSUB datalinlinSUB-val, predict datalinlin datalinlin-val"
 				}
 
 			}
@@ -492,10 +489,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1018.5, 681.5, 113.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 1018.5, 681.5, 281.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knnregressor~"
+					"text" : "fluid.knnregressor~ @numneighbours 3 @weight 1"
 				}
 
 			}
@@ -850,7 +847,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"outlettype" : [ "list", "float", "" ],
 									"patching_rect" : [ 173.5, 922.0, 76.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.kdtree~"
@@ -2015,8 +2012,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -2035,6 +2032,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2044,8 +2042,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2110,9 +2107,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 441.0, 890.0, 262.0, 22.0 ],
+					"patching_rect" : [ 441.0, 890.0, 236.0, 22.0 ],
 					"style" : "",
-					"text" : "knearest entrylinlin 1, knearestdist entrylinlin 1"
+					"text" : "knearest entrylinlin, knearestdist entrylinlin"
 				}
 
 			}
@@ -2202,22 +2199,19 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 527.0, 978.0, 61.0, 22.0 ],
-					"style" : "",
-					"text" : "0.067767"
+					"style" : ""
 				}
 
 			}
 , 			{
 				"box" : 				{
 					"id" : "obj-32",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 487.5, 978.0, 29.5, 35.0 ],
-					"style" : "",
-					"text" : "\"35\""
+					"patching_rect" : [ 487.5, 978.0, 29.5, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -2240,10 +2234,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 441.0, 930.0, 76.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 441.0, 930.0, 184.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~"
+					"text" : "fluid.kdtree~ @numneighbours 1"
 				}
 
 			}
@@ -3557,8 +3551,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
@@ -3577,6 +3571,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3586,8 +3581,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

@@ -1336,9 +1336,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 372.0, 762.0, 215.0, 22.0 ],
+									"patching_rect" : [ 372.0, 762.0, 205.0, 22.0 ],
 									"style" : "",
-									"text" : "fit thedataset2, knearest theflattarget 5"
+									"text" : "fit thedataset2, knearest theflattarget"
 								}
 
 							}
@@ -1348,10 +1348,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 372.0, 789.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 372.0, 789.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 5"
 								}
 
 							}
@@ -1453,9 +1453,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 147.0, 762.0, 209.0, 22.0 ],
+									"patching_rect" : [ 147.0, 762.0, 199.0, 22.0 ],
 									"style" : "",
-									"text" : "fit thedataset, knearest theflattarget 5"
+									"text" : "fit thedataset, knearest theflattarget"
 								}
 
 							}
@@ -1465,10 +1465,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 147.0, 789.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 147.0, 789.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 5"
 								}
 
 							}
@@ -3152,8 +3152,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4588,8 +4588,8 @@
 												"name" : "max6box",
 												"default" : 												{
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5194,8 +5194,8 @@
 												"name" : "max6box",
 												"default" : 												{
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -5910,8 +5910,8 @@
 												"name" : "max6box",
 												"default" : 												{
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -7074,8 +7074,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -8006,29 +8006,29 @@
 			}
  ],
 		"parameters" : 		{
+			"obj-152::obj-10::obj-11" : [ "live.text[3]", "live.text", 0 ],
+			"obj-152::obj-12::obj-9" : [ "live.text[18]", "live.text", 0 ],
+			"obj-152::obj-10::obj-3" : [ "live.text[2]", "live.text", 0 ],
 			"obj-152::obj-8::obj-29" : [ "live.text[23]", "live.text", 0 ],
-			"obj-152::obj-11::obj-5" : [ "live.text", "live.text", 0 ],
-			"obj-152::obj-12::obj-23" : [ "live.text[15]", "live.text", 0 ],
-			"obj-152::obj-12::obj-11" : [ "live.text[16]", "live.text", 0 ],
+			"obj-152::obj-12::obj-5" : [ "live.text[20]", "live.text", 0 ],
 			"obj-152::obj-10::obj-19" : [ "live.text[8]", "live.text", 0 ],
 			"obj-152::obj-4::obj-5" : [ "live.text[22]", "live.text", 0 ],
-			"obj-152::obj-12::obj-19" : [ "live.text[13]", "live.text", 0 ],
+			"obj-152::obj-12::obj-3" : [ "live.text[19]", "live.text", 0 ],
+			"obj-152::obj-12::obj-37" : [ "live.text[11]", "live.text", 0 ],
+			"obj-152::obj-4::obj-29" : [ "live.text[21]", "live.text", 0 ],
 			"obj-152::obj-10::obj-25" : [ "live.text[10]", "live.text", 0 ],
-			"obj-152::obj-11::obj-29" : [ "live.text[25]", "live.text", 0 ],
-			"obj-152::obj-12::obj-25" : [ "live.text[12]", "live.text", 0 ],
+			"obj-152::obj-12::obj-11" : [ "live.text[16]", "live.text", 0 ],
+			"obj-152::obj-12::obj-23" : [ "live.text[15]", "live.text", 0 ],
 			"obj-152::obj-8::obj-5" : [ "live.text[24]", "live.text", 0 ],
 			"obj-152::obj-10::obj-23" : [ "live.text[6]", "live.text", 0 ],
 			"obj-152::obj-10::obj-5" : [ "live.text[7]", "live.text", 0 ],
-			"obj-152::obj-12::obj-5" : [ "live.text[20]", "live.text", 0 ],
-			"obj-152::obj-12::obj-9" : [ "live.text[18]", "live.text", 0 ],
-			"obj-152::obj-4::obj-29" : [ "live.text[21]", "live.text", 0 ],
-			"obj-152::obj-10::obj-20" : [ "live.text[9]", "live.text", 0 ],
 			"obj-152::obj-12::obj-20" : [ "live.text[14]", "live.text", 0 ],
+			"obj-152::obj-12::obj-25" : [ "live.text[12]", "live.text", 0 ],
 			"obj-152::obj-10::obj-18" : [ "live.text[1]", "live.text", 0 ],
-			"obj-152::obj-12::obj-3" : [ "live.text[19]", "live.text", 0 ],
-			"obj-152::obj-10::obj-11" : [ "live.text[3]", "live.text", 0 ],
-			"obj-152::obj-12::obj-37" : [ "live.text[11]", "live.text", 0 ],
-			"obj-152::obj-10::obj-3" : [ "live.text[2]", "live.text", 0 ]
+			"obj-152::obj-10::obj-20" : [ "live.text[9]", "live.text", 0 ],
+			"obj-152::obj-11::obj-29" : [ "live.text[25]", "live.text", 0 ],
+			"obj-152::obj-11::obj-5" : [ "live.text", "live.text", 0 ],
+			"obj-152::obj-12::obj-19" : [ "live.text[13]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -8157,8 +8157,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

@@ -121,7 +121,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1366.0, 358.0, 142.75, 61.0 ],
+					"patching_rect" : [ 1431.25, 364.0, 142.75, 61.0 ],
 					"style" : "",
 					"text" : "args = point dimension, num classes",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
@@ -1669,9 +1669,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1246.0, 257.0, 107.0, 22.0 ],
+					"patching_rect" : [ 1246.0, 257.0, 74.0, 22.0 ],
 					"style" : "",
-					"text" : "fit mfccstats 5 100"
+					"text" : "fit mfccstats"
 				}
 
 			}
@@ -1681,10 +1681,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 1246.0, 364.0, 85.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 1246.0, 364.0, 175.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kmeans~"
+					"text" : "fluid.kmeans~ @numclusters 5"
 				}
 
 			}
@@ -2130,9 +2130,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 705.5, 274.0, 137.0, 22.0 ],
+					"patching_rect" : [ 705.5, 274.0, 125.0, 22.0 ],
 					"style" : "",
-					"text" : "knearest tmp.flatpoint 5"
+					"text" : "knearest tmp.flatpoint"
 				}
 
 			}
@@ -2634,10 +2634,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 593.0, 317.5, 82.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 593.0, 317.5, 198.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kdtree~"
+					"text" : "fluid.kdtree~ @numneighbours 5"
 				}
 
 			}
@@ -3860,8 +3860,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-62" : [ "live.tab", "live.tab", 0 ],
-			"obj-15" : [ "live.text", "live.text", 0 ]
+			"obj-15" : [ "live.text", "live.text", 0 ],
+			"obj-62" : [ "live.tab", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

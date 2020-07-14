@@ -38,6 +38,46 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"attr" : "numneighbours",
+					"id" : "obj-37",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 514.0, 187.0, 181.0, 22.0 ],
+					"style" : "",
+					"text_width" : 130.0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-22",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 502.5, 262.0, 256.0, 22.0 ],
+					"style" : "",
+					"text" : "knearest simplepoint, knearestdist simplepoint"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 20.0, 464.0, 91.0, 22.0 ],
+					"style" : "",
+					"text" : "loadmess set 2"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-61",
 					"linecount" : 3,
 					"maxclass" : "comment",
@@ -192,9 +232,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 51.0, 532.0, 128.0, 22.0 ],
+					"patching_rect" : [ 51.0, 532.0, 176.0, 22.0 ],
 					"style" : "",
-					"text" : "fit simple1data $1 100"
+					"text" : "numclusters $1, fit simple1data"
 				}
 
 			}
@@ -347,10 +387,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 51.0, 737.0, 85.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 51.0, 737.0, 253.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.kmeans~"
+					"text" : "fluid.kmeans~ @numclusters 2 @maxiter 100"
 				}
 
 			}
@@ -409,19 +449,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-52",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 601.5, 138.0, 72.0, 22.0 ],
-					"style" : "",
-					"text" : "loadmess 3"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-50",
 					"linecount" : 5,
 					"maxclass" : "comment",
@@ -430,32 +457,6 @@
 					"patching_rect" : [ 76.0, 18.0, 291.0, 74.0 ],
 					"style" : "",
 					"text" : "as with example 1a, we make a 1D dataset, but this time we skip 5 values in the middle of the line. The data look likes this\n   label:  0  1    2    3    4    5      6      7      8      9\n   value: 0  10  20  30  40  100  110  120  130  140"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-42",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 502.5, 272.0, 200.0, 22.0 ],
-					"style" : "",
-					"text" : "sprintf knearestdist simplepoint %d"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-17",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 432.5, 246.0, 179.0, 22.0 ],
-					"style" : "",
-					"text" : "sprintf knearest simplepoint %d"
 				}
 
 			}
@@ -646,32 +647,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-27",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 591.0, 208.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "int"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 601.5, 162.0, 50.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-25",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -741,7 +716,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
+					"outlettype" : [ "list", "float", "" ],
 					"patching_rect" : [ 410.0, 307.0, 76.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.kdtree~"
@@ -899,7 +874,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
+					"destination" : [ "obj-51", 0 ],
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -948,6 +923,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-22", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-24", 0 ]
 				}
@@ -962,31 +944,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
+					"destination" : [ "obj-22", 0 ],
 					"source" : [ "obj-25", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-27", 1 ],
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"order" : 1,
-					"source" : [ "obj-27", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-42", 0 ],
-					"order" : 0,
-					"source" : [ "obj-27", 0 ]
 				}
 
 			}
@@ -1042,6 +1001,13 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-37", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-28", 0 ],
 					"source" : [ "obj-38", 0 ]
 				}
@@ -1060,13 +1026,6 @@
 					"destination" : [ "obj-5", 0 ],
 					"order" : 1,
 					"source" : [ "obj-4", 2 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-42", 0 ]
 				}
 
 			}
@@ -1095,13 +1054,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-59", 0 ],
 					"source" : [ "obj-51", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-52", 0 ]
 				}
 
 			}
@@ -1162,8 +1114,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,

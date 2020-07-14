@@ -38,12 +38,25 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-24",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 656.0, 566.0, 137.0, 22.0 ],
+					"style" : "",
+					"text" : "predictpoint simplepoint"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-28",
 					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 26.0, 610.0, 400.0, 47.0 ],
+					"patching_rect" : [ 26.0, 610.0, 402.0, 47.0 ],
 					"style" : "",
 					"text" : "Further reading about nearest neighbour classification can be found here: https://scikit-learn.org/stable/modules/neighbors.html#nearest-neighbors-classification",
 					"textcolor" : [ 0.0, 0.0, 0.0, 0.5 ]
@@ -482,64 +495,12 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-21",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 679.5, 447.0, 29.5, 22.0 ],
-					"style" : "",
-					"text" : "1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-23",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 713.0, 447.0, 72.0, 22.0 ],
-					"style" : "",
-					"text" : "loadmess 3"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-27",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 677.0, 541.0, 54.5, 22.0 ],
-					"style" : "",
-					"text" : "int"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 713.0, 478.0, 50.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-20",
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 461.5, 635.0, 123.0, 22.0 ],
+					"patching_rect" : [ 569.5, 635.0, 123.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -551,7 +512,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 677.0, 508.0, 30.0, 22.0 ],
+					"patching_rect" : [ 656.0, 507.0, 30.0, 22.0 ],
 					"style" : "",
 					"text" : "t b l"
 				}
@@ -585,19 +546,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-11",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 677.0, 567.0, 193.0, 22.0 ],
-					"style" : "",
-					"text" : "sprintf predictpoint simplepoint %d"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 					"fontname" : "Arial Bold",
 					"hint" : "",
@@ -609,7 +557,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 687.0, 479.0, 20.0, 20.0 ],
+					"patching_rect" : [ 517.0, 466.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 144.0, 556.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -670,7 +618,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 364.0, 447.0, 81.0, 22.0 ],
-					"style" : ""
+					"style" : "",
+					"text" : "11.95 4.5"
 				}
 
 			}
@@ -706,10 +655,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 475.5, 603.0, 109.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 475.5, 602.0, 217.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knnclassifier~"
+					"text" : "fluid.knnclassifier~ @numneighbours 3"
 				}
 
 			}
@@ -921,16 +870,22 @@
 				}
 
 			}
- ],
-		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"midpoints" : [ 686.5, 597.5, 485.0, 597.5 ],
-					"source" : [ "obj-11", 0 ]
+, 			{
+				"box" : 				{
+					"attr" : "numneighbours",
+					"id" : "obj-27",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 536.0, 466.0, 190.0, 22.0 ],
+					"style" : "",
+					"text_width" : 132.0
 				}
 
 			}
-, 			{
+ ],
+		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-14", 2 ],
 					"order" : 1,
@@ -1006,7 +961,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-27", 0 ],
+					"destination" : [ "obj-24", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -1041,13 +996,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-22", 0 ]
 				}
@@ -1055,8 +1003,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-23", 0 ]
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-24", 0 ]
 				}
 
 			}
@@ -1078,14 +1026,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-27", 1 ],
-					"source" : [ "obj-26", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-17", 0 ],
 					"source" : [ "obj-27", 0 ]
 				}
 
@@ -1129,7 +1070,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-18", 0 ],
-					"midpoints" : [ 360.5, 502.5, 686.5, 502.5 ],
+					"midpoints" : [ 360.5, 502.5, 665.5, 502.5 ],
 					"order" : 0,
 					"source" : [ "obj-45", 0 ]
 				}
@@ -1240,8 +1181,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,

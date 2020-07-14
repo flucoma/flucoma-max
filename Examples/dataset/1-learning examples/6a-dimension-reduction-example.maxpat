@@ -93,7 +93,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+						"rect" : [ 59.0, 104.0, 725.0, 632.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -127,9 +127,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 317.0, 318.5, 70.0, 22.0 ],
+									"patching_rect" : [ 317.0, 318.5, 60.0, 22.0 ],
 									"style" : "",
-									"text" : "fit data2d 1"
+									"text" : "fit data2d"
 								}
 
 							}
@@ -139,10 +139,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 272.5, 411.0, 62.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 272.5, 411.0, 172.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.pca~"
+									"text" : "fluid.pca~ @numdimensions 1"
 								}
 
 							}
@@ -230,7 +230,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"outlettype" : [ "list", "float", "" ],
 									"patching_rect" : [ 60.5, 268.0, 105.0, 22.0 ],
 									"style" : "",
 									"text" : "fluid.standardize~"
@@ -244,9 +244,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 301.5, 268.0, 78.0, 22.0 ],
+									"patching_rect" : [ 301.5, 268.0, 68.0, 22.0 ],
 									"style" : "",
-									"text" : "fit data2dS 1"
+									"text" : "fit data2dS"
 								}
 
 							}
@@ -256,10 +256,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 66.0, 411.0, 62.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 66.0, 411.0, 172.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.pca~"
+									"text" : "fluid.pca~ @numdimensions 1"
 								}
 
 							}
@@ -484,7 +484,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 755.0, 556.0, 81.0, 22.0 ],
+					"patching_rect" : [ 749.0, 556.0, 81.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -605,15 +605,27 @@
 						"subpatcher_template" : "",
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-104",
-									"linecount" : 2,
+									"id" : "obj-3",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 577.0, 201.0, 134.0, 35.0 ],
+									"patching_rect" : [ 1073.0, 358.0, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "knearest entry1d 3, knearestdist entry1d 3"
+									"text" : "fit"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-104",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 577.0, 201.0, 215.0, 22.0 ],
+									"style" : "",
+									"text" : "knearest entry1d, knearestdist entry1d"
 								}
 
 							}
@@ -675,10 +687,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 651.5, 253.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 651.5, 253.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 3"
 								}
 
 							}
@@ -724,28 +736,26 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-107",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 863.0, 208.0, 145.0, 35.0 ],
+									"patching_rect" : [ 866.0, 209.0, 231.0, 22.0 ],
 									"style" : "",
-									"text" : "knearest entry1dS 3, knearestdist entry1dS 3"
+									"text" : "knearest entry1dS, knearestdist entry1dS"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-106",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 293.0, 202.0, 135.0, 35.0 ],
+									"patching_rect" : [ 293.0, 202.0, 231.0, 22.0 ],
 									"style" : "",
-									"text" : "knearest entry2dS 3, knearestdist entry2dS 3"
+									"text" : "knearest entry2dS, knearestdist entry2dS"
 								}
 
 							}
@@ -807,10 +817,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 376.5, 253.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 376.5, 253.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 3"
 								}
 
 							}
@@ -911,10 +921,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 937.5, 260.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 937.5, 259.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 3"
 								}
 
 							}
@@ -960,14 +970,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-59",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 187.0, 128.0, 35.0 ],
+									"patching_rect" : [ 50.0, 187.0, 215.0, 22.0 ],
 									"style" : "",
-									"text" : "knearest entry2d 3, knearestdist entry2d 3"
+									"text" : "knearest entry2d, knearestdist entry2d"
 								}
 
 							}
@@ -1003,10 +1012,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 132.5, 242.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 132.5, 242.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 3"
 								}
 
 							}
@@ -1479,6 +1488,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-139", 0 ],
 									"source" : [ "obj-66", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 1 ],
+									"source" : [ "obj-66", 2 ]
 								}
 
 							}
@@ -2145,8 +2161,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2262,7 +2278,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 230.5, 244.0, 75.0, 22.0 ],
+					"patching_rect" : [ 280.5, 256.0, 75.0, 22.0 ],
 					"style" : "",
 					"text" : "print reduxS"
 				}
@@ -2275,9 +2291,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 187.5, 197.0, 161.0, 22.0 ],
+					"patching_rect" : [ 187.5, 197.0, 151.0, 22.0 ],
 					"style" : "",
-					"text" : "fittransform data2d data1d 1"
+					"text" : "fittransform data2d data1d"
 				}
 
 			}
@@ -2287,10 +2303,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 187.5, 221.0, 62.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 187.5, 221.0, 172.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.pca~"
+					"text" : "fluid.pca~ @numdimensions 1"
 				}
 
 			}
@@ -2383,7 +2399,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 755.0, 532.0, 64.0, 22.0 ],
+					"patching_rect" : [ 749.0, 532.0, 64.0, 22.0 ],
 					"style" : "",
 					"text" : "r clickfloat"
 				}
@@ -2627,7 +2643,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 760.0, 466.0, 131.0, 60.0 ],
+					"patching_rect" : [ 745.0, 466.0, 131.0, 60.0 ],
 					"style" : "",
 					"text" : "query by original coordinate (by clicking near the red point of choice)"
 				}
@@ -2702,7 +2718,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 760.0, 444.0, 20.0, 20.0 ],
+					"patching_rect" : [ 745.0, 444.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
 					"text" : "10",
@@ -3358,8 +3374,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3475,7 +3491,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 447.5, 244.0, 53.0, 22.0 ],
+					"patching_rect" : [ 447.5, 256.0, 53.0, 22.0 ],
 					"style" : "",
 					"text" : "print std"
 				}
@@ -3500,7 +3516,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
+					"outlettype" : [ "list", "float", "" ],
 					"patching_rect" : [ 361.5, 221.0, 105.0, 22.0 ],
 					"style" : "",
 					"text" : "fluid.standardize~"
@@ -4045,8 +4061,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4175,7 +4191,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 576.0, 244.0, 75.0, 22.0 ],
+					"patching_rect" : [ 635.0, 256.0, 75.0, 22.0 ],
 					"style" : "",
 					"text" : "print reduxS"
 				}
@@ -4188,9 +4204,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 533.0, 197.0, 177.0, 22.0 ],
+					"patching_rect" : [ 533.0, 197.0, 167.0, 22.0 ],
 					"style" : "",
-					"text" : "fittransform data2dS data1dS 1"
+					"text" : "fittransform data2dS data1dS"
 				}
 
 			}
@@ -4200,10 +4216,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 533.0, 221.0, 62.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 533.0, 221.0, 172.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.pca~"
+					"text" : "fluid.pca~ @numdimensions 1"
 				}
 
 			}
@@ -4732,8 +4748,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5453,8 +5469,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -5827,8 +5843,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

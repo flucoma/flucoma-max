@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 62.0, 88.0, 892.0, 990.0 ],
+		"rect" : [ 62.0, 88.0, 971.0, 985.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,40 +38,27 @@
 		"subpatcher_template" : "",
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-8",
-					"linecount" : 10,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 653.25, 624.0, 235.0, 141.0 ],
-					"style" : "",
-					"text" : "When we request more than one neighbour to regress, there are 2 ways to deal with them to generate a single value: by default, we do an average of the neighbours weighted by their relative distances to the target, and we get a smooth-ish interpolation. We can also do a uniform average of the K neighbours instead. Toggle the box at (8) and see how staggered the curve becomes."
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-6",
-					"maxclass" : "toggle",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 631.5, 289.0, 24.0, 24.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-4",
-					"maxclass" : "newobj",
+					"id" : "obj-5",
+					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 580.5, 292.0, 48.0, 22.0 ],
+					"patching_rect" : [ 437.0, 325.0, 138.0, 22.0 ],
 					"style" : "",
-					"text" : "pack i i"
+					"text" : "predictpoint simplePoint"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"linecount" : 9,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 653.25, 624.0, 259.0, 127.0 ],
+					"style" : "",
+					"text" : "When we request more than one neighbour to regress, there are 2 ways to deal with them to generate a single value: by default, we do an average of the neighbours weighted by their relative distances to the target, and we get a smooth-ish interpolation. We can also do a uniform average of the K neighbours instead. Toggle the atate at (9) and see how staggered the curve becomes when pressing (8)"
 				}
 
 			}
@@ -88,11 +75,11 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 661.25, 289.0, 20.0, 20.0 ],
+					"patching_rect" : [ 707.5, 325.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 669.25, 269.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
-					"text" : "8",
+					"text" : "9",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
 
@@ -725,8 +712,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -943,7 +930,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 661.25, 237.0, 20.0, 20.0 ],
+					"patching_rect" : [ 707.5, 289.0, 20.0, 20.0 ],
 					"presentation_rect" : [ 873.0, 397.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"style" : "",
@@ -1291,59 +1278,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-49",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 607.5, 213.0, 72.0, 22.0 ],
-					"style" : "",
-					"text" : "loadmess 1"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-48",
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "int" ],
-					"patching_rect" : [ 590.0, 263.0, 36.5, 22.0 ],
-					"style" : "",
-					"text" : "int"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-26",
-					"maxclass" : "number",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "bang" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 607.5, 237.0, 50.0, 22.0 ],
-					"style" : ""
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-17",
-					"linecount" : 2,
-					"maxclass" : "newobj",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 580.5, 315.0, 115.0, 35.0 ],
-					"style" : "",
-					"text" : "sprintf predictpoint simplePoint %d %d"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"format" : 6,
 					"id" : "obj-47",
 					"maxclass" : "flonum",
@@ -1399,12 +1333,11 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-39",
-					"linecount" : 3,
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 724.5, 354.0, 157.0, 49.0 ],
+					"patching_rect" : [ 707.5, 358.0, 256.75, 22.0 ],
 					"style" : "",
 					"text" : "expr sin($f1 /15707.963267948966192) + $f2"
 				}
@@ -1443,7 +1376,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 715.0, 263.0, 109.0, 22.0 ],
+					"patching_rect" : [ 712.0, 242.5, 109.0, 22.0 ],
 					"style" : "",
 					"text" : "peek~ simplePoint"
 				}
@@ -1456,7 +1389,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 715.0, 239.0, 46.0, 22.0 ],
+					"patching_rect" : [ 712.0, 218.5, 46.0, 22.0 ],
 					"style" : "",
 					"text" : "pak 0 i"
 				}
@@ -1481,10 +1414,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 419.5, 358.0, 113.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 419.5, 358.0, 281.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.knnregressor~"
+					"text" : "fluid.knnregressor~ @weight 0 @numneighbours 1"
 				}
 
 			}
@@ -1514,11 +1447,39 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"attr" : "weight",
+					"id" : "obj-6",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 731.0, 325.0, 176.0, 22.0 ],
+					"style" : "",
+					"text_width" : 124.0
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"attr" : "numneighbours",
+					"id" : "obj-7",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 731.0, 289.0, 176.0, 22.0 ],
+					"style" : "",
+					"text_width" : 123.0
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
-					"midpoints" : [ 523.0, 382.5, 607.5, 382.5 ],
+					"midpoints" : [ 691.0, 382.5, 607.5, 382.5 ],
 					"source" : [ "obj-11", 2 ]
 				}
 
@@ -1533,22 +1494,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"midpoints" : [ 590.0, 354.5, 429.0, 354.5 ],
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
 					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-48", 1 ],
-					"source" : [ "obj-26", 0 ]
 				}
 
 			}
@@ -1600,7 +1546,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-39", 0 ],
-					"midpoints" : [ 703.5, 314.0, 734.0, 314.0 ],
+					"midpoints" : [ 703.5, 349.0, 717.0, 349.0 ],
 					"order" : 1,
 					"source" : [ "obj-34", 1 ]
 				}
@@ -1608,7 +1554,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-48", 0 ],
+					"destination" : [ "obj-5", 0 ],
+					"midpoints" : [ 599.5, 315.25, 446.5, 315.25 ],
 					"source" : [ "obj-34", 0 ]
 				}
 
@@ -1644,7 +1591,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-41", 0 ],
-					"midpoints" : [ 734.0, 425.0, 634.5, 425.0 ],
+					"midpoints" : [ 717.0, 425.0, 634.5, 425.0 ],
 					"order" : 1,
 					"source" : [ "obj-39", 0 ]
 				}
@@ -1653,16 +1600,9 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-50", 1 ],
-					"midpoints" : [ 734.0, 406.0, 780.0, 406.0 ],
+					"midpoints" : [ 717.0, 406.0, 780.0, 406.0 ],
 					"order" : 0,
 					"source" : [ "obj-39", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"source" : [ "obj-4", 0 ]
 				}
 
 			}
@@ -1716,15 +1656,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 0 ],
-					"source" : [ "obj-48", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-26", 0 ],
-					"source" : [ "obj-49", 0 ]
+					"destination" : [ "obj-11", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -1780,7 +1713,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-4", 1 ],
+					"destination" : [ "obj-11", 0 ],
+					"midpoints" : [ 740.5, 352.0, 429.0, 352.0 ],
 					"source" : [ "obj-6", 0 ]
 				}
 
@@ -1811,6 +1745,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-74", 0 ],
 					"source" : [ "obj-68", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-11", 0 ],
+					"midpoints" : [ 740.5, 320.0, 429.0, 320.0 ],
+					"source" : [ "obj-7", 0 ]
 				}
 
 			}
@@ -1882,8 +1824,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

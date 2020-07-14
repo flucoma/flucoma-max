@@ -265,9 +265,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 106.5, 219.0, 108.0, 22.0 ],
+									"patching_rect" : [ 106.5, 219.0, 101.0, 22.0 ],
 									"style" : "",
-									"text" : "append #0-entry 1"
+									"text" : "append #0-entry "
 								}
 
 							}
@@ -516,9 +516,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 1120.0, 515.0, 167.0, 22.0 ],
+													"patching_rect" : [ 1120.0, 515.0, 161.0, 22.0 ],
 													"style" : "",
-													"text" : "append #0-entryMFCC-nrm 1"
+													"text" : "append #0-entryMFCC-nrm "
 												}
 
 											}
@@ -529,9 +529,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 799.0, 515.0, 163.0, 22.0 ],
+													"patching_rect" : [ 799.0, 515.0, 156.0, 22.0 ],
 													"style" : "",
-													"text" : "append #0-entryMFCC-std 1"
+													"text" : "append #0-entryMFCC-std "
 												}
 
 											}
@@ -542,9 +542,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 649.0, 523.0, 143.0, 22.0 ],
+													"patching_rect" : [ 649.0, 523.0, 136.0, 22.0 ],
 													"style" : "",
-													"text" : "append #0-entryMFCC 1"
+													"text" : "append #0-entryMFCC "
 												}
 
 											}
@@ -646,10 +646,10 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 1286.5, 563.0, 76.0, 22.0 ],
+													"outlettype" : [ "list", "float", "" ],
+													"patching_rect" : [ 1286.5, 563.0, 184.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.kdtree~"
+													"text" : "fluid.kdtree~ @numneighbours 1"
 												}
 
 											}
@@ -672,10 +672,10 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 856.5, 563.0, 76.0, 22.0 ],
+													"outlettype" : [ "list", "float", "" ],
+													"patching_rect" : [ 856.5, 563.0, 184.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.kdtree~"
+													"text" : "fluid.kdtree~ @numneighbours 1"
 												}
 
 											}
@@ -737,10 +737,10 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 417.5, 563.0, 76.0, 22.0 ],
+													"outlettype" : [ "list", "float", "" ],
+													"patching_rect" : [ 417.5, 563.0, 184.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.kdtree~"
+													"text" : "fluid.kdtree~ @numneighbours 1"
 												}
 
 											}
@@ -750,7 +750,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"outlettype" : [ "list", "float", "" ],
 													"patching_rect" : [ 1631.25, 351.0, 105.0, 22.0 ],
 													"style" : "",
 													"text" : "fluid.standardize~"
@@ -790,7 +790,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"outlettype" : [ "list", "float", "" ],
 													"patching_rect" : [ 1229.5, 351.0, 95.0, 22.0 ],
 													"style" : "",
 													"text" : "fluid.normalize~"
@@ -1547,8 +1547,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -1567,6 +1567,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1576,8 +1577,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -2656,7 +2656,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1071.5, 375.666626, 50.0, 22.0 ],
 									"style" : "",
-									"text" : "19"
+									"text" : "0"
 								}
 
 							}
@@ -3210,10 +3210,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 73.0, 255.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 73.0, 256.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 1"
 								}
 
 							}
@@ -4119,8 +4119,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -4139,6 +4139,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4148,8 +4149,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -4275,9 +4275,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 100.0, 225.0, 108.0, 22.0 ],
+									"patching_rect" : [ 100.0, 225.0, 98.0, 22.0 ],
 									"style" : "",
-									"text" : "append #0-entry 5"
+									"text" : "append #0-entry"
 								}
 
 							}
@@ -4358,9 +4358,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 1120.0, 515.0, 167.0, 22.0 ],
+													"patching_rect" : [ 1120.0, 515.0, 161.0, 22.0 ],
 													"style" : "",
-													"text" : "append #0-entryMFCC-nrm 5"
+													"text" : "append #0-entryMFCC-nrm "
 												}
 
 											}
@@ -4371,9 +4371,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 799.0, 515.0, 163.0, 22.0 ],
+													"patching_rect" : [ 799.0, 515.0, 156.0, 22.0 ],
 													"style" : "",
-													"text" : "append #0-entryMFCC-std 5"
+													"text" : "append #0-entryMFCC-std "
 												}
 
 											}
@@ -4384,9 +4384,9 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 649.0, 523.0, 143.0, 22.0 ],
+													"patching_rect" : [ 649.0, 523.0, 136.0, 22.0 ],
 													"style" : "",
-													"text" : "append #0-entryMFCC 5"
+													"text" : "append #0-entryMFCC "
 												}
 
 											}
@@ -4699,10 +4699,10 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 1286.5, 563.0, 76.0, 22.0 ],
+													"outlettype" : [ "list", "float", "" ],
+													"patching_rect" : [ 1286.5, 563.0, 184.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.kdtree~"
+													"text" : "fluid.kdtree~ @numneighbours 5"
 												}
 
 											}
@@ -4922,10 +4922,10 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 856.5, 563.0, 76.0, 22.0 ],
+													"outlettype" : [ "list", "float", "" ],
+													"patching_rect" : [ 856.5, 563.0, 184.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.kdtree~"
+													"text" : "fluid.kdtree~ @numneighbours 5"
 												}
 
 											}
@@ -5210,10 +5210,10 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 417.5, 563.0, 76.0, 22.0 ],
+													"outlettype" : [ "list", "float", "" ],
+													"patching_rect" : [ 417.5, 563.0, 184.0, 22.0 ],
 													"style" : "",
-													"text" : "fluid.kdtree~"
+													"text" : "fluid.kdtree~ @numneighbours 5"
 												}
 
 											}
@@ -5223,7 +5223,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"outlettype" : [ "list", "float", "" ],
 													"patching_rect" : [ 1631.25, 351.0, 105.0, 22.0 ],
 													"style" : "",
 													"text" : "fluid.standardize~"
@@ -5263,7 +5263,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"outlettype" : [ "list", "float", "" ],
 													"patching_rect" : [ 1229.5, 351.0, 95.0, 22.0 ],
 													"style" : "",
 													"text" : "fluid.normalize~"
@@ -6223,8 +6223,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -6243,6 +6243,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -6252,8 +6253,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -6271,7 +6271,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 219.5, 225.0, 149.0, 22.0 ],
+									"patching_rect" : [ 263.5, 225.0, 149.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -6534,7 +6534,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 219.5, 253.0, 24.0, 24.0 ],
+									"patching_rect" : [ 263.5, 255.0, 24.0, 24.0 ],
 									"style" : ""
 								}
 
@@ -6943,10 +6943,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 73.0, 255.0, 76.0, 22.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 73.0, 255.0, 184.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.kdtree~"
+									"text" : "fluid.kdtree~ @numneighbours 5"
 								}
 
 							}
@@ -7394,8 +7394,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -7414,6 +7414,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -7423,8 +7424,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -8787,8 +8787,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -8807,6 +8807,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -8816,8 +8817,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -10598,8 +10598,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -10618,6 +10618,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -10627,8 +10628,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -11342,8 +11342,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -11362,6 +11362,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -11371,8 +11372,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -13229,8 +13229,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -13249,6 +13249,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -13258,8 +13259,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -13382,22 +13382,22 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-19::obj-25" : [ "live.tab[2]", "live.tab", 0 ],
-			"obj-1::obj-19::obj-49" : [ "live.tab[3]", "live.tab", 0 ],
 			"obj-1::obj-19::obj-62" : [ "live.tab[1]", "live.tab", 0 ],
-			"obj-1::obj-62" : [ "live.tab", "live.tab", 0 ]
+			"obj-1::obj-19::obj-25" : [ "live.tab[2]", "live.tab", 0 ],
+			"obj-1::obj-62" : [ "live.tab", "live.tab", 0 ],
+			"obj-1::obj-19::obj-49" : [ "live.tab[3]", "live.tab", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
 				"name" : "data-manipulator.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/2-various other examples/3-moments-APTvsMFCC",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/2-various other examples/three-moments-LPTvsMFCC",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "threshfinder.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/2-various other examples/3-moments-APTvsMFCC",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/Examples/dataset/2-various other examples/three-moments-LPTvsMFCC",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -13459,8 +13459,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
@@ -13479,6 +13479,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -13488,8 +13489,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
