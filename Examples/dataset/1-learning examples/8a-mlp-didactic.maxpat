@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 35.0, -1024.0, 1852.0, 990.0 ],
+		"rect" : [ 34.0, -1024.0, 1852.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -591,28 +591,13 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-20",
-					"linecount" : 19,
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 1374.0, 90.5, 380.0, 261.0 ],
-					"style" : "",
-					"text" : "\nhidden\t\nAn Array that gives the sizes of any hidden layers in the network (default is two hidden layers of three units each).\n\nactivation\t\nActivation function to use for the hidden layer units.\n\nmaxIter\t\nMaximum number of iterations to use in training.\n\nlearnRate\t\nThe learning rate of the network. Start small, increase slowly.\n\nmomentum\t\nTraining momentum, default 0.9\n\nbatchSize\t\nTraining batch size."
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-17",
-					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 186.5, 741.0, 134.0, 102.0 ],
-					"style" : "",
-					"text" : "\"\nrows: 4 cols: 1\nf-f 5.1074e-05\nf-t    0.99272\nt-f    0.98374\nt-t 2.7903e-05\n\""
+					"patching_rect" : [ 186.5, 741.0, 134.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -632,14 +617,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-15",
-					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1521.0, 665.0, 134.0, 102.0 ],
-					"style" : "",
-					"text" : "\"\nrows: 4 cols: 1\nf-f          0\nf-t          1\nt-f          1\nt-t          0\n\""
+					"patching_rect" : [ 1521.0, 665.0, 134.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -673,14 +656,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-12",
-					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1179.0, 665.0, 134.0, 102.0 ],
-					"style" : "",
-					"text" : "\"\nrows: 4 cols: 2\nf-f          0         0\nf-t          0         1\nt-f          1         0\nt-t          1         1\n\""
+					"patching_rect" : [ 1179.0, 665.0, 134.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -837,7 +818,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 240.0, 400.5, 115.0, 22.0 ],
 					"style" : "",
-					"text" : "fit 0.002286"
+					"text" : "predictpoint"
 				}
 
 			}
@@ -848,9 +829,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 130.5, 335.0, 590.0, 22.0 ],
+					"patching_rect" : [ 48.5, 339.0, 673.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.mlpregressor~ @activation 1 @hidden 3 @batchsize 1 @maxiter 1000 @learnrate 0.1 @momentum 0.5"
+					"text" : "fluid.mlpregressor~ @activation 1 @hidden 3 @batchsize 1 @maxiter 10000 @learnrate 0.1 @momentum 0.5 @validation 0"
 				}
 
 			}
@@ -940,7 +921,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 372.0, 277.0, 150.0, 22.0 ],
+					"patching_rect" : [ 372.0, 277.0, 201.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -1334,7 +1315,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1344,7 +1324,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
