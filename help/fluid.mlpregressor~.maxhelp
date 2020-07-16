@@ -84,6 +84,60 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 640.0, 684.0, 307.0, 21.0 ],
+									"presentation_rect" : [ 423.0, 684.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "the reconstruction error. if -1, the network has failed",
+									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 64.0, 659.0, 250.0, 21.0 ],
+									"presentation_rect" : [ 65.0, 659.0, 0.0, 0.0 ],
+									"style" : "",
+									"text" : "reset will restart the training from the start",
+									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 17.0, 655.0, 39.0, 23.0 ],
+									"style" : "",
+									"text" : "reset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 640.0, 659.0, 98.0, 23.0 ],
+									"style" : "",
+									"text" : "0.011612"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
@@ -1904,11 +1958,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-112",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 341.0, 577.0, 345.0, 50.0 ],
+									"patching_rect" : [ 205.0, 610.0, 486.0, 36.0 ],
 									"style" : "",
 									"text" : "First we fit our source data and target (ramp to sine), then get the regressor to predict outputs for each test data point (an exponential curve)",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -1934,7 +1988,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 117.0, 660.0, 154.0, 23.0 ],
+									"patching_rect" : [ 757.5, 637.0, 154.0, 23.0 ],
 									"style" : "",
 									"text" : "s mlpregress.help.redraw"
 								}
@@ -1956,12 +2010,12 @@
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 117.0, 631.0, 81.0, 23.0 ],
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 719.0, 610.0, 96.0, 23.0 ],
 									"style" : "",
-									"text" : "route predict"
+									"text" : "route fit predict"
 								}
 
 							}
@@ -2841,10 +2895,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 17.0, 572.0, 304.0, 23.0 ],
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 17.0, 572.0, 721.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.mlpregressor~ @numneighbours 2 @weight 0"
+									"text" : "fluid.mlpregressor~ @hidden 2 @activation 4 @maxiter 1000 @learnrate 0.1 @momentum 0.1 @batchsize 1 @validation 0"
 								}
 
 							}
@@ -2890,8 +2944,29 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"attr" : "learnrate",
+									"id" : "obj-10",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 17.0, 613.5, 150.0, 23.0 ],
+									"style" : ""
+								}
+
+							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"midpoints" : [ 26.5, 644.0, 11.0, 644.0, 11.0, 564.0, 26.5, 564.0 ],
+									"source" : [ "obj-10", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-77", 0 ],
 									"source" : [ "obj-101", 0 ]
@@ -2930,6 +3005,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-107", 0 ],
+									"source" : [ "obj-104", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 1 ],
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -2938,6 +3020,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-102", 0 ],
 									"source" : [ "obj-106", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"midpoints" : [ 26.5, 687.0, 5.0, 687.0, 5.0, 560.0, 26.5, 560.0 ],
+									"source" : [ "obj-13", 0 ]
 								}
 
 							}

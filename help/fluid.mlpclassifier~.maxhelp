@@ -41,6 +41,7 @@
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-1",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -102,12 +103,38 @@
 						"showontab" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 18.0, 625.0, 39.0, 23.0 ],
+									"style" : "",
+									"text" : "reset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 587.0, 630.0, 65.0, 23.0 ],
+									"style" : "",
+									"text" : "0.00135"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-112",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 328.0, 568.0, 343.0, 50.0 ],
+									"patching_rect" : [ 281.0, 587.0, 343.0, 50.0 ],
 									"style" : "",
 									"text" : "First we fit our training data and labels (four points, four labels), then get the classifier to predict labels for our test data",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -160,7 +187,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 116.0, 624.0, 153.0, 23.0 ],
+									"patching_rect" : [ 671.5, 612.0, 153.0, 23.0 ],
 									"style" : "",
 									"text" : "s mlpclassify.help.redraw"
 								}
@@ -182,12 +209,12 @@
 								"box" : 								{
 									"id" : "obj-104",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 116.0, 595.0, 81.0, 23.0 ],
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 633.0, 587.0, 96.0, 23.0 ],
 									"style" : "",
-									"text" : "route predict"
+									"text" : "route fit predict"
 								}
 
 							}
@@ -3221,8 +3248,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
@@ -3331,10 +3358,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 18.0, 562.0, 300.0, 23.0 ],
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 18.0, 562.0, 634.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.mlpclassifier~ @numneighbours 4 @weight 0"
+									"text" : "fluid.mlpclassifier~ @hidden 6 @activation 3 @maxiter 1000 @learnrate 0.1 @momentum 0.1 @validation 0"
 								}
 
 							}
@@ -3381,6 +3408,19 @@
 								}
 
 							}
+, 							{
+								"box" : 								{
+									"attr" : "learnrate",
+									"id" : "obj-9",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 18.0, 592.0, 164.0, 23.0 ],
+									"style" : ""
+								}
+
+							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -3421,6 +3461,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-107", 0 ],
+									"source" : [ "obj-104", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 1 ],
 									"source" : [ "obj-104", 0 ]
 								}
 
@@ -3536,8 +3583,24 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"midpoints" : [ 27.5, 654.0, 4.0, 654.0, 4.0, 543.0, 27.5, 543.0 ],
+									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-77", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-6", 0 ],
+									"midpoints" : [ 27.5, 621.0, 11.0, 621.0, 11.0, 553.0, 27.5, 553.0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -3553,8 +3616,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -3751,10 +3814,6 @@
 			}
 , 			{
 				"name" : "jit.*.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.+.mxo",
 				"type" : "iLaX"
 			}
  ],
