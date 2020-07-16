@@ -89,7 +89,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 640.0, 684.0, 307.0, 21.0 ],
-									"presentation_rect" : [ 423.0, 684.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "the reconstruction error. if -1, the network has failed",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
@@ -102,10 +101,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 64.0, 659.0, 250.0, 21.0 ],
-									"presentation_rect" : [ 65.0, 659.0, 0.0, 0.0 ],
+									"patching_rect" : [ 64.0, 659.0, 305.0, 21.0 ],
 									"style" : "",
-									"text" : "reset will restart the training from the start",
+									"text" : "init will reset the training to a new start",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -117,9 +115,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 17.0, 655.0, 39.0, 23.0 ],
+									"patching_rect" : [ 17.0, 655.0, 29.5, 23.0 ],
 									"style" : "",
-									"text" : "reset"
+									"text" : "init"
 								}
 
 							}
@@ -132,7 +130,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 640.0, 659.0, 98.0, 23.0 ],
 									"style" : "",
-									"text" : "0.011612"
+									"text" : "0.008936"
 								}
 
 							}
@@ -2785,9 +2783,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -3152,9 +3150,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
