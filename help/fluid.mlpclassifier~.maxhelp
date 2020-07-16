@@ -52,7 +52,7 @@
 					}
 ,
 					"style" : "",
-					"text" : "js helpstarter.js fluid.knnclassifier~"
+					"text" : "js helpstarter.js fluid.mlpclassifier~"
 				}
 
 			}
@@ -150,7 +150,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 635.0, 181.0, 151.0, 23.0 ],
 									"style" : "",
-									"text" : "r knnclassify.help.redraw"
+									"text" : "r mlpclassify.help.redraw"
 								}
 
 							}
@@ -162,7 +162,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 116.0, 624.0, 153.0, 23.0 ],
 									"style" : "",
-									"text" : "s knnclassify.help.redraw"
+									"text" : "s mlpclassify.help.redraw"
 								}
 
 							}
@@ -1154,7 +1154,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 367.0, 515.0, 304.0, 23.0 ],
 									"style" : "",
-									"text" : "fit knnclassify.help.examples knnclassify.help.labels"
+									"text" : "fit mlpclassify.help.examples mlpclassify.help.labels"
 								}
 
 							}
@@ -1365,7 +1365,7 @@
 																	"outlettype" : [ "bang", "float", "" ],
 																	"patching_rect" : [ 337.0, 247.0, 219.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.labelset~ knnclassify.help.mapping"
+																	"text" : "fluid.labelset~ mlpclassify.help.mapping"
 																}
 
 															}
@@ -1652,7 +1652,7 @@
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 262.25, 262.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.buf2list @buffer knnclassify.help.smallpoint",
+																	"text" : "fluid.buf2list @buffer mlpclassify.help.smallpoint",
 																	"varname" : "fluid.buf2list"
 																}
 
@@ -1666,7 +1666,7 @@
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 161.0, 212.0, 22.0 ],
 																	"style" : "",
-																	"text" : "getpoint $1 knnclassify.help.smallpoint"
+																	"text" : "getpoint $1 mlpclassify.help.smallpoint"
 																}
 
 															}
@@ -1692,7 +1692,7 @@
 																	"outlettype" : [ "bang", "float", "" ],
 																	"patching_rect" : [ 50.0, 193.0, 213.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.dataset~ knnclassify.help.testdata"
+																	"text" : "fluid.dataset~ mlpclassify.help.testdata"
 																}
 
 															}
@@ -2265,7 +2265,7 @@
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 94.0, 305.25, 262.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.buf2list @buffer knnclassify.help.smallpoint",
+																	"text" : "fluid.buf2list @buffer mlpclassify.help.smallpoint",
 																	"varname" : "fluid.buf2list[1]"
 																}
 
@@ -2279,7 +2279,7 @@
 																	"outlettype" : [ "" ],
 																	"patching_rect" : [ 50.0, 150.0, 212.0, 22.0 ],
 																	"style" : "",
-																	"text" : "getpoint $1 knnclassify.help.smallpoint"
+																	"text" : "getpoint $1 mlpclassify.help.smallpoint"
 																}
 
 															}
@@ -2305,7 +2305,7 @@
 																	"outlettype" : [ "bang", "float", "" ],
 																	"patching_rect" : [ 320.0, 277.75, 204.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.labelset~ knnclassify.help.labels"
+																	"text" : "fluid.labelset~ mlpclassify.help.labels"
 																}
 
 															}
@@ -2318,7 +2318,7 @@
 																	"outlettype" : [ "bang", "float", "" ],
 																	"patching_rect" : [ 83.0, 201.75, 222.0, 22.0 ],
 																	"style" : "",
-																	"text" : "fluid.dataset~ knnclassify.help.examples"
+																	"text" : "fluid.dataset~ mlpclassify.help.examples"
 																}
 
 															}
@@ -2505,7 +2505,7 @@
 													"outlettype" : [ "float", "bang" ],
 													"patching_rect" : [ 378.0, 63.0, 190.0, 22.0 ],
 													"style" : "",
-													"text" : "buffer~ knnclassify.help.smallpoint"
+													"text" : "buffer~ mlpclassify.help.smallpoint"
 												}
 
 											}
@@ -3293,7 +3293,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 58.0, 434.0, 157.0, 38.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ knnclassify.help.testdata"
+									"text" : "fluid.dataset~ mlpclassify.help.testdata"
 								}
 
 							}
@@ -3307,7 +3307,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 389.0, 434.0, 164.0, 38.0 ],
 									"style" : "",
-									"text" : "fluid.dataset~ knnclassify.help.examples"
+									"text" : "fluid.dataset~ mlpclassify.help.examples"
 								}
 
 							}
@@ -3321,7 +3321,7 @@
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 225.0, 434.0, 162.0, 38.0 ],
 									"style" : "",
-									"text" : "fluid.labelset~ knnclassify.help.labels"
+									"text" : "fluid.labelset~ mlpclassify.help.labels"
 								}
 
 							}
@@ -3334,7 +3334,7 @@
 									"outlettype" : [ "list", "float", "" ],
 									"patching_rect" : [ 18.0, 562.0, 300.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.knnclassifier~ @numneighbours 4 @weight 0"
+									"text" : "fluid.mlpclassifier~ @numneighbours 4 @weight 0"
 								}
 
 							}
@@ -3344,7 +3344,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.knnclassifier~" ],
+									"jsarguments" : [ "fluid.mlpclassifier~" ],
 									"maxclass" : "jsui",
 									"nofsaa" : 1,
 									"numinlets" : 1,
@@ -3364,7 +3364,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 18.0, 515.0, 342.0, 23.0 ],
 									"style" : "",
-									"text" : "predict knnclassify.help.testdata knnclassify.help.mapping"
+									"text" : "predict mlpclassify.help.testdata mlpclassify.help.mapping"
 								}
 
 							}
@@ -3623,7 +3623,7 @@
 					"filename" : "helpname.js",
 					"id" : "obj-4",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.knnclassifier~" ],
+					"jsarguments" : [ "fluid.mlpclassifier~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
