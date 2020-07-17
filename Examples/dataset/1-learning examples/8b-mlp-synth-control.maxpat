@@ -183,7 +183,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 107.0, 44.0, 150.0, 20.0 ],
-					"presentation_rect" : [ 107.0, 44.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "synth control (output)"
 				}
@@ -248,8 +247,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 734.0, 698.0, 84.0, 22.0 ],
-					"style" : "",
-					"text" : "0.001786"
+					"style" : ""
 				}
 
 			}
@@ -258,11 +256,11 @@
 					"id" : "obj-32",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "clear", "reset", "int" ],
-					"patching_rect" : [ 982.0, 339.0, 83.0, 22.0 ],
+					"numoutlets" : 2,
+					"outlettype" : [ "clear", "int" ],
+					"patching_rect" : [ 982.0, 339.0, 53.0, 22.0 ],
 					"style" : "",
-					"text" : "t clear reset 0"
+					"text" : "t clear 0"
 				}
 
 			}
@@ -324,7 +322,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 184.0, 477.5, 103.0, 22.0 ],
-					"presentation_rect" : [ 184.0, 475.5, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "fit inData outData"
 				}
@@ -337,7 +334,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 162.0, 456.0, 150.0, 20.0 ],
-					"presentation_rect" : [ 422.0, 220.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "train"
 				}
@@ -545,7 +541,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 493.0, 572.0, 349.0, 35.0 ],
+					"patching_rect" : [ 493.0, 572.0, 352.0, 35.0 ],
 					"style" : "",
 					"text" : "fluid.mlpregressor~ @activation 1 @batchsize 1 @maxiter 1000 @learnrate 0.1 @validation 0 @hidden 6 @momentum 0"
 				}
@@ -2440,7 +2436,8 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-113", 0 ],
-					"source" : [ "obj-32", 1 ]
+					"order" : 2,
+					"source" : [ "obj-32", 0 ]
 				}
 
 			}
@@ -2448,7 +2445,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-23", 2 ],
 					"order" : 0,
-					"source" : [ "obj-32", 2 ]
+					"source" : [ "obj-32", 1 ]
 				}
 
 			}
@@ -2456,7 +2453,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-33", 0 ],
 					"order" : 1,
-					"source" : [ "obj-32", 2 ]
+					"source" : [ "obj-32", 1 ]
 				}
 
 			}
@@ -2591,9 +2588,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2611,7 +2608,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2621,7 +2617,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
