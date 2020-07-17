@@ -34,6 +34,6 @@ void ext_main(void*)
   makeMaxWrapper<RTStandardizeClient>("fluid.standardize~");
   makeMaxWrapper<RTPCAClient>("fluid.pca~");
   makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
-  makeMaxWrapper<NRTThreadedMLPRegressorClient>("fluid.mlpregressor~");
-  makeMaxWrapper<NRTThreadedMLPClassifierClient>("fluid.mlpclassifier~");
+  makeMaxWrapper<RTMLPRegressorClient>("fluid.mlpregressor~");
+  makeMaxWrapper<RTMLPClassifierClient>("fluid.mlpclassifier~");
 }
