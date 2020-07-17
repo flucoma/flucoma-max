@@ -126,9 +126,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 60.0, 314.0, 301.0, 35.0 ],
+									"patching_rect" : [ 60.0, 314.0, 300.0, 35.0 ],
 									"style" : "",
-									"text" : "reset, filter 0 > 0, addcolumn 3, transform simple5data simple5subset"
+									"text" : "clear, filter 0 > 0, addcolumn 3, transform simple5data simple5subset"
 								}
 
 							}
@@ -148,12 +148,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-5",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 31.0, 104.0, 393.0, 20.0 ],
+									"patching_rect" : [ 31.0, 104.0, 393.0, 33.0 ],
 									"style" : "",
-									"text" : "in this example, column 0 must be between 0.03 and 0.08"
+									"text" : "in this example, column 0 must be greater than 0.03, colum 1 less than 0.08, or column 2 above 2.98, and only outputs column 0."
 								}
 
 							}
@@ -178,9 +179,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 51.0, 215.0, 314.0, 35.0 ],
+									"patching_rect" : [ 51.0, 215.0, 381.0, 35.0 ],
 									"style" : "",
-									"text" : "reset, filter 0 > 0.87, or 1 < 0.08, addcolumn 3, transform simple5data simple5subset"
+									"text" : "clear, filter 0 > 0.87, or 1 < 0.08, addcolumn 3, transform simple5data simple5subset"
 								}
 
 							}
@@ -192,9 +193,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 17.0, 63.0, 391.0, 35.0 ],
+									"patching_rect" : [ 17.0, 63.0, 386.0, 35.0 ],
 									"style" : "",
-									"text" : "reset, filter 0 > 0.03, and 0 < 0.08, addcolumn 0, transform simple5data simple5subset"
+									"text" : "clear, filter 0 > 0.03, and 1 < 1.08, or 2 > 2.98, addcolumn 0, transform simple5data simple5subset"
 								}
 
 							}
@@ -244,8 +245,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -450,10 +451,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "", "reset" ],
+					"outlettype" : [ "", "clear" ],
 					"patching_rect" : [ 394.0, 199.0, 53.0, 22.0 ],
 					"style" : "",
-					"text" : "t s reset"
+					"text" : "t s clear"
 				}
 
 			}
@@ -1111,8 +1112,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
