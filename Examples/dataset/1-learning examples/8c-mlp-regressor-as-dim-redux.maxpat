@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, -1024.0, 1852.0, 990.0 ],
+		"rect" : [ 34.0, 79.0, 1852.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -573,14 +573,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-33",
-					"linecount" : 10,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 599.335571, 638.0, 160.0, 143.0 ],
-					"style" : "",
-					"text" : "print \"\nrows: 100 cols: 2\n0    0.49706   0.58173\n1    0.87495    0.7438\n2        0.1       0.1\n       ...\n97    0.83774   0.85692\n98    0.78069   0.81121\n99    0.84049   0.88269\n\""
+					"patching_rect" : [ 599.335571, 638.0, 160.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -803,14 +801,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-22",
-					"linecount" : 10,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 844.335571, 654.0, 160.0, 143.0 ],
-					"style" : "",
-					"text" : "print \"\nrows: 100 cols: 2\n0    0.86676   0.83304\n1    0.86745   0.83353\n2    0.86604   0.83156\n       ...\n97    0.86738   0.83388\n98    0.86728   0.83374\n99    0.86738   0.83395\n\""
+					"patching_rect" : [ 844.335571, 654.0, 160.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -859,9 +855,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 819.5, 537.237122, 259.0, 22.0 ],
+					"patching_rect" : [ 819.5, 537.237122, 249.0, 22.0 ],
 					"style" : "",
-					"text" : "predict mlpAE.help.data mlpAE.help.reduced 2"
+					"text" : "predict mlpAE.help.data mlpAE.help.reduced"
 				}
 
 			}
@@ -884,10 +880,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 895.0, 458.237122, 720.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 895.0, 458.237122, 805.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.mlpregressor~ @activation 1 @hidden 10 2 10 @batchsize 10 @maxiter 10000 @learnrate 0.01 @momentum 0.1 @validation 0"
+					"text" : "fluid.mlpregressor~ @activation 1 @hidden 10 2 10 @batchsize 10 @maxiter 10000 @learnrate 0.01 @momentum 0.1 @validation 0 @outputlayer 2"
 				}
 
 			}
@@ -1143,8 +1139,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -2386,8 +2382,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -2803,8 +2799,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
