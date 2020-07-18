@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 533.0, 102.0, 882.0, 740.0 ],
+		"rect" : [ 533.0, 102.0, 839.0, 651.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 882.0, 714.0 ],
+						"rect" : [ 0.0, 26.0, 839.0, 625.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -297,9 +297,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 53.0, 194.0, 596.0, 22.0 ],
+									"patching_rect" : [ 53.0, 194.0, 637.0, 22.0 ],
 									"style" : "",
-									"text" : "fluid.bufaudiotransport~ 2048 @source1 boxA @source2 boxB @out boxX @fftsettings 2048 256 @blocking 0"
+									"text" : "fluid.bufaudiotransport~ 2048 @source1 boxA @source2 boxB @destination boxX @fftsettings 2048 256 @blocking 0"
 								}
 
 							}
@@ -678,7 +678,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 533.0, 128.0, 882.0, 714.0 ],
+						"rect" : [ 533.0, 128.0, 839.0, 625.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1041,9 +1041,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 122.0, 375.0, 429.0, 23.0 ],
+									"patching_rect" : [ 122.0, 375.0, 476.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.bufaudiotransport~ 8192 @source1 low @source2 high @out output"
+									"text" : "fluid.bufaudiotransport~ 8192 @source1 low @source2 high @destination output"
 								}
 
 							}
@@ -1075,7 +1075,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 570.0, 382.0, 201.242569, 39.0 ],
+									"patching_rect" : [ 605.0, 382.0, 201.242569, 39.0 ],
 									"presentation_rect" : [ 570.0, 382.0, 201.242569, 39.0 ]
 								}
 
@@ -1348,7 +1348,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 882.0, 714.0 ],
+						"rect" : [ 0.0, 26.0, 839.0, 625.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
