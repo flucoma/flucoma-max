@@ -139,7 +139,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 535.5, 501.0, 141.0, 22.0 ],
-									"presentation_rect" : [ 538.5, 501.0, 0.0, 0.0 ],
 									"style" : ""
 								}
 
@@ -281,7 +280,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 543.5, 756.0, 141.0, 22.0 ],
+									"patching_rect" : [ 541.5, 756.0, 141.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -318,7 +317,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 526.5, 471.0, 104.0, 22.0 ],
+									"patching_rect" : [ 522.5, 469.0, 104.0, 22.0 ],
 									"style" : ""
 								}
 
@@ -394,9 +393,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 215.0, 671.0, 117.0, 22.0 ],
+									"patching_rect" : [ 215.0, 671.0, 106.0, 22.0 ],
 									"style" : "",
-									"text" : "sel standardizepoint"
+									"text" : "sel transformpoint"
 								}
 
 							}
@@ -548,9 +547,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 215.0, 418.0, 107.0, 22.0 ],
+									"patching_rect" : [ 215.0, 418.0, 106.0, 22.0 ],
 									"style" : "",
-									"text" : "sel normalizepoint"
+									"text" : "sel transformpoint"
 								}
 
 							}
@@ -1036,7 +1035,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 9.0, 13.0, 690.0, 60.0 ],
+									"patching_rect" : [ 9.0, 13.0, 693.0, 60.0 ],
 									"style" : "",
 									"text" : "Once a dataset is normalized / standardized, query points have to be scaled accordingly to be used in distance measurement. In our instance, values were originally between 0 and 100, and now they will be between 0 and 1 (norm), or their average will be 0. (std). If we have data that we want to match from a similar ranging input, which is usually the case, we will need to normalize the searching point in each dimension using the same coefficients."
 								}
@@ -1332,9 +1331,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1352,6 +1351,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1361,8 +1361,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2038,7 +2037,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 11.0, 318.0, 274.0, 22.0 ],
+					"patching_rect" : [ 11.0, 320.0, 274.0, 22.0 ],
 					"style" : ""
 				}
 
@@ -2793,9 +2792,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
@@ -2813,6 +2812,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2822,8 +2822,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
