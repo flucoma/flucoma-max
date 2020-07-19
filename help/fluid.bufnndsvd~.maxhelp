@@ -2,14 +2,13 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 8,
-			"minor" : 1,
-			"revision" : 3,
+			"major" : 7,
+			"minor" : 3,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"classnamespace" : "box",
 		"rect" : [ 178.0, 100.0, 813.0, 624.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -52,6 +51,7 @@
 						"parameter_enable" : 0
 					}
 ,
+					"style" : "",
 					"text" : "js helpstarter.js fluid.bufnndsvd~"
 				}
 
@@ -65,15 +65,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 3,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
-						"rect" : [ 84.0, 129.0, 640.0, 480.0 ],
+						"rect" : [ 178.0, 126.0, 813.0, 598.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -109,6 +108,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 28.0, 207.0, 363.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.bufnmf~ @activations acts @bases bases @basesmode"
 								}
 
@@ -120,30 +120,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 318.5, 259.345794320106506, 424.0, 239.0 ],
+									"patching_rect" : [ 318.5, 259.345794, 424.0, 224.0 ],
+									"style" : "",
 									"text" : "from sklearn:\n‘nndsvd’: Nonnegative Double Singular Value Decomposition (NNDSVD)\n\n    initialization (better for sparseness)\n\n‘nndsvda’: NNDSVD with zeros filled with the average of X\n\n    (better when sparsity is not desired)\n\n‘nndsvdar’: NNDSVD with zeros filled with small random values\n\n    (generally faster, less accurate alternative to NNDSVDa for when sparsity is not desired)\n\n"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 56.0, 350.0, 21.0 ],
-									"text" : "Non Negative Double Singular Value Decomposition "
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-11",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 137.0, 321.0, 21.0 ],
-									"text" : "Find Initial Bases and Acitvations for fluid.bufnmf~"
 								}
 
 							}
@@ -155,6 +134,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 87.0, 577.0, 50.0, 23.0 ],
+									"style" : "",
 									"text" : "5"
 								}
 
@@ -166,7 +146,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 9,
 									"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-									"patching_rect" : [ 34.0, 537.635514199733734, 103.0, 23.0 ],
+									"patching_rect" : [ 34.0, 537.635514, 103.0, 23.0 ],
+									"style" : "",
 									"text" : "info~ bases"
 								}
 
@@ -179,6 +160,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 393.0, 202.0, 51.0, 23.0 ],
+									"style" : "",
 									"text" : "replace"
 								}
 
@@ -191,6 +173,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 483.0, 507.0, 77.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ acts"
 								}
 
@@ -203,6 +186,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 483.0, 543.0, 87.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ bases"
 								}
 
@@ -214,8 +198,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 226.0, 448.0, 24.0, 24.0 ]
+									"patching_rect" : [ 226.0, 448.0, 24.0, 24.0 ],
+									"style" : ""
 								}
 
 							}
@@ -227,6 +211,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 393.0, 232.0, 293.0, 23.0 ],
+									"style" : "",
 									"text" : "buffer~ source Tremblay-AaS-SynthTwoVoices-M"
 								}
 
@@ -238,7 +223,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 34.0, 500.345794320106506, 397.0, 23.0 ],
+									"patching_rect" : [ 34.0, 500.345794, 397.0, 23.0 ],
+									"style" : "",
 									"text" : "fluid.bufnndsvd~ @source source @bases bases @activations acts"
 								}
 
@@ -251,7 +237,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 59.5, 448.0, 150.0, 23.0 ]
+									"patching_rect" : [ 59.5, 448.0, 150.0, 23.0 ],
+									"style" : ""
 								}
 
 							}
@@ -263,7 +250,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.0, 398.0, 235.0, 23.0 ]
+									"patching_rect" : [ 34.0, 398.0, 235.0, 23.0 ],
+									"style" : ""
 								}
 
 							}
@@ -279,7 +267,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 620.0, 125.0 ]
+									"patching_rect" : [ 10.0, 10.0, 587.0, 131.0 ]
 								}
 
 							}
@@ -335,9 +323,11 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -355,7 +345,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 359.7919921875, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 359.791992, 57.599854 ]
 				}
 
 			}
@@ -368,15 +358,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 8,
-							"minor" : 1,
-							"revision" : 3,
+							"major" : 7,
+							"minor" : 3,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"classnamespace" : "box",
-						"rect" : [ 84.0, 129.0, 640.0, 480.0 ],
+						"rect" : [ 0.0, 26.0, 813.0, 598.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -413,9 +402,11 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
+						"style" : "",
 						"tags" : ""
 					}
 ,
+					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}
