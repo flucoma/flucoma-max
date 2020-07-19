@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 532.0, -886.0, 1297.0, 751.0 ],
+		"rect" : [ 532.0, 79.0, 1297.0, 751.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -247,7 +247,8 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 734.0, 698.0, 84.0, 22.0 ],
-					"style" : ""
+					"style" : "",
+					"text" : "0.001704"
 				}
 
 			}
@@ -540,10 +541,10 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 493.0, 572.0, 352.0, 35.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 493.0, 572.0, 396.0, 35.0 ],
 					"style" : "",
-					"text" : "fluid.mlpregressor~ @activation 1 @batchsize 1 @maxiter 1000 @learnrate 0.1 @validation 0 @hidden 6 @momentum 0"
+					"text" : "fluid.mlpregressor~ @activation 1 @finalactivation 1 @batchsize 1 @maxiter 1000 @learnrate 0.1 @validation 0 @hidden 6 @momentum 0"
 				}
 
 			}

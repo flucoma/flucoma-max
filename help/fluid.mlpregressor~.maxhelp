@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 355.0, 324.0, 967.0, 732.0 ],
+		"rect" : [ 100.0, 100.0, 967.0, 732.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -54,7 +54,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 355.0, 350.0, 967.0, 706.0 ],
+						"rect" : [ 100.0, 126.0, 967.0, 706.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -129,8 +129,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 640.0, 659.0, 98.0, 23.0 ],
-									"style" : "",
-									"text" : "0.012726"
+									"style" : ""
 								}
 
 							}
@@ -2881,10 +2880,10 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 17.0, 572.0, 721.0, 23.0 ],
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 17.0, 572.0, 828.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.mlpregressor~ @hidden 2 @activation 4 @maxiter 1000 @learnrate 0.1 @momentum 0.1 @batchsize 1 @validation 0"
+									"text" : "fluid.mlpregressor~ @hidden 2 @activation 3 @finalactivation 3 @maxiter 1000 @learnrate 0.1 @momentum 0.1 @batchsize 1 @validation 0"
 								}
 
 							}

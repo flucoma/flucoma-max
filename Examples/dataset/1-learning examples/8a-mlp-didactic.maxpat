@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, -1024.0, 1852.0, 990.0 ],
+		"rect" : [ 34.0, 79.0, 1852.0, 990.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,7 +44,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 10.0, 262.0, 37.0, 22.0 ],
-					"presentation_rect" : [ 8.0, 264.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "clear"
 				}
@@ -839,13 +838,14 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-2",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 48.5, 339.0, 673.0, 22.0 ],
+					"outlettype" : [ "list", "float", "" ],
+					"patching_rect" : [ 48.5, 339.0, 426.0, 35.0 ],
 					"style" : "",
-					"text" : "fluid.mlpregressor~ @activation 1 @hidden 3 @batchsize 1 @maxiter 10000 @learnrate 0.1 @momentum 0.5 @validation 0"
+					"text" : "fluid.mlpregressor~ @activation 1 @finalactivation 1 @hidden 3 @batchsize 1 @maxiter 10000 @learnrate 0.1 @momentum 0.5 @validation 0"
 				}
 
 			}
