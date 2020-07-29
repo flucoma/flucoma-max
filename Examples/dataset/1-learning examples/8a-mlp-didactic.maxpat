@@ -843,9 +843,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "list", "float", "" ],
-					"patching_rect" : [ 48.5, 339.0, 426.0, 35.0 ],
+					"patching_rect" : [ 48.5, 339.0, 441.0, 35.0 ],
 					"style" : "",
-					"text" : "fluid.mlpregressor~ @activation 1 @finalactivation 1 @hidden 3 @batchsize 1 @maxiter 10000 @learnrate 0.1 @momentum 0.5 @validation 0"
+					"text" : "fluid.mlpregressor~ @activation 1 @outputactivation 1 @hidden 3 @batchsize 1 @maxiter 10000 @learnrate 0.1 @momentum 0.5 @validation 0"
 				}
 
 			}
@@ -1316,9 +1316,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1336,6 +1336,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1345,8 +1346,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
