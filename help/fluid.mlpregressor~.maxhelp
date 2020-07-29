@@ -129,7 +129,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 640.0, 659.0, 98.0, 23.0 ],
-									"style" : ""
+									"style" : "",
+									"text" : "0.021275"
 								}
 
 							}
@@ -2770,9 +2771,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2790,6 +2791,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2799,8 +2801,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -2881,9 +2882,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 17.0, 572.0, 828.0, 23.0 ],
+									"patching_rect" : [ 17.0, 572.0, 840.0, 23.0 ],
 									"style" : "",
-									"text" : "fluid.mlpregressor~ @hidden 2 @activation 3 @finalactivation 3 @maxiter 1000 @learnrate 0.1 @momentum 0.1 @batchsize 1 @validation 0"
+									"text" : "fluid.mlpregressor~ @hidden 2 @activation 3 @outputactivation 3 @maxiter 1000 @learnrate 0.1 @momentum 0.1 @batchsize 1 @validation 0"
 								}
 
 							}
@@ -3137,9 +3138,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3157,6 +3158,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3166,8 +3168,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
