@@ -20,6 +20,7 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <data/FluidTensor.hpp>
 #include <atomic>
 #include <ext_buffer.h>
+#include <ext_systhread.h>
 
 namespace fluid {
 namespace client {
@@ -71,35 +72,31 @@ public:
   const Result resize(index frames, index channels,
                       double newSampleRate) override
   {
+    
+    if(frames == numFrames() && channels == numChans()) return {};
+  
     t_object* buffer = getBuffer();
 
     if (buffer)
     {
-      if (!mImmediate)
+      if (systhread_ismainthread() && !mImmediate)
       {
-        // Do this in two stages so we can set length in samps rather than ms
         unlockSamps();
-        buffer_edit_begin(buffer);
         t_atom args[2];
-        atom_setfloat(&args[0], 0.);
         atom_setlong(&args[1], static_cast<t_atom_long>(channels));
-        t_symbol* setSizeMsg = gensym("setsize");
-        object_method_typed(buffer, setSizeMsg, 2, args, nullptr);
-        object_method(buffer, gensym("dirty"));
-        t_atom newsize;
-        atom_setlong(&newsize, static_cast<t_atom_long>(frames));
+        atom_setlong(&args[0], static_cast<t_atom_long>(frames));
         t_symbol* sampsMsg = gensym("sizeinsamps");
-        object_method_typed(buffer, sampsMsg, 1, &newsize, nullptr);
+        object_method_typed(buffer, sampsMsg, 2, args, nullptr);
+       
         t_atom sr;
         atom_setfloat(&sr, newSampleRate);
         t_symbol* srMsg = gensym("sr");
         object_method_typed(buffer, srMsg, 1, &sr, nullptr);
-        object_method(buffer, gensym("dirty"));
-        buffer_edit_end(buffer, 1);
+        buffer_setdirty(buffer);
         lockSamps();
 
         if (frames != numFrames() || channels != numChans())
-          return {Result::Status::kError, "Could not resize"};
+          return {Result::Status::kError, "Could not resize ", mName->s_name};
 
         assert(frames == numFrames() && channels == numChans());
 
@@ -108,9 +105,15 @@ public:
       else
       {
         if (channels > numChans())
-          return {Result::Status::kError, "Not enough channels in buffer"};
+          return {Result::Status::kError,
+            "Can't resize buffers outside main thread. Not enough channels in ",
+            mName->s_name,
+            ": has ", numChans(), " need ", channels};
         if (frames > numFrames())
-          return {Result::Status::kError, "Not enough space in buffer"};
+          return {Result::Status::kError,
+            "Can't resize buffers outside main thread. Not enough frames in ",
+            mName->s_name,
+            ": has ", numFrames(), " need ", frames};
 
         if (sampleRate() != newSampleRate)
         {
@@ -218,7 +221,7 @@ public:
   void refresh() override
   {
     t_object* buffer = getBuffer();
-    if (buffer) object_method(buffer, gensym("dirty"));
+    if (buffer) buffer_setdirty(buffer);
   }
 
 private:
