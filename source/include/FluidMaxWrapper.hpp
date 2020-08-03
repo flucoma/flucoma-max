@@ -916,6 +916,7 @@ public:
   {
     x->mParams = x->mParamSnapshot;
     x->params().template forEachParam<touchAttribute>(x);
+    object_attr_touch((t_object*) x, gensym("latency"));    
   }
 
   static void doVersion(FluidMaxWrapper* x)
