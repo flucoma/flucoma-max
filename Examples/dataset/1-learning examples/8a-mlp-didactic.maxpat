@@ -58,7 +58,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 79.0, 286.0, 128.0, 22.0 ],
-					"presentation_rect" : [ 77.0, 288.0, 0.0, 0.0 ],
 					"style" : "",
 					"text" : "read /tmp/mlp-toy.json"
 				}
@@ -646,14 +645,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-17",
-					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 186.5, 741.0, 134.0, 102.0 ],
-					"style" : "",
-					"text" : "\"\nrows: 4 cols: 1\nf-f   0.068815\nf-t    0.91445\nt-f    0.91665\nt-t   0.087244\n\""
+					"patching_rect" : [ 186.5, 741.0, 134.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -673,14 +670,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-15",
-					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1521.0, 665.0, 134.0, 102.0 ],
-					"style" : "",
-					"text" : "\"\nrows: 4 cols: 1\nf-f          0\nf-t          1\nt-f          1\nt-t          0\n\""
+					"patching_rect" : [ 1521.0, 665.0, 134.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -714,14 +709,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-12",
-					"linecount" : 7,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 1179.0, 665.0, 134.0, 102.0 ],
-					"style" : "",
-					"text" : "\"\nrows: 4 cols: 2\nf-f          0         0\nf-t          0         1\nt-f          1         0\nt-t          1         1\n\""
+					"patching_rect" : [ 1179.0, 665.0, 134.0, 22.0 ],
+					"style" : ""
 				}
 
 			}
@@ -877,8 +870,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 240.0, 400.5, 115.0, 22.0 ],
-					"style" : "",
-					"text" : "predictpoint"
+					"style" : ""
 				}
 
 			}
@@ -1406,6 +1398,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1415,8 +1408,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
