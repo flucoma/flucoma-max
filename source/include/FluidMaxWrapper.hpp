@@ -82,8 +82,11 @@ public:
            long /*maxvectorsize*/, long /*flags*/)
   {
     Wrapper* wrapper = static_cast<Wrapper*>(this);
-    wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
+    if(!Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
+      wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
+    
     auto& client = wrapper->client();
+    
     client.sampleRate(samplerate);
 
     audioInputConnections.resize(asUnsigned(client.audioChannelsIn()));
