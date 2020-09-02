@@ -148,7 +148,7 @@ set(MAX_INSTALL_PREFIX "." CACHE PATH "Prefix for assembling max package")
 set(FLUID_PACKAGE_NAME FluidCorpusManipulation CACHE STRING "Name for published package")
 set(MAX_PACKAGE_ROOT ${MAX_INSTALL_PREFIX}/${FLUID_PACKAGE_NAME})
 
-foreach(PACKAGE_DIRECTORY examples;extras;help;init)
+foreach(PACKAGE_DIRECTORY examples;extras;help;init;patchers)
   install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION ${MAX_PACKAGE_ROOT})
 endforeach(PACKAGE_DIRECTORY)
 
