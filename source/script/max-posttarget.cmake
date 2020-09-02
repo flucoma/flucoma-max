@@ -85,8 +85,6 @@ if (APPLE)
     XCODE_GENERATE_SCHEME ON
 		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"    
   )
-  
-  set_property(TARGET ${PROJECT_NAME} PROPERTY OSX_ARCHITECTURES ${FLUID_OSX_ARCHS})
     
   #If we target 10.7 (actually < 10.9), we have to manually include this:
   target_compile_options(${PROJECT_NAME} PRIVATE -stdlib=libc++)

@@ -31,13 +31,6 @@ endif()
 # Main Action
 project (flucoma-max LANGUAGES CXX)
 
-# XCODE_VERSION Doesn't work before project() call 
-if(APPLE AND XCODE_VERSION VERSION_GREATER_EQUAL 10)
-  set(FLUID_OSX_ARCHS x86_64)
-else()
-  set(FLUID_OSX_ARCHS x86_64;i386)
-endif()  
-
 set(CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY ON)
 set(AUTHOR_DOMAIN "org.flucoma")
 string(TIMESTAMP "%Y" THISYEAR)
@@ -127,9 +120,6 @@ endif()
 
 # Misc setup and subroutines
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
-
-# only on Max do we need UBs
-set_property(TARGET HISSTools_FFT PROPERTY OSX_ARCHITECTURES ${FLUID_OSX_ARCHS})
 
 ################################################################################
 # Max Wrapper
