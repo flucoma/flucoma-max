@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 291.0, 126.0, 965.0, 795.0 ],
+		"rect" : [ 272.0, 192.0, 965.0, 795.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -86,7 +86,6 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontsize" : 13.0,
@@ -108,7 +107,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 88.5, 355.0, 355.0, 50.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
 								}
@@ -1113,7 +1111,6 @@
 					}
 ,
 					"patching_rect" : [ 50.0, 125.0, 62.0, 22.0 ],
-					"presentation_linecount" : 3,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1161,7 +1158,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 291.0, 152.0, 965.0, 769.0 ],
+						"rect" : [ 272.0, 218.0, 965.0, 769.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1209,7 +1206,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 178.0, 456.0, 482.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "clear, filter 0 > 70, or 1 <= 200, addrange 0 3, transform dsq.help.src dsq.help.dest"
 								}
 
@@ -1424,7 +1420,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-7",
