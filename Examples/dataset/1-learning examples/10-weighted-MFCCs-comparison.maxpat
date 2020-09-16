@@ -783,7 +783,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 675.747571999999991, 807.0, 237.0, 76.0 ],
-					"text" : "Tremblay-beatRemember.wav-25 Tremblay-beatRemember.wav-17 Tremblay-beatRemember.wav-4 Tremblay-beatRemember.wav-21 Tremblay-beatRemember.wav-30"
+					"text" : "Tremblay-beatRemember.wav-1 Tremblay-beatRemember.wav-2 Tremblay-beatRemember.wav-9 Tremblay-beatRemember.wav-27 Tremblay-beatRemember.wav-15"
 				}
 
 			}
@@ -1173,8 +1173,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 207.166661798954124, 566.912280559539795, 32.0, 22.0 ],
-									"text" : "gate"
+									"patching_rect" : [ 207.166661798954124, 566.912280559539795, 52.0, 22.0 ],
+									"text" : "gate 1 1"
 								}
 
 							}
@@ -1904,8 +1904,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 101.0, 370.0, 290.0, 35.0 ],
-									"text" : "fluid.bufscale~ @source #0_tmpweights @destination #0_tmpweights @inlow -110 @inhigh 0"
+									"patching_rect" : [ 101.0, 370.0, 393.0, 35.0 ],
+									"text" : "fluid.bufscale~ @source #0_tmpweights @destination #0_tmpweights @inputlow -110 @inputhigh 0"
 								}
 
 							}
@@ -3428,9 +3428,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3448,6 +3448,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3457,8 +3458,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
