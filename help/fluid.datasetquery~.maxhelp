@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 272.0, 192.0, 965.0, 795.0 ],
+		"rect" : [ 258.0, 217.0, 965.0, 795.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -88,13 +88,93 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-6",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 436.5, 275.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-1",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 458.5, 400.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "4",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-47",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 226.0, 367.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-3",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 243.0, 244.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-34",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 95.5, 446.5, 359.0, 23.0 ],
+									"patching_rect" : [ 97.5, 398.5, 359.0, 23.0 ],
 									"text" : "transformjoin dsq.help.join.A dsq.help.join.B dsq.help.join.out"
 								}
 
@@ -106,7 +186,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 88.5, 355.0, 355.0, 50.0 ],
+									"patching_rect" : [ 88.5, 310.5, 355.0, 50.0 ],
 									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
 								}
@@ -119,7 +199,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 88.5, 407.0, 130.0, 23.0 ],
+									"patching_rect" : [ 88.5, 366.0, 130.0, 23.0 ],
 									"text" : "clear, filter 0 >= 3000"
 								}
 
@@ -131,7 +211,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 609.0, 43.0, 62.0, 23.0 ],
+									"patching_rect" : [ 497.0, 10.0, 62.0, 23.0 ],
 									"text" : "loadbang"
 								}
 
@@ -142,7 +222,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 444.5, 550.0, 179.0, 141.0 ],
+									"patching_rect" : [ 121.0, 627.0, 179.0, 141.0 ],
 									"textcolor" : [ 0.996078431372549, 0.898039215686275, 0.031372549019608, 1.0 ]
 								}
 
@@ -154,7 +234,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 444.5, 525.0, 94.0, 23.0 ],
+									"patching_rect" : [ 121.0, 602.0, 94.0, 23.0 ],
 									"text" : "dict.deserialize"
 								}
 
@@ -166,7 +246,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 444.5, 496.0, 74.0, 23.0 ],
+									"patching_rect" : [ 121.0, 573.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -178,7 +258,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 153.0, 628.0, 117.0, 23.0 ],
+									"patching_rect" : [ 121.0, 480.0, 117.0, 23.0 ],
 									"text" : "route transformjoin"
 								}
 
@@ -190,7 +270,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 153.0, 657.0, 41.0, 23.0 ],
+									"patching_rect" : [ 121.0, 511.0, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -202,7 +282,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 21.0, 266.0, 212.0, 23.0 ],
+									"patching_rect" : [ 21.0, 243.0, 212.0, 23.0 ],
 									"text" : "clear, filter 0 >= 3000, addcolumn 0"
 								}
 
@@ -214,7 +294,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 21.0, 595.0, 119.0, 23.0 ],
+									"patching_rect" : [ 21.0, 446.0, 119.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
@@ -226,7 +306,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 153.0, 684.0, 184.0, 23.0 ],
+									"patching_rect" : [ 121.0, 540.0, 184.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.join.out"
 								}
 
@@ -239,7 +319,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 65.5, 308.5, 359.0, 23.0 ],
+									"patching_rect" : [ 64.26397705078125, 275.5, 359.0, 23.0 ],
 									"text" : "transformjoin dsq.help.join.A dsq.help.join.B dsq.help.join.out"
 								}
 
@@ -251,7 +331,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 17.0, 206.0, 355.0, 50.0 ],
+									"patching_rect" : [ 16.0, 191.0, 355.0, 50.0 ],
 									"text" : "Queries are executed against columns in dataset A. Any columns added to the query are merged with those in dataset B: ",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
 								}
@@ -263,7 +343,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 765.5, 291.0, 155.0, 152.0 ]
+									"patching_rect" : [ 685.5, 221.5, 155.0, 152.0 ]
 								}
 
 							}
@@ -274,7 +354,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 765.5, 266.0, 94.0, 23.0 ],
+									"patching_rect" : [ 685.5, 196.5, 94.0, 23.0 ],
 									"text" : "dict.deserialize"
 								}
 
@@ -286,7 +366,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 765.5, 237.0, 74.0, 23.0 ],
+									"patching_rect" : [ 685.5, 167.5, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -298,7 +378,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 609.5, 158.0, 41.0, 23.0 ],
+									"patching_rect" : [ 497.5, 92.29815303430081, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -309,7 +389,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 582.5, 291.0, 175.0, 228.0 ]
+									"patching_rect" : [ 502.5, 221.5, 175.0, 228.0 ]
 								}
 
 							}
@@ -320,7 +400,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 582.5, 266.0, 94.0, 23.0 ],
+									"patching_rect" : [ 502.5, 196.5, 94.0, 23.0 ],
 									"text" : "dict.deserialize"
 								}
 
@@ -332,7 +412,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 582.5, 237.0, 74.0, 23.0 ],
+									"patching_rect" : [ 502.5, 167.5, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -344,7 +424,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 426.5, 206.0, 175.0, 23.0 ],
+									"patching_rect" : [ 497.5, 133.447229551451187, 175.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.join.A"
 								}
 
@@ -356,7 +436,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 609.5, 206.0, 175.0, 23.0 ],
+									"patching_rect" : [ 680.5, 133.447229551451187, 175.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.join.B"
 								}
 
@@ -847,7 +927,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 609.0, 84.0, 80.0, 23.0 ],
+									"patching_rect" : [ 497.0, 51.149076517150405, 80.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -867,7 +947,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 106.0, 103.0, 439.0, 26.0 ],
+									"patching_rect" : [ 12.5, 107.0, 439.0, 26.0 ],
 									"text" : "transformjoin <dataset A> <dataset B> <desintation dataset>"
 								}
 
@@ -879,7 +959,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 110.5, 135.0, 430.0, 36.0 ],
+									"patching_rect" : [ 12.5, 139.0, 430.0, 36.0 ],
 									"text" : "transformjoin performs an 'inner join' meaning that only labels present in both datasets will be returned, and their columns will be combined.  ",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 								}
@@ -902,13 +982,13 @@
 									"filename" : "helpname.js",
 									"id" : "obj-4",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.dataset~" ],
+									"jsarguments" : [ "fluid.datasetquery~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 292.06396484375, 57.599853515625 ]
+									"patching_rect" : [ 10.0, 10.0, 413.26397705078125, 57.599853515625 ]
 								}
 
 							}
@@ -923,7 +1003,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 619.0, 190.5, 436.0, 190.5 ],
+									"midpoints" : [ 507.0, 121.955145118733526, 507.0, 121.955145118733526 ],
 									"order" : 1,
 									"source" : [ "obj-15", 0 ]
 								}
@@ -932,7 +1012,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
-									"midpoints" : [ 619.0, 199.5, 619.0, 199.5 ],
+									"midpoints" : [ 507.0, 125.0, 690.0, 125.0 ],
 									"order" : 0,
 									"source" : [ "obj-15", 0 ]
 								}
@@ -962,7 +1042,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-30", 0 ],
-									"midpoints" : [ 327.5, 719.0, 431.75, 719.0, 431.75, 485.0, 454.0, 485.0 ],
+									"midpoints" : [ 295.5, 566.0, 130.5, 566.0 ],
 									"source" : [ "obj-22", 2 ]
 								}
 
@@ -1033,6 +1113,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
+									"midpoints" : [ 663.0, 161.473614775725594, 512.0, 161.473614775725594 ],
 									"source" : [ "obj-40", 2 ]
 								}
 
@@ -1040,6 +1121,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
+									"midpoints" : [ 846.0, 161.473614775725594, 695.0, 161.473614775725594 ],
 									"source" : [ "obj-41", 2 ]
 								}
 
@@ -1062,8 +1144,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -1110,7 +1192,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 50.0, 125.0, 62.0, 22.0 ],
+					"patching_rect" : [ 50.0, 125.0, 130.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1119,7 +1201,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p merging",
+					"text" : "p \"combining columns\"",
 					"varname" : "basic_tab[1]"
 				}
 
@@ -1158,7 +1240,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 272.0, 218.0, 965.0, 769.0 ],
+						"rect" : [ 258.0, 243.0, 965.0, 769.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2055,8 +2137,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -2129,7 +2211,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 15.0, 292.06396484375, 57.599853515625 ]
+					"patching_rect" : [ 10.0, 10.0, 292.06396484375, 57.599853515625 ]
 				}
 
 			}
