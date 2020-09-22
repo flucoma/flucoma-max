@@ -432,7 +432,7 @@ bool checkResult(Result& res)
       {
       case Result::Status::kWarning:
         object_warn((t_object*) this, res.message().c_str());
-        break;
+        return true; //
       case Result::Status::kError:
         object_error((t_object*) this, res.message().c_str());
         break;
