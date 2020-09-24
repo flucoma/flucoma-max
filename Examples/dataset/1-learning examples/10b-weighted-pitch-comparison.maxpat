@@ -40,6 +40,42 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-11",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "signal" ],
+					"patching_rect" : [ 664.5, 835.0, 29.5, 22.0 ],
+					"text" : "*~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "int" ],
+					"patching_rect" : [ 675.0, 799.782165605095543, 29.5, 22.0 ],
+					"text" : "> 0."
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 675.0, 753.5, 99.0, 22.0 ],
+					"text" : "getattr frequency"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"fontface" : 1,
 					"fontname" : "Lato",
 					"id" : "obj-157",
@@ -47,7 +83,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 37.166660000000007, 435.5, 117.0, 21.0 ],
-					"presentation_linecount" : 3,
 					"text" : "weighted & stripped"
 				}
 
@@ -98,8 +133,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 105.499973000000068, 699.782165605095543, 265.0, 122.0 ],
-					"presentation_linecount" : 6,
+					"patching_rect" : [ 105.499973000000068, 699.782165605095543, 266.0, 122.0 ],
 					"text" : "unweighted: way off\n\nweighted: better, but still....\n\nweghted and stripped: close enough for electroacoustic music ",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -165,8 +199,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 155.0, 500.5, 97.0, 60.0 ],
-					"presentation_linecount" : 4,
+					"patching_rect" : [ 155.0, 500.5, 99.0, 60.0 ],
 					"text" : "With the outliers stripped, we see a much tighter range...",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
 				}
@@ -180,7 +213,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 468.0, 500.5, 97.0, 74.0 ],
-					"presentation_linecount" : 5,
 					"text" : "The weighted stats have the same range but much less variance",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
 				}
@@ -193,7 +225,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 784.0, 500.5, 94.0, 74.0 ],
+					"patching_rect" : [ 784.0, 500.5, 97.0, 74.0 ],
 					"text" : "The unweighted stats have a huge range (145-6.7kHz) and variance",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
 				}
@@ -276,7 +308,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 427.999999999999886, 96.0, 386.0, 74.0 ],
-					"presentation_linecount" : 4,
 					"text" : "We do three versions of the statistics. \n– Completely plain, where everything is taken into equal account. \n– Using the pitch confidence as a weighting , thresholded so everything < 0.8 is zeroed \n– Using the same weighting as well as automatic outlier removal ",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
 				}
@@ -290,7 +321,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 90.333343499999955, 88.0, 235.0, 47.0 ],
-					"presentation_linecount" : 3,
 					"text" : "Produce statistics for a short clip that has a clearly pitched section and much less clearly pitched section ",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -303,8 +333,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 100.166660000000007, 623.0, 259.333313000000089, 47.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 100.166660000000007, 623.0, 262.0, 47.0 ],
 					"text" : "Play back the esitmated mean frequency of the excerpt (right channel) against the original (left channel).  ",
 					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 				}
@@ -958,8 +987,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -978,7 +1007,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -988,7 +1016,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1006,7 +1035,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 609.833316500000024, 753.5, 50.0, 22.0 ],
+					"patching_rect" : [ 788.999999999999886, 751.690445859872511, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1025,7 +1054,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 954.0, 532.0, 67.0, 20.0 ],
-					"presentation_linecount" : 3,
 					"text" : "confidence"
 				}
 
@@ -1146,7 +1174,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 26.0, 243.0, 292.0, 49.0 ],
-					"presentation_linecount" : 3,
 					"text" : "fluid.bufstats~ @source example.10b.pitches @stats example.10b.stats.weighted.stripped @weights example.10b.weights @outlierscutoff 1.5"
 				}
 
@@ -1227,7 +1254,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 609.833316500000024, 802.0, 47.0, 22.0 ],
+					"patching_rect" : [ 788.999999999999886, 803.598726114649594, 47.0, 22.0 ],
 					"text" : "*~ 0.03"
 				}
 
@@ -1239,7 +1266,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 609.833316500000024, 777.5, 43.0, 22.0 ],
+					"patching_rect" : [ 788.999999999999886, 779.598726114649708, 43.0, 22.0 ],
 					"text" : "cycle~"
 				}
 
@@ -1461,6 +1488,13 @@
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
+					"destination" : [ "obj-11", 1 ],
+					"source" : [ "obj-10", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-120", 0 ],
 					"source" : [ "obj-109", 1 ]
 				}
@@ -1471,6 +1505,14 @@
 					"destination" : [ "obj-47", 0 ],
 					"midpoints" : [ 386.833316500000024, 839.0, 473.333316500000024, 839.0 ],
 					"source" : [ "obj-109", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-47", 1 ],
+					"midpoints" : [ 674.0, 867.0, 586.666658249999955, 867.0, 586.666658249999955, 835.5, 499.333316500000024, 835.5 ],
+					"source" : [ "obj-11", 0 ]
 				}
 
 			}
@@ -1492,7 +1534,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-80", 0 ],
-					"midpoints" : [ 501.333316500000024, 744.0, 619.333316500000024, 744.0 ],
+					"midpoints" : [ 501.333316500000024, 744.0, 798.499999999999886, 744.0 ],
 					"source" : [ "obj-120", 2 ]
 				}
 
@@ -1598,8 +1640,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-47", 1 ],
-					"midpoints" : [ 619.333316500000024, 830.5, 499.333316500000024, 830.5 ],
+					"destination" : [ "obj-11", 0 ],
+					"midpoints" : [ 798.499999999999886, 830.5, 674.0, 830.5 ],
 					"source" : [ "obj-46", 0 ]
 				}
 
@@ -1881,6 +1923,21 @@
 				}
 
 			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-10", 0 ],
+					"source" : [ "obj-9", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-45", 0 ],
+					"midpoints" : [ 724.5, 779.75, 798.499999999999886, 779.75 ],
+					"source" : [ "obj-9", 1 ]
+				}
+
+			}
  ],
 		"parameters" : 		{
 			"obj-85" : [ "live.tab", "live.tab", 0 ],
@@ -1926,8 +1983,8 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
@@ -1946,7 +2003,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1956,7 +2012,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
