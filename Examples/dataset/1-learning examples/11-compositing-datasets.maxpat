@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 238.0, 79.0, 1038.0, 943.0 ],
+		"rect" : [ 238.0, 79.0, 919.0, 864.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -40,72 +40,113 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-22",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 385.0, 412.0, 149.0, 22.0 ],
-					"text" : "write /tmp/max_slices.json"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 754.5, 441.0, 135.0, 22.0 ],
-					"text" : "write /tmp/max_dur.json"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-17",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 593.0, 441.0, 144.0, 22.0 ],
-					"text" : "write /tmp/max_mfcc.json"
-				}
-
-			}
-, 			{
-				"box" : 				{
+					"fontsize" : 13.0,
 					"id" : "obj-16",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 440.0, 441.0, 141.0, 22.0 ],
-					"text" : "write /tmp/max_loud.json"
+					"maxclass" : "live.text",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 558.113191187381744, 703.861898275352587, 117.584909081459045, 35.754717946052551 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "live.text[5]",
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.text",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "composite dataset",
+					"varname" : "live.text[2]"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontsize" : 13.0,
 					"id" : "obj-14",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 272.0, 441.0, 144.0, 22.0 ],
-					"text" : "write /tmp/max_pitch.json"
+					"maxclass" : "live.text",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 337.905645728111267, 703.861898275352587, 117.584909081459045, 35.754717946052551 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "live.text[4]",
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.text",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "thinning out data",
+					"varname" : "live.text[1]"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"fontsize" : 13.0,
+					"id" : "obj-18",
+					"maxclass" : "live.text",
+					"mode" : 0,
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"parameter_enable" : 1,
+					"patching_rect" : [ 121.905645728111267, 703.861898275352587, 117.584909081459045, 35.754717946052551 ],
+					"saved_attribute_attributes" : 					{
+						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
+							"parameter_longname" : "live.text[2]",
+							"parameter_mmax" : 1,
+							"parameter_shortname" : "live.text",
+							"parameter_type" : 2
+						}
+
+					}
+,
+					"text" : "MFCC matching",
+					"varname" : "live.text"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"bubble" : 1,
+					"fontsize" : 14.0,
+					"id" : "obj-10",
+					"linecount" : 7,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 461.405645728111267, 136.861898275352587, 311.0, 120.0 ],
+					"presentation_linecount" : 5,
+					"text" : "This patch is moderately annotated; to see these notes, bring up Max's much neglected 'clue' window (and perhaps make it bigger). \n\nHover over objects with a grey-ish square in the top right of the box (when unlocked), and you should see notes...",
+					"textcolor" : [ 0.717647058823529, 0.164705882352941, 0.164705882352941, 1.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"fontface" : 1,
+					"fontname" : "Lato",
+					"fontsize" : 16.0,
 					"id" : "obj-15",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 58.0, 661.861898275352587, 485.0, 20.0 ],
-					"text" : "These patches need to be explored in sequence (as the later ones need data from earlier)"
+					"patching_rect" : [ 100.0, 669.861898275352587, 634.0, 26.0 ],
+					"text" : "These patches need to be explored in sequence (as the later ones need data from earlier)",
+					"textcolor" : [ 0.717647058823529, 0.164705882352941, 0.164705882352941, 1.0 ]
 				}
 
 			}
@@ -118,7 +159,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 283.0, 9.339613080024719, 692.0, 122.0 ],
+					"patching_rect" : [ 80.0, 6.339613080024719, 692.0, 122.0 ],
 					"text" : "Example 11:\n here we will define a process that creates and populates a series of parallel dataset, one of each 'feature-space' that we can then eventually manipulate more easily than individual dimensions."
 				}
 
@@ -126,11 +167,12 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-12",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 111.0, 91.861898275352587, 150.0, 20.0 ],
-					"text" : "Do analysis of corpus"
+					"patching_rect" : [ 80.0, 136.861898275352587, 150.0, 33.0 ],
+					"text" : "Do analysis of corpus (will spin, don't worry)"
 				}
 
 			}
@@ -141,7 +183,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 409.0, 725.0, 51.0, 22.0 ],
+					"patching_rect" : [ 562.0, 774.0, 51.0, 22.0 ],
 					"text" : "pcontrol"
 				}
 
@@ -153,7 +195,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 409.0, 695.861898275352587, 35.0, 22.0 ],
+					"patching_rect" : [ 562.0, 744.861898275352587, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -175,7 +217,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 468.0, 79.0, 916.0, 947.0 ],
+						"rect" : [ 153.0, 79.0, 1440.0, 946.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -205,13 +247,158 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-37",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "bang" ],
+									"patching_rect" : [ 921.0, 407.0, 32.0, 22.0 ],
+									"text" : "t b b"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-36",
+									"linecount" : 4,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 740.0, 817.0, 364.0, 62.0 ],
+									"presentation_linecount" : 4,
+									"text" : "knearest Tremblay-ASWINE-ScratchySynth-M.wav-3 Tremblay-ASWINE-ScratchySynth-M.wav-8 Tremblay-Iterative-M.wav-15 Tremblay-Iterative-M.wav-3 Tremblay-ASWINE-ScratchySynth-M.wav-15"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-32",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "bang" ],
+									"patching_rect" : [ 922.0, 593.0, 208.0, 22.0 ],
+									"text" : "t b b"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-31",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 1111.0, 765.0, 110.0, 22.0 ],
+									"text" : "fluid.datasetquery~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 922.0, 630.0, 169.0, 35.0 ],
+									"presentation_linecount" : 4,
+									"text" : "fit example11.composite, knearest target.composite"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-30",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "list", "float", "" ],
+									"patching_rect" : [ 922.0, 682.0, 182.0, 22.0 ],
+									"text" : "fluid.kdtree~ @numneighbours 5"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"annotation" : "Join the three datasets togeher  in a two-step shuffle with transformjoin",
+									"id" : "obj-28",
+									"linecount" : 9,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 1111.0, 630.0, 160.0, 129.0 ],
+									"presentation_linecount" : 9,
+									"text" : "clear, addrange 0 4, transformjoin example11.pitch.norm example11.timbre.norm example11.tmp, transformjoin example11.loudness.norm example11.tmp example11.composite"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-27",
+									"linecount" : 3,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 922.0, 537.5, 266.0, 49.0 ],
+									"text" : "fluid.bufcompose~ @source target.pitch.norm @numframes 4 @destination target.composite @deststartframe 4"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"annotation" : "normalize each feature dataset (including the PCA'd MFCCs from the first part), so we have pitch, loudness and 'timbre' ",
+									"id" : "obj-23",
+									"linecount" : 5,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 934.0, 447.0, 342.0, 76.0 ],
+									"presentation_linecount" : 5,
+									"text" : ";\rnorm.pitch max 4.5;\rnorm.pitch min -4.5;\rnorm.pitch fittransform example11.pitch example11.pitch.norm;\rnorm.pitch transformpoint #0_tmppoint.pitch target.pitch.norm "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"annotation" : "Here, we tweak the range of the normalize  for the pitch data, so it's bigger; thus the pitch data (renormalized) will present greateer distances in the tree, and so be weighted less, in effect. That's the idea anyway",
+									"id" : "obj-22",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 921.0, 371.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 997.0, 371.0, 240.0, 20.0 ],
+									"presentation_linecount" : 4,
+									"text" : "Can we change the weighting of a feature? "
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"annotation" : "Stamdardize, taking advantage of a reveive object cunningly placed in the patch for the first chunk (so we re-use the extant object)",
 									"id" : "obj-21",
 									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 208.25, 585.0, 370.0, 35.0 ],
+									"patching_rect" : [ 210.25, 488.0, 370.0, 35.0 ],
 									"text" : ";\rexample11.2.std transformpoint target.mfcc.select target.mfcc.select"
 								}
 
@@ -222,20 +409,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 161.0, 8.0, 150.0, 20.0 ],
+									"patching_rect" : [ 178.25, 8.0, 150.0, 20.0 ],
 									"text" : "Normalize and compose"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 468.0, 864.0, 150.0, 33.0 ],
-									"text" : "Run the query (currently returns nonsense)"
 								}
 
 							}
@@ -246,7 +421,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 124.0, 41.0, 136.0, 22.0 ],
+									"patching_rect" : [ 128.0, 41.0, 136.0, 22.0 ],
 									"text" : "t b b"
 								}
 
@@ -258,37 +433,27 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 881.0, 664.0, 199.0, 22.0 ],
+									"patching_rect" : [ 1048.0, 305.91224489795917, 199.0, 22.0 ],
 									"text" : "fluid.dataset~ example11.composite"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 507.0, 276.0, 30.0, 22.0 ],
-									"text" : "size"
-								}
-
-							}
-, 							{
-								"box" : 								{
+									"annotation" : "Yes, it looks like a lot but there's basically two things going on below: \n1) Normalising and gluing together the feature datasets \n2) Normalising and gluing the target datapoint from the previous chunk, to query against the compsoite dataset",
 									"id" : "obj-87",
 									"maxclass" : "button",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 124.0, 4.0, 24.0, 24.0 ]
+									"patching_rect" : [ 128.0, 4.0, 24.0, 24.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "zap these for good measure",
 									"id" : "obj-83",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -307,20 +472,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 726.0, 864.0, 364.0, 76.0 ],
+									"patching_rect" : [ 133.5, 805.0, 364.0, 76.0 ],
 									"text" : "knearest Tremblay-ASWINE-ScratchySynth-M.wav-6 Tremblay-ASWINE-ScratchySynth-M.wav-11 Tremblay-ASWINE-ScratchySynth-M.wav-3 Tremblay-ASWINE-ScratchySynth-M.wav-15 Tremblay-ASWINE-ScratchySynth-M.wav-8"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-80",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 316.0, 878.0, 147.0, 22.0 ],
-									"text" : "knearest target.composite"
 								}
 
 							}
@@ -331,8 +484,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 128.0, 878.0, 137.0, 22.0 ],
-									"text" : "fit example11.composite"
+									"patching_rect" : [ 128.0, 738.0, 282.0, 22.0 ],
+									"text" : "fit example11.composite, knearest target.composite"
 								}
 
 							}
@@ -343,58 +496,62 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 128.0, 918.0, 182.0, 22.0 ],
+									"patching_rect" : [ 128.0, 765.0, 182.0, 22.0 ],
 									"text" : "fluid.kdtree~ @numneighbours 5"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Nearly there! Finally we \n1) Compose our target data buffers into a single point \n2) Fit our composite dataset with a KD tree",
 									"id" : "obj-71",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "bang", "bang", "bang", "bang" ],
-									"patching_rect" : [ 128.0, 731.0, 309.249999999999943, 22.0 ],
+									"patching_rect" : [ 128.0, 604.0, 309.249999999999943, 22.0 ],
 									"text" : "t b b b b"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "The four loudness statistics at frames 8-11",
 									"id" : "obj-70",
 									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 166.0, 774.0, 179.0, 49.0 ],
+									"patching_rect" : [ 166.0, 638.0, 179.0, 49.0 ],
 									"text" : "source target.loud.norm, numframes 4, deststartframe 8, bang"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "the four pitch statistics at frames 4-7",
 									"id" : "obj-69",
 									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 351.5, 774.0, 179.0, 49.0 ],
+									"patching_rect" : [ 351.5, 638.0, 179.0, 49.0 ],
 									"text" : "source target.pitch.norm, numframes 4, deststartframe 4, bang"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Take the four 'timbre' staistics, place at the start of the composed buffer",
 									"id" : "obj-66",
 									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 542.0, 774.0, 214.0, 49.0 ],
+									"patching_rect" : [ 542.0, 638.0, 214.0, 49.0 ],
 									"text" : "source target.timbre.norm, destination target.composite, startframe 0, deststartframe 0, bang"
 								}
 
@@ -406,70 +563,75 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 166.0, 849.0, 106.0, 22.0 ],
+									"patching_rect" : [ 166.0, 709.0, 106.0, 22.0 ],
 									"text" : "fluid.bufcompose~"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Normalize, using the fluid.normalize~ in this patch attached to [r norm.timbre]",
 									"id" : "obj-64",
 									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 159.25, 687.0, 339.0, 35.0 ],
+									"patching_rect" : [ 159.25, 565.0, 339.0, 35.0 ],
 									"text" : ";\rnorm.timbre transformpoint target.mfcc.pca target.timbre.norm"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "To make the 'timbre' data for the  target data point we: \n1) Compose a buffer with the mean and standard deviation of the MFCCs and delta-MFCCs\n2)  Standardize this data against the same mean / variance to which the datastet was fitted \n3) Reduce the 48-dimensional buffer to 4 dimensions using the same PCA to which the dataset was fitted \n4) Normalize into the same range as the dataset 'timbre' data",
 									"id" : "obj-63",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 5,
 									"outlettype" : [ "bang", "bang", "bang", "bang", "bang" ],
-									"patching_rect" : [ 128.0, 441.0, 144.0, 22.0 ],
+									"patching_rect" : [ 128.0, 366.0, 144.0, 22.0 ],
 									"text" : "t b b b b b"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Reduce with PCA, taking advantage of a reveive object cunningly placed in the patch for the first chunk",
 									"id" : "obj-59",
 									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 190.5, 643.0, 362.0, 35.0 ],
+									"patching_rect" : [ 190.5, 528.0, 362.0, 35.0 ],
 									"text" : ";\rexample11.2.pca transformpoint target.mfcc.select target.mfcc.pca"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Grab the mean and standard deviation of the delta-MFCCs. Still 24 points; write to destination buffer at 24 point offset. \n\nRead offset is 84 because: we are reading the 7th chunk (start of the delta stats) where the chunks are 12 points long -> 7 x 12 -> 84",
 									"id" : "obj-57",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 222.25, 479.0, 213.0, 22.0 ],
+									"patching_rect" : [ 222.25, 416.0, 213.0, 22.0 ],
 									"text" : "startframe 84, deststartframe 24, bang"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Grab the mean and standard deviation of the MFCCs for the targat data point (12 coefficients, 2 statistics -> 24 points)",
 									"id" : "obj-56",
 									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 443.25, 479.0, 360.283011674880981, 35.0 ],
+									"patching_rect" : [ 437.25, 416.0, 360.283011674880981, 35.0 ],
 									"text" : "source #0_tmppoint.mfcc, numframes 24,deststartframe 0,  destination target.mfcc.select, bang"
 								}
 
@@ -481,33 +643,38 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 222.25, 533.0, 106.0, 22.0 ],
+									"patching_rect" : [ 222.25, 461.0, 106.0, 22.0 ],
 									"text" : "fluid.bufcompose~"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Now we get started on the target point. Normalize its pitch and loudness. 'timbre' is more complex, because we still need to make the data for it",
 									"id" : "obj-52",
 									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 139.0, 382.0, 353.0, 49.0 ],
+									"patching_rect" : [ 139.0, 301.0, 353.0, 49.0 ],
 									"text" : ";\rnorm.pitch transformpoint #0_tmppoint.pitch target.pitch.norm;\rnorm.loud transformpoint #0_tmppoint.loudness target.loud.norm"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 1,
+									"fontname" : "Lato",
+									"fontsize" : 14.0,
 									"id" : "obj-50",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 301.0, 25.0, 150.0, 47.0 ],
-									"text" : "MAKE SURE YOU'VE RUN THE PREVIOUS EXAMPLES FIRST "
+									"patching_rect" : [ 366.0, 8.0, 206.0, 40.0 ],
+									"text" : "MAKE SURE YOU'VE RUN THE PREVIOUS EXAMPLES FIRST ",
+									"textcolor" : [ 0.811764705882353, 0.176470588235294, 0.176470588235294, 1.0 ]
 								}
 
 							}
@@ -518,7 +685,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 881.0, 589.666666666666742, 138.0, 22.0 ],
+									"patching_rect" : [ 1048.0, 243.108163265306104, 138.0, 22.0 ],
 									"text" : "buffer~ target.composite"
 								}
 
@@ -530,7 +697,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 881.0, 552.5, 147.0, 22.0 ],
+									"patching_rect" : [ 1048.0, 211.706122448979585, 147.0, 22.0 ],
 									"text" : "buffer~ target.timbre.norm"
 								}
 
@@ -542,7 +709,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 881.0, 515.333333333333371, 131.0, 22.0 ],
+									"patching_rect" : [ 1048.0, 180.304081632653066, 131.0, 22.0 ],
 									"text" : "buffer~ target.mfcc.pca"
 								}
 
@@ -554,7 +721,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 881.0, 626.833333333333371, 143.0, 22.0 ],
+									"patching_rect" : [ 1048.0, 274.510204081632651, 143.0, 22.0 ],
 									"text" : "buffer~ target.mfcc.select"
 								}
 
@@ -566,7 +733,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 881.0, 478.166666666666686, 137.0, 22.0 ],
+									"patching_rect" : [ 1048.0, 148.902040816326519, 137.0, 22.0 ],
 									"text" : "buffer~ target.loud.norm"
 								}
 
@@ -578,55 +745,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 881.0, 441.0, 139.0, 22.0 ],
+									"patching_rect" : [ 1048.0, 117.5, 139.0, 22.0 ],
 									"text" : "buffer~ target.pitch.norm"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-42",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 671.0, 287.0, 32.0, 22.0 ],
-									"text" : "print"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-40",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 758.0, 362.0, 32.0, 22.0 ],
-									"text" : "print"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-37",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 561.0, 281.0, 30.0, 22.0 ],
-									"text" : "cols"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-35",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 557.0, 328.0, 199.0, 22.0 ],
-									"text" : "fluid.dataset~ example11.composite"
 								}
 
 							}
@@ -637,20 +757,21 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 150.0, 352.0, 110.0, 22.0 ],
+									"patching_rect" : [ 150.0, 270.0, 110.0, 22.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Join the three datasets togeher  in a two-step shuffle with transformjoin",
 									"id" : "obj-33",
-									"linecount" : 9,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 150.0, 215.0, 160.0, 129.0 ],
+									"patching_rect" : [ 150.0, 221.0, 531.0, 35.0 ],
 									"text" : "clear, addrange 0 4, transformjoin example11.pitch.norm example11.timbre.norm example11.tmp, transformjoin example11.loudness.norm example11.tmp example11.composite"
 								}
 
@@ -674,7 +795,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 991.0, 371.0, 80.0, 22.0 ],
+									"patching_rect" : [ 922.0, 218.5, 80.0, 22.0 ],
 									"text" : "r norm.timbre"
 								}
 
@@ -686,7 +807,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 991.0, 400.0, 93.0, 22.0 ],
+									"patching_rect" : [ 922.0, 247.5, 93.0, 22.0 ],
 									"text" : "fluid.normalize~"
 								}
 
@@ -698,7 +819,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 1101.0, 371.0, 69.0, 22.0 ],
+									"patching_rect" : [ 922.0, 157.5, 69.0, 22.0 ],
 									"text" : "r norm.loud"
 								}
 
@@ -710,7 +831,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 1101.0, 400.0, 93.0, 22.0 ],
+									"patching_rect" : [ 922.0, 186.5, 93.0, 22.0 ],
 									"text" : "fluid.normalize~"
 								}
 
@@ -722,13 +843,14 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 881.0, 371.0, 72.0, 22.0 ],
+									"patching_rect" : [ 922.0, 276.5, 72.0, 22.0 ],
 									"text" : "r norm.pitch"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "normalize each feature dataset (including the PCA'd MFCCs from the first part), so we have pitch, loudness and 'timbre' ",
 									"id" : "obj-7",
 									"linecount" : 4,
 									"maxclass" : "message",
@@ -747,7 +869,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 881.0, 400.0, 93.0, 22.0 ],
+									"patching_rect" : [ 922.0, 305.5, 93.0, 22.0 ],
 									"text" : "fluid.normalize~"
 								}
 
@@ -808,7 +930,7 @@
 									"bgoncolor" : [ 0.55, 0.55, 0.55, 1.0 ],
 									"fontface" : 1,
 									"hint" : "",
-									"id" : "obj-6",
+									"id" : "obj-20",
 									"ignoreclick" : 1,
 									"legacytextcolor" : 1,
 									"maxclass" : "textbutton",
@@ -816,9 +938,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 443.25, 851.0, 20.0, 20.0 ],
+									"patching_rect" : [ 957.0, 371.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
 									"textoncolor" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"textovercolor" : [ 0.2, 0.2, 0.2, 1.0 ],
@@ -842,7 +964,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 325.0, 8.0, 20.0, 20.0 ],
+									"patching_rect" : [ 154.0, 8.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -919,6 +1041,56 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-37", 0 ],
+									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-32", 0 ],
+									"source" : [ "obj-27", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-31", 0 ],
+									"source" : [ "obj-28", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-30", 0 ],
+									"source" : [ "obj-29", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-36", 1 ],
+									"midpoints" : [ 1094.5, 730.5, 1094.5, 730.5 ],
+									"source" : [ "obj-30", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-28", 0 ],
+									"source" : [ "obj-32", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-29", 0 ],
+									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
 									"source" : [ "obj-33", 0 ]
 								}
@@ -926,29 +1098,22 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-40", 0 ],
-									"source" : [ "obj-35", 2 ]
+									"destination" : [ "obj-23", 0 ],
+									"source" : [ "obj-37", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-35", 0 ],
+									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-37", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-35", 0 ],
-									"source" : [ "obj-42", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-53", 0 ],
-									"midpoints" : [ 452.75, 515.0, 231.75, 515.0 ],
+									"midpoints" : [ 446.75, 455.5, 231.75, 455.5 ],
 									"source" : [ "obj-56", 0 ]
 								}
 
@@ -971,7 +1136,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-56", 0 ],
-									"midpoints" : [ 262.5, 470.5, 452.75, 470.5 ],
+									"midpoints" : [ 262.5, 407.5, 446.75, 407.5 ],
 									"source" : [ "obj-63", 4 ]
 								}
 
@@ -979,7 +1144,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-57", 0 ],
-									"midpoints" : [ 231.25, 469.0, 231.75, 469.0 ],
+									"midpoints" : [ 231.25, 401.5, 231.75, 401.5 ],
 									"source" : [ "obj-63", 3 ]
 								}
 
@@ -1009,7 +1174,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-65", 0 ],
-									"midpoints" : [ 551.5, 835.5, 175.5, 835.5 ],
+									"midpoints" : [ 551.5, 702.5, 175.5, 702.5 ],
 									"source" : [ "obj-66", 0 ]
 								}
 
@@ -1017,7 +1182,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-65", 0 ],
-									"midpoints" : [ 361.0, 835.5, 175.5, 835.5 ],
+									"midpoints" : [ 361.0, 694.5, 175.5, 694.5 ],
 									"source" : [ "obj-69", 0 ]
 								}
 
@@ -1025,7 +1190,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-65", 0 ],
-									"midpoints" : [ 175.5, 835.5, 175.5, 835.5 ],
+									"midpoints" : [ 175.5, 697.5, 175.5, 697.5 ],
 									"source" : [ "obj-70", 0 ]
 								}
 
@@ -1033,7 +1198,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-66", 0 ],
-									"midpoints" : [ 427.749999999999943, 763.0, 551.5, 763.0 ],
+									"midpoints" : [ 427.749999999999943, 632.0, 551.5, 632.0 ],
 									"source" : [ "obj-71", 3 ]
 								}
 
@@ -1041,7 +1206,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-69", 0 ],
-									"midpoints" : [ 331.0, 763.0, 361.0, 763.0 ],
+									"midpoints" : [ 331.0, 632.0, 361.0, 632.0 ],
 									"source" : [ "obj-71", 2 ]
 								}
 
@@ -1049,7 +1214,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-70", 0 ],
-									"midpoints" : [ 234.25, 763.0, 175.5, 763.0 ],
+									"midpoints" : [ 234.25, 632.0, 175.5, 632.0 ],
 									"source" : [ "obj-71", 1 ]
 								}
 
@@ -1064,6 +1229,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-82", 1 ],
+									"midpoints" : [ 300.5, 795.5, 488.0, 795.5 ],
 									"source" : [ "obj-76", 2 ]
 								}
 
@@ -1072,20 +1238,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-76", 0 ],
 									"source" : [ "obj-78", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-35", 0 ],
-									"source" : [ "obj-8", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-76", 0 ],
-									"source" : [ "obj-80", 0 ]
 								}
 
 							}
@@ -1169,7 +1321,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 409.0, 758.0, 193.0, 22.0 ],
+					"patching_rect" : [ 562.0, 805.0, 193.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1189,32 +1341,21 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 46.0, 859.0, 85.0, 35.0 ],
+					"patching_rect" : [ 364.318763580490099, 187.361898275352587, 85.0, 35.0 ],
 					"text" : ";\rmax showclue"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-47",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 699.5, 397.839613080024719, 199.0, 22.0 ],
-					"text" : "fluid.dataset~ example11.composite"
-				}
-
-			}
-, 			{
-				"box" : 				{
+					"annotation" : "this is a handy shortcut to redo the segmentation and feature analysis without redoing the file loading",
 					"id" : "obj-53",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 36.0, 288.0, 24.0, 24.0 ]
+					"patching_rect" : [ 5.0, 333.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -1225,7 +1366,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 267.0, 727.0, 51.0, 22.0 ],
+					"patching_rect" : [ 337.905645728111267, 774.0, 51.0, 22.0 ],
 					"text" : "pcontrol"
 				}
 
@@ -1237,7 +1378,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 267.0, 697.861898275352587, 35.0, 22.0 ],
+					"patching_rect" : [ 337.905645728111267, 744.861898275352587, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -1287,7 +1428,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
-						"visible" : 1,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-116",
@@ -1297,29 +1437,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 728.5, 467.735860109329224, 231.0, 47.0 ],
 									"text" : "fit two trees. One against the filtered data set, the other against the full range of datapoints, with all their statistics"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-115",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 437.5, 409.0, 547.0, 20.0 ],
-									"text" : "copy the mean and standard deviation of the pitch & confidence from the target sound for comparison"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-114",
-									"linecount" : 8,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 615.540878792603735, 263.0, 150.0, 114.0 ],
-									"text" : "Construct a filtered dataset containing only points with a comparable length to our target, and a pitch confidence > 0.7, using just the mean and standard deviation of the pitch and confidence"
 								}
 
 							}
@@ -1624,6 +1741,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "We're going to analyse a whole sound using the same features as for the whole corpus, and look at whether / how the nearest neightbour matching is affected by being selective about what we try and match against",
 									"id" : "obj-85",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -1641,7 +1759,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "int" ],
-									"patching_rect" : [ 391.0, 732.0, 65.5, 22.0 ],
+									"patching_rect" : [ 335.707545459270477, 731.0, 65.5, 22.0 ],
 									"text" : "t b i"
 								}
 
@@ -1658,7 +1776,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "float" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 391.0, 645.245279729366302, 106.0, 66.0 ],
+									"patching_rect" : [ 335.707545459270477, 644.245279729366302, 106.0, 66.0 ],
 									"rounded" : 35.0,
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
@@ -1678,6 +1796,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "find the nearest neighbours to the target using the filtered data",
 									"id" : "obj-80",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1690,6 +1809,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "find the nearest points to the target using the unfiltered datapoint",
 									"id" : "obj-79",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1726,6 +1846,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "copy the mean and standard deviation of the pitch & confidence from the target sound for comparison (complete analysis is in buffer~ #0_tmppoint.pitch. We put the selected data into #0_tmpmatch.1 buffer~)",
 									"id" : "obj-75",
 									"linecount" : 2,
 									"maxclass" : "newobj",
@@ -1739,6 +1860,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Now query our tmp dataset (containing the duration constrained pitch data), selecting only the entries whose median pitch confidnece (which is column 11)  is > 0.7, and copying the first four columns into the composite dataset. These columns contain the mean and standard deviation for the pitch and confidence data (so we've thrown out the other stats)\n\nNote that here we use transform, so we're acting directly on one dataset and writing to another. If there was anything in compose before, it will be junked.",
 									"id" : "obj-57",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1756,13 +1878,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 68.207545459270477, 236.0, 29.5, 22.0 ],
+									"patching_rect" : [ 68.207545459270477, 232.0, 29.5, 22.0 ],
 									"text" : "t b l"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Run a query on our duration dataset that selects all the entries between 22050 and 66150 samples long. \n\nUse this selection to effectively *filter* the _pitch_ dataset because we're using transformjoin and haven't added any columns to the query. The results end up in the tmp dataset\n",
+									"hint" : "",
 									"id" : "obj-45",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1780,13 +1904,14 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 68.207545459270477, 210.0, 104.0, 22.0 ],
+									"patching_rect" : [ 68.207545459270477, 205.0, 104.0, 22.0 ],
 									"text" : "vexpr $i1 + 44100"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Not random numbers. We're generating ± 22050 samples either side of the length of the clip we're analysing (44100 samples). \n\nYes, there's a cleverer and clearer way to do this",
 									"id" : "obj-29",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -1811,6 +1936,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "this is basocally the same as the feature extractor at the top level (look thete for gory detais) In the furtue this wlll be refactored to eliminate the code duplication.",
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -2303,7 +2429,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 222.547155052423477, 658.245279729366302, 157.415093243122101, 47.0 ],
+									"patching_rect" : [ 167.254700511693954, 657.245279729366302, 157.415093243122101, 47.0 ],
 									"text" : "Compare the results by playing back the nearest neighbours in sequence"
 								}
 
@@ -2376,7 +2502,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 505.5, 818.245282053947449, 275.0, 76.0 ],
+									"patching_rect" : [ 450.207545459270477, 817.245282053947449, 275.0, 76.0 ],
 									"text" : "Tremblay-ASWINE-ScratchySynth-M.wav-2 Tremblay-ASWINE-ScratchySynth-M.wav-11 Tremblay-ASWINE-ScratchySynth-M.wav-18 Green-Box641.wav-20 Tremblay-ASWINE-ScratchySynth-M.wav-15"
 								}
 
@@ -2399,7 +2525,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 164.0, 272.0 ],
+										"rect" : [ 858.0, 474.0, 164.0, 272.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2615,7 +2741,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 437.5, 771.489255675418804, 134.040878792603735, 22.0 ],
+									"patching_rect" : [ 382.207545459270477, 770.489255675418804, 134.040878792603735, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2648,7 +2774,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 437.5, 848.754715621471405, 60.0, 29.0 ]
+									"patching_rect" : [ 382.207545459270477, 847.754715621471405, 60.0, 29.0 ]
 								}
 
 							}
@@ -2658,7 +2784,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 381.754720270633698, 849.245282053947449, 45.0, 45.0 ]
+									"patching_rect" : [ 326.462265729904175, 848.245282053947449, 45.0, 45.0 ]
 								}
 
 							}
@@ -2722,13 +2848,37 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "int", "int" ],
+													"patching_rect" : [ 52.999995132287324, 84.532856519073448, 29.5, 22.0 ],
+													"text" : "t i i"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-4",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "int" ],
+													"patching_rect" : [ 116.0, 24.0, 29.5, 22.0 ],
+													"text" : "+ 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"comment" : "",
 													"id" : "obj-3",
 													"index" : 2,
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 286.0, 566.0, 30.0, 30.0 ]
+													"patching_rect" : [ 116.0, 59.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2740,7 +2890,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 79.914233798954001, 468.859648942947388, 30.0, 30.0 ]
+													"patching_rect" : [ 79.914233798954001, 497.859648942947388, 30.0, 30.0 ]
 												}
 
 											}
@@ -2775,7 +2925,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 219.914233798954001, 468.859648942947388, 47.0, 22.0 ],
+													"patching_rect" : [ 219.914233798954001, 497.859648942947388, 47.0, 22.0 ],
 													"text" : "delay 0"
 												}
 
@@ -2787,7 +2937,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 79.914233798954001, 406.333331942558289, 79.0, 22.0 ],
+													"patching_rect" : [ 79.914233798954001, 435.333331942558289, 79.0, 22.0 ],
 													"text" : "prepend start"
 												}
 
@@ -2799,7 +2949,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 79.914233798954001, 371.529204130172729, 34.949591279029846, 22.0 ],
+													"patching_rect" : [ 79.914233798954001, 400.529204130172729, 34.949591279029846, 22.0 ],
 													"text" : "join"
 												}
 
@@ -2811,7 +2961,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "float" ],
-													"patching_rect" : [ 95.863825077983847, 335.798576891422272, 29.5, 22.0 ],
+													"patching_rect" : [ 95.863825077983847, 364.798576891422272, 29.5, 22.0 ],
 													"text" : "!- 0."
 												}
 
@@ -2824,7 +2974,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 79.914233798954001, 281.563799693527244, 139.002428000000009, 35.0 ],
+													"patching_rect" : [ 79.914233798954001, 310.563799693527244, 139.002428000000009, 35.0 ],
 													"text" : "vexpr $f1 * (1000/$f2) @scalarmode 1"
 												}
 
@@ -2836,7 +2986,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 79.914233798954001, 228.833331942558289, 139.002428000000009, 22.0 ],
+													"patching_rect" : [ 79.914233798954001, 257.833331942558289, 139.002428000000009, 22.0 ],
 													"text" : "t l b"
 												}
 
@@ -2848,7 +2998,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 9,
 													"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-													"patching_rect" : [ 199.91666179895401, 256.333331942558289, 129.0, 22.0 ],
+													"patching_rect" : [ 199.91666179895401, 285.333331942558289, 129.0, 22.0 ],
 													"text" : "info~ example11.audio"
 												}
 
@@ -2860,7 +3010,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 79.66666179895401, 176.333331942558289, 55.0, 22.0 ],
+													"patching_rect" : [ 79.66666179895401, 205.333331942558289, 55.0, 22.0 ],
 													"text" : "zl slice 1"
 												}
 
@@ -2872,7 +3022,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 79.914233798954001, 203.333331942558289, 115.0, 22.0 ],
+													"patching_rect" : [ 79.914233798954001, 232.333331942558289, 115.0, 22.0 ],
 													"text" : "dict.unpack bounds:"
 												}
 
@@ -2884,7 +3034,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 52.999995132287324, 125.833331942558289, 73.0, 22.0 ],
+													"patching_rect" : [ 52.999995132287324, 154.833331942558289, 73.0, 22.0 ],
 													"text" : "prepend get"
 												}
 
@@ -2896,7 +3046,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 4,
 													"outlettype" : [ "dictionary", "", "", "" ],
-													"patching_rect" : [ 52.999995132287324, 152.333331942558289, 122.0, 22.0 ],
+													"patching_rect" : [ 52.999995132287324, 181.333331942558289, 122.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 0,
 														"parameter_enable" : 0,
@@ -2914,7 +3064,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 207.166661798954124, 566.912280559539795, 52.0, 22.0 ],
+													"patching_rect" : [ 207.166661798954124, 573.912280559539795, 52.0, 22.0 ],
 													"text" : "gate 1 1"
 												}
 
@@ -2926,7 +3076,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 294.611106243398581, 520.043859601020813, 33.0, 22.0 ],
+													"patching_rect" : [ 294.611106243398581, 549.043859601020813, 33.0, 22.0 ],
 													"text" : "== 0"
 												}
 
@@ -2950,7 +3100,7 @@
 													"numinlets" : 5,
 													"numoutlets" : 4,
 													"outlettype" : [ "int", "", "", "int" ],
-													"patching_rect" : [ 220.166661798954124, 492.859648942947388, 130.666666666666686, 22.0 ],
+													"patching_rect" : [ 220.166661798954124, 521.859648942947388, 130.666666666666686, 22.0 ],
 													"text" : "counter 1 1"
 												}
 
@@ -2962,7 +3112,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 52.999995132287324, 99.532856519073448, 112.0, 22.0 ],
+													"patching_rect" : [ 52.999995132287324, 128.532856519073448, 112.0, 22.0 ],
 													"text" : "zl lookup"
 												}
 
@@ -2974,7 +3124,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "signal", "bang" ],
-													"patching_rect" : [ 79.914233798954001, 440.333331942558289, 131.0, 22.0 ],
+													"patching_rect" : [ 79.914233798954001, 469.333331942558289, 131.0, 22.0 ],
 													"text" : "play~ example11.audio"
 												}
 
@@ -3023,7 +3173,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-58", 0 ],
+													"destination" : [ "obj-5", 0 ],
 													"source" : [ "obj-138", 0 ]
 												}
 
@@ -3039,6 +3189,27 @@
 												"patchline" : 												{
 													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-146", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"source" : [ "obj-4", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"source" : [ "obj-5", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-58", 0 ],
+													"source" : [ "obj-5", 0 ]
 												}
 
 											}
@@ -3065,14 +3236,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
-													"order" : 0,
-													"source" : [ "obj-65", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-67", 0 ],
 													"source" : [ "obj-65", 2 ]
 												}
@@ -3081,7 +3244,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-68", 1 ],
-													"order" : 1,
 													"source" : [ "obj-65", 0 ]
 												}
 
@@ -3096,14 +3258,13 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-68", 0 ],
-													"midpoints" : [ 304.111106243398581, 552.675438523292542, 216.666661798954124, 552.675438523292542 ],
 													"source" : [ "obj-67", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-58", 0 ],
+													"destination" : [ "obj-5", 0 ],
 													"midpoints" : [ 216.666661798954124, 599.570175290107727, 14.04166179895401, 599.570175290107727, 14.04166179895401, 78.532856519073448, 62.499995132287324, 78.532856519073448 ],
 													"source" : [ "obj-68", 0 ]
 												}
@@ -3161,7 +3322,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-83", 0 ],
-													"midpoints" : [ 89.414233798954001, 329.198565818042766, 105.363825077983847, 329.198565818042766 ],
+													"midpoints" : [ 89.414233798954001, 358.198565818042766, 105.363825077983847, 358.198565818042766 ],
 													"order" : 0,
 													"source" : [ "obj-79", 0 ]
 												}
@@ -3170,7 +3331,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-84", 0 ],
-													"midpoints" : [ 89.414233798954001, 343.546501911849987, 89.414233798954001, 343.546501911849987 ],
+													"midpoints" : [ 89.414233798954001, 372.546501911849987, 89.414233798954001, 372.546501911849987 ],
 													"order" : 1,
 													"source" : [ "obj-79", 0 ]
 												}
@@ -3207,7 +3368,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 390.5, 814.245282053947449, 66.0, 22.0 ],
+									"patching_rect" : [ 335.207545459270477, 813.245282053947449, 66.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3233,6 +3394,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "fit a KD tree against the complete pitch data (all slices, all statistics)",
 									"id" : "obj-65",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -3245,6 +3407,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "fit a KD tree against the reduced data",
 									"id" : "obj-64",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -3320,7 +3483,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 202.622629404067993, 666.122638702392578, 20.0, 20.0 ],
+									"patching_rect" : [ 147.33017486333847, 665.122638702392578, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -3361,7 +3524,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-97", 1 ],
-									"midpoints" : [ 331.707545459270477, 623.291792188457521, 504.520439396301867, 623.291792188457521 ],
+									"midpoints" : [ 331.707545459270477, 623.291792188457521, 449.227984855572345, 623.291792188457521 ],
 									"source" : [ "obj-110", 0 ]
 								}
 
@@ -3385,7 +3548,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-97", 2 ],
-									"midpoints" : [ 625.040878792603735, 620.933303837350877, 562.040878792603735, 620.933303837350877 ],
+									"midpoints" : [ 625.040878792603735, 619.933303837350877, 506.748424251874212, 619.933303837350877 ],
 									"source" : [ "obj-118", 0 ]
 								}
 
@@ -3403,13 +3566,6 @@
 									"destination" : [ "obj-113", 0 ],
 									"order" : 1,
 									"source" : [ "obj-148", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-117", 0 ],
-									"source" : [ "obj-148", 1 ]
 								}
 
 							}
@@ -3614,7 +3770,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 1 ],
-									"midpoints" : [ 447.0, 803.867268864683183, 771.0, 803.867268864683183 ],
+									"midpoints" : [ 391.707545459270477, 802.867268864683183, 715.707545459270477, 802.867268864683183 ],
 									"order" : 0,
 									"source" : [ "obj-97", 0 ]
 								}
@@ -3672,7 +3828,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 267.0, 758.0, 110.0, 22.0 ],
+					"patching_rect" : [ 337.905645728111267, 805.0, 110.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3691,7 +3847,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 58.0, 728.0, 51.0, 22.0 ],
+					"patching_rect" : [ 121.905645728111267, 774.0, 51.0, 22.0 ],
 					"text" : "pcontrol"
 				}
 
@@ -3703,7 +3859,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 58.0, 698.861898275352587, 35.0, 22.0 ],
+					"patching_rect" : [ 121.905645728111267, 744.861898275352587, 35.0, 22.0 ],
 					"text" : "open"
 				}
 
@@ -3725,7 +3881,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 90.0, 79.0, 1362.0, 791.0 ],
+						"rect" : [ 166.0, 127.0, 1362.0, 791.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3755,17 +3911,6 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-16",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 296.0, 252.0, 32.0, 22.0 ],
-									"text" : "print"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 0,
@@ -3773,19 +3918,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 20.716972053050995, 204.867918431758881, 103.0, 22.0 ],
 									"text" : "r example11.2.std"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-34",
-									"linecount" : 4,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 1037.0, 508.0, 50.0, 62.0 ],
-									"text" : "fittransform 0.374181"
 								}
 
 							}
@@ -3885,6 +4017,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Select just the mean and standard deviation of the MFCCs, discarding the delta-MFCC statistics",
 									"id" : "obj-7",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -4055,6 +4188,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Confirm we have gone down from 168 dimensions to 48, and then standardize (adjust to zero mean, and unit variance) our filtered dataset.",
 									"id" : "obj-24",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -4575,7 +4709,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 695.859632161842228, 674.867923080921173, 319.0, 49.0 ],
-									"text" : "Tremblay-FMTriDist-M.wav-10 Tremblay-FMTriDist-M.wav-13 Tremblay-FMTri-M.wav-5 Tremblay-FMTri-M.wav-23 Tremblay-FMTriDist-M.wav-14"
+									"text" : "Tremblay-Iterative-M.wav-25 Tremblay-Iterative-M.wav-10 Tremblay-Iterative-M.wav-26 Tremblay-Iterative-M.wav-23 Tremblay-Iterative-M.wav-7"
 								}
 
 							}
@@ -5470,12 +5604,13 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 573.867923080921173, 445.0, 226.0, 22.0 ],
-									"text" : "Tremblay-FMTriDist-M.wav-10"
+									"text" : "Tremblay-Iterative-M.wav-25"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "We want to select just the means and standard deviations of the MFCCs and delta-MFCCs. \n\nWe have 12 coefficients for each, and each of these has 7 statistics. The MFCC mean and standard deviation are the first two stastics – times 12, that's first 24 dimensions. The corresponding stats for the delta-MFCCs start 7 x 12 -> 84 points later. ",
 									"id" : "obj-74",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -5512,6 +5647,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Fit the 4D data to a KD tree",
 									"id" : "obj-65",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -5524,6 +5660,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Fit the 4D data to a KD tree",
 									"id" : "obj-64",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -5584,6 +5721,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Take our 48 dimensioned MFCC data and reduce it to 4 dimensions with PCA",
 									"id" : "obj-52",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -5608,6 +5746,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Reduce the 24-dimensions to 4 with PCA",
 									"id" : "obj-51",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -5870,17 +6009,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-34", 1 ],
-									"order" : 0,
-									"source" : [ "obj-39", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-66", 0 ],
 									"midpoints" : [ 1021.216972053050995, 493.610048020879276, 870.216972053050995, 493.610048020879276 ],
-									"order" : 1,
 									"source" : [ "obj-39", 2 ]
 								}
 
@@ -5931,16 +6061,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-16", 0 ],
-									"order" : 0,
-									"source" : [ "obj-54", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-55", 0 ],
-									"order" : 1,
 									"source" : [ "obj-54", 2 ]
 								}
 
@@ -6113,7 +6234,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 58.0, 759.0, 139.0, 22.0 ],
+					"patching_rect" : [ 121.905645728111267, 805.0, 139.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -6127,48 +6248,39 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-41",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 3,
-					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 699.5, 331.599999999999909, 193.0, 22.0 ],
-					"text" : "fluid.dataset~ example11.mfcc.pca"
-				}
-
-			}
-, 			{
-				"box" : 				{
+					"annotation" : "will hold some MFCCs that have been standardised ",
 					"id" : "obj-40",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 699.5, 302.39999999999992, 189.0, 22.0 ],
+					"patching_rect" : [ 707.5, 401.39999999999992, 189.0, 22.0 ],
 					"text" : "fluid.dataset~ example11.mfcc.std"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "there's a couple of places where we need a temporary dataset, so here's one...",
 					"id" : "obj-37",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 699.5, 366.0, 165.0, 22.0 ],
+					"patching_rect" : [ 707.5, 433.339613080024719, 165.0, 22.0 ],
 					"text" : "fluid.dataset~ example11.tmp"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "reset everything, and then send our dictionary of slices into the batch processor",
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 6,
 					"outlettype" : [ "", "clear", "clear", "clear", "clear", "clear" ],
-					"patching_rect" : [ 90.0, 453.0, 165.0, 22.0 ],
+					"patching_rect" : [ 59.0, 478.0, 165.0, 22.0 ],
 					"text" : "t l clear clear clear clear clear"
 				}
 
@@ -6182,7 +6294,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 211.0, 396.0, 115.0, 22.0 ]
+					"patching_rect" : [ 196.0, 445.0, 115.0, 22.0 ]
 				}
 
 			}
@@ -6195,30 +6307,32 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 217.0, 586.861898275352587, 115.0, 22.0 ]
+					"patching_rect" : [ 186.0, 631.861898275352587, 115.0, 22.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "this is just a handy shortcut to re-run the feature analysis without redoing the file loading and segmentation",
 					"id" : "obj-60",
 					"maxclass" : "button",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 36.0, 377.0, 24.0, 24.0 ]
+					"patching_rect" : [ 5.0, 411.0, 24.0, 24.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "this dict holds the list of files we've loaded",
 					"id" : "obj-58",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 90.0, 328.0, 50.5, 22.0 ],
+					"patching_rect" : [ 59.0, 373.0, 50.5, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -6231,12 +6345,13 @@
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "this dict holds labels and start / end for every segment we found",
 					"id" : "obj-57",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 90.0, 425.0, 122.0, 22.0 ],
+					"patching_rect" : [ 59.0, 445.0, 122.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 0,
 						"parameter_enable" : 0,
@@ -6254,7 +6369,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 714.5, 513.0, 188.0, 22.0 ],
+					"patching_rect" : [ 683.5, 538.0, 188.0, 22.0 ],
 					"text" : "fluid.dataset~ example11.duration"
 				}
 
@@ -6266,7 +6381,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 535.0, 513.0, 170.0, 22.0 ],
+					"patching_rect" : [ 504.0, 538.0, 170.0, 22.0 ],
 					"text" : "fluid.dataset~ example11.mfcc"
 				}
 
@@ -6278,7 +6393,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 329.0, 513.0, 193.0, 22.0 ],
+					"patching_rect" : [ 298.0, 538.0, 193.0, 22.0 ],
 					"text" : "fluid.dataset~ example11.loudness"
 				}
 
@@ -6290,13 +6405,14 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
-					"patching_rect" : [ 148.400000000000006, 513.0, 170.0, 22.0 ],
+					"patching_rect" : [ 117.400000000000006, 538.0, 170.0, 22.0 ],
 					"text" : "fluid.dataset~ example11.pitch"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "this subpatcher gets called once for each slice in the dictionary. Open it up to see what we're doing",
 					"fontface" : 1,
 					"id" : "obj-38",
 					"maxclass" : "newobj",
@@ -6314,7 +6430,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 79.0, 1293.0, 943.0 ],
+						"rect" : [ 555.0, 79.0, 888.0, 863.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6344,124 +6460,12 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-29",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 658.0, 640.0, 135.0, 22.0 ],
-									"text" : "write /tmp/max_dur.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 358.0, 151.0, 42.0, 22.0 ],
 									"text" : "print b"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-27",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 473.0, 592.575998809967132, 141.0, 22.0 ],
-									"text" : "write /tmp/max_loud.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 629.0, 587.575998809967132, 144.0, 22.0 ],
-									"text" : "write /tmp/max_mfcc.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-7",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 434.0, 557.617198647891655, 144.0, 22.0 ],
-									"text" : "write /tmp/max_pitch.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-19",
-									"linecount" : 2,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 750.081604674458504, 870.0, 50.0, 35.0 ],
-									"text" : "addpoint"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-18",
-									"linecount" : 2,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 562.081604674458504, 859.5, 50.0, 35.0 ],
-									"text" : "addpoint"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-13",
-									"linecount" : 2,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 330.0, 866.0, 50.0, 35.0 ],
-									"text" : "addpoint"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-9",
-									"linecount" : 2,
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 227.0, 866.0, 50.0, 35.0 ],
-									"text" : "addpoint"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-4",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 849.0, 701.0, 30.0, 22.0 ],
-									"text" : "size"
 								}
 
 							}
@@ -6479,6 +6483,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "We want a dataset of segment durations later, which we can make quite simply using the numframes we get from fluid.processsegments",
 									"id" : "obj-74",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -6495,7 +6500,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 104.0, 640.0, 480.0 ],
+										"rect" : [ 589.0, 79.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -6724,6 +6729,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "write the different features into separate datasets",
 									"id" : "obj-54",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -6736,6 +6742,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "capture the label for the point here, so we can recall it after analysis and use to label points in datasets",
 									"id" : "obj-53",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
@@ -6761,6 +6768,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "As with the statistics from bufpitch, this gives us 28 numbers (2 channels, 14 statistics each)",
 									"id" : "obj-50",
 									"linecount" : 2,
 									"maxclass" : "newobj",
@@ -6846,13 +6854,14 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "From the statistics we have 28 numbers of interest: seven basic measurements, plus another seven for the derivative of the data, repeated for both the pitch and confidence estimates. \n\nFlatten this 14 x 2 thing into a single 28 x 1 thing, so we can put it in a fluid.dataset~ later",
 									"id" : "obj-37",
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 25.191862285137177, 232.36065512144495, 305.744182586669922, 35.0 ],
+									"patching_rect" : [ 25.191862285137177, 248.772276320300762, 305.744182586669922, 35.0 ],
 									"text" : "fluid.bufflatten~ @source #0_tmpstats @destination #0_tmppoint.pitch"
 								}
 
@@ -6931,6 +6940,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Extract pitch data (pitch estimate and confidence) from 1st channel of source buffer, note we choosing midicent units rather than Hz",
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -6943,19 +6953,21 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "Gather some statistics from the pitch data. \n\nWe use the thresholded confidence as a weighting, so that everything that had a confidence < 0.7 is ignored for the mean, variance and higher moments. We also run automatic outlier removal, to ignore data whose pitch characteristics are too different to the rest of the sample. \n\nThe point of all this is to be quite choosy about what 'counts' as pitched data in the statistics,  and to help the esitmated quantities tally batter with what we might hear (see Example 10b)\n\nWe might even end up with no useable data after all this. If so, bufstats issues a warning, and we get a vector of 0s for our point.",
 									"id" : "obj-32",
+									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 25.191862285137177, 195.272276320300762, 637.0, 22.0 ],
+									"patching_rect" : [ 25.191862285137177, 195.272276320300762, 299.0, 49.0 ],
 									"text" : "fluid.bufstats~ @source #0_tmppitch @stats #0_tmpstats @weights #0_tmpweights @numderivs 1 @outlierscutoff 1.5"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"annotation" : "Take the pitch confidence and threshold it at a value of 0.1",
+									"annotation" : "Take the pitch confidence (2nd channel of pitch feature buffer) and threshold it at a value of 0.7",
 									"id" : "obj-31",
 									"linecount" : 3,
 									"maxclass" : "newobj",
@@ -6969,6 +6981,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "We want to weigh the statistics we will generate for the MFCC data against the loudness of the frame, so that quieter frames are accorded less significance in coming up with the mean etc. \n\nWe take the first channel of our loudness data, and rescale it from (nominally) -70dB to 0dB into the range 0-1 (thus gating anything <-70dB). If there is content that is quieter, bufstats will produce a warning",
 									"id" : "obj-2",
 									"linecount" : 3,
 									"maxclass" : "newobj",
@@ -6994,6 +7007,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "run a loudness analysis. Note that we get useful attributes set from routepass further up, but are tiggered by the fluid.bufflatten~ directly above",
 									"id" : "obj-16",
 									"linecount" : 2,
 									"maxclass" : "newobj",
@@ -7007,6 +7021,7 @@
 							}
 , 							{
 								"box" : 								{
+									"annotation" : "fluid.processsegments sends useful messsages in. Because we need to run three separate processes here, we've repeated some of the labels in routepass to cut down on patch cords. Note the bang in the middle to kick everything off though....",
 									"id" : "obj-12",
 									"maxclass" : "newobj",
 									"numinlets" : 9,
@@ -7222,13 +7237,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-45", 0 ],
-									"source" : [ "obj-20", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-74", 0 ],
 									"source" : [ "obj-21", 0 ]
 								}
@@ -7262,20 +7270,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-44", 0 ],
-									"source" : [ "obj-27", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"source" : [ "obj-29", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
 									"source" : [ "obj-31", 0 ]
 								}
@@ -7291,7 +7285,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
-									"midpoints" : [ 34.691862285137177, 342.865135808944274, 34.877907156944275, 342.865135808944274 ],
+									"midpoints" : [ 34.691862285137177, 306.496430041565873, 34.877907156944275, 306.496430041565873 ],
 									"source" : [ "obj-37", 0 ]
 								}
 
@@ -7300,66 +7294,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-43", 0 ],
 									"source" : [ "obj-39", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"order" : 3,
-									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-44", 0 ],
-									"order" : 2,
-									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-45", 0 ],
-									"order" : 1,
-									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-46", 0 ],
-									"order" : 0,
-									"source" : [ "obj-4", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-9", 1 ],
-									"source" : [ "obj-43", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-13", 1 ],
-									"source" : [ "obj-44", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-18", 1 ],
-									"source" : [ "obj-45", 2 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 1 ],
-									"source" : [ "obj-46", 2 ]
 								}
 
 							}
@@ -7445,13 +7379,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-43", 0 ],
-									"source" : [ "obj-7", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
 									"source" : [ "obj-70", 0 ]
 								}
@@ -7530,7 +7457,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 374.413117852378832, 560.0, 167.0, 22.0 ],
+					"patching_rect" : [ 343.413117852378832, 585.0, 167.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -7546,6 +7473,7 @@
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "this subpatch gets called once for each file in the overall buffer, and will run a segmenter...",
 					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -7562,7 +7490,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 84.0, 129.0, 431.0, 211.0 ],
+						"rect" : [ 416.0, 194.0, 431.0, 211.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7592,6 +7520,7 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"annotation" : "the messages setting the soufce, destination and processing bounds are sent by fluid.segmentcorpus~, so we don't need to do much here",
 									"id" : "obj-7",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -7694,7 +7623,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 374.413117852378832, 366.06639899999999, 75.0, 22.0 ],
+					"patching_rect" : [ 343.413117852378832, 411.06639899999999, 75.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -7709,12 +7638,13 @@
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "",
 					"id" : "obj-139",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "dictionary", "float", "" ],
-					"patching_rect" : [ 90.0, 366.06639899999999, 261.0, 22.0 ],
+					"patching_rect" : [ 59.0, 411.06639899999999, 261.0, 22.0 ],
 					"text" : "fluid.segmentcorpus @source example11.audio",
 					"varname" : "fluid.segmentcorpus"
 				}
@@ -7727,7 +7657,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 3,
 					"outlettype" : [ "dictionary", "float", "" ],
-					"patching_rect" : [ 90.0, 560.0, 273.0, 22.0 ],
+					"patching_rect" : [ 59.0, 585.0, 273.0, 22.0 ],
 					"text" : "fluid.processsegments @source example11.audio",
 					"varname" : "fluid.processsegments"
 				}
@@ -7735,12 +7665,13 @@
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "our corpus in one big buffer",
 					"id" : "obj-32",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 699.5, 267.0, 140.0, 22.0 ],
+					"patching_rect" : [ 707.5, 373.0, 140.0, 22.0 ],
 					"text" : "buffer~ example11.audio"
 				}
 
@@ -7752,19 +7683,20 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 90.0, 263.5, 94.0, 22.0 ],
+					"patching_rect" : [ 59.0, 308.5, 94.0, 22.0 ],
 					"text" : "fluid.audiofilesin"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "make a new path for the package media folder",
 					"id" : "obj-21",
 					"maxclass" : "newobj",
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 90.0, 238.0, 123.0, 22.0 ],
+					"patching_rect" : [ 59.0, 283.0, 123.0, 22.0 ],
 					"text" : "combine path /media/"
 				}
 
@@ -7776,7 +7708,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "dictionary" ],
-					"patching_rect" : [ 90.0, 296.0, 287.0, 22.0 ],
+					"patching_rect" : [ 59.0, 341.0, 287.0, 22.0 ],
 					"text" : "fluid.concataudiofiles @destination example11.audio",
 					"varname" : "fluid.concataudiofiles"
 				}
@@ -7784,24 +7716,26 @@
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "if we're in the examples folder. then extract the path leading up to it",
 					"id" : "obj-11",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 90.0, 209.0, 131.0, 22.0 ],
+					"patching_rect" : [ 59.0, 254.0, 131.0, 22.0 ],
 					"text" : "regexp (.*)/examples/.*"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "",
 					"id" : "obj-9",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 90.0, 182.0, 128.0, 22.0 ],
+					"patching_rect" : [ 59.0, 227.0, 128.0, 22.0 ],
 					"text" : "conformpath max boot"
 				}
 
@@ -7813,19 +7747,20 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 90.0, 121.0, 32.0, 22.0 ],
+					"patching_rect" : [ 59.0, 166.0, 32.0, 22.0 ],
 					"text" : "path"
 				}
 
 			}
 , 			{
 				"box" : 				{
+					"annotation" : "find out where we are",
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 90.0, 148.622631728649139, 67.0, 22.0 ],
+					"patching_rect" : [ 59.0, 193.622631728649139, 67.0, 22.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -7846,7 +7781,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 462.0, 695.861898275352587, 20.0, 20.0 ],
+					"patching_rect" : [ 536.113191187381744, 711.739257248378863, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"text" : "4",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -7872,7 +7807,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 84.0, 91.861898275352587, 20.0, 20.0 ],
+					"patching_rect" : [ 53.0, 136.861898275352587, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"text" : "1",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -7898,7 +7833,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 99.0, 698.861898275352587, 20.0, 20.0 ],
+					"patching_rect" : [ 99.905645728111267, 711.739257248378863, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"text" : "2",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -7924,7 +7859,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 94.905645728111267, 148.622631728649139, 20.0, 20.0 ],
+					"patching_rect" : [ 63.905645728111267, 193.622631728649139, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"text" : "1",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -7950,7 +7885,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 308.0, 697.861898275352587, 20.0, 20.0 ],
+					"patching_rect" : [ 312.905645728111267, 711.739257248378863, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"text" : "3",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -8027,28 +7962,21 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-43", 0 ],
+					"destination" : [ "obj-128", 0 ],
 					"source" : [ "obj-14", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-44", 0 ],
+					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-16", 0 ]
 				}
 
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-45", 0 ],
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-46", 0 ],
+					"destination" : [ "obj-123", 0 ],
 					"source" : [ "obj-18", 0 ]
 				}
 
@@ -8064,13 +7992,6 @@
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
 					"source" : [ "obj-21", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-57", 0 ],
-					"source" : [ "obj-22", 0 ]
 				}
 
 			}
@@ -8126,7 +8047,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-43", 0 ],
-					"midpoints" : [ 157.900000000000006, 493.5, 157.900000000000006, 493.5 ],
+					"midpoints" : [ 126.900000000000006, 518.5, 126.900000000000006, 518.5 ],
 					"source" : [ "obj-4", 2 ]
 				}
 
@@ -8134,7 +8055,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-44", 0 ],
-					"midpoints" : [ 187.099999999999994, 502.5, 338.5, 502.5 ],
+					"midpoints" : [ 156.099999999999994, 527.5, 307.5, 527.5 ],
 					"source" : [ "obj-4", 3 ]
 				}
 
@@ -8142,7 +8063,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-45", 0 ],
-					"midpoints" : [ 216.300000000000011, 492.5, 544.5, 492.5 ],
+					"midpoints" : [ 185.300000000000011, 517.5, 513.5, 517.5 ],
 					"source" : [ "obj-4", 4 ]
 				}
 
@@ -8150,7 +8071,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-46", 0 ],
-					"midpoints" : [ 245.5, 482.5, 724.0, 482.5 ],
+					"midpoints" : [ 214.5, 507.5, 693.0, 507.5 ],
 					"source" : [ "obj-4", 5 ]
 				}
 
@@ -8218,6 +8139,9 @@
 			"obj-121::obj-72" : [ "live.tab", "live.tab", 0 ],
 			"obj-129::obj-81" : [ "live.tab[2]", "live.tab", 0 ],
 			"obj-129::obj-86" : [ "live.text[3]", "live.text[3]", 0 ],
+			"obj-14" : [ "live.text[4]", "live.text", 0 ],
+			"obj-16" : [ "live.text[5]", "live.text", 0 ],
+			"obj-18" : [ "live.text[2]", "live.text", 0 ],
 			"parameterbanks" : 			{
 
 			}
