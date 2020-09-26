@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 238.0, 79.0, 919.0, 864.0 ],
+		"rect" : [ 60.0, 87.0, 919.0, 864.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -254,7 +254,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 291.0, 794.0, 87.0, 22.0 ],
-									"presentation_rect" : [ 34.0, 755.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "route knearest"
 								}
@@ -1207,7 +1206,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 351.5, 767.0, 150.0, 20.0 ],
-									"presentation_rect" : [ 538.25, 846.0, 0.0, 0.0 ],
 									"style" : "",
 									"text" : "observe the results"
 								}
@@ -1949,7 +1947,6 @@
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 667.391479, 859.2453, 20.0, 20.0 ],
-									"presentation_rect" : [ 713.0, 820.0, 0.0, 0.0 ],
 									"rounded" : 60.0,
 									"style" : "",
 									"text" : "4",
@@ -1977,7 +1974,6 @@
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 325.0, 767.0, 20.0, 20.0 ],
-									"presentation_rect" : [ 504.0, 809.0, 0.0, 0.0 ],
 									"rounded" : 60.0,
 									"style" : "",
 									"text" : "2",
@@ -3728,14 +3724,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
-									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 450.207545, 817.245282, 275.0, 76.0 ],
-									"style" : "",
-									"text" : "Tremblay-ASWINE-ScratchySynth-M.wav-2 Tremblay-ASWINE-ScratchySynth-M.wav-11 Tremblay-ASWINE-ScratchySynth-M.wav-18 Green-Box641.wav-20 Tremblay-ASWINE-ScratchySynth-M.wav-15"
+									"patching_rect" : [ 450.20755, 817.2453, 275.0, 22.0 ],
+									"style" : ""
 								}
 
 							}
@@ -4801,7 +4795,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-97", 1 ],
-									"midpoints" : [ 331.707545, 623.291792, 449.227985, 623.291792 ],
+									"midpoints" : [ 331.707545, 623.291792, 449.227984, 623.291792 ],
 									"source" : [ "obj-110", 0 ]
 								}
 
@@ -5054,7 +5048,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 1 ],
-									"midpoints" : [ 391.707545, 802.867269, 715.707545, 802.867269 ],
+									"midpoints" : [ 391.707545, 802.867269, 715.70755, 802.867269 ],
 									"order" : 0,
 									"source" : [ "obj-97", 0 ]
 								}
@@ -6034,14 +6028,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
-									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 695.859632, 674.867923, 319.0, 49.0 ],
-									"style" : "",
-									"text" : "Tremblay-FMTri-M.wav-19 Tremblay-FMTri-M.wav-22 Tremblay-FMTri-M.wav-18 Tremblay-FMTriDist-M.wav-7 Tremblay-FMTri-M.wav-14"
+									"patching_rect" : [ 695.859619, 674.86792, 319.0, 22.0 ],
+									"style" : ""
 								}
 
 							}
@@ -6973,7 +6965,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 573.867923, 445.0, 226.0, 22.0 ],
 									"style" : "",
-									"text" : "Tremblay-FMTri-M.wav-19"
+									"text" : "Green-Box639.wav-2"
 								}
 
 							}
@@ -8793,7 +8785,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-56", 0 ],
-									"midpoints" : [ 475.74943, 773.61972, 451.581605, 773.61972 ],
+									"midpoints" : [ 475.749431, 773.61972, 451.581605, 773.61972 ],
 									"source" : [ "obj-54", 3 ]
 								}
 
@@ -9596,15 +9588,15 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-129::obj-86" : [ "live.text[3]", "live.text[3]", 0 ],
 			"obj-14" : [ "live.text[4]", "live.text", 0 ],
-			"obj-121::obj-72" : [ "live.tab", "live.tab", 0 ],
-			"obj-2::obj-81" : [ "live.tab[3]", "live.tab", 0 ],
-			"obj-121::obj-18" : [ "live.text", "live.text", 0 ],
 			"obj-18" : [ "live.text[2]", "live.text", 0 ],
-			"obj-129::obj-81" : [ "live.tab[2]", "live.tab", 0 ],
+			"obj-121::obj-72" : [ "live.tab", "live.tab", 0 ],
 			"obj-16" : [ "live.text[5]", "live.text", 0 ],
-			"obj-121::obj-19" : [ "live.text[1]", "live.text", 0 ]
+			"obj-129::obj-81" : [ "live.tab[2]", "live.tab", 0 ],
+			"obj-2::obj-81" : [ "live.tab[3]", "live.tab", 0 ],
+			"obj-121::obj-19" : [ "live.text[1]", "live.text", 0 ],
+			"obj-121::obj-18" : [ "live.text", "live.text", 0 ],
+			"obj-129::obj-86" : [ "live.text[3]", "live.text[3]", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
