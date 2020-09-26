@@ -338,12 +338,12 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 112.0, 46.0, 93.0, 22.0 ],
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 112.0, 46.0, 121.0, 22.0 ],
 					"style" : "",
-					"text" : "route bang size"
+					"text" : "route bang size label"
 				}
 
 			}
@@ -478,7 +478,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
-					"midpoints" : [ 158.5, 80.0, 476.5, 80.0 ],
+					"midpoints" : [ 155.5, 80.0, 476.5, 80.0 ],
 					"source" : [ "obj-2", 1 ]
 				}
 
@@ -486,7 +486,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-2", 2 ]
+					"source" : [ "obj-2", 3 ]
 				}
 
 			}
@@ -623,8 +623,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-5" : [ "live.text[3]", "live.text", 0 ],
-			"obj-29" : [ "live.text[2]", "live.text", 0 ]
+			"obj-29" : [ "live.text[2]", "live.text", 0 ],
+			"obj-5" : [ "live.text[3]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

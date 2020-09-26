@@ -461,12 +461,12 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 112.0, 46.0, 93.0, 22.0 ],
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 112.0, 46.0, 121.0, 22.0 ],
 					"style" : "",
-					"text" : "route bang size"
+					"text" : "route bang size label"
 				}
 
 			}
@@ -602,7 +602,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-2", 2 ]
+					"source" : [ "obj-2", 3 ]
 				}
 
 			}
@@ -717,14 +717,14 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-11" : [ "live.text[3]", "live.text", 0 ],
+			"obj-20" : [ "live.text[9]", "live.text", 0 ],
 			"obj-3" : [ "live.text[2]", "live.text", 0 ],
-			"obj-18" : [ "live.text[1]", "live.text", 0 ],
 			"obj-19" : [ "live.text[8]", "live.text", 0 ],
+			"obj-18" : [ "live.text[1]", "live.text", 0 ],
 			"obj-23" : [ "live.text[6]", "live.text", 0 ],
 			"obj-5" : [ "live.text[7]", "live.text", 0 ],
 			"obj-25" : [ "live.text[10]", "live.text", 0 ],
-			"obj-20" : [ "live.text[9]", "live.text", 0 ]
+			"obj-11" : [ "live.text[3]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{

@@ -307,12 +307,12 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 3,
-					"numoutlets" : 3,
-					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 112.0, 46.0, 93.0, 22.0 ],
+					"numinlets" : 4,
+					"numoutlets" : 4,
+					"outlettype" : [ "", "", "", "" ],
+					"patching_rect" : [ 112.0, 46.0, 121.0, 22.0 ],
 					"style" : "",
-					"text" : "route bang size"
+					"text" : "route bang size label"
 				}
 
 			}
@@ -446,7 +446,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-7", 0 ],
-					"midpoints" : [ 158.5, 82.5, 482.5, 82.5 ],
+					"midpoints" : [ 155.5, 82.5, 482.5, 82.5 ],
 					"source" : [ "obj-2", 1 ]
 				}
 
@@ -454,7 +454,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-2", 2 ]
+					"source" : [ "obj-2", 3 ]
 				}
 
 			}

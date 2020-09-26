@@ -354,12 +354,12 @@
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
-					"numinlets" : 4,
-					"numoutlets" : 4,
-					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 112.0, 46.0, 147.0, 22.0 ],
+					"numinlets" : 5,
+					"numoutlets" : 5,
+					"outlettype" : [ "", "", "", "", "" ],
+					"patching_rect" : [ 112.0, 46.0, 176.0, 22.0 ],
 					"style" : "",
-					"text" : "route bang size fftsettings"
+					"text" : "route bang size fftsettings label"
 				}
 
 			}
@@ -516,7 +516,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-22", 0 ],
-					"midpoints" : [ 164.166667, 94.0, 525.5, 94.0 ],
+					"midpoints" : [ 160.75, 94.0, 525.5, 94.0 ],
 					"source" : [ "obj-2", 1 ]
 				}
 
@@ -524,7 +524,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-8", 0 ],
-					"source" : [ "obj-2", 3 ]
+					"source" : [ "obj-2", 4 ]
 				}
 
 			}
@@ -654,8 +654,8 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-5" : [ "live.text[5]", "live.text", 0 ],
-			"obj-29" : [ "live.text[4]", "live.text", 0 ]
+			"obj-29" : [ "live.text[4]", "live.text", 0 ],
+			"obj-5" : [ "live.text[5]", "live.text", 0 ]
 		}
 ,
 		"dependency_cache" : [ 			{
