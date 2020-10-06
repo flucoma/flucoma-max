@@ -230,7 +230,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"items" : [ "Manhattan", ",", "Euclidean", ",", "Squared Euclidean", ",", "Minowski Max", ",", "Minowski Min", ",", "Kullback Leiber (not yet)", ",", "Cosine" ],
+									"items" : [ "Manhattan", ",", "Euclidean", ",", "Squared Euclidean", ",", "Minkowski Max", ",", "Minkowski Min", ",", "Kullback Leiber (not yet)", ",", "Cosine" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1919,8 +1919,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
