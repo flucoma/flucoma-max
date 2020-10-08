@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 743.0, 696.0 ],
+		"rect" : [ 68.0, 79.0, 743.0, 696.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -72,7 +72,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 743.0, 670.0 ],
+						"rect" : [ 68.0, 105.0, 743.0, 670.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -558,7 +558,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -568,7 +567,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -733,7 +733,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 301.0, 554.731079, 108.0, 36.0 ],
+									"patching_rect" : [ 297.5, 596.040344, 108.0, 36.0 ],
 									"style" : "",
 									"text" : "Use umap to reduce this to 2D"
 								}
@@ -747,7 +747,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 57.5, 136.195023, 359.0, 21.0 ],
 									"style" : "",
-									"text" : "Make 100 random RGB points"
+									"text" : "Make 400 random RGB points"
 								}
 
 							}
@@ -947,7 +947,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -957,7 +956,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -1011,7 +1011,7 @@
 									"outlettype" : [ "bang", "int" ],
 									"patching_rect" : [ 10.0, 163.968216, 50.0, 23.0 ],
 									"style" : "",
-									"text" : "t b 100"
+									"text" : "t b 400"
 								}
 
 							}
@@ -1633,7 +1633,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1643,7 +1642,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -1670,13 +1670,14 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-3",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 104.0, 543.225037, 197.0, 23.0 ],
+									"patching_rect" : [ 104.0, 543.225037, 290.0, 38.0 ],
 									"style" : "",
-									"text" : "fluid.umap~ @numdimensions 2"
+									"text" : "fluid.umap~ @numdimensions 2 @learnrate 0.2 @maxiter 50 @mindist 0.2 @numneighbours 5"
 								}
 
 							}
@@ -1840,7 +1841,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
-									"midpoints" : [ 291.5, 577.369385, 420.072412, 577.369385, 420.072412, 287.442426, 449.835571, 287.442426 ],
+									"midpoints" : [ 384.5, 577.369385, 420.072412, 577.369385, 420.072412, 287.442426, 449.835571, 287.442426 ],
 									"source" : [ "obj-3", 2 ]
 								}
 
@@ -1897,7 +1898,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1907,7 +1907,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
