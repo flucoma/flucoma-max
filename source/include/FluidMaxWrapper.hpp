@@ -10,6 +10,7 @@ under the European Union’s Horizon 2020 research and innovation programme
 
 #pragma once
 
+
 #include <ext.h>
 #include <ext_atomic.h>
 #include <ext_obex.h>
@@ -1335,13 +1336,14 @@ private:
     defer(x,(method)&doRead<N>,s,0,nullptr);
   }
   
-  #pragma clang diagnostic push
-  #pragma clang diagnostic ignored "-Wmultichar"
+
   template <size_t N>
   static void doRead(FluidMaxWrapper* x, t_symbol* s)
   {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wfour-char-constants"
     t_fourcc filetype = FOUR_CHAR_CODE('JSON');
-    
+#pragma clang diagnostic pop
     t_fourcc outtype;
     char filename[MAX_PATH_CHARS];
     short path;
@@ -1377,9 +1379,9 @@ private:
   template <size_t N>
   static void doWrite(FluidMaxWrapper* x, t_symbol* s)
   {
-    t_fourcc filetype = FOUR_CHAR_CODE('JSON');
-    
-    t_fourcc outtype;
+//    t_fourcc filetype = FOUR_CHAR_CODE('JSON');
+//    
+//    t_fourcc outtype;
     char filename[MAX_PATH_CHARS];
     short path;
     char fullpath[MAX_PATH_CHARS];
@@ -1396,7 +1398,7 @@ private:
     if(x->checkResult(messageResult))
       object_obex_dumpout(x,gensym("write"),0,nullptr);
   }
-  #pragma clang diagnostic pop
+
 
 
   // Sets up a single attribute
