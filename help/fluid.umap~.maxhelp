@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 68.0, 79.0, 743.0, 696.0 ],
+		"rect" : [ 100.0, 100.0, 743.0, 764.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -72,7 +72,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 68.0, 105.0, 743.0, 670.0 ],
+						"rect" : [ 100.0, 126.0, 743.0, 738.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -627,14 +627,13 @@
 									"bgfillcolor_type" : "color",
 									"gradient" : 1,
 									"id" : "obj-20",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 452.335571, 160.968216, 206.0, 38.0 ],
+									"patching_rect" : [ 452.335571, 174.968216, 208.0, 23.0 ],
 									"style" : "",
-									"text" : "https://umap-learn.readthedocs.io/en/latest/parameters.html",
+									"text" : "https://umap-learn.readthedocs.io/",
 									"textcolor" : [ 0.317647, 0.654902, 0.976471, 1.0 ]
 								}
 
@@ -1675,9 +1674,9 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 104.0, 543.225037, 290.0, 38.0 ],
+									"patching_rect" : [ 104.0, 543.225037, 292.0, 38.0 ],
 									"style" : "",
-									"text" : "fluid.umap~ @numdimensions 2 @learnrate 0.2 @maxiter 50 @mindist 0.2 @numneighbours 5"
+									"text" : "fluid.umap~ @numdimensions 2 @learnrate 0.2 @iterations 50 @mindist 0.2 @numneighbours 5"
 								}
 
 							}
@@ -1693,7 +1692,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 539.0, 113.0 ]
+									"patching_rect" : [ 10.0, 10.0, 561.0, 109.0 ]
 								}
 
 							}
@@ -1723,20 +1722,20 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 230.0, 381.225037, 150.0, 23.0 ],
+									"patching_rect" : [ 230.0, 411.225037, 150.0, 23.0 ],
 									"style" : ""
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "maxiter",
+									"attr" : "iterations",
 									"id" : "obj-4",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 230.0, 410.225037, 150.0, 23.0 ],
+									"patching_rect" : [ 230.0, 467.225037, 150.0, 23.0 ],
 									"style" : ""
 								}
 
@@ -1749,7 +1748,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 230.0, 439.225037, 150.0, 23.0 ],
+									"patching_rect" : [ 230.0, 382.411499, 150.0, 23.0 ],
 									"style" : ""
 								}
 
@@ -1762,7 +1761,20 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 230.0, 466.225037, 150.0, 23.0 ],
+									"patching_rect" : [ 230.0, 354.225037, 150.0, 23.0 ],
+									"style" : ""
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "batchsize",
+									"id" : "obj-21",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 230.0, 439.225037, 150.0, 23.0 ],
 									"style" : ""
 								}
 
@@ -1826,6 +1838,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-21", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
 									"source" : [ "obj-22", 0 ]
 								}
@@ -1841,7 +1860,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
-									"midpoints" : [ 384.5, 577.369385, 420.072412, 577.369385, 420.072412, 287.442426, 449.835571, 287.442426 ],
+									"midpoints" : [ 386.5, 577.369385, 420.072412, 577.369385, 420.072412, 287.442426, 449.835571, 287.442426 ],
 									"source" : [ "obj-3", 2 ]
 								}
 
@@ -1958,7 +1977,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 743.0, 670.0 ],
+						"rect" : [ 0.0, 26.0, 743.0, 738.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

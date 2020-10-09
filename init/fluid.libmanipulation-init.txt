@@ -8,6 +8,7 @@ max objectfile fluid.normalize~ fluid.libmanipulation fluid.normalize~;
 max objectfile fluid.standardize~ fluid.libmanipulation fluid.standardize~;
 max objectfile fluid.pca~ fluid.libmanipulation fluid.pca~;
 max objectfile fluid.mds~ fluid.libmanipulation fluid.mds~;
+max objectfile fluid.umap~ fluid.libmanipulation fluid.umap~;
 max objectfile fluid.datasetquery~ fluid.libmanipulation fluid.datasetquery~;
 max objectfile fluid.mlpregressor~ fluid.libmanipulation fluid.mlpregressor~;
 max objectfile fluid.mlpclassifier~ fluid.libmanipulation fluid.mlpclassifier~;
