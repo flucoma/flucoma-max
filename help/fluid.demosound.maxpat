@@ -445,7 +445,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 0.0, -1.0, 529.0, 554.0 ],
 									"rendermode" : 1,
-									"url" : "file:///Users/owen/Documents/Max%207/Packages/flucoma-max-devkit/media/-credits.txt"
+									"url" : ""
 								}
 
 							}
@@ -1142,7 +1142,7 @@
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 154.0, 279.0, 100.0, 22.0 ],
-									"prefix" : "MacOS:/Users/owen/Documents/Max 7/Packages/flucoma-max-devkit/media/",
+									"prefix" : "",
 									"presentation" : 1,
 									"presentation_rect" : [ 32.0, 3.0, 147.641829999999999, 22.0 ],
 									"style" : "AudioStatus_Menu",

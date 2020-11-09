@@ -590,7 +590,7 @@
 																	"presentation" : 1,
 																	"presentation_rect" : [ 0.0, -1.0, 529.0, 554.0 ],
 																	"rendermode" : 1,
-																	"url" : "file:///Users/pa/Documents/documents@hudd/research/projects/fluid%20corpus%20navigation/research/flucoma-max/media/-credits.txt"
+																	"url" : ""
 																}
 
 															}
@@ -1322,7 +1322,7 @@
 																	"outlettype" : [ "int", "", "" ],
 																	"parameter_enable" : 0,
 																	"patching_rect" : [ 154.0, 279.0, 100.0, 22.0 ],
-																	"prefix" : "choses:/Users/pa/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/media/",
+																	"prefix" : "",
 																	"presentation" : 1,
 																	"presentation_rect" : [ 32.0, 3.0, 147.64183, 22.0 ],
 																	"style" : "AudioStatus_Menu",
