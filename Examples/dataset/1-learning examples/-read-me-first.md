@@ -17,3 +17,11 @@ This allows to understand the various data preprocessing one can do, and their i
 In these patch, we explore 2 dimensionality reduction algorithms and their impact on distances and therefore potentially order of nearest neighbours. In the first one (6a) we explore PCA, drawing a simple line in a 2D space, and observing the impact of normalisation, dimensionality reduction, whilst progressively adding noise. In the 2nd one (6b) we start with a predictable 2D curve and observe how PCA compares with various modes of MDS in trying to keep overall and local topologies whilst reducing to 1D.
 ### 7-making-subsets-of-datasets.maxpat
 In this patch, we explore conditional dataset pruning, to allow the creation of new, smaller datasets.
+### 8a-mlp-didactic.maxpat /// 8b-mlp-synth-control.maxpat /// 8c-mlp-regressor-as-dim-redux.maxpat
+In these patches we explore various use-cases in which a simple neural network (a multi-layer perceptron) shines. In 8a, we illustrate the classic example of a non-linear function (XOR) being modelled. In 8b, we make use of MLP to derive a preset system on a complex chaotic synth. In 3c, we show how taping in and out of the middle of a funneling network allows for a type of data reduction.
+### 9-regressor-comparison.maxpat
+This patch shows the main difference between regressing between nearest neighbours, and modelling via a neural net, would yield different perspective on the same multidimensional space.
+### 10a-weighted-MFCCs-comparison.maxpat /// 10b-weighted-pitch-comparison.maxpat
+These patches show the consequences of various ways of removing outliers in the time series, to provide a different and at times more meaningful statistical reduction.
+### 11-compositing-datasets.maxpat
+This patch keeps various descriptor spaces in separate datasets to allow curating and pruning dataset as part of the query process.
