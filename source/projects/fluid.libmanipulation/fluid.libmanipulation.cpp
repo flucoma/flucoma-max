@@ -9,6 +9,7 @@
 #include <clients/nrt/KNNRegressorClient.hpp>
 #include <clients/nrt/NormalizeClient.hpp>
 #include <clients/nrt/StandardizeClient.hpp>
+#include <clients/nrt/RobustScaleClient.hpp>
 #include <clients/nrt/PCAClient.hpp>
 #include <clients/nrt/MDSClient.hpp>
 #include <clients/nrt/UMAPClient.hpp>
@@ -33,6 +34,7 @@ void ext_main(void*)
   makeMaxWrapper<RTKNNRegressorClient>("fluid.knnregressor~");
   makeMaxWrapper<RTNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<RTStandardizeClient>("fluid.standardize~");
+  makeMaxWrapper<RTRobustScaleClient>("fluid.robustscale~");
   makeMaxWrapper<RTPCAClient>("fluid.pca~");
   makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
   makeMaxWrapper<NRTThreadedUMAPClient>("fluid.umap~");

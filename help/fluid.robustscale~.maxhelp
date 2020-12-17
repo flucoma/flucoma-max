@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 950.0, 636.0 ],
+		"rect" : [ 100.0, 100.0, 916.0, 635.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,7 +42,24 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-3",
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 289.0, 77.0, 176.0, 22.0 ],
+					"saved_object_attributes" : 					{
+						"filename" : "helpstarter.js",
+						"parameter_enable" : 0
+					}
+,
+					"text" : "js helpstarter.js fluid.normalize~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
@@ -57,7 +74,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 950.0, 610.0 ],
+						"rect" : [ 100.0, 126.0, 916.0, 609.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -88,14 +105,13 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-1",
+									"id" : "obj-5",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.5, 531.0, 138.0, 23.0 ],
-									"presentation_linecount" : 2,
-									"text" : "help fluid.robustscale~"
+									"patching_rect" : [ 356.5, 540.0, 128.0, 23.0 ],
+									"text" : "help fluid.normalize~"
 								}
 
 							}
@@ -106,7 +122,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 325.5, 565.5, 55.0, 23.0 ],
+									"patching_rect" : [ 341.5, 570.5, 55.0, 23.0 ],
 									"text" : "pcontrol"
 								}
 
@@ -118,8 +134,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 325.5, 507.0, 128.0, 23.0 ],
-									"text" : "help fluid.normalize~"
+									"patching_rect" : [ 341.5, 512.0, 139.0, 23.0 ],
+									"text" : "help fluid.standardize~"
 								}
 
 							}
@@ -129,7 +145,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 325.5, 480.0, 150.0, 21.0 ],
+									"patching_rect" : [ 341.5, 485.0, 150.0, 21.0 ],
 									"text" : "See also "
 								}
 
@@ -141,7 +157,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 65.0, 142.0, 142.0, 25.0 ],
+									"patching_rect" : [ 81.0, 147.0, 142.0, 25.0 ],
 									"text" : "bang to run analysis",
 									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
 								}
@@ -154,7 +170,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 554.0, 511.0, 352.0, 50.0 ],
+									"patching_rect" : [ 557.0, 533.0, 352.0, 50.0 ],
 									"text" : "By normalizing to a uniform scale, both would be weighted equally (if you then wanted to manually tweak one to increase its weighting, this is conceptually simpler too)",
 									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
 								}
@@ -167,7 +183,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 536.5, 227.0, 352.0, 65.0 ],
+									"patching_rect" : [ 539.5, 249.0, 352.0, 65.0 ],
 									"text" : "The ranges of the unstandardized data (above) are very different. Any kind of distance metric would be dominated by the pitch, such that the confidence had almost no role to play.",
 									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
 								}
@@ -180,8 +196,8 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 519.0, 19.0, 156.0, 23.0 ],
-									"text" : "r standardize.help.refresh"
+									"patching_rect" : [ 522.0, 41.0, 155.0, 23.0 ],
+									"text" : "r robustscale.help.refresh"
 								}
 
 							}
@@ -192,8 +208,8 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 536.5, 300.0, 156.0, 23.0 ],
-									"text" : "r standardize.help.refresh"
+									"patching_rect" : [ 539.5, 322.0, 155.0, 23.0 ],
+									"text" : "r robustscale.help.refresh"
 								}
 
 							}
@@ -203,8 +219,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 113.0, 472.0, 158.0, 23.0 ],
-									"text" : "s standardize.help.refresh"
+									"patching_rect" : [ 129.0, 477.0, 157.0, 23.0 ],
+									"text" : "s robustscale.help.refresh"
 								}
 
 							}
@@ -215,7 +231,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 21.0, 275.0, 34.0, 23.0 ],
+									"patching_rect" : [ 37.0, 280.0, 34.0, 23.0 ],
 									"text" : "t b b"
 								}
 
@@ -227,7 +243,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 113.0, 442.0, 23.0, 23.0 ],
+									"patching_rect" : [ 129.0, 447.0, 23.0, 23.0 ],
 									"text" : "t b"
 								}
 
@@ -239,7 +255,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 113.0, 417.0, 97.0, 23.0 ],
+									"patching_rect" : [ 129.0, 422.0, 97.0, 23.0 ],
 									"text" : "route transform"
 								}
 
@@ -251,8 +267,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 21.0, 565.5, 180.0, 23.0 ],
-									"text" : "buffer~ standardize.help.point"
+									"patching_rect" : [ 37.0, 570.5, 179.0, 23.0 ],
+									"text" : "buffer~ robustscale.help.point"
 								}
 
 							}
@@ -263,7 +279,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "clear" ],
-									"patching_rect" : [ 21.0, 170.0, 254.0, 23.0 ],
+									"patching_rect" : [ 37.0, 175.0, 268.0, 23.0 ],
 									"text" : "t b b clear"
 								}
 
@@ -314,6 +330,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-9",
@@ -375,11 +392,11 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-3",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 330.0, 42.0, 150.0, 47.0 ],
+													"patching_rect" : [ 330.0, 42.0, 154.0, 33.0 ],
 													"text" : "analyse the pitch and pitch confidence of source buffer"
 												}
 
@@ -403,7 +420,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 47.0, 528.0, 260.5, 22.0 ],
+													"patching_rect" : [ 47.0, 528.0, 269.5, 22.0 ],
 													"text" : "i"
 												}
 
@@ -416,8 +433,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 47.0, 471.0, 247.0, 49.0 ],
-													"text" : "fluid.bufflatten~ @source standardize.help.median @destination standardize.help.point"
+													"patching_rect" : [ 47.0, 471.0, 206.0, 49.0 ],
+													"text" : "fluid.bufflatten~ @source robustscale.help.median @destination robustscale.help.point"
 												}
 
 											}
@@ -428,8 +445,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 98.0, 589.0, 184.0, 22.0 ],
-													"text" : "buffer~ standardize.help.median"
+													"patching_rect" : [ 98.0, 589.0, 179.0, 22.0 ],
+													"text" : "buffer~ robustscale.help.median"
 												}
 
 											}
@@ -441,21 +458,21 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 47.0, 411.0, 247.0, 49.0 ],
-													"text" : "fluid.buf.select @source standardize.help.stats @destination standardize.help.median @indices 0 @channels 1 2"
+													"patching_rect" : [ 47.0, 396.0, 206.0, 62.0 ],
+													"text" : "fluid.buf.select @source robustscale.help.stats @destination robustscale.help.median @indices 0 @channels 1 2"
 												}
 
 											}
 , 											{
 												"box" : 												{
 													"id" : "obj-40",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 47.0, 351.0, 224.0, 49.0 ],
-													"text" : "fluid.bufstats~ @source standardize.help.pitch @stats standardize.help.stats"
+													"patching_rect" : [ 47.0, 351.0, 257.0, 35.0 ],
+													"text" : "fluid.bufstats~ @source robustscale.help.pitch @stats robustscale.help.stats"
 												}
 
 											}
@@ -550,8 +567,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 98.0, 560.0, 168.0, 22.0 ],
-													"text" : "buffer~ standardize.help.stats"
+													"patching_rect" : [ 98.0, 560.0, 165.0, 22.0 ],
+													"text" : "buffer~ robustscale.help.stats"
 												}
 
 											}
@@ -562,8 +579,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 115.333332999999996, 202.25, 168.0, 22.0 ],
-													"text" : "buffer~ standardize.help.pitch"
+													"patching_rect" : [ 115.333332999999996, 202.25, 165.0, 22.0 ],
+													"text" : "buffer~ robustscale.help.pitch"
 												}
 
 											}
@@ -575,8 +592,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 12.0, 48.0, 286.0, 35.0 ],
-													"text" : "fluid.bufpitch~ @source standardize.help.src @features standardize.help.pitch"
+													"patching_rect" : [ 12.0, 48.0, 248.0, 35.0 ],
+													"text" : "fluid.bufpitch~ @source robustscale.help.src @features robustscale.help.pitch"
 												}
 
 											}
@@ -630,7 +647,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-6", 1 ],
-													"midpoints" : [ 108.0, 154.5, 298.0, 154.5 ],
+													"midpoints" : [ 108.0, 154.5, 307.0, 154.5 ],
 													"source" : [ "obj-1", 3 ]
 												}
 
@@ -745,7 +762,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 65.0, 212.0, 97.0, 23.0 ],
+									"patching_rect" : [ 81.0, 217.0, 97.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -782,7 +799,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 84.0, 129.0, 585.0, 480.0 ],
+										"rect" : [ 1315.0, 314.0, 585.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -1163,7 +1180,7 @@
 													"patching_rect" : [ 365.5, 346.5, 29.5, 20.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 185.0, 20.5, 29.5, 20.0 ],
-													"text" : "2.15",
+													"text" : "1.72",
 													"textcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"textjustification" : 2
 												}
@@ -1480,7 +1497,7 @@
 													"patching_rect" : [ 365.5, 394.0, 29.5, 32.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 182.0, 64.0, 32.5, 20.0 ],
-													"text" : "-1.18",
+													"text" : "-0.59",
 													"textcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"textjustification" : 2
 												}
@@ -1509,7 +1526,7 @@
 													"patching_rect" : [ 146.75, 375.0, 29.5, 32.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 8.0, 64.0, 33.5, 20.0 ],
-													"text" : "-1.93",
+													"text" : "-1.09",
 													"textcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"textjustification" : 2
 												}
@@ -1537,7 +1554,7 @@
 													"patching_rect" : [ 138.5, 331.5, 46.0, 20.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ -4.5, 20.5, 46.0, 20.0 ],
-													"text" : "1.28",
+													"text" : "0.64",
 													"textcolor" : [ 0.239216, 0.254902, 0.278431, 1.0 ],
 													"textjustification" : 2
 												}
@@ -1592,7 +1609,7 @@
 													"patching_rect" : [ 391.5, 346.5, 128.5, 57.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 216.5, 20.5, 128.5, 57.0 ],
-													"setminmax" : [ -1.175402045249939, 2.150254964828491 ],
+													"setminmax" : [ -0.593808233737946, 1.716042160987854 ],
 													"setstyle" : 1,
 													"size" : 10,
 													"slidercolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
@@ -1611,7 +1628,7 @@
 													"patching_rect" : [ 183.0, 331.5, 128.5, 57.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 45.0, 20.5, 128.5, 57.0 ],
-													"setminmax" : [ -1.933169960975647, 1.280961990356445 ],
+													"setminmax" : [ -1.094691395759583, 0.635515749454498 ],
 													"setstyle" : 1,
 													"size" : 10,
 													"slidercolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
@@ -1663,8 +1680,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer standardize.help.point",
+													"patching_rect" : [ 146.5, 137.5, 238.0, 22.0 ],
+													"text" : "fluid.buf2list @buffer robustscale.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -1792,7 +1809,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 553.0, 421.0, 340.0, 86.0 ],
+									"patching_rect" : [ 556.0, 443.0, 340.0, 86.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 554.0, 421.0, 329.0, 88.0 ],
 									"varname" : "bpatcher[1]",
@@ -1807,7 +1824,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "int" ],
-									"patching_rect" : [ 536.5, 329.0, 54.0, 23.0 ],
+									"patching_rect" : [ 539.5, 351.0, 54.0, 23.0 ],
 									"text" : "uzi 10 0"
 								}
 
@@ -1819,8 +1836,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 668.0, 359.0, 204.0, 23.0 ],
-									"text" : "getpoint $1 standardize.help.point"
+									"patching_rect" : [ 671.0, 381.0, 203.0, 23.0 ],
+									"text" : "getpoint $1 robustscale.help.point"
 								}
 
 							}
@@ -2525,7 +2542,7 @@
 													"patching_rect" : [ 391.5, 346.5, 128.5, 57.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 216.5, 20.5, 128.5, 57.0 ],
-													"setminmax" : [ 0.0, 0.552605986595154 ],
+													"setminmax" : [ 0.0, 0.552605926990509 ],
 													"setstyle" : 1,
 													"size" : 10,
 													"slidercolor" : [ 0.439216, 0.74902, 0.254902, 1.0 ],
@@ -2596,8 +2613,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer standardize.help.point",
+													"patching_rect" : [ 146.5, 137.5, 238.0, 22.0 ],
+													"text" : "fluid.buf2list @buffer robustscale.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -2713,7 +2730,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 536.5, 140.0, 347.5, 85.0 ],
+									"patching_rect" : [ 539.5, 162.0, 347.5, 85.0 ],
 									"varname" : "bpatcher",
 									"viewvisibility" : 1
 								}
@@ -2726,8 +2743,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 356.0, 328.0, 149.0, 23.0 ],
-									"text" : "fit standardize.help.data"
+									"patching_rect" : [ 369.0, 333.0, 146.0, 23.0 ],
+									"text" : "fit robustscale.help.data"
 								}
 
 							}
@@ -2738,8 +2755,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 681.0, 78.0, 204.0, 23.0 ],
-									"text" : "getpoint $1 standardize.help.point"
+									"patching_rect" : [ 684.0, 100.0, 203.0, 23.0 ],
+									"text" : "getpoint $1 robustscale.help.point"
 								}
 
 							}
@@ -2750,7 +2767,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "int" ],
-									"patching_rect" : [ 519.0, 48.0, 54.0, 23.0 ],
+									"patching_rect" : [ 522.0, 70.0, 54.0, 23.0 ],
 									"text" : "uzi 10 0"
 								}
 
@@ -2762,8 +2779,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 681.0, 106.0, 214.0, 23.0 ],
-									"text" : "fluid.dataset~ standardize.help.data"
+									"patching_rect" : [ 684.0, 128.0, 213.0, 23.0 ],
+									"text" : "fluid.dataset~ robustscale.help.data"
 								}
 
 							}
@@ -2774,8 +2791,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 668.0, 387.0, 226.0, 23.0 ],
-									"text" : "fluid.dataset~ standardize.help.normd"
+									"patching_rect" : [ 671.0, 409.0, 226.0, 23.0 ],
+									"text" : "fluid.dataset~ robustscale.help.scaled"
 								}
 
 							}
@@ -2786,8 +2803,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 65.0, 239.0, 207.0, 23.0 ],
-									"text" : "addpoint $1 standardize.help.point"
+									"patching_rect" : [ 81.0, 244.0, 207.0, 23.0 ],
+									"text" : "addpoint $1 robustscale.help.point"
 								}
 
 							}
@@ -2798,8 +2815,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 65.0, 275.0, 214.0, 23.0 ],
-									"text" : "fluid.dataset~ standardize.help.data"
+									"patching_rect" : [ 81.0, 280.0, 213.0, 23.0 ],
+									"text" : "fluid.dataset~ robustscale.help.data"
 								}
 
 							}
@@ -2811,7 +2828,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 21.0, 142.0, 24.0, 24.0 ]
+									"patching_rect" : [ 37.0, 147.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -2823,8 +2840,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 21.0, 523.5, 252.0, 38.0 ],
-									"text" : "buffer~ standardize.help.src Tremblay-ASWINE-ScratchySynth-M.wav"
+									"patching_rect" : [ 37.0, 528.5, 257.0, 38.0 ],
+									"text" : "buffer~ robustscale.help.src Tremblay-ASWINE-ScratchySynth-M.wav"
 								}
 
 							}
@@ -2835,24 +2852,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "list", "float", "" ],
-									"patching_rect" : [ 21.0, 368.0, 111.0, 23.0 ],
-									"text" : "fluid.standardize~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.standardize~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 515.0, 126.0 ]
+									"patching_rect" : [ 37.0, 373.0, 110.0, 23.0 ],
+									"text" : "fluid.robustscale~"
 								}
 
 							}
@@ -2863,8 +2864,24 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 21.0, 328.0, 333.0, 23.0 ],
-									"text" : "transform standardize.help.data standardize.help.normd"
+									"patching_rect" : [ 37.0, 333.0, 330.0, 23.0 ],
+									"text" : "transform robustscale.help.data robustscale.help.scaled"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.robustscale~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 507.0, 126.0 ]
 								}
 
 							}
@@ -2880,15 +2897,40 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 311.0, 504.0, 86.0 ],
+									"patching_rect" : [ 31.0, 316.0, 492.0, 88.0 ],
 									"proportion" : 0.5
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "low",
+									"id" : "obj-1",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 341.5, 413.0, 150.0, 23.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "high",
+									"id" : "obj-4",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 341.5, 439.0, 150.0, 23.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-113", 0 ],
+									"destination" : [ "obj-3", 0 ],
+									"midpoints" : [ 351.0, 438.0, 336.75, 438.0, 336.75, 364.0, 46.5, 364.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -2945,7 +2987,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-42", 0 ],
-									"midpoints" : [ 563.5, 77.5, 690.5, 77.5 ],
+									"midpoints" : [ 566.5, 99.5, 693.5, 99.5 ],
 									"source" : [ "obj-32", 2 ]
 								}
 
@@ -2954,6 +2996,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-83", 0 ],
 									"source" : [ "obj-32", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"midpoints" : [ 351.0, 467.0, 328.75, 467.0, 328.75, 368.0, 46.5, 368.0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -2973,8 +3023,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-113", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 365.5, 360.5, 30.5, 360.5 ],
+									"midpoints" : [ 378.5, 360.5, 46.5, 360.5 ],
 									"source" : [ "obj-79", 0 ]
 								}
 
@@ -2982,7 +3039,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 30.5, 363.0, 30.5, 363.0 ],
+									"midpoints" : [ 46.5, 368.0, 46.5, 368.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -2997,7 +3054,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-84", 0 ],
-									"midpoints" : [ 581.0, 355.0, 677.5, 355.0 ],
+									"midpoints" : [ 584.0, 377.0, 680.5, 377.0 ],
 									"source" : [ "obj-86", 2 ]
 								}
 
@@ -3019,7 +3076,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"midpoints" : [ 265.5, 268.75, 74.5, 268.75 ],
+									"midpoints" : [ 295.5, 273.75, 90.5, 273.75 ],
 									"source" : [ "obj-96", 2 ]
 								}
 
@@ -3027,7 +3084,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-95", 0 ],
-									"midpoints" : [ 148.0, 202.0, 74.5, 202.0 ],
+									"midpoints" : [ 171.0, 207.0, 90.5, 207.0 ],
 									"source" : [ "obj-96", 1 ]
 								}
 
@@ -3056,7 +3113,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-79", 0 ],
-									"midpoints" : [ 45.5, 322.5, 365.5, 322.5 ],
+									"midpoints" : [ 61.5, 327.5, 378.5, 327.5 ],
 									"source" : [ "obj-99", 1 ]
 								}
 
@@ -3071,7 +3128,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 99.0, 93.0, 50.0, 22.0 ],
+					"patching_rect" : [ 49.0, 90.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3081,7 +3138,7 @@
 					}
 ,
 					"text" : "p basic",
-					"varname" : "basic_tab[1]"
+					"varname" : "basic_tab"
 				}
 
 			}
@@ -3091,13 +3148,13 @@
 					"filename" : "helpname.js",
 					"id" : "obj-4",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.standardize~" ],
+					"jsarguments" : [ "fluid.normalize~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 378.401245000000017, 57.567627000000002 ]
+					"patching_rect" : [ 10.0, 10.0, 341.749969000000021, 57.567627000000002 ]
 				}
 
 			}
@@ -3118,7 +3175,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 950.0, 610.0 ],
+						"rect" : [ 0.0, 26.0, 916.0, 609.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3164,22 +3221,6 @@
 				}
 
 			}
-, 			{
-				"box" : 				{
-					"border" : 0,
-					"filename" : "helpname.js",
-					"id" : "obj-7",
-					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.standardize~" ],
-					"maxclass" : "jsui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 378.401245000000017, 57.567627000000002 ]
-				}
-
-			}
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
@@ -3212,6 +3253,12 @@
 				"name" : "fluid.buf.select.js",
 				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/javascript",
 				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
