@@ -13,4 +13,3 @@ max objectfile fluid.umap~ fluid.libmanipulation fluid.umap~;
 max objectfile fluid.datasetquery~ fluid.libmanipulation fluid.datasetquery~;
 max objectfile fluid.mlpregressor~ fluid.libmanipulation fluid.mlpregressor~;
 max objectfile fluid.mlpclassifier~ fluid.libmanipulation fluid.mlpclassifier~;
-max objectfile fluid.robustscale~ fluid.libmanipulation fluid.robustscale~;
