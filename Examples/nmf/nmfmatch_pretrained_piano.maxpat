@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 4,
-			"architecture" : "x86",
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 8,
+			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 0.0, 26.0, 1013.0, 587.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 57.0, 110.0, 1203.0, 891.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,6 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"showontab" : 1,
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-61",
@@ -45,7 +47,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 279.0, 181.0, 62.0, 22.0 ],
-					"style" : "",
 					"text" : "zl change"
 				}
 
@@ -58,7 +59,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 950.0, 79.0, 35.0, 22.0 ],
-					"style" : "",
 					"text" : "read"
 				}
 
@@ -71,7 +71,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 969.0, 121.0, 136.0, 22.0 ],
-					"style" : "",
 					"text" : "replace piano-dicts.wav"
 				}
 
@@ -83,7 +82,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 703.0, 57.0, 114.0, 20.0 ],
-					"style" : "",
 					"text" : "open for a bit of fun"
 				}
 
@@ -96,7 +94,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 703.0, 110.0, 128.0, 22.0 ],
-					"style" : "",
 					"text" : "bases pno-dict-shuffle"
 				}
 
@@ -109,7 +106,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 361.0, 110.0, 98.0, 22.0 ],
-					"style" : "",
 					"text" : "bases pno-dicts"
 				}
 
@@ -123,13 +119,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"major" : 8,
+							"minor" : 1,
+							"revision" : 8,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
+						"classnamespace" : "box",
 						"rect" : [ 97.0, 79.0, 799.0, 385.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -157,6 +154,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-3",
@@ -165,7 +163,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 331.0, 252.0, 89.0, 22.0 ],
-									"style" : "",
 									"text" : "pak startchan i"
 								}
 
@@ -178,7 +175,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 345.0, 286.0, 111.0, 22.0 ],
-									"style" : "",
 									"text" : "pak deststartchan i"
 								}
 
@@ -191,7 +187,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 309.0, 89.0, 114.0, 60.0 ],
-									"style" : "",
 									"text" : "here we assign each component to another position, for fun"
 								}
 
@@ -201,10 +196,9 @@
 									"id" : "obj-12",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 44.0, 327.0, 450.0, 22.0 ],
-									"style" : "",
 									"text" : "fluid.bufcompose~ @source pno-dicts @destination pno-dict-shuffle @numchans 1"
 								}
 
@@ -217,7 +211,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "int" ],
 									"patching_rect" : [ 397.0, 190.0, 53.0, 22.0 ],
-									"style" : "",
 									"text" : "uzi 88 0"
 								}
 
@@ -230,7 +223,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "bang" ],
 									"patching_rect" : [ 455.0, 238.0, 45.0, 22.0 ],
-									"style" : "",
 									"text" : "urn 88"
 								}
 
@@ -243,7 +235,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 563.0, 120.0, 50.0, 22.0 ],
-									"style" : "",
 									"text" : "replace"
 								}
 
@@ -255,8 +246,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 433.0, 87.0, 24.0, 24.0 ],
-									"style" : ""
+									"parameter_enable" : 0,
+									"patching_rect" : [ 433.0, 87.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -268,7 +259,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "clear", "bang" ],
 									"patching_rect" : [ 433.0, 127.0, 63.0, 22.0 ],
-									"style" : "",
 									"text" : "t b clear b"
 								}
 
@@ -281,7 +271,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 617.0, 216.0, 132.0, 22.0 ],
-									"style" : "",
 									"text" : "pack sizeinsamps 1 88"
 								}
 
@@ -294,7 +283,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 617.0, 242.0, 133.0, 22.0 ],
-									"style" : "",
 									"text" : "buffer~ pno-dict-shuffle"
 								}
 
@@ -390,8 +378,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -410,6 +398,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -419,8 +408,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -443,11 +431,9 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p componentshuffler"
 				}
 
@@ -460,7 +446,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 913.0, 121.0, 50.0, 22.0 ],
-					"style" : "",
 					"text" : "replace"
 				}
 
@@ -473,7 +458,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1028.0, 337.0, 34.0, 22.0 ],
-					"style" : "",
 					"text" : "gate"
 				}
 
@@ -486,7 +470,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "clear" ],
 					"patching_rect" : [ 1043.0, 231.0, 114.0, 22.0 ],
-					"style" : "",
 					"text" : "t l clear"
 				}
 
@@ -499,8 +482,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1043.0, 180.0, 24.0, 24.0 ],
-					"style" : ""
+					"patching_rect" : [ 1043.0, 180.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -512,7 +494,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1043.0, 207.0, 34.0, 22.0 ],
-					"style" : "",
 					"text" : "gate"
 				}
 
@@ -525,7 +506,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
 					"patching_rect" : [ 1084.0, 303.0, 42.0, 22.0 ],
-					"style" : "",
 					"text" : "* 500."
 				}
 
@@ -538,7 +518,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "float" ],
 					"patching_rect" : [ 1043.0, 279.0, 62.0, 22.0 ],
-					"style" : "",
 					"text" : "unpack i f"
 				}
 
@@ -552,8 +531,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "int", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 1028.0, 371.0, 75.0, 198.0 ],
-					"style" : ""
+					"patching_rect" : [ 1028.0, 371.0, 75.0, 198.0 ]
 				}
 
 			}
@@ -565,7 +543,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
 					"patching_rect" : [ 1043.0, 255.0, 75.0, 22.0 ],
-					"style" : "",
 					"text" : "listfunnel 21"
 				}
 
@@ -577,7 +554,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 666.0, 748.0, 59.0, 20.0 ],
-					"style" : "",
 					"text" : "-0        0-"
 				}
 
@@ -597,7 +573,6 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 509.0, 234.5, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "2",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -618,7 +593,6 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 121.0, 10.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "1",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -631,7 +605,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 145.0, 10.0, 391.0, 20.0 ],
-					"style" : "",
 					"text" : "play the real upright piano line in loop - it should play on the left channel"
 				}
 
@@ -644,7 +617,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 279.0, 770.5, 870.0, 74.0 ],
-					"style" : "",
 					"text" : "What is happening: a dictionary of 88 bases is provided, pretrained on a chromatic scale of a grand piano. It gives one activation per note. On the left we can see the activations unprocessed, on an amplitude scale of 0 to 20. On the right, there is an attempt to be creative with that information, scaling and gating the activations, and resynthesising with simple sine waves. A midi piano could be used instead of the right-hand side notation.\n\nFor the inquisitive mind, the training patch has been provided below."
 				}
 
@@ -656,7 +628,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 533.0, 234.5, 324.0, 20.0 ],
-					"style" : "",
 					"text" : "select a preset - 1 is continuous, 2 is processing on attacks"
 				}
 
@@ -668,7 +639,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 743.0, 400.0, 139.0, 20.0 ],
-					"style" : "",
 					"text" : "activation volume gating"
 				}
 
@@ -680,7 +650,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 592.0, 347.0, 144.0, 20.0 ],
-					"style" : "",
 					"text" : "activation volume scaling"
 				}
 
@@ -692,7 +661,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 218.0, 394.0, 123.0, 20.0 ],
-					"style" : "",
 					"text" : "auto-freeze on attack"
 				}
 
@@ -704,7 +672,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 154.0, 348.0, 159.0, 20.0 ],
-					"style" : "",
 					"text" : "latency compensation delay"
 				}
 
@@ -716,7 +683,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 837.0, 586.0, 153.0, 20.0 ],
-					"style" : "",
 					"text" : "post-processed activations"
 				}
 
@@ -728,7 +694,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 394.0, 586.0, 147.0, 20.0 ],
-					"style" : "",
 					"text" : "pre-processed activations"
 				}
 
@@ -741,7 +706,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 8.0, 10.0, 98.0, 22.0 ],
-					"style" : "",
 					"text" : "loadmess loop 1"
 				}
 
@@ -754,7 +718,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 162.0, 429.0, 36.0, 22.0 ],
-					"style" : "",
 					"text" : "sel 0"
 				}
 
@@ -768,8 +731,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 102.0, 348.0, 50.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 102.0, 348.0, 50.0, 22.0 ]
 				}
 
 			}
@@ -789,8 +751,7 @@
 							"number" : 2,
 							"data" : [ 5, "obj-43", "flonum", "float", 0.05, 5, "obj-10", "flonum", "float", 0.001, 5, "obj-60", "toggle", "int", 1, 5, "obj-16", "flonum", "float", 100.0 ]
 						}
- ],
-					"style" : ""
+ ]
 				}
 
 			}
@@ -803,13 +764,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"major" : 8,
+							"minor" : 1,
+							"revision" : 8,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
+						"classnamespace" : "box",
 						"rect" : [ 34.0, 79.0, 1147.0, 447.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -837,6 +799,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-13",
@@ -844,7 +807,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 177.0, 212.0, 417.0, 20.0 ],
-									"style" : "",
 									"text" : "in the end, the second attempts, striped from the DC, is what is shipped here"
 								}
 
@@ -856,7 +818,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 499.0, 146.0, 197.0, 20.0 ],
-									"style" : "",
 									"text" : "third attempt at pretraining here:"
 								}
 
@@ -870,13 +831,14 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"major" : 8,
+											"minor" : 1,
+											"revision" : 8,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
+										"classnamespace" : "box",
 										"rect" : [ 674.0, 79.0, 1212.0, 934.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
@@ -904,6 +866,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-11",
@@ -912,7 +875,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "int" ],
 													"patching_rect" : [ 298.0, 513.0, 30.0, 22.0 ],
-													"style" : "",
 													"text" : "t b i"
 												}
 
@@ -925,7 +887,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 359.5, 516.0, 89.0, 22.0 ],
-													"style" : "",
 													"text" : "pak startchan i"
 												}
 
@@ -938,7 +899,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 269.5, 471.0, 111.0, 22.0 ],
-													"style" : "",
 													"text" : "pak deststartchan i"
 												}
 
@@ -951,7 +911,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "int" ],
 													"patching_rect" : [ 236.0, 273.0, 30.0, 22.0 ],
-													"style" : "",
 													"text" : "t b i"
 												}
 
@@ -964,7 +923,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 248.5, 314.0, 73.0, 22.0 ],
-													"style" : "",
 													"text" : "pak startat i"
 												}
 
@@ -977,7 +935,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
 													"patching_rect" : [ 138.0, 495.0, 59.0, 22.0 ],
-													"style" : "",
 													"text" : "minimum"
 												}
 
@@ -990,7 +947,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 34.0, 384.0, 193.0, 22.0 ],
-													"style" : "",
 													"text" : "loadmess descriptors log_centroid"
 												}
 
@@ -1003,7 +959,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
 													"patching_rect" : [ 236.0, 384.0, 34.0, 22.0 ],
-													"style" : "",
 													"text" : "t 2 1"
 												}
 
@@ -1016,7 +971,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 138.0, 411.0, 117.0, 22.0 ],
-													"style" : "",
 													"text" : "pak analyse temp2 i"
 												}
 
@@ -1029,7 +983,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 138.0, 471.0, 63.0, 22.0 ],
-													"style" : "",
 													"text" : "zl group 2"
 												}
 
@@ -1040,9 +993,8 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 138.0, 447.0, 76.0, 22.0 ],
-													"style" : "",
 													"text" : "descriptors~"
 												}
 
@@ -1055,7 +1007,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
 													"patching_rect" : [ 460.0, 608.0, 105.0, 22.0 ],
-													"style" : "",
 													"text" : "buffer~ temp2 2 2"
 												}
 
@@ -1075,7 +1026,6 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 263.0, 51.0, 20.0, 20.0 ],
 													"rounded" : 60.0,
-													"style" : "",
 													"text" : "1",
 													"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 												}
@@ -1096,7 +1046,6 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 269.5, 704.0, 20.0, 20.0 ],
 													"rounded" : 60.0,
-													"style" : "",
 													"text" : "2",
 													"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 												}
@@ -1110,7 +1059,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 294.0, 704.0, 150.0, 74.0 ],
-													"style" : "",
 													"text" : "then with the 89 channel preseed dictionary, a 89 components nmf is run again, updating the dictionaries. It takes a few hours."
 												}
 
@@ -1123,7 +1071,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 294.5, 51.0, 534.0, 33.0 ],
-													"style" : "",
 													"text" : "this will iterate through each note to create a double components nmf dictionary, to pretrain the dictionaries, dismissing the one with the attack and keeping the one with the resonance"
 												}
 
@@ -1135,7 +1082,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 263.0, 236.0, 34.0, 22.0 ],
-													"style" : "",
 													"text" : "print"
 												}
 
@@ -1148,7 +1094,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 178.0, 572.0, 56.0, 22.0 ],
-													"style" : "",
 													"text" : "deferlow"
 												}
 
@@ -1161,8 +1106,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 774.0, 526.0, 50.0, 22.0 ],
-													"style" : ""
+													"patching_rect" : [ 774.0, 526.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -1174,7 +1118,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 774.0, 550.0, 109.0, 22.0 ],
-													"style" : "",
 													"text" : "name pno-dicts $1"
 												}
 
@@ -1187,8 +1130,7 @@
 													"numinlets" : 5,
 													"numoutlets" : 6,
 													"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-													"patching_rect" : [ 774.0, 576.0, 256.0, 64.0 ],
-													"style" : ""
+													"patching_rect" : [ 774.0, 576.0, 256.0, 64.0 ]
 												}
 
 											}
@@ -1200,7 +1142,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
 													"patching_rect" : [ 354.0, 608.0, 98.0, 22.0 ],
-													"style" : "",
 													"text" : "buffer~ temp 2 2"
 												}
 
@@ -1213,7 +1154,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 337.0, 145.0, 132.0, 22.0 ],
-													"style" : "",
 													"text" : "pack sizeinsamps 1 88"
 												}
 
@@ -1223,10 +1163,9 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 178.0, 545.0, 313.0, 22.0 ],
-													"style" : "",
 													"text" : "fluid.bufcompose~ @source temp @destination pno-dicts"
 												}
 
@@ -1239,7 +1178,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 230.0, 924.0, 131.0, 22.0 ],
-													"style" : "",
 													"text" : "554572.9375"
 												}
 
@@ -1252,7 +1190,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "" ],
 													"patching_rect" : [ 261.0, 881.0, 37.0, 22.0 ],
-													"style" : "",
 													"text" : "timer"
 												}
 
@@ -1265,7 +1202,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "bang" ],
 													"patching_rect" : [ 236.0, 732.0, 34.0, 22.0 ],
-													"style" : "",
 													"text" : "t b b"
 												}
 
@@ -1277,8 +1213,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 236.0, 700.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 236.0, 700.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -1289,8 +1225,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 155.0, 846.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 155.0, 846.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -1300,10 +1236,9 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 154.0, 817.0, 775.0, 22.0 ],
-													"style" : "",
 													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @iterations 100 @bases pno-dicts @components 88 @activations pno-acts @basesmode 1"
 												}
 
@@ -1316,7 +1251,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
 													"patching_rect" : [ 337.0, 171.0, 100.0, 22.0 ],
-													"style" : "",
 													"text" : "buffer~ pno-dicts"
 												}
 
@@ -1327,10 +1261,9 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 236.0, 358.0, 508.0, 22.0 ],
-													"style" : "",
 													"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @iterations 100 @components 2 @bases temp @resynth temp2"
 												}
 
@@ -1343,7 +1276,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
 													"patching_rect" : [ 236.0, 175.0, 59.0, 22.0 ],
-													"style" : "",
 													"text" : "split 0 87"
 												}
 
@@ -1356,7 +1288,6 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "int", "", "", "int" ],
 													"patching_rect" : [ 236.0, 142.0, 61.0, 22.0 ],
-													"style" : "",
 													"text" : "counter"
 												}
 
@@ -1369,7 +1300,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "bang", "bang" ],
 													"patching_rect" : [ 236.0, 81.0, 44.0, 22.0 ],
-													"style" : "",
 													"text" : "t b b b"
 												}
 
@@ -1382,7 +1312,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
 													"patching_rect" : [ 236.0, 205.0, 29.5, 22.0 ],
-													"style" : "",
 													"text" : "t i i"
 												}
 
@@ -1394,8 +1323,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 236.0, 51.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 236.0, 51.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -1654,8 +1583,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
@@ -1674,6 +1603,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1683,8 +1613,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -1707,11 +1636,9 @@
 										"description" : "",
 										"digest" : "",
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p prebuildingTonalBasisPerNote"
 								}
 
@@ -1724,7 +1651,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 239.0, 376.0, 192.0, 22.0 ],
-									"style" : "",
 									"text" : "format float32, filetype wave, write"
 								}
 
@@ -1737,7 +1663,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 239.0, 400.0, 97.0, 22.0 ],
-									"style" : "",
 									"text" : "buffer~ pno-acts"
 								}
 
@@ -1749,7 +1674,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 38.0, 296.0, 95.0, 20.0 ],
-									"style" : "",
 									"text" : "save the results"
 								}
 
@@ -1761,7 +1685,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 264.0, 146.0, 197.0, 20.0 ],
-									"style" : "",
 									"text" : "second attempt at pretraining here:"
 								}
 
@@ -1773,7 +1696,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 38.0, 146.0, 190.0, 20.0 ],
-									"style" : "",
 									"text" : "first attempt at pretraining in here:"
 								}
 
@@ -1785,7 +1707,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 38.0, 42.0, 622.0, 20.0 ],
-									"style" : "",
 									"text" : "this files contains a chromatic scale of the piano, 1 second each of piano, mezzo, forte, to create the 88 dictionaries"
 								}
 
@@ -1799,13 +1720,14 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"major" : 8,
+											"minor" : 1,
+											"revision" : 8,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
+										"classnamespace" : "box",
 										"rect" : [ 50.0, 79.0, 1054.0, 967.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
@@ -1833,6 +1755,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-19",
@@ -1841,7 +1764,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 157.0, 491.0, 111.0, 22.0 ],
-													"style" : "",
 													"text" : "pak deststartchan i"
 												}
 
@@ -1854,7 +1776,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "int" ],
 													"patching_rect" : [ 118.0, 367.0, 30.0, 22.0 ],
-													"style" : "",
 													"text" : "t b i"
 												}
 
@@ -1867,7 +1788,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 651.0, 275.0, 294.0, 74.0 ],
-													"style" : "",
 													"text" : "this was not working, since the last dictionary, full of zeros, never get changed since the tuning is done multiplicatively. Filling it with noise or DC does work either, since always farther from any sound to be relevant for the algorythm to fix."
 												}
 
@@ -1887,7 +1807,6 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 145.0, 98.0, 20.0, 20.0 ],
 													"rounded" : 60.0,
-													"style" : "",
 													"text" : "1",
 													"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 												}
@@ -1908,7 +1827,6 @@
 													"parameter_enable" : 0,
 													"patching_rect" : [ 227.5, 655.0, 20.0, 20.0 ],
 													"rounded" : 60.0,
-													"style" : "",
 													"text" : "2",
 													"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 												}
@@ -1922,7 +1840,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 252.0, 655.0, 150.0, 74.0 ],
-													"style" : "",
 													"text" : "then with the 89 channel preseed dictionary, a 89 components nmf is run again, updating the dictionaries. It takes a few hours."
 												}
 
@@ -1935,7 +1852,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 178.0, 105.0, 150.0, 60.0 ],
-													"style" : "",
 													"text" : "this will iterate through each note to create a single component nmf dictionary, to pretrain the dictionaries"
 												}
 
@@ -1947,7 +1863,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 145.0, 283.0, 34.0, 22.0 ],
-													"style" : "",
 													"text" : "print"
 												}
 
@@ -1960,7 +1875,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 118.0, 575.0, 56.0, 22.0 ],
-													"style" : "",
 													"text" : "deferlow"
 												}
 
@@ -1973,8 +1887,7 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 656.0, 573.0, 50.0, 22.0 ],
-													"style" : ""
+													"patching_rect" : [ 656.0, 573.0, 50.0, 22.0 ]
 												}
 
 											}
@@ -1986,7 +1899,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 656.0, 597.0, 109.0, 22.0 ],
-													"style" : "",
 													"text" : "name pno-dicts $1"
 												}
 
@@ -2000,8 +1912,7 @@
 													"numinlets" : 5,
 													"numoutlets" : 6,
 													"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-													"patching_rect" : [ 656.0, 623.0, 256.0, 64.0 ],
-													"style" : ""
+													"patching_rect" : [ 656.0, 623.0, 256.0, 64.0 ]
 												}
 
 											}
@@ -2013,7 +1924,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
 													"patching_rect" : [ 118.0, 611.0, 78.0, 22.0 ],
-													"style" : "",
 													"text" : "buffer~ temp"
 												}
 
@@ -2026,7 +1936,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 219.0, 192.0, 132.0, 22.0 ],
-													"style" : "",
 													"text" : "pack sizeinsamps 1 89"
 												}
 
@@ -2036,10 +1945,9 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 118.0, 545.0, 313.0, 22.0 ],
-													"style" : "",
 													"text" : "fluid.bufcompose~ @source temp @destination pno-dicts"
 												}
 
@@ -2052,7 +1960,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 188.0, 875.0, 131.0, 22.0 ],
-													"style" : "",
 													"text" : "7445693."
 												}
 
@@ -2065,7 +1972,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "" ],
 													"patching_rect" : [ 219.0, 832.0, 37.0, 22.0 ],
-													"style" : "",
 													"text" : "timer"
 												}
 
@@ -2078,7 +1984,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "bang" ],
 													"patching_rect" : [ 194.0, 683.0, 34.0, 22.0 ],
-													"style" : "",
 													"text" : "t b b"
 												}
 
@@ -2090,8 +1995,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 194.0, 651.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 194.0, 651.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -2102,8 +2007,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 113.0, 797.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 113.0, 797.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -2113,10 +2018,9 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 113.0, 769.0, 887.0, 22.0 ],
-													"style" : "",
 													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @iterations 100 @bases pno-dicts @components 89 @resynth pno-audio @activations pno-acts @basesmode 1"
 												}
 
@@ -2129,7 +2033,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
 													"patching_rect" : [ 219.0, 218.0, 100.0, 22.0 ],
-													"style" : "",
 													"text" : "buffer~ pno-dicts"
 												}
 
@@ -2140,10 +2043,9 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 118.0, 442.0, 657.0, 22.0 ],
-													"style" : "",
 													"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @iterations 100 @components 1 @bases temp @numframes 132300 @source pianosource"
 												}
 
@@ -2156,7 +2058,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
 													"patching_rect" : [ 118.0, 222.0, 59.0, 22.0 ],
-													"style" : "",
 													"text" : "split 0 87"
 												}
 
@@ -2169,7 +2070,6 @@
 													"numoutlets" : 4,
 													"outlettype" : [ "int", "", "", "int" ],
 													"patching_rect" : [ 118.0, 189.0, 61.0, 22.0 ],
-													"style" : "",
 													"text" : "counter"
 												}
 
@@ -2182,7 +2082,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 130.5, 408.0, 73.0, 22.0 ],
-													"style" : "",
 													"text" : "pak startat i"
 												}
 
@@ -2195,7 +2094,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"patching_rect" : [ 118.0, 327.0, 59.0, 22.0 ],
-													"style" : "",
 													"text" : "* 132300"
 												}
 
@@ -2208,7 +2106,6 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "bang", "bang" ],
 													"patching_rect" : [ 118.0, 128.0, 44.0, 22.0 ],
-													"style" : "",
 													"text" : "t b b b"
 												}
 
@@ -2221,7 +2118,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
 													"patching_rect" : [ 118.0, 252.0, 29.5, 22.0 ],
-													"style" : "",
 													"text" : "t i i"
 												}
 
@@ -2233,8 +2129,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 118.0, 98.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 118.0, 98.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -2430,8 +2326,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
@@ -2450,6 +2346,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2459,8 +2356,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -2483,11 +2379,9 @@
 										"description" : "",
 										"digest" : "",
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p prebuildingSingleBasisDictPerNote"
 								}
 
@@ -2501,13 +2395,14 @@
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
-											"major" : 7,
-											"minor" : 3,
-											"revision" : 4,
-											"architecture" : "x86",
+											"major" : 8,
+											"minor" : 1,
+											"revision" : 8,
+											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
+										"classnamespace" : "box",
 										"rect" : [ 334.0, 79.0, 801.0, 397.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
@@ -2535,6 +2430,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-6",
@@ -2542,7 +2438,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 182.0, 316.0, 91.0, 20.0 ],
-													"style" : "",
 													"text" : "yes, 28minutes"
 												}
 
@@ -2555,7 +2450,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 168.0, 109.5, 555.0, 33.0 ],
-													"style" : "",
 													"text" : "pressing this button started a process of trying to separate in 88 components. Since the seed is random, that was not very helpful. Moreover, the windowsize was too small to capture the fundamentals"
 												}
 
@@ -2568,7 +2462,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 69.0, 316.0, 107.0, 22.0 ],
-													"style" : "",
 													"text" : "1643688.375"
 												}
 
@@ -2581,7 +2474,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "" ],
 													"patching_rect" : [ 157.0, 264.0, 37.0, 22.0 ],
-													"style" : "",
 													"text" : "timer"
 												}
 
@@ -2594,7 +2486,6 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "bang" ],
 													"patching_rect" : [ 132.0, 115.0, 34.0, 22.0 ],
-													"style" : "",
 													"text" : "t b b"
 												}
 
@@ -2606,8 +2497,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 132.0, 80.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 132.0, 80.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -2618,8 +2509,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 51.0, 229.0, 24.0, 24.0 ],
-													"style" : ""
+													"parameter_enable" : 0,
+													"patching_rect" : [ 51.0, 229.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -2629,10 +2520,9 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 51.0, 199.0, 694.0, 22.0 ],
-													"style" : "",
 													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 1024 256 2048 @iterations 100 @bases pno-dicts @components 88 @resynth pno-audio"
 												}
 
@@ -2690,11 +2580,9 @@
 										"description" : "",
 										"digest" : "",
 										"globalpatchername" : "",
-										"style" : "",
 										"tags" : ""
 									}
 ,
-									"style" : "",
 									"text" : "p naiveShotInTheDark"
 								}
 
@@ -2707,7 +2595,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 38.0, 376.0, 192.0, 22.0 ],
-									"style" : "",
 									"text" : "format float32, filetype wave, write"
 								}
 
@@ -2720,7 +2607,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 38.0, 318.0, 192.0, 22.0 ],
-									"style" : "",
 									"text" : "format float32, filetype wave, write"
 								}
 
@@ -2733,7 +2619,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 38.0, 342.0, 105.0, 22.0 ],
-									"style" : "",
 									"text" : "buffer~ pno-audio"
 								}
 
@@ -2746,7 +2631,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 38.0, 400.0, 100.0, 22.0 ],
-									"style" : "",
 									"text" : "buffer~ pno-dicts"
 								}
 
@@ -2759,7 +2643,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 38.0, 66.0, 345.0, 22.0 ],
-									"style" : "",
 									"text" : "replace /Users/pa/Desktop/piano-segment-for-nmf-training.wav"
 								}
 
@@ -2772,7 +2655,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
 									"patching_rect" : [ 38.0, 93.0, 117.0, 22.0 ],
-									"style" : "",
 									"text" : "buffer~ pianosource"
 								}
 
@@ -2810,8 +2692,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -2830,6 +2712,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2839,8 +2722,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2863,11 +2745,9 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p pianopretraining"
 				}
 
@@ -2880,8 +2760,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 192.0, 392.0, 24.0, 24.0 ],
-					"style" : ""
+					"patching_rect" : [ 192.0, 392.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -2893,7 +2772,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 224.0, 508.0, 34.0, 22.0 ],
-					"style" : "",
 					"text" : "gate"
 				}
 
@@ -2906,7 +2784,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 55.0, 372.0, 66.0, 22.0 ],
-					"style" : "",
 					"text" : "delay 100."
 				}
 
@@ -2919,7 +2796,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 141.0, 459.0, 24.0, 22.0 ],
-					"style" : "",
 					"text" : "t 1"
 				}
 
@@ -2932,7 +2808,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
 					"patching_rect" : [ 141.0, 520.0, 30.0, 22.0 ],
-					"style" : "",
 					"text" : "t l 0"
 				}
 
@@ -2945,7 +2820,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 141.0, 494.0, 54.0, 22.0 ],
-					"style" : "",
 					"text" : "gate 1 1"
 				}
 
@@ -2960,13 +2834,14 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 4,
-							"architecture" : "x86",
+							"major" : 8,
+							"minor" : 1,
+							"revision" : 8,
+							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
+						"classnamespace" : "box",
 						"rect" : [ 59.0, 104.0, 1514.0, 1057.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
@@ -2994,6 +2869,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-2",
@@ -3002,7 +2878,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "float", "float", "float" ],
 									"patching_rect" : [ 253.75, 150.0, 69.0, 22.0 ],
-									"style" : "",
 									"text" : "unpack f f f"
 								}
 
@@ -3015,7 +2890,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 253.75, 117.0, 116.0, 22.0 ],
-									"style" : "",
 									"text" : "loadmess 15 20 -50"
 								}
 
@@ -3027,8 +2901,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 177.0, 665.0, 20.0, 20.0 ],
-									"style" : ""
+									"parameter_enable" : 0,
+									"patching_rect" : [ 177.0, 665.0, 20.0, 20.0 ]
 								}
 
 							}
@@ -3041,7 +2915,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 216.25, 349.0, 150.0, 20.0 ],
-									"style" : "",
 									"text" : "rel thresh "
 								}
 
@@ -3055,7 +2928,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.25, 492.0, 150.0, 20.0 ],
-									"style" : "",
 									"text" : "abs thresh (about -50)"
 								}
 
@@ -3070,7 +2942,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "signal" ],
 									"patching_rect" : [ 139.25, 190.0, 70.0, 22.0 ],
-									"style" : "",
 									"text" : "cross~ 250"
 								}
 
@@ -3085,7 +2956,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 228.75, 660.0, 63.0, 22.0 ],
-									"style" : "",
 									"text" : "delay 200"
 								}
 
@@ -3100,7 +2970,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
 									"patching_rect" : [ 207.5, 636.0, 67.0, 22.0 ],
-									"style" : "",
 									"text" : "onebang 1"
 								}
 
@@ -3114,7 +2983,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.75, 328.0, 28.0, 20.0 ],
-									"style" : "",
 									"text" : "-30"
 								}
 
@@ -3128,7 +2996,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.75, 359.0, 28.0, 20.0 ],
-									"style" : "",
 									"text" : "-40"
 								}
 
@@ -3142,7 +3009,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.75, 391.0, 28.0, 20.0 ],
-									"style" : "",
 									"text" : "-50"
 								}
 
@@ -3156,7 +3022,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.75, 424.0, 28.0, 20.0 ],
-									"style" : "",
 									"text" : "-60"
 								}
 
@@ -3170,7 +3035,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.75, 455.0, 28.0, 20.0 ],
-									"style" : "",
 									"text" : "-70"
 								}
 
@@ -3184,7 +3048,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 46.5, 328.0, 24.0, 20.0 ],
-									"style" : "",
 									"text" : "40"
 								}
 
@@ -3198,7 +3061,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 45.5, 359.0, 24.0, 20.0 ],
-									"style" : "",
 									"text" : "30"
 								}
 
@@ -3212,7 +3074,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 45.0, 391.0, 24.0, 20.0 ],
-									"style" : "",
 									"text" : "20"
 								}
 
@@ -3226,7 +3087,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 45.0, 424.0, 24.0, 20.0 ],
-									"style" : "",
 									"text" : "10"
 								}
 
@@ -3240,7 +3100,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 52.0, 455.0, 19.0, 20.0 ],
-									"style" : "",
 									"text" : "0"
 								}
 
@@ -3256,8 +3115,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 216.25, 371.0, 50.0, 24.0 ],
-									"style" : ""
+									"patching_rect" : [ 216.25, 371.0, 50.0, 24.0 ]
 								}
 
 							}
@@ -3272,8 +3130,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 272.75, 371.0, 50.0, 24.0 ],
-									"style" : ""
+									"patching_rect" : [ 272.75, 371.0, 50.0, 24.0 ]
 								}
 
 							}
@@ -3284,8 +3141,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 0,
 									"patching_rect" : [ 63.5, 336.0, 130.0, 130.0 ],
-									"range" : [ 0.0, 40.0 ],
-									"style" : ""
+									"range" : [ 0.0, 40.0 ]
 								}
 
 							}
@@ -3299,7 +3155,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 207.75, 581.0, 150.5, 22.0 ],
-									"style" : "",
 									"text" : "*~"
 								}
 
@@ -3314,7 +3169,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 330.25, 545.0, 45.0, 22.0 ],
-									"style" : "",
 									"text" : ">~ -60"
 								}
 
@@ -3329,7 +3183,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
 									"patching_rect" : [ 207.75, 611.0, 45.0, 22.0 ],
-									"style" : "",
 									"text" : "edge~"
 								}
 
@@ -3344,7 +3197,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 207.75, 538.0, 91.0, 22.0 ],
-									"style" : "",
 									"text" : "thresh~ 10 100"
 								}
 
@@ -3359,7 +3211,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 190.25, 249.0, 89.0, 22.0 ],
-									"style" : "",
 									"text" : "slide~ 10 2205"
 								}
 
@@ -3374,7 +3225,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 190.25, 303.0, 33.0, 22.0 ],
-									"style" : "",
 									"text" : "-~"
 								}
 
@@ -3389,7 +3239,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 282.25, 275.0, 48.0, 22.0 ],
-									"style" : "",
 									"text" : "atodb~"
 								}
 
@@ -3404,7 +3253,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 190.25, 275.0, 48.0, 22.0 ],
-									"style" : "",
 									"text" : "atodb~"
 								}
 
@@ -3419,7 +3267,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 282.25, 249.0, 102.0, 22.0 ],
-									"style" : "",
 									"text" : "slide~ 4410 4410"
 								}
 
@@ -3434,7 +3281,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 190.25, 213.0, 37.0, 22.0 ],
-									"style" : "",
 									"text" : "abs~"
 								}
 
@@ -3450,8 +3296,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 410.25, 492.0, 50.0, 24.0 ],
-									"style" : ""
+									"patching_rect" : [ 410.25, 492.0, 50.0, 24.0 ]
 								}
 
 							}
@@ -3462,8 +3307,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 0,
 									"patching_rect" : [ 410.25, 336.0, 130.0, 130.0 ],
-									"range" : [ -70.0, -30.0 ],
-									"style" : ""
+									"range" : [ -70.0, -30.0 ]
 								}
 
 							}
@@ -3476,8 +3320,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 139.25, 130.0, 25.0, 25.0 ],
-									"style" : ""
+									"patching_rect" : [ 139.25, 130.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -3489,8 +3332,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 207.5, 843.0, 25.0, 25.0 ],
-									"style" : ""
+									"patching_rect" : [ 207.5, 843.0, 25.0, 25.0 ]
 								}
 
 							}
@@ -3702,11 +3544,9 @@
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p cool amplitude based attack detector"
 				}
 
@@ -3719,7 +3559,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 353.0, 459.0, 143.0, 22.0 ],
-					"style" : "",
 					"text" : "vexpr min(($f1 * $f2)\\,0.2)"
 				}
 
@@ -3733,8 +3572,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 664.0, 400.0, 81.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 664.0, 400.0, 81.0, 22.0 ]
 				}
 
 			}
@@ -3746,7 +3584,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 505.0, 424.0, 178.0, 22.0 ],
-					"style" : "",
 					"text" : "vexpr $f1 > $f2 @scalarmode 1"
 				}
 
@@ -3759,7 +3596,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patching_rect" : [ 41.5, 525.0, 60.0, 22.0 ],
-					"style" : "",
 					"text" : "loadbang"
 				}
 
@@ -3772,7 +3608,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 61.5, 603.0, 53.0, 22.0 ],
-					"style" : "",
 					"text" : "zl group"
 				}
 
@@ -3785,7 +3620,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 81.5, 573.0, 47.0, 22.0 ],
-					"style" : "",
 					"text" : "mtof 0."
 				}
 
@@ -3798,7 +3632,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "int" ],
 					"patching_rect" : [ 41.5, 549.0, 59.0, 22.0 ],
-					"style" : "",
 					"text" : "uzi 88 21"
 				}
 
@@ -3811,7 +3644,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 40.5, 640.0, 40.0, 22.0 ],
-					"style" : "",
 					"text" : "zl reg"
 				}
 
@@ -3824,7 +3656,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 141.0, 597.0, 30.0, 22.0 ],
-					"style" : "",
 					"text" : "t b l"
 				}
 
@@ -3839,7 +3670,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 124.0, 707.0, 79.0, 23.0 ],
-					"style" : "",
 					"text" : "prepend set"
 				}
 
@@ -3854,7 +3684,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 124.0, 683.0, 47.0, 23.0 ],
-					"style" : "",
 					"text" : "zl lace"
 				}
 
@@ -3867,7 +3696,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 124.0, 732.0, 112.0, 22.0 ],
-					"style" : "",
 					"text" : "oscbank~ 88 1 512"
 				}
 
@@ -3879,7 +3707,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 666.0, 593.0, 59.0, 20.0 ],
-					"style" : "",
 					"text" : "-20      1-"
 				}
 
@@ -3893,8 +3720,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 509.0, 347.0, 81.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 509.0, 347.0, 81.0, 22.0 ]
 				}
 
 			}
@@ -3909,8 +3735,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 718.0, 603.0, 391.0, 158.0 ],
 					"setminmax" : [ 0.0, 1.0 ],
-					"size" : 88,
-					"style" : ""
+					"size" : 88
 				}
 
 			}
@@ -3922,7 +3747,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 353.0, 371.0, 175.0, 22.0 ],
-					"style" : "",
 					"text" : "vexpr $f1 * $f2 @scalarmode 1"
 				}
 
@@ -3935,7 +3759,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 27.0, 61.0, 321.0, 22.0 ],
-					"style" : "",
 					"text" : "loadmess open Tremblay-SA-UprightPianoPedalWide.wav"
 				}
 
@@ -3947,8 +3770,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
-					"patching_rect" : [ 8.0, 39.0, 320.0, 16.0 ],
-					"style" : ""
+					"patching_rect" : [ 8.0, 39.0, 320.0, 16.0 ]
 				}
 
 			}
@@ -3959,8 +3781,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 4.0, 770.5, 45.0, 45.0 ],
-					"style" : ""
+					"patching_rect" : [ 4.0, 770.5, 45.0, 45.0 ]
 				}
 
 			}
@@ -3977,14 +3798,13 @@
 						"followglobaltempo" : 0,
 						"formantcorrection" : 0,
 						"mode" : "basic",
-						"originallength" : [ 10195.047852, "ticks" ],
-						"originaltempo" : 120.0,
+						"originallength" : [ 10195.047619047618355, "ticks" ],
+						"originaltempo" : 119.999999999999986,
 						"pitchcorrection" : 0,
 						"quality" : "basic",
 						"timestretch" : [ 0 ]
 					}
 ,
-					"style" : "",
 					"text" : "sfplay~ 2"
 				}
 
@@ -4000,8 +3820,7 @@
 					"parameter_enable" : 0,
 					"patching_rect" : [ 279.0, 603.0, 391.0, 158.0 ],
 					"setminmax" : [ 0.0, 20.0 ],
-					"size" : 88,
-					"style" : ""
+					"size" : 88
 				}
 
 			}
@@ -4013,7 +3832,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "list", "" ],
 					"patching_rect" : [ 279.0, 153.0, 441.0, 22.0 ],
-					"style" : "",
 					"text" : "fluid.nmfmatch~ 88 @fftsettings 4096 512 4096 @iterations 10 @bases pno-dicts"
 				}
 
@@ -4026,7 +3844,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 913.0, 153.0, 186.0, 22.0 ],
-					"style" : "",
 					"text" : "buffer~ pno-dicts piano-dicts.wav"
 				}
 
@@ -4039,7 +3856,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 351.0, 67.0, 37.0, 22.0 ],
-					"style" : "",
 					"text" : "open"
 				}
 
@@ -4504,11 +4320,25 @@
 
 			}
  ],
+		"dependency_cache" : [ 			{
+				"name" : "fluid.nmfmatch~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufnmf~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufcompose~.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
@@ -4527,6 +4357,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4536,8 +4367,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",

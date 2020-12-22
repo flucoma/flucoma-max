@@ -2,13 +2,14 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 8,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 34.0, 79.0, 858.0, 878.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -37,6 +38,7 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"showontab" : 1,
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-2",
@@ -45,7 +47,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 175.5, 426.0, 208.0, 22.0 ],
-					"style" : "",
 					"text" : "reset, source side, destination hpside"
 				}
 
@@ -58,7 +59,6 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "bang", "bang", "bang", "bang" ],
 					"patching_rect" : [ 191.0, 676.0, 313.0, 22.0 ],
-					"style" : "",
 					"text" : "b 4"
 				}
 
@@ -71,7 +71,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 88.5, 738.0, 212.0, 22.0 ],
-					"style" : "",
 					"text" : "gain -0.707107, deststartchan 1, bang"
 				}
 
@@ -83,9 +82,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 233.0, 773.0, 182.0, 22.0 ],
-					"style" : "",
-					"text" : "source hpside, destgain 1., bang"
+					"patching_rect" : [ 233.0, 773.0, 254.0, 22.0 ],
+					"text" : "source hpside, destgain 1., numchans 1, bang"
 				}
 
 			}
@@ -96,8 +94,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 331.666656, 808.0, 255.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 331.666655999999989, 808.0, 255.0, 22.0 ],
 					"text" : "gain 0.707107, source mid, numchans 2, bang"
 				}
 
@@ -110,7 +107,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 485.0, 838.5, 139.0, 22.0 ],
-					"style" : "",
 					"text" : "reset, destination output"
 				}
 
@@ -123,7 +119,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 233.0, 202.0, 670.0, 22.0 ],
-					"style" : "",
 					"text" : "reset, destgain 1., destination side, source stereoinput, gain 0.707107, numchans 1, bang, startchan 1, gain -0.707107, bang"
 				}
 
@@ -136,7 +131,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 28.0, 235.0, 305.0, 22.0 ],
-					"style" : "",
 					"text" : "destination mid, gain 0.707107, bang, startchan 0, bang"
 				}
 
@@ -155,9 +149,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 801.0, 671.0, 20.0, 20.0 ],
-					"presentation_rect" : [ 144.0, 556.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "4",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -177,9 +169,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 221.0, 560.0, 20.0, 20.0 ],
-					"presentation_rect" : [ 134.0, 605.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "3",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -192,7 +182,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 825.0, 671.0, 157.0, 20.0 ],
-					"style" : "",
 					"text" : "pick your listening selection"
 				}
 
@@ -204,7 +193,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 243.0, 560.0, 494.0, 20.0 ],
-					"style" : "",
 					"text" : "click here to reconstruct the stereo signal from MS (again, -3dB is applied)"
 				}
 
@@ -223,9 +211,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 698.5, 347.0, 20.0, 20.0 ],
-					"presentation_rect" : [ 698.5, 347.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "2",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -245,9 +231,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 143.5, 278.0, 20.0, 20.0 ],
-					"presentation_rect" : [ 143.5, 279.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "2",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -261,7 +245,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 360.5, 278.0, 494.0, 47.0 ],
-					"style" : "",
 					"text" : "click one of the 3 message boxes to trigger an expensive way to do high pass filtering by convolving with a FIR. The top one is a cutoff at sampling_rate/4, the middle is around sampling_rate/10 and the bottom is about sampling_rate/100"
 				}
 
@@ -280,9 +263,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 313.0, 307.0, 20.0, 20.0 ],
-					"presentation_rect" : [ 332.5, 419.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "2",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -296,7 +277,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 633.0, 61.0, 50.0, 22.0 ],
-					"style" : "",
 					"text" : "replace"
 				}
 
@@ -308,7 +288,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 101.5, 40.0, 471.0, 20.0 ],
-					"style" : "",
 					"text" : "click here to trigger the MS decomposition (-3dB each side to avoid gain accumulation)"
 				}
 
@@ -327,9 +306,7 @@
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
 					"patching_rect" : [ 70.0, 40.0, 20.0, 20.0 ],
-					"presentation_rect" : [ 920.0, 320.067627, 20.0, 20.0 ],
 					"rounded" : 60.0,
-					"style" : "",
 					"text" : "1",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 				}
@@ -342,8 +319,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 191.0, 560.0, 24.0, 24.0 ],
-					"style" : ""
+					"parameter_enable" : 0,
+					"patching_rect" : [ 191.0, 560.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -355,7 +332,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "bang" ],
 					"patching_rect" : [ 191.0, 588.0, 34.0, 22.0 ],
-					"style" : "",
 					"text" : "t b b"
 				}
 
@@ -367,8 +343,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 28.0, 40.0, 24.0, 24.0 ],
-					"style" : ""
+					"parameter_enable" : 0,
+					"patching_rect" : [ 28.0, 40.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -380,7 +356,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "bang" ],
 					"patching_rect" : [ 28.0, 68.0, 62.0, 22.0 ],
-					"style" : "",
 					"text" : "t b b b"
 				}
 
@@ -393,7 +368,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 106.0, 129.0, 87.0, 22.0 ],
-					"style" : "",
 					"text" : "sizeinsamps 1"
 				}
 
@@ -406,7 +380,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 206.0, 615.0, 97.0, 22.0 ],
-					"style" : "",
 					"text" : "sizeinsamps 1 1"
 				}
 
@@ -419,7 +392,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "bang", "bang" ],
 					"patching_rect" : [ 98.0, 384.0, 40.0, 22.0 ],
-					"style" : "",
 					"text" : "t l b b"
 				}
 
@@ -433,7 +405,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 171.0, 336.0, 521.0, 49.0 ],
-					"style" : "",
 					"text" : "0.982494 -0.066859 -0.064358 -0.061897 -0.059477 -0.057098 -0.054761 -0.052466 -0.050215 -0.048007 -0.045843 -0.043724 -0.041649 -0.03962 -0.037636 -0.035697 -0.033805 -0.031959 -0.030159 -0.028406 -0.026699 -0.025038 -0.023425 -0.021857 -0.020337"
 				}
 
@@ -446,7 +417,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 175.5, 482.0, 247.0, 22.0 ],
-					"style" : "",
 					"text" : "destgain 1., deststartframe $1, gain $2, bang"
 				}
 
@@ -459,7 +429,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "list" ],
 					"patching_rect" : [ 98.0, 426.0, 58.0, 22.0 ],
-					"style" : "",
 					"text" : "listfunnel"
 				}
 
@@ -472,7 +441,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 147.0, 307.0, 150.0, 22.0 ],
-					"style" : "",
 					"text" : "0.8 -0.32 -0.24 -0.16 -0.08"
 				}
 
@@ -485,7 +453,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 98.0, 278.0, 38.0, 22.0 ],
-					"style" : "",
 					"text" : "1. -1."
 				}
 
@@ -498,7 +465,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 404.5, 428.0, 87.0, 22.0 ],
-					"style" : "",
 					"text" : "sizeinsamps 1"
 				}
 
@@ -512,8 +478,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 797.0, 700.0, 100.0, 22.0 ],
-					"style" : ""
+					"patching_rect" : [ 797.0, 700.0, 100.0, 22.0 ]
 				}
 
 			}
@@ -525,7 +490,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 837.5, 733.0, 74.0, 22.0 ],
-					"style" : "",
 					"text" : "prepend set"
 				}
 
@@ -538,7 +502,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 106.0, 166.0, 73.0, 22.0 ],
-					"style" : "",
 					"text" : "buffer~ side"
 				}
 
@@ -551,7 +514,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 182.0, 166.0, 71.0, 22.0 ],
-					"style" : "",
 					"text" : "buffer~ mid"
 				}
 
@@ -564,7 +526,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 206.0, 642.0, 95.0, 22.0 ],
-					"style" : "",
 					"text" : "buffer~ output 1"
 				}
 
@@ -577,7 +538,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 633.0, 88.0, 339.0, 22.0 ],
-					"style" : "",
 					"text" : "buffer~ stereoinput Tremblay-SA-UprightPianoPedalWide.wav"
 				}
 
@@ -590,7 +550,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 1034.0, 708.0, 33.0, 22.0 ],
-					"style" : "",
 					"text" : "stop"
 				}
 
@@ -603,7 +562,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 989.0, 708.0, 34.0, 22.0 ],
-					"style" : "",
 					"text" : "start"
 				}
 
@@ -614,8 +572,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 862.0, 827.0, 45.0, 45.0 ],
-					"style" : ""
+					"patching_rect" : [ 862.0, 827.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -627,7 +584,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "signal", "signal", "bang" ],
 					"patching_rect" : [ 862.0, 778.0, 116.0, 22.0 ],
-					"style" : "",
 					"text" : "play~ stereopiano 2"
 				}
 
@@ -640,7 +596,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
 					"patching_rect" : [ 404.5, 452.0, 97.0, 22.0 ],
-					"style" : "",
 					"text" : "buffer~ hpside 1"
 				}
 
@@ -653,7 +608,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "float", "" ],
 					"patching_rect" : [ 24.0, 870.0, 108.0, 22.0 ],
-					"style" : "",
 					"text" : "fluid.bufcompose~"
 				}
 
@@ -930,9 +884,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
