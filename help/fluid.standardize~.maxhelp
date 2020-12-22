@@ -94,7 +94,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 340.5, 531.0, 138.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "help fluid.robustscale~"
 								}
 
@@ -150,12 +149,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-107",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 554.0, 511.0, 352.0, 50.0 ],
-									"text" : "By normalizing to a uniform scale, both would be weighted equally (if you then wanted to manually tweak one to increase its weighting, this is conceptually simpler too)",
+									"patching_rect" : [ 554.0, 511.0, 352.0, 36.0 ],
+									"text" : "By normalizing to a uniform scale, both would be weighted equally",
 									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
 								}
 
@@ -1592,7 +1591,7 @@
 													"patching_rect" : [ 391.5, 346.5, 128.5, 57.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 216.5, 20.5, 128.5, 57.0 ],
-													"setminmax" : [ -1.175402045249939, 2.150254964828491 ],
+													"setminmax" : [ -1.175401926040649, 2.15025520324707 ],
 													"setstyle" : 1,
 													"size" : 10,
 													"slidercolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
@@ -1611,7 +1610,7 @@
 													"patching_rect" : [ 183.0, 331.5, 128.5, 57.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 45.0, 20.5, 128.5, 57.0 ],
-													"setminmax" : [ -1.933169960975647, 1.280961990356445 ],
+													"setminmax" : [ -1.933169722557068, 1.280961632728577 ],
 													"setstyle" : 1,
 													"size" : 10,
 													"slidercolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
@@ -2525,7 +2524,7 @@
 													"patching_rect" : [ 391.5, 346.5, 128.5, 57.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 216.5, 20.5, 128.5, 57.0 ],
-													"setminmax" : [ 0.0, 0.552605986595154 ],
+													"setminmax" : [ 0.0, 0.552605926990509 ],
 													"setstyle" : 1,
 													"size" : 10,
 													"slidercolor" : [ 0.439216, 0.74902, 0.254902, 1.0 ],

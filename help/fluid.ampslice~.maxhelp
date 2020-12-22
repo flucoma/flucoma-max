@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 7,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 6,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -86,7 +86,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -232,20 +232,20 @@
 												"filekind" : "audiofile",
 												"loop" : 1,
 												"content_state" : 												{
-													"speed" : [ 1.0 ],
-													"formant" : [ 1.0 ],
-													"originallength" : [ 0.0, "ticks" ],
-													"followglobaltempo" : [ 0 ],
-													"timestretch" : [ 0 ],
-													"mode" : [ "basic" ],
 													"play" : [ 0 ],
+													"formantcorrection" : [ 0 ],
+													"followglobaltempo" : [ 0 ],
+													"originallengthms" : [ 0.0 ],
+													"mode" : [ "basic" ],
+													"formant" : [ 1.0 ],
 													"originaltempo" : [ 120.0 ],
+													"basictuning" : [ 440 ],
+													"timestretch" : [ 0 ],
+													"pitchshift" : [ 1.0 ],
+													"speed" : [ 1.0 ],
+													"originallength" : [ 0.0, "ticks" ],
 													"slurtime" : [ 0.0 ],
 													"quality" : [ "basic" ],
-													"originallengthms" : [ 0.0 ],
-													"pitchshift" : [ 1.0 ],
-													"formantcorrection" : [ 0 ],
-													"basictuning" : [ 440 ],
 													"pitchcorrection" : [ 0 ]
 												}
 
@@ -649,8 +649,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -721,7 +721,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1130,7 +1130,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 228.25, 312.5, 222.0, 22.0 ],
 									"style" : "",
-									"text" : "reset, offthreshold 7, minslicelength 220"
+									"text" : "reset, offthreshold 7, minslicelength 441"
 								}
 
 							}
@@ -1355,8 +1355,8 @@
 								"name" : "max6box",
 								"default" : 								{
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1428,7 +1428,7 @@
 						"appversion" : 						{
 							"major" : 7,
 							"minor" : 3,
-							"revision" : 5,
+							"revision" : 6,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1518,22 +1518,14 @@
 				"name" : "fluid.ampslice~.mxo",
 				"type" : "iLaX"
 			}
-, 			{
-				"name" : "vtimes~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "vplus~.mxo",
-				"type" : "iLaX"
-			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
