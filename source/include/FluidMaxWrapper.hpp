@@ -1499,7 +1499,7 @@ void makeMaxWrapper(const char* classname)
 {
   //  using InputType = typename
   //  InputTypeWrapper<isRealTime<Client<double>>>::type;
-
+  common_symbols_init(); 
   FluidMaxWrapper<Client>::makeClass(classname);
 }
 
