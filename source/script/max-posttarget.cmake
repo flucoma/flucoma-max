@@ -75,6 +75,8 @@ if (APPLE)
 		${MAX_AUDIO_API}
 	)
 
+  string(REPLACE "~" "-" EXTERN_NO_TILDE ${EXTERN_OUTPUT_NAME})
+
 	set_target_properties(${PROJECT_NAME} PROPERTIES
 		BUNDLE True
 		BUNDLE_EXTENSION "mxo"
