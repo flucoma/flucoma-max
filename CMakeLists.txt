@@ -24,7 +24,7 @@ set(FLUID_DOCS_PATH "" CACHE PATH "Optional path to flucoma-docs (needed for doc
 if (APPLE)
   set(CMAKE_XCODE_GENERATE_SCHEME ON)
   set(CMAKE_XCODE_SCHEME_EXECUTABLE "/Applications/Max.app")
-  set(CMAKE_OSX_DEPLOYMENT_TARGET 10.8)
+  set(CMAKE_OSX_DEPLOYMENT_TARGET "10.8" CACHE STRING "")
 endif()
 
 ################################################################################
