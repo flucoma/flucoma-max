@@ -975,8 +975,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 61.0, 91.0, 58.0, 22.0 ],
-																	"text" : "pack -2 2"
+																	"patching_rect" : [ 61.0, 91.0, 65.0, 22.0 ],
+																	"text" : "pack -2. 2."
 																}
 
 															}
@@ -1293,7 +1293,6 @@
 													"presentation_rect" : [ 216.5, 20.5, 128.5, 57.0 ],
 													"setminmax" : [ -2.0, 2.0 ],
 													"setstyle" : 1,
-													"settype" : 0,
 													"size" : 10,
 													"slidercolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 													"spacing" : 1
@@ -1313,7 +1312,6 @@
 													"presentation_rect" : [ 45.0, 20.5, 128.5, 57.0 ],
 													"setminmax" : [ -2.0, 2.0 ],
 													"setstyle" : 1,
-													"settype" : 0,
 													"size" : 10,
 													"slidercolor" : [ 0.952941, 0.564706, 0.098039, 1.0 ],
 													"spacing" : 1,
