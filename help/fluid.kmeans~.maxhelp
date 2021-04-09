@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 82.0, 88.0, 967.0, 599.0 ],
+		"rect" : [ 56.0, 105.0, 967.0, 599.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -129,18 +129,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 79.181816000000012, 393.210846000000004, 37.0, 23.0 ],
-									"text" : "clear"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 219.0, 504.511292000000026, 50.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -2751,7 +2739,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 55.181815999999998, 353.210845999999947, 182.000000000000028, 38.0 ],
+									"patching_rect" : [ 55.181815999999998, 353.210845999999947, 185.0, 38.0 ],
 									"text" : "fitpredict kmeans.dataset.help kmeans.labelset.help"
 								}
 
@@ -2814,13 +2802,6 @@
 							}
  ],
 						"lines" : [ 							{
-								"patchline" : 								{
-									"destination" : [ "obj-12", 1 ],
-									"source" : [ "obj-11", 1 ]
-								}
-
-							}
-, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
 									"midpoints" : [ 134.681815999999998, 497.095285999999987, 28.5, 497.095285999999987 ],
@@ -2922,6 +2903,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
+									"midpoints" : [ 302.681816000000026, 450.990508999999975, 134.681815999999998, 450.990508999999975 ],
 									"source" : [ "obj-5", 2 ]
 								}
 
@@ -2944,9 +2926,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2964,6 +2946,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2973,8 +2956,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -3023,7 +3005,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 82.0, 114.0, 967.0, 573.0 ],
+						"rect" : [ 56.0, 131.0, 967.0, 573.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3063,7 +3045,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 435.5, 421.454543999999999, 524.0, 127.0 ],
-									"presentation_linecount" : 8,
 									"text" : "We can now query for a given point how far it is from each cluster's means. For instance, (2) creates a point in the top right quadrant (0.5 0.5) then we transform it (3) to another buffer. When we print its content (4), we get 4 values for that point, instead of a single cluster name as when we use predictpoint. We can also send a full dataset to be transformed in that new cluster-distance space. If we create a simple dataset of 4 items, one per quadrant (5) we can transform it (6) and get, for each entry, the distance to each cluster means (7).",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.73 ]
 								}
@@ -3360,9 +3341,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -3380,6 +3361,7 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3389,8 +3371,7 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-,
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 												}
 ,
 												"parentstyle" : "max6box",
@@ -3408,7 +3389,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 611.0, 262.500015000000019, 79.0, 23.0 ],
+									"patching_rect" : [ 611.0, 261.000015000000019, 79.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3440,7 +3421,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 571.0, 320.545440999999983, 321.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "transform kmeans.transform.src kmeans.transform.dst"
 								}
 
@@ -3452,7 +3432,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 554.5, 224.212128000000007, 275.0, 23.0 ]
+									"patching_rect" : [ 554.5, 224.212128000000007, 236.0, 23.0 ]
 								}
 
 							}
@@ -3536,7 +3516,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 571.0, 262.500015000000019, 34.0, 23.0 ],
+									"patching_rect" : [ 571.0, 261.000015000000019, 34.0, 23.0 ],
 									"text" : "print"
 								}
 
@@ -6228,6 +6208,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
+									"midpoints" : [ 620.5, 286.772742999999991, 580.5, 286.772742999999991 ],
 									"source" : [ "obj-29", 0 ]
 								}
 
@@ -6329,7 +6310,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-21", 1 ],
-									"midpoints" : [ 560.0, 220.212128000000007, 820.0, 220.212128000000007 ],
+									"midpoints" : [ 560.0, 220.212128000000007, 781.0, 220.212128000000007 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -6338,9 +6319,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -6358,6 +6339,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -6367,8 +6349,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -6386,7 +6367,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 393.0, 83.0, 146.0, 22.0 ],
+					"patching_rect" : [ 384.0, 74.0, 153.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -6395,7 +6376,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"cluster-distance space\"",
+					"text" : "p \"Cluster-Distance Space\"",
 					"varname" : "basic_tab[2]"
 				}
 
@@ -6457,7 +6438,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 576.181824000000006, 322.909087999999997, 244.0, 84.0 ],
-									"presentation_linecount" : 4,
 									"text" : "... but we can retrieve the improved means to a dataset. Press this, then print to observe the subtle improvements to each cluster's means.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.73 ]
 								}
@@ -6505,7 +6485,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 309.181824000000006, 486.909087999999997, 244.0, 69.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Fitting further will improve the means should that be possible. In this case, it will be subtle...",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.73 ]
 								}
@@ -6543,7 +6522,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 557.318175999999994, 54.954543999999999, 71.0, 81.0 ],
+									"patching_rect" : [ 557.318175999999994, 54.954543999999999, 77.0, 81.0 ],
 									"text" : "0 0.5 0.5, 1 -0.5 0.5, 2 0.5 -0.5, 3 -0.5 -0.5, bang"
 								}
 
@@ -6657,7 +6636,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 521.5, 189.409087999999997, 34.0, 23.0 ],
+									"patching_rect" : [ 521.5, 186.5, 34.0, 23.0 ],
 									"text" : "print"
 								}
 
@@ -6682,7 +6661,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 309.181824000000006, 433.045456000000001, 263.0, 38.0 ],
+									"patching_rect" : [ 309.181824000000006, 430.045456000000001, 263.0, 38.0 ],
 									"text" : "fit kmeans.dataset.help, predict kmeans.dataset.help kmeans.labelset.help"
 								}
 
@@ -9404,9 +9383,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -9424,6 +9403,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -9433,8 +9413,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -9452,7 +9431,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 248.0, 107.0, 140.0, 22.0 ],
+					"patching_rect" : [ 248.0, 107.0, 141.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -9461,7 +9440,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"accessing the means\"",
+					"text" : "p \"Accessing the Means\"",
 					"varname" : "basic_tab[1]"
 				}
 
@@ -10020,7 +9999,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 372.181824000000006, 243.212128000000007, 95.0, 23.0 ],
+									"patching_rect" : [ 368.181816000000026, 245.212128000000007, 95.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -10929,7 +10908,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 372.181824000000006, 272.54547100000002, 156.0, 158.0 ],
+									"patching_rect" : [ 368.181816000000026, 274.54547100000002, 156.0, 158.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -10965,7 +10944,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "bang", "clear", "clear", "clear" ],
-									"patching_rect" : [ 53.181815999999998, 190.363631999999996, 475.0, 23.0 ],
+									"patching_rect" : [ 53.181815999999998, 190.363631999999996, 460.0, 23.0 ],
 									"text" : "t b clear clear clear"
 								}
 
@@ -12289,6 +12268,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"midpoints" : [ 356.681816000000026, 443.787239, 46.681815999999998, 443.787239 ],
+									"order" : 1,
+									"source" : [ "obj-36", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-54", 1 ],
 									"source" : [ "obj-36", 1 ]
 								}
@@ -12304,7 +12292,8 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-61", 1 ],
-									"midpoints" : [ 366.681816000000026, 228.287880000000001, 457.681824000000006, 228.287880000000001 ],
+									"midpoints" : [ 356.681816000000026, 228.287880000000001, 453.681816000000026, 228.287880000000001 ],
+									"order" : 0,
 									"source" : [ "obj-36", 2 ]
 								}
 
@@ -12326,7 +12315,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-61", 0 ],
-									"midpoints" : [ 172.590912000000003, 561.511308999999983, 357.136361000000022, 561.511308999999983, 357.136361000000022, 237.212124999999986, 381.681824000000006, 237.212124999999986 ],
+									"midpoints" : [ 172.590912000000003, 561.511308999999983, 363.136361000000022, 561.511308999999983, 363.136361000000022, 237.212124999999986, 377.681816000000026, 237.212124999999986 ],
 									"source" : [ "obj-44", 0 ]
 								}
 
@@ -12334,6 +12323,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
+									"midpoints" : [ 214.681815999999998, 477.990508999999975, 116.681815999999998, 477.990508999999975 ],
 									"source" : [ "obj-5", 2 ]
 								}
 
@@ -12363,9 +12353,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -12383,6 +12373,7 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -12392,8 +12383,7 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 								}
 ,
 								"parentstyle" : "max6box",
@@ -12559,10 +12549,6 @@
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "jit.+.mxo",
 				"type" : "iLaX"
 			}
  ],
