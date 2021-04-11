@@ -112,12 +112,13 @@ if(DOCS)
     add_subdirectory(${flucoma-docs_SOURCE_DIR} ${flucoma-docs_BINARY_DIR})
   endif()
 
-  add_custom_target(MAX_MAKE_DOCS ALL)
-  add_dependencies(MAX_MAKE_DOCS MAKE_MAX_REF)
-  add_custom_command(TARGET MAX_MAKE_DOCS POST_BUILD
-    COMMAND ${CMAKE_COMMAND} -E copy_directory "${FLUID_MAX_REF_PATH}"  "${CMAKE_CURRENT_SOURCE_DIR}/docs"
-    COMMENT "${FLUID_MAX_REF_PATH}"
-  )
+  set(MAX_DOC_PATH "${CMAKE_SOURCE_DIR}/docs" CACHE PATH "")
+  # add_custom_target(MAX_MAKE_DOCS ALL)
+  # add_dependencies(MAX_MAKE_DOCS MAKE_MAX_REF)  
+  # add_custom_command(TARGET MAX_MAKE_DOCS POST_BUILD
+  #   COMMAND ${CMAKE_COMMAND} -E copy_directory "${FLUID_MAX_REF_PATH}"  "${CMAKE_CURRENT_SOURCE_DIR}/docs"
+  #   COMMENT "${MAX_DOC_PATH}"
+  # )
 endif()
 
 # Misc setup and subroutines
@@ -147,10 +148,10 @@ endforeach ()
 #install bits. Max packages bundle Windows and Mac builds together
 set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
 set(MAX_INSTALL_PREFIX "." CACHE PATH "Prefix for assembling max package")
-set(FLUID_PACKAGE_NAME FluidCorpusManipulation CACHE STRING "Name for published package")
+set(FLUID_PACKAGE_NAME "Fluid Corpus Manipulation" CACHE STRING "Name for published package")
 set(MAX_PACKAGE_ROOT ${MAX_INSTALL_PREFIX}/${FLUID_PACKAGE_NAME})
 
-foreach(PACKAGE_DIRECTORY examples;extras;help;init;patchers)
+foreach(PACKAGE_DIRECTORY examples;extras;help;init;patchers;interfaces)
   install(DIRECTORY ${PACKAGE_DIRECTORY} DESTINATION ${MAX_PACKAGE_ROOT})
 endforeach(PACKAGE_DIRECTORY)
 
@@ -168,7 +169,7 @@ install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic
         RENAME LICENSE.md)
 
 if(DOCS)
-  install(DIRECTORY "${FLUID_MAX_REF_PATH}/" 
+  install(DIRECTORY "${MAX_DOC_PATH}/" 
           DESTINATION "${MAX_PACKAGE_ROOT}/docs"  
           PATTERN "*.xml")
 endif()
