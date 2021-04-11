@@ -6,7 +6,7 @@ sysbuild
 log.txt
 externals
 support
-build
+build*
 *.o
 *.dylib
 tmp
@@ -15,5 +15,8 @@ tmp
 **/package-info.json
 media
 docs
+interfaces/max.db.json
+interfaces/flucoma-obj-qlookup.json
 /.vs
 release-packaging/**
+winbuild/*
