@@ -1224,7 +1224,9 @@ private:
     str = *json;
     
     auto messageResult = x->mClient.template invoke<N>(x->mClient,str);
-    
+  
+    x->params().template forEachParam<touchAttribute>(x);
+  
     object_free(jsonwriter);
     if(x->checkResult(messageResult))
       object_obex_dumpout(x,gensym("load"),0,nullptr);
@@ -1363,8 +1365,12 @@ private:
         return;
       }
     }
+    
     path_toabsolutesystempath(path, filename, fullpath);
+    
     auto messageResult = x->mClient.template invoke<N>(x->mClient, fullpath);
+    
+    x->params().template forEachParam<touchAttribute>(x);
     if(x->checkResult(messageResult))
       object_obex_dumpout(x,gensym("read"),0,nullptr);
   }
