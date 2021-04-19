@@ -315,7 +315,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "resynthesis",
+									"attr" : "resynth",
 									"id" : "obj-72",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -737,7 +737,7 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 645.5, 177.482075744432677, 134.0, 24.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "fluid.jit.spectrogram.js",
+										"filename" : "fluid.jit.spectrogram",
 										"parameter_enable" : 0
 									}
 ,
@@ -812,8 +812,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 29.0, 689.5, 332.0, 52.0 ],
-									"text" : "fluid.bufstft~ @inverse 1 @magnitude bufstft.help.mags @phase bufstft.help.phases @resynthesis bufstft.help.resynth"
+									"patching_rect" : [ 29.0, 689.5, 310.0, 52.0 ],
+									"text" : "fluid.bufstft~ @inverse 1 @magnitude bufstft.help.mags @phase bufstft.help.phases @resynth bufstft.help.resynth"
 								}
 
 							}
