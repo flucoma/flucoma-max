@@ -84,7 +84,7 @@ To find out which branches / tags / commits of these we use, look in the top lev
 
 ## Compiling for different CPUs
 
-The build system generally assumes an x86 cpu with AVX instructions (most modern x86 CPUs). To build on another kind of CPU (e.g. older than 2012) you can use the `FLUID_ARCH` cache variable to pass specific flags to your compiler. For example use `-DFLUID_ARCH=-march=native` to optimize for your particular CPU.
+The build system generally assumes an x86 cpu with AVX instructions (most modern x86 CPUs). To build on another kind of CPU (e.g. older than 2012) you can use the `FLUID_ARCH` cache variable to pass specific flags to your compiler. For example use `-DFLUID_ARCH=-mcpu=native` to optimize for your particular CPU.
 
 # Credits 
 ### FluCoMa core development team (in alphabetical order)
