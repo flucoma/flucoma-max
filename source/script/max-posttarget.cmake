@@ -20,14 +20,7 @@ target_include_directories (
 	PRIVATE
 	"${CMAKE_CURRENT_SOURCE_DIR}/../../include"
   "${FLUID_VERSION_PATH}"
-	"${FLUID_M_PATH}/include/"
-	"${FLUID_M_PATH}/thirdparty"
 )
-
-file(GLOB_RECURSE FLUID_MANIPULATION_HEADERS CONFIGURE_DEPENDS "${FLUID_M_PATH}/include/**/*.hpp")
-
-target_sources(${PROJECT_NAME} PUBLIC ${FLUID_MANIPULATION_HEADERS})
-
 
 if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W3 )
@@ -49,8 +42,6 @@ source_group(TREE "${flucoma-core_SOURCE_DIR}/include" FILES ${HEADERS})
 get_property(HEADERS TARGET FLUID_MAX PROPERTY INTERFACE_SOURCES)
 source_group("Max Wrapper" FILES ${HEADERS})
 source_group("" FILES "${PROJECT_NAME}.cpp")
-# get_property(HEADERS TARGET FLUID_MANIP PROPERTY INTERFACE_SOURCES)
-# source_group(TREE "${fluid_manipulation_SOURCE_DIR}/include" FILES ${HEADERS})
 
 if ("${THIS_FOLDER_NAME}" MATCHES ".*_tilde")
 	string(REGEX REPLACE "_tilde" "~" EXTERN_OUTPUT_NAME "${THIS_FOLDER_NAME}")

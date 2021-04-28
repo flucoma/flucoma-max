@@ -16,7 +16,6 @@ if(NOT MAX_SDK_PATH)
 endif()
 
 set(FLUID_PATH "" CACHE PATH "Optional path to the Fluid Decomposition repo")
-set(FLUID_M_PATH "" CACHE PATH "Optional path to the Fluid fluid_manipulation repo")
 
 option(DOCS "Generate Max XML documentation" OFF)
 set(FLUID_DOCS_PATH "" CACHE PATH "Optional path to flucoma-docs (needed for docs)")
@@ -46,19 +45,13 @@ set(FETCHCONTENT_QUIET FALSE)
 
 FetchContent_Declare(
   flucoma-core
-  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_decomposition.git
+  GIT_REPOSITORY https://github.com/flucoma/flucoma-core.git
   GIT_PROGRESS TRUE
 )
 
-# FetchContent_Declare(
-#   fluid_manipulation
-#   GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_manipulation.git
-#   GIT_PROGRESS TRUE
-# )
-
 FetchContent_Declare(
   flucoma-docs
-  GIT_REPOSITORY https://bitbucket.org/flucoma/fluid_paramdump.git
+  GIT_REPOSITORY https://github.com/flucoma/flucoma-docs.git
   GIT_PROGRESS TRUE  
 )
 
@@ -81,21 +74,6 @@ endif()
 set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY
                 TOPLEVEL "${CMAKE_CURRENT_SOURCE_DIR}/externals"
                 SUPERBUILD "${CMAKE_SOURCE_DIR}/max_externals")
-
-
-# if(FLUID_M_PATH)
-#   get_filename_component(
-#     FETCHCONTENT_SOURCE_DIR_FLUID_MANIPULATION ${FLUID_M_PATH} ABSOLUTE
-#   )
-# endif()
-#
-# FetchContent_GetProperties(fluid_manipulation)
-#
-# if(NOT fluid_manipulation_POPULATED)
-#   FetchContent_Populate(fluid_manipulation)
-#   add_subdirectory(${fluid_manipulation_SOURCE_DIR} ${fluid_manipulation_BINARY_DIR})
-# endif()
-
 
 if(DOCS)
   if(FLUID_DOCS_PATH)
