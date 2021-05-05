@@ -8,7 +8,6 @@ under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 */
 
-
 #pragma once
 // We get lots of this warning because C74 macros, and can't (AFAICS) do
 // anything else but mute them:
@@ -72,9 +71,9 @@ public:
   const Result resize(index frames, index channels,
                       double newSampleRate) override
   {
-    
-    if(frames == numFrames() && channels == numChans()) return {};
-  
+
+    if (frames == numFrames() && channels == numChans()) return {};
+
     t_object* buffer = getBuffer();
 
     if (buffer)
@@ -87,7 +86,7 @@ public:
         atom_setlong(&args[0], static_cast<t_atom_long>(frames));
         t_symbol* sampsMsg = gensym("sizeinsamps");
         object_method_typed(buffer, sampsMsg, 2, args, nullptr);
-       
+
         t_atom sr;
         atom_setfloat(&sr, newSampleRate);
         t_symbol* srMsg = gensym("sr");
@@ -106,14 +105,22 @@ public:
       {
         if (channels > numChans())
           return {Result::Status::kError,
-            "Can't resize buffers outside main thread. Not enough channels in ",
-            mName->s_name,
-            ": has ", numChans(), " need ", channels};
+                  "Can't resize buffers outside main thread. Not enough "
+                  "channels in ",
+                  mName->s_name,
+                  ": has ",
+                  numChans(),
+                  " need ",
+                  channels};
         if (frames > numFrames())
-          return {Result::Status::kError,
-            "Can't resize buffers outside main thread. Not enough frames in ",
-            mName->s_name,
-            ": has ", numFrames(), " need ", frames};
+          return {
+              Result::Status::kError,
+              "Can't resize buffers outside main thread. Not enough frames in ",
+              mName->s_name,
+              ": has ",
+              numFrames(),
+              " need ",
+              frames};
 
         if (sampleRate() != newSampleRate)
         {
@@ -150,10 +157,9 @@ public:
     releaseLock();
   }
 
-
   FluidTensorView<float, 2> allFrames() override
   {
-  
+
     FluidTensorView<float, 2> v{this->mSamps, 0, numFrames(), numChans()};
     return v.transpose();
   }
@@ -253,7 +259,6 @@ private:
 
   void swap(MaxBufferAdaptor&& other) noexcept
   {
-
     if (this == &other) return;
 
     while (!tryLock())

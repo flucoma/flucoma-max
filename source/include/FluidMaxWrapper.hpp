@@ -10,12 +10,11 @@ under the European Union’s Horizon 2020 research and innovation programme
 
 #pragma once
 
-
 #include <ext.h>
 #include <ext_atomic.h>
+#include <ext_dictobj.h>
 #include <ext_obex.h>
 #include <ext_obex_util.h>
-#include <ext_dictobj.h>
 #include <z_dsp.h>
 
 #include <clients/common/FluidBaseClient.hpp>
@@ -84,11 +83,11 @@ public:
            long /*maxvectorsize*/, long /*flags*/)
   {
     Wrapper* wrapper = static_cast<Wrapper*>(this);
-    if(!Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
+    if (!Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
       wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
-    
+
     auto& client = wrapper->client();
-    
+
     client.sampleRate(samplerate);
 
     audioInputConnections.resize(asUnsigned(client.audioChannelsIn()));
@@ -219,7 +218,6 @@ struct NonRealTime
     CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Non-Blocking Queue Flag");
   }
 
-
   void cancel()
   {
     auto& wrapper = static_cast<Wrapper&>(*this);
@@ -270,7 +268,9 @@ struct NonRealTime
     x->mClient.enqueue(x->mParams);
 
     if (x->mSynchronous != 2)
-    { defer(x, (method) &callProcess, nullptr, 0, nullptr); }
+    {
+      defer(x, (method) &callProcess, nullptr, 0, nullptr);
+    }
     else
     {
       callProcess(x, nullptr, 0, nullptr);
@@ -281,7 +281,6 @@ struct NonRealTime
   {
     x->process();
   }
-
 
   static void checkProcess(Wrapper* x)
   {
@@ -387,30 +386,26 @@ class FluidMaxWrapper
   friend impl::RealTime<FluidMaxWrapper<Client>>;
   friend impl::NonRealTime<FluidMaxWrapper<Client>>;
 
-  template<typename T>
+  template <typename T>
   struct IsModel
   {
     using type = std::false_type;
   };
 
-  template<typename T>
+  template <typename T>
   struct IsModel<NRTThreadingAdaptor<ClientWrapper<T>>>
   {
     using type = typename ClientWrapper<T>::isModelObject;
   };
 
-
-  template<typename T>
+  template <typename T>
   struct IsModel<ClientWrapper<T>>
   {
     using type = typename ClientWrapper<T>::isModelObject;
   };
 
-
-  template<typename T>
+  template <typename T>
   using IsModel_t = typename IsModel<T>::type;
-  
-
 
   template <size_t N>
   static constexpr auto paramDescriptor()
@@ -424,8 +419,7 @@ class FluidMaxWrapper
     return Client::getParameterDescriptors().template makeValue<N>();
   }
 
-
-bool checkResult(Result& res)
+  bool checkResult(Result& res)
   {
 
     if (!res.ok())
@@ -558,7 +552,6 @@ bool checkResult(Result& res)
       return {atom_getsym(a)->s_name};
     }
 
-
     template <typename T>
     static std::enable_if_t<std::is_integral<T>::value> toAtom(t_atom* a, T v)
     {
@@ -626,7 +619,6 @@ bool checkResult(Result& res)
     }
   };
 
-
   //////////////////////////////////////////////////////////////////////////////////////////////////
 
   // Setter
@@ -655,11 +647,11 @@ bool checkResult(Result& res)
       return MAX_ERR_NONE;
     }
   };
-  
-  template<size_t N>
-  struct Setter<LongArrayT,N>
+
+  template <size_t N>
+  struct Setter<LongArrayT, N>
   {
-    
+
     static t_max_err set(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
                          long ac, t_atom* av)
     {
@@ -667,17 +659,16 @@ bool checkResult(Result& res)
 
       x->messages().reset();
       typename LongArrayT::type& a = x->params().template get<N>();
-      
+
       a.resize(ac);
-      
+
       using T = typename LongArrayT::type::type;
-      
+
       for (index i = 0; i < static_cast<index>(ac); i++)
         a[i] = ParamAtomConverter::fromAtom((t_object*) x, av + i, T{});
       object_attr_touch((t_object*) x, gensym("latency"));
       return MAX_ERR_NONE;
     }
-  
   };
 
   //////////////////////////////////////////////////////////////////////////////
@@ -705,17 +696,17 @@ bool checkResult(Result& res)
       return MAX_ERR_NONE;
     }
   };
-  
+
   template <size_t N>
   struct Getter<LongArrayT, N>
   {
-    
+
     static t_max_err get(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
                          long* ac, t_atom** av)
     {
-      
+
       typename LongArrayT::type& a = x->params().template get<N>();
-      index argSize = a.size();
+      index                      argSize = a.size();
 
       char alloc;
       atom_alloc_array(argSize, ac, av, &alloc);
@@ -727,9 +718,7 @@ bool checkResult(Result& res)
 
       return MAX_ERR_NONE;
     }
-  
   };
-  
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -765,7 +754,6 @@ bool checkResult(Result& res)
     }
   };
 
-
   template <typename T>
   struct IsThreadedShared : std::false_type
   {};
@@ -774,7 +762,6 @@ bool checkResult(Result& res)
   struct IsThreadedShared<NRTThreadingAdaptor<NRTSharedInstanceAdaptor<T>>>
       : std::true_type
   {};
-
 
 public:
   using ClientType = Client;
@@ -807,16 +794,14 @@ public:
 
     object_obex_store(this, gensym("dumpout"),
                       (t_object*) outlet_new(this, nullptr));
-    
-    if (isNonRealTime<Client>::value || (IsModel_t<Client>::value && Client::isRealTime::value))
+
+    if (isNonRealTime<Client>::value ||
+        (IsModel_t<Client>::value && Client::isRealTime::value))
     {
       mProgressOutlet = floatout(this);
     }
-    
-    if (isNonRealTime<Client>::value)
-    {
-      mNRTDoneOutlet = bangout(this);
-    }
+
+    if (isNonRealTime<Client>::value) { mNRTDoneOutlet = bangout(this); }
 
     if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
 
@@ -831,7 +816,7 @@ public:
   {
     Client::getParameterDescriptors().template iterate<RemoveListener>(this,
                                                                        mParams);
-    if(mDumpDictionary) object_free(mDumpDictionary);                         
+    if (mDumpDictionary) object_free(mDumpDictionary);
   }
 
   template <size_t N, typename T>
@@ -854,7 +839,6 @@ public:
       paramSet.template removeListener<N>(x);
     }
   };
-
 
   void progress(double progress) { outlet_float(mProgressOutlet, progress); }
 
@@ -896,7 +880,6 @@ public:
                     0);
     class_addmethod(getClass(), (method) doReset, "reset", 0);
 
-
     makeReferable();
 
     m.template iterate<SetupMessage>();
@@ -922,7 +905,7 @@ public:
   {
     x->mParams = x->mParamSnapshot;
     x->params().template forEachParam<touchAttribute>(x);
-    object_attr_touch((t_object*) x, gensym("latency"));    
+    object_attr_touch((t_object*) x, gensym("latency"));
   }
 
   static void doVersion(FluidMaxWrapper* x)
@@ -1041,7 +1024,7 @@ private:
     using IndexList =
         typename Client::MessageSetType::template MessageDescriptorAt<
             N>::IndexList;
-    x->client().setParams(x->params()); 
+    x->client().setParams(x->params());
     invokeMessageImpl<N>(x, s, ac, av, IndexList());
   }
 
@@ -1062,7 +1045,6 @@ private:
     if (x->checkResult(result)) messageOutput(x, s, result);
   }
 
-
   template <typename Tuple, size_t N>
   static auto setArg(FluidMaxWrapper* x, long ac, t_atom* av)
   {
@@ -1072,7 +1054,6 @@ private:
     else
       return typename std::tuple_element<N, Tuple>::type{};
   }
-
 
   template <typename T>
   static size_t ResultSize(T)
@@ -1086,7 +1067,6 @@ private:
     return static_cast<FluidTensor<T, 1>>(x).size();
   }
 
-
   template <typename... Ts, size_t... Is>
   static std::tuple<std::array<size_t, sizeof...(Ts)>, size_t>
   ResultSize(std::tuple<Ts...>&& x, std::index_sequence<Is...>)
@@ -1097,7 +1077,6 @@ private:
         (offsets[Is] = size, size += ResultSize(std::get<Is>(x)), 0)...};
     return std::make_tuple(offsets, size);
   }
-
 
   template <typename T>
   static std::enable_if_t<!isSpecialization<T, std::tuple>::value>
@@ -1130,72 +1109,94 @@ private:
     object_obex_dumpout(x, s, 0, nullptr);
   }
 
-
   // Sets up a single message
   template <size_t N, typename T>
   struct SetupMessage
   {
     void operator()(const T& message)
     {
-      if(message.name == "load")
+      if (message.name == "load")
       {
-          SpecialCase<MessageResult<void>,std::string>{}.template handle<N>(typename T::ReturnType{},typename T::ArgumentTypes{}, [&message](auto M){
-              class_addmethod(getClass(), (method) deferLoad<decltype(M)::value>,lowerCase(message.name).c_str(), A_GIMME, 0);
-          });
-          return;
+        SpecialCase<MessageResult<void>, std::string>{}.template handle<N>(
+            typename T::ReturnType{}, typename T::ArgumentTypes{},
+            [&message](auto M) {
+              class_addmethod(getClass(),
+                              (method) deferLoad<decltype(M)::value>,
+                              lowerCase(message.name).c_str(), A_GIMME, 0);
+            });
+        return;
       }
-      if(message.name == "dump")
+      if (message.name == "dump")
       {
-          SpecialCase<MessageResult<std::string>>{}.template handle<N>(typename T::ReturnType{},typename T::ArgumentTypes{}, [&message](auto M){
-              class_addmethod(getClass(), (method) deferDump<decltype(M)::value>,lowerCase(message.name).c_str(), A_GIMME, 0);
-          });
-          return;
+        SpecialCase<MessageResult<std::string>>{}.template handle<N>(
+            typename T::ReturnType{}, typename T::ArgumentTypes{},
+            [&message](auto M) {
+              class_addmethod(getClass(),
+                              (method) deferDump<decltype(M)::value>,
+                              lowerCase(message.name).c_str(), A_GIMME, 0);
+            });
+        return;
       }
-      if(message.name == "print")
+      if (message.name == "print")
       {
-          SpecialCase<MessageResult<std::string>>{}.template handle<N>(typename T::ReturnType{},typename T::ArgumentTypes{}, [&message](auto M){
-              class_addmethod(getClass(), (method) deferPrint<decltype(M)::value>, lowerCase(message.name).c_str(), A_GIMME, 0);
-          });
-          return;
+        SpecialCase<MessageResult<std::string>>{}.template handle<N>(
+            typename T::ReturnType{}, typename T::ArgumentTypes{},
+            [&message](auto M) {
+              class_addmethod(getClass(),
+                              (method) deferPrint<decltype(M)::value>,
+                              lowerCase(message.name).c_str(), A_GIMME, 0);
+            });
+        return;
       }
-      if(message.name == "read")
+      if (message.name == "read")
       {
-          SpecialCase<MessageResult<void>,std::string>{}.template handle<N>(typename T::ReturnType{},typename T::ArgumentTypes{}, [&message](auto M){
-              class_addmethod(getClass(), (method)deferRead<decltype(M)::value>, lowerCase(message.name).c_str(), A_DEFSYM, 0);
-          });
-          return;
+        SpecialCase<MessageResult<void>, std::string>{}.template handle<N>(
+            typename T::ReturnType{}, typename T::ArgumentTypes{},
+            [&message](auto M) {
+              class_addmethod(getClass(),
+                              (method) deferRead<decltype(M)::value>,
+                              lowerCase(message.name).c_str(), A_DEFSYM, 0);
+            });
+        return;
       }
-      if(message.name == "write")
+      if (message.name == "write")
       {
-          SpecialCase<MessageResult<void>,std::string>{}.template handle<N>(typename T::ReturnType{},typename T::ArgumentTypes{}, [&message](auto M){
-              class_addmethod(getClass(), (method)deferWrite<decltype(M)::value>, lowerCase(message.name).c_str(), A_DEFSYM, 0);
-          });
-          return;
+        SpecialCase<MessageResult<void>, std::string>{}.template handle<N>(
+            typename T::ReturnType{}, typename T::ArgumentTypes{},
+            [&message](auto M) {
+              class_addmethod(getClass(),
+                              (method) deferWrite<decltype(M)::value>,
+                              lowerCase(message.name).c_str(), A_DEFSYM, 0);
+            });
+        return;
       }
       class_addmethod(getClass(), (method) invokeMessage<N>,
                       lowerCase(message.name).c_str(), A_GIMME, 0);
     }
-    
-    //This amounts to me really, really promising the compiler that it's all ok
+
+    // This amounts to me really, really promising the compiler that it's all ok
     //(life isn't as simple as being able to runtime dispatch on message names,
-    //I neeed to make sure messages whose sigs don't match the special case don't get
-    //even the possibility of being run)
-    template<typename Return, typename...Args>
+    // I neeed to make sure messages whose sigs don't match the special case
+    // don't get even the possibility of being run)
+    template <typename Return, typename... Args>
     struct SpecialCase
     {
-      template<size_t M,typename F>
-      void handle(Return,std::tuple<Args...>,F&& f) { f(std::integral_constant<size_t,M>()); }
+      template <size_t M, typename F>
+      void handle(Return, std::tuple<Args...>, F&& f)
+      {
+        f(std::integral_constant<size_t, M>());
+      }
 
-      template<size_t M,typename U,typename ArgTuple,typename F>
-      void handle(U,ArgTuple,F&&) {}
+      template <size_t M, typename U, typename ArgTuple, typename F>
+      void handle(U, ArgTuple, F&&)
+      {}
     };
-    
   };
-  
+
   template <size_t N>
   static void deferLoad(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-      defer(x,(method)doLoad<N>,nullptr,ac,av);
+    defer(x, (method) doLoad<N>, nullptr, ac, av);
   }
 
   template <size_t N>
@@ -1203,141 +1204,145 @@ private:
   {
     static t_symbol* dictionarySymbol = gensym("dictionary");
 
-    if(ac < 2 ||  atom_getsym(av) != dictionarySymbol){
-      object_error((t_object*)x,"Expected a dictionary");
-    }
-    
-    t_symbol* dictName = atom_getsym(av + 1);
-    t_dictionary* d = dictobj_findregistered_retain(dictName);
-   
-    if(!d)
+    if (ac < 2 || atom_getsym(av) != dictionarySymbol)
     {
-      object_error((t_object*)x, "Could not get a dictionary %s",dictName);
+      object_error((t_object*) x, "Expected a dictionary");
+    }
+
+    t_symbol*     dictName = atom_getsym(av + 1);
+    t_dictionary* d = dictobj_findregistered_retain(dictName);
+
+    if (!d)
+    {
+      object_error((t_object*) x, "Could not get a dictionary %s", dictName);
       return;
     }
-    
-    t_object *jsonwriter = (t_object*)object_new(_sym_nobox, _sym_jsonwriter);
-    t_handle json;
-    const char *str;
+
+    t_object* jsonwriter = (t_object*) object_new(_sym_nobox, _sym_jsonwriter);
+    t_handle  json;
+    const char* str;
     object_method(jsonwriter, _sym_writedictionary, d);
     object_method(jsonwriter, _sym_getoutput, &json);
     str = *json;
-    
-    auto messageResult = x->mClient.template invoke<N>(x->mClient,str);
-  
+
+    auto messageResult = x->mClient.template invoke<N>(x->mClient, str);
+
     x->params().template forEachParam<touchAttribute>(x);
-  
+
     object_free(jsonwriter);
-    if(x->checkResult(messageResult))
-      object_obex_dumpout(x,gensym("load"),0,nullptr);
+    if (x->checkResult(messageResult))
+      object_obex_dumpout(x, gensym("load"), 0, nullptr);
   }
 
-  
   template <size_t N>
   static void deferDump(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-      defer(x,(method)doDump<N>,nullptr,ac,av);
+    defer(x, (method) doDump<N>, nullptr, ac, av);
   }
-  
+
   template <size_t N>
   static void doDump(FluidMaxWrapper* x, t_symbol*, short ac, t_atom* av)
-  {    
-    t_dictionary* d = nullptr; 
-    t_atom result[1];
-    t_object* jsonreader = (t_object*)object_new(_sym_nobox, _sym_jsonreader);;
+  {
+    t_dictionary* d = nullptr;
+    t_atom        result[1];
+    t_object* jsonreader = (t_object*) object_new(_sym_nobox, _sym_jsonreader);
+    ;
 
     auto messageresult = x->mClient.template invoke<N>(x->mClient);
-  
-    if (!x->checkResult(messageresult)) return; 
-    
+
+    if (!x->checkResult(messageresult)) return;
+
     std::string jsontext = static_cast<std::string>(messageresult);
-        
-    t_max_err err = (t_max_err)object_method(jsonreader, _sym_parse, jsontext.c_str(), result);
+
+    t_max_err err = (t_max_err) object_method(jsonreader, _sym_parse,
+                                              jsontext.c_str(), result);
     if (!err)
     {
-       t_object *ro = (t_object*)atom_getobj(result);
-       if (ro)
-       {
+      t_object* ro = (t_object*) atom_getobj(result);
+      if (ro)
+      {
         if (object_classname_compare(ro, _sym_dictionary))
-            d = (t_dictionary*)ro;
+          d = (t_dictionary*) ro;
         else
         {
-            object_error((t_object*)x, "Failed to make a dictionary from object");             
-            object_free(ro);
-            return; 
+          object_error((t_object*) x,
+                       "Failed to make a dictionary from object");
+          object_free(ro);
+          return;
         }
       }
-    } 
+    }
     else
     {
-        object_error((t_object*)x, "Could not parse object into Dictionary"); 
-        return; 
+      object_error((t_object*) x, "Could not parse object into Dictionary");
+      return;
     }
     object_free(jsonreader);
+
+    t_dictionary* dest = nullptr;
+    t_symbol*     dictName = nullptr;
     
-    t_dictionary* dest  = nullptr;
-    t_symbol* dictName  = nullptr; 
-    if(ac)
+    if (ac)
     {
-      dictName = atom_getsym(av); 
-      dest  = dictobj_findregistered_retain(dictName);
-      if(!dest)
+      dictName = atom_getsym(av);
+      dest = dictobj_findregistered_retain(dictName);
+      if (!dest)
       {
-        object_error((t_object *)x, "unable to reference dictionary named %s", dictName);
-        if(d) object_free(d); 
-        return;        
+        object_error((t_object*) x, "unable to reference dictionary named %s",
+                     dictName);
+        if (d) object_free(d);
+        return;
       }
     }
-    else 
+    else
     {
-      if(!x->mDumpDictionary)
+      if (!x->mDumpDictionary)
       {
         x->mDumpDictionary = dictionary_new();
-        
+
         dictName = symbol_unique();
-        x->mDumpDictionary = dictobj_register(x->mDumpDictionary,&dictName);
+        x->mDumpDictionary = dictobj_register(x->mDumpDictionary, &dictName);
       }
       dest = x->mDumpDictionary;
-      dictName = dictobj_namefromptr(dest); 
+      dictName = dictobj_namefromptr(dest);
     }
+    
     dictionary_clear(dest);
     dictionary_clone_to_existing(d, dest);
     static t_symbol* modified = gensym("modified");
     static t_symbol* dictionarySymbol = gensym("dictionary");
-    t_atom a[2];
+    t_atom           a[2];
     atom_setsym(a, dictionarySymbol);
     atom_setsym(a + 1, dictName);
-    if(ac) dictobj_release(dest);
-    if(d) object_free(d);
+    if (ac) dictobj_release(dest);
+    if (d) object_free(d);
     object_notify(dest, modified, nullptr);
-    object_obex_dumpout(x,gensym("dump"),2,a);
-  }       
-
+    object_obex_dumpout(x, gensym("dump"), 2, a);
+  }
 
   template <size_t N>
   static void deferPrint(FluidMaxWrapper* x, t_symbol*, long, t_atom*)
   {
-    defer(x,(method)doPrint<N>,nullptr,0,nullptr);
+    defer(x, (method) doPrint<N>, nullptr, 0, nullptr);
   }
 
   template <size_t N>
   static void doPrint(FluidMaxWrapper* x, t_symbol*, long, t_atom*)
   {
-    auto result = x->mClient.template invoke<N>(x->mClient);     
-    if(x->checkResult(result))
+    auto result = x->mClient.template invoke<N>(x->mClient);
+    if (x->checkResult(result))
     {
-      object_post((t_object*)x,"%s",static_cast<std::string>(result).c_str());
-      object_obex_dumpout(x,gensym("print"),0,nullptr);
+      object_post((t_object*) x, "%s",
+                  static_cast<std::string>(result).c_str());
+      object_obex_dumpout(x, gensym("print"), 0, nullptr);
     }
-    
   }
-  
+
   template <size_t N>
-  static void deferRead(FluidMaxWrapper *x,t_symbol* s)
+  static void deferRead(FluidMaxWrapper* x, t_symbol* s)
   {
-    defer(x,(method)&doRead<N>,s,0,nullptr);
+    defer(x, (method) &doRead<N>, s, 0, nullptr);
   }
-  
 
   template <size_t N>
   static void doRead(FluidMaxWrapper* x, t_symbol* s)
@@ -1347,65 +1352,63 @@ private:
     t_fourcc filetype = FOUR_CHAR_CODE('JSON');
 #pragma clang diagnostic pop
     t_fourcc outtype;
-    char filename[MAX_PATH_CHARS];
-    short path;
-    char fullpath[MAX_PATH_CHARS];
-    
-    
-    if(s == gensym(""))
+    char     filename[MAX_PATH_CHARS];
+    short    path;
+    char     fullpath[MAX_PATH_CHARS];
+
+    if (s == gensym(""))
     {
-      if(open_dialog(filename,&path,&outtype,&filetype,1)) return; //non-zero -> cancel
+      if (open_dialog(filename, &path, &outtype, &filetype, 1))
+        return; // non-zero -> cancel
     }
     else
     {
-      strcpy(filename,s->s_name);
-      if (locatefile_extended(filename,&path,&outtype,&filetype,1)) //non-zero -> not found
+      strcpy(filename, s->s_name);
+      if (locatefile_extended(filename, &path, &outtype, &filetype,
+                              1)) // non-zero -> not found
       {
-        object_error((t_object*)x,"%s not found",s->s_name);
+        object_error((t_object*) x, "%s not found", s->s_name);
         return;
       }
     }
-    
+
     path_toabsolutesystempath(path, filename, fullpath);
-    
+
     auto messageResult = x->mClient.template invoke<N>(x->mClient, fullpath);
-    
+
     x->params().template forEachParam<touchAttribute>(x);
-    if(x->checkResult(messageResult))
-      object_obex_dumpout(x,gensym("read"),0,nullptr);
+    if (x->checkResult(messageResult))
+      object_obex_dumpout(x, gensym("read"), 0, nullptr);
   }
- 
- 
+
   template <size_t N>
-  static void deferWrite(FluidMaxWrapper *x,t_symbol* s)
+  static void deferWrite(FluidMaxWrapper* x, t_symbol* s)
   {
-    defer(x,(method)&doWrite<N>,s,0,nullptr);
+    defer(x, (method) &doWrite<N>, s, 0, nullptr);
   }
-  
+
   template <size_t N>
   static void doWrite(FluidMaxWrapper* x, t_symbol* s)
   {
-//    t_fourcc filetype = FOUR_CHAR_CODE('JSON');
-//    
-//    t_fourcc outtype;
-    char filename[MAX_PATH_CHARS];
+    //    t_fourcc filetype = FOUR_CHAR_CODE('JSON');
+    //
+    //    t_fourcc outtype;
+    char  filename[MAX_PATH_CHARS];
     short path;
-    char fullpath[MAX_PATH_CHARS];
-    strcpy(filename,"fluidobject.json");
-    
-    if(s == gensym(""))
+    char  fullpath[MAX_PATH_CHARS];
+    strcpy(filename, "fluidobject.json");
+
+    if (s == gensym(""))
     {
-      if(saveas_dialog(filename,&path,nullptr)) return ;
+      if (saveas_dialog(filename, &path, nullptr)) return;
       path_toabsolutesystempath(path, filename, fullpath);
     }
     else
-        strcpy(fullpath,s->s_name); 
+      strcpy(fullpath, s->s_name);
     auto messageResult = x->mClient.template invoke<N>(x->mClient, fullpath);
-    if(x->checkResult(messageResult))
-      object_obex_dumpout(x,gensym("write"),0,nullptr);
+    if (x->checkResult(messageResult))
+      object_obex_dumpout(x, gensym("write"), 0, nullptr);
   }
-
-
 
   // Sets up a single attribute
   // TODO: static assert on T?
@@ -1483,7 +1486,7 @@ private:
   ParamSetType       mParamSnapshot;
   Client             mClient;
   t_int32_atomic     mInPerform{0};
-  t_dictionary*      mDumpDictionary; 
+  t_dictionary*      mDumpDictionary;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -1505,10 +1508,9 @@ void makeMaxWrapper(const char* classname)
 {
   //  using InputType = typename
   //  InputTypeWrapper<isRealTime<Client<double>>>::type;
-  common_symbols_init(); 
+  common_symbols_init();
   FluidMaxWrapper<Client>::makeClass(classname);
 }
-
 
 } // namespace client
 } // namespace fluid
