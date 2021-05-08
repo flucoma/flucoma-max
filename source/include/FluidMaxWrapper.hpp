@@ -59,11 +59,22 @@ class RealTime
 public:
   static void setup(t_class* c)
   {
-    class_dspinit(c);
-    class_addmethod(c, (method) callDSP, "dsp64", A_CANT, 0);
-    class_addattr(c, attribute_new("latency", USESYM(long), 0,
-                                   (method) getLatency<Wrapper>, nullptr));
-    CLASS_ATTR_LABEL(c, "latency", 0, "Latency");
+
+    if (Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
+    {
+      class_addmethod(c, (method) Wrapper::assistDataObject, "assist", A_CANT,
+                      0);
+    }
+    else
+    {
+      class_dspinit(c);
+      class_addmethod(c, (method) callDSP, "dsp64", A_CANT, 0);
+      class_addattr(c, attribute_new("latency", USESYM(long), 0,
+                                     (method) getLatency<Wrapper>, nullptr));
+      CLASS_ATTR_LABEL(c, "latency", 0, "Latency");
+
+      class_addmethod(c, (method) assist, "assist", A_CANT, 0);
+    }
   }
 
   static void callDSP(Wrapper* x, t_object* dsp64, short* count,
@@ -166,6 +177,34 @@ public:
     mTick.clear();
   }
 
+  static void assist(Wrapper* x, void* /*b*/, long io, long index, char* s)
+  {
+    auto& client = x->client();
+    switch (io)
+    {
+    case 1:
+      snprintf_zero(s, 512, "(signal) %s", client.getInputLabel(index));
+      break;
+    case 2:
+      if (index < client.audioChannelsOut())
+      {
+        snprintf_zero(s, 512, "(signal) %s", client.getOutputLabel(index));
+        break;
+      }
+      else if (index <
+               client.audioChannelsOut() + (client.controlChannelsOut() > 0))
+      {
+        snprintf_zero(s, 512, "(list) %s", client.getOutputLabel(index));
+        break;
+      }
+      else
+      {
+        strncpy_zero(s, "(list) dumpout", 512);
+        break;
+      }
+    }
+  }
+
   ~RealTime()
   {
     if (mControlClock) freeobject((t_object*) mControlClock);
@@ -203,19 +242,35 @@ struct NonRealTime
 
   static void setup(t_class* c)
   {
-    class_addmethod(c, (method) deferProcess, "bang", 0);
-    class_addmethod(c, (method) callCancel, "cancel", 0);
 
-    CLASS_ATTR_LONG(c, "blocking", 0, Wrapper, mSynchronous);
-    CLASS_ATTR_FILTER_CLIP(c, "blocking", 0, 2);
-    CLASS_ATTR_ENUMINDEX(c, "blocking", 0,
-                         "Non-Blocking \"Blocking (Low Priority)\" \"Blocking "
-                         "(High Priority)\"");
-    CLASS_ATTR_LABEL(c, "blocking", 0, "Blocking");
+    using Client = typename Wrapper::ClientType;
+    constexpr bool isDataObject =
+        Wrapper::template IsThreadedShared<Client>::value ||
+        Wrapper::template IsModel_t<Client>::value;
 
-    CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
-    CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
-    CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Non-Blocking Queue Flag");
+    if (isDataObject)
+    {
+      class_addmethod(c, (method) Wrapper::assistDataObject, "assist", A_CANT,
+                      0);
+    }
+    else
+    {
+      class_addmethod(c, (method) deferProcess, "bang", 0);
+      class_addmethod(c, (method) callCancel, "cancel", 0);
+      class_addmethod(c, (method) assist, "assist", A_CANT, 0);
+
+      CLASS_ATTR_LONG(c, "blocking", 0, Wrapper, mSynchronous);
+      CLASS_ATTR_FILTER_CLIP(c, "blocking", 0, 2);
+      CLASS_ATTR_ENUMINDEX(
+          c, "blocking", 0,
+          "Non-Blocking \"Blocking (Low Priority)\" \"Blocking "
+          "(High Priority)\"");
+      CLASS_ATTR_LABEL(c, "blocking", 0, "Blocking");
+
+      CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
+      CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
+      CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Non-Blocking Queue Flag");
+    }
   }
 
   void cancel()
@@ -303,6 +358,53 @@ struct NonRealTime
   }
 
   static void clockTick(Wrapper* x) { qelem_set(x->mQelem); }
+
+  static void assist(Wrapper* /*x*/, void* /*b*/, long io, long index, char* s)
+  {
+
+    using Client = typename Wrapper::ClientType;
+
+    std::cout << Wrapper::template IsModel_t<Client>::value;
+
+    constexpr bool isDataObject =
+        Wrapper::template IsThreadedShared<Client>::value ||
+        Wrapper::template IsModel_t<Client>::value;
+
+    if (isDataObject)
+    {
+      switch (io)
+      {
+      case 1: strncpy_zero(s, "(anything) messages in", 512); break;
+      case 2:
+        if (index < 2)
+        {
+          strncpy_zero(s, "(unused)", 512);
+          break;
+        }
+        else
+        {
+          strncpy_zero(s, "(list) message results / dumpout", 512);
+          break;
+        }
+      }
+    }
+    else
+    {
+      switch (io)
+      {
+      case 1: strncpy_zero(s, "(bang) start processing", 512); break;
+      case 2:
+        switch (index)
+        {
+        case 0: strncpy_zero(s, "(bang) processing complete", 512); break;
+        case 1:
+          strncpy_zero(s, "(float) progress for non-blocking processing", 512);
+          break;
+        case 2: strncpy_zero(s, "(list) dumpout", 512); break;
+        }
+      }
+    }
+  }
 
   void clockWait()
   {
@@ -775,7 +877,7 @@ public:
   {
     if (mClient.audioChannelsIn())
     {
-      assert(mClient.audioChannelsIn() <= (std::numeric_limits<long>::max)());
+      assert((mClient.audioChannelsIn() <= std::numeric_limits<long>::max()));
       dsp_setup(impl::MaxBase::getMSPObject(),
                 static_cast<long>(mClient.audioChannelsIn()));
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
@@ -897,6 +999,7 @@ public:
 
     p.template iterateMutable<SetupAttribute>();
     p.template iterateFixed<SetupReadOnlyAttribute>();
+
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
@@ -950,6 +1053,26 @@ public:
   long          verbose() { return mVerbose; }
   Client&       client() { return mClient; }
   ParamSetType& params() { return mParams; }
+
+  static void assistDataObject(FluidMaxWrapper* /*x*/, void* /*b*/, long io,
+                               long index, char* s)
+  {
+    switch (io)
+    {
+    case 1: strncpy_zero(s, "(anything) messages in", 512); break;
+    case 2:
+      if (index < 2)
+      {
+        strncpy_zero(s, "(unused)", 512);
+        break;
+      }
+      else
+      {
+        strncpy_zero(s, "(list) message results / dumpout", 512);
+        break;
+      }
+    }
+  }
 
 private:
   static t_class* getClass(t_class* setClass = nullptr)
@@ -1281,7 +1404,7 @@ private:
 
     t_dictionary* dest = nullptr;
     t_symbol*     dictName = nullptr;
-    
+
     if (ac)
     {
       dictName = atom_getsym(av);
@@ -1306,7 +1429,7 @@ private:
       dest = x->mDumpDictionary;
       dictName = dictobj_namefromptr(dest);
     }
-    
+
     dictionary_clear(dest);
     dictionary_clone_to_existing(d, dest);
     static t_symbol* modified = gensym("modified");
