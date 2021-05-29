@@ -333,7 +333,7 @@
 					"patching_rect" : [ 664.0, 718.707512999999949, 265.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 264.0, 21.0 ],
-					"text" : "Buffer Compositing Utility",
+					"text" : "Seven Spectral Shape Descriptors on a Buffer",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.6 ]
 				}
 
@@ -474,7 +474,7 @@
 					"patching_rect" : [ 657.0, 803.165829000000031, 342.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 387.19876099999999, 284.479034000000013, 35.0 ],
-					"text" : "fluid.bufcompose~",
+					"text" : "fluid.bufspectralshape~",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.82 ]
 				}
 
@@ -722,7 +722,7 @@
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offset" : [ -2205.0, -555.0 ],
+					"offset" : [ -1095.0, -90.0 ],
 					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
@@ -735,7 +735,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 6.0, 79.0, 1321.0, 952.0 ],
+						"rect" : [ 9.0, 79.0, 1321.0, 952.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1436,11 +1436,11 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 2409.548386999999821, 617.903228000000013, 149.193547999999993, 119.967742999999999 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 2400.0, 585.0, 149.193542000000008, 294.967742999999984 ],
+									"presentation_rect" : [ 2400.0, 585.0, 149.193541999999979, 352.967742999999928 ],
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~" ]
+									"tabs" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~" ]
 								}
 
 							}
@@ -2151,13 +2151,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-47",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 49.0 ],
-									"text" : "fluid.bufcompose~"
+									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 62.0 ],
+									"text" : "fluid.bufspectralshape~"
 								}
 
 							}
@@ -2383,11 +2383,11 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 2408.225809000000027, 123.903227999999999, 149.193547999999993, 119.967742999999999 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 2400.0, 120.0, 149.193542000000008, 217.967743000000013 ],
+									"presentation_rect" : [ 2400.0, 120.0, 149.193541999999979, 274.967743000000041 ],
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufsines~", "fluid.buftransients~", "fluid.bufhpss~", "fluid.bufnmf~" ]
+									"tabs" : [ "fluid.bufsines~", "fluid.buftransients~", "fluid.bufhpss~", "fluid.bufnmf~", "fluid.bufstft~" ]
 								}
 
 							}
@@ -2427,11 +2427,11 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 1284.258064000000104, 128.580650999999989, 145.967741999999987, 209.483871999999991 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 1290.0, 120.0, 145.967743000000013, 338.483886999999982 ],
+									"presentation_rect" : [ 1290.0, 120.0, 145.967742999999928, 396.483886999999982 ],
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~" ]
+									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnndsvd~" ]
 								}
 
 							}
