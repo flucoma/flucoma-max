@@ -327,13 +327,15 @@
 					"fontname" : "Lato",
 					"fontsize" : 12.0,
 					"id" : "obj-56",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 664.0, 718.707512999999949, 265.0, 21.0 ],
+					"patching_rect" : [ 664.0, 718.707512999999949, 265.0, 35.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 264.0, 21.0 ],
-					"text" : "Seven Spectral Shape Descriptors on a Buffer",
+					"presentation_linecount" : 2,
+					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 264.0, 35.0 ],
+					"text" : "Non-Negative Double Singular Value Decomposition on a Buffer",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.6 ]
 				}
 
@@ -474,7 +476,7 @@
 					"patching_rect" : [ 657.0, 803.165829000000031, 342.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 387.19876099999999, 284.479034000000013, 35.0 ],
-					"text" : "fluid.bufspectralshape~",
+					"text" : "fluid.bufnndsvd~",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.82 ]
 				}
 
@@ -2151,13 +2153,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-47",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 62.0 ],
-									"text" : "fluid.bufspectralshape~"
+									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 49.0 ],
+									"text" : "fluid.bufnndsvd~"
 								}
 
 							}
