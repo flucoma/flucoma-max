@@ -59,21 +59,27 @@ class RealTime
 public:
   static void setup(t_class* c)
   {
+  
+    constexpr bool isModel = Wrapper::template IsModel_t<typename Wrapper::ClientType>::value;
 
-    if (Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
+    if (isModel)
     {
       class_addmethod(c, (method) Wrapper::assistDataObject, "assist", A_CANT,
                       0);
     }
-    else
+    else class_addmethod(c, (method) assist, "assist", A_CANT, 0);
+    
+    ///FIXME: Better test needed
+    using ClientClass = typename Wrapper::ClientType::Client;
+    constexpr bool addDSP = !(isModel && isControl<ClientClass>);
+    
+    if(addDSP)
     {
       class_dspinit(c);
       class_addmethod(c, (method) callDSP, "dsp64", A_CANT, 0);
       class_addattr(c, attribute_new("latency", USESYM(long), 0,
                                      (method) getLatency<Wrapper>, nullptr));
       CLASS_ATTR_LABEL(c, "latency", 0, "Latency");
-
-      class_addmethod(c, (method) assist, "assist", A_CANT, 0);
     }
   }
 
@@ -1063,6 +1069,15 @@ public:
     case 2:
       if (index < 2)
       {
+      
+        constexpr bool isModel = IsModel_t<ClientType>::value;
+        using ClientClass = typename ClientType::Client;
+        if(index == 0 && isModel && isAudioOut<ClientClass>)
+        {
+          strncpy_zero(s, "(signal) audio out", 512);
+          break;
+        }
+        
         strncpy_zero(s, "(unused)", 512);
         break;
       }
