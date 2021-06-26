@@ -327,15 +327,13 @@
 					"fontname" : "Lato",
 					"fontsize" : 12.0,
 					"id" : "obj-56",
-					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 664.0, 718.707512999999949, 265.0, 35.0 ],
+					"patching_rect" : [ 664.0, 718.707512999999949, 265.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 2,
-					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 264.0, 35.0 ],
-					"text" : "Non-Negative Double Singular Value Decomposition on a Buffer",
+					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 264.0, 21.0 ],
+					"text" : "Amplitude-based Detrending Slicer for Buffers",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.6 ]
 				}
 
@@ -476,7 +474,7 @@
 					"patching_rect" : [ 657.0, 803.165829000000031, 342.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 387.19876099999999, 284.479034000000013, 35.0 ],
-					"text" : "fluid.bufnndsvd~",
+					"text" : "fluid.bufampslice~",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.82 ]
 				}
 
@@ -724,7 +722,7 @@
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offset" : [ -1095.0, -90.0 ],
+					"offset" : [ -15.0, -90.0 ],
 					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
@@ -737,7 +735,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 9.0, 79.0, 1321.0, 952.0 ],
+						"rect" : [ 9.0, 79.0, 750.0, 952.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -2159,7 +2157,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 49.0 ],
-									"text" : "fluid.bufnndsvd~"
+									"text" : "fluid.bufampslice~"
 								}
 
 							}
@@ -2473,11 +2471,11 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 234.806452000000007, 146.903228000000013, 149.193547999999993, 119.967742999999999 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 210.0, 120.0, 149.193542000000008, 176.967743000000013 ],
+									"presentation_rect" : [ 210.0, 120.0, 149.193541999999979, 294.967743000000041 ],
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufonsetslice~", "fluid.buftransientslice~", "fluid.bufnoveltyslice~" ]
+									"tabs" : [ "fluid.bufonsetslice~", "fluid.buftransientslice~", "fluid.bufnoveltyslice~", "fluid.bufampslice~", "fluid.bufampgate~" ]
 								}
 
 							}
@@ -2495,11 +2493,11 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 43.806452, 146.903228000000013, 149.193547999999993, 119.967742999999999 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 30.0, 120.0, 149.193542000000008, 176.967743000000013 ],
+									"presentation_rect" : [ 30.0, 120.0, 149.193542000000008, 294.967743000000041 ],
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.onsetslice~", "fluid.transientslice~", "fluid.noveltyslice~" ]
+									"tabs" : [ "fluid.onsetslice~", "fluid.transientslice~", "fluid.noveltyslice~", "fluid.ampslice~", "fluid.ampgate~" ]
 								}
 
 							}
@@ -3881,9 +3879,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
