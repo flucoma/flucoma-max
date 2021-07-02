@@ -13,6 +13,7 @@
 #include <clients/nrt/PCAClient.hpp>
 #include <clients/nrt/MDSClient.hpp>
 #include <clients/nrt/UMAPClient.hpp>
+#include <clients/nrt/GridClient.hpp>
 #include <clients/rt/AudioTransportClient.hpp>
 #include <clients/nrt/NMFCrossClient.hpp>
 #include <clients/rt/NMFMorphClient.hpp>
@@ -38,6 +39,7 @@ void ext_main(void*)
   makeMaxWrapper<RTPCAClient>("fluid.pca~");
   makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
   makeMaxWrapper<RTUMAPClient>("fluid.umap~");
+  makeMaxWrapper<NRTThreadedGridClient>("fluid.grid~");
   makeMaxWrapper<RTMLPRegressorClient>("fluid.mlpregressor~");
   makeMaxWrapper<RTMLPClassifierClient>("fluid.mlpclassifier~");
 }
