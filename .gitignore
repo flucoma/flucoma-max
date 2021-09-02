@@ -20,3 +20,4 @@ interfaces/flucoma-obj-qlookup.json
 /.vs
 release-packaging/**
 winbuild/*
+.DS_Store
