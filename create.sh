@@ -7,12 +7,12 @@ rm build/cmake_install.cmake
 rm build/install_manifest.txt
 cd build
 
-rm -r ../externals/*
+rm -r ../externals
 rm -r ../release-packaging/Fluid\ Corpus\ Manipulation/*
 
-cmake -GNinja -DMAX_SDK_PATH=../sdk -DFLUID_PATH=../../core -DFLUID_ARCH=-mcpu=native -DCMAKE_OSX_ARCHITECTURES="arm64" ..
+cmake -GNinja -DMAX_SDK_PATH=../sdk -DFLUID_PATH=../../core -DFLUID_ARCH=-mcpu=native -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
 ninja clean && ninja
 
 cd ..
 cd externals
-# fd -e mxo -x codesign --remove-signature "{}"
+fd -e mxo -x codesign --remove-signature "{}"
