@@ -34,9 +34,9 @@ public:
 
   ~MaxBufferAdaptor()
   {
-    while (!tryLock())
-      ;
-
+//    while (!tryLock())
+//      ;
+    lock(); 
     release();
     if (mBufref) object_free(mBufref);
   }
@@ -229,6 +229,11 @@ public:
     t_object* buffer = getBuffer();
     if (buffer) buffer_setdirty(buffer);
   }
+  
+  void view()
+  {
+    buffer_view(getBuffer());
+  }
 
 private:
   void lockSamps() const
@@ -246,9 +251,26 @@ private:
     }
   }
 
-  bool tryLock() const { return compareExchange(false, true); }
+  bool tryLock() const {
+//  return compareExchange(false, true);
+      return !mLock.load(std::memory_order_relaxed) &&
+             !mLock.exchange(true, std::memory_order_acquire);
+  }
 
-  void releaseLock() const { compareExchange(true, false); }
+  void lock() noexcept {
+   for(;;) {
+      if(!mLock.exchange(true, std::memory_order_acquire)) return;
+      while(mLock.load(std::memory_order_relaxed)) {
+        // pause?
+      }
+   }
+  
+  }
+
+  void releaseLock() const {
+     mLock.store(false, std::memory_order_release);
+//    compareExchange(true, false);
+  }
 
   bool compareExchange(bool compare, bool exchange) const
   {
@@ -260,9 +282,9 @@ private:
   void swap(MaxBufferAdaptor&& other) noexcept
   {
     if (this == &other) return;
-
-    while (!tryLock())
-      ;
+    lock();
+//    while (!tryLock())
+//      ;
 
     release();
     object_free(mBufref);
