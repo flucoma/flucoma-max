@@ -2400,7 +2400,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 1370.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3679,6 +3679,22 @@
 					"border" : 0,
 					"filename" : "helpname.js",
 					"id" : "obj-12",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "fluid.mlpclassifier~" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 10.0, 397.54400634765625, 57.599853515625 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpname.js",
+					"id" : "obj-13",
 					"ignoreclick" : 1,
 					"jsarguments" : [ "fluid.mlpclassifier~" ],
 					"maxclass" : "jsui",
