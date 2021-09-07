@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 1030.0, 865.0 ],
+		"rect" : [ 35.0, 88.0, 995.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1030.0, 839.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -136,7 +136,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 667.0, 406.0, 326.0, 60.0 ],
-									"presentation_linecount" : 4,
 									"text" : "Merge the contents of fluid.dataset~ named \"data1\" into \"data2\". \"dump\" is automatically called after by routing the merge message from fluid.dataset~ demonstrating how the data changes."
 								}
 
@@ -363,8 +362,8 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 598.75, 565.0, 182.875, 260.0 ],
-									"stripecolor" : [ 1.0, 0.392156862745098, 0.0, 1.0 ]
+									"patching_rect" : [ 598.75, 555.0, 195.875, 190.0 ],
+									"stripecolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 0.45 ]
 								}
 
 							}
@@ -748,7 +747,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 185.125, 565.0, 182.875, 260.0 ],
+									"patching_rect" : [ 185.125, 560.0, 195.875, 190.0 ],
 									"stripecolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 0.45 ]
 								}
 
@@ -893,7 +892,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 120.0, 525.0, 60.0 ],
+									"patching_rect" : [ 5.0, 120.0, 527.0, 60.0 ],
 									"text" : "It is simple to merge the contents of one fluid.dataset~ into another. This process will overwrite the points where a identity (key) is the same. For example if you merge \"dataset1\" into \"dataset2\" and they both share the \"numbers\" identity, the value found in dataset1 will overwrite the value found in dataset2."
 								}
 
@@ -1262,55 +1261,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-19",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 756.0, 639.0, 54.0, 22.0 ],
-					"text" : "deferlow"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-18",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 756.0, 607.0, 58.0, 22.0 ],
-					"text" : "loadbang"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-17",
-					"maxclass" : "message",
-					"numinlets" : 2,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 756.0, 676.0, 263.0, 22.0 ],
-					"text" : "window constrain 35 88 1030 865, window exec"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-12",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 756.0, 711.0, 67.0, 22.0 ],
-					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
-					"text" : "thispatcher"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-10",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -1326,7 +1276,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 1030.0, 839.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1383,7 +1333,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.0, 555.0, 356.0, 36.0 ],
-									"presentation_linecount" : 4,
 									"text" : "Open the max console to see the data that was generated and stored in the dataset with the identity \"scratch-synth\""
 								}
 
@@ -1847,7 +1796,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1030.0, 839.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2349,7 +2298,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1030.0, 839.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2415,7 +2364,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 227.125, 570.0, 427.5, 185.0 ]
+									"patching_rect" : [ 227.125, 570.0, 162.875, 175.0 ]
 								}
 
 							}
@@ -2788,7 +2737,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 756.0, 748.0, 164.0, 22.0 ],
+					"patching_rect" : [ 670.0, 608.0, 164.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "helpstarter.js",
 						"parameter_enable" : 0
@@ -2815,7 +2764,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1030.0, 839.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2857,7 +2806,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 480.0, 728.0, 20.0, 20.0 ],
+									"patching_rect" : [ 598.600000649690628, 681.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "!!!",
 									"textcolor" : [ 1.0, 0.968627450980392, 0.0, 1.0 ]
@@ -2868,12 +2817,12 @@
 								"box" : 								{
 									"fontface" : 2,
 									"id" : "obj-58",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 154.0, 720.0, 348.0, 36.0 ],
-									"text" : "fluid.dataset~ will report back when an operation is complete. You can use this to chain together processes."
+									"patching_rect" : [ 316.600000649690628, 666.5, 280.0, 50.0 ],
+									"text" : "fluid.dataset~ will report back when an operation is complete from its right outlet. You can use this to chain together processes."
 								}
 
 							}
@@ -3467,7 +3416,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1030.0, 839.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3500,7 +3449,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 756.0, 781.0, 50.0, 22.0 ],
+					"patching_rect" : [ 670.0, 640.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3514,28 +3463,7 @@
 
 			}
  ],
-		"lines" : [ 			{
-				"patchline" : 				{
-					"destination" : [ "obj-12", 0 ],
-					"source" : [ "obj-17", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-19", 0 ],
-					"source" : [ "obj-18", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-17", 0 ],
-					"source" : [ "obj-19", 0 ]
-				}
-
-			}
- ],
+		"lines" : [  ],
 		"dependency_cache" : [ 			{
 				"name" : "helpname.js",
 				"bootpath" : "C74:/help/resources",
