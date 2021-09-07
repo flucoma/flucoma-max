@@ -35,7 +35,7 @@ struct FluidListToBuf
   t_atom        outName;
   index         axis{0};
   index         maxSize{32767};
-  index         canResize{0};
+  index         canResize;
   index         startChannel{0};
   index         startFrame{0};
   Buffer        output;
@@ -122,7 +122,7 @@ void* FluidListToBuf_new(t_symbol*, long argc, t_atom* argv)
 
   x->defaultOut = (t_object*) object_new_typed(CLASS_BOX, gensym("buffer~"), 1,
                                                &bufferArgs);
-
+                                      
   x->output.reset(new MaxBufferAdaptor((t_object*) x, x->defaultOutName));
   atom_setsym(&x->outName, x->defaultOutName);
   {
@@ -131,7 +131,8 @@ void* FluidListToBuf_new(t_symbol*, long argc, t_atom* argv)
              argCount > 1 ? atom_getlong(argv + 1) : 0,
              x->output->sampleRate());
   }
-  attr_args_process(x, argc - argCount, argv + argCount);
+  x->canResize = 1; 
+  attr_args_process(x, argc - argCount, argv + argCount);  
   return x;
 }
 
@@ -176,9 +177,6 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
 {
   if (x->output)
   {
-
-    
-    
     
     if (x->canResize && isr())
       object_warn((t_object*) x, "auto-sizing is enabled but object called from "

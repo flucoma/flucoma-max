@@ -32,7 +32,6 @@ struct FluidBufToList
   t_object      obj;
   index         axis{0};
   index         maxSize{256};
-  index         canResize{0};
   index         startChannel{0};
   index         startFrame{0};
   index         size{-1};
@@ -91,10 +90,6 @@ void main()
   CLASS_ATTR_LABEL(FluidBufToListClass, "axis", 0,
                    "Read Frame-wise or Channel-wise");
   CLASS_ATTR_FILTER_CLIP(FluidBufToListClass, "axis", 0, 1);
-
-//  CLASS_ATTR_LONG(FluidBufToListClass, "autosize", 0, FluidBufToList, canResize);
-//  CLASS_ATTR_STYLE_LABEL(FluidBufToListClass, "autosize", 0, "onoff",
-//                         "Enable resizing (will defer)");
 
   CLASS_ATTR_LONG(FluidBufToListClass, "startframe", 0, FluidBufToList,
                   startFrame);
