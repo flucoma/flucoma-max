@@ -89,9 +89,8 @@
 								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numinlets" : 0,
+									"numoutlets" : 0,
 									"patching_rect" : [ 525.0, 360.0, 86.0, 23.0 ],
 									"text" : "fluid.dataset~"
 								}
@@ -209,8 +208,7 @@
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 0,
 									"patching_rect" : [ 5.0, 375.0, 364.0, 23.0 ],
 									"text" : "fluid.bufnoveltyslice~ @source src.mono @indices src.indices"
 								}
@@ -220,9 +218,8 @@
 								"box" : 								{
 									"id" : "obj-46",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numinlets" : 0,
+									"numoutlets" : 0,
 									"patching_rect" : [ 1090.0, 470.0, 89.0, 23.0 ],
 									"text" : "fluid.bufpitch~"
 								}
@@ -269,8 +266,8 @@
 									"id" : "obj-29",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 5.0, 285.0, 503.0, 23.0 ],
 									"text" : "fluid.bufcompose~ @source src @destination src.mono @destgain 0.5 @numchans 1"
 								}
@@ -304,9 +301,8 @@
 								"box" : 								{
 									"id" : "obj-16",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numinlets" : 0,
+									"numoutlets" : 0,
 									"patching_rect" : [ 120.0, 885.0, 137.0, 23.0 ],
 									"text" : "fluid.dataset~ analysis"
 								}
@@ -341,8 +337,8 @@
 									"id" : "obj-10",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 635.0, 360.0, 504.0, 23.0 ],
 									"text" : "fluid.bufmfcc~ 13 @source src.mono @features features @fftsettings 8192 4096 8192"
 								}
@@ -464,9 +460,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -603,7 +599,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
+									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 920.0, 705.0, 100.0, 23.0 ],
 									"text" : "fluid.normalize~"
 								}
@@ -683,7 +679,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 380.0, 580.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
@@ -733,8 +729,8 @@
 									"id" : "obj-14",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 401.0, 445.0, 89.0, 23.0 ],
 									"text" : "fluid.mfcc~ 13"
 								}
@@ -1043,7 +1039,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
+									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 20.0, 780.0, 287.0, 23.0 ],
 									"text" : "fluid.mlpclassifier~ @activation 1 @learnrate 0.1"
 								}
@@ -1191,9 +1187,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1652,9 +1648,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1780,7 +1776,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 550.0, 427.5, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
@@ -1830,8 +1826,8 @@
 									"id" : "obj-14",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 730.0, 349.5, 89.0, 23.0 ],
 									"text" : "fluid.mfcc~ 13"
 								}
@@ -2129,7 +2125,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
+									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 10.0, 365.0, 155.0, 67.0 ],
 									"text" : "fluid.mlpclassifier~ @activation 1 @learnrate 0.05 @maxiter 10"
 								}
@@ -2321,9 +2317,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2496,8 +2492,7 @@
 									"id" : "obj-27",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 0,
 									"patching_rect" : [ 774.0, 680.0, 126.0, 23.0 ],
 									"text" : "fluid.labelset~ labels"
 								}
@@ -2508,8 +2503,7 @@
 									"id" : "obj-26",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 0,
 									"patching_rect" : [ 625.0, 680.0, 147.0, 23.0 ],
 									"text" : "fluid.dataset~ mfcc-data"
 								}
@@ -2849,8 +2843,7 @@
 									"id" : "obj-21",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 0,
 									"patching_rect" : [ 348.5, 891.0, 126.0, 23.0 ],
 									"text" : "fluid.labelset~ labels"
 								}
@@ -2874,7 +2867,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 11.5, 645.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf",
 									"varname" : "fluid.buf2list"
@@ -2898,8 +2891,7 @@
 									"id" : "obj-7",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 0,
 									"patching_rect" : [ 11.5, 891.0, 147.0, 23.0 ],
 									"text" : "fluid.dataset~ mfcc-data"
 								}
@@ -3197,8 +3189,8 @@
 									"id" : "obj-15",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "list", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 32.5, 497.0, 89.0, 23.0 ],
 									"text" : "fluid.mfcc~ 13"
 								}
@@ -3484,9 +3476,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3543,23 +3535,6 @@
 ,
 					"text" : "p \"Classification (1)\"",
 					"varname" : "basic_tab[1]"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 507.0, 399.0, 191.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"filename" : "helpstarter.js",
-						"parameter_enable" : 0
-					}
-,
-					"text" : "js helpstarter.js fluid.mlpclassifier~"
 				}
 
 			}
@@ -3629,7 +3604,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 700.0, 399.0, 27.0, 22.0 ],
+					"patching_rect" : [ 564.0, 324.0, 27.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3706,6 +3681,22 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpname.js",
+					"id" : "obj-14",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "fluid.mlpclassifier~" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 10.0, 397.54400634765625, 57.599853515625 ]
+				}
+
+			}
  ],
 		"lines" : [  ],
 		"parameters" : 		{
@@ -3731,56 +3722,24 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "helpdetails.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.mfcc~.mxo",
-				"type" : "iLaX"
+				"name" : "fluid.list2buf.maxpat",
+				"bootpath" : "~/dev/flucoma/max/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.list2buf.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufmfcc~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufcompose~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufpitch~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufnoveltyslice~.mxo",
-				"type" : "iLaX"
+				"name" : "fluid.bufresize.maxpat",
+				"bootpath" : "~/dev/flucoma/max/patchers",
+				"patcherrelativepath" : "../patchers",
+				"type" : "JSON",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0
