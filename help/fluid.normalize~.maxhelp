@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 10,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -67,8 +67,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -295,8 +295,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -391,11 +391,11 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-3",
-													"linecount" : 3,
+													"linecount" : 2,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 330.0, 42.0, 151.0, 47.0 ],
+													"patching_rect" : [ 330.0, 42.0, 154.0, 33.0 ],
 													"text" : "analyse the pitch and pitch confidence of source buffer"
 												}
 
@@ -783,6 +783,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-87",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"numinlets" : 2,
 									"numoutlets" : 0,
@@ -791,8 +792,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -837,8 +838,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 10,
+															"minor" : 2,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1208,8 +1209,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 10,
+															"minor" : 2,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1603,9 +1604,9 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 391.5, 346.5, 128.5, 57.0 ],
+													"patching_rect" : [ 391.5, 346.5, 129.0, 57.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 216.5, 20.5, 128.5, 57.0 ],
+													"presentation_rect" : [ 216.5, 20.5, 129.0, 57.0 ],
 													"setminmax" : [ 0.0, 1.0 ],
 													"setstyle" : 1,
 													"size" : 10,
@@ -1622,9 +1623,9 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 183.0, 331.5, 128.5, 57.0 ],
+													"patching_rect" : [ 183.0, 331.5, 129.0, 57.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 45.0, 20.5, 128.5, 57.0 ],
+													"presentation_rect" : [ 45.0, 20.5, 129.0, 57.0 ],
 													"setminmax" : [ 0.0, 1.0 ],
 													"setstyle" : 1,
 													"size" : 10,
@@ -1674,11 +1675,11 @@
 												"box" : 												{
 													"id" : "obj-44",
 													"maxclass" : "newobj",
-													"numinlets" : 1,
+													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer normalize.help.point",
+													"outlettype" : [ "list" ],
+													"patching_rect" : [ 146.5, 137.5, 234.0, 22.0 ],
+													"text" : "fluid.buf2list @source normalize.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -1848,6 +1849,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-83",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"numinlets" : 2,
 									"numoutlets" : 0,
@@ -1856,8 +1858,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 10,
+											"minor" : 2,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1997,8 +1999,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 10,
+															"minor" : 2,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2207,8 +2209,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 1,
-															"revision" : 10,
+															"minor" : 2,
+															"revision" : 0,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2536,9 +2538,9 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 391.5, 346.5, 128.5, 57.0 ],
+													"patching_rect" : [ 391.5, 346.5, 129.0, 57.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 216.5, 20.5, 128.5, 57.0 ],
+													"presentation_rect" : [ 216.5, 20.5, 129.0, 57.0 ],
 													"setminmax" : [ 0.0, 0.552605926990509 ],
 													"setstyle" : 1,
 													"size" : 10,
@@ -2555,9 +2557,9 @@
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 183.0, 331.5, 128.5, 57.0 ],
+													"patching_rect" : [ 183.0, 331.5, 129.0, 57.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 45.0, 20.5, 128.5, 57.0 ],
+													"presentation_rect" : [ 45.0, 20.5, 129.0, 57.0 ],
 													"setminmax" : [ 0.0, 4791.4375 ],
 													"setstyle" : 1,
 													"size" : 10,
@@ -2607,11 +2609,11 @@
 												"box" : 												{
 													"id" : "obj-44",
 													"maxclass" : "newobj",
-													"numinlets" : 1,
+													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer normalize.help.point",
+													"outlettype" : [ "list" ],
+													"patching_rect" : [ 146.5, 137.5, 234.0, 22.0 ],
+													"text" : "fluid.buf2list @source normalize.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -3165,8 +3167,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 10,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3233,13 +3235,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.buf2list.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "helpstarter.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
@@ -3251,6 +3246,10 @@
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.buf2list.mxo",
 				"type" : "iLaX"
 			}
 , 			{
