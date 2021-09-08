@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -51,7 +51,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -117,7 +117,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -163,7 +163,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 5,
+															"revision" : 11,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -482,7 +482,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 5,
+															"revision" : 11,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -801,7 +801,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 5,
+															"revision" : 11,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1291,7 +1291,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 5,
+															"revision" : 11,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1850,7 +1850,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1886,12 +1886,24 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 287.0, 275.0, 70.0, 22.0 ],
+													"text" : "route buffer"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-12",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 294.0, 287.0, 29.5, 22.0 ],
+													"patching_rect" : [ 285.5, 305.0, 84.5, 22.0 ],
 													"text" : "join"
 												}
 
@@ -1938,7 +1950,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "list" ],
 													"patching_rect" : [ 285.5, 251.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -2034,6 +2046,13 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-12", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-8", 0 ]
 												}
 
@@ -2058,6 +2077,55 @@
 													"source" : [ "obj-98", 0 ]
 												}
 
+											}
+ ],
+										"styles" : [ 											{
+												"name" : "max6box",
+												"default" : 												{
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "max6inlet",
+												"default" : 												{
+													"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "max6message",
+												"default" : 												{
+													"bgfillcolor" : 													{
+														"type" : "gradient",
+														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+														"angle" : 270.0,
+														"proportion" : 0.39,
+														"autogradient" : 0
+													}
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+												}
+,
+												"parentstyle" : "max6box",
+												"multi" : 0
+											}
+, 											{
+												"name" : "max6outlet",
+												"default" : 												{
+													"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
 											}
  ]
 									}
@@ -2158,7 +2226,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2194,12 +2262,36 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-4",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 81.0, 295.0, 70.0, 22.0 ],
+													"text" : "route buffer"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 289.0, 285.0, 70.0, 22.0 ],
+													"text" : "route buffer"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-35",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 92.5, 303.0, 75.5, 22.0 ],
+													"patching_rect" : [ 72.5, 329.0, 75.5, 22.0 ],
 													"text" : "join"
 												}
 
@@ -2210,7 +2302,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "list" ],
 													"patching_rect" : [ 84.5, 264.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -2222,7 +2314,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "list" ],
 													"patching_rect" : [ 287.5, 247.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -2247,7 +2339,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 287.5, 290.0, 75.5, 22.0 ],
+													"patching_rect" : [ 287.5, 329.0, 75.5, 22.0 ],
 													"text" : "join"
 												}
 
@@ -2432,6 +2524,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-28", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-19", 0 ],
 													"source" : [ "obj-23", 0 ]
 												}
@@ -2509,14 +2608,14 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-28", 0 ],
+													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-31", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-35", 0 ],
+													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-34", 0 ]
 												}
 
@@ -2525,6 +2624,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-49", 0 ],
 													"source" : [ "obj-35", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-35", 0 ],
+													"source" : [ "obj-4", 0 ]
 												}
 
 											}
@@ -2548,9 +2654,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2871,9 +2977,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2944,7 +3050,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3005,25 +3111,15 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.list2buf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufresize.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.libmanipulation.mxo",
+				"name" : "fluid.list2buf.mxo",
 				"type" : "iLaX"
 			}
  ],

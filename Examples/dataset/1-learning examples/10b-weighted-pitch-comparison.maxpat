@@ -1160,7 +1160,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 26.0, 295.833374000000049, 292.0, 35.0 ],
-					"text" : "fluid.buf2list @buffer example.10b.stats.weighted.stripped",
+					"text" : "fluid.buf2list @source example.10b.stats.weighted.stripped",
 					"varname" : "fluid.buf2list[3]"
 				}
 
@@ -1303,7 +1303,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 341.0, 347.0, 270.0, 22.0 ],
-					"text" : "fluid.buf2list @buffer example.10b.stats.weighted",
+					"text" : "fluid.buf2list @source example.10b.stats.weighted",
 					"varname" : "fluid.buf2list[1]"
 				}
 
@@ -1342,7 +1342,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 656.0, 295.833374000000049, 283.0, 22.0 ],
-					"text" : "fluid.buf2list @buffer example.10b.stats.unweighted",
+					"text" : "fluid.buf2list @source example.10b.stats.unweighted",
 					"varname" : "fluid.buf2list"
 				}
 

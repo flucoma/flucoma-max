@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 10,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,6 +39,18 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-23",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "" ],
+					"patching_rect" : [ 426.335571000000016, 697.5, 70.0, 22.0 ],
+					"text" : "route buffer"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-14",
 					"maxclass" : "comment",
@@ -583,7 +595,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 467.335571000000016, 620.0, 336.0, 33.0 ],
+					"patching_rect" : [ 462.335571000000016, 596.0, 336.0, 33.0 ],
 					"text" : "switch on the querying, then click in the window. You will see 4 buffers being updated in the bottom right of the screen"
 				}
 
@@ -745,7 +757,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 10,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1067,7 +1079,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 461.422667999999987, 598.0, 20.0, 20.0 ],
+					"patching_rect" : [ 456.422667999999987, 574.0, 20.0, 20.0 ],
 					"rounded" : 60.0,
 					"text" : "9",
 					"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1165,7 +1177,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 431.335571000000016, 641.5, 34.0, 22.0 ],
+					"patching_rect" : [ 426.335571000000016, 617.5, 34.0, 22.0 ],
 					"text" : "gate"
 				}
 
@@ -1177,7 +1189,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 431.335571000000016, 717.130493000000001, 78.0, 22.0 ],
+					"patching_rect" : [ 431.335571000000016, 738.130493000000001, 78.0, 22.0 ],
 					"text" : "knearest $1"
 				}
 
@@ -1189,7 +1201,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 431.335571000000016, 666.43481399999996, 50.0, 22.0 ],
+					"patching_rect" : [ 426.335571000000016, 642.43481399999996, 50.0, 22.0 ],
 					"text" : "qlim 40"
 				}
 
@@ -1200,8 +1212,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 431.335571000000016, 690.43481399999996, 77.0, 22.0 ],
+					"outlettype" : [ "list" ],
+					"patching_rect" : [ 426.335571000000016, 666.43481399999996, 77.0, 22.0 ],
 					"text" : "fluid.list2buf"
 				}
 
@@ -1214,7 +1226,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 427.0, 609.5, 24.0, 24.0 ]
+					"patching_rect" : [ 422.0, 585.5, 24.0, 24.0 ]
 				}
 
 			}
@@ -1566,7 +1578,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 10,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1675,9 +1687,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1831,7 +1843,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 10,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2325,7 +2337,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 10,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2521,11 +2533,11 @@
 								"box" : 								{
 									"id" : "obj-44",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
+									"numinlets" : 2,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 327.0, 251.25, 242.0, 22.0 ],
-									"text" : "fluid.buf2list @buffer mlpAE.help.smallpoint",
+									"outlettype" : [ "list" ],
+									"patching_rect" : [ 327.0, 251.25, 245.0, 22.0 ],
+									"text" : "fluid.buf2list @source mlpAE.help.smallpoint",
 									"varname" : "fluid.buf2list"
 								}
 
@@ -2918,9 +2930,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3127,6 +3139,22 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-42", 0 ],
+					"order" : 1,
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-61", 0 ],
+					"order" : 0,
+					"source" : [ "obj-23", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-32", 0 ],
 					"source" : [ "obj-24", 0 ]
 				}
@@ -3253,16 +3281,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-42", 0 ],
-					"order" : 1,
-					"source" : [ "obj-46", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-61", 0 ],
-					"order" : 0,
+					"destination" : [ "obj-23", 0 ],
 					"source" : [ "obj-46", 0 ]
 				}
 
@@ -3590,27 +3609,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "fluid.buf2list.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.list2buf.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufresize.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../../../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "fluid.bufview.js",
 				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
 				"patcherrelativepath" : "../../../help",
@@ -3623,6 +3621,10 @@
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.buf2list.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -3649,14 +3651,18 @@
 				"name" : "fluid.libmanipulation.mxo",
 				"type" : "iLaX"
 			}
+, 			{
+				"name" : "fluid.list2buf.mxo",
+				"type" : "iLaX"
+			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

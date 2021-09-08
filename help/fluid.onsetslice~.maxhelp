@@ -9,7 +9,7 @@
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 71.0, 139.0, 718.0, 644.0 ],
+		"rect" : [ 100.0, 100.0, 718.0, 644.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -74,7 +74,7 @@
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 71.0, 165.0, 718.0, 618.0 ],
+						"rect" : [ 100.0, 126.0, 718.0, 618.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -212,8 +212,8 @@
 									"id" : "obj-172",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "dictionary" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -224,7 +224,7 @@
 											"modernui" : 1
 										}
 ,
-										"rect" : [ 442.0, 172.0, 640.0, 480.0 ],
+										"rect" : [ 1026.0, 359.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -251,6 +251,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-6",
@@ -305,19 +306,6 @@
 ,
 													"style" : "",
 													"text" : "dict"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"comment" : "settings as a dict for your pleasure",
-													"id" : "obj-3",
-													"index" : 3,
-													"maxclass" : "outlet",
-													"numinlets" : 1,
-													"numoutlets" : 0,
-													"patching_rect" : [ 209.0, 329.0, 30.0, 30.0 ],
-													"style" : ""
 												}
 
 											}
@@ -433,8 +421,8 @@
 														}
 ,
 														"3" : 														{
-															"filtersize" : 3,
-															"threshold" : 1.4,
+															"filtersize" : 5,
+															"threshold" : 1.1,
 															"fftsettings" : [ 128, 64, 256 ],
 															"framedelta" : 0,
 															"minslicelength" : 40,
@@ -473,7 +461,7 @@
 														}
 ,
 														"7" : 														{
-															"filtersize" : 11,
+															"filtersize" : 7,
 															"threshold" : 4.0,
 															"fftsettings" : [ 512, 64, 1024 ],
 															"framedelta" : 0,
@@ -483,7 +471,7 @@
 														}
 ,
 														"8" : 														{
-															"filtersize" : 7,
+															"filtersize" : 3,
 															"threshold" : 0.05,
 															"fftsettings" : [ 512, 64, 1024 ],
 															"framedelta" : 0,
@@ -493,8 +481,8 @@
 														}
 ,
 														"9" : 														{
-															"filtersize" : 7,
-															"threshold" : 0.8,
+															"filtersize" : 3,
+															"threshold" : 1.0,
 															"fftsettings" : [ 512, 64, 1024 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
@@ -504,7 +492,7 @@
 ,
 														"10" : 														{
 															"filtersize" : 11,
-															"threshold" : 0.1,
+															"threshold" : 0.09,
 															"fftsettings" : [ 512, 64, 1024 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
@@ -514,7 +502,7 @@
 ,
 														"11" : 														{
 															"filtersize" : 7,
-															"threshold" : 0.3,
+															"threshold" : 0.48,
 															"fftsettings" : [ 512, 64, 1024 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
@@ -524,7 +512,7 @@
 ,
 														"12" : 														{
 															"filtersize" : 7,
-															"threshold" : 0.3,
+															"threshold" : 0.36,
 															"fftsettings" : [ 512, 64, 1024 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
@@ -543,8 +531,8 @@
 														}
 ,
 														"14" : 														{
-															"filtersize" : 5,
-															"threshold" : 0.14,
+															"filtersize" : 7,
+															"threshold" : 0.11,
 															"fftsettings" : [ 128, 64, 128 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
@@ -554,8 +542,8 @@
 ,
 														"15" : 														{
 															"filtersize" : 5,
-															"threshold" : 0.8,
-															"fftsettings" : [ 128, 64, 128 ],
+															"threshold" : 0.85,
+															"fftsettings" : [ 128, 64, 256 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 1,
@@ -634,8 +622,8 @@
 ,
 														"23" : 														{
 															"filtersize" : 7,
-															"threshold" : 0.22,
-															"fftsettings" : [ 512, 64, 2048 ],
+															"threshold" : 0.27,
+															"fftsettings" : [ 512, 64, 8192 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 3,
@@ -654,8 +642,8 @@
 ,
 														"25" : 														{
 															"filtersize" : 7,
-															"threshold" : 0.22,
-															"fftsettings" : [ 512, 64, 2048 ],
+															"threshold" : 0.25,
+															"fftsettings" : [ 512, 64, 4096 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 8,
@@ -664,8 +652,8 @@
 ,
 														"26" : 														{
 															"filtersize" : 7,
-															"threshold" : 0.22,
-															"fftsettings" : [ 512, 64, 2048 ],
+															"threshold" : 0.25,
+															"fftsettings" : [ 512, 64, 4096 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 9,
@@ -674,8 +662,8 @@
 ,
 														"27" : 														{
 															"filtersize" : 5,
-															"threshold" : 0.84,
-															"fftsettings" : [ 512, 64, 2048 ],
+															"threshold" : 0.666,
+															"fftsettings" : [ 512, 64, 8192 ],
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 8,
@@ -833,13 +821,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
-													"source" : [ "obj-4", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"midpoints" : [ 348.5, 291.5, 218.5, 291.5 ],
 													"source" : [ "obj-5", 2 ]
@@ -878,7 +859,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 275.0, 593.0, 22.0 ],
+									"patching_rect" : [ 10.0, 275.0, 303.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -967,7 +948,7 @@
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 180.0, 556.0, 50.0, 22.0 ],
 													"style" : "",
-													"text" : "21"
+													"text" : "31"
 												}
 
 											}
@@ -2991,9 +2972,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -3285,9 +3266,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 												}
 ,
 												"parentstyle" : "",
@@ -3514,7 +3495,7 @@
 										"followglobaltempo" : 0,
 										"formantcorrection" : 0,
 										"mode" : "basic",
-										"originallength" : [ 10937.948299, "ticks" ],
+										"originallength" : [ 23377.915646, "ticks" ],
 										"originaltempo" : 120.0,
 										"pitchcorrection" : 0,
 										"quality" : "basic",
@@ -3669,7 +3650,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-68", 0 ],
-									"midpoints" : [ 306.5, 396.5, 146.5, 396.5 ],
+									"midpoints" : [ 303.5, 396.5, 146.5, 396.5 ],
 									"source" : [ "obj-172", 1 ]
 								}
 
@@ -3794,9 +3775,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4471,9 +4452,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4667,9 +4648,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
 				}
 ,
 				"parentstyle" : "",
