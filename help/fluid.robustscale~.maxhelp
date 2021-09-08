@@ -1362,7 +1362,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 146.5, 137.5, 238.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer robustscale.help.point",
+													"text" : "fluid.buf2list @source robustscale.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -2287,7 +2287,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 146.5, 137.5, 238.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer robustscale.help.point",
+													"text" : "fluid.buf2list @source robustscale.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
