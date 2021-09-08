@@ -34,7 +34,7 @@ struct FluidBufToList
   index         maxSize{256};
   index         startChannel{0};
   index         startFrame{0};
-  index         size{-1};
+  index         numValues{-1};
   Buffer        source;
   void*         outlet;
   void*         proxy;
@@ -82,7 +82,7 @@ void main()
                   "dblclick", A_CANT, 0);
 
   CLASS_ATTR_SYM(FluidBufToListClass, "source", 0, FluidBufToList, source);
-  CLASS_ATTR_LABEL(FluidBufToListClass, "source", 0, "Source   Buffer");
+  CLASS_ATTR_LABEL(FluidBufToListClass, "source", 0, "Source Buffer");
   CLASS_ATTR_ACCESSORS(FluidBufToListClass, "source", FluidBufToList_getSource,
                        FluidBufToList_setSource);
 
@@ -99,10 +99,8 @@ void main()
                   startChannel);
   CLASS_ATTR_FILTER_MIN(FluidBufToListClass, "startchan", 0);
 
-  CLASS_ATTR_LONG(FluidBufToListClass, "size", 0, FluidBufToList,
-                  size);
-  
-//  CLASS_ATTR_FILTER_MIN(FluidBufToListClass, "size", -1);
+  CLASS_ATTR_LONG(FluidBufToListClass, "numvalues", 0, FluidBufToList,
+                  numValues);
 
   class_dumpout_wrap(FluidBufToListClass);
   class_register(CLASS_BOX, FluidBufToListClass);
@@ -116,13 +114,13 @@ void* FluidBufToList_new(t_symbol*, long argc, t_atom* argv)
   x->outlet = listout(x);
   x->proxy = proxy_new((t_object *)x, 1, &x->in);
   long argCount = attr_args_offset(argc, argv);
-  
+
   x->maxSize = argCount ?  std::min(atom_getlong(argv),t_atom_long(32767)) : 256;
-    
+
   x->output.reserve(x->maxSize);
 
   attr_args_process(x, argc - argCount, argv + argCount);
-  x->size = -1;
+  x->numValues = -1;
   return x;
 }
 
@@ -141,9 +139,9 @@ t_max_err FluidBufToList_setSource(FluidBufToList* x, t_object* /*attr*/,
       x->source.reset(new MaxBufferAdaptor((t_object*) x, s));
     }
   }
-  
-  if(proxy_getinlet((t_object*) x) == 0) FluidBufToList_process(x);
-  
+
+  // if(proxy_getinlet((t_object*) x) == 0) FluidBufToList_process(x);
+
   return MAX_ERR_NONE;
 }
 
@@ -171,7 +169,7 @@ void FluidBufToList_process(FluidBufToList* x)
 {
   if (x->source)
   {
-    
+
 
 //    if (!buf.exists())
 //    {
@@ -181,17 +179,17 @@ void FluidBufToList_process(FluidBufToList* x)
 //
 //    if (!buf.valid()) return;
 //
-    index nFrames = x->axis == 0 ? x->size : 1;
-    index nChans = x->axis ==  0 ?  1 : x->size ;
-    
+    index nFrames = x->axis == 0 ? x->numValues : 1;
+    index nChans = x->axis ==  0 ?  1 : x->numValues ;
+
     auto r = bufferRangeCheck(x->source.get(), x->startFrame, nFrames, x->startChannel, nChans);
     if(r.status() == Result::Status::kError)
     {
       object_error((t_object*)x,r.message().c_str());
       return;
     }
-    
-    
+
+
     auto buf = MaxBufferAdaptor::Access(x->source.get());
     index count = x->axis == 0
                       ? std::min(x->maxSize, nFrames)
@@ -205,7 +203,7 @@ void FluidBufToList_process(FluidBufToList* x)
       std::for_each(frames.begin(),frames.end(),[x, n=0](const float& f) mutable -> void {
         atom_setfloat(&x->output[n++],f);
       });
-    
+
       outlet_list(x->outlet, nullptr, count, x->output.data());
   }
 }
