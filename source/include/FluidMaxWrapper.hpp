@@ -59,21 +59,23 @@ class RealTime
 public:
   static void setup(t_class* c)
   {
-  
-    constexpr bool isModel = Wrapper::template IsModel_t<typename Wrapper::ClientType>::value;
+
+    constexpr bool isModel =
+        Wrapper::template IsModel_t<typename Wrapper::ClientType>::value;
 
     if (isModel)
     {
       class_addmethod(c, (method) Wrapper::assistDataObject, "assist", A_CANT,
                       0);
     }
-    else class_addmethod(c, (method) assist, "assist", A_CANT, 0);
-    
-    ///FIXME: Better test needed
+    else
+      class_addmethod(c, (method) assist, "assist", A_CANT, 0);
+
+    /// FIXME: Better test needed
     using ClientClass = typename Wrapper::ClientType::Client;
     constexpr bool addDSP = !(isModel && isControl<ClientClass>);
-    
-    if(addDSP)
+
+    if (addDSP)
     {
       class_dspinit(c);
       class_addmethod(c, (method) callDSP, "dsp64", A_CANT, 0);
@@ -487,6 +489,46 @@ class FluidMaxWrapper
                                 typename Client::isNonRealTime,
                                 typename Client::isRealTime>
 {
+
+  struct StreamingListInput
+  {
+
+    void processInput(FluidMaxWrapper* x, long ac, t_atom* av)
+    {
+    
+    }
+
+    void operator()(FluidMaxWrapper* x, long ac, t_atom* av)
+    {
+      FluidContext c;
+            
+      atom_getdouble_array(std::min<index>(x->mListSize, ac), av,
+                           std::min<index>(x->mListSize, ac),
+                           x->mInputListData[0].data());
+      x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+      
+      for (index i = 0; i <  x->mAllControlOuts.size(); ++i)
+      {
+        atom_setdouble_array(
+            std::min<index>(x->mListSize, ac), x->mOutputListAtoms.data(),
+            std::min<index>(x->mListSize, ac), x->mOutputListData[i].data());
+        outlet_list(x->mAllControlOuts[x->mAllControlOuts.size() - 1 - i], nullptr, x->mListSize,
+                    x->mOutputListAtoms.data());
+      }
+    }
+  };
+
+  struct NoStreamingListInput
+  {
+    void operator()(FluidMaxWrapper*, long, t_atom*) {}
+  };
+
+  using ListInputHandler =
+      std::conditional_t<isControlIn<typename Client::Client>,
+                         StreamingListInput, NoStreamingListInput>;
+
+  ListInputHandler mListHandler;
+
   using WrapperBase = impl::FluidMaxBase<FluidMaxWrapper<Client>,
                                          typename Client::isNonRealTime,
                                          typename Client::isRealTime>;
@@ -889,6 +931,21 @@ public:
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
     }
 
+    if (index new_ins = mClient.controlChannelsIn())
+    {
+      mAutosize = true;      
+      if(mListSize)
+      {
+        mInputListData.resize(new_ins, mListSize);
+        for (index i = 1; i <= new_ins; ++i)
+          mInputListViews.emplace_back(mInputListData.row(i - 1));
+      }
+
+      mProxies.reserve(new_ins);
+      for (index i = 1; i <= new_ins; ++i)
+        mProxies.push_back(proxy_new(this, i, nullptr));
+    }
+
     while (mMessages.size() > 0)
     {
       printResult(this, mMessages.front(), true);
@@ -911,7 +968,20 @@ public:
 
     if (isNonRealTime<Client>::value) { mNRTDoneOutlet = bangout(this); }
 
-    if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
+    if (mClient.controlChannelsOut())
+    {
+      if(mListSize)
+      {
+        mOutputListData.resize(mClient.controlChannelsOut(), mListSize);
+        mOutputListAtoms.reserve(mListSize);
+        for (index i = 0; i < mClient.controlChannelsOut(); ++i)
+          mOutputListViews.emplace_back(mOutputListData.row(i));
+      }
+      mAllControlOuts.reserve(mClient.controlChannelsOut());
+      for (index i = 0; i < mClient.controlChannelsOut(); ++i)
+        mAllControlOuts.push_back(listout(this));
+      mControlOutlet = mAllControlOuts[0];
+    }
 
     for (index i = 0; i < mClient.audioChannelsOut(); ++i)
       outlet_new(this, "signal");
@@ -925,6 +995,7 @@ public:
     Client::getParameterDescriptors().template iterate<RemoveListener>(this,
                                                                        mParams);
     if (mDumpDictionary) object_free(mDumpDictionary);
+    for (auto p : mProxies) object_free(p);
   }
 
   template <size_t N, typename T>
@@ -983,6 +1054,18 @@ public:
                        sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     WrapperBase::setup(getClass());
 
+    if (isControlIn<typename Client::Client>)
+    {
+      class_addmethod(getClass(), (method) doList, "list", A_GIMME, 0);
+      t_object* a = attr_offset_new("autosize", USESYM(long), 0, nullptr, nullptr,
+                                  calcoffset(FluidMaxWrapper, mAutosize));
+      class_addattr(getClass(), a);
+      CLASS_ATTR_FILTER_CLIP(getClass(), "autosize", 0, 1);
+      CLASS_ATTR_STYLE_LABEL(getClass(), "autosize", 0, "onoff",
+                           "Report Warnings");
+                                  
+    }
+
     class_addmethod(getClass(), (method) doNotify, "notify", A_CANT, 0);
     class_addmethod(getClass(), (method) object_obex_dumpout, "dumpout", A_CANT,
                     0);
@@ -1034,6 +1117,67 @@ public:
                     0);
   }
 
+
+  void resizeListHandlers(index newSize)
+  {
+      index numIns = mClient.controlChannelsIn();
+      mListSize = newSize; 
+      if(mListSize)
+      {
+        mInputListData.resize(numIns,mListSize);
+        mInputListViews.clear();
+        for (index i = 0; i < numIns; ++i)
+        {
+          mInputListViews.emplace_back(mInputListData.row(i));
+        }
+        std::cout << mInputListViews.size() << '\n';
+        mOutputListData.resize(mClient.controlChannelsOut(),mListSize);
+        mOutputListAtoms.reserve(mListSize);
+        mOutputListViews.clear();
+        for (index i = 0; i < mClient.controlChannelsOut(); ++i)
+        {
+          mOutputListViews.emplace_back(mOutputListData.row(i));
+        }
+        
+      }
+  }
+
+  static void doList(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
+  {
+    if(!isr() && x->mAutosize && (ac != x->mListSize)) x->resizeListHandlers(ac);
+    x->mListHandler(x, ac, av);
+  }
+  
+  static void handleList(FluidMaxWrapper* x, t_symbol* s, long ac, t_atom* av)
+  {
+      if(!x->mListSize && !x->mAutosize)
+      {
+        object_error((t_object*)x, "No list size argument nor autosize enabled: can't do anything");
+        return;
+      }
+      
+      if(isr())
+      {
+        if(x->mAutosize && ac != x->mListSize)
+        {
+          object_warn((t_object*)x, "input list size (%d) != object argument (%d) and autosize is enabled: this operation will be deferred",ac,x->mListSize);
+          defer(x,(method)doList,s, ac, av);
+          return;
+        }
+
+        if(!x->mAutosize && ac != x->mListSize)
+        {
+          object_warn((t_object*)x, "bad input list size (%d), expect %d",ac,x->mListSize);
+          return;
+        }
+      }
+      
+      doList(x,s,ac,av);
+      
+  }
+  
+  
+
   static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
   {
     std::string name(newName->s_name);
@@ -1069,15 +1213,15 @@ public:
     case 2:
       if (index < 2)
       {
-      
+
         constexpr bool isModel = IsModel_t<ClientType>::value;
         using ClientClass = typename ClientType::Client;
-        if(index == 0 && isModel && isAudioOut<ClientClass>)
+        if (index == 0 && isModel && isAudioOut<ClientClass>)
         {
           strncpy_zero(s, "(signal) audio out", 512);
           break;
         }
-        
+
         strncpy_zero(s, "(unused)", 512);
         break;
       }
@@ -1141,10 +1285,20 @@ private:
 
   ParamSetType& initParamsFromArgs(long ac, t_atom* av)
   {
+      
     // Process arguments for instantiation parameters
     if (long numArgs = attr_args_offset(static_cast<short>(ac), av))
     {
       long argCount{0};
+      
+      if(isControlIn<typename Client::Client>)
+      {
+        mListSize = atom_getlong(av);
+//        if(numArgs == 1) return;
+        numArgs -= 1;
+        av += 1;
+      }
+      
       auto results = mParams.template setFixedParameterValues<Fetcher>(
           true, numArgs, av, argCount);
       for (auto& r : results) mMessages.push_back(r);
@@ -1620,11 +1774,21 @@ private:
   void*              mDumpOutlet;
   void*              mProgressOutlet;
   bool               mVerbose;
+  bool               mAutosize;
   ParamSetType       mParams;
   ParamSetType       mParamSnapshot;
   Client             mClient;
   t_int32_atomic     mInPerform{0};
   t_dictionary*      mDumpDictionary;
+  std::vector<void*> mProxies;
+
+  index mListSize;
+  FluidTensor<double, 2>                  mInputListData;
+  std::vector<FluidTensorView<double, 1>> mInputListViews;
+  FluidTensor<double, 2>                  mOutputListData;
+  std::vector<FluidTensorView<double, 1>> mOutputListViews;
+  std::vector<void*>                      mAllControlOuts;
+  std::vector<t_atom>                     mOutputListAtoms;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
