@@ -1033,7 +1033,7 @@ public:
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
 
-    if (static_cast<size_t>(attr_args_offset(static_cast<short>(ac), av)) >
+    if (static_cast<size_t>(attr_args_offset(static_cast<short>(ac), av)) - isControlIn<typename Client::Client> >
         ParamDescType::NumFixedParams)
     {
       object_warn((t_object*) x,
@@ -1056,7 +1056,7 @@ public:
 
     if (isControlIn<typename Client::Client>)
     {
-      class_addmethod(getClass(), (method) doList, "list", A_GIMME, 0);
+      class_addmethod(getClass(), (method) handleList, "list", A_GIMME, 0);
       t_object* a = attr_offset_new("autosize", USESYM(long), 0, nullptr, nullptr,
                                   calcoffset(FluidMaxWrapper, mAutosize));
       class_addattr(getClass(), a);
