@@ -34,7 +34,6 @@ struct FluidListToBuf
   t_symbol*     defaultOutName{nullptr};
   t_atom        outName;
   index         axis{0};
-  index         maxSize{32767};
   index         canResize;
   index         startChannel{0};
   index         startFrame{0};
