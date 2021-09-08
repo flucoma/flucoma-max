@@ -51,6 +51,7 @@ void FluidListToBuf_assist(FluidListToBuf* x, void* b, long m, long a, char* s);
 void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
                          t_atom* argv);
 void FluidListToBuf_float(FluidListToBuf* x, double floatin);
+void FluidListToBuf_int(FluidListToBuf* x, long intin);
 
 t_max_err FluidListToBuf_setOut(FluidListToBuf* x, t_object* attr, long argc,
                                 t_atom* argv);
@@ -75,6 +76,9 @@ void main()
                   A_GIMME, 0);
   class_addmethod(FluidListToBufClass, (method) FluidListToBuf_float,
                 "float", A_FLOAT, 0);
+  class_addmethod(FluidListToBufClass, (method) FluidListToBuf_int,
+                              "int", A_LONG, 0);
+
   class_addmethod(FluidListToBufClass, (method) FluidListToBuf_assist, "assist",
                   A_CANT, 0);
 
@@ -179,6 +183,13 @@ void FluidListToBuf_float(FluidListToBuf* x, double floatin)
   t_atom floataslist;
   atom_setfloat(&floataslist, floatin);
   FluidListToBuf_list(x, nullptr, 1, &floataslist);
+}
+
+void FluidListToBuf_int(FluidListToBuf* x, long intin)
+{
+  t_atom intaslist;
+  atom_setfloat(&intaslist, intin);
+  FluidListToBuf_list(x, nullptr, 1, &intaslist);
 }
 
 void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
