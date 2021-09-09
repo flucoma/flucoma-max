@@ -361,7 +361,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 598.75, 555.0, 195.875, 190.0 ],
+									"patching_rect" : [ 598.75, 555.0, 196.25, 195.0 ],
 									"stripecolor" : [ 1.0, 0.392156862745098, 0.0, 0.54 ]
 								}
 
