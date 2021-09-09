@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1796,7 +1796,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1827,13 +1827,13 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-18",
-									"maxclass" : "button",
+									"id" : "obj-19",
+									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 118.5, 24.0, 24.0 ]
+									"patching_rect" : [ 5.0, 120.0, 62.0, 23.0 ],
+									"text" : "loadbang"
 								}
 
 							}
@@ -1999,8 +1999,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 117.5, 100.0, 149.0, 22.0 ],
-													"text" : "fluid.dataset~ help.dataset"
+													"patching_rect" : [ 117.5, 100.0, 137.0, 22.0 ],
+													"text" : "fluid.dataset~ help.other"
 												}
 
 											}
@@ -2131,7 +2131,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 5.0, 151.5, 153.0, 23.0 ],
+									"patching_rect" : [ 5.0, 155.0, 153.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2149,7 +2149,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 238.5, 340.0, 353.0, 21.0 ],
+									"patching_rect" : [ 238.5, 343.5, 353.0, 21.0 ],
 									"text" : "Dump the contents of the fluid.dataset~ to a Max dictionary"
 								}
 
@@ -2161,7 +2161,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 173.5, 340.0, 41.0, 23.0 ],
+									"patching_rect" : [ 173.5, 343.5, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -2179,7 +2179,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 238.5, 378.0, 20.0, 20.0 ],
+									"patching_rect" : [ 238.5, 381.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "6",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -2192,7 +2192,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 147.0, 560.0, 303.0, 200.0 ]
+									"patching_rect" : [ 147.0, 563.5, 303.0, 200.0 ]
 								}
 
 							}
@@ -2202,7 +2202,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 207.5, 306.0, 326.0, 21.0 ],
+									"patching_rect" : [ 207.5, 309.5, 326.0, 21.0 ],
 									"text" : "Get the number of columns for ALL the data points."
 								}
 
@@ -2214,7 +2214,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 149.5, 305.0, 32.0, 23.0 ],
+									"patching_rect" : [ 149.5, 308.5, 32.0, 23.0 ],
 									"text" : "cols"
 								}
 
@@ -2232,7 +2232,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 216.5, 341.5, 20.0, 20.0 ],
+									"patching_rect" : [ 216.5, 345.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -2245,7 +2245,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 202.0, 525.0, 98.0, 23.0 ],
+									"patching_rect" : [ 202.0, 528.5, 98.0, 23.0 ],
 									"text" : "print @popup 1"
 								}
 
@@ -2257,7 +2257,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 147.0, 485.0, 74.0, 23.0 ],
+									"patching_rect" : [ 147.0, 488.5, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -2265,12 +2265,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-13",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 177.5, 258.0, 326.0, 36.0 ],
-									"text" : "Get the size (number of identifiers with associated data). The output can be routed from the last output."
+									"patching_rect" : [ 183.5, 255.0, 326.0, 50.0 ],
+									"text" : "Get the size (number of identifiers with associated data). The size value is output from the right outlet in a message that can be routed."
 								}
 
 							}
@@ -2281,7 +2281,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 119.5, 265.0, 32.0, 23.0 ],
+									"patching_rect" : [ 119.5, 268.5, 32.0, 23.0 ],
 									"text" : "size"
 								}
 
@@ -2299,7 +2299,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 184.0, 307.0, 20.0, 20.0 ],
+									"patching_rect" : [ 184.0, 310.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -2312,7 +2312,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 157.0, 226.5, 233.0, 21.0 ],
+									"patching_rect" : [ 157.0, 230.0, 233.0, 21.0 ],
 									"text" : "Read a fluid.dataset~ from disk"
 								}
 
@@ -2324,7 +2324,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 95.5, 225.0, 35.0, 23.0 ],
+									"patching_rect" : [ 95.5, 228.5, 35.0, 23.0 ],
 									"text" : "read"
 								}
 
@@ -2342,7 +2342,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 155.5, 266.5, 20.0, 20.0 ],
+									"patching_rect" : [ 155.5, 270.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -2355,7 +2355,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 127.5, 191.5, 233.0, 21.0 ],
+									"patching_rect" : [ 127.5, 195.0, 233.0, 21.0 ],
 									"text" : "Write a fluid.dataset~ to disk"
 								}
 
@@ -2367,7 +2367,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 67.5, 190.0, 36.0, 23.0 ],
+									"patching_rect" : [ 67.5, 193.5, 36.0, 23.0 ],
 									"text" : "write"
 								}
 
@@ -2385,7 +2385,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 131.5, 226.5, 20.0, 20.0 ],
+									"patching_rect" : [ 131.5, 230.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -2398,7 +2398,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 260.5, 378.0, 233.0, 21.0 ],
+									"patching_rect" : [ 260.5, 381.5, 233.0, 21.0 ],
 									"text" : "Completely reset a fluid.dataset~"
 								}
 
@@ -2410,7 +2410,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 199.5, 375.0, 37.0, 23.0 ],
+									"patching_rect" : [ 199.5, 378.5, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -2428,7 +2428,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 105.5, 191.5, 20.0, 20.0 ],
+									"patching_rect" : [ 105.5, 195.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -2442,8 +2442,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 5.0, 445.0, 161.0, 23.0 ],
-									"text" : "fluid.dataset~ help.dataset"
+									"patching_rect" : [ 5.0, 448.5, 148.0, 23.0 ],
+									"text" : "fluid.dataset~ help.other"
 								}
 
 							}
@@ -2474,7 +2474,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 105.0, 432.0, 14.5, 432.0 ],
+									"midpoints" : [ 105.0, 435.5, 14.5, 435.5 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -2482,7 +2482,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 129.0, 432.0, 14.5, 432.0 ],
+									"midpoints" : [ 129.0, 435.5, 14.5, 435.5 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -2504,14 +2504,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-18", 0 ]
+									"source" : [ "obj-19", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 159.0, 432.0, 14.5, 432.0 ],
+									"midpoints" : [ 159.0, 435.5, 14.5, 435.5 ],
 									"source" : [ "obj-23", 0 ]
 								}
 
@@ -2519,7 +2519,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 183.0, 432.0, 14.5, 432.0 ],
+									"midpoints" : [ 183.0, 435.5, 14.5, 435.5 ],
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -2527,7 +2527,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 209.0, 432.0, 14.5, 432.0 ],
+									"midpoints" : [ 209.0, 435.5, 14.5, 435.5 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -2542,7 +2542,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 77.0, 432.0, 14.5, 432.0 ],
+									"midpoints" : [ 77.0, 435.5, 14.5, 435.5 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
