@@ -10,7 +10,6 @@ under the European Union’s Horizon 2020 research and innovation programme
 
 #pragma once
 
-
 #include <ext.h>
 #include <ext_atomic.h>
 #include <ext_dictobj.h>
@@ -29,16 +28,16 @@ using Buffer = std::unique_ptr<MaxBufferAdaptor>;
 
 struct FluidBufToList
 {
-  t_object      obj;
-  index         axis{0};
-  index         maxSize{256};
-  index         startChannel{0};
-  index         startFrame{0};
-  index         numValues{-1};
-  Buffer        source;
-  void*         outlet;
-  void*         proxy;
-  long          in;
+  t_object            obj;
+  index               axis{0};
+  index               maxSize{256};
+  index               startChannel{0};
+  index               startFrame{0};
+  index               numValues{-1};
+  Buffer              source;
+  void*               outlet;
+  void*               proxy;
+  long                in;
   std::vector<t_atom> output;
 };
 
@@ -48,14 +47,13 @@ void* FluidBufToList_new(t_symbol* s, long argc, t_atom* argv);
 void  FluidBufToList_free(FluidBufToList* x);
 void FluidBufToList_assist(FluidBufToList* x, void* b, long m, long a, char* s);
 void FluidBufToList_process(FluidBufToList* x);
-
+void FluidBufToList_buffer(FluidBufToList* x, t_symbol*, long argc, t_atom* argv); 
 void FluidBufToList_bang(FluidBufToList* x);
 
-
 t_max_err FluidBufToList_setSource(FluidBufToList* x, t_object* attr, long argc,
-                                t_atom* argv);
-t_max_err FluidBufToList_getSource(FluidBufToList* x, t_object* attr, long* argc,
-                                t_atom** argv);
+                                   t_atom* argv);
+t_max_err FluidBufToList_getSource(FluidBufToList* x, t_object* attr,
+                                   long* argc, t_atom** argv);
 t_max_err FluidBufToList_notify(FluidBufToList* x, t_symbol* s, t_symbol* msg,
                                 void* sender, void* data);
 
@@ -80,6 +78,9 @@ void main()
 
   class_addmethod(FluidBufToListClass, (method) FluidBufToList_dblclick,
                   "dblclick", A_CANT, 0);
+
+  class_addmethod(FluidBufToListClass, (method) FluidBufToList_buffer, "buffer",
+                  A_GIMME, 0);
 
   CLASS_ATTR_SYM(FluidBufToListClass, "source", 0, FluidBufToList, source);
   CLASS_ATTR_LABEL(FluidBufToListClass, "source", 0, "Source Buffer");
@@ -112,10 +113,11 @@ void* FluidBufToList_new(t_symbol*, long argc, t_atom* argv)
   FluidBufToList* x = (FluidBufToList*) object_alloc(FluidBufToListClass);
 
   x->outlet = listout(x);
-  x->proxy = proxy_new((t_object *)x, 1, &x->in);
+  x->proxy = proxy_new((t_object*) x, 1, &x->in);
   long argCount = attr_args_offset(argc, argv);
 
-  x->maxSize = argCount ?  std::min(atom_getlong(argv),t_atom_long(32767)) : 256;
+  x->maxSize =
+      argCount ? std::min(atom_getlong(argv), t_atom_long(32767)) : 256;
 
   x->output.reserve(x->maxSize);
 
@@ -125,32 +127,25 @@ void* FluidBufToList_new(t_symbol*, long argc, t_atom* argv)
 }
 
 t_max_err FluidBufToList_setSource(FluidBufToList* x, t_object* /*attr*/,
-                                long argc, t_atom* argv)
+                                   long argc, t_atom* argv)
 {
   if (argc)
   {
     t_symbol* s = atom_getsym(argv);
-    if (s == gensym(""))
-    {
-      x->source.reset(nullptr);
-    }
+    if (s == gensym("")) { x->source.reset(nullptr); }
     else
     {
       x->source.reset(new MaxBufferAdaptor((t_object*) x, s));
     }
   }
 
-  // if(proxy_getinlet((t_object*) x) == 0) FluidBufToList_process(x);
-
   return MAX_ERR_NONE;
 }
 
-void FluidBufToList_bang(FluidBufToList* x){
-  FluidBufToList_process(x);
-}
+void FluidBufToList_bang(FluidBufToList* x) { FluidBufToList_process(x); }
 
 t_max_err FluidBufToList_getSource(FluidBufToList* x, t_object* /*attr*/,
-                                long* argc, t_atom** argv)
+                                   long* argc, t_atom** argv)
 {
   char alloc;
   atom_alloc(argc, argv, &alloc);
@@ -170,41 +165,40 @@ void FluidBufToList_process(FluidBufToList* x)
   if (x->source)
   {
 
-
-//    if (!buf.exists())
-//    {
-//      object_error((t_object*) x, "Buffer %s not found", x->source->name());
-//      return;
-//    }
-//
-//    if (!buf.valid()) return;
-//
     index nFrames = x->axis == 0 ? x->numValues : 1;
-    index nChans = x->axis ==  0 ?  1 : x->numValues ;
+    index nChans = x->axis == 0 ? 1 : x->numValues;
 
-    auto r = bufferRangeCheck(x->source.get(), x->startFrame, nFrames, x->startChannel, nChans);
-    if(r.status() == Result::Status::kError)
+    auto r = bufferRangeCheck(x->source.get(), x->startFrame, nFrames,
+                              x->startChannel, nChans);
+    if (r.status() == Result::Status::kError)
     {
-      object_error((t_object*)x,r.message().c_str());
+      object_error((t_object*) x, r.message().c_str());
       return;
     }
 
-
-    auto buf = MaxBufferAdaptor::Access(x->source.get());
-    index count = x->axis == 0
-                      ? std::min(x->maxSize, nFrames)
-                      : std::min(x->maxSize, nChans);
-
+    auto  buf = MaxBufferAdaptor::Access(x->source.get());
+    index count = x->axis == 0 ? std::min(x->maxSize, nFrames)
+                               : std::min(x->maxSize, nChans);
 
     auto frames =
         buf.allFrames()(Slice(x->startChannel, x->axis == 0 ? 1 : count),
                         Slice(x->startFrame, x->axis == 0 ? count : 1));
 
-      std::for_each(frames.begin(),frames.end(),[x, n=0](const float& f) mutable -> void {
-        atom_setfloat(&x->output[n++],f);
-      });
+    std::for_each(frames.begin(), frames.end(),
+                  [x, n = 0](const float& f) mutable -> void {
+                    atom_setfloat(&x->output[n++], f);
+                  });
 
-      outlet_list(x->outlet, nullptr, count, x->output.data());
+    outlet_list(x->outlet, nullptr, count, x->output.data());
+  }
+}
+
+void FluidBufToList_buffer(FluidBufToList* x, t_symbol*, long argc, t_atom* argv)
+{
+  if (argc)
+  {
+    FluidBufToList_setSource(x, nullptr, argc, argv);
+    FluidBufToList_process(x);
   }
 }
 
@@ -215,7 +209,7 @@ void FluidBufToList_assist(FluidBufToList*, void*, long io, long, char* s)
   case 1: strncpy_zero(s, "(list) input", 512); break;
   case 2: strncpy_zero(s, "(list) buffer output", 512); break;
   }
-}
+} 
 
 t_max_err FluidBufToList_notify(FluidBufToList* x, t_symbol* s, t_symbol* msg,
                                 void* sender, void* data)

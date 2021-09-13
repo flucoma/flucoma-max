@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 10,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -68,7 +68,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 10,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -104,6 +104,18 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 179.0, 632.896057000000042, 193.0, 23.0 ],
+									"text" : "fluid.dataset~ mds.help.reduced"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "message",
@@ -265,7 +277,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 102.0, 439.731079000000022, 129.871139999999997, 23.0 ],
+									"patching_rect" : [ 102.0, 439.731079000000022, 33.0, 23.0 ],
 									"text" : "int 0"
 								}
 
@@ -329,7 +341,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 10,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -495,8 +507,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 102.0, 469.828186000000017, 293.0, 38.0 ],
-									"text" : "distancemetric $1, fittransform mds.help.reduced mds.help.reduced"
+									"patching_rect" : [ 102.0, 469.828186000000017, 189.0, 38.0 ],
+									"text" : "distancemetric $1, fittransform mds.help.std mds.help.reduced"
 								}
 
 							}
@@ -543,8 +555,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 10.0, 625.896057000000042, 193.0, 23.0 ],
-									"text" : "fluid.dataset~ mds.help.reduced"
+									"patching_rect" : [ 10.0, 632.896057000000042, 164.0, 23.0 ],
+									"text" : "fluid.dataset~ mds.help.std"
 								}
 
 							}
@@ -579,7 +591,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 231.0, 625.896057000000042, 137.0, 23.0 ],
+									"patching_rect" : [ 10.0, 572.73108000000002, 137.0, 23.0 ],
 									"text" : "buffer~ mds.help.point"
 								}
 
@@ -591,7 +603,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 594.896057000000042, 369.0, 23.0 ],
+									"patching_rect" : [ 10.0, 600.896057000000042, 369.0, 23.0 ],
 									"text" : "buffer~ mds.help.src Tremblay-ASWINE-ScratchySynth-M.wav"
 								}
 
@@ -608,7 +620,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 10,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1164,7 +1176,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 10,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1262,10 +1274,10 @@
 												"box" : 												{
 													"id" : "obj-44",
 													"maxclass" : "newobj",
-													"numinlets" : 1,
+													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 327.0, 251.25, 227.0, 22.0 ],
+													"outlettype" : [ "list" ],
+													"patching_rect" : [ 327.0, 251.25, 233.0, 22.0 ],
 													"text" : "fluid.buf2list @source mds.help.smallpoint",
 													"varname" : "fluid.buf2list"
 												}
@@ -1740,8 +1752,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 316.968201000000022, 358.0, 23.0 ],
-									"text" : "fit mds.help.data, transform mds.help.data mds.help.reduced"
+									"patching_rect" : [ 10.0, 316.968201000000022, 329.0, 23.0 ],
+									"text" : "fit mds.help.data, transform mds.help.data mds.help.std"
 								}
 
 							}
@@ -1768,6 +1780,23 @@
 									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 									"border" : 1,
 									"bordercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
+									"id" : "obj-22",
+									"maxclass" : "panel",
+									"mode" : 0,
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 92.742278999999996, 395.493958000000021, 320.257721000000004, 175.237121999999999 ],
+									"proportion" : 0.5
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"angle" : 270.0,
+									"background" : 1,
+									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
+									"border" : 1,
+									"bordercolor" : [ 0.784314, 0.145098, 0.023529, 1.0 ],
 									"id" : "obj-25",
 									"maxclass" : "panel",
 									"mode" : 0,
@@ -1781,7 +1810,8 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 1 ],
+									"destination" : [ "obj-5", 0 ],
+									"midpoints" : [ 222.371139999999997, 431.349640000000022, 111.5, 431.349640000000022 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1904,9 +1934,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1977,7 +2007,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 10,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2038,13 +2068,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.buf2list.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "helpstarter.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
@@ -2060,6 +2083,10 @@
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.buf2list.mxo",
 				"type" : "iLaX"
 			}
 , 			{

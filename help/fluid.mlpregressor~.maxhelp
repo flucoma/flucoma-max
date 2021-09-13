@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 992.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -56,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -360,7 +361,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 302.0, 387.5, 511.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Toggle to \"play\" mode, allowing the 2D space to be transformed into a 10D space."
 								}
 
@@ -404,7 +404,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 336.0, 417.0, 482.0, 50.0 ],
-									"presentation_linecount" : 5,
 									"text" : "Train the neural network. You can click this multiple times to increase the amount of training. Aim for as small as possible \"loss\" which is emitted in the number box below."
 								}
 
@@ -436,8 +435,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 192.0, 228.0, 211.0, 36.0 ],
-									"text" : "Repeat steps 2 -> 4 several times. When satisfied move to step 8."
+									"patching_rect" : [ 192.0, 228.0, 279.0, 36.0 ],
+									"text" : "Repeat steps 2 -> 4 several times, perhaps 7 times in total. When satisfied move to step 8."
 								}
 
 							}
@@ -456,7 +455,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 170.0, 236.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "8",
+									"text" : "7",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -467,8 +466,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 192.0, 205.0, 150.0, 21.0 ],
-									"text" : "Pick another point."
+									"patching_rect" : [ 192.0, 205.0, 258.0, 21.0 ],
+									"text" : "Pick another point elsewhere in the space."
 								}
 
 							}
@@ -582,8 +581,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 533.25, 160.5, 422.5, 65.0 ],
-									"text" : "Create a point in the input and output fluid.datasets~. They have the same identifier in each. Later the fluid.mlpclassifier~ will train and attempt to figure out a mapping between the two input dimensions and ten output dimensions."
+									"patching_rect" : [ 537.0, 160.5, 442.5, 65.0 ],
+									"text" : "Create a point in the input and output fluid.datasets~. The points will have the same identifier in each dataset~. Later the fluid.mlpclassifier~ will train, attempting to learn a mapping between the input points with two dimensions and the corresponding output points with ten dimensions."
 								}
 
 							}
@@ -658,7 +657,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 5.0, 120.0, 620.0, 36.0 ],
-									"text" : "This is essentially the same patch on the \"basic\" tab, except controls have beene xposed for you to train your own mapping between the two-dimensional input and the ten dimensional synthesiser parameters."
+									"text" : "This is essentially the same patch on the \"basic\" tab, except controls have been exposed for you to train your own mapping between the two-dimensional input and the ten dimensional synthesiser parameters."
 								}
 
 							}
@@ -2449,8 +2448,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
@@ -2985,8 +2984,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -3034,7 +3033,6 @@
 					}
 ,
 					"patching_rect" : [ 70.0, 85.0, 195.0, 22.0 ],
-					"presentation_linecount" : 6,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3065,7 +3063,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 1370.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3114,7 +3112,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 428.0, 183.0, 65.0 ],
-									"presentation_linecount" : 6,
 									"text" : "A pre-trained neural network is loaded for you to play with. If you want to train your own network see the next tab."
 								}
 
@@ -3183,7 +3180,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 5.0, 120.0, 560.0, 79.0 ],
-									"text" : "The fluid.mlpregressor~ is a neural network which can learn complex mappings between input and output data. In this example, a neural network has been pre-trained such that a two-dimensional input is mapped onto a ten-dimensional output. This allows one to control ten parameters of a chaotic synthesiser with only two input values. This network can be retrained with new mappings to investigate different tendencies and musicking."
+									"text" : "The fluid.mlpregressor~ is a neural network which can learn complex mappings between input and output data. In this example, a neural network has been pre-trained such that a two-dimensional input is mapped onto a ten-dimensional output. This allows one to control ten parameters of a chaotic synthesiser with only two input values. This network can be retrained with new mappings to explore other areas in the learned space."
 								}
 
 							}
@@ -4709,8 +4706,8 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
@@ -5167,8 +5164,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
@@ -5246,7 +5243,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

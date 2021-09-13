@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 319.0, 79.0, 526.0, 432.0 ],
+		"rect" : [ 73.0, 140.0, 526.0, 432.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 319.0, 131.0, 526.0, 380.0 ],
+						"rect" : [ 73.0, 166.0, 526.0, 406.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -92,7 +92,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 179.0, 280.189872999999977, 98.0, 23.0 ],
+									"patching_rect" : [ 179.0, 306.189872999999977, 98.0, 23.0 ],
 									"text" : "print @popup 1"
 								}
 
@@ -100,12 +100,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 3,
+									"linecount" : 14,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 237.0, 143.229958000000011, 262.0, 50.0 ],
-									"text" : "There aren't ways of selecting offsets, or channels or anything fancy, becaause duct tape. For that sort of thing, see",
+									"patching_rect" : [ 244.0, 87.594936999999959, 264.0, 210.0 ],
+									"text" : "attributes: \n- source <buffername> assigns the buffer to be converted\n- startframe <int>\n- startchan <int>\n- axis <0|1> reading consecutive values frame- or channel-wise\n- numvalues <int> how many values to pick from the start position in the buffer\n\nmessages:\n- bang: triggers the process\n- buffer: changes the name of the source buffer and triggers the process",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -117,8 +117,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 237.0, 81.5, 262.0, 50.0 ],
-									"text" : "Be aware that the maximum list size in Max is 32767. The abstraction won't try to read more than that. ",
+									"patching_rect" : [ 179.0, 337.189873000000034, 262.0, 50.0 ],
+									"text" : "Be aware that the maximum list size in Max is 32767. The object will not try to read more than that. ",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -141,8 +141,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 57.0, 262.0, 21.0 ],
-									"text" : "some duct tape to dump a buffer~ into a list ",
+									"patching_rect" : [ 10.0, 57.0, 251.0, 21.0 ],
+									"text" : "a utility object to dump a buffer~ into a list ",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
