@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 169.0, -956.0, 995.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 992.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -114,8 +114,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 482.0, 410.0, 229.0, 181.0 ],
-									"presentation_linecount" : 12,
-									"text" : "Once setpoint is sent to the fluid.dataset~ that contains our analysis, a message is sent to the fluid.labelset~ below associating the ID \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the ID \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that ID>"
+									"text" : "Once setpoint is sent to the fluid.dataset~ that contains our analysis, a message is sent to the fluid.labelset~ below associating the identifier \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the identifier \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that identifier."
 								}
 
 							}
@@ -197,7 +196,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 5.0, 116.0, 515.0, 36.0 ],
-									"text" : "Almost always a fluid.labelset~ will be used in with a fluid.dataset~ for training a fluid.mlpclassifier~ or performing clustering with fluid.kmeans~."
+									"text" : "Almost always a fluid.labelset~ will be used with a fluid.dataset~. Examples of this include training an fluid.mlpclassifier~ or performing clustering with fluid.kmeans~."
 								}
 
 							}
@@ -240,7 +239,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 622.0, 179.0, 229.0, 94.0 ],
-									"text" : "Analyse the buffer named src with the mel-cepstrum frequency coefficient descriptor. Calculate the statistics across each coefficient per spectral frame and flatten the data to a single dimension."
+									"text" : "Analyse the buffer named src with the mel-frequency cepstrum coefficient descriptor. Calculate the statistics across each coefficient per spectral frame and flatten the data to a single dimension."
 								}
 
 							}
@@ -521,9 +520,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -541,7 +540,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -551,7 +549,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -569,7 +568,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 212.0, 85.0, 216.0, 22.0 ],
+					"patching_rect" : [ 93.0, 85.0, 166.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -578,7 +577,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"A Simple Audio-Descriptor Example\"",
+					"text" : "p \"Audio-Descriptor Example\"",
 					"varname" : "basic_tab[2]"
 				}
 
@@ -600,7 +599,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -631,11 +630,471 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-18",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"patching_rect" : [ 5.0, 120.0, 62.0, 23.0 ],
+									"text" : "loadbang"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "dump" ],
+									"patcher" : 									{
+										"fileversion" : 1,
+										"appversion" : 										{
+											"major" : 8,
+											"minor" : 2,
+											"revision" : 0,
+											"architecture" : "x64",
+											"modernui" : 1
+										}
+,
+										"classnamespace" : "box",
+										"rect" : [ 59.0, 106.0, 338.0, 395.0 ],
+										"bglocked" : 0,
+										"openinpresentation" : 0,
+										"default_fontsize" : 12.0,
+										"default_fontface" : 0,
+										"default_fontname" : "Arial",
+										"gridonopen" : 1,
+										"gridsize" : [ 15.0, 15.0 ],
+										"gridsnaponopen" : 1,
+										"objectsnaponopen" : 1,
+										"statusbarvisible" : 2,
+										"toolbarvisible" : 1,
+										"lefttoolbarpinned" : 0,
+										"toptoolbarpinned" : 0,
+										"righttoolbarpinned" : 0,
+										"bottomtoolbarpinned" : 0,
+										"toolbars_unpinned_last_save" : 0,
+										"tallnewobj" : 0,
+										"boxanimatetime" : 200,
+										"enablehscroll" : 1,
+										"enablevscroll" : 1,
+										"devicewidth" : 0.0,
+										"description" : "",
+										"digest" : "",
+										"tags" : "",
+										"style" : "",
+										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
+										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "dump", "bang" ],
+													"patching_rect" : [ 39.75, 194.0, 55.0, 22.0 ],
+													"text" : "t dump b"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-2",
+													"index" : 1,
+													"maxclass" : "outlet",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 75.75, 353.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"comment" : "",
+													"id" : "obj-1",
+													"index" : 1,
+													"maxclass" : "inlet",
+													"numinlets" : 0,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 12.0, 12.0, 30.0, 30.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-103",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "int", "bang" ],
+													"patching_rect" : [ 113.25, 134.0, 116.5, 22.0 ],
+													"text" : "t i b"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-102",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 112.75, 194.0, 112.0, 22.0 ],
+													"text" : "sprintf entry-%i: %s"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-86",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patcher" : 													{
+														"fileversion" : 1,
+														"appversion" : 														{
+															"major" : 8,
+															"minor" : 2,
+															"revision" : 0,
+															"architecture" : "x64",
+															"modernui" : 1
+														}
+,
+														"classnamespace" : "box",
+														"rect" : [ 756.0, 221.0, 288.0, 202.0 ],
+														"bglocked" : 0,
+														"openinpresentation" : 0,
+														"default_fontsize" : 12.0,
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"gridonopen" : 1,
+														"gridsize" : [ 15.0, 15.0 ],
+														"gridsnaponopen" : 1,
+														"objectsnaponopen" : 1,
+														"statusbarvisible" : 2,
+														"toolbarvisible" : 1,
+														"lefttoolbarpinned" : 0,
+														"toptoolbarpinned" : 0,
+														"righttoolbarpinned" : 0,
+														"bottomtoolbarpinned" : 0,
+														"toolbars_unpinned_last_save" : 0,
+														"tallnewobj" : 0,
+														"boxanimatetime" : 200,
+														"enablehscroll" : 1,
+														"enablevscroll" : 1,
+														"devicewidth" : 0.0,
+														"description" : "",
+														"digest" : "",
+														"tags" : "",
+														"style" : "",
+														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
+														"boxes" : [ 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-5",
+																	"index" : 1,
+																	"maxclass" : "outlet",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 13.0, 160.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-4",
+																	"index" : 1,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "bang" ],
+																	"patching_rect" : [ 13.0, 15.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-3",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 13.0, 125.0, 47.0, 22.0 ],
+																	"text" : "zl.nth 1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-2",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 13.0, 92.0, 69.0, 22.0 ],
+																	"text" : "zl.scramble"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-1",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 13.0, 58.0, 265.0, 22.0 ],
+																	"text" : "zl.reg noise tonal atonal scratch brittle bright dull"
+																}
+
+															}
+ ],
+														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-1", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-3", 0 ],
+																	"source" : [ "obj-2", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-5", 0 ],
+																	"source" : [ "obj-3", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-1", 0 ],
+																	"source" : [ "obj-4", 0 ]
+																}
+
+															}
+ ]
+													}
+,
+													"patching_rect" : [ 210.75, 165.0, 118.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"description" : "",
+														"digest" : "",
+														"globalpatchername" : "",
+														"tags" : ""
+													}
+,
+													"text" : "p semi-random-label"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-74",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "bang", "int" ],
+													"patching_rect" : [ 12.0, 99.0, 74.5, 22.0 ],
+													"text" : "uzi 37"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-71",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "dictionary" ],
+													"patching_rect" : [ 75.75, 275.0, 130.0, 22.0 ],
+													"text" : "dict.pack data: cols:1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-70",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "dictionary" ],
+													"patching_rect" : [ 75.75, 245.0, 66.0, 22.0 ],
+													"text" : "dict.group"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-54",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
+													"patching_rect" : [ 111.5, 99.0, 139.0, 22.0 ],
+													"text" : "fluid.labelset~ help.other"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-52",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "clear" ],
+													"patching_rect" : [ 12.0, 64.0, 118.5, 22.0 ],
+													"text" : "t b clear"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-43",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 75.75, 310.0, 84.0, 22.0 ],
+													"text" : "prepend load"
+												}
+
+											}
+ ],
+										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-52", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-70", 0 ],
+													"midpoints" : [ 122.25, 230.0, 85.25, 230.0 ],
+													"source" : [ "obj-102", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-102", 0 ],
+													"source" : [ "obj-103", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-86", 0 ],
+													"source" : [ "obj-103", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"midpoints" : [ 49.25, 347.0, 85.25, 347.0 ],
+													"source" : [ "obj-3", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-70", 0 ],
+													"midpoints" : [ 85.25, 218.0, 85.25, 218.0 ],
+													"source" : [ "obj-3", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-43", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-54", 0 ],
+													"source" : [ "obj-52", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-74", 0 ],
+													"source" : [ "obj-52", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-71", 0 ],
+													"source" : [ "obj-70", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-43", 0 ],
+													"source" : [ "obj-71", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-103", 0 ],
+													"midpoints" : [ 77.0, 131.0, 122.75, 131.0 ],
+													"source" : [ "obj-74", 2 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-3", 0 ],
+													"source" : [ "obj-74", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-102", 1 ],
+													"source" : [ "obj-86", 0 ]
+												}
+
+											}
+ ]
+									}
+,
+									"patching_rect" : [ 5.0, 153.0, 166.0, 23.0 ],
+									"saved_object_attributes" : 									{
+										"description" : "",
+										"digest" : "",
+										"globalpatchername" : "",
+										"tags" : ""
+									}
+,
+									"text" : "p \"make a dummy labelset\""
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-27",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 150.0, 240.0, 353.0, 21.0 ],
+									"patching_rect" : [ 176.0, 315.0, 353.0, 21.0 ],
 									"text" : "Dump the contents of the fluid.dataset~ to a Max dictionary."
 								}
 
@@ -647,7 +1106,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 85.0, 240.0, 41.0, 23.0 ],
+									"patching_rect" : [ 111.0, 315.0, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -665,7 +1124,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 150.0, 278.0, 20.0, 20.0 ],
+									"patching_rect" : [ 176.0, 353.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -678,7 +1137,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.0, 495.0, 303.0, 200.0 ]
+									"patching_rect" : [ 136.0, 565.0, 309.0, 180.0 ]
 								}
 
 							}
@@ -695,7 +1154,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 128.0, 241.5, 20.0, 20.0 ],
+									"patching_rect" : [ 154.0, 316.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -708,7 +1167,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 206.0, 460.0, 98.0, 23.0 ],
+									"patching_rect" : [ 191.0, 535.0, 98.0, 23.0 ],
 									"text" : "print @popup 1"
 								}
 
@@ -720,7 +1179,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 151.0, 420.0, 74.0, 23.0 ],
+									"patching_rect" : [ 136.0, 495.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -731,7 +1190,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 115.0, 201.5, 345.0, 21.0 ],
+									"patching_rect" : [ 141.0, 276.5, 345.0, 21.0 ],
 									"text" : "Get the size (number of identifiers with associated labels)."
 								}
 
@@ -743,7 +1202,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 57.0, 200.0, 32.0, 23.0 ],
+									"patching_rect" : [ 83.0, 275.0, 32.0, 23.0 ],
 									"text" : "size"
 								}
 
@@ -754,7 +1213,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 94.5, 161.5, 233.0, 21.0 ],
+									"patching_rect" : [ 120.5, 236.5, 233.0, 21.0 ],
 									"text" : "Read a fluid.labelset~ from disk."
 								}
 
@@ -766,7 +1225,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 33.0, 160.0, 35.0, 23.0 ],
+									"patching_rect" : [ 59.0, 235.0, 35.0, 23.0 ],
 									"text" : "read"
 								}
 
@@ -784,7 +1243,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 93.0, 201.5, 20.0, 20.0 ],
+									"patching_rect" : [ 119.0, 276.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -797,7 +1256,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 65.0, 126.5, 233.0, 21.0 ],
+									"patching_rect" : [ 91.0, 201.5, 233.0, 21.0 ],
 									"text" : "Write a fluid.labelset~ to disk."
 								}
 
@@ -809,7 +1268,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 125.0, 36.0, 23.0 ],
+									"patching_rect" : [ 31.0, 200.0, 36.0, 23.0 ],
 									"text" : "write"
 								}
 
@@ -827,7 +1286,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 72.5, 161.5, 20.0, 20.0 ],
+									"patching_rect" : [ 98.5, 236.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -840,7 +1299,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 172.0, 278.0, 233.0, 21.0 ],
+									"patching_rect" : [ 198.0, 353.0, 233.0, 21.0 ],
 									"text" : "Completely reset a fluid.labelset~."
 								}
 
@@ -852,7 +1311,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 111.0, 275.0, 37.0, 23.0 ],
+									"patching_rect" : [ 137.0, 350.0, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -870,7 +1329,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 43.0, 126.5, 20.0, 20.0 ],
+									"patching_rect" : [ 69.0, 201.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.929411764705882, 0.941176470588235, 0.956862745098039, 1.0 ]
@@ -884,8 +1343,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 5.0, 385.0, 165.0, 23.0 ],
-									"text" : "fluid.labelset~ help.labelset"
+									"patching_rect" : [ 5.0, 460.0, 150.0, 23.0 ],
+									"text" : "fluid.labelset~ help.other"
 								}
 
 							}
@@ -916,7 +1375,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 42.5, 370.0, 14.5, 370.0 ],
+									"midpoints" : [ 68.5, 445.0, 14.5, 445.0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -924,7 +1383,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 66.5, 370.0, 14.5, 370.0 ],
+									"midpoints" : [ 92.5, 445.0, 14.5, 445.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -945,8 +1404,15 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-18", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 94.5, 370.0, 14.5, 370.0 ],
+									"midpoints" : [ 120.5, 445.0, 14.5, 445.0 ],
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -954,7 +1420,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 120.5, 370.0, 14.5, 370.0 ],
+									"midpoints" : [ 146.5, 445.0, 14.5, 445.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -962,7 +1428,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 14.5, 151.0, 14.5, 151.0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"midpoints" : [ 40.5, 226.0, 14.5, 226.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -971,9 +1444,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -991,7 +1464,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1001,7 +1473,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1019,7 +1492,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 94.0, 85.0, 115.0, 22.0 ],
+					"patching_rect" : [ 263.0, 85.0, 115.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1050,7 +1523,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 169.0, -930.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1218,7 +1691,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 261.0, 340.0, 150.0, 22.0 ],
+									"patching_rect" : [ 261.0, 305.0, 150.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1243,7 +1716,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 35.0, 197.0, 20.0, 20.0 ],
+									"patching_rect" : [ 35.0, 162.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1256,7 +1729,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 57.0, 197.0, 326.0, 20.0 ],
+									"patching_rect" : [ 57.0, 162.0, 326.0, 20.0 ],
 									"text" : "Generate random data to be stored in the fluid.dataset~"
 								}
 
@@ -1267,7 +1740,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 440.0, 235.0, 170.0, 500.0 ]
+									"patching_rect" : [ 440.0, 200.0, 170.0, 500.0 ]
 								}
 
 							}
@@ -1278,7 +1751,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 171.75, 570.0, 39.0, 22.0 ],
+									"patching_rect" : [ 171.75, 535.0, 39.0, 22.0 ],
 									"text" : "dump"
 								}
 
@@ -1290,7 +1763,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 171.75, 535.0, 133.75, 22.0 ],
+									"patching_rect" : [ 171.75, 500.0, 133.75, 22.0 ],
 									"text" : "route load dump"
 								}
 
@@ -1302,7 +1775,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "int", "bang" ],
-									"patching_rect" : [ 60.5, 310.0, 219.5, 22.0 ],
+									"patching_rect" : [ 60.5, 275.0, 219.5, 22.0 ],
 									"text" : "t i b"
 								}
 
@@ -1314,7 +1787,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 60.5, 370.0, 112.0, 22.0 ],
+									"patching_rect" : [ 60.5, 335.0, 112.0, 22.0 ],
 									"text" : "sprintf entry-%i: %s"
 								}
 
@@ -1326,7 +1799,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "bang", "int" ],
-									"patching_rect" : [ 5.0, 270.0, 74.5, 22.0 ],
+									"patching_rect" : [ 5.0, 235.0, 74.5, 22.0 ],
 									"text" : "uzi 100"
 								}
 
@@ -1338,7 +1811,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 32.75, 435.0, 121.0, 22.0 ],
+									"patching_rect" : [ 32.75, 400.0, 121.0, 22.0 ],
 									"text" : "dict.pack data: cols:1"
 								}
 
@@ -1350,7 +1823,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 32.75, 405.0, 61.0, 22.0 ],
+									"patching_rect" : [ 32.75, 370.0, 61.0, 22.0 ],
 									"text" : "dict.group"
 								}
 
@@ -1363,7 +1836,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 195.0, 24.0, 24.0 ]
+									"patching_rect" : [ 5.0, 160.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1374,7 +1847,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 104.5, 270.0, 158.0, 22.0 ],
+									"patching_rect" : [ 104.5, 235.0, 158.0, 22.0 ],
 									"text" : "fluid.labelset~ dictionary-fun"
 								}
 
@@ -1386,7 +1859,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "clear" ],
-									"patching_rect" : [ 5.0, 235.0, 118.5, 22.0 ],
+									"patching_rect" : [ 5.0, 200.0, 118.5, 22.0 ],
 									"text" : "t b clear"
 								}
 
@@ -1394,12 +1867,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
-									"linecount" : 4,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 120.0, 525.0, 60.0 ],
-									"text" : "You can construct the contents of a fluid.dataset~ programatically by creating a dictionary in the correct format. This also means you can format data in other environments and languages in this way and load it into the dataset directly. In the example below, we will use random number generation to create a toy dataset by first loading the information into a dictionary."
+									"patching_rect" : [ 5.0, 120.0, 525.0, 33.0 ],
+									"text" : "It is possible to programatically construct a dataset inside a dict object and then \"load\" the dict into the fluid.dataset~. This might facilitate working across different paradigms with your data."
 								}
 
 							}
@@ -1410,7 +1883,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 32.75, 470.0, 81.0, 22.0 ],
+									"patching_rect" : [ 32.75, 435.0, 81.0, 22.0 ],
 									"text" : "prepend load"
 								}
 
@@ -1422,7 +1895,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 32.75, 502.0, 158.0, 22.0 ],
+									"patching_rect" : [ 32.75, 467.0, 158.0, 22.0 ],
 									"text" : "fluid.labelset~ dictionary-fun"
 								}
 
@@ -1482,7 +1955,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-108", 0 ],
-									"midpoints" : [ 238.625, 567.0, 426.0, 567.0, 426.0, 231.0, 449.5, 231.0 ],
+									"midpoints" : [ 238.625, 532.0, 426.0, 532.0, 426.0, 196.0, 449.5, 196.0 ],
 									"source" : [ "obj-104", 1 ]
 								}
 
@@ -1490,7 +1963,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 181.25, 593.0, 25.5, 593.0, 25.5, 497.0, 42.25, 497.0 ],
+									"midpoints" : [ 181.25, 558.0, 25.5, 558.0, 25.5, 462.0, 42.25, 462.0 ],
 									"source" : [ "obj-107", 0 ]
 								}
 
@@ -1498,7 +1971,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-102", 1 ],
-									"midpoints" : [ 270.5, 363.0, 163.0, 363.0 ],
+									"midpoints" : [ 270.5, 328.0, 163.0, 328.0 ],
 									"source" : [ "obj-13", 0 ]
 								}
 
@@ -1563,9 +2036,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1583,7 +2056,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1593,7 +2065,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1611,7 +2084,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 432.0, 85.0, 90.0, 22.0 ],
+					"patching_rect" : [ 380.0, 85.0, 37.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1619,7 +2092,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p Dictionaries"
+					"text" : "p dict"
 				}
 
 			}
@@ -1640,7 +2113,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1697,8 +2170,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 389.0, 384.5, 318.0, 36.0 ],
-									"presentation_linecount" : 2,
-									"text" : "Delete the label with the ID huddersfield, and dump the labelset to a dictionary again."
+									"text" : "Delete the label with the identifier huddersfield, and dump the labelset to a dictionary again."
 								}
 
 							}
@@ -1710,7 +2182,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 179.0, 384.5, 186.0, 23.0 ],
-									"presentation_linecount" : 7,
 									"text" : "deletelabel huddersfield, dump"
 								}
 
@@ -1742,7 +2213,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 222.0, 336.0, 318.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Dump again to see how the labels have changed."
 								}
 
@@ -1810,8 +2280,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 385.0, 239.75, 266.0, 79.0 ],
-									"presentation_linecount" : 6,
+									"patching_rect" : [ 385.0, 239.75, 269.0, 79.0 ],
 									"text" : "Set and update labels with the corresponding messages. The setlabel message will create the label if it doesn note exist, while updatelabel message assumes it already exists and will not make it."
 								}
 
@@ -1843,7 +2312,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 147.0, 198.5, 291.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Dump the labelset to inspect the internal state."
 								}
 
@@ -1890,7 +2358,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 35.0, 160.0, 160.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "addlabel huddersfield cold"
 								}
 
@@ -1934,7 +2401,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 228.0, 130.0, 240.0, 36.0 ],
+									"patching_rect" : [ 228.0, 130.0, 242.0, 36.0 ],
 									"text" : "Add labels with the addlabel <identifier> <label> structured message. "
 								}
 
@@ -2059,9 +2526,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2079,7 +2546,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2089,7 +2555,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2107,7 +2574,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 10.0, 85.0, 81.0, 22.0 ],
+					"patching_rect" : [ 10.0, 85.0, 47.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2116,7 +2583,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p Introduction",
+					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
 
@@ -2138,7 +2605,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
