@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: install ninja
+      run: brew install ninja
+
     - name: curl SDK
       run: curl -L0 https://cycling74.s3.amazonaws.com/download/max-sdk-8.0.3.zip --output sdk.zip
 
@@ -24,9 +27,9 @@ jobs:
       run: mkdir -p build
       
     - name: cmake
-      run: cmake -DMAX_SDK_PATH=../max-sdk-8.0.3/ ..
+      run: cmake -GNinja -DMAX_SDK_PATH=../max-sdk-8.0.3/ ..
       working-directory: build
       
     - name: install
-      run: make install
+      run: ninja
       working-directory: build
