@@ -14,9 +14,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: get SDK
-      run: git clone https://github.com/Cycling74/max-sdk-base.git sdk
+    - name: curl SDK
+      run: curl -L0 https://cycling74.s3.amazonaws.com/download/max-sdk-8.0.3.zip --output sdk.zip
 
+    - name: unzip
+      run: unzip sdk.zip
+      
     - name: make build directory
       run: mkdir -p build
       
@@ -24,7 +27,7 @@ jobs:
       run: cd build
       
     - name: cmake
-      run: cmake -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64"..
+      run: cmake -DMAX_SDK_PATH=../max-sdk-8.0.3/ -DCMAKE_OSX_ARCHITECTURES="x86_64"..
       
     - name: install
       run: make install
