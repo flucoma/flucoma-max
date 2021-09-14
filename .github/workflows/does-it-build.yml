@@ -14,6 +14,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: get SDK
+      run: git clone https://github.com/Cycling74/max-sdk-base.git sdk
+
     - name: make build directory
       run: mkdir -p build
       
@@ -21,7 +24,7 @@ jobs:
       run: cd build
       
     - name: cmake
-      run: cmake -DCMAKE_OSX_ARCHITECTURES="x86_64"..
+      run: cmake -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64"..
       
     - name: install
       run: make install
