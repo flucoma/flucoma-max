@@ -23,14 +23,10 @@ jobs:
     - name: make build directory
       run: mkdir -p build
       
-    - name: change to build directory
-      run: cd build
-
-    - name: list
-      run: ls
-      
     - name: cmake
       run: cmake -DMAX_SDK_PATH=../max-sdk-8.0.3/ ..
+      working-directory: build
       
     - name: install
       run: make install
+      working-directory: build
