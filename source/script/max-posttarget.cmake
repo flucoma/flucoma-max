@@ -56,8 +56,8 @@ if(DEFINED FLUID_ARCH)
 endif()
 
 ### Output ###
-target_sources(${PROJECT_NAME} PRIVATE "${C74_MAX_API_DIR}/max-includes/common/commonsyms.c")
 if (APPLE)
+  
 	find_library(JITTER_LIBRARY "JitterAPI" HINTS "${C74_MAX_API_DIR}/jit-includes")
   find_library(MAX_AUDIO_API "MaxAudioAPI" HINTS "${C74_MAX_API_DIR}/msp-includes")
 
@@ -81,7 +81,10 @@ if (APPLE)
     
   #If we target 10.7 (actually < 10.9), we have to manually include this:
   target_compile_options(${PROJECT_NAME} PRIVATE -stdlib=libc++)
-elseif (WIN32)  
+elseif (WIN32)
+  
+  target_sources(${PROJECT_NAME} PRIVATE "${C74_MAX_API_DIR}/max-includes/common/commonsyms.c")
+  
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAudio_LIB})
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${Jitter_LIB})
