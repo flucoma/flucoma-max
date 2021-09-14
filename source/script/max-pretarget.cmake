@@ -17,7 +17,7 @@ endif()
 
 if (NOT DEFINED C74_MAX_API_DIR)
    file(TO_CMAKE_PATH "${MAX_SDK_PATH}" MAX_SDK_FULLPATH)
-   set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/max-sdk-base/c74support")
+   set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/c74support")
 endif ()
 #set(C74_INCLUDES "${C74_MAX_API_DIR}/include")
 set(C74_MAX_INCLUDES ${C74_MAX_API_DIR}/max-includes)
