@@ -30,7 +30,7 @@ jobs:
       run: cd build
       
     - name: cmake
-      run: cmake -DMAX_SDK_PATH=../max-sdk-8.0.3/ -DCMAKE_OSX_ARCHITECTURES="x86_64"..
+      run: cmake -DMAX_SDK_PATH=../max-sdk-8.0.3/ ..
       
     - name: install
       run: make install
