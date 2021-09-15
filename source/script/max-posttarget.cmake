@@ -3,6 +3,10 @@
 
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_14)
 
+target_sources(${PROJECT_NAME} PRIVATE 
+  "${C74_MAX_API_DIR}/max-includes/common/commonsyms.c"
+)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES
     CXX_STANDARD 14
     CXX_STANDARD_REQUIRED ON
@@ -26,7 +30,7 @@ if(MSVC)
   target_compile_options(${PROJECT_NAME} PRIVATE /W3 )
 else()
   target_compile_options(${PROJECT_NAME} PRIVATE
-    -Wall -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wpedantic -Wreturn-type
+    -Wall -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wpedantic -Wreturn-type -include "${C74_MAX_INCLUDES}/macho-prefix.pch"
   )
 endif()
 
@@ -82,9 +86,7 @@ if (APPLE)
   #If we target 10.7 (actually < 10.9), we have to manually include this:
   target_compile_options(${PROJECT_NAME} PRIVATE -stdlib=libc++)
 elseif (WIN32)
-  
-  target_sources(${PROJECT_NAME} PRIVATE "${C74_MAX_API_DIR}/max-includes/common/commonsyms.c")
-  
+    
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAPI_LIB})
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${MaxAudio_LIB})
 	target_link_libraries(${PROJECT_NAME} PRIVATE ${Jitter_LIB})
