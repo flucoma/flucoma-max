@@ -24,7 +24,7 @@ if (NOT DEFINED C74_MAX_API_DIR)
      set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/max-sdk-base/c74support")
     # newer SDK layout, just max-sdk-base   
    elseif(EXISTS "${MAX_SDK_FULLPATH}/c74support")   
-      set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/74support")
+      set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/c74support")
    else()
      message(FATAL_ERROR "Could not find Cycling 74 support folder")
    endif()
