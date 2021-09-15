@@ -114,7 +114,7 @@ public:
               audioInputConnections.begin());
 
     assert((client.audioChannelsOut() > 0) !=
-               (client.controlChannelsOut() > 0) &&
+               (client.controlChannelsOut().count > 0) &&
            "Client must *either* be audio out or control out, sorry");
 
     audioOutputConnections.resize(asUnsigned(client.audioChannelsOut()));
@@ -128,16 +128,19 @@ public:
     if (client.audioChannelsOut() > 0)
       mOutputs = std::vector<ViewType>(asUnsigned(client.audioChannelsOut()),
                                        ViewType(nullptr, 0, 0));
-    if (client.controlChannelsOut() > 0)
+    if (client.controlChannelsOut().count > 0)
     {
       mControlClock =
           mControlClock ? mControlClock
                         : clock_new((t_object*) wrapper, (method) doControlOut);
       mTick.clear();
-      mOutputs = std::vector<ViewType>(asUnsigned(client.controlChannelsOut()),
-                                       ViewType(nullptr, 0, 0));
-      mControlOutputs.resize(asUnsigned(client.controlChannelsOut()));
-      mControlAtoms.resize(asUnsigned(client.controlChannelsOut()));
+
+      mControlOutputs.resize(asUnsigned(client.controlChannelsOut().size));
+      
+      mOutputs.clear(); 
+      mOutputs.emplace_back(mControlOutputs.data(),0,mControlOutputs.size());
+      mControlAtoms.resize(asUnsigned(client.controlChannelsOut().size));
+      
     }
 
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform),
@@ -163,9 +166,7 @@ public:
       mOutputs[asUnsigned(i)].reset(outs[asUnsigned(i)], 0, sampleframes);
     }
 
-    for (index i = 0; i < client.controlChannelsOut(); ++i)
-      mOutputs[asUnsigned(i)].reset(&mControlOutputs[asUnsigned(i)], 0, 1);
-
+    std::fill(mControlOutputs.begin(), mControlOutputs.end(),0.0);
     client.process(mInputs, mOutputs, mContext);
 
     if (mControlClock && !mTick.test_and_set()) clock_delay(mControlClock, 0);
@@ -178,9 +179,9 @@ public:
     Wrapper* w = static_cast<Wrapper*>(this);
     auto&    client = w->client();
     atom_setdouble_array(
-        static_cast<long>(client.controlChannelsOut()), mControlAtoms.data(),
-        static_cast<long>(client.controlChannelsOut()), mControlOutputs.data());
-    w->controlOut(static_cast<long>(client.controlChannelsOut()),
+        static_cast<long>(client.controlChannelsOut().size), mControlAtoms.data(),
+        static_cast<long>(client.controlChannelsOut().size), mControlOutputs.data());
+    w->controlOut(static_cast<long>(client.controlChannelsOut().size),
                   mControlAtoms.data());
     mTick.clear();
   }
@@ -200,7 +201,7 @@ public:
         break;
       }
       else if (index <
-               client.audioChannelsOut() + (client.controlChannelsOut() > 0))
+               client.audioChannelsOut() + (client.controlChannelsOut().count > 0))
       {
         snprintf_zero(s, 512, "(list) %s", client.getOutputLabel(index));
         break;
@@ -968,17 +969,17 @@ public:
 
     if (isNonRealTime<Client>::value) { mNRTDoneOutlet = bangout(this); }
 
-    if (mClient.controlChannelsOut())
+    if (mClient.controlChannelsOut().count)
     {
       if(mListSize)
       {
-        mOutputListData.resize(mClient.controlChannelsOut(), mListSize);
+        mOutputListData.resize(mClient.controlChannelsOut().count, mListSize);
         mOutputListAtoms.reserve(mListSize);
-        for (index i = 0; i < mClient.controlChannelsOut(); ++i)
+        for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
           mOutputListViews.emplace_back(mOutputListData.row(i));
       }
-      mAllControlOuts.reserve(mClient.controlChannelsOut());
-      for (index i = 0; i < mClient.controlChannelsOut(); ++i)
+      mAllControlOuts.reserve(mClient.controlChannelsOut().count);
+      for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
         mAllControlOuts.push_back(listout(this));
       mControlOutlet = mAllControlOuts[0];
     }
@@ -1131,10 +1132,10 @@ public:
           mInputListViews.emplace_back(mInputListData.row(i));
         }
         std::cout << mInputListViews.size() << '\n';
-        mOutputListData.resize(mClient.controlChannelsOut(),mListSize);
+        mOutputListData.resize(mClient.controlChannelsOut().count,mListSize);
         mOutputListAtoms.reserve(mListSize);
         mOutputListViews.clear();
-        for (index i = 0; i < mClient.controlChannelsOut(); ++i)
+        for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
         {
           mOutputListViews.emplace_back(mOutputListData.row(i));
         }
