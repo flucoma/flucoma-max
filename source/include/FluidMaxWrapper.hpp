@@ -879,7 +879,7 @@ public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mMessages{}, mParams(Client::getParameterDescriptors()),
         mParamSnapshot(Client::getParameterDescriptors()),
-        mClient{initParamsFromArgs(ac, av)}
+        mClient{initParamsFromArgs(ac, av)},mDumpDictionary{nullptr}
   {
     if (mClient.audioChannelsIn())
     {
