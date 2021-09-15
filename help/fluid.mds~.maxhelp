@@ -1266,7 +1266,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 327.0, 251.25, 227.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer mds.help.smallpoint",
+													"text" : "fluid.buf2list @source mds.help.smallpoint",
 													"varname" : "fluid.buf2list"
 												}
 

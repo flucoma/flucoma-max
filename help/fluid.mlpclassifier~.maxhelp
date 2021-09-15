@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 1242.0, 811.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 1370.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1242.0, 785.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -94,7 +94,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 390.0, 241.5, 217.0, 50.0 ],
-									"presentation_linecount" : 7,
 									"text" : "Everytime transformpoint is called on fluid.normalize~ send the message predictpoint <buffer>"
 								}
 
@@ -127,7 +126,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 1058.5, 144.5, 125.0, 65.0 ],
-									"presentation_linecount" : 4,
 									"text" : "Play back one of the audio tracks that we created the training set with."
 								}
 
@@ -257,7 +255,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 760.0, 166.0, 144.0, 152.0 ],
-									"presentation_linecount" : 10,
 									"text" : "Press the predict button to make the fluid.mlpclassifier~. This is performed by taking the MFCCs stored in zl.reg, turning that list into a buffer and then constructing the message predictpoint <buffer>."
 								}
 
@@ -362,7 +359,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.0, 302.0, 239.0, 50.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Training will start automatically after normalisation. Turn off when the loss is low enough."
 								}
 
@@ -517,9 +513,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -537,7 +533,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -547,7 +542,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -602,7 +598,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 178.0, 255.0, 173.0, 23.0 ],
-									"presentation_linecount" : 3,
 									"text" : "predictpoint normalisedPoint"
 								}
 
@@ -961,7 +956,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 91.0, 400.0, 160.0, 23.0 ],
-									"presentation_linecount" : 3,
 									"text" : "fit mfcc-data.normal labels"
 								}
 
@@ -1035,7 +1029,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.5, 120.0, 607.5, 625.0 ],
+									"patching_rect" : [ 5.5, 120.0, 607.5, 550.0 ],
 									"proportion" : 0.5
 								}
 
@@ -1193,9 +1187,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1213,7 +1207,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1223,7 +1216,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1242,7 +1236,6 @@
 					}
 ,
 					"patching_rect" : [ 524.0, 80.0, 141.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1273,7 +1266,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1242.0, 785.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1397,12 +1390,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-80",
-									"linecount" : 16,
+									"linecount" : 14,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 575.0, 310.0, 328.0, 253.0 ],
-									"presentation_linecount" : 22,
+									"patching_rect" : [ 575.0, 285.0, 393.0, 224.0 ],
 									"text" : "Instead of training directly on the mfcc-data fluid.dataset~, the data will be normalised. Normalisation will scale the values in the dataset between a given minimum and maximum (0 and 1 by default). Doing this means that each column of our data contributes equally to the dataset. To read more about this, see https://learn.flucoma.org/overviews/why-scale.\n\nWe will also have to normalise any new incoming data according to the minimum and maximums which are derived from the orignial un-normalised data. To do this we need to have access to the fluid.normalize~ object which performed the normalisation for us and to leverage the transformpont message. You'll see this in the next tab.\n\n"
 								}
 
@@ -1473,7 +1465,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 920.0, 700.0, 45.0, 45.0 ]
+									"patching_rect" : [ 960.0, 700.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1577,9 +1569,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1597,7 +1589,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1607,7 +1598,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1656,7 +1648,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 1242.0, 785.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2038,9 +2030,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -2058,7 +2050,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2068,7 +2059,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -2145,7 +2137,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 956.0, 660.0, 45.0, 45.0 ]
+									"patching_rect" : [ 956.0, 700.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -2707,9 +2699,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2727,7 +2719,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2737,7 +2728,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2786,7 +2778,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1242.0, 785.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2841,8 +2833,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 940.0, 662.5, 385.0, 21.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 940.0, 662.5, 264.0, 21.0 ],
 									"text" : "Clear the datasets if you want to start again."
 								}
 
@@ -2887,32 +2878,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 637.0, 655.0, 210.0, 65.0 ],
-									"presentation_linecount" : 5,
-									"text" : "Create an \"addlabel\" message in the format addlabel <label> <id>, in which case the id can be found in a fluid.dataset~. "
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-20",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 1070.0, 560.0, 190.0, 23.0 ],
-									"text" : "read /Users/james/labelset.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-22",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 1070.0, 535.0, 188.0, 23.0 ],
-									"text" : "read /Users/james/dataset.json"
+									"text" : "Create an \"addlabel\" message in the format addlabel <label> <identifier>, in which case the id can be found in a fluid.dataset~. "
 								}
 
 							}
@@ -2934,7 +2900,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 135.0, 333.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3156,7 +3122,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 1320.0, 701.75, 45.0, 45.0 ]
+									"patching_rect" : [ 315.0, 293.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -3350,12 +3316,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-43",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 121.0, 540.0, 308.0, 50.0 ],
-									"text" : "Create an \"addpoint\" message in the format addpoint <id> <buffer>. The <id> is a unique name associated to the data stored in the <buffer>."
+									"patching_rect" : [ 121.0, 540.0, 308.0, 65.0 ],
+									"text" : "Create an \"addpoint\" message in the format addpoint <identifier> <buffer>. The <identifier> is a unique name associated to the data stored in the <buffer>."
 								}
 
 							}
@@ -3384,7 +3350,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 140.5, 320.0, 20.0, 20.0 ],
+									"patching_rect" : [ 130.5, 305.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3398,7 +3364,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 163.5, 305.0, 150.0, 50.0 ],
+									"patching_rect" : [ 153.5, 290.5, 150.0, 50.0 ],
 									"text" : "Select an input source (or press stop to stop playback)"
 								}
 
@@ -3976,9 +3942,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -3996,7 +3962,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4006,7 +3971,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -4071,7 +4037,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1242.0, 785.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
