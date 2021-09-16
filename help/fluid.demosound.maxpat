@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
+			"minor" : 2,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-64",
@@ -84,7 +85,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 850.5, 157.0, 99.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "fluid.patchpath.js",
+						"filename" : "fluid.patchpath",
 						"parameter_enable" : 0
 					}
 ,
@@ -399,7 +400,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -433,9 +434,9 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"color" : [ 1.0, 1.0, 1.0, 1.0 ],
 									"id" : "obj-15",
 									"maxclass" : "jweb",
 									"numinlets" : 1,
@@ -445,7 +446,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 0.0, -1.0, 529.0, 554.0 ],
 									"rendermode" : 1,
-									"url" : ""
+									"url" : "file://-credits.txt"
 								}
 
 							}
@@ -588,6 +589,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-1",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -597,7 +599,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -631,6 +633,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-17",
@@ -720,7 +723,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
+											"minor" : 2,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -754,6 +757,7 @@
 										"tags" : "",
 										"style" : "",
 										"subpatcher_template" : "",
+										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
 													"fontname" : "Arial",
@@ -1061,18 +1065,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
 									"patching_rect" : [ 23.0, 442.0, 51.0, 22.0 ],
-									"saved_object_attributes" : 									{
-										"basictuning" : 440,
-										"followglobaltempo" : 0,
-										"formantcorrection" : 0,
-										"mode" : "basic",
-										"originallength" : [ 2219.080272108843474, "ticks" ],
-										"originaltempo" : 120.0,
-										"pitchcorrection" : 0,
-										"quality" : "basic",
-										"timestretch" : [ 0 ]
-									}
-,
 									"text" : "sfplay~"
 								}
 
@@ -1135,14 +1127,14 @@
 									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "color",
 									"id" : "obj-5",
-									"items" : [ "Browse...", ",", "<separator>", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+									"items" : [ "Browse...", ",", "<separator>", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 154.0, 279.0, 100.0, 22.0 ],
-									"prefix" : "",
+									"prefix" : "~/dev/flucoma/max/media/",
 									"presentation" : 1,
 									"presentation_rect" : [ 32.0, 3.0, 147.641829999999999, 22.0 ],
 									"style" : "AudioStatus_Menu",
@@ -1152,7 +1144,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"id" : "obj-2",
 									"maxclass" : "playbar",
 									"numinlets" : 1,
@@ -1426,7 +1417,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1460,6 +1451,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -1845,7 +1837,7 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 256.0, 91.814605999999998, 712.0, 22.0 ],
-					"text" : "patcherargs @module 0 @vol -20 @loop 0 @file anton.aif @wave 0 @freq 440 @noise 0 @filter 0 @flucomafile Nicol-LoopE-M.wav"
+					"text" : "patcherargs @module 0 @vol -20 @loop 1 @file anton.aif @wave 0 @freq 440 @noise 0 @filter 0 @flucomafile Nicol-LoopE-M.wav"
 				}
 
 			}
@@ -1860,6 +1852,7 @@
 					"hidden" : 1,
 					"id" : "obj-3",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -1869,7 +1862,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1903,6 +1896,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -2305,7 +2299,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2339,7 +2333,8 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
-						"globalpatchername" : "[1][1][1][3][1][1][3][2][1][1][1][1][1][2][3][3][1][17][4][1][2][2][1][1]",
+						"assistshowspatchername" : 0,
+						"globalpatchername" : "[1][1][1][3][1][1][3][2][1][1][1][1][1][2][3][3][1][17][4][1][2][2][1][1][1]",
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-6",
@@ -2648,7 +2643,7 @@
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
-						"globalpatchername" : "[1][1][1][3][1][1][3][2][1][1][1][1][1][2][3][3][1][17][4][1][2][2][1][1]",
+						"globalpatchername" : "[1][1][1][3][1][1][3][2][1][1][1][1][1][2][3][3][1][17][4][1][2][2][1][1][1]",
 						"tags" : ""
 					}
 ,
@@ -2723,6 +2718,7 @@
 					"hidden" : 1,
 					"id" : "obj-26",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -2732,7 +2728,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2766,6 +2762,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -2867,7 +2864,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"id" : "obj-2",
 									"maxclass" : "number",
 									"numinlets" : 1,
@@ -2877,7 +2873,6 @@
 									"patching_rect" : [ 26.0, 98.0, 51.0, 22.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 90.0, 2.0, 51.0, 22.0 ],
-									"textcolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ],
 									"triscale" : 0.75
 								}
 
@@ -2962,6 +2957,7 @@
 					"hidden" : 1,
 					"id" : "obj-21",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -2971,7 +2967,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
+							"minor" : 2,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3005,6 +3001,7 @@
 						"tags" : "",
 						"style" : "",
 						"subpatcher_template" : "",
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"fontname" : "Arial",
@@ -3109,7 +3106,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"format" : 6,
@@ -3122,7 +3118,6 @@
 									"patching_rect" : [ 274.333344000000011, 425.947357000000011, 50.0, 22.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 107.0, 45.0, 50.0, 22.0 ],
-									"textcolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ],
 									"triscale" : 0.75
 								}
 
@@ -3145,7 +3140,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"id" : "obj-24",
 									"maxclass" : "toggle",
 									"numinlets" : 1,
@@ -3204,7 +3198,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 0.2, 0.2, 0.2, 1.0 ],
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"format" : 6,
@@ -3217,7 +3210,6 @@
 									"patching_rect" : [ 155.241210999999993, 67.947356999999997, 53.0, 22.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 44.0, 23.0, 53.0, 22.0 ],
-									"textcolor" : [ 0.968627, 0.968627, 0.968627, 1.0 ],
 									"triscale" : 0.75
 								}
 
@@ -3412,12 +3404,12 @@
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_enum" : [ "sine", "saw", "square", "random" ],
-											"parameter_type" : 2,
-											"parameter_unitstyle" : 0,
+											"parameter_initial" : [ 0.0 ],
 											"parameter_longname" : "live.tab[3]",
 											"parameter_mmax" : 3,
-											"parameter_initial" : [ 0.0 ],
-											"parameter_shortname" : "live.tab[1]"
+											"parameter_shortname" : "live.tab[1]",
+											"parameter_type" : 2,
+											"parameter_unitstyle" : 9
 										}
 
 									}
@@ -3660,15 +3652,19 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 176.0, 9.0, 43.0, 107.0 ],
 					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : ""
+						}
+,
 						"valueof" : 						{
-							"parameter_type" : 0,
-							"parameter_unitstyle" : 4,
-							"parameter_mmin" : -70.0,
-							"parameter_longname" : "[5]",
-							"parameter_initial_enable" : 1,
-							"parameter_mmax" : 6.0,
 							"parameter_initial" : [ -30.0 ],
-							"parameter_shortname" : "Level"
+							"parameter_initial_enable" : 1,
+							"parameter_longname" : "[5]",
+							"parameter_mmax" : 6.0,
+							"parameter_mmin" : -70.0,
+							"parameter_shortname" : "Level",
+							"parameter_type" : 0,
+							"parameter_unitstyle" : 4
 						}
 
 					}
@@ -4164,7 +4160,8 @@
 			"parameterbanks" : 			{
 
 			}
-
+,
+			"inherited_shortname" : 1
 		}
 ,
 		"dependency_cache" : [ 			{
@@ -4199,7 +4196,7 @@
 			}
 , 			{
 				"name" : "fluid.patchpath.js",
-				"bootpath" : "~/Documents/Max 7/Packages/flucoma-max-devkit/help",
+				"bootpath" : "~/dev/flucoma/max/help",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -4228,8 +4225,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4247,7 +4244,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4257,7 +4253,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
