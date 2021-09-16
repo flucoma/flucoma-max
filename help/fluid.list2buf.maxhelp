@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 232.0, 112.0, 500.0, 432.0 ],
+		"rect" : [ 232.0, 112.0, 534.0, 507.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 232.0, 138.0, 500.0, 406.0 ],
+						"rect" : [ 232.0, 138.0, 534.0, 481.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -88,6 +88,19 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"linecount" : 11,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 243.0, 283.594936999999959, 264.0, 166.0 ],
+									"text" : "attributes: \n- destination <buffername> assigns the buffer to be written\n- startframe <int>\n- startchan <int>\n- axis <0|1> writing consecutive values frame- or channel-wise\n- autosize <0|1> enables the resizing option\n\nmessages:\n- list: triggers the writing process",
+									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -117,8 +130,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 239.0, 215.0, 204.0, 50.0 ],
-									"text" : "the abstraction uses its own buffer internally, which is resized if needed. ",
+									"patching_rect" : [ 239.0, 217.0, 204.0, 50.0 ],
+									"text" : "the object uses its own buffer internally, which is grown in size if needed and if possible.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -160,7 +173,7 @@
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "u133001033",
+									"buffername" : "u128004929",
 									"id" : "obj-13",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
