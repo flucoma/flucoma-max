@@ -17,7 +17,17 @@ endif()
 
 if (NOT DEFINED C74_MAX_API_DIR)
    file(TO_CMAKE_PATH "${MAX_SDK_PATH}" MAX_SDK_FULLPATH)
-   set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/c74support")
+   if(EXISTS "${MAX_SDK_FULLPATH}/source/c74support")
+     set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/c74support")
+   # newer SDK layout, full Max-SDK download 
+   elseif(EXISTS "${MAX_SDK_FULLPATH}/source/max-sdk-base/c74support") 
+     set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/max-sdk-base/c74support")
+    # newer SDK layout, just max-sdk-base   
+   elseif(EXISTS "${MAX_SDK_FULLPATH}/c74support")   
+      set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/c74support")
+   else()
+     message(FATAL_ERROR "Could not find Cycling 74 support folder")
+   endif()
 endif ()
 #set(C74_INCLUDES "${C74_MAX_API_DIR}/include")
 set(C74_MAX_INCLUDES ${C74_MAX_API_DIR}/max-includes)
@@ -28,9 +38,6 @@ set(C74_SCRIPTS "../../script")
 
 set(C74_CXX_STANDARD 0)
 
-if (APPLE)	
-	SET( CMAKE_CXX_FLAGS  "${CMAKE_CXX_FLAGS} -include \"${C74_MAX_INCLUDES}/macho-prefix.pch\"")
-endif ()
 
 # if (NOT DEFINED C74_BUILD_MAX_EXTENSION)
 # 	set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/../../../externals")
