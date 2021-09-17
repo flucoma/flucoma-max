@@ -128,7 +128,7 @@ public:
     if (client.audioChannelsOut() > 0)
       mOutputs = std::vector<ViewType>(asUnsigned(client.audioChannelsOut()),
                                        ViewType(nullptr, 0, 0));
-    if (client.controlChannelsOut().count > 0)
+    if (client.controlChannelsOut().count > 0 && client.audioChannelsIn() > 0)
     {
       mControlClock =
           mControlClock ? mControlClock
@@ -143,6 +143,7 @@ public:
       
     }
 
+    if(!(client.controlChannelsIn() > 0))
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform),
                   0, nullptr);
   }
