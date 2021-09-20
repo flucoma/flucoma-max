@@ -1004,8 +1004,8 @@ public:
   {
     void operator()(const T& param, FluidMaxWrapper* x, ParamSetType& paramSet)
     {
-      auto listenerFunc = [x, &param]() {
-        object_attr_touch((t_object*) (x), gensym(param.name));
+      auto listenerFunc = [x, name=gensym(lowerCase(param.name).c_str())]() {
+        object_attr_touch((t_object*) (x), name);
       };
       paramSet.template addListener<N>(std::move(listenerFunc), x);
     }
