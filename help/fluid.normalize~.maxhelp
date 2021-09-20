@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 172.0, -938.0, 992.0, 777.0 ],
+		"rect" : [ 100.0, -938.0, 992.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -56,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 172.0, -912.0, 992.0, 751.0 ],
+						"rect" : [ 100.0, -912.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -735,7 +736,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 135.0, 880.0, 65.0 ],
+									"patching_rect" : [ 5.0, 135.0, 882.0, 65.0 ],
 									"text" : "A common problem occurs when we want to use two different types of audio-descriptor analysis that have different value scales. A good example of this can be found in the fluid.pitch~ descriptor which returns both the estimated fundamental pitch in Hz and a confidence of each estimation. The estimation is already in the range 0.0 to 1.0, however, pitch is not. Normalisation can put these two descriptor values into an equivalent range which might facilitate navigating through data with a controller or making comparison of two descriptors simpler and statistically equivalent."
 								}
 
@@ -951,8 +952,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -1455,7 +1456,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 170.0, 510.0, 133.625, 225.0 ],
+									"patching_rect" : [ 170.0, 460.0, 133.625, 225.0 ],
 									"stripecolor" : [ 1.0, 0.345098039215686, 0.298039215686275, 1.0 ]
 								}
 
@@ -1521,7 +1522,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 510.0, 133.625, 225.0 ],
+									"patching_rect" : [ 5.0, 460.0, 133.625, 225.0 ],
 									"stripecolor" : [ 0.0, 0.854901960784314, 0.282352941176471, 0.5 ]
 								}
 
@@ -1630,7 +1631,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
-									"midpoints" : [ 382.5, 455.0, 179.5, 455.0 ],
+									"midpoints" : [ 382.5, 441.0, 179.5, 441.0 ],
 									"source" : [ "obj-44", 0 ]
 								}
 
@@ -1653,8 +1654,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
