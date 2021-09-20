@@ -3,7 +3,11 @@ mgraphics.init();
 mgraphics.relative_coords = 1;
 mgraphics.autofill = 0;
 
-sketch.ortho3d();
+outlets = 2;
+
+setoutletassist(0, 'id of point closest to mouse');
+setoutletassist(1, 'raw normalised coordinates');
+
 // Colors
 var vbrgb = [1., 1., 1., 1.];
 var vfrgb = [0.5,0.5,0.5,1.];
