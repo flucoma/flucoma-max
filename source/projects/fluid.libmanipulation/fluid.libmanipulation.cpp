@@ -36,10 +36,10 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
   makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
   makeMaxWrapper<NRTThreadedRobustScaleClient>("fluid.robustscale~");
-  makeMaxWrapper<RTPCAClient>("fluid.pca~");
+  makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
   makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
-  makeMaxWrapper<RTUMAPClient>("fluid.umap~");
+  makeMaxWrapper<NRTThreadedUMAPClient>("fluid.umap~");
   makeMaxWrapper<NRTThreadedGridClient>("fluid.grid~");
-  makeMaxWrapper<RTMLPRegressorClient>("fluid.mlpregressor~");
-  makeMaxWrapper<RTMLPClassifierClient>("fluid.mlpclassifier~");
+  makeMaxWrapper<NRTThreadedMLPRegressorClient>("fluid.mlpregressor~");
+  makeMaxWrapper<NRTThreadedMLPClassifierClient>("fluid.mlpclassifier~");
 }
