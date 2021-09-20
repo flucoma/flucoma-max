@@ -139,7 +139,10 @@ function clear() {
 };
 
 function bang() {
-	outlet(0, _closest);
+	if (_closest) {
+		outlet(0, _closest);
+	}
+	outlet(1, vx, vy);
     mgraphics.redraw();
 }
 
