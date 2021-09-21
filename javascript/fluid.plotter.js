@@ -18,8 +18,8 @@ var black = [0.0, 0.0, 0.0, 1.0];
 var white = [1.0, 1.0, 1.0, 1.0];
 
 // Point Management
-var points = [];
-var pointSize = 2.0;
+var points = new Array();
+var _pointsize = 1.0;
 
 // Internal State for Mousing
 var w = [0,0,0];
@@ -30,6 +30,8 @@ var _pointcolor = black;
 var _shape = 'square'
 var _highlightcolor = red;
 var _closest = null;
+var labels = new Array();
+var colorMap = {};
 
 function paint() {
 	
@@ -40,32 +42,84 @@ function paint() {
 	_closest = get_closest(vx, vy);
 
 	for (var i=0; i < points.length; i++) {
-		if (points[i].id == _closest) {
-			mgraphics.set_source_rgba(_highlightcolor);
-		} else {
-			mgraphics.set_source_rgba(points[i].color);
-		}
-		
+		// if (points[i].id == _closest) {
+		// 	mgraphics.set_source_rgba(_highlightcolor);
+		// } else {
+		// 	mgraphics.set_source_rgba(points[i].color);
+		// }
+		mgraphics.set_source_rgba([0, 0, 0, 1]);
+
+		var x = points[i].x * 2 - 1
+		var y = points[i].y * 2 - 1
+		var psize = _pointsize * points[i].size
+		// Convert box size into a relative portion of screen
+		// Subtract that value from the coordinates
 		if (_shape == 'square')
-		{
-			mgraphics.rectangle(
-				points[i].x*2-1, 
-				points[i].y*2-1, 
-				pointSize * points[i].size, 
-				pointSize * points[i].size
-			)
-		} 
-		else 
-		{
-			mgraphics.ellipse(
-				points[i].x*2-1, 
-				points[i].y*2-1, 
-				pointSize * points[i].size, 
-				pointSize * points[i].size
-			)
-		}
+			mgraphics.rectangle(x, y, psize, psize)
+		else
+			mgraphics.ellipse( x, y, psize, psize)
+
 		mgraphics.fill();
 	}
+}
+
+function setdict(name){
+	points = new Array();
+	var d = new Dict(name)
+
+	// Check that it is a valid dictionary from flucoma.
+	if (!d.contains('data') || !d.contains('cols'))
+		error('Please provide a valid dictionary of data from a fluid.dataset~')
+	if (d.get('cols') != 2)
+		error('fluid.dataset~ should be exactly two dimensions.')
+
+	var keys = d.get('data').getkeys();
+	var data = d.get('data')
+	for (var i=0; i < keys.length; i++) {
+		var k = keys[i]
+		points.push({
+			id: k,
+			x : data.get(k)[0],
+			y : data.get(k)[1],
+			color : [0, 0, 0, 1],
+			size : 0.1
+		})
+	}
+	mgraphics.redraw();
+}
+
+function setcategories(name){
+	labels = new Array();
+	var d = new Dict(name);
+	// Check that it is a valid dictionary from flucoma.
+	if (!d.contains('data') || !d.contains('cols'))
+		error('Please provide a valid dictionary of labels from a fluid.labelset~')
+	if (d.get('cols') != 1)
+		error('There should only be one column of data which is a label.')
+	
+	var data = d.get('data');
+	var keys = data.getkeys();
+	var uniques = new Array();
+
+	var exists = uniques.indexOf('help');
+	// returns -1 if it doesnt exist
+	// How many unique labels are there?
+	for (var i=0; i < keys.length; i++) {
+		var key = keys[i];
+		var label = data.get(key);
+		if (uniques.indexOf(label) == -1)
+			uniques.push(label)
+	}	
+	
+	// Map each label to a cluster
+	for (var i=0; i < uniques.length; i++) {
+		var u = uniques[i];
+		colorMap[u] = 
+	}
+	// for (var i=0; i < keys.length; i++) {
+	// 	var key = keys[i];
+	// 	labels.push({ id : data[key] })
+	// }	
 }
 
 function get_closest(x1, y1) {
@@ -133,7 +187,7 @@ function addpoint(id, x, y, size) {
 }
 
 function pointsize(v) { 
-	pointSize = v;
+	_pointsize = v;
     mgraphics.redraw();
 };
 
@@ -182,20 +236,16 @@ function set()
 	}
 }
 
-function setvalueof(x,y)
-{
+function setvalueof(x,y) {
 	list(x,y);
 }
 
-function getvalueof()
-{
+function getvalueof() {
 	var a = new Array(vx,vy);
-	
 	return a;
 }
 
-function setlist(x, y)
-{
+function setlist(x, y) {
 	var width = box.rect[2] - box.rect[0];
 	var height = box.rect[3] - box.rect[1];
 	
@@ -212,8 +262,7 @@ function setlist(x, y)
     mgraphics.redraw();
 }
 
-function onclick(x,y,but,cmd,shift,capslock,option,ctrl)
-{
+function onclick(x,y,but,cmd,shift,capslock,option,ctrl) {
 	ondrag(x, y)
 }
 onclick.local = 1; //private. could be left public to permit "synthetic" events
@@ -224,9 +273,7 @@ function calcAspect() {
     return width /height;
   }
 
-function ondrag(x,y)
-{
-
+function ondrag(x,y) {
 	var width = box.rect[2] - box.rect[0];
 	var height = box.rect[3] - box.rect[1];
 		
@@ -244,8 +291,7 @@ function ondrag(x,y)
 }
 ondrag.local = 1; //private. could be left public to permit "synthetic" events
 
-function forcesize(w,h)
-{
+function forcesize(w,h) {
 	if (w!=h) {
 		h = w;
 		box.size(w,h);
@@ -253,8 +299,7 @@ function forcesize(w,h)
 }
 forcesize.local = 1; //private
 
-function onresize(w, h)
-{
+function onresize(w, h) {
 	forcesize(w, h);
     mgraphics.redraw();
 }
