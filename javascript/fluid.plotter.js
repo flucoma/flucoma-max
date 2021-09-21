@@ -151,26 +151,23 @@ function constructColorScheme() {
 		var uniques = new Array();
 
 		// How many unique labels are there?
-		for (var i=0; i < keys.length; i++) {
-			var key = keys[i];
+		keys.forEach(function(key) {
 			var label = data.get(key);
 			if (uniques.indexOf(label) == -1) {
 				uniques.push(label)
 			}
-		}	
+		})
 		
 		colorMap = {};
 		var scheme = strChunk(_colorscheme, 6);
-		for (var i=0; i < uniques.length; i++) {
-			var u = uniques[i];
-
+		uniques.forEach(function(u, i) {
 			if (i < scheme.length) {
 				colorMap[u] = hexToRGB(scheme[i], 0.8); // wrap around the colour scheme over and over
 			} 
 			else {
 				colorMap[u] = [ Math.random(), Math.random(), Math.random(), 0.9 ];
 			} 
-		}
+		})
 		mgraphics.redraw();
 	}
 }
