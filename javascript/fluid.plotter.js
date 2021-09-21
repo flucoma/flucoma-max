@@ -64,10 +64,10 @@ function paint() {
 	mgraphics.rectangle(-1, 1, 2, 2);
 	mgraphics.fill();
 
-	for (var i=0; i < points.length; i++) {
+	points.forEach(function(point) {
 		var color;
 		if (labelDict) {
-			var label = labelDict.get('data').get(points[i].id);
+			var label = labelDict.get('data').get(point.id);
 			color = colorMap[label] || [0,0,0,0.65]
 		} 
 		else {
@@ -75,17 +75,17 @@ function paint() {
 		}
 		mgraphics.set_source_rgba(color);
 
-		var highlightScale = _highlight.indexOf(points[i].id) != -1 ? 2.3 : 1.0
-		var psize = (_pointsize * points[i].size) * highlightScale;
-		var x = points[i].x * 2 - 1;
-		var y = points[i].y * 2 - 1
+		var highlightScale = _highlight.indexOf(point.id) != -1 ? 2.3 : 1.0
+		var psize = (_pointsize * point.size) * highlightScale;
+		var x = point.x * 2 - 1;
+		var y = point.y * 2 - 1
 
 		if (_shape == 'square')
 		mgraphics.rectangle(x, y, psize, psize)
 		else
 		mgraphics.ellipse(x, y, psize, psize)
-		mgraphics.fill();
-	}
+		mgraphics.fill();	
+	})
 }
 
 function calcAspect() {
