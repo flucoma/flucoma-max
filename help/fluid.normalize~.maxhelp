@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, -938.0, 992.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 992.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, -912.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -87,6 +87,37 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-1",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 45.0, 247.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 67.0, 247.0, 203.0, 21.0 ],
+									"text" : "Perform pitch analysis of a sound"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-21",
 									"maxclass" : "dict.view",
@@ -724,7 +755,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 95.0, 245.0, 313.0, 23.0 ],
+									"patching_rect" : [ 15.0, 695.0, 313.0, 23.0 ],
 									"text" : "buffer~ src Tremblay-ASWINE-ScratchySynth-M.wav"
 								}
 
@@ -736,7 +767,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 135.0, 882.0, 65.0 ],
+									"patching_rect" : [ 5.0, 135.0, 884.0, 65.0 ],
 									"text" : "A common problem occurs when we want to use two different types of audio-descriptor analysis that have different value scales. A good example of this can be found in the fluid.pitch~ descriptor which returns both the estimated fundamental pitch in Hz and a confidence of each estimation. The estimation is already in the range 0.0 to 1.0, however, pitch is not. Normalisation can put these two descriptor values into an equivalent range which might facilitate navigating through data with a controller or making comparison of two descriptors simpler and statistically equivalent."
 								}
 
@@ -768,7 +799,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 667.5, 237.0, 233.0, 36.0 ],
+									"patching_rect" : [ 672.0, 237.0, 240.0, 36.0 ],
 									"text" : "Normalise \"raw\" to a new fluid.dataset~ called \"normalized\""
 								}
 
@@ -840,7 +871,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 420.0, 285.0, 208.0, 23.0 ],
 									"text" : "fluid.normalize~ @min 0. @max 1."
 								}
@@ -952,8 +983,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
@@ -1031,7 +1062,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1570,7 +1601,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 50.0, 275.0, 208.0, 23.0 ],
 									"text" : "fluid.normalize~ @min 0. @max 1."
 								}
@@ -1654,8 +1685,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
