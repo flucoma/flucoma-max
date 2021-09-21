@@ -80,10 +80,7 @@ function paint() {
 		}
 		mgraphics.set_source_rgba(color);
 
-		var highlightScale = 1.0;
-		if (_highlight.indexOf(points[i].id) != -1) {
-			highlightScale = 2.75;
-		}
+		var highlightScale = _highlight.indexOf(points[i].id) != -1 ? 2.3 : 1.0
 		var psize = (_pointsize * points[i].size) * highlightScale;
 		var x = points[i].x * 2 - 1;
 		var y = points[i].y * 2 - 1
@@ -93,7 +90,6 @@ function paint() {
 		mgraphics.rectangle(x, y, psize, psize)
 		else
 		mgraphics.ellipse(x, y, psize, psize)
-		
 		mgraphics.fill();
 
 		// mgraphics.set_source_rgba([0.8, 0.8, 0.8, 0.8]);
