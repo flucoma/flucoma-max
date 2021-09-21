@@ -111,16 +111,15 @@ function setdict(name) {
 	if (!fail) {
 		var keys = dataDict.get('data').getkeys();
 		var data = dataDict.get('data')
-		for (var i=0; i < keys.length; i++) {
-			var k = keys[i]
+		keys.forEach(function(key) {
 			points.push({
-				id: k,
-				x : data.get(k)[0],
-				y : data.get(k)[1],
+				id: key,
+				x : data.get(key)[0],
+				y : data.get(key)[1],
 				color : [0, 0, 0, 1],
 				size : 0.1
 			})
-		}
+		})
 		mgraphics.redraw();
 	}
 }
