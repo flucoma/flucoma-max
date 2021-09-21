@@ -29,17 +29,17 @@ void ext_main(void*)
   makeMaxWrapper<NRTThreadedDataSetClient>("fluid.dataset~");
   makeMaxWrapper<NRTThreadedDataSetQueryClient>("fluid.datasetquery~");
   makeMaxWrapper<NRTThreadedLabelSetClient>("fluid.labelset~");
-  makeMaxWrapper<RTKDTreeClient>("fluid.kdtree~");
-  makeMaxWrapper<RTKMeansClient>("fluid.kmeans~");
-  makeMaxWrapper<RTKNNClassifierClient>("fluid.knnclassifier~");
-  makeMaxWrapper<RTKNNRegressorClient>("fluid.knnregressor~");
-  makeMaxWrapper<RTNormalizeClient>("fluid.normalize~");
-  makeMaxWrapper<RTStandardizeClient>("fluid.standardize~");
-  makeMaxWrapper<RTRobustScaleClient>("fluid.robustscale~");
-  makeMaxWrapper<RTPCAClient>("fluid.pca~");
+  makeMaxWrapper<NRTThreadedKDTreeClient>("fluid.kdtree~");
+  makeMaxWrapper<NRTThreadedKMeansClient>("fluid.kmeans~");
+  makeMaxWrapper<NRTThreadedKNNClassifierClient>("fluid.knnclassifier~");
+  makeMaxWrapper<NRTThreadedKNNRegressorClient>("fluid.knnregressor~");
+  makeMaxWrapper<NRTThreadedNormalizeClient>("fluid.normalize~");
+  makeMaxWrapper<NRTThreadedStandardizeClient>("fluid.standardize~");
+  makeMaxWrapper<NRTThreadedRobustScaleClient>("fluid.robustscale~");
+  makeMaxWrapper<NRTThreadedPCAClient>("fluid.pca~");
   makeMaxWrapper<NRTThreadedMDSClient>("fluid.mds~");
-  makeMaxWrapper<RTUMAPClient>("fluid.umap~");
+  makeMaxWrapper<NRTThreadedUMAPClient>("fluid.umap~");
   makeMaxWrapper<NRTThreadedGridClient>("fluid.grid~");
-  makeMaxWrapper<RTMLPRegressorClient>("fluid.mlpregressor~");
-  makeMaxWrapper<RTMLPClassifierClient>("fluid.mlpclassifier~");
+  makeMaxWrapper<NRTThreadedMLPRegressorClient>("fluid.mlpregressor~");
+  makeMaxWrapper<NRTThreadedMLPClassifierClient>("fluid.mlpclassifier~");
 }
