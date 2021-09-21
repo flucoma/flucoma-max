@@ -65,11 +65,6 @@ function paint() {
 	mgraphics.fill();
 
 	for (var i=0; i < points.length; i++) {
-		// if (points[i].id == _closest) {
-		// 	mgraphics.set_source_rgba(_highlightcolor);
-		// } else {
-		// 	mgraphics.set_source_rgba(points[i].color);
-		// }
 		var color;
 		if (labelDict) {
 			var label = labelDict.get('data').get(points[i].id);
@@ -84,18 +79,12 @@ function paint() {
 		var psize = (_pointsize * points[i].size) * highlightScale;
 		var x = points[i].x * 2 - 1;
 		var y = points[i].y * 2 - 1
-		// Convert box size into a relative portion of screen
-		// Subtract that value from the coordinates
+
 		if (_shape == 'square')
 		mgraphics.rectangle(x, y, psize, psize)
 		else
 		mgraphics.ellipse(x, y, psize, psize)
 		mgraphics.fill();
-
-		// mgraphics.set_source_rgba([0.8, 0.8, 0.8, 0.8]);
-		// if (_highlight.indexOf(points[i].id) != -1) {
-		// 	mgraphics.ellipse(x, y, psize*4, -psize*4)
-		// }
 	}
 }
 
