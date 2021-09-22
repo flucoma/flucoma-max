@@ -27,7 +27,7 @@ var _pointsize = 0.25;
 var w = [0,0,0];
 var vx = 0;
 var vy = 0;
-var _bgcolor = [1.0, 1.0, 1.0, 1.0];
+var _bgcolor = [0.95,0.95,0.95,0.95, 1.0];
 var _shape = 'square'
 var _closest = null;
 var _colorscheme = colors.cat;
@@ -257,6 +257,7 @@ function onclick(x,y,but,cmd,shift,capslock,option,ctrl) {
 onclick.local = 1; //private. could be left public to permit "synthetic" events
 
 function ondrag(x,y) {
+
 	var width = box.rect[2] - box.rect[0];
 	var height = box.rect[3] - box.rect[1];
 		
