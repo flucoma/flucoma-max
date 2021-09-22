@@ -173,5 +173,7 @@ function downsamplebuffer(){
 function onresize(){
 	w = box.rect[2] - box.rect[0];
 	h = box.rect[3] - box.rect[1];
-	downsamplebuffer();
+	if (buf) {
+		downsamplebuffer();
+	}
 }
