@@ -84,8 +84,8 @@ function paint() {
 		var highlightScale = _highlight.indexOf(point.id) != -1 ? 2.3 : 1.0
 		var psize = (_pointsize * point.size) * highlightScale;
 
-		var x = scale(point.x, _xrange[0], _xrange[1], -1, 1)
-		var y = scale(point.y, _yrange[0], _yrange[1], -1, 1)
+		var x = scale(point.x, _xrange[0], _xrange[1], -1, 1) - (psize*0.5)
+		var y = scale(point.y, _yrange[0], _yrange[1], -1, 1) + (psize*0.5)
 
 		if (_shape == 'square') {
 			mgraphics.rectangle(x, y, psize, psize)
