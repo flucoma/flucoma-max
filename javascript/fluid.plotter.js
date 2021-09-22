@@ -21,7 +21,7 @@ var colors = {
 
 // Point Management
 var points = new Array();
-var _pointsize = 0.5;
+var _pointsize = 0.25;
 
 // Internal State for Mousing
 var w = [0,0,0];
@@ -32,6 +32,8 @@ var _shape = 'square'
 var _closest = null;
 var _colorscheme = colors.cat;
 var _highlight = [];
+var _xrange = [0, 1];
+var _yrange = [0, 1];
 var labels = new Array();
 var labelDict = null;
 var dataDict = null;
@@ -58,6 +60,10 @@ function strChunk(str, size) {
 	return chunks
 }
 
+function scale(v, iMin, iMax, oMin, oMax) {
+	return ((v - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin
+}
+
 function paint() {
 	
 	mgraphics.set_source_rgba(_bgcolor);
@@ -77,13 +83,16 @@ function paint() {
 
 		var highlightScale = _highlight.indexOf(point.id) != -1 ? 2.3 : 1.0
 		var psize = (_pointsize * point.size) * highlightScale;
-		var x = point.x * 2 - 1;
-		var y = point.y * 2 - 1
 
-		if (_shape == 'square')
-		mgraphics.rectangle(x, y, psize, psize)
-		else
-		mgraphics.ellipse(x, y, psize, psize)
+		var x = scale(point.x, _xrange[0], _xrange[1], -1, 1)
+		var y = scale(point.y, _yrange[0], _yrange[1], -1, 1)
+
+		if (_shape == 'square') {
+			mgraphics.rectangle(x, y, psize, psize)
+		}
+		else {
+			mgraphics.ellipse(x, y, psize, psize)
+		}
 		mgraphics.fill();	
 	})
 }
@@ -142,6 +151,22 @@ function colorscheme(scheme) {
 		_colorscheme = colors[scheme]
 	}
 	constructColorScheme();
+}
+
+function xrange(min, max) {
+	_xrange = [min, max];
+	mgraphics.redraw();
+}
+
+function yrange(min, max) {
+	_yrange = [min, max];
+	mgraphics.redraw();
+}
+
+function range(min, max) {
+	_yrange = [min, max];
+	_xrange = [min, max];
+	mgraphics.redraw();
 }
 
 function constructColorScheme() {
@@ -215,7 +240,8 @@ function pointsize(v) {
 };
 
 function clear() { 
-	points = [];
+	colorMap = {};
+	points = new Array();
 	labelSet = null;
     mgraphics.redraw();
 };
@@ -241,8 +267,10 @@ function ondrag(x,y) {
 	
 	w = sketch.screentoworld(x,y);
 
-	vx = x/width;
+	vx = x / width;
 	vy = 1- y/height;
+	vx = scale(vx, 0, 1, _xrange[0], _xrange[1]);
+	vy = scale(vy, 0, 1, _yrange[0], _yrange[1]);
 	notifyclients();
 	bang();
 }
