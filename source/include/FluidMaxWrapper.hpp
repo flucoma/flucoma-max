@@ -918,6 +918,7 @@ public:
   using ClientType = Client;
   using ParamDescType = typename Client::ParamDescType;
   using ParamSetType = typename Client::ParamSetType;
+  using ParamValues = typename ParamSetType::ValueTuple;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mMessages{}, mParams(Client::getParameterDescriptors()),
@@ -1410,13 +1411,21 @@ private:
     {
       if (message.name == "load")
       {
-        SpecialCase<MessageResult<void>, std::string>{}.template handle<N>(
-            typename T::ReturnType{}, typename T::ArgumentTypes{},
-            [&message](auto M) {
-              class_addmethod(getClass(),
-                              (method) deferLoad<decltype(M)::value>,
-                              lowerCase(message.name).c_str(), A_GIMME, 0);
-            });
+        using ReturnType = typename T::ReturnType;
+        using ArgumentTypes = typename T::ArgumentTypes;
+        constexpr bool isVoid = std::is_same<ReturnType, MessageResult<void>>::value;
+        
+        using IfVoid = SpecialCase<MessageResult<void>,std::string>;
+        using IfParams = SpecialCase<MessageResult<ParamValues>,std::string>;
+        using Handler = std::conditional_t<isVoid, IfVoid, IfParams>;
+
+        Handler{}.template handle<N>(
+                ReturnType{}, ArgumentTypes{}, [&message](auto M) {
+                  class_addmethod(getClass(),
+                                  (method) deferLoad<decltype(M)::value>,
+                                  lowerCase(message.name).c_str(), A_GIMME, 0);
+                });
+
         return;
       }
       if (message.name == "dump")
@@ -1443,7 +1452,15 @@ private:
       }
       if (message.name == "read")
       {
-        SpecialCase<MessageResult<void>, std::string>{}.template handle<N>(
+        using ReturnType = typename T::ReturnType;
+        using ArgumentTypes = typename T::ArgumentTypes;
+        constexpr bool isVoid = std::is_same<ReturnType, MessageResult<void>>::value;
+        
+        using IfVoid = SpecialCase<MessageResult<void>,std::string>;
+        using IfParams = SpecialCase<MessageResult<ParamValues>,std::string>;
+        using Handler = std::conditional_t<isVoid, IfVoid, IfParams>;
+      
+        Handler{}.template handle<N>(
             typename T::ReturnType{}, typename T::ArgumentTypes{},
             [&message](auto M) {
               class_addmethod(getClass(),
@@ -1519,13 +1536,21 @@ private:
     str = *json;
 
     auto messageResult = x->mClient.template invoke<N>(x->mClient, str);
-
+    updateParams(x, messageResult);
     x->params().template forEachParam<touchAttribute>(x);
 
     object_free(jsonwriter);
     if (x->checkResult(messageResult))
       object_obex_dumpout(x, gensym("load"), 0, nullptr);
   }
+
+  static void updateParams(FluidMaxWrapper*                                 x,
+                           MessageResult<typename ParamSetType::ValueTuple> v)
+  {
+    x->mParams.fromTuple(typename ParamSetType::ValueTuple(v));
+  }
+
+  static void updateParams(FluidMaxWrapper*, MessageResult<void>) {}
 
   template <size_t N>
   static void deferDump(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
@@ -1668,7 +1693,7 @@ private:
     path_toabsolutesystempath(path, filename, fullpath);
 
     auto messageResult = x->mClient.template invoke<N>(x->mClient, fullpath);
-
+    updateParams(x, messageResult);
     x->params().template forEachParam<touchAttribute>(x);
     if (x->checkResult(messageResult))
       object_obex_dumpout(x, gensym("read"), 0, nullptr);
