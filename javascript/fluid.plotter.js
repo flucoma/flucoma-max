@@ -137,10 +137,14 @@ function setcategories(name) {
 	labels = new Array();
 	labelDict = new Dict(name);
 	// Check that it is a valid dictionary from flucoma.
-	if (!labelDict.contains('data') || !labelDict.contains('cols'))
+	if (!labelDict.contains('data') || !labelDict.contains('cols')) {
+		labelDict = null;
 		error('Please provide a valid dictionary of labels from a fluid.labelset~')
-	if (labelDict.get('cols') != 1)
+	}
+	if (labelDict.get('cols') != 1) {
+		labelDict = null;
 		error('There should only be one column of data which is a label.')
+	}
 
 	constructColorScheme()
 }
