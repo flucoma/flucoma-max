@@ -21,7 +21,7 @@ var colors = {
 
 // Point Management
 var points = new Array();
-var _pointsize = 0.25;
+var _pointsize = 0.35;
 
 // Internal State for Mousing
 var w = [0,0,0];
