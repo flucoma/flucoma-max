@@ -202,7 +202,7 @@ public:
         break;
       }
       else if (index <
-               client.audioChannelsOut() + (client.controlChannelsOut().count > 0))
+               client.audioChannelsOut() + client.controlChannelsOut().count)
       {
         snprintf_zero(s, 512, "(list) %s", client.getOutputLabel(index));
         break;
@@ -924,7 +924,7 @@ public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mMessages{}, mParams(Client::getParameterDescriptors()),
         mParamSnapshot(Client::getParameterDescriptors()),
-        mClient{initParamsFromArgs(ac, av)}
+        mClient{initParamsFromArgs(ac, av)},mDumpDictionary{nullptr}
   {
     if (mClient.audioChannelsIn())
     {
@@ -1035,13 +1035,13 @@ public:
   {
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
-
-    if (static_cast<size_t>(attr_args_offset(static_cast<short>(ac), av)) - isControlIn<typename Client::Client> >
+    std::cout << attr_args_offset(static_cast<short>(ac), av) << '\n'; 
+    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlIn<typename Client::Client> >
         ParamDescType::NumFixedParams)
     {
       object_warn((t_object*) x,
                   "Too many arguments. Got %d, expect at most %d", ac,
-                  ParamDescType::NumFixedParams);
+                  ParamDescType::NumFixedParams + isControlIn<typename Client::Client>);
     }
 
     return x;

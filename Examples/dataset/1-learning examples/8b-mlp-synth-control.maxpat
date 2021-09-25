@@ -209,7 +209,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 835.5, 646.0, 157.0, 22.0 ],
 					"style" : "",
-					"text" : "fluid.buf2list @buffer output",
+					"text" : "fluid.buf2list @source output",
 					"varname" : "fluid.buf2list"
 				}
 

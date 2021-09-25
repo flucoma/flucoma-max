@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 1,
-			"revision" : 5,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -68,7 +68,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -104,6 +104,18 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 34.217392000000018, 606.304320999999959, 75.0, 23.0 ],
+									"text" : "route buffer"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-31",
 									"maxclass" : "message",
@@ -182,7 +194,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 676.0, 551.0, 185.0, 50.0 ],
+									"patching_rect" : [ 676.0, 551.0, 186.0, 50.0 ],
 									"text" : "only the extent within radius is searched; number of returned points is uncapped",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
 								}
@@ -206,7 +218,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 671.0, 458.0, 185.0, 65.0 ],
+									"patching_rect" : [ 671.0, 458.0, 186.0, 65.0 ],
 									"text" : "only the extent within radius is searched; number of returned points is capped at numneighbours",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
 								}
@@ -383,7 +395,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 500.130431999999985, 326.391296000000011, 134.999999999999943, 98.0 ],
+									"patching_rect" : [ 500.130431999999985, 326.391296000000011, 135.0, 98.0 ],
 									"text" : "hold down the mouse and explore the space, the nearest neighbours should light up!"
 								}
 
@@ -413,7 +425,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -590,7 +602,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -626,12 +638,24 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 47.0, 203.0, 70.0, 22.0 ],
+													"text" : "route buffer"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-37",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 238.0, 40.0, 22.0 ],
+													"patching_rect" : [ 50.0, 286.0, 40.0, 22.0 ],
 													"text" : "zl rev"
 												}
 
@@ -643,7 +667,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 204.0, 29.5, 22.0 ],
+													"patching_rect" : [ 50.0, 252.0, 29.5, 22.0 ],
 													"text" : "join"
 												}
 
@@ -666,7 +690,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "" ],
+													"outlettype" : [ "list" ],
 													"patching_rect" : [ 50.0, 168.0, 77.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -691,7 +715,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 266.0, 110.0, 22.0 ],
+													"patching_rect" : [ 50.0, 314.0, 110.0, 22.0 ],
 													"text" : "prepend addpoint"
 												}
 
@@ -738,6 +762,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-25", 0 ],
+													"source" : [ "obj-2", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-52", 0 ],
 													"source" : [ "obj-20", 0 ]
 												}
@@ -745,7 +776,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-25", 0 ],
+													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-23", 0 ]
 												}
 
@@ -778,6 +809,55 @@
 												}
 
 											}
+ ],
+										"styles" : [ 											{
+												"name" : "max6box",
+												"default" : 												{
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "max6inlet",
+												"default" : 												{
+													"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
+, 											{
+												"name" : "max6message",
+												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgfillcolor" : 													{
+														"type" : "gradient",
+														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
+														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
+														"angle" : 270.0,
+														"proportion" : 0.39,
+														"autogradient" : 0
+													}
+
+												}
+,
+												"parentstyle" : "max6box",
+												"multi" : 0
+											}
+, 											{
+												"name" : "max6outlet",
+												"default" : 												{
+													"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
+												}
+,
+												"parentstyle" : "",
+												"multi" : 0
+											}
  ]
 									}
 ,
@@ -800,7 +880,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.869579000000002, 626.52172900000005, 76.0, 23.0 ],
+									"patching_rect" : [ 34.869579000000002, 632.52172900000005, 76.0, 23.0 ],
 									"text" : "knearest $1"
 								}
 
@@ -823,8 +903,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 34.869579000000002, 586.304320999999959, 77.0, 23.0 ],
+									"outlettype" : [ "list" ],
+									"patching_rect" : [ 34.869579000000002, 578.000000000000114, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
 
@@ -873,7 +953,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 1,
-											"revision" : 5,
+											"revision" : 11,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1113,7 +1193,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 1,
-															"revision" : 5,
+															"revision" : 11,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1291,7 +1371,7 @@
 																		"appversion" : 																		{
 																			"major" : 8,
 																			"minor" : 1,
-																			"revision" : 5,
+																			"revision" : 11,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -2365,7 +2445,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-42", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-38", 0 ]
 								}
 
@@ -2374,6 +2454,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-38", 0 ],
 									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-42", 0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -2412,9 +2499,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2501,7 +2588,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 1,
-							"revision" : 5,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2568,20 +2655,6 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.list2buf.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufresize.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "helpstarter.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
@@ -2597,6 +2670,10 @@
 			}
 , 			{
 				"name" : "jit.*.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.list2buf.mxo",
 				"type" : "iLaX"
 			}
  ],

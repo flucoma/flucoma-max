@@ -474,7 +474,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 50.0, 100.0, 237.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer buf.flatten.help.dst",
+													"text" : "fluid.buf2list @source buf.flatten.help.dst",
 													"varname" : "fluid.buf2list"
 												}
 

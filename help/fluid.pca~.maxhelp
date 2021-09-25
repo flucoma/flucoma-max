@@ -1197,7 +1197,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 327.0, 251.25, 224.0, 22.0 ],
-													"text" : "fluid.buf2list @buffer pca.help.smallpoint",
+													"text" : "fluid.buf2list @source pca.help.smallpoint",
 													"varname" : "fluid.buf2list"
 												}
 

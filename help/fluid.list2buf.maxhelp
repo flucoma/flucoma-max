@@ -2,14 +2,15 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 5,
+			"major" : 8,
+			"minor" : 1,
+			"revision" : 11,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 232.0, 112.0, 500.0, 432.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 232.0, 112.0, 534.0, 507.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -38,6 +39,7 @@
 		"subpatcher_template" : "",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-7",
@@ -47,14 +49,15 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 5,
+							"major" : 8,
+							"minor" : 1,
+							"revision" : 11,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 232.0, 138.0, 500.0, 406.0 ],
+						"classnamespace" : "box",
+						"rect" : [ 232.0, 138.0, 534.0, 481.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -82,15 +85,28 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"linecount" : 11,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 243.0, 283.594936999999959, 264.0, 166.0 ],
+									"text" : "attributes: \n- destination <buffername> assigns the buffer to be written\n- startframe <int>\n- startchan <int>\n- axis <0|1> writing consecutive values frame- or channel-wise\n- autosize <0|1> enables the resizing option\n\nmessages:\n- list: triggers the writing process",
+									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 113.864983, 60.0, 23.0 ],
-									"style" : "",
+									"patching_rect" : [ 10.0, 113.864982999999995, 60.0, 23.0 ],
 									"text" : "deferlow"
 								}
 
@@ -103,7 +119,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"patching_rect" : [ 10.0, 83.0, 62.0, 23.0 ],
-									"style" : "",
 									"text" : "loadbang"
 								}
 
@@ -115,9 +130,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 219.0, 215.0, 204.0, 50.0 ],
-									"style" : "",
-									"text" : "the abstraction uses its own buffer internally, which is resized if needed. ",
+									"patching_rect" : [ 239.0, 217.0, 204.0, 50.0 ],
+									"text" : "the object uses its own buffer internally, which is grown in size if needed and if possible.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -128,8 +142,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 106.0, 245.0, 98.0, 23.0 ],
-									"style" : "",
+									"patching_rect" : [ 134.0, 244.0, 98.0, 23.0 ],
 									"text" : "print @popup 1"
 								}
 
@@ -141,7 +154,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 58.0, 334.0, 21.0 ],
-									"style" : "",
 									"text" : "some duct tape to store a list in an internal buffer~",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -151,25 +163,23 @@
 								"box" : 								{
 									"id" : "obj-14",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 244.0, 77.0, 23.0 ],
-									"style" : "",
-									"text" : "prepend set"
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 10.0, 244.0, 122.0, 23.0 ],
+									"text" : "substitute buffer set"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "1097_tmp",
+									"buffername" : "u128004929",
 									"id" : "obj-13",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 10.0, 273.0, 194.0, 119.0 ],
-									"style" : ""
+									"patching_rect" : [ 10.0, 273.0, 194.0, 119.0 ]
 								}
 
 							}
@@ -182,7 +192,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 10.0, 141.0, 454.0, 67.0 ],
-									"style" : "",
 									"text" : "0. 0.19509 0.382683 0.55557 0.707107 0.83147 0.92388 0.980785 1. 0.980785 0.92388 0.83147 0.707107 0.55557 0.382683 0.19509 0. -0.19509 -0.382683 -0.55557 -0.707107 -0.83147 -0.92388 -0.980785 -1. -0.980785 -0.92388 -0.83147 -0.707107 -0.55557 -0.382683 -0.19509"
 								}
 
@@ -193,9 +202,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "" ],
+									"outlettype" : [ "list" ],
 									"patching_rect" : [ 10.0, 215.0, 77.0, 23.0 ],
-									"style" : "",
 									"text" : "fluid.list2buf"
 								}
 
@@ -249,7 +257,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 19.5, 241.0, 115.5, 241.0 ],
+									"midpoints" : [ 19.5, 241.0, 143.5, 241.0 ],
 									"order" : 0,
 									"source" : [ "obj-5", 0 ]
 								}
@@ -271,11 +279,9 @@
 						"digest" : "",
 						"fontsize" : 13.0,
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p basic",
 					"varname" : "basic_tab"
 				}
@@ -293,7 +299,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 268.783997, 57.599854 ]
+					"patching_rect" : [ 10.0, 10.0, 268.783996999999999, 57.599854000000001 ]
 				}
 
 			}
@@ -312,18 +318,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.list2buf.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufresize.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
+				"name" : "fluid.list2buf.mxo",
+				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0
