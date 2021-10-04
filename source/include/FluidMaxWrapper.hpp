@@ -167,7 +167,6 @@ public:
       mOutputs[asUnsigned(i)].reset(outs[asUnsigned(i)], 0, sampleframes);
     }
 
-    std::fill(mControlOutputs.begin(), mControlOutputs.end(),0.0);
     client.process(mInputs, mOutputs, mContext);
 
     if (mControlClock && !mTick.test_and_set()) clock_delay(mControlClock, 0);
