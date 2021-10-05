@@ -106,6 +106,13 @@ function paint() {
 	})
 }
 
+function dictionary(name) {
+	if (inlet == 0) {
+		setdict(name)
+	} 
+	else if (inlet == 1) {
+		setcategories(name)
+	}
 }
 
 function setdict(name) {
