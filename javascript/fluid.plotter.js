@@ -3,8 +3,11 @@ mgraphics.init();
 mgraphics.relative_coords = 1;
 mgraphics.autofill = 0;
 
+inlets = 2;
 outlets = 2;
 
+setinletassist(0, 'Dictionary of Points');
+setinletassist(1, 'Dictionary of Labels');
 setoutletassist(0, 'id of point closest to mouse');
 setoutletassist(1, 'raw normalised coordinates');
 
