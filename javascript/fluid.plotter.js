@@ -106,11 +106,6 @@ function paint() {
 	})
 }
 
-function calcAspect() {
-    var width = this.box.rect[2] - this.box.rect[0];
-    var height = this.box.rect[3] - this.box.rect[1];
-	post(width, height)
-    return width /height;
 }
 
 function setdict(name) {
