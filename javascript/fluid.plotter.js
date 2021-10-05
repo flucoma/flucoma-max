@@ -48,7 +48,7 @@ var colorMap = {};
 
 
 function hexToRGB(hex, a) {
-	// Converts HEX values to an array of rgba values
+	// Converts a HEX value to an array of RGBA values
 	var a = a || 1.0;
     var r = parseInt(hex.slice(1, 3), 16) / 256.0,
         g = parseInt(hex.slice(3, 5), 16) / 256.0,
@@ -68,11 +68,13 @@ function strChunk(str, size) {
 }
 
 function scale(v, iMin, iMax, oMin, oMax) {
+	// Scales <v> from the input range to the output range
+	// Exactly the same as the scale object
 	return ((v - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin
 }
 
 function paint() {
-	
+	// The paint loop
 	mgraphics.set_source_rgba(_bgcolor);
 	mgraphics.rectangle(-1, 1, 2, 2);
 	mgraphics.fill();
