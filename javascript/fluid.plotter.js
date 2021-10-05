@@ -83,10 +83,10 @@ function paint() {
 		var color;
 		if (labelDict) {
 			var label = labelDict.get('data').get(point.id);
-			color = colorMap[label] || [0,0,0,0.65]
+			color = colorMap[label] || [0,0,0,0.65];
 		} 
 		else {
-			color = [0,0,0,0.65]
+			color = point.color;
 		}
 		mgraphics.set_source_rgba(color);
 
@@ -243,7 +243,8 @@ function addpoint(id, x, y, size) {
 		id : id,
 		x : x,
 		y : y,
-		size : 0.1
+		size : size,
+		color : _pointcolor,
 	}
 	points.push(point);
 	mgraphics.redraw();
