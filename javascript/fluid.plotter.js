@@ -43,6 +43,7 @@ var _xrange = [0, 1];
 var _yrange = [0, 1];
 var labels = new Array();
 var labelDict = null;
+var labelJSON = {};
 var dataDict = null;
 var colorMap = {};
 
@@ -80,13 +81,10 @@ function paint() {
 	mgraphics.fill();
 
 	points.forEach(function(point) {
-		var color;
-		if (labelDict) {
-			var label = labelDict.get('data').get(point.id);
+		var color = point.color;
+		if (labelJSON) {
+			var label = labelJSON[point.id]
 			color = colorMap[label] || [0,0,0,0.65];
-		} 
-		else {
-			color = point.color;
 		}
 		mgraphics.set_source_rgba(color);
 
@@ -157,7 +155,9 @@ function setcategories(name) {
 		error('There should only be one column of data which is a label.')
 	}
 
-	constructColorScheme()
+	// Convert the internal representation to a JSON object for speedier referencing.
+	labelJSON = JSON.parse(labelDict.stringify()).data;
+	constructColorScheme();
 }
 
 function colorscheme(scheme) {
