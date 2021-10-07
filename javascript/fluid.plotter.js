@@ -3,8 +3,11 @@ mgraphics.init();
 mgraphics.relative_coords = 1;
 mgraphics.autofill = 0;
 
+inlets = 2;
 outlets = 2;
 
+setinletassist(0, 'Dictionary of Points');
+setinletassist(1, 'Dictionary of Labels');
 setoutletassist(0, 'id of point closest to mouse');
 setoutletassist(1, 'raw normalised coordinates');
 
@@ -45,7 +48,7 @@ var colorMap = {};
 
 
 function hexToRGB(hex, a) {
-	// Converts HEX values to an array of rgba values
+	// Converts a HEX value to an array of RGBA values
 	var a = a || 1.0;
     var r = parseInt(hex.slice(1, 3), 16) / 256.0,
         g = parseInt(hex.slice(3, 5), 16) / 256.0,
@@ -65,11 +68,13 @@ function strChunk(str, size) {
 }
 
 function scale(v, iMin, iMax, oMin, oMax) {
+	// Scales <v> from the input range to the output range
+	// Exactly the same as the scale object
 	return ((v - iMin) / (iMax - iMin)) * (oMax - oMin) + oMin
 }
 
 function paint() {
-	
+	// The paint loop
 	mgraphics.set_source_rgba(_bgcolor);
 	mgraphics.rectangle(-1, 1, 2, 2);
 	mgraphics.fill();
@@ -78,10 +83,10 @@ function paint() {
 		var color;
 		if (labelDict) {
 			var label = labelDict.get('data').get(point.id);
-			color = colorMap[label] || [0,0,0,0.65]
+			color = colorMap[label] || [0,0,0,0.65];
 		} 
 		else {
-			color = [0,0,0,0.65]
+			color = point.color;
 		}
 		mgraphics.set_source_rgba(color);
 
@@ -101,11 +106,13 @@ function paint() {
 	})
 }
 
-function calcAspect() {
-    var width = this.box.rect[2] - this.box.rect[0];
-    var height = this.box.rect[3] - this.box.rect[1];
-	post(width, height)
-    return width /height;
+function dictionary(name) {
+	if (inlet == 0) {
+		setdict(name)
+	} 
+	else if (inlet == 1) {
+		setcategories(name)
+	}
 }
 
 function setdict(name) {
@@ -205,10 +212,6 @@ function constructColorScheme() {
 	}
 }
 
-function eudist(x1, y1, x2, y2) {
-	return Math.pow((x2-x1), 2) + Math.pow((y2-y1), 2)
-}
-
 function shape(x) {
 	_shape = x;
 	mgraphics.redraw();
@@ -236,7 +239,8 @@ function addpoint(id, x, y, size) {
 		id : id,
 		x : x,
 		y : y,
-		size : 0.1
+		size : size,
+		color : _pointcolor,
 	}
 	points.push(point);
 	mgraphics.redraw();
