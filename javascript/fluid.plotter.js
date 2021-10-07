@@ -81,9 +81,9 @@ function paint() {
 	mgraphics.fill();
 
 	points.forEach(function(point) {
-		if (labelDict) {
-			var label = labelDict.get('data').get(point.id);
 		var color = point.color;
+		if (labelJSON) {
+			var label = labelJSON[point.id]
 			color = colorMap[label] || [0,0,0,0.65];
 		}
 		mgraphics.set_source_rgba(color);
