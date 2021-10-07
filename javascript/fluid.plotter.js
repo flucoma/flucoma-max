@@ -43,6 +43,7 @@ var _xrange = [0, 1];
 var _yrange = [0, 1];
 var labels = new Array();
 var labelDict = null;
+var labelJSON = {};
 var dataDict = null;
 var colorMap = {};
 
