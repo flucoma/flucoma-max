@@ -81,13 +81,10 @@ function paint() {
 	mgraphics.fill();
 
 	points.forEach(function(point) {
-		var color;
 		if (labelDict) {
 			var label = labelDict.get('data').get(point.id);
+		var color = point.color;
 			color = colorMap[label] || [0,0,0,0.65];
-		} 
-		else {
-			color = point.color;
 		}
 		mgraphics.set_source_rgba(color);
 
