@@ -158,7 +158,9 @@ function setcategories(name) {
 		error('There should only be one column of data which is a label.')
 	}
 
-	constructColorScheme()
+	// Convert the internal representation to a JSON object for speedier referencing.
+	labelJSON = JSON.parse(labelDict.stringify()).data;
+	constructColorScheme();
 }
 
 function colorscheme(scheme) {
