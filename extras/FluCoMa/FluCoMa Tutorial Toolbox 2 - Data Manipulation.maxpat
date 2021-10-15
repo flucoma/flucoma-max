@@ -40,13 +40,13 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-36",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 254.0, 142.0, 137.0, 20.0 ],
-					"presentation_linecount" : 4,
-					"text" : "fluid.buf2list and list2buf"
+					"id" : "obj-1",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 30.0, 120.0, 31.0, 22.0 ],
+					"text" : "load"
 				}
 
 			}
@@ -56,20 +56,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 209.0, 165.0, 20.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 240.0, 187.0, 165.0, 20.0 ],
 					"text" : "Descriptor Data -> Dataset"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-33",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 240.0, 36.0, 20.0 ],
-					"text" : "Stats"
 				}
 
 			}
@@ -79,7 +67,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 419.0, 53.0, 20.0 ],
+					"patching_rect" : [ 225.0, 360.0, 53.0, 20.0 ],
 					"text" : "KMeans"
 				}
 
@@ -90,7 +78,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 599.0, 91.0, 20.0 ],
+					"patching_rect" : [ 240.0, 540.0, 91.0, 20.0 ],
 					"text" : "Audio Feature?"
 				}
 
@@ -101,7 +89,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 569.0, 85.0, 20.0 ],
+					"patching_rect" : [ 240.0, 510.0, 85.0, 20.0 ],
 					"text" : "Control Space"
 				}
 
@@ -112,7 +100,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 509.0, 87.0, 20.0 ],
+					"patching_rect" : [ 240.0, 450.0, 87.0, 20.0 ],
 					"text" : "Drum Machine"
 				}
 
@@ -123,8 +111,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 479.0, 92.0, 20.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 240.0, 420.0, 92.0, 20.0 ],
 					"text" : "Sound Detector"
 				}
 
@@ -135,8 +122,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 329.0, 254.0, 20.0 ],
-					"presentation_linecount" : 6,
+					"patching_rect" : [ 240.0, 270.0, 254.0, 20.0 ],
 					"text" : "Normalisation, Standardisation, Robustscaling"
 				}
 
@@ -147,8 +133,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 389.0, 67.0, 20.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 240.0, 330.0, 67.0, 20.0 ],
 					"text" : "2D Plotting"
 				}
 
@@ -159,7 +144,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 269.0, 206.0, 20.0 ],
+					"patching_rect" : [ 225.0, 210.0, 206.0, 20.0 ],
 					"text" : "KDTrees (Searching Through Space)"
 				}
 
@@ -170,7 +155,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 187.0, 61.0, 20.0 ],
+					"patching_rect" : [ 240.0, 165.0, 61.0, 20.0 ],
 					"text" : "Labelset~"
 				}
 
@@ -181,7 +166,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 164.0, 57.0, 20.0 ],
+					"patching_rect" : [ 240.0, 142.0, 57.0, 20.0 ],
 					"text" : "Dataset~"
 				}
 
@@ -204,7 +189,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 225.0, 90.0, 286.0, 20.0 ],
-					"presentation_linecount" : 5,
 					"text" : "Data Manipulation (Dataset~ Labelset~ and Buffer~)"
 				}
 
@@ -215,8 +199,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 240.0, 629.0, 100.0, 20.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 240.0, 570.0, 100.0, 20.0 ],
 					"text" : "Feature Learning"
 				}
 
@@ -227,7 +210,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 539.0, 69.0, 20.0 ],
+					"patching_rect" : [ 225.0, 480.0, 69.0, 20.0 ],
 					"text" : "Regression"
 				}
 
@@ -238,8 +221,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 449.0, 79.0, 20.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 225.0, 390.0, 79.0, 20.0 ],
 					"text" : "Classification"
 				}
 
@@ -250,7 +232,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 299.0, 77.0, 20.0 ],
+					"patching_rect" : [ 225.0, 240.0, 77.0, 20.0 ],
 					"text" : "Data Scaling"
 				}
 
@@ -261,7 +243,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 225.0, 359.0, 123.0, 20.0 ],
+					"patching_rect" : [ 225.0, 300.0, 123.0, 20.0 ],
 					"text" : "Dimension Reduction"
 				}
 
