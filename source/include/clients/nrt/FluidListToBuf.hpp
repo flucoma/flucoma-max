@@ -216,8 +216,8 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
     }
 
     index count = x->axis == 0
-                      ? std::min(argc, buf.numFrames() - x->startFrame)
-                      : std::min(argc, buf.numChans() - x->startChannel);
+                      ? std::min<index>(argc, buf.numFrames() - x->startFrame)
+                      : std::min<index>(argc, buf.numChans() - x->startChannel);
 
     if (!buf.exists())
     {

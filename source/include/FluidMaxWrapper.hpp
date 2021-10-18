@@ -59,21 +59,23 @@ class RealTime
 public:
   static void setup(t_class* c)
   {
-  
-    constexpr bool isModel = Wrapper::template IsModel_t<typename Wrapper::ClientType>::value;
+
+    constexpr bool isModel =
+        Wrapper::template IsModel_t<typename Wrapper::ClientType>::value;
 
     if (isModel)
     {
       class_addmethod(c, (method) Wrapper::assistDataObject, "assist", A_CANT,
                       0);
     }
-    else class_addmethod(c, (method) assist, "assist", A_CANT, 0);
-    
-    ///FIXME: Better test needed
+    else
+      class_addmethod(c, (method) assist, "assist", A_CANT, 0);
+
+    /// FIXME: Better test needed
     using ClientClass = typename Wrapper::ClientType::Client;
     constexpr bool addDSP = !(isModel && isControl<ClientClass>);
-    
-    if(addDSP)
+
+    if (addDSP)
     {
       class_dspinit(c);
       class_addmethod(c, (method) callDSP, "dsp64", A_CANT, 0);
@@ -112,7 +114,7 @@ public:
               audioInputConnections.begin());
 
     assert((client.audioChannelsOut() > 0) !=
-               (client.controlChannelsOut() > 0) &&
+               (client.controlChannelsOut().count > 0) &&
            "Client must *either* be audio out or control out, sorry");
 
     audioOutputConnections.resize(asUnsigned(client.audioChannelsOut()));
@@ -126,18 +128,22 @@ public:
     if (client.audioChannelsOut() > 0)
       mOutputs = std::vector<ViewType>(asUnsigned(client.audioChannelsOut()),
                                        ViewType(nullptr, 0, 0));
-    if (client.controlChannelsOut() > 0)
+    if (client.controlChannelsOut().count > 0 && client.audioChannelsIn() > 0)
     {
       mControlClock =
           mControlClock ? mControlClock
                         : clock_new((t_object*) wrapper, (method) doControlOut);
       mTick.clear();
-      mOutputs = std::vector<ViewType>(asUnsigned(client.controlChannelsOut()),
-                                       ViewType(nullptr, 0, 0));
-      mControlOutputs.resize(asUnsigned(client.controlChannelsOut()));
-      mControlAtoms.resize(asUnsigned(client.controlChannelsOut()));
+
+      mControlOutputs.resize(asUnsigned(client.controlChannelsOut().size));
+      
+      mOutputs.clear(); 
+      mOutputs.emplace_back(mControlOutputs.data(),0,mControlOutputs.size());
+      mControlAtoms.resize(asUnsigned(client.controlChannelsOut().size));
+      
     }
 
+    if(!(client.controlChannelsIn() > 0))
     object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform),
                   0, nullptr);
   }
@@ -161,9 +167,6 @@ public:
       mOutputs[asUnsigned(i)].reset(outs[asUnsigned(i)], 0, sampleframes);
     }
 
-    for (index i = 0; i < client.controlChannelsOut(); ++i)
-      mOutputs[asUnsigned(i)].reset(&mControlOutputs[asUnsigned(i)], 0, 1);
-
     client.process(mInputs, mOutputs, mContext);
 
     if (mControlClock && !mTick.test_and_set()) clock_delay(mControlClock, 0);
@@ -176,9 +179,9 @@ public:
     Wrapper* w = static_cast<Wrapper*>(this);
     auto&    client = w->client();
     atom_setdouble_array(
-        static_cast<long>(client.controlChannelsOut()), mControlAtoms.data(),
-        static_cast<long>(client.controlChannelsOut()), mControlOutputs.data());
-    w->controlOut(static_cast<long>(client.controlChannelsOut()),
+        static_cast<long>(client.controlChannelsOut().size), mControlAtoms.data(),
+        static_cast<long>(client.controlChannelsOut().size), mControlOutputs.data());
+    w->controlOut(static_cast<long>(client.controlChannelsOut().size),
                   mControlAtoms.data());
     mTick.clear();
   }
@@ -198,7 +201,7 @@ public:
         break;
       }
       else if (index <
-               client.audioChannelsOut() + (client.controlChannelsOut() > 0))
+               client.audioChannelsOut() + client.controlChannelsOut().count)
       {
         snprintf_zero(s, 512, "(list) %s", client.getOutputLabel(index));
         break;
@@ -487,6 +490,46 @@ class FluidMaxWrapper
                                 typename Client::isNonRealTime,
                                 typename Client::isRealTime>
 {
+
+  struct StreamingListInput
+  {
+
+    void processInput(FluidMaxWrapper* x, long ac, t_atom* av)
+    {
+    
+    }
+
+    void operator()(FluidMaxWrapper* x, long ac, t_atom* av)
+    {
+      FluidContext c;
+            
+      atom_getdouble_array(std::min<index>(x->mListSize, ac), av,
+                           std::min<index>(x->mListSize, ac),
+                           x->mInputListData[0].data());
+      x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+      
+      for (index i = 0; i <  x->mAllControlOuts.size(); ++i)
+      {
+        atom_setdouble_array(
+            std::min<index>(x->mListSize, ac), x->mOutputListAtoms.data(),
+            std::min<index>(x->mListSize, ac), x->mOutputListData[i].data());
+        outlet_list(x->mAllControlOuts[x->mAllControlOuts.size() - 1 - i], nullptr, x->mListSize,
+                    x->mOutputListAtoms.data());
+      }
+    }
+  };
+
+  struct NoStreamingListInput
+  {
+    void operator()(FluidMaxWrapper*, long, t_atom*) {}
+  };
+
+  using ListInputHandler =
+      std::conditional_t<isControlIn<typename Client::Client>,
+                         StreamingListInput, NoStreamingListInput>;
+
+  ListInputHandler mListHandler;
+
   using WrapperBase = impl::FluidMaxBase<FluidMaxWrapper<Client>,
                                          typename Client::isNonRealTime,
                                          typename Client::isRealTime>;
@@ -875,6 +918,7 @@ public:
   using ClientType = Client;
   using ParamDescType = typename Client::ParamDescType;
   using ParamSetType = typename Client::ParamSetType;
+  using ParamValues = typename ParamSetType::ValueTuple;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mMessages{}, mParams(Client::getParameterDescriptors()),
@@ -887,6 +931,21 @@ public:
       dsp_setup(impl::MaxBase::getMSPObject(),
                 static_cast<long>(mClient.audioChannelsIn()));
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
+    }
+
+    if (index new_ins = mClient.controlChannelsIn())
+    {
+      mAutosize = true;      
+      if(mListSize)
+      {
+        mInputListData.resize(new_ins, mListSize);
+        for (index i = 1; i <= new_ins; ++i)
+          mInputListViews.emplace_back(mInputListData.row(i - 1));
+      }
+
+      mProxies.reserve(new_ins);
+      for (index i = 1; i <= new_ins; ++i)
+        mProxies.push_back(proxy_new(this, i, nullptr));
     }
 
     while (mMessages.size() > 0)
@@ -911,7 +970,20 @@ public:
 
     if (isNonRealTime<Client>::value) { mNRTDoneOutlet = bangout(this); }
 
-    if (mClient.controlChannelsOut()) mControlOutlet = listout(this);
+    if (mClient.controlChannelsOut().count)
+    {
+      if(mListSize)
+      {
+        mOutputListData.resize(mClient.controlChannelsOut().count, mListSize);
+        mOutputListAtoms.reserve(mListSize);
+        for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
+          mOutputListViews.emplace_back(mOutputListData.row(i));
+      }
+      mAllControlOuts.reserve(mClient.controlChannelsOut().count);
+      for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
+        mAllControlOuts.push_back(listout(this));
+      mControlOutlet = mAllControlOuts[0];
+    }
 
     for (index i = 0; i < mClient.audioChannelsOut(); ++i)
       outlet_new(this, "signal");
@@ -925,6 +997,7 @@ public:
     Client::getParameterDescriptors().template iterate<RemoveListener>(this,
                                                                        mParams);
     if (mDumpDictionary) object_free(mDumpDictionary);
+    for (auto p : mProxies) object_free(p);
   }
 
   template <size_t N, typename T>
@@ -932,8 +1005,8 @@ public:
   {
     void operator()(const T& param, FluidMaxWrapper* x, ParamSetType& paramSet)
     {
-      auto listenerFunc = [x, &param]() {
-        object_attr_touch((t_object*) (x), gensym(param.name));
+      auto listenerFunc = [x, name=gensym(lowerCase(param.name).c_str())]() {
+        object_attr_touch((t_object*) (x), name);
       };
       paramSet.template addListener<N>(std::move(listenerFunc), x);
     }
@@ -961,13 +1034,13 @@ public:
   {
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
-
-    if (static_cast<size_t>(attr_args_offset(static_cast<short>(ac), av)) >
+    std::cout << attr_args_offset(static_cast<short>(ac), av) << '\n'; 
+    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlIn<typename Client::Client> >
         ParamDescType::NumFixedParams)
     {
       object_warn((t_object*) x,
                   "Too many arguments. Got %d, expect at most %d", ac,
-                  ParamDescType::NumFixedParams);
+                  ParamDescType::NumFixedParams + isControlIn<typename Client::Client>);
     }
 
     return x;
@@ -982,6 +1055,18 @@ public:
     getClass(class_new(className, (method) create, (method) destroy,
                        sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     WrapperBase::setup(getClass());
+
+    if (isControlIn<typename Client::Client>)
+    {
+      class_addmethod(getClass(), (method) handleList, "list", A_GIMME, 0);
+      t_object* a = attr_offset_new("autosize", USESYM(long), 0, nullptr, nullptr,
+                                  calcoffset(FluidMaxWrapper, mAutosize));
+      class_addattr(getClass(), a);
+      CLASS_ATTR_FILTER_CLIP(getClass(), "autosize", 0, 1);
+      CLASS_ATTR_STYLE_LABEL(getClass(), "autosize", 0, "onoff",
+                           "Report Warnings");
+                                  
+    }
 
     class_addmethod(getClass(), (method) doNotify, "notify", A_CANT, 0);
     class_addmethod(getClass(), (method) object_obex_dumpout, "dumpout", A_CANT,
@@ -1034,6 +1119,67 @@ public:
                     0);
   }
 
+
+  void resizeListHandlers(index newSize)
+  {
+      index numIns = mClient.controlChannelsIn();
+      mListSize = newSize; 
+      if(mListSize)
+      {
+        mInputListData.resize(numIns,mListSize);
+        mInputListViews.clear();
+        for (index i = 0; i < numIns; ++i)
+        {
+          mInputListViews.emplace_back(mInputListData.row(i));
+        }
+        std::cout << mInputListViews.size() << '\n';
+        mOutputListData.resize(mClient.controlChannelsOut().count,mListSize);
+        mOutputListAtoms.reserve(mListSize);
+        mOutputListViews.clear();
+        for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
+        {
+          mOutputListViews.emplace_back(mOutputListData.row(i));
+        }
+        
+      }
+  }
+
+  static void doList(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
+  {
+    if(!isr() && x->mAutosize && (ac != x->mListSize)) x->resizeListHandlers(ac);
+    x->mListHandler(x, ac, av);
+  }
+  
+  static void handleList(FluidMaxWrapper* x, t_symbol* s, long ac, t_atom* av)
+  {
+      if(!x->mListSize && !x->mAutosize)
+      {
+        object_error((t_object*)x, "No list size argument nor autosize enabled: can't do anything");
+        return;
+      }
+      
+      if(isr())
+      {
+        if(x->mAutosize && ac != x->mListSize)
+        {
+          object_warn((t_object*)x, "input list size (%d) != object argument (%d) and autosize is enabled: this operation will be deferred",ac,x->mListSize);
+          defer(x,(method)doList,s, ac, av);
+          return;
+        }
+
+        if(!x->mAutosize && ac != x->mListSize)
+        {
+          object_warn((t_object*)x, "bad input list size (%d), expect %d",ac,x->mListSize);
+          return;
+        }
+      }
+      
+      doList(x,s,ac,av);
+      
+  }
+  
+  
+
   static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
   {
     std::string name(newName->s_name);
@@ -1069,15 +1215,15 @@ public:
     case 2:
       if (index < 2)
       {
-      
+
         constexpr bool isModel = IsModel_t<ClientType>::value;
         using ClientClass = typename ClientType::Client;
-        if(index == 0 && isModel && isAudioOut<ClientClass>)
+        if (index == 0 && isModel && isAudioOut<ClientClass>)
         {
           strncpy_zero(s, "(signal) audio out", 512);
           break;
         }
-        
+
         strncpy_zero(s, "(unused)", 512);
         break;
       }
@@ -1141,10 +1287,20 @@ private:
 
   ParamSetType& initParamsFromArgs(long ac, t_atom* av)
   {
+      
     // Process arguments for instantiation parameters
     if (long numArgs = attr_args_offset(static_cast<short>(ac), av))
     {
       long argCount{0};
+      
+      if(isControlIn<typename Client::Client>)
+      {
+        mListSize = atom_getlong(av);
+//        if(numArgs == 1) return;
+        numArgs -= 1;
+        av += 1;
+      }
+      
       auto results = mParams.template setFixedParameterValues<Fetcher>(
           true, numArgs, av, argCount);
       for (auto& r : results) mMessages.push_back(r);
@@ -1255,13 +1411,21 @@ private:
     {
       if (message.name == "load")
       {
-        SpecialCase<MessageResult<void>, std::string>{}.template handle<N>(
-            typename T::ReturnType{}, typename T::ArgumentTypes{},
-            [&message](auto M) {
-              class_addmethod(getClass(),
-                              (method) deferLoad<decltype(M)::value>,
-                              lowerCase(message.name).c_str(), A_GIMME, 0);
-            });
+        using ReturnType = typename T::ReturnType;
+        using ArgumentTypes = typename T::ArgumentTypes;
+        constexpr bool isVoid = std::is_same<ReturnType, MessageResult<void>>::value;
+        
+        using IfVoid = SpecialCase<MessageResult<void>,std::string>;
+        using IfParams = SpecialCase<MessageResult<ParamValues>,std::string>;
+        using Handler = std::conditional_t<isVoid, IfVoid, IfParams>;
+
+        Handler{}.template handle<N>(
+                ReturnType{}, ArgumentTypes{}, [&message](auto M) {
+                  class_addmethod(getClass(),
+                                  (method) deferLoad<decltype(M)::value>,
+                                  lowerCase(message.name).c_str(), A_GIMME, 0);
+                });
+
         return;
       }
       if (message.name == "dump")
@@ -1288,7 +1452,15 @@ private:
       }
       if (message.name == "read")
       {
-        SpecialCase<MessageResult<void>, std::string>{}.template handle<N>(
+        using ReturnType = typename T::ReturnType;
+        using ArgumentTypes = typename T::ArgumentTypes;
+        constexpr bool isVoid = std::is_same<ReturnType, MessageResult<void>>::value;
+        
+        using IfVoid = SpecialCase<MessageResult<void>,std::string>;
+        using IfParams = SpecialCase<MessageResult<ParamValues>,std::string>;
+        using Handler = std::conditional_t<isVoid, IfVoid, IfParams>;
+      
+        Handler{}.template handle<N>(
             typename T::ReturnType{}, typename T::ArgumentTypes{},
             [&message](auto M) {
               class_addmethod(getClass(),
@@ -1364,13 +1536,21 @@ private:
     str = *json;
 
     auto messageResult = x->mClient.template invoke<N>(x->mClient, str);
-
+    updateParams(x, messageResult);
     x->params().template forEachParam<touchAttribute>(x);
 
     object_free(jsonwriter);
     if (x->checkResult(messageResult))
       object_obex_dumpout(x, gensym("load"), 0, nullptr);
   }
+
+  static void updateParams(FluidMaxWrapper*                                 x,
+                           MessageResult<typename ParamSetType::ValueTuple> v)
+  {
+    x->mParams.fromTuple(typename ParamSetType::ValueTuple(v));
+  }
+
+  static void updateParams(FluidMaxWrapper*, MessageResult<void>) {}
 
   template <size_t N>
   static void deferDump(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
@@ -1513,7 +1693,7 @@ private:
     path_toabsolutesystempath(path, filename, fullpath);
 
     auto messageResult = x->mClient.template invoke<N>(x->mClient, fullpath);
-
+    updateParams(x, messageResult);
     x->params().template forEachParam<touchAttribute>(x);
     if (x->checkResult(messageResult))
       object_obex_dumpout(x, gensym("read"), 0, nullptr);
@@ -1620,11 +1800,21 @@ private:
   void*              mDumpOutlet;
   void*              mProgressOutlet;
   bool               mVerbose;
+  bool               mAutosize;
   ParamSetType       mParams;
   ParamSetType       mParamSnapshot;
   Client             mClient;
   t_int32_atomic     mInPerform{0};
   t_dictionary*      mDumpDictionary;
+  std::vector<void*> mProxies;
+
+  index mListSize;
+  FluidTensor<double, 2>                  mInputListData;
+  std::vector<FluidTensorView<double, 1>> mInputListViews;
+  FluidTensor<double, 2>                  mOutputListData;
+  std::vector<FluidTensorView<double, 1>> mOutputListViews;
+  std::vector<void*>                      mAllControlOuts;
+  std::vector<t_atom>                     mOutputListAtoms;
 };
 
 ////////////////////////////////////////////////////////////////////////////////
