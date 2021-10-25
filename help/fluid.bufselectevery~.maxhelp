@@ -134,7 +134,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "channelhop",
+									"attr" : "chanhop",
 									"id" : "obj-9",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -226,7 +226,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 314.981146000000024, 478.801903999999922, 214.264153999999991, 50.0 ],
-									"text" : "choose channel interbal with channelhop (default 1 = every channel)",
+									"text" : "choose channel interval with chanhop (default 1 = every channel)",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.89 ]
 								}
 
@@ -983,7 +983,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 13.264151999999999, 437.528317000000015, 270.264162999999996, 67.0 ],
-									"text" : "fluid.bufselectevery~ @source buf.select.help.src @destination buf.select.help.dst @channelhop 2 @framehop 2"
+									"text" : "fluid.bufselectevery~ @source buf.select.help.src @destination buf.select.help.dst @chanhop 2 @framehop 2"
 								}
 
 							}
