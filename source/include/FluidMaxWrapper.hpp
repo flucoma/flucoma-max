@@ -1119,6 +1119,20 @@ public:
                     0);
   }
 
+  template <typename CType = Client>
+  static std::enable_if_t<!IsThreadedShared<CType>::value>
+  checkName(ParamSetType&)
+  {}
+
+  template <typename CType = Client>
+  static std::enable_if_t<IsThreadedShared<CType>::value>
+  checkName(ParamSetType& params)
+  {
+    if (params.template get<0>().size() == 0)
+    {
+      params.template set<0>(std::string(symbol_unique()->s_name), nullptr);
+    }
+  }
 
   void resizeListHandlers(index newSize)
   {
@@ -1307,6 +1321,7 @@ private:
     }
     // process in-box attributes for mutable params
     attr_args_process((t_object*) this, static_cast<short>(ac), av);
+    checkName(mParams);
     // return params so this can be called in client initaliser
     return mParams;
   }
