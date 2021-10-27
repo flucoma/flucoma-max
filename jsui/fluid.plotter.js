@@ -29,6 +29,7 @@ var colors = {
 // Point Management
 var points = new Array();
 var _pointsize = 0.35;
+var _pointcolor = [0, 0, 0, 1];
 
 // Internal State for Mousing
 var w = [0,0,0];
@@ -82,7 +83,7 @@ function paint() {
 
 	points.forEach(function(point) {
 		var color = point.color;
-		if (labelJSON) {
+		if (labelJSON == {}) {
 			var label = labelJSON[point.id]
 			color = colorMap[label] || [0,0,0,0.65];
 		}
@@ -104,6 +105,8 @@ function paint() {
 	})
 }
 
+
+
 function dictionary(name) {
 	if (inlet == 0) {
 		setdict(name)
@@ -111,6 +114,19 @@ function dictionary(name) {
 	else if (inlet == 1) {
 		setcategories(name)
 	}
+}
+
+function addpoint(id, x, y, size) {
+	var size = size || 1.0;
+	var point = {
+		id : id,
+		x : x,
+		y : y,
+		size : size,
+		color : _pointcolor,
+	}
+	points.push(point);
+	mgraphics.redraw();
 }
 
 function setdict(name) {
@@ -134,7 +150,7 @@ function setdict(name) {
 				id: key,
 				x : data.get(key)[0],
 				y : data.get(key)[1],
-				color : [0, 0, 0, 1],
+				color : _pointcolor,
 				size : 0.1
 			})
 		})
@@ -231,19 +247,6 @@ function highlight() {
 	_highlight = []; // sanity
 	_highlight = arrayfromargs(arguments)
     mgraphics.redraw();
-}
-
-function addpoint(id, x, y, size) {
-	var size = size || 1.0
-	var point = {
-		id : id,
-		x : x,
-		y : y,
-		size : size,
-		color : _pointcolor,
-	}
-	points.push(point);
-	mgraphics.redraw();
 }
 
 function pointsize(v) { 
