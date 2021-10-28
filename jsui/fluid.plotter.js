@@ -43,7 +43,7 @@ var _xrange = [0, 1];
 var _yrange = [0, 1];
 var labels = new Array();
 var labelDict = null;
-var labelJSON = {};
+var labelJSON = null;
 var dataDict = null;
 var colorMap = {};
 
@@ -83,8 +83,7 @@ function paint() {
 	points.forEach(function(point) {
 		var color = point.color;
 		if (labelJSON) {
-			var label = labelJSON[point.id]
-			color = colorMap[label] || [0,0,0,0.65];
+			color = colorMap[ labelJSON[point.id]] ;
 		}
 		mgraphics.set_source_rgba(color);
 
