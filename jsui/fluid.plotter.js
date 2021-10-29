@@ -83,7 +83,8 @@ function paint() {
 	points.forEach(function(point) {
 		var color = point.color;
 		if (labelJSON) {
-			color = colorMap[ labelJSON[point.id]] ;
+			var label = labelJSON[poind.id]
+			color = colorMap[label];
 		}
 		mgraphics.set_source_rgba(color);
 
