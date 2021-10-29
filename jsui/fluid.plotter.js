@@ -124,7 +124,7 @@ function setdict(name) {
 		fail = true;
 	}
 	if (dataDict.get('cols') != 2) {
-		error('fluid.dataset~ should be exactly two dimensions.', '\n')
+		error('fluid.dataset~ should be exactly two dimensions', '\n')
 		fail = true;
 	}
 	if (!fail) {
@@ -147,11 +147,11 @@ function setcategories(name) {
 	// Check that it is a valid dictionary from flucoma.
 	if (!labelDict.contains('data') || !labelDict.contains('cols')) {
 		labelDict = null;
-		error('Please provide a valid dictionary of labels from a fluid.labelset~')
+		error('Please provide a valid dictionary of labels from a fluid.labelset~', '\n')
 	}
 	if (labelDict.get('cols') != 1) {
 		labelDict = null;
-		error('There should only be one column of data which is a label.')
+		error('There should only be one column of data which is a label', '\n')
 	}
 
 	// Convert the internal representation to a JSON object for speedier referencing.
@@ -211,7 +211,7 @@ function addpoint(id, x, y, size) {
 		pointUpdate(id, x, y, size);
 	} 
 	else {
-		error(id, 'already exists');
+		error('The identifier:', id, 'already exists', '\n');
 	}
 }
 
