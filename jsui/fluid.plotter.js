@@ -36,7 +36,7 @@ var w = [0,0,0];
 var vx = 0;
 var vy = 0;
 var _bgcolor = [0.95,0.95,0.95,0.95, 1.0];
-var _shape = 'square'
+var _shape = 'circle'
 var _closest = null;
 var _colorscheme = colors.cat;
 var _highlight = [];
@@ -44,7 +44,7 @@ var _xrange = [0, 1];
 var _yrange = [0, 1];
 var labels = new Array();
 var labelDict = null;
-var labelJSON = {};
+var labelJSON = null;
 var dataDict = null;
 var colorMap = {};
 
@@ -81,31 +81,30 @@ function paint() {
 	mgraphics.rectangle(-1, 1, 2, 2);
 	mgraphics.fill();
 
-	points.forEach(function(point) {
+	Object.keys(points).forEach(function(pt) {
+		var point = points[pt];
 		var color = point.color;
-		if (labelJSON == {}) {
-			var label = labelJSON[point.id]
-			color = colorMap[label] || [0,0,0,0.65];
+
+		if (labelJSON) {
+			var label = labelJSON[pt]
+			color = colorMap[label];
 		}
 		mgraphics.set_source_rgba(color);
 
-		var highlightScale = _highlight.indexOf(point.id) != -1 ? 2.3 : 1.0
+		var highlightScale = _highlight.indexOf(pt) != -1 ? 2.3 : 1.0
 		var psize = (_pointsize * point.size) * highlightScale;
 
 		var x = scale(point.x, _xrange[0], _xrange[1], -1, 1) - (psize*0.5)
 		var y = scale(point.y, _yrange[0], _yrange[1], -1, 1) + (psize*0.5)
 
-		if (_shape == 'square') {
-			mgraphics.rectangle(x, y, psize, psize)
-		}
-		else {
+		if (_shape == 'circle')
 			mgraphics.ellipse(x, y, psize, psize)
-		}
-		mgraphics.fill();	
-	})
+		else
+			mgraphics.rectangle(x, y, psize, psize)
+
+		mgraphics.fill();
+	});
 }
-
-
 
 function dictionary(name) {
 	if (inlet == 0) {
@@ -116,21 +115,7 @@ function dictionary(name) {
 	}
 }
 
-function addpoint(id, x, y, size) {
-	var size = size || 1.0;
-	var point = {
-		id : id,
-		x : x,
-		y : y,
-		size : size,
-		color : _pointcolor,
-	}
-	points.push(point);
-	mgraphics.redraw();
-}
-
 function setdict(name) {
-	points = new Array();
 	dataDict = new Dict(name)
 	var fail = false;
 	// Check that it is a valid dictionary from flucoma.
@@ -143,16 +128,14 @@ function setdict(name) {
 		fail = true;
 	}
 	if (!fail) {
-		var keys = dataDict.get('data').getkeys();
-		var data = dataDict.get('data')
-		keys.forEach(function(key) {
-			points.push({
-				id: key,
-				x : data.get(key)[0],
-				y : data.get(key)[1],
-				color : _pointcolor,
-				size : 0.1
-			})
+		var rawData = JSON.parse(dataDict.stringify()).data;
+		Object.keys(rawData).forEach(function(pt) { 
+			points[pt] = {
+				x : rawData[pt][0],
+				y : rawData[pt][1],
+				color: _pointcolor,
+				size: 0.1
+			}
 		})
 		mgraphics.redraw();
 	}
@@ -174,30 +157,6 @@ function setcategories(name) {
 	// Convert the internal representation to a JSON object for speedier referencing.
 	labelJSON = JSON.parse(labelDict.stringify()).data;
 	constructColorScheme();
-}
-
-function colorscheme(scheme) {
-
-	if (colors[scheme]) {
-		_colorscheme = colors[scheme]
-	}
-	constructColorScheme();
-}
-
-function xrange(min, max) {
-	_xrange = [min, max];
-	mgraphics.redraw();
-}
-
-function yrange(min, max) {
-	_yrange = [min, max];
-	mgraphics.redraw();
-}
-
-function range(min, max) {
-	_yrange = [min, max];
-	_xrange = [min, max];
-	mgraphics.redraw();
 }
 
 function constructColorScheme() {
@@ -226,6 +185,54 @@ function constructColorScheme() {
 		})
 		mgraphics.redraw();
 	}
+}
+
+function colorscheme(scheme) {
+
+	if (colors[scheme]) {
+		_colorscheme = colors[scheme]
+	}
+	constructColorScheme();
+}
+
+function pointUpdate(id, x, y, size) {
+	var size = size || 1.0;
+	points[id] = {
+		x : x,
+		y : y,
+		size : size,
+		color : _pointcolor,
+	};
+	mgraphics.redraw();
+}
+
+function addpoint(id, x, y, size) {
+	if (!points.hasOwnProperty(id)) {
+		pointUpdate(id, x, y, size);
+	} 
+	else {
+		error(id, 'already exists');
+	}
+}
+
+function setpoint(id, x, y, size) {
+	pointUpdate(id, x, y, size)
+}
+
+function xrange(min, max) {
+	_xrange = [min, max];
+	mgraphics.redraw();
+}
+
+function yrange(min, max) {
+	_yrange = [min, max];
+	mgraphics.redraw();
+}
+
+function range(min, max) {
+	_yrange = [min, max];
+	_xrange = [min, max];
+	mgraphics.redraw();
 }
 
 function shape(x) {
