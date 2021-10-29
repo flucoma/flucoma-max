@@ -47,6 +47,7 @@ var labelDict = null;
 var labelJSON = null;
 var dataDict = null;
 var colorMap = {};
+var pointColors = {};
 
 
 function hexToRGB(hex, a) {
@@ -83,10 +84,14 @@ function paint() {
 
 	Object.keys(points).forEach(function(pt) {
 		var point = points[pt];
-		var color = point.color;
+		var color = _pointcolor;
+
+		if (pointColors.hasOwnProperty(pt)) {
+			color = pointColors[pt];
+		}
 
 		if (labelJSON) {
-			var label = labelJSON[pt]
+			var label = labelJSON[pt];
 			color = colorMap[label];
 		}
 		mgraphics.set_source_rgba(color);
@@ -133,7 +138,6 @@ function setdict(name) {
 			points[pt] = {
 				x : rawData[pt][0],
 				y : rawData[pt][1],
-				color: _pointcolor,
 				size: 0.1
 			}
 		})
@@ -200,8 +204,7 @@ function pointUpdate(id, x, y, size) {
 	points[id] = {
 		x : x,
 		y : y,
-		size : size,
-		color : _pointcolor,
+		size : size
 	};
 	mgraphics.redraw();
 }
@@ -217,6 +220,15 @@ function addpoint(id, x, y, size) {
 
 function setpoint(id, x, y, size) {
 	pointUpdate(id, x, y, size)
+}
+
+function setpointcolor(id, r, g, b, a) {
+	var r = 0 || r;
+	var g = 0 || g;
+	var b = 0 || b;
+	var a = 1 || a;
+	pointColors[id] = [r, g, b, a];
+	mgraphics.redraw();
 }
 
 function todataset() {
@@ -245,7 +257,7 @@ function shape(x) {
 }
 
 function pointcolor(r, g, b, a) {
-	_pointcolor = [r, g, b, a]
+	_pointcolor = [r, g, b, a];
 	mgraphics.redraw();
 }
 
