@@ -219,6 +219,10 @@ function setpoint(id, x, y, size) {
 	pointUpdate(id, x, y, size)
 }
 
+function todataset() {
+	// A method to convert the internal representation to converted to a dataset allowing manual visual editing
+}
+
 function xrange(min, max) {
 	_xrange = [min, max];
 	mgraphics.redraw();
