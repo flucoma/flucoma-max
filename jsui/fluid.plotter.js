@@ -196,7 +196,7 @@ function colorscheme(scheme) {
 }
 
 function pointUpdate(id, x, y, size) {
-	var size = size || 1.0;
+	var size = size || 0.1;
 	points[id] = {
 		x : x,
 		y : y,
