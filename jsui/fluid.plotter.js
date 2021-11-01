@@ -28,26 +28,29 @@ var colors = {
 
 // Point Management
 var points = new Array();
-var _pointsize = 0.35;
-var _pointcolor = [0, 0, 0, 1];
+var pointSizeScaler = 0.075;
+var defaultPointColor = [0, 0, 0, 0.8]
+var _pointsizescale = 1.0;
 
 // Internal State for Mousing
 var w = [0,0,0];
 var vx = 0;
 var vy = 0;
+var _xmin = 0.0;
+var _xmax = 1.0;
+var _ymin = 0.0;
+var _ymax = 1.0;
 var _bgcolor = [0.95,0.95,0.95,0.95, 1.0];
 var _shape = 'circle'
 var _closest = null;
 var _colorscheme = colors.cat;
 var _highlight = [];
-var _xrange = [0, 1];
-var _yrange = [0, 1];
-var labels = new Array();
 var labelDict = null;
 var labelJSON = null;
 var dataDict = null;
 var colorMap = {};
 var pointColors = {};
+var pointSizes = {};
 
 
 function hexToRGB(hex, a) {
@@ -84,7 +87,7 @@ function paint() {
 
 	Object.keys(points).forEach(function(pt) {
 		var point = points[pt];
-		var color = _pointcolor;
+		var color = defaultPointColor;
 
 		if (pointColors.hasOwnProperty(pt)) {
 			color = pointColors[pt];
@@ -96,11 +99,15 @@ function paint() {
 		}
 		mgraphics.set_source_rgba(color);
 
-		var highlightScale = _highlight.indexOf(pt) != -1 ? 2.3 : 1.0
-		var psize = (_pointsize * point.size) * highlightScale;
+		var highlightScale = _highlight.indexOf(pt) != -1 ? 2.3 : 1.0;
 
-		var x = scale(point.x, _xrange[0], _xrange[1], -1, 1) - (psize*0.5)
-		var y = scale(point.y, _yrange[0], _yrange[1], -1, 1) + (psize*0.5)
+		var pointSize = pointSizes.hasOwnProperty(pt) ? pointSizes[pt] : 1.0;
+
+		// calculate the point size from the highlight, point scale and points' size
+		var psize = ((_pointsizescale * pointSize)  * highlightScale) * pointSizeScaler;
+
+		var x = scale(point.x, _xmin, _xmax, -1, 1) - (psize*0.5)
+		var y = scale(point.y, _ymin, _ymax, -1, 1) + (psize*0.5)
 
 		if (_shape == 'circle')
 			mgraphics.ellipse(x, y, psize, psize)
@@ -199,30 +206,26 @@ function colorscheme(scheme) {
 	constructColorScheme();
 }
 
-function pointUpdate(id, x, y, size) {
-	var size = size || 0.1;
+function pointUpdate(id, x, y) {
 	points[id] = {
-		x : x,
-		y : y,
-		size : size
+		x: x,
+		y: y
 	};
 	mgraphics.redraw();
 }
 
-function addpoint(id, x, y, size) {
-	if (!points.hasOwnProperty(id)) {
-		pointUpdate(id, x, y, size);
-	} 
-	else {
+function addpoint(id, x, y) {
+	if (!points.hasOwnProperty(id))
+		pointUpdate(id, x, y);
+	else
 		error('The identifier:', id, 'already exists', '\n');
-	}
 }
 
-function setpoint(id, x, y, size) {
-	pointUpdate(id, x, y, size)
+function setpoint(id, x, y) {
+	pointUpdate(id, x, y)
 }
 
-function setpointcolor(id, r, g, b, a) {
+function pointcolor(id, r, g, b, a) {
 	var r = 0 || r;
 	var g = 0 || g;
 	var b = 0 || b;
@@ -231,33 +234,42 @@ function setpointcolor(id, r, g, b, a) {
 	mgraphics.redraw();
 }
 
+function pointsize(id, size) {
+	pointSizes[id] = size;
+	mgraphics.redraw();
+}
+
+function pointsizescale(v) { 
+	_pointsizescale = v;
+    mgraphics.redraw();
+};
+
 function todataset() {
 	// A method to convert the internal representation to converted to a dataset allowing manual visual editing
 }
 
-function xrange(min, max) {
-	_xrange = [min, max];
+function xmin(x) {
+	_xmin = x;
 	mgraphics.redraw();
 }
 
-function yrange(min, max) {
-	_yrange = [min, max];
+function xmax(x) {
+	_xmax = x;
 	mgraphics.redraw();
 }
 
-function range(min, max) {
-	_yrange = [min, max];
-	_xrange = [min, max];
+function ymin(x) {
+	_ymin = x;
+	mgraphics.redraw();
+}
+
+function ymax(x) {
+	_ymax = x;
 	mgraphics.redraw();
 }
 
 function shape(x) {
 	_shape = x;
-	mgraphics.redraw();
-}
-
-function pointcolor(r, g, b, a) {
-	_pointcolor = [r, g, b, a];
 	mgraphics.redraw();
 }
 
@@ -272,11 +284,6 @@ function highlight() {
     mgraphics.redraw();
 }
 
-function pointsize(v) { 
-	_pointsize = v;
-    mgraphics.redraw();
-};
-
 function clear() { 
 	colorMap = {};
 	points = new Array();
@@ -289,7 +296,7 @@ function bang() {
     mgraphics.redraw();
 }
 
-function onclick(x,y,but,cmd,shift,capslock,option,ctrl) {
+function onclick(x,y) {
 	ondrag(x, y)
 }
 onclick.local = 1; //private. could be left public to permit "synthetic" events
@@ -308,8 +315,8 @@ function ondrag(x,y) {
 
 	vx = x / width;
 	vy = 1- y/height;
-	vx = scale(vx, 0, 1, _xrange[0], _xrange[1]);
-	vy = scale(vy, 0, 1, _yrange[0], _yrange[1]);
+	vx = scale(vx, 0, 1, _xmin, _xmax);
+	vy = scale(vy, 0, 1, _ymin, _ymax);
 	notifyclients();
 	bang();
 }
