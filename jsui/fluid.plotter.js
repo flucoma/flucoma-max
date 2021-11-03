@@ -248,25 +248,27 @@ function todataset() {
 	// A method to convert the internal representation to converted to a dataset allowing manual visual editing
 }
 
-function xmin(x) {
-	_xmin = x;
+function xrange(min, max) {
+	// Set the domain on the x axis
+	_xmin = min;
+	_xmax = max;
 	mgraphics.redraw();
 }
 
-function xmax(x) {
-	_xmax = x;
+function yrange(min, max) {
+	// Set the domain on the y axis
+	_ymin = min;
+	_ymax = max;
 	mgraphics.redraw();
 }
 
-function ymin(x) {
-	_ymin = x;
+function range(min, max) {
+	// Set the domain on both axis simultaneously
+	xrange(min, max);
+	yrange(min, max);
 	mgraphics.redraw();
 }
 
-function ymax(x) {
-	_ymax = x;
-	mgraphics.redraw();
-}
 
 function shape(x) {
 	_shape = x;
