@@ -1532,6 +1532,7 @@ private:
     if (ac < 2 || atom_getsym(av) != dictionarySymbol)
     {
       object_error((t_object*) x, "Expected a dictionary");
+      return; 
     }
 
     t_symbol*     dictName = atom_getsym(av + 1);
