@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -330,10 +330,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 664.0, 718.707512999999949, 265.0, 21.0 ],
+					"patching_rect" : [ 664.0, 718.707512999999949, 266.0, 22.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 264.0, 21.0 ],
-					"text" : "Amplitude-based Detrending Slicer for Buffers",
+					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 266.0, 22.0 ],
+					"text" : "undocumented😬",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.6 ]
 				}
 
@@ -474,7 +474,7 @@
 					"patching_rect" : [ 657.0, 803.165829000000031, 342.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 387.19876099999999, 284.479034000000013, 35.0 ],
-					"text" : "fluid.bufampslice~",
+					"text" : "fluid.list2buf",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.82 ]
 				}
 
@@ -719,6 +719,7 @@
 					"enablevscroll" : 0,
 					"id" : "obj-2",
 					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -728,14 +729,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 9.0, 79.0, 750.0, 952.0 ],
+						"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1056,14 +1057,13 @@
 									"fontface" : 1,
 									"fontname" : "Lato",
 									"id" : "obj-95",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 2618.548386999999821, 594.580650999999989, 123.0, 35.0 ],
+									"patching_rect" : [ 2618.548386999999821, 594.580650999999989, 123.0, 21.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 2580.0, 570.0, 149.0, 21.0 ],
-									"text" : "Experimental Abstractions"
+									"text" : "Experimental Helpers"
 								}
 
 							}
@@ -1372,7 +1372,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.buf2list", "fluid.list2buf", "fluid.bufresize" ]
+									"tabs" : [ "fluid.plotter", "fluid.waveform~" ]
 								}
 
 							}
@@ -1440,7 +1440,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~" ]
+									"tabs" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~", "fluid.buf2list", "fluid.list2buf", "fluid.bufresize" ]
 								}
 
 							}
@@ -2151,13 +2151,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-47",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 49.0 ],
-									"text" : "fluid.bufampslice~"
+									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 35.0 ],
+									"text" : "fluid.list2buf"
 								}
 
 							}
@@ -3862,16 +3862,9 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "fluidobjdigest.js",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/interfaces",
+				"bootpath" : "~/dev/flucoma/max/interfaces",
 				"patcherrelativepath" : "../interfaces",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluidcorpusmanipulation.png",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/interfaces",
-				"patcherrelativepath" : "../interfaces",
-				"type" : "PNG",
 				"implicit" : 1
 			}
  ],
@@ -3879,9 +3872,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3899,7 +3892,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3909,7 +3901,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
