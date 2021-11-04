@@ -14,29 +14,23 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    # - name: install Max
-      # run: brew install --cask cycling74-max
-
-    # - name: open
-      # run: open patchers/write-test.maxpat
-
-    # - name: is the file there?
-      # run: ls
-
     - name: install ninja
       run: brew install ninja
 
-    - name: curl SDK
-      run: curl -L0 https://cycling74.s3.amazonaws.com/download/max-sdk-8.0.3.zip --output sdk.zip
+#     - name: curl SDK
+#       run: curl -L0 https://cycling74.s3.amazonaws.com/download/max-sdk-8.0.3.zip --output sdk.zip
 
-    - name: unzip
-      run: unzip sdk.zip
+#     - name: unzip
+#       run: unzip sdk.zip
+
+    - name: get max sdk
+      run: https://github.com/Cycling74/max-sdk.git sdk
       
     - name: make build directory
       run: mkdir -p build
       
     - name: cmake
-      run: cmake -GNinja -DMAX_SDK_PATH=../max-sdk-8.0.3/ ..
+      run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ ..
       working-directory: build
       
     - name: install
