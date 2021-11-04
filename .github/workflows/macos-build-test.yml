@@ -16,12 +16,6 @@ jobs:
     - name: install ninja
       run: brew install ninja
 
-#     - name: curl SDK
-#       run: curl -L0 https://cycling74.s3.amazonaws.com/download/max-sdk-8.0.3.zip --output sdk.zip
-
-#     - name: unzip
-#       run: unzip sdk.zip
-
     - name: get max sdk
       run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
       
@@ -43,9 +37,9 @@ jobs:
       uses: svenstaro/upload-release-action@v2
       with:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
-        file: release.zip
-        asset_name: thisrelease
-        tag: ${{ github.ref }}
+        file: FluidCorpusManipulation-nightly.zip
+        asset_name: ${{
+        tag: ${{ github.sha }}
         overwrite: true
         body: "This is a release"
         
