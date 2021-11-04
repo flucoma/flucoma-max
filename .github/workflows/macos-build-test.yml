@@ -34,5 +34,5 @@ jobs:
       working-directory: build
       
     - name: install
-      run: ninja
+      run: ninja fluid.ampslice_tilde
       working-directory: build
