@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-
     runs-on: macos-latest
 
     steps:
@@ -36,3 +35,17 @@ jobs:
     - name: install
       run: ninja fluid.ampslice_tilde
       working-directory: build
+      
+    - name: zip release
+      run: zip -r release.zip externals
+      
+    - name: package and upload
+      uses: svenstaro/upload-release-action@v2
+      with:
+        repo_token: ${{ secrets.GITHUB_TOKEN }}
+        file: release.zip
+        asset_name: thisrelease
+        tag: ${{ github.ref }}
+        overwrite: true
+        body: "This is a release"
+        
