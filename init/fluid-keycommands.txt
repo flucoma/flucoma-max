@@ -1,2 +1,0 @@
-max definecommand F patcher inserttextobj fluid.;
-max definecommandinstructions patcher F "fluid object or abstraction";

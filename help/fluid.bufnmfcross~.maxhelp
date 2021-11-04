@@ -900,8 +900,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 73.5, 175.0, 22.0, 22.0 ],
-													"text" : "t 2"
+													"patching_rect" : [ 73.5, 175.0, 29.0, 22.0 ],
+													"text" : "t 15"
 												}
 
 											}
@@ -1212,7 +1212,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
 													"patching_rect" : [ 73.5, 175.0, 29.0, 22.0 ],
-													"text" : "t 16"
+													"text" : "t 14"
 												}
 
 											}

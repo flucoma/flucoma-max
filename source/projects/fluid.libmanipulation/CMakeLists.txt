@@ -9,3 +9,7 @@ add_library(
 )
 
 include(${CMAKE_CURRENT_SOURCE_DIR}/../../script/max-posttarget.cmake)
+
+if(MSVC)
+  target_compile_options(${PROJECT_NAME} PRIVATE /bigobj)
+endif()
