@@ -38,10 +38,10 @@ jobs:
       with:
         release_name: FluCoMa Max Nightly Build
         prerelease: true
-        body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour"
+        body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: release.zip
-        asset_name: FluCoMa-Max-nightly-${{ github.sha }}.zip
+        asset_name: FluCoMa-Max-nightly.zip
         tag: ${{ github.ref }}
         overwrite: true
         
