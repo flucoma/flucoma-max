@@ -39,7 +39,7 @@ jobs:
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: release.zip
         asset_name: FluCoMa-Max-nightly-${{ github.sha }}.zip
-        tag: ${{ github.sha }}
+        tag: ${{ github.ref }}
         overwrite: true
         body: "This is a release"
         
