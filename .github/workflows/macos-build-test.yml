@@ -36,10 +36,12 @@ jobs:
     - name: package and upload
       uses: svenstaro/upload-release-action@v2
       with:
+        release_name: FluCoMa Max Nightly Build
+        prelease: true
+        body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour"
         repo_token: ${{ secrets.GITHUB_TOKEN }}
         file: release.zip
         asset_name: FluCoMa-Max-nightly-${{ github.sha }}.zip
         tag: ${{ github.ref }}
         overwrite: true
-        body: "This is a release"
         
