@@ -24,7 +24,7 @@ jobs:
 #       run: unzip sdk.zip
 
     - name: get max sdk
-      run: https://github.com/Cycling74/max-sdk.git sdk
+      run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
       
     - name: make build directory
       run: mkdir -p build
