@@ -48,6 +48,9 @@ jobs:
       - name: make build directory
         run: mkdir -p build
 
+      - name: create externals folder
+        run: mkdir -p externals
+
       - name: clone core
         run : git clone https://github.com/jamesb93/flucoma-core.git core
         
