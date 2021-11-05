@@ -1,0 +1,113 @@
+name: Cached Releases
+
+on:
+  push:
+    branches: [ main, ci/automatic-building ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  winbuild:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: get max sdk
+      run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
+      
+    - name: make build directory
+      run: mkdir -p build
+      
+    - name: cmake
+      run: cmake -DMAX_SDK_PATH="../sdk/" ..
+      working-directory: build
+      
+    - name: build binaries
+      run: cmake --build . --target fluid.ampslice_tilde
+      working-directory: build
+
+    # - uses: actions/upload-artifact@v2
+    #   with:
+    #     name: winbuild
+    #     path: externals/fluid.ampslice~.mxe64
+
+    - name: cache build
+      uses: actions/cache@v2
+      env:
+        cache-name: cache-mxe
+      with:
+        path: externals
+        key: mxe
+  
+  macbuild:
+    needs: winbuild
+    runs-on: macos-latest
+
+    - name: check pre
+      run: ls externals
+
+    steps:
+      - uses: actions/checkout@v2
+
+      # - uses: actions/download-artifact@v2
+      #   with:
+      #     name: winbuild
+
+      - name: grab cache
+        id: cache-mxe
+        uses: actions/cache@v2
+        with:
+          path: externals
+          key: mxe
+      
+      - name: check
+        run: ls externals
+
+    #   - name: install ninja
+    #     run: brew install ninja
+
+    #   - name: get max sdk
+    #     run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
+        
+    #   - name: make build directory
+    #     run: mkdir -p build
+        
+    #   - name: cmake
+    #     run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ ..
+    #     working-directory: build
+        
+    #   - name: install
+    #     run: ninja fluid.ampslice_tilde
+    #     working-directory: build
+        
+    #   - name: zip release
+    #     run: zip -r release.zip externals
+        
+    #   - name: package and upload
+    #     uses: svenstaro/upload-release-action@v2
+    #     with:
+    #       release_name: FluCoMa Max Nightly Build
+    #       prerelease: true
+    #       body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
+    #       repo_token: ${{ secrets.GITHUB_TOKEN }}
+    #       file: release.zip
+    #       asset_name: FluCoMa-Max-nightly.zip
+    #       tag: nightly
+    #       overwrite: true
+      
+    # - name: zip release
+    #   run: zip -r release.zip externals
+      
+    # - name: package and upload
+    #   uses: svenstaro/upload-release-action@v2
+    #   with:
+    #     release_name: FluCoMa Max Nightly Build
+    #     prerelease: true
+    #     body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
+    #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+    #     file: release.zip
+    #     asset_name: FluCoMa-Max-nightly.zip
+    #     tag: nightly
+    #     overwrite: true
+        
