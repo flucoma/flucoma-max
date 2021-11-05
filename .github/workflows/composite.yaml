@@ -1,11 +1,11 @@
-name: Windows Nightly
+name: Composite
 
 on:
   push:
     branches: [ main, ci/automatic-building ]
 
 jobs:
-  build:
+  winbuild:
     runs-on: windows-latest
 
     steps:
@@ -19,10 +19,11 @@ jobs:
     
   inspect:
     runs-on: macos-latest
+    needs: winbuild
 
     steps:
     - name: seee
-      run: ls /
+      run: ls ../
       
     # - name: zip release
     #   run: zip -r release.zip externals
