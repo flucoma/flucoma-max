@@ -1,4 +1,4 @@
-name: Windows Nightly
+name: Nightly Releases
 
 on:
   push:
@@ -27,10 +27,13 @@ jobs:
       run: cmake --build . --target fluid.ampslice_tilde
       working-directory: build
 
+    - name: see
+      run: ls externals
+
     - uses: actions/upload-artifact@v2
       with:
         name: winbuild
-        path: externals/fluid.ampslice\~.mxe64
+        path: externals/fluid.ampslice~.mxe64
   
   macbuild:
     needs: winbuild
