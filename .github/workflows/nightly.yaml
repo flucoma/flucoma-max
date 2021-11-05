@@ -30,7 +30,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: winbuild
-        path: externals/fluid.ampslice~.mxe64
+        path: externals/
   
   macbuild:
     needs: winbuild
@@ -38,14 +38,6 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-      
-      - uses: actions/download-artifact@v2
-        with:
-          name: winbuild
-          path: externals
-
-      - name: clean externals folder
-        run: rm -rf externals
 
       - name: install ninja
         run: brew install ninja
@@ -64,8 +56,13 @@ jobs:
         run: ninja fluid.ampslice_tilde
         working-directory: build
 
-      - name: check
-        run: ls externals
+      - uses: actions/download-artifact@v2
+        with:
+          name: winbuild
+          path: externals/windows
+        
+      - name: see
+        run: ls externals/windows
         
     #   - name: zip release
     #     run: zip -r release.zip externals
