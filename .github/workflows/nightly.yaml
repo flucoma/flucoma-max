@@ -44,6 +44,9 @@ jobs:
 
       - name: uname
         run: uname -m
+      
+      - name: clang
+        run: clang -v
 
       - name: get max sdk
         run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
