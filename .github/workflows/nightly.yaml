@@ -13,6 +13,9 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
+    - name: see
+      run: ls
+
     - name: get max sdk
       run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
       
@@ -46,6 +49,9 @@ jobs:
         with:
           name: winbuild
           path: externals
+
+      - name: clean externals folder
+        run: rm -rf externals
 
       - name: install ninja
         run: brew install ninja
