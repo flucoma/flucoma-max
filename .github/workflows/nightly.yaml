@@ -41,30 +41,31 @@ jobs:
 
     steps:
       - uses: actions/checkout@v2
-
+d
       - uses: actions/download-artifact@v2
         with:
           name: winbuild
-      
+          path: externals
+
+      - name: install ninja
+        run: brew install ninja
+
+      - name: get max sdk
+        run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
+        
+      - name: make build directory
+        run: mkdir -p build
+        
+      - name: cmake
+        run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ ..
+        working-directory: build
+        
+      - name: install
+        run: ninja fluid.ampslice_tilde
+        working-directory: build
+
       - name: check
-        run: ls
-
-    #   - name: install ninja
-    #     run: brew install ninja
-
-    #   - name: get max sdk
-    #     run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
-        
-    #   - name: make build directory
-    #     run: mkdir -p build
-        
-    #   - name: cmake
-    #     run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ ..
-    #     working-directory: build
-        
-    #   - name: install
-    #     run: ninja fluid.ampslice_tilde
-    #     working-directory: build
+        run: ls externals
         
     #   - name: zip release
     #     run: zip -r release.zip externals
