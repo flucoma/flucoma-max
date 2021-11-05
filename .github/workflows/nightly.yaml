@@ -53,6 +53,9 @@ jobs:
       - name: clean externals folder
         run: rm -rf externals
 
+      - name: see
+        run: ls -R
+
       - name: install ninja
         run: brew install ninja
 
@@ -65,6 +68,9 @@ jobs:
       - name: cmake
         run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ ..
         working-directory: build
+
+      - name: see
+        run: ls -R
         
       - name: install
         run: ninja fluid.ampslice_tilde
