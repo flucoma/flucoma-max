@@ -39,31 +39,31 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # - name: install ninja
-      #   run: brew install ninja
+      - name: install ninja
+        run: brew install ninja
 
-      # - name: get max sdk
-      #   run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
+      - name: get max sdk
+        run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
         
-      # - name: make build directory
-      #   run: mkdir -p build
+      - name: make build directory
+        run: mkdir -p build
         
-      # - name: cmake
-      #   run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ ..
-      #   working-directory: build
+      - name: cmake
+        run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64"..
+        working-directory: build
         
-      # - name: install
-      #   run: ninja fluid.ampslice_tilde
-      #   working-directory: build
+      - name: install
+        run: ninja fluid.ampslice_tilde
+        working-directory: build
 
-      - name: x
+      - name: create externals folder
         run: mkdir -p externals
 
       - uses: actions/download-artifact@v2
         with:
           name: winbuild
           path: externals
-        
+      
       - name: see
         run: ls externals
         
