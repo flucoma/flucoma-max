@@ -1,0 +1,102 @@
+name: Windows Nightly
+
+on:
+  push:
+    branches: [ main, ci/automatic-building ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  winbuild:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: create a file
+      run: touch foo  
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: winbuild
+        path: foo
+
+    # - name: get max sdk
+    #   run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
+      
+    # - name: make build directory
+    #   run: mkdir -p build
+      
+    # - name: cmake
+    #   run: cmake -DMAX_SDK_PATH="../sdk/" ..
+    #   working-directory: build
+      
+    # - name: install
+    #   run: cmake --build . --target fluid.ampslice_tilde
+    #   working-directory: build
+
+    # - name: list
+    #   run: ls
+    #   working-directory: externals
+  
+  macbuild:
+    needs: winbuild
+    runs-on: macos-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: winbuild
+      
+      - name: check
+        run: ls
+
+    #   - name: install ninja
+    #     run: brew install ninja
+
+    #   - name: get max sdk
+    #     run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
+        
+    #   - name: make build directory
+    #     run: mkdir -p build
+        
+    #   - name: cmake
+    #     run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ ..
+    #     working-directory: build
+        
+    #   - name: install
+    #     run: ninja fluid.ampslice_tilde
+    #     working-directory: build
+        
+    #   - name: zip release
+    #     run: zip -r release.zip externals
+        
+    #   - name: package and upload
+    #     uses: svenstaro/upload-release-action@v2
+    #     with:
+    #       release_name: FluCoMa Max Nightly Build
+    #       prerelease: true
+    #       body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
+    #       repo_token: ${{ secrets.GITHUB_TOKEN }}
+    #       file: release.zip
+    #       asset_name: FluCoMa-Max-nightly.zip
+    #       tag: nightly
+    #       overwrite: true
+      
+    # - name: zip release
+    #   run: zip -r release.zip externals
+      
+    # - name: package and upload
+    #   uses: svenstaro/upload-release-action@v2
+    #   with:
+    #     release_name: FluCoMa Max Nightly Build
+    #     prerelease: true
+    #     body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
+    #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+    #     file: release.zip
+    #     asset_name: FluCoMa-Max-nightly.zip
+    #     tag: nightly
+    #     overwrite: true
+        
