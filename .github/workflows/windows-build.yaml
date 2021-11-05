@@ -20,7 +20,7 @@ jobs:
       run: mkdir -p build
       
     - name: cmake
-      run: cmake -DMAX_SDK_PATH=../sdk/ ..
+      run: cmake -DMAX_SDK_PATH="../sdk/" ..
       working-directory: build
       
     - name: install
