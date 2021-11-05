@@ -44,11 +44,11 @@ jobs:
     needs: winbuild
     runs-on: macos-latest
 
-    - name: check pre
-      run: ls externals
-
     steps:
       - uses: actions/checkout@v2
+
+      - name: check pre
+        run: ls externals
 
       # - uses: actions/download-artifact@v2
       #   with:
