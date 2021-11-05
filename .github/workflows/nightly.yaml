@@ -55,7 +55,7 @@ jobs:
         run : git clone https://github.com/jamesb93/flucoma-core.git core
         
       - name: cmake
-        run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ -DFLUID_PATH=../../core -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
+        run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ -DFLUID_PATH=../core -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
         working-directory: build
         
       - name: install
