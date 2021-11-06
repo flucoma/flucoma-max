@@ -28,7 +28,7 @@ jobs:
       working-directory: build
 
     - name: remove pdb files
-      run: Remove-Item install -Recurse -Include *.pdb
+      run: Remove-Item release-packaging -Recurse -Include *.pdb
 
     - uses: actions/upload-artifact@v2
       with:
