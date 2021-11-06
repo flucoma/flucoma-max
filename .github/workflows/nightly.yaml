@@ -24,16 +24,18 @@ jobs:
       working-directory: build
       
     - name: build binaries
-      run: cmake --build . --target fluid.ampslice_tilde
+      run: cmake --build . --target install
       working-directory: build
+
+    - name: remove pdb files
+      run: Remove-Item install -Recurse -Include *.pdb
 
     - uses: actions/upload-artifact@v2
       with:
         name: winbuild
-        path: externals/
+        path: release-packaging/FluidCorpusManipulation/externals/
   
   macbuild:
-    needs: winbuild
     runs-on: macos-11
 
     steps:
@@ -50,20 +52,30 @@ jobs:
 
       - name: create externals folder
         run: mkdir -p externals
-
-      - name: clone core
-        run : git clone https://github.com/jamesb93/flucoma-core.git core
         
       - name: cmake
-        run: cmake -GNinja -DCMAKE_APPLE_SILICON_PROCESSOR=arm64 -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
+        run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
         working-directory: build
         
       - name: install
-        run: ninja fluid.ampslice_tilde
+        run: ninja install
         working-directory: build
 
-      - name: create externals folder
-        run: mkdir -p externals
+      - uses: actions/upload-artifact@v2
+        with:
+          name: macbuild
+          path: release-packaging/FluidCorpusManipulation/
+  
+  release:
+    runs-on: macos-11
+    needs: [winbuild, macbuild]
+
+    steps:
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: macbuild
+          path: ./
 
       - uses: actions/download-artifact@v2
         with:
@@ -71,20 +83,17 @@ jobs:
           path: externals
       
       - name: see
-        run: ls externals
-      
-      - name: zip release
-        run: zip -r release.zip externals
+        run: ls -R
         
-      - name: package and upload
-        uses: svenstaro/upload-release-action@v2
-        with:
-          release_name: FluCoMa Max Nightly Build
-          prerelease: true
-          body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: release.zip
-          asset_name: FluCoMa-Max-nightly.zip
-          tag: nightly
-          overwrite: true
+      # - name: package and upload
+      #   uses: svenstaro/upload-release-action@v2
+      #   with:
+      #     release_name: FluCoMa Max Nightly Build
+      #     prerelease: true
+      #     body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
+      #     repo_token: ${{ secrets.GITHUB_TOKEN }}
+      #     file: release.zip
+      #     asset_name: FluCoMa-Max-nightly.zip
+      #     tag: nightly
+      #     overwrite: true
         
