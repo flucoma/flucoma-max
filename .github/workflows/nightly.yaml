@@ -53,9 +53,12 @@ jobs:
 
       - name: create externals folder
         run: mkdir -p externals
+
+      - name: install python dependencies
+        run: pip3 install pyyaml docutils jinja2
         
       - name: cmake
-        run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
+        run: cmake -GNinja -DDOCS=ON -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
         working-directory: build
         
       - name: install
