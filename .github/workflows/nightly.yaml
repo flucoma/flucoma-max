@@ -30,7 +30,7 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: winbuild
-        path: release-packaging/FluidCorpusManipulation/externals/
+        path: release-packaging/Fluid\ Corpus\ Manipulation/externals/
   
   macbuild:
     runs-on: macos-11
@@ -61,7 +61,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: macbuild
-          path: release-packaging/FluidCorpusManipulation/
+          path: release-packaging/Fluid\ Corpus\ Manipulation/
   
   release:
     runs-on: ubuntu-latest
