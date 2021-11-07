@@ -27,10 +27,14 @@ jobs:
       run: cmake --build . --target install --config Release
       working-directory: build
 
+    - name: see
+      run: ls
+      working-directory: "release-packaging/Fluid Corpus Manipulation/"
+
     - uses: actions/upload-artifact@v2
       with:
         name: winbuild
-        path: release-packaging/Fluid\ Corpus\ Manipulation/externals/
+        path: "release-packaging/Fluid Corpus Manipulation/externals/"
   
   macbuild:
     runs-on: macos-11
