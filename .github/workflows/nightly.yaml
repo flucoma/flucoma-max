@@ -73,18 +73,24 @@ jobs:
 
     steps:
 
+      - name: make parent folder
+        run : mkdir -p "Fluid Corpus Manipulation"
+
       - uses: actions/download-artifact@v2
         with:
           name: macbuild
-          path: ./
+          path: "Fluid Corpus Manipulation"
 
       - uses: actions/download-artifact@v2
         with:
           name: winbuild
-          path: externals
+          path: "Fluid Corpus Manipulation/externals"
       
       - name: zip
-        run: zip -r FluCoMa-Max-nightly.zip ./
+        run: zip -r FluCoMa-Max-nightly.zip "Fluid Corpus Manipulation"
+
+      - name: see
+        run: ls
         
       - name: package and upload
         uses: svenstaro/upload-release-action@v2
