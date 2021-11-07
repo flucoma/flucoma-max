@@ -2,9 +2,9 @@ name: Nightly Releases
 
 on:
   push:
-    branches: [ main, ci/automatic-building ]
+    branches: [ dev, ci/automatic-building ]
   pull_request:
-    branches: [ main ]
+    branches: [ dev ]
 
 jobs:
   winbuild:
