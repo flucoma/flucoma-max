@@ -83,18 +83,18 @@ jobs:
           name: winbuild
           path: externals
       
-      - name: see
-        run: ls -R
+      - name: zip
+        run: zip -r FluCoMa-Max-nightly.zip ./
         
-      # - name: package and upload
-      #   uses: svenstaro/upload-release-action@v2
-      #   with:
-      #     release_name: FluCoMa Max Nightly Build
-      #     prerelease: true
-      #     body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-      #     repo_token: ${{ secrets.GITHUB_TOKEN }}
-      #     file: release.zip
-      #     asset_name: FluCoMa-Max-nightly.zip
-      #     tag: nightly
-      #     overwrite: true
+      - name: package and upload
+        uses: svenstaro/upload-release-action@v2
+        with:
+          release_name: FluCoMa Max Nightly Build
+          prerelease: true
+          body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: FluCoMa-Max-nightly.zip
+          asset_name: FluCoMa-Max-nightly.zip
+          tag: nightly
+          overwrite: true
         
