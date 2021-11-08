@@ -1738,7 +1738,36 @@ private:
       path_toabsolutesystempath(path, filename, fullpath);
     }
     else
-      strcpy(fullpath, s->s_name);
+    {
+      char  thispath[MAX_PATH_CHARS];
+      char  infolder[MAX_PATH_CHARS];
+      path_splitnames(s->s_name, infolder, thispath);
+      if(strlen(thispath) == 0) //for relative paths, everything goes in infolder?
+      {
+        t_object* patcher;
+        object_obex_lookup(x, gensym("#P"), &patcher);
+        t_symbol *patcherpath = object_attr_getsym(patcher, gensym("filepath"));
+        
+        if(patcherpath && patcherpath != gensym(""))
+        {
+          path_splitnames(patcherpath->s_name, infolder,thispath);
+          strncat_zero(infolder, "/", MAX_PATH_CHARS);
+          strncpy_zero(thispath,infolder,MAX_PATH_CHARS);
+        }
+        else
+        {
+          path_topotentialname(path_getdefault(), "",thispath, 0);
+          strncat_zero(thispath, "/", MAX_PATH_CHARS);
+        }
+        
+        strncat_zero(thispath, s->s_name,MAX_PATH_CHARS);
+        path_nameconform(thispath, fullpath, PATH_STYLE_SLASH, PATH_TYPE_BOOT);
+      }
+      else
+      {
+        strncpy_zero(fullpath,s->s_name,MAX_PATH_CHARS);
+      }
+    }
     auto messageResult = x->mClient.template invoke<N>(x->mClient, fullpath);
     if (x->checkResult(messageResult))
       object_obex_dumpout(x, gensym("write"), 0, nullptr);
