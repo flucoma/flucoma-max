@@ -141,6 +141,7 @@ function setdict(name) {
 		fail = true;
 	}
 	if (!fail) {
+		points = {};
 		var rawData = JSON.parse(dataDict.stringify()).data;
 		Object.keys(rawData).forEach(function(pt) { 
 			points[pt] = {
