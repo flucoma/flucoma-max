@@ -90,8 +90,8 @@ The build system generally assumes an x86 cpu with AVX instructions (most modern
 #### FluCoMa core development team (in alphabetical order)
 Owen Green, Gerard Roma, Pierre Alexandre Tremblay
 
-#### Other contributors:
-Alex Harker, Francesco Cameli
+#### Other contributors (in alphabetical order):
+James Bradbury, Francesco Cameli, Alex Harker, Ted Moore
 
 --
 
