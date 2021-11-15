@@ -104,6 +104,6 @@ jobs:
           repo_token: ${{ secrets.GITHUB_TOKEN }}
           file: FluCoMa-Max-nightly.zip
           asset_name: FluCoMa-Max-nightly.zip
-          tag: nightly
+          tag: 1.0.0-nightly
           overwrite: true
         
