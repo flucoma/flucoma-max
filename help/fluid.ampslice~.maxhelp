@@ -2,22 +2,23 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
-			"minor" : 3,
-			"revision" : 6,
+			"major" : 8,
+			"minor" : 2,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 100.0, 100.0, 829.0, 654.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 35.0, 88.0, 992.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 1,
-		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
+		"gridonopen" : 2,
+		"gridsize" : [ 5.0, 5.0 ],
+		"gridsnaponopen" : 2,
 		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
@@ -36,46 +37,10 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showrootpatcherontab" : 0,
-		"showontab" : 0,
+		"showontab" : 1,
 		"isolateaudio" : 1,
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"fontname" : "Arial",
-					"fontsize" : 13.0,
-					"id" : "obj-8",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 26.5, 72.567627, 175.0, 23.0 ],
-					"saved_object_attributes" : 					{
-						"filename" : "helpstarter",
-						"parameter_enable" : 0
-					}
-,
-					"style" : "",
-					"text" : "js helpstarter fluid.ampslice~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"border" : 0,
-					"filename" : "helpname.js",
-					"id" : "obj-9",
-					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.ampslice~" ],
-					"maxclass" : "jsui",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 319.211975, 57.567627 ]
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -84,22 +49,23 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 6,
+							"major" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 829.0, 628.0 ],
+						"classnamespace" : "box",
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
-						"gridonopen" : 1,
-						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
+						"gridonopen" : 2,
+						"gridsize" : [ 5.0, 5.0 ],
+						"gridsnaponopen" : 2,
 						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
@@ -120,7 +86,24 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"isolateaudio" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpname.js",
+									"id" : "obj-5",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.ampslice~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 5.0, 5.0, 319.183990478515625, 57.599853515625 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"attr" : "onthreshold",
 									"id" : "obj-2",
@@ -128,8 +111,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 494.0, 275.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 494.0, 275.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -148,7 +130,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 12.0, 121.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -162,7 +143,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 89.5, 499.5, 86.0, 21.0 ],
-									"style" : "",
 									"text" : "turn on audio",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -183,7 +163,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 67.5, 499.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -204,7 +183,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 118.5, 187.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -217,19 +195,21 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 12.0, 66.567627, 190.0, 21.0 ],
-									"style" : "",
+									"patching_rect" : [ 12.0, 66.567627000000002, 190.0, 21.0 ],
 									"text" : "Amplitude followers love drums"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"basictuning" : 440,
 									"clipheight" : 69.0,
 									"data" : 									{
 										"clips" : [ 											{
+												"absolutepath" : "Nicol-LoopE-M.wav",
 												"filename" : "Nicol-LoopE-M.wav",
 												"filekind" : "audiofile",
+												"id" : "u234009046",
 												"loop" : 1,
 												"content_state" : 												{
 													"play" : [ 0 ],
@@ -253,29 +233,21 @@
  ]
 									}
 ,
+									"followglobaltempo" : 0,
+									"formantcorrection" : 0,
 									"id" : "obj-28",
 									"maxclass" : "playlist~",
+									"mode" : "basic",
 									"numinlets" : 1,
 									"numoutlets" : 5,
+									"originallength" : [ 0.0, "ticks" ],
+									"originaltempo" : 120.0,
 									"outlettype" : [ "signal", "signal", "signal", "", "dictionary" ],
-									"patching_rect" : [ 41.606003, 97.0, 270.0, 69.0 ],
-									"style" : ""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpname.js",
-									"id" : "obj-19",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.ampslice~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 319.211975, 57.567627 ]
+									"patching_rect" : [ 41.606003000000001, 97.0, 270.0, 69.0 ],
+									"pitchcorrection" : 0,
+									"quality" : "basic",
+									"timestretch" : [ 0 ]
 								}
 
 							}
@@ -287,7 +259,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.5, 186.0, 372.0, 21.0 ],
-									"style" : "",
 									"text" : "a sort of click on the right, relative envelope mostly, with a gate",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -301,7 +272,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 27.25, 331.0, 50.0, 22.0 ],
-									"style" : "",
 									"text" : "0"
 								}
 
@@ -314,7 +284,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 58.25, 287.0, 86.0, 22.0 ],
-									"style" : "",
 									"text" : "getattr latency"
 								}
 
@@ -327,7 +296,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 15.0, 381.0, 83.0, 22.0 ],
-									"style" : "",
 									"text" : "delay~ 44100"
 								}
 
@@ -340,8 +308,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 342.0, 305.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 342.0, 305.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -353,8 +320,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 342.0, 333.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 342.0, 333.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -367,7 +333,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 140.5, 209.0, 460.0, 35.0 ],
-									"style" : "",
 									"text" : "reset, slowrampup 4410, slowrampdown 4410, onthreshold 10, offthreshold 5, fastrampup 10, fastrampdown 2205, minslicelength 4410, highpassfreq 20, floor -40"
 								}
 
@@ -380,7 +345,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 140.5, 435.0, 42.0, 22.0 ],
-									"style" : "",
 									"text" : "*~ 0.5"
 								}
 
@@ -393,7 +357,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
 									"patching_rect" : [ 140.5, 381.0, 90.0, 22.0 ],
-									"style" : "",
 									"text" : "fluid.ampslice~"
 								}
 
@@ -405,7 +368,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 107.5, 983.0, 150.0, 20.0 ],
-									"style" : "",
 									"text" : "start audio"
 								}
 
@@ -425,7 +387,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 80.5, 983.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -438,8 +399,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 487.0, 45.0, 45.0 ],
-									"style" : ""
+									"patching_rect" : [ 15.0, 487.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -451,8 +411,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 190.0, 305.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 190.0, 305.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -464,8 +423,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 190.0, 333.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 190.0, 333.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -477,8 +435,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 494.0, 305.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 494.0, 305.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -490,8 +447,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 494.0, 333.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 494.0, 333.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -503,8 +459,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 646.0, 333.0, 150.0, 22.0 ],
-									"style" : ""
+									"patching_rect" : [ 646.0, 333.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -606,7 +561,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 51.106003, 263.5, 150.0, 263.5 ],
+									"midpoints" : [ 51.106003000000001, 263.5, 150.0, 263.5 ],
 									"order" : 0,
 									"source" : [ "obj-28", 0 ]
 								}
@@ -615,7 +570,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
-									"midpoints" : [ 51.106003, 265.0, 24.5, 265.0 ],
+									"midpoints" : [ 51.106003000000001, 265.0, 24.5, 265.0 ],
 									"order" : 1,
 									"source" : [ "obj-28", 0 ]
 								}
@@ -648,9 +603,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -668,7 +623,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -678,7 +632,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -696,17 +651,15 @@
  ]
 					}
 ,
-					"patching_rect" : [ 146.606003, 198.0, 118.0, 22.0 ],
+					"patching_rect" : [ 10.0, 85.0, 55.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
-					"text" : "p \"musical example\""
+					"text" : "p basic"
 				}
 
 			}
@@ -719,22 +672,23 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 6,
+							"major" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 100.0, 126.0, 829.0, 628.0 ],
+						"classnamespace" : "box",
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
-						"gridonopen" : 1,
-						"gridsize" : [ 15.0, 15.0 ],
-						"gridsnaponopen" : 1,
+						"gridonopen" : 2,
+						"gridsize" : [ 5.0, 5.0 ],
+						"gridsnaponopen" : 2,
 						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
 						"toolbarvisible" : 1,
@@ -755,6 +709,7 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"isolateaudio" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-14",
@@ -763,7 +718,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 20.0, 232.0, 45.0, 22.0 ],
-									"style" : "",
 									"text" : "+~ 0.2"
 								}
 
@@ -776,7 +730,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 20.0, 208.0, 42.0, 22.0 ],
-									"style" : "",
 									"text" : "*~ 0.8"
 								}
 
@@ -789,7 +742,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 20.0, 184.0, 78.0, 22.0 ],
-									"style" : "",
 									"text" : "phasor~ -1.1"
 								}
 
@@ -806,8 +758,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "float" ],
 									"patching_rect" : [ 60.0, 499.0, 56.0, 22.0 ],
-									"sig" : 0.0,
-									"style" : ""
+									"sig" : 0.0
 								}
 
 							}
@@ -819,7 +770,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 60.0, 473.0, 32.0, 22.0 ],
-									"style" : "",
 									"text" : "+=~"
 								}
 
@@ -832,7 +782,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 60.0, 443.0, 37.0, 22.0 ],
-									"style" : "",
 									"text" : "set 0"
 								}
 
@@ -845,7 +794,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 299.75, 290.5, 370.0, 21.0 ],
-									"style" : "",
 									"text" : "better still, adding a minslicelength sorts it all",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -859,7 +807,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 278.5, 226.0, 487.0, 21.0 ],
-									"style" : "",
 									"text" : "beware of double trigger at the begining of the cycles. A solution: Schmidth triggers",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -874,7 +821,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 250.25, 176.0, 447.0, 36.0 ],
-									"style" : "",
 									"text" : "the default settings thresholds on the same value of the difference between a slow and a fast envelope",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -888,7 +834,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 299.75, 409.0, 79.0, 21.0 ],
-									"style" : "",
 									"text" : "Sonify state"
 								}
 
@@ -901,7 +846,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
 									"patching_rect" : [ 259.75, 442.0, 35.0, 22.0 ],
-									"style" : "",
 									"text" : "* 0.2"
 								}
 
@@ -914,8 +858,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 259.75, 402.0, 35.0, 35.0 ],
-									"style" : ""
+									"patching_rect" : [ 259.75, 402.0, 35.0, 35.0 ]
 								}
 
 							}
@@ -927,7 +870,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 147.5, 476.0, 29.5, 22.0 ],
-									"style" : "",
 									"text" : "*~"
 								}
 
@@ -947,7 +889,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 228.25, 517.875, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -960,8 +901,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 147.5, 511.0, 73.75, 73.75 ],
-									"style" : ""
+									"patching_rect" : [ 147.5, 511.0, 73.75, 73.75 ]
 								}
 
 							}
@@ -980,7 +920,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 274.75, 290.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -1001,7 +940,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 254.5, 226.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -1014,8 +952,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.0, 151.0, 698.0, 21.0 ],
-									"style" : "",
+									"patching_rect" : [ 15.0, 151.0, 698.0, 36.0 ],
 									"text" : "Our source here is a sinewave that does not go to silence and has sharp-ish amplitude bumps as onsets we try to track\n",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1029,7 +966,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 20.0, 258.0, 102.0, 22.0 ],
-									"style" : "",
 									"text" : "*~"
 								}
 
@@ -1042,7 +978,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 103.0, 184.0, 68.0, 22.0 ],
-									"style" : "",
 									"text" : "cycle~ 320"
 								}
 
@@ -1055,7 +990,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 64.75, 302.0, 86.0, 22.0 ],
-									"style" : "",
 									"text" : "getattr latency"
 								}
 
@@ -1075,7 +1009,6 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 228.25, 184.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"style" : "",
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
@@ -1089,8 +1022,7 @@
 									"maxclass" : "scope~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 20.0, 397.0, 109.0, 34.0 ],
-									"style" : ""
+									"patching_rect" : [ 20.0, 397.0, 109.0, 34.0 ]
 								}
 
 							}
@@ -1102,7 +1034,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
 									"patching_rect" : [ 20.0, 358.0, 93.0, 22.0 ],
-									"style" : "",
 									"text" : "delay~ 44100 1"
 								}
 
@@ -1116,7 +1047,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
 									"patching_rect" : [ 147.5, 351.5, 388.0, 35.0 ],
-									"style" : "",
 									"text" : "fluid.ampslice~ @fastrampup 5 @fastrampdown 50 @slowrampup 220 @slowrampdown 220 @onthreshold 10 @offthreshold 10 @floor -60"
 								}
 
@@ -1129,7 +1059,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 228.25, 312.5, 222.0, 22.0 ],
-									"style" : "",
 									"text" : "reset, offthreshold 7, minslicelength 441"
 								}
 
@@ -1142,7 +1071,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 212.0, 248.0, 116.0, 22.0 ],
-									"style" : "",
 									"text" : "reset, offthreshold 7"
 								}
 
@@ -1155,7 +1083,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 188.0, 184.0, 37.0, 22.0 ],
-									"style" : "",
 									"text" : "reset"
 								}
 
@@ -1169,6 +1096,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-28",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "fluid.flucomaorg.maxpat",
 									"numinlets" : 0,
@@ -1191,7 +1119,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 532.0, 108.5 ]
+									"patching_rect" : [ 4.0, 5.0, 532.0, 108.5 ]
 								}
 
 							}
@@ -1354,9 +1282,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1374,7 +1302,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1384,7 +1311,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1402,17 +1330,15 @@
  ]
 					}
 ,
-					"patching_rect" : [ 66.0, 104.0, 49.0, 22.0 ],
+					"patching_rect" : [ 70.0, 85.0, 108.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
-					"text" : "p basic",
+					"text" : "p \"under the hood\"",
 					"varname" : "basic_tab"
 				}
 
@@ -1426,14 +1352,15 @@
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
-							"major" : 7,
-							"minor" : 3,
-							"revision" : 6,
+							"major" : 8,
+							"minor" : 2,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
-						"rect" : [ 0.0, 26.0, 829.0, 628.0 ],
+						"classnamespace" : "box",
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1461,20 +1388,19 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
+						"assistshowspatchername" : 0,
 						"boxes" : [  ],
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 223.0, 230.0, 50.0, 22.0 ],
+					"patching_rect" : [ 185.0, 85.0, 25.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
 						"globalpatchername" : "",
-						"style" : "",
 						"tags" : ""
 					}
 ,
-					"style" : "",
 					"text" : "p ?",
 					"varname" : "q_tab"
 				}
@@ -1490,26 +1416,20 @@
 			}
 , 			{
 				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"bootpath" : "~/dev/flucoma/max/help",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "Nicol-LoopE-M.wav",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/media",
+				"bootpath" : "~/dev/flucoma/max/media",
 				"patcherrelativepath" : "../media",
 				"type" : "WAVE",
 				"implicit" : 1
 			}
 , 			{
-				"name" : "helpstarter.js",
+				"name" : "helpname.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
@@ -1523,9 +1443,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1543,7 +1463,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1553,7 +1472,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
