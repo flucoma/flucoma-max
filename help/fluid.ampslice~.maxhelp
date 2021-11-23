@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 39.0, -1056.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -137,7 +137,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 312.0, 154.5, 95.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Play drum loop",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -472,7 +471,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 39.0, -1056.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -572,7 +571,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 602.75, 482.0, 317.0, 36.0 ],
-									"presentation_linecount" : 2,
 									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -619,7 +617,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 544.0, 388.5, 288.0, 65.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Make the fast envelope a bit smoother, and the slow envelope a lot smoother. \n\nIt's not perfect but a little less jittery.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -634,7 +631,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 482.5, 322.0, 455.0, 36.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Fast envelope has to go 3dB below slow curve for a new onset to be detected. This causes \"false\" onsets to be detected.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -668,7 +664,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 452.0, 291.0, 342.0, 21.0 ],
-									"presentation_linecount" : 6,
 									"text" : "Fast envelope tracker has to exceed slow tracker by 12dB",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -786,7 +781,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 405.0, 390.0, 115.0, 62.0 ],
-									"presentation_linecount" : 8,
 									"text" : "fastrampup 10, fastrampdown 50, slowrampup 500, slowrampdown 500"
 								}
 
