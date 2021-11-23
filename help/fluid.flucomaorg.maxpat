@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
+			"minor" : 2,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -16,9 +16,9 @@
 		"default_fontsize" : 12.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 1,
-		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
+		"gridonopen" : 2,
+		"gridsize" : [ 5.0, 5.0 ],
+		"gridsnaponopen" : 2,
 		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
@@ -37,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-27",
@@ -65,14 +66,15 @@
 					"fontsize" : 12.0,
 					"gradient" : 1,
 					"id" : "obj-25",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.0, 9.0, 135.0, 23.0 ],
+					"patching_rect" : [ 15.0, 9.0, 135.0, 37.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 17.0, 14.5, 135.0, 23.0 ],
-					"text" : "http://www.flucoma.org",
+					"presentation_rect" : [ 5.0, 5.0, 140.0, 23.0 ],
+					"text" : "https://www.flucoma.org",
 					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
 				}
 
@@ -91,7 +93,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 87.0, 64.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 11.0, 10.0, 151.0, 34.0 ],
+					"presentation_rect" : [ 5.0, 5.0, 140.0, 23.0 ],
 					"proportion" : 0.5,
 					"rounded" : 10
 				}
@@ -106,8 +108,6 @@
 
 			}
  ],
-		"dependency_cache" : [  ],
-		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
