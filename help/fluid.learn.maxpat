@@ -74,7 +74,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 145.0, 175.0, 56.0, 22.0 ],
+					"patching_rect" : [ 145.0, 175.0, 61.0, 22.0 ],
 					"text" : "#1"
 				}
 
@@ -86,7 +86,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 285.0, 15.0, 111.0, 22.0 ],
+					"patching_rect" : [ 285.0, 15.0, 115.0, 22.0 ],
 					"text" : "loadmess #1"
 				}
 
@@ -145,14 +145,15 @@
 					"fontsize" : 13.0,
 					"gradient" : 1,
 					"id" : "obj-25",
+					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 100.0, 221.0, 24.0 ],
+					"patching_rect" : [ 18.0, 100.0, 221.0, 40.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 10.0, 25.0, 221.0, 24.0 ],
-					"text" : "learn.flucoma.org/reference/ampslice",
+					"presentation_rect" : [ 10.0, 25.0, 410.0, 24.0 ],
+					"text" : "learn.flucoma.org/reference/transients",
 					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
 				}
 
