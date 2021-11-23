@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 437.0, 79.0, 935.0, 795.0 ],
+		"rect" : [ 437.0, 87.0, 935.0, 795.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -330,10 +330,10 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 664.0, 718.707512999999949, 266.0, 22.0 ],
+					"patching_rect" : [ 664.0, 718.707512999999949, 266.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 266.0, 22.0 ],
-					"text" : "undocumented😬",
+					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 266.0, 21.0 ],
+					"text" : "A set of data associated with identifiers.",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.6 ]
 				}
 
@@ -474,7 +474,7 @@
 					"patching_rect" : [ 657.0, 803.165829000000031, 342.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 387.19876099999999, 284.479034000000013, 35.0 ],
-					"text" : "fluid.list2buf",
+					"text" : "fluid.dataset~",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.82 ]
 				}
 
@@ -723,7 +723,7 @@
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offset" : [ -15.0, -90.0 ],
+					"offset" : [ -1095.0, -555.0 ],
 					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
@@ -1199,7 +1199,7 @@
 									"patching_rect" : [ 1348.274196000000074, 577.580650999999989, 120.0, 21.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 1290.0, 570.0, 120.0, 21.0 ],
-									"text" : "Buffer Analysis"
+									"text" : "Statistical Analysis"
 								}
 
 							}
@@ -1890,11 +1890,11 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 1328.548387000000048, 602.903228000000013, 149.193547999999993, 119.967742999999999 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 1290.0, 585.0, 149.193542000000008, 59.967742999999999 ],
+									"presentation_rect" : [ 1290.0, 585.0, 149.193541999999979, 119.967743000000041 ],
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufstats~" ]
+									"tabs" : [ "fluid.bufstats~", "fluid.stats~" ]
 								}
 
 							}
@@ -2157,7 +2157,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 35.0 ],
-									"text" : "fluid.list2buf"
+									"text" : "fluid.dataset~"
 								}
 
 							}
@@ -3872,9 +3872,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3892,6 +3892,7 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3901,8 +3902,7 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-,
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+
 				}
 ,
 				"parentstyle" : "max6box",
