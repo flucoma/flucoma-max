@@ -736,7 +736,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
+						"rect" : [ 35.0, 88.0, 1007.0, 777.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1712,7 +1712,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.pca~", "fluid.kmeans~", "fluid.mds~", "fluid.umap~" ]
+									"tabs" : [ "fluid.pca~", "fluid.kmeans~", "fluid.mds~", "fluid.umap~", "fluid.grid~" ]
 								}
 
 							}
@@ -2387,7 +2387,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufsines~", "fluid.buftransients~", "fluid.bufhpss~", "fluid.bufnmf~", "fluid.bufstft~" ]
+									"tabs" : [ "fluid.bufsines~", "fluid.buftransients~", "fluid.bufhpss~", "fluid.bufnmf~" ]
 								}
 
 							}
@@ -2431,7 +2431,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnndsvd~" ]
+									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnndsvd~", "fluid.bufstft~" ]
 								}
 
 							}
