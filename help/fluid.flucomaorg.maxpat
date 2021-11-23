@@ -73,7 +73,7 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 15.0, 9.0, 135.0, 37.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 5.0, 140.0, 23.0 ],
+					"presentation_rect" : [ 10.0, 10.0, 140.0, 23.0 ],
 					"text" : "https://www.flucoma.org",
 					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
 				}
@@ -93,7 +93,7 @@
 					"numoutlets" : 0,
 					"patching_rect" : [ 87.0, 64.0, 128.0, 128.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 5.0, 5.0, 140.0, 23.0 ],
+					"presentation_rect" : [ 10.0, 10.0, 140.0, 23.0 ],
 					"proportion" : 0.5,
 					"rounded" : 10
 				}
