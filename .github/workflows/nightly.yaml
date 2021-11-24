@@ -31,7 +31,7 @@ jobs:
         run: git clone --branch fix/blas-compilation-settings https://github.com/jamesb93/flucoma-core.git core    
         
       - name: cmake
-        run: cmake -GNinja -DDOCS=ON -DFLUID_CORE=../core -DMAX_SDK_PATH=../sdk/ ..
+        run: cmake -GNinja -DDOCS=ON -DFLUID_PATH=../core -DMAX_SDK_PATH=../sdk/ ..
         working-directory: build
 
       - name: install
@@ -59,7 +59,7 @@ jobs:
       run: git clone --branch fix/blas-compilation-settings https://github.com/jamesb93/flucoma-core.git core    
       
     - name: cmake
-      run: cmake -DFLUID_CORE="../core" -DMAX_SDK_PATH="../sdk/" ..
+      run: cmake -DFLUID_PATH="../core" -DMAX_SDK_PATH="../sdk/" ..
       working-directory: build
       
     - name: build binaries
@@ -97,7 +97,7 @@ jobs:
         run: git clone --branch fix/blas-compilation-settings https://github.com/jamesb93/flucoma-core.git core    
         
       - name: cmake
-        run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
+        run: cmake -GNinja -FLUID_PATH=../core -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
         working-directory: build
         
       - name: install
