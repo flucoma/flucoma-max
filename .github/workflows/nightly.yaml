@@ -26,9 +26,12 @@ jobs:
 
       - name: create externals folder
         run: mkdir -p externals
+
+      - name: clone latest flucoma-core
+        run: git clone --branch fix/blas-compilation-settings https://github.com/jamesb93/flucoma-core.git core    
         
       - name: cmake
-        run: cmake -GNinja -DDOCS=ON -DMAX_SDK_PATH=../sdk/ ..
+        run: cmake -GNinja -DDOCS=ON -DFLUID_CORE=../core -DMAX_SDK_PATH=../sdk/ ..
         working-directory: build
 
       - name: install
@@ -51,9 +54,12 @@ jobs:
       
     - name: make build directory
       run: mkdir -p build
+
+    - name: clone latest flucoma-core
+      run: git clone --branch fix/blas-compilation-settings https://github.com/jamesb93/flucoma-core.git core    
       
     - name: cmake
-      run: cmake -DMAX_SDK_PATH="../sdk/" ..
+      run: cmake -DFLUID_CORE="../core" -DMAX_SDK_PATH="../sdk/" ..
       working-directory: build
       
     - name: build binaries
@@ -86,6 +92,9 @@ jobs:
 
       - name: create externals folder
         run: mkdir -p externals
+
+      - name: clone latest flucoma-core
+        run: git clone --branch fix/blas-compilation-settings https://github.com/jamesb93/flucoma-core.git core    
         
       - name: cmake
         run: cmake -GNinja -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
