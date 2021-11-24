@@ -41,7 +41,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: docsbuild
-          path: docs
+          path: build/max_ref
 
   winbuild:
     runs-on: windows-latest
@@ -114,7 +114,6 @@ jobs:
     needs: [winbuild, macbuild, docs]
 
     steps:
-
       - name: make parent folder
         run : mkdir -p "Fluid Corpus Manipulation"
 
@@ -127,6 +126,11 @@ jobs:
         with:
           name: winbuild
           path: "Fluid Corpus Manipulation/externals"
+  
+      - uses: actions/download-artifact@v2
+        with:
+          name: docsbuild
+          path: "Fluid Corpus Manipulation/docs"
       
       - name: zip
         run: zip -r FluCoMa-Max-nightly.zip "Fluid Corpus Manipulation"
