@@ -137,6 +137,13 @@ jobs:
 
       - name: see
         run: ls
+
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+        with:
+          delete_release: true # default: false
+          tag_name: 1.0.0-nightly # tag name to delete
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
       - name: package and upload
         uses: svenstaro/upload-release-action@v2
