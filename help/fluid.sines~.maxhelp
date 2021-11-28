@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 809.0, 586.0 ],
+						"rect" : [ 100.0, 126.0, 809.0, 586.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -88,7 +88,7 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"args" : [ "ampslice" ],
+									"args" : [ "sines" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -913,7 +913,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 809.0, 586.0 ],
+						"rect" : [ 0.0, 26.0, 809.0, 586.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -944,7 +944,7 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"args" : [ "ampslice" ],
+									"args" : [ "sines" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
