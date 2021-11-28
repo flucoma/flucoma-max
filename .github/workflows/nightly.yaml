@@ -29,8 +29,6 @@ jobs:
       
       - name: create externals folder
         run: mkdir -p externals
-
-      - name: clone latest flucoma-core
         
       - name: cmake
         run: cmake -GNinja -DDOCS=ON -DFLUID_PATH=../core -DMAX_SDK_PATH=../sdk/ ..
