@@ -81,7 +81,7 @@
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
 						"gridonopen" : 2,
-						"gridsize" : [ 5.0, 5.0 ],
+						"gridsize" : [ 10.0, 10.0 ],
 						"gridsnaponopen" : 2,
 						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
