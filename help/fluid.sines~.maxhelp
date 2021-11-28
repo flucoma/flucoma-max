@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 720.0, 599.0, 809.0, 612.0 ],
+		"rect" : [ 100.0, 100.0, 809.0, 612.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -87,6 +87,47 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"args" : [ "ampslice" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-75",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 340.0, 10.0, 230.0, 50.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-2",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.flucomaorg.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 340.0, 61.0, 160.0, 40.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-30",
 									"maxclass" : "newobj",
@@ -872,7 +913,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 720.0, 625.0, 809.0, 586.0 ],
+						"rect" : [ 100.0, 126.0, 809.0, 586.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -902,6 +943,47 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"args" : [ "ampslice" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-75",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 340.0, 10.0, 230.0, 50.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-4",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.flucomaorg.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 340.0, 61.0, 160.0, 40.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-49",
@@ -978,7 +1060,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 170.000000000000114, 420.0, 109.999999999999943, 22.0 ],
-									"text" : "latency 3072"
+									"text" : "latency 53248"
 								}
 
 							}
@@ -1518,27 +1600,7 @@
 							}
 , 							{
 								"box" : 								{
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-6",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.flucomaorg.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 400.0, 510.0, 160.0, 41.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "@file", "Tremblay-BeatRemember.wav", "@loop", 1, "@vol", 0 ],
+									"args" : [ "@flucomafile", "@file", "Tremblay-BeatRemember.wav", "@file", "Tremblay-BeatRemember.wav", "@loop", 1, "@vol", 0 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -1649,7 +1711,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 437.0, 90.0, 163.0, 20.0 ],
+									"patching_rect" : [ 634.0, 320.0, 163.0, 20.0 ],
 									"text" : "experiment with parameters",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1668,7 +1730,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 413.0, 90.0, 20.0, 20.0 ],
+									"patching_rect" : [ 610.0, 320.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
