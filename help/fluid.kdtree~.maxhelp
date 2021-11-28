@@ -105,12 +105,53 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "kdtree" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-75",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 510.0, 10.0, 230.0, 50.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-4",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.flucomaorg.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 510.0, 61.0, 160.0, 40.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-39",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 427.0, 139.0, 171.0, 23.0 ],
+									"patching_rect" : [ 432.0, 154.0, 171.0, 23.0 ],
 									"text" : "loadmess pointsizescale 0.4"
 								}
 
@@ -122,7 +163,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 185.0, 637.789124000000015, 108.0, 23.0 ],
+									"patching_rect" : [ 190.0, 652.789124000000015, 108.0, 23.0 ],
 									"text" : "prepend highlight"
 								}
 
@@ -134,7 +175,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 156.0, 520.789124000000015, 76.0, 23.0 ],
+									"patching_rect" : [ 161.0, 535.789124000000015, 76.0, 23.0 ],
 									"text" : "knearest $2"
 								}
 
@@ -146,7 +187,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 357.0, 487.789124000000015, 158.0, 23.0 ],
+									"patching_rect" : [ 362.0, 502.789124000000015, 158.0, 23.0 ],
 									"text" : "buffer~ coords @samps 2"
 								}
 
@@ -158,7 +199,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 156.0, 487.789124000000015, 199.0, 23.0 ],
+									"patching_rect" : [ 161.0, 502.789124000000015, 199.0, 23.0 ],
 									"text" : "fluid.list2buf @destination coords"
 								}
 
@@ -171,7 +212,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 177.0, 139.0, 183.0, 23.0 ],
+									"patching_rect" : [ 182.0, 154.0, 183.0, 23.0 ],
 									"text" : "fluid.dataset~ kdtree.help.data"
 								}
 
@@ -193,7 +234,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 182.789124000000015, 115.0, 23.0 ],
+									"patching_rect" : [ 10.0, 197.789124000000015, 115.0, 23.0 ],
 									"text" : "fit kdtree.help.data"
 								}
 
@@ -207,7 +248,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 156.0, 182.789124000000015, 290.0, 290.0 ]
+									"patching_rect" : [ 161.0, 197.789124000000015, 290.0, 290.0 ]
 								}
 
 							}
@@ -650,7 +691,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 5.0, 139.0, 170.0, 23.0 ],
+									"patching_rect" : [ 10.0, 154.0, 170.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -675,7 +716,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 35.0, 107.0, 20.0, 20.0 ],
+									"patching_rect" : [ 40.0, 122.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -688,7 +729,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 57.0, 107.0, 328.0, 21.0 ],
+									"patching_rect" : [ 62.0, 122.0, 328.0, 21.0 ],
 									"text" : "Generate random data to be stored in the fluid.dataset~"
 								}
 
@@ -701,7 +742,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 105.0, 24.0, 24.0 ]
+									"patching_rect" : [ 10.0, 120.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -712,7 +753,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 865.5, 446.0, 45.0, 23.0 ],
+									"patching_rect" : [ 870.5, 461.0, 45.0, 23.0 ],
 									"text" : "0 0.09"
 								}
 
@@ -724,7 +765,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 825.5, 446.0, 37.0, 23.0 ],
+									"patching_rect" : [ 830.5, 461.0, 37.0, 23.0 ],
 									"text" : "0 0.3"
 								}
 
@@ -736,7 +777,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 870.0, 353.0, 52.0, 23.0 ],
+									"patching_rect" : [ 875.0, 368.0, 52.0, 23.0 ],
 									"text" : "10 0.09"
 								}
 
@@ -748,7 +789,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 821.0, 353.0, 45.0, 23.0 ],
+									"patching_rect" : [ 826.0, 368.0, 45.0, 23.0 ],
 									"text" : "30 0.3"
 								}
 
@@ -760,7 +801,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 945.0, 511.391296000000011, 43.0, 23.0 ],
+									"patching_rect" : [ 950.0, 526.391296000000011, 43.0, 23.0 ],
 									"text" : "unjoin"
 								}
 
@@ -772,7 +813,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 821.0, 289.0, 34.0, 23.0 ],
+									"patching_rect" : [ 826.0, 304.0, 34.0, 23.0 ],
 									"text" : "10 0"
 								}
 
@@ -784,7 +825,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 651.0, 472.0, 186.0, 50.0 ],
+									"patching_rect" : [ 656.0, 487.0, 186.0, 50.0 ],
 									"text" : "only the extent within radius is searched; number of returned points is uncapped",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
 								}
@@ -796,7 +837,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 637.0, 446.0, 185.0, 21.0 ],
+									"patching_rect" : [ 642.0, 461.0, 185.0, 21.0 ],
 									"text" : "numneighbours = 0, radius > 0"
 								}
 
@@ -808,7 +849,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 646.0, 379.0, 186.0, 65.0 ],
+									"patching_rect" : [ 651.0, 394.0, 186.0, 65.0 ],
 									"text" : "only the extent within radius is searched; number of returned points is capped at numneighbours",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
 								}
@@ -820,7 +861,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 632.0, 353.0, 185.0, 21.0 ],
+									"patching_rect" : [ 637.0, 368.0, 185.0, 21.0 ],
 									"text" : "numneighbours > 0, radius > 0"
 								}
 
@@ -832,7 +873,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 646.0, 315.0, 185.0, 36.0 ],
+									"patching_rect" : [ 651.0, 330.0, 185.0, 36.0 ],
 									"text" : "radius is ignored: the whole extent of the tree is searched",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
 								}
@@ -844,7 +885,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 632.0, 289.0, 185.0, 21.0 ],
+									"patching_rect" : [ 637.0, 304.0, 185.0, 21.0 ],
 									"text" : "numneighbours > 0, radius = 0"
 								}
 
@@ -856,7 +897,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 632.0, 233.0, 312.0, 50.0 ],
+									"patching_rect" : [ 637.0, 248.0, 312.0, 50.0 ],
 									"text" : "Because the range of distances is hard to predict a priori, you can use the knearestdist message to get an idea of useful values for radius. ",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
 								}
@@ -869,7 +910,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 632.0, 178.0, 312.0, 50.0 ],
+									"patching_rect" : [ 637.0, 193.0, 312.0, 50.0 ],
 									"text" : "We can query the tree in terms of either a (maximum) number of neighbouring points to return, or a radius around the query point.  "
 								}
 
@@ -881,7 +922,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 632.0, 151.0, 218.0, 21.0 ],
+									"patching_rect" : [ 637.0, 166.0, 218.0, 21.0 ],
 									"text" : "Radius vs Number of Neighbours "
 								}
 
@@ -899,7 +940,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 858.5, 151.0, 20.0, 20.0 ],
+									"patching_rect" : [ 863.5, 166.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -913,7 +954,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 185.0, 602.789124000000015, 92.0, 23.0 ],
+									"patching_rect" : [ 190.0, 617.789124000000015, 92.0, 23.0 ],
 									"text" : "route knearest"
 								}
 
@@ -925,7 +966,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 5.0, 572.789124000000015, 199.0, 23.0 ],
+									"patching_rect" : [ 10.0, 587.789124000000015, 199.0, 23.0 ],
 									"text" : "fluid.kdtree~ @numneighbours 5"
 								}
 
@@ -942,7 +983,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 5.0, 615.0, 95.0 ]
+									"patching_rect" : [ 10.0, 10.0, 495.0, 95.0 ]
 								}
 
 							}
@@ -954,7 +995,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 821.0, 560.52172900000005, 150.0, 23.0 ]
+									"patching_rect" : [ 826.0, 575.52172900000005, 150.0, 23.0 ]
 								}
 
 							}
@@ -966,7 +1007,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 632.0, 560.52172900000005, 185.0, 23.0 ],
+									"patching_rect" : [ 637.0, 575.52172900000005, 185.0, 23.0 ],
 									"text_width" : 118.0
 								}
 
@@ -983,7 +1024,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 615.0, 139.0, 393.0, 489.0 ],
+									"patching_rect" : [ 620.0, 154.0, 393.0, 489.0 ],
 									"proportion" : 0.5
 								}
 
@@ -992,7 +1033,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"midpoints" : [ 830.5, 615.0, 14.5, 615.0 ],
+									"midpoints" : [ 835.5, 630.0, 19.5, 630.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1042,7 +1083,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"midpoints" : [ 830.5, 328.0, 954.5, 328.0 ],
+									"midpoints" : [ 835.5, 343.0, 959.5, 343.0 ],
 									"source" : [ "obj-26", 0 ]
 								}
 
@@ -1050,7 +1091,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 966.5, 557.760864500000025, 830.5, 557.760864500000025 ],
+									"midpoints" : [ 971.5, 572.760864500000025, 835.5, 572.760864500000025 ],
 									"source" : [ "obj-27", 1 ]
 								}
 
@@ -1058,7 +1099,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 954.5, 548.760864500000025, 641.5, 548.760864500000025 ],
+									"midpoints" : [ 959.5, 563.760864500000025, 646.5, 563.760864500000025 ],
 									"source" : [ "obj-27", 0 ]
 								}
 
@@ -1066,7 +1107,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"midpoints" : [ 830.5, 402.0, 954.5, 402.0 ],
+									"midpoints" : [ 835.5, 417.0, 959.5, 417.0 ],
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -1074,7 +1115,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"midpoints" : [ 641.5, 615.0, 14.5, 615.0 ],
+									"midpoints" : [ 646.5, 630.0, 19.5, 630.0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -1082,7 +1123,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"midpoints" : [ 879.5, 402.0, 954.5, 402.0 ],
+									"midpoints" : [ 884.5, 417.0, 959.5, 417.0 ],
 									"source" : [ "obj-30", 0 ]
 								}
 
@@ -1090,7 +1131,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"midpoints" : [ 875.0, 491.5, 954.5, 491.5 ],
+									"midpoints" : [ 880.0, 506.5, 959.5, 506.5 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -1098,7 +1139,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"midpoints" : [ 835.0, 491.5, 954.5, 491.5 ],
+									"midpoints" : [ 840.0, 506.5, 959.5, 506.5 ],
 									"source" : [ "obj-33", 0 ]
 								}
 
@@ -1106,7 +1147,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"midpoints" : [ 165.5, 557.789124000000015, 14.5, 557.789124000000015 ],
+									"midpoints" : [ 170.5, 572.789124000000015, 19.5, 572.789124000000015 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -1114,7 +1155,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 1 ],
-									"midpoints" : [ 194.5, 671.789124000000015, 525.0, 671.789124000000015, 525.0, 176.789124000000015, 436.5, 176.789124000000015 ],
+									"midpoints" : [ 199.5, 686.789124000000015, 530.0, 686.789124000000015, 530.0, 191.789124000000015, 441.5, 191.789124000000015 ],
 									"source" : [ "obj-35", 0 ]
 								}
 
@@ -1144,9 +1185,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1304,6 +1345,13 @@
 				"bootpath" : "~/dev/flucoma/max/jsui",
 				"patcherrelativepath" : "../jsui",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/dev/flucoma/max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
