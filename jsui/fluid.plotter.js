@@ -8,8 +8,6 @@ outlets = 1;
 
 setinletassist(0, 'Dictionary of Points');
 setinletassist(1, 'Dictionary of Labels');
-setoutletassist(0, 'id of point closest to mouse');
-setoutletassist(1, 'raw normalised coordinates');
 
 // Colors - These are taken directly from d3.js
 // https://github.com/d3/d3-scale-chromatic
