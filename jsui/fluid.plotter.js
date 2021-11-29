@@ -8,6 +8,7 @@ outlets = 1;
 
 setinletassist(0, 'Dictionary of Points');
 setinletassist(1, 'Dictionary of Labels');
+setoutletassist(0, 'Position of mouse in x/y space');
 
 // Colors - These are taken directly from d3.js
 // https://github.com/d3/d3-scale-chromatic
