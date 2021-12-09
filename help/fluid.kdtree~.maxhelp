@@ -163,7 +163,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 190.0, 652.789124000000015, 108.0, 23.0 ],
+									"patching_rect" : [ 190.0, 705.0, 108.0, 23.0 ],
 									"text" : "prepend highlight"
 								}
 
@@ -245,8 +245,8 @@
 									"id" : "obj-6",
 									"maxclass" : "jsui",
 									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 161.0, 197.789124000000015, 290.0, 290.0 ]
 								}
@@ -319,7 +319,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 333.0, 436.0, 50.0, 62.0 ],
-													"text" : "dictionary u765002558"
+													"text" : "dictionary u013012895"
 												}
 
 											}
@@ -954,7 +954,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 190.0, 617.789124000000015, 92.0, 23.0 ],
+									"patching_rect" : [ 190.0, 670.0, 92.0, 23.0 ],
 									"text" : "route knearest"
 								}
 
@@ -966,7 +966,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 10.0, 587.789124000000015, 199.0, 23.0 ],
+									"patching_rect" : [ 10.0, 640.0, 199.0, 23.0 ],
 									"text" : "fluid.kdtree~ @numneighbours 5"
 								}
 
@@ -1033,7 +1033,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"midpoints" : [ 835.5, 630.0, 19.5, 630.0 ],
+									"midpoints" : [ 835.5, 627.0, 19.5, 627.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1115,7 +1115,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
-									"midpoints" : [ 646.5, 630.0, 19.5, 630.0 ],
+									"midpoints" : [ 646.5, 627.0, 19.5, 627.0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -1155,7 +1155,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 1 ],
-									"midpoints" : [ 199.5, 686.789124000000015, 530.0, 686.789124000000015, 530.0, 191.789124000000015, 441.5, 191.789124000000015 ],
+									"midpoints" : [ 199.5, 738.0, 531.0, 738.0, 531.0, 192.0, 441.5, 192.0 ],
 									"source" : [ "obj-35", 0 ]
 								}
 
@@ -1185,8 +1185,8 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
