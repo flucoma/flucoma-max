@@ -105,13 +105,53 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "bufselect" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-75",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 540.0, 10.0, 230.0, 50.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-2",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.flucomaorg.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 540.0, 61.0, 160.0, 40.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-30",
 									"linecount" : 6,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 610.0, 363.075463999999954, 150.0, 94.0 ],
-									"presentation_linecount" : 6,
 									"text" : "This visual representation of the output shows how only certain values were extracted from the source buffer."
 								}
 
@@ -124,7 +164,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 710.0, 193.641515999999967, 150.0, 50.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Indices and channels are set with a list of 0 counting positions."
 								}
 
@@ -138,7 +177,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 496.0, 142.0, 397.867942999999855, 40.0 ],
-									"presentation_linecount" : 5,
 									"text" : "Trigger the bufselect~ object to extract the given indices for every given channel and store the result in the destination buffer."
 								}
 
@@ -518,7 +556,6 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 470.0, 270.0, 268.735847999999976, 52.0 ],
-									"presentation_linecount" : 3,
 									"text" : "fluid.bufselect~ @source buf.select.help.src @destination buf.select.help.dst @channels 0 2 4 @indices 0 2 4"
 								}
 
@@ -1179,6 +1216,13 @@
 				"name" : "helpdetails.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/dev/flucoma/max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
