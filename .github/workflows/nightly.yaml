@@ -108,7 +108,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: macbuild
-          path: release-packaging/Fluid\ Corpus\ Manipulation/
+          path: release-packaging/FluidCorpusManipulation/
   
   release:
     runs-on: ubuntu-latest
