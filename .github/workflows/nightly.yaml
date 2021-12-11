@@ -69,14 +69,10 @@ jobs:
       run: cmake --build . --target install --config Release
       working-directory: build
 
-    - name: see
-      run: ls
-      working-directory: "release-packaging/Fluid Corpus Manipulation/"
-
     - uses: actions/upload-artifact@v2
       with:
         name: winbuild
-        path: "release-packaging/Fluid Corpus Manipulation/externals/"
+        path: "release-packaging/FluidCorpusManipulation/externals/"
   
   macbuild:
     runs-on: macos-11
@@ -110,7 +106,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: macbuild
-          path: release-packaging/Fluid\ Corpus\ Manipulation/
+          path: release-packaging/FluidCorpusManipulation/
   
   release:
     runs-on: ubuntu-latest
@@ -118,25 +114,25 @@ jobs:
 
     steps:
       - name: make parent folder
-        run : mkdir -p "Fluid Corpus Manipulation"
+        run : mkdir -p "FluidCorpusManipulation"
 
       - uses: actions/download-artifact@v2
         with:
           name: macbuild
-          path: "Fluid Corpus Manipulation"
+          path: "FluidCorpusManipulation"
 
       - uses: actions/download-artifact@v2
         with:
           name: winbuild
-          path: "Fluid Corpus Manipulation/externals"
+          path: "FluidCorpusManipulation/externals"
   
       - uses: actions/download-artifact@v2
         with:
           name: docsbuild
-          path: "Fluid Corpus Manipulation/docs"
+          path: "FluidCorpusManipulation/docs"
       
       - name: zip
-        run: zip -r FluCoMa-Max-nightly.zip "Fluid Corpus Manipulation"
+        run: zip -r FluCoMa-Max-nightly.zip "FluidCorpusManipulation"
 
       - name: see
         run: ls
@@ -159,4 +155,3 @@ jobs:
           asset_name: FluCoMa-Max-nightly.zip
           tag: nightly
           overwrite: true
-        
