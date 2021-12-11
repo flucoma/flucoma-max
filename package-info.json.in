@@ -1,22 +1,22 @@
 {
 	"author" : "FluCoMa",
-	"description" : "Fluid Decomposition Toolbox",
-	"homepatcher" : "FluCoMa.maxpat",
+	"description" : "Fluid Corpus Manipulation Toolkit",
+	"homepatcher" : "Fluid Corpus Manipulation Toolkit.maxpat",
 	"max_version_min" : "7.0",
-	"name" : "Fluid_Decomposition",
+	"name" : "FluidCorpusManipulation",
 	"os" : {
 		"macintosh" : {
-			"platform" : [ "ia32", "x64" ],
+			"platform" : [ "aarch64", "x64" ],
 			"min_version" : "10.7"
 		},
 		"windows" : {
-			"platform" : [ "ia32", "x64" ],
+			"platform" : [ "x64" ],
 			"min_version" : "10"
 		}
 	},
 	"package_extra" : {
 		"reverse_domain" : "org.flucoma",
-		"copyright" : "Copyright (c) 2017-19 University of Huddersfield"
+		"copyright" : "Copyright (c) 2017-21 University of Huddersfield"
 	},
 	"tags" : [ ],
 	"version" : "@GIT_VERSION_MAJ@",
