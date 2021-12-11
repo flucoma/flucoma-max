@@ -3,6 +3,8 @@ name: Nightly Releases
 on:
   push:
     branches: [ dev, ci/automatic-building ]
+  pull_request:
+    branches: [ dev ]
 
 jobs:
   docs:
