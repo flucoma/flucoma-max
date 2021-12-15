@@ -200,7 +200,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 178.0, 157.428571428571388, 214.0, 20.0 ],
+													"patching_rect" : [ 178.0, 157.428571428571388, 218.0, 20.0 ],
 													"text" : "Transpose those pitches up an octave. "
 												}
 
@@ -237,7 +237,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 13.0, 68.142857142857139, 29.5, 22.0 ],
+													"patching_rect" : [ 13.0, 68.142857142857139, 43.5, 22.0 ],
 													"text" : "t b l"
 												}
 
@@ -273,8 +273,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 13.0, 200.571428571428555, 49.0, 22.0 ],
-													"text" : "list.lace"
+													"patching_rect" : [ 13.0, 200.571428571428555, 43.0, 22.0 ],
+													"text" : "zl.lace"
 												}
 
 											}
@@ -325,7 +325,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-36", 1 ],
-													"midpoints" : [ 33.0, 93.0, 0.0, 93.0, 0.0, 195.0, 52.5, 195.0 ],
+													"midpoints" : [ 47.0, 102.0, 0.0, 102.0, 0.0, 192.0, 46.5, 192.0 ],
 													"source" : [ "obj-2", 1 ]
 												}
 
@@ -394,8 +394,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 12.0, 470.0, 66.0, 22.0 ],
-									"text" : "list.change"
+									"patching_rect" : [ 12.0, 470.0, 60.0, 22.0 ],
+									"text" : "zl.change"
 								}
 
 							}
@@ -1132,6 +1132,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-44",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -1205,7 +1206,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 178.0, 157.428571428571388, 214.0, 20.0 ],
+													"patching_rect" : [ 178.0, 157.428571428571388, 218.0, 20.0 ],
 													"text" : "Transpose those pitches up an octave. "
 												}
 
@@ -1242,7 +1243,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 13.0, 68.142857142857139, 29.5, 22.0 ],
+													"patching_rect" : [ 13.0, 68.142857142857139, 43.5, 22.0 ],
 													"text" : "t b l"
 												}
 
@@ -1278,8 +1279,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 13.0, 200.571428571428555, 49.0, 22.0 ],
-													"text" : "list.lace"
+													"patching_rect" : [ 13.0, 200.571428571428555, 43.0, 22.0 ],
+													"text" : "zl.lace"
 												}
 
 											}
@@ -1330,7 +1331,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-36", 1 ],
-													"midpoints" : [ 33.0, 93.0, 0.0, 93.0, 0.0, 195.0, 52.5, 195.0 ],
+													"midpoints" : [ 47.0, 102.0, 0.0, 102.0, 0.0, 192.0, 46.5, 192.0 ],
 													"source" : [ "obj-2", 1 ]
 												}
 
@@ -1380,7 +1381,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 12.0, 500.0, 104.0, 22.0 ],
+									"patching_rect" : [ 12.0, 500.0, 112.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1422,7 +1423,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 157.0, 434.5, 472.0, 20.0 ],
+									"patching_rect" : [ 162.0, 433.0, 472.0, 20.0 ],
 									"text" : "Consecutive frames of analysis are smoothed to make the visualisation easier to follow."
 								}
 
@@ -1440,7 +1441,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 135.0, 434.5, 20.0, 20.0 ],
+									"patching_rect" : [ 140.0, 433.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
