@@ -1042,7 +1042,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 187.0, 367.0, 37.0 ],
-									"text" : "The default here is a scratch synth. Keep it for now and change it after you've looked at this tab.",
+									"text" : "The default here is an extended passage of oboe multiphonics. Keep it for now and change it after you've looked at this tab.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1667,12 +1667,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-24",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 561.0, 500.0, 168.0, 60.0 ],
-									"text" : "The relative value between different indices of the output list describe the energy for each \"chroma\" or pitch class."
+									"patching_rect" : [ 561.0, 501.5, 168.0, 74.0 ],
+									"text" : "Each index of the list is a pitch class. The strength of that pitch class is determined by the corresponding element."
 								}
 
 							}
