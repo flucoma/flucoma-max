@@ -40,6 +40,40 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"bgmode" : 0,
+					"border" : 0,
+					"clickthrough" : 0,
+					"enablehscroll" : 0,
+					"enablevscroll" : 0,
+					"id" : "obj-4",
+					"lockeddragscroll" : 0,
+					"lockedsize" : 0,
+					"maxclass" : "bpatcher",
+					"name" : "fluid.flucomaorg.maxpat",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"offset" : [ 0.0, 0.0 ],
+					"patching_rect" : [ 530.0, 50.0, 172.0, 50.0 ],
+					"presentation" : 1,
+					"presentation_rect" : [ 0.0, 51.0, 172.0, 50.0 ],
+					"viewvisibility" : 1
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 285.0, 50.0, 54.0, 22.0 ],
+					"text" : "deferlow"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgcolor" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
 					"bgcolor2" : [ 0.301961, 0.301961, 0.301961, 1.0 ],
 					"bgfillcolor_angle" : 270.0,
@@ -59,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 155.0, 135.0, 108.0, 24.0 ],
+					"patching_rect" : [ 155.0, 170.0, 108.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.0, 10.0, 224.0, 24.0 ],
 					"text" : "Online Reference",
@@ -74,7 +108,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 145.0, 175.0, 61.0, 22.0 ],
+					"patching_rect" : [ 145.0, 210.0, 61.0, 22.0 ],
 					"text" : "#1"
 				}
 
@@ -98,7 +132,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 18.0, 50.0, 286.0, 22.0 ],
+					"patching_rect" : [ 18.0, 85.0, 286.0, 22.0 ],
 					"text" : "combine learn.flucoma.org/reference/ s @triggers -1"
 				}
 
@@ -112,7 +146,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 18.0, 220.0, 256.0, 35.0 ],
+					"patching_rect" : [ 18.0, 255.0, 256.0, 35.0 ],
 					"text" : "combine https://learn.flucoma.org/reference/ s @triggers -1"
 				}
 
@@ -125,7 +159,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 255.0, 129.0, 35.0 ],
+					"patching_rect" : [ 18.0, 290.0, 129.0, 35.0 ],
 					"text" : ";\rmax launchbrowser $1"
 				}
 
@@ -145,15 +179,14 @@
 					"fontsize" : 13.0,
 					"gradient" : 1,
 					"id" : "obj-25",
-					"linecount" : 2,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 100.0, 221.0, 40.0 ],
+					"patching_rect" : [ 18.0, 135.0, 221.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.0, 25.0, 410.0, 24.0 ],
-					"text" : "learn.flucoma.org/reference/transients",
+					"text" : "learn.flucoma.org/reference/chroma",
 					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
 				}
 
@@ -175,7 +208,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-12", 1 ],
+					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-13", 0 ]
 				}
 
@@ -198,6 +231,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
 					"source" : [ "obj-25", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 1 ],
+					"source" : [ "obj-3", 0 ]
 				}
 
 			}
