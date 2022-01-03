@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 87.0, 1016.0, 779.0 ],
+		"rect" : [ 35.0, 87.0, 770.0, 607.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 113.0, 1016.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 770.0, 581.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -130,7 +130,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 140.0, 640.0, 36.0 ],
-									"presentation_linecount" : 9,
 									"text" : "bufselect~ is useful in an analytical context, because it allows you to extract and isolate specific descriptors and analyses from a larger collection.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -299,7 +298,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 524.0, 205.0, 220.0, 40.0 ],
-									"presentation_linecount" : 5,
 									"text" : "Select a combination of spectral features and statistical analyses."
 								}
 
@@ -375,7 +373,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 801.5, 335.0, 384.0, 36.0 ],
-													"presentation_linecount" : 2,
 													"text" : "Finally, this will extract only the specific stats requested for each of the selected features.",
 													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 												}
@@ -390,7 +387,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 763.5, 285.0, 384.0, 21.0 ],
-													"presentation_linecount" : 2,
 													"text" : "This will contain all of the stats for the selected spectral features.",
 													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 												}
@@ -405,7 +401,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 825.5, 235.0, 320.0, 21.0 ],
-													"presentation_linecount" : 2,
 													"text" : "This will contain only a subset of the spectral features.",
 													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 												}
@@ -420,7 +415,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 801.5, 185.0, 278.0, 21.0 ],
-													"presentation_linecount" : 3,
 													"text" : "This buffer contains all of the spectral features.",
 													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 												}
@@ -2467,7 +2461,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1016.0, 753.0 ],
+						"rect" : [ 35.0, 113.0, 770.0, 581.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2501,12 +2495,11 @@
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
 									"id" : "obj-6",
-									"linecount" : 2,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 680.0, 200.0, 200.0, 36.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 640.0, 249.283009999999877, 120.0, 65.0 ],
 									"text" : "Indices and channels are set with a list of 0 counting positions.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -2521,8 +2514,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 580.0, 399.358473999999774, 130.0, 94.0 ],
-									"presentation_linecount" : 6,
+									"patching_rect" : [ 540.0, 369.283009999999877, 131.0, 94.0 ],
 									"text" : "This visual representation of the output shows how only certain values were extracted from the source buffer.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -2568,11 +2560,11 @@
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-27",
-									"linecount" : 2,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 496.0, 142.0, 397.867942999999855, 40.0 ],
+									"patching_rect" : [ 456.0, 142.0, 250.0, 69.0 ],
 									"text" : "Trigger the bufselect~ object to extract the given indices for every given channel and store the result in the destination buffer."
 								}
 
@@ -2590,7 +2582,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 895.867942999999855, 150.0, 20.0, 20.0 ],
+									"patching_rect" : [ 705.867942999999855, 166.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2605,7 +2597,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 470.0, 150.0, 24.0, 24.0 ]
+									"patching_rect" : [ 430.0, 164.5, 24.0, 24.0 ]
 								}
 
 							}
@@ -2901,7 +2893,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 470.0, 330.0, 48.0, 23.0 ],
+									"patching_rect" : [ 430.0, 329.283009999999877, 48.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2926,7 +2918,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "list" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 470.0, 399.358473999999774, 100.0, 93.71699000000018 ],
+									"patching_rect" : [ 430.0, 369.283009999999877, 100.0, 93.71699000000018 ],
 									"range" : 9,
 									"rows" : 2
 								}
@@ -2940,7 +2932,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 530.0, 234.0, 23.0 ],
+									"patching_rect" : [ 10.0, 500.0, 234.0, 23.0 ],
 									"text" : "buffer~ buf.select.help.src @samps 5 5"
 								}
 
@@ -2953,7 +2945,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 470.0, 530.0, 157.0, 23.0 ],
+									"patching_rect" : [ 430.0, 469.924536000000103, 157.0, 23.0 ],
 									"text" : "buffer~ buf.select.help.dst"
 								}
 
@@ -2966,7 +2958,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 470.0, 200.0, 200.0, 67.0 ],
+									"patching_rect" : [ 430.0, 249.283009999999877, 200.0, 67.0 ],
 									"text" : "fluid.bufselect~ @source buf.select.help.src @destination buf.select.help.dst @channels 0 4 @indices 0 2"
 								}
 
@@ -3529,7 +3521,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1016.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 770.0, 581.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
