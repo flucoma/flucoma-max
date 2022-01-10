@@ -2,7 +2,7 @@ name: Nightly Releases
 
 on:
   push:
-    branches: [ dev, ci/automatic-building ]
+    branches: [ dev, ci ]
   pull_request:
     branches: [ dev ]
 
@@ -12,36 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: install ninja
-        run: brew install ninja
+      - name: setup environment
+        uses: flucoma/actions/env@v2
       
-      - name: get max sdk
-        run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
-      
-      - name: install python dependencies
-        run: pip3 install pyyaml docutils jinja2
-
-      - name: make build directory
-        run: mkdir -p build
-
-      - name: clone latest flucoma-core
-        run: git clone --branch dev https://github.com/flucoma/flucoma-core.git core    
-      
-      - name: create externals folder
-        run: mkdir -p externals
-        
-      - name: cmake
-        run: cmake -GNinja -DDOCS=ON -DFLUID_PATH=../core -DMAX_SDK_PATH=../sdk/ ..
-        working-directory: build
-
-      - name: install
-        run: ninja MAKE_MAX_REF
-        working-directory: build
+      - name: build docs
+        uses: flucoma/actions/maxdocs@v2
 
       - uses: actions/upload-artifact@v2
         with:
@@ -54,22 +29,11 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: get max sdk
-      run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
-      
-    - name: make build directory
-      run: mkdir -p build
+    - name: setup environment
+      uses: flucoma/actions/env@v2
 
-    - name: clone latest flucoma-core 
-      run: git clone --branch dev https://github.com/flucoma/flucoma-core.git core    
-    
-    - name: cmake
-      run: cmake -DFLUID_PATH="../core" -DMAX_SDK_PATH="../sdk/" ..
-      working-directory: build
-      
-    - name: build binaries
-      run: cmake --build . --target install --config Release
-      working-directory: build
+    - name: build toolkit
+      uses: flucoma/actions/max@v2
 
     - uses: actions/upload-artifact@v2
       with:
@@ -82,28 +46,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: install ninja
-        run: brew install ninja
+      - name: setup environment
+        uses: flucoma/actions/env@v2
 
-      - name: get max sdk
-        run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
-        
-      - name: make build directory
-        run: mkdir -p build
-
-      - name: create externals folder
-        run: mkdir -p externals
-
-      - name: clone latest flucoma-core 
-        run: git clone --branch dev https://github.com/flucoma/flucoma-core.git core
-      
-      - name: cmake
-        run: cmake -GNinja -DFLUID_PATH=../core -DMAX_SDK_PATH=../sdk/ -DCMAKE_OSX_ARCHITECTURES="x86_64;arm64" ..
-        working-directory: build
-        
-      - name: install
-        run: ninja install
-        working-directory: build
+      - name: build toolkit
+        uses: flucoma/actions/max@v2
 
       - uses: actions/upload-artifact@v2
         with:
