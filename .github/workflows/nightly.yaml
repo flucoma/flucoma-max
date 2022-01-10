@@ -46,9 +46,6 @@ jobs:
     - name: setup environment
       uses: flucoma/actions/env@v2
 
-    - name: setup environment
-      uses: flucoma/actions/env@v2
-
     - name: build toolkit
       uses: flucoma/actions/max@v2
 
