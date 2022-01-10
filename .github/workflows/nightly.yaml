@@ -15,22 +15,8 @@ jobs:
       - name: setup environment
         uses: flucoma/actions/env@v2
       
-      - name: install python dependencies
-        run: pip3 install pyyaml docutils jinja2
-
-      - name: get max sdk
-        run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk
-      
-      - name: create externals folder
-        run: mkdir -p externals
-        
-      - name: cmake
-        run: cmake -GNinja -DDOCS=ON -DFLUID_PATH=../core -DMAX_SDK_PATH=../sdk/ ..
-        working-directory: build
-
-      - name: install
-        run: ninja MAKE_MAX_REF
-        working-directory: build
+      - name: build docs
+        uses: flucoma/actions/maxdocs@v2
 
       - uses: actions/upload-artifact@v2
         with:
