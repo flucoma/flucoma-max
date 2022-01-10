@@ -12,11 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Cancel Previous Runs
-        uses: styfle/cancel-workflow-action@0.9.1
-        with:
-          access_token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: setup environment
         uses: flucoma/actions/env@v2
       
@@ -51,16 +46,11 @@ jobs:
     - name: setup environment
       uses: flucoma/actions/env@v2
 
-    - name: get max sdk
-      run: git clone --recursive https://github.com/Cycling74/max-sdk.git sdk 
-    
-    - name: cmake
-      run: cmake -DFLUID_PATH="../core" -DMAX_SDK_PATH="../sdk/" ..
-      working-directory: build
-      
-    - name: build binaries
-      run: cmake --build . --target install --config Release
-      working-directory: build
+    - name: setup environment
+      uses: flucoma/actions/env@v2
+
+    - name: build toolkit
+      uses: flucoma/actions/max@v2
 
     - uses: actions/upload-artifact@v2
       with:
