@@ -2,9 +2,7 @@ name: Nightly Releases
 
 on:
   push:
-    branches: [ dev, ci ]
-  pull_request:
-    branches: [ dev ]
+    branches: [ dev, ci/** ]
 
 jobs:
   docs:
