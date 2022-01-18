@@ -2,60 +2,46 @@ name: Nightly Releases
 
 on:
   push:
-    branches: [ dev, ci ]
-  pull_request:
-    branches: [ dev ]
+    branches: [ dev, ci/** ]
 
 jobs:
   docs:
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
-
-      - name: setup environment
-        uses: flucoma/actions/env@v2
-      
-      - name: build docs
-        uses: flucoma/actions/maxdocs@v2
+      - uses: flucoma/actions/env@v2
+      - uses: flucoma/actions/maxdocs@v2
 
       - uses: actions/upload-artifact@v2
         with:
           name: docsbuild
           path: build/max_ref
-
-  winbuild:
-    runs-on: windows-latest
-
-    steps:
-    - uses: actions/checkout@v2
-
-    - name: setup environment
-      uses: flucoma/actions/env@v2
-
-    - name: build toolkit
-      uses: flucoma/actions/max@v2
-
-    - uses: actions/upload-artifact@v2
-      with:
-        name: winbuild
-        path: "release-packaging/FluidCorpusManipulation/externals/"
   
   macbuild:
     runs-on: macos-11
 
     steps:
       - uses: actions/checkout@v2
-
-      - name: setup environment
-        uses: flucoma/actions/env@v2
-
-      - name: build toolkit
-        uses: flucoma/actions/max@v2
+      - uses: flucoma/actions/env@v2
+      - uses: flucoma/actions/max@v3
 
       - uses: actions/upload-artifact@v2
         with:
           name: macbuild
           path: release-packaging/FluidCorpusManipulation/
+
+  winbuild:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: flucoma/actions/env@v2
+    - uses: flucoma/actions/max@v2
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: winbuild
+        path: "release-packaging/FluidCorpusManipulation/externals/"
   
   release:
     if: ${{ github.ref == 'refs/heads/dev' }}
