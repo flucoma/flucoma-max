@@ -9,21 +9,32 @@ jobs:
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v2
-      - uses: flucoma/actions/maxdocs@v2
+      - uses: flucoma/actions/env@v4      
+      - uses: flucoma/actions/maxdocs@v4
 
       - uses: actions/upload-artifact@v2
         with:
           name: docsbuild
           path: build/max_ref
+          
+  winbuild:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: flucoma/actions/env@v4
+      - uses: flucoma/actions/max@v4
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: winbuild
+          path: "release-packaging/FluidCorpusManipulation/externals/"
   
   macbuild:
     runs-on: macos-11
-
     steps:
       - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v2
-      - uses: flucoma/actions/max@v3
+      - uses: flucoma/actions/env@v4
+      - uses: flucoma/actions/max@v4
 
       - uses: actions/upload-artifact@v2
         with:
