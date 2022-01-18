@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 140.0, -917.0, 810.0, 779.0 ],
+		"rect" : [ 34.0, 87.0, 810.0, 779.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 140.0, -891.0, 810.0, 753.0 ],
+						"rect" : [ 34.0, 113.0, 810.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -87,6 +87,29 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "spectroscope~",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 620.0, 590.0, 300.0, 100.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "power",
+									"id" : "obj-1",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 340.0, 230.0, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"args" : [ "spectralshape" ],
 									"bgmode" : 0,
@@ -155,7 +178,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 386.0, 152.0, 87.0 ],
+									"patching_rect" : [ 480.0, 386.0, 155.0, 87.0 ],
 									"text" : "The logarithmic spectral centroid and the logarithmic spectral spread are used to drive the frequency and Q values of the reson~ filter below.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -802,6 +825,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-65", 0 ],
 									"source" : [ "obj-14", 0 ]
 								}
@@ -944,9 +974,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -964,7 +994,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -974,7 +1003,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2200,9 +2230,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2220,7 +2250,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2230,7 +2259,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2329,7 +2359,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 370.0, 598.5, 110.0, 102.0 ],
-									"text" : "11021.076184 60.331775 0.05411 1876.182816 11067.127819 -82.848889 46.665692"
+									"text" : "221.940724 51.977994 22.486551 4481.233937 271.390804 -105.527551 47.2"
 								}
 
 							}
@@ -3088,9 +3118,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -3108,7 +3138,6 @@
 , 															{
 																"name" : "max6message",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"bgfillcolor" : 																	{
 																		"type" : "gradient",
 																		"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3118,7 +3147,8 @@
 																		"proportion" : 0.39,
 																		"autogradient" : 0
 																	}
-
+,
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "max6box",
@@ -3434,9 +3464,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -3454,7 +3484,6 @@
 , 															{
 																"name" : "max6message",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"bgfillcolor" : 																	{
 																		"type" : "gradient",
 																		"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3464,7 +3493,8 @@
 																		"proportion" : 0.39,
 																		"autogradient" : 0
 																	}
-
+,
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "max6box",
@@ -3706,9 +3736,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -3726,7 +3756,6 @@
 , 															{
 																"name" : "max6message",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"bgfillcolor" : 																	{
 																		"type" : "gradient",
 																		"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3736,7 +3765,8 @@
 																		"proportion" : 0.39,
 																		"autogradient" : 0
 																	}
-
+,
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "max6box",
@@ -3939,9 +3969,9 @@
 														"styles" : [ 															{
 																"name" : "max6box",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 																	"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-																	"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "",
@@ -3959,7 +3989,6 @@
 , 															{
 																"name" : "max6message",
 																"default" : 																{
-																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 																	"bgfillcolor" : 																	{
 																		"type" : "gradient",
 																		"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -3969,7 +3998,8 @@
 																		"proportion" : 0.39,
 																		"autogradient" : 0
 																	}
-
+,
+																	"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 ,
 																"parentstyle" : "max6box",
@@ -4595,9 +4625,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -4615,7 +4645,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4625,7 +4654,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -4767,9 +4797,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -4787,7 +4817,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4797,7 +4826,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -5021,9 +5051,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -5041,7 +5071,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -5051,7 +5080,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
