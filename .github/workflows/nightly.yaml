@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: flucoma/actions/env@v4      
-      - uses: flucoma/actions/maxdocs@v2
+      - uses: flucoma/actions/maxdocs@v4
 
       - uses: actions/upload-artifact@v2
         with:
