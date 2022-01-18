@@ -93,12 +93,8 @@ if(DOCS)
   endif()
 
   set(MAX_DOC_PATH "${CMAKE_SOURCE_DIR}/docs" CACHE PATH "")
-  # add_custom_target(MAX_MAKE_DOCS ALL)
-  # add_dependencies(MAX_MAKE_DOCS MAKE_MAX_REF)  
-  # add_custom_command(TARGET MAX_MAKE_DOCS POST_BUILD
-  #   COMMAND ${CMAKE_COMMAND} -E copy_directory "${FLUID_MAX_REF_PATH}"  "${CMAKE_CURRENT_SOURCE_DIR}/docs"
-  #   COMMENT "${MAX_DOC_PATH}"
-  # )
+  
+  add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
 endif()
 
 # Misc setup and subroutines

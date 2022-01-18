@@ -16,18 +16,18 @@ jobs:
         with:
           name: docsbuild
           path: build/max_ref
-
+          
   winbuild:
     runs-on: windows-latest
     steps:
-    - uses: actions/checkout@v2
-    - uses: flucoma/actions/env@v4
-    - uses: flucoma/actions/max@v4
+      - uses: actions/checkout@v2
+      - uses: flucoma/actions/env@v4
+      - uses: flucoma/actions/max@v4
 
-    - uses: actions/upload-artifact@v2
-      with:
-        name: winbuild
-        path: "release-packaging/FluidCorpusManipulation/externals/"
+      - uses: actions/upload-artifact@v2
+        with:
+          name: winbuild
+          path: "release-packaging/FluidCorpusManipulation/externals/"
   
   macbuild:
     runs-on: macos-11
@@ -40,6 +40,19 @@ jobs:
         with:
           name: macbuild
           path: release-packaging/FluidCorpusManipulation/
+
+  winbuild:
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - uses: flucoma/actions/env@v2
+    - uses: flucoma/actions/max@v2
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: winbuild
+        path: "release-packaging/FluidCorpusManipulation/externals/"
   
   release:
     if: ${{ github.ref == 'refs/heads/dev' }}
