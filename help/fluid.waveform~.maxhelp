@@ -1233,7 +1233,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.463916659355164, 876.288610696792603, 513.0, 21.0 ],
-									"text" : "'dump' writes the current state to a dic, but loading is still TODO, so not useful yet"
+									"text" : "'dump' writes the current state to a dict, but loading is still TODO, so not useful yet"
 								}
 
 							}
