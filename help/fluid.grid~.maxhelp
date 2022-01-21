@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 517.0, 455.0, 1141.0, 817.0 ],
+		"rect" : [ 34.0, 87.0, 994.0, 779.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -37,7 +37,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -56,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1141.0, 791.0 ],
+						"rect" : [ 34.0, 113.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -87,27 +88,73 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-24",
-									"maxclass" : "newobj",
+									"id" : "obj-23",
+									"maxclass" : "comment",
 									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 665.0, 400.0, 29.5, 23.0 ],
-									"text" : "t b l"
+									"numoutlets" : 0,
+									"patching_rect" : [ 655.0, 325.0, 50.0, 21.0 ],
+									"text" : "vertical",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-23",
+									"id" : "obj-22",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 631.0, 288.0, 65.0, 21.0 ],
+									"text" : "horizontal",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
 									"maxclass" : "number",
-									"maximum" : 25,
-									"minimum" : 1,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 665.0, 330.0, 50.0, 23.0 ]
+									"patching_rect" : [ 712.5, 325.0, 50.0, 23.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 712.5, 360.0, 62.0, 23.0 ],
+									"text" : "extent $1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-8",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 610.0, 325.0, 42.0, 23.0 ],
+									"text" : "axis 1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "" ],
+									"patching_rect" : [ 583.5, 400.0, 29.5, 23.0 ],
+									"text" : "t b l"
 								}
 
 							}
@@ -115,12 +162,12 @@
 								"box" : 								{
 									"bubbleside" : 2,
 									"id" : "obj-12",
-									"linecount" : 13,
+									"linecount" : 11,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 655.0, 505.0, 233.0, 195.0 ],
-									"text" : "As the grid oversamples the original shape of the space is preseved. This gives you a flexible control over how \"gridded\" the result is.\n\nIt is important to remember that oversampling changes the dimensions of the grid too as it essentially is a control of resolution.\n\nIn this instance the changes in shape of the output are overcome by normalising the space.",
+									"patching_rect" : [ 655.0, 505.0, 233.0, 181.0 ],
+									"text" : "The extent attribute constrains the dimensions of the selected axis when the grid is created. When the value is 0, the constraints are disabled.\n\nThis allows you to control how points are compacted and arranged in the grid output, facilitating distinct arrangements of points in lines of varying density and uniformity. \n\n",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -138,7 +185,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 490.0, 308.0, 20.0, 20.0 ],
+									"patching_rect" : [ 353.0, 288.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -148,14 +195,14 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"bubbleside" : 2,
+									"bubbleside" : 3,
 									"id" : "obj-7",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 385.0, 330.0, 230.0, 55.0 ],
-									"text" : "Experiment with transformations and modifying the oversampling factor."
+									"patching_rect" : [ 375.0, 279.5, 197.0, 40.0 ],
+									"text" : "Experiment by changing both the axis and extent attributes."
 								}
 
 							}
@@ -166,8 +213,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 665.0, 368.0, 94.0, 23.0 ],
-									"text" : "oversample $1"
+									"patching_rect" : [ 585.0, 288.0, 42.0, 23.0 ],
+									"text" : "axis 0"
 								}
 
 							}
@@ -210,7 +257,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 48.0, 440.0, 79.0, 23.0 ],
-									"text" : "s help.grid.2"
+									"text" : "s help.grid.3"
 								}
 
 							}
@@ -222,7 +269,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 631.0, 450.0, 77.0, 23.0 ],
-									"text" : "r help.grid.2"
+									"text" : "r help.grid.3"
 								}
 
 							}
@@ -234,7 +281,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 256.0, 455.0, 77.0, 23.0 ],
-									"text" : "r help.grid.2"
+									"text" : "r help.grid.3"
 								}
 
 							}
@@ -245,7 +292,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 195.5, 290.0, 79.0, 23.0 ],
-									"text" : "s help.grid.2"
+									"text" : "s help.grid.3"
 								}
 
 							}
@@ -584,7 +631,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 10.0, 290.0, 182.0, 23.0 ],
-									"text" : "fluid.dataset~ help.grid.2.input"
+									"text" : "fluid.dataset~ help.grid.3.input"
 								}
 
 							}
@@ -634,6 +681,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -642,7 +690,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 171.0, 108.0, 176.0, 22.0 ],
-													"text" : "fluid.dataset~ help.grid.2.output"
+													"text" : "fluid.dataset~ help.grid.3.output"
 												}
 
 											}
@@ -678,7 +726,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 60.0, 148.0, 288.0, 22.0 ],
-													"text" : "fittransform help.grid.2.output help.grid.2.normoutput"
+													"text" : "fittransform help.grid.3.output help.grid.3.normoutput"
 												}
 
 											}
@@ -738,7 +786,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 247.0, 290.0, 204.0, 22.0 ],
-													"text" : "fluid.dataset~ help.grid.2.normoutput"
+													"text" : "fluid.dataset~ help.grid.3.normoutput"
 												}
 
 											}
@@ -767,8 +815,27 @@
 												}
 
 											}
+, 											{
+												"box" : 												{
+													"attr" : "axis",
+													"id" : "obj-1",
+													"maxclass" : "attrui",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 51.0, 43.0, 150.0, 22.0 ]
+												}
+
+											}
  ],
 										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-17", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
 												"patchline" : 												{
 													"destination" : [ "obj-34", 0 ],
 													"source" : [ "obj-13", 0 ]
@@ -849,12 +916,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 385.0, 400.0, 274.0, 23.0 ],
-									"text" : "fittransform help.grid.2.input help.grid.2.output"
+									"patching_rect" : [ 385.0, 370.0, 123.0, 52.0 ],
+									"text" : "fittransform help.grid.3.input help.grid.3.output"
 								}
 
 							}
@@ -1007,6 +1075,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"midpoints" : [ 722.0, 391.0, 593.0, 391.0 ],
+									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 1 ],
 									"source" : [ "obj-110", 0 ]
 								}
@@ -1021,6 +1097,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-11", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
 									"midpoints" : [ 394.5, 436.0, 394.5, 436.0 ],
 									"source" : [ "obj-19", 0 ]
@@ -1029,15 +1112,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-4", 0 ],
-									"source" : [ "obj-23", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"midpoints" : [ 674.5, 437.0, 372.0, 437.0, 372.0, 395.0, 394.5, 395.0 ],
+									"midpoints" : [ 593.0, 437.0, 371.0, 437.0, 371.0, 357.0, 394.5, 357.0 ],
 									"source" : [ "obj-24", 0 ]
 								}
 
@@ -1045,7 +1121,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
-									"midpoints" : [ 685.0, 436.0, 394.5, 436.0 ],
+									"midpoints" : [ 603.5, 435.0, 394.5, 435.0 ],
 									"source" : [ "obj-24", 1 ]
 								}
 
@@ -1060,6 +1136,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
+									"midpoints" : [ 594.5, 355.0, 593.0, 355.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -1077,6 +1154,14 @@
 									"destination" : [ "obj-84", 0 ],
 									"midpoints" : [ 182.5, 330.0, 19.5, 330.0 ],
 									"source" : [ "obj-69", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-24", 0 ],
+									"midpoints" : [ 619.5, 389.5, 593.0, 389.5 ],
+									"source" : [ "obj-8", 0 ]
 								}
 
 							}
@@ -1158,7 +1243,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 200.0, 10.0, 40.0, 22.0 ],
+					"patching_rect" : [ 200.0, 10.0, 108.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1167,7 +1252,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p axis",
+					"text" : "p \"axis and extent\"",
 					"varname" : "basic_tab[3]"
 				}
 
@@ -1189,7 +1274,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1141.0, 791.0 ],
+						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1252,8 +1337,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 655.0, 505.0, 230.0, 195.0 ],
-									"presentation_linecount" : 13,
+									"patching_rect" : [ 655.0, 505.0, 233.0, 195.0 ],
 									"text" : "As the grid oversamples the original shape of the space is preseved. This gives you a flexible control over how \"gridded\" the result is.\n\nIt is important to remember that oversampling changes the dimensions of the grid too as it essentially is a control of resolution.\n\nIn this instance the changes in shape of the output are overcome by normalising the space.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1272,7 +1356,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 490.0, 308.0, 20.0, 20.0 ],
+									"patching_rect" : [ 385.0, 331.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1282,14 +1366,13 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"bubbleside" : 2,
+									"bubbleside" : 3,
 									"id" : "obj-7",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 385.0, 330.0, 230.0, 55.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 409.0, 321.5, 250.0, 40.0 ],
 									"text" : "Experiment with transformations and modifying the oversampling factor."
 								}
 
@@ -2294,7 +2377,6 @@
 					}
 ,
 					"patching_rect" : [ 80.0, 10.0, 90.0, 22.0 ],
-					"presentation_linecount" : 3,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2325,7 +2407,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1141.0, 791.0 ],
+						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2362,7 +2444,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 685.0, 495.0, 215.0, 94.0 ],
-									"presentation_linecount" : 12,
 									"text" : "Each point retains the same colour between the input and griddified output, so you can see how the algorithm tries to preserve the original layout of points in space while conforming it to a grid.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2398,7 +2479,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 415.0, 345.0, 230.0, 55.0 ],
-									"presentation_linecount" : 4,
 									"text" : "Transform the dataset into a grid. (Take a look inside the sub-patch too)"
 								}
 
@@ -2410,8 +2490,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 280.0, 495.0, 114.5, 123.0 ],
-									"presentation_linecount" : 7,
+									"patching_rect" : [ 280.0, 495.0, 122.0, 123.0 ],
 									"text" : "The raw dataset is plotted here and each point is assigned a colour based on its position to create a smooth colour change spectrum",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2880,6 +2959,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -3137,7 +3217,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 40.0, 155.0, 142.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "read circles.json, dump"
 								}
 
@@ -3405,7 +3484,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1141.0, 791.0 ],
+						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
