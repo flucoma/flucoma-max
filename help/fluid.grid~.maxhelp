@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 994.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -87,6 +87,30 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 650.0, 195.0, 65.0, 23.0 ],
+									"text" : "fluid.grid~"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 220.0, 197.0, 165.0, 23.0 ],
+									"text" : "read gaussian4.json, dump"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-23",
 									"maxclass" : "comment",
@@ -653,7 +677,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 84.0, 131.0, 541.0, 407.0 ],
+										"rect" : [ 84.0, 671.0, 541.0, 407.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -681,7 +705,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -1128,6 +1151,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-105", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-35", 0 ]
 								}
@@ -1304,6 +1334,18 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 220.0, 197.0, 165.0, 23.0 ],
+									"text" : "read gaussian4.json, dump"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-24",
 									"maxclass" : "newobj",
@@ -2270,6 +2312,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-105", 0 ],
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-35", 0 ]
 								}
@@ -2407,7 +2456,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
+						"rect" : [ 34.0, 113.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2437,6 +2486,31 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"filename" : "fluid.waveform~",
+									"id" : "obj-6",
+									"maxclass" : "jsui",
+									"numinlets" : 3,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 645.0, 255.0, 64.0, 64.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 220.0, 197.0, 165.0, 23.0 ],
+									"text" : "read gaussian4.json, dump"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-127",
 									"linecount" : 6,
@@ -2931,7 +3005,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 163.0, 338.0, 534.0, 401.0 ],
+										"rect" : [ 163.0, 878.0, 534.0, 401.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2959,7 +3033,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-32",
@@ -3362,6 +3435,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-105", 0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-105", 0 ],
 									"midpoints" : [ 24.5, 231.0, 19.5, 231.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
@@ -3552,6 +3632,13 @@
 			}
 , 			{
 				"name" : "fluid.plotter.js",
+				"bootpath" : "~/dev/flucoma/max/jsui",
+				"patcherrelativepath" : "../jsui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.waveform~.js",
 				"bootpath" : "~/dev/flucoma/max/jsui",
 				"patcherrelativepath" : "../jsui",
 				"type" : "TEXT",
