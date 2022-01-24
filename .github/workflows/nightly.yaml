@@ -10,7 +10,9 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: flucoma/actions/env@v4      
-      - uses: flucoma/actions/maxdocs@v4
+      - uses: flucoma/actions/docs@v4
+        with:
+          target: MAKE_MAX_REF
 
       - uses: actions/upload-artifact@v2
         with:
