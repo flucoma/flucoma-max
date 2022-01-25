@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 988.0, 726.0 ],
+		"rect" : [ 1257.0, 604.0, 1025.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -339,7 +339,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
+						"rect" : [ 1257.0, 630.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -819,7 +819,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -855,9 +855,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 52.0, 305.018521547317505, 337.0, 22.0 ],
-									"presentation_linecount" : 2,
-									"text" : "indicesbuffer fluid.waveform.slices fluid.waveform.src.markers"
+									"patching_rect" : [ 52.0, 305.018521547317505, 331.0, 22.0 ],
+									"text" : "indicebuffer fluid.waveform.slices fluid.waveform.src.markers"
 								}
 
 							}
@@ -904,8 +903,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 206.0, 279.566044270992279, 186.0, 20.0 ],
-									"text" : "markers messages adds markers",
+									"patching_rect" : [ 206.0, 279.566044270992279, 252.0, 20.0 ],
+									"text" : "indicesbuffer messages adds vertical markers",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
 
@@ -916,7 +915,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 83.5, 154.566044270992279, 104.0, 20.0 ],
+									"patching_rect" : [ 78.0, 154.566044270992279, 104.0, 20.0 ],
 									"text" : "make some slices",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -942,7 +941,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 408.0, 21.0 ],
-									"text" : "show and manipulate markers on top of a wavveform ",
+									"text" : "show and manipulate markers on top of a waveform ",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 								}
 
@@ -1198,7 +1197,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 988.0, 700.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1234,7 +1233,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 15.463916659355164, 663.288610696792603, 513.0, 21.0 ],
-									"text" : "'dump' writes the current state to a dic, but loading is still TODO, so not useful yet"
+									"text" : "'dump' writes the current state to a dict, but loading is still TODO, so not useful yet"
 								}
 
 							}
@@ -1662,7 +1661,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
