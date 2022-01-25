@@ -233,7 +233,7 @@ function addlayer (type, source, _name) {
   refresh(); 
 }
 
-function indicesbuffer(source, reference, _name) {
+function indicebuffer(source, reference, _name) {
   addmarkers(source, reference, _name);
 }
 
