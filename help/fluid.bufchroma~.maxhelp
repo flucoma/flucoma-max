@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 606.0, 447.0, 835.0, 762.0 ],
+		"rect" : [ 100.0, 100.0, 835.0, 762.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 606.0, 473.0, 835.0, 736.0 ],
+						"rect" : [ 100.0, 126.0, 835.0, 736.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -952,7 +952,7 @@
 									"presentation" : 1,
 									"presentation_rect" : [ 19.833344, 17.5, 425.0, 156.0 ],
 									"setminmax" : [ 0.0, 0.200000002980232 ],
-									"size" : 12
+									"size" : 19
 								}
 
 							}
@@ -1408,12 +1408,49 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-16",
+													"linecount" : 3,
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
+													"patching_rect" : [ 133.0, 178.0, 193.0, 49.0 ],
+													"text" : "fluid.bufselect~ @source bufchroma.help.src @destination bufchroma.help.src.mono"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-13",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "" ],
+													"patching_rect" : [ 133.0, 95.0, 45.0, 22.0 ],
+													"text" : "sel 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 9,
+													"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+													"patching_rect" : [ 12.0, 57.0, 140.0, 22.0 ],
+													"text" : "info~ bufchroma.help.src"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 256.0, 113.0, 82.0, 22.0 ],
+													"patching_rect" : [ 582.0, 229.0, 82.0, 22.0 ],
 													"text" : "clear, size 1 1"
 												}
 
@@ -1425,7 +1462,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "bang" ],
-													"patching_rect" : [ 12.0, 62.0, 263.0, 22.0 ],
+													"patching_rect" : [ 338.0, 178.0, 263.0, 22.0 ],
 													"text" : "t b b"
 												}
 
@@ -1438,7 +1475,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 256.0, 152.0, 185.0, 22.0 ],
+													"patching_rect" : [ 582.0, 268.0, 185.0, 22.0 ],
 													"text" : "buffer~ bufchroma.help.src.mono"
 												}
 
@@ -1450,7 +1487,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 12.0, 113.0, 201.0, 22.0 ],
+													"patching_rect" : [ 338.0, 229.0, 201.0, 22.0 ],
 													"text" : "startchan 0, bang, startchan 1, bang"
 												}
 
@@ -1463,7 +1500,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 12.0, 152.0, 201.0, 62.0 ],
+													"patching_rect" : [ 338.0, 268.0, 201.0, 62.0 ],
 													"text" : "fluid.bufcompose~ @source bufchroma.help.src @destination bufchroma.help.src.mono @destgain 0.5 @numchans 1"
 												}
 
@@ -1476,7 +1513,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 12.0, 230.0, 30.0, 30.0 ]
+													"patching_rect" : [ 133.0, 371.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1496,8 +1533,31 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-4", 0 ],
+													"destination" : [ "obj-8", 0 ],
 													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-16", 0 ],
+													"midpoints" : [ 142.5, 120.0, 142.5, 120.0 ],
+													"source" : [ "obj-13", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"midpoints" : [ 168.5, 165.0, 347.5, 165.0 ],
+													"source" : [ "obj-13", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-16", 0 ]
 												}
 
 											}
@@ -1533,6 +1593,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-14", 0 ],
 													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-13", 0 ],
+													"source" : [ "obj-8", 8 ]
 												}
 
 											}
@@ -3096,12 +3163,49 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-16",
+													"linecount" : 3,
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "float", "" ],
+													"patching_rect" : [ 133.0, 178.0, 193.0, 49.0 ],
+													"text" : "fluid.bufselect~ @source bufchroma.help.src @destination bufchroma.help.src.mono"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-13",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "bang", "" ],
+													"patching_rect" : [ 133.0, 95.0, 45.0, 22.0 ],
+													"text" : "sel 1"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-8",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 9,
+													"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+													"patching_rect" : [ 12.0, 57.0, 140.0, 22.0 ],
+													"text" : "info~ bufchroma.help.src"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-7",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 256.0, 113.0, 82.0, 22.0 ],
+													"patching_rect" : [ 582.0, 229.0, 82.0, 22.0 ],
 													"text" : "clear, size 1 1"
 												}
 
@@ -3113,7 +3217,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "bang" ],
-													"patching_rect" : [ 12.0, 62.0, 263.0, 22.0 ],
+													"patching_rect" : [ 338.0, 178.0, 263.0, 22.0 ],
 													"text" : "t b b"
 												}
 
@@ -3126,7 +3230,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 256.0, 152.0, 185.0, 22.0 ],
+													"patching_rect" : [ 582.0, 268.0, 185.0, 22.0 ],
 													"text" : "buffer~ bufchroma.help.src.mono"
 												}
 
@@ -3138,7 +3242,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 12.0, 113.0, 201.0, 22.0 ],
+													"patching_rect" : [ 338.0, 229.0, 201.0, 22.0 ],
 													"text" : "startchan 0, bang, startchan 1, bang"
 												}
 
@@ -3151,7 +3255,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 12.0, 152.0, 201.0, 62.0 ],
+													"patching_rect" : [ 338.0, 268.0, 201.0, 62.0 ],
 													"text" : "fluid.bufcompose~ @source bufchroma.help.src @destination bufchroma.help.src.mono @destgain 0.5 @numchans 1"
 												}
 
@@ -3164,7 +3268,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 12.0, 230.0, 30.0, 30.0 ]
+													"patching_rect" : [ 133.0, 371.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -3184,8 +3288,31 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-4", 0 ],
+													"destination" : [ "obj-8", 0 ],
 													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-16", 0 ],
+													"midpoints" : [ 142.5, 120.0, 142.5, 120.0 ],
+													"source" : [ "obj-13", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"midpoints" : [ 168.5, 165.0, 347.5, 165.0 ],
+													"source" : [ "obj-13", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-16", 0 ]
 												}
 
 											}
@@ -3221,6 +3348,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-14", 0 ],
 													"source" : [ "obj-7", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-13", 0 ],
+													"source" : [ "obj-8", 8 ]
 												}
 
 											}
@@ -3779,6 +3913,10 @@
 				"patcherrelativepath" : "../misc",
 				"type" : "JSON",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.bufselect~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "fluid.flucomaorg.maxpat",
