@@ -339,7 +339,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 988.0, 700.0 ],
+						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -389,7 +389,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 739.0, 285.0, 172.0, 33.0 ],
+									"patching_rect" : [ 751.0, 285.0, 172.0, 33.0 ],
 									"text" : "use color message to change feature curves to red",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -401,7 +401,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 599.0, 144.0, 172.0, 20.0 ],
+									"patching_rect" : [ 611.0, 144.0, 172.0, 20.0 ],
 									"text" : "draw pitch + confidence on top",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -462,8 +462,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 35.0, 299.399652600288391, 221.0, 22.0 ],
-									"text" : "addlayer imagebuf fluid.waveform.mags"
+									"patching_rect" : [ 35.0, 299.399652600288391, 234.0, 22.0 ],
+									"text" : "addlayer imagebuffer fluid.waveform.mags"
 								}
 
 							}
@@ -500,7 +500,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 552.0, 142.0, 24.0, 24.0 ]
+									"patching_rect" : [ 564.0, 142.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -524,8 +524,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 552.0, 247.0, 417.0, 22.0 ],
-									"text" : "addlayer featurebuf fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
+									"patching_rect" : [ 564.0, 247.0, 430.0, 22.0 ],
+									"text" : "addlayer featurebuffer fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
 								}
 
 							}
@@ -536,8 +536,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 266.0, 173.0, 279.0, 22.0 ],
-									"text" : "addlayer audiobuf fluid.waveform.src.layers source"
+									"patching_rect" : [ 266.0, 173.0, 292.0, 22.0 ],
+									"text" : "addlayer audiobuffer fluid.waveform.src.layers source"
 								}
 
 							}
@@ -613,7 +613,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 552.0, 173.0, 197.0, 62.0 ],
+									"patching_rect" : [ 564.0, 173.0, 197.0, 62.0 ],
 									"text" : "fluid.bufpitch~ @source fluid.waveform.src.layers @features fluid.waveform.pitch @unit 0"
 								}
 
@@ -675,7 +675,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 577.0, 142.0, 20.0, 20.0 ],
+									"patching_rect" : [ 589.0, 142.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -767,7 +767,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
-									"midpoints" : [ 561.5, 366.759260773658752, 44.5, 366.759260773658752 ],
+									"midpoints" : [ 573.5, 366.759260773658752, 44.5, 366.759260773658752 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -850,6 +850,19 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 52.0, 305.018521547317505, 337.0, 22.0 ],
+									"presentation_linecount" : 2,
+									"text" : "indicesbuffer fluid.waveform.slices fluid.waveform.src.markers"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-13",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -891,7 +904,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 72.5, 272.566044270992279, 186.0, 20.0 ],
+									"patching_rect" : [ 206.0, 279.566044270992279, 186.0, 20.0 ],
 									"text" : "markers messages adds markers",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -906,18 +919,6 @@
 									"patching_rect" : [ 83.5, 154.566044270992279, 104.0, 20.0 ],
 									"text" : "make some slices",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 52.0, 300.0, 313.0, 22.0 ],
-									"text" : "markers fluid.waveform.slices fluid.waveform.src.markers"
 								}
 
 							}
@@ -952,7 +953,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 231.5, 103.5, 313.0, 20.0 ],
+									"patching_rect" : [ 316.0, 103.5, 145.0, 20.0 ],
 									"text" : "what are we segmenting?",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -977,8 +978,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 103.5, 186.0, 22.0 ],
-									"text" : "buffer fluid.waveform.src.markers"
+									"patching_rect" : [ 10.0, 103.5, 304.0, 22.0 ],
+									"text" : "addlayer audiobuffer fluid.waveform.src.markers source"
 								}
 
 							}
@@ -1106,7 +1107,14 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-20", 0 ]
 								}
 
@@ -1122,13 +1130,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-62", 0 ],
 									"source" : [ "obj-37", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-39", 0 ],
-									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -1197,7 +1198,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
+						"rect" : [ 34.0, 113.0, 988.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1352,7 +1353,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 205.749425232410431, 109.050583183765411, 309.0, 36.0 ],
+									"patching_rect" : [ 300.666099548339844, 110.550583183765411, 309.0, 36.0 ],
 									"text" : "buffer <buffer name> will display a buffer as a waveform. see the layers tab for finer control",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -1428,8 +1429,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.249425232410431, 117.050583183765411, 150.0, 23.0 ],
-									"text" : "buffer fluid.waveform.src"
+									"patching_rect" : [ 15.249425232410431, 117.050583183765411, 278.0, 23.0 ],
+									"text" : "addlayer audiobuffer fluid.waveform.src source"
 								}
 
 							}
