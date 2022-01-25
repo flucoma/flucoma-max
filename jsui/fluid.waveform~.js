@@ -205,9 +205,9 @@ function addlayer (type, source, _name) {
   const index = find(_name ? _name : source); 
 
   var layerTypes = {
-    'imagebuf' : 'image',
-    'featurebuf' : 'line',
-    'audiobuf' : 'wave',
+    'imagebuffer' : 'image',
+    'featurebuffer' : 'line',
+    'audiobuffer' : 'wave',
     'line' : 'line',
     'image' : 'image',
     'wave' : 'wave'
