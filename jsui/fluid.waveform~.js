@@ -206,7 +206,7 @@ function addlayer (type, source, _name) {
 
   var layerTypes = {
     'imagebuffer' : 'image',
-    'featurebuffer' : 'line',
+    'featuresbuffer' : 'line',
     'audiobuffer' : 'wave',
     'line' : 'line',
     'image' : 'image',
@@ -233,7 +233,7 @@ function addlayer (type, source, _name) {
   refresh(); 
 }
 
-function indicebuffer(source, reference, _name) {
+function indicesbuffer(source, reference, _name) {
   addmarkers(source, reference, _name);
 }
 
