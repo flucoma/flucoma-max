@@ -524,8 +524,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 564.0, 247.0, 430.0, 22.0 ],
-									"text" : "addlayer featurebuffer fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
+									"patching_rect" : [ 564.0, 247.0, 436.0, 22.0 ],
+									"text" : "addlayer featuresbuffer fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
 								}
 
 							}
@@ -855,8 +855,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 52.0, 305.018521547317505, 331.0, 22.0 ],
-									"text" : "indicebuffer fluid.waveform.slices fluid.waveform.src.markers"
+									"patching_rect" : [ 52.0, 305.018521547317505, 337.0, 22.0 ],
+									"text" : "indicesbuffer fluid.waveform.slices fluid.waveform.src.markers"
 								}
 
 							}
