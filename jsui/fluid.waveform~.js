@@ -233,6 +233,10 @@ function addlayer (type, source, _name) {
   refresh(); 
 }
 
+function indicesbuffer(source, reference, _name) {
+  addmarkers(source, reference, _name);
+}
+
 function addmarkers(source, reference, _name)
 {
   if (!reference || !source) error('marker layer must have a source (buffer) and a reference (buffer or sample rate)\n');
