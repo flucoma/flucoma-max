@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1394.0, 956.0 ],
+		"rect" : [ 34.0, 87.0, 988.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -152,8 +152,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -242,8 +242,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -332,14 +332,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 105.0, 1394.0, 930.0 ],
+						"rect" : [ 34.0, 113.0, 988.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -462,8 +462,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 35.0, 299.399652600288391, 204.0, 22.0 ],
-									"text" : "addlayer image fluid.waveform.mags"
+									"patching_rect" : [ 35.0, 299.399652600288391, 221.0, 22.0 ],
+									"text" : "addlayer imagebuf fluid.waveform.mags"
 								}
 
 							}
@@ -524,8 +524,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 552.0, 247.0, 381.0, 22.0 ],
-									"text" : "addlayer line fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
+									"patching_rect" : [ 552.0, 247.0, 417.0, 22.0 ],
+									"text" : "addlayer featurebuf fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
 								}
 
 							}
@@ -536,8 +536,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 266.0, 173.0, 261.0, 22.0 ],
-									"text" : "addlayer wave fluid.waveform.src.layers source"
+									"patching_rect" : [ 266.0, 173.0, 279.0, 22.0 ],
+									"text" : "addlayer audiobuf fluid.waveform.src.layers source"
 								}
 
 							}
@@ -548,7 +548,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 750.944449543952942, 415.468550783672299, 215.0, 22.0 ],
+									"patching_rect" : [ 426.565008103847504, 409.968550783672299, 215.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.src.layers anton",
 									"varname" : "doesit"
 								}
@@ -563,7 +563,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 35.0, 520.518521547317505, 1256.944449543952942, 384.067990250435855 ],
+									"patching_rect" : [ 35.0, 471.518521547317505, 606.565008103847504, 183.067990250435855 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 634.573396921157837, 195.243875801563263, 500.59646075963974, 346.481478452682495 ]
 								}
@@ -576,7 +576,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 750.944449543952942, 446.0, 155.0, 22.0 ],
+									"patching_rect" : [ 426.565008103847504, 440.5, 155.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.pitch"
 								}
 
@@ -812,14 +812,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -855,7 +855,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 964.944449543952942, 505.0, 150.0, 33.0 ],
+									"patching_rect" : [ 539.944449543952942, 426.0, 150.0, 33.0 ],
 									"text" : "TODO: re-dump markers back to original buffer / list"
 								}
 
@@ -867,7 +867,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 79.5, 478.0, 330.0, 60.0 ],
+									"patching_rect" : [ 72.5, 406.0, 330.0, 60.0 ],
 									"text" : "When patcher locked: \nHover over a marker to select, click and drag to move. \nshift+click to add \nopt-click to remove"
 								}
 
@@ -879,7 +879,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 130.0, 351.066044270992279, 238.0, 33.0 ],
+									"patching_rect" : [ 123.0, 330.066044270992279, 238.0, 33.0 ],
 									"text" : "need to supply source buffer as time reference (until I find a Better Way)",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -891,7 +891,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 79.5, 293.566044270992279, 186.0, 20.0 ],
+									"patching_rect" : [ 72.5, 272.566044270992279, 186.0, 20.0 ],
 									"text" : "markers messages adds markers",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -903,7 +903,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 90.5, 175.566044270992279, 104.0, 20.0 ],
+									"patching_rect" : [ 83.5, 154.566044270992279, 104.0, 20.0 ],
 									"text" : "make some slices",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -916,7 +916,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 59.0, 321.0, 313.0, 22.0 ],
+									"patching_rect" : [ 52.0, 300.0, 313.0, 22.0 ],
 									"text" : "markers fluid.waveform.slices fluid.waveform.src.markers"
 								}
 
@@ -929,7 +929,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 59.0, 201.566044270992279, 24.0, 24.0 ]
+									"patching_rect" : [ 52.0, 180.566044270992279, 24.0, 24.0 ]
 								}
 
 							}
@@ -952,7 +952,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 238.5, 124.5, 313.0, 20.0 ],
+									"patching_rect" : [ 231.5, 103.5, 313.0, 20.0 ],
 									"text" : "what are we segmenting?",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -965,7 +965,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 656.944449543952942, 386.018521547317505, 49.0, 22.0 ],
+									"patching_rect" : [ 649.944449543952942, 365.018521547317505, 49.0, 22.0 ],
 									"text" : "refresh"
 								}
 
@@ -977,7 +977,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 17.0, 124.5, 186.0, 22.0 ],
+									"patching_rect" : [ 10.0, 103.5, 186.0, 22.0 ],
 									"text" : "buffer fluid.waveform.src.markers"
 								}
 
@@ -989,7 +989,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 448.944449543952942, 351.066044270992279, 227.0, 22.0 ],
+									"patching_rect" : [ 441.944449543952942, 330.066044270992279, 227.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.src.markers jongly",
 									"varname" : "doesit"
 								}
@@ -1004,7 +1004,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 59.0, 555.410335123538971, 1055.944449543952942, 291.176176674214389 ],
+									"patching_rect" : [ 52.0, 483.410335123538971, 606.565008103847504, 183.067990250435855 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 634.573396921157837, 195.243875801563263, 500.59646075963974, 346.481478452682495 ]
 								}
@@ -1017,7 +1017,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 448.944449543952942, 321.0, 160.0, 22.0 ],
+									"patching_rect" : [ 441.944449543952942, 300.0, 160.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.slices"
 								}
 
@@ -1030,7 +1030,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 59.0, 234.518521547317505, 266.0, 35.0 ],
+									"patching_rect" : [ 52.0, 213.518521547317505, 266.0, 35.0 ],
 									"text" : "fluid.bufonsetslice~ @source fluid.waveform.src @indices fluid.waveform.slices @metric 2"
 								}
 
@@ -1066,7 +1066,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 59.0, 175.566044270992279, 20.0, 20.0 ],
+									"patching_rect" : [ 52.0, 154.566044270992279, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -1092,7 +1092,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 213.0, 124.5, 20.0, 20.0 ],
+									"patching_rect" : [ 206.0, 103.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -1135,7 +1135,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
-									"midpoints" : [ 666.444449543952942, 424.759260773658752, 68.5, 424.759260773658752 ],
+									"midpoints" : [ 659.444449543952942, 403.759260773658752, 61.5, 403.759260773658752 ],
 									"source" : [ "obj-62", 0 ]
 								}
 
@@ -1143,7 +1143,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
-									"midpoints" : [ 26.5, 455.205167561769485, 68.5, 455.205167561769485 ],
+									"midpoints" : [ 19.5, 434.205167561769485, 61.5, 434.205167561769485 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -1190,14 +1190,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1232,8 +1232,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.463916659355164, 876.288610696792603, 513.0, 21.0 ],
-									"text" : "'dump' writes the current state to a dict, but loading is still TODO, so not useful yet"
+									"patching_rect" : [ 15.463916659355164, 663.288610696792603, 513.0, 21.0 ],
+									"text" : "'dump' writes the current state to a dic, but loading is still TODO, so not useful yet"
 								}
 
 							}
@@ -1295,7 +1295,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 15.249425232410431, 843.701033353805542, 50.5, 23.0 ],
+									"patching_rect" : [ 15.249425232410431, 630.701033353805542, 50.5, 23.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -1455,7 +1455,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 15.249425232410431, 428.972132682800293, 1315.944449543952942, 398.067990250435855 ],
+									"patching_rect" : [ 15.249425232410431, 428.972132682800293, 606.565008103847504, 183.067990250435855 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 619.573396921157837, 180.243875801563263, 500.59646075963974, 346.481478452682495 ]
 								}
@@ -1654,14 +1654,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 988.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1710,31 +1710,6 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.waveform~.js",
-				"bootpath" : "~/Documents/Max 8/Packages/fav4max/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "fluid.bufonsetslice~.mxo",
 				"type" : "iLaX"
 			}
@@ -1745,6 +1720,31 @@
 , 			{
 				"name" : "fluid.bufstft~.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.waveform~.js",
+				"bootpath" : "~/dev/flucoma/max/jsui",
+				"patcherrelativepath" : "../jsui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0
