@@ -1,12 +1,3 @@
-
-// if (!Float32Array.prototype.slice) {
-//   Object.defineProperty(Float32Array.prototype, 'slice', {
-//     value: function (begin, end) {
-//       return new Array(Array.prototype.slice.call(this, begin, end));
-//     }
-//   });
-// }
-
 if (!Array.prototype.fill) {
   Object.defineProperty(Array.prototype, 'fill', {
     value: function (value) {
@@ -120,6 +111,7 @@ function init () {
   layerData = []; 
   labels = [];
   markerlayers = []; 
+  alllayers = []; 
   redrawNeeded = true; 
   img = null; 
   refresh(); 
@@ -127,21 +119,47 @@ function init () {
 }
 
 
-function MarkersSpec (sig, fs, extent) {
-  if(!fs) throw "Markers without sample rate"
+function MarkersSpec (source, reference) {
   
-  if(extent)
-  {
-    if(sig[sig.length - 1] < extent) sig.push(extent)
+  if(!reference) throw "Markers without reference layer or sample rate"
+  
+  this.source = source; 
+  this.reference = reference; 
+  this.type = 'markers'
+
+  this.refresh = function(){
+      if(!this.source) throw "Markers without source buffer" 
+      
+      var markers = new Buffer(source); 
+      if(!markers) error("Markers: buffer~", source, "not found!\n")  
+      var markerdata = markers.peek(1,0,markers.framecount())
+      //reference can be either a buffer name or a sampling rate 
+      this.fs = null;
+      var extent = 0; 
+      if(typeof reference === 'string')
+      {
+        var refbuf = new Buffer(reference); 
+        if(!refbuf){
+          error("Markers: reference buffer~",reference,"not found!\n"); 
+          return; 
+        }
+        this.fs = 1000.0 * (refbuf.framecount() / refbuf.length()); 
+        extent = refbuf.framecount(); 
+        if(markerdata[markerdata.length - 1] < extent) markerdata.push(extent)
+      }
+      else if(typeof reference === 'number')
+      {
+        this.fs = reference; 
+      }      
+      if(!this.fs) throw "Markers without sample rate"
+      this.data = new Markers(markerdata,this.fs);
+      this.length = this.data.length;
   }
   
-  this.data = new Markers(sig,fs)
-  this.seletced = false;
-  this.locations = [];
-  this.length = this.data.length;
-  this.fs = fs; 
+  this.seletced = false;  
   this.forEach = function (c) { this.data.forEach(c); };
   this.style = this.style = {color: [1., 0.709804, 0.196078, 1.], backgroundcolor: [0, 0, 0, 0],selectedcolor:[ 1., 0.345098, 0.298039, 1.]};
+
   this.ondrag = function (x, y, button, mod1, shift, caps, opt, mod2)	{
 	 	var factor = (this.data.length / getWidth()) * zoom;
     var off = Math.min(offset,1 - zoom) * this.data.length
@@ -185,10 +203,22 @@ find.local = 1;
 function addlayer (type, source, _name) {
   if (!type || !source) error('layer must have a type (symbol) and a source (buffer name)\n');
   const index = find(_name ? _name : source); 
+
+  var layerTypes = {
+    'imagebuf' : 'image',
+    'featurebuf' : 'line',
+    'audiobuf' : 'wave',
+    'line' : 'line',
+    'image' : 'image',
+    'wave' : 'wave'
+  }
+
+  var translatedType = layerTypes[type]
+
   if(index < 0)
   {
     var l = new LayerSpec();
-    l.type = type;
+    l.type = translatedType;
     l.source = source;
     layers.push(l);
     alllayers.push(l);   
@@ -196,8 +226,8 @@ function addlayer (type, source, _name) {
   } 
   else 
   {
-    var l = layers[index]; 
-    l.type = type;
+    var l = alllayers[index]; 
+    l.type = translatedType;
     l.source = source;    
   }
   refresh(); 
@@ -206,46 +236,26 @@ function addlayer (type, source, _name) {
 function addmarkers(source, reference, _name)
 {
   if (!reference || !source) error('marker layer must have a source (buffer) and a reference (buffer or sample rate)\n');
-  var markers = new Buffer(source); 
-  if(!markers) error("Markers:buffer~", source, "not found!\n")  
-  var markerdata = markers.peek(1,0,markers.framecount())
-  var fs = null; 
-  var referenceLength = null; 
-  
-  if(typeof reference === 'string')
-  {
-    var refbuf = new Buffer(reference); 
-    if(!refbuf){
-      error("Markers: reference buffer~",reference,"not found!\n"); 
-      return; 
-    }
-    fs = 1000.0 * (refbuf.framecount() / refbuf.length()); 
-    referenceLength = refbuf.framecount(); 
+
+  const index = find(_name ? _name : source); 
+  if(index < 0)
+  {  
+    var l = new MarkersSpec(source, reference)//markerdata,fs,referenceLength)  
+    l.type = 'markers';
+    markerlayers.push(l);
+    alllayers.push(l); 
+    labels.push(_name ? _name : source);
   }
-  else if(typeof reference === 'number')
+  else 
   {
-    fs = reference; 
+    var l = alllayers[index];
+    l.source = source; 
+    l.reference = reference; 
   }
-  
-  if(!reference)
-  {
-    error("Markers: could not establish sample rate from", reference,"\n")
-    return
-  }
-  
-  if(!fs) throw "Markers: could not establish sample rate"; 
-  
-  var l = new MarkersSpec(markerdata,fs,referenceLength)
-  
-  l.type = 'markers';
-  markerlayers.push(l);
-  alllayers.push(l); 
-  labels.push(_name ? _name : source);
   refresh(); 
 }
 
 function removelayer (_name) {
-  labels.findIndex(function(n){n===_name});  
   if (!_name) return;
   var index = find(_name);
   if (index < 0) return;
@@ -253,6 +263,11 @@ function removelayer (_name) {
   labels.splice(index, 1);
   layers = alllayers.filter(function(l){return l instanceof LayerSpec}); 
   markerlayers = alllayers.filter(function(l){return l instanceof MarkersSpec}); 
+  refresh(); 
+}
+
+function clear() {
+  init();   
 }
 
 function getlayers () {
@@ -406,13 +421,12 @@ function refresh () {
   }); //layers for each
   
   markerlayers.forEach(function (l, i) {    
+    l.refresh(); 
     var ld = new LayerData() 
     if (!disp) 
       disp = new Display(jsuiObj, 'markers', width, height, 0, null);
     else  
       disp.addLayer('marker',0);
-    
-    if(layers.length > 0) l.extent = layers[0].length 
   })        
   redrawNeeded = true; 
 }
@@ -558,7 +572,9 @@ function render()
       var sig =layerData[0].data[0]; 
       l.data.extent = [0, sig.rank === 2 ? sig.nBands : sig.length]; 
     }
-    var sig = l.data.slice(off * l.data.length, l.data.length * (zoom + off))     
+    else l.data.extent = [0,l.data[l.data.length - 1]]; 
+    var sig = l.data.slice(off * l.data.length, l.data.length * (zoom + off))    
+    disp.layers[i + layers.length].setRange([0, 0, width,height]);  
     disp.draw(sig,l.style,disp.layers[i + layers.length])
   })
   img = new Image(mg); 
@@ -619,9 +635,9 @@ function onresize (x, y, button, mod1, shift, caps, opt, mod2) {
 
   if (disp) {
     disp.canvas.width = width;
-    disp.canvas.height = height;
-    redrawNeeded = true; 
+    disp.canvas.height = height;     
   }
+  redrawNeeded = true;
 }
 
 function onidle (x, y, button, mod1, shift, caps, opt, mod2) {

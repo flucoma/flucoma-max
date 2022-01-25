@@ -16,7 +16,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 
 function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); Object.defineProperty(Constructor, "prototype", { writable: false }); return Constructor; }
 
 Object.defineProperty(exports, '__esModule', {
   value: true
@@ -123,16 +123,7 @@ var Signal = /*#__PURE__*/function () {
       return new Signal(this.rank == 2 ? this.data.map(function (x) {
         return x.map(f);
       }) : this.data.map(f), this.sampleRate, newType ? newType : this.type, newMin !== null ? newMin : this.min, newMax !== null ? newMax : this.max);
-    } // slice(start, end)
-    // {
-    //   // post("SDSKDLSKDLSDKLSKDD",start,end,'\n')
-    //   throw "HWHQHQHQHQH"
-    //   return new Signal(
-    //     this.rank == 2 ? this.data.map(s => s.slice(start,end)) : this.data.slice(start,end), 
-    //     this.sampleRate, this.type, this.min, this.max
-    //   );
-    // }
-
+    }
   }, {
     key: "draw",
     value: function draw(target, style) {
@@ -150,14 +141,14 @@ Signal.TYPE_INT = 1;
 Signal.TYPE_BINARY = 2;
 var signal = Signal;
 
-var Marker = function Marker(position) {
+var Marker = /*#__PURE__*/_createClass(function Marker(position) {
   var selected = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : false;
 
   _classCallCheck(this, Marker);
 
   this.position = position;
   this.selected = selected;
-};
+});
 
 Marker.prototype.valueOf = function () {
   return this.position;
@@ -263,27 +254,25 @@ var stats = {
   }
 };
 var unaryops = {
-  'threshold': function threshold(th) {
+  "threshold": function threshold(th) {
     return this.map(function (x) {
       return x > th;
     }, 2, 0, 1);
   },
-  'slice': function slice(from, to) {
-    var unit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 'samples';
+  "slice": function slice(from, to) {
+    var unit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "samples";
 
-    if (unit === 'seconds') {
+    if (unit === "seconds") {
       from = Math.round(from * this.sampleRate);
       to = Math.round(to * this.sampleRate);
     }
 
     var clone = this.clone();
-    clone.data = clone.rank == 2 ? clone.data.map(function (s) {
-      return s.slice(from, to);
-    }) : this.data.slice(from, to);
+    clone.data = clone.data.slice(from, to);
     clone.computeRange();
     return clone;
   },
-  'normalize': function normalize() {
+  "normalize": function normalize() {
     var _this = this;
 
     var newDesc = this.map(function (x) {
@@ -293,63 +282,63 @@ var unaryops = {
     newDesc.max = 1;
     return newDesc;
   },
-  'offset': function offset(num) {
+  "offset": function offset(num) {
     return this.map(function (x) {
       return x + num;
     });
   },
-  'log': function log() {
+  "log": function log() {
     return this.map(Math.log).computeRange();
   },
-  'square': function square() {
+  "square": function square() {
     return this.map(function (x) {
       return Math.pow(x, 2);
     });
   },
-  'pow': function pow(n) {
+  "pow": function pow(n) {
     return this.map(function (x) {
       return Math.pow(x, n);
     });
   },
-  'exp': function exp() {
+  "exp": function exp() {
     return this.map(Math.exp);
   },
-  'sqrt': function sqrt() {
+  "sqrt": function sqrt() {
     return this.map(Math.sqrt);
   },
-  'abs': function abs() {
+  "abs": function abs() {
     return this.map(Math.abs);
   },
-  'scale': function scale(num) {
+  "scale": function scale(num) {
     return this.map(function (x) {
       return x * num;
     });
   },
-  'reflect': function reflect(num) {
+  "reflect": function reflect(num) {
     var _this2 = this;
 
     return this.map(function (x) {
       return _this2.max - x;
     });
   },
-  'diff': function diff() {
+  "diff": function diff() {
     var _this3 = this;
 
     return this.map(function (x, i) {
       return i == 0 ? i : x - _this3.data[i - 1];
     }).computeRange();
   },
-  'delay': function delay(n) {
+  "delay": function delay(n) {
     var _this4 = this;
 
     return this.map(function (x, i) {
       return i <= n ? 0 : _this4.data[i - n];
     }).computeRange();
   },
-  'smooth': function smooth(n) {
+  "smooth": function smooth(n) {
     var _this5 = this;
 
-    var stat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'mean';
+    var stat = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "mean";
     var nPrev = Math.floor(n / 2);
     var newDesc = this.map(function (x, i) {
       return i <= nPrev ? stats[stat](_this5.data.slice(0, n - i)) : stats[stat](_this5.data.slice(i - nPrev, i + n - nPrev));
@@ -357,7 +346,7 @@ var unaryops = {
     newDesc.computeRange();
     return newDesc;
   },
-  'schmitt': function schmitt(th0, th1) {
+  "schmitt": function schmitt(th0, th1) {
     this.clone();
     var state = 0;
 
@@ -370,7 +359,7 @@ var unaryops = {
 
     return this;
   },
-  'slide': function slide(up, down) {
+  "slide": function slide(up, down) {
     up = Math.max(up, 1);
     down = Math.max(down, 1);
     var previous = 0;
@@ -378,13 +367,7 @@ var unaryops = {
 
     for (var i = 0; i < this.length; i++) {
       var current = this.data[i];
-
-      if (current >= previous) {
-        slide = up;
-      } else {
-        slide = down;
-      }
-
+      if (current >= previous) slide = up;else slide = down;
       this.data[i] = previous + (current - previous) / slide;
       previous = this.data[i];
     }
@@ -435,29 +418,6 @@ var binaryops = {
       return x == desc.data[i] ? 1 : 0;
     });
   }
-};
-var samplers = {
-  "sample": function sample(step) {
-    var method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "mean";
-    var newSize = Math.ceil(this.data.length / step);
-    var newData = new Array(newSize);
-    var newRate = this.sampleRate / step;
-    this.data.length / step;
-
-    for (var i = 0; i < newSize; i += 1) {
-      var bucketStart = Math.floor(i * step);
-      var bucketEnd = Math.floor((i + 1) * step);
-      if (bucketStart > this.data.length - 1) bucketStart = this.data.length - 1;
-      if (bucketEnd > this.data.length - 1) bucketEnd = this.data.length - 1;
-
-      if (bucketStart === bucketEnd) {
-        newData[i] = i > 0 ? newData[i - 1] : this.data[i];
-      } else newData[i] = stats[method](this.data.slice(bucketStart, bucketEnd));
-    }
-
-    var s = new signal(newData, newRate, this.type);
-    return s;
-  }
 }; // Lightest-weight wrapping around MGraphics possible, to allow for layers to draw into sub-regions of an MGrpahics using function calls that match the HTMLContext names
 
 var SubContext = /*#__PURE__*/function () {
@@ -487,7 +447,7 @@ var SubContext = /*#__PURE__*/function () {
     set: function set(s) {
       var _this$mg;
 
-      (_this$mg = this.mg).set_source_rgb.apply(_this$mg, _toConsumableArray(s));
+      (_this$mg = this.mg).set_source_rgba.apply(_this$mg, _toConsumableArray(s));
 
       this.stroke_style = s;
     }
@@ -887,16 +847,17 @@ var Layer = /*#__PURE__*/function () {
         throw 'Trying to draw 1D signal as image';
       }
 
-      desc = desc.offset(1e-6).log().normalize();
-      var imageData = new Image(desc.length, desc.nBands);
+      desc = desc.offset(1e-6).log().normalize(); //orientation is actually flipped wrt to what Fav.js assumes
 
-      for (var i = 0; i < desc.nBands; i++) {
-        desc.nBands - i;
+      var len = desc.nBands;
+      var bands = desc.length;
+      var imageData = new Image(len, bands);
 
-        for (var j = 0; j < desc.length; j++) {
-          var val = desc.data[j][i];
+      for (var i = 0; i < bands; i++) {
+        for (var j = 0; j < len; j++) {
+          var val = desc.data[i][j];
           var rgb = this.hslToRgb(val, 0, val);
-          imageData.setpixel(j, desc.nBands - i, rgb[0], rgb[1], rgb[2], 1);
+          imageData.setpixel(j, bands - i, rgb[0], rgb[1], rgb[2], 1);
         }
       }
 
@@ -937,6 +898,11 @@ var MarkerLayer = /*#__PURE__*/function () {
   }
 
   _createClass(MarkerLayer, [{
+    key: "setRange",
+    value: function setRange(range) {
+      this.context = new SubContext(this, range);
+    }
+  }, {
     key: "draw",
     value: function draw(desc, style) {
       var extent = desc.length;
@@ -1071,8 +1037,24 @@ var Display = /*#__PURE__*/function () {
   return Display;
 }();
 
-var displayJsui = Display; // import "core-js/stable";
-// import "regenerator-runtime/runtime";
+var displayJsui = Display;
+
+unaryops_1['slice'] = function (from, to) {
+  var unit = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : "samples";
+
+  if (unit === "seconds") {
+    from = Math.round(from * this.sampleRate);
+    to = Math.round(to * this.sampleRate);
+  }
+
+  var clone = this.clone();
+  clone.data = clone.rank == 2 ? clone.data.map(function (s) {
+    return s.slice(from, to);
+  }) : this.data.slice(from, to); //<-- diff 
+
+  clone.computeRange();
+  return clone;
+};
 
 for (var key in unaryops_1) {
   signal.prototype[key] = unaryops_1[key];
@@ -1080,11 +1062,32 @@ for (var key in unaryops_1) {
 
 for (var key in binaryops) {
   signal.prototype[key] = binaryops[key];
-}
+} // for (var key in samplers) {
+//   Signal.prototype[key] = samplers[key];
+// }
 
-for (var key in samplers) {
-  signal.prototype[key] = samplers[key];
-}
+
+signal.prototype['sample'] = function (step) {
+  var method = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : "mean";
+  var newSize = Math.ceil(this.data.length / step);
+  var newData = new Array(newSize);
+  var newRate = this.sampleRate / step;
+  this.data.length / step;
+
+  for (var i = 0; i < newSize; i += 1) {
+    var bucketStart = Math.floor(i * step);
+    var bucketEnd = Math.floor((i + 1) * step);
+    if (bucketStart > this.data.length - 1) bucketStart = this.data.length - 1;
+    if (bucketEnd > this.data.length - 1) bucketEnd = this.data.length - 1;
+
+    if (bucketStart === bucketEnd) {
+      newData[i] = i > 0 ? newData[i - 1] : this.data[i]; //<------- diff
+    } else newData[i] = stats[method](this.data.slice(bucketStart, bucketEnd));
+  }
+
+  var s = new signal(newData, newRate, this.type);
+  return s;
+};
 
 var apiMax = {
   "Signal": signal,
