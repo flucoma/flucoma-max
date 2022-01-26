@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 5,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 62.0, 79.0, 1291.0, 954.0 ],
+		"rect" : [ 62.0, 87.0, 1291.0, 954.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -44,16 +44,10 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 199.0, 97.0, 157.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"filename" : "helpstarter.js",
-						"parameter_enable" : 0
-					}
-,
-					"text" : "js helpstarter.js fluid.bufstft~"
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 67.0, 85.0, 230.0, 22.0 ],
+					"text" : "fluid_decomposition.blocking fluid.bufstft~"
 				}
 
 			}
@@ -67,14 +61,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 5,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 62.0, 105.0, 1291.0, 928.0 ],
+						"rect" : [ 62.0, 113.0, 1291.0, 928.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -447,6 +441,7 @@
 									"enablevscroll" : 0,
 									"id" : "obj-56",
 									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"numinlets" : 0,
 									"numoutlets" : 1,
@@ -456,8 +451,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 5,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -543,14 +538,14 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+													"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
 													"patching_rect" : [ 73.5, 140.833344000000011, 133.0, 22.0 ],
-													"prefix" : "Macintosh HD:/Users/owen/Documents/Max 8/Packages/flucoma-max/media/",
+													"prefix" : "~/dev/flucoma/max/media/",
 													"presentation" : 1,
 													"presentation_rect" : [ 2.5, 2.833344, 282.0, 22.0 ],
 													"types" : [ "WAVE", "AIFF" ]
@@ -650,9 +645,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -670,7 +665,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -680,7 +674,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -752,7 +747,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 645.5, 277.0, 564.0, 161.0 ]
+									"patching_rect" : [ 645.5, 277.0, 564.0, 161.0 ],
+									"sync" : 1
 								}
 
 							}
@@ -1070,9 +1066,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1090,7 +1086,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1100,7 +1095,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1158,8 +1154,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 5,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1198,7 +1194,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 205.0, 205.0, 50.0, 22.0 ],
+					"patching_rect" : [ 303.0, 85.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1213,10 +1209,31 @@
 			}
  ],
 		"lines" : [  ],
+		"parameters" : 		{
+			"obj-1::obj-39" : [ "live.text", "live.text", 0 ],
+			"parameterbanks" : 			{
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
+				"name" : "fluid.bufstft~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.jit.spectrogram.js",
+				"bootpath" : "~/dev/flucoma/max/javascript",
+				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid_decomposition.blocking.maxpat",
+				"bootpath" : "~/dev/flucoma/max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
@@ -1226,21 +1243,10 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.jit.spectrogram.js",
-				"bootpath" : "~/Documents/Max 8/Packages/flucoma-max/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
+				"name" : "helpname.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufstft~.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0
