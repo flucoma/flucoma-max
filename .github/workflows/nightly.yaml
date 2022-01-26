@@ -77,15 +77,13 @@ jobs:
           tag_name: nightly # tag name to delete
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+
       - name: package and upload
-        uses: svenstaro/upload-release-action@v2
+        uses: softprops/action-gh-release@v1
         with:
-          release_name: FluCoMa Max Nightly Build
-          prerelease: true
+          name: FluCoMa Max Nightly Release
           body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: FluCoMa-Max-nightly.zip
-          asset_name: FluCoMa-Max-nightly.zip
-          tag: nightly
-          overwrite: true
+          files: FluCoMa-Max-nightly.zip
+          prerelease: true
+          tag_name: nightly
+          draft: false
