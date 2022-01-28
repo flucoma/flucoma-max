@@ -1,6 +1,11 @@
 name: Release
 on:
   workflow_dispatch:
+    inputs:
+      base:
+        description: 'Base branch to deploy core from'
+        required: false
+        default: 'main'
 
 jobs:
   docs:
@@ -8,11 +13,11 @@ jobs:
     steps:
       - uses: flucoma/actions/env@v4
         with:
-          branch: main
+          branch: ${{ github.event.inputs.base }} 
       - uses: flucoma/actions/docs@v4
         with:
           target: MAKE_MAX_REF
-          branch: main
+          branch: ${{ github.event.inputs.base }} 
 
       - uses: actions/upload-artifact@v2
         with:
@@ -25,7 +30,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: flucoma/actions/env@v4
         with:
-          branch: main
+          branch: ${{ github.event.inputs.base }} 
       - uses: flucoma/actions/max@v4
 
       - uses: actions/upload-artifact@v2
@@ -41,7 +46,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: flucoma/actions/env@v4
         with:
-          branch: main
+          branch: ${{ github.event.inputs.base }} 
       - uses: flucoma/actions/max@v4
 
       - uses: actions/upload-artifact@v2
