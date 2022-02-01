@@ -136,8 +136,10 @@ install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/
         FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
 
 # install(CODE [[ message(STATUS "${flucoma-core_SOURCE_DIR}") ]])
-install(DIRECTORY "${flucoma-core_SOURCE_DIR}/AudioFiles/" 
+install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/AudioFiles/" 
         DESTINATION "${MAX_PACKAGE_ROOT}/media")
+install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/DataSets/"
+        DESTINATION "${MAX_PACKAGE_ROOT}/DataSets")
 install(FILES icon.png package-info.json QuickStart.md 
         DESTINATION ${MAX_PACKAGE_ROOT})
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
