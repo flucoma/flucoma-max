@@ -167,7 +167,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 325.0, 243.566399, 150.0, 36.0 ],
 									"style" : "",
-									"text" : "set desintation using attribute",
+									"text" : "set destination using attribute",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.51 ]
 								}
 
