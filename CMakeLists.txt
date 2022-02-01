@@ -139,7 +139,7 @@ install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/
 install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/AudioFiles/" 
         DESTINATION "${MAX_PACKAGE_ROOT}/media")
 install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/DataSets/"
-        DESTINATION "${MAX_PACKAGE_ROOT}/DataSets")
+        DESTINATION "${MAX_PACKAGE_ROOT}/misc")
 install(FILES icon.png package-info.json QuickStart.md 
         DESTINATION ${MAX_PACKAGE_ROOT})
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
