@@ -68,6 +68,8 @@ FetchContent_GetProperties(flucoma-core)
 if(NOT flucoma-core_POPULATED)
   FetchContent_Populate(flucoma-core)
   add_subdirectory(${flucoma-core_SOURCE_DIR} ${flucoma-core_BINARY_DIR})  
+  file(GLOB FLUCOMA_CORE_RESOURCES ${flucoma-core_SOURCE_DIR}/Resources/Data/*.*)
+  file(COPY ${FLUCOMA_CORE_RESOURCES} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/misc)
   include(flucoma_version)
   include(flucoma-buildtools)
   include(flucoma-buildtype)
@@ -136,8 +138,10 @@ install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/
         FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
 
 # install(CODE [[ message(STATUS "${flucoma-core_SOURCE_DIR}") ]])
-install(DIRECTORY "${flucoma-core_SOURCE_DIR}/AudioFiles/" 
-        DESTINATION "${MAX_PACKAGE_ROOT}/media")
+install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/AudioFiles/" 
+        DESTINATION ${MAX_PACKAGE_ROOT}/media)
+install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/Data/"
+        DESTINATION ${MAX_PACKAGE_ROOT}/misc)
 install(FILES icon.png package-info.json QuickStart.md 
         DESTINATION ${MAX_PACKAGE_ROOT})
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
