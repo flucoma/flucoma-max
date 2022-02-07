@@ -17,7 +17,7 @@
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
 		"gridonopen" : 2,
-		"gridsize" : [ 5.0, 5.0 ],
+		"gridsize" : [ 10.0, 10.0 ],
 		"gridsnaponopen" : 2,
 		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 39.0, 113.0, 902.0, 676.0 ],
+						"rect" : [ 0.0, 26.0, 902.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -104,7 +104,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 530.0, 10.0, 260.0, 110.0 ],
+									"patching_rect" : [ 530.0, 10.0, 230.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -422,7 +422,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 5.0, 5.0, 55.0, 22.0 ],
+					"patching_rect" : [ 10.0, 10.0, 55.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -451,7 +451,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 902.0, 676.0 ],
+						"rect" : [ 39.0, 113.0, 902.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -483,6 +483,27 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "ampslice" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-75",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ -10.0, -8.0 ],
+									"patching_rect" : [ 530.0, 10.0, 250.0, 110.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"border" : 0,
 									"evaluatehref" : 1,
 									"fontface" : 0,
@@ -498,47 +519,6 @@
 									"preservehref" : 1,
 									"text" : "The fluid.ampslice~ object performs segmentation by comparing the difference between two amplitude envelopes, one capturing slow changes, one capturing fast changes in a signal. The slow one provides a context which the fast one is compared to meaning the threshold of this slicer is dynamic. For a more detailed explanation see: <link href=\"; max launchbrowser https://learn.flucoma.org/reference/ampslice\" >https://learn.flucoma.org/reference/ampslice</link>.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "ampslice" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-75",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 530.0, 10.0, 240.0, 49.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-4",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.flucomaorg.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 530.0, 61.0, 150.0, 30.0 ],
-									"viewvisibility" : 1
 								}
 
 							}
@@ -1193,7 +1173,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 65.0, 5.0, 108.0, 22.0 ],
+					"patching_rect" : [ 70.0, 10.0, 108.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1256,7 +1236,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 310.0, 25.0, 25.0, 22.0 ],
+					"patching_rect" : [ 190.0, 10.0, 25.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
