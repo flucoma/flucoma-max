@@ -4,13 +4,13 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 39.0, 87.0, 992.0, 777.0 ],
+		"rect" : [ 39.0, 87.0, 902.0, 702.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -52,13 +52,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 39.0, 113.0, 902.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -104,27 +104,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 530.0, 10.0, 230.0, 50.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-4",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.flucomaorg.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 530.0, 61.0, 150.0, 30.0 ],
+									"patching_rect" : [ 530.0, 10.0, 260.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -394,9 +374,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -414,7 +394,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -424,7 +403,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -465,13 +445,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 39.0, 113.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 902.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -502,6 +482,26 @@
 						"isolateaudio" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"evaluatehref" : 1,
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-8",
+									"linkbold" : 1,
+									"maxclass" : "markup",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 340.0, 150.0, 550.0, 80.0 ],
+									"preservehref" : 1,
+									"text" : "The fluid.ampslice~ object performs segmentation by comparing the difference between two amplitude envelopes, one capturing slow changes, one capturing fast changes in a signal. The slow one provides a context which the fast one is compared to meaning the threshold of this slicer is dynamic. For a more detailed explanation see: <link href=\"; max launchbrowser https://learn.flucoma.org/reference/ampslice\" >https://learn.flucoma.org/reference/ampslice</link>.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"args" : [ "ampslice" ],
 									"bgmode" : 0,
@@ -555,7 +555,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 577.0, 490.0, 20.0, 20.0 ],
+									"patching_rect" : [ 577.0, 450.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -570,8 +570,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 602.75, 482.0, 317.0, 36.0 ],
-									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms",
+									"patching_rect" : [ 602.75, 442.0, 287.0, 36.0 ],
+									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -589,7 +589,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 522.0, 411.0, 20.0, 20.0 ],
+									"patching_rect" : [ 522.0, 371.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -603,7 +603,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 210.0, 220.0, 100.0, 22.0 ],
+									"patching_rect" : [ 210.0, 160.0, 100.0, 22.0 ],
 									"text" : "loadmess 1000"
 								}
 
@@ -616,7 +616,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 544.0, 388.5, 288.0, 65.0 ],
+									"patching_rect" : [ 544.0, 348.5, 288.0, 65.0 ],
 									"text" : "Make the fast envelope a bit smoother, and the slow envelope a lot smoother. \n\nIt's not perfect but a little less jittery.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -630,8 +630,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 482.5, 322.0, 455.0, 36.0 ],
-									"text" : "Fast envelope has to go 3dB below slow curve for a new onset to be detected. This causes \"false\" onsets to be detected.",
+									"patching_rect" : [ 482.5, 282.0, 388.0, 36.0 ],
+									"text" : "Fast envelope has to go 3dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -649,7 +649,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 460.5, 330.0, 20.0, 20.0 ],
+									"patching_rect" : [ 460.5, 290.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -663,8 +663,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 452.0, 291.0, 342.0, 21.0 ],
-									"text" : "Fast envelope tracker has to exceed slow tracker by 12dB",
+									"patching_rect" : [ 452.0, 251.0, 348.0, 21.0 ],
+									"text" : "Fast envelope has to exceed slow envelope by 6dB",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -682,7 +682,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 430.0, 291.0, 20.0, 20.0 ],
+									"patching_rect" : [ 430.0, 251.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -695,7 +695,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 262.0, 255.0, 41.0, 20.0 ],
+									"patching_rect" : [ 262.0, 195.0, 41.0, 20.0 ],
 									"text" : "speed"
 								}
 
@@ -707,7 +707,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
-									"patching_rect" : [ 103.0, 334.0, 41.0, 22.0 ],
+									"patching_rect" : [ 103.0, 274.0, 41.0, 22.0 ],
 									"text" : "i 1000"
 								}
 
@@ -720,7 +720,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 210.0, 254.0, 50.0, 22.0 ]
+									"patching_rect" : [ 210.0, 194.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -731,7 +731,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 103.0, 291.0, 126.0, 22.0 ],
+									"patching_rect" : [ 103.0, 231.0, 126.0, 22.0 ],
 									"text" : "metro 1000 @active 1"
 								}
 
@@ -743,7 +743,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 103.0, 444.0, 75.0, 22.0 ],
+									"patching_rect" : [ 103.0, 384.0, 75.0, 22.0 ],
 									"text" : "onepole~ 80"
 								}
 
@@ -755,7 +755,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 103.0, 404.0, 58.0, 22.0 ],
+									"patching_rect" : [ 103.0, 344.0, 58.0, 22.0 ],
 									"text" : "curve~ 0."
 								}
 
@@ -767,7 +767,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 103.0, 364.0, 83.0, 22.0 ],
+									"patching_rect" : [ 103.0, 304.0, 83.0, 22.0 ],
 									"text" : "1, 0 $1 -0.8"
 								}
 
@@ -780,7 +780,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 405.0, 390.0, 115.0, 62.0 ],
+									"patching_rect" : [ 405.0, 350.0, 115.0, 62.0 ],
 									"text" : "fastrampup 10, fastrampdown 50, slowrampup 500, slowrampdown 500"
 								}
 
@@ -792,7 +792,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 460.0, 490.0, 115.0, 22.0 ],
+									"patching_rect" : [ 460.0, 450.0, 115.0, 22.0 ],
 									"text" : "minslicelength 4410"
 								}
 
@@ -804,7 +804,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 290.0, 88.0, 22.0 ],
+									"patching_rect" : [ 340.0, 250.0, 81.0, 22.0 ],
 									"text" : "onthreshold 6"
 								}
 
@@ -816,21 +816,22 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 377.5, 330.0, 81.0, 22.0 ],
+									"patching_rect" : [ 377.5, 290.0, 81.0, 22.0 ],
 									"text" : "offthreshold 6"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"bubble" : 1,
+									"fontsize" : 13.0,
 									"id" : "obj-18",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 268.0, 684.0, 340.0, 37.0 ],
-									"text" : "Each time an onset is triggered the object produces an impulse. +=~ counts how many impulses have happened."
+									"patching_rect" : [ 270.0, 626.0, 369.0, 36.0 ],
+									"text" : "Each time an onset is triggered the object produces an impulse. +=~ counts how many impulses have happened.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
@@ -845,7 +846,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "float" ],
-									"patching_rect" : [ 210.0, 691.5, 56.0, 22.0 ],
+									"patching_rect" : [ 210.0, 631.5, 56.0, 22.0 ],
 									"sig" : 0.0
 								}
 
@@ -857,7 +858,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 210.0, 650.0, 30.0, 22.0 ],
+									"patching_rect" : [ 210.0, 590.0, 30.0, 22.0 ],
 									"text" : "+=~"
 								}
 
@@ -869,8 +870,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 322.0, 241.0, 210.0, 24.0 ],
-									"text" : "Generates a regular pulsing sound"
+									"patching_rect" : [ 67.0, 631.5, 99.0, 24.0 ],
+									"text" : "Turn audio on"
 								}
 
 							}
@@ -881,7 +882,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 20.0, 680.0, 45.0, 45.0 ]
+									"patching_rect" : [ 20.0, 620.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -892,7 +893,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 20.0, 474.0, 102.0, 22.0 ],
+									"patching_rect" : [ 20.0, 414.0, 102.0, 22.0 ],
 									"text" : "*~"
 								}
 
@@ -904,7 +905,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 20.0, 291.0, 68.0, 22.0 ],
+									"patching_rect" : [ 20.0, 231.0, 68.0, 22.0 ],
 									"text" : "cycle~ 80"
 								}
 
@@ -916,7 +917,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 94.0, 540.0, 84.0, 22.0 ],
+									"patching_rect" : [ 94.0, 480.0, 84.0, 22.0 ],
 									"text" : "getattr latency"
 								}
 
@@ -928,7 +929,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 20.0, 603.0, 93.0, 22.0 ],
+									"patching_rect" : [ 20.0, 543.0, 93.0, 22.0 ],
 									"text" : "delay~ 44100 1"
 								}
 
@@ -940,20 +941,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 210.0, 590.0, 88.0, 22.0 ],
+									"patching_rect" : [ 210.0, 530.0, 88.0, 22.0 ],
 									"text" : "fluid.ampslice~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-6",
-									"linecount" : 5,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 130.0, 909.75, 74.0 ],
-									"text" : "The fluid.ampslice~ object performs segmentation by computing two amplitude curves, or envelopes, on an incoming signal. \n\nOne of these curves is \"fast\" while the other is \"slow\". The idea behind this is that the slow curve captures the overall amplitude of the sound across a window of time, while the fast one is concerned with the immediate amplitude. When the value of the fast curve exceeds is greater than slow curve. How much greater, is determined by the onthreshold parameter. For consecutive onsets to trigger, the fast curve also has to drop below the slow curve an amount specified by the offthreshold parameter."
 								}
 
 							}
@@ -985,7 +974,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 210.0, 310.0, 294.0 ],
+									"patching_rect" : [ 10.0, 150.0, 310.0, 294.0 ],
 									"proportion" : 0.5
 								}
 
@@ -1002,7 +991,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 1 ],
-									"midpoints" : [ 219.5, 636.0, 55.5, 636.0 ],
+									"midpoints" : [ 219.5, 576.0, 55.5, 576.0 ],
 									"order" : 1,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -1018,7 +1007,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 136.0, 576.0, 219.5, 576.0 ],
+									"midpoints" : [ 136.0, 516.0, 219.5, 516.0 ],
 									"source" : [ "obj-22", 1 ]
 								}
 
@@ -1033,7 +1022,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 387.0, 576.0, 219.5, 576.0 ],
+									"midpoints" : [ 387.0, 516.0, 219.5, 516.0 ],
 									"source" : [ "obj-26", 0 ]
 								}
 
@@ -1041,7 +1030,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 349.5, 576.0, 219.5, 576.0 ],
+									"midpoints" : [ 349.5, 516.0, 219.5, 516.0 ],
 									"source" : [ "obj-27", 0 ]
 								}
 
@@ -1056,7 +1045,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 469.5, 576.0, 219.5, 576.0 ],
+									"midpoints" : [ 469.5, 516.0, 219.5, 516.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -1064,7 +1053,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 29.5, 576.0, 219.5, 576.0 ],
+									"midpoints" : [ 29.5, 516.0, 219.5, 516.0 ],
 									"order" : 0,
 									"source" : [ "obj-35", 0 ]
 								}
@@ -1081,7 +1070,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 414.5, 576.0, 219.5, 576.0 ],
+									"midpoints" : [ 414.5, 516.0, 219.5, 516.0 ],
 									"source" : [ "obj-45", 0 ]
 								}
 
@@ -1125,7 +1114,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-58", 1 ],
-									"midpoints" : [ 219.5, 287.0, 240.0, 287.0, 240.0, 329.0, 134.5, 329.0 ],
+									"midpoints" : [ 219.5, 227.0, 240.0, 227.0, 240.0, 269.0, 134.5, 269.0 ],
 									"order" : 1,
 									"source" : [ "obj-57", 0 ]
 								}
@@ -1156,9 +1145,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -1176,7 +1165,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1186,7 +1174,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -1228,13 +1217,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 2,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 902.0, 676.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1283,10 +1272,15 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
+				"name" : "Nicol-LoopE-M.wav",
+				"bootpath" : "~/dev/flucoma/max/media",
+				"patcherrelativepath" : "../media",
+				"type" : "WAVE",
 				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.ampslice~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "fluid.flucomaorg.maxpat",
@@ -1303,24 +1297,19 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "Nicol-LoopE-M.wav",
-				"bootpath" : "~/dev/flucoma/max/media",
-				"patcherrelativepath" : "../media",
-				"type" : "WAVE",
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.ampslice~.mxo",
-				"type" : "iLaX"
 			}
  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -1338,7 +1327,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1348,7 +1336,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
