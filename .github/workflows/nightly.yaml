@@ -1,16 +1,18 @@
 name: Nightly Releases
 
 on:
+  workflow_dispatch:
   push:
     branches: [ dev, ci/** ]
 
 jobs:
   docs:
-    runs-on: macos-11
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - uses: flucoma/actions/env@v4      
-      - uses: flucoma/actions/maxdocs@v4
+      - uses: flucoma/actions/docs@v4
+        with:
+          target: MAKE_MAX_REF
 
       - uses: actions/upload-artifact@v2
         with:
@@ -42,7 +44,6 @@ jobs:
           path: release-packaging/FluidCorpusManipulation/
   
   release:
-    if: ${{ github.ref == 'refs/heads/dev' }}
     runs-on: ubuntu-latest
     needs: [winbuild, macbuild, docs]
 
@@ -77,15 +78,13 @@ jobs:
           tag_name: nightly # tag name to delete
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        
+
       - name: package and upload
-        uses: svenstaro/upload-release-action@v2
+        uses: softprops/action-gh-release@v1
         with:
-          release_name: FluCoMa Max Nightly Build
-          prerelease: true
+          name: FluCoMa Max Nightly Release
           body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: FluCoMa-Max-nightly.zip
-          asset_name: FluCoMa-Max-nightly.zip
-          tag: nightly
-          overwrite: true
+          files: FluCoMa-Max-nightly.zip
+          prerelease: true
+          tag_name: nightly
+          draft: false
