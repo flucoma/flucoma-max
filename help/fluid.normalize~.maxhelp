@@ -88,6 +88,43 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "normalize" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-3",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 540.0, 10.0, 240.0, 110.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.normalize~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 525.0, 115.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"format" : 6,
 									"id" : "obj-36",
 									"maxclass" : "flonum",
@@ -711,22 +748,6 @@
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.normalize~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 525.0, 115.0 ]
-								}
-
-							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -901,6 +922,43 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"args" : [ "normalize" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-3",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 540.0, 10.0, 240.0, 110.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.normalize~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 525.0, 115.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-1",
@@ -1752,22 +1810,6 @@
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.normalize~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 525.0, 115.0 ]
-								}
-
-							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -1971,6 +2013,27 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"args" : [ "normalize" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-3",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 540.0, 10.0, 240.0, 110.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-57",
 									"maxclass" : "newobj",
@@ -2729,6 +2792,20 @@
 , 			{
 				"name" : "fluid.bufstats~.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/dev/flucoma/max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.learn.maxpat",
+				"bootpath" : "~/dev/flucoma/max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.libmanipulation.mxo",
