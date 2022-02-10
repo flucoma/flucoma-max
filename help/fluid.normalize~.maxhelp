@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 992.0, 777.0 ],
+		"rect" : [ 34.0, 87.0, 934.0, 747.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 934.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -143,7 +143,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 390.0, 591.5, 210.0, 36.0 ],
+									"patching_rect" : [ 390.0, 573.5, 210.0, 36.0 ],
 									"presentation_linecount" : 2,
 									"text" : "The result of transforming the single point is output to a buffer.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
@@ -559,7 +559,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 250.0, 598.0, 132.0, 23.0 ],
+									"patching_rect" : [ 250.0, 580.0, 132.0, 23.0 ],
 									"text" : "-1.222222"
 								}
 
@@ -571,7 +571,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 250.0, 548.0, 210.0, 23.0 ],
+									"patching_rect" : [ 250.0, 530.0, 210.0, 23.0 ],
 									"text" : "fluid.buf2list @source help.pointdst"
 								}
 
@@ -595,7 +595,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 605.0, 598.0, 126.0, 23.0 ],
+									"patching_rect" : [ 605.0, 580.0, 126.0, 23.0 ],
 									"text" : "buffer~ help.pointdst"
 								}
 
@@ -760,6 +760,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 1 ],
+									"midpoints" : [ 259.5, 567.0, 372.5, 567.0 ],
 									"source" : [ "obj-13", 0 ]
 								}
 
@@ -892,7 +893,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 934.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1712,7 +1713,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 140.0, 700.0, 79.0 ],
-									"text" : "A common problem occurs when we want to use two different types of audio-descriptor analysis that have different value scales. A good example of this can be found in the fluid.pitch~ descriptor which returns both the estimated fundamental pitch in Hz and a confidence of each estimation. The estimation is already in the range 0.0 to 1.0, however, pitch is not. Normalisation can put these two descriptor values into an equivalent range which might facilitate navigating through data with a controller or making comparison of two descriptors equivalent in their ranges.",
+									"text" : "When fluid.normalize~ learns the minima and maxima of a fluid.dataset~ it does so per-column. In this example, pitch and pitch confidence data make up the source dataset with pitch being in the range of the minimum and maximum frequency of the analysis and confidence ranging between 0 and 1. Even though these two separate bits of information occupy different ranges, by normalising each column individual descriptor values for each point are transformed to be in the same range (0 to 1 by default).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1983,7 +1984,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 992.0, 751.0 ],
+						"rect" : [ 34.0, 113.0, 934.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2725,7 +2726,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 934.0, 721.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
