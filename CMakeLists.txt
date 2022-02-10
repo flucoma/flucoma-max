@@ -80,6 +80,9 @@ set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY
                 SUPERBUILD "${CMAKE_SOURCE_DIR}/max_externals")
 
 if(DOCS)
+  
+  set(MAX_DOC_OUT "${CMAKE_SOURCE_DIR}/docs" CACHE PATH "")
+  
   if(FLUID_DOCS_PATH)
     get_filename_component(
       FETCHCONTENT_SOURCE_DIR_FLUCOMA-DOCS ${FLUID_DOCS_PATH} ABSOLUTE
@@ -94,7 +97,7 @@ if(DOCS)
     add_subdirectory(${flucoma-docs_SOURCE_DIR} ${flucoma-docs_BINARY_DIR})
   endif()
 
-  set(MAX_DOC_PATH "${CMAKE_SOURCE_DIR}/docs" CACHE PATH "")
+
   
   add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
 endif()
@@ -149,7 +152,7 @@ install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic
         RENAME LICENSE.md)
 
 if(DOCS)
-  install(DIRECTORY "${MAX_DOC_PATH}/" 
+  install(DIRECTORY "${MAX_DOC_OUT}/" 
           DESTINATION "${MAX_PACKAGE_ROOT}/docs"  
           PATTERN "*.xml")
 endif()
