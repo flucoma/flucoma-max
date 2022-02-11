@@ -68,6 +68,8 @@ FetchContent_GetProperties(flucoma-core)
 if(NOT flucoma-core_POPULATED)
   FetchContent_Populate(flucoma-core)
   add_subdirectory(${flucoma-core_SOURCE_DIR} ${flucoma-core_BINARY_DIR})  
+  file(GLOB FLUCOMA_CORE_RESOURCES ${flucoma-core_SOURCE_DIR}/Resources/Data/*.*)
+  file(COPY ${FLUCOMA_CORE_RESOURCES} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/misc)
   include(flucoma_version)
   include(flucoma-buildtools)
   include(flucoma-buildtype)
@@ -78,6 +80,9 @@ set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY
                 SUPERBUILD "${CMAKE_SOURCE_DIR}/max_externals")
 
 if(DOCS)
+  
+  set(MAX_DOC_OUT "${CMAKE_SOURCE_DIR}/docs" CACHE PATH "")
+  
   if(FLUID_DOCS_PATH)
     get_filename_component(
       FETCHCONTENT_SOURCE_DIR_FLUCOMA-DOCS ${FLUID_DOCS_PATH} ABSOLUTE
@@ -92,7 +97,7 @@ if(DOCS)
     add_subdirectory(${flucoma-docs_SOURCE_DIR} ${flucoma-docs_BINARY_DIR})
   endif()
 
-  set(MAX_DOC_PATH "${CMAKE_SOURCE_DIR}/docs" CACHE PATH "")
+
   
   add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
 endif()
@@ -136,8 +141,10 @@ install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/
         FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
 
 # install(CODE [[ message(STATUS "${flucoma-core_SOURCE_DIR}") ]])
-install(DIRECTORY "${flucoma-core_SOURCE_DIR}/AudioFiles/" 
-        DESTINATION "${MAX_PACKAGE_ROOT}/media")
+install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/AudioFiles/" 
+        DESTINATION ${MAX_PACKAGE_ROOT}/media)
+install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/Data/"
+        DESTINATION ${MAX_PACKAGE_ROOT}/misc)
 install(FILES icon.png package-info.json QuickStart.md 
         DESTINATION ${MAX_PACKAGE_ROOT})
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
@@ -145,7 +152,7 @@ install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic
         RENAME LICENSE.md)
 
 if(DOCS)
-  install(DIRECTORY "${MAX_DOC_PATH}/" 
+  install(DIRECTORY "${MAX_DOC_OUT}/" 
           DESTINATION "${MAX_PACKAGE_ROOT}/docs"  
           PATTERN "*.xml")
 endif()
