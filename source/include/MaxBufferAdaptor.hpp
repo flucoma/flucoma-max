@@ -38,7 +38,10 @@ public:
 //      ;
     lock(); 
     release();
-    if (mBufref) object_free(mBufref);
+    t_buffer_ref* tmp{nullptr};
+    using std::swap;
+    swap(tmp,mBufref);
+    if (tmp) object_free(tmp);
   }
 
   MaxBufferAdaptor(const MaxBufferAdaptor&) = delete;
