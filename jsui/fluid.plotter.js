@@ -42,7 +42,6 @@ var _ymin = 0.0;
 var _ymax = 1.0;
 var _bgcolor = [0.95,0.95,0.95,0.95, 1.0];
 var _shape = 'circle'
-var _closest = null;
 var _colorscheme = colors.cat;
 var _highlight = [];
 var labelDict = null;
