@@ -68,7 +68,6 @@ function strChunk(str, size) {
 	for (var i=0, o=0; i < numChunks; ++i, o += size) {
 	  chunks[i] = str.substr(o, size)
 	}
-  
 	return chunks
 }
 
@@ -272,7 +271,6 @@ function range(min, max) {
 	mgraphics.redraw();
 }
 
-
 function shape(x) {
 	_shape = x;
 	mgraphics.redraw();
@@ -292,7 +290,10 @@ function highlight() {
 function clear() { 
 	colorMap = {};
 	points = new Array();
-	labelSet = null;
+	labelJSON = null;
+	labelDict = null;
+	labelJSON = null;
+	dataDict = null;
     mgraphics.redraw();
 };
 
@@ -304,7 +305,7 @@ function bang() {
 function onclick(x,y) {
 	ondrag(x, y)
 }
-onclick.local = 1; //private. could be left public to permit "synthetic" events
+onclick.local = 1; //private. could be left public to permit 'synthetic' events
 
 function ondrag(x,y) {
 
@@ -325,7 +326,7 @@ function ondrag(x,y) {
 	notifyclients();
 	bang();
 }
-ondrag.local = 1; //private. could be left public to permit "synthetic" events
+ondrag.local = 1; //private. could be left public to permit 'synthetic' events
 
 function forcesize(w,h) {
 	if (w!=h) {
