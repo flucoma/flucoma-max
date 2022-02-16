@@ -1,1 +1,2 @@
+max objectfile fluid.waveform~ fluid.waveform~;
 max definesubstitution fluid.waveform~ jsui @filename fluid.waveform~;

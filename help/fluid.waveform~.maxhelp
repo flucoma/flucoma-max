@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 79.0, 1394.0, 956.0 ],
+		"rect" : [ 1257.0, 604.0, 1025.0, 726.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -152,8 +152,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -242,8 +242,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -332,14 +332,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 105.0, 1394.0, 930.0 ],
+						"rect" : [ 1257.0, 630.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -389,7 +389,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 739.0, 285.0, 172.0, 33.0 ],
+									"patching_rect" : [ 751.0, 285.0, 172.0, 33.0 ],
 									"text" : "use color message to change feature curves to red",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -401,7 +401,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 599.0, 144.0, 172.0, 20.0 ],
+									"patching_rect" : [ 611.0, 144.0, 172.0, 20.0 ],
 									"text" : "draw pitch + confidence on top",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -462,8 +462,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 35.0, 299.399652600288391, 204.0, 22.0 ],
-									"text" : "addlayer image fluid.waveform.mags"
+									"patching_rect" : [ 35.0, 299.399652600288391, 234.0, 22.0 ],
+									"text" : "addlayer imagebuffer fluid.waveform.mags"
 								}
 
 							}
@@ -500,7 +500,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 552.0, 142.0, 24.0, 24.0 ]
+									"patching_rect" : [ 564.0, 142.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -524,8 +524,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 552.0, 247.0, 381.0, 22.0 ],
-									"text" : "addlayer line fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
+									"patching_rect" : [ 564.0, 247.0, 436.0, 22.0 ],
+									"text" : "addlayer featuresbuffer fluid.waveform.pitch, color fluid.waveform.pitch 1. 0. 0. 1."
 								}
 
 							}
@@ -536,8 +536,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 266.0, 173.0, 261.0, 22.0 ],
-									"text" : "addlayer wave fluid.waveform.src.layers source"
+									"patching_rect" : [ 266.0, 173.0, 292.0, 22.0 ],
+									"text" : "addlayer audiobuffer fluid.waveform.src.layers source"
 								}
 
 							}
@@ -548,7 +548,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 750.944449543952942, 415.468550783672299, 215.0, 22.0 ],
+									"patching_rect" : [ 426.565008103847504, 409.968550783672299, 215.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.src.layers anton",
 									"varname" : "doesit"
 								}
@@ -563,7 +563,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 35.0, 520.518521547317505, 1256.944449543952942, 384.067990250435855 ],
+									"patching_rect" : [ 35.0, 471.518521547317505, 606.565008103847504, 183.067990250435855 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 634.573396921157837, 195.243875801563263, 500.59646075963974, 346.481478452682495 ]
 								}
@@ -576,7 +576,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 750.944449543952942, 446.0, 155.0, 22.0 ],
+									"patching_rect" : [ 426.565008103847504, 440.5, 155.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.pitch"
 								}
 
@@ -613,7 +613,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 552.0, 173.0, 197.0, 62.0 ],
+									"patching_rect" : [ 564.0, 173.0, 197.0, 62.0 ],
 									"text" : "fluid.bufpitch~ @source fluid.waveform.src.layers @features fluid.waveform.pitch @unit 0"
 								}
 
@@ -675,7 +675,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 577.0, 142.0, 20.0, 20.0 ],
+									"patching_rect" : [ 589.0, 142.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -767,7 +767,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
-									"midpoints" : [ 561.5, 366.759260773658752, 44.5, 366.759260773658752 ],
+									"midpoints" : [ 573.5, 366.759260773658752, 44.5, 366.759260773658752 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -812,14 +812,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -850,12 +850,24 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-1",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 52.0, 305.018521547317505, 337.0, 22.0 ],
+									"text" : "indicesbuffer fluid.waveform.slices fluid.waveform.src.markers"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-13",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 964.944449543952942, 505.0, 150.0, 33.0 ],
+									"patching_rect" : [ 539.944449543952942, 426.0, 150.0, 33.0 ],
 									"text" : "TODO: re-dump markers back to original buffer / list"
 								}
 
@@ -867,7 +879,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 79.5, 478.0, 330.0, 60.0 ],
+									"patching_rect" : [ 72.5, 406.0, 330.0, 60.0 ],
 									"text" : "When patcher locked: \nHover over a marker to select, click and drag to move. \nshift+click to add \nopt-click to remove"
 								}
 
@@ -879,7 +891,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 130.0, 351.066044270992279, 238.0, 33.0 ],
+									"patching_rect" : [ 123.0, 330.066044270992279, 238.0, 33.0 ],
 									"text" : "need to supply source buffer as time reference (until I find a Better Way)",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -891,8 +903,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 79.5, 293.566044270992279, 186.0, 20.0 ],
-									"text" : "markers messages adds markers",
+									"patching_rect" : [ 206.0, 279.566044270992279, 252.0, 20.0 ],
+									"text" : "indicesbuffer messages adds vertical markers",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
 
@@ -903,21 +915,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 90.5, 175.566044270992279, 104.0, 20.0 ],
+									"patching_rect" : [ 78.0, 154.566044270992279, 104.0, 20.0 ],
 									"text" : "make some slices",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 59.0, 321.0, 313.0, 22.0 ],
-									"text" : "markers fluid.waveform.slices fluid.waveform.src.markers"
 								}
 
 							}
@@ -929,7 +929,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 59.0, 201.566044270992279, 24.0, 24.0 ]
+									"patching_rect" : [ 52.0, 180.566044270992279, 24.0, 24.0 ]
 								}
 
 							}
@@ -941,7 +941,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 408.0, 21.0 ],
-									"text" : "show and manipulate markers on top of a wavveform ",
+									"text" : "show and manipulate markers on top of a waveform ",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 								}
 
@@ -952,7 +952,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 238.5, 124.5, 313.0, 20.0 ],
+									"patching_rect" : [ 316.0, 103.5, 145.0, 20.0 ],
 									"text" : "what are we segmenting?",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -965,7 +965,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 656.944449543952942, 386.018521547317505, 49.0, 22.0 ],
+									"patching_rect" : [ 649.944449543952942, 365.018521547317505, 49.0, 22.0 ],
 									"text" : "refresh"
 								}
 
@@ -977,8 +977,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 17.0, 124.5, 186.0, 22.0 ],
-									"text" : "buffer fluid.waveform.src.markers"
+									"patching_rect" : [ 10.0, 103.5, 304.0, 22.0 ],
+									"text" : "addlayer audiobuffer fluid.waveform.src.markers source"
 								}
 
 							}
@@ -989,7 +989,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 448.944449543952942, 351.066044270992279, 227.0, 22.0 ],
+									"patching_rect" : [ 441.944449543952942, 330.066044270992279, 227.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.src.markers jongly",
 									"varname" : "doesit"
 								}
@@ -1004,7 +1004,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 59.0, 555.410335123538971, 1055.944449543952942, 291.176176674214389 ],
+									"patching_rect" : [ 52.0, 483.410335123538971, 606.565008103847504, 183.067990250435855 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 634.573396921157837, 195.243875801563263, 500.59646075963974, 346.481478452682495 ]
 								}
@@ -1017,7 +1017,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 448.944449543952942, 321.0, 160.0, 22.0 ],
+									"patching_rect" : [ 441.944449543952942, 300.0, 160.0, 22.0 ],
 									"text" : "buffer~ fluid.waveform.slices"
 								}
 
@@ -1030,7 +1030,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 59.0, 234.518521547317505, 266.0, 35.0 ],
+									"patching_rect" : [ 52.0, 213.518521547317505, 266.0, 35.0 ],
 									"text" : "fluid.bufonsetslice~ @source fluid.waveform.src @indices fluid.waveform.slices @metric 2"
 								}
 
@@ -1066,7 +1066,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 59.0, 175.566044270992279, 20.0, 20.0 ],
+									"patching_rect" : [ 52.0, 154.566044270992279, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -1092,7 +1092,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 213.0, 124.5, 20.0, 20.0 ],
+									"patching_rect" : [ 206.0, 103.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ],
@@ -1106,7 +1106,14 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
+									"destination" : [ "obj-39", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-20", 0 ]
 								}
 
@@ -1128,14 +1135,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
-									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-39", 0 ],
-									"midpoints" : [ 666.444449543952942, 424.759260773658752, 68.5, 424.759260773658752 ],
+									"midpoints" : [ 659.444449543952942, 403.759260773658752, 61.5, 403.759260773658752 ],
 									"source" : [ "obj-62", 0 ]
 								}
 
@@ -1143,7 +1143,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-39", 0 ],
-									"midpoints" : [ 26.5, 455.205167561769485, 68.5, 455.205167561769485 ],
+									"midpoints" : [ 19.5, 434.205167561769485, 61.5, 434.205167561769485 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -1190,14 +1190,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1232,8 +1232,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 15.463916659355164, 876.288610696792603, 513.0, 21.0 ],
-									"text" : "'dump' writes the current state to a dic, but loading is still TODO, so not useful yet"
+									"patching_rect" : [ 15.463916659355164, 663.288610696792603, 513.0, 21.0 ],
+									"text" : "'dump' writes the current state to a dict, but loading is still TODO, so not useful yet"
 								}
 
 							}
@@ -1295,7 +1295,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 4,
 									"outlettype" : [ "dictionary", "", "", "" ],
-									"patching_rect" : [ 15.249425232410431, 843.701033353805542, 50.5, 23.0 ],
+									"patching_rect" : [ 15.249425232410431, 630.701033353805542, 50.5, 23.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
 										"parameter_enable" : 0,
@@ -1352,7 +1352,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 205.749425232410431, 109.050583183765411, 309.0, 36.0 ],
+									"patching_rect" : [ 300.666099548339844, 110.550583183765411, 309.0, 36.0 ],
 									"text" : "buffer <buffer name> will display a buffer as a waveform. see the layers tab for finer control",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.52 ]
 								}
@@ -1428,8 +1428,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 15.249425232410431, 117.050583183765411, 150.0, 23.0 ],
-									"text" : "buffer fluid.waveform.src"
+									"patching_rect" : [ 15.249425232410431, 117.050583183765411, 278.0, 23.0 ],
+									"text" : "addlayer audiobuffer fluid.waveform.src source"
 								}
 
 							}
@@ -1455,7 +1455,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 15.249425232410431, 428.972132682800293, 1315.944449543952942, 398.067990250435855 ],
+									"patching_rect" : [ 15.249425232410431, 428.972132682800293, 606.565008103847504, 183.067990250435855 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 619.573396921157837, 180.243875801563263, 500.59646075963974, 346.481478452682495 ]
 								}
@@ -1654,14 +1654,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1394.0, 930.0 ],
+						"rect" : [ 0.0, 26.0, 1025.0, 700.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1710,31 +1710,6 @@
  ],
 		"lines" : [  ],
 		"dependency_cache" : [ 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.waveform~.js",
-				"bootpath" : "~/Documents/Max 8/Packages/fav4max/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
 				"name" : "fluid.bufonsetslice~.mxo",
 				"type" : "iLaX"
 			}
@@ -1745,6 +1720,31 @@
 , 			{
 				"name" : "fluid.bufstft~.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.waveform~.js",
+				"bootpath" : "~/dev/flucoma/max/jsui",
+				"patcherrelativepath" : "../jsui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0
