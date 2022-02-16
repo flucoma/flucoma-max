@@ -237,6 +237,9 @@ private:
 template <class Wrapper>
 struct NonRealTime
 {
+  
+//  std::array<t_buffer_ref*,Wrapper::ParamDescType::NumOf<BufferT>> outputBufferThings;
+    
   NonRealTime()
   {
     mQelem = qelem_new(static_cast<Wrapper*>(this), (method) checkProcess);
@@ -267,7 +270,7 @@ struct NonRealTime
       class_addmethod(c, (method) deferProcess, "bang", 0);
       class_addmethod(c, (method) callCancel, "cancel", 0);
       class_addmethod(c, (method) assist, "assist", A_CANT, 0);
-
+      
       CLASS_ATTR_LONG(c, "blocking", 0, Wrapper, mSynchronous);
       CLASS_ATTR_FILTER_CLIP(c, "blocking", 0, 2);
       CLASS_ATTR_ENUMINDEX(
@@ -420,6 +423,7 @@ struct NonRealTime
     clock_set(mClock, 20); // FIX - set at 20ms for now...
   }
 
+
 protected:
   long  mSynchronous = 1;
   long  mQueueEnabled = 0;
@@ -494,7 +498,7 @@ class FluidMaxWrapper
   struct StreamingListInput
   {
 
-    void processInput(FluidMaxWrapper* x, long ac, t_atom* av)
+    void processInput(FluidMaxWrapper*, long, t_atom*)
     {
     
     }
@@ -508,7 +512,7 @@ class FluidMaxWrapper
                            x->mInputListData[0].data());
       x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
       
-      for (index i = 0; i <  x->mAllControlOuts.size(); ++i)
+      for (index i = 0; i <  asSigned(x->mAllControlOuts.size()); ++i)
       {
         atom_setdouble_array(
             std::min<index>(x->mListSize, ac), x->mOutputListAtoms.data(),
@@ -919,6 +923,9 @@ public:
   using ParamDescType = typename Client::ParamDescType;
   using ParamSetType = typename Client::ParamSetType;
   using ParamValues = typename ParamSetType::ValueTuple;
+  
+  static constexpr index NumInputBuffers = ParamDescType::template NumOfType<InputBufferT>;
+  static constexpr index NumOutputBuffers = ParamDescType::template NumOfType<BufferT>;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mMessages{}, mParams(Client::getParameterDescriptors()),
@@ -947,6 +954,18 @@ public:
       for (index i = 1; i <= new_ins; ++i)
         mProxies.push_back(proxy_new(this, i, nullptr));
     }
+    
+    
+
+    if(mProxies.size() < NumInputBuffers - 1)
+    {
+      for(index i = mProxies.size(); i < NumInputBuffers - 1; i++)
+      {
+        mProxies.push_back(proxy_new(this,i,nullptr));
+      }
+    }
+        
+  
 
     while (mMessages.size() > 0)
     {
@@ -968,7 +987,7 @@ public:
       mProgressOutlet = floatout(this);
     }
 
-    if (isNonRealTime<Client>::value) { mNRTDoneOutlet = bangout(this); }
+    if (isNonRealTime<Client>::value) { mNRTDoneOutlet = outlet_new((t_object*)this, nullptr); }
 
     if (mClient.controlChannelsOut().count)
     {
@@ -1067,6 +1086,9 @@ public:
                            "Report Warnings");
                                   
     }
+    
+    if(NumInputBuffers) class_addmethod(getClass(), (method) doBuffer, "buffer", A_GIMME, 0);
+      
 
     class_addmethod(getClass(), (method) doNotify, "notify", A_CANT, 0);
     class_addmethod(getClass(), (method) object_obex_dumpout, "dumpout", A_CANT,
@@ -1157,7 +1179,15 @@ public:
         
       }
   }
-
+  
+  static void doBuffer(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
+  {
+      switch (proxy_getinlet((t_object *)x)) {
+        
+      }
+  }
+  
+  
   static void doList(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
     if(!isr() && x->mAutosize && (ac != x->mListSize)) x->resizeListHandlers(ac);
@@ -1468,7 +1498,7 @@ private:
       if (message.name == "read")
       {
         using ReturnType = typename T::ReturnType;
-        using ArgumentTypes = typename T::ArgumentTypes;
+//        using ArgumentTypes = typename T::ArgumentTypes;
         constexpr bool isVoid = std::is_same<ReturnType, MessageResult<void>>::value;
         
         using IfVoid = SpecialCase<MessageResult<void>,std::string>;
@@ -1852,6 +1882,8 @@ private:
   t_int32_atomic     mInPerform{0};
   t_dictionary*      mDumpDictionary;
   std::vector<void*> mProxies;
+  
+  std::vector<void(*)()> mBufferDispatch; 
 
   index mListSize;
   FluidTensor<double, 2>                  mInputListData;
