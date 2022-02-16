@@ -87,14 +87,15 @@ function paint() {
 		var point = points[pt];
 		var color = defaultPointColor;
 
-		if (pointColors.hasOwnProperty(pt)) {
-			color = pointColors[pt];
-		}
-
 		if (labelJSON) {
 			var label = labelJSON[pt];
 			color = colorMap[label];
 		}
+
+		if (pointColors.hasOwnProperty(pt)) {
+			color = pointColors[pt];
+		}
+		
 		mgraphics.set_source_rgba(color);
 
 		var highlightScale = _highlight.indexOf(pt) != -1 ? 2.3 : 1.0;
