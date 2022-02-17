@@ -671,8 +671,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 10.0, 440.0, 484.0, 22.0 ],
-									"text" : "fluid.bufsines~ @source help.bufsines.1.src @sines help.bufsines.1.sines @numchans -1"
+									"patching_rect" : [ 10.0, 440.0, 480.0, 22.0 ],
+									"text" : "fluid.bufsines~ @source help.bufsines.1.src @sines help.bufsines.1.sines @numchans 1"
 								}
 
 							}
