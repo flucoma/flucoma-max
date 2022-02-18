@@ -30,6 +30,7 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <atomic>
 #include <cctype> //std::tolower
 #include <deque>
+#include <map>
 #include <tuple>
 #include <utility>
 
@@ -376,7 +377,7 @@ struct NonRealTime
 
     using Client = typename Wrapper::ClientType;
 
-    std::cout << Wrapper::template IsModel_t<Client>::value;
+//    std::cout << Wrapper::template IsModel_t<Client>::value;
 
     constexpr bool isDataObject =
         Wrapper::template IsThreadedShared<Client>::value ||
@@ -787,6 +788,7 @@ class FluidMaxWrapper
                          long ac, t_atom* av)
     {
       while (x->mInPerform) {} // spin-wait
+      
       ParamLiteralConvertor<T, argSize> a;
       a.set(makeValue<N>());
 
@@ -798,10 +800,39 @@ class FluidMaxWrapper
       x->params().template set<N>(a.value(),
                                   x->verbose() ? &x->messages() : nullptr);
       printResult(x, x->messages());
+      
       object_attr_touch((t_object*) x, gensym("latency"));
       return MAX_ERR_NONE;
     }
   };
+  
+  template <size_t N>
+  struct Setter<BufferT, N>
+  {
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
+                         long ac, t_atom* av)
+    {
+      while (x->mInPerform) {} // spin-wait
+      
+      ParamLiteralConvertor<BufferT, 1> a;
+      a.set(makeValue<N>());
+
+      if(!ac || atom_getsym(av) == gensym(""))
+      {
+          a[0] = BufferT::type(new MaxBufferAdaptor((t_object*)x, x->mHostedOutputBufferNames[N]));
+      }
+      else a[0] = ParamAtomConverter::fromAtom((t_object*) x, av, a[0]);
+      
+      x->params().template set<N>(a.value(),
+                                  x->verbose() ? &x->messages() : nullptr);
+      printResult(x, x->messages());
+      
+      object_attr_touch((t_object*) x, gensym("latency"));
+      return MAX_ERR_NONE;
+      
+    }
+  
+ };
 
   template <size_t N>
   struct Setter<LongArrayT, N>
@@ -952,20 +983,47 @@ public:
 
       mProxies.reserve(new_ins);
       for (index i = 1; i <= new_ins; ++i)
-        mProxies.push_back(proxy_new(this, i, nullptr));
+        mProxies.push_back(proxy_new(this, i + 1, &this->mProxyNumber));
     }
     
     
-
+    //new proxy inlets for any additional input buffers beyond the first
     if(mProxies.size() < NumInputBuffers - 1)
     {
       for(index i = mProxies.size(); i < NumInputBuffers - 1; i++)
       {
-        mProxies.push_back(proxy_new(this,i,nullptr));
+        mProxies.push_back(proxy_new(this,i + 1, &this->mProxyNumber));
       }
     }
+    
+    //handle runtime dispatch of `buffer` message through a lookup table of functions that will set the attr
+    mParams.template forEachParamType<InputBufferT>([this](auto&, auto idx){
+      constexpr index N = decltype(idx)::value;
+      mBufferDispatch.push_back([](FluidMaxWrapper* x, long, t_atom* av)
+      {
+        static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
+        t_symbol* attrval =  atom_getsym(av);
+        t_symbol* attrname = gensym(param_name.c_str());
+        object_attr_setsym(x, attrname, attrval);
+      });
+    });
+    
+    //setup an array of buffer~ object that we'll use if the respective params are unset when process is called
+    mParams.template forEachParamType<BufferT>([this](auto&, auto idx){
+        constexpr index N = idx();
+        t_symbol* uniqueName = symbol_unique();
+        t_atom bufferArgs;
+        atom_setsym(&bufferArgs,uniqueName);
+        mHostedOutputBufferNames[N] = uniqueName;
         
-  
+        mHostedOutputBufferObjects.push_back((t_object*) object_new_typed(CLASS_BOX, gensym("buffer~"), 1,
+                                               &bufferArgs));
+                                               
+        mParams.template set<N>(BufferT::type(new MaxBufferAdaptor((t_object*)this, uniqueName)),nullptr);
+                
+        
+    });
+    
 
     while (mMessages.size() > 0)
     {
@@ -1017,6 +1075,7 @@ public:
                                                                        mParams);
     if (mDumpDictionary) object_free(mDumpDictionary);
     for (auto p : mProxies) object_free(p);
+    for (auto b : mHostedOutputBufferObjects) object_free(b);
   }
 
   template <size_t N, typename T>
@@ -1042,7 +1101,21 @@ public:
 
   void progress(double progress) { outlet_float(mProgressOutlet, progress); }
 
-  void doneBang() { outlet_bang(mNRTDoneOutlet); }
+  void doneBang()
+  {
+    params().template forEachParamType<BufferT>([this](auto& x, auto idx){
+    
+      constexpr index N = idx();
+      
+      auto b = static_cast<MaxBufferAdaptor*>(params().template get<N>().get());
+      
+      atom a;
+      atom_setsym(&a,b->name());
+      
+      outlet_anything(mNRTDoneOutlet,gensym("buffer"), 1, &a);
+    });
+    outlet_bang(mNRTDoneOutlet);
+  }
 
   void controlOut(long ac, t_atom* av)
   {
@@ -1053,7 +1126,7 @@ public:
   {
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
-    std::cout << attr_args_offset(static_cast<short>(ac), av) << '\n'; 
+    //std::cout << attr_args_offset(static_cast<short>(ac), av) << '\n';
     if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlIn<typename Client::Client> >
         ParamDescType::NumFixedParams)
     {
@@ -1168,7 +1241,7 @@ public:
         {
           mInputListViews.emplace_back(mInputListData.row(i));
         }
-        std::cout << mInputListViews.size() << '\n';
+//        std::cout << mInputListViews.size() << '\n';
         mOutputListData.resize(mClient.controlChannelsOut().count,mListSize);
         mOutputListAtoms.reserve(mListSize);
         mOutputListViews.clear();
@@ -1182,12 +1255,13 @@ public:
   
   static void doBuffer(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-      switch (proxy_getinlet((t_object *)x)) {
-        
-      }
+      
+      index inlet =proxy_getinlet((t_object *)x);
+      
+      x->mBufferDispatch[inlet](x,ac,av);
   }
   
-  
+
   static void doList(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
     if(!isr() && x->mAutosize && (ac != x->mListSize)) x->resizeListHandlers(ac);
@@ -1883,7 +1957,11 @@ private:
   t_dictionary*      mDumpDictionary;
   std::vector<void*> mProxies;
   
-  std::vector<void(*)()> mBufferDispatch; 
+  
+  std::map<index,t_symbol*> mHostedOutputBufferNames;
+  std::vector<t_object*>    mHostedOutputBufferObjects;
+  std::vector<void(*)(FluidMaxWrapper*,long,t_atom*)> mBufferDispatch;
+  index mProxyNumber;
 
   index mListSize;
   FluidTensor<double, 2>                  mInputListData;
