@@ -1018,8 +1018,12 @@ public:
         
         mHostedOutputBufferObjects.push_back((t_object*) object_new_typed(CLASS_BOX, gensym("buffer~"), 1,
                                                &bufferArgs));
-                                               
-        mParams.template set<N>(BufferT::type(new MaxBufferAdaptor((t_object*)this, uniqueName)),nullptr);
+        
+        auto currentValue =
+        static_cast<MaxBufferAdaptor*>(mParams.template get<N>().get());
+        
+        if(!currentValue || currentValue->name() == gensym(""))
+          mParams.template set<N>(BufferT::type(new MaxBufferAdaptor((t_object*)this, uniqueName)),nullptr);
                 
         
     });
