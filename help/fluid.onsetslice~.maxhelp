@@ -111,7 +111,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 423.25, 168.0, 134.5, 64.0 ],
-									"presentation_linecount" : 9,
 									"text" : "Select from a combination of curated sound files and parameters",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -3689,7 +3688,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 213.0, 364.5, 243.0, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Compensates for the delay incurred by the spectral processing of the algorithm",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
