@@ -668,6 +668,12 @@ class FluidMaxWrapper
     }
 
     template <typename T>
+    static Optional<T> fromAtom(t_object* x, t_atom* a, Optional<T>)
+    {
+      return {fromAtom(x,a,T{})}; 
+    }
+  
+    template <typename T>
     static std::enable_if_t<std::is_integral<T>::value, T>
     fromAtom(t_object* /*x*/, t_atom* a, T)
     {
