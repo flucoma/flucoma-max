@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -124,26 +124,6 @@
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
 									"hint" : "",
-									"id" : "obj-39",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 880.0, 481.5, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "6",
-									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
 									"id" : "obj-38",
 									"ignoreclick" : 1,
 									"legacytextcolor" : 1,
@@ -152,7 +132,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 869.0, 389.5, 20.0, 20.0 ],
+									"patching_rect" : [ 877.0, 350.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -174,30 +154,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-33",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 527.5, 328.0, 250.0, 21.0 ],
-									"text" : "OR Last column is equal to 3000",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-32",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 490.0, 288.0, 281.0, 21.0 ],
-									"text" : "AND Second column is less than or equal to 20",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-31",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -205,44 +161,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 320.0, 170.0, 37.0, 23.0 ],
 									"text" : "clear"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-21",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 434.5, 328.0, 82.0, 23.0 ],
-									"text" : "or 3 <= 2000"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-13",
-									"linecount" : 4,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 800.0, 288.0, 162.0, 69.0 ],
-									"text" : "Optionally add any number of additional opeartors to constrain the search",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-7",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 407.5, 288.0, 78.0, 23.0 ],
-									"text" : "and 1 <= 20"
 								}
 
 							}
@@ -273,7 +191,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 414.5, 230.0, 165.0, 25.0 ],
+									"patching_rect" : [ 430.5, 210.0, 165.0, 25.0 ],
 									"text" : "Now add our basic filter",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -292,7 +210,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 967.0, 312.5, 20.0, 20.0 ],
+									"patching_rect" : [ 867.0, 280.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -312,7 +230,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 586.0, 232.5, 20.0, 20.0 ],
+									"patching_rect" : [ 602.0, 212.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -330,8 +248,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -477,7 +395,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 422.0, 560.0, 96.0, 23.0 ],
+									"patching_rect" : [ 422.0, 460.0, 96.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -496,8 +414,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 495.0, 388.0, 202.0, 65.0 ],
-									"text" : "Add a range of columns in the format <start> <number of columns>. This will add three columns starting from the first.",
+									"patching_rect" : [ 487.0, 261.0, 215.0, 65.0 ],
+									"text" : "Add a range of columns in the format <start> <number of columns>. This will add two columns starting from the second.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -510,7 +428,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 680.0, 471.5, 195.0, 40.0 ],
+									"patching_rect" : [ 680.0, 341.5, 195.0, 40.0 ],
 									"text" : "Transform to do the query and copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -524,7 +442,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 712.0, 379.5, 155.0, 40.0 ],
+									"patching_rect" : [ 710.0, 271.5, 155.0, 40.0 ],
 									"text" : "Add a range of columns to copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -581,7 +499,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 422.0, 600.0, 168.0, 110.0 ],
+									"patching_rect" : [ 422.0, 500.0, 168.0, 110.0 ],
 									"textcolor" : [ 0.995808, 0.800103, 0.399985, 1.0 ]
 								}
 
@@ -631,8 +549,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1032,7 +950,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 460.0, 480.0, 218.0, 23.0 ],
+									"patching_rect" : [ 460.0, 350.0, 218.0, 23.0 ],
 									"text" : "transform dsq.help.src dsq.help.dest"
 								}
 
@@ -1044,8 +962,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 407.5, 388.0, 85.0, 23.0 ],
-									"text" : "addrange 0 3"
+									"patching_rect" : [ 400.0, 280.0, 85.0, 23.0 ],
+									"text" : "addrange 1 2"
 								}
 
 							}
@@ -1056,7 +974,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 343.0, 230.0, 66.0, 23.0 ],
+									"patching_rect" : [ 359.0, 210.0, 66.0, 23.0 ],
 									"text" : "filter 0 < 3"
 								}
 
@@ -1068,7 +986,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 320.0, 520.0, 121.0, 23.0 ],
+									"patching_rect" : [ 320.0, 420.0, 121.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
@@ -1101,24 +1019,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 394.5, 377.0, 315.5, 83.0 ],
-									"proportion" : 0.5
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"angle" : 270.0,
-									"background" : 1,
-									"bgcolor" : [ 0.670588235294118, 0.686274509803922, 1.0, 0.0 ],
-									"border" : 2,
-									"bordercolor" : [ 0.423529411764706, 0.513725490196078, 1.0, 1.0 ],
-									"id" : "obj-35",
-									"maxclass" : "panel",
-									"mode" : 0,
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 394.5, 275.5, 403.0, 92.5 ],
+									"patching_rect" : [ 390.0, 250.0, 315.5, 83.0 ],
 									"proportion" : 0.5
 								}
 
@@ -1141,7 +1042,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 417.0, 507.0, 329.5, 507.0 ],
+									"midpoints" : [ 409.5, 361.0, 329.5, 361.0 ],
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -1149,15 +1050,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 444.0, 363.0, 329.5, 363.0 ],
-									"source" : [ "obj-21", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 469.5, 508.0, 329.5, 508.0 ],
+									"midpoints" : [ 469.5, 396.0, 329.5, 396.0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -1172,7 +1065,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 329.5, 195.0, 329.5, 195.0 ],
+									"midpoints" : [ 329.5, 306.0, 329.5, 306.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -1195,15 +1088,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 417.0, 363.0, 329.5, 363.0 ],
-									"source" : [ "obj-7", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 352.5, 507.0, 329.5, 507.0 ],
+									"midpoints" : [ 368.5, 326.0, 329.5, 326.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -1268,7 +1153,6 @@
 					}
 ,
 					"patching_rect" : [ 170.0, 85.0, 106.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1292,14 +1176,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1355,7 +1239,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 140.0, 430.0, 21.0 ],
+									"patching_rect" : [ 10.0, 133.0, 430.0, 21.0 ],
 									"text" : "We can also combine multiple operators to refine the filter for the query.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1409,7 +1293,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 359.0, 170.0, 212.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Clear the filters so we start fresh",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1434,7 +1317,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 490.0, 288.0, 281.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "AND Second column is less than or equal to 20",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -1472,8 +1354,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 434.5, 328.0, 82.0, 23.0 ],
-									"presentation_linecount" : 2,
-									"text" : "or 3 <= 2000"
+									"text" : "or 3 <= 5000"
 								}
 
 							}
@@ -1485,8 +1366,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 799.5, 288.0, 144.5, 69.0 ],
-									"presentation_linecount" : 4,
+									"patching_rect" : [ 799.5, 288.0, 147.0, 69.0 ],
 									"text" : "Optionally add any number of additional opeartors to constrain the search",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1500,8 +1380,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 407.5, 288.0, 78.0, 23.0 ],
-									"presentation_linecount" : 2,
-									"text" : "and 1 <= 20"
+									"text" : "and 1 <= 10"
 								}
 
 							}
@@ -1589,8 +1468,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1755,8 +1634,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 527.5, 388.0, 120.0, 65.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 527.5, 388.0, 124.0, 65.0 ],
 									"text" : "Add columns that we want to copy for points where the filter is satisfied",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -1771,7 +1649,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 680.0, 471.5, 195.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Transform to do the query and copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1785,8 +1662,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 668.0, 407.5, 155.0, 40.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 668.0, 407.5, 156.0, 40.0 ],
 									"text" : "Then add columns we want to copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1893,8 +1769,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2538,7 +2414,6 @@
 					}
 ,
 					"patching_rect" : [ 80.0, 85.0, 78.0, 22.0 ],
-					"presentation_linecount" : 3,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2562,8 +2437,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2630,8 +2505,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2778,7 +2653,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 519.0, 544.0, 52.0, 23.0 ],
+									"patching_rect" : [ 519.0, 580.0, 52.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2803,7 +2678,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 865.0, 374.0, 20.0, 20.0 ],
+									"patching_rect" : [ 862.0, 441.75, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2850,13 +2725,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
-									"linecount" : 6,
+									"linecount" : 10,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 530.0, 404.0, 355.0, 94.0 ],
-									"presentation_linecount" : 6,
-									"text" : "When a column is manually added with addcolumn, the filter only respects the contents of dataset A. Any points that satisy the filter have the respective column merged with that of dataset B. In this case, any point where the first column is equal to 6000 has the corresponding column for that point in dataset B's merged with dataset A.",
+									"patching_rect" : [ 620.0, 384.25, 230.0, 152.0 ],
+									"text" : "When a column is manually added with addcolumn, the filter only respects the contents of dataset A. Any points that satisfy the filter have the respective column merged with that of dataset B. In this case, any point where the first column is equal to 6000 has the corresponding column for that point in dataset B's merged with dataset A.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -2890,7 +2764,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 673.0, 340.5, 20.0, 20.0 ],
+									"patching_rect" : [ 673.0, 352.25, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2973,12 +2847,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-33",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 458.0, 268.0, 355.0, 50.0 ],
-									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A.",
+									"patching_rect" : [ 458.0, 268.0, 355.0, 65.0 ],
+									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A. It is important to note that it merges the second provided dataset with the first for each identifier.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -3001,7 +2875,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 519.0, 580.0, 181.0, 130.0 ],
+									"patching_rect" : [ 519.0, 610.0, 241.0, 80.0 ],
 									"textcolor" : [ 0.996078, 0.898039, 0.031373, 1.0 ]
 								}
 
@@ -3013,7 +2887,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 458.0, 340.0, 212.0, 23.0 ],
+									"patching_rect" : [ 458.0, 351.75, 212.0, 23.0 ],
 									"text" : "clear, filter 0 == 6000, addcolumn 0"
 								}
 
@@ -3025,7 +2899,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 419.0, 510.0, 119.0, 23.0 ],
+									"patching_rect" : [ 419.0, 550.0, 119.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
@@ -3034,11 +2908,12 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-21",
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 501.263977000000068, 372.5, 359.0, 23.0 ],
+									"patching_rect" : [ 500.0, 411.75, 108.736022999999932, 67.0 ],
 									"text" : "transformjoin dsq.help.join.A dsq.help.join.B dsq.help.join.out"
 								}
 
@@ -3122,8 +2997,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3708,7 +3583,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 330.0, 490.0, 175.5 ],
+									"patching_rect" : [ 410.0, 342.0, 480.0, 206.25 ],
 									"proportion" : 0.5
 								}
 
@@ -3725,7 +3600,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 190.0, 410.0, 137.5 ],
+									"patching_rect" : [ 410.0, 190.0, 410.0, 150.0 ],
 									"proportion" : 0.5
 								}
 
@@ -3741,6 +3616,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
+									"midpoints" : [ 509.5, 537.0, 428.5, 537.0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -3762,6 +3638,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
+									"midpoints" : [ 467.5, 537.0, 428.5, 537.0 ],
 									"source" : [ "obj-25", 0 ]
 								}
 
@@ -3769,6 +3646,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
+									"midpoints" : [ 428.5, 386.0, 428.5, 386.0 ],
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -3776,6 +3654,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
+									"midpoints" : [ 441.5, 402.25, 428.5, 402.25 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -3904,14 +3783,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4052,8 +3931,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4219,7 +4098,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 544.5, 548.0, 207.0, 65.0 ],
-									"presentation_linecount" : 4,
 									"text" : "The result is such that only the first column (0th) of each point is copied over if the value in this column is less than 0.5.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -4234,7 +4112,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 689.5, 416.5, 158.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Composing the query as one message",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4248,7 +4125,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 671.5, 234.0, 207.0, 65.0 ],
-									"presentation_linecount" : 4,
 									"text" : "In effect, we are saying, for each point where the filter is satisfied copy THIS column to our destination.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -4262,8 +4138,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 635.0, 323.5, 195.0, 69.0 ],
-									"presentation_linecount" : 4,
+									"patching_rect" : [ 635.0, 323.5, 197.0, 69.0 ],
 									"text" : "Calling transform executes the query and copies the results from the source to the destination.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4278,7 +4153,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 456.0, 241.0, 191.5, 54.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Then we specify which columns we would like to copy if they satisfy the filter.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4338,7 +4212,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 456.0, 416.5, 224.0, 38.0 ],
-									"text" : "clear, filter 0 < 3, addcolumn 0, transform dsq.help.src dsq.help.dest"
+									"text" : "clear, filter 1 < 3, addcolumn 1, transform dsq.help.src dsq.help.dest"
 								}
 
 							}
@@ -4398,8 +4272,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5062,8 +4936,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
