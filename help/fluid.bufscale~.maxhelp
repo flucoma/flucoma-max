@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -42,23 +42,6 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-1",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 364.0, 35.0, 169.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"filename" : "helpstarter.js",
-						"parameter_enable" : 0
-					}
-,
-					"text" : "js helpstarter.js fluid.bufscale~"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -67,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -81,7 +64,7 @@
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
 						"gridonopen" : 2,
-						"gridsize" : [ 5.0, 5.0 ],
+						"gridsize" : [ 10.0, 10.0 ],
 						"gridsnaponopen" : 2,
 						"objectsnaponopen" : 1,
 						"statusbarvisible" : 2,
@@ -105,12 +88,25 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "clipping",
+									"id" : "obj-4",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 190.0, 360.0, 190.0, 23.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-43",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 125.0, 578.5, 280.0, 36.0 ],
+									"patching_rect" : [ 120.0, 558.5, 280.0, 36.0 ],
 									"text" : "The input (ranging from 1 to 5) is scaled to the output range of (0 to 1).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -123,7 +119,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 585.0, 113.0, 23.0 ]
+									"patching_rect" : [ 5.0, 565.0, 113.0, 23.0 ],
+									"text" : "0. 0.25 0.5 0.75 1."
 								}
 
 							}
@@ -135,7 +132,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 35.0, 482.0, 280.0, 40.0 ],
+									"patching_rect" : [ 35.0, 462.0, 280.0, 40.0 ],
 									"text" : "Extract the destination buffer data to see how bufscale processed the source buffer"
 								}
 
@@ -153,7 +150,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 317.0, 490.0, 20.0, 20.0 ],
+									"patching_rect" : [ 317.0, 470.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -163,12 +160,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-36",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 335.0, 355.0, 150.0, 65.0 ],
-									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling.",
+									"patching_rect" : [ 390.0, 291.5, 373.0, 50.0 ],
+									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling. You can optionall clip the output, as to not exceed the specified output minimum and maximum.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -181,7 +178,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 35.0, 267.0, 205.0, 40.0 ],
+									"patching_rect" : [ 370.0, 200.0, 205.0, 40.0 ],
 									"text" : "Scale the source buffer and copy to the destination buffer"
 								}
 
@@ -199,7 +196,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 243.0, 275.0, 20.0, 20.0 ],
+									"patching_rect" : [ 578.0, 208.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -214,7 +211,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 180.0, 414.999999999999943, 150.0, 23.0 ]
+									"parameter_enable" : 0,
+									"patching_rect" : [ 190.0, 332.5, 190.0, 23.0 ]
 								}
 
 							}
@@ -226,7 +224,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 180.0, 386.666666666666629, 150.0, 23.0 ]
+									"parameter_enable" : 0,
+									"patching_rect" : [ 190.0, 305.0, 190.0, 23.0 ]
 								}
 
 							}
@@ -238,7 +237,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 180.0, 358.333333333333314, 150.0, 23.0 ]
+									"parameter_enable" : 0,
+									"patching_rect" : [ 190.0, 277.5, 190.0, 23.0 ]
 								}
 
 							}
@@ -250,7 +250,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 180.0, 330.0, 150.0, 23.0 ]
+									"parameter_enable" : 0,
+									"patching_rect" : [ 190.0, 250.0, 190.0, 23.0 ]
 								}
 
 							}
@@ -262,7 +263,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 70.0, 181.5, 150.0, 40.0 ],
+									"patching_rect" : [ 70.0, 121.5, 150.0, 40.0 ],
 									"text" : "Fill the source buffer with some numbers"
 								}
 
@@ -274,7 +275,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 190.0, 59.0, 23.0 ],
+									"patching_rect" : [ 5.0, 130.0, 59.0, 23.0 ],
 									"text" : "1 2 3 4 5"
 								}
 
@@ -287,7 +288,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 5.0, 230.0, 258.0, 23.0 ],
+									"patching_rect" : [ 5.0, 170.0, 258.0, 23.0 ],
 									"text" : "fluid.list2buf @destination bufscale.help.src"
 								}
 
@@ -300,7 +301,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 490.0, 24.0, 24.0 ]
+									"patching_rect" : [ 5.0, 470.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -312,7 +313,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 5.0, 530.0, 241.0, 23.0 ],
+									"patching_rect" : [ 5.0, 510.0, 241.0, 23.0 ],
 									"text" : "fluid.buf2list @source bufscale.help.dest"
 								}
 
@@ -333,7 +334,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 580.0, 5.0, 235.0, 110.0 ],
+									"patching_rect" : [ 415.0, 5.0, 235.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -351,7 +352,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 222.0, 191.5, 20.0, 20.0 ],
+									"patching_rect" : [ 222.0, 131.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -360,25 +361,12 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-17",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 275.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 330.0, 145.0, 81.0 ],
+									"patching_rect" : [ 5.0, 208.5, 363.0, 23.0 ],
 									"text" : "source bufscale.help.src, destination bufscale.help.dest, bang"
 								}
 
@@ -391,7 +379,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 435.0, 445.0, 158.0, 23.0 ],
+									"patching_rect" : [ 435.0, 405.0, 158.0, 23.0 ],
 									"text" : "buffer~ bufscale.help.dest"
 								}
 
@@ -404,7 +392,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 265.0, 230.0, 150.0, 23.0 ],
+									"patching_rect" : [ 265.0, 170.0, 150.0, 23.0 ],
 									"text" : "buffer~ bufscale.help.src"
 								}
 
@@ -417,7 +405,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 5.0, 445.0, 427.0, 23.0 ],
+									"patching_rect" : [ 5.0, 405.0, 427.0, 23.0 ],
 									"text" : "fluid.bufscale~ @inputlow 1 @inputhigh 5 @outputlow 0. @outputhigh 1."
 								}
 
@@ -434,7 +422,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 5.0, 570.0, 160.0 ]
+									"patching_rect" : [ 5.0, 5.0, 405.0, 110.0 ]
 								}
 
 							}
@@ -442,15 +430,8 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 14.5, 393.0, 14.5, 393.0 ],
+									"midpoints" : [ 14.5, 353.0, 14.5, 353.0 ],
 									"source" : [ "obj-11", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"source" : [ "obj-17", 0 ]
 								}
 
 							}
@@ -464,7 +445,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 189.5, 354.0, 162.0, 354.0, 162.0, 438.0, 14.5, 438.0 ],
+									"midpoints" : [ 199.5, 273.0, 14.5, 273.0 ],
 									"source" : [ "obj-29", 0 ]
 								}
 
@@ -472,6 +453,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 1 ],
+									"midpoints" : [ 14.5, 552.0, 108.5, 552.0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -479,7 +461,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 189.5, 381.0, 162.0, 381.0, 162.0, 438.0, 14.5, 438.0 ],
+									"midpoints" : [ 199.5, 303.0, 14.5, 303.0 ],
 									"source" : [ "obj-30", 0 ]
 								}
 
@@ -487,7 +469,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 189.5, 411.0, 162.0, 411.0, 162.0, 438.0, 14.5, 438.0 ],
+									"midpoints" : [ 199.5, 330.0, 14.5, 330.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -495,8 +477,16 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 189.5, 438.0, 14.5, 438.0 ],
+									"midpoints" : [ 199.5, 357.0, 14.5, 357.0 ],
 									"source" : [ "obj-32", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"midpoints" : [ 199.5, 384.0, 14.5, 384.0 ],
+									"source" : [ "obj-4", 0 ]
 								}
 
 							}
@@ -585,7 +575,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 312.176024999999981, 57.599854000000001 ]
+					"patching_rect" : [ 10.0, 10.0, 312.176025390625, 57.599853515625 ]
 				}
 
 			}
@@ -599,8 +589,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -688,12 +678,6 @@
 			}
 , 			{
 				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
