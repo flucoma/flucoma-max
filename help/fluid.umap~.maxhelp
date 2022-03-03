@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -88,13 +88,50 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "umap" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-8",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 600.0, 10.0, 220.0, 110.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.umap~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 580.0, 120.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-18",
 									"linecount" : 33,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 680.0, 167.0, 300.0, 486.0 ],
-									"text" : "The UMAP algorithm can be nudged to either favour the global or local shape of the original data. In essence, this is about whether or not you care about the overall relationship between data or smaller clusters of points when it is reduced.\n\nThe numneighbours attribute dictates how many points from the original data are considered together when it is determining a transform for the data. These are related to the size of your data, so if you had 100 points and wanted the whole space to be considered as one thing, setting numneighbours to 100 might be an interesting place to start.\n\nThe minimum distance attribute dictates how close points can be represented in the output dataset. Small values tending towards 0 let UMAP pack the points in tightly while larger values cause the data to be more spread out.\n\nMusically speaking, this decision making will be bound up in lots of different attentions, like what kind of sounds you are analysing and how you want to use them. If you want tight perceptually meaningful clusters then lowering the number of neighbours (relative to your total dataset) and increasing the minimum distance could be a tool for creating more stark separations between points. Likewise, lowering the mindist and increasing the numneighbours might create a flatter and more spread out space for exploring more widely.",
+									"patching_rect" : [ 650.0, 167.0, 315.0, 486.0 ],
+									"text" : "The UMAP algorithm can be nudged to favour the global or local structure of the original data. In essence, this is about whether or not you care about the overall shape of the data, or smaller clusters of points when it is reduced.\n\nThe numneighbours attribute dictates how many points from the original data are considered together when it is determining a transform for the data. These are related to the size of your data. For example, imagine that you have a dataset with 100 points and wanted the whole space to be considered as \"one thing\", setting numneighbours to 100 might be an interesting place to start.\n\nThe minimum distance attribute dictates how close points can be represented in the output dataset. Small values tending towards 0 let UMAP pack the points in tightly while larger values cause the data to be more spread out.\n\nMusically speaking, this decision making will be bound up in lots of different attentions, like what kind of sounds are being analysed and how those sounds will be used in conjunction with the UMAP representation. If you want tight perceptually meaningful clusters then lowering the number of neighbours (relative to your total dataset) and increasing the minimum distance could be a tool for creating more stark separations between points. Likewise, lowering the mindist and increasing the numneighbours might create a flatter and more spread out space for exploring more widely.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -127,6 +164,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
 									"patching_rect" : [ 120.0, 220.0, 150.0, 23.0 ],
 									"text_width" : 82.0
 								}
@@ -140,6 +178,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
 									"patching_rect" : [ 70.0, 190.0, 200.0, 23.0 ],
 									"text_width" : 132.0
 								}
@@ -152,7 +191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 496.0, 349.0, 171.0, 23.0 ],
+									"patching_rect" : [ 437.0, 277.0, 171.0, 23.0 ],
 									"text" : "loadmess pointsizescale 0.5"
 								}
 
@@ -1365,43 +1404,6 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "umap" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-8",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 555.0, 10.0, 220.0, 110.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.umap~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 538.0, 124.195022999999992 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"angle" : 270.0,
 									"background" : 1,
 									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
@@ -1421,7 +1423,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 1 ],
-									"midpoints" : [ 505.5, 374.0, 478.0, 374.0, 478.0, 339.0, 446.5, 339.0 ],
+									"midpoints" : [ 446.5, 303.0, 446.5, 303.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -1451,7 +1453,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 1 ],
-									"midpoints" : [ 195.5, 712.0, 473.0, 712.0, 473.0, 338.0, 446.5, 338.0 ],
+									"midpoints" : [ 195.5, 714.0, 468.0, 714.0, 468.0, 345.0, 446.5, 345.0 ],
 									"source" : [ "obj-35", 0 ]
 								}
 
@@ -1596,7 +1598,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1655,7 +1657,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 84.0, 131.0, 397.0, 232.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1690,7 +1692,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 133.0, 76.0, 23.0 ],
+													"patching_rect" : [ 13.0, 90.0, 76.0, 22.0 ],
 													"text" : "knearest $2"
 												}
 
@@ -1702,7 +1704,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "list" ],
-													"patching_rect" : [ 50.0, 100.0, 77.0, 23.0 ],
+													"patching_rect" : [ 13.0, 57.0, 77.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
 
@@ -1714,7 +1716,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 329.0, 200.0, 92.0, 23.0 ],
+													"patching_rect" : [ 292.0, 157.0, 92.0, 22.0 ],
 													"text" : "route knearest"
 												}
 
@@ -1726,7 +1728,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 50.0, 165.0, 298.0, 23.0 ],
+													"patching_rect" : [ 13.0, 122.0, 298.0, 22.0 ],
 													"text" : "fluid.kdtree~ help.umap.1.tree @numneighbours 1"
 												}
 
@@ -1740,7 +1742,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 13.0, 14.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1752,7 +1754,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 329.0, 283.0, 30.0, 30.0 ]
+													"patching_rect" : [ 292.0, 192.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1774,7 +1776,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-13", 0 ],
-													"midpoints" : [ 59.5, 167.789124000000015, 59.5, 167.789124000000015 ],
+													"midpoints" : [ 22.5, 124.789124000000015, 22.5, 124.789124000000015 ],
 													"source" : [ "obj-34", 0 ]
 												}
 
@@ -2947,7 +2949,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ -154.0, -1112.0, 1526.0, 1077.0 ],
+										"rect" : [ 727.0, -512.0, 645.0, 477.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2977,240 +2979,12 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-52",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 781.0, 627.0, 34.0, 22.0 ],
-													"text" : "write"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-50",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 771.0, 578.0, 32.0, 22.0 ],
-													"text" : "print"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-46",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "bang", "clear" ],
-													"patching_rect" : [ 682.0, 45.0, 61.0, 22.0 ],
-													"text" : "t b b clear"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-45",
-													"maxclass" : "newobj",
-													"numinlets" : 5,
-													"numoutlets" : 4,
-													"outlettype" : [ "int", "", "", "int" ],
-													"patching_rect" : [ 675.0, 550.0, 61.0, 22.0 ],
-													"text" : "counter"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-44",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 675.0, 594.0, 87.0, 22.0 ],
-													"text" : "setpoint $1 flat"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-41",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 675.0, 648.0, 80.0, 22.0 ],
-													"text" : "fluid.dataset~"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-40",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 911.5, 273.0, 78.0, 22.0 ],
-													"text" : "expr $i2 - $i1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-35",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 2,
-													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 682.0, 147.0, 158.0, 22.0 ],
-													"text" : "list.iter 2 @zlmaxsize 32678"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-32",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 681.0, 13.0, 24.0, 24.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-30",
-													"maxclass" : "newobj",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
-													"patching_rect" : [ 682.0, 93.0, 263.0, 22.0 ],
-													"text" : "fluid.buf2list 32768 @source help.umap.1.slices"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-24",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 1008.5, 514.0, 65.0, 22.0 ],
-													"text" : "buffer~ flat"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-23",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 1256.0, 412.0, 75.0, 22.0 ],
-													"text" : "buffer~ mfcc"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-20",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 987.5, 470.0, 75.0, 22.0 ],
-													"text" : "buffer~ stats"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-19",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 726.5, 185.0, 29.5, 22.0 ],
-													"text" : "t b l"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-16",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 726.5, 514.0, 263.0, 22.0 ],
-													"text" : "fluid.bufflatten~ @source stats @destination flat"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-15",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 726.5, 470.0, 233.0, 22.0 ],
-													"text" : "fluid.bufstats~ @source mfcc @stats stats"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-14",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 911.5, 314.0, 85.0, 22.0 ],
-													"text" : "numframes $1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-13",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 820.5, 314.0, 79.0, 22.0 ],
-													"text" : "startframe $1"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-3",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 726.5, 387.0, 639.0, 22.0 ],
-													"text" : "fluid.bufmfcc~ 20 @numcoeffs 20 @fftsettings 4096 512 4096 @source help.umap.1.src @features mfcc @startcoeff 1"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"id" : "obj-26",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 323.0, 475.0, 298.0, 22.0 ],
+													"patching_rect" : [ 323.0, 436.0, 298.0, 22.0 ],
 													"text" : "buffer~ help.umap.1.slices flucoma_corpus_slices.wav"
 												}
 
@@ -3500,18 +3274,6 @@
 											}
 , 											{
 												"box" : 												{
-													"id" : "obj-17",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 355.0, 379.75, 104.0, 22.0 ],
-													"text" : "pointsizescale 0.4"
-												}
-
-											}
-, 											{
-												"box" : 												{
 													"comment" : "",
 													"id" : "obj-8",
 													"index" : 1,
@@ -3531,7 +3293,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 283.0, 475.0, 30.0, 30.0 ]
+													"patching_rect" : [ 283.0, 436.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -3604,7 +3366,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 47.0, 436.375, 134.0, 22.0 ],
+													"patching_rect" : [ 47.0, 397.375, 134.0, 22.0 ],
 													"text" : "fit help.umap.1.analysis"
 												}
 
@@ -3616,7 +3378,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "" ],
-													"patching_rect" : [ 244.0, 379.75, 97.0, 22.0 ],
+													"patching_rect" : [ 244.0, 340.75, 97.0, 22.0 ],
 													"text" : "route read dump"
 												}
 
@@ -3628,7 +3390,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 67.0, 308.5, 215.0, 22.0 ],
+													"patching_rect" : [ 67.0, 269.5, 215.0, 22.0 ],
 													"text" : "read flucoma_corpus_mfcc.json, dump"
 												}
 
@@ -3640,7 +3402,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 67.0, 347.125, 196.0, 22.0 ],
+													"patching_rect" : [ 67.0, 308.125, 196.0, 22.0 ],
 													"text" : "fluid.dataset~ help.umap.1.analysis"
 												}
 
@@ -3652,72 +3414,13 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 47.0, 475.0, 180.0, 22.0 ],
+													"patching_rect" : [ 47.0, 436.0, 180.0, 22.0 ],
 													"text" : "fluid.kdtree~ help.umap.1.kdtree"
 												}
 
 											}
  ],
 										"lines" : [ 											{
-												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
-													"source" : [ "obj-13", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
-													"source" : [ "obj-14", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-16", 0 ],
-													"source" : [ "obj-15", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-45", 0 ],
-													"source" : [ "obj-16", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-18", 0 ],
-													"midpoints" : [ 364.5, 461.0, 292.5, 461.0 ],
-													"source" : [ "obj-17", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-13", 0 ],
-													"order" : 1,
-													"source" : [ "obj-19", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-3", 0 ],
-													"source" : [ "obj-19", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-40", 0 ],
-													"order" : 0,
-													"source" : [ "obj-19", 1 ]
-												}
-
-											}
-, 											{
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-2", 0 ]
@@ -3734,7 +3437,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-18", 0 ],
-													"midpoints" : [ 292.5, 404.0, 292.5, 404.0 ],
+													"midpoints" : [ 292.5, 365.0, 292.5, 365.0 ],
 													"source" : [ "obj-22", 1 ]
 												}
 
@@ -3742,7 +3445,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-27", 0 ],
-													"midpoints" : [ 253.5, 421.0, 56.5, 421.0 ],
+													"midpoints" : [ 253.5, 382.0, 56.5, 382.0 ],
 													"source" : [ "obj-22", 0 ]
 												}
 
@@ -3763,79 +3466,8 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-15", 0 ],
-													"source" : [ "obj-3", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-35", 0 ],
-													"source" : [ "obj-30", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-46", 0 ],
-													"source" : [ "obj-32", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-19", 0 ],
-													"source" : [ "obj-35", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-21", 0 ],
 													"source" : [ "obj-4", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-14", 0 ],
-													"source" : [ "obj-40", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-41", 0 ],
-													"source" : [ "obj-44", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-44", 0 ],
-													"source" : [ "obj-45", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-30", 0 ],
-													"source" : [ "obj-46", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-41", 0 ],
-													"midpoints" : [ 733.5, 90.0, 660.0, 90.0, 660.0, 639.0, 684.5, 639.0 ],
-													"source" : [ "obj-46", 2 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-45", 2 ],
-													"source" : [ "obj-46", 1 ]
 												}
 
 											}
@@ -3848,20 +3480,6 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-41", 0 ],
-													"source" : [ "obj-50", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-41", 0 ],
-													"source" : [ "obj-52", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-25", 0 ],
 													"source" : [ "obj-6", 1 ]
 												}
@@ -3869,17 +3487,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-17", 0 ],
-													"midpoints" : [ 23.5, 55.0, 539.0, 55.0, 539.0, 375.0, 364.5, 375.0 ],
-													"order" : 0,
-													"source" : [ "obj-8", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
 													"destination" : [ "obj-2", 0 ],
-													"order" : 1,
 													"source" : [ "obj-8", 0 ]
 												}
 
@@ -3972,7 +3580,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 555.0, 10.0, 220.0, 110.0 ],
+									"patching_rect" : [ 600.0, 10.0, 220.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -3989,7 +3597,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 538.0, 124.195022999999992 ]
+									"patching_rect" : [ 10.0, 10.0, 580.0, 120.0 ]
 								}
 
 							}
@@ -4201,6 +3809,55 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 370.0, 690.0, 607.0, 21.0 ],
+									"text" : "This example and the data is drawn almost entirely from https://pair-code.github.io/understanding-umap/",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"args" : [ "umap" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-8",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 600.0, 10.0, 220.0, 110.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.umap~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 580.0, 120.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"angle" : 270.0,
 									"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 									"border" : 2,
@@ -4210,7 +3867,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 488.0, 217.5, 242.0, 124.0 ],
+									"patching_rect" : [ 478.0, 187.5, 242.0, 124.0 ],
 									"proportion" : 0.5
 								}
 
@@ -4223,7 +3880,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 754.0, 253.0, 164.0, 54.0 ],
+									"patching_rect" : [ 744.0, 223.0, 164.0, 54.0 ],
 									"text" : "Now transform the three dimensions of the mammoth into two."
 								}
 
@@ -4241,7 +3898,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 732.0, 270.0, 20.0, 20.0 ],
+									"patching_rect" : [ 722.0, 240.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4255,7 +3912,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 680.0, 480.0, 153.0, 152.0 ],
+									"patching_rect" : [ 670.0, 450.0, 153.0, 152.0 ],
 									"text" : "The colours for each point stay the same betwen the 3 and 2 dimensional representation. \n\nYou can see how certain features are grouped together such as legs, the  body, the tusk.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -4269,7 +3926,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 732.0, 164.5, 170.0, 54.0 ],
+									"patching_rect" : [ 722.0, 134.5, 170.0, 54.0 ],
 									"text" : "Now transform the three dimensions of the mammoth into two."
 								}
 
@@ -4281,7 +3938,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 160.0, 347.0, 150.0, 65.0 ],
+									"patching_rect" : [ 150.0, 317.0, 150.0, 65.0 ],
 									"text" : "Using jitter the mammoth dataset is projected into a 3 dimensional space.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -4300,7 +3957,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 710.0, 180.0, 20.0, 20.0 ],
+									"patching_rect" : [ 700.0, 150.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4320,7 +3977,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 297.0, 190.0, 20.0, 20.0 ],
+									"patching_rect" : [ 287.0, 150.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4335,7 +3992,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 145.0, 180.0, 150.0, 40.0 ],
+									"patching_rect" : [ 135.0, 140.0, 150.0, 40.0 ],
 									"text" : "Load the mammoth dataset."
 								}
 
@@ -4655,7 +4312,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 651.0, 390.0, 123.0, 23.0 ],
+									"patching_rect" : [ 641.0, 360.0, 123.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4674,7 +4331,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 290.0, 68.0, 23.0 ],
+									"patching_rect" : [ 10.0, 260.0, 68.0, 23.0 ],
 									"text" : "route read"
 								}
 
@@ -4686,7 +4343,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 230.0, 75.0, 23.0 ],
+									"patching_rect" : [ 490.0, 200.0, 75.0, 23.0 ],
 									"text" : "loadmess 7"
 								}
 
@@ -4699,7 +4356,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 500.0, 270.0, 50.0, 23.0 ]
+									"patching_rect" : [ 490.0, 240.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -4710,7 +4367,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 630.0, 230.0, 86.0, 23.0 ],
+									"patching_rect" : [ 620.0, 200.0, 86.0, 23.0 ],
 									"text" : "loadmess 0.1"
 								}
 
@@ -4724,7 +4381,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 630.0, 270.0, 50.0, 23.0 ]
+									"patching_rect" : [ 620.0, 240.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -4735,7 +4392,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 630.0, 310.0, 68.0, 23.0 ],
+									"patching_rect" : [ 620.0, 280.0, 68.0, 23.0 ],
 									"text" : "mindist $1"
 								}
 
@@ -4747,7 +4404,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 310.0, 116.0, 23.0 ],
+									"patching_rect" : [ 490.0, 280.0, 116.0, 23.0 ],
 									"text" : "numneighbours $1"
 								}
 
@@ -4762,7 +4419,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 20.0, 430.0, 260.0, 260.0 ],
+									"patching_rect" : [ 10.0, 400.0, 260.0, 260.0 ],
 									"sync" : 1
 								}
 
@@ -4775,7 +4432,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 20.0, 330.0, 24.0, 24.0 ]
+									"patching_rect" : [ 10.0, 300.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -5306,7 +4963,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 20.0, 370.0, 136.0, 23.0 ],
+									"patching_rect" : [ 10.0, 340.0, 136.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -5325,7 +4982,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 410.0, 180.0, 296.0, 23.0 ],
+									"patching_rect" : [ 400.0, 150.0, 296.0, 23.0 ],
 									"text" : "fittransform help.umap.mammoth help.umap.1.out"
 								}
 
@@ -5337,7 +4994,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.0, 190.0, 123.0, 23.0 ],
+									"patching_rect" : [ 10.0, 150.0, 123.0, 23.0 ],
 									"text" : "read mammoth.json"
 								}
 
@@ -5349,7 +5006,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 20.0, 235.0, 212.0, 23.0 ],
+									"patching_rect" : [ 10.0, 205.0, 212.0, 23.0 ],
 									"text" : "fluid.dataset~ help.umap.mammoth"
 								}
 
@@ -5649,7 +5306,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 410.0, 390.0, 154.0, 23.0 ],
+									"patching_rect" : [ 400.0, 360.0, 154.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -5670,44 +5327,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 410.0, 430.0, 260.0, 260.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "umap" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-8",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 550.0, 10.0, 220.0, 110.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.umap~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 538.0, 124.195022999999992 ]
+									"patching_rect" : [ 400.0, 400.0, 260.0, 260.0 ]
 								}
 
 							}
@@ -5722,7 +5342,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
-									"midpoints" : [ 509.5, 375.0, 419.5, 375.0 ],
+									"midpoints" : [ 499.5, 345.0, 409.5, 345.0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -5730,7 +5350,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
-									"midpoints" : [ 639.5, 375.0, 419.5, 375.0 ],
+									"midpoints" : [ 629.5, 345.0, 409.5, 345.0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -5787,7 +5407,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 222.5, 271.0, 29.5, 271.0 ],
+									"midpoints" : [ 212.5, 241.0, 19.5, 241.0 ],
 									"source" : [ "obj-89", 2 ]
 								}
 
@@ -5802,7 +5422,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 0 ],
-									"midpoints" : [ 419.5, 204.0, 419.5, 204.0 ],
+									"midpoints" : [ 409.5, 174.0, 409.5, 174.0 ],
 									"order" : 1,
 									"source" : [ "obj-96", 0 ]
 								}
@@ -5811,7 +5431,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 419.5, 375.0, 660.5, 375.0 ],
+									"midpoints" : [ 409.5, 345.0, 650.5, 345.0 ],
 									"order" : 0,
 									"source" : [ "obj-96", 0 ]
 								}
@@ -5966,23 +5586,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.buf2list.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "fluid.bufcompose~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufflatten~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufmfcc~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufstats~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
