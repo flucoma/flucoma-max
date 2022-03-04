@@ -56,7 +56,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
+						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -664,7 +664,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
+						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -694,6 +694,32 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-10",
+									"local" : 1,
+									"maxclass" : "ezdac~",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 390.0, 401.0, 45.0, 45.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-9",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 280.0, 160.5, 98.0, 40.0 ],
+									"presentation_linecount" : 2,
+									"text" : "Trigger processing",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"args" : [ "bufcompose" ],
 									"bgmode" : 0,
@@ -727,18 +753,6 @@
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 10.0, 11.0, 400.0, 99.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-54",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 51.0, 144.0, 312.0, 36.0 ],
-									"text" : "overlay a brief burst of the first source, with 1\" of the second, read from an offset of 30k samples"
 								}
 
 							}
@@ -828,8 +842,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 293.0, 49.0, 143.0, 23.0 ],
-													"text" : "bufcompose_help_dst3"
+													"patching_rect" : [ 293.0, 49.0, 82.0, 23.0 ],
+													"text" : "help.bc.3.dst"
 												}
 
 											}
@@ -840,8 +854,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 152.0, 49.0, 143.0, 23.0 ],
-													"text" : "bufcompose_help_src6"
+													"patching_rect" : [ 152.0, 49.0, 89.0, 23.0 ],
+													"text" : "help.bc.3.src2"
 												}
 
 											}
@@ -852,8 +866,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 10.0, 49.0, 143.0, 23.0 ],
-													"text" : "bufcompose_help_src5"
+													"patching_rect" : [ 10.0, 49.0, 89.0, 23.0 ],
+													"text" : "help.bc.3.src1"
 												}
 
 											}
@@ -997,20 +1011,22 @@
  ]
 									}
 ,
-									"patching_rect" : [ 467.0, 299.0, 203.0, 22.0 ],
+									"patching_rect" : [ 390.0, 310.0, 203.0, 22.0 ],
 									"viewvisibility" : 1
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-8",
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 461.0, 274.5, 91.0, 21.0 ],
-									"text" : "play",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"patching_rect" : [ 595.0, 294.0, 98.0, 54.0 ],
+									"text" : "Listen to the sources and results",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -1021,19 +1037,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 467.0, 330.5, 40.0, 23.0 ],
+									"patching_rect" : [ 390.0, 350.0, 40.0, 23.0 ],
 									"text" : "play~"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-23",
-									"local" : 1,
-									"maxclass" : "ezdac~",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 467.0, 373.5, 60.0, 60.0 ]
 								}
 
 							}
@@ -1050,7 +1055,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 435.5, 274.5, 20.0, 20.0 ],
+									"patching_rect" : [ 700.0, 310.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1070,7 +1075,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 22.5, 148.5, 20.0, 20.0 ],
+									"patching_rect" : [ 250.0, 170.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1084,20 +1089,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 19.0, 376.0, 187.0, 23.0 ],
-									"text" : "buffer~ bufcompose_help_dst3"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-45",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 48.5, 333.0, 105.0, 21.0 ],
-									"style" : "helpfile_label",
-									"text" : "bang when done"
+									"patching_rect" : [ 10.0, 412.0, 126.0, 23.0 ],
+									"text" : "buffer~ help.bc.3.dst"
 								}
 
 							}
@@ -1105,25 +1098,13 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-63",
-									"linecount" : 3,
+									"linecount" : 8,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 170.0, 454.0, 50.0 ],
+									"patching_rect" : [ 390.0, 140.0, 334.0, 123.0 ],
 									"style" : "helpfile_label",
-									"text" : "the attributes startframe, numframes, startchan, numchans, deststartframe, and deststartchan give you fine control over which portion of the source you copy and where it is placed"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 22.5, 324.0, 24.0, 24.0 ]
+									"text" : "The startframe, numframes, startchan, numchans, deststartframe, and deststartchan attributes give you fine control over which portion of the source you copy and where it is placed\n\nThis chain of messages followed by a bang will overlay a brief burst of the first source with 1 second starting from an offset of 30k samples."
 								}
 
 							}
@@ -1134,8 +1115,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 19.0, 406.5, 374.0, 23.0 ],
-									"text" : "buffer~ bufcompose_help_src5 Tremblay-SlideChoirAdd-M.wav"
+									"patching_rect" : [ 10.0, 351.0, 320.0, 23.0 ],
+									"text" : "buffer~ help.bc.3.src1 Tremblay-SlideChoirAdd-M.wav"
 								}
 
 							}
@@ -1146,46 +1127,38 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 19.0, 437.5, 415.0, 23.0 ],
-									"text" : "buffer~ bufcompose_help_src6 Tremblay-AaS-SynthTwoVoices-M.wav"
+									"patching_rect" : [ 10.0, 381.5, 361.0, 23.0 ],
+									"text" : "buffer~ help.bc.3.src2 Tremblay-AaS-SynthTwoVoices-M.wav"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 3,
+									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 22.5, 180.5, 370.0, 52.0 ],
-									"text" : "reset, source bufcompose_help_src5, numframes 9000, bang, source bufcompose_help_src6, startframe 30000, numframes 44100, destgain 1., bang"
+									"patching_rect" : [ 22.5, 140.0, 217.5, 81.0 ],
+									"text" : "reset, source help.bc.3.src1, numframes 9000, bang, source help.bc.3.src2, startframe 30000, numframes 44100, destgain 1., bang"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
-									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 22.5, 253.0, 174.0, 52.0 ],
-									"text" : "fluid.bufcompose~ @destination bufcompose_help_dst3"
+									"patching_rect" : [ 22.5, 240.0, 271.0, 23.0 ],
+									"text" : "fluid.bufcompose~ @destination help.bc.3.dst"
 								}
 
 							}
  ],
 						"lines" : [ 							{
-								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-11", 0 ]
@@ -1201,7 +1174,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 1 ],
+									"destination" : [ "obj-10", 1 ],
 									"order" : 0,
 									"source" : [ "obj-5", 0 ]
 								}
@@ -1209,7 +1182,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
+									"destination" : [ "obj-10", 0 ],
 									"order" : 1,
 									"source" : [ "obj-5", 0 ]
 								}
