@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 105.0, 175.0, 824.0, 500.0 ],
+		"rect" : [ 100.0, 100.0, 824.0, 500.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -2158,7 +2158,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 105.0, 201.0, 824.0, 474.0 ],
+						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2189,68 +2189,27 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-28",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.flucomaorg.maxpat",
-									"numinlets" : 0,
+									"id" : "obj-22",
+									"linecount" : 8,
+									"maxclass" : "comment",
+									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 659.0, 430.0, 160.0, 41.0 ],
-									"viewvisibility" : 1
+									"patching_rect" : [ 650.0, 320.0, 153.0, 114.0 ],
+									"text" : "When bufcompose receives a bang it copies the source to the destination. These waveforms display the contents of each buffer, visualising the result of the copy process.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-7",
-									"local" : 1,
-									"maxclass" : "ezdac~",
-									"numinlets" : 2,
+									"arrows" : 2,
+									"border" : 5.0,
+									"id" : "obj-21",
+									"justification" : 1,
+									"maxclass" : "live.line",
+									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 497.0, 388.75, 65.5, 65.5 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-68",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 108.5, 421.5, 57.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-67",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 176.5, 421.5, 50.0, 22.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-65",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 9,
-									"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
-									"patching_rect" : [ 31.5, 383.5, 164.0, 22.0 ],
-									"text" : "info~ bufcompose_help_dst1"
+									"patching_rect" : [ 276.0, 365.0, 100.0, 20.0 ]
 								}
 
 							}
@@ -2259,7 +2218,7 @@
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
 									"hint" : "",
-									"id" : "obj-53",
+									"id" : "obj-35",
 									"ignoreclick" : 1,
 									"legacytextcolor" : 1,
 									"maxclass" : "textbutton",
@@ -2267,47 +2226,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 490.0, 266.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "3",
-									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
-									"id" : "obj-52",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 262.0, 266.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "2",
-									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
-									"id" : "obj-33",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 6.5, 266.0, 20.0, 20.0 ],
+									"patching_rect" : [ 402.0, 152.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2316,89 +2235,119 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-48",
-									"linecount" : 3,
+									"bubble" : 1,
+									"id" : "obj-18",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 232.0, 398.0, 204.0, 47.0 ],
-									"style" : "helpfile_label",
-									"text" : "The destination is expanded in time and channels to accomodate the range being copied over"
+									"patching_rect" : [ 36.0, 150.0, 364.0, 24.0 ],
+									"text" : "Press bang to copy the contents of the source to the destination"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-47",
+									"buffername" : "help.bc.1.dst",
+									"id" : "obj-15",
+									"maxclass" : "waveform~",
+									"numinlets" : 5,
+									"numoutlets" : 6,
+									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
+									"patching_rect" : [ 380.0, 320.0, 264.0, 110.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"buffername" : "help.bc.1.src",
+									"id" : "obj-14",
+									"maxclass" : "waveform~",
+									"numinlets" : 5,
+									"numoutlets" : 6,
+									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
+									"patching_rect" : [ 10.0, 320.0, 264.0, 110.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-13",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 379.0, 195.0, 175.0, 22.0 ],
-									"text" : "buffer~ bufcompose_help_dst1"
+									"patching_rect" : [ 380.0, 290.0, 117.0, 22.0 ],
+									"text" : "buffer~ help.bc.1.dst"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-45",
+									"id" : "obj-12",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "float", "bang" ],
+									"patching_rect" : [ 10.0, 290.0, 264.0, 22.0 ],
+									"text" : "buffer~ help.bc.1.src Tremblay-FMTriDist-M.wav"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-11",
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 82.5, 348.0, 99.0, 20.0 ],
-									"style" : "helpfile_label",
-									"text" : "bang when done"
+									"patching_rect" : [ 390.0, 191.0, 150.0, 60.0 ],
+									"text" : "Like all other FluCoMa objects, the buffer inputs and outputs can be set as attributes.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-44",
+									"id" : "obj-9",
 									"maxclass" : "button",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 515.0, 266.0, 24.0, 24.0 ]
+									"patching_rect" : [ 10.0, 150.0, 24.0, 24.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-38",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 287.0, 266.0, 196.0, 22.0 ],
-									"text" : "destination bufcompose_help_dst1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-63",
-									"linecount" : 2,
-									"maxclass" : "comment",
+									"id" : "obj-4",
+									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 21.5, 221.0, 322.0, 33.0 ],
-									"style" : "helpfile_label",
-									"text" : "use the source and destination attributes to set these buffers, and bang to process"
+									"numoutlets" : 3,
+									"outlettype" : [ "bang", "float", "" ],
+									"patching_rect" : [ 10.0, 210.0, 374.0, 22.0 ],
+									"text" : "fluid.bufcompose~ @source help.bc.1.src @destination help.bc.1.dst"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"fontname" : "Arial",
-									"fontsize" : 13.0,
-									"id" : "obj-62",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
+									"args" : [ "bufcompose" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-3",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
 									"numoutlets" : 0,
-									"patching_rect" : [ 21.5, 188.0, 314.0, 36.0 ],
-									"text" : "fluid.bufcompose copies from a source buffer~ to a destination buffer~ at a given gain"
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 540.0, 11.0, 260.0, 119.0 ],
+									"viewvisibility" : 1
 								}
 
 							}
@@ -2414,166 +2363,15 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 11.0, 593.0, 124.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"maxclass" : "button",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 31.5, 348.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 540.0, 319.75, 91.0, 20.0 ],
-									"text" : "play the results"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-2",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 379.0, 222.5, 385.0, 22.0 ],
-									"text" : "buffer~ bufcompose_help_src1 Tremblay-AaS-SynthTwoVoices-M.wav"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-12",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 497.0, 319.75, 34.0, 22.0 ],
-									"text" : "start"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-5",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 497.0, 357.75, 177.0, 22.0 ],
-									"text" : "play~ bufcompose_help_dst1 2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-6",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 31.5, 266.0, 223.0, 22.0 ],
-									"text" : "source bufcompose_help_src1, gain 0.5"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-1",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 31.5, 318.0, 108.0, 22.0 ],
-									"text" : "fluid.bufcompose~"
+									"patching_rect" : [ 10.0, 11.0, 521.0, 129.0 ]
 								}
 
 							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
-									"destination" : [ "obj-10", 0 ],
-									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-65", 0 ],
-									"source" : [ "obj-10", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-12", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 296.5, 299.0, 41.0, 299.0 ],
-									"source" : [ "obj-38", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 524.5, 309.0, 41.0, 309.0 ],
-									"source" : [ "obj-44", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-7", 1 ],
-									"source" : [ "obj-5", 1 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-7", 0 ],
-									"source" : [ "obj-5", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 41.0, 317.0, 41.0, 317.0 ],
-									"source" : [ "obj-6", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-67", 0 ],
-									"midpoints" : [ 186.0, 413.0, 186.0, 413.0 ],
-									"source" : [ "obj-65", 8 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-68", 0 ],
-									"midpoints" : [ 149.75, 413.0, 118.0, 413.0 ],
-									"source" : [ "obj-65", 6 ]
+									"destination" : [ "obj-4", 0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -2818,6 +2616,13 @@
 			}
 , 			{
 				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/dev/flucoma/max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.learn.maxpat",
 				"bootpath" : "~/dev/flucoma/max/help",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
