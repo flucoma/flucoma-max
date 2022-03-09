@@ -269,6 +269,7 @@ struct NonRealTime
     else
     {
       class_addmethod(c, (method) deferProcess, "bang", 0);
+      if(Wrapper::NumInputBuffers) class_addmethod(Wrapper::getClass(), (method) doBuffer, "buffer", A_GIMME, 0);
       class_addmethod(c, (method) callCancel, "cancel", 0);
       class_addmethod(c, (method) assist, "assist", A_CANT, 0);
       
@@ -331,12 +332,25 @@ struct NonRealTime
 
   static void callCancel(Wrapper* x) { x->cancel(); }
 
+  static void dobang(Wrapper *x) {
+    index in = proxy_getinlet(x);
+    
+    if(in == 0) deferProcess(x);
+  }
+
   static void deferProcess(Wrapper* x)
   {
     x->mClient.enqueue(x->mParams);
 
     if (x->mSynchronous != 2)
     {
+      if(x->mSynchronous == 0)
+      {
+        t_box *b;
+        t_max_err err = object_obex_lookup((t_object*)x, gensym("#B"), (t_object **)&b);
+        object_method(b, gensym("startprogress"),&x->mProgress);
+      }
+    
       defer(x, (method) &callProcess, nullptr, 0, nullptr);
     }
     else
@@ -370,9 +384,19 @@ struct NonRealTime
     }
   }
 
+  static void doBuffer(Wrapper* x, t_symbol*, long ac, t_atom* av)
+  {
+      
+      index inlet =proxy_getinlet((t_object *)x);
+      
+      x->mBufferDispatch[inlet](x,ac,av);
+      
+      if(inlet == 0) deferProcess(x);
+  }
+  
   static void clockTick(Wrapper* x) { qelem_set(x->mQelem); }
 
-  static void assist(Wrapper* /*x*/, void* /*b*/, long io, long index, char* s)
+  static void assist(Wrapper* x, void* /*b*/, long io, long index, char* s)
   {
 
     using Client = typename Wrapper::ClientType;
@@ -407,14 +431,11 @@ struct NonRealTime
       {
       case 1: strncpy_zero(s, "(bang) start processing", 512); break;
       case 2:
-        switch (index)
-        {
-        case 0: strncpy_zero(s, "(bang) processing complete", 512); break;
-        case 1:
-          strncpy_zero(s, "(float) progress for non-blocking processing", 512);
-          break;
-        case 2: strncpy_zero(s, "(list) dumpout", 512); break;
-        }
+          if(index < Wrapper::NumOutputBuffers)
+          {
+             x->mBufferAssist[index](x,s);
+          }
+          else strncpy_zero(s, "(list) dumpout", 512);
       }
     }
   }
@@ -998,7 +1019,7 @@ public:
     
     //handle runtime dispatch of `buffer` message through a lookup table of functions that will set the attr
     mParams.template forEachParamType<InputBufferT>([this](auto&, auto idx){
-      constexpr index N = decltype(idx)::value;
+      constexpr index N = idx();
       mBufferDispatch.push_back([](FluidMaxWrapper* x, long, t_atom* av)
       {
         static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
@@ -1006,6 +1027,17 @@ public:
         t_symbol* attrname = gensym(param_name.c_str());
         object_attr_setsym(x, attrname, attrval);
       });
+    });
+    
+    
+    //functions for buffer outlet assistance
+    mParams.template forEachParamType<BufferT>([this](auto&, auto idx){
+      constexpr index N = idx();
+       mBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
+       {
+          static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
+          sprintf(s,"buffer: %s", param_name.c_str());
+       });
     });
     
     //setup an array of buffer~ object that we'll use if the respective params are unset when process is called
@@ -1042,15 +1074,13 @@ public:
 
     object_obex_store(this, gensym("dumpout"),
                       (t_object*) outlet_new(this, nullptr));
-
-    if (isNonRealTime<Client>::value ||
-        (IsModel_t<Client>::value && Client::isRealTime::value))
-    {
-      mProgressOutlet = floatout(this);
-    }
-
-    if (isNonRealTime<Client>::value) { mNRTDoneOutlet = outlet_new((t_object*)this, nullptr); }
-
+    
+    mBufferOutlets.reserve(NumOutputBuffers);
+    
+    mParams.template forEachParamType<BufferT>([this](auto&, auto){
+      mBufferOutlets.insert(mBufferOutlets.begin(),outlet_new((t_object*)this,nullptr));
+    });
+  
     if (mClient.controlChannelsOut().count)
     {
       if(mListSize)
@@ -1103,11 +1133,25 @@ public:
     }
   };
 
-  void progress(double progress) { outlet_float(mProgressOutlet, progress); }
+  void progress(double progress)
+  {
+    mProgress = progress;
+    t_atom a;
+    atom_setfloat(&a,progress);
+    object_obex_dumpout(this,gensym("progress"),1,&a);
+  }
 
   void doneBang()
   {
-    params().template forEachParamType<BufferT>([this](auto& x, auto idx){
+    t_box *b;
+    t_max_err err = object_obex_lookup((t_object*)this, gensym("#B"), (t_object **)&b);
+    object_method(b, gensym("stopprogress"));
+
+    t_atom a;
+    atom_setfloat(&a,1);
+    object_obex_dumpout(this,gensym("progress"),1,&a);
+
+    params().template forEachParamType<BufferT>([this,i=0](auto& x, auto idx)mutable{
     
       constexpr index N = idx();
       
@@ -1115,10 +1159,9 @@ public:
       
       atom a;
       atom_setsym(&a,b->name());
-      
-      outlet_anything(mNRTDoneOutlet,gensym("buffer"), 1, &a);
+
+      outlet_anything(mBufferOutlets[i++],gensym("buffer"), 1, &a);
     });
-    outlet_bang(mNRTDoneOutlet);
   }
 
   void controlOut(long ac, t_atom* av)
@@ -1164,9 +1207,6 @@ public:
                                   
     }
     
-    if(NumInputBuffers) class_addmethod(getClass(), (method) doBuffer, "buffer", A_GIMME, 0);
-      
-
     class_addmethod(getClass(), (method) doNotify, "notify", A_CANT, 0);
     class_addmethod(getClass(), (method) object_obex_dumpout, "dumpout", A_CANT,
                     0);
@@ -1256,15 +1296,6 @@ public:
         
       }
   }
-  
-  static void doBuffer(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
-  {
-      
-      index inlet =proxy_getinlet((t_object *)x);
-      
-      x->mBufferDispatch[inlet](x,ac,av);
-  }
-  
 
   static void doList(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
@@ -1300,8 +1331,6 @@ public:
       
   }
   
-  
-
   static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
   {
     std::string name(newName->s_name);
@@ -1951,7 +1980,7 @@ private:
   void*              mNRTDoneOutlet;
   void*              mControlOutlet;
   void*              mDumpOutlet;
-  void*              mProgressOutlet;
+  double             mProgress;
   bool               mVerbose;
   bool               mAutosize;
   ParamSetType       mParams;
@@ -1965,7 +1994,11 @@ private:
   std::map<index,t_symbol*> mHostedOutputBufferNames;
   std::vector<t_object*>    mHostedOutputBufferObjects;
   std::vector<void(*)(FluidMaxWrapper*,long,t_atom*)> mBufferDispatch;
+  
+  std::vector<void(*)(FluidMaxWrapper*,char* s)> mBufferAssist;
+  
   index mProxyNumber;
+  std::vector<void*> mBufferOutlets;
 
   index mListSize;
   FluidTensor<double, 2>                  mInputListData;
