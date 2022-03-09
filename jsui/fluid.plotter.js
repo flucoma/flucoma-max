@@ -10,9 +10,11 @@ setinletassist(0, 'Dictionary of Points');
 setinletassist(1, 'Dictionary of Labels');
 setoutletassist(0, 'Position of mouse in x/y space');
 
-// Colors - These are taken directly from d3.js
 // https://github.com/d3/d3-scale-chromatic
+// https://sashamaps.net/docs/resources/20-colors/
 var colors = {
+	// default: 'e6194b3cb44bffe1190082c8f5823046f0f0f032e6fabed4008080dcbeffaa6e28fffac8800000aaffc3000080808080ff7878000000',
+	default: 'e6194b3cb44bffe1194363d8f58231911eb446f0f0f032e6bcf60cfabebe008080e6beff9a6324fffac8800000aaffc3808000ffd8b1000075808080',
 	cat : '1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf',
 	accent : '7fc97fbeaed4fdc086ffff99386cb0f0027fbf5b17666666',
 	dark : '1b9e77d95f027570b3e7298a66a61ee6ab02a6761d666666',
@@ -42,7 +44,7 @@ var _ymin = 0.0;
 var _ymax = 1.0;
 var _bgcolor = [0.95,0.95,0.95,0.95, 1.0];
 var _shape = 'circle'
-var _colorscheme = colors.cat;
+var _colorscheme = colors.default;
 var _highlight = [];
 var labelDict = null;
 var labelJSON = null;
@@ -186,23 +188,20 @@ function constructColorScheme() {
 		
 		colorMap = {};
 		var scheme = strChunk(_colorscheme, 6);
-		var schemeExtension = strChunk(colors.random, 6);
-		uniques.forEach(function(u, i) {
-			if (i < scheme.length) {
-				// When the labels can be assigned to the colour scheme
-				colorMap[u] = hexToRGB(scheme[i], 0.8);
-			} 
-			else {
-				// When the number of labels exceeds the colour scheme, take colours from the random palette
-				colorMap[u] = hexToRGB(schemeExtension[i-scheme.length], 0.8)
-			} 
-		})
+		uniques.sort();
+			uniques.forEach(function(u, i) {
+			i = i % scheme.length;
+			var color = hexToRGB(scheme[i], 1.0);
+			colorMap[u] = color;
+			post(color, '\n')
+		});
 		mgraphics.redraw();
+
+		
 	}
 }
 
 function colorscheme(scheme) {
-
 	if (colors[scheme]) {
 		_colorscheme = colors[scheme]
 	}
