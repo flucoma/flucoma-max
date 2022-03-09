@@ -53,14 +53,14 @@ var colorMap = {};
 var pointColors = {};
 var pointSizes = {};
 
-
-function hexToRGB(hex, a) {
-	// Converts a HEX value to an array of RGBA values
-	var a = a || 1.0;
-    var r = parseInt(hex.slice(1, 3), 16) / 256.0,
-        g = parseInt(hex.slice(3, 5), 16) / 256.0,
-        b = parseInt(hex.slice(5, 7), 16) / 256.0;
-	return [r, g, b, a];
+function hexToRGB(hex, alpha) {
+	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	return result ? [
+		parseInt(result[1], 16) / 255.0,
+		parseInt(result[2], 16) / 255.0,
+		parseInt(result[3], 16) / 255.0,
+		alpha
+		] : [0, 0, 0, alpha];
 }
 
 function strChunk(str, size) {
@@ -193,11 +193,8 @@ function constructColorScheme() {
 			i = i % scheme.length;
 			var color = hexToRGB(scheme[i], 1.0);
 			colorMap[u] = color;
-			post(color, '\n')
 		});
 		mgraphics.redraw();
-
-		
 	}
 }
 
