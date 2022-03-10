@@ -1,0 +1,5 @@
+max objectfile fluid.bufnoveltycurve~ fluid.bufnoveltycurve~ fluid.bufnoveltyslice~;
+max objectfile fluid.bufonsetcurve~   fluid.bufonsetcurve~   fluid.bufnoveltyslice~;
+max objectfile fluid.bufampcurve~     fluid.bufampcurve~     fluid.bufampslice~;
+
+
