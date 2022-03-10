@@ -37,177 +37,16 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
-				"box" : 				{
-					"id" : "obj-3",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"patcher" : 					{
-						"fileversion" : 1,
-						"appversion" : 						{
-							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
-							"architecture" : "x64",
-							"modernui" : 1
-						}
-,
-						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
-						"bglocked" : 0,
-						"openinpresentation" : 0,
-						"default_fontsize" : 13.0,
-						"default_fontface" : 0,
-						"default_fontname" : "Arial",
-						"gridonopen" : 2,
-						"gridsize" : [ 10.0, 10.0 ],
-						"gridsnaponopen" : 2,
-						"objectsnaponopen" : 1,
-						"statusbarvisible" : 2,
-						"toolbarvisible" : 1,
-						"lefttoolbarpinned" : 0,
-						"toptoolbarpinned" : 0,
-						"righttoolbarpinned" : 0,
-						"bottomtoolbarpinned" : 0,
-						"toolbars_unpinned_last_save" : 0,
-						"tallnewobj" : 0,
-						"boxanimatetime" : 200,
-						"enablehscroll" : 1,
-						"enablevscroll" : 1,
-						"devicewidth" : 0.0,
-						"description" : "",
-						"digest" : "",
-						"tags" : "",
-						"style" : "",
-						"subpatcher_template" : "",
-						"showontab" : 1,
-						"assistshowspatchername" : 0,
-						"boxes" : [ 							{
-								"box" : 								{
-									"id" : "obj-2",
-									"linecount" : 4,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 60.0, 150.0, 150.0, 65.0 ],
-									"text" : "slices -> compose random order of things\n\nstack/merge/concat"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "bufcompose" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-4",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 420.0, 11.0, 260.0, 109.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-34",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.bufcompose~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 11.0, 400.0, 99.0 ]
-								}
-
-							}
- ],
-						"lines" : [  ],
-						"styles" : [ 							{
-								"name" : "max6box",
-								"default" : 								{
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6inlet",
-								"default" : 								{
-									"color" : [ 0.423529, 0.372549, 0.27451, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6message",
-								"default" : 								{
-									"bgfillcolor" : 									{
-										"type" : "gradient",
-										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
-										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
-										"proportion" : 0.39,
-										"autogradient" : 0
-									}
-,
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
-								}
-,
-								"parentstyle" : "max6box",
-								"multi" : 0
-							}
-, 							{
-								"name" : "max6outlet",
-								"default" : 								{
-									"color" : [ 0.0, 0.454902, 0.498039, 1.0 ]
-								}
-,
-								"parentstyle" : "",
-								"multi" : 0
-							}
- ]
-					}
-,
-					"patching_rect" : [ 129.0, 218.0, 75.0, 23.0 ],
-					"presentation_linecount" : 3,
-					"saved_object_attributes" : 					{
-						"description" : "",
-						"digest" : "",
-						"fontsize" : 13.0,
-						"globalpatchername" : "",
-						"tags" : ""
-					}
-,
-					"text" : "p examples"
-				}
-
-			}
-, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 277.0, 321.0, 284.0, 23.0 ],
+					"patching_rect" : [ 210.0, 250.0, 284.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufcompose~"
 				}
 
@@ -713,7 +552,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 280.0, 160.5, 98.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Trigger processing",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1024,7 +862,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 595.0, 294.0, 98.0, 54.0 ],
+									"patching_rect" : [ 595.0, 294.0, 100.0, 54.0 ],
 									"text" : "Listen to the sources and results",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1301,6 +1139,79 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "ezdac~",
+									"numinlets" : 2,
+									"numoutlets" : 0,
+									"patching_rect" : [ 410.0, 397.0, 45.0, 45.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-13",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 510.0, 152.5, 220.0, 40.0 ],
+									"presentation_linecount" : 2,
+									"text" : "Copy the mono source to the destination (which is now stereo)",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-14",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 740.0, 162.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-11",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 220.0, 120.0, 263.0, 25.0 ],
+									"presentation_linecount" : 5,
+									"text" : "Copy the stereo source to the destination",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-8",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 614.75, 304.0, 100.0, 54.0 ],
+									"text" : "Listen to the sources and results",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"args" : [ "bufcompose" ],
 									"bgmode" : 0,
 									"border" : 0,
@@ -1349,22 +1260,10 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 473.0, 273.0, 20.0, 20.0 ],
+									"patching_rect" : [ 724.75, 320.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-11",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 31.5, 337.0, 58.0, 23.0 ],
-									"text" : "samps 0"
 								}
 
 							}
@@ -1375,21 +1274,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 60.0, 222.0, 524.0, 23.0 ],
-									"text" : "source bufcompose_help_src8, gain 0.7, destgain 1., deststartchan 0., numchans 2, bang"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-7",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 153.0, 453.0, 36.0 ],
-									"style" : "helpfile_label",
-									"text" : "here we make a stereo buffer from a stereo source, and then copy in a mono source ith numchans = 2; it is then repeated across each destination channel"
+									"patching_rect" : [ 31.5, 160.0, 470.0, 23.0 ],
+									"text" : "source help.bc.5.src2, gain 0.7, destgain 1., deststartchan 0., numchans 2, bang"
 								}
 
 							}
@@ -1648,7 +1534,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 474.25, 297.75, 203.0, 22.0 ],
+									"patching_rect" : [ 410.0, 320.0, 203.0, 22.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1659,7 +1545,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 380.0, 251.0, 451.0, 21.0 ],
+									"patching_rect" : [ 54.0, 190.0, 451.0, 21.0 ],
 									"style" : "helpfile_label",
 									"text" : "if numchans > the available source channels, then channels will be repeated "
 								}
@@ -1678,7 +1564,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 4.5, 222.0, 20.0, 20.0 ],
+									"patching_rect" : [ 340.0, 160.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1698,7 +1584,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 4.5, 193.0, 20.0, 20.0 ],
+									"patching_rect" : [ 485.0, 122.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1712,20 +1598,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 31.5, 364.5, 187.0, 23.0 ],
-									"text" : "buffer~ bufcompose_help_dst4"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-45",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 82.5, 294.0, 105.0, 21.0 ],
-									"style" : "helpfile_label",
-									"text" : "bang when done"
+									"patching_rect" : [ 10.0, 393.75, 126.0, 23.0 ],
+									"text" : "buffer~ help.bc.5.dst"
 								}
 
 							}
@@ -1737,19 +1611,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 31.5, 294.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 495.0, 273.0, 91.0, 21.0 ],
-									"text" : "play ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"patching_rect" : [ 10.0, 263.75, 24.0, 24.0 ]
 								}
 
 							}
@@ -1760,8 +1622,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 31.5, 399.0, 435.0, 23.0 ],
-									"text" : "buffer~ bufcompose_help_src7 Tremblay-SA-UprightPianoPedalWide.wav"
+									"patching_rect" : [ 10.0, 320.0, 381.0, 23.0 ],
+									"text" : "buffer~ help.bc.5.src1 Tremblay-SA-UprightPianoPedalWide.wav"
 								}
 
 							}
@@ -1772,8 +1634,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 31.5, 425.5, 415.0, 23.0 ],
-									"text" : "buffer~ bufcompose_help_src8 Tremblay-AaS-SynthTwoVoices-M.wav"
+									"patching_rect" : [ 10.0, 356.875, 361.0, 23.0 ],
+									"text" : "buffer~ help.bc.5.src2 Tremblay-AaS-SynthTwoVoices-M.wav"
 								}
 
 							}
@@ -1784,19 +1646,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 475.25, 329.75, 97.0, 23.0 ],
+									"patching_rect" : [ 410.0, 352.0, 97.0, 23.0 ],
 									"text" : "play~ dummy 2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-23",
-									"local" : 1,
-									"maxclass" : "ezdac~",
-									"numinlets" : 2,
-									"numoutlets" : 0,
-									"patching_rect" : [ 474.25, 374.75, 56.5, 56.5 ]
 								}
 
 							}
@@ -1807,8 +1658,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 31.5, 193.0, 466.0, 23.0 ],
-									"text" : "reset, source bufcompose_help_src7, destination bufcompose_help_dst4, bang"
+									"patching_rect" : [ 10.0, 120.0, 204.0, 23.0 ],
+									"text" : "reset, source help.bc.5.src1, bang"
 								}
 
 							}
@@ -1819,8 +1670,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 31.5, 264.0, 114.0, 23.0 ],
-									"text" : "fluid.bufcompose~"
+									"patching_rect" : [ 10.0, 230.0, 271.0, 23.0 ],
+									"text" : "fluid.bufcompose~ @destination help.bc.5.dst"
 								}
 
 							}
@@ -1829,13 +1680,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
 									"source" : [ "obj-1", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-47", 0 ],
-									"source" : [ "obj-11", 0 ]
 								}
 
 							}
@@ -1855,14 +1699,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 1 ],
-									"source" : [ "obj-5", 1 ]
+									"destination" : [ "obj-15", 1 ],
+									"order" : 0,
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-23", 0 ],
+									"destination" : [ "obj-15", 0 ],
+									"order" : 1,
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -1926,7 +1772,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 230.0, 290.0, 92.0, 23.0 ],
+					"patching_rect" : [ 150.0, 210.0, 92.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1972,7 +1818,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
+						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2321,7 +2167,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 439.82144199999999, 358.0, 27.0, 23.0 ],
+					"patching_rect" : [ 320.0, 290.0, 27.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
