@@ -167,7 +167,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 325.0, 243.566399, 150.0, 36.0 ],
 									"style" : "",
-									"text" : "set desintation using attribute",
+									"text" : "set destination using attribute",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.51 ]
 								}
 
@@ -218,9 +218,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 61.0, 470.0, 36.0 ],
 									"style" : "",
-									"text" : "Take a list of audio files, load them one afer the other into a buffer, return a dict of filenames with start + end times",
+									"patching_rect" : [ 10.0, 61.0, 470.0, 50.0 ],
+									"text" : "This object takes a list of audio files, loads them one after the other into a buffer, and returns a dict of filenames with start + end times, sampling rate and channel count.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 

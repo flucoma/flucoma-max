@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 809.0, 586.0 ],
+						"rect" : [ 0.0, 26.0, 809.0, 586.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -102,27 +102,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 340.0, 10.0, 230.0, 50.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-2",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.flucomaorg.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 340.0, 61.0, 160.0, 40.0 ],
+									"patching_rect" : [ 300.0, 10.0, 260.0, 100.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -323,7 +303,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
 									"patching_rect" : [ 206.0, 258.0, 33.0, 22.0 ],
-									"text" : "* 30."
+									"text" : "* 40."
 								}
 
 							}
@@ -684,7 +664,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 218.0, 293.0, 194.0 ],
-									"text" : "The fluid.sines~ object attempts to reconstruct the input signal as a bank of sinusoids. We might expect that for a pure sine tone, the algorithm has no problems.\n\nWith these settings everything in the sound is considered a sinusoid, even short and quiet peaks.\n\nBecause the decomposition is a windowed process, the detected sinusoidal peaks are located in time based on the window of analysis. When the oscillator changes even slowly over time we hear the artefact and failure of the algorithm emerging in the residual output."
+									"text" : "The fluid.sines~ object attempts to reconstruct the input signal as a bank of sinusoids. We might expect that for a pure sine tone, the algorithm has no problems.\n\nWith these settings everything in the sound is considered a sinusoid, even short and quiet peaks.\n\nBecause the decomposition is a windowed process, the detected sinusoidal peaks are located in time based on the window of analysis. When the oscillator changes even slowly over time we hear the artefact and failure of the algorithm emerging in the residual output.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
@@ -725,7 +706,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 320.0, 100.0 ]
+									"patching_rect" : [ 10.0, 10.0, 280.0, 100.0 ]
 								}
 
 							}
@@ -733,6 +714,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 1 ],
+									"midpoints" : [ 94.5, 462.0, 45.5, 462.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -818,9 +800,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -913,7 +895,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 809.0, 586.0 ],
+						"rect" : [ 100.0, 126.0, 809.0, 586.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -958,40 +940,19 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 340.0, 10.0, 230.0, 50.0 ],
+									"patching_rect" : [ 300.0, 10.0, 240.0, 100.0 ],
 									"viewvisibility" : 1
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-4",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.flucomaorg.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 340.0, 61.0, 160.0, 40.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
 									"id" : "obj-49",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 260.0, 227.75, 37.0 ],
+									"patching_rect" : [ 570.0, 260.0, 227.75, 33.0 ],
 									"text" : "Increase the threshold drastically but lower the minimum track length.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -999,13 +960,12 @@
 							}
 , 							{
 								"box" : 								{
-									"bubble" : 1,
 									"id" : "obj-48",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 215.666666666666686, 227.75, 37.0 ],
+									"patching_rect" : [ 570.0, 215.666666666666686, 227.75, 33.0 ],
 									"text" : "Lower the threshold but increase the track length drastically.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1013,12 +973,11 @@
 							}
 , 							{
 								"box" : 								{
-									"bubble" : 1,
 									"id" : "obj-47",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 178.833333333333343, 227.75, 24.0 ],
+									"patching_rect" : [ 570.0, 178.833333333333343, 227.75, 20.0 ],
 									"text" : "Increase the minimum track length.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1026,13 +985,12 @@
 							}
 , 							{
 								"box" : 								{
-									"bubble" : 1,
 									"id" : "obj-46",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 130.0, 227.75, 37.0 ],
+									"patching_rect" : [ 570.0, 130.0, 227.75, 33.0 ],
 									"text" : "Tracks can be short but the detection threshold is higher than default.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1040,13 +998,12 @@
 							}
 , 							{
 								"box" : 								{
-									"bubble" : 1,
 									"id" : "obj-45",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 282.000000000000057, 412.5, 453.0, 37.0 ],
+									"patching_rect" : [ 282.000000000000057, 412.5, 453.0, 33.0 ],
 									"text" : "Changing the minimum track length adds latency at the benefit of potentially being less jittery.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1060,19 +1017,20 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 170.000000000000114, 420.0, 109.999999999999943, 22.0 ],
-									"text" : "latency 53248"
+									"text" : "latency 3072"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-41",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 82.0, 541.25, 67.0, 20.0 ],
+									"patching_rect" : [ 79.5, 541.25, 84.0, 24.0 ],
 									"text" : "Start audio",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -1519,9 +1477,9 @@
 										"styles" : [ 											{
 												"name" : "max6box",
 												"default" : 												{
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 												}
 ,
 												"parentstyle" : "",
@@ -1600,7 +1558,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@flucomafile", "@file", "Tremblay-BeatRemember.wav", "@file", "Tremblay-BeatRemember.wav", "@loop", 1, "@vol", 0 ],
+									"args" : [ "@file", "Tremblay-BeatRemember.wav", "@file", "Tremblay-BeatRemember.wav", "@loop", 1, "@vol", 0 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -1642,26 +1600,28 @@
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-59",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 257.0, 124.5, 150.0, 33.0 ],
+									"patching_rect" : [ 257.0, 120.0, 150.0, 37.0 ],
 									"text" : "Play the default sound (or choose your own)",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-57",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 182.000000000000028, 471.5, 453.0, 20.0 ],
+									"patching_rect" : [ 182.000000000000028, 470.0, 470.0, 24.0 ],
 									"text" : "Select which component you want to hear. Selecting both sums to the original input.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -1707,13 +1667,15 @@
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 0,
 									"id" : "obj-30",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 634.0, 320.0, 163.0, 20.0 ],
+									"patching_rect" : [ 634.75, 311.5, 163.0, 39.0 ],
 									"text" : "experiment with parameters",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -1730,7 +1692,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 610.0, 320.0, 20.0, 20.0 ],
+									"patching_rect" : [ 610.0, 328.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1773,7 +1735,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 320.0, 100.0 ]
+									"patching_rect" : [ 10.0, 10.0, 280.0, 100.0 ]
 								}
 
 							}
@@ -1892,9 +1854,9 @@
 						"styles" : [ 							{
 								"name" : "max6box",
 								"default" : 								{
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 								}
 ,
 								"parentstyle" : "",
@@ -2104,6 +2066,13 @@
 				"implicit" : 1
 			}
 , 			{
+				"name" : "fluid.learn.maxpat",
+				"bootpath" : "~/dev/flucoma/max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "fluid.flucomaorg.maxpat",
 				"bootpath" : "~/dev/flucoma/max/help",
 				"patcherrelativepath" : ".",
@@ -2125,9 +2094,9 @@
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
 				}
 ,
 				"parentstyle" : "",

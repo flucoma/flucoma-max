@@ -15,6 +15,7 @@ tmp
 **/package-info.json
 media
 docs
+misc
 interfaces/max.db.json
 interfaces/flucoma-obj-qlookup.json
 /.vs

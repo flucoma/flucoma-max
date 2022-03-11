@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 2,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -45,7 +45,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 185.0, 72.0, 22.0 ],
+					"patching_rect" : [ 230.0, 127.0, 72.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -57,7 +57,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 150.0, 54.0, 22.0 ],
+					"patching_rect" : [ 230.0, 92.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -168,7 +168,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 18.0, 113.0, 286.0, 22.0 ],
+					"patching_rect" : [ 230.0, 55.0, 286.0, 22.0 ],
 					"text" : "combine learn.flucoma.org/reference/ s @triggers -1"
 				}
 
@@ -218,9 +218,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 18.0, 220.0, 221.0, 24.0 ],
+					"patching_rect" : [ 230.0, 162.0, 221.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.0, 25.0, 410.0, 24.0 ],
+					"text" : "learn.flucoma.org/reference/grid",
 					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
 				}
 
@@ -301,8 +302,8 @@
 				"name" : "max6box",
 				"default" : 				{
 					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ]
+					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -320,7 +321,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -330,7 +330,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
