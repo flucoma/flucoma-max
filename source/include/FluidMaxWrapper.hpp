@@ -1101,6 +1101,28 @@ public:
 
     Client::getParameterDescriptors().template iterate<AddListener>(this,
                                                                     mParams);
+
+
+    t_atom oNameAtom;
+    t_symbol* oName = symbol_unique();
+    atom_setsym(&oNameAtom, oName);
+    mDefaultArgs.mObjects[0] = (t_object*)object_new_typed(CLASS_BOX, gensym("buffer~"), 1,
+                                               &oNameAtom);
+    mDefaultArgs.mBuffer.reset(new MaxBufferAdaptor((t_object*)this,oName));
+                                               
+    oName = symbol_unique();
+    atom_setsym(&oNameAtom, oName);
+    mDefaultArgs.mObjects[1] = (t_object*)object_new_typed(CLASS_BOX, gensym("fluid.dataset~"), 1,
+                                               &oNameAtom);
+    mDefaultArgs.mDataSet = SharedClientRef<dataset::DataSetClient>(oName->s_name);
+                                               
+    oName = symbol_unique();
+    atom_setsym(&oNameAtom, oName);
+    mDefaultArgs.mObjects[2] = (t_object*)object_new_typed(CLASS_BOX, gensym("fluid.labelset~"), 1,
+                                               &oNameAtom);
+    mDefaultArgs.mLabelSet = SharedClientRef<labelset::LabelSetClient>(oName->s_name);
+
+
   }
 
   ~FluidMaxWrapper()
@@ -1110,6 +1132,8 @@ public:
     if (mDumpDictionary) object_free(mDumpDictionary);
     for (auto p : mProxies) object_free(p);
     for (auto b : mHostedOutputBufferObjects) object_free(b);
+    
+    for(auto o: mDefaultArgs.mObjects) object_free(o);
   }
 
   template <size_t N, typename T>
@@ -1498,8 +1522,30 @@ private:
       return ParamAtomConverter::fromAtom(
           (t_object*) x, av + N, typename std::tuple_element<N, Tuple>::type{});
     else
-      return typename std::tuple_element<N, Tuple>::type{};
+//      return typename std::tuple_element<N, Tuple>::type{};
+        return argDefault<N>(x,typename std::tuple_element<N, Tuple>::type{});
   }
+  
+  template<size_t N,typename T>
+  static auto argDefault(FluidMaxWrapper*, T obj){
+     return obj;
+  }
+  
+  template<size_t N>
+  static auto argDefault(FluidMaxWrapper* x, std::shared_ptr<BufferAdaptor>&){
+     return x->mDefaultArgs.mBuffer;
+  }
+  
+  template<size_t N>
+  static auto argDefault(FluidMaxWrapper* x, SharedClientRef<dataset::DataSetClient>&){
+     return x->mDefaultArgs.mDataSet;
+  }
+
+  template<size_t N,typename T>
+  static auto argDefault(FluidMaxWrapper* x, SharedClientRef<labelset::LabelSetClient>&){
+     return x->mDefaultArgs.mLabelSet;
+  }
+
 
   template <typename T>
   static size_t ResultSize(T)
@@ -1996,6 +2042,16 @@ private:
   std::vector<void(*)(FluidMaxWrapper*,long,t_atom*)> mBufferDispatch;
   
   std::vector<void(*)(FluidMaxWrapper*,char* s)> mBufferAssist;
+  
+  struct MessageArgDefaultContainers
+  {
+    std::array<t_object*, 3> mObjects;
+    std::shared_ptr<BufferAdaptor> mBuffer;
+    SharedClientRef<dataset::DataSetClient> mDataSet;
+    SharedClientRef<labelset::LabelSetClient> mLabelSet;
+  };
+  
+  MessageArgDefaultContainers mDefaultArgs;
   
   index mProxyNumber;
   std::vector<void*> mBufferOutlets;
