@@ -405,12 +405,22 @@ struct NonRealTime
 
   static void doBuffer(Wrapper* x, t_symbol*, long ac, t_atom* av)
   {
-      
       index inlet =proxy_getinlet((t_object *)x);
       
       x->mBufferDispatch[inlet](x,ac,av);
       
-      if(inlet == 0) deferProcess(x);
+      if(inlet == 0)
+      {
+       
+       static std::array<t_symbol*, 4> rangeAttributes{
+          gensym("startframe"),gensym("numframes"),gensym("startchan"),gensym("numchans")
+       };
+       //extra args in left inlet are interpreted as setting input buffer range:
+       for(index i = 1; i < ac && i < 5; ++i)
+          object_attr_setlong(x, rangeAttributes[i - 1], atom_getlong(av + i));
+       
+       deferProcess(x);
+      }
   }
   
   static void clockTick(Wrapper* x) { qelem_set(x->mQelem); }
