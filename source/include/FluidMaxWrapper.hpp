@@ -37,6 +37,24 @@ under the European Union’s Horizon 2020 research and innovation programme
 namespace fluid {
 namespace client {
 
+namespace dataset {
+  class DataSetClient;
+}
+
+namespace labelset {
+  class LabelSetClient;
+}
+
+template<typename T>
+const char* SharedClientName="Unrecognised object";
+
+template<>
+const char* SharedClientName<dataset::DataSetClient> ="fluid.dataset~";
+
+template<>
+const char* SharedClientName<labelset::LabelSetClient> ="fluid.labelset~";
+
+
 ////////////////////////////////////////////////////////////////////////////////
 
 namespace impl {
@@ -348,7 +366,8 @@ struct NonRealTime
       {
         t_box *b;
         t_max_err err = object_obex_lookup((t_object*)x, gensym("#B"), (t_object **)&b);
-        object_method(b, gensym("startprogress"),&x->mProgress);
+        if(!err)
+          object_method(b, gensym("startprogress"),&x->mProgress);
       }
     
       defer(x, (method) &callProcess, nullptr, 0, nullptr);
@@ -413,14 +432,14 @@ struct NonRealTime
       {
       case 1: strncpy_zero(s, "(anything) messages in", 512); break;
       case 2:
-        if (index < 2)
+        if (index < 1)
         {
-          strncpy_zero(s, "(unused)", 512);
+          strncpy_zero(s, "(anything) message results", 512);
           break;
         }
         else
         {
-          strncpy_zero(s, "(list) message results / dumpout", 512);
+          strncpy_zero(s, "(anything) dumpout", 512);
           break;
         }
       }
@@ -435,7 +454,7 @@ struct NonRealTime
           {
              x->mBufferAssist[index](x,s);
           }
-          else strncpy_zero(s, "(list) dumpout", 512);
+          else strncpy_zero(s, "(anything) dumpout", 512);
       }
     }
   }
@@ -534,12 +553,12 @@ class FluidMaxWrapper
                            x->mInputListData[0].data());
       x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
       
-      for (index i = 0; i <  asSigned(x->mAllControlOuts.size()); ++i)
+      for (index i = 0; i <  asSigned(x->mDataOutlets.size()); ++i)
       {
         atom_setdouble_array(
             std::min<index>(x->mListSize, ac), x->mOutputListAtoms.data(),
             std::min<index>(x->mListSize, ac), x->mOutputListData[i].data());
-        outlet_list(x->mAllControlOuts[x->mAllControlOuts.size() - 1 - i], nullptr, x->mListSize,
+        outlet_list(x->mDataOutlets[i], nullptr, x->mListSize,
                     x->mOutputListAtoms.data());
       }
     }
@@ -1009,7 +1028,7 @@ public:
     
     
     //new proxy inlets for any additional input buffers beyond the first
-    if(mProxies.size() < NumInputBuffers - 1)
+    if(asSigned(mProxies.size()) < NumInputBuffers - 1)
     {
       for(index i = mProxies.size(); i < NumInputBuffers - 1; i++)
       {
@@ -1075,11 +1094,16 @@ public:
     object_obex_store(this, gensym("dumpout"),
                       (t_object*) outlet_new(this, nullptr));
     
-    mBufferOutlets.reserve(NumOutputBuffers);
     
-    mParams.template forEachParamType<BufferT>([this](auto&, auto){
-      mBufferOutlets.insert(mBufferOutlets.begin(),outlet_new((t_object*)this,nullptr));
+    //how many non-signal outlets do we need?
+    index numDataOutlets = std::max<index>({NumOutputBuffers,mClient.controlChannelsOut().count,
+      Client::getMessageDescriptors().size() > 0
     });
+    
+    mDataOutlets.reserve(numDataOutlets);
+    
+    for (index i = 0; i < numDataOutlets; ++i)
+        mDataOutlets.insert(mDataOutlets.begin(),outlet_new((t_object*)this,nullptr));
   
     if (mClient.controlChannelsOut().count)
     {
@@ -1090,10 +1114,7 @@ public:
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
           mOutputListViews.emplace_back(mOutputListData.row(i));
       }
-      mAllControlOuts.reserve(mClient.controlChannelsOut().count);
-      for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
-        mAllControlOuts.push_back(listout(this));
-      mControlOutlet = mAllControlOuts[0];
+      mControlOutlet = mDataOutlets[0];
     }
 
     for (index i = 0; i < mClient.audioChannelsOut(); ++i)
@@ -1101,27 +1122,6 @@ public:
 
     Client::getParameterDescriptors().template iterate<AddListener>(this,
                                                                     mParams);
-
-
-    t_atom oNameAtom;
-    t_symbol* oName = symbol_unique();
-    atom_setsym(&oNameAtom, oName);
-    mDefaultArgs.mObjects[0] = (t_object*)object_new_typed(CLASS_BOX, gensym("buffer~"), 1,
-                                               &oNameAtom);
-    mDefaultArgs.mBuffer.reset(new MaxBufferAdaptor((t_object*)this,oName));
-                                               
-    oName = symbol_unique();
-    atom_setsym(&oNameAtom, oName);
-    mDefaultArgs.mObjects[1] = (t_object*)object_new_typed(CLASS_BOX, gensym("fluid.dataset~"), 1,
-                                               &oNameAtom);
-    mDefaultArgs.mDataSet = SharedClientRef<dataset::DataSetClient>(oName->s_name);
-                                               
-    oName = symbol_unique();
-    atom_setsym(&oNameAtom, oName);
-    mDefaultArgs.mObjects[2] = (t_object*)object_new_typed(CLASS_BOX, gensym("fluid.labelset~"), 1,
-                                               &oNameAtom);
-    mDefaultArgs.mLabelSet = SharedClientRef<labelset::LabelSetClient>(oName->s_name);
-
 
   }
 
@@ -1132,8 +1132,6 @@ public:
     if (mDumpDictionary) object_free(mDumpDictionary);
     for (auto p : mProxies) object_free(p);
     for (auto b : mHostedOutputBufferObjects) object_free(b);
-    
-    for(auto o: mDefaultArgs.mObjects) object_free(o);
   }
 
   template <size_t N, typename T>
@@ -1169,13 +1167,14 @@ public:
   {
     t_box *b;
     t_max_err err = object_obex_lookup((t_object*)this, gensym("#B"), (t_object **)&b);
-    object_method(b, gensym("stopprogress"));
+    if(!err)
+      object_method(b, gensym("stopprogress"));
 
     t_atom a;
     atom_setfloat(&a,1);
     object_obex_dumpout(this,gensym("progress"),1,&a);
 
-    params().template forEachParamType<BufferT>([this,i=0](auto& x, auto idx)mutable{
+    params().template forEachParamType<BufferT>([this,i=0](auto&, auto idx)mutable{
     
       constexpr index N = idx();
       
@@ -1184,7 +1183,7 @@ public:
       atom a;
       atom_setsym(&a,b->name());
 
-      outlet_anything(mBufferOutlets[i++],gensym("buffer"), 1, &a);
+      outlet_anything(mDataOutlets[i++],gensym("buffer"), 1, &a);
     });
   }
 
@@ -1508,11 +1507,16 @@ private:
 
     // Read in arguments
     ArgTuple args{setArg<ArgTuple, Is>(x, ac, av)...};
-
+    std::vector<t_atom> outputTokens;
+    
+    ForEach(args,[&outputTokens](auto& a){
+        outputToken(outputTokens,a);
+    });
+    
     auto result =
         x->mClient.template invoke<N>(x->mClient, std::get<Is>(args)...);
 
-    if (x->checkResult(result)) messageOutput(x, s, result);
+    if (x->checkResult(result)) messageOutput(x, s, outputTokens, result);
   }
 
   template <typename Tuple, size_t N>
@@ -1522,30 +1526,87 @@ private:
       return ParamAtomConverter::fromAtom(
           (t_object*) x, av + N, typename std::tuple_element<N, Tuple>::type{});
     else
-//      return typename std::tuple_element<N, Tuple>::type{};
-        return argDefault<N>(x,typename std::tuple_element<N, Tuple>::type{});
+        return x->argDefault<N>(typename std::tuple_element<N, Tuple>::type{});
   }
   
   template<size_t N,typename T>
-  static auto argDefault(FluidMaxWrapper*, T obj){
+  auto argDefault(T obj){
      return obj;
   }
   
   template<size_t N>
-  static auto argDefault(FluidMaxWrapper* x, std::shared_ptr<BufferAdaptor>&){
-     return x->mDefaultArgs.mBuffer;
+  std::shared_ptr<BufferAdaptor> argDefault(std::shared_ptr<BufferAdaptor>&&){
+    
+    static std::unique_ptr<t_object,void(*)(t_object*)> obj(nullptr,[](t_object* o){
+      if(o) object_free(o);
+    });
+    
+    static t_symbol* name;
+    
+    if(!obj)
+    {
+      t_atom oNameAtom;
+      t_symbol* oName = symbol_unique();
+      atom_setsym(&oNameAtom, oName);
+      obj.reset((t_object*)object_new_typed(CLASS_BOX, gensym("buffer~"), 1,
+                                               &oNameAtom));
+      name = oName;
+    }
+      
+    return std::make_shared<MaxBufferAdaptor>((t_object*)this, name);
   }
   
-  template<size_t N>
-  static auto argDefault(FluidMaxWrapper* x, SharedClientRef<dataset::DataSetClient>&){
-     return x->mDefaultArgs.mDataSet;
-  }
-
   template<size_t N,typename T>
-  static auto argDefault(FluidMaxWrapper* x, SharedClientRef<labelset::LabelSetClient>&){
-     return x->mDefaultArgs.mLabelSet;
+  SharedClientRef<T> argDefault(SharedClientRef<T>)
+  {
+        
+    static std::unique_ptr<t_object,void(*)(t_object*)> obj(nullptr,[](t_object* o){
+      if(o) object_free(o);
+    });
+
+    static t_symbol* name;
+
+    if(!obj)
+    {
+      t_atom oNameAtom;
+      t_symbol* oName = symbol_unique();
+      atom_setsym(&oNameAtom, oName);
+      t_symbol* maxclass = gensym(SharedClientName<T>);
+      obj.reset((t_object*)object_new_typed(CLASS_BOX, maxclass, 1,
+                                               &oNameAtom));
+      name = oName;
+    }
+
+    return {name->s_name};
+  }
+  
+  template<size_t N,typename T>
+  SharedClientRef<const T> argDefault(SharedClientRef<const T> object)
+  {
+     return object;
   }
 
+  template<typename T>
+  static void outputToken(std::vector<t_atom>&,T) {}
+  
+  static void outputToken(std::vector<t_atom>& v,std::shared_ptr<BufferAdaptor> const& b) {
+    t_symbol* name = static_cast<MaxBufferAdaptor*>(b.get())->name();
+    t_atom res;
+    atom_setsym(&res, name);
+    v.push_back(res);
+  }
+  
+  template<typename T>
+  static void outputToken(std::vector<t_atom>& v,SharedClientRef<T> const& ds) {
+    t_symbol* name = gensym(ds.name());
+    t_atom res;
+    atom_setsym(&res, name);
+    v.push_back(res);
+  }
+  
+  template<typename T>
+  static void outputToken(std::vector<t_atom>&,SharedClientRef<const T>) {
+  }
 
   template <typename T>
   static size_t ResultSize(T)
@@ -1572,16 +1633,17 @@ private:
 
   template <typename T>
   static std::enable_if_t<!isSpecialization<T, std::tuple>::value>
-  messageOutput(FluidMaxWrapper* x, t_symbol* s, MessageResult<T> r)
+  messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens, MessageResult<T> r)
   {
-    size_t              resultSize = ResultSize(static_cast<T>(r));
+    size_t              resultSize = ResultSize(static_cast<T>(r)) + outputTokens.size();
     std::vector<t_atom> out(resultSize);
-    ParamAtomConverter::toAtom(out.data(), static_cast<T>(r));
-    object_obex_dumpout(x, s, static_cast<long>(resultSize), out.data());
+    std::copy_n(outputTokens.begin(), outputTokens.size(),out.begin());
+    ParamAtomConverter::toAtom(out.data() + outputTokens.size(), static_cast<T>(r));
+    outlet_anything(x->mDataOutlets[0],s,static_cast<long>(resultSize), out.data());
   }
 
   template <typename... Ts>
-  static void messageOutput(FluidMaxWrapper* x, t_symbol* s,
+  static void messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens,
                             MessageResult<std::tuple<Ts...>> r)
   {
     auto   indices = std::index_sequence_for<Ts...>();
@@ -1589,16 +1651,18 @@ private:
     std::array<size_t, sizeof...(Ts)> offsets;
     std::tie(offsets, resultSize) =
         ResultSize(static_cast<std::tuple<Ts...>>(r), indices);
+    resultSize += outputTokens.size();
     std::vector<t_atom> out(resultSize);
-    ParamAtomConverter::toAtom(out.data(), static_cast<std::tuple<Ts...>>(r),
+    std::copy_n(outputTokens.begin(), outputTokens.size(),out.begin());
+    ParamAtomConverter::toAtom(out.data() + outputTokens.size(), static_cast<std::tuple<Ts...>>(r),
                                indices, offsets);
-    object_obex_dumpout(x, s, static_cast<long>(resultSize), out.data());
+    outlet_anything(x->mDataOutlets[0],s,static_cast<long>(resultSize), out.data());
   }
 
-  static void messageOutput(FluidMaxWrapper* x, t_symbol* s,
+  static void messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens,
                             MessageResult<void>)
   {
-    object_obex_dumpout(x, s, 0, nullptr);
+    outlet_anything(x->mDataOutlets[0],s,outputTokens.size(), outputTokens.data());
   }
 
   // Sets up a single message
@@ -2036,32 +2100,20 @@ private:
   t_dictionary*      mDumpDictionary;
   std::vector<void*> mProxies;
   
-  
   std::map<index,t_symbol*> mHostedOutputBufferNames;
   std::vector<t_object*>    mHostedOutputBufferObjects;
   std::vector<void(*)(FluidMaxWrapper*,long,t_atom*)> mBufferDispatch;
   
   std::vector<void(*)(FluidMaxWrapper*,char* s)> mBufferAssist;
-  
-  struct MessageArgDefaultContainers
-  {
-    std::array<t_object*, 3> mObjects;
-    std::shared_ptr<BufferAdaptor> mBuffer;
-    SharedClientRef<dataset::DataSetClient> mDataSet;
-    SharedClientRef<labelset::LabelSetClient> mLabelSet;
-  };
-  
-  MessageArgDefaultContainers mDefaultArgs;
-  
+    
   index mProxyNumber;
-  std::vector<void*> mBufferOutlets;
+  std::vector<void*> mDataOutlets;
 
   index mListSize;
   FluidTensor<double, 2>                  mInputListData;
   std::vector<FluidTensorView<double, 1>> mInputListViews;
   FluidTensor<double, 2>                  mOutputListData;
   std::vector<FluidTensorView<double, 1>> mOutputListViews;
-  std::vector<void*>                      mAllControlOuts;
   std::vector<t_atom>                     mOutputListAtoms;
 };
 
