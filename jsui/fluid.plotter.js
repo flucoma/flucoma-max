@@ -4,7 +4,7 @@ mgraphics.relative_coords = 1;
 mgraphics.autofill = 0;
 
 inlets = 2;
-outlets = 1;
+outlets = 2;
 
 setinletassist(0, 'Dictionary of Points');
 setinletassist(1, 'Dictionary of Labels');
@@ -52,6 +52,12 @@ var dataDict = null;
 var colorMap = {};
 var pointColors = {};
 var pointSizes = {};
+
+// zoom
+var clickstart  = { x:0, y:0 };
+var clickend = { x:0, y:0 };
+var dragging = 0;
+var boxarea = [0, 0, 0, 0];
 
 function hexToRGB(hex, alpha) {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
@@ -117,6 +123,31 @@ function paint() {
 
 		mgraphics.fill();
 	});
+
+	if (dragging) {
+		var w = this.box.rect[2] - this.box.rect[0];
+		var h = this.box.rect[3] - this.box.rect[1];
+		var x1 = clickstart.x / w * 2 - 1
+		var y1 = (clickstart.y / h * 2 - 1) * -1;
+		var x2 = clickend.x / w * 2 - 1
+		var y2 = (clickend.y / h * 2 - 1) * -1;
+		
+		var width = Math.abs(x2 - x1);
+		var height = Math.abs(y2 - y1);
+		if (x1 <= x2 && y1 > y2) { // SE
+			mgraphics.rectangle(x1, y1, width, height);
+			boxarea = [x1, x2, y1, y2];
+		} else if (x1 <= x2 && y1 <= y2) { // NE
+			mgraphics.rectangle(x1, y2, width, height);
+			boxarea = [x1, x2, y2, y1];
+		} else if (x1 > x2 && y1 <= y2) { // NW
+			mgraphics.rectangle(x2, y2, width, height)
+			boxarea = [x2, x1, y2, y1]
+		} else if (x1 > x2 && y1 > y2) { // SW
+			mgraphics.rectangle(x2, y1, width, height)
+			boxarea = [x2, x1, y1, y2]
+		}
+	}
 }
 
 function dictionary(name) {
@@ -299,16 +330,34 @@ function bang() {
     mgraphics.redraw();
 }
 
-function onclick(x,y) {
-	ondrag(x, y)
+function onclick(x,y, button, mod1, shift, capslock, option, mod2) {
+	ondrag(x, y, button, mod1, shift, capslock, option, mod2)
+	clickstart = { x:x, y:y }
 }
 onclick.local = 1; //private. could be left public to permit 'synthetic' events
 
-function ondrag(x,y) {
+function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
+	clickend = { x:x, y:y };
+	dragging = button && option;
+	if (dragging == 0) {
+		clickend = { x:0, y:0 };
+		clickstart = { x:0, y:0 };
+	}; // reset
 
+	if (!button && option) {
+		var _new_xmin = scale(boxarea[0], -1, 1, _xmin, _xmax);
+		var _new_xmax = scale(boxarea[1], -1, 1, _xmin, _xmax);
+		var _new_ymin = scale(boxarea[2], -1, 1, _ymin, _ymax);
+		var _new_ymax = scale(boxarea[3], -1, 1, _ymin, _ymax);
+
+		_xmin = _new_xmin;
+		_xmax = _new_xmax;
+		_ymin = _new_ymax; // invert y axis
+		_ymax = _new_ymin; // invert y axis
+		outlet(1, 'range', [_xmin, _xmax, _ymin, _ymax]);
+	}
 	var width = box.rect[2] - box.rect[0];
 	var height = box.rect[3] - box.rect[1];
-		
 	if (x<0) x = 0;
 	else if (x>width) x = width;
 	if (y<0) y = 0;
@@ -320,6 +369,7 @@ function ondrag(x,y) {
 	vy = 1- y/height;
 	vx = scale(vx, 0, 1, _xmin, _xmax);
 	vy = scale(vy, 0, 1, _ymin, _ymax);
+	mgraphics.redraw();
 	notifyclients();
 	bang();
 }
