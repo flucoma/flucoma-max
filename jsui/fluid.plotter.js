@@ -352,7 +352,7 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 		clickstart = { x:0, y:0 };
 	}; // reset
 
-	if (!button && mod2) {
+	if (button && mod2) {
 		_xmin = _stored_xmin;
 		_xmax = _stored_xmax;
 		_ymin = _stored_ymin;
