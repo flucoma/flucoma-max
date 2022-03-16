@@ -42,6 +42,10 @@ var _xmin = 0.0;
 var _xmax = 1.0;
 var _ymin = 0.0;
 var _ymax = 1.0;
+var _stored_xmin = 0.0;
+var _stored_xmax = 1.0;
+var _stored_ymin = 0.0;
+var _stored_ymax = 1.0;
 var _bgcolor = [0.95,0.95,0.95,0.95, 1.0];
 var _shape = 'circle'
 var _colorscheme = colors.default;
@@ -282,6 +286,8 @@ function xrange(min, max) {
 	// Set the domain on the x axis
 	_xmin = min;
 	_xmax = max;
+	_stored_xmin = _xmin;
+	_stored_xmax = _xmax;
 	mgraphics.redraw();
 }
 
@@ -289,6 +295,8 @@ function yrange(min, max) {
 	// Set the domain on the y axis
 	_ymin = min;
 	_ymax = max;
+	_stored_ymin = _ymin;
+	_stored_ymax = _ymax;
 	mgraphics.redraw();
 }
 
@@ -344,6 +352,15 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 		clickstart = { x:0, y:0 };
 	}; // reset
 
+	if (!button && mod2) {
+		_xmin = _stored_xmin;
+		_xmax = _stored_xmax;
+		_ymin = _stored_ymin;
+		_ymax = _stored_ymax;
+		outlet(1, 'xrange', [_xmin, _xmax]);
+		outlet(1, 'yrange', [_ymin, _ymax]);
+	}
+
 	if (!button && option) {
 		var _new_xmin = scale(boxarea[0], -1, 1, _xmin, _xmax);
 		var _new_xmax = scale(boxarea[1], -1, 1, _xmin, _xmax);
@@ -354,7 +371,8 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 		_xmax = _new_xmax;
 		_ymin = _new_ymax; // invert y axis
 		_ymax = _new_ymin; // invert y axis
-		outlet(1, 'range', [_xmin, _xmax, _ymin, _ymax]);
+		outlet(1, 'xrange', [_xmin, _xmax]);
+		outlet(1, 'yrange', [_ymin, _ymax]);
 	}
 	var width = box.rect[2] - box.rect[0];
 	var height = box.rect[3] - box.rect[1];
