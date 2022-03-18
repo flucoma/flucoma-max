@@ -1048,7 +1048,7 @@ public:
     
     //handle runtime dispatch of `buffer` message through a lookup table of functions that will set the attr
     mParams.template forEachParamType<InputBufferT>([this](auto&, auto idx){
-      constexpr index N = idx();
+      static constexpr index N = decltype(idx)::value;
       mBufferDispatch.push_back([](FluidMaxWrapper* x, long, t_atom* av)
       {
         static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
@@ -1061,7 +1061,7 @@ public:
     
     //functions for buffer outlet assistance
     mParams.template forEachParamType<BufferT>([this](auto&, auto idx){
-      constexpr index N = idx();
+       static constexpr index N = decltype(idx)::value; 
        mBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
        {
           static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
@@ -2116,7 +2116,7 @@ private:
   
   std::vector<void(*)(FluidMaxWrapper*,char* s)> mBufferAssist;
     
-  index mProxyNumber;
+  long mProxyNumber;
   std::vector<void*> mDataOutlets;
 
   index mListSize;
