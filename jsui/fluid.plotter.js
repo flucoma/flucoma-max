@@ -63,6 +63,12 @@ var clickend = { x:0, y:0 };
 var dragging = 0;
 var boxarea = [0, 0, 0, 0];
 
+if (jsarguments.length > 1) {
+	_pointsizescale = jsarguments[1];
+} else {
+	_pointsizescale = 1.0;
+}
+
 function hexToRGB(hex, alpha) {
 	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 	return result ? [
@@ -328,14 +334,12 @@ function clear() {
 	points = new Array();
 	labelJSON = null;
 	labelDict = null;
-	labelJSON = null;
 	dataDict = null;
     mgraphics.redraw();
 };
 
 function bang() {
 	outlet(0, vx, vy);
-    mgraphics.redraw();
 }
 
 function onclick(x,y, button, mod1, shift, capslock, option, mod2) {
@@ -345,6 +349,33 @@ function onclick(x,y, button, mod1, shift, capslock, option, mod2) {
 onclick.local = 1; //private. could be left public to permit 'synthetic' events
 
 function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
+	var width = box.rect[2] - box.rect[0];
+	var height = box.rect[3] - box.rect[1];
+	if (x<0) x = 0;
+	else if (x>width) x = width;
+	if (y<0) y = 0;
+	else if (y>height) y = height;
+	
+	w = sketch.screentoworld(x,y);
+	vx = x / width;
+	vy = 1- y/height;
+	vx = scale(vx, 0, 1, _xmin, _xmax);
+	vy = scale(vy, 0, 1, _ymin, _ymax);
+	mgraphics.redraw();
+	if (!button && option) {
+		var _new_xmin = scale(boxarea[0], -1, 1, _xmin, _xmax);
+		var _new_xmax = scale(boxarea[1], -1, 1, _xmin, _xmax);
+		var _new_ymin = scale(boxarea[2], -1, 1, _ymin, _ymax);
+		var _new_ymax = scale(boxarea[3], -1, 1, _ymin, _ymax);
+
+		_xmin = _new_xmin;
+		_xmax = _new_xmax;
+		_ymin = _new_ymax; // invert y axis
+		_ymax = _new_ymin; // invert y axis
+		outlet(1, 'xrange', [_xmin, _xmax]);
+		outlet(1, 'yrange', [_ymin, _ymax]);
+	}
+	
 	clickend = { x:x, y:y };
 	dragging = button && option;
 	if (dragging == 0) {
@@ -361,35 +392,10 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 		outlet(1, 'yrange', [_ymin, _ymax]);
 	}
 
-	if (!button && option) {
-		var _new_xmin = scale(boxarea[0], -1, 1, _xmin, _xmax);
-		var _new_xmax = scale(boxarea[1], -1, 1, _xmin, _xmax);
-		var _new_ymin = scale(boxarea[2], -1, 1, _ymin, _ymax);
-		var _new_ymax = scale(boxarea[3], -1, 1, _ymin, _ymax);
-
-		_xmin = _new_xmin;
-		_xmax = _new_xmax;
-		_ymin = _new_ymax; // invert y axis
-		_ymax = _new_ymin; // invert y axis
-		outlet(1, 'xrange', [_xmin, _xmax]);
-		outlet(1, 'yrange', [_ymin, _ymax]);
+	if (!option) {
+		notifyclients();
+		bang();
 	}
-	var width = box.rect[2] - box.rect[0];
-	var height = box.rect[3] - box.rect[1];
-	if (x<0) x = 0;
-	else if (x>width) x = width;
-	if (y<0) y = 0;
-	else if (y>height) y = height;
-	
-	w = sketch.screentoworld(x,y);
-
-	vx = x / width;
-	vy = 1- y/height;
-	vx = scale(vx, 0, 1, _xmin, _xmax);
-	vy = scale(vy, 0, 1, _ymin, _ymax);
-	mgraphics.redraw();
-	notifyclients();
-	bang();
 }
 ondrag.local = 1; //private. could be left public to permit 'synthetic' events
 
