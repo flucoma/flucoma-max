@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 789.0, 616.0 ],
+						"rect" : [ 34.0, 126.0, 789.0, 616.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -583,8 +583,8 @@
 									"id" : "obj-25",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 430.0, 432.0, 22.0 ],
 									"text" : "fluid.bufonsetslice~ @source help.bufonset2.src @indices help.bufonset2.slices"
 								}
@@ -1378,7 +1378,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 180.0, 556.0, 50.0, 22.0 ],
-													"text" : "5"
+													"text" : "0"
 												}
 
 											}
@@ -3607,7 +3607,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 126.0, 789.0, 616.0 ],
+						"rect" : [ 0.0, 26.0, 789.0, 616.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3638,6 +3638,31 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 432.0, 253.0, 150.0, 20.0 ],
+									"text" : "change the threshold",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"attr" : "threshold",
+									"id" : "obj-13",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 281.5, 252.0, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
 									"hint" : "",
@@ -3649,7 +3674,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 590.0, 372.0, 20.0, 20.0 ],
+									"patching_rect" : [ 590.0, 382.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3663,7 +3688,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 402.0, 370.0, 186.0, 24.0 ],
+									"patching_rect" : [ 402.0, 380.0, 186.0, 24.0 ],
 									"text" : "Select a segment to play back"
 								}
 
@@ -3681,7 +3706,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 262.5, 252.0, 20.0, 20.0 ],
+									"patching_rect" : [ 234.0, 252.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3695,7 +3720,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 94.5, 250.0, 166.0, 24.0 ],
+									"patching_rect" : [ 66.0, 250.0, 166.0, 24.0 ],
 									"text" : "Segment the source audio"
 								}
 
@@ -3710,7 +3735,7 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 350.0, 435.0, 136.0, 47.0 ],
+									"patching_rect" : [ 350.0, 445.0, 136.0, 47.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~",
@@ -4028,7 +4053,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 350.0, 405.0, 96.0, 22.0 ],
+									"patching_rect" : [ 350.0, 415.0, 96.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4048,7 +4073,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 350.0, 370.0, 50.0, 22.0 ]
+									"patching_rect" : [ 350.0, 380.0, 50.0, 22.0 ]
 								}
 
 							}
@@ -4059,7 +4084,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 68.5, 330.0, 280.0, 22.0 ],
+									"patching_rect" : [ 40.0, 330.0, 280.0, 22.0 ],
 									"text" : "indicesbuffer help.bufonset.slices help.bufonset.src"
 								}
 
@@ -4072,7 +4097,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 482.5, 252.0, 155.0, 22.0 ],
+									"patching_rect" : [ 611.5, 290.0, 155.0, 22.0 ],
 									"text" : "buffer~ help.bufonset.slices"
 								}
 
@@ -4085,7 +4110,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 68.5, 250.0, 24.0, 24.0 ]
+									"patching_rect" : [ 40.0, 250.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -4096,7 +4121,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 160.0, 141.0, 22.0 ],
+									"patching_rect" : [ 10.0, 170.0, 141.0, 22.0 ],
 									"text" : "buffer~ help.bufonset.src"
 								}
 
@@ -4108,7 +4133,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 200.0, 244.0, 22.0 ],
+									"patching_rect" : [ 10.0, 210.0, 244.0, 22.0 ],
 									"text" : "clear, addlayer audiobuffer help.bufonset.src"
 								}
 
@@ -4122,7 +4147,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 420.0, 313.0, 130.0 ]
+									"patching_rect" : [ 10.0, 430.0, 313.0, 130.0 ]
 								}
 
 							}
@@ -4143,7 +4168,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 120.0, 290.0, 30.0 ],
+									"patching_rect" : [ 10.0, 130.0, 290.0, 30.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -4161,7 +4186,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 480.0, 517.0, 20.0, 20.0 ],
+									"patching_rect" : [ 480.0, 527.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4175,7 +4200,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 397.0, 515.0, 84.0, 24.0 ],
+									"patching_rect" : [ 397.0, 525.0, 84.0, 24.0 ],
 									"text" : "Start audio"
 								}
 
@@ -4193,7 +4218,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 510.0, 125.0, 20.0, 20.0 ],
+									"patching_rect" : [ 510.0, 135.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4207,7 +4232,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 300.5, 123.0, 209.0, 24.0 ],
+									"patching_rect" : [ 300.5, 133.0, 209.0, 24.0 ],
 									"text" : "Select a sound (or use the default)"
 								}
 
@@ -4219,7 +4244,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 350.0, 505.0, 45.0, 45.0 ]
+									"patching_rect" : [ 350.0, 515.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -4229,9 +4254,9 @@
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 68.5, 290.0, 569.0, 22.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 40.0, 290.0, 569.0, 22.0 ],
 									"text" : "fluid.bufonsetslice~ @source help.bufonset.src @indices help.bufonset.slices @metric 9 @threshold 0.25"
 								}
 
@@ -4291,6 +4316,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
+									"midpoints" : [ 291.0, 281.5, 49.5, 281.5 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
 									"source" : [ "obj-17", 0 ]
 								}
 
@@ -4298,7 +4331,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 78.0, 405.0, 19.5, 405.0 ],
+									"midpoints" : [ 49.5, 415.0, 19.5, 415.0 ],
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -4329,7 +4362,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 19.5, 225.0, 19.5, 225.0 ],
+									"midpoints" : [ 19.5, 235.0, 19.5, 235.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -4344,7 +4377,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 141.5, 190.5, 19.5, 190.5 ],
+									"midpoints" : [ 141.5, 200.5, 19.5, 200.5 ],
 									"source" : [ "obj-9", 1 ]
 								}
 
@@ -4534,8 +4567,8 @@
 			}
 , 			{
 				"name" : "fluid.waveform~.js",
-				"bootpath" : "~/dev/flucoma/max/jsui",
-				"patcherrelativepath" : "../jsui",
+				"bootpath" : "~/dev/flucoma/waveform/max-package/jsui",
+				"patcherrelativepath" : "../../waveform/max-package/jsui",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
