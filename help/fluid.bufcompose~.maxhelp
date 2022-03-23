@@ -68,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
+						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -542,7 +542,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
+						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -573,6 +573,54 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-14",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 395.0, 162.0, 133.0, 54.0 ],
+									"presentation_linecount" : 3,
+									"text" : "44100 samples starting from 30000 samples",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-13",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 532.0, 179.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"linecount" : 2,
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 30.0, 170.0, 360.0, 38.0 ],
+									"text" : "source help.bc.3.src2, startframe 30000, numframes 44100, destgain 1., bang"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-10",
 									"local" : 1,
 									"maxclass" : "ezdac~",
@@ -586,12 +634,11 @@
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-9",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 280.0, 160.5, 98.0, 40.0 ],
-									"text" : "Trigger processing",
+									"patching_rect" : [ 321.0, 130.0, 205.0, 25.0 ],
+									"text" : "9000 samples of help.bc.3.src1",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -934,7 +981,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 700.0, 310.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -952,7 +999,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 250.0, 170.5, 20.0, 20.0 ],
+									"patching_rect" : [ 530.0, 131.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -966,7 +1013,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 412.0, 126.0, 23.0 ],
+									"patching_rect" : [ 10.0, 390.0, 126.0, 23.0 ],
 									"text" : "buffer~ help.bc.3.dst"
 								}
 
@@ -975,11 +1022,11 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-63",
-									"linecount" : 8,
+									"linecount" : 10,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 390.0, 140.0, 334.0, 123.0 ],
+									"patching_rect" : [ 560.0, 131.5, 250.0, 152.0 ],
 									"style" : "helpfile_label",
 									"text" : "The startframe, numframes, startchan, numchans, deststartframe, and deststartchan attributes give you fine control over which portion of the source you copy and where it is placed\n\nThis chain of messages followed by a bang will overlay a brief burst of the first source with 1 second starting from an offset of 30k samples."
 								}
@@ -992,7 +1039,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 351.0, 320.0, 23.0 ],
+									"patching_rect" : [ 10.0, 310.0, 320.0, 23.0 ],
 									"text" : "buffer~ help.bc.3.src1 Tremblay-SlideChoirAdd-M.wav"
 								}
 
@@ -1004,7 +1051,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 381.5, 361.0, 23.0 ],
+									"patching_rect" : [ 10.0, 350.0, 361.0, 23.0 ],
 									"text" : "buffer~ help.bc.3.src2 Tremblay-AaS-SynthTwoVoices-M.wav"
 								}
 
@@ -1012,13 +1059,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 22.5, 140.0, 217.5, 81.0 ],
-									"text" : "reset, source help.bc.3.src1, numframes 9000, bang, source help.bc.3.src2, startframe 30000, numframes 44100, destgain 1., bang"
+									"patching_rect" : [ 10.0, 130.0, 309.0, 23.0 ],
+									"text" : "reset, source help.bc.3.src1, numframes 9000, bang"
 								}
 
 							}
@@ -1029,7 +1075,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 22.5, 240.0, 271.0, 23.0 ],
+									"patching_rect" : [ 10.0, 230.0, 271.0, 23.0 ],
 									"text" : "fluid.bufcompose~ @destination help.bc.3.dst"
 								}
 
@@ -1039,6 +1085,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-11", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"source" : [ "obj-12", 0 ]
 								}
 
 							}
