@@ -542,7 +542,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
+						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -580,7 +580,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 395.0, 162.0, 133.0, 54.0 ],
-									"presentation_linecount" : 3,
 									"text" : "44100 samples starting from 30000 samples",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1200,7 +1199,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
+						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1235,7 +1234,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 397.0, 45.0, 45.0 ]
+									"patching_rect" : [ 410.0, 393.75, 45.0, 45.0 ]
 								}
 
 							}
@@ -1635,9 +1634,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 54.0, 190.0, 451.0, 21.0 ],
+									"patching_rect" : [ 54.0, 190.0, 494.0, 21.0 ],
 									"style" : "helpfile_label",
-									"text" : "if numchans > the available source channels, then channels will be repeated "
+									"text" : "if numchans > the available source channels, then source channels will be repeated "
 								}
 
 							}
@@ -1701,7 +1700,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 263.75, 24.0, 24.0 ]
+									"patching_rect" : [ 10.0, 260.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1736,7 +1735,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 410.0, 352.0, 97.0, 23.0 ],
+									"patching_rect" : [ 410.0, 356.875, 97.0, 23.0 ],
 									"text" : "play~ dummy 2"
 								}
 
@@ -1760,7 +1759,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 230.0, 271.0, 23.0 ],
+									"patching_rect" : [ 10.0, 220.0, 271.0, 23.0 ],
 									"text" : "fluid.bufcompose~ @destination help.bc.5.dst"
 								}
 
