@@ -68,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
+						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -99,6 +99,31 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 10.0, 120.0, 86.0, 23.0 ],
+									"text" : "loadmess 0.5"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-13",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 153.0, 50.0, 23.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
 									"hint" : "",
@@ -110,7 +135,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 615.0, 276.5, 20.0, 20.0 ],
+									"patching_rect" : [ 611.5, 316.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -125,7 +150,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 274.0, 203.0, 25.0 ],
+									"patching_rect" : [ 406.5, 313.5, 203.0, 25.0 ],
 									"style" : "helpfile_label",
 									"text" : "Play back the composed result",
 									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
@@ -139,7 +164,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 383.0, 378.5, 45.0, 45.0 ]
+									"patching_rect" : [ 379.5, 418.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -151,7 +176,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 383.0, 274.0, 24.0, 24.0 ]
+									"patching_rect" : [ 379.5, 313.5, 24.0, 24.0 ]
 								}
 
 							}
@@ -162,7 +187,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 383.0, 320.0, 117.0, 23.0 ],
+									"patching_rect" : [ 379.5, 359.5, 117.0, 23.0 ],
 									"text" : "play~ help.bc.2.dst"
 								}
 
@@ -175,7 +200,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 440.0, 380.0, 200.0, 43.5 ]
+									"patching_rect" : [ 436.5, 419.5, 200.0, 43.5 ]
 								}
 
 							}
@@ -192,7 +217,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 660.0, 201.5, 20.0, 20.0 ],
+									"patching_rect" : [ 660.0, 261.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -208,7 +233,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 379.5, 191.5, 279.0, 40.0 ],
+									"patching_rect" : [ 379.5, 251.5, 279.0, 40.0 ],
 									"style" : "helpfile_label",
 									"text" : "Trigger a series of bufcompose copies from various sources to a single destination",
 									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
@@ -222,8 +247,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 140.0, 79.0, 23.0 ],
-									"text" : "destgain 0.5"
+									"patching_rect" : [ 10.0, 190.0, 76.0, 23.0 ],
+									"text" : "destgain $1"
 								}
 
 							}
@@ -273,7 +298,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 97.5, 124.5, 306.0, 54.0 ],
+									"patching_rect" : [ 97.5, 174.5, 306.0, 54.0 ],
 									"style" : "helpfile_label",
 									"text" : "By default the destination gain is 1 meaning the content is overwritten. You can \"dub\" new content variably, by using the destgain attribute.",
 									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
@@ -293,7 +318,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 219.0, 156.5, 20.0, 20.0 ],
+									"patching_rect" : [ 219.0, 176.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -313,7 +338,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 410.0, 143.0, 20.0, 20.0 ],
+									"patching_rect" : [ 410.0, 193.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -327,7 +352,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 420.0, 192.0, 23.0 ],
+									"patching_rect" : [ 10.0, 440.0, 192.0, 23.0 ],
 									"text" : "buffer~ help.bc.2.dst @samps 1"
 								}
 
@@ -339,7 +364,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 389.5, 331.0, 23.0 ],
+									"patching_rect" : [ 10.0, 409.5, 331.0, 23.0 ],
 									"text" : "buffer~ help.bc.2.src2 Tremblay-AaS-VoiceQC-B2K.wav"
 								}
 
@@ -351,7 +376,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 360.0, 312.0, 23.0 ],
+									"patching_rect" : [ 10.0, 380.0, 312.0, 23.0 ],
 									"text" : "buffer~ help.bc.2.src1 Tremblay-BaB-HumDC-M.wav"
 								}
 
@@ -364,7 +389,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 42.5, 200.0, 335.0, 23.0 ],
+									"patching_rect" : [ 42.5, 260.0, 335.0, 23.0 ],
 									"text" : "source help.bc.2.src1, bang, source help.bc.2.src2, bang"
 								}
 
@@ -374,9 +399,9 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 10.0, 250.0, 271.0, 23.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 10.0, 310.0, 271.0, 23.0 ],
 									"text" : "fluid.bufcompose~ @destination help.bc.2.dst"
 								}
 
@@ -407,8 +432,22 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-13", 0 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 52.0, 234.0, 19.5, 234.0 ],
+									"midpoints" : [ 52.0, 294.0, 19.5, 294.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -416,7 +455,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 19.5, 165.0, 19.5, 165.0 ],
+									"midpoints" : [ 19.5, 215.0, 19.5, 215.0 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -988,8 +1027,8 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 22.5, 240.0, 271.0, 23.0 ],
 									"text" : "fluid.bufcompose~ @destination help.bc.3.dst"
 								}
@@ -1156,7 +1195,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.0, 152.5, 220.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Copy the mono source to the destination (which is now stereo)",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1190,7 +1228,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 220.0, 120.0, 263.0, 25.0 ],
-									"presentation_linecount" : 5,
 									"text" : "Copy the stereo source to the destination",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1668,8 +1705,8 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 230.0, 271.0, 23.0 ],
 									"text" : "fluid.bufcompose~ @destination help.bc.5.dst"
 								}
@@ -1818,7 +1855,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
+						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1983,8 +2020,8 @@
 									"id" : "obj-4",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 210.0, 405.0, 23.0 ],
 									"text" : "fluid.bufcompose~ @source help.bc.1.src @destination help.bc.1.dst"
 								}
