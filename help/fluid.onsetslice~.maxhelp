@@ -133,7 +133,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 302.0, 375.0, 150.0, 60.0 ],
+									"patching_rect" : [ 302.0, 375.0, 152.0, 60.0 ],
 									"text" : "This represents the change in the underlying feature of fluid.onsetslice~ in realtime.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}

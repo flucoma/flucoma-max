@@ -37,7 +37,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"isolateaudio" : 1,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
@@ -132,7 +133,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 488.0, 381.5, 168.0, 47.0 ],
+									"patching_rect" : [ 488.0, 381.5, 170.0, 47.0 ],
 									"text" : "This represents the change in the underlying feature of fluid.noveltyslice~ in realtime.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -269,7 +270,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 471.0, 21.0 ],
-									"text" : "Extract the feature curve that fluid.noveltyslice~ uses under the hood in realtime",
+									"text" : "Extract the feature that fluid.noveltyslice~ uses under the hood in realtime",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
