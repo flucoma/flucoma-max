@@ -14,5 +14,5 @@ under the European Union’s Horizon 2020 research and innovation programme
 void ext_main(void*)
 {
   using namespace fluid::client;
-  makeMaxWrapper<RTNoveltyFeatureClient>("fluid.noveltycurve~");
+  makeMaxWrapper<RTNoveltyFeatureClient>("fluid.noveltyfeature~");
 }
