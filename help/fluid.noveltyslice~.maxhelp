@@ -742,7 +742,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "feature",
+									"attr" : "algorithm",
 									"id" : "obj-35",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
