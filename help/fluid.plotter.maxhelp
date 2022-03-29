@@ -89,24 +89,26 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"id" : "obj-13",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 381.0, 615.0, 90.0, 22.0 ],
-									"text" : "-5 5"
+									"patching_rect" : [ 381.0, 615.0, 90.0, 35.0 ],
+									"text" : "0.223602 0.950311"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 265.0, 610.0, 90.0, 22.0 ],
-									"text" : "-5 5"
+									"patching_rect" : [ 265.0, 610.0, 90.0, 35.0 ],
+									"text" : "0.263975 0.903727"
 								}
 
 							}
@@ -118,7 +120,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 336.0, 580.0, 251.0, 22.0 ],
-									"text" : "route xrange yrange"
+									"text" : "route zoomxrange zoomyrange"
 								}
 
 							}
@@ -450,7 +452,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 361.0, 310.0, 251.0, 154.0 ],
+									"patching_rect" : [ 361.0, 310.0, 255.0, 154.0 ],
 									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as xrange [-3 3]).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -496,7 +498,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 425.0, 183.0, 197.0, 64.0 ],
+									"patching_rect" : [ 425.0, 183.0, 200.0, 64.0 ],
 									"text" : "Let's set the range to something that will capture the range of the dataset. It won't be perfect though!"
 								}
 
@@ -1944,7 +1946,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 649.0, 279.0, 125.0, 70.0 ],
-									"saturation" : 0.737254901960784
+									"saturation" : 0.611764705882353
 								}
 
 							}
@@ -2689,7 +2691,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 49.5, 425.90283203125, 132.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting.3"
 												}
@@ -2701,7 +2703,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 49.5, 349.90283203125, 132.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting.3"
 												}
@@ -2809,7 +2811,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 134.5, 93.90283203125, 132.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting.3"
 												}
@@ -3613,7 +3615,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 5.0, 227.0, 74.0, 22.0 ],
 									"text" : "fluid.kdtree~"
 								}
@@ -3695,7 +3697,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 78.0, 220.0, 147.0, 22.0 ],
 													"text" : "fluid.labelset~ clustering.2"
 												}
@@ -3731,7 +3733,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 14.0, 103.0, 173.0, 22.0 ],
 													"text" : "fluid.kmeans~ @numclusters 4"
 												}
@@ -3928,7 +3930,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 53.0, 424.90283203125, 132.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting.2"
 												}
@@ -3940,7 +3942,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 53.0, 348.90283203125, 132.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting.2"
 												}
@@ -4048,7 +4050,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 138.5, 94.90283203125, 132.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting.2"
 												}
@@ -4618,7 +4620,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 485.0, 257.5, 137.0, 22.0 ],
 									"text" : "fluid.labelset~ clustering"
 								}
@@ -4654,7 +4656,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 421.0, 140.5, 173.0, 22.0 ],
 									"text" : "fluid.kmeans~ @numclusters 4"
 								}
@@ -4897,7 +4899,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 115.5, 111.0, 122.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting"
 												}
@@ -5115,7 +5117,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 5.0, 253.0, 122.0, 22.0 ],
 									"text" : "fluid.dataset~ plotting"
 								}
@@ -5171,7 +5173,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 5.0, 170.0, 122.0, 22.0 ],
 									"text" : "fluid.dataset~ plotting"
 								}
