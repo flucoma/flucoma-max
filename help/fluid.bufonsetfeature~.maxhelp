@@ -448,6 +448,7 @@
 							}
 , 							{
 								"box" : 								{
+									"args" : [ "@file", "Nicol-LoopE-M.wav" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -499,8 +500,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 10.0, 274.0, 398.0, 22.0 ],
-									"text" : "fluid.bufonsetfeature~ @source help.onset.src @feature help.onset.curve"
+									"patching_rect" : [ 10.0, 274.0, 404.0, 22.0 ],
+									"text" : "fluid.bufonsetfeature~ @source help.onset.src @features help.onset.curve"
 								}
 
 							}
