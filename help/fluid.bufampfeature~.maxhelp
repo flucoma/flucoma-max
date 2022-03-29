@@ -455,7 +455,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 470.0, 131.0, 22.0 ],
+									"patching_rect" : [ 10.0, 480.0, 131.0, 22.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -482,13 +482,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-22",
-									"linecount" : 5,
+									"linecount" : 6,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 10.0, 379.0, 250.0, 76.0 ],
-									"text" : "fluid.bufampslice~ @source help.amp.src @indices help.amp.slices @offthreshold 3 @onthreshold 12 @floor -48 @fastrampup 100 @fastrampdown 100 @slowrampup 1000 @slowrampdown 1000"
+									"patching_rect" : [ 10.0, 379.0, 250.0, 89.0 ],
+									"text" : "fluid.bufampslice~ @source help.amp.src @indices help.amp.slices @offthreshold 0 @onthreshold 8.5 @floor -48 @fastrampup 100 @fastrampdown 100 @slowrampup 1000 @slowrampdown 1000 @minslicelength 200"
 								}
 
 							}
@@ -506,7 +506,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Nicol-LoopE-M.wav" ],
+									"args" : [ "@file", "Tremblay-AaS-AcBassGuit-Melo-M.wav" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
