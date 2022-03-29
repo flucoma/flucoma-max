@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 565.0, 533.0 ],
+						"rect" : [ 35.0, 114.0, 565.0, 533.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -458,17 +458,6 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-5",
-					"maxclass" : "newobj",
-					"numinlets" : 0,
-					"numoutlets" : 0,
-					"patching_rect" : [ 67.0, 100.0, 290.0, 22.0 ],
-					"text" : "fluid_decomposition.blocking fluid.bufnoveltyfeature~"
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -517,7 +506,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 359.0, 100.0, 50.0, 22.0 ],
+					"patching_rect" : [ 67.0, 100.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -583,7 +572,6 @@
 		"parameters" : 		{
 			"obj-1::obj-2::obj-21::obj-6" : [ "live.tab[3]", "live.tab[1]", 0 ],
 			"obj-1::obj-2::obj-35" : [ "[5]", "Level", 0 ],
-			"obj-5::obj-39" : [ "live.text", "live.text", 0 ],
 			"parameterbanks" : 			{
 
 			}
@@ -592,10 +580,6 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "fluid.bufnoveltyfeature~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "fluid.demosound.maxpat",
 				"bootpath" : "~/dev/flucoma/max/help",
 				"patcherrelativepath" : ".",
@@ -615,13 +599,6 @@
 				"bootpath" : "~/dev/flucoma/max/help",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid_decomposition.blocking.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
