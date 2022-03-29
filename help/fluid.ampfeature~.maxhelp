@@ -236,8 +236,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 300.0, 320.0, 132.0, 76.0 ],
-									"text" : "fluid.ampfeature~ @fastramup 100 @fastrampdown 100 @slowrampup 1000 @slowrampdown 1000"
+									"patching_rect" : [ 300.0, 320.0, 140.0, 76.0 ],
+									"text" : "fluid.ampfeature~ @fastrampup 100 @fastrampdown 100 @slowrampup 1000 @slowrampdown 1000"
 								}
 
 							}
