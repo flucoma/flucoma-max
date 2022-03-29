@@ -85,7 +85,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 773.0, 574.0, 781.0, 558.0 ],
+						"rect" : [ 0.0, 26.0, 781.0, 558.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1060,7 +1060,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 781.0, 558.0 ],
+						"rect" : [ 773.0, 574.0, 781.0, 558.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2137,7 +2137,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "feature",
+									"attr" : "algorithm",
 									"id" : "obj-4",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
