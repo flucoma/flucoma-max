@@ -611,7 +611,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 482.5, 282.0, 388.0, 36.0 ],
-									"text" : "Fast envelope has to go 3dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected.",
+									"text" : "Fast envelope has to go 6dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
