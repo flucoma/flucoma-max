@@ -372,8 +372,8 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 		_xmax = _new_xmax;
 		_ymin = _new_ymax; // invert y axis
 		_ymax = _new_ymin; // invert y axis
-		outlet(1, 'xrange', [_xmin, _xmax]);
-		outlet(1, 'yrange', [_ymin, _ymax]);
+		outlet(1, 'zoomxrange', [_xmin, _xmax]);
+		outlet(1, 'zoomyrange', [_ymin, _ymax]);
 	}
 	
 	clickend = { x:x, y:y };
