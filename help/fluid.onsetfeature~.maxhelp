@@ -95,7 +95,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.0, 130.0, 155.0, 100.0 ],
-									"text" : "By matching the metric, filtersize and framedelta attributes we get a glimpse of the onset curve that onsetslice~ uses to measure changes in the spectrum over time",
+									"text" : "By matching the metric, filtersize and framedelta attributes we get a glimpse of the onset curve that fluid.onsetslice~ uses to measure changes in the spectrum over time",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
