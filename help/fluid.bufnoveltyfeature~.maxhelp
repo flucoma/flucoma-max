@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 950.0, 678.0 ],
+		"rect" : [ 35.0, 88.0, 815.0, 629.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 950.0, 652.0 ],
+						"rect" : [ 35.0, 114.0, 815.0, 603.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -671,7 +671,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 120.0, 103.0, 55.0, 22.0 ],
+					"patching_rect" : [ 14.0, 97.0, 55.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -690,25 +690,8 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 137.0, 163.0, 276.0, 22.0 ],
-					"text" : "fluid_decomposition.blocking fluid.bufnoveltyslice~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"id" : "obj-3",
-					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 284.0, 88.0, 205.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"filename" : "helpstarter.js",
-						"parameter_enable" : 0
-					}
-,
-					"text" : "js helpstarter.js fluid.bufnoveltyslice~"
+					"patching_rect" : [ 71.0, 97.0, 290.0, 22.0 ],
+					"text" : "fluid_decomposition.blocking fluid.bufnoveltyfeature~"
 				}
 
 			}
@@ -729,7 +712,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 950.0, 652.0 ],
+						"rect" : [ 0.0, 26.0, 815.0, 603.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -762,7 +745,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 466.0, 313.0, 50.0, 22.0 ],
+					"patching_rect" : [ 363.0, 97.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -796,6 +779,22 @@
 					"border" : 0,
 					"filename" : "helpname.js",
 					"id" : "obj-4",
+					"ignoreclick" : 1,
+					"jsarguments" : [ "fluid.bufnoveltyslice~" ],
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 10.0, 10.0, 455.02398681640625, 57.599853515625 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"border" : 0,
+					"filename" : "helpname.js",
+					"id" : "obj-7",
 					"ignoreclick" : 1,
 					"jsarguments" : [ "fluid.bufnoveltyslice~" ],
 					"maxclass" : "jsui",
@@ -862,12 +861,6 @@
 			}
 , 			{
 				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
 				"bootpath" : "C74:/help/resources",
 				"type" : "TEXT",
 				"implicit" : 1
