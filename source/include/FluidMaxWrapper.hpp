@@ -1578,10 +1578,11 @@ private:
   static void doDump(FluidMaxWrapper* x, t_symbol*, short ac, t_atom* av)
   {
     t_dictionary* d = nullptr;
-    t_atom        result[1];
+    t_atom        result;
+    std::memset(&result,0,sizeof(t_atom));
+    
     t_object* jsonreader = (t_object*) object_new(_sym_nobox, _sym_jsonreader);
-    ;
-
+    
     auto messageresult = x->mClient.template invoke<N>(x->mClient);
 
     if (!x->checkResult(messageresult)) return;
@@ -1589,10 +1590,10 @@ private:
     std::string jsontext = static_cast<std::string>(messageresult);
 
     t_max_err err = (t_max_err) object_method(jsonreader, _sym_parse,
-                                              jsontext.c_str(), result);
+                                              jsontext.c_str(), &result);
     if (!err)
     {
-      t_object* ro = (t_object*) atom_getobj(result);
+      t_object* ro = (t_object*) atom_getobj(&result);
       if (ro)
       {
         if (object_classname_compare(ro, _sym_dictionary))
