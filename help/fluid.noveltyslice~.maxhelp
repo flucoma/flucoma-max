@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -51,14 +51,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
+						"rect" : [ 100.0, 126.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -119,8 +119,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 278.0, 197.0, 496.0, 22.0 ],
-									"text" : "feature 1, threshold 0.0035, kernelsize 31, filtersize 4, minslicelength 100, fftsettings 128 32"
+									"patching_rect" : [ 278.0, 197.0, 499.0, 22.0 ],
+									"text" : "algorithm 1, threshold 0.009, kernelsize 31, filtersize 4, minslicelength 100, fftsettings 128 32"
 								}
 
 							}
@@ -132,21 +132,20 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 461.5, 276.5, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Green-Box641.wav" ],
+									"args" : [ "@loop", 1, "@file", "Nicol-LoopE-M.wav" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
 									"enablehscroll" : 0,
 									"enablevscroll" : 0,
 									"id" : "obj-1",
-									"lockeddragscroll" : 0,
+									"lockeddragscroll" : 1,
 									"lockedsize" : 0,
 									"maxclass" : "bpatcher",
 									"name" : "fluid.demosound.maxpat",
@@ -179,7 +178,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 257.5, 300.25, 202.0, 22.0 ]
 								}
 
@@ -192,7 +190,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 257.5, 276.375, 202.0, 22.0 ]
 								}
 
@@ -205,20 +202,18 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 461.5, 252.5, 150.0, 22.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"attr" : "feature",
+									"attr" : "algorithm",
 									"id" : "obj-52",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 257.5, 252.5, 202.0, 22.0 ]
 								}
 
@@ -232,7 +227,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 461.5, 300.375, 254.0, 22.0 ]
 								}
 
@@ -392,7 +386,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 384.593780999999979, 57.567627000000002 ]
+									"patching_rect" : [ 10.0, 10.0, 384.55999755859375, 57.599853515625 ]
 								}
 
 							}
@@ -596,14 +590,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 792.0, 555.0 ],
+						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -748,7 +742,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 196.5, 228.5, 194.0, 22.0 ]
 								}
 
@@ -761,7 +754,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 393.5, 228.5, 150.0, 22.0 ]
 								}
 
@@ -774,7 +766,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 196.5, 252.5, 194.0, 22.0 ]
 								}
 
@@ -787,7 +778,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 196.5, 276.5, 194.0, 22.0 ]
 								}
 
@@ -801,7 +791,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 393.5, 252.5, 278.0, 22.0 ]
 								}
 
@@ -1261,8 +1250,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1328,14 +1317,14 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "fluid.demosound.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
+				"bootpath" : "~/Desktop/fromBU/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
+				"bootpath" : "~/Desktop/fromBU/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
 				"patcherrelativepath" : ".",
 				"type" : "JSON",
 				"implicit" : 1
@@ -1346,7 +1335,7 @@
 			}
 , 			{
 				"name" : "fluid.patchpath.js",
-				"bootpath" : "~/dev/flucoma/max/help",
+				"bootpath" : "~/Desktop/fromBU/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
