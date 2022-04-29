@@ -90,20 +90,20 @@ void main()
   CLASS_ATTR_ACCESSORS(FluidListToBufClass, "destination", FluidListToBuf_getOut,
                        FluidListToBuf_setOut);
 
-  CLASS_ATTR_LONG(FluidListToBufClass, "axis", 0, FluidListToBuf, axis);
+  CLASS_ATTR_ATOM_LONG(FluidListToBufClass, "axis", 0, FluidListToBuf, axis);
   CLASS_ATTR_LABEL(FluidListToBufClass, "axis", 0,
                    "Write Frame-wise or Channel-wise");
   CLASS_ATTR_FILTER_CLIP(FluidListToBufClass, "axis", 0, 1);
 
-  CLASS_ATTR_LONG(FluidListToBufClass, "autosize", 0, FluidListToBuf, canResize);
+  CLASS_ATTR_ATOM_LONG(FluidListToBufClass, "autosize", 0, FluidListToBuf, canResize);
   CLASS_ATTR_STYLE_LABEL(FluidListToBufClass, "autosize", 0, "onoff",
                          "Enable resizing (will defer)");
 
-  CLASS_ATTR_LONG(FluidListToBufClass, "startframe", 0, FluidListToBuf,
+  CLASS_ATTR_ATOM_LONG(FluidListToBufClass, "startframe", 0, FluidListToBuf,
                   startFrame);
   CLASS_ATTR_FILTER_MIN(FluidListToBufClass, "startframe", 0);
 
-  CLASS_ATTR_LONG(FluidListToBufClass, "startchan", 0, FluidListToBuf,
+  CLASS_ATTR_ATOM_LONG(FluidListToBufClass, "startchan", 0, FluidListToBuf,
                   startChannel);
   CLASS_ATTR_FILTER_MIN(FluidListToBufClass, "startchan", 0);
 
