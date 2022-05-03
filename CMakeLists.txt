@@ -7,6 +7,11 @@
 # (grant agreement No 725899).
 
 cmake_minimum_required(VERSION 3.11)
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
 ################################################################################
 # Paths
 set(MAX_TARGET_NAMESPACE "" CACHE STRING "Optional namesapce to prepend to targets to prevent collision in superbuilds")
@@ -102,6 +107,17 @@ if(DOCS)
   add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
 endif()
 
+FetchContent_Declare(
+  fluid_waveform
+  URL https://github.com/flucoma/fluid.waveform/releases/download/build/fluid.waveform.tar.gz
+  CONFIGURE_COMMAND ""
+  BUILD_COMMAND ""
+)
+
+if(NOT fluid_waveform_POPULATED)
+  FetchContent_Populate(fluid_waveform)
+endif() 
+
 # Misc setup and subroutines
 include("${CMAKE_CURRENT_SOURCE_DIR}/source/script/max-package.cmake")
 
@@ -140,7 +156,6 @@ install(DIRECTORY ${CMAKE_LIBRARY_OUTPUT_DIRECTORY}/
         DESTINATION ${MAX_PACKAGE_ROOT}/externals 
         FILES_MATCHING REGEX "\\.(mxo|mxe|mxe64)")
 
-# install(CODE [[ message(STATUS "${flucoma-core_SOURCE_DIR}") ]])
 install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/AudioFiles/" 
         DESTINATION ${MAX_PACKAGE_ROOT}/media)
 install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/Data/"
@@ -150,9 +165,10 @@ install(FILES icon.png package-info.json QuickStart.md
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
         DESTINATION ${MAX_PACKAGE_ROOT} 
         RENAME LICENSE.md)
-
 if(DOCS)
   install(DIRECTORY "${MAX_DOC_OUT}/" 
           DESTINATION "${MAX_PACKAGE_ROOT}/docs"  
           PATTERN "*.xml")
 endif()
+
+install(DIRECTORY "${fluid_waveform_SOURCE_DIR}/" DESTINATION ${MAX_PACKAGE_ROOT})
