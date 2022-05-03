@@ -1036,6 +1036,7 @@ class FluidMaxWrapper
     }
   };
   
+  template <size_t N>
   struct Getter<ChoicesT,N>
   {
     static constexpr index argSize = paramDescriptor<N>().fixedSize;
