@@ -372,7 +372,7 @@ struct NonRealTime
   {
 
     using Client = typename Wrapper::ClientType;
-    
+
     constexpr bool isDataObject =
         Wrapper::template IsThreadedShared<Client>::value ||
         Wrapper::template IsModel_t<Client>::value;
@@ -505,7 +505,7 @@ class FluidMaxWrapper
                            std::min<index>(x->mListSize, ac),
                            x->mInputListData[0].data());
       x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
-      
+
       for (index i = 0; i <  asSigned(x->mAllControlOuts.size()); ++i)
       {
         atom_setdouble_array(
@@ -665,6 +665,12 @@ class FluidMaxWrapper
       }
     }
 
+    template <typename T>
+    static Optional<T> fromAtom(t_object* x, t_atom* a, Optional<T>)
+    {
+      return {fromAtom(x,a,T{})}; 
+    }
+  
     template <typename T>
     static std::enable_if_t<std::is_integral<T>::value, T>
     fromAtom(t_object* /*x*/, t_atom* a, T)
@@ -846,6 +852,41 @@ class FluidMaxWrapper
   };
   
 
+  template <size_t N>
+  struct Setter<ChoicesT, N>
+  {
+
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
+                         long ac, t_atom* av)
+    {
+      while (x->mInPerform) {} // spin-wait
+
+      x->messages().reset();
+      auto desc = x->params().template descriptorAt<N>();
+            
+      typename ChoicesT::type a{ac ? 0u : desc.defaultValue};
+      
+
+      for (index i = 0; i < static_cast<index>(ac); i++)
+      {
+          t_symbol* s = atom_getsym(av + i);
+          index pos = desc.lookup(s->s_name);
+          if(pos == -1)
+          {
+            object_error((t_object*)x,"%s: unrecognised choice",s->s_name);
+            continue;
+          }
+          a.set(pos,1);
+      }
+      
+      x->params().template set<N>(std::move(a), x->verbose() ? &x->messages() : nullptr);
+      
+      object_attr_touch((t_object*) x, gensym("latency"));
+      return MAX_ERR_NONE;
+    }
+  };
+
+
   //////////////////////////////////////////////////////////////////////////////
 
   // Getter
@@ -910,6 +951,31 @@ class FluidMaxWrapper
     }
   };
   
+  struct Getter<ChoicesT,N>
+  {
+    static constexpr index argSize = paramDescriptor<N>().fixedSize;
+
+    static t_max_err get(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
+                         long* ac, t_atom** av)
+    {
+      
+      typename ChoicesT::type& a = x->params().template get<N>();
+      auto desc = x->params().template descriptorAt<N>();
+      
+      index argSize = a.count();
+      
+      char alloc;
+      atom_alloc_array(argSize, ac, av, &alloc);
+
+      for (index i = 0, arg = 0; i < desc.numOptions; i++)
+      {
+        if(a[i])
+          ParamAtomConverter::toAtom(*av + arg++,desc.strings[i]);
+      }
+
+      return MAX_ERR_NONE;
+    }
+  };
 
   //////////////////////////////////////////////////////////////////////////////
 
@@ -961,7 +1027,7 @@ public:
   using ParamValues = typename ParamSetType::ValueTuple;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
-      : mMessages{}, mParams(Client::getParameterDescriptors()),
+      : mListSize{32}, mMessages{}, mParams(Client::getParameterDescriptors()),
         mParamSnapshot(Client::getParameterDescriptors()),
         mClient{initParamsFromArgs(ac, av)},mDumpDictionary{nullptr}
   {
@@ -1075,7 +1141,6 @@ public:
   {
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
-//    std::cout << attr_args_offset(static_cast<short>(ac), av) << '\n';
     if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlIn<typename Client::Client> >
         ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams)
     {
@@ -1100,7 +1165,7 @@ public:
     if (isControlIn<typename Client::Client>)
     {
       class_addmethod(getClass(), (method) handleList, "list", A_GIMME, 0);
-      t_object* a = attr_offset_new("autosize", USESYM(long), 0, nullptr, nullptr,
+      t_object* a = attr_offset_new("autosize", USESYM(atom_long), 0, nullptr, nullptr,
                                   calcoffset(FluidMaxWrapper, mAutosize));
       class_addattr(getClass(), a);
       CLASS_ATTR_FILTER_CLIP(getClass(), "autosize", 0, 1);
@@ -1120,7 +1185,7 @@ public:
 
     class_addmethod(getClass(), (method) doVersion, "version", 0);
     // Change for MSVC, which didn't like the macro version
-    t_object* a = attr_offset_new("warnings", USESYM(long), 0, nullptr, nullptr,
+    t_object* a = attr_offset_new("warnings", USESYM(atom_long), 0, nullptr, nullptr,
                                   calcoffset(FluidMaxWrapper, mVerbose));
     class_addattr(getClass(), a);
 
@@ -1187,7 +1252,6 @@ public:
         {
           mInputListViews.emplace_back(mInputListData.row(i));
         }
-//        std::cout << mInputListViews.size() << '\n';
         mOutputListData.resize(mClient.controlChannelsOut().count,mListSize);
         mOutputListAtoms.reserve(mListSize);
         mOutputListViews.clear();
@@ -1201,9 +1265,16 @@ public:
 
   static void doList(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-    if(!isr() && x->mAutosize && (ac != x->mListSize)) x->resizeListHandlers(ac);
+
+//    if(!isr() && x->mAutosize && (ac != x->mListSize)) x->resizeListHandlers(ac);
     x->mListHandler(x, ac, av);
   }
+  
+  static void doListResize(FluidMaxWrapper* x, t_symbol*, long ac, t_atom*)
+  {
+    x->resizeListHandlers(ac);
+  }
+  
   
   static void handleList(FluidMaxWrapper* x, t_symbol* s, long ac, t_atom* av)
   {
@@ -1218,6 +1289,7 @@ public:
         if(x->mAutosize && ac != x->mListSize)
         {
           object_warn((t_object*)x, "input list size (%d) != object argument (%d) and autosize is enabled: this operation will be deferred",ac,x->mListSize);
+          defer(x,method(doListResize),s,ac,av);
           defer(x,(method)doList,s, ac, av);
           return;
         }
@@ -1228,6 +1300,7 @@ public:
           return;
         }
       }
+      else if(ac != x->mListSize) doListResize(x,s,ac,av);
       
       doList(x,s,ac,av);
       
@@ -1351,9 +1424,9 @@ private:
       if(isControlIn<typename Client::Client>)
       {
         mListSize = atom_getlong(av);
-//        if(numArgs == 1) return;
         numArgs -= 1;
         av += 1;
+        ac--;
       }
       
       auto r1 = mParams.setPrimaryParameterValues(true,
@@ -1534,7 +1607,7 @@ private:
         using Handler = std::conditional_t<isVoid, IfVoid, IfParams>;
       
         Handler{}.template handle<N>(
-            typename T::ReturnType{}, typename T::ArgumentTypes{},
+            typename T::ReturnType{}, ArgumentTypes{},
             [&message](auto M) {
               class_addmethod(getClass(),
                               (method) deferRead<decltype(M)::value>,
@@ -1934,12 +2007,13 @@ private:
   static t_symbol* maxAttrType(LongT) { return USESYM(atom_long); }
   static t_symbol* maxAttrType(BufferT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(InputBufferT) { return USESYM(symbol); }
-  static t_symbol* maxAttrType(EnumT) { return USESYM(long); }
+  static t_symbol* maxAttrType(EnumT) { return USESYM(atom_long); }
   static t_symbol* maxAttrType(FloatPairsArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(FFTParamsT) { return gensym("atom"); }
   static t_symbol* maxAttrType(StringT) { return USESYM(symbol); }
   static t_symbol* maxAttrType(LongArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(LongRuntimeMaxT) { return USESYM(atom_long); }
+  static t_symbol* maxAttrType(ChoicesT) { return gensym("atom"); }
 
   template <typename T>
   static std::enable_if_t<IsSharedClient<typename T::type>::value, t_symbol*>
@@ -1947,15 +2021,16 @@ private:
   {
     return USESYM(symbol);
   }
-    
+
+  index mListSize;
   std::deque<Result> mMessages;
   Result             mResult;
   void*              mNRTDoneOutlet;
   void*              mControlOutlet;
   void*              mDumpOutlet;
   void*              mProgressOutlet;
-  bool               mVerbose;
-  bool               mAutosize;
+  index               mVerbose;
+  index               mAutosize;
   ParamSetType       mParams;
   ParamSetType       mParamSnapshot;
   Client             mClient;
@@ -1963,7 +2038,6 @@ private:
   t_dictionary*      mDumpDictionary;
   std::vector<void*> mProxies;
 
-  index mListSize;
   FluidTensor<double, 2>                  mInputListData;
   std::vector<FluidTensorView<double, 1>> mInputListViews;
   FluidTensor<double, 2>                  mOutputListData;
