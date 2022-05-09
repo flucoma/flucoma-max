@@ -255,7 +255,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 264.0, 227.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -290,7 +290,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 129.75, 41.0, 23.0 ],
+													"patching_rect" : [ 19.0, 85.75, 41.0, 22.0 ],
 													"text" : "dump"
 												}
 
@@ -302,7 +302,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 198.0, 190.5, 74.0, 23.0 ],
+													"patching_rect" : [ 167.0, 146.5, 74.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -314,7 +314,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 100.0, 97.0, 23.0 ],
+													"patching_rect" : [ 19.0, 56.0, 97.0, 22.0 ],
 													"text" : "route transform"
 												}
 
@@ -324,9 +324,9 @@
 													"id" : "obj-27",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 50.0, 159.5, 167.0, 23.0 ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 19.0, 115.5, 167.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.dest"
 												}
 
@@ -340,7 +340,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 19.0, 10.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -352,7 +352,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 198.0, 273.5, 30.0, 30.0 ]
+													"patching_rect" : [ 167.0, 180.5, 30.0, 30.0 ]
 												}
 
 											}
@@ -367,7 +367,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-32", 0 ],
-													"source" : [ "obj-27", 2 ]
+													"source" : [ "obj-27", 1 ]
 												}
 
 											}
@@ -395,7 +395,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 422.0, 460.0, 96.0, 23.0 ],
+									"patching_rect" : [ 320.0, 460.0, 96.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -499,7 +499,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 422.0, 500.0, 168.0, 110.0 ],
+									"patching_rect" : [ 320.0, 500.0, 168.0, 110.0 ],
 									"textcolor" : [ 0.995808, 0.800103, 0.399985, 1.0 ]
 								}
 
@@ -531,8 +531,8 @@
 									"id" : "obj-40",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 250.0, 160.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.src"
 								}
@@ -662,8 +662,8 @@
 													"id" : "obj-40",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 141.0, 90.0, 170.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.src"
 												}
@@ -699,8 +699,8 @@
 													"id" : "obj-30",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 75.5, 510.0, 148.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.src"
 												}
@@ -904,13 +904,13 @@
 												"name" : "max6message",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -984,8 +984,8 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 320.0, 420.0, 121.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
@@ -1028,7 +1028,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
-									"source" : [ "obj-1", 2 ]
+									"source" : [ "obj-1", 0 ]
 								}
 
 							}
@@ -1073,8 +1073,8 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 160.5, 284.0, 19.5, 284.0 ],
-									"source" : [ "obj-40", 2 ]
+									"midpoints" : [ 160.5, 281.0, 19.5, 281.0 ],
+									"source" : [ "obj-40", 1 ]
 								}
 
 							}
@@ -1125,13 +1125,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -1475,7 +1475,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 258.0, 229.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1510,7 +1510,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 129.75, 41.0, 23.0 ],
+													"patching_rect" : [ 12.0, 87.75, 41.0, 22.0 ],
 													"text" : "dump"
 												}
 
@@ -1522,7 +1522,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 198.0, 190.5, 74.0, 23.0 ],
+													"patching_rect" : [ 160.0, 148.5, 74.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -1534,7 +1534,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 100.0, 97.0, 23.0 ],
+													"patching_rect" : [ 12.0, 58.0, 97.0, 22.0 ],
 													"text" : "route transform"
 												}
 
@@ -1544,9 +1544,9 @@
 													"id" : "obj-27",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 50.0, 159.5, 167.0, 23.0 ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 12.0, 117.5, 167.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.dest"
 												}
 
@@ -1560,7 +1560,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 12.0, 13.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1572,7 +1572,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 198.0, 273.5, 30.0, 30.0 ]
+													"patching_rect" : [ 160.0, 181.5, 30.0, 30.0 ]
 												}
 
 											}
@@ -1587,7 +1587,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-32", 0 ],
-													"source" : [ "obj-27", 2 ]
+													"source" : [ "obj-27", 1 ]
 												}
 
 											}
@@ -1615,7 +1615,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 422.0, 560.0, 96.0, 23.0 ],
+									"patching_rect" : [ 320.0, 560.0, 96.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1719,7 +1719,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 422.0, 600.0, 158.0, 110.0 ],
+									"patching_rect" : [ 320.0, 600.0, 150.0, 130.0 ],
 									"textcolor" : [ 0.995808, 0.800103, 0.399985, 1.0 ]
 								}
 
@@ -1751,8 +1751,8 @@
 									"id" : "obj-40",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 250.0, 160.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.src"
 								}
@@ -1882,8 +1882,8 @@
 													"id" : "obj-40",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 141.0, 90.0, 170.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.src"
 												}
@@ -1919,8 +1919,8 @@
 													"id" : "obj-30",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 75.5, 510.0, 148.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.src"
 												}
@@ -2124,13 +2124,13 @@
 												"name" : "max6message",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -2204,8 +2204,8 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 320.0, 520.0, 121.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
@@ -2265,7 +2265,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
-									"source" : [ "obj-1", 2 ]
+									"source" : [ "obj-1", 0 ]
 								}
 
 							}
@@ -2326,8 +2326,8 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 160.5, 284.0, 19.5, 284.0 ],
-									"source" : [ "obj-40", 2 ]
+									"midpoints" : [ 160.5, 281.0, 19.5, 281.0 ],
+									"source" : [ "obj-40", 1 ]
 								}
 
 							}
@@ -2386,13 +2386,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -2512,7 +2512,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2547,7 +2547,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 193.0, 74.0, 23.0 ],
+													"patching_rect" : [ 13.0, 175.0, 74.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -2559,7 +2559,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 100.0, 117.0, 23.0 ],
+													"patching_rect" : [ 13.0, 61.0, 117.0, 22.0 ],
 													"text" : "route transformjoin"
 												}
 
@@ -2571,7 +2571,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 131.0, 41.0, 23.0 ],
+													"patching_rect" : [ 13.0, 97.0, 41.0, 22.0 ],
 													"text" : "dump"
 												}
 
@@ -2581,9 +2581,9 @@
 													"id" : "obj-22",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 50.0, 160.0, 184.0, 23.0 ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 13.0, 136.0, 184.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.out"
 												}
 
@@ -2597,7 +2597,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 13.0, 10.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2609,7 +2609,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 276.0, 30.0, 30.0 ]
+													"patching_rect" : [ 13.0, 208.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2617,8 +2617,8 @@
 										"lines" : [ 											{
 												"patchline" : 												{
 													"destination" : [ "obj-30", 0 ],
-													"midpoints" : [ 224.5, 186.0, 59.5, 186.0 ],
-													"source" : [ "obj-22", 2 ]
+													"midpoints" : [ 187.5, 163.0, 22.5, 163.0 ],
+													"source" : [ "obj-22", 1 ]
 												}
 
 											}
@@ -2653,7 +2653,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 519.0, 580.0, 52.0, 23.0 ],
+									"patching_rect" : [ 419.0, 580.0, 52.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2725,11 +2725,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
-									"linecount" : 10,
+									"linecount" : 9,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 620.0, 384.25, 230.0, 152.0 ],
+									"patching_rect" : [ 620.0, 384.25, 234.0, 137.0 ],
 									"text" : "When a column is manually added with addcolumn, the filter only respects the contents of dataset A. Any points that satisfy the filter have the respective column merged with that of dataset B. In this case, any point where the first column is equal to 6000 has the corresponding column for that point in dataset B's merged with dataset A.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -2875,7 +2875,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 519.0, 610.0, 241.0, 80.0 ],
+									"patching_rect" : [ 419.0, 610.0, 241.0, 80.0 ],
 									"textcolor" : [ 0.996078, 0.898039, 0.031373, 1.0 ]
 								}
 
@@ -2897,8 +2897,8 @@
 									"id" : "obj-23",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 419.0, 550.0, 119.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
@@ -2967,8 +2967,8 @@
 									"id" : "obj-40",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 281.5, 175.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.join.A"
 								}
@@ -2979,8 +2979,8 @@
 									"id" : "obj-41",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 193.0, 281.5, 175.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.join.B"
 								}
@@ -3073,8 +3073,8 @@
 													"id" : "obj-40",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 102.5, 97.0, 162.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.A"
 												}
@@ -3085,8 +3085,8 @@
 													"id" : "obj-41",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 276.5, 97.0, 162.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.B"
 												}
@@ -3122,8 +3122,8 @@
 													"id" : "obj-30",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 83.5, 505.0, 162.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.A"
 												}
@@ -3194,8 +3194,8 @@
 													"id" : "obj-25",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 257.5, 505.0, 162.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.B"
 												}
@@ -3532,13 +3532,13 @@
 												"name" : "max6message",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -3624,7 +3624,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-49", 0 ],
-									"source" : [ "obj-23", 2 ]
+									"source" : [ "obj-23", 0 ]
 								}
 
 							}
@@ -3662,16 +3662,16 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 175.5, 320.5, 19.5, 320.5 ],
-									"source" : [ "obj-40", 2 ]
+									"midpoints" : [ 175.5, 314.75, 19.5, 314.75 ],
+									"source" : [ "obj-40", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
-									"midpoints" : [ 358.5, 320.5, 202.5, 320.5 ],
-									"source" : [ "obj-41", 2 ]
+									"midpoints" : [ 358.5, 314.75, 202.5, 314.75 ],
+									"source" : [ "obj-41", 1 ]
 								}
 
 							}
@@ -3732,13 +3732,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -3938,7 +3938,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 59.0, 106.0, 280.0, 274.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3973,7 +3973,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 129.75, 41.0, 23.0 ],
+													"patching_rect" : [ 19.0, 101.75, 41.0, 22.0 ],
 													"text" : "dump"
 												}
 
@@ -3985,7 +3985,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 198.0, 190.5, 74.0, 23.0 ],
+													"patching_rect" : [ 167.0, 162.5, 74.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -3997,7 +3997,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 100.0, 97.0, 23.0 ],
+													"patching_rect" : [ 19.0, 72.0, 97.0, 22.0 ],
 													"text" : "route transform"
 												}
 
@@ -4007,9 +4007,9 @@
 													"id" : "obj-27",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 50.0, 159.5, 167.0, 23.0 ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 19.0, 131.5, 167.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.dest"
 												}
 
@@ -4023,7 +4023,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 19.0, 12.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -4035,7 +4035,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 198.0, 273.5, 30.0, 30.0 ]
+													"patching_rect" : [ 167.0, 200.5, 30.0, 30.0 ]
 												}
 
 											}
@@ -4050,7 +4050,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-32", 0 ],
-													"source" : [ "obj-27", 2 ]
+													"source" : [ "obj-27", 1 ]
 												}
 
 											}
@@ -4078,7 +4078,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 432.0, 508.0, 96.0, 23.0 ],
+									"patching_rect" : [ 330.0, 500.0, 96.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4097,7 +4097,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 544.5, 548.0, 207.0, 65.0 ],
+									"patching_rect" : [ 440.5, 557.5, 207.0, 65.0 ],
 									"text" : "The result is such that only the first column (0th) of each point is copied over if the value in this column is less than 0.5.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -4222,7 +4222,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 432.0, 548.0, 108.0, 100.0 ],
+									"patching_rect" : [ 330.0, 540.0, 108.0, 100.0 ],
 									"textcolor" : [ 0.995808, 0.800103, 0.399985, 1.0 ]
 								}
 
@@ -4254,8 +4254,8 @@
 									"id" : "obj-40",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 230.0, 160.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.src"
 								}
@@ -4385,8 +4385,8 @@
 													"id" : "obj-40",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 141.0, 90.0, 170.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.join.src"
 												}
@@ -4422,8 +4422,8 @@
 													"id" : "obj-30",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 75.5, 510.0, 148.0, 22.0 ],
 													"text" : "fluid.dataset~ dsq.help.src"
 												}
@@ -4627,13 +4627,13 @@
 												"name" : "max6message",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -4745,8 +4745,8 @@
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 330.0, 468.0, 121.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
@@ -4772,7 +4772,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-25", 0 ],
-									"source" : [ "obj-1", 2 ]
+									"source" : [ "obj-1", 0 ]
 								}
 
 							}
@@ -4817,8 +4817,8 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 160.5, 264.0, 19.5, 264.0 ],
-									"source" : [ "obj-40", 2 ]
+									"midpoints" : [ 160.5, 261.0, 19.5, 261.0 ],
+									"source" : [ "obj-40", 1 ]
 								}
 
 							}
@@ -4869,13 +4869,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -4991,41 +4991,6 @@
 			}
  ],
 		"lines" : [  ],
-		"dependency_cache" : [ 			{
-				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.learn.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.list2buf.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 
