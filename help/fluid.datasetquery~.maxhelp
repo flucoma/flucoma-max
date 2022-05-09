@@ -88,33 +88,12 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"args" : [ "datasetquery" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-20",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 560.0, 10.0, 260.0, 100.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-42",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 140.0, 430.0, 21.0 ],
-									"text" : "We can also combine multiple operators to refine the filter for the query.",
+									"patching_rect" : [ 10.0, 62.0, 430.0, 21.0 ],
+									"text" : "Only copy a range of columns using addrange",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -132,7 +111,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 877.0, 350.0, 20.0, 20.0 ],
+									"patching_rect" : [ 927.0, 330.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -146,7 +125,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 359.0, 170.0, 212.0, 25.0 ],
+									"patching_rect" : [ 409.0, 150.0, 212.0, 25.0 ],
 									"text" : "Clear the filters so we start fresh",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -159,7 +138,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 320.0, 170.0, 37.0, 23.0 ],
+									"patching_rect" : [ 370.0, 150.0, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -177,7 +156,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 577.5, 170.0, 20.0, 20.0 ],
+									"patching_rect" : [ 627.5, 150.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -191,7 +170,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 430.5, 210.0, 165.0, 25.0 ],
+									"patching_rect" : [ 480.5, 190.0, 165.0, 25.0 ],
 									"text" : "Now add our basic filter",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -210,7 +189,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 867.0, 280.0, 20.0, 20.0 ],
+									"patching_rect" : [ 917.0, 260.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -230,7 +209,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 602.0, 212.5, 20.0, 20.0 ],
+									"patching_rect" : [ 652.0, 192.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -395,7 +374,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 320.0, 460.0, 96.0, 23.0 ],
+									"patching_rect" : [ 370.0, 440.0, 96.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -414,7 +393,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 487.0, 261.0, 215.0, 65.0 ],
+									"patching_rect" : [ 537.0, 241.0, 215.0, 65.0 ],
 									"text" : "Add a range of columns in the format <start> <number of columns>. This will add two columns starting from the second.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -428,7 +407,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 680.0, 341.5, 195.0, 40.0 ],
+									"patching_rect" : [ 730.0, 321.5, 195.0, 40.0 ],
 									"text" : "Transform to do the query and copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -442,7 +421,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 710.0, 271.5, 155.0, 40.0 ],
+									"patching_rect" : [ 760.0, 251.5, 155.0, 40.0 ],
 									"text" : "Add a range of columns to copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -461,7 +440,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 285.0, 170.0, 20.0, 20.0 ],
+									"patching_rect" : [ 335.0, 150.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -475,7 +454,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 36.0, 170.0, 247.0, 25.0 ],
+									"patching_rect" : [ 86.0, 150.0, 247.0, 25.0 ],
 									"text" : "Generate some example data to query",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -489,7 +468,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 170.0, 24.0, 24.0 ]
+									"patching_rect" : [ 60.0, 150.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -499,7 +478,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 320.0, 500.0, 168.0, 110.0 ],
+									"patching_rect" : [ 370.0, 480.0, 168.0, 110.0 ],
 									"textcolor" : [ 0.995808, 0.800103, 0.399985, 1.0 ]
 								}
 
@@ -510,7 +489,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 327.5, 220.0, 129.5 ]
+									"patching_rect" : [ 60.0, 307.5, 220.0, 129.5 ]
 								}
 
 							}
@@ -521,7 +500,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 290.0, 74.0, 23.0 ],
+									"patching_rect" : [ 60.0, 270.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -533,7 +512,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 250.0, 160.0, 23.0 ],
+									"patching_rect" : [ 60.0, 230.0, 160.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.src"
 								}
 
@@ -931,7 +910,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 210.0, 80.0, 23.0 ],
+									"patching_rect" : [ 60.0, 190.0, 80.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -950,7 +929,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 460.0, 350.0, 218.0, 23.0 ],
+									"patching_rect" : [ 510.0, 330.0, 218.0, 23.0 ],
 									"text" : "transform dsq.help.src dsq.help.dest"
 								}
 
@@ -962,7 +941,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 400.0, 280.0, 85.0, 23.0 ],
+									"patching_rect" : [ 450.0, 260.0, 85.0, 23.0 ],
 									"text" : "addrange 1 2"
 								}
 
@@ -974,7 +953,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 359.0, 210.0, 66.0, 23.0 ],
+									"patching_rect" : [ 409.0, 190.0, 66.0, 23.0 ],
 									"text" : "filter 0 < 3"
 								}
 
@@ -986,7 +965,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 320.0, 420.0, 121.0, 23.0 ],
+									"patching_rect" : [ 370.0, 400.0, 121.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
@@ -1003,7 +982,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 545.0, 121.0 ]
+									"patching_rect" : [ 10.0, 10.0, 415.0, 50.0 ]
 								}
 
 							}
@@ -1019,7 +998,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 390.0, 250.0, 315.5, 83.0 ],
+									"patching_rect" : [ 440.0, 230.0, 315.5, 83.0 ],
 									"proportion" : 0.5
 								}
 
@@ -1042,7 +1021,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 409.5, 361.0, 329.5, 361.0 ],
+									"midpoints" : [ 459.5, 341.0, 379.5, 341.0 ],
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -1050,7 +1029,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 469.5, 396.0, 329.5, 396.0 ],
+									"midpoints" : [ 519.5, 376.0, 379.5, 376.0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -1065,7 +1044,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 329.5, 306.0, 329.5, 306.0 ],
+									"midpoints" : [ 379.5, 286.0, 379.5, 286.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -1073,7 +1052,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 160.5, 281.0, 19.5, 281.0 ],
+									"midpoints" : [ 210.5, 261.0, 69.5, 261.0 ],
 									"source" : [ "obj-40", 1 ]
 								}
 
@@ -1088,7 +1067,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 368.5, 326.0, 329.5, 326.0 ],
+									"midpoints" : [ 418.5, 306.0, 379.5, 306.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -1214,32 +1193,11 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"args" : [ "datasetquery" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-43",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 560.0, 10.0, 260.0, 100.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-42",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 133.0, 430.0, 21.0 ],
+									"patching_rect" : [ 10.0, 62.0, 430.0, 21.0 ],
 									"text" : "We can also combine multiple operators to refine the filter for the query.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1258,7 +1216,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 880.0, 481.5, 20.0, 20.0 ],
+									"patching_rect" : [ 900.0, 461.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "6",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1278,7 +1236,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 825.0, 417.5, 20.0, 20.0 ],
+									"patching_rect" : [ 845.0, 397.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1292,7 +1250,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 359.0, 170.0, 212.0, 25.0 ],
+									"patching_rect" : [ 379.0, 150.0, 212.0, 25.0 ],
 									"text" : "Clear the filters so we start fresh",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1304,7 +1262,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 527.5, 328.0, 250.0, 21.0 ],
+									"patching_rect" : [ 547.5, 308.0, 250.0, 21.0 ],
 									"text" : "OR Last column is equal to 3000",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -1316,7 +1274,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 490.0, 288.0, 281.0, 21.0 ],
+									"patching_rect" : [ 510.0, 268.0, 281.0, 21.0 ],
 									"text" : "AND Second column is less than or equal to 20",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -1329,7 +1287,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 320.0, 170.0, 37.0, 23.0 ],
+									"patching_rect" : [ 340.0, 150.0, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -1341,7 +1299,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 435.5, 428.0, 83.0, 23.0 ],
+									"patching_rect" : [ 455.5, 408.0, 83.0, 23.0 ],
 									"text" : "addcolumn 3"
 								}
 
@@ -1353,7 +1311,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 434.5, 328.0, 82.0, 23.0 ],
+									"patching_rect" : [ 454.5, 308.0, 82.0, 23.0 ],
 									"text" : "or 3 <= 5000"
 								}
 
@@ -1366,7 +1324,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 799.5, 288.0, 147.0, 69.0 ],
+									"patching_rect" : [ 819.5, 268.0, 147.0, 69.0 ],
 									"text" : "Optionally add any number of additional opeartors to constrain the search",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1379,7 +1337,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 407.5, 288.0, 78.0, 23.0 ],
+									"patching_rect" : [ 427.5, 268.0, 78.0, 23.0 ],
 									"text" : "and 1 <= 10"
 								}
 
@@ -1397,7 +1355,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 577.5, 170.0, 20.0, 20.0 ],
+									"patching_rect" : [ 597.5, 150.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1411,7 +1369,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 414.5, 230.0, 165.0, 25.0 ],
+									"patching_rect" : [ 434.5, 210.0, 165.0, 25.0 ],
 									"text" : "Now add our basic filter",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1430,7 +1388,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 946.0, 312.5, 20.0, 20.0 ],
+									"patching_rect" : [ 966.0, 292.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1450,7 +1408,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 586.0, 232.5, 20.0, 20.0 ],
+									"patching_rect" : [ 606.0, 212.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1615,7 +1573,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 320.0, 560.0, 96.0, 23.0 ],
+									"patching_rect" : [ 340.0, 540.0, 96.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1634,7 +1592,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 527.5, 388.0, 124.0, 65.0 ],
+									"patching_rect" : [ 547.5, 368.0, 124.0, 65.0 ],
 									"text" : "Add columns that we want to copy for points where the filter is satisfied",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -1648,7 +1606,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 680.0, 471.5, 195.0, 40.0 ],
+									"patching_rect" : [ 700.0, 451.5, 195.0, 40.0 ],
 									"text" : "Transform to do the query and copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1662,7 +1620,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 668.0, 407.5, 156.0, 40.0 ],
+									"patching_rect" : [ 688.0, 387.5, 156.0, 40.0 ],
 									"text" : "Then add columns we want to copy",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1681,7 +1639,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 285.0, 170.0, 20.0, 20.0 ],
+									"patching_rect" : [ 305.0, 150.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1695,7 +1653,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 36.0, 170.0, 247.0, 25.0 ],
+									"patching_rect" : [ 56.0, 150.0, 247.0, 25.0 ],
 									"text" : "Generate some example data to query",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1709,7 +1667,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 170.0, 24.0, 24.0 ]
+									"patching_rect" : [ 30.0, 150.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1719,7 +1677,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 320.0, 600.0, 150.0, 130.0 ],
+									"patching_rect" : [ 340.0, 580.0, 150.0, 130.0 ],
 									"textcolor" : [ 0.995808, 0.800103, 0.399985, 1.0 ]
 								}
 
@@ -1730,7 +1688,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 327.5, 220.0, 129.5 ]
+									"patching_rect" : [ 30.0, 307.5, 220.0, 129.5 ]
 								}
 
 							}
@@ -1741,7 +1699,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 290.0, 74.0, 23.0 ],
+									"patching_rect" : [ 30.0, 270.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -1753,7 +1711,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 250.0, 160.0, 23.0 ],
+									"patching_rect" : [ 30.0, 230.0, 160.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.src"
 								}
 
@@ -2151,7 +2109,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 210.0, 80.0, 23.0 ],
+									"patching_rect" : [ 30.0, 190.0, 80.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2170,7 +2128,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 460.0, 480.0, 218.0, 23.0 ],
+									"patching_rect" : [ 480.0, 460.0, 218.0, 23.0 ],
 									"text" : "transform dsq.help.src dsq.help.dest"
 								}
 
@@ -2182,7 +2140,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 407.5, 388.0, 83.0, 23.0 ],
+									"patching_rect" : [ 427.5, 368.0, 83.0, 23.0 ],
 									"text" : "addcolumn 0"
 								}
 
@@ -2194,7 +2152,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 343.0, 230.0, 66.0, 23.0 ],
+									"patching_rect" : [ 363.0, 210.0, 66.0, 23.0 ],
 									"text" : "filter 0 < 3"
 								}
 
@@ -2206,7 +2164,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 320.0, 520.0, 121.0, 23.0 ],
+									"patching_rect" : [ 340.0, 500.0, 121.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
@@ -2223,7 +2181,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 545.0, 121.0 ]
+									"patching_rect" : [ 10.0, 10.0, 420.0, 50.0 ]
 								}
 
 							}
@@ -2239,7 +2197,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 394.5, 378.0, 273.0, 84.0 ],
+									"patching_rect" : [ 414.5, 358.0, 273.0, 84.0 ],
 									"proportion" : 0.5
 								}
 
@@ -2256,7 +2214,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 394.5, 275.5, 403.0, 92.5 ],
+									"patching_rect" : [ 414.5, 255.5, 403.0, 92.5 ],
 									"proportion" : 0.5
 								}
 
@@ -2279,7 +2237,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 417.0, 507.0, 329.5, 507.0 ],
+									"midpoints" : [ 437.0, 487.0, 349.5, 487.0 ],
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -2287,7 +2245,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 444.0, 363.0, 329.5, 363.0 ],
+									"midpoints" : [ 464.0, 343.0, 349.5, 343.0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -2295,7 +2253,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 469.5, 507.0, 329.5, 507.0 ],
+									"midpoints" : [ 489.5, 487.0, 349.5, 487.0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -2303,7 +2261,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 445.0, 507.0, 329.5, 507.0 ],
+									"midpoints" : [ 465.0, 487.0, 349.5, 487.0 ],
 									"source" : [ "obj-24", 0 ]
 								}
 
@@ -2318,7 +2276,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 329.5, 195.0, 329.5, 195.0 ],
+									"midpoints" : [ 349.5, 175.0, 349.5, 175.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -2326,7 +2284,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 160.5, 281.0, 19.5, 281.0 ],
+									"midpoints" : [ 180.5, 261.0, 39.5, 261.0 ],
 									"source" : [ "obj-40", 1 ]
 								}
 
@@ -2341,7 +2299,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 417.0, 363.0, 329.5, 363.0 ],
+									"midpoints" : [ 437.0, 343.0, 349.5, 343.0 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -2349,7 +2307,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 352.5, 507.0, 329.5, 507.0 ],
+									"midpoints" : [ 372.5, 487.0, 349.5, 487.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -2444,7 +2402,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2474,27 +2432,6 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
-								"box" : 								{
-									"args" : [ "datasetquery" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-50",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 560.0, 10.0, 260.0, 100.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
 								"box" : 								{
 									"id" : "obj-49",
 									"maxclass" : "newobj",
@@ -2653,7 +2590,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 419.0, 580.0, 52.0, 23.0 ],
+									"patching_rect" : [ 459.0, 520.0, 52.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2678,7 +2615,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 862.0, 441.75, 20.0, 20.0 ],
+									"patching_rect" : [ 902.0, 381.75, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2688,11 +2625,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-38",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 140.0, 426.0, 36.0 ],
+									"patching_rect" : [ 10.0, 62.0, 650.0, 21.0 ],
 									"text" : "The transformjoin message allows filtering the contents of a dataset based on the contents found in another. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2705,7 +2641,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 36.0, 190.0, 338.0, 25.0 ],
+									"patching_rect" : [ 76.0, 130.0, 338.0, 25.0 ],
 									"text" : "Generate two datasets with some overlap of identifiers"
 								}
 
@@ -2718,7 +2654,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 190.0, 24.0, 24.0 ]
+									"patching_rect" : [ 50.0, 130.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -2729,7 +2665,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 620.0, 384.25, 234.0, 137.0 ],
+									"patching_rect" : [ 660.0, 324.25, 238.0, 137.0 ],
 									"text" : "When a column is manually added with addcolumn, the filter only respects the contents of dataset A. Any points that satisfy the filter have the respective column merged with that of dataset B. In this case, any point where the first column is equal to 6000 has the corresponding column for that point in dataset B's merged with dataset A.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -2747,7 +2683,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 545.0, 121.0 ]
+									"patching_rect" : [ 10.0, 10.0, 420.0, 50.0 ]
 								}
 
 							}
@@ -2764,7 +2700,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 673.0, 352.25, 20.0, 20.0 ],
+									"patching_rect" : [ 713.0, 292.25, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2784,7 +2720,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 793.0, 234.0, 20.0, 20.0 ],
+									"patching_rect" : [ 833.0, 174.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2804,7 +2740,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 556.5, 201.5, 20.0, 20.0 ],
+									"patching_rect" : [ 596.5, 141.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2824,7 +2760,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 376.0, 192.5, 20.0, 20.0 ],
+									"patching_rect" : [ 416.0, 132.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2839,7 +2775,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 432.0, 232.5, 359.0, 23.0 ],
+									"patching_rect" : [ 472.0, 172.5, 359.0, 23.0 ],
 									"text" : "transformjoin dsq.help.join.A dsq.help.join.B dsq.help.join.out"
 								}
 
@@ -2851,7 +2787,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 458.0, 268.0, 355.0, 65.0 ],
+									"patching_rect" : [ 498.0, 208.0, 355.0, 65.0 ],
 									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A. It is important to note that it merges the second provided dataset with the first for each identifier.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -2864,7 +2800,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 419.0, 200.0, 130.0, 23.0 ],
+									"patching_rect" : [ 459.0, 140.0, 130.0, 23.0 ],
 									"text" : "clear, filter 0 >= 3000"
 								}
 
@@ -2875,7 +2811,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 419.0, 610.0, 241.0, 80.0 ],
+									"patching_rect" : [ 459.0, 550.0, 241.0, 80.0 ],
 									"textcolor" : [ 0.996078, 0.898039, 0.031373, 1.0 ]
 								}
 
@@ -2887,7 +2823,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 458.0, 351.75, 212.0, 23.0 ],
+									"patching_rect" : [ 498.0, 291.75, 212.0, 23.0 ],
 									"text" : "clear, filter 0 == 6000, addcolumn 0"
 								}
 
@@ -2899,7 +2835,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 419.0, 550.0, 119.0, 23.0 ],
+									"patching_rect" : [ 459.0, 490.0, 119.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
@@ -2913,7 +2849,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 411.75, 108.736022999999932, 67.0 ],
+									"patching_rect" : [ 540.0, 351.75, 108.736022999999932, 67.0 ],
 									"text" : "transformjoin dsq.help.join.A dsq.help.join.B dsq.help.join.out"
 								}
 
@@ -2924,7 +2860,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 193.0, 359.787234000000012, 170.0, 152.159995999999978 ]
+									"patching_rect" : [ 233.0, 299.787234000000012, 170.0, 152.159995999999978 ]
 								}
 
 							}
@@ -2935,7 +2871,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 193.0, 326.0, 74.0, 23.0 ],
+									"patching_rect" : [ 233.0, 266.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -2946,7 +2882,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 359.787234000000012, 175.0, 228.0 ]
+									"patching_rect" : [ 50.0, 299.787234000000012, 175.0, 228.0 ]
 								}
 
 							}
@@ -2957,7 +2893,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 326.0, 74.0, 23.0 ],
+									"patching_rect" : [ 50.0, 266.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -2969,7 +2905,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 281.5, 175.0, 23.0 ],
+									"patching_rect" : [ 50.0, 221.5, 175.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.join.A"
 								}
 
@@ -2981,7 +2917,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 193.0, 281.5, 175.0, 23.0 ],
+									"patching_rect" : [ 233.0, 221.5, 175.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.join.B"
 								}
 
@@ -3559,7 +3495,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 232.5, 80.0, 23.0 ],
+									"patching_rect" : [ 50.0, 172.5, 80.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3583,7 +3519,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 342.0, 480.0, 206.25 ],
+									"patching_rect" : [ 450.0, 282.0, 480.0, 206.25 ],
 									"proportion" : 0.5
 								}
 
@@ -3600,7 +3536,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 190.0, 410.0, 150.0 ],
+									"patching_rect" : [ 450.0, 130.0, 410.0, 150.0 ],
 									"proportion" : 0.5
 								}
 
@@ -3616,7 +3552,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
-									"midpoints" : [ 509.5, 537.0, 428.5, 537.0 ],
+									"midpoints" : [ 549.5, 477.0, 468.5, 477.0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -3638,7 +3574,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
-									"midpoints" : [ 467.5, 537.0, 428.5, 537.0 ],
+									"midpoints" : [ 507.5, 477.0, 468.5, 477.0 ],
 									"source" : [ "obj-25", 0 ]
 								}
 
@@ -3646,7 +3582,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
-									"midpoints" : [ 428.5, 386.0, 428.5, 386.0 ],
+									"midpoints" : [ 468.5, 326.0, 468.5, 326.0 ],
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -3654,7 +3590,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
-									"midpoints" : [ 441.5, 402.25, 428.5, 402.25 ],
+									"midpoints" : [ 481.5, 342.25, 468.5, 342.25 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -3662,7 +3598,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 175.5, 314.75, 19.5, 314.75 ],
+									"midpoints" : [ 215.5, 254.75, 59.5, 254.75 ],
 									"source" : [ "obj-40", 1 ]
 								}
 
@@ -3670,7 +3606,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
-									"midpoints" : [ 358.5, 314.75, 202.5, 314.75 ],
+									"midpoints" : [ 398.5, 254.75, 242.5, 254.75 ],
 									"source" : [ "obj-41", 1 ]
 								}
 
@@ -3685,7 +3621,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 19.5, 257.5, 19.5, 257.5 ],
+									"midpoints" : [ 59.5, 197.5, 59.5, 197.5 ],
 									"order" : 1,
 									"source" : [ "obj-8", 0 ]
 								}
@@ -3694,7 +3630,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 0 ],
-									"midpoints" : [ 19.5, 266.5, 202.5, 266.5 ],
+									"midpoints" : [ 59.5, 206.5, 242.5, 206.5 ],
 									"order" : 0,
 									"source" : [ "obj-8", 0 ]
 								}
@@ -3790,7 +3726,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3853,7 +3789,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 850.0, 426.5, 20.0, 20.0 ],
+									"patching_rect" : [ 890.0, 486.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3873,7 +3809,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 832.5, 348.0, 20.0, 20.0 ],
+									"patching_rect" : [ 872.5, 408.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3893,7 +3829,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 649.5, 256.5, 20.0, 20.0 ],
+									"patching_rect" : [ 689.5, 316.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3913,7 +3849,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 620.0, 152.5, 20.0, 20.0 ],
+									"patching_rect" : [ 660.0, 212.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4078,7 +4014,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 330.0, 500.0, 96.0, 23.0 ],
+									"patching_rect" : [ 370.0, 560.0, 96.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4097,7 +4033,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 440.5, 557.5, 207.0, 65.0 ],
+									"patching_rect" : [ 480.5, 617.5, 207.0, 65.0 ],
 									"text" : "The result is such that only the first column (0th) of each point is copied over if the value in this column is less than 0.5.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -4111,7 +4047,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 689.5, 416.5, 158.0, 40.0 ],
+									"patching_rect" : [ 729.5, 476.5, 158.0, 40.0 ],
 									"text" : "Composing the query as one message",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4124,7 +4060,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 671.5, 234.0, 207.0, 65.0 ],
+									"patching_rect" : [ 711.5, 294.0, 207.0, 65.0 ],
 									"text" : "In effect, we are saying, for each point where the filter is satisfied copy THIS column to our destination.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -4138,7 +4074,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 635.0, 323.5, 197.0, 69.0 ],
+									"patching_rect" : [ 675.0, 383.5, 197.0, 69.0 ],
 									"text" : "Calling transform executes the query and copies the results from the source to the destination.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4152,7 +4088,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 456.0, 241.0, 191.5, 54.0 ],
+									"patching_rect" : [ 496.0, 301.0, 191.5, 54.0 ],
 									"text" : "Then we specify which columns we would like to copy if they satisfy the filter.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4171,7 +4107,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 285.0, 150.0, 20.0, 20.0 ],
+									"patching_rect" : [ 325.0, 210.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4185,7 +4121,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 36.0, 150.0, 247.0, 25.0 ],
+									"patching_rect" : [ 76.0, 210.0, 247.0, 25.0 ],
 									"text" : "Generate some example data to query",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4199,7 +4135,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 150.0, 24.0, 24.0 ]
+									"patching_rect" : [ 50.0, 210.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -4211,7 +4147,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 456.0, 416.5, 224.0, 38.0 ],
+									"patching_rect" : [ 496.0, 476.5, 224.0, 38.0 ],
 									"text" : "clear, filter 1 < 3, addcolumn 1, transform dsq.help.src dsq.help.dest"
 								}
 
@@ -4222,7 +4158,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 330.0, 540.0, 108.0, 100.0 ],
+									"patching_rect" : [ 370.0, 600.0, 108.0, 100.0 ],
 									"textcolor" : [ 0.995808, 0.800103, 0.399985, 1.0 ]
 								}
 
@@ -4233,7 +4169,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 307.5, 220.0, 129.5 ]
+									"patching_rect" : [ 50.0, 367.5, 220.0, 129.5 ]
 								}
 
 							}
@@ -4244,7 +4180,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 270.0, 74.0, 23.0 ],
+									"patching_rect" : [ 50.0, 330.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -4256,7 +4192,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 230.0, 160.0, 23.0 ],
+									"patching_rect" : [ 50.0, 290.0, 160.0, 23.0 ],
 									"text" : "fluid.dataset~ dsq.help.src"
 								}
 
@@ -4654,7 +4590,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 190.0, 80.0, 23.0 ],
+									"patching_rect" : [ 50.0, 250.0, 80.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4672,7 +4608,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 421.5, 371.5, 207.0, 21.0 ],
+									"patching_rect" : [ 461.5, 431.5, 207.0, 21.0 ],
 									"text" : "transform <source> <destination> ",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -4685,7 +4621,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 409.5, 346.5, 218.0, 23.0 ],
+									"patching_rect" : [ 449.5, 406.5, 218.0, 23.0 ],
 									"text" : "transform dsq.help.src dsq.help.dest"
 								}
 
@@ -4697,7 +4633,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 368.0, 256.5, 83.0, 23.0 ],
+									"patching_rect" : [ 408.0, 316.5, 83.0, 23.0 ],
 									"text" : "addcolumn 0"
 								}
 
@@ -4709,7 +4645,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 642.0, 123.0, 253.0, 79.0 ],
+									"patching_rect" : [ 682.0, 183.0, 253.0, 79.0 ],
 									"text" : "filter <column index> <operator> <value> \n\nIn this case this says that we are only interested in points in the dataset where the first column is less than 3",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -4722,7 +4658,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 330.0, 150.0, 66.0, 23.0 ],
+									"patching_rect" : [ 370.0, 210.0, 66.0, 23.0 ],
 									"text" : "filter 0 < 3"
 								}
 
@@ -4734,7 +4670,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 400.0, 150.0, 212.0, 25.0 ],
+									"patching_rect" : [ 440.0, 210.0, 212.0, 25.0 ],
 									"text" : "Queries always start with a filter.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4747,7 +4683,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 330.0, 468.0, 121.0, 23.0 ],
+									"patching_rect" : [ 370.0, 528.0, 121.0, 23.0 ],
 									"text" : "fluid.datasetquery~"
 								}
 
@@ -4786,7 +4722,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 377.5, 373.25, 339.5, 373.25 ],
+									"midpoints" : [ 417.5, 433.25, 379.5, 433.25 ],
 									"source" : [ "obj-18", 0 ]
 								}
 
@@ -4794,7 +4730,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 419.0, 418.25, 339.5, 418.25 ],
+									"midpoints" : [ 459.0, 478.25, 379.5, 478.25 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -4809,7 +4745,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 465.5, 460.75, 339.5, 460.75 ],
+									"midpoints" : [ 505.5, 520.75, 379.5, 520.75 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -4817,7 +4753,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 160.5, 261.0, 19.5, 261.0 ],
+									"midpoints" : [ 200.5, 321.0, 59.5, 321.0 ],
 									"source" : [ "obj-40", 1 ]
 								}
 
@@ -4832,7 +4768,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 339.5, 320.0, 339.5, 320.0 ],
+									"midpoints" : [ 379.5, 380.0, 379.5, 380.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
