@@ -936,6 +936,36 @@ class FluidMaxWrapper
     }
   };
   
+  template <size_t N>
+  struct Setter<FFTParamsT,N>
+  {
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object*, long ac, t_atom* av)
+    {
+      if (!ac) return MAX_ERR_NONE;
+      while (x->mInPerform) {}
+      x->messages().reset();
+      auto& a = x->params().template get<N>();
+     
+      std::array<index,3> defaults{1024,-1,-1};
+      for (index i = 0; i < 3 && i < static_cast<index>(ac); i++)
+            defaults[i] = ParamAtomConverter::fromAtom((t_object*) x, av + i, defaults[0]);
+     
+      if(!x->mInitialized)
+        a = FFTParams(defaults[0], defaults[1], defaults[2], a.max());
+      else
+        x->params().template set<N>(FFTParams(defaults[0], defaults[1], defaults[2], a.max()),
+                                  x->verbose() ? &x->messages() : nullptr);
+                                  
+//      x->params().template constrain<N>()
+                                  
+      printResult(x, x->messages());
+
+      object_attr_touch((t_object*) x, gensym("latency"));
+      return MAX_ERR_NONE;
+    }
+  };
+  
+  
 
   template <size_t N>
   struct Setter<ChoicesT, N>
@@ -1035,7 +1065,26 @@ class FluidMaxWrapper
         return MAX_ERR_NONE;
     }
   };
-  
+
+  template <size_t N>
+  struct Getter<FFTParamsT, N>
+  {
+     static t_max_err get(FluidMaxWrapper<Client>* x, t_object* /*attr*/,
+                         long* ac, t_atom** av)
+    {
+        char alloc;
+        atom_alloc_array(3, ac, av, &alloc);
+        
+        auto a = x->mParams.template get<N>();
+        
+        atom_setlong(*av, a.winSize());
+        atom_setlong(*av + 1, a.hopRaw());
+        atom_setlong(*av + 2, a.fftRaw());
+        
+        return MAX_ERR_NONE;
+    }
+  };
+
   template <size_t N>
   struct Getter<ChoicesT,N>
   {
@@ -2202,8 +2251,7 @@ private:
     {
       std::string maxName = "max" + name;
       std::string maxLabel = std::string("Maximum ") + attr.displayName;
-      
-      
+            
       using stype = t_max_err(*)(FluidMaxWrapper* x, t_object*, long ac, t_atom* av);
       using gtype = t_max_err(*)(FluidMaxWrapper* x, t_object*, long* ac, t_atom** av);
       
@@ -2243,6 +2291,52 @@ private:
       class_addattr(getClass(), a);
       CLASS_ATTR_LABEL(getClass(), maxName.c_str(), 0, maxLabel.c_str());
     }
+    
+    void decorateAttr(const FFTParamsT&, std::string name)
+    {
+      std::string maxName = "maxfftsize";
+      std::string maxLabel = "Maximum FFT Size";
+            
+      using stype = t_max_err(*)(FluidMaxWrapper* x, t_object*, long ac, t_atom* av);
+      using gtype = t_max_err(*)(FluidMaxWrapper* x, t_object*, long* ac, t_atom** av);
+      
+      stype setter = [](FluidMaxWrapper* x, t_object*, long ac, t_atom* av) -> t_max_err
+      {
+        static constexpr index Idx = N;
+        if(ac && !x->mInitialized)
+        {
+          auto current = x->mParams.template get<Idx>();
+          index newMax = atom_getlong(av);
+          if(newMax > 0)
+          {
+            x->mParams.template set<Idx>(FFTParams(current.winSize(), current.hopRaw(), current.fftRaw(), newMax),nullptr);
+          }
+        }
+        return MAX_ERR_NONE;
+      };
+      
+      gtype getter = [](FluidMaxWrapper<Client>* x, t_object* /*attr*/,
+                                      long* ac, t_atom** av) -> t_max_err
+      {
+        char alloc;
+        atom_alloc_array(1, ac, av, &alloc);
+        static constexpr index Idx = N;
+        if(alloc)
+        {
+          auto current = x->mParams.template get<Idx>();
+          atom_setlong(av[0],current.maxRaw());
+        }
+        return MAX_ERR_NONE;
+      };
+            
+      t_object*   a = attribute_new(maxName.c_str(), gensym("atom"), 0,
+                                    (method)getter, (method)setter);
+      
+      class_addattr(getClass(), a);
+      CLASS_ATTR_LABEL(getClass(), maxName.c_str(), 0, maxLabel.c_str());
+      
+    }
+    
   };
 
   template <size_t N, typename T>
