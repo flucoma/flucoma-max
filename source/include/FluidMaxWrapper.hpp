@@ -1298,6 +1298,21 @@ public:
     if (mDumpDictionary) object_free(mDumpDictionary);
     for (auto p : mProxies) object_free(p);
     for (auto b : mHostedOutputBufferObjects) object_free(b);
+    
+    t_symbol* ns = gensym("_FLUCOMA") ;
+    
+    for (auto&& s: mArgObjects){
+      t_symbol* name = s.second;
+      if(name)
+      {
+        t_object* o = (t_object*) object_findregistered(ns,name);
+        if(o)
+        {
+          object_unregister(o);
+          object_free(o);
+        }
+      }
+    }
   }
 
   template <size_t N, typename T>
@@ -1696,7 +1711,7 @@ private:
             N>::ArgumentTypes;
 
     // Read in arguments
-    ArgTuple args{setArg<ArgTuple, Is>(x, ac, av)...};
+    ArgTuple args{setArg<ArgTuple, N, Is>(x, ac, av)...};
     std::vector<t_atom> outputTokens;
     
     ForEach(args,[&outputTokens](auto& a){
@@ -1709,65 +1724,61 @@ private:
     if (x->checkResult(result)) messageOutput(x, s, outputTokens, result);
   }
 
-  template <typename Tuple, size_t N>
+  template <typename Tuple, size_t N, size_t I>
   static auto setArg(FluidMaxWrapper* x, long ac, t_atom* av)
   {
-    if (N < asUnsigned(ac))
+    if (I < asUnsigned(ac))
       return ParamAtomConverter::fromAtom(
-          (t_object*) x, av + N, typename std::tuple_element<N, Tuple>::type{});
+          (t_object*) x, av + I, typename std::tuple_element<I, Tuple>::type{});
     else
-        return x->argDefault<N>(typename std::tuple_element<N, Tuple>::type{});
+        return x->argDefault<N, I>(typename std::tuple_element<I, Tuple>::type{});
   }
   
-  template<size_t N,typename T>
+  template<size_t N, size_t I, typename T>
   auto argDefault(T obj){
      return obj;
-  }
+  }  
   
-  template<size_t N>
+  template<size_t N, size_t I>
   std::shared_ptr<BufferAdaptor> argDefault(std::shared_ptr<BufferAdaptor>&&){
     
-    static std::unique_ptr<t_object,void(*)(t_object*)> obj(nullptr,[](t_object* o){
-      if(o) object_free(o);
-    });
+    static t_symbol* namespace_binding = gensym("_FLUCOMA");
+
+    t_symbol*& argName = mArgObjects[{N,I}];
     
-    static t_symbol* name;
-    
-    if(!obj)
+    if(!argName)
     {
+      argName = symbol_unique();
       t_atom oNameAtom;
-      t_symbol* oName = symbol_unique();
-      atom_setsym(&oNameAtom, oName);
-      obj.reset((t_object*)object_new_typed(CLASS_BOX, gensym("buffer~"), 1,
-                                               &oNameAtom));
-      name = oName;
+      atom_setsym(&oNameAtom, argName);
+      t_object* obj = (t_object*) object_new_typed(CLASS_BOX, gensym("buffer~"),
+                                                   1, &oNameAtom);
+      object_register(namespace_binding, argName, obj);
     }
       
-    return std::make_shared<MaxBufferAdaptor>((t_object*)this, name);
+    return std::make_shared<MaxBufferAdaptor>((t_object*)this, argName);
   }
   
-  template<size_t N,typename T>
+  template<size_t N, size_t I, typename T>
   SharedClientRef<T> argDefault(SharedClientRef<T>)
   {
-        
-    static std::unique_ptr<t_object,void(*)(t_object*)> obj(nullptr,[](t_object* o){
-      if(o) object_free(o);
-    });
 
-    static t_symbol* name;
+    static t_symbol* namespace_binding = gensym("_FLUCOMA");
+    
+    t_symbol*& argName = mArgObjects[{N,I}];
 
-    if(!obj)
+    if(!argName)
     {
+      argName = symbol_unique();
       t_atom oNameAtom;
-      t_symbol* oName = symbol_unique();
-      atom_setsym(&oNameAtom, oName);
+      atom_setsym(&oNameAtom, argName);
       t_symbol* maxclass = gensym(SharedClientName<T>);
-      obj.reset((t_object*)object_new_typed(CLASS_BOX, maxclass, 1,
-                                               &oNameAtom));
-      name = oName;
+      t_object* obj =
+          (t_object*) object_new_typed(CLASS_BOX, maxclass, 1, &oNameAtom);
+      object_register(namespace_binding, argName, obj);
     }
 
-    return {name->s_name};
+    return {argName->s_name};
   }
   
   template<size_t N,typename T>
@@ -1785,18 +1796,19 @@ private:
     atom_setsym(&res, name);
     v.push_back(res);
   }
-  
-  template<typename T>
-  static void outputToken(std::vector<t_atom>& v,SharedClientRef<T> const& ds) {
+
+  template <typename T>
+  static void outputToken(std::vector<t_atom>& v, SharedClientRef<T> const& ds)
+  {
     t_symbol* name = gensym(ds.name());
     t_atom res;
     atom_setsym(&res, name);
     v.push_back(res);
   }
-  
-  template<typename T>
-  static void outputToken(std::vector<t_atom>&,SharedClientRef<const T>) {
-  }
+
+  template <typename T>
+  static void outputToken(std::vector<t_atom>&, SharedClientRef<const T>)
+  {}
 
   template <typename T>
   static size_t ResultSize(T)
@@ -2292,7 +2304,7 @@ private:
       CLASS_ATTR_LABEL(getClass(), maxName.c_str(), 0, maxLabel.c_str());
     }
     
-    void decorateAttr(const FFTParamsT&, std::string name)
+    void decorateAttr(const FFTParamsT&, std::string)
     {
       std::string maxName = "maxfftsize";
       std::string maxLabel = "Maximum FFT Size";
@@ -2406,6 +2418,10 @@ private:
   std::vector<t_atom>                     mOutputListAtoms;
   
   bool mInitialized{false};
+  
+  using ArgKey = std::pair<size_t, size_t>;
+  //if we wanted unordered_map here we'd need to rustle up a hash function for ArgKey
+  std::map<ArgKey,t_symbol*> mArgObjects;  
 };
 
 ////////////////////////////////////////////////////////////////////////////////
