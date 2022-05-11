@@ -906,6 +906,9 @@ class FluidMaxWrapper
 
       for (index i = 0; i < static_cast<index>(ac); i++)
         a[i] = ParamAtomConverter::fromAtom((t_object*) x, av + i, T{});
+        
+      x->params().template set<N>(std::move(a),x->verbose() ? &x->messages() : nullptr);
+        
       object_attr_touch((t_object*) x, gensym("latency"));
       return MAX_ERR_NONE;
     }
