@@ -105,7 +105,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 568.75, 270.0, 232.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "change the size of the novelty \"kernel\"",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -133,7 +132,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 534.75, 211.0, 280.0, 21.0 ],
-									"presentation_linecount" : 3,
 									"text" : "what feature do you want to look for novelty in?",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -194,7 +192,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 623.0, 422.5, 20.0, 20.0 ],
+									"patching_rect" : [ 623.0, 412.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -209,7 +207,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 422.0, 420.0, 199.0, 25.0 ],
+									"patching_rect" : [ 422.0, 410.0, 199.0, 25.0 ],
 									"text" : "Select a segment to play back"
 								}
 
@@ -599,7 +597,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 370.0, 420.0, 52.0, 23.0 ]
+									"patching_rect" : [ 370.0, 410.0, 52.0, 23.0 ]
 								}
 
 							}
@@ -625,7 +623,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 530.0, 330.0, 131.0, 23.0 ],
+									"patching_rect" : [ 546.5, 330.0, 131.0, 23.0 ],
 									"text" : "buffer~ help.ns.slices"
 								}
 
