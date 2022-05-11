@@ -118,7 +118,7 @@ void* FluidListToBuf_new(t_symbol*, long argc, t_atom* argv)
 
   FluidListToBuf* x = (FluidListToBuf*) object_alloc(FluidListToBufClass);
 
-  x->outlet = listout(x);
+  x->outlet = outlet_new(x, "buffer");
   x->defaultOutName = symbol_unique();
 
   long argCount = attr_args_offset(argc, argv);
