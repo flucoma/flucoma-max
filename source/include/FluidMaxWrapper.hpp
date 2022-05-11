@@ -1166,8 +1166,8 @@ public:
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mListSize{32}, mMessages{}, mParams(Client::getParameterDescriptors()),
-        mParamSnapshot(Client::getParameterDescriptors()),
-        mClient{initParamsFromArgs(ac, av)},mDumpDictionary{nullptr}
+        mParamSnapshot{mParams.toTuple()},
+        mClient{initParamsFromArgs(ac, av)}, mDumpDictionary{nullptr}
   {
     if (mClient.audioChannelsIn())
     {
@@ -1253,7 +1253,7 @@ public:
     }
 
     auto results = mParams.keepConstrained(true);
-    mParamSnapshot = mParams;
+    mParamSnapshot = mParams.toTuple();
 
     for (auto& r : results) printResult(this, r);
 
@@ -1424,7 +1424,7 @@ public:
 
   static void doReset(FluidMaxWrapper* x)
   {
-    x->mParams = x->mParamSnapshot;
+    x->mParams.fromTuple(x->mParamSnapshot);
     x->params().template forEachParam<touchAttribute>(x);
     object_attr_touch((t_object*) x, gensym("latency"));
   }
@@ -2383,7 +2383,8 @@ private:
   bool               mVerbose;
   bool               mAutosize;
   ParamSetType       mParams;
-  ParamSetType       mParamSnapshot;
+  ParamValues        mParamSnapshot;
+
   Client             mClient;
   t_int32_atomic     mInPerform{0};
   t_dictionary*      mDumpDictionary;
