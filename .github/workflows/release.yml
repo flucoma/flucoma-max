@@ -1,0 +1,95 @@
+name: Release
+on:
+  workflow_dispatch:
+    inputs:
+      base:
+        description: 'Base branch to deploy core from'
+        required: false
+        default: 'main'
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: flucoma/actions/env@v4
+        with:
+          branch: ${{ github.event.inputs.base }} 
+      - uses: flucoma/actions/docs@v4
+        with:
+          target: MAKE_MAX_REF
+          branch: ${{ github.event.inputs.base }} 
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: docsbuild
+          path: build/max_ref
+          
+  winbuild:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: flucoma/actions/env@v4
+        with:
+          branch: ${{ github.event.inputs.base }} 
+      - uses: flucoma/actions/max@v4
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: winbuild
+          path: "release-packaging/FluidCorpusManipulation/externals/"
+  
+  macbuild:
+    runs-on: macos-11
+    outputs:
+      version: ${{ steps.get-version.outputs.version }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: flucoma/actions/env@v4
+        with:
+          branch: ${{ github.event.inputs.base }} 
+      - uses: flucoma/actions/max@v4
+
+      - uses: actions/upload-artifact@v2
+        with:
+          name: macbuild
+          path: release-packaging/FluidCorpusManipulation/
+
+      - id: get-version
+        run: echo "::set-output name=version::$(cat flucoma.version.rc)"
+        working-directory: core
+  
+  release:
+    runs-on: ubuntu-latest
+    needs: [winbuild, macbuild, docs]
+
+    steps:
+      - name: make parent folder
+        run : mkdir -p "FluidCorpusManipulation"
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: macbuild
+          path: "FluidCorpusManipulation"
+
+      - uses: actions/download-artifact@v2
+        with:
+          name: winbuild
+          path: "FluidCorpusManipulation/externals"
+  
+      - uses: actions/download-artifact@v2
+        with:
+          name: docsbuild
+          path: "FluidCorpusManipulation/docs"
+      
+      - name: zip
+        run: zip -r FluCoMa-Max-"${{ needs.macbuild.outputs.version }}".zip "FluidCorpusManipulation"
+
+      - name: package and upload
+        uses: softprops/action-gh-release@v1
+        with:
+          name: ${{ needs.macbuild.outputs.version }}
+          body: "This is a release build of the FluCoMa Max package. The build hash is ${{ github.sha }}"
+          files: FluCoMa*.zip
+          prerelease: true
+          tag_name: ${{ needs.macbuild.outputs.version }}
+          draft: false

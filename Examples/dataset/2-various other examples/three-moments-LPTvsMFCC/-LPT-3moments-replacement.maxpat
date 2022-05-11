@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 11,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -82,8 +82,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -273,8 +273,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -615,7 +615,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 1286.5, 563.0, 184.0, 22.0 ],
 													"text" : "fluid.kdtree~ @numneighbours 1"
 												}
@@ -639,7 +639,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 856.5, 563.0, 184.0, 22.0 ],
 													"text" : "fluid.kdtree~ @numneighbours 1"
 												}
@@ -699,7 +699,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 417.5, 563.0, 184.0, 22.0 ],
 													"text" : "fluid.kdtree~ @numneighbours 1"
 												}
@@ -711,7 +711,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 1631.25, 351.0, 105.0, 22.0 ],
 													"text" : "fluid.standardize~"
 												}
@@ -748,7 +748,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 1229.5, 351.0, 95.0, 22.0 ],
 													"text" : "fluid.normalize~"
 												}
@@ -2114,8 +2114,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2522,7 +2522,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 1071.5, 375.666626000000008, 50.0, 22.0 ],
-									"text" : "20"
+									"text" : "0"
 								}
 
 							}
@@ -3037,7 +3037,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 73.0, 256.0, 184.0, 22.0 ],
 									"text" : "fluid.kdtree~ @numneighbours 1"
 								}
@@ -4014,8 +4014,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4112,8 +4112,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -4497,7 +4497,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 1286.5, 563.0, 184.0, 22.0 ],
 													"text" : "fluid.kdtree~ @numneighbours 5"
 												}
@@ -4707,7 +4707,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 856.5, 563.0, 184.0, 22.0 ],
 													"text" : "fluid.kdtree~ @numneighbours 5"
 												}
@@ -4977,7 +4977,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 417.5, 563.0, 184.0, 22.0 ],
 													"text" : "fluid.kdtree~ @numneighbours 5"
 												}
@@ -4989,7 +4989,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 1631.25, 351.0, 105.0, 22.0 ],
 													"text" : "fluid.standardize~"
 												}
@@ -5026,7 +5026,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 3,
-													"outlettype" : [ "list", "float", "" ],
+													"outlettype" : [ "bang", "float", "" ],
 													"patching_rect" : [ 1229.5, 351.0, 95.0, 22.0 ],
 													"text" : "fluid.normalize~"
 												}
@@ -6637,7 +6637,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
-									"outlettype" : [ "list", "float", "" ],
+									"outlettype" : [ "bang", "float", "" ],
 									"patching_rect" : [ 73.0, 255.0, 184.0, 22.0 ],
 									"text" : "fluid.kdtree~ @numneighbours 5"
 								}
@@ -7166,8 +7166,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -8497,8 +8497,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -9544,7 +9544,7 @@
 							}
 , 							{
 								"box" : 								{
-									"attr" : "feature",
+									"attr" : "algorithm",
 									"id" : "obj-59",
 									"maxclass" : "attrui",
 									"numinlets" : 1,
@@ -10228,8 +10228,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 11,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -10298,8 +10298,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 11,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -12831,40 +12831,17 @@
 ,
 		"dependency_cache" : [ 			{
 				"name" : "data-manipulator.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/examples/dataset/2-various other examples/three-moments-LPTvsMFCC",
+				"bootpath" : "~/Desktop/fromBU/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/examples/dataset/2-various other examples/three-moments-LPTvsMFCC",
 				"patcherrelativepath" : ".",
 				"type" : "TEXT",
 				"implicit" : 1
-			}
-, 			{
-				"name" : "threshfinder.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/examples/dataset/2-various other examples/three-moments-LPTvsMFCC",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufpitch~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufloudness~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufspectralshape~.mxo",
-				"type" : "iLaX"
 			}
 , 			{
 				"name" : "fluid.bufcompose~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.bufstats~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
+				"name" : "fluid.bufloudness~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -12876,20 +12853,31 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
 				"name" : "fluid.bufonsetslice~.mxo",
 				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufpitch~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufspectralshape~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufstats~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "threshfinder.js",
+				"bootpath" : "~/Desktop/fromBU/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/examples/dataset/2-various other examples/three-moments-LPTvsMFCC",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
 			}
  ],
 		"autosave" : 0,

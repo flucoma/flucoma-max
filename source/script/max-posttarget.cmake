@@ -1,17 +1,11 @@
 # Bits of this Copyright (c) 2016, Cycling '74
 # Usage of this file and its contents is governed by the MIT License
 
-target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_14)
 
 target_sources(${PROJECT_NAME} PRIVATE 
   "${C74_MAX_API_DIR}/max-includes/common/commonsyms.c"
 )
 
-set_target_properties(${PROJECT_NAME} PROPERTIES
-    CXX_STANDARD 14
-    CXX_STANDARD_REQUIRED ON
-    CXX_EXTENSIONS OFF
-)
 
 target_link_libraries(${PROJECT_NAME}
   PRIVATE
@@ -27,7 +21,7 @@ target_include_directories (
 )
 
 if(MSVC)
-  target_compile_options(${PROJECT_NAME} PRIVATE /W3 )
+  target_compile_options(${PROJECT_NAME} PRIVATE /external:W0 /W3)
 else()
   target_compile_options(${PROJECT_NAME} PRIVATE
     -Wall -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wpedantic -Wreturn-type -include "${C74_MAX_INCLUDES}/macho-prefix.pch"
