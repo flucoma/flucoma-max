@@ -151,13 +151,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-39",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 392.0, 290.0, 98.0, 81.0 ],
-									"text" : "kernelsize 3, threshold 0.5, feature 0, minslicelength 1, filtersize 1"
+									"patching_rect" : [ 392.0, 290.0, 98.0, 67.0 ],
+									"text" : "kernelsize 3, threshold 0.5, minslicelength 1, filtersize 1"
 								}
 
 							}
@@ -178,26 +178,26 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-36",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 290.0, 110.0, 100.0, 81.0 ],
-									"text" : "kernelsize 5, threshold 0.61, feature 4, minslicelength 3, filtersize 1"
+									"patching_rect" : [ 290.0, 110.0, 100.0, 67.0 ],
+									"text" : "kernelsize 5, threshold 0.61, minslicelength 3, filtersize 1"
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-31",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 200.0, 110.0, 81.0 ],
-									"text" : "kernelsize 41, threshold 0.35, feature 0, minslicelength 1, filtersize 1"
+									"patching_rect" : [ 340.0, 200.0, 110.0, 67.0 ],
+									"text" : "kernelsize 41, threshold 0.35, minslicelength 1, filtersize 1"
 								}
 
 							}

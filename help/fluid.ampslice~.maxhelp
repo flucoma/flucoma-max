@@ -103,11 +103,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-4",
-									"linecount" : 9,
+									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 310.0, 156.0, 127.0 ],
+									"patching_rect" : [ 410.0, 310.0, 159.0, 100.0 ],
 									"text" : "an example where many of the parameters are tuned to a specific musical example.\n\nThe sensitivity doesn't catch everything, but its sensitive to the most salient hits.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
