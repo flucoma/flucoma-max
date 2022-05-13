@@ -954,9 +954,9 @@ class FluidMaxWrapper
             defaults[i] = ParamAtomConverter::fromAtom((t_object*) x, av + i, defaults[0]);
      
       if(!x->mInitialized)
-        a = FFTParams(defaults[0], defaults[1], defaults[2], a.max());
+        a = FFTParams(defaults[0], defaults[1], defaults[2], a.maxRaw());
       else
-        x->params().template set<N>(FFTParams(defaults[0], defaults[1], defaults[2], a.max()),
+        x->params().template set<N>(FFTParams(defaults[0], defaults[1], defaults[2], a.maxRaw()),
                                   x->verbose() ? &x->messages() : nullptr);
                                   
 //      x->params().template constrain<N>()
