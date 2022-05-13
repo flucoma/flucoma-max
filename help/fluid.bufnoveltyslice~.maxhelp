@@ -234,7 +234,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 623.0, 452.5, 20.0, 20.0 ],
+									"patching_rect" : [ 767.0, 462.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -249,7 +249,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 422.0, 450.0, 199.0, 25.0 ],
+									"patching_rect" : [ 566.0, 460.0, 199.0, 25.0 ],
 									"text" : "Select a segment to play back"
 								}
 
@@ -299,7 +299,7 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 370.0, 525.0, 136.0, 47.0 ],
+									"patching_rect" : [ 514.0, 535.0, 136.0, 47.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~",
@@ -618,7 +618,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 370.0, 495.0, 104.0, 23.0 ],
+									"patching_rect" : [ 514.0, 505.0, 104.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -639,7 +639,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 370.0, 450.0, 52.0, 23.0 ]
+									"patching_rect" : [ 514.0, 460.0, 52.0, 23.0 ]
 								}
 
 							}
@@ -665,7 +665,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 546.5, 400.0, 131.0, 23.0 ],
+									"patching_rect" : [ 340.0, 440.0, 131.0, 23.0 ],
 									"text" : "buffer~ help.ns.slices"
 								}
 
@@ -757,7 +757,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 507.0, 607.5, 20.0, 20.0 ],
+									"patching_rect" : [ 651.0, 617.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -772,7 +772,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 417.0, 605.0, 88.0, 25.0 ],
+									"patching_rect" : [ 561.0, 615.0, 88.0, 25.0 ],
 									"text" : "Start audio"
 								}
 
@@ -818,7 +818,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 370.0, 595.0, 45.0, 45.0 ]
+									"patching_rect" : [ 514.0, 605.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -831,8 +831,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 140.0, 400.0, 390.0, 23.0 ],
-									"text" : "fluid.bufnoveltyslice~ @source help.ns.src @indices help.ns.slices"
+									"patching_rect" : [ 140.0, 400.0, 622.0, 23.0 ],
+									"text" : "fluid.bufnoveltyslice~ @source help.ns.src @indices help.ns.slices @maxfiltersize 71 @maxkernelsize 101"
 								}
 
 							}
