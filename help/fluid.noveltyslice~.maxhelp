@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
+						"rect" : [ 100.0, 126.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -109,7 +109,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 290.0, 90.0, 62.0, 23.0 ],
+									"patching_rect" : [ 290.0, 70.0, 62.0, 23.0 ],
 									"text" : "loadbang"
 								}
 
@@ -128,7 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 350.0, 432.5, 340.0, 92.5 ],
+									"patching_rect" : [ 400.0, 440.0, 340.0, 92.5 ],
 									"text" : "Ultimately, fluid.noveltyslice~ is about balancing the different parameters and the latency they create, to change the algorithms notion of what is \"novel\". Check out the learn reference for more information on what novelty is and how it is determined.\n\n<link href=\"; max launchbrowser https://learn.flucoma.org/reference/noveltyslice\" >https://learn.flucoma.org/reference/noveltyslice</link>",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -142,7 +142,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 494.0, 310.0, 218.0, 108.0 ],
+									"patching_rect" : [ 494.0, 290.0, 218.0, 108.0 ],
 									"text" : "A small kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes without sacrificing latency because the threshold is much higher. It is at times a little noisy though.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -156,7 +156,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 392.0, 310.0, 98.0, 81.0 ],
+									"patching_rect" : [ 392.0, 290.0, 98.0, 81.0 ],
 									"text" : "kernelsize 3, threshold 0.5, feature 0, minslicelength 1, filtersize 1"
 								}
 
@@ -169,7 +169,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 442.0, 220.0, 193.0, 79.0 ],
+									"patching_rect" : [ 460.0, 200.0, 193.0, 79.0 ],
 									"text" : "A large kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes at the expense of latency.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -183,7 +183,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 290.0, 130.0, 100.0, 81.0 ],
+									"patching_rect" : [ 290.0, 110.0, 100.0, 81.0 ],
 									"text" : "kernelsize 5, threshold 0.61, feature 4, minslicelength 3, filtersize 1"
 								}
 
@@ -196,8 +196,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 220.0, 100.0, 81.0 ],
-									"text" : "kernelsize 41, threshold 0.7, feature 0, minslicelength 1, filtersize 1"
+									"patching_rect" : [ 340.0, 200.0, 110.0, 81.0 ],
+									"text" : "kernelsize 41, threshold 0.35, feature 0, minslicelength 1, filtersize 1"
 								}
 
 							}
@@ -209,7 +209,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 392.0, 138.0, 205.0, 65.0 ],
+									"patching_rect" : [ 392.0, 118.0, 205.0, 65.0 ],
 									"text" : "A small kernelsize calculating novelty on the loudness of the signal. Captures a medium amount of detail in the drum loop.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -228,7 +228,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 210.0, 250.0, 20.0, 20.0 ],
+									"patching_rect" : [ 210.0, 230.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -244,7 +244,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 60.0, 239.5, 145.0, 40.0 ],
+									"patching_rect" : [ 60.0, 219.5, 145.0, 40.0 ],
 									"text" : "Play the selected audio"
 								}
 
@@ -262,7 +262,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 168.0, 493.0, 20.0, 20.0 ],
+									"patching_rect" : [ 168.0, 473.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -276,7 +276,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 77.0, 490.5, 89.0, 25.0 ],
+									"patching_rect" : [ 77.0, 470.5, 89.0, 25.0 ],
 									"text" : "Start Audio"
 								}
 
@@ -290,7 +290,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 138.0, 381.0, 55.0, 23.0 ]
+									"patching_rect" : [ 138.0, 361.0, 55.0, 23.0 ]
 								}
 
 							}
@@ -301,7 +301,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 30.0, 420.0, 127.0, 23.0 ],
+									"patching_rect" : [ 30.0, 400.0, 127.0, 23.0 ],
 									"text" : "delay~ 22050 22050"
 								}
 
@@ -313,7 +313,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 137.75, 331.0, 139.5, 23.0 ],
+									"patching_rect" : [ 137.75, 311.0, 139.5, 23.0 ],
 									"text" : "getattr latency"
 								}
 
@@ -325,7 +325,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 480.0, 45.0, 45.0 ]
+									"patching_rect" : [ 30.0, 460.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -346,7 +346,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 30.0, 120.0, 231.0, 122.0 ],
+									"patching_rect" : [ 30.0, 100.0, 231.0, 122.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -358,8 +358,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 198.0, 420.0, 111.0, 23.0 ],
-									"text" : "fluid.noveltyslice~"
+									"patching_rect" : [ 198.0, 400.0, 229.0, 23.0 ],
+									"text" : "fluid.noveltyslice~ @maxkernelsize 41"
 								}
 
 							}
@@ -383,7 +383,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 39.5, 443.0, 39.5, 443.0 ],
+									"midpoints" : [ 39.5, 423.0, 39.5, 423.0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -398,7 +398,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"midpoints" : [ 39.5, 244.0, 39.5, 244.0 ],
+									"midpoints" : [ 39.5, 224.0, 39.5, 224.0 ],
 									"order" : 1,
 									"source" : [ "obj-2", 0 ]
 								}
@@ -407,7 +407,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 39.5, 367.0, 207.5, 367.0 ],
+									"midpoints" : [ 39.5, 347.0, 207.5, 347.0 ],
 									"order" : 0,
 									"source" : [ "obj-2", 0 ]
 								}
@@ -416,7 +416,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 1 ],
-									"midpoints" : [ 207.5, 467.0, 65.5, 467.0 ],
+									"midpoints" : [ 207.5, 447.0, 65.5, 447.0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -424,7 +424,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 349.5, 406.0, 207.5, 406.0 ],
+									"midpoints" : [ 349.5, 386.0, 207.5, 386.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -432,7 +432,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 299.5, 406.5, 207.5, 406.5 ],
+									"midpoints" : [ 299.5, 386.5, 207.5, 386.5 ],
 									"source" : [ "obj-36", 0 ]
 								}
 
@@ -440,7 +440,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 401.5, 406.0, 207.5, 406.0 ],
+									"midpoints" : [ 401.5, 386.0, 207.5, 386.0 ],
 									"source" : [ "obj-39", 0 ]
 								}
 
@@ -550,7 +550,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 792.0, 555.0 ],
+						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
