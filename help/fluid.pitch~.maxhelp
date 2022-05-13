@@ -74,7 +74,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 791.0, 632.0 ],
+						"rect" : [ 0.0, 26.0, 791.0, 632.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -722,7 +722,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 791.0, 632.0 ],
+						"rect" : [ 100.0, 126.0, 791.0, 632.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -795,7 +795,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 480.0, 300.0, 239.0, 50.0 ],
-									"presentation_linecount" : 5,
 									"text" : "moments in time ABOVE this value of pitch confidence will be let through the gate to the delays",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -808,7 +807,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 500.0, 415.5, 178.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "visualise the pitch confidence",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -828,6 +826,7 @@
 							}
 , 							{
 								"box" : 								{
+									"args" : [ "@file", "Tremblay-ASWINE-ScratchySynth-M.wav" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -878,8 +877,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 300.0, 152.5, 399.0, 23.0 ],
-									"text" : "buffer~ help.pitch.musical Tremblay-ASWINE-ScratchySynth-M.wav"
+									"patching_rect" : [ 300.0, 160.0, 156.0, 23.0 ],
+									"text" : "buffer~ help.pitch.musical"
 								}
 
 							}

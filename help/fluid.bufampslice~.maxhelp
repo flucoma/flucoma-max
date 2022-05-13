@@ -93,8 +93,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 620.0, 397.5, 153.0, 137.0 ],
-									"presentation_linecount" : 9,
+									"patching_rect" : [ 620.0, 397.5, 154.0, 137.0 ],
 									"text" : "It is always a good idea to prototype with the realtime version of these objects so you can hear how parameter changes work almost immediately.\n\nCheck out fluid.ampslice~",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -107,9 +106,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 360.0, 330.0, 326.0, 50.0 ],
-									"presentation_linecount" : 3,
-									"text" : "This smooths out the \"fast\" envelope follower meaning the overall detection will be less sensitive to immediate hits and will be more robust.",
+									"patching_rect" : [ 300.0, 330.0, 327.0, 50.0 ],
+									"text" : "This makes both envelopes in the internal tracking slower than the default, meaning it is less nervous but also less precise.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -121,8 +119,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 240.0, 259.0, 323.0, 65.0 ],
-									"presentation_linecount" : 4,
+									"patching_rect" : [ 240.0, 259.0, 326.0, 65.0 ],
 									"text" : "Small changes in thresholds can have a drastic effect.  This increases the amount of energy required for an onset meaning less quiet (potentially erroneous) sounds are detected.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -148,7 +145,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 212.0, 213.5, 329.0, 36.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Adding a minimum slice length is always a good idea for debouncing the time between onsets",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -169,13 +165,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
+									"linecount" : 5,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 120.0, 340.0, 233.0, 23.0 ],
-									"presentation_linecount" : 2,
-									"text" : "fastrampup 100, fastrampup 100, bang"
+									"patching_rect" : [ 150.0, 330.0, 140.0, 81.0 ],
+									"text" : "slowrampup 1000, slowrampdown 1000, fastrampup 100, fastrampdown 100, bang"
 								}
 
 							}
@@ -187,7 +183,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 40.0, 140.0, 542.0, 65.0 ],
-									"presentation_linecount" : 5,
 									"text" : "This is a small selection of ways that the algorithm can be tuned to be less or more sensitive.\n\nThe default settings here that have been set are incredibly sensitive. Sometimes oversegmenting little hits.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -616,7 +611,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 10.0, 510.0, 592.0, 23.0 ],
-									"presentation_linecount" : 3,
 									"text" : "waveform help.bufampslice.tuningsrc, slices help.bufampslice.tuningslices help.bufampslice.tuningsrc"
 								}
 
@@ -695,6 +689,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-33", 0 ],
+									"midpoints" : [ 159.5, 426.0, 19.5, 426.0 ],
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -702,6 +697,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-33", 0 ],
+									"midpoints" : [ 59.5, 426.0, 19.5, 426.0 ],
 									"source" : [ "obj-26", 0 ]
 								}
 
@@ -747,6 +743,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-33", 0 ],
+									"midpoints" : [ 104.5, 426.0, 19.5, 426.0 ],
 									"source" : [ "obj-34", 0 ]
 								}
 
@@ -754,6 +751,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-33", 0 ],
+									"midpoints" : [ 19.5, 126.0, 19.5, 126.0 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -1252,7 +1250,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 130.0, 390.0, 300.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "slices help.bufampslice.slices help.bufampslice.src"
 								}
 
@@ -1305,7 +1302,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 20.0, 230.0, 222.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "clear, waveform help.bufampslice.src"
 								}
 
