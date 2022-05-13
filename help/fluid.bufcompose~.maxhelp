@@ -356,8 +356,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 40.0, 399.5, 331.0, 23.0 ],
-									"text" : "buffer~ help.bc.2.src2 Tremblay-AaS-VoiceQC-B2K.wav"
+									"patching_rect" : [ 40.0, 399.5, 346.0, 23.0 ],
+									"text" : "buffer~ help.bc.2.src2 Tremblay-AaS-VoiceQC-B2K-M.wav"
 								}
 
 							}
@@ -1430,8 +1430,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 293.0, 49.0, 143.0, 23.0 ],
-													"text" : "bufcompose_help_dst4"
+													"patching_rect" : [ 293.0, 49.0, 82.0, 23.0 ],
+													"text" : "help.bc.5.dst"
 												}
 
 											}
@@ -1442,8 +1442,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 152.0, 49.0, 143.0, 23.0 ],
-													"text" : "bufcompose_help_src8"
+													"patching_rect" : [ 152.0, 49.0, 89.0, 23.0 ],
+													"text" : "help.bc.5.src2"
 												}
 
 											}
@@ -1454,8 +1454,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 10.0, 49.0, 143.0, 23.0 ],
-													"text" : "bufcompose_help_src7"
+													"patching_rect" : [ 10.0, 49.0, 89.0, 23.0 ],
+													"text" : "help.bc.5.src1"
 												}
 
 											}
@@ -1712,8 +1712,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "signal", "signal", "bang" ],
-									"patching_rect" : [ 430.0, 346.875, 97.0, 23.0 ],
-									"text" : "play~ dummy 2"
+									"patching_rect" : [ 430.0, 346.875, 128.0, 23.0 ],
+									"text" : "play~ help.bc.5.dst 2"
 								}
 
 							}
