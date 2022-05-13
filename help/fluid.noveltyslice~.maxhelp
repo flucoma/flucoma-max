@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 1311.0, 136.0, 792.0, 581.0 ],
+		"rect" : [ 100.0, 100.0, 792.0, 581.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 1311.0, 162.0, 792.0, 555.0 ],
+						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -92,11 +92,10 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-5",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 62.0, 205.0, 36.0 ],
+									"patching_rect" : [ 10.0, 62.0, 259.0, 21.0 ],
 									"text" : "Tuning the parameters of fluid.noveltyslice~",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -129,7 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 324.5, 420.0, 340.0, 92.5 ],
+									"patching_rect" : [ 350.0, 432.5, 340.0, 92.5 ],
 									"text" : "Ultimately, fluid.noveltyslice~ is about balancing the different parameters and the latency they create, to change the algorithms notion of what is \"novel\". Check out the learn reference for more information on what novelty is and how it is determined.\n\n<link href=\"; max launchbrowser https://learn.flucoma.org/reference/noveltyslice\" >https://learn.flucoma.org/reference/noveltyslice</link>",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -139,12 +138,12 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-38",
-									"linecount" : 6,
+									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 494.0, 310.0, 218.0, 94.0 ],
-									"text" : "A small kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes without sacrificing latency because the threshold is much higher.",
+									"patching_rect" : [ 494.0, 310.0, 218.0, 108.0 ],
+									"text" : "A small kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes without sacrificing latency because the threshold is much higher. It is at times a little noisy though.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -158,7 +157,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 392.0, 310.0, 98.0, 81.0 ],
-									"text" : "kernelsize 3, threshold 0.71, feature 0, minslicelength 1, filtersize 1"
+									"text" : "kernelsize 3, threshold 0.5, feature 0, minslicelength 1, filtersize 1"
 								}
 
 							}
@@ -184,8 +183,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 290.0, 130.0, 101.0, 81.0 ],
-									"text" : "kernelsize 5, threshold 0.35, feature 4, minslicelength 3, filtersize 1"
+									"patching_rect" : [ 290.0, 130.0, 100.0, 81.0 ],
+									"text" : "kernelsize 5, threshold 0.61, feature 4, minslicelength 3, filtersize 1"
 								}
 
 							}
@@ -197,8 +196,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 340.0, 220.0, 101.0, 81.0 ],
-									"text" : "kernelsize 41, threshold 0.3, feature 0, minslicelength 1, filtersize 1"
+									"patching_rect" : [ 340.0, 220.0, 100.0, 81.0 ],
+									"text" : "kernelsize 41, threshold 0.7, feature 0, minslicelength 1, filtersize 1"
 								}
 
 							}
@@ -332,7 +331,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Nicol-LoopE-M.wav", "@vol", 0, "@loop", 1 ],
+									"args" : [ "@file", "Constanzo-PreparedSnare-M.wav", "@vol", 0, "@loop", 1 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -551,7 +550,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
+						"rect" : [ 100.0, 126.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -583,13 +582,37 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 217.5, 420.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "bang", "bang" ],
+									"patching_rect" : [ 217.5, 380.0, 45.0, 23.0 ],
+									"text" : "edge~"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-20",
-									"linecount" : 2,
+									"linecount" : 9,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 490.0, 333.5, 150.0, 36.0 ],
-									"text" : "Produces impulses when a slice is detected",
+									"patching_rect" : [ 490.0, 333.5, 150.0, 137.0 ],
+									"text" : "Produces impulses when a slice is detected.\n\nWith these settings it can pick up the \"wiggles\" around changes in the note which is one of novelty slicing's strengths.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -815,7 +838,24 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 1 ],
 									"midpoints" : [ 192.5, 427.0, 65.5, 427.0 ],
+									"order" : 1,
 									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"midpoints" : [ 192.5, 375.0, 227.0, 375.0 ],
+									"order" : 0,
+									"source" : [ "obj-3", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-7", 0 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
