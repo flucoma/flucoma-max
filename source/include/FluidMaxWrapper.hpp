@@ -925,7 +925,8 @@ class FluidMaxWrapper
       auto& a = x->params().template get<N>();
       
       if(!x->mInitialized)
-         a = LongRuntimeMaxParam(atom_getlong(av), a.max());
+         x->params().template set<N>(LongRuntimeMaxParam(atom_getlong(av), a.maxRaw()),
+                                  x->verbose() ? &x->messages() : nullptr);
       else
          x->params().template set<N>(LongRuntimeMaxParam(atom_getlong(av), a.max()),
                                   x->verbose() ? &x->messages() : nullptr);
