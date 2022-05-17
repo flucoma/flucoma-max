@@ -268,6 +268,7 @@
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
+										"fontsize" : 13.0,
 										"globalpatchername" : "",
 										"tags" : ""
 									}
@@ -753,7 +754,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 230.0, 127.0, 72.0, 22.0 ],
+													"patching_rect" : [ 230.0, 127.0, 77.0, 23.0 ],
 													"text" : "prepend set"
 												}
 
@@ -765,7 +766,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 230.0, 92.0, 54.0, 22.0 ],
+													"patching_rect" : [ 230.0, 92.0, 58.0, 23.0 ],
 													"text" : "deferlow"
 												}
 
@@ -777,7 +778,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 45.0, 61.0, 22.0 ],
+													"patching_rect" : [ 15.0, 45.0, 62.0, 23.0 ],
 													"text" : "#1"
 												}
 
@@ -811,7 +812,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 15.0, 75.0, 54.0, 22.0 ],
+													"patching_rect" : [ 15.0, 75.0, 58.0, 23.0 ],
 													"text" : "deferlow"
 												}
 
@@ -852,7 +853,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 462.0, 235.0, 61.0, 22.0 ],
+													"patching_rect" : [ 462.0, 235.0, 62.0, 23.0 ],
 													"text" : "#1"
 												}
 
@@ -864,7 +865,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 15.0, 12.0, 58.0, 22.0 ],
+													"patching_rect" : [ 15.0, 12.0, 62.0, 23.0 ],
 													"text" : "loadbang"
 												}
 
@@ -876,7 +877,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 230.0, 55.0, 286.0, 22.0 ],
+													"patching_rect" : [ 230.0, 55.0, 309.0, 23.0 ],
 													"text" : "combine learn.flucoma.org/reference/ s @triggers -1"
 												}
 
@@ -889,7 +890,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 225.0, 265.0, 256.0, 35.0 ],
+													"patching_rect" : [ 225.0, 265.0, 266.0, 38.0 ],
 													"text" : "combine https://learn.flucoma.org/reference/ s @triggers -1"
 												}
 
@@ -902,7 +903,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 225.0, 315.0, 129.0, 35.0 ],
+													"patching_rect" : [ 225.0, 315.0, 139.0, 38.0 ],
 													"text" : ";\rmax launchbrowser $1"
 												}
 
@@ -1530,7 +1531,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "float" ],
-													"patching_rect" : [ 50.5, 187.0, 154.0, 22.0 ],
+													"patching_rect" : [ 50.5, 187.0, 154.0, 23.0 ],
 													"text" : "peek~ buf.flatten.help.src"
 												}
 
@@ -1542,7 +1543,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 185.5, 158.0, 29.5, 22.0 ],
+													"patching_rect" : [ 185.5, 158.0, 29.5, 23.0 ],
 													"text" : "+ 1"
 												}
 
@@ -1554,7 +1555,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
-													"patching_rect" : [ 118.0, 128.0, 86.5, 22.0 ],
+													"patching_rect" : [ 118.0, 128.0, 86.5, 23.0 ],
 													"text" : "swap"
 												}
 
@@ -1566,7 +1567,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "int", "int" ],
-													"patching_rect" : [ 50.0, 100.0, 154.5, 22.0 ],
+													"patching_rect" : [ 50.0, 100.0, 154.5, 23.0 ],
 													"text" : "unpack 0 0 0"
 												}
 
