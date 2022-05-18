@@ -95,7 +95,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.0, 344.833327999999995, 100.0, 65.0 ],
-									"presentation_linecount" : 4,
 									"text" : "delay compensation for processing of hpss.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -229,7 +228,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 354.5, 306.833327999999995, 290.0, 21.0 ],
+									"patching_rect" : [ 380.0, 289.0, 290.0, 21.0 ],
 									"text" : "size of 'percussive' median filter (in spectral bins)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -242,7 +241,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 354.5, 233.833327999999995, 226.0, 36.0 ],
+									"patching_rect" : [ 380.0, 216.0, 226.0, 36.0 ],
 									"text" : "size of 'harmonic' median filter (in hops). Bigger = more latency",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -613,7 +612,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 354.5, 327.833327999999995, 150.0, 23.0 ]
+									"patching_rect" : [ 380.0, 310.0, 150.0, 23.0 ]
 								}
 
 							}
@@ -626,7 +625,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 354.5, 271.833327999999995, 150.0, 23.0 ]
+									"patching_rect" : [ 380.0, 254.0, 150.0, 23.0 ]
 								}
 
 							}
@@ -772,7 +771,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 364.0, 295.833327999999995, 293.5, 295.833327999999995 ],
+									"midpoints" : [ 389.5, 279.0, 293.5, 279.0 ],
 									"source" : [ "obj-27", 0 ]
 								}
 
@@ -832,7 +831,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 364.0, 352.833327999999995, 293.5, 352.833327999999995 ],
+									"midpoints" : [ 389.5, 351.0, 293.5, 351.0 ],
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -992,7 +991,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 402.875, 267.520844000000011, 188.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Modify the frequency threshold",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -2251,7 +2249,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 236.375, 606.5, 298.0, 25.0 ],
-									"presentation_linecount" : 4,
 									"text" : "select which component or components to hear",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -2286,7 +2283,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 233.375, 134.0, 40.0 ],
-									"presentation_linecount" : 2,
 									"text" : "modify the thresholds",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
