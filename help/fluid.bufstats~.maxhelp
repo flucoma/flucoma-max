@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 843.0, 739.0 ],
+						"rect" : [ 0.0, 26.0, 843.0, 739.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -95,7 +95,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 447.5, 584.5, 230.0, 94.0 ],
-									"presentation_linecount" : 9,
 									"text" : "This is the skewness of the raw data, and the skewness of the 1st derivative. This single piece of information can help us differentiate the upward and downward trends of each of these distributions.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -118,7 +117,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 351.5, 620.0, 81.0, 23.0 ]
+									"patching_rect" : [ 351.5, 620.0, 81.0, 23.0 ],
+									"text" : "0. -2.011716"
 								}
 
 							}
@@ -139,7 +139,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 33.5, 620.0, 77.0, 23.0 ]
+									"patching_rect" : [ 33.5, 620.0, 77.0, 23.0 ],
+									"text" : "0. 2.006501"
 								}
 
 							}
@@ -195,7 +196,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 59.5, 480.0, 386.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Only calculate the skewness of the 0th (raw) and 1st derivative"
 								}
 
@@ -235,7 +235,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 33.5, 530.0, 261.0, 38.0 ],
+									"patching_rect" : [ 33.5, 530.0, 265.0, 38.0 ],
 									"text" : "fluid.bufstats~ @source help.bufstats.src.up @numderivs 1 @select skew"
 								}
 
@@ -248,8 +248,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 593.5, 384.5, 160.0, 94.0 ],
-									"presentation_linecount" : 8,
+									"patching_rect" : [ 593.5, 384.5, 162.0, 94.0 ],
 									"text" : "These two sets of values are very similar. It would be hard to gather any meaningful information for differentiating these two ramps from each other.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -498,7 +497,6 @@
 									}
 ,
 									"patching_rect" : [ 363.5, 210.0, 76.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -714,7 +712,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 351.5, 420.0, 236.0, 23.0 ]
+									"patching_rect" : [ 351.5, 420.0, 236.0, 23.0 ],
+									"text" : "0.505 0.288661 0. 1.79976 0.01 0.51 1."
 								}
 
 							}
@@ -760,7 +759,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 33.5, 420.0, 229.0, 23.0 ]
+									"patching_rect" : [ 33.5, 420.0, 229.0, 23.0 ],
+									"text" : "0.495 0.288661 0. 1.79976 0. 0.5 0.99"
 								}
 
 							}
@@ -1824,7 +1824,7 @@
 											}
 , 											{
 												"box" : 												{
-													"buffername" : "u500001334",
+													"buffername" : "u364007468",
 													"gridcolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
 													"id" : "obj-10",
 													"maxclass" : "waveform~",
@@ -1856,7 +1856,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 267.0, 158.0, 109.0, 22.0 ],
-													"text" : "buffer u946001688"
+													"text" : "buffer u364007468"
 												}
 
 											}
@@ -1868,7 +1868,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 20.0, 73.0, 109.0, 22.0 ],
-													"text" : "buffer u815007369"
+													"text" : "buffer u636007471"
 												}
 
 											}
@@ -2114,7 +2114,7 @@
 											}
 , 											{
 												"box" : 												{
-													"buffername" : "u500001334",
+													"buffername" : "u152007476",
 													"gridcolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
 													"id" : "obj-10",
 													"maxclass" : "waveform~",
@@ -2133,7 +2133,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 17.0, 67.0, 109.0, 22.0 ],
-													"text" : "buffer u815007369"
+													"text" : "buffer u636007471"
 												}
 
 											}
@@ -2145,7 +2145,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 161.0, 151.0, 109.0, 22.0 ],
-													"text" : "buffer u500001334"
+													"text" : "buffer u152007476"
 												}
 
 											}
@@ -2406,12 +2406,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-2",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 16.0, 97.0, 108.0, 22.0 ],
-													"text" : "buffer u339001160"
+													"text" : "buffer u631007486"
 												}
 
 											}
@@ -2538,7 +2539,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 30.0, 339.5, 117.0, 23.0 ],
-									"text" : "buffer u815007369"
+									"text" : "buffer u636007471"
 								}
 
 							}
@@ -4648,7 +4649,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 843.0, 739.0 ],
+						"rect" : [ 35.0, 114.0, 843.0, 739.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
