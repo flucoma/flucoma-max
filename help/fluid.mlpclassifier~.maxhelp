@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 963.0, 877.0 ],
+		"rect" : [ 35.0, 87.0, 963.0, 779.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 963.0, 851.0 ],
+						"rect" : [ 35.0, 113.0, 963.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -94,8 +94,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 640.0, 700.0, 193.0, 50.0 ],
-									"presentation_linecount" : 5,
+									"patching_rect" : [ 650.0, 628.0, 193.0, 50.0 ],
 									"text" : "If you change the dataset you can call \"predict\" again to generate new predictions.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -104,11 +103,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-48",
-									"linecount" : 11,
+									"linecount" : 8,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 656.0, 390.0, 150.0, 166.0 ],
+									"patching_rect" : [ 670.0, 374.0, 184.0, 123.0 ],
 									"text" : "Every point in the dataset has a prediction made for it and is coloured accordingly.\n\nWe should see the quadrant separation learned from the first dataset mapped on to the second dataset here.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -127,7 +126,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 800.0, 672.5, 20.0, 20.0 ],
+									"patching_rect" : [ 810.0, 600.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -141,7 +140,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 432.0, 670.0, 364.0, 25.0 ],
+									"patching_rect" : [ 442.0, 598.0, 364.0, 25.0 ],
 									"text" : "Based on the training, predict labels for the second dataset"
 								}
 
@@ -159,7 +158,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 670.0, 142.5, 20.0, 20.0 ],
+									"patching_rect" : [ 680.0, 142.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -173,7 +172,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 502.0, 140.0, 164.0, 25.0 ],
+									"patching_rect" : [ 512.0, 140.0, 164.0, 25.0 ],
 									"text" : "Select a second dataset"
 								}
 
@@ -187,7 +186,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 60.0, 790.0, 70.0, 23.0 ]
+									"patching_rect" : [ 70.0, 718.0, 70.0, 23.0 ]
 								}
 
 							}
@@ -198,7 +197,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 60.0, 750.0, 94.0, 23.0 ],
+									"patching_rect" : [ 70.0, 678.0, 94.0, 23.0 ],
 									"text" : "route fit predict"
 								}
 
@@ -210,7 +209,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 633.0, 318.5, 74.0, 23.0 ],
+									"patching_rect" : [ 643.0, 300.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -222,7 +221,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 512.0, 218.5, 41.0, 23.0 ],
+									"patching_rect" : [ 553.0, 218.5, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -234,7 +233,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.0, 670.0, 290.0, 23.0 ],
+									"patching_rect" : [ 150.0, 598.0, 290.0, 23.0 ],
 									"text" : "predict help.mlpc.dataout.1 help.mlpc.labelsout.1"
 								}
 
@@ -246,7 +245,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 441.0, 318.5, 74.0, 23.0 ],
+									"patching_rect" : [ 451.0, 300.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -258,7 +257,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 330.0, 218.5, 92.0, 23.0 ],
+									"patching_rect" : [ 340.0, 218.5, 92.0, 23.0 ],
 									"text" : "read $1, dump"
 								}
 
@@ -266,11 +265,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-21",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 60.0, 540.0, 204.0, 23.0 ],
+									"patching_rect" : [ 288.5, 390.0, 131.5, 38.0 ],
 									"text" : "fluid.dataset~ help.mlpc.labelsin.1"
 								}
 
@@ -278,11 +278,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 60.0, 500.0, 195.0, 23.0 ],
+									"patching_rect" : [ 288.5, 340.0, 121.5, 38.0 ],
 									"text" : "fluid.dataset~ help.mlpc.datain.1"
 								}
 
@@ -290,12 +291,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 330.0, 258.5, 130.0, 38.0 ],
+									"patching_rect" : [ 340.0, 258.5, 203.0, 23.0 ],
 									"text" : "fluid.dataset~ help.mlpc.dataout.1"
 								}
 
@@ -303,12 +303,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
-									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 512.0, 258.5, 140.0, 38.0 ],
+									"patching_rect" : [ 553.0, 258.5, 214.0, 23.0 ],
 									"text" : "fluid.labelset~ help.mlpc.labelsout.1"
 								}
 
@@ -322,7 +321,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 441.0, 358.5, 211.0, 211.0 ]
+									"patching_rect" : [ 451.0, 330.0, 211.0, 211.0 ]
 								}
 
 							}
@@ -1015,7 +1014,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 60.0, 230.0, 211.0, 23.0 ],
+									"patching_rect" : [ 70.0, 230.0, 211.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1043,7 +1042,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 330.0, 140.0, 170.0, 60.0 ],
+									"patching_rect" : [ 340.0, 140.0, 170.0, 60.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1061,7 +1060,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 326.0, 592.5, 20.0, 20.0 ],
+									"patching_rect" : [ 336.0, 520.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1075,7 +1074,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 100.0, 590.0, 224.0, 25.0 ],
+									"patching_rect" : [ 110.0, 518.0, 224.0, 25.0 ],
 									"text" : "Clear the neural network to reset it"
 								}
 
@@ -1093,7 +1092,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 640.0, 632.5, 20.0, 20.0 ],
+									"patching_rect" : [ 650.0, 560.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1107,7 +1106,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 350.0, 630.0, 286.0, 25.0 ],
+									"patching_rect" : [ 360.0, 558.0, 286.0, 25.0 ],
 									"text" : "Train the network as many times as you want"
 								}
 
@@ -1125,7 +1124,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 230.0, 181.5, 20.0, 20.0 ],
+									"patching_rect" : [ 240.0, 181.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1140,7 +1139,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 60.0, 140.0, 184.0, 40.0 ],
+									"patching_rect" : [ 70.0, 140.0, 184.0, 40.0 ],
 									"text" : "Prepare some data and labels"
 								}
 
@@ -1152,7 +1151,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 60.0, 590.0, 37.0, 23.0 ],
+									"patching_rect" : [ 70.0, 518.0, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -1164,7 +1163,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 103.0, 630.0, 246.0, 23.0 ],
+									"patching_rect" : [ 113.0, 558.0, 246.0, 23.0 ],
 									"text" : "fit help.mlpc.datain.1 help.mlpc.labelsin.1"
 								}
 
@@ -1176,7 +1175,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 60.0, 710.0, 575.0, 23.0 ],
+									"patching_rect" : [ 70.0, 638.0, 575.0, 23.0 ],
 									"text" : "fluid.mlpclassifier~ @hiddenlayers 6 @activation 1 @learnrate 0.1 @momentum 0.1 @validation 0"
 								}
 
@@ -1190,7 +1189,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 60.0, 270.0, 211.0, 211.0 ]
+									"patching_rect" : [ 70.0, 270.0, 211.0, 211.0 ]
 								}
 
 							}
@@ -1201,7 +1200,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 60.0, 180.0, 165.0, 23.0 ],
+									"patching_rect" : [ 70.0, 180.0, 165.0, 23.0 ],
 									"text" : "read gaussian4.json, dump"
 								}
 
@@ -1255,6 +1254,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
+									"midpoints" : [ 757.5, 290.25, 652.5, 290.25 ],
 									"source" : [ "obj-11", 1 ]
 								}
 
@@ -1269,6 +1269,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
+									"midpoints" : [ 533.5, 290.25, 460.5, 290.25 ],
 									"source" : [ "obj-18", 1 ]
 								}
 
@@ -1297,6 +1298,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
+									"midpoints" : [ 159.5, 626.0, 79.5, 626.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -1318,7 +1320,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
-									"midpoints" : [ 107.0, 783.0, 847.25, 783.0, 847.25, 207.5, 521.5, 207.5 ],
+									"midpoints" : [ 117.0, 703.0, 55.0, 703.0, 55.0, 214.0, 562.5, 214.0 ],
 									"source" : [ "obj-36", 1 ]
 								}
 
@@ -1333,7 +1335,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"midpoints" : [ 112.5, 666.0, 69.5, 666.0 ],
+									"midpoints" : [ 122.5, 625.0, 79.5, 625.0 ],
 									"source" : [ "obj-58", 0 ]
 								}
 
@@ -1341,7 +1343,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"midpoints" : [ 69.5, 606.0, 69.5, 606.0 ],
+									"midpoints" : [ 79.5, 544.0, 79.5, 544.0 ],
 									"source" : [ "obj-70", 0 ]
 								}
 
@@ -1443,7 +1445,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 851.0 ],
+						"rect" : [ 0.0, 26.0, 963.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1479,7 +1481,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 393.0, 380.0, 382.0, 21.0 ],
+									"patching_rect" : [ 393.0, 370.0, 382.0, 21.0 ],
 									"text" : "A prediction will be made based on the position of your mouse. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1492,7 +1494,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 670.0, 539.0, 257.5, 36.0 ],
+									"patching_rect" : [ 670.0, 529.0, 257.5, 36.0 ],
 									"text" : "You can repeatedly train to get a better \"fit\". (See the message below the object)",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1511,7 +1513,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 418.0, 615.5, 20.0, 20.0 ],
+									"patching_rect" : [ 418.0, 605.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1525,7 +1527,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 176.0, 570.0, 180.0, 79.0 ],
+									"patching_rect" : [ 176.0, 560.0, 180.0, 79.0 ],
 									"text" : "The predictpoint message here tells the neural network that new data (in the buffer) needs to have a label predicted for it.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1544,7 +1546,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 731.0, 355.5, 20.0, 20.0 ],
+									"patching_rect" : [ 731.0, 345.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1558,7 +1560,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 393.0, 353.0, 336.0, 25.0 ],
+									"patching_rect" : [ 393.0, 343.0, 336.0, 25.0 ],
 									"text" : "Click and drag around this space to trigger predictions"
 								}
 
@@ -1570,7 +1572,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 738.0, 204.5, 169.0, 94.0 ],
+									"patching_rect" : [ 738.0, 194.5, 169.0, 94.0 ],
 									"text" : "Labels are assigned like so:\n\ntop left yellow\ntop right blue\nbottom left red\nbottom right green",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1579,12 +1581,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-40",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 528.0, 706.5, 138.0, 50.0 ],
-									"text" : "This is the label that it determines for your mouse point",
+									"patching_rect" : [ 528.0, 696.5, 103.0, 36.0 ],
+									"text" : "This is the predicted label.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1596,7 +1598,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 207.0, 673.5, 149.0, 36.0 ],
+									"patching_rect" : [ 207.0, 663.5, 149.0, 36.0 ],
 									"text" : "The \"error\" after fitting the data and the labels",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1609,7 +1611,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 700.5, 666.5, 150.0, 50.0 ],
+									"patching_rect" : [ 700.5, 656.5, 150.0, 50.0 ],
 									"text" : "updates the colour of the cursor as you move around the space",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1628,7 +1630,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 676.0, 432.5, 20.0, 20.0 ],
+									"patching_rect" : [ 676.0, 422.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1642,7 +1644,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 450.0, 430.0, 224.0, 25.0 ],
+									"patching_rect" : [ 450.0, 420.0, 224.0, 25.0 ],
 									"text" : "Clear the neural network to reset it"
 								}
 
@@ -1660,7 +1662,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 840.0, 492.5, 20.0, 20.0 ],
+									"patching_rect" : [ 840.0, 482.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1675,7 +1677,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 664.0, 468.0, 171.0, 69.0 ],
+									"patching_rect" : [ 664.0, 458.0, 171.0, 69.0 ],
 									"text" : "Train the network using data and labels provided in help.mlpc.data.1 and help.mlpc.labels.1"
 								}
 
@@ -1687,7 +1689,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 52.5, 388.0, 100.0, 65.0 ],
+									"patching_rect" : [ 52.5, 378.0, 100.0, 65.0 ],
 									"text" : "Have a cursor appear in the space when querying",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1699,7 +1701,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 609.0, 181.5, 298.0, 21.0 ],
+									"patching_rect" : [ 609.0, 171.5, 298.0, 21.0 ],
 									"text" : "provide a label for each point based on its position",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1999,7 +2001,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 676.0, 720.0, 125.0, 23.0 ],
+									"patching_rect" : [ 676.0, 710.0, 125.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2019,7 +2021,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 22.5, 340.0, 140.0, 38.0 ],
+									"patching_rect" : [ 22.5, 330.0, 140.0, 38.0 ],
 									"text" : "setpoint cursor $1 $2, pointsize cursor 2.5"
 								}
 
@@ -2037,7 +2039,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 633.0, 144.0, 20.0, 20.0 ],
+									"patching_rect" : [ 633.0, 134.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2051,7 +2053,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 463.0, 141.5, 168.0, 25.0 ],
+									"patching_rect" : [ 463.0, 131.5, 168.0, 25.0 ],
 									"text" : "Give each cluster a label"
 								}
 
@@ -2069,7 +2071,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 384.0, 141.5, 20.0, 20.0 ],
+									"patching_rect" : [ 384.0, 131.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2083,7 +2085,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 176.0, 139.0, 205.0, 25.0 ],
+									"patching_rect" : [ 176.0, 129.0, 205.0, 25.0 ],
 									"text" : "load the gaussian clusters data"
 								}
 
@@ -2095,7 +2097,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 393.0, 720.0, 128.0, 23.0 ],
+									"patching_rect" : [ 393.0, 703.0, 128.0, 23.0 ],
 									"text" : "\"top left yellow\""
 								}
 
@@ -2107,7 +2109,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 410.0, 640.0, 203.0, 23.0 ],
+									"patching_rect" : [ 410.0, 630.0, 203.0, 23.0 ],
 									"text" : "route fit predictpoint"
 								}
 
@@ -2119,7 +2121,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 410.0, 430.0, 37.0, 23.0 ],
+									"patching_rect" : [ 410.0, 420.0, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -2131,7 +2133,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 353.0, 680.0, 76.0, 23.0 ],
+									"patching_rect" : [ 353.0, 670.0, 76.0, 23.0 ],
 									"text" : "0.004634"
 								}
 
@@ -2143,7 +2145,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 176.0, 530.0, 94.0, 23.0 ],
+									"patching_rect" : [ 176.0, 504.0, 94.0, 23.0 ],
 									"text" : "predictpoint $2"
 								}
 
@@ -2155,7 +2157,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 176.0, 490.0, 77.0, 23.0 ],
+									"patching_rect" : [ 176.0, 470.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
 
@@ -2167,7 +2169,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 437.0, 491.0, 225.0, 23.0 ],
+									"patching_rect" : [ 437.0, 481.0, 225.0, 23.0 ],
 									"text" : "fit help.mlpc.data.1 help.mlpc.labels.1"
 								}
 
@@ -2606,7 +2608,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 420.0, 181.5, 182.0, 23.0 ],
+									"patching_rect" : [ 420.0, 171.5, 182.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2625,7 +2627,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 597.0, 261.5, 74.0, 23.0 ],
+									"patching_rect" : [ 597.0, 251.5, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -2637,7 +2639,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 420.0, 141.5, 41.0, 23.0 ],
+									"patching_rect" : [ 420.0, 131.5, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -2649,7 +2651,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 420.0, 225.5, 196.0, 23.0 ],
+									"patching_rect" : [ 420.0, 215.5, 196.0, 23.0 ],
 									"text" : "fluid.labelset~ help.mlpc.labels.1"
 								}
 
@@ -2662,7 +2664,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 410.0, 560.0, 230.0, 52.0 ],
+									"patching_rect" : [ 410.0, 550.0, 230.0, 52.0 ],
 									"text" : "fluid.mlpclassifier~ @hiddenlayers 6 @activation 1 @learnrate 0.1 @momentum 0.1 @validation 0"
 								}
 
@@ -2674,7 +2676,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 176.0, 210.0, 74.0, 23.0 ],
+									"patching_rect" : [ 176.0, 200.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -2688,7 +2690,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 176.0, 260.0, 211.0, 211.0 ]
+									"patching_rect" : [ 176.0, 250.0, 211.0, 211.0 ]
 								}
 
 							}
@@ -2699,7 +2701,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 140.0, 165.0, 23.0 ],
+									"patching_rect" : [ 10.0, 130.0, 165.0, 23.0 ],
 									"text" : "read gaussian4.json, dump"
 								}
 
@@ -2711,7 +2713,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 180.0, 185.0, 23.0 ],
+									"patching_rect" : [ 10.0, 170.0, 185.0, 23.0 ],
 									"text" : "fluid.dataset~ help.mlpc.data.1"
 								}
 
@@ -2772,7 +2774,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-21", 0 ],
-									"midpoints" : [ 185.5, 474.0, 170.0, 474.0, 170.0, 333.0, 32.0, 333.0 ],
+									"midpoints" : [ 185.5, 464.0, 170.0, 464.0, 170.0, 323.0, 32.0, 323.0 ],
 									"order" : 1,
 									"source" : [ "obj-14", 0 ]
 								}
@@ -2796,7 +2798,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 419.5, 613.0, 419.5, 613.0 ],
+									"midpoints" : [ 419.5, 603.0, 419.5, 603.0 ],
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -2804,7 +2806,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"midpoints" : [ 32.0, 384.0, 170.0, 384.0, 170.0, 255.0, 185.5, 255.0 ],
+									"midpoints" : [ 32.0, 374.0, 170.0, 374.0, 170.0, 245.0, 185.5, 245.0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -2826,7 +2828,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"midpoints" : [ 685.5, 770.0, 16.5, 770.0, 16.5, 249.0, 185.5, 249.0 ],
+									"midpoints" : [ 685.5, 745.0, 16.5, 745.0, 16.5, 239.0, 185.5, 239.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -2834,7 +2836,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 1 ],
-									"midpoints" : [ 606.5, 285.0, 399.0, 285.0, 399.0, 255.0, 377.5, 255.0 ],
+									"midpoints" : [ 606.5, 275.0, 399.0, 275.0, 399.0, 245.0, 377.5, 245.0 ],
 									"source" : [ "obj-49", 0 ]
 								}
 
@@ -2849,7 +2851,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"midpoints" : [ 446.5, 546.0, 419.5, 546.0 ],
+									"midpoints" : [ 446.5, 536.0, 419.5, 536.0 ],
 									"source" : [ "obj-58", 0 ]
 								}
 
@@ -2857,7 +2859,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-31", 0 ],
-									"midpoints" : [ 511.5, 693.0, 685.5, 693.0 ],
+									"midpoints" : [ 511.5, 683.0, 685.5, 683.0 ],
 									"order" : 0,
 									"source" : [ "obj-6", 1 ]
 								}
@@ -2888,7 +2890,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"midpoints" : [ 185.5, 555.0, 419.5, 555.0 ],
+									"midpoints" : [ 185.5, 534.0, 419.5, 534.0 ],
 									"source" : [ "obj-66", 0 ]
 								}
 
@@ -2896,7 +2898,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 0 ],
-									"midpoints" : [ 419.5, 456.0, 419.5, 456.0 ],
+									"midpoints" : [ 419.5, 446.0, 419.5, 446.0 ],
 									"source" : [ "obj-70", 0 ]
 								}
 
@@ -3000,7 +3002,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 851.0 ],
+						"rect" : [ 0.0, 26.0, 963.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
