@@ -227,7 +227,10 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
 
     if (!isr() && (x->canResize || resizeAnyway))
     {
-      bool needsResize = count < argc;
+      index size = x->axis == 0
+                ? buf.numFrames() - x->startFrame
+                : buf.numChans() - x->startChannel;
+      bool needsResize = size != argc;
 
       if (needsResize && !buf.resize(x->axis == 0 ? x->startFrame + argc : 1,
                                      x->axis == 0 ? 1 : x->startChannel + argc,
