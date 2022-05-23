@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
+						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -131,8 +131,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -369,7 +369,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 62.0, 77.0, 280.0, 40.0 ],
+									"patching_rect" : [ 62.0, 77.0, 283.0, 40.0 ],
 									"text" : "Drag this value up and down between 1 and 100 to generate lists of values of that length",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -381,7 +381,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 10.0, 260.0, 344.0, 23.0 ],
 									"text" : "fluid.list2buf @autosize 0 @destination help.list2buf.resize"
 								}
@@ -411,7 +411,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 40.0, 200.0, 150.0, 23.0 ]
 								}
 
@@ -481,8 +480,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -542,14 +541,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
+						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -585,7 +584,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 170.0, 90.0, 243.0, 79.0 ],
+									"patching_rect" : [ 170.0, 90.0, 245.0, 79.0 ],
 									"text" : "You can also alter the axis or orientation that the buffer will take the values in. This changes whether values are written to individual channels or as frames in a single channel",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -719,7 +718,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 10.0, 210.0, 328.0, 23.0 ],
 									"text" : "fluid.list2buf @destination help.list2buf.dst.axis @axis 0"
 								}
@@ -831,8 +830,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -895,7 +894,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 153.0, 140.0, 327.0, 25.0 ],
-									"text" : "Notice that the buffer will never be resized downards",
+									"text" : "Notice that the buffer will be resized downards",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -932,13 +931,13 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 69.5, 250.0, 150.0, 23.0 ],
-									"text" : "buffer u080001115"
+									"text" : "buffer u979000824"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "u080001115",
+									"buffername" : "u979000824",
 									"id" : "obj-3",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -1025,7 +1024,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 10.0, 190.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
@@ -1116,8 +1115,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1254,7 +1253,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 10.0, 190.0, 251.0, 23.0 ],
 									"text" : "fluid.list2buf @destination help.list2buf.dst"
 								}
@@ -1319,6 +1318,23 @@
 			}
  ],
 		"lines" : [  ],
+		"dependency_cache" : [ 			{
+				"name" : "fluid.list2buf.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
 		"autosave" : 0
 	}
 
