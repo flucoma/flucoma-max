@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -78,8 +78,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -178,7 +178,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 550.0, 216.5, 259.0, 210.0 ],
-									"text" : "The fluid.bufmfcc~ object above only returns 3 MFCC coefficients. The buffer~ with the analysis is 6 channels, because it calculates 3 channels per channel in the input buffer, which in this case is stereo.\n\nThe layout is as follows then:\n\nMFCC 0 - L\nMFCC 1 - L\nMFCC 2 - L\nMFCC 0 - R\nMFCC 1 - R\nMFCC - 2 R",
+									"text" : "The fluid.bufmfcc~ object above only returns 3 MFCC coefficients. The buffer~ with the analysis is 6 channels, because it calculates 3 channels per channel in the input buffer, which in this case is stereo.\n\nThe layout is as follows then:\n\nMFCC 0 - L\nMFCC 1 - L\nMFCC 2 - L\nMFCC 0 - R\nMFCC 1 - R\nMFCC 2 - R",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -442,8 +442,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -633,7 +633,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 416.5, 258.5, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
@@ -647,7 +646,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 416.5, 233.5, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
@@ -774,7 +772,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 416.5, 184.0, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
@@ -788,7 +785,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
 									"patching_rect" : [ 416.5, 208.0, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
@@ -970,8 +966,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1035,6 +1031,71 @@
 			"inherited_shortname" : 1
 		}
 ,
+		"dependency_cache" : [ 			{
+				"name" : "fluid.bufloader.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.bufmfcc~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.learn.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.patchpath.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.waveform~.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/jsui",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/jsui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid_decomposition.blocking.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpstarter.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
