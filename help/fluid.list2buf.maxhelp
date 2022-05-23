@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
+						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -99,7 +99,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 442.0, 190.0, 20.0, 20.0 ],
+									"patching_rect" : [ 442.0, 200.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -114,8 +114,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 200.0, 181.5, 240.0, 40.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 200.0, 191.5, 240.0, 40.0 ],
 									"text" : "Now turn on autosize on and see how it affects the destination buffer",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -267,7 +266,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 130.0, 188.0, 23.0 ],
+									"patching_rect" : [ 10.0, 140.0, 188.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -286,7 +285,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 280.0, 350.5, 234.0, 23.0 ],
+									"patching_rect" : [ 280.0, 360.5, 234.0, 23.0 ],
 									"text" : "buffer~ help.list2buf.resize @samps 32"
 								}
 
@@ -313,7 +312,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 10.0, 330.0, 256.0, 64.0 ]
+									"patching_rect" : [ 10.0, 340.0, 256.0, 64.0 ]
 								}
 
 							}
@@ -324,7 +323,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 210.0, 123.5, 470.0, 36.0 ],
+									"patching_rect" : [ 210.0, 133.5, 470.0, 36.0 ],
 									"text" : "With autosize 0 fluid.list2buf won't try to resize the destination buffer (internal or external). This means the buffer cannot grow to accomodate more values",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -337,7 +336,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 290.0, 44.0, 23.0 ],
+									"patching_rect" : [ 10.0, 300.0, 44.0, 23.0 ],
 									"text" : "set $2"
 								}
 
@@ -366,11 +365,12 @@
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-4",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 62.0, 84.5, 280.0, 25.0 ],
-									"text" : "Generate a list of random values of N length",
+									"patching_rect" : [ 62.0, 77.0, 280.0, 40.0 ],
+									"text" : "Drag this value up and down between 1 and 100 to generate lists of values of that length",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -382,7 +382,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 10.0, 250.0, 344.0, 23.0 ],
+									"patching_rect" : [ 10.0, 260.0, 344.0, 23.0 ],
 									"text" : "fluid.list2buf @autosize 0 @destination help.list2buf.resize"
 								}
 
@@ -412,7 +412,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 40.0, 190.0, 150.0, 23.0 ]
+									"patching_rect" : [ 40.0, 200.0, 150.0, 23.0 ]
 								}
 
 							}
@@ -427,7 +427,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 49.5, 236.0, 19.5, 236.0 ],
+									"midpoints" : [ 49.5, 246.0, 19.5, 246.0 ],
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -435,7 +435,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 19.5, 159.0, 19.5, 159.0 ],
+									"midpoints" : [ 19.5, 169.0, 19.5, 169.0 ],
 									"source" : [ "obj-39", 0 ]
 								}
 
@@ -458,7 +458,6 @@
 					}
 ,
 					"patching_rect" : [ 171.0, 85.0, 77.0, 22.0 ],
-					"presentation_linecount" : 3,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -586,7 +585,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 170.0, 90.0, 240.0, 79.0 ],
+									"patching_rect" : [ 170.0, 90.0, 243.0, 79.0 ],
 									"text" : "You can also alter the axis or orientation that the buffer will take the values in. This changes whether values are written to individual channels or as frames in a single channel",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -896,7 +895,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 153.0, 140.0, 327.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Notice that the buffer will never be resized downards",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -934,13 +932,13 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 69.5, 250.0, 150.0, 23.0 ],
-									"text" : "buffer u384008155"
+									"text" : "buffer u080001115"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "u384008155",
+									"buffername" : "u080001115",
 									"id" : "obj-3",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -957,8 +955,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 100.0, 183.5, 480.0, 36.0 ],
-									"presentation_linecount" : 5,
+									"patching_rect" : [ 100.0, 183.5, 483.0, 36.0 ],
 									"text" : "If no @destination buffer is set, an internal buffer is resized and used instead. The outlet reports the name of the destination buffer that was operated on",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1126,7 +1123,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
+						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1322,23 +1319,6 @@
 			}
  ],
 		"lines" : [  ],
-		"dependency_cache" : [ 			{
-				"name" : "fluid.list2buf.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 
