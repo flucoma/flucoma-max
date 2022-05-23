@@ -121,7 +121,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 576.0, 435.5, 188.0, 21.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Listen to the source if you want",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -166,7 +165,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 600.0, 121.5, 99.0, 21.0 ],
-									"presentation_linecount" : 3,
 									"text" : "A stereo source",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -180,7 +178,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 550.0, 216.5, 259.0, 210.0 ],
-									"presentation_linecount" : 14,
 									"text" : "The fluid.bufmfcc~ object above only returns 3 MFCC coefficients. The buffer~ with the analysis is 6 channels, because it calculates 3 channels per channel in the input buffer, which in this case is stereo.\n\nThe layout is as follows then:\n\nMFCC 0 - L\nMFCC 1 - L\nMFCC 2 - L\nMFCC 0 - R\nMFCC 1 - R\nMFCC - 2 R",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -231,7 +228,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 70.0, 259.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "multichannel processing with fluid.bufmfcc~",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -593,6 +589,7 @@
 							}
 , 							{
 								"box" : 								{
+									"args" : [ "@file", "Nicol-LoopE-M.wav" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -696,8 +693,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 382.5, 129.5, 143.0, 25.0 ],
-									"text" : "start MFCC analysis",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "start MFCC analysis"
 								}
 
 							}

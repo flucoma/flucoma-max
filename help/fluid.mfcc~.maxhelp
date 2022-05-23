@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 796.0, 622.0 ],
+						"rect" : [ 99.0, 113.0, 796.0, 622.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -107,7 +107,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 290.0, 420.0, 300.0, 79.0 ],
-									"presentation_linecount" : 7,
 									"text" : "Inside this subpatch a Euclidian distance is calculated on the current MFCC analysis to the one stored against either the first or second template. The lower the number, the more similar it is.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -152,7 +151,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.333374000000049, 62.0, 222.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "A real-time timbral matching example",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -228,6 +226,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-5",
+									"local" : 1,
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
@@ -1104,7 +1103,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 134.25, 110.0, 113.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "select a source"
 								}
 
@@ -1160,7 +1158,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 210.0, 320.0, 449.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "ask the object for 13 MFCCs starting from the second (it counts starting at 0)",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1186,7 +1183,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 292.0, 140.25, 278.0, 166.0 ],
-									"presentation_linecount" : 10,
 									"text" : "The first coefficient (the first index) is essentally a value that represents the loudness.\n\nTry modulating the volume here on any of the sources, and watch that it doesn't really effect the \"shape\" of the coefficients.\n\nRemoving the first coefficient is a common practice if you only care about the timbre of the measured sound.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1766,7 +1762,6 @@
 					}
 ,
 					"patching_rect" : [ 80.0, 160.0, 153.0, 23.0 ],
-					"presentation_linecount" : 4,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1798,7 +1793,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 99.0, 113.0, 796.0, 622.0 ],
+						"rect" : [ 0.0, 26.0, 796.0, 622.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1856,7 +1851,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 251.166655999999989, 180.0, 99.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "play a sound"
 								}
 
@@ -1889,7 +1883,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 294.0, 520.5, 220.0, 65.0 ],
-									"presentation_linecount" : 3,
 									"text" : "MFCCs are output as a list which can be used for many applications where we are interested in the timbral differences between sounds.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
