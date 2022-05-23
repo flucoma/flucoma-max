@@ -94,7 +94,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 120.0, 250.0, 117.0, 23.0 ],
-									"text" : "buffer u055003304"
+									"text" : "buffer u694007111"
 								}
 
 							}
@@ -1035,7 +1035,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 694.5, 223.0, 20.0, 20.0 ],
+									"patching_rect" : [ 694.5, 220.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1128,7 +1128,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 529.5, 214.5, 163.0, 40.0 ],
+									"patching_rect" : [ 529.5, 211.5, 163.0, 40.0 ],
 									"text" : "Modify the number of bands in the analysis"
 								}
 
@@ -1173,7 +1173,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 477.5, 188.0, 82.0, 23.0 ],
+									"patching_rect" : [ 477.5, 180.0, 82.0, 23.0 ],
 									"text" : "loadmess 40"
 								}
 
@@ -1186,7 +1186,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 477.5, 223.0, 50.0, 23.0 ]
+									"patching_rect" : [ 477.5, 220.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -1197,8 +1197,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 477.5, 260.0, 123.0, 23.0 ],
-									"text" : "numbands $1, bang"
+									"patching_rect" : [ 477.5, 260.0, 87.0, 23.0 ],
+									"text" : "numbands $1"
 								}
 
 							}
