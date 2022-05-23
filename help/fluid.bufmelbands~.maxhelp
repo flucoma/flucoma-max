@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -94,7 +94,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 120.0, 250.0, 117.0, 23.0 ],
-									"text" : "buffer u694007111"
+									"text" : "buffer u971002885"
 								}
 
 							}
@@ -336,8 +336,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -458,7 +458,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 409.315979000000027, 57.567627000000002 ]
+									"patching_rect" : [ 10.0, 10.0, 409.280029296875, 57.599853515625 ]
 								}
 
 							}
@@ -986,8 +986,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1197,8 +1197,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 477.5, 260.0, 87.0, 23.0 ],
-									"text" : "numbands $1"
+									"patching_rect" : [ 477.5, 260.0, 123.0, 23.0 ],
+									"text" : "numbands $1, bang"
 								}
 
 							}
@@ -1213,8 +1213,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1613,8 +1613,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1695,8 +1695,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 0,
+															"minor" : 2,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1737,7 +1737,7 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 370.0, 280.0, 172.0, 152.0 ],
+																	"patching_rect" : [ 370.0, 280.0, 176.0, 152.0 ],
 																	"text" : "Mel bands are like a spectrum where each \"bin\" will have a centre frequency. \n\nThis subpatch calculates the centre frequency of each bin, based on how many mel bands have been used and the minimum and maximum frequencies",
 																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 																}
@@ -2488,6 +2488,14 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"midpoints" : [ 144.5, 206.0, 316.5, 206.0 ],
+									"source" : [ "obj-13", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-13", 0 ],
 									"source" : [ "obj-16", 0 ]
 								}
@@ -2540,14 +2548,6 @@
 									"destination" : [ "obj-33", 1 ],
 									"midpoints" : [ 316.5, 525.0, 87.5, 525.0 ],
 									"source" : [ "obj-25", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-21", 0 ],
-									"midpoints" : [ 173.5, 246.0, 316.5, 246.0 ],
-									"source" : [ "obj-26", 1 ]
 								}
 
 							}
@@ -2749,8 +2749,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2808,17 +2808,86 @@
 		"parameters" : 		{
 			"obj-4::obj-39" : [ "live.text", "live.text", 0 ],
 			"parameterbanks" : 			{
-				"0" : 				{
-					"index" : 0,
-					"name" : "",
-					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
 
 			}
 ,
 			"inherited_shortname" : 1
 		}
 ,
+		"dependency_cache" : [ 			{
+				"name" : "fluid.buf2list.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufcompose~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufloader.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.bufmelbands~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufview.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.learn.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.patchpath.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.waveform~.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/jsui",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/jsui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid_decomposition.blocking.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
+				"patcherrelativepath" : ".",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
