@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 851.0 ],
+						"rect" : [ 35.0, 114.0, 963.0, 851.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -88,6 +88,20 @@
 						"workspacedisabled" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 640.0, 700.0, 193.0, 50.0 ],
+									"presentation_linecount" : 5,
+									"text" : "If you change the dataset you can call \"predict\" again to generate new predictions.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-48",
 									"linecount" : 11,
@@ -128,7 +142,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 432.0, 670.0, 364.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Based on the training, predict labels for the second dataset"
 								}
 
@@ -367,7 +380,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 68.0, 11.0, 298.0, 47.0 ],
-													"presentation_linecount" : 3,
 													"text" : "This is essentially an automatic version of what the first tab does to generate labels for a dataset based on the position of points in four quadrants.",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -1401,7 +1413,6 @@
 					}
 ,
 					"patching_rect" : [ 90.0, 80.0, 180.0, 23.0 ],
-					"presentation_linecount" : 6,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1432,7 +1443,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 963.0, 851.0 ],
+						"rect" : [ 0.0, 26.0, 963.0, 851.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1469,7 +1480,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 393.0, 380.0, 382.0, 21.0 ],
-									"presentation_linecount" : 3,
 									"text" : "A prediction will be made based on the position of your mouse. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1483,7 +1493,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 670.0, 539.0, 257.5, 36.0 ],
-									"presentation_linecount" : 4,
 									"text" : "You can repeatedly train to get a better \"fit\". (See the message below the object)",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1517,7 +1526,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 176.0, 570.0, 180.0, 79.0 ],
-									"presentation_linecount" : 3,
 									"text" : "The predictpoint message here tells the neural network that new data (in the buffer) needs to have a label predicted for it.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1551,7 +1559,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 393.0, 353.0, 336.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Click and drag around this space to trigger predictions"
 								}
 
@@ -1564,7 +1571,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 738.0, 204.5, 169.0, 94.0 ],
-									"presentation_linecount" : 6,
 									"text" : "Labels are assigned like so:\n\ntop left yellow\ntop right blue\nbottom left red\nbottom right green",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1577,8 +1583,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 528.0, 706.5, 134.0, 50.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 528.0, 706.5, 138.0, 50.0 ],
 									"text" : "This is the label that it determines for your mouse point",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1592,7 +1597,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 207.0, 673.5, 149.0, 36.0 ],
-									"presentation_linecount" : 2,
 									"text" : "The \"error\" after fitting the data and the labels",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1639,7 +1643,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 450.0, 430.0, 224.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Clear the neural network to reset it"
 								}
 
@@ -1672,8 +1675,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 664.0, 468.0, 168.0, 69.0 ],
-									"presentation_linecount" : 4,
+									"patching_rect" : [ 664.0, 468.0, 171.0, 69.0 ],
 									"text" : "Train the network using data and labels provided in help.mlpc.data.1 and help.mlpc.labels.1"
 								}
 
@@ -2094,7 +2096,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 393.0, 720.0, 128.0, 23.0 ],
-									"text" : "\"top right blue\""
+									"text" : "\"top left yellow\""
 								}
 
 							}
@@ -2130,7 +2132,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 353.0, 680.0, 76.0, 23.0 ],
-									"text" : "0.008831"
+									"text" : "0.004634"
 								}
 
 							}
@@ -2224,7 +2226,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 390.0, 18.0, 158.0, 154.0 ],
-													"presentation_linecount" : 11,
 													"text" : "This patch might seem complicated because of the many \"if\" objects.\n\nAt it's core, it just iterates over the datapoints of the fluid.dataset~ and creates an accompanying label in a labelset based on the position in the x/y space separated into quadrants.",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -2250,7 +2251,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 582.0, 341.0, 158.0, 47.0 ],
-													"presentation_linecount" : 3,
 													"text" : "assign symbols as labels to points based on which quadrant they belong to",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
