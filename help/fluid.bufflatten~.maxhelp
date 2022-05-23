@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 777.0, 621.0 ],
+						"rect" : [ 97.0, 126.0, 777.0, 621.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -132,6 +132,20 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"bubble" : 1,
+													"fontsize" : 13.0,
+													"id" : "obj-1",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 50.0, 20.0, 84.0, 25.0 ],
+													"text" : "Press me!",
+													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"fontsize" : 13.0,
 													"id" : "obj-5",
@@ -264,7 +278,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 280.0, 430.0, 211.0, 23.0 ],
+									"patching_rect" : [ 280.0, 430.0, 214.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -273,7 +287,7 @@
 										"tags" : ""
 									}
 ,
-									"text" : "p \"Recreating this without buffers~\""
+									"text" : "p \"Automatically managed buffer~s\""
 								}
 
 							}
@@ -361,7 +375,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 590.0, 500.0, 165.0, 23.0 ],
+									"patching_rect" : [ 550.0, 510.0, 165.0, 23.0 ],
 									"text" : "buffer~ help.flatten.flatstats"
 								}
 
@@ -374,7 +388,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 590.0, 470.0, 159.0, 23.0 ],
+									"patching_rect" : [ 550.0, 480.0, 159.0, 23.0 ],
 									"text" : "buffer~ help.flatten.means"
 								}
 
@@ -387,7 +401,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 590.0, 440.0, 147.0, 23.0 ],
+									"patching_rect" : [ 550.0, 450.0, 147.0, 23.0 ],
 									"text" : "buffer~ help.flatten.stats"
 								}
 
@@ -439,7 +453,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 590.0, 410.0, 163.0, 23.0 ],
+									"patching_rect" : [ 550.0, 420.0, 163.0, 23.0 ],
 									"text" : "buffer~ help.flatten.chroma"
 								}
 
@@ -586,7 +600,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 97.0, 126.0, 777.0, 621.0 ],
+						"rect" : [ 0.0, 26.0, 777.0, 621.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
