@@ -78,7 +78,6 @@ endif ()
 add_library(MAX_SDK OBJECT
   "${C74_MAX_INCLUDES}/common/commonsyms.c"
 )
-set_target_properties(MAX_SDK PROPERTIES LINKER_LANGUAGE C)
 
 target_include_directories(MAX_SDK SYSTEM PUBLIC 
   "${C74_MAX_INCLUDES}"
@@ -127,16 +126,7 @@ function(add_max_external)
   
   add_library(${safe_name} MODULE ${source})
   
-  if(NOT EXISTS "${C74_MAX_API_DIR}/max-includes/common/commonsyms.c")
-    message(FATAL_ERROR "NOOOOOOOOO")
-  endif()
-  
   set_target_properties(${safe_name} PROPERTIES OUTPUT_NAME "${name}")
-  
-  # target_sources(${safe_name} PRIVATE 
-  #   "${C74_MAX_INCLUDES}/common/commonsyms.c"
-  # )
-  # message(FATAL_ERROR "${C74_MAX_API_DIR}/max-includes/common/commonsyms.c")
 
   target_link_libraries(${safe_name}
     PRIVATE
@@ -159,35 +149,15 @@ function(add_max_external)
     )
   endif()
 
-  # target_include_directories( ${safe_name}
-  # 	SYSTEM PRIVATE
-  # 	"${C74_MAX_INCLUDES}"
-  # 	"${C74_MSP_INCLUDES}"
-  # 	"${C74_JIT_INCLUDES}"
-  # )
-
   get_property(HEADERS TARGET FLUID_DECOMPOSITION PROPERTY INTERFACE_SOURCES)
   source_group(TREE "${flucoma-core_SOURCE_DIR}/include" FILES ${HEADERS})
   get_property(HEADERS TARGET FLUID_MAX PROPERTY INTERFACE_SOURCES)
   source_group("Max Wrapper" FILES ${HEADERS})
   source_group("" FILES "${source}")
 
-  #set AVX or whatever
-  if(DEFINED FLUID_ARCH)
-    target_compile_options(${safe_name} PRIVATE ${FLUID_ARCH})
-  endif()
-
   ### Output ###
   if (APPLE)
-    
-  	# find_library(JITTER_LIBRARY "JitterAPI" HINTS "${C74_MAX_API_DIR}/jit-includes")
-    # find_library(MAX_AUDIO_API "MaxAudioAPI" HINTS "${C74_MAX_API_DIR}/msp-includes")
-    # 
-  	# target_link_libraries(${safe_name} PRIVATE
-  	# 	${JITTER_LIBRARY}
-  	# 	${MAX_AUDIO_API}
-  	# )
-        
+
     get_property(VERSION_TAG GLOBAL PROPERTY FLUCOMA_VERSION_TERSE)
     
     if (NOT DEFINED EXCLUDE_FROM_COLLECTIVES)
@@ -209,21 +179,18 @@ function(add_max_external)
       
     #If we target < 10.9 we have to manually include this:
     target_compile_options(${safe_name} PRIVATE -stdlib=libc++)
-  elseif (WIN32)
-      
-  	# target_link_libraries(${safe_name} PRIVATE "${MaxAPI_LIB}")
-  	# target_link_libraries(${safe_name} PRIVATE "${MaxAudio_LIB}")
-  	# target_link_libraries(${safe_name} PRIVATE "${Jitter_LIB}")
-    # message(WARNING "${MaxAPI_LIB}")
+  elseif (WIN32)      
   	if (CMAKE_SIZEOF_VOID_P EQUAL 8)
   		set_target_properties(${safe_name} PROPERTIES SUFFIX ".mxe64")
   	else ()
   		set_target_properties(${safe_name} PROPERTIES SUFFIX ".mxe")
   	endif ()
-
+  endif()
+  
+  if(MSVC)
   	# warning about constexpr not being const in c++14
-  	set_target_properties(${safe_name} PROPERTIES COMPILE_FLAGS "/wd4814")
-
+  	set_target_properties(${safe_name} PROPERTIES COMPILE_FLAGS "/wd4814")  
+    target_compile_options(${safe_name} PRIVATE /FS /bigobj)  
   endif ()
   
   if(NOT ARG_NOINSTALL)    
