@@ -35,7 +35,7 @@ endif()
 
 ################################################################################
 # Main Action
-project (flucoma-max LANGUAGES CXX)
+project (flucoma-max LANGUAGES C CXX)
 
 set(CMAKE_XCODE_GENERATE_TOP_LEVEL_PROJECT_ONLY ON)
 set(AUTHOR_DOMAIN "org.flucoma")
