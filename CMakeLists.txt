@@ -110,7 +110,7 @@ if(DOCS)
     set(MAX_DOC_OUT "${CMAKE_BINARY_DIR}/max_ref")
     add_ref_target(max "Making Max ref")
   endif()
-  # add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
+  add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
 endif()
 
 FetchContent_Declare(
