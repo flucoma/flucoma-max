@@ -12,7 +12,7 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
-
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging" CACHE PATH "")
 ################################################################################
 # Paths
 set(MAX_TARGET_NAMESPACE "" CACHE STRING "Optional namesapce to prepend to targets to prevent collision in superbuilds")
@@ -44,7 +44,7 @@ string(TIMESTAMP "%Y" THISYEAR)
 set(COPYRIGHT_STRING "Copyright (c) 2017-${THISYEAR} University of Huddersfield")
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging" CACHE PATH "")
+
 set(MAX_INSTALL_PREFIX "." CACHE PATH "Prefix for assembling max package")
 set(FLUID_PACKAGE_NAME "FluidCorpusManipulation" CACHE STRING "Name for published package")
 set(MAX_PACKAGE_ROOT ${MAX_INSTALL_PREFIX}/${FLUID_PACKAGE_NAME})
