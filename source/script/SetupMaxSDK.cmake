@@ -8,16 +8,6 @@
 
 include_guard() 
 
-# if(MSVC)
-#   foreach(flag_var
-#       CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
-#       CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
-#     if(${flag_var} MATCHES "/MD")
-#       string(REGEX REPLACE "/MD" "/MT" ${flag_var} "${${flag_var}}")
-#     endif()
-#   endforeach()
-# endif()
-
 if (NOT DEFINED C74_MAX_API_DIR)
    file(TO_CMAKE_PATH "${MAX_SDK_PATH}" MAX_SDK_FULLPATH)
    if(EXISTS "${MAX_SDK_FULLPATH}/source/c74support")
@@ -75,29 +65,10 @@ else ()
 	set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${C74_SYM_LINKER_FLAGS}")
 endif ()
 
-add_library(MAX_SDK OBJECT
-  "${C74_MAX_INCLUDES}/common/commonsyms.c"
-)
-
-target_include_directories(MAX_SDK SYSTEM PUBLIC 
-  "${C74_MAX_INCLUDES}"
-  "${C74_MSP_INCLUDES}"
-  "${C74_JIT_INCLUDES}"
-)
-
 if (APPLE)
   find_library(JITTER_LIBRARY "JitterAPI" HINTS  "${C74_JIT_INCLUDES}")
   find_library(MAX_AUDIO_API "MaxAudioAPI" HINTS "${C74_MSP_INCLUDES}")
-
-  target_link_libraries(MAX_SDK PUBLIC
-    ${JITTER_LIBRARY}
-    ${MAX_AUDIO_API}
-  )
-elseif (WIN32)    
-  target_link_libraries(MAX_SDK PUBLIC "${MaxAPI_LIB}")
-  target_link_libraries(MAX_SDK PUBLIC "${MaxAudio_LIB}")
-  target_link_libraries(MAX_SDK PUBLIC "${Jitter_LIB}")
-endif ()
+endif()
 
 function(add_max_external)
   
@@ -124,7 +95,10 @@ function(add_max_external)
     
   string(REGEX REPLACE "~" "_tilde" safe_name ${name})
   
-  add_library(${safe_name} MODULE ${source})
+  add_library(${safe_name} MODULE 
+    ${source} 
+    "${C74_MAX_INCLUDES}/common/commonsyms.c"
+  )
   
   set_target_properties(${safe_name} PROPERTIES OUTPUT_NAME "${name}")
 
@@ -132,13 +106,20 @@ function(add_max_external)
     PRIVATE
     FLUID_DECOMPOSITION
     FLUID_MAX
-    MAX_SDK
   )
 
   target_include_directories (
   	${safe_name}
   	PRIVATE
   	"${CMAKE_CURRENT_SOURCE_DIR}/source/include"
+  )
+  
+  target_include_directories (
+    ${safe_name}
+    SYSTEM PRIVATE   
+    "${C74_MAX_INCLUDES}"
+    "${C74_MSP_INCLUDES}"
+    "${C74_JIT_INCLUDES}"
   )
 
   if(MSVC)
@@ -164,6 +145,8 @@ function(add_max_external)
 		  set(EXCLUDE_FROM_COLLECTIVES no)
 	  endif()
     
+    string(REGEX REPLACE "_" "-" plist_name ${safe_name})
+    
   	set_target_properties(${safe_name} PROPERTIES
   		BUNDLE True
   		BUNDLE_EXTENSION "mxo"
@@ -172,19 +155,31 @@ function(add_max_external)
   		MACOSX_BUNDLE_BUNDLE_VERSION ${VERSION_TAG}
       MACOSX_BUNDLE_SHORT_VERSION_STRING ${VERSION_TAG}
       MACOSX_BUNDLE_EXECUTABLE_NAME ${safe_name}
-      MACOSX_BUNDLE_GUI_IDENTIFIER  "org.flucoma.${safe_name}"
+      MACOSX_BUNDLE_GUI_IDENTIFIER  "org.flucoma.${plist_name}"
       XCODE_GENERATE_SCHEME ON
   		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"    
     )
       
     #If we target < 10.9 we have to manually include this:
     target_compile_options(${safe_name} PRIVATE -stdlib=libc++)
+    
+    target_link_libraries(${safe_name} PRIVATE
+      ${JITTER_LIBRARY}
+      ${MAX_AUDIO_API}
+    )
+    
   elseif (WIN32)      
   	if (CMAKE_SIZEOF_VOID_P EQUAL 8)
   		set_target_properties(${safe_name} PROPERTIES SUFFIX ".mxe64")
   	else ()
   		set_target_properties(${safe_name} PROPERTIES SUFFIX ".mxe")
   	endif ()
+    
+    target_link_libraries(${safe_name} PRIVATE 
+      "${MaxAPI_LIB}"
+      "${MaxAudio_LIB}"
+      "${Jitter_LIB}"
+    )
   endif()
   
   if(MSVC)
