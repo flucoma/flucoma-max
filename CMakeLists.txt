@@ -44,7 +44,7 @@ string(TIMESTAMP "%Y" THISYEAR)
 set(COPYRIGHT_STRING "Copyright (c) 2017-${THISYEAR} University of Huddersfield")
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
-set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging")
+set(CMAKE_INSTALL_PREFIX "${CMAKE_CURRENT_SOURCE_DIR}/release-packaging" CACHE PATH "")
 set(MAX_INSTALL_PREFIX "." CACHE PATH "Prefix for assembling max package")
 set(FLUID_PACKAGE_NAME "FluidCorpusManipulation" CACHE STRING "Name for published package")
 set(MAX_PACKAGE_ROOT ${MAX_INSTALL_PREFIX}/${FLUID_PACKAGE_NAME})
