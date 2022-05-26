@@ -6,25 +6,25 @@ on:
     branches: [ dev, ci/** ]
 
 jobs:
-  docs:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: flucoma/actions/env@v4      
-      - uses: flucoma/actions/docs@v4
-        with:
-          target: MAKE_MAX_REF
-
-      - uses: actions/upload-artifact@v2
-        with:
-          name: docsbuild
-          path: build/max_ref
-          
+  # docs:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: flucoma/actions/env@v5      
+  #     - uses: flucoma/actions/docs@v5
+  #       with:
+  #         target: MAKE_MAX_REF
+  # 
+  #     - uses: actions/upload-artifact@v2
+  #       with:
+  #         name: docsbuild
+  #         path: build/max_ref
+  # 
   winbuild:
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v4
-      - uses: flucoma/actions/max@v4
+      - uses: flucoma/actions/env@v5
+      - uses: flucoma/actions/max@v5
 
       - uses: actions/upload-artifact@v2
         with:
@@ -35,8 +35,8 @@ jobs:
     runs-on: macos-11
     steps:
       - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v4
-      - uses: flucoma/actions/max@v4
+      - uses: flucoma/actions/env@v5
+      - uses: flucoma/actions/max@v5
 
       - uses: actions/upload-artifact@v2
         with:
@@ -61,10 +61,10 @@ jobs:
           name: winbuild
           path: "FluidCorpusManipulation/externals"
   
-      - uses: actions/download-artifact@v2
-        with:
-          name: docsbuild
-          path: "FluidCorpusManipulation/docs"
+      # - uses: actions/download-artifact@v2
+      #   with:
+      #     name: docsbuild
+      #     path: "FluidCorpusManipulation/docs"
       
       - name: zip
         run: zip -r FluCoMa-Max-nightly.zip "FluidCorpusManipulation"
