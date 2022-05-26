@@ -957,7 +957,7 @@ class FluidMaxWrapper
       if(!x->mInitialized)
         a = FFTParams(defaults[0], defaults[1], defaults[2], a.maxRaw());
       else
-        x->params().template set<N>(FFTParams(defaults[0], defaults[1], defaults[2], a.maxRaw()),
+        x->params().template set<N>(FFTParams(defaults[0], defaults[1], defaults[2], a.max()),
                                   x->verbose() ? &x->messages() : nullptr);
                                   
 //      x->params().template constrain<N>()
