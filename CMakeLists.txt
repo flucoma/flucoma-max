@@ -23,6 +23,8 @@ endif()
 
 set(FLUID_PATH "" CACHE PATH "Optional path to the Fluid Decomposition repo")
 
+set(FLUID_BRANCH "origin/main" CACHE STRING "Branch to pull flucoma dependencies from")
+
 option(DOCS "Generate Max XML documentation" OFF)
 set(FLUID_DOCS_PATH "" CACHE PATH "Optional path to flucoma-docs (needed for docs)")
 
@@ -57,14 +59,14 @@ FetchContent_Declare(
   flucoma-core
   GIT_REPOSITORY https://github.com/flucoma/flucoma-core.git
   GIT_PROGRESS TRUE
-  GIT_TAG origin/main
+  GIT_TAG ${FLUID_BRANCH}
 )
 
 FetchContent_Declare(
   flucoma-docs
   GIT_REPOSITORY https://github.com/flucoma/flucoma-docs.git
   GIT_PROGRESS TRUE  
-  GIT_TAG origin/main
+  GIT_TAG ${FLUID_BRANCH}
 )
 
 if(FLUID_PATH)
