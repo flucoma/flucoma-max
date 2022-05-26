@@ -7,7 +7,7 @@
 	"os" : {
 		"macintosh" : {
 			"platform" : [ "aarch64", "x64" ],
-			"min_version" : "10.7"
+			"min_version" : "10.9"
 		},
 		"windows" : {
 			"platform" : [ "x64" ],
@@ -16,9 +16,9 @@
 	},
 	"package_extra" : {
 		"reverse_domain" : "org.flucoma",
-		"copyright" : "Copyright (c) 2017-21 University of Huddersfield"
+		"copyright" : "Copyright (c) University of Huddersfield"
 	},
 	"tags" : [ ],
-	"version" : "@GIT_VERSION_MAJ@",
+	"version" : "@FLUCOMA_VERSION_TAG@",
 	"website" : "http://www.github.com/flucoma/"
 }

@@ -83,6 +83,9 @@ include(flucoma_version)
 include(flucoma-buildtools)
 include(flucoma-buildtype)
 
+get_property(FLUCOMA_VERSION_TAG GLOBAL PROPERTY FLUCOMA_VERSION_SHA)
+configure_file(package-info.json.in "${CMAKE_CURRENT_SOURCE_DIR}/package-info.json")
+
 
 set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY
                 TOPLEVEL "${CMAKE_CURRENT_SOURCE_DIR}/externals"
