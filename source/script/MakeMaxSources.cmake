@@ -6,7 +6,7 @@
 # under the European Union’s Horizon 2020 research and innovation programme
 # (grant agreement No 725899).
 
-include(FLuidClientStub)
+include(FluidClientStub)
 
 function(make_external_name client header var)  
   string(FIND ${header} "clients/rt" is_rtclient)
