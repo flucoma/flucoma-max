@@ -53,8 +53,6 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/source/script")
 # Fetch / link to dependencies
 include(FetchContent)
 
-set(FETCHCONTENT_QUIET FALSE)
-
 FetchContent_Declare(
   flucoma-core
   GIT_REPOSITORY https://github.com/flucoma/flucoma-core.git
@@ -75,17 +73,14 @@ if(FLUID_PATH)
   )
 endif()
 
-FetchContent_GetProperties(flucoma-core)
+FetchContent_MakeAvailable(flucoma-core)
 
-if(NOT flucoma-core_POPULATED)
-  FetchContent_Populate(flucoma-core)
-  add_subdirectory(${flucoma-core_SOURCE_DIR} ${flucoma-core_BINARY_DIR})  
-  file(GLOB FLUCOMA_CORE_RESOURCES ${flucoma-core_SOURCE_DIR}/Resources/Data/*.*)
-  file(COPY ${FLUCOMA_CORE_RESOURCES} DESTINATION ${CMAKE_CURRENT_SOURCE_DIR}/misc)
-  include(flucoma_version)
-  include(flucoma-buildtools)
-  include(flucoma-buildtype)
-endif()
+file(GLOB FLUCOMA_CORE_RESOURCES "${flucoma-core_SOURCE_DIR}/Resources/Data/*.*")
+file(COPY ${FLUCOMA_CORE_RESOURCES} DESTINATION "${CMAKE_CURRENT_SOURCE_DIR}/misc")
+include(flucoma_version)
+include(flucoma-buildtools)
+include(flucoma-buildtype)
+
 
 set_if_toplevel(VAR CMAKE_LIBRARY_OUTPUT_DIRECTORY
                 TOPLEVEL "${CMAKE_CURRENT_SOURCE_DIR}/externals"
@@ -99,17 +94,12 @@ if(DOCS)
       FETCHCONTENT_SOURCE_DIR_FLUCOMA-DOCS ${FLUID_DOCS_PATH} ABSOLUTE
     )
   endif()
-
-  FetchContent_GetProperties(flucoma-docs)
-  if(NOT flucoma-docs_POPULATED)
-    FetchContent_Populate(flucoma-docs)
-    file(GLOB_RECURSE DOC_SOURCE RELATIVE "${CMAKE_CURRENT_SOURCE_DIR}" "${flucoma-docs_SOURCE_DIR}/**/*.cpp" )
-    source_group("\\XML Doc Gen" FILES ${DOC_SOURCE})
-    add_subdirectory(${flucoma-docs_SOURCE_DIR} ${flucoma-docs_BINARY_DIR})
-    include(FlucomaDocs)
-    set(MAX_DOC_OUT "${CMAKE_BINARY_DIR}/max_ref")
-    add_ref_target(max "Making Max ref")
-  endif()
+  
+  FetchContent_MakeAvailable(flucoma-docs)
+  include(FlucomaDocs)
+  set(MAX_DOC_OUT "${CMAKE_BINARY_DIR}/max_ref")
+  add_ref_target(max "Making Max ref")
+  # endif()
   add_custom_target(MAX_MAKE_DOCS ALL DEPENDS MAKE_MAX_REF)
 endif()
 
@@ -119,10 +109,8 @@ FetchContent_Declare(
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
 )
+FetchContent_MakeAvailable(fluid_waveform)
 
-if(NOT fluid_waveform_POPULATED)
-  FetchContent_Populate(fluid_waveform)
-endif() 
 
 ################################################################################
 # Max Wrapper
