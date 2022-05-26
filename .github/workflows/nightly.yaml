@@ -25,6 +25,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: flucoma/actions/env@v5
       - uses: flucoma/actions/max@v5
+        with:
+          branch: origin/dev
 
       - uses: actions/upload-artifact@v2
         with:
@@ -37,6 +39,8 @@ jobs:
       - uses: actions/checkout@v2
       - uses: flucoma/actions/env@v5
       - uses: flucoma/actions/max@v5
+        with:
+          branch: origin/dev
 
       - uses: actions/upload-artifact@v2
         with:
