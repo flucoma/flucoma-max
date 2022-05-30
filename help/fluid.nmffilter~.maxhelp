@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 890.0, 724.0 ],
+						"rect" : [ 35.0, 114.0, 890.0, 724.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -505,6 +505,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-29",
+									"local" : 1,
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
@@ -1173,6 +1174,7 @@
 , 							{
 								"box" : 								{
 									"buffername" : "help.filter.src.1",
+									"chanoffset" : 0,
 									"gridcolor" : [ 0.92, 0.92, 0.92, 1.0 ],
 									"id" : "obj-15",
 									"maxclass" : "waveform~",
@@ -1403,7 +1405,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 890.0, 724.0 ],
+						"rect" : [ 0.0, 26.0, 890.0, 724.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
