@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 960.0, 707.0 ],
+		"rect" : [ 962.0, 438.0, 960.0, 707.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -131,7 +131,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.0, 130.0, 354.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "play a source through the nmffilter with the selected base"
 								}
 
@@ -200,7 +199,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 56.5, 150.0, 195.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "play back activation envelope"
 								}
 
@@ -1213,7 +1211,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 960.0, 681.0 ],
+						"rect" : [ 962.0, 464.0, 960.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1357,6 +1355,7 @@
 , 							{
 								"box" : 								{
 									"buffername" : "help.nmf.activations.2",
+									"chanoffset" : 2,
 									"gridcolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
 									"id" : "obj-39",
 									"maxclass" : "waveform~",
@@ -1372,6 +1371,7 @@
 , 							{
 								"box" : 								{
 									"buffername" : "help.nmf.bases.2",
+									"chanoffset" : 0,
 									"gridcolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
 									"id" : "obj-27",
 									"maxclass" : "waveform~",
@@ -5507,7 +5507,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 960.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 960.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
