@@ -90,6 +90,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-33",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 354.0, 340.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-30",
 									"linecount" : 4,
 									"maxclass" : "comment",
@@ -275,18 +287,6 @@
 									"outlettype" : [ "float" ],
 									"patching_rect" : [ 354.0, 375.0, 35.0, 23.0 ],
 									"text" : "* 0.2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-8",
-									"maxclass" : "toggle",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 354.0, 335.0, 35.0, 35.0 ]
 								}
 
 							}
@@ -820,6 +820,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
+									"source" : [ "obj-33", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"midpoints" : [ 334.0, 270.0, 322.5, 270.0, 322.5, 270.0, 253.5, 270.0 ],
 									"source" : [ "obj-34", 0 ]
@@ -899,13 +906,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-9", 0 ],
-									"source" : [ "obj-8", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-35", 1 ],
 									"source" : [ "obj-80", 0 ]
 								}
@@ -914,7 +914,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 1 ],
-									"midpoints" : [ 363.5, 418.5, 318.75, 418.5 ],
+									"midpoints" : [ 363.5, 414.0, 318.75, 414.0 ],
 									"order" : 0,
 									"source" : [ "obj-9", 0 ]
 								}
@@ -923,7 +923,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 1 ],
-									"midpoints" : [ 363.5, 455.5, 264.0, 455.5 ],
+									"midpoints" : [ 363.5, 414.0, 264.0, 414.0 ],
 									"order" : 1,
 									"source" : [ "obj-9", 0 ]
 								}
