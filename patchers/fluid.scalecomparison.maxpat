@@ -39,6 +39,7 @@
 		"subpatcher_template" : "",
 		"showontab" : 1,
 		"assistshowspatchername" : 0,
+		"title" : "comparing scalers",
 		"boxes" : [ 			{
 				"box" : 				{
 					"bgmode" : 0,
