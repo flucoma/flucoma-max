@@ -12,8 +12,7 @@ setoutletassist(0, 'Position of mouse in x/y space');
 
 // https://github.com/d3/d3-scale-chromatic
 // https://sashamaps.net/docs/resources/20-colors/
-var colors = {
-	// default: 'e6194b3cb44bffe1190082c8f5823046f0f0f032e6fabed4008080dcbeffaa6e28fffac8800000aaffc3000080808080ff7878000000',
+const colors = {
 	default: 'e6194b3cb44bffe1194363d8f58231911eb446f0f0f032e6bcf60cfabebe008080e6beff9a6324fffac8800000aaffc3808000ffd8b1000075808080',
 	cat : '1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf',
 	accent : '7fc97fbeaed4fdc086ffff99386cb0f0027fbf5b17666666',
@@ -28,36 +27,40 @@ var colors = {
 	random : '4718b25810c14dc677ad56e049fd52a3e7399539afcf8c552a9e59492382a64418e5bd612919f266de12df6e600c9347a52c34c432d4a0ad016a8df898c855f14b77b3a521020cfabf5516a105cd5bfc1e096eccc282de30977be174dbcc7035b3e50774d556eb343880d788b82c31692acb296388b85fd7133faf99341df43ec06d58e6b614bb3f6eed2dca896069f660ddecd5395df064ae3cd9ac186891f059d1bec62e2c81aa33a559c28e065da9e4bf74030c9bb9371eaa1a30e5ce164295eb3d3c8218f68510b33d06dde380cae16b2d67929075e9ec4b903ade4939a9c0aa1a9b23ec54cf7be7da164c31ada1d671ab1fa525cbe46f03109c90a601729fe53093ddc20e374ae45415c09ee61405434ae3183693c776e87633af6f269e46f948d3697474ef972c57eb34c6789cd570dc44d1de7093672ed2fa417e38bd604feca644297e05d64393db521073ea64f658fa28cd88971bfa74134771fc1d6b80aa801d45eb97a7fd5e9075e61a8f399462dbe88271617f24a5eb3ab382d97ce355f052ffc042c821efae7691d7c11e35c9cb59277afe2288c3ac4a03a9a833d870b6eb976f14ec438ed04027afa6d3b2708c193ef7100e1cce4251f0a00b93342d06b99d66183c50c9fb2fa868e44ce1d273bd63033ec33a7fec66950f9acc58761cd3a1aa5b08b1ee12802c87a3e05f0a5fa16d61d2a42a91e4c16d194f9909a7f38bba32a43112ce0b0ec964ded42ffe39d7f505f02f1f5d830da7927f1787e032a2361dfdbb26350ead2e531fb7ebd35209b139b6324a6d50d25a05dd44d7d1c130f02fb767cddb1c6a2da71905f730e73b0449dc'
 };
 
-// Point Management
-var points = new Array();
-var pointSizeScaler = 0.075;
-var defaultPointColor = [0, 0, 0, 0.8]
-var _pointsizescale = 1.0;
+// Constant Values
+const defaultPointColor = [0, 0, 0, 0.8];
+const pointSizeScaler = 0.075;
 
 // Internal State for Mousing
 var w = [0,0,0];
 var vx = 0;
 var vy = 0;
-var _xmin = 0.0;
-var _xmax = 1.0;
-var _ymin = 0.0;
-var _ymax = 1.0;
-var _stored_xmin = 0.0;
-var _stored_xmax = 1.0;
-var _stored_ymin = 0.0;
-var _stored_ymax = 1.0;
-var _bgcolor = [0.95,0.95,0.95,0.95, 1.0];
-var _shape = 'circle'
-var _colorscheme = colors.default;
-var _highlight = [];
-var labelDict = null;
-var labelJSON = null;
-var dataDict = null;
-var colorMap = {};
-var pointColors = {};
-var pointSizes = {};
 
-// zoom
+// Domain and Range
+var _xmin = 0.0,
+	_xmax = 1.0,
+	_ymin = 0.0, 
+	_ymax = 1.0,
+	_stored_xmin = 0.0, 
+	_stored_xmax = 1.0,
+	_stored_ymin = 0.0, 
+	_stored_ymax = 1.0;
+
+// Points
+var points, 
+	_pointsizescale,
+	_bgcolor,
+	_shape,
+	_colorscheme,
+	_highlight,
+	labelDict,
+	labelJSON,
+	dataDict,
+	colorMap,
+	pointColors,
+	pointSizes;
+
+// Zoom
 var clickstart  = { x:0, y:0 };
 var clickend = { x:0, y:0 };
 var dragging = 0;
@@ -69,8 +72,30 @@ if (jsarguments.length > 1) {
 	_pointsizescale = 1.0;
 }
 
+function clear() {
+	_bgcolor = [0.95,0.95,0.95,0.95, 1.0];
+	_shape = 'circle'
+	_colorscheme = colors.default;
+	_highlight = [];
+	labelDict = null;
+	labelJSON = null;
+	dataDict = null;
+	colorMap = {};
+	points = new Array();
+	pointColors = {};
+	pointSizes = {};
+	_pointsizescale = 1.0;
+	mgraphics.redraw();
+};
+
+function reset() {
+	clear()
+}
+
+reset(); // initalise values with reset()
+
 function hexToRGB(hex, alpha) {
-	var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+	const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 	return result ? [
 		parseInt(result[1], 16) / 255.0,
 		parseInt(result[2], 16) / 255.0,
@@ -102,48 +127,47 @@ function paint() {
 	mgraphics.fill();
 
 	Object.keys(points).forEach(function(pt) {
-		var point = points[pt];
 		var color = defaultPointColor;
-
-		if (labelJSON) {
-			var label = labelJSON[pt];
-			color = colorMap[label];
-		}
-
-		if (pointColors.hasOwnProperty(pt)) {
-			color = pointColors[pt];
-		}
 		
+		// We also check for the labelJSON and assign here because...
+		// ... it allows us to separate the state of points assigned manually + automatically
+		if (labelJSON) {
+			const label = labelJSON[pt];
+			if (label !== undefined) {
+				color = colorMap[label]
+			}
+		}
+		if (pointColors.hasOwnProperty(pt)) color = pointColors[pt];
 		mgraphics.set_source_rgba(color);
-
-		var highlightScale = _highlight.indexOf(pt) != -1 ? 2.3 : 1.0;
-
-		var pointSize = pointSizes.hasOwnProperty(pt) ? pointSizes[pt] : 1.0;
+		
+		const highlightScale = _highlight.indexOf(pt) != -1 ? 2.3 : 1.0;
+		const pointSize = pointSizes.hasOwnProperty(pt) ? pointSizes[pt] : 1.0;
 
 		// calculate the point size from the highlight, point scale and points' size
-		var psize = ((_pointsizescale * pointSize)  * highlightScale) * pointSizeScaler;
+		const psize = ((_pointsizescale * pointSize)  * highlightScale) * pointSizeScaler;
 
-		var x = scale(point.x, _xmin, _xmax, -1, 1) - (psize*0.5)
-		var y = scale(point.y, _ymin, _ymax, -1, 1) + (psize*0.5)
+		const point = points[pt];
+		const x = scale(point.x, _xmin, _xmax, -1, 1) - (psize*0.5);
+		const y = scale(point.y, _ymin, _ymax, -1, 1) + (psize*0.5);
 
 		if (_shape == 'circle')
-			mgraphics.ellipse(x, y, psize, psize)
+			mgraphics.ellipse(x, y, psize, psize);
 		else
-			mgraphics.rectangle(x, y, psize, psize)
-
+			mgraphics.rectangle(x, y, psize, psize);
+			
 		mgraphics.fill();
 	});
 
 	if (dragging) {
-		var w = this.box.rect[2] - this.box.rect[0];
-		var h = this.box.rect[3] - this.box.rect[1];
-		var x1 = clickstart.x / w * 2 - 1
-		var y1 = (clickstart.y / h * 2 - 1) * -1;
-		var x2 = clickend.x / w * 2 - 1
-		var y2 = (clickend.y / h * 2 - 1) * -1;
+		const w = this.box.rect[2] - this.box.rect[0];
+		const h = this.box.rect[3] - this.box.rect[1];
+		const x1 = clickstart.x / w * 2 - 1
+		const y1 = (clickstart.y / h * 2 - 1) * -1;
+		const x2 = clickend.x / w * 2 - 1
+		const y2 = (clickend.y / h * 2 - 1) * -1;
 		
-		var width = Math.abs(x2 - x1);
-		var height = Math.abs(y2 - y1);
+		const width = Math.abs(x2 - x1);
+		const height = Math.abs(y2 - y1);
 		if (x1 <= x2 && y1 > y2) { // SE
 			mgraphics.rectangle(x1, y1, width, height);
 			boxarea = [x1, x2, y1, y2];
@@ -161,10 +185,10 @@ function paint() {
 }
 
 function dictionary(name) {
-	if (inlet == 0) {
+	if (inlet === 0) {
 		setdict(name)
 	} 
-	else if (inlet == 1) {
+	else if (inlet === 1) {
 		setcategories(name)
 	}
 }
@@ -174,11 +198,11 @@ function setdict(name) {
 	var fail = false;
 	// Check that it is a valid dictionary from flucoma.
 	if (!dataDict.contains('data') || !dataDict.contains('cols')) {
-		error('Please provide a valid dictionary of data from a fluid.dataset~', '\n')
+		error('Please provide a valid dictionary of data from a fluid.dataset~', '\n');
 		fail = true;
 	}
 	if (dataDict.get('cols') != 2) {
-		error('fluid.dataset~ should be exactly two dimensions', '\n')
+		error('fluid.dataset~ should be exactly two dimensions', '\n');
 		fail = true;
 	}
 	if (!fail) {
@@ -201,11 +225,11 @@ function setcategories(name) {
 	// Check that it is a valid dictionary from flucoma.
 	if (!labelDict.contains('data') || !labelDict.contains('cols')) {
 		labelDict = null;
-		error('Please provide a valid dictionary of labels from a fluid.labelset~', '\n')
+		error('Please provide a valid dictionary of labels from a fluid.labelset~', '\n');
 	}
 	if (labelDict.get('cols') != 1) {
 		labelDict = null;
-		error('There should only be one column of data which is a label', '\n')
+		error('There should only be one column of data which is a label', '\n');
 	}
 
 	// Convert the internal representation to a JSON object for speedier referencing.
@@ -215,8 +239,8 @@ function setcategories(name) {
 
 function constructColorScheme() {
 	if (labelDict) {
-		var data = labelDict.get('data');
-		var keys = data.getkeys();
+		const data = labelDict.get('data');
+		const keys = data.getkeys();
 		var uniques = new Array();
 
 		// How many unique labels are there?
@@ -230,11 +254,19 @@ function constructColorScheme() {
 		colorMap = {};
 		var scheme = strChunk(_colorscheme, 6);
 		uniques.sort();
-			uniques.forEach(function(u, i) {
+		uniques.forEach(function(u, i) {
 			i = i % scheme.length;
 			var color = hexToRGB(scheme[i], 1.0);
 			colorMap[u] = color;
 		});
+
+		// Strip any of the points from the pointColors if they have been assigned here
+		keys.forEach(function(pt) {
+			if (pointColors.hasOwnProperty(pt)) {
+				delete pointColors[pt]
+			}
+		})
+		
 		mgraphics.redraw();
 	}
 }
@@ -329,15 +361,6 @@ function highlight() {
     mgraphics.redraw();
 }
 
-function clear() { 
-	colorMap = {};
-	points = new Array();
-	labelJSON = null;
-	labelDict = null;
-	dataDict = null;
-    mgraphics.redraw();
-};
-
 function bang() {
 	outlet(0, vx, vy);
 }
@@ -349,8 +372,8 @@ function onclick(x,y, button, mod1, shift, capslock, option, mod2) {
 onclick.local = 1; //private. could be left public to permit 'synthetic' events
 
 function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
-	var width = box.rect[2] - box.rect[0];
-	var height = box.rect[3] - box.rect[1];
+	const width = box.rect[2] - box.rect[0];
+	const height = box.rect[3] - box.rect[1];
 	if (x<0) x = 0;
 	else if (x>width) x = width;
 	if (y<0) y = 0;
@@ -363,10 +386,10 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 	vy = scale(vy, 0, 1, _ymin, _ymax);
 	mgraphics.redraw();
 	if (!button && option) {
-		var _new_xmin = scale(boxarea[0], -1, 1, _xmin, _xmax);
-		var _new_xmax = scale(boxarea[1], -1, 1, _xmin, _xmax);
-		var _new_ymin = scale(boxarea[2], -1, 1, _ymin, _ymax);
-		var _new_ymax = scale(boxarea[3], -1, 1, _ymin, _ymax);
+		const _new_xmin = scale(boxarea[0], -1, 1, _xmin, _xmax);
+		const _new_xmax = scale(boxarea[1], -1, 1, _xmin, _xmax);
+		const _new_ymin = scale(boxarea[2], -1, 1, _ymin, _ymax);
+		const _new_ymax = scale(boxarea[3], -1, 1, _ymin, _ymax);
 
 		_xmin = _new_xmin;
 		_xmax = _new_xmax;
@@ -392,7 +415,7 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 		outlet(1, 'yrange', [_ymin, _ymax]);
 	}
 
-	if (!option) {
+	if (!option && button) {
 		notifyclients();
 		bang();
 	}

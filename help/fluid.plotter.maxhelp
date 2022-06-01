@@ -95,7 +95,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.0, 215.0, 279.0, 65.0 ],
-									"presentation_linecount" : 4,
 									"text" : "The range of the generated data sits between -2.5 and 2.5 but the view of the data is set to be between -5 and 5 on both axes to have some whitespace around the edges.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -108,7 +107,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.0, 415.0, 20.0 ],
-									"presentation_linecount" : 2,
 									"text" : "fluid.plotter has a zoom feature allowing you to zone in on subsets of the plot",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -124,7 +122,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 431.5, 665.0, 97.0, 38.0 ],
-									"text" : "-3.78882 3.198758"
+									"text" : "-1.552795 1.118012"
 								}
 
 							}
@@ -138,7 +136,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 307.0, 665.0, 96.0, 38.0 ],
-									"text" : "-2.857143 2.981366"
+									"text" : "-1.086957 2.608696"
 								}
 
 							}
@@ -491,7 +489,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 409.0, 360.0, 275.0, 166.0 ],
+									"patching_rect" : [ 409.0, 360.0, 279.0, 166.0 ],
 									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5]).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1023,7 +1021,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 97.0, 283.0, 161.0, 79.0 ],
+									"patching_rect" : [ 97.0, 283.0, 165.0, 79.0 ],
 									"text" : "You don't need a fluid.dataset~ necessarily. Using the setpoint message you can create a plot point by point.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2002,7 +2000,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 674.0, 283.0, 125.0, 70.0 ],
-									"saturation" : 0.137254901960784
+									"saturation" : 0.752941176470588
 								}
 
 							}
@@ -2463,7 +2461,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 490.25, 179.402831999999989, 375.0, 69.0 ],
+									"patching_rect" : [ 490.25, 179.402831999999989, 378.0, 69.0 ],
 									"text" : "Click these messages to start adjusting the range to the minimum and maximum of the original data. You will see that the data is now visible in the space. Wiggle the number boxes to see how it affects the display of points."
 								}
 
@@ -2629,7 +2627,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 111.25, 125.0, 298.0, 69.0 ],
+									"patching_rect" : [ 111.25, 125.0, 299.0, 69.0 ],
 									"text" : "Generate random data between a range that is not normal. In this case the horizontal values range between 0 and 10000, and the vertical values range between 40 and 600."
 								}
 
@@ -2708,12 +2706,24 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 162.5, 387.0, 62.0, 22.0 ],
+													"text" : "route load"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-68",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 49.5, 391.40283203125, 39.0, 22.0 ],
+													"patching_rect" : [ 162.5, 422.40283203125, 39.0, 22.0 ],
 													"text" : "dump"
 												}
 
@@ -2725,7 +2735,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 162.5, 459.90283203125, 69.0, 22.0 ],
+													"patching_rect" : [ 275.5, 486.90283203125, 69.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -2737,7 +2747,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 49.5, 425.90283203125, 132.0, 22.0 ],
+													"patching_rect" : [ 162.5, 456.90283203125, 132.0, 22.0 ],
 													"text" : "fluid.dataset~ plotting.3"
 												}
 
@@ -2907,7 +2917,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 162.5, 493.805664031249989, 30.0, 30.0 ]
+													"patching_rect" : [ 275.5, 520.805664031249989, 30.0, 30.0 ]
 												}
 
 											}
@@ -2932,6 +2942,13 @@
 													"destination" : [ "obj-23", 0 ],
 													"order" : 0,
 													"source" : [ "obj-16", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-5", 0 ],
+													"source" : [ "obj-17", 1 ]
 												}
 
 											}
@@ -2979,6 +2996,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-68", 0 ],
+													"source" : [ "obj-5", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-54", 0 ],
 													"source" : [ "obj-52", 1 ]
 												}
@@ -2995,6 +3019,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-62", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-62", 0 ],
+													"source" : [ "obj-63", 1 ]
 												}
 
 											}
@@ -3588,7 +3619,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 222.5, 616.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
@@ -3603,7 +3634,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 222.5, 574.0, 161.5, 23.0 ],
-									"text" : "0.723485 0.291667"
+									"text" : "0.295455 0.359848"
 								}
 
 							}
