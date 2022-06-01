@@ -419,7 +419,7 @@ function ondrag(x,y, button, mod1, shift, capslock, option, mod2) {
 		outlet(1, 'yrange', [_ymin, _ymax]);
 	}
 
-	if (!option) {
+	if (!option && button) {
 		notifyclients();
 		bang();
 	}
