@@ -37,10 +37,14 @@ var vx = 0;
 var vy = 0;
 
 // Domain and Range
-var _xmin, _xmax,
-	_ymin, _ymax,
-	_stored_xmin, _stored_xmax,
-	_stored_ymin, _stored_ymax;
+var _xmin = 0.0,
+	_xmax = 1.0,
+	_ymin = 0.0, 
+	_ymax = 1.0,
+	_stored_xmin = 0.0, 
+	_stored_xmax = 1.0,
+	_stored_ymin = 0.0, 
+	_stored_ymax = 1.0;
 
 // Points
 var points, 
@@ -69,14 +73,6 @@ if (jsarguments.length > 1) {
 }
 
 function clear() {
-	_xmin = 0.0;
-	_xmax = 1.0;
-	_ymin = 0.0;
-	_ymax = 1.0;
-	_stored_xmin = 0.0;
-	_stored_xmax = 1.0;
-	_stored_ymin = 0.0;
-	_stored_ymax = 1.0;
 	_bgcolor = [0.95,0.95,0.95,0.95, 1.0];
 	_shape = 'circle'
 	_colorscheme = colors.default;
