@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 160.0, 190.0, 239.0, 23.0 ],
+					"text" : "fluid.scalecomparison fluid.standardize~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 950.0, 731.0 ],
+						"rect" : [ 0.0, 26.0, 950.0, 731.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -88,13 +99,24 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 10.0, 62.0, 160.0, 21.0 ],
+									"text" : "visualising standardisation",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-27",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 554.5, 320.0, 295.0, 50.0 ],
-									"presentation_linecount" : 9,
+									"patching_rect" : [ 544.5, 310.0, 295.0, 50.0 ],
 									"text" : "This shows the data scaled using standardisation.\n\nThey are now in more comparable ranges.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -107,7 +129,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 388.5, 370.0, 101.5, 94.0 ],
+									"patching_rect" : [ 378.5, 360.0, 102.0, 94.0 ],
 									"text" : "This plot shows the unscaled ranges of the pitch and pitch confidence analysis",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -129,7 +151,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 30.0, 370.0, 350.0, 270.0 ],
+									"patching_rect" : [ 20.0, 360.0, 350.0, 270.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -150,7 +172,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 510.0, 372.5, 350.0, 270.0 ],
+									"patching_rect" : [ 500.0, 362.5, 350.0, 270.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -162,7 +184,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 510.0, 232.5, 94.0, 23.0 ],
+									"patching_rect" : [ 500.0, 222.5, 94.0, 23.0 ],
 									"text" : "sel fittransform"
 								}
 
@@ -174,7 +196,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 30.0, 320.0, 88.0, 23.0 ],
+									"patching_rect" : [ 20.0, 310.0, 88.0, 23.0 ],
 									"text" : "sel frombuffer"
 								}
 
@@ -1249,7 +1271,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 768.0, 114.5, 20.0, 20.0 ],
+									"patching_rect" : [ 758.0, 104.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1264,7 +1286,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 550.0, 112.5, 216.0, 40.0 ],
+									"patching_rect" : [ 540.0, 102.5, 216.0, 40.0 ],
 									"text" : "Standardise the dataset of raw data"
 								}
 
@@ -1282,7 +1304,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 290.5, 162.5, 20.0, 20.0 ],
+									"patching_rect" : [ 280.5, 152.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1296,7 +1318,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 56.0, 160.0, 229.0, 25.0 ],
+									"patching_rect" : [ 46.0, 150.0, 229.0, 25.0 ],
 									"text" : "Analyse the pitch of a source buffer"
 								}
 
@@ -1309,7 +1331,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 629.5, 202.5, 213.0, 23.0 ],
+									"patching_rect" : [ 619.5, 192.5, 213.0, 23.0 ],
 									"text" : "fluid.dataset~ help.s.standardised.1"
 								}
 
@@ -1321,7 +1343,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 510.0, 162.5, 274.0, 23.0 ],
+									"patching_rect" : [ 500.0, 152.5, 274.0, 23.0 ],
 									"text" : "fittransform help.s.raw.1 help.s.standardised.1"
 								}
 
@@ -1334,7 +1356,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 510.0, 200.0, 111.0, 23.0 ],
+									"patching_rect" : [ 500.0, 190.0, 111.0, 23.0 ],
 									"text" : "fluid.standardize~"
 								}
 
@@ -1347,7 +1369,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 260.5, 230.0, 149.0, 23.0 ],
+									"patching_rect" : [ 250.5, 220.0, 149.0, 23.0 ],
 									"text" : "buffer~ help.s.features.1"
 								}
 
@@ -1359,7 +1381,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.0, 240.0, 86.0, 23.0 ],
+									"patching_rect" : [ 20.0, 230.0, 86.0, 23.0 ],
 									"text" : "frombuffer $2"
 								}
 
@@ -1372,7 +1394,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 30.0, 160.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 150.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1383,7 +1405,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 281.0, 159.0, 23.0 ],
+									"patching_rect" : [ 20.0, 271.0, 159.0, 23.0 ],
 									"text" : "fluid.dataset~ help.s.raw.1"
 								}
 
@@ -1396,7 +1418,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 197.5, 379.0, 23.0 ],
+									"patching_rect" : [ 20.0, 187.5, 379.0, 23.0 ],
 									"text" : "fluid.bufpitch~ @source help.s.src.1 @features help.s.features.1"
 								}
 
@@ -1408,7 +1430,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 30.0, 110.0, 347.0, 23.0 ],
+									"patching_rect" : [ 20.0, 100.0, 347.0, 23.0 ],
 									"text" : "buffer~ help.s.src.1 Tremblay-UW-ComplexDescent-M.wav"
 								}
 
@@ -1425,7 +1447,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 20.0, 379.5, 50.0 ]
+									"patching_rect" : [ 10.0, 10.0, 379.5, 50.0 ]
 								}
 
 							}
@@ -1490,7 +1512,6 @@
 					}
 ,
 					"patching_rect" : [ 50.0, 130.0, 180.0, 23.0 ],
-					"presentation_linecount" : 6,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2060,6 +2081,20 @@
 			}
  ],
 		"lines" : [  ],
+		"parameters" : 		{
+			"obj-8::obj-6::obj-1" : [ "live.slider", "Zoom", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"autosave" : 0
 	}
 
