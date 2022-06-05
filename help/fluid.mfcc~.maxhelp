@@ -176,7 +176,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 20.0, 330.0, 121.0, 23.0 ],
-									"text" : "fluid.stats @size 10"
+									"text" : "fluid.stats @history 10"
 								}
 
 							}
