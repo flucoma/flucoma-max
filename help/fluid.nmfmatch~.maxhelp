@@ -106,7 +106,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 230.0, 580.0, 132.0, 23.0 ],
-									"text" : "fluid.stats 2 @size 10"
+									"text" : "fluid.stats 2 @history 10"
 								}
 
 							}
@@ -2019,7 +2019,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 244.877481000000017, 470.0, 125.0, 23.0 ],
-									"text" : "fluid.stats 8 @size 5"
+									"text" : "fluid.stats 8 @history 5"
 								}
 
 							}
@@ -3510,7 +3510,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 135.0, 468.0, 132.0, 23.0 ],
-									"text" : "fluid.stats 2 @size 10"
+									"text" : "fluid.stats 2 @history 10"
 								}
 
 							}

@@ -1872,7 +1872,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 30.0, 540.0, 114.0, 23.0 ],
-									"text" : "fluid.stats @size 5"
+									"text" : "fluid.stats @history 5"
 								}
 
 							}
