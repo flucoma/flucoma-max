@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 38.0, 87.0, 855.0, 728.0 ],
+		"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -37,7 +37,8 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
-		"showontab" : 1,
+		"showrootpatcherontab" : 0,
+		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -56,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 855.0, 702.0 ],
+						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -214,7 +215,6 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 183.0, 176.0, 173.0, 35.0 ],
-													"presentation_linecount" : 2,
 													"text" : "waveform help.ampgate.src.2, slices $2 help.ampgate.src.2"
 												}
 
@@ -227,7 +227,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 9.0, 176.0, 169.0, 35.0 ],
+													"patching_rect" : [ 9.0, 176.0, 173.0, 35.0 ],
 													"text" : "waveform help.ampgate.src.2, slices $2 help.ampgate.src.2"
 												}
 
@@ -609,7 +609,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 855.0, 702.0 ],
+						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -700,7 +700,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 393.0, 50.0 ]
+									"patching_rect" : [ 10.0, 10.0, 389.24005126953125, 57.599853515625 ]
 								}
 
 							}
@@ -892,7 +892,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 1176.0, 408.0, 640.0, 480.0 ],
+										"rect" : [ 766.0, 408.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 13.0,
@@ -1086,7 +1086,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 60.0, 589.0, 21.0 ],
+									"patching_rect" : [ 10.0, 69.599853515625, 589.0, 21.0 ],
 									"text" : "we can move onsets / offsets to more desireable positions, or supress state changes that are too fast",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1305,7 +1305,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 855.0, 702.0 ],
+						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1426,22 +1426,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 266.0, 220.0, 212.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "interleave the onsets and offsets"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-39",
-									"linecount" : 7,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 500.0, 150.0, 108.0 ],
-									"presentation_linecount" : 7,
-									"text" : "Unlike other slices the output is two channels:\n\nOne for the times of on states and one for the times of off stats of the gate.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
@@ -2338,7 +2323,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 38.0, 113.0, 855.0, 702.0 ],
+						"rect" : [ 35.0, 114.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2427,7 +2412,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 476.0, 380.0, 267.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "play source and silence removed together"
 								}
 
@@ -2459,7 +2443,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 333.0, 21.0 ],
-									"presentation_linecount" : 5,
 									"text" : "Removing silences using bufampgates onset offset pairs",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -3157,7 +3140,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 855.0, 702.0 ],
+						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
