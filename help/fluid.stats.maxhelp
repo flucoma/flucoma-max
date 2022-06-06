@@ -88,13 +88,149 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-27",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 319.0, 212.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-28",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 242.0, 210.0, 75.0, 25.0 ],
+									"text" : "audio on"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"linecount" : 5,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 219.0, 450.5, 460.0, 79.0 ],
+									"presentation_linecount" : 14,
+									"text" : "The standard deviations of each coefficient. Higher values mean that they have deviated from the mean more over the history of the fluid.stats object.\n\nYou might like to think of this as its own kind of descriptor that can indicate variation or how sporadic the data is over time.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-25",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 219.0, 390.0, 487.0, 36.0 ],
+									"presentation_linecount" : 7,
+									"text" : "The mean values of the last 15 MFCC frames. The changes are much smoother because the mean of the last 15 frames is being taken instead of the raw values.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 219.0, 272.0, 161.0, 36.0 ],
+									"text" : "The raw MFCC values of the current frame.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"candycane" : 13,
+									"ghostbar" : 75,
+									"id" : "obj-22",
+									"maxclass" : "multislider",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 20.0, 460.0, 197.0, 60.0 ],
+									"setminmax" : [ 0.0, 10.0 ],
+									"signed" : 1,
+									"size" : 20
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"candycane" : 13,
+									"ghostbar" : 75,
+									"id" : "obj-21",
+									"maxclass" : "multislider",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 20.0, 380.0, 197.0, 60.0 ],
+									"setminmax" : [ -30.0, 30.0 ],
+									"signed" : 1,
+									"size" : 20
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"candycane" : 13,
+									"ghostbar" : 75,
+									"id" : "obj-19",
+									"maxclass" : "multislider",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 20.0, 260.0, 197.0, 60.0 ],
+									"setminmax" : [ -30.0, 30.0 ],
+									"signed" : 1,
+									"size" : 20
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-15",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 20.0, 340.0, 155.0, 23.0 ],
+									"text" : "fluid.stats 20 @history 15"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 120.0, 300.0, 71.0, 23.0 ],
-									"text" : "fluid.pitch~"
+									"patching_rect" : [ 20.0, 200.0, 170.0, 23.0 ],
+									"text" : "fluid.mfcc~ 20 @startcoeff 1"
 								}
 
 							}
@@ -117,7 +253,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 280.0, 45.0, 45.0 ]
+									"patching_rect" : [ 195.0, 200.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -128,8 +264,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 30.0, 190.0, 348.0, 23.0 ],
-									"text" : "sfplay~ @audiofile Tremblay-AaS-AcBassGuit-Melo-M.wav"
+									"patching_rect" : [ 20.0, 150.0, 400.0, 23.0 ],
+									"text" : "sfplay~ @audiofile Tremblay-AaS-AcBassGuit-Melo-M.wav @loop 1"
 								}
 
 							}
@@ -146,9 +282,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 339.0, 142.5, 20.0, 20.0 ],
+									"patching_rect" : [ 250.0, 102.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -160,8 +296,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 59.0, 140.0, 278.0, 25.0 ],
-									"text" : "switch the message rate noise generator on"
+									"patching_rect" : [ 49.0, 100.0, 199.0, 25.0 ],
+									"text" : "play the acoustic bass sample"
 								}
 
 							}
@@ -173,7 +309,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 30.0, 140.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 100.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -196,6 +332,61 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-3", 1 ],
+									"midpoints" : [ 29.5, 186.0, 230.5, 186.0 ],
+									"order" : 0,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"midpoints" : [ 29.5, 186.0, 204.5, 186.0 ],
+									"order" : 1,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"order" : 2,
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-21", 0 ],
+									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-22", 0 ],
+									"midpoints" : [ 97.5, 370.0, 5.0, 370.0, 5.0, 455.0, 29.5, 455.0 ],
+									"source" : [ "obj-15", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-15", 0 ],
+									"source" : [ "obj-19", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-68", 0 ]
 								}
@@ -205,7 +396,6 @@
 					}
 ,
 					"patching_rect" : [ 70.0, 115.0, 108.0, 22.0 ],
-					"presentation_linecount" : 4,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -266,6 +456,20 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-1",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 213.0, 530.0, 108.0, 36.0 ],
+									"presentation_linecount" : 2,
+									"text" : "sampe standard deviations",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
@@ -376,7 +580,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 199.0, 356.0, 84.0, 38.0 ],
-									"text" : "0.940809 1.067923"
+									"text" : "0.952785 1.204332"
 								}
 
 							}
@@ -389,7 +593,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 86.0, 356.0, 89.0, 38.0 ],
-									"text" : "-0.473338 -0.083297"
+									"text" : "-0.123385 0.24014"
 								}
 
 							}
@@ -452,6 +656,18 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "newobj",
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 252.666666666666686, 70.0, 65.0, 22.0 ],
+													"text" : "route clear"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-1",
 													"maxclass" : "newobj",
@@ -593,7 +809,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 298.666666666666686, 14.0, 30.0, 30.0 ]
+													"patching_rect" : [ 252.666666666666686, 25.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -634,6 +850,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-88", 0 ],
 													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-82", 0 ],
+													"source" : [ "obj-2", 1 ]
 												}
 
 											}
@@ -711,7 +934,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-82", 0 ],
+													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-9", 0 ]
 												}
 
@@ -1030,7 +1253,7 @@
 									"id" : "obj-73",
 									"ignoreclick" : 1,
 									"knobcolor" : [ 1.0, 0.345098039215686, 0.298039215686275, 0.64 ],
-									"knobsize" : 71.161442089672192,
+									"knobsize" : 78.283589146049593,
 									"maxclass" : "nodes",
 									"nodecolor" : [ 1.0, 0.345098039215686, 0.298039215686275, 0.17 ],
 									"nodenumber" : 20,
@@ -1043,8 +1266,8 @@
 									"patching_rect" : [ 30.0, 471.0, 177.555404178019984, 178.0 ],
 									"pointcolor" : [ 1.0, 0.709803921568627, 0.196078431372549, 0.9 ],
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.0 ],
-									"xplace" : [ 0.132376666166466, 0.423229848403655, 0.393455380215566, 0.557903139177228, 0.388304367829545, 0.291458766032848, 0.266199058309006, 0.513524242536901, 0.45301859607551, 0.60475433977147, 0.499197289796384, 0.432314154998181, 0.498593386765983, 0.424171579233683, 0.481410544581355, 0.138871222515543, 0.790039272204854, 0.446245419616034, 0.211593896633314, 0.475546168071176 ],
-									"yplace" : [ 0.358839487161644, 0.145427265117488, 0.349455269862887, 0.613404677636029, 0.605286476275118, 0.311134863242685, 0.249861056700104, 0.710883312489319, 0.438300390512362, 0.381164826778899, 0.709313252118086, 0.766313874343757, 0.666717728524346, 0.410440234138308, 0.668215574176992, 0.655623679449465, 0.378817970145889, 0.313835535042305, 0.480504371716536, 0.508802650028794 ]
+									"xplace" : [ 0.472398333776579, 0.60371051744007, 0.389783475242681, 0.541725169293999, 0.236487721299071, 0.440066502425764, 0.478269554364931, 0.287184248078295, 0.133596769218695, 0.608852962675732, 0.430482995584999, 0.474879986241543, 0.551723448872808, 0.478224220076848, 0.588305895113701, 0.748394375955759, 0.32599542302139, 0.521570176786484, 0.381224953175868, 0.744431748289758 ],
+									"yplace" : [ 0.848660986699014, 0.296302180138933, 0.289939724607025, 0.453211583150418, 0.750884545450797, 0.779923248420612, 0.35873495862481, 0.481920036008135, 0.751794379811598, 0.930361613294536, 0.621408482373829, 0.493079459571367, 0.837968020815528, 0.560348004495813, 0.212470761761662, 0.458174034158072, 0.520581266039397, 0.748253854424131, 0.40418936119923, 0.432961744299578 ]
 								}
 
 							}
