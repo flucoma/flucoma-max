@@ -59,7 +59,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
+						"rect" : [ 34.0, 113.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -89,6 +89,25 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"evaluatehref" : 1,
+									"fontface" : 0,
+									"fontname" : "Arial",
+									"fontsize" : 13.0,
+									"id" : "obj-62",
+									"justification" : 1,
+									"maxclass" : "markup",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 605.0, 450.0, 340.0, 40.0 ],
+									"text" : "<link href=\"; max launchbrowser https://stats.stackexchange.com/questions/22329/how-does-centering-the-data-get-rid-of-the-intercept-in-regression-and-pca/22331#22331\" >This link</link> provides a good explanation for why whitening is a useful step when using PCA values in analysis.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-88",
 									"linecount" : 16,
@@ -1142,7 +1161,6 @@
 					}
 ,
 					"patching_rect" : [ 60.0, 128.0, 69.0, 22.0 ],
-					"presentation_linecount" : 3,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1175,7 +1193,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 994.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1331,8 +1349,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 20.0, 570.0, 242.0, 94.0 ],
-									"presentation_linecount" : 6,
+									"patching_rect" : [ 20.0, 570.0, 244.0, 94.0 ],
 									"text" : "Each frame of analysis contains 13 MFCC values. PCA reduces this to 2 values, so that we can create a \"map\" of each frame. In theory, frames that are similar will be clumped together creating a perceptually meaningful space.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1346,8 +1363,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 810.0, 300.0, 107.0, 54.0 ],
-									"presentation_linecount" : 6,
+									"patching_rect" : [ 810.0, 300.0, 109.0, 54.0 ],
 									"text" : "click and drag around this space"
 								}
 
@@ -1372,7 +1388,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 663.0, 120.0, 218.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "dump the normalised PCA values"
 								}
 
