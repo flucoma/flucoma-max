@@ -88,6 +88,39 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-74",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 556.0, 334.0, 285.0, 25.0 ],
+									"presentation_linecount" : 4,
+									"text" : "Resynthesise using the reversed magnitudes"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-75",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 843.0, 336.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-73",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -525,20 +558,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 530.0, 630.0, 59.0, 23.0 ],
+									"patching_rect" : [ 560.0, 620.0, 59.0, 23.0 ],
 									"text" : "dac~ 1 2"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-57",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 530.0, 580.0, 39.0, 23.0 ],
-									"text" : "*~ 10"
 								}
 
 							}
@@ -550,7 +571,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 530.0, 480.0, 24.0, 24.0 ]
+									"patching_rect" : [ 560.0, 520.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -561,7 +582,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 530.0, 530.0, 146.0, 23.0 ],
+									"patching_rect" : [ 560.0, 570.0, 146.0, 23.0 ],
 									"text" : "play~ help.stft.resynth.2"
 								}
 
@@ -783,7 +804,16 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-57", 0 ],
+									"destination" : [ "obj-58", 1 ],
+									"order" : 0,
+									"source" : [ "obj-53", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-58", 0 ],
+									"order" : 1,
 									"source" : [ "obj-53", 0 ]
 								}
 
@@ -792,22 +822,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-53", 0 ],
 									"source" : [ "obj-55", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-58", 1 ],
-									"order" : 0,
-									"source" : [ "obj-57", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-58", 0 ],
-									"order" : 1,
-									"source" : [ "obj-57", 0 ]
 								}
 
 							}
