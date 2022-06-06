@@ -88,6 +88,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-10",
+									"maxclass" : "button",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 330.0, 370.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -117,7 +129,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 356.0, 400.0, 106.0, 25.0 ],
+									"patching_rect" : [ 416.0, 370.0, 106.0, 25.0 ],
 									"text" : "play the result"
 								}
 
@@ -135,7 +147,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 470.0, 402.5, 20.0, 20.0 ],
+									"patching_rect" : [ 530.0, 372.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -149,7 +161,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 378.0, 510.0, 75.0, 25.0 ],
+									"patching_rect" : [ 438.0, 480.0, 75.0, 25.0 ],
 									"text" : "audio on"
 								}
 
@@ -167,7 +179,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 456.0, 512.5, 20.0, 20.0 ],
+									"patching_rect" : [ 516.0, 482.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -671,7 +683,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 330.0, 500.0, 45.0, 45.0 ]
+									"patching_rect" : [ 390.0, 470.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -683,7 +695,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 330.0, 400.0, 24.0, 24.0 ]
+									"patching_rect" : [ 390.0, 370.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -694,7 +706,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 330.0, 450.0, 146.0, 23.0 ],
+									"patching_rect" : [ 390.0, 420.0, 146.0, 23.0 ],
 									"text" : "play~ help.stft.resynth.2"
 								}
 
@@ -750,7 +762,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Olencki-TenTromboneLongTones-M.wav" ],
+									"args" : [ "@file", "Constanzo-PreparedSnare-M.wav" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -893,6 +905,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-67", 0 ],
 									"source" : [ "obj-13", 2 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-10", 0 ],
+									"source" : [ "obj-17", 0 ]
 								}
 
 							}
