@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 62.0, 87.0, 1291.0, 954.0 ],
+		"rect" : [ 62.0, 87.0, 916.0, 954.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 62.0, 113.0, 1291.0, 928.0 ],
+						"rect" : [ 0.0, 26.0, 916.0, 928.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -274,7 +274,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 903.0, 520.0, 222.0, 23.0 ],
-									"presentation_linecount" : 3,
 									"text" : "clear, samps 4953 513, sr 86.132812"
 								}
 
@@ -335,7 +334,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "list", "list" ],
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 640.0, 270.0, 127.0, 23.0 ],
 									"text" : "ears.info~ sr audiosr"
 								}
@@ -385,7 +384,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "list", "list" ],
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 920.0, 330.0, 224.0, 23.0 ],
 									"text" : "ears.info~ numchannels numsamples"
 								}
@@ -447,7 +446,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "list", "list" ],
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 920.0, 197.0, 224.0, 23.0 ],
 									"text" : "ears.info~ numchannels numsamples"
 								}
@@ -1157,7 +1156,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1291.0, 928.0 ],
+						"rect" : [ 62.0, 113.0, 916.0, 928.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1188,12 +1187,25 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"filename" : "fluid.waveform~",
+									"id" : "obj-1",
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 450.0, 190.0, 340.0, 96.567627000000016 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-29",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 51.0, 453.0, 366.0, 25.0 ],
+									"patching_rect" : [ 46.0, 423.0, 366.0, 25.0 ],
 									"text" : "Resynthesise the source using the magnitudes and phases"
 								}
 
@@ -1211,7 +1223,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 421.0, 455.0, 20.0, 20.0 ],
+									"patching_rect" : [ 416.0, 425.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1224,7 +1236,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 350.0, 547.0, 74.0, 21.0 ],
+									"patching_rect" : [ 345.0, 497.0, 74.0, 21.0 ],
 									"text" : "resynthesis",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1233,14 +1245,14 @@
 , 							{
 								"box" : 								{
 									"bgcolor" : [ 0.313725490196078, 0.313725490196078, 0.313725490196078, 1.0 ],
-									"buffername" : "help.stft.src",
+									"buffername" : "help.stft.resynth",
 									"gridcolor" : [ 0.784313725490196, 0.784313725490196, 0.784313725490196, 1.0 ],
 									"id" : "obj-27",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 350.0, 570.0, 315.0, 80.0 ],
+									"patching_rect" : [ 345.0, 520.0, 315.0, 80.0 ],
 									"selectioncolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 0.0 ],
 									"style" : "redness",
 									"vzoom" : 0.200000002980232,
@@ -1254,7 +1266,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 25.0, 547.0, 48.0, 21.0 ],
+									"patching_rect" : [ 20.0, 497.0, 48.0, 21.0 ],
 									"text" : "source",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1267,7 +1279,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 623.0, 170.0, 231.0, 25.0 ],
+									"patching_rect" : [ 620.0, 140.0, 231.0, 25.0 ],
 									"text" : "Draw magnitudes as a spectrogram"
 								}
 
@@ -1285,7 +1297,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 856.5, 173.0, 20.0, 20.0 ],
+									"patching_rect" : [ 853.0, 142.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1299,7 +1311,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 51.0, 280.0, 129.0, 25.0 ],
+									"patching_rect" : [ 46.0, 250.0, 129.0, 25.0 ],
 									"text" : "Do STFT analysis"
 								}
 
@@ -1312,7 +1324,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 25.0, 386.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 356.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1332,7 +1344,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 510.0, 10.0, 230.0, 105.0 ],
+									"patching_rect" : [ 552.0, 10.0, 230.0, 105.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1345,20 +1357,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 25.0, 453.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"id" : "obj-73",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 460.0, 230.081120744432667, 78.0, 23.0 ],
-									"text" : "jit.normalize"
+									"patching_rect" : [ 20.0, 423.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1369,7 +1368,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 255.0, 323.0, 169.0, 23.0 ],
+									"patching_rect" : [ 250.0, 293.0, 169.0, 23.0 ],
 									"text" : "buffer~ help.stft.magnitudes"
 								}
 
@@ -1387,7 +1386,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 182.0, 282.5, 20.0, 20.0 ],
+									"patching_rect" : [ 177.0, 252.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1656,7 +1655,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 25.0, 170.0, 286.0, 25.666656 ],
+									"patching_rect" : [ 20.0, 140.0, 286.0, 25.666656 ],
 									"viewvisibility" : 1
 								}
 
@@ -1668,38 +1667,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 460.0, 170.0, 161.0, 23.0 ],
-									"text" : "buffer help.stft.magnitudes"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontname" : "Arial",
-									"id" : "obj-48",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 460.0, 200.040560372216362, 134.0, 23.0 ],
-									"saved_object_attributes" : 									{
-										"filename" : "fluid.jit.spectrogram",
-										"parameter_enable" : 0
-									}
-,
-									"text" : "js fluid.jit.spectrogram"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-11",
-									"maxclass" : "jit.pwindow",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "jit_matrix", "" ],
-									"patching_rect" : [ 460.0, 260.081120744432667, 320.0, 109.918879255567333 ],
-									"sync" : 1
+									"patching_rect" : [ 450.0, 140.0, 164.0, 23.0 ],
+									"text" : "image help.stft.magnitudes"
 								}
 
 							}
@@ -1713,7 +1682,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 25.0, 570.0, 315.0, 80.0 ],
+									"patching_rect" : [ 20.0, 520.0, 315.0, 80.0 ],
 									"selectioncolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 0.0 ],
 									"style" : "redness",
 									"vzoom" : 0.200000002980232,
@@ -1729,7 +1698,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 25.0, 280.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 250.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1741,7 +1710,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 25.0, 493.0, 648.0, 23.0 ],
+									"patching_rect" : [ 20.0, 463.0, 648.0, 23.0 ],
 									"text" : "fluid.bufstft~ @magnitude help.stft.magnitudes @phase help.stft.phases @resynth help.stft.resynth @inverse 1"
 								}
 
@@ -1755,7 +1724,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 25.0, 323.0, 211.0, 52.0 ],
+									"patching_rect" : [ 20.0, 293.0, 211.0, 52.0 ],
 									"text" : "fluid.bufstft~ @source help.stft.src @magnitude help.stft.magnitudes @phase help.stft.phases"
 								}
 
@@ -1768,7 +1737,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 680.0, 493.0, 144.0, 23.0 ],
+									"patching_rect" : [ 675.0, 463.0, 144.0, 23.0 ],
 									"text" : "buffer~ help.stft.resynth"
 								}
 
@@ -1780,7 +1749,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 255.0, 352.0, 144.0, 23.0 ],
+									"patching_rect" : [ 250.0, 322.0, 144.0, 23.0 ],
 									"text" : "buffer~ help.stft.phases"
 								}
 
@@ -1793,7 +1762,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 25.0, 213.432372999999984, 119.0, 23.0 ],
+									"patching_rect" : [ 20.0, 183.432372999999984, 119.0, 23.0 ],
 									"text" : "buffer~ help.stft.src"
 								}
 
@@ -1810,7 +1779,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 492.0, 75.0 ]
+									"patching_rect" : [ 10.0, 10.0, 540.0, 110.0 ]
 								}
 
 							}
@@ -1818,7 +1787,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 34.5, 305.0, 34.5, 305.0 ],
+									"midpoints" : [ 29.5, 275.0, 29.5, 275.0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
@@ -1832,14 +1801,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-73", 0 ],
-									"source" : [ "obj-48", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-48", 0 ],
+									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-50", 0 ]
 								}
 
@@ -1848,13 +1810,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-56", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-11", 0 ],
-									"source" : [ "obj-73", 0 ]
 								}
 
 							}
@@ -1964,7 +1919,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1291.0, 928.0 ],
+						"rect" : [ 0.0, 26.0, 916.0, 928.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
