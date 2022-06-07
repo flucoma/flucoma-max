@@ -71,7 +71,7 @@ under the European Union’s Horizon 2020 research and innovation programme
             <arg name='reference' optional='0' type='symbol' />
         </arglist>
         <description>
-        Paint vertical slices stored in a buffer~ onto the waveform.
+        Paint vertical slices stored in a buffer~ onto the waveform. These markers can be moved, deleted, and added manually too.
         
         </description>
     </method>
