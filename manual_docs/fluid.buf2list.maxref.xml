@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+<!--
+Part of the Fluid Corpus Manipulation Project (http://www.flucoma.org/)
+Copyright 2017-2019 University of Huddersfield.
+Licensed under the BSD-3 License.
+See license.md file in the project root for full license information.
+This project has received funding from the European Research Council (ERC)
+under the European Union’s Horizon 2020 research and innovation programme
+(grant agreement No 725899).
+-->
+<c74object name='fluid.buf2list' category='FluidCorpusManuipulation'>
+    <digest>Copy the contents of a buffer~ to a list</digest>
+    <description>A simplified workflow for extracting numerical data from buffers as lists of numbers.</description>
+    <discussion>
+        <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
+        Given a source buffer that is valid, fluid.buf2list copies its contents to a new list when it receives a bang.
+
+This is a convenient way of extracting data from a buffer to be used elsewhere.
+
+        <p>fluid.buf2list is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
+    </discussion>
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name='author'>FluCoMa</metadata>
+		<metadata name='tag'>Fluid Decomposition</metadata>
+		<metadata name='tag'>corpus</metadata>
+	</metadatalist>
+
+    <inletlist>
+    </inletlist>
+
+    <outletlist>
+    </outletlist>
+
+    <!--MESSAGES-->
+    <methodlist>
+    <method name='bang'>
+        <arglist>
+        </arglist>
+        <description>
+        
+        
+        </description>
+    </method>
+	</methodlist>
+	<!--MESSAGES-->
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+        <attribute name='autosize' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Determines if the output buffer will be resized according to the size of the input list. 
+        </digest>
+        <description> 
+         
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='1'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='axis' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Changes the orientation of the data that is copied. <m>axis 0</m> copies frame-wise into a single channel. <m>axis 1</m> will copy the list channel-wise resulting in as many channels as there are elements in the input list.
+ 
+        </digest>
+        <description> 
+         
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='destination' get='1' set='1' type='symbol' size='1'>
+        <digest> 
+        The buffer~ to copy the list values to. 
+        </digest>
+        <description> 
+         
+        </description>
+
+
+        </attribute>
+        <attribute name='startchan' get='1' set='1' type='int' size='1'>
+        <digest> 
+        For multichannel output buffers, which which channel to begin copying to. The default is 0. 
+        </digest>
+        <description> 
+         
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='startframe' get='1' set='1' type='int' size='1'>
+        <digest> 
+        The starting index (in samples) from which to copy in the source buffer. 
+        </digest>
+        <description> 
+         
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+	</attributelist>
+	<!--ATTRIBUTES-->
+
+	<!--RELATED-->
+	<seealsolist>
+    <seealso name='fluid.list2buf'/>
+	</seealsolist>
+	<!--RELATED-->
+</c74object>
