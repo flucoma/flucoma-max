@@ -36,6 +36,17 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
     </outletlist>
 
     <objarglist>
+        <objarg name='maxsize' optional='0' type=''>
+            <digest>
+            Maximum list size
+            </digest>
+            <description>
+            Sets a maximum size for the internal list. The absolute maximum in Max is 32767.
+            </description>
+            <attributelist>
+                <attribute name='default' get='1' set='1' type='int' size='1' value='256' />
+            </attributelist>
+        </objarg>
     </objarglist>
 
     <!--MESSAGES-->
