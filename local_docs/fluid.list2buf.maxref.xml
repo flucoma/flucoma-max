@@ -35,6 +35,9 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
     <outletlist>
     </outletlist>
 
+    <objarglist>
+    </objarglist>
+
     <!--MESSAGES-->
     <methodlist>
     <method name='list'>
@@ -45,6 +48,7 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
         
         </description>
     </method>
+
 	</methodlist>
 	<!--MESSAGES-->
 

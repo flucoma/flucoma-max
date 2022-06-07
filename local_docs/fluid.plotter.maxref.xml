@@ -67,6 +67,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         </outlet>
     </outletlist>
 
+    <objarglist>
+    </objarglist>
+
     <!--MESSAGES-->
     <methodlist>
     <method name='xrange'>
@@ -176,6 +179,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         
         </description>
     </method>
+
 	</methodlist>
 	<!--MESSAGES-->
 

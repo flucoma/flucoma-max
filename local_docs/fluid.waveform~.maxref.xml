@@ -31,6 +31,9 @@ under the European Union’s Horizon 2020 research and innovation programme
     <outletlist>
     </outletlist>
 
+    <objarglist>
+    </objarglist>
+
     <!--MESSAGES-->
     <methodlist>
     <method name='waveform'>
@@ -97,6 +100,7 @@ under the European Union’s Horizon 2020 research and innovation programme
         
         </description>
     </method>
+
 	</methodlist>
 	<!--MESSAGES-->
 

@@ -33,6 +33,20 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
     <outletlist>
     </outletlist>
 
+    <objarglist>
+        <objarg name='maxsize' optional='0' type=''>
+            <digest>
+            Maximum list size
+            </digest>
+            <description>
+            Sets a maximum size for the internal list. The absolute maximum in Max is 32767.
+            </description>
+            <attributelist>
+                <attribute name='default' get='1' set='1' type='int' size='1' value='256' />
+            </attributelist>
+        </objarg>
+    </objarglist>
+
     <!--MESSAGES-->
     <methodlist>
     <method name='bang'>
@@ -41,6 +55,32 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
         <description>
         
         
+        </description>
+    </method>
+
+    <method name="bang">
+        <arglist />
+        <digest>
+        Trigger processing
+        </digest>
+        <description>
+        Extract data from the <at>source</at> <o>buffer~</o>, given the current values of <at>startframe</at>, <at>numframes</at>, <at>startchan</at> and <at>numchans</at>. 
+        </description>
+    </method>
+    <method name="buffer">
+        <arglist>
+        <!-- This should be true but isn't yet --> 
+        <!-- <arg name= "buffer" optional='0' type="symbol" />
+        <arg name= "start frame" optional='1' type="long" />
+        <arg name= "number of frames" optional='1' type="long" />
+        <arg name= "start channel" optional='1' type="long" />
+        <arg name= "number of channels" optional='1' type="long" /> -->
+        </arglist> 
+        <digest>
+        Set the source buffer~ and trigger processing
+        </digest>
+        <description>
+        Sets the value of <at>source</at><!-- and optionally <at>startframe</at>, <at>numframes</at>, <at>startchan</at>, <at>numchans</at>.--> Then processes as if <m>bang</m> had been called. 
         </description>
     </method>
 	</methodlist>
