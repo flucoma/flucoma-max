@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 992.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -133,7 +133,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 10.0, 262.5, 240.0, 52.0 ],
+									"patching_rect" : [ 10.0, 262.5, 243.0, 52.0 ],
 									"text" : "fluid.bufnmf~ @source help.morph.src.1 @bases help.morph.bases.1 @activations help.morph.act.1"
 								}
 
@@ -390,7 +390,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 537.5, 100.0, 29.5, 23.0 ],
+													"patching_rect" : [ 531.5, 100.0, 29.5, 23.0 ],
 													"text" : "+ 1"
 												}
 
@@ -402,8 +402,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 317.5, 135.0, 239.0, 23.0 ],
-													"text" : "combine bufnmf_help_act n @triggers 1"
+													"patching_rect" : [ 317.5, 135.0, 233.0, 23.0 ],
+													"text" : "combine help.morph.act. n @triggers 1"
 												}
 
 											}
@@ -494,13 +494,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-65",
-													"linecount" : 3,
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 45.0, 253.0, 129.0, 52.0 ],
-													"text" : "combine bufnmf_help_bases n @triggers 1"
+													"patching_rect" : [ 45.0, 253.0, 250.0, 23.0 ],
+													"text" : "combine help.morph.bases. n @triggers 1"
 												}
 
 											}
@@ -526,7 +525,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 537.5, 58.0, 30.0, 30.0 ]
+													"patching_rect" : [ 531.5, 58.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -541,7 +540,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-65", 1 ],
-													"midpoints" : [ 54.5, 244.0, 164.5, 244.0 ],
+													"midpoints" : [ 54.5, 244.0, 285.5, 244.0 ],
 													"source" : [ "obj-66", 0 ]
 												}
 
@@ -636,7 +635,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 920.0, 568.5, 113.0, 23.0 ],
+									"patching_rect" : [ 740.0, 580.0, 113.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -804,8 +803,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 190.0, 266.0, 23.0 ],
-									"text" : "buffer~ help.morph.src.1 Nicol-LoopE-M.wav"
+									"patching_rect" : [ 10.0, 190.0, 350.0, 23.0 ],
+									"text" : "buffer~ help.morph.src.1 Constanzo-PreparedSnare-M.wav"
 								}
 
 							}
@@ -828,8 +827,8 @@
 									"numinlets" : 3,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 46.0, 502.5, 629.0, 23.0 ],
-									"text" : "fluid.nmfmorph~ @source help.morph.bases.1 @target help.morph.bases.2 @activations bufnmf_help_act1"
+									"patching_rect" : [ 46.0, 502.5, 622.0, 23.0 ],
+									"text" : "fluid.nmfmorph~ @source help.morph.bases.1 @target help.morph.bases.2 @activations help.morph.act.1"
 								}
 
 							}
@@ -898,57 +897,6 @@
 								}
 
 							}
-, 							{
-								"box" : 								{
-									"attr" : "activations",
-									"attr_display" : 1,
-									"id" : "obj-109",
-									"ignoreclick" : 1,
-									"lock" : 1,
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"orientation" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 670.0, 420.0, 128.0, 46.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "source",
-									"attr_display" : 1,
-									"id" : "obj-110",
-									"ignoreclick" : 1,
-									"lock" : 1,
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"orientation" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 370.0, 420.0, 142.0, 46.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"attr" : "target",
-									"attr_display" : 1,
-									"id" : "obj-111",
-									"ignoreclick" : 1,
-									"lock" : 1,
-									"maxclass" : "attrui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"orientation" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 518.5, 420.0, 145.0, 46.0 ]
-								}
-
-							}
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
@@ -966,32 +914,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 679.5, 489.0, 55.5, 489.0 ],
-									"source" : [ "obj-109", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
 									"source" : [ "obj-11", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 379.5, 489.0, 55.5, 489.0 ],
-									"source" : [ "obj-110", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 528.0, 489.0, 55.5, 489.0 ],
-									"source" : [ "obj-111", 0 ]
 								}
 
 							}
@@ -1080,7 +1004,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 929.5, 460.75, 55.5, 460.75 ],
+									"midpoints" : [ 749.5, 490.75, 55.5, 490.75 ],
 									"source" : [ "obj-93", 0 ]
 								}
 
@@ -1184,7 +1108,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
