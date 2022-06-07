@@ -180,6 +180,9 @@ install(FILES icon.png package-info.json QuickStart.md
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
         DESTINATION ${MAX_PACKAGE_ROOT} 
         RENAME LICENSE.md)
+install(DIRECTORY manual_docs/
+        DESTINATION ${MAX_PACKAGE_ROOT}/docs)
+
 if(DOCS)
   install(DIRECTORY "${MAX_DOC_OUT}/" 
           DESTINATION "${MAX_PACKAGE_ROOT}/docs"  
