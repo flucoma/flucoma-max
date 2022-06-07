@@ -180,7 +180,7 @@ install(FILES icon.png package-info.json QuickStart.md
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
         DESTINATION ${MAX_PACKAGE_ROOT} 
         RENAME LICENSE.md)
-install(DIRECTORY local_docs/
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/local_docs/"
         DESTINATION ${MAX_PACKAGE_ROOT}/docs)
 
 if(DOCS)
