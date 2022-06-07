@@ -61,7 +61,7 @@ under the European Union’s Horizon 2020 research and innovation programme
             <arg name='buffer' optional='0' type='symbol' />
         </arglist>
         <description>
-        Construct an image from a two-dimensional buffer~ of values.
+        Construct an image from a two-dimensional buffer~ of values, such as a spectrogram.
         
         </description>
     </method>
