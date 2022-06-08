@@ -3,7 +3,7 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 3,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
@@ -333,7 +333,7 @@
 					"patching_rect" : [ 664.0, 718.707512999999949, 266.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 266.0, 21.0 ],
-					"text" : "A set of data associated with identifiers.",
+					"text" : "Realtime Amplitude Differential Feature",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.6 ]
 				}
 
@@ -474,7 +474,7 @@
 					"patching_rect" : [ 657.0, 803.165829000000031, 342.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 387.19876099999999, 284.479034000000013, 35.0 ],
-					"text" : "fluid.dataset~",
+					"text" : "fluid.ampfeature~",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.82 ]
 				}
 
@@ -723,20 +723,20 @@
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offset" : [ -1095.0, -555.0 ],
+					"offset" : [ -1095.0, -90.0 ],
 					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 88.0, 1007.0, 777.0 ],
+						"rect" : [ 35.0, 88.0, 1877.0, 1237.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -2151,13 +2151,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-47",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 35.0 ],
-									"text" : "fluid.dataset~"
+									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 49.0 ],
+									"text" : "fluid.ampfeature~"
 								}
 
 							}
@@ -2431,7 +2431,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnndsvd~", "fluid.bufstft~" ]
+									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnndsvd~", "fluid.bufstft~", "fluid.bufampfeature~", "fluid.bufonsetfeature~", "fluid.bufnoveltyfeature~" ]
 								}
 
 							}
@@ -2453,7 +2453,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.pitch~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.spectralshape~", "fluid.chroma~", "fluid.nmfmatch~" ]
+									"tabs" : [ "fluid.pitch~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.spectralshape~", "fluid.chroma~", "fluid.nmfmatch~", "fluid.ampfeature~", "fluid.onsetfeature~", "fluid.noveltyfeature~" ]
 								}
 
 							}
@@ -3860,21 +3860,13 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "fluidobjdigest.js",
-				"bootpath" : "~/dev/flucoma/max/interfaces",
-				"patcherrelativepath" : "../interfaces",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -3892,17 +3884,17 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "gradient"
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
