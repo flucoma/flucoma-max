@@ -36,7 +36,7 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
     </outletlist>
 
     <objarglist>
-        <objarg name='maxsize' optional='0' type=''>
+        <objarg name='maxsize' optional='1' type=''>
             <digest>
             Maximum list size
             </digest>
@@ -70,7 +70,7 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
         Determines if the output buffer will be resized according to the size of the input list. 
         </digest>
         <description> 
-         
+        Sets whether the <at>destination</at> <o>buffer~</o> should be resized as needed. Note that this only applies when invoking from the main thread: buffer~s can not be resized from the high priority thread. 
         </description>
 
         <attributelist>
@@ -81,10 +81,10 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
         </attribute>
         <attribute name='axis' get='1' set='1' type='int' size='1'>
         <digest> 
-        Changes the orientation of the data that is copied. `axis 0` copies frame-wise into a single channel. `axis 1` will copy the list channel-wise resulting in as many channels as there are elements in the input list. 
+        Direction in which to write to <at>destination</at>. 
         </digest>
         <description> 
-         
+        In what direction to write data to <at>destination</at>. <m>0</m> writes frame by frame, <m>1</m> writes channel-by-channel. 
         </description>
 
         <attributelist>
@@ -95,20 +95,20 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
         </attribute>
         <attribute name='destination' get='1' set='1' type='symbol' size='1'>
         <digest> 
-        The buffer~ to copy the list values to. 
+        The <o>buffer~</o> to copy the list values to. 
         </digest>
         <description> 
-         
+        Sets the destination <o>buffer~</o> into which to write list data. If this is unset then the object will use its own automatically named <o>buffer~</o>. 
         </description>
 
 
         </attribute>
         <attribute name='startchan' get='1' set='1' type='int' size='1'>
         <digest> 
-        For multichannel output buffers, which which channel to begin copying to. The default is 0. 
+        Start channel in <at>destination</at>. 
         </digest>
         <description> 
-         
+        For multichannel output buffers, which channel to begin copying to. The default is 0. 
         </description>
 
         <attributelist>
@@ -119,10 +119,10 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
         </attribute>
         <attribute name='startframe' get='1' set='1' type='int' size='1'>
         <digest> 
-        The starting index (in samples) from which to copy in the source buffer. 
+        Start frame in <at>destination</at>. 
         </digest>
         <description> 
-         
+        The starting index (in samples) to copy list to the <at>destination</at> <o>buffer~</o>. 
         </description>
 
         <attributelist>
@@ -137,6 +137,8 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
 	<!--RELATED-->
 	<seealsolist>
     <seealso name='fluid.buf2list'/>
+    <seealso name='peek~'/>
+    <seealso name='poke~'/>
 	</seealsolist>
 	<!--RELATED-->
 </c74object>

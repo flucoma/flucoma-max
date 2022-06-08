@@ -34,7 +34,7 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
     </outletlist>
 
     <objarglist>
-        <objarg name='maxsize' optional='0' type=''>
+        <objarg name='maxsize' optional='1' type=''>
             <digest>
             Maximum list size
             </digest>
@@ -88,27 +88,12 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
 
 	<!--ATTRIBUTES-->
 	<attributelist>
-        <attribute name='autosize' get='1' set='1' type='int' size='1'>
-        <digest> 
-        Determines if the output buffer will be resized according to the size of the input list. 
-        </digest>
-        <description> 
-         
-        </description>
-
-        <attributelist>
-        <attribute name='default' get='1' set='1' type='int' size='1' value='1'>
-        </attribute>
-        </attributelist>
-
-        </attribute>
         <attribute name='axis' get='1' set='1' type='int' size='1'>
         <digest> 
-        Changes the orientation of the data that is copied. <m>axis 0</m> copies frame-wise into a single channel. <m>axis 1</m> will copy the list channel-wise resulting in as many channels as there are elements in the input list.
- 
+        Direction in which to copy from the <at>source</at>. 
         </digest>
         <description> 
-         
+        In what direction to copy data from the <at>source</at>. <m>0</m> copies frame by frame, <m>1</m> copies channel-by-channel. 
         </description>
 
         <attributelist>
@@ -119,20 +104,20 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
         </attribute>
         <attribute name='destination' get='1' set='1' type='symbol' size='1'>
         <digest> 
-        The buffer~ to copy the list values to. 
+        The <o>buffer~</o> to copy the values from. 
         </digest>
         <description> 
-         
+        Sets the destination <o>buffer~</o> into which to write list data. If this is unset then the object will use its own automatically named <o>buffer~</o>. 
         </description>
 
 
         </attribute>
         <attribute name='startchan' get='1' set='1' type='int' size='1'>
         <digest> 
-        For multichannel output buffers, which which channel to begin copying to. The default is 0. 
+        Start channel in <at>destination</at>. 
         </digest>
         <description> 
-         
+        For multichannel input buffers, which channel to begin copying from. The default is 0. 
         </description>
 
         <attributelist>
@@ -143,10 +128,10 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
         </attribute>
         <attribute name='startframe' get='1' set='1' type='int' size='1'>
         <digest> 
-        The starting index (in samples) from which to copy in the source buffer. 
+        Start frame in <at>destination</at>. 
         </digest>
         <description> 
-         
+        The starting index (in samples) to copy values from the <at>source</at> <o>buffer~</o>. 
         </description>
 
         <attributelist>
@@ -161,6 +146,8 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
 	<!--RELATED-->
 	<seealsolist>
     <seealso name='fluid.list2buf'/>
+    <seealso name='peek~'/>
+    <seealso name='poke~'/>
 	</seealsolist>
 	<!--RELATED-->
 </c74object>
