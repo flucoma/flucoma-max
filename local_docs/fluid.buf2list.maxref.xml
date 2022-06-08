@@ -102,12 +102,12 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
         </attributelist>
 
         </attribute>
-        <attribute name='destination' get='1' set='1' type='symbol' size='1'>
+        <attribute name='source' get='1' set='1' type='symbol' size='1'>
         <digest> 
         The <o>buffer~</o> to copy the values from. 
         </digest>
         <description> 
-        Sets the destination <o>buffer~</o> into which to write list data. If this is unset then the object will use its own automatically named <o>buffer~</o>. 
+        Sets the source <o>buffer~</o> to copy data from. 
         </description>
 
 
