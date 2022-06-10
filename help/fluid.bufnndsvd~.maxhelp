@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 87.0, 992.0, 777.0 ],
+		"rect" : [ 35.0, 87.0, 980.0, 755.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -68,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 113.0, 992.0, 751.0 ],
+						"rect" : [ 35.0, 113.0, 980.0, 729.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -110,7 +110,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 785.0, 522.5, 20.0, 20.0 ],
+									"patching_rect" : [ 609.5, 492.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -124,8 +124,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 580.0, 520.0, 203.0, 25.0 ],
-									"presentation_linecount" : 4,
+									"patching_rect" : [ 404.5, 490.0, 203.0, 25.0 ],
 									"text" : "Select a component to listen to"
 								}
 
@@ -143,7 +142,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 657.0, 672.5, 20.0, 20.0 ],
+									"patching_rect" : [ 481.5, 642.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -157,7 +156,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 580.0, 670.0, 75.0, 25.0 ],
+									"patching_rect" : [ 404.5, 640.0, 75.0, 25.0 ],
 									"text" : "audio on"
 								}
 
@@ -220,20 +219,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-43",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 60.0, 550.0, 383.0, 36.0 ],
-									"presentation_linecount" : 2,
-									"text" : "Use the bases and activations provided by the SVD object as starting conditions for another NMF process.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-42",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -249,6 +234,8 @@
 									"format" : 6,
 									"id" : "obj-40",
 									"maxclass" : "flonum",
+									"maximum" : 1.0,
+									"minimum" : 0.0,
 									"mousefilter" : 1,
 									"numinlets" : 1,
 									"numoutlets" : 2,
@@ -311,7 +298,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 690.0, 187.0, 290.0, 30.0 ],
+									"patching_rect" : [ 650.0, 153.0, 290.0, 30.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -347,7 +334,7 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 530.0, 594.000000000000114, 136.0, 47.0 ],
+									"patching_rect" : [ 354.5, 564.000000000000114, 136.0, 47.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~",
@@ -371,7 +358,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 530.0, 660.0, 45.0, 45.0 ]
+									"patching_rect" : [ 354.5, 630.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -688,7 +675,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 530.0, 562.000000000000114, 143.0, 23.0 ],
+									"patching_rect" : [ 354.5, 532.000000000000114, 143.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -708,7 +695,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 530.0, 520.0, 50.0, 23.0 ]
+									"patching_rect" : [ 354.5, 490.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -778,7 +765,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 690.0, 343.0, 147.0, 23.0 ],
+									"patching_rect" : [ 650.0, 309.0, 147.0, 23.0 ],
 									"text" : "buffer~ help.svd.resynth"
 								}
 
@@ -787,11 +774,12 @@
 								"box" : 								{
 									"color" : [ 1.0, 0.43921568627451, 0.662745098039216, 1.0 ],
 									"id" : "obj-20",
+									"linecount" : 4,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 20.0, 460.0, 785.0, 23.0 ],
+									"patching_rect" : [ 20.0, 460.0, 230.0, 67.0 ],
 									"text" : "fluid.bufnmf~ @source help.svd.src @bases help.svd.bases @resynth help.svd.resynth @basesmode 1 @resynthmode 1 @blocking 0"
 								}
 
@@ -816,7 +804,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 690.0, 270.0, 139.0, 23.0 ],
+									"patching_rect" : [ 650.0, 236.0, 139.0, 23.0 ],
 									"text" : "buffer~ help.svd.bases"
 								}
 
@@ -829,7 +817,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 690.0, 306.5, 166.0, 23.0 ],
+									"patching_rect" : [ 650.0, 272.5, 166.0, 23.0 ],
 									"text" : "buffer~ help.svd.activations"
 								}
 
@@ -842,7 +830,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 690.0, 230.0, 122.0, 23.0 ],
+									"patching_rect" : [ 650.0, 196.0, 122.0, 23.0 ],
 									"text" : "buffer~ help.svd.src"
 								}
 
@@ -855,8 +843,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 20.0, 230.0, 657.0, 23.0 ],
-									"text" : "fluid.bufnndsvd~ @source help.svd.src @activations help.svd.activations @bases help.svd.bases @numchans 1"
+									"patching_rect" : [ 20.0, 230.0, 569.0, 23.0 ],
+									"text" : "fluid.bufnndsvd~ @source help.svd.src @activations help.svd.activations @bases help.svd.bases"
 								}
 
 							}
@@ -1079,7 +1067,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 980.0, 729.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
