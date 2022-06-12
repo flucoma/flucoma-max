@@ -2226,7 +2226,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 25.0, 77.0, 457.0, 21.0 ],
-									"text" : "Bases and actiavtions: the data under the hood that powers the NMF process",
+									"text" : "Bases and activations: the data under the hood that powers the NMF process",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
