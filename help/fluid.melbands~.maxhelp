@@ -1846,7 +1846,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 146.0, 542.0, 393.0, 21.0 ],
+									"patching_rect" : [ 180.0, 541.0, 393.0, 21.0 ],
 									"text" : "Smoothing the mel bands output makes it a bit easier to visualise it",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1871,8 +1871,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 30.0, 540.0, 114.0, 23.0 ],
-									"text" : "fluid.stats @history 5"
+									"patching_rect" : [ 30.0, 540.0, 147.0, 23.0 ],
+									"text" : "fluid.stats 40 @history 5"
 								}
 
 							}
