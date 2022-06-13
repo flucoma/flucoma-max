@@ -47,7 +47,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"patching_rect" : [ 70.0, 85.0, 253.0, 22.0 ],
-					"text" : "fluid_decomposition.blocking fluid.bufnndsvd~"
+					"text" : "fluid_decomposition.blocking fluid.bufnmfseed~"
 				}
 
 			}
@@ -305,7 +305,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "bufnndsvd" ],
+									"args" : [ "bufnmfseed" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -844,7 +844,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
 									"patching_rect" : [ 20.0, 230.0, 569.0, 23.0 ],
-									"text" : "fluid.bufnndsvd~ @source help.svd.src @activations help.svd.activations @bases help.svd.bases"
+									"text" : "fluid.bufnmfseed~ @source help.svd.src @activations help.svd.activations @bases help.svd.bases"
 								}
 
 							}
@@ -854,7 +854,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.bufnndsvd~" ],
+									"jsarguments" : [ "fluid.bufnmfseed~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -1040,7 +1040,7 @@
 					"filename" : "helpname.js",
 					"id" : "obj-4",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.bufnndsvd~" ],
+					"jsarguments" : [ "fluid.bufnmfseed~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,

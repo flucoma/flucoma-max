@@ -2431,7 +2431,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnndsvd~", "fluid.bufstft~", "fluid.bufampfeature~", "fluid.bufonsetfeature~", "fluid.bufnoveltyfeature~" ]
+									"tabs" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnmfseed~", "fluid.bufstft~", "fluid.bufampfeature~", "fluid.bufonsetfeature~", "fluid.bufnoveltyfeature~" ]
 								}
 
 							}
