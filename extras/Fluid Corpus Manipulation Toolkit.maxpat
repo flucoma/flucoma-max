@@ -1712,7 +1712,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.pca~", "fluid.kmeans~", "fluid.mds~", "fluid.umap~", "fluid.grid~" ]
+									"tabs" : [ "fluid.pca~", "fluid.kmeans~", "fluid.skmeans~", "fluid.mds~", "fluid.umap~", "fluid.grid~" ]
 								}
 
 							}
