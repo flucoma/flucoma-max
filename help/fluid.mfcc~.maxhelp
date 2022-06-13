@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 99.0, 113.0, 796.0, 622.0 ],
+						"rect" : [ 0.0, 26.0, 796.0, 622.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -175,7 +175,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 20.0, 330.0, 121.0, 23.0 ],
+									"patching_rect" : [ 20.0, 330.0, 137.0, 23.0 ],
 									"text" : "fluid.stats @history 10"
 								}
 
@@ -1793,7 +1793,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 796.0, 622.0 ],
+						"rect" : [ 99.0, 113.0, 796.0, 622.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2060,8 +2060,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 440.0, 91.0, 23.0 ],
-									"text" : "fluid.mfcc~ 13"
+									"patching_rect" : [ 20.0, 440.0, 285.0, 23.0 ],
+									"text" : "fluid.mfcc~ @numcoeffs 13 @maxnumcoeffs 40"
 								}
 
 							}

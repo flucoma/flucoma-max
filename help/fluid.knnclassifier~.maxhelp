@@ -1237,7 +1237,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 140.0, 540.0, 152.0, 166.0 ],
+									"patching_rect" : [ 140.0, 540.0, 155.0, 166.0 ],
 									"text" : "The detected class here should correspond to the source sound type.\n\nYou might notice that silence is detected as the piano. This makes sense as a large portion of the first second of audio that was analysed in that source is silence.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
