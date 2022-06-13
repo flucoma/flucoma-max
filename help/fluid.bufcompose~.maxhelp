@@ -213,7 +213,8 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 466.5, 409.5, 200.0, 43.5 ]
+									"patching_rect" : [ 466.5, 409.5, 200.0, 43.5 ],
+									"selectioncolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 0.0 ]
 								}
 
 							}
@@ -1183,7 +1184,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
+						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1228,6 +1229,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-15",
+									"local" : 1,
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
@@ -1884,7 +1886,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 824.0, 474.0 ],
+						"rect" : [ 0.0, 26.0, 824.0, 474.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
