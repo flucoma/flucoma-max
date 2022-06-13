@@ -3847,7 +3847,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 60.0, 10.0, 417.0, 181.0 ],
-													"text" : "This part of the patch uses fluid.bufnmf~ to derive some components based on the crude assumption that if a small part of the guitar sound is broken down into two components, one of those components will contain the plectrum sound almost exclusively. The other component will contain the resonant part of the guitar sound.\n\nTo try and measure this automatically with the computer, we resynthesise two components and them measure the median spectral centroid of each one. We assume that the component with the higher median spectral centroid will be the plectrum. The buffer channel index is then stored so that we can extract it later when we retrieve the matching.",
+													"text" : "This part of the patch uses fluid.bufnmf~ to derive some components based on the crude assumption that if a small part of the guitar sound is broken down into two components, one of those components will contain the plectrum sound almost exclusively. The other component will contain the resonant part of the guitar sound.\n\nTo try and measure this automatically with the computer, we resynthesise two components and then measure the median spectral centroid of each one. We assume that the component with the higher median spectral centroid will be the plectrum. The buffer channel index is then stored so that we can extract it later when we retrieve the matching.",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
