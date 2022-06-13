@@ -585,7 +585,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 420.0, 190.0, 96.0 ],
-									"text" : "fluid.bufaudiotransport~ @sourcea help.at.sourcea @sourceb help.at.sourceb @destination help.at.output @blocking 0 @interpolation 0.5 @maxfftszie 8192"
+									"text" : "fluid.bufaudiotransport~ @sourcea help.at.sourcea @sourceb help.at.sourceb @destination help.at.output @blocking 0 @interpolation 0.5 @maxfftsize 8192"
 								}
 
 							}
