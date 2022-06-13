@@ -93,7 +93,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 330.0, 21.0 ],
-									"presentation_linecount" : 3,
 									"text" : "A stripped back example for how the fluid.kdtree~ works",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -271,7 +270,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 155.0, 150.0, 77.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -790,7 +789,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 520.0, 340.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
@@ -1219,7 +1218,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 574.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Change the specificity of searches by constraining the distance and number of nearest neighbours",
 									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
 								}
@@ -1301,7 +1299,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 40.0, 495.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
@@ -4079,7 +4077,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 87.0, 493.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}

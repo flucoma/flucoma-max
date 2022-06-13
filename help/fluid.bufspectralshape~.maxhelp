@@ -114,7 +114,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 560.0, 180.0, 212.0, 181.0 ],
-									"presentation_linecount" : 12,
 									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -127,7 +126,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 284.5, 341.0, 212.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "this is actually the same as above",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -141,7 +139,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 233.0, 301.0, 217.0, 25.0 ],
-									"presentation_linecount" : 7,
 									"text" : "only return the centroid and skew",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1662,7 +1659,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 520.0, 358.0, 171.0, 69.0 ],
+									"patching_rect" : [ 520.0, 358.0, 175.0, 69.0 ],
 									"text" : "Use the mouse to scrub through different parts of the audio file and retrieve the analysis"
 								}
 
@@ -2030,14 +2027,6 @@
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
 									"source" : [ "obj-38", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-38", 0 ],
-									"midpoints" : [ 175.5, 220.5, 29.5, 220.5 ],
-									"source" : [ "obj-5", 1 ]
 								}
 
 							}

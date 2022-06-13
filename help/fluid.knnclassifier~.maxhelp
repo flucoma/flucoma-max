@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 1013.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 957.0, 750.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -74,7 +74,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 1013.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 957.0, 724.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1237,7 +1237,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 140.0, 540.0, 150.0, 166.0 ],
+									"patching_rect" : [ 140.0, 540.0, 155.0, 166.0 ],
 									"text" : "The detected class here should correspond to the source sound type.\n\nYou might notice that silence is detected as the piano. This makes sense as a large portion of the first second of audio that was analysed in that source is silence.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1271,7 +1271,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 297.0, 240.0, 191.0, 25.0 ],
-									"presentation_linecount" : 4,
 									"text" : "play one of the sources back"
 								}
 
@@ -1336,7 +1335,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 416.0, 480.0, 374.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Fit the knnclassifier~ to the fluid.dataset~ and fluid.labelset~ "
 								}
 
@@ -1376,6 +1374,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-101",
+									"local" : 1,
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
@@ -1821,7 +1820,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1013.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 957.0, 724.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,

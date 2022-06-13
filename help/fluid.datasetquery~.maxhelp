@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -703,7 +703,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 75.5, 365.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -1902,7 +1902,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 75.5, 365.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -3095,7 +3095,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 78.5, 351.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -3167,7 +3167,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 252.5, 351.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -3726,7 +3726,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4383,7 +4383,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 75.5, 365.0, 72.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}

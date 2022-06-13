@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 225.0, 386.0, 640.0, 480.0 ],
+		"rect" : [ 225.0, 386.0, 610.0, 523.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,12 +40,36 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-9",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "int", "bang" ],
+					"patching_rect" : [ 110.0, 52.0, 32.0, 22.0 ],
+					"text" : "t 0 b"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 110.0, 12.0, 113.0, 22.0 ],
+					"text" : "qmetro 5 @active 1"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-7",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 230.0, 127.0, 72.0, 22.0 ],
+					"patching_rect" : [ 35.0, 247.0, 72.0, 22.0 ],
 					"text" : "prepend set"
 				}
 
@@ -57,7 +81,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 230.0, 92.0, 54.0, 22.0 ],
+					"patching_rect" : [ 35.0, 212.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -69,7 +93,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.0, 45.0, 61.0, 22.0 ],
+					"patching_rect" : [ 35.0, 105.0, 61.0, 22.0 ],
 					"text" : "#1"
 				}
 
@@ -89,7 +113,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 0,
 					"offset" : [ 0.0, 0.0 ],
-					"patching_rect" : [ 10.0, 385.0, 172.0, 50.0 ],
+					"patching_rect" : [ 410.0, 390.0, 172.0, 50.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 0.0, 51.0, 172.0, 50.0 ],
 					"viewvisibility" : 1
@@ -103,7 +127,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 15.0, 75.0, 54.0, 22.0 ],
+					"patching_rect" : [ 35.0, 135.0, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -129,7 +153,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.0, 165.0, 108.0, 24.0 ],
+					"patching_rect" : [ 267.0, 285.0, 108.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.0, 10.0, 224.0, 24.0 ],
 					"text" : "Online Reference",
@@ -144,7 +168,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 462.0, 235.0, 61.0, 22.0 ],
+					"patching_rect" : [ 267.0, 355.0, 61.0, 22.0 ],
 					"text" : "#1"
 				}
 
@@ -156,7 +180,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 15.0, 12.0, 58.0, 22.0 ],
+					"patching_rect" : [ 35.0, 12.0, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -168,7 +192,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 230.0, 55.0, 286.0, 22.0 ],
+					"patching_rect" : [ 35.0, 175.0, 286.0, 22.0 ],
 					"text" : "combine learn.flucoma.org/reference/ s @triggers -1"
 				}
 
@@ -181,7 +205,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 225.0, 265.0, 256.0, 35.0 ],
+					"patching_rect" : [ 30.0, 385.0, 256.0, 35.0 ],
 					"text" : "combine https://learn.flucoma.org/reference/ s @triggers -1"
 				}
 
@@ -194,7 +218,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 225.0, 315.0, 129.0, 35.0 ],
+					"patching_rect" : [ 30.0, 435.0, 129.0, 35.0 ],
 					"text" : ";\rmax launchbrowser $1"
 				}
 
@@ -218,10 +242,10 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 230.0, 162.0, 221.0, 24.0 ],
+					"patching_rect" : [ 35.0, 282.0, 221.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.0, 25.0, 410.0, 24.0 ],
-					"text" : "learn.flucoma.org/reference/grid",
+					"text" : "learn.flucoma.org/reference/hpss",
 					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
 				}
 
@@ -258,6 +282,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
+					"midpoints" : [ 276.5, 331.5, 276.5, 331.5 ],
 					"source" : [ "obj-17", 0 ]
 				}
 
@@ -272,6 +297,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-16", 0 ],
+					"midpoints" : [ 44.5, 330.0, 276.5, 330.0 ],
 					"source" : [ "obj-25", 0 ]
 				}
 
@@ -279,6 +305,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-12", 1 ],
+					"midpoints" : [ 44.5, 165.5, 311.5, 165.5 ],
 					"source" : [ "obj-3", 0 ]
 				}
 
@@ -292,8 +319,30 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-9", 0 ],
+					"source" : [ "obj-6", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
 					"source" : [ "obj-7", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-5", 0 ],
+					"source" : [ "obj-9", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-6", 0 ],
+					"midpoints" : [ 119.5, 75.0, 95.0, 75.0, 95.0, 6.0, 119.5, 6.0 ],
+					"source" : [ "obj-9", 0 ]
 				}
 
 			}
@@ -322,13 +371,13 @@
 				"name" : "max6message",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "gradient"
 					}
 ,
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
