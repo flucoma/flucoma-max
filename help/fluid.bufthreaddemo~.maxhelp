@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 117.0, 144.0, 748.0, 578.0 ],
+		"rect" : [ 100.0, 100.0, 1174.0, 875.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
+						"rect" : [ 100.0, 126.0, 1174.0, 849.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -687,6 +687,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
+									"local" : 1,
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
@@ -3562,7 +3563,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
+						"rect" : [ 0.0, 26.0, 1174.0, 849.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3894,7 +3895,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 117.0, 170.0, 748.0, 552.0 ],
+						"rect" : [ 0.0, 26.0, 1174.0, 849.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4130,7 +4131,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 748.0, 552.0 ],
+						"rect" : [ 0.0, 26.0, 1174.0, 849.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
