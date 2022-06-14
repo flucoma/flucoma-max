@@ -10,7 +10,7 @@ jobs:
       - uses: flucoma/actions/env@v5
       - uses: flucoma/actions/max@v5
         with:
-          branch: origin/dev
+          branch: origin/main
 
       - uses: actions/upload-artifact@v2
         with:
@@ -26,7 +26,7 @@ jobs:
       - uses: flucoma/actions/env@v5
       - uses: flucoma/actions/max@v5
         with:
-          branch: origin/dev
+          branch: origin/main
 
       - uses: actions/upload-artifact@v2
         with:
