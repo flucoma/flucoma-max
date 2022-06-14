@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+<!--
+Part of the Fluid Corpus Manipulation Project (http://www.flucoma.org/)
+Copyright 2017-2019 University of Huddersfield.
+Licensed under the BSD-3 License.
+See license.md file in the project root for full license information.
+This project has received funding from the European Research Council (ERC)
+under the European Union’s Horizon 2020 research and innovation programme
+(grant agreement No 725899).
+-->
+<c74object name='fluid.list2buf' category='FluidCorpusManuipulation'>
+    <digest>Copy a list to a buffer~</digest>
+    <description>Copies the values of a list to a buffer~.</description>
+    <discussion>
+        <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
+        fluid.list2buf copies the values of a list to a buffer~.
+
+This is a convenient way of transforming data such that it can interface with other FluCoMa objects that expect to receive a buffer.
+
+Be aware that if a buffer of a predefined size is not supplied as the output it will defer the copying. If you need the copying to occur in the high priority thread, supply a buffer with the size of the input.
+
+        <p>fluid.list2buf is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
+    </discussion>
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name='author'>FluCoMa</metadata>
+		<metadata name='tag'>Fluid Decomposition</metadata>
+		<metadata name='tag'>corpus</metadata>
+	</metadatalist>
+
+    <inletlist>
+    </inletlist>
+
+    <outletlist>
+    </outletlist>
+
+    <objarglist>
+        <objarg name='maxsize' optional='1' type=''>
+            <digest>
+            Maximum list size
+            </digest>
+            <description>
+            Sets a maximum size for the internal list. The absolute maximum in Max is 32767.
+            </description>
+            <attributelist>
+                <attribute name='default' get='1' set='1' type='int' size='1' value='256' />
+            </attributelist>
+        </objarg>
+    </objarglist>
+
+    <!--MESSAGES-->
+    <methodlist>
+    <method name='list'>
+        <arglist>
+        </arglist>
+        <description>
+        
+        
+        </description>
+    </method>
+
+	</methodlist>
+	<!--MESSAGES-->
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+        <attribute name='autosize' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Determines if the output buffer will be resized according to the size of the input list. 
+        </digest>
+        <description> 
+        Sets whether the <at>destination</at> <o>buffer~</o> should be resized as needed. Note that this only applies when invoking from the main thread: buffer~s can not be resized from the high priority thread. 
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='1'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='axis' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Direction in which to write to <at>destination</at>. 
+        </digest>
+        <description> 
+        In what direction to write data to <at>destination</at>. <m>0</m> writes frame by frame, <m>1</m> writes channel-by-channel. 
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='destination' get='1' set='1' type='symbol' size='1'>
+        <digest> 
+        The <o>buffer~</o> to copy the list values to. 
+        </digest>
+        <description> 
+        Sets the destination <o>buffer~</o> into which to write list data. If this is unset then the object will use its own automatically named <o>buffer~</o>. 
+        </description>
+
+
+        </attribute>
+        <attribute name='startchan' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Start channel in <at>destination</at>. 
+        </digest>
+        <description> 
+        For multichannel output buffers, which channel to begin copying to. The default is 0. 
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='startframe' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Start frame in <at>destination</at>. 
+        </digest>
+        <description> 
+        The starting index (in samples) to copy list to the <at>destination</at> <o>buffer~</o>. 
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+	</attributelist>
+	<!--ATTRIBUTES-->
+
+	<!--RELATED-->
+	<seealsolist>
+    <seealso name='fluid.buf2list'/>
+    <seealso name='peek~'/>
+    <seealso name='poke~'/>
+	</seealsolist>
+	<!--RELATED-->
+</c74object>

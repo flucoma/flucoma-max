@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+<!--
+Part of the Fluid Corpus Manipulation Project (http://www.flucoma.org/)
+Copyright 2017-2019 University of Huddersfield.
+Licensed under the BSD-3 License.
+See license.md file in the project root for full license information.
+This project has received funding from the European Research Council (ERC)
+under the European Union’s Horizon 2020 research and innovation programme
+(grant agreement No 725899).
+-->
+<c74object name='fluid.buf2list' category='FluidCorpusManuipulation'>
+    <digest>Copy the contents of a buffer~ to a list</digest>
+    <description>A simplified workflow for extracting numerical data from buffers as lists of numbers.</description>
+    <discussion>
+        <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
+        Given a source buffer that is valid, fluid.buf2list copies its contents to a new list when it receives a bang.
+
+This is a convenient way of extracting data from a buffer to be used elsewhere.
+
+        <p>fluid.buf2list is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
+    </discussion>
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name='author'>FluCoMa</metadata>
+		<metadata name='tag'>Fluid Decomposition</metadata>
+		<metadata name='tag'>corpus</metadata>
+	</metadatalist>
+
+    <inletlist>
+    </inletlist>
+
+    <outletlist>
+    </outletlist>
+
+    <objarglist>
+        <objarg name='maxsize' optional='1' type=''>
+            <digest>
+            Maximum list size
+            </digest>
+            <description>
+            Sets a maximum size for the internal list. The absolute maximum in Max is 32767.
+            </description>
+            <attributelist>
+                <attribute name='default' get='1' set='1' type='int' size='1' value='256' />
+            </attributelist>
+        </objarg>
+    </objarglist>
+
+    <!--MESSAGES-->
+    <methodlist>
+    <method name='bang'>
+        <arglist>
+        </arglist>
+        <description>
+        
+        
+        </description>
+    </method>
+
+    <method name="bang">
+        <arglist />
+        <digest>
+        Trigger processing
+        </digest>
+        <description>
+        Extract data from the <at>source</at> <o>buffer~</o>, given the current values of <at>startframe</at>, <at>numframes</at>, <at>startchan</at> and <at>numchans</at>. 
+        </description>
+    </method>
+    <method name="buffer">
+        <arglist>
+        <!-- This should be true but isn't yet --> 
+        <!-- <arg name= "buffer" optional='0' type="symbol" />
+        <arg name= "start frame" optional='1' type="long" />
+        <arg name= "number of frames" optional='1' type="long" />
+        <arg name= "start channel" optional='1' type="long" />
+        <arg name= "number of channels" optional='1' type="long" /> -->
+        </arglist> 
+        <digest>
+        Set the source buffer~ and trigger processing
+        </digest>
+        <description>
+        Sets the value of <at>source</at><!-- and optionally <at>startframe</at>, <at>numframes</at>, <at>startchan</at>, <at>numchans</at>.--> Then processes as if <m>bang</m> had been called. 
+        </description>
+    </method>
+	</methodlist>
+	<!--MESSAGES-->
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+        <attribute name='axis' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Direction in which to copy from the <at>source</at>. 
+        </digest>
+        <description> 
+        In what direction to copy data from the <at>source</at>. <m>0</m> copies frame by frame, <m>1</m> copies channel-by-channel. 
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='source' get='1' set='1' type='symbol' size='1'>
+        <digest> 
+        The <o>buffer~</o> to copy the values from. 
+        </digest>
+        <description> 
+        Sets the source <o>buffer~</o> to copy data from. 
+        </description>
+
+
+        </attribute>
+        <attribute name='startchan' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Start channel in <at>destination</at>. 
+        </digest>
+        <description> 
+        For multichannel input buffers, which channel to begin copying from. The default is 0. 
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+        <attribute name='startframe' get='1' set='1' type='int' size='1'>
+        <digest> 
+        Start frame in <at>destination</at>. 
+        </digest>
+        <description> 
+        The starting index (in samples) to copy values from the <at>source</at> <o>buffer~</o>. 
+        </description>
+
+        <attributelist>
+        <attribute name='default' get='1' set='1' type='int' size='1' value='0'>
+        </attribute>
+        </attributelist>
+
+        </attribute>
+	</attributelist>
+	<!--ATTRIBUTES-->
+
+	<!--RELATED-->
+	<seealsolist>
+    <seealso name='fluid.list2buf'/>
+    <seealso name='peek~'/>
+    <seealso name='poke~'/>
+	</seealsolist>
+	<!--RELATED-->
+</c74object>

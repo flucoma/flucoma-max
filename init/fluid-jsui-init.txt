@@ -1,2 +1,2 @@
 max objectfile fluid.plotter fluid.plotter;
-max definesubstitution fluid.plotter jsui @filename fluid.plotter;
+max definesubstitution fluid.plotter jsui @filename fluid.plotter @border 0;

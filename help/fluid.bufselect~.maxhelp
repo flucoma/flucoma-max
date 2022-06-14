@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 87.0, 770.0, 607.0 ],
+		"rect" : [ 35.0, 87.0, 781.0, 569.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -61,14 +61,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 770.0, 581.0 ],
+						"rect" : [ 0.0, 26.0, 781.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -105,7 +105,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 281.0, 271.0, 320.0, 21.0 ],
+									"patching_rect" : [ 281.0, 181.0, 320.0, 21.0 ],
 									"text" : "This subpatch contains the analysis and bufselect-ing.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -124,7 +124,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 502.0, 215.0, 20.0, 20.0 ],
+									"patching_rect" : [ 502.0, 125.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -136,12 +136,11 @@
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
 									"id" : "obj-25",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 140.0, 640.0, 36.0 ],
-									"text" : "bufselect~ is useful in an analytical context, because it allows you to extract and isolate specific descriptors and analyses from a larger collection.",
+									"patching_rect" : [ 10.0, 60.0, 640.0, 21.0 ],
+									"text" : "Extract specific channels and frames of analysis with fluid.bufselect~",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
 
@@ -157,14 +156,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 84.0, 131.0, 305.0, 263.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -199,7 +198,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 180.0, 74.0, 23.0 ],
+													"patching_rect" : [ 201.0, 156.0, 69.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -211,7 +210,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 100.0, 276.0, 23.0 ],
+													"patching_rect" : [ 20.0, 81.0, 255.0, 22.0 ],
 													"text" : "frombuffer bufselect.help.isolated-stat 1, dump"
 												}
 
@@ -221,9 +220,9 @@
 													"id" : "obj-79",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 50.0, 140.0, 216.0, 23.0 ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
+													"patching_rect" : [ 20.0, 121.0, 200.0, 22.0 ],
 													"text" : "fluid.dataset~ bufselect.help.dataset"
 												}
 
@@ -236,8 +235,8 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 20.0, 21.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -249,7 +248,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 263.0, 30.0, 30.0 ]
+													"patching_rect" : [ 201.0, 195.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -264,8 +263,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-83", 0 ],
-													"midpoints" : [ 256.5, 174.0, 59.5, 174.0 ],
-													"source" : [ "obj-79", 2 ]
+													"source" : [ "obj-79", 1 ]
 												}
 
 											}
@@ -286,7 +284,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 310.0, 136.0, 23.0 ],
+									"patching_rect" : [ 10.0, 220.0, 136.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -308,7 +306,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 524.0, 205.0, 220.0, 40.0 ],
+									"patching_rect" : [ 524.0, 115.0, 220.0, 40.0 ],
 									"text" : "Select a combination of spectral features and statistical analyses."
 								}
 
@@ -322,7 +320,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 330.0, 350.0, 310.0, 137.0 ],
+									"patching_rect" : [ 330.0, 260.0, 310.0, 137.0 ],
 									"text" : "The dictionary here represents the final result after bufselect has extracted the requested spectral shape descriptors and the subsequent statistical analyses of these.\n\nWhen this patch loads, the dictionary will show the average spectral centroid. Try adding more descriptors and statistical analyses to see how the data grows and shrinks.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -334,19 +332,19 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
+									"outlettype" : [ "" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 35.0, 88.0, 1058.0, 777.0 ],
+										"rect" : [ 35.0, 88.0, 1197.0, 440.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -383,7 +381,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 801.5, 335.0, 384.0, 36.0 ],
+													"patching_rect" : [ 801.5, 328.0, 384.0, 36.0 ],
 													"text" : "Finally, this will extract only the specific stats requested for each of the selected features.",
 													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 												}
@@ -510,8 +508,8 @@
 													"id" : "obj-21",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 12.5, 335.0, 465.0, 22.0 ],
 													"text" : "fluid.bufselect~ @source bufselect.help.stats @destination bufselect.help.isolated-stat"
 												}
@@ -523,8 +521,8 @@
 													"id" : "obj-13",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 12.5, 235.0, 575.0, 22.0 ],
 													"text" : "fluid.bufselect~ @source bufselect.help.features @destination bufselect.help.isolated-feature @channels 0"
 												}
@@ -574,9 +572,9 @@
 													"color" : [ 1.0, 0.43921568627451, 0.662745098039216, 1.0 ],
 													"id" : "obj-3",
 													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numinlets" : 2,
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 12.5, 285.0, 445.0, 22.0 ],
 													"text" : "fluid.bufstats~ @source bufselect.help.isolated-feature @stats bufselect.help.stats"
 												}
@@ -588,8 +586,8 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 12.5, 185.0, 493.0, 22.0 ],
 													"text" : "fluid.bufspectralshape~ @source bufselect.help.audiosrc @features bufselect.help.features"
 												}
@@ -629,7 +627,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 12.5, 418.0, 30.0, 30.0 ]
+													"patching_rect" : [ 12.5, 370.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -747,13 +745,13 @@
 												"name" : "max6message",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -774,7 +772,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 270.0, 269.0, 23.0 ],
+									"patching_rect" : [ 10.0, 180.0, 269.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -792,7 +790,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 350.0, 310.0, 190.0 ],
+									"patching_rect" : [ 10.0, 260.0, 310.0, 190.0 ],
 									"style" : "velvet"
 								}
 
@@ -817,8 +815,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1529,13 +1527,13 @@
 												"name" : "max6message",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -1556,7 +1554,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 190.0, 245.0, 70.0 ],
+									"patching_rect" : [ 10.0, 100.0, 245.0, 70.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1581,8 +1579,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2291,13 +2289,13 @@
 												"name" : "max6message",
 												"default" : 												{
 													"bgfillcolor" : 													{
-														"type" : "gradient",
+														"angle" : 270.0,
+														"autogradient" : 0,
+														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 														"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-														"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-														"angle" : 270.0,
 														"proportion" : 0.39,
-														"autogradient" : 0
+														"type" : "gradient"
 													}
 ,
 													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -2318,28 +2316,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 260.0, 190.0, 240.0, 70.0 ],
-									"viewvisibility" : 1
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "bufselect" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-75",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 540.0, 10.0, 230.0, 100.0 ],
+									"patching_rect" : [ 260.0, 100.0, 240.0, 70.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2356,7 +2333,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 520.0, 120.0 ]
+									"patching_rect" : [ 10.0, 10.0, 340.0, 50.0 ]
 								}
 
 							}
@@ -2414,13 +2391,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -2465,14 +2442,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 113.0, 770.0, 581.0 ],
+						"rect" : [ 0.0, 26.0, 781.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2510,7 +2487,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 640.0, 249.283009999999877, 120.0, 65.0 ],
+									"patching_rect" : [ 640.0, 239.283009999999877, 120.0, 65.0 ],
 									"text" : "Indices and channels are set with a list of 0 counting positions.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -2525,7 +2502,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 540.0, 369.283009999999877, 131.0, 94.0 ],
+									"patching_rect" : [ 540.0, 359.283009999999877, 131.0, 94.0 ],
 									"text" : "This visual representation of the output shows how only certain values were extracted from the source buffer.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -2540,7 +2517,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 280.0, 249.283009999999877, 130.0, 137.0 ],
+									"patching_rect" : [ 280.0, 239.283009999999877, 130.0, 137.0 ],
 									"text" : "In this 5 sample x 5 channel buffer there are mostly values set to 0. However, in channels 0 2 and 4 and at indices 0 2 and 4 there are some unique values that we will extract!",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -2562,7 +2539,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 540.0, 10.0, 230.0, 100.0 ],
+									"patching_rect" : [ 550.0, 10.0, 200.0, 100.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2575,7 +2552,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 456.0, 142.0, 250.0, 69.0 ],
+									"patching_rect" : [ 456.0, 132.0, 250.0, 69.0 ],
 									"text" : "Trigger the bufselect~ object to extract the given indices for every given channel and store the result in the destination buffer."
 								}
 
@@ -2593,7 +2570,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 705.867942999999855, 166.5, 20.0, 20.0 ],
+									"patching_rect" : [ 705.867942999999855, 156.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2608,7 +2585,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 430.0, 164.5, 24.0, 24.0 ]
+									"patching_rect" : [ 430.0, 154.5, 24.0, 24.0 ]
 								}
 
 							}
@@ -2620,7 +2597,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 142.0, 205.0, 40.0 ],
+									"patching_rect" : [ 40.0, 132.0, 205.0, 40.0 ],
 									"text" : "Generate some buffer data and visually represent it below."
 								}
 
@@ -2638,7 +2615,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 247.0, 152.0, 20.0, 20.0 ],
+									"patching_rect" : [ 247.0, 142.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2656,14 +2633,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 710.0, 200.0, 334.0, 344.0 ],
+										"rect" : [ 710.0, 200.0, 322.0, 374.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2693,12 +2670,24 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"patching_rect" : [ 13.0, 48.0, 22.0, 22.0 ],
+													"text" : "t b"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-19",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
-													"patching_rect" : [ 59.0, 151.0, 29.5, 22.0 ],
+													"patching_rect" : [ 59.0, 183.0, 29.5, 22.0 ],
 													"text" : "t i i"
 												}
 
@@ -2710,7 +2699,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "int", "int" ],
-													"patching_rect" : [ 182.0, 118.0, 117.0, 22.0 ],
+													"patching_rect" : [ 182.0, 150.0, 117.0, 22.0 ],
 													"text" : "t i i"
 												}
 
@@ -2722,7 +2711,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "int" ],
-													"patching_rect" : [ 182.0, 151.0, 29.5, 22.0 ],
+													"patching_rect" : [ 182.0, 183.0, 29.5, 22.0 ],
 													"text" : "- 1"
 												}
 
@@ -2734,7 +2723,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 59.0, 241.0, 117.0, 22.0 ],
+													"patching_rect" : [ 59.0, 273.0, 117.0, 22.0 ],
 													"text" : "join 3"
 												}
 
@@ -2746,7 +2735,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "int" ],
-													"patching_rect" : [ 34.0, 83.0, 167.0, 22.0 ],
+													"patching_rect" : [ 34.0, 115.0, 167.0, 22.0 ],
 													"text" : "t b i"
 												}
 
@@ -2758,7 +2747,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "bang", "int" ],
-													"patching_rect" : [ 13.0, 48.0, 40.0, 22.0 ],
+													"patching_rect" : [ 13.0, 80.0, 40.0, 22.0 ],
 													"text" : "uzi 2"
 												}
 
@@ -2770,7 +2759,7 @@
 													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "float" ],
-													"patching_rect" : [ 157.0, 209.0, 142.0, 22.0 ],
+													"patching_rect" : [ 157.0, 241.0, 142.0, 22.0 ],
 													"text" : "peek~ buf.select.help.dst"
 												}
 
@@ -2782,7 +2771,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 3,
 													"outlettype" : [ "bang", "bang", "int" ],
-													"patching_rect" : [ 34.0, 118.0, 44.0, 22.0 ],
+													"patching_rect" : [ 34.0, 150.0, 44.0, 22.0 ],
 													"text" : "uzi 2 0"
 												}
 
@@ -2795,7 +2784,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 13.0, 7.0, 30.0, 30.0 ]
 												}
 
@@ -2808,12 +2797,19 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 59.0, 293.094330000000014, 30.0, 30.0 ]
+													"patching_rect" : [ 59.0, 325.094330000000014, 30.0, 30.0 ]
 												}
 
 											}
  ],
 										"lines" : [ 											{
+												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
 												"patchline" : 												{
 													"destination" : [ "obj-81", 0 ],
 													"source" : [ "obj-12", 0 ]
@@ -2823,7 +2819,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-12", 1 ],
-													"midpoints" : [ 191.5, 195.0, 117.5, 195.0 ],
+													"midpoints" : [ 191.5, 227.0, 117.5, 227.0 ],
 													"source" : [ "obj-17", 0 ]
 												}
 
@@ -2838,7 +2834,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-3", 2 ],
-													"midpoints" : [ 289.5, 141.0, 289.5, 141.0 ],
+													"midpoints" : [ 289.5, 173.0, 289.5, 173.0 ],
 													"source" : [ "obj-18", 1 ]
 												}
 
@@ -2846,7 +2842,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-12", 0 ],
-													"midpoints" : [ 68.5, 174.0, 68.5, 174.0 ],
+													"midpoints" : [ 68.5, 206.0, 68.5, 206.0 ],
 													"source" : [ "obj-19", 0 ]
 												}
 
@@ -2854,7 +2850,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-3", 0 ],
-													"midpoints" : [ 79.0, 195.0, 166.5, 195.0 ],
+													"midpoints" : [ 79.0, 227.0, 166.5, 227.0 ],
 													"source" : [ "obj-19", 1 ]
 												}
 
@@ -2882,7 +2878,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-4", 0 ],
+													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-80", 0 ]
 												}
 
@@ -2904,7 +2900,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 430.0, 329.283009999999877, 48.0, 23.0 ],
+									"patching_rect" : [ 430.0, 319.283009999999877, 48.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2929,7 +2925,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "list" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 430.0, 369.283009999999877, 100.0, 93.71699000000018 ],
+									"patching_rect" : [ 430.0, 359.283009999999877, 100.0, 93.71699000000018 ],
 									"range" : 9,
 									"rows" : 2
 								}
@@ -2943,7 +2939,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 500.0, 234.0, 23.0 ],
+									"patching_rect" : [ 10.0, 490.0, 234.0, 23.0 ],
 									"text" : "buffer~ buf.select.help.src @samps 5 5"
 								}
 
@@ -2956,7 +2952,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 430.0, 469.924536000000103, 157.0, 23.0 ],
+									"patching_rect" : [ 430.0, 459.924536000000103, 157.0, 23.0 ],
 									"text" : "buffer~ buf.select.help.dst"
 								}
 
@@ -2967,9 +2963,9 @@
 									"linecount" : 4,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
-									"patching_rect" : [ 430.0, 249.283009999999877, 200.0, 67.0 ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 430.0, 239.283009999999877, 200.0, 67.0 ],
 									"text" : "fluid.bufselect~ @source buf.select.help.src @destination buf.select.help.dst @channels 0 4 @indices 0 2"
 								}
 
@@ -2982,7 +2978,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 150.0, 24.0, 24.0 ]
+									"patching_rect" : [ 10.0, 140.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -2998,7 +2994,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 520.0, 120.0 ]
+									"patching_rect" : [ 10.0, 10.0, 530.0, 110.0 ]
 								}
 
 							}
@@ -3013,8 +3009,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3366,7 +3362,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 200.0, 63.0, 23.0 ],
+									"patching_rect" : [ 10.0, 190.0, 63.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3391,7 +3387,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "list" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 249.283009999999877, 257.0, 243.792454000000021 ],
+									"patching_rect" : [ 10.0, 239.283009999999877, 257.0, 243.792454000000021 ],
 									"range" : 9,
 									"rows" : 5
 								}
@@ -3458,13 +3454,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -3525,14 +3521,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 770.0, 581.0 ],
+						"rect" : [ 0.0, 26.0, 781.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3603,56 +3599,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "fluid.bufselect~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufspectralshape~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufstats~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.learn.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid_decomposition.blocking.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
@@ -3678,13 +3624,13 @@
 				"name" : "max6message",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "gradient"
 					}
 ,
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]

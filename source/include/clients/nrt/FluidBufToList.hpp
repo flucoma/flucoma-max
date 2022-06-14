@@ -87,20 +87,20 @@ void main()
   CLASS_ATTR_ACCESSORS(FluidBufToListClass, "source", FluidBufToList_getSource,
                        FluidBufToList_setSource);
 
-  CLASS_ATTR_LONG(FluidBufToListClass, "axis", 0, FluidBufToList, axis);
+  CLASS_ATTR_ATOM_LONG(FluidBufToListClass, "axis", 0, FluidBufToList, axis);
   CLASS_ATTR_LABEL(FluidBufToListClass, "axis", 0,
                    "Read Frame-wise or Channel-wise");
   CLASS_ATTR_FILTER_CLIP(FluidBufToListClass, "axis", 0, 1);
 
-  CLASS_ATTR_LONG(FluidBufToListClass, "startframe", 0, FluidBufToList,
+  CLASS_ATTR_ATOM_LONG(FluidBufToListClass, "startframe", 0, FluidBufToList,
                   startFrame);
   CLASS_ATTR_FILTER_MIN(FluidBufToListClass, "startframe", 0);
 
-  CLASS_ATTR_LONG(FluidBufToListClass, "startchan", 0, FluidBufToList,
+  CLASS_ATTR_ATOM_LONG(FluidBufToListClass, "startchan", 0, FluidBufToList,
                   startChannel);
   CLASS_ATTR_FILTER_MIN(FluidBufToListClass, "startchan", 0);
 
-  CLASS_ATTR_LONG(FluidBufToListClass, "numvalues", 0, FluidBufToList,
+  CLASS_ATTR_ATOM_LONG(FluidBufToListClass, "numvalues", 0, FluidBufToList,
                   numValues);
 
   class_dumpout_wrap(FluidBufToListClass);

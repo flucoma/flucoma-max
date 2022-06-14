@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 1,
-			"revision" : 8,
+			"minor" : 2,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -120,8 +120,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -196,8 +196,8 @@
 									"id" : "obj-12",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 44.0, 327.0, 450.0, 22.0 ],
 									"text" : "fluid.bufcompose~ @source pno-dicts @destination pno-dict-shuffle @numchans 1"
 								}
@@ -398,7 +398,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -408,7 +407,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -765,8 +765,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -832,8 +832,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 8,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1058,7 +1058,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 294.0, 704.0, 150.0, 74.0 ],
+													"patching_rect" : [ 294.0, 704.0, 150.0, 87.0 ],
 													"text" : "then with the 89 channel preseed dictionary, a 89 components nmf is run again, updating the dictionaries. It takes a few hours."
 												}
 
@@ -1163,8 +1163,8 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 178.0, 545.0, 313.0, 22.0 ],
 													"text" : "fluid.bufcompose~ @source temp @destination pno-dicts"
 												}
@@ -1236,9 +1236,9 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 154.0, 817.0, 775.0, 22.0 ],
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
+													"patching_rect" : [ 154.0, 817.0, 775.0, 35.0 ],
 													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @iterations 100 @bases pno-dicts @components 88 @activations pno-acts @basesmode 1"
 												}
 
@@ -1258,13 +1258,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-57",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 236.0, 358.0, 508.0, 22.0 ],
-													"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @iterations 100 @components 2 @bases temp @resynth temp2"
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
+													"patching_rect" : [ 236.0, 358.0, 654.0, 22.0 ],
+													"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @iterations 100 @components 2 @bases temp @resynth temp2 @resynthmode 1"
 												}
 
 											}
@@ -1603,7 +1602,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -1613,7 +1611,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -1721,8 +1720,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 8,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1839,7 +1838,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 252.0, 655.0, 150.0, 74.0 ],
+													"patching_rect" : [ 252.0, 655.0, 150.0, 87.0 ],
 													"text" : "then with the 89 channel preseed dictionary, a 89 components nmf is run again, updating the dictionaries. It takes a few hours."
 												}
 
@@ -1851,7 +1850,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 178.0, 105.0, 150.0, 60.0 ],
+													"patching_rect" : [ 178.0, 105.0, 150.0, 74.0 ],
 													"text" : "this will iterate through each note to create a single component nmf dictionary, to pretrain the dictionaries"
 												}
 
@@ -1906,7 +1905,6 @@
 , 											{
 												"box" : 												{
 													"buffername" : "pno-dicts",
-													"chanoffset" : 0,
 													"id" : "obj-18",
 													"maxclass" : "waveform~",
 													"numinlets" : 5,
@@ -1945,8 +1943,8 @@
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
+													"numoutlets" : 2,
+													"outlettype" : [ "", "" ],
 													"patching_rect" : [ 118.0, 545.0, 313.0, 22.0 ],
 													"text" : "fluid.bufcompose~ @source temp @destination pno-dicts"
 												}
@@ -2018,10 +2016,10 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 113.0, 769.0, 887.0, 22.0 ],
-													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @iterations 100 @bases pno-dicts @components 89 @resynth pno-audio @activations pno-acts @basesmode 1"
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
+													"patching_rect" : [ 113.0, 769.0, 941.0, 35.0 ],
+													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 4096 256 -1 @iterations 100 @bases pno-dicts @components 89 @resynth pno-audio @activations pno-acts @basesmode 1 @resynthmode 1"
 												}
 
 											}
@@ -2043,9 +2041,9 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 118.0, 442.0, 657.0, 22.0 ],
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
+													"patching_rect" : [ 118.0, 442.0, 657.0, 35.0 ],
 													"text" : "fluid.bufnmf~ @fftsettings 4096 256 -1 @iterations 100 @components 1 @bases temp @numframes 132300 @source pianosource"
 												}
 
@@ -2346,7 +2344,6 @@
 , 											{
 												"name" : "max6message",
 												"default" : 												{
-													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 													"bgfillcolor" : 													{
 														"type" : "gradient",
 														"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2356,7 +2353,8 @@
 														"proportion" : 0.39,
 														"autogradient" : 0
 													}
-
+,
+													"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 												}
 ,
 												"parentstyle" : "max6box",
@@ -2396,8 +2394,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 1,
-											"revision" : 8,
+											"minor" : 2,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2449,7 +2447,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 168.0, 109.5, 555.0, 33.0 ],
+													"patching_rect" : [ 168.0, 109.5, 555.0, 47.0 ],
 													"text" : "pressing this button started a process of trying to separate in 88 components. Since the seed is random, that was not very helpful. Moreover, the windowsize was too small to capture the fundamentals"
 												}
 
@@ -2520,10 +2518,10 @@
 													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 3,
-													"outlettype" : [ "bang", "float", "" ],
-													"patching_rect" : [ 51.0, 199.0, 694.0, 22.0 ],
-													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 1024 256 2048 @iterations 100 @bases pno-dicts @components 88 @resynth pno-audio"
+													"numoutlets" : 4,
+													"outlettype" : [ "", "", "", "" ],
+													"patching_rect" : [ 51.0, 199.0, 747.0, 35.0 ],
+													"text" : "fluid.bufnmf~ @source pianosource @fftsettings 1024 256 2048 @iterations 100 @bases pno-dicts @components 88 @resynth pno-audio @resynthmode 1"
 												}
 
 											}
@@ -2712,7 +2710,6 @@
 , 							{
 								"name" : "max6message",
 								"default" : 								{
-									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"bgfillcolor" : 									{
 										"type" : "gradient",
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -2722,7 +2719,8 @@
 										"proportion" : 0.39,
 										"autogradient" : 0
 									}
-
+,
+									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 ,
 								"parentstyle" : "max6box",
@@ -2835,8 +2833,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 1,
-							"revision" : 8,
+							"minor" : 2,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3793,18 +3791,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "signal", "signal", "bang" ],
 					"patching_rect" : [ 8.0, 97.0, 59.0, 22.0 ],
-					"saved_object_attributes" : 					{
-						"basictuning" : 440,
-						"followglobaltempo" : 0,
-						"formantcorrection" : 0,
-						"mode" : "basic",
-						"originallength" : [ 10195.047619047618355, "ticks" ],
-						"originaltempo" : 119.999999999999986,
-						"pitchcorrection" : 0,
-						"quality" : "basic",
-						"timestretch" : [ 0 ]
-					}
-,
 					"text" : "sfplay~ 2"
 				}
 
@@ -3830,7 +3816,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
-					"outlettype" : [ "list", "" ],
+					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 279.0, 153.0, 441.0, 22.0 ],
 					"text" : "fluid.nmfmatch~ 88 @fftsettings 4096 512 4096 @iterations 10 @bases pno-dicts"
 				}
@@ -4321,7 +4307,7 @@
 			}
  ],
 		"dependency_cache" : [ 			{
-				"name" : "fluid.nmfmatch~.mxo",
+				"name" : "fluid.bufcompose~.mxo",
 				"type" : "iLaX"
 			}
 , 			{
@@ -4329,7 +4315,7 @@
 				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.bufcompose~.mxo",
+				"name" : "fluid.nmfmatch~.mxo",
 				"type" : "iLaX"
 			}
  ],
@@ -4357,7 +4343,6 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
 						"type" : "gradient",
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
@@ -4367,7 +4352,8 @@
 						"proportion" : 0.39,
 						"autogradient" : 0
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
