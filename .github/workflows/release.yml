@@ -35,7 +35,7 @@ jobs:
 
       - id: get-version
         run: echo "::set-output name=version::$(cat flucoma.version.rc)"
-        working-directory: builds/_deps/flucoma-core-src
+        working-directory: build/_deps/flucoma-core-src
   
   release:
     runs-on: ubuntu-latest
