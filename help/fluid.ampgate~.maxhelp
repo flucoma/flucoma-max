@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 946.0, 656.0 ],
+						"rect" : [ 0.0, 26.0, 946.0, 656.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -162,7 +162,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 387.25, 340.0, 106.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "sonify triggers",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1028,7 +1027,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 946.0, 656.0 ],
+						"rect" : [ 100.0, 126.0, 946.0, 656.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1065,7 +1064,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 417.5, 274.0, 299.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "gets the latency calculation directly from the object",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
