@@ -5,20 +5,7 @@ on:
   push:
     branches: [ dev, ci/** ]
 
-jobs:
-  # docs:
-  #   runs-on: ubuntu-latest
-  #   steps:
-  #     - uses: flucoma/actions/env@v5      
-  #     - uses: flucoma/actions/docs@v5
-  #       with:
-  #         target: MAKE_MAX_REF
-  # 
-  #     - uses: actions/upload-artifact@v2
-  #       with:
-  #         name: docsbuild
-  #         path: build/max_ref
-  # 
+jobs: 
   winbuild:
     runs-on: windows-latest
     steps:
@@ -64,17 +51,9 @@ jobs:
         with:
           name: winbuild
           path: "FluidCorpusManipulation/externals"
-  
-      # - uses: actions/download-artifact@v2
-      #   with:
-      #     name: docsbuild
-      #     path: "FluidCorpusManipulation/docs"
       
       - name: zip
         run: zip -r FluCoMa-Max-nightly.zip "FluidCorpusManipulation"
-
-      - name: see
-        run: ls
 
       - uses: dev-drprasad/delete-tag-and-release@v0.2.0
         with:
