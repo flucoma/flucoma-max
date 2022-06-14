@@ -1016,7 +1016,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 62.0, 263.0, 21.0 ],
-					"text" : "Compariing the shape of scalers",
+					"text" : "Comparing the shape of scalers",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
 
