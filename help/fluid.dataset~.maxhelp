@@ -2926,7 +2926,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 199.0, 298.0, 557.0, 36.0 ],
-									"text" : "Get the number of columns, or dimensions of the data points. Since all points must have the same number of dimensions, this is just a single number. It is reported out the right outlet.",
+									"text" : "Get the number of columns, or dimensions of the data points. Since all points must have the same number of dimensions, this is just a single number. It is reported out the left outlet.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -2973,7 +2973,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 179.0, 259.0, 630.0, 21.0 ],
-									"text" : "Get the size (the number of <identifier> <data> pairs in the dataset), which is reported out the right outlet.",
+									"text" : "Get the size (the number of <identifier> <data> pairs in the dataset), which is reported out the left outlet.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
