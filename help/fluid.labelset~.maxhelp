@@ -2175,7 +2175,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 424.0, 262.25, 421.0, 54.0 ],
-									"text" : "Set and update labels with the corresponding messages. The setlabel message will create the label if it doesn note exist, while updatelabel message assumes it already exists and will not make it."
+									"text" : "Set and update labels with the corresponding messages. The setlabel message will create the label if it doesn't exist, while updatelabel message assumes it already exists and will not make it."
 								}
 
 							}
