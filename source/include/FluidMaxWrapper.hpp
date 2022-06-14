@@ -348,7 +348,13 @@ struct NonRealTime
     }
   }
 
-  static void callCancel(Wrapper* x) { x->cancel(); }
+  static void callCancel(Wrapper* x) {
+    x->cancel();
+    t_box *b;
+    t_max_err err = object_obex_lookup(x, gensym("#B"), (t_object **)&b);
+    if(!err)
+      object_method(b, gensym("stopprogress"));
+  }
 
   static void dobang(Wrapper *x) {
     index in = proxy_getinlet(x);
