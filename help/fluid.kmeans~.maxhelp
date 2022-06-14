@@ -88,12 +88,24 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 10.0, 62.0, 412.0, 21.0 ],
+									"text" : "Calculating distances between points and each learned mean/centroid",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-110",
 									"linecount" : 10,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 350.0, 500.0, 150.0, 152.0 ],
+									"patching_rect" : [ 350.0, 480.0, 153.0, 152.0 ],
 									"text" : "The point size is scaled by the distance that the point has to the cluster it belongs to.\n\nSo, you should see that points further away from the centroid are smaller and ones which are closer are larger.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -112,7 +124,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 769.0, 222.5, 20.0, 20.0 ],
+									"patching_rect" : [ 769.0, 202.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -126,8 +138,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 700.0, 270.0, 215.0, 25.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 700.0, 250.0, 215.0, 25.0 ],
 									"text" : "Get the distances to each cluster"
 								}
 
@@ -145,7 +156,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 917.0, 272.5, 20.0, 20.0 ],
+									"patching_rect" : [ 917.0, 252.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -159,7 +170,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 558.0, 220.0, 209.0, 25.0 ],
+									"patching_rect" : [ 558.0, 200.0, 209.0, 25.0 ],
 									"text" : "Get the centroids of the clusters"
 								}
 
@@ -614,7 +625,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 430.0, 370.0, 117.0, 23.0 ],
+									"patching_rect" : [ 430.0, 350.0, 117.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -633,7 +644,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 360.0, 220.0, 196.0, 23.0 ],
+									"patching_rect" : [ 360.0, 200.0, 196.0, 23.0 ],
 									"text" : "getmeans help.kmeans.5.means"
 								}
 
@@ -1041,7 +1052,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 549.0, 370.0, 92.0, 23.0 ],
+									"patching_rect" : [ 549.0, 350.0, 92.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1060,7 +1071,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 400.0, 270.0, 292.0, 23.0 ],
+									"patching_rect" : [ 400.0, 250.0, 292.0, 23.0 ],
 									"text" : "transform help.kmeans.5.data help.kmeans.5.dist"
 								}
 
@@ -1223,7 +1234,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 317.0, 370.0, 110.0, 23.0 ],
+									"patching_rect" : [ 317.0, 350.0, 110.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1232,27 +1243,6 @@
 									}
 ,
 									"text" : "p \"dump labelset\""
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "kmeans" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-46",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 372.0, 10.0, 230.0, 105.0 ],
-									"viewvisibility" : 1
 								}
 
 							}
@@ -1269,7 +1259,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 920.0, 172.5, 20.0, 20.0 ],
+									"patching_rect" : [ 920.0, 152.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1283,7 +1273,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 654.0, 170.0, 264.0, 25.0 ],
+									"patching_rect" : [ 654.0, 150.0, 264.0, 25.0 ],
 									"text" : "Predict clusters from the selected dataset"
 								}
 
@@ -1301,7 +1291,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 316.0, 132.5, 20.0, 20.0 ],
+									"patching_rect" : [ 316.0, 112.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1315,7 +1305,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 187.0, 130.0, 127.0, 25.0 ],
+									"patching_rect" : [ 187.0, 110.0, 127.0, 25.0 ],
 									"text" : "Choose a dataset"
 								}
 
@@ -1495,7 +1485,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 205.0, 78.0, 23.0 ],
+									"patching_rect" : [ 10.0, 185.0, 78.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1514,7 +1504,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 317.0, 170.0, 335.0, 23.0 ],
+									"patching_rect" : [ 317.0, 150.0, 335.0, 23.0 ],
 									"text" : "clear, fitpredict help.kmeans.5.data help.kmeans.5.labels"
 								}
 
@@ -1526,7 +1516,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 317.0, 320.0, 187.0, 23.0 ],
+									"patching_rect" : [ 317.0, 300.0, 187.0, 23.0 ],
 									"text" : "fluid.kmeans~ @numclusters 4"
 								}
 
@@ -1541,7 +1531,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 420.0, 326.0, 326.0 ]
+									"patching_rect" : [ 10.0, 400.0, 326.0, 326.0 ]
 								}
 
 							}
@@ -1562,7 +1552,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 120.0, 175.0, 63.363631999999996 ],
+									"patching_rect" : [ 10.0, 100.0, 175.0, 63.363631999999996 ],
 									"viewvisibility" : 1
 								}
 
@@ -1579,7 +1569,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 360.0, 100.0 ]
+									"patching_rect" : [ 10.0, 10.0, 300.0, 50.0 ]
 								}
 
 							}
@@ -1594,7 +1584,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 439.5, 405.0, 326.5, 405.0 ],
+									"midpoints" : [ 439.5, 385.0, 326.5, 385.0 ],
 									"source" : [ "obj-102", 0 ]
 								}
 
@@ -1602,7 +1592,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-102", 0 ],
-									"midpoints" : [ 326.5, 357.0, 439.5, 357.0 ],
+									"midpoints" : [ 326.5, 337.0, 439.5, 337.0 ],
 									"order" : 1,
 									"source" : [ "obj-12", 0 ]
 								}
@@ -1611,7 +1601,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 326.5, 345.0, 326.5, 345.0 ],
+									"midpoints" : [ 326.5, 325.0, 326.5, 325.0 ],
 									"order" : 2,
 									"source" : [ "obj-12", 0 ]
 								}
@@ -1620,7 +1610,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-81", 0 ],
-									"midpoints" : [ 326.5, 357.0, 558.5, 357.0 ],
+									"midpoints" : [ 326.5, 337.0, 558.5, 337.0 ],
 									"order" : 0,
 									"source" : [ "obj-12", 0 ]
 								}
@@ -1629,7 +1619,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"midpoints" : [ 326.5, 195.0, 326.5, 195.0 ],
+									"midpoints" : [ 326.5, 175.0, 326.5, 175.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -1637,7 +1627,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 19.5, 230.0, 19.5, 230.0 ],
+									"midpoints" : [ 19.5, 210.0, 19.5, 210.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -1645,7 +1635,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 326.5, 396.0, 326.5, 396.0 ],
+									"midpoints" : [ 326.5, 376.0, 326.5, 376.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -1653,7 +1643,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"midpoints" : [ 409.5, 306.0, 326.5, 306.0 ],
+									"midpoints" : [ 409.5, 286.0, 326.5, 286.0 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -1661,7 +1651,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 1 ],
-									"midpoints" : [ 558.5, 405.0, 326.5, 405.0 ],
+									"midpoints" : [ 558.5, 385.0, 326.5, 385.0 ],
 									"source" : [ "obj-81", 0 ]
 								}
 
@@ -1669,7 +1659,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"midpoints" : [ 369.5, 306.0, 326.5, 306.0 ],
+									"midpoints" : [ 369.5, 286.0, 326.5, 286.0 ],
 									"source" : [ "obj-83", 0 ]
 								}
 
@@ -1792,7 +1782,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 70.0, 670.0, 21.0 ],
+									"patching_rect" : [ 10.0, 62.0, 670.0, 21.0 ],
 									"text" : "You can also retrieve the \"means\" i.e the centres of each cluster either for visualisation or perhaps further analysis.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -3030,7 +3020,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 60.0, 385.0, 36.0 ],
+									"patching_rect" : [ 10.0, 60.0, 460.0, 36.0 ],
 									"text" : "You can incrementally \"fit\" a dataset, allowing you to iterate slowly through the learning process of the kmeans algorithm",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -3263,7 +3253,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 400.0, 60.0 ]
+									"patching_rect" : [ 10.0, 10.0, 300.0, 50.0 ]
 								}
 
 							}
