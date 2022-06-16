@@ -88,17 +88,6 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-3",
-									"maxclass" : "spectroscope~",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 620.0, 590.0, 300.0, 100.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"attr" : "power",
 									"id" : "obj-1",
 									"maxclass" : "attrui",
