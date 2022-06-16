@@ -489,7 +489,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 821.0, 651.0 ],
+						"rect" : [ 34.0, 113.0, 821.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -520,6 +520,19 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"format" : 6,
+									"id" : "obj-4",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 50.0, 540.0, 78.0, 23.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-41",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -548,7 +561,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 130.0, 540.0, 40.0, 21.0 ],
+									"patching_rect" : [ 130.0, 541.0, 40.0, 21.0 ],
 									"text" : "value",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -575,18 +588,6 @@
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
 									"patching_rect" : [ 191.5, 540.0, 256.0, 64.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-24",
-									"maxclass" : "number",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "bang" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 540.0, 70.0, 23.0 ]
 								}
 
 							}
@@ -982,7 +983,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-24", 0 ],
+									"destination" : [ "obj-4", 0 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -1081,7 +1082,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 821.0, 651.0 ],
+						"rect" : [ 0.0, 26.0, 821.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
