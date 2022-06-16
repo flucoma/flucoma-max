@@ -93,7 +93,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 614.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Adjusting the parameters to affect the \"embedding\" or \"projection\" of data into a lower dimensional space.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -118,11 +117,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
-									"linecount" : 33,
+									"linecount" : 32,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 660.0, 127.0, 320.0, 486.0 ],
+									"patching_rect" : [ 660.0, 127.0, 324.0, 471.0 ],
 									"text" : "The UMAP algorithm can be nudged to favour the global or local structure of the original data. In essence, this is about whether or not you care about the overall shape of the data, or smaller clusters of points when it is reduced.\n\nThe numneighbours attribute dictates how many points from the original data are considered together when it is determining a transform for the data. These are related to the size of your data. For example, imagine that you have a dataset with 100 points and wanted the whole space to be considered as \"one thing\", setting numneighbours to 100 might be an interesting place to start.\n\nThe minimum distance attribute dictates how close points can be represented in the output dataset. Small values tending towards 0 let UMAP pack the points in tightly while larger values cause the data to be more spread out.\n\nMusically speaking, this decision making will be bound up in lots of different attentions, like what kind of sounds are being analysed and how those sounds will be used in conjunction with the UMAP representation. If you want tight perceptually meaningful clusters then lowering the number of neighbours (relative to your total dataset) and increasing the minimum distance could be a tool for creating more stark separations between points. Likewise, lowering the mindist and increasing the numneighbours might create a flatter and more spread out space for exploring more widely.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -240,7 +239,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 14.0, 56.0, 77.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -1371,6 +1370,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-19",
 									"jsarguments" : [ 0.5 ],
@@ -1572,7 +1572,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1665,7 +1665,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"outlettype" : [ "list" ],
+													"outlettype" : [ "buffer" ],
 													"patching_rect" : [ 13.0, 57.0, 77.0, 22.0 ],
 													"text" : "fluid.list2buf"
 												}
@@ -2902,6 +2902,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-19",
 									"jsarguments" : [ 0.5 ],
@@ -3960,7 +3961,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -5491,6 +5492,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-10",
 									"maxclass" : "jsui",

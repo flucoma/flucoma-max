@@ -196,7 +196,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 358.0, 357.0, 114.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Squared Euclidian",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
@@ -347,6 +346,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -581,6 +581,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -815,6 +816,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1049,6 +1051,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1283,6 +1286,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1655,6 +1659,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1888,7 +1893,6 @@
 					}
 ,
 					"patching_rect" : [ 60.0, 130.0, 187.0, 23.0 ],
-					"presentation_linecount" : 7,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2260,6 +2264,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-26",
 									"jsarguments" : [ 0.35 ],

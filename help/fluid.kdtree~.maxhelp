@@ -1182,7 +1182,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
+						"rect" : [ 35.0, 115.0, 1055.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1342,6 +1342,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-6",
 									"maxclass" : "jsui",
@@ -2372,7 +2373,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 115.0, 1055.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4085,6 +4086,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-6",
 									"jsarguments" : [ 0.5 ],
