@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -108,20 +108,6 @@
 									"patching_rect" : [ 388.0, 490.0, 215.0, 166.0 ],
 									"text" : "By default, each row is layed out framewise, so all of channel 1 is ordered in time as the columns of identifier 0.\n\nWhen frombuffer <buffer> 1 is passed (implicitly 0), the copying is transposed. This means each identifier will contain the same index across all channels as the columns of a given identifier.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-25",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 1107.0, 417.0, 185.0, 54.0 ],
-									"text" : "Channels become \"rows\" or \"identifiers\" and the frames become columns.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -3689,7 +3675,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
