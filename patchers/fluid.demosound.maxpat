@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
+			"minor" : 3,
 			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 730.0, 250.0, 928.0, 871.0 ],
+		"rect" : [ 1.0, 54.0, 1918.0, 1145.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -45,7 +45,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 912.0, 320.833344000000011, 125.0, 22.0 ],
+					"patching_rect" : [ 853.0, 397.000030999999922, 125.0, 22.0 ],
 					"text" : "combine path /media/"
 				}
 
@@ -59,7 +59,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
-					"patching_rect" : [ 881.0, 240.000030999999979, 161.0, 23.0 ],
+					"patching_rect" : [ 817.5, 356.251983999999936, 161.0, 23.0 ],
 					"text" : "regexp (.+)/help/.+.maxpat"
 				}
 
@@ -71,7 +71,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 846.0, 124.0, 58.0, 22.0 ],
+					"patching_rect" : [ 817.5, 276.251952999999958, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -83,7 +83,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 850.5, 157.0, 99.0, 22.0 ],
+					"patching_rect" : [ 817.5, 317.251952999999958, 99.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "fluid.patchpath",
 						"parameter_enable" : 0
@@ -136,7 +136,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "open" ],
-					"patching_rect" : [ 963.5, 549.333349999999996, 42.0, 22.0 ],
+					"patching_rect" : [ 948.0, 533.962545999999975, 42.0, 22.0 ],
 					"text" : "t open"
 				}
 
@@ -159,7 +159,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 956.000028000000043, 514.000014999999962, 129.0, 19.0 ],
+					"patching_rect" : [ 948.0, 501.629210999999998, 129.0, 19.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 5.0, 97.0, 177.666672000000005, 19.0 ],
 					"text" : "FluCoMa Sound File Credits..."
@@ -304,7 +304,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1076.0, 402.708129999999983, 67.0, 22.0 ],
+					"patching_rect" : [ 1076.0, 311.708129999999983, 67.0, 22.0 ],
 					"text" : "universal 1"
 				}
 
@@ -385,7 +385,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 948.0, 630.0, 53.0, 22.0 ],
+					"patching_rect" : [ 948.0, 567.629196000000093, 53.0, 22.0 ],
 					"text" : "pcontrol"
 				}
 
@@ -400,7 +400,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -506,7 +506,7 @@
 						"bgcolor" : [ 0.3, 0.3, 0.3, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 928.5, 670.0, 56.0, 22.0 ],
+					"patching_rect" : [ 928.5, 607.629196000000093, 56.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -550,7 +550,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 814.0, 563.0, 88.0, 22.0 ],
+					"patching_rect" : [ 740.0, 546.0, 88.0, 22.0 ],
 					"text" : "prepend folder"
 				}
 
@@ -562,7 +562,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 3,
 					"outlettype" : [ "bang", "bang", "" ],
-					"patching_rect" : [ 226.0, 220.0, 46.0, 22.0 ],
+					"patching_rect" : [ 244.714126999999962, 224.000031000000007, 44.0, 22.0 ],
 					"text" : "sel 0 1"
 				}
 
@@ -574,7 +574,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 730.0, 418.833344000000011, 101.0, 22.0 ],
+					"patching_rect" : [ 740.0, 503.629210999999998, 101.0, 22.0 ],
 					"text" : "C74:/media/msp/"
 				}
 
@@ -599,7 +599,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -735,7 +735,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
+											"minor" : 3,
 											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1139,7 +1139,7 @@
 									"bgfillcolor_proportion" : 0.39,
 									"bgfillcolor_type" : "color",
 									"id" : "obj-5",
-									"items" : [ "Browse...", ",", "<separator>", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Nicol-LoopE-M_hpss-h_163786918639271.wav", ",", "Nicol-LoopE-M_hpss-p_163786918639271.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+									"items" : [ "Constanzo-PreparedSnare-M.wav", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
@@ -1382,13 +1382,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -1436,7 +1436,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1480,7 +1480,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 168.274993999999992, 211.399993999999992, 88.0, 22.0 ],
+									"patching_rect" : [ 148.5, 166.399993999999992, 88.0, 22.0 ],
 									"text" : "prepend folder"
 								}
 
@@ -1494,7 +1494,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.0, 205.370789000000002, 83.0, 22.0 ],
+									"patching_rect" : [ 381.0, 175.370789000000002, 83.0, 22.0 ],
 									"text" : "prepend filter"
 								}
 
@@ -1508,7 +1508,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 413.0, 181.0, 89.0, 22.0 ],
+									"patching_rect" : [ 381.0, 151.0, 89.0, 22.0 ],
 									"text" : "prepend noise"
 								}
 
@@ -1522,7 +1522,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 314.399993999999992, 241.370789000000002, 81.0, 22.0 ],
+									"patching_rect" : [ 282.399993999999992, 211.370789000000002, 81.0, 22.0 ],
 									"text" : "prepend freq"
 								}
 
@@ -1536,7 +1536,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 278.399993999999992, 185.0, 88.0, 22.0 ],
+									"patching_rect" : [ 250.399993999999992, 166.399993999999992, 88.0, 22.0 ],
 									"text" : "prepend wave"
 								}
 
@@ -1550,7 +1550,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 157.875, 173.0, 75.0, 22.0 ],
+									"patching_rect" : [ 117.0, 137.0, 75.0, 22.0 ],
 									"text" : "prepend file"
 								}
 
@@ -1564,7 +1564,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 135.0, 130.0, 83.0, 22.0 ],
+									"patching_rect" : [ 84.0, 102.0, 83.0, 22.0 ],
 									"text" : "prepend loop"
 								}
 
@@ -1578,7 +1578,7 @@
 									"numinlets" : 11,
 									"numoutlets" : 11,
 									"outlettype" : [ "", "", "", "", "", "", "", "", "", "", "" ],
-									"patching_rect" : [ 50.0, 100.0, 349.0, 22.0 ],
+									"patching_rect" : [ 18.0, 70.0, 406.333323333333283, 22.0 ],
 									"text" : "route module vol loop file folder flucomafile wave freq noise filter"
 								}
 
@@ -1592,7 +1592,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 40.0, 25.0, 25.0 ],
+									"patching_rect" : [ 18.0, 10.0, 25.0, 25.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 585.0, 120.0, 25.0, 25.0 ]
 								}
@@ -1606,7 +1606,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 235.0, 25.0, 25.0 ],
+									"patching_rect" : [ 18.0, 227.0, 25.0, 25.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 585.0, 315.0, 25.0, 25.0 ]
 								}
@@ -1620,7 +1620,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 92.0, 235.0, 25.0, 25.0 ],
+									"patching_rect" : [ 51.0, 227.0, 25.0, 25.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 627.0, 315.0, 25.0, 25.0 ]
 								}
@@ -1634,7 +1634,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 135.0, 295.0, 25.0, 25.0 ],
+									"patching_rect" : [ 84.0, 227.0, 25.0, 25.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 665.0, 315.0, 25.0, 25.0 ]
 								}
@@ -1648,7 +1648,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 282.399993999999992, 300.600006000000008, 25.0, 25.0 ],
+									"patching_rect" : [ 250.399993999999992, 270.600006000000008, 25.0, 25.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 765.0, 315.0, 25.0, 25.0 ]
 								}
@@ -1662,7 +1662,7 @@
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 402.666655999999989, 267.333344000000011, 25.0, 25.0 ],
+									"patching_rect" : [ 370.666655999999989, 237.333344000000011, 25.0, 25.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 870.0, 315.0, 25.0, 25.0 ]
 								}
@@ -1800,13 +1800,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -1821,7 +1821,7 @@
 						"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 263.0, 156.0, 73.0, 22.0 ],
+					"patching_rect" : [ 24.0, 103.0, 335.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1829,7 +1829,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p attrArgs"
+					"text" : "p \"parse arguments\""
 				}
 
 			}
@@ -1841,7 +1841,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 256.0, 65.814605999999998, 24.0, 24.0 ]
+					"patching_rect" : [ 24.0, 12.814605999999998, 24.0, 24.0 ]
 				}
 
 			}
@@ -1855,8 +1855,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 256.0, 91.814605999999998, 712.0, 22.0 ],
-					"text" : "patcherargs @module 0 @vol -20 @loop 0 @file anton.aif @wave 0 @freq 440 @noise 0 @filter 0 @flucomafile Nicol-LoopE-M.wav"
+					"patching_rect" : [ 24.0, 50.814605999999998, 526.0, 22.0 ],
+					"text" : "patcherargs @module 0 @vol -9 @loop 0 @file anton.aif @wave 0 @freq 440 @noise 0 @filter 0"
 				}
 
 			}
@@ -1881,7 +1881,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2024,14 +2024,14 @@
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"frozen_object_attributes" : 									{
-										"ramp" : 200
+										"ramp" : 200.0
 									}
 ,
 									"id" : "obj-9",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"outlettype" : [ "signal", "list" ],
+									"outlettype" : [ "signal", "" ],
 									"patching_rect" : [ 30.0, 270.0, 86.0, 22.0 ],
 									"text" : "matrix~ 2 1 1."
 								}
@@ -2227,13 +2227,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -2298,7 +2298,7 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "int", "", "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 64.0, 172.736938000000009, 179.0, 22.0 ],
+					"patching_rect" : [ 24.0, 149.736938000000009, 179.0, 22.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 5.0, 5.0, 179.0, 22.0 ],
 					"style" : "AudioStatus_Menu"
@@ -2318,7 +2318,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2637,13 +2637,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -2658,7 +2658,7 @@
 						"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ]
 					}
 ,
-					"patching_rect" : [ 16.0, 224.000031000000007, 106.0, 22.0 ],
+					"patching_rect" : [ 24.0, 224.000031000000007, 101.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2693,7 +2693,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 16.0, 257.000030999999979, 69.0, 21.0 ],
+					"patching_rect" : [ 24.0, 257.000030999999979, 65.0, 21.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
 					"text" : "thispatcher"
 				}
@@ -2720,7 +2720,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 4,
 					"numoutlets" : 2,
-					"outlettype" : [ "signal", "list" ],
+					"outlettype" : [ "signal", "" ],
 					"patching_rect" : [ 213.0, 439.333344000000011, 394.0, 21.0 ],
 					"text" : "matrix~ 4 1 1. @ramp 200"
 				}
@@ -2747,7 +2747,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2939,13 +2939,13 @@
 								"name" : "AudioStatus_Menu",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "color",
+										"angle" : 270.0,
+										"autogradient" : 0,
 										"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 										"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 										"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "color"
 									}
 
 								}
@@ -2986,7 +2986,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
+							"minor" : 3,
 							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3399,7 +3399,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 4,
 									"numoutlets" : 2,
-									"outlettype" : [ "signal", "list" ],
+									"outlettype" : [ "signal", "" ],
 									"patching_rect" : [ 152.333344000000011, 378.0, 83.0, 21.0 ],
 									"text" : "matrix~ 4 1 1."
 								}
@@ -3916,6 +3916,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-1", 0 ],
+					"midpoints" : [ 191.5, 135.0, 217.5, 135.0 ],
 					"source" : [ "obj-24", 2 ]
 				}
 
@@ -3923,6 +3924,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-2", 0 ],
+					"midpoints" : [ 112.5, 135.0, 9.0, 135.0, 9.0, 489.0, 112.5, 489.0 ],
 					"source" : [ "obj-24", 1 ]
 				}
 
@@ -3930,6 +3932,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-21", 0 ],
+					"midpoints" : [ 270.5, 210.0, 347.5, 210.0 ],
 					"source" : [ "obj-24", 3 ]
 				}
 
@@ -3937,6 +3940,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-25", 0 ],
+					"midpoints" : [ 33.5, 126.0, 33.5, 126.0 ],
 					"source" : [ "obj-24", 0 ]
 				}
 
@@ -3944,6 +3948,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
+					"midpoints" : [ 349.5, 345.0, 597.5, 345.0 ],
 					"source" : [ "obj-24", 4 ]
 				}
 
@@ -4126,6 +4131,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-24", 0 ],
+					"midpoints" : [ 540.5, 90.0, 33.5, 90.0 ],
 					"source" : [ "obj-7", 1 ]
 				}
 
@@ -4183,56 +4189,18 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "sine.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "saw.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "square.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "random.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "interfacecolor.js",
-				"bootpath" : "C74:/interfaces",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.patchpath.js",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "AudioStatus_Menu",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "color",
+						"angle" : 270.0,
+						"autogradient" : 0,
 						"color" : [ 0.294118, 0.313726, 0.337255, 1 ],
 						"color1" : [ 0.454902, 0.462745, 0.482353, 0.0 ],
 						"color2" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "color"
 					}
 
 				}
@@ -4243,9 +4211,9 @@
 , 			{
 				"name" : "max6box",
 				"default" : 				{
+					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ],
 					"bgcolor" : [ 1.0, 1.0, 1.0, 0.5 ],
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
-					"accentcolor" : [ 0.8, 0.839216, 0.709804, 1.0 ]
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "",
@@ -4263,17 +4231,17 @@
 , 			{
 				"name" : "max6message",
 				"default" : 				{
-					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ],
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "gradient"
 					}
-
+,
+					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 ,
 				"parentstyle" : "max6box",
