@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
+						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1123,7 +1123,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
+						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1154,6 +1154,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-3",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.list2buf" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 270.0, 190.0, 196.235519409179688, 39.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
 									"hint" : "",
@@ -1178,7 +1194,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 210.0, 289.0, 224.0, 21.0 ],
+									"patching_rect" : [ 210.0, 310.0, 224.0, 21.0 ],
 									"text" : "The buffer now contains those values",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1205,7 +1221,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 270.0, 190.0, 143.0, 23.0 ],
+									"patching_rect" : [ 210.0, 264.0, 143.0, 23.0 ],
 									"text" : "buffer~ help.list2buf.dst"
 								}
 
@@ -1225,6 +1241,7 @@
 , 							{
 								"box" : 								{
 									"buffername" : "help.list2buf.dst",
+									"chanoffset" : 0,
 									"id" : "obj-13",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,

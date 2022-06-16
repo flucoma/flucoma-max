@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 99.0, 113.0, 742.0, 608.0 ],
+						"rect" : [ 0.0, 26.0, 742.0, 608.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1793,7 +1793,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 742.0, 608.0 ],
+						"rect" : [ 99.0, 113.0, 742.0, 608.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1823,6 +1823,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.mfcc~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 230.0, 440.0, 202.638015747070312, 54.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"args" : [ "mfcc" ],
 									"bgmode" : 0,
@@ -2060,8 +2076,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 440.0, 285.0, 23.0 ],
-									"text" : "fluid.mfcc~ @numcoeffs 13 @maxnumcoeffs 40"
+									"patching_rect" : [ 20.0, 440.0, 208.0, 23.0 ],
+									"text" : "fluid.mfcc~ 13 @maxnumcoeffs 40"
 								}
 
 							}

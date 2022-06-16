@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -61,8 +61,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -151,7 +151,7 @@
 									"filename" : "fluid.waveform~",
 									"id" : "obj-5",
 									"maxclass" : "jsui",
-									"numinlets" : 3,
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
@@ -321,9 +321,9 @@
 									"color" : [ 1.0, 0.43921568627451, 0.662745098039216, 1.0 ],
 									"id" : "obj-18",
 									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 506.0, 506.0, 22.0 ],
 									"text" : "fluid.bufstats~ @source help.loudness.2.features @stats help.loudness.2.stats @numchans 2"
 								}
@@ -372,8 +372,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -440,7 +440,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 11.0, 15.0, 30.0, 30.0 ]
 												}
 
@@ -544,8 +544,8 @@
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 10.0, 230.0, 477.0, 22.0 ],
 									"text" : "fluid.bufloudness~ @source help.loudness.2.source @features help.loudness.2.features"
 								}
@@ -726,13 +726,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -775,8 +775,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -812,6 +812,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-7",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufloudness~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 513.0, 420.0, 232.739517211914062, 39.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "newobj",
@@ -945,7 +961,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 510.0, 497.0, 160.0, 60.0 ],
+									"patching_rect" : [ 460.0, 497.0, 160.0, 60.0 ],
 									"text" : "The upper feature curve displays the loudness in dBFS. The lower feature curve shows the true-peak.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -973,8 +989,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1041,7 +1057,7 @@
 													"maxclass" : "inlet",
 													"numinlets" : 0,
 													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 164.0, 40.0, 30.0, 30.0 ]
 												}
 
@@ -1162,7 +1178,7 @@
 									"filename" : "fluid.waveform~",
 									"id" : "obj-11",
 									"maxclass" : "jsui",
-									"numinlets" : 3,
+									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
@@ -1212,7 +1228,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 520.0, 420.0, 170.0, 22.0 ],
+									"patching_rect" : [ 630.0, 516.0, 170.0, 22.0 ],
 									"text" : "buffer~ help.loudness.features"
 								}
 
@@ -1224,8 +1240,8 @@
 									"linecount" : 3,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "bang", "float", "" ],
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 320.0, 420.0, 191.0, 49.0 ],
 									"text" : "fluid.bufloudness~ @source help.loudness.source @features help.loudness.features"
 								}
@@ -1416,13 +1432,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -1466,8 +1482,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1530,73 +1546,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "fluid.buf2list.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufloader.maxpat",
-				"bootpath" : "~/dev/flucoma/max/misc",
-				"patcherrelativepath" : "../misc",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufloudness~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufstats~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.learn.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.patchpath.js",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.waveform~.js",
-				"bootpath" : "~/dev/flucoma/max/jsui",
-				"patcherrelativepath" : "../jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid_decomposition.blocking.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
@@ -1622,13 +1571,13 @@
 				"name" : "max6message",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "gradient"
 					}
 ,
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]

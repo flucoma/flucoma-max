@@ -3420,7 +3420,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4035,7 +4035,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4065,6 +4065,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufhpss~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 690.0, 328.0, 219.863006591796875, 54.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-22",
 									"maxclass" : "message",
@@ -4116,7 +4132,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 23.0, 369.0, 256.0, 64.0 ],
+									"patching_rect" : [ 23.0, 405.0, 256.0, 64.0 ],
 									"waveformcolor" : [ 0.254901960784314, 0.905882352941176, 0.450980392156863, 1.0 ]
 								}
 
@@ -4129,7 +4145,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 23.0, 278.0, 256.0, 64.0 ],
+									"patching_rect" : [ 23.0, 295.0, 256.0, 64.0 ],
 									"waveformcolor" : [ 1.0, 0.43921568627451, 0.662745098039216, 1.0 ]
 								}
 
@@ -4640,7 +4656,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 23.0, 344.0, 185.0, 23.0 ],
+									"patching_rect" : [ 23.0, 380.0, 185.0, 23.0 ],
 									"text" : "buffer~ help.hpss.percussive.1"
 								}
 
@@ -4653,7 +4669,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 23.0, 253.0, 176.0, 23.0 ],
+									"patching_rect" : [ 23.0, 270.0, 176.0, 23.0 ],
 									"text" : "buffer~ help.hpss.harmonic.1"
 								}
 

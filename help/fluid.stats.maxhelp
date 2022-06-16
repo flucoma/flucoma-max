@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -417,8 +417,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -454,6 +454,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-3",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.stats" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 333.0, 297.0, 193.394989013671875, 39.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-1",
 									"linecount" : 6,
@@ -616,8 +632,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -969,8 +985,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 2,
-											"revision" : 2,
+											"minor" : 3,
+											"revision" : 0,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1327,6 +1343,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
 									"patching_rect" : [ 171.0, 216.0, 150.0, 23.0 ]
 								}
 
@@ -1485,8 +1502,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1540,41 +1557,6 @@
 			}
  ],
 		"lines" : [  ],
-		"dependency_cache" : [ 			{
-				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.learn.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.mfcc~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.stats.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 
