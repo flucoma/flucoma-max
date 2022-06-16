@@ -614,7 +614,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 2,
-															"file" : "Tremblay-beatRemember.wav"
+															"file" : "Tremblay-BeatRemember.wav"
 														}
 ,
 														"23" : 														{
@@ -624,7 +624,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 3,
-															"file" : "Tremblay-beatRemember.wav"
+															"file" : "Tremblay-BeatRemember.wav"
 														}
 ,
 														"24" : 														{
@@ -634,7 +634,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 6,
-															"file" : "Tremblay-beatRemember.wav"
+															"file" : "Tremblay-BeatRemember.wav"
 														}
 ,
 														"25" : 														{
@@ -644,7 +644,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 8,
-															"file" : "Tremblay-beatRemember.wav"
+															"file" : "Tremblay-BeatRemember.wav"
 														}
 ,
 														"26" : 														{
@@ -654,7 +654,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 9,
-															"file" : "Tremblay-beatRemember.wav"
+															"file" : "Tremblay-BeatRemember.wav"
 														}
 ,
 														"27" : 														{
