@@ -2994,7 +2994,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 843.0, 739.0 ],
+						"rect" : [ 35.0, 114.0, 843.0, 739.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3231,6 +3231,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-12",
@@ -3238,7 +3239,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 293.0, 273.0, 189.0, 74.0 ],
+													"patching_rect" : [ 293.0, 273.0, 196.0, 74.0 ],
 													"text" : "Using @select we extract only the  \"mid\" statistic (by default this is the 50th percentile and therefore the median). This is a little more robust to outliers than the mean",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -3275,7 +3276,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 426.0, 153.0, 229.0, 20.0 ],
+													"patching_rect" : [ 582.0, 154.0, 229.0, 20.0 ],
 													"text" : "analyse the pitch of contiguous segments",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -3706,8 +3707,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 17.0, 153.0, 404.0, 22.0 ],
-													"text" : "fluid.bufpitch~ @source help.bufstats.src.2 @features help.bufstats.pitch.2"
+													"patching_rect" : [ 17.0, 153.0, 561.0, 22.0 ],
+													"text" : "fluid.bufpitch~ @source help.bufstats.src.2 @features help.bufstats.pitch.2 @fftsettings 4096 1024 4096"
 												}
 
 											}
@@ -5852,7 +5853,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 843.0, 739.0 ],
+						"rect" : [ 0.0, 26.0, 843.0, 739.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
