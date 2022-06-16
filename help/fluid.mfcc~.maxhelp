@@ -175,8 +175,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 20.0, 320.0, 137.0, 23.0 ],
-									"text" : "fluid.stats @history 10"
+									"patching_rect" : [ 20.0, 320.0, 155.0, 23.0 ],
+									"text" : "fluid.stats 20 @history 10"
 								}
 
 							}
