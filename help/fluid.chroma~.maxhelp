@@ -1068,8 +1068,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 12.0, 430.0, 455.0, 23.0 ],
-									"text" : "fluid.chroma~ 19 @fftsettings 4096 512 4096 @normalize 1 @numchroma 19"
+									"patching_rect" : [ 12.0, 430.0, 352.0, 23.0 ],
+									"text" : "fluid.chroma~ 19 @fftsettings 4096 512 4096 @normalize 1"
 								}
 
 							}
@@ -1302,12 +1302,41 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "numchroma",
+									"id" : "obj-21",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 100.0, 294.0, 150.0, 22.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-19",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.chroma~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 120.0, 350.0, 210.106521606445312, 39.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-4",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 92.5, 300.5, 72.0, 24.0 ],
+									"patching_rect" : [ 60.0, 610.5, 72.0, 24.0 ],
 									"text" : "audio on",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1326,7 +1355,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 166.5, 302.5, 20.0, 20.0 ],
+									"patching_rect" : [ 134.0, 612.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1971,7 +2000,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 46.0, 290.0, 45.0, 45.0 ]
+									"patching_rect" : [ 46.0, 290.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1983,8 +2012,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 12.0, 350.0, 208.0, 23.0 ],
-									"text" : "fluid.chroma~ 12 @numchroma 12"
+									"patching_rect" : [ 12.0, 350.0, 105.0, 23.0 ],
+									"text" : "fluid.chroma~ 12"
 								}
 
 							}
@@ -2011,6 +2040,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"midpoints" : [ 109.5, 336.0, 21.5, 336.0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
@@ -2049,7 +2086,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-60", 1 ],
-									"midpoints" : [ 21.5, 285.0, 81.5, 285.0 ],
+									"midpoints" : [ 21.5, 285.0, 66.5, 285.0 ],
 									"order" : 0,
 									"source" : [ "obj-50", 0 ]
 								}
