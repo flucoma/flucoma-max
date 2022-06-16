@@ -314,6 +314,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-10",
 									"maxclass" : "jsui",
@@ -1182,6 +1183,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-14",
 									"maxclass" : "jsui",
@@ -2156,7 +2158,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 176.0, 470.0, 77.0, 23.0 ],
 									"text" : "fluid.list2buf"
 								}
@@ -2683,6 +2685,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-14",
 									"maxclass" : "jsui",
