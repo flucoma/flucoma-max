@@ -69,7 +69,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 835.0, 736.0 ],
+						"rect" : [ 0.0, 26.0, 835.0, 736.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1891,7 +1891,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 835.0, 736.0 ],
+						"rect" : [ 100.0, 126.0, 835.0, 736.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1921,6 +1921,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufchroma~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 510.0, 320.0, 210.106521606445312, 39.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-14",
 									"maxclass" : "newobj",
@@ -2504,7 +2520,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 520.0, 350.0, 188.0, 79.0 ],
+									"patching_rect" : [ 470.0, 440.0, 188.0, 79.0 ],
 									"text" : "Each channel will contain a single pitch class. Each frame  of each channel describes the strength of that pitch class in a single FFT analysis window.",
 									"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
 								}
@@ -3395,7 +3411,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 520.0, 320.0, 179.0, 22.0 ],
+									"patching_rect" : [ 470.0, 410.0, 179.0, 22.0 ],
 									"text" : "buffer~ bufchroma.help.features"
 								}
 

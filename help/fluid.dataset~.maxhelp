@@ -544,7 +544,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3689,7 +3689,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4007,34 +4007,14 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 0.015686274509804, 0.015686274509804, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
-									"id" : "obj-57",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 400.0, 685.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "!!!",
-									"textcolor" : [ 1.0, 0.968627450980392, 0.0, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontface" : 2,
 									"id" : "obj-58",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 118.0, 670.0, 280.0, 50.0 ],
-									"text" : "fluid.dataset~ will report back when an operation is complete from its right outlet. You can use this to chain together processes.",
+									"patching_rect" : [ 200.0, 660.0, 280.0, 50.0 ],
+									"text" : "fluid.dataset~ will report back when an operation is complete from its left outlet. You can use this to chain together processes.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -4045,8 +4025,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 17.0, 670.0, 98.0, 23.0 ],
-									"text" : "print @popup 1"
+									"patching_rect" : [ 17.0, 670.0, 179.0, 23.0 ],
+									"text" : "print fluid.dataset~ @popup 1"
 								}
 
 							}

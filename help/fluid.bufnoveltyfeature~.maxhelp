@@ -88,6 +88,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-6",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufnoveltyfeature~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 368.0, 300.0, 198.841995239257812, 54.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"args" : [ "noveltyfeature" ],
 									"bgmode" : 0,
 									"border" : 0,
@@ -483,7 +499,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 300.0, 160.0, 89.0 ],
+									"patching_rect" : [ 10.0, 300.0, 161.0, 89.0 ],
 									"text" : "fluid.bufnoveltyslice~ @source help.novelty.src @indices help.novelty.slices @threshold 0.5 @maxfiltersize 11 @maxkernelsize 51"
 								}
 

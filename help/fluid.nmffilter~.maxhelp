@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 890.0, 750.0 ],
+		"rect" : [ 35.0, 88.0, 920.0, 761.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 890.0, 724.0 ],
+						"rect" : [ 35.0, 114.0, 920.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -87,6 +87,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-1",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.nmffilter~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 650.0, 532.0, 236.178009033203125, 39.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-42",
 									"linecount" : 2,
@@ -556,7 +572,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 570.0, 220.089004516601562, 94.0 ],
+									"patching_rect" : [ 566.0, 590.0, 220.089004516601562, 94.0 ],
 									"text" : "nmffilter is pointed to the bases produced by fluid.bufnmf~\n\nthis allows you to filter audio based on what has been \"learned\" and which is stored in the \"bases\".",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1174,7 +1190,6 @@
 , 							{
 								"box" : 								{
 									"buffername" : "help.filter.src.1",
-									"chanoffset" : 0,
 									"gridcolor" : [ 0.92, 0.92, 0.92, 1.0 ],
 									"id" : "obj-15",
 									"maxclass" : "waveform~",
@@ -1405,7 +1420,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 890.0, 724.0 ],
+						"rect" : [ 0.0, 26.0, 920.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3175,7 +3190,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 890.0, 724.0 ],
+						"rect" : [ 0.0, 26.0, 920.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,

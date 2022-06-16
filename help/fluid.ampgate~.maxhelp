@@ -1059,11 +1059,27 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.ampgate~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 320.0, 404.0, 187.454010009765625, 39.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-58",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 417.5, 274.0, 299.0, 21.0 ],
+									"patching_rect" : [ 412.5, 222.0, 299.0, 21.0 ],
 									"text" : "gets the latency calculation directly from the object",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1075,7 +1091,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 350.0, 351.0, 188.0, 21.0 ],
+									"patching_rect" : [ 345.0, 299.0, 188.0, 21.0 ],
 									"text" : "the delay compensated original",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1267,7 +1283,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 234.0, 390.0, 45.0, 45.0 ]
+									"patching_rect" : [ 229.0, 328.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1279,7 +1295,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 328.0, 310.0, 50.0, 23.0 ]
+									"patching_rect" : [ 323.0, 258.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -1290,7 +1306,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 328.0, 273.0, 90.0, 23.0 ],
+									"patching_rect" : [ 323.0, 221.0, 90.0, 23.0 ],
 									"text" : "getattr latency"
 								}
 
@@ -1302,7 +1318,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 260.0, 350.0, 87.0, 23.0 ],
+									"patching_rect" : [ 255.0, 298.0, 87.0, 23.0 ],
 									"text" : "delay~ 44100"
 								}
 
@@ -1464,11 +1480,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-1",
+									"linecount" : 4,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 10.0, 444.0, 853.0, 23.0 ],
+									"patching_rect" : [ 10.0, 390.0, 303.0, 67.0 ],
 									"text" : "fluid.ampgate~ @rampup 441 @rampdown 2205 @onthreshold -27 @offthreshold -31 @minsilencelength 4410 @lookback 441 @highpassfreq 85"
 								}
 
@@ -1586,7 +1603,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 60.606002999999987, 240.0, 27.106002999999987, 240.0, 27.106002999999987, 429.0, 19.5, 429.0 ],
+									"midpoints" : [ 60.606002999999987, 240.0, 19.5, 240.0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -1594,7 +1611,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 60.606002999999987, 270.0, 27.106002999999987, 270.0, 27.106002999999987, 429.0, 19.5, 429.0 ],
+									"midpoints" : [ 60.606002999999987, 270.0, 19.5, 270.0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
@@ -1602,7 +1619,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 60.606002999999987, 345.0, 27.106002999999987, 345.0, 27.106002999999987, 429.0, 19.5, 429.0 ],
+									"midpoints" : [ 60.606002999999987, 345.0, 19.5, 345.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -1610,6 +1627,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
+									"midpoints" : [ 19.5, 186.0, 19.5, 186.0 ],
 									"order" : 1,
 									"source" : [ "obj-20", 0 ]
 								}
@@ -1618,7 +1636,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-24", 0 ],
-									"midpoints" : [ 19.5, 201.0, 269.5, 201.0 ],
+									"midpoints" : [ 19.5, 201.0, 264.5, 201.0 ],
 									"order" : 0,
 									"source" : [ "obj-20", 0 ]
 								}
@@ -1627,7 +1645,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 60.606002999999987, 294.0, 27.106002999999987, 294.0, 27.106002999999987, 429.0, 19.5, 429.0 ],
+									"midpoints" : [ 60.606002999999987, 294.0, 19.5, 294.0 ],
 									"source" : [ "obj-21", 0 ]
 								}
 
@@ -1642,7 +1660,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 373.0, 303.0, 213.0, 303.0, 213.0, 429.0, 19.5, 429.0 ],
+									"midpoints" : [ 368.0, 246.0, 213.0, 246.0, 213.0, 201.0, 19.5, 201.0 ],
 									"source" : [ "obj-25", 1 ]
 								}
 
@@ -1657,7 +1675,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 60.606002999999987, 321.0, 27.106002999999987, 321.0, 27.106002999999987, 429.0, 19.5, 429.0 ],
+									"midpoints" : [ 60.606002999999987, 321.0, 19.5, 321.0 ],
 									"source" : [ "obj-26", 0 ]
 								}
 
@@ -1693,7 +1711,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 60.606002999999987, 429.0, 19.5, 429.0 ],
+									"midpoints" : [ 60.606002999999987, 375.0, 19.5, 375.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 

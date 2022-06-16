@@ -1355,6 +1355,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufampgate~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 240.0, 326.0, 187.454010009765625, 39.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"args" : [ "ampgate" ],
 									"bgmode" : 0,
 									"border" : 0,
@@ -1387,7 +1403,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 523.5, 420.0, 20.0, 20.0 ],
+									"patching_rect" : [ 623.5, 410.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1401,7 +1417,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 442.0, 417.5, 75.0, 25.0 ],
+									"patching_rect" : [ 542.0, 407.5, 75.0, 25.0 ],
 									"text" : "audio on"
 								}
 
@@ -1419,7 +1435,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 627.0, 252.5, 20.0, 20.0 ],
+									"patching_rect" : [ 727.0, 242.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1433,7 +1449,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 442.0, 250.0, 183.0, 25.0 ],
+									"patching_rect" : [ 542.0, 240.0, 183.0, 25.0 ],
 									"text" : "play back onset/offset pairs"
 								}
 
@@ -1919,7 +1935,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 390.0, 290.0, 104.0, 23.0 ],
+									"patching_rect" : [ 490.0, 280.0, 104.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1938,7 +1954,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 390.0, 406.0, 45.0, 45.0 ]
+									"patching_rect" : [ 490.0, 396.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1952,7 +1968,7 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 390.0, 336.0, 147.0, 47.0 ],
+									"patching_rect" : [ 490.0, 326.0, 147.0, 47.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~",
@@ -1977,7 +1993,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 390.0, 250.0, 50.0, 23.0 ]
+									"patching_rect" : [ 490.0, 240.0, 50.0, 23.0 ]
 								}
 
 							}

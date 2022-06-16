@@ -99,6 +99,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-34",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufnoveltyslice~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 472.158004760742188, 400.0, 198.841995239257812, 54.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-31",
 									"linecount" : 2,
@@ -234,7 +250,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 767.0, 462.5, 20.0, 20.0 ],
+									"patching_rect" : [ 799.5, 472.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -249,7 +265,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 566.0, 460.0, 199.0, 25.0 ],
+									"patching_rect" : [ 598.5, 470.0, 199.0, 25.0 ],
 									"text" : "Select a segment to play back"
 								}
 
@@ -299,7 +315,7 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 514.0, 535.0, 136.0, 47.0 ],
+									"patching_rect" : [ 546.5, 545.0, 136.0, 47.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~",
@@ -714,7 +730,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 514.0, 505.0, 104.0, 23.0 ],
+									"patching_rect" : [ 546.5, 515.0, 104.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -735,7 +751,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 514.0, 460.0, 52.0, 23.0 ]
+									"patching_rect" : [ 546.5, 470.0, 52.0, 23.0 ]
 								}
 
 							}
@@ -747,7 +763,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 140.0, 440.0, 189.0, 23.0 ],
+									"patching_rect" : [ 140.0, 460.0, 189.0, 23.0 ],
 									"text" : "slices help.ns.slices help.ns.src"
 								}
 
@@ -761,7 +777,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 340.0, 440.0, 131.0, 23.0 ],
+									"patching_rect" : [ 350.0, 520.0, 131.0, 23.0 ],
 									"text" : "buffer~ help.ns.slices"
 								}
 
@@ -853,7 +869,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 651.0, 617.5, 20.0, 20.0 ],
+									"patching_rect" : [ 683.5, 627.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -868,7 +884,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 561.0, 615.0, 88.0, 25.0 ],
+									"patching_rect" : [ 593.5, 625.0, 88.0, 25.0 ],
 									"text" : "Start audio"
 								}
 
@@ -914,7 +930,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 514.0, 605.0, 45.0, 45.0 ]
+									"patching_rect" : [ 546.5, 615.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -923,11 +939,12 @@
 									"color" : [ 0.423529411764706, 0.513725490196078, 1.0, 1.0 ],
 									"fontsize" : 13.0,
 									"id" : "obj-8",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 140.0, 400.0, 622.0, 23.0 ],
+									"patching_rect" : [ 140.0, 400.0, 330.0, 38.0 ],
 									"text" : "fluid.bufnoveltyslice~ @source help.ns.src @indices help.ns.slices @maxfiltersize 71 @maxkernelsize 101"
 								}
 

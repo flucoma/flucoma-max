@@ -684,6 +684,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-1",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.loudness~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 330.0, 330.0, 232.739517211914062, 39.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"attr" : "hopsize",
 									"id" : "obj-55",
 									"maxclass" : "attrui",
