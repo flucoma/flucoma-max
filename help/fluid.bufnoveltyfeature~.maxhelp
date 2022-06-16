@@ -478,13 +478,13 @@
 								"box" : 								{
 									"color" : [ 0.254901960784314, 0.905882352941176, 0.450980392156863, 1.0 ],
 									"id" : "obj-22",
-									"linecount" : 4,
+									"linecount" : 6,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 300.0, 161.0, 62.0 ],
-									"text" : "fluid.bufnoveltyslice~ @source help.novelty.src @indices help.novelty.slices @threshold 0.1"
+									"patching_rect" : [ 10.0, 300.0, 160.0, 89.0 ],
+									"text" : "fluid.bufnoveltyslice~ @source help.novelty.src @indices help.novelty.slices @threshold 0.5 @maxfiltersize 11 @maxkernelsize 51"
 								}
 
 							}
@@ -552,13 +552,13 @@
 								"box" : 								{
 									"color" : [ 1.0, 0.43921568627451, 0.662745098039216, 1.0 ],
 									"id" : "obj-1",
-									"linecount" : 3,
+									"linecount" : 5,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 190.0, 300.0, 170.0, 49.0 ],
-									"text" : "fluid.bufnoveltyfeature~ @source help.novelty.src @features help.novelty.curve"
+									"patching_rect" : [ 190.0, 300.0, 170.0, 76.0 ],
+									"text" : "fluid.bufnoveltyfeature~ @source help.novelty.src @features help.novelty.curve @maxfiltersize 11 @maxkernelsize 51"
 								}
 
 							}
@@ -583,7 +583,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 199.5, 390.0, 131.5, 390.0 ],
+									"midpoints" : [ 199.5, 396.0, 131.5, 396.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
