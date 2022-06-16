@@ -333,7 +333,7 @@
 					"patching_rect" : [ 664.0, 718.707512999999949, 266.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 424.19876099999999, 266.0, 21.0 ],
-					"text" : "Realtime Amplitude Differential Feature",
+					"text" : "A set of data associated with identifiers.",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.6 ]
 				}
 
@@ -474,7 +474,7 @@
 					"patching_rect" : [ 657.0, 803.165829000000031, 342.0, 35.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 616.020935000000009, 387.19876099999999, 284.479034000000013, 35.0 ],
-					"text" : "fluid.ampfeature~",
+					"text" : "fluid.dataset~",
 					"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.82 ]
 				}
 
@@ -723,7 +723,7 @@
 					"maxclass" : "bpatcher",
 					"numinlets" : 1,
 					"numoutlets" : 1,
-					"offset" : [ -1095.0, -90.0 ],
+					"offset" : [ -1095.0, -555.0 ],
 					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
@@ -736,7 +736,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 88.0, 1877.0, 1237.0 ],
+						"rect" : [ 35.0, 88.0, 1850.0, 1077.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -1894,7 +1894,7 @@
 									"spacing_x" : 1.0,
 									"spacing_y" : 24.0,
 									"tabcolor" : [ 0.012, 0.447, 0.71, 0.5 ],
-									"tabs" : [ "fluid.bufstats~", "fluid.stats~" ]
+									"tabs" : [ "fluid.bufstats~", "fluid.stats" ]
 								}
 
 							}
@@ -2151,13 +2151,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-47",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 49.0 ],
-									"text" : "fluid.ampfeature~"
+									"patching_rect" : [ 590.903226000000018, 21.0, 50.0, 35.0 ],
+									"text" : "fluid.dataset~"
 								}
 
 							}
