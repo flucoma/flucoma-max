@@ -1233,7 +1233,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 430.0, 383.75, 45.0, 45.0 ]
+									"patching_rect" : [ 430.0, 390.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1768,15 +1768,14 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 1 ],
-									"order" : 0,
-									"source" : [ "obj-5", 0 ]
+									"midpoints" : [ 494.0, 384.0, 465.5, 384.0 ],
+									"source" : [ "obj-5", 1 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-15", 0 ],
-									"order" : 1,
 									"source" : [ "obj-5", 0 ]
 								}
 
