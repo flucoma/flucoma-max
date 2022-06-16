@@ -2591,7 +2591,7 @@
 								"box" : 								{
 									"autopopulate" : 1,
 									"id" : "obj-29",
-									"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-beatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+									"items" : [ "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Nicol-LoopE-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-ComplexDescent-M.wav", ",", "Tremblay-FMTri-M.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 									"maxclass" : "umenu",
 									"numinlets" : 1,
 									"numoutlets" : 3,
