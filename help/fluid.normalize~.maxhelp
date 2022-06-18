@@ -1122,7 +1122,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @source standardize.help.point",
+													"text" : "fluid.buf2list @source normalize.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -1287,7 +1287,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 540.0, 102.5, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"text" : "Normalise the dataset of raw data"
 								}
 
 							}
@@ -1441,7 +1441,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.standardize~" ],
+									"jsarguments" : [ "fluid.normalize~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -1520,7 +1520,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"visualising standardisation\"",
+					"text" : "p \"visualising normalisation\"",
 					"varname" : "basic_tab[2]"
 				}
 
@@ -1634,7 +1634,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 560.0, 150.0, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"text" : "Normalise the dataset of raw data"
 								}
 
 							}
@@ -1989,7 +1989,7 @@
 					"filename" : "helpname.js",
 					"id" : "obj-4",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.standardize~" ],
+					"jsarguments" : [ "fluid.normalize~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -2069,7 +2069,7 @@
 					"filename" : "helpname.js",
 					"id" : "obj-7",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.standardize~" ],
+					"jsarguments" : [ "fluid.normalize~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,

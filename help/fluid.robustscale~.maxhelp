@@ -198,7 +198,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 38.0, 864.0, 352.0, 36.0 ],
-									"text" : "By normalizing to a uniform scale, both would be weighted equally",
+									"text" : "By scaling to a uniform scale, both would be weighted equally",
 									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
 								}
 
@@ -1111,7 +1111,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @source standardize.help.point",
+													"text" : "fluid.buf2list @source robustscale.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -1276,7 +1276,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 550.0, 112.5, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"text" : "Scale the dataset of raw data"
 								}
 
 							}
@@ -1509,7 +1509,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"visualising standardisation\"",
+					"text" : "p \"visualising robust scaling\"",
 					"varname" : "basic_tab[2]"
 				}
 
@@ -1613,7 +1613,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 580.5, 160.0, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"text" : "Scale the dataset of raw data"
 								}
 
 							}
