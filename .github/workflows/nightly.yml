@@ -29,6 +29,17 @@ jobs:
         with:
           branch: origin/dev
 
+      - name: sign and notarise
+        uses: flucoma/actions/distribution@main
+        with:
+          glob: '-e mxo'
+          package: 'release-packaging'
+          cert: ${{ secrets.CERT }}
+          certpwd: ${{ secrets.CERTPWD }}
+          teamid: ${{ secrets.WWDRTEAMID }}
+          apppwd: ${{ secrets.APPSTORECONNECTPWD }}
+          appusr: ${{ secrets.APPSTORECONNECTUSERNAME }}
+
       - uses: actions/upload-artifact@v2
         with:
           name: macbuild
