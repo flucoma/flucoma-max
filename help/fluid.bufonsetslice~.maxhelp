@@ -1220,7 +1220,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 0,
-															"file" : "Tremblay-FMTri-M.wav"
+															"file" : "Tremblay-FMTriDist-M.wav"
 														}
 ,
 														"29" : 														{
@@ -1230,7 +1230,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 1,
-															"file" : "Tremblay-FMTri-M.wav"
+															"file" : "Tremblay-FMTriDist-M.wav"
 														}
 ,
 														"30" : 														{
@@ -1240,7 +1240,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 2,
-															"file" : "Tremblay-FMTri-M.wav"
+															"file" : "Tremblay-FMTriDist-M.wav"
 														}
 ,
 														"31" : 														{
@@ -1250,7 +1250,7 @@
 															"framedelta" : 0,
 															"minslicelength" : 45,
 															"metric" : 5,
-															"file" : "Tremblay-FMTri-M.wav"
+															"file" : "Tremblay-FMTriDist-M.wav"
 														}
 
 													}
