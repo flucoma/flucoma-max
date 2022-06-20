@@ -3232,8 +3232,19 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-12",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 366.0, 385.75, 104.0, 22.0 ],
+													"text" : "pointsizescale 0.5"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-26",
 													"maxclass" : "newobj",
@@ -3885,6 +3896,14 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-18", 0 ],
+													"midpoints" : [ 375.5, 468.0, 312.5, 468.0 ],
+													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-2", 0 ]
 												}
@@ -3900,7 +3919,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-18", 0 ],
-													"midpoints" : [ 312.5, 410.0, 312.5, 410.0 ],
+													"midpoints" : [ 312.5, 408.0, 312.5, 408.0 ],
 													"source" : [ "obj-22", 1 ]
 												}
 
@@ -3908,7 +3927,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-27", 0 ],
-													"midpoints" : [ 273.5, 427.0, 76.5, 427.0 ],
+													"midpoints" : [ 273.5, 429.0, 76.5, 429.0 ],
 													"source" : [ "obj-22", 0 ]
 												}
 
@@ -3936,7 +3955,18 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-12", 0 ],
+													"midpoints" : [ 273.5, 372.0, 375.5, 372.0 ],
+													"order" : 0,
+													"source" : [ "obj-5", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-22", 0 ],
+													"midpoints" : [ 273.5, 372.0, 273.5, 372.0 ],
+													"order" : 1,
 													"source" : [ "obj-5", 1 ]
 												}
 
