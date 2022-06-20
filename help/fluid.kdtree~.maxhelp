@@ -1182,7 +1182,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 115.0, 1055.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2373,7 +2373,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
+						"rect" : [ 35.0, 115.0, 1055.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3060,7 +3060,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 387.0, 248.0, 281.0, 210.0 ],
-									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values, loudness and spectral centroid, that attempt to represent perceived qualities of the sound.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space.",
+									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values from dimensionality reduction (UMAP) that attempt to represent the perceptual differences between this corpus.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
 
