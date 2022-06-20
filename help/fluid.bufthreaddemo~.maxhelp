@@ -3594,6 +3594,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 232.0, 408.0, 86.0, 22.0 ],
+									"text" : "route progress"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-21",
 									"linecount" : 2,
 									"maxclass" : "comment",
@@ -3729,7 +3741,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 141.0, 414.0, 158.5, 16.0 ],
+									"patching_rect" : [ 232.0, 440.0, 158.5, 16.0 ],
 									"size" : 1.0
 								}
 
@@ -3806,7 +3818,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
+									"destination" : [ "obj-3", 0 ],
 									"source" : [ "obj-1", 1 ]
 								}
 
@@ -3845,6 +3857,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-26", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-3", 0 ]
 								}
 
 							}
@@ -4162,6 +4181,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "" ],
+									"patching_rect" : [ 249.0, 390.0, 92.0, 23.0 ],
+									"text" : "route progress"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -4217,7 +4248,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 152.75, 281.5, 169.0, 33.0 ],
+									"patching_rect" : [ 151.75, 276.0, 169.0, 33.0 ],
 									"text" : "You can abort a threaded job using the 'cancel' message",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -4227,12 +4258,12 @@
 								"box" : 								{
 									"fontsize" : 12.0,
 									"id" : "obj-35",
-									"linecount" : 5,
+									"linecount" : 6,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 323.0, 356.0, 309.0, 74.0 ],
-									"text" : "When blocking = 0, the middle outlet of the object will report approximate job progress.\n\nThe left outlet will still bang when finished, which you can use to trigger your next round of processing",
+									"patching_rect" : [ 421.0, 370.0, 309.0, 87.0 ],
+									"text" : "When blocking = 0, the right outlet of the object will report approximate job progress.\n\nThe left outlet will still output a message when finished, which you can use to trigger your next round of processing",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -4329,7 +4360,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 158.0, 396.0, 158.5, 16.0 ],
+									"patching_rect" : [ 249.0, 428.0, 158.5, 16.0 ],
 									"size" : 1.0
 								}
 
@@ -4398,7 +4429,7 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
+									"destination" : [ "obj-2", 0 ],
 									"source" : [ "obj-1", 1 ]
 								}
 
@@ -4439,6 +4470,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
 									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-19", 0 ],
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
