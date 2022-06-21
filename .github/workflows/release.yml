@@ -75,7 +75,7 @@ jobs:
         with:
           name: ${{ needs.macbuild.outputs.version }}
           body: "This is a release build of the FluCoMa Max package. The build hash is ${{ github.sha }}"
-          files: FluCoMa*.zip
+          files: FluCoMa*
           prerelease: true
           tag_name: ${{ needs.macbuild.outputs.version }}
           draft: false

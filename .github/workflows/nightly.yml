@@ -79,7 +79,7 @@ jobs:
         with:
           name: FluCoMa Max Nightly Release
           body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-          files: FluCoMa-Max-nightly.zip
+          files: FluCoMa*
           prerelease: true
           tag_name: nightly
           draft: false
