@@ -137,8 +137,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 192.5, 611.0, 273.0, 21.0 ],
-									"text" : "This will reflect the number of \"selected\" items"
+									"patching_rect" : [ 192.5, 571.0, 273.0, 21.0 ],
+									"text" : "This will reflect the number of \"selected\" items",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
@@ -150,7 +151,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 142.0, 610.0, 50.0, 23.0 ]
+									"patching_rect" : [ 142.0, 570.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -161,7 +162,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 142.0, 570.0, 39.0, 23.0 ],
+									"patching_rect" : [ 142.0, 530.0, 39.0, 23.0 ],
 									"text" : "zl.len"
 								}
 
@@ -328,7 +329,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 530.0, 78.0, 23.0 ],
+									"patching_rect" : [ 10.0, 490.0, 78.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -346,7 +347,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 570.0, 124.0, 150.0 ]
+									"patching_rect" : [ 10.0, 530.0, 124.0, 150.0 ]
 								}
 
 							}
@@ -359,18 +360,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 98.0, 310.0, 333.0, 23.0 ],
 									"text" : "select centroid spread skew kurtosis rolloff flatness crest"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-19",
-									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 10.0, 490.0, 223.0, 23.0 ],
-									"text" : "fluid.stats 7 @history 40 @autosize 0"
 								}
 
 							}
@@ -606,23 +595,17 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
+									"midpoints" : [ 19.5, 474.0, 19.5, 474.0 ],
 									"order" : 1,
-									"source" : [ "obj-19", 0 ]
+									"source" : [ "obj-2", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-36", 0 ],
-									"midpoints" : [ 19.5, 521.0, 151.5, 521.0 ],
+									"midpoints" : [ 19.5, 483.0, 151.5, 483.0 ],
 									"order" : 0,
-									"source" : [ "obj-19", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-19", 0 ],
 									"source" : [ "obj-2", 0 ]
 								}
 
