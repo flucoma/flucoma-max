@@ -1,4 +1,4 @@
-name: Nightly Releases
+name: nightly
 
 on:
   workflow_dispatch:
@@ -9,23 +9,23 @@ jobs:
   winbuild:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v5
-      - uses: flucoma/actions/max@v5
+      - uses: actions/checkout@v3
+      - uses: flucoma/actions/env@main
+      - uses: flucoma/actions/max@main
         with:
           branch: origin/dev
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: winbuild
           path: "release-packaging/FluidCorpusManipulation/externals/"
   
   macbuild:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v5
-      - uses: flucoma/actions/max@v5
+      - uses: actions/checkout@v3
+      - uses: flucoma/actions/env@main
+      - uses: flucoma/actions/max@main
         with:
           branch: origin/dev
 
@@ -41,7 +41,7 @@ jobs:
           apppwd: ${{ secrets.APPSTORECONNECTPWD }}
           appusr: ${{ secrets.APPSTORECONNECTUSERNAME }}
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: macbuild
           path: release-packaging/FluidCorpusManipulation/

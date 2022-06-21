@@ -1,4 +1,4 @@
-name: Release
+name: release
 on:
   workflow_dispatch:
 
@@ -6,29 +6,41 @@ jobs:
   winbuild:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v5
-      - uses: flucoma/actions/max@v5
+      - uses: actions/checkout@v3
+      - uses: flucoma/actions/env@main
+      - uses: flucoma/actions/max@main
         with:
           branch: origin/main
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: winbuild
           path: "release-packaging/FluidCorpusManipulation/externals/"
   
   macbuild:
-    runs-on: macos-11
+    runs-on: macos-latest
     outputs:
       version: ${{ steps.get-version.outputs.version }}
     steps:
-      - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v5
-      - uses: flucoma/actions/max@v5
+      - uses: actions/checkout@v3
+      - uses: flucoma/actions/env@main
+      - uses: flucoma/actions/max@main
         with:
           branch: origin/main
 
-      - uses: actions/upload-artifact@v2
+      - name: sign and notarise
+        uses: flucoma/actions/distribution@main
+        with:
+          glob: '-e mxo'
+          package: 'release-packaging'
+          output_type: 'bundle'
+          cert: ${{ secrets.CERT }}
+          certpwd: ${{ secrets.CERTPWD }}
+          teamid: ${{ secrets.WWDRTEAMID }}
+          apppwd: ${{ secrets.APPSTORECONNECTPWD }}
+          appusr: ${{ secrets.APPSTORECONNECTUSERNAME }}
+
+      - uses: actions/upload-artifact@v3
         with:
           name: macbuild
           path: release-packaging/FluidCorpusManipulation/
