@@ -99,7 +99,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 662.625, 365.833327999999995, 219.863006591796875, 54.0 ]
+									"patching_rect" : [ 662.0, 365.0, 219.863006591796875, 54.0 ]
 								}
 
 							}
@@ -198,7 +198,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Green-Box639.wav", "@vol", 0, "@loop", 1 ],
+									"args" : [ "@file", "Nicol-LoopE-M.wav", "@vol", 0, "@loop", 1 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -968,6 +968,39 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"bubble" : 1,
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 80.0, 670.0, 101.0, 25.0 ],
+									"text" : "turn audio on",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-7",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 183.0, 672.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-9",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1027,7 +1060,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 723.5, 223.312469000000021, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1039,7 +1072,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 285.0, 287.5, 113.0, 25.0 ],
+									"patching_rect" : [ 263.0, 290.5, 113.0, 25.0 ],
 									"text" : "select a source",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1058,9 +1091,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 263.0, 290.0, 20.0, 20.0 ],
+									"patching_rect" : [ 378.0, 293.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -2046,7 +2079,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 91.567627000000002, 810.0, 108.0 ],
+									"patching_rect" : [ 10.0, 91.567627000000002, 814.0, 108.0 ],
 									"text" : "in mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are. \n\nIn modes 1 and 2, a binary mask is used instead, where a component is designated as being harmonic or percussive if the respective median filter output exceeds some threshold. This yields greater separation, but can have more audible artefacts. \n\nfluid.hpss~ lets you adjust this threshold with respect to frequency, to enable fine-tuning. In mode 1, just use the harmthresh attribute, which will internally make a complementary threshold for the percussive part – guaranteeing that the two components still sum to the source. ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -2258,6 +2291,39 @@
 						"isolateaudio" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-11",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 60.0, 652.0, 101.0, 25.0 ],
+									"text" : "turn audio on",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-15",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 163.0, 654.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-9",
@@ -3858,7 +3924,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 160.0, 213.375, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -3923,7 +3989,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 516.0, 235.187469000000021, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 

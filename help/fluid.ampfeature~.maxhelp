@@ -90,12 +90,100 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ "ampfeature" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-46",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 397.0, 10.0, 253.0, 110.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"hidden" : 1,
+									"id" : "obj-14",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 230.0, 179.0, 85.0, 24.0 ],
+									"text" : "Play sound",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-18",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 317.0, 181.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-9",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 60.0, 492.0, 73.0, 24.0 ],
+									"text" : "Audio on",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-63",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 135.0, 494.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-27",
 									"linecount" : 6,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 510.0, 150.0, 156.0, 87.0 ],
+									"patching_rect" : [ 460.0, 260.0, 156.0, 87.0 ],
 									"text" : "By matching the various amplitude envelope attributes we get a sense for how the slicer is determining changes in the signal.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -184,7 +272,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 350.0, 230.0, 150.0, 22.0 ]
+									"patching_rect" : [ 430.0, 230.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -197,7 +285,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 320.0, 200.0, 150.0, 22.0 ]
+									"patching_rect" : [ 400.0, 200.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -210,7 +298,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 287.5, 170.0, 145.0, 22.0 ]
+									"patching_rect" : [ 367.5, 170.0, 145.0, 22.0 ]
 								}
 
 							}
@@ -223,7 +311,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 260.0, 140.0, 200.0, 22.0 ],
+									"patching_rect" : [ 340.0, 140.0, 200.0, 22.0 ],
 									"text_width" : 86.0
 								}
 
@@ -288,7 +376,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 420.0, 110.0 ]
+									"patching_rect" : [ 10.0, 10.0, 380.0, 100.0 ]
 								}
 
 							}
@@ -304,7 +392,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 359.5, 306.0, 19.5, 306.0 ],
+									"midpoints" : [ 439.5, 306.0, 19.5, 306.0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -354,7 +442,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 269.5, 306.0, 19.5, 306.0 ],
+									"midpoints" : [ 349.5, 306.0, 19.5, 306.0 ],
 									"order" : 1,
 									"source" : [ "obj-6", 0 ]
 								}
@@ -363,7 +451,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 269.5, 306.0, 309.5, 306.0 ],
+									"midpoints" : [ 349.5, 306.0, 309.5, 306.0 ],
 									"order" : 0,
 									"source" : [ "obj-6", 0 ]
 								}
@@ -372,7 +460,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 297.0, 306.0, 19.5, 306.0 ],
+									"midpoints" : [ 377.0, 306.0, 19.5, 306.0 ],
 									"order" : 1,
 									"source" : [ "obj-7", 0 ]
 								}
@@ -381,7 +469,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 297.0, 306.0, 309.5, 306.0 ],
+									"midpoints" : [ 377.0, 306.0, 309.5, 306.0 ],
 									"order" : 0,
 									"source" : [ "obj-7", 0 ]
 								}
@@ -390,7 +478,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 329.5, 306.0, 19.5, 306.0 ],
+									"midpoints" : [ 409.5, 306.0, 19.5, 306.0 ],
 									"order" : 1,
 									"source" : [ "obj-8", 0 ]
 								}
@@ -399,7 +487,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 329.5, 306.0, 309.5, 306.0 ],
+									"midpoints" : [ 409.5, 306.0, 309.5, 306.0 ],
 									"order" : 0,
 									"source" : [ "obj-8", 0 ]
 								}
@@ -430,13 +518,13 @@
 								"name" : "max6message",
 								"default" : 								{
 									"bgfillcolor" : 									{
-										"type" : "gradient",
+										"angle" : 270.0,
+										"autogradient" : 0,
+										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 										"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 										"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-										"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-										"angle" : 270.0,
 										"proportion" : 0.39,
-										"autogradient" : 0
+										"type" : "gradient"
 									}
 ,
 									"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]
@@ -561,71 +649,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "fluid.ampfeature~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.ampslice~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.demosound.maxpat",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.patchpath.js",
-				"bootpath" : "~/dev/flucoma/max/help",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "interfacecolor.js",
-				"bootpath" : "C74:/interfaces",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "random.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "saw.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "sine.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "square.svg",
-				"bootpath" : "C74:/media/max/picts/m4l-picts",
-				"type" : "svg",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
@@ -651,13 +674,13 @@
 				"name" : "max6message",
 				"default" : 				{
 					"bgfillcolor" : 					{
-						"type" : "gradient",
+						"angle" : 270.0,
+						"autogradient" : 0,
+						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
 						"color1" : [ 0.866667, 0.866667, 0.866667, 1.0 ],
 						"color2" : [ 0.788235, 0.788235, 0.788235, 1.0 ],
-						"color" : [ 0.290196, 0.309804, 0.301961, 1.0 ],
-						"angle" : 270.0,
 						"proportion" : 0.39,
-						"autogradient" : 0
+						"type" : "gradient"
 					}
 ,
 					"textcolor_inverse" : [ 0.0, 0.0, 0.0, 1.0 ]

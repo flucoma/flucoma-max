@@ -2,22 +2,23 @@
 	"patcher" : 	{
 		"fileversion" : 1,
 		"appversion" : 		{
-			"major" : 7,
+			"major" : 8,
 			"minor" : 3,
-			"revision" : 5,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
-		"rect" : [ 34.0, 79.0, 890.0, 671.0 ],
+		"classnamespace" : "box",
+		"rect" : [ 34.0, 87.0, 980.0, 671.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
-		"default_fontsize" : 12.0,
+		"default_fontsize" : 13.0,
 		"default_fontface" : 0,
 		"default_fontname" : "Arial",
-		"gridonopen" : 1,
-		"gridsize" : [ 15.0, 15.0 ],
-		"gridsnaponopen" : 1,
+		"gridonopen" : 2,
+		"gridsize" : [ 10.0, 10.0 ],
+		"gridsnaponopen" : 2,
 		"objectsnaponopen" : 1,
 		"statusbarvisible" : 2,
 		"toolbarvisible" : 1,
@@ -37,48 +38,31 @@
 		"style" : "",
 		"subpatcher_template" : "",
 		"showontab" : 1,
+		"assistshowspatchername" : 0,
 		"title" : "blocking attribute",
 		"boxes" : [ 			{
 				"box" : 				{
-					"fontsize" : 12.0,
-					"id" : "obj-48",
-					"linecount" : 3,
+					"fontsize" : 13.0,
+					"id" : "obj-3",
+					"linecount" : 2,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 69.5, 325.0, 151.0, 47.0 ],
-					"style" : "",
-					"text" : "In non-blocking, the middle outlet will report progress",
+					"patching_rect" : [ 25.0, 330.0, 245.0, 36.0 ],
+					"presentation_linecount" : 2,
+					"text" : "With @blocking 2, the progress of a job is visually shown on the object itself.",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"floatoutput" : 1,
-					"id" : "obj-47",
-					"ignoreclick" : 1,
-					"maxclass" : "slider",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"parameter_enable" : 0,
-					"patching_rect" : [ 70.5, 292.0, 118.0, 24.0 ],
-					"size" : 1.0,
-					"style" : "",
-					"varname" : "progress"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"fontsize" : 12.0,
+					"fontsize" : 13.0,
 					"id" : "obj-44",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 270.5, 198.0, 213.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 160.0, 195.0, 230.0, 21.0 ],
 					"text" : "Use calling thread (for very small jobs)",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -86,13 +70,12 @@
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 12.0,
+					"fontsize" : 13.0,
 					"id" : "obj-45",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 270.5, 175.0, 205.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 160.0, 172.0, 221.0, 21.0 ],
 					"text" : "Use Max main thread (for small jobs)",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -100,13 +83,12 @@
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 12.0,
+					"fontsize" : 13.0,
 					"id" : "obj-46",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 270.5, 153.0, 259.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 160.0, 150.0, 280.0, 21.0 ],
 					"text" : "Use a dedicated worker thread (for longer jobs)",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -119,8 +101,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 92.599854, 334.0, 21.0 ],
-					"style" : "",
+					"patching_rect" : [ 10.0, 92.599853999999993, 334.0, 21.0 ],
 					"text" : "By default non-realtime objects use the Max main thread",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -128,39 +109,36 @@
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 12.0,
+					"fontsize" : 13.0,
 					"id" : "obj-42",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 120.5, 198.0, 148.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 10.0, 195.0, 160.0, 21.0 ],
 					"text" : "2: Blocking (High Priority)"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 12.0,
+					"fontsize" : 13.0,
 					"id" : "obj-41",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 120.5, 175.0, 148.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 10.0, 172.0, 160.0, 21.0 ],
 					"text" : "1: Blocking (Low Priority)"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 12.0,
+					"fontsize" : 13.0,
 					"id" : "obj-40",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 120.5, 153.0, 148.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 10.0, 150.0, 160.0, 21.0 ],
 					"text" : "0: Non-blocking"
 				}
 
@@ -179,11 +157,11 @@
 					"patching_rect" : [ 318.0, 231.0, 187.0, 27.0 ],
 					"saved_attribute_attributes" : 					{
 						"valueof" : 						{
+							"parameter_enum" : [ "val1", "val2" ],
 							"parameter_longname" : "live.text",
+							"parameter_mmax" : 1,
 							"parameter_shortname" : "live.text",
-							"parameter_type" : 2,
-							"parameter_mmax" : 1.0,
-							"parameter_enum" : [ "val1", "val2" ]
+							"parameter_type" : 2
 						}
 
 					}
@@ -201,8 +179,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 318.0, 278.0, 148.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 318.0, 278.0, 159.0, 23.0 ],
 					"text" : "help fluid.bufthreaddemo~"
 				}
 
@@ -215,21 +192,19 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 318.0, 313.0, 51.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 318.0, 313.0, 55.0, 23.0 ],
 					"text" : "pcontrol"
 				}
 
 			}
 , 			{
 				"box" : 				{
-					"fontsize" : 12.0,
+					"fontsize" : 13.0,
 					"id" : "obj-21",
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 101.5, 132.0, 151.0, 20.0 ],
-					"style" : "",
+					"patching_rect" : [ 10.0, 128.0, 161.0, 21.0 ],
 					"text" : "Options",
 					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 				}
@@ -243,8 +218,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 349.0, 19.0, 58.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 410.0, 10.0, 62.0, 23.0 ],
 					"text" : "loadbang"
 				}
 
@@ -257,8 +231,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 349.0, 72.0, 83.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 410.0, 63.0, 32.0, 23.0 ],
 					"text" : "t s s"
 				}
 
@@ -271,8 +244,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 231.0, 265.0, 22.0 ],
-					"style" : "",
+					"parameter_enable" : 0,
+					"patching_rect" : [ 25.0, 231.0, 265.0, 23.0 ],
 					"varname" : "blockattr"
 				}
 
@@ -286,9 +259,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 436.0, 59.0, 479.0, 35.0 ],
-					"style" : "",
-					"text" : "script newobject newobj @text $1 @varname fluidobj @patching_position 30 260, script connect blockattr 0 fluidobj 0, script connect fluidobj 1 progress 0"
+					"patching_rect" : [ 474.0, 100.0, 518.0, 38.0 ],
+					"text" : "script newobject newobj @text $1 @varname fluidobj @patching_position 25 270, script connect blockattr 0 fluidobj 0"
 				}
 
 			}
@@ -300,9 +272,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 436.0, 98.0, 67.0, 22.0 ],
+					"patching_rect" : [ 474.0, 139.0, 72.0, 23.0 ],
 					"save" : [ "#N", "thispatcher", ";", "#Q", "end", ";" ],
-					"style" : "",
 					"text" : "thispatcher"
 				}
 
@@ -315,8 +286,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 349.0, 98.0, 57.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 410.0, 107.5, 61.0, 23.0 ],
 					"text" : "jsargs $1"
 				}
 
@@ -329,8 +299,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 349.0, 46.0, 72.0, 22.0 ],
-					"style" : "",
+					"patching_rect" : [ 410.0, 37.0, 77.0, 23.0 ],
 					"text" : "patcherargs"
 				}
 
@@ -347,7 +316,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 107.009087, 57.567627 ]
+					"patching_rect" : [ 10.0, 10.0, 107.0, 57.599853515625 ]
 				}
 
 			}
@@ -358,8 +327,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.0, 69.599854, 255.0, 21.0 ],
-					"style" : "",
+					"patching_rect" : [ 10.0, 69.599853999999993, 255.0, 21.0 ],
 					"text" : "Choose with thread to use for processing"
 				}
 
@@ -369,7 +337,7 @@
 				"patchline" : 				{
 					"destination" : [ "obj-4", 0 ],
 					"hidden" : 1,
-					"midpoints" : [ 358.5, 130.0, 344.0, 130.0, 344.0, 2.0, 19.5, 2.0 ],
+					"midpoints" : [ 419.5, 130.0, 344.0, 130.0, 344.0, 2.0, 19.5, 2.0 ],
 					"source" : [ "obj-10", 0 ]
 				}
 
@@ -432,16 +400,19 @@
 			}
  ],
 		"parameters" : 		{
-			"obj-39" : [ "live.text", "live.text", 0 ]
+			"obj-39" : [ "live.text", "live.text", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 

@@ -159,6 +159,7 @@ function paint() {
 	});
 
 	if (dragging) {
+		mgraphics.set_source_rgba(0, 0, 0, 0.15);
 		const w = this.box.rect[2] - this.box.rect[0];
 		const h = this.box.rect[3] - this.box.rect[1];
 		const x1 = clickstart.x / w * 2 - 1
@@ -181,6 +182,7 @@ function paint() {
 			mgraphics.rectangle(x2, y1, width, height)
 			boxarea = [x2, x1, y1, y2]
 		}
+		mgraphics.fill()
 	}
 }
 

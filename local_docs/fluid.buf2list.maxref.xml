@@ -49,14 +49,6 @@ This is a convenient way of extracting data from a buffer to be used elsewhere.
 
     <!--MESSAGES-->
     <methodlist>
-    <method name='bang'>
-        <arglist>
-        </arglist>
-        <description>
-        
-        
-        </description>
-    </method>
 
     <method name="bang">
         <arglist />

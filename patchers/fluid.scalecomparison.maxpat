@@ -42,6 +42,18 @@
 		"title" : "comparing scalers",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 30.0, 390.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -844,6 +856,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-31",
 					"jsarguments" : [ 0.15 ],
@@ -858,6 +871,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-28",
 					"jsarguments" : [ 0.15 ],
@@ -872,6 +886,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-26",
 					"jsarguments" : [ 0.15 ],
@@ -1191,6 +1206,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}

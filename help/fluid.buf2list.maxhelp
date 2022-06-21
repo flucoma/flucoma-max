@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 73.0, 100.0, 594.0, 497.0 ],
+		"rect" : [ 73.0, 100.0, 619.0, 553.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 594.0, 471.0 ],
+						"rect" : [ 0.0, 26.0, 619.0, 527.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -93,7 +93,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 400.0, 150.0, 36.0 ],
+									"patching_rect" : [ 60.0, 430.0, 154.0, 36.0 ],
 									"text" : "This is the mean of each coefficient in order",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -106,7 +106,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 80.0, 220.0, 117.0, 23.0 ]
+									"patching_rect" : [ 110.0, 250.0, 117.0, 23.0 ],
+									"text" : "buffer u900005461"
 								}
 
 							}
@@ -117,9 +118,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 350.0, 172.0, 217.0, 36.0 ],
-									"presentation_linecount" : 2,
-									"text" : "the buffer of audio features is made for you automatically.",
+									"patching_rect" : [ 383.0, 193.5, 217.0, 36.0 ],
+									"text" : "The buffer of audio features is made for you automatically.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -131,9 +131,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 120.0, 253.5, 261.0, 36.0 ],
-									"presentation_linecount" : 3,
-									"text" : "the buffer for output is automatically created for you and passed to fluid.buf2list",
+									"patching_rect" : [ 150.0, 283.5, 265.0, 36.0 ],
+									"text" : "The buffer for output is automatically created for you and passed to fluid.buf2list",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
@@ -146,20 +145,18 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 20.0, 130.0, 24.0, 24.0 ]
+									"patching_rect" : [ 50.0, 160.0, 24.0, 24.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.0, 350.0, 514.0, 38.0 ],
-									"text" : "-26.493025 9.522013 10.670277 15.141257 -2.881981 -1.405288 -5.336903 -1.311817 -3.925783 0.707925 1.762497 1.237725 1.939072"
+									"patching_rect" : [ 50.0, 380.0, 514.0, 23.0 ]
 								}
 
 							}
@@ -170,7 +167,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 260.0, 89.0, 23.0 ],
+									"patching_rect" : [ 50.0, 290.0, 89.0, 23.0 ],
 									"text" : "fluid.bufstats~"
 								}
 
@@ -182,7 +179,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 20.0, 300.0, 128.0, 23.0 ],
+									"patching_rect" : [ 50.0, 330.0, 128.0, 23.0 ],
 									"text" : "fluid.buf2list @axis 1"
 								}
 
@@ -194,7 +191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 170.0, 331.0, 23.0 ],
+									"patching_rect" : [ 50.0, 200.0, 331.0, 23.0 ],
 									"text" : "fluid.bufmfcc~ 13 @source help.buf2list @numcoeffs 13"
 								}
 
@@ -243,7 +240,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 1 ],
-									"midpoints" : [ 29.5, 207.0, 187.5, 207.0 ],
+									"midpoints" : [ 59.5, 237.0, 217.5, 237.0 ],
 									"order" : 0,
 									"source" : [ "obj-3", 0 ]
 								}
@@ -260,7 +257,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-7", 1 ],
-									"midpoints" : [ 29.5, 337.0, 524.5, 337.0 ],
+									"midpoints" : [ 59.5, 367.0, 554.5, 367.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -313,7 +310,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 73.0, 126.0, 594.0, 471.0 ],
+						"rect" : [ 73.0, 126.0, 619.0, 527.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -344,11 +341,27 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.buf2list" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 490.0, 100.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-17",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 179.0, 320.0, 98.0, 23.0 ],
+									"patching_rect" : [ 190.0, 372.405063000000041, 98.0, 23.0 ],
 									"text" : "print @popup 1"
 								}
 
@@ -360,7 +373,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 300.0, 95.0, 264.0, 210.0 ],
+									"patching_rect" : [ 311.0, 140.0, 264.0, 210.0 ],
 									"text" : "attributes: \n- source <buffername> assigns the buffer to be converted\n- startframe <int>\n- startchan <int>\n- axis <0|1> reading consecutive values frame- or channel-wise\n- numvalues <int> how many values to pick from the start position in the buffer\n\nmessages:\n- bang: triggers the process\n- buffer: changes the name of the source buffer and triggers the process",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -373,7 +386,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 279.0, 320.000000000000057, 262.0, 108.0 ],
+									"patching_rect" : [ 312.0, 365.0, 262.0, 108.0 ],
 									"text" : "Be aware that the maximum list size in Max is 32767. The object will not try to read more than that. By default it reads only 256 values much like the zl family of objects. Providing a first argument to increase this maximum is essential if you need a bigger input maximum size.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -386,20 +399,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 19.0, 125.864982999999995, 60.0, 23.0 ],
+									"patching_rect" : [ 30.0, 160.0, 60.0, 23.0 ],
 									"text" : "deferlow"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-27",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 57.0, 251.0, 21.0 ],
-									"text" : "a utility object to dump a buffer~ into a list ",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
 							}
@@ -410,7 +411,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 19.0, 95.0, 62.0, 23.0 ],
+									"patching_rect" : [ 30.0, 120.0, 62.0, 23.0 ],
 									"text" : "loadbang"
 								}
 
@@ -422,7 +423,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "" ],
-									"patching_rect" : [ 19.0, 187.594936999999987, 91.0, 23.0 ],
+									"patching_rect" : [ 30.0, 240.0, 91.0, 23.0 ],
 									"text" : "t b l"
 								}
 
@@ -435,7 +436,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 19.0, 320.0, 154.0, 107.0 ],
+									"patching_rect" : [ 30.0, 372.405063000000041, 154.0, 107.0 ],
 									"size" : 32
 								}
 
@@ -447,7 +448,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 19.0, 156.729958000000011, 55.0, 23.0 ],
+									"patching_rect" : [ 30.0, 200.0, 55.0, 23.0 ],
 									"text" : "fill cos 1"
 								}
 
@@ -459,7 +460,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 91.0, 224.324894999999998, 195.0, 23.0 ],
+									"patching_rect" : [ 102.0, 276.729958000000011, 195.0, 23.0 ],
 									"text" : "buffer~ buf2list.help @samps 32"
 								}
 
@@ -471,25 +472,9 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 19.0, 267.0, 206.0, 23.0 ],
+									"patching_rect" : [ 30.0, 319.405063000000041, 206.0, 23.0 ],
 									"text" : "fluid.buf2list @source buf2list.help",
 									"varname" : "fluid.buf2list"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.buf2list" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 275.0, 45.0 ]
 								}
 
 							}
@@ -497,7 +482,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-11", 0 ],
-									"midpoints" : [ 28.5, 291.0, 28.5, 291.0 ],
+									"midpoints" : [ 39.5, 343.405063000000041, 39.5, 343.405063000000041 ],
 									"order" : 1,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -506,7 +491,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 28.5, 306.0, 188.5, 306.0 ],
+									"midpoints" : [ 39.5, 358.405063000000041, 199.5, 358.405063000000041 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}

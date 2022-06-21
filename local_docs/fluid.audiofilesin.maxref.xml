@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+<!--
+Part of the Fluid Corpus Manipulation Project (http://www.flucoma.org/)
+Copyright 2017-2019 University of Huddersfield.
+Licensed under the BSD-3 License.
+See license.md file in the project root for full license information.
+This project has received funding from the European Research Council (ERC)
+under the European Union’s Horizon 2020 research and innovation programme
+(grant agreement No 725899).
+-->
+<c74object name='fluid.audiofilesin' category='FluidCorpusManuipulation'>
+    <digest>Collect audio from a directory</digest>
+    <description>A convenience abstraction for collecting all audio files in a directory into a list.</description>
+    <discussion>
+        <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
+        Given a valid path to a directory on disk, this abstraction reports all audio files that Max can open in that directory.
+
+        <p>fluid.audiofilesin is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
+    </discussion>
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name='author'>FluCoMa</metadata>
+		<metadata name='tag'>Fluid Decomposition</metadata>
+		<metadata name='tag'>corpus</metadata>
+	</metadatalist>
+
+    <inletlist>
+    </inletlist>
+
+    <outletlist>
+    </outletlist>
+
+    <objarglist>
+    </objarglist>
+
+    <!--MESSAGES-->
+    <methodlist>
+    <method name='list'>
+        <arglist>
+        </arglist>
+        <digest>
+        A valid path to a directory
+        </digest>
+        <description>
+        The directory to scan for audio files.
+        
+        </description>
+    </method>
+
+	</methodlist>
+	<!--MESSAGES-->
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+	</attributelist>
+	<!--ATTRIBUTES-->
+
+	<!--RELATED-->
+	<seealsolist>
+    <seealso name='fluid.concataudiofiles'/>
+    <seealso name='folder'/>
+	</seealsolist>
+	<!--RELATED-->
+</c74object>

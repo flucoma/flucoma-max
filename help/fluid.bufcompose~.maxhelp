@@ -99,6 +99,41 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 539.0, 419.75, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"fontsize" : 13.0,
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 458.5, 417.25, 77.0, 25.0 ],
+									"style" : "helpfile_label",
+									"text" : "Audio on",
+									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-63",
 									"maxclass" : "comment",
@@ -150,7 +185,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 641.5, 306.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -213,7 +248,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 466.5, 409.5, 200.0, 43.5 ],
+									"patching_rect" : [ 600.0, 408.0, 200.0, 43.5 ],
 									"selectioncolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 0.0 ]
 								}
 
@@ -565,6 +600,41 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-7",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 520.5, 413.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"fontsize" : 13.0,
+									"id" : "obj-15",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 440.0, 411.0, 77.0, 25.0 ],
+									"style" : "helpfile_label",
+									"text" : "Audio on",
+									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-6",
@@ -965,7 +1035,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 700.0, 310.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1215,6 +1285,41 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-7",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 557.0, 402.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"fontsize" : 13.0,
+									"id" : "obj-12",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 476.5, 400.0, 77.0, 25.0 ],
+									"style" : "helpfile_label",
+									"text" : "Audio on",
+									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-63",
 									"maxclass" : "comment",
@@ -1329,7 +1434,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 744.75, 310.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 

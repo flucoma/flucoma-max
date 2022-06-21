@@ -46,7 +46,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 70.0, 85.0, 253.0, 22.0 ],
+					"patching_rect" : [ 70.0, 85.0, 260.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufnmfseed~"
 				}
 
@@ -319,7 +319,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 395.0, 10.0, 245.0, 100.0 ],
+									"patching_rect" : [ 410.0, 10.0, 245.0, 100.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -843,7 +843,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 20.0, 230.0, 569.0, 23.0 ],
+									"patching_rect" : [ 20.0, 230.0, 577.0, 23.0 ],
 									"text" : "fluid.bufnmfseed~ @source help.svd.src @activations help.svd.activations @bases help.svd.bases"
 								}
 
@@ -860,7 +860,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 381.5, 100.0 ]
+									"patching_rect" : [ 10.0, 10.0, 389.5, 100.0 ]
 								}
 
 							}

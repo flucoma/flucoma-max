@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
+						"rect" : [ 34.0, 113.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -93,7 +93,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 62.0, 963.0, 36.0 ],
+									"patching_rect" : [ 10.0, 62.0, 540.0, 36.0 ],
 									"text" : "Constraining the grid to an \"extent\" along either axis is possible. This means you can enforce the grid to have a certain dimensionality. Good for mapping sounds onto controllers!",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2282,6 +2282,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
+									"midpoints" : [ 232.5, 296.0, 69.5, 296.0 ],
 									"source" : [ "obj-69", 1 ]
 								}
 
@@ -2369,7 +2370,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 994.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 994.0, 753.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,

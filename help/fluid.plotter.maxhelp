@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 956.0, 779.0 ],
+		"rect" : [ 35.0, 88.0, 965.0, 793.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 956.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -87,6 +87,18 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 830.0, 210.0, 64.0, 64.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-2",
@@ -122,7 +134,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 431.5, 665.0, 97.0, 38.0 ],
-									"text" : "-1.552795 1.118012"
+									"text" : "-3.167702 2.888199"
 								}
 
 							}
@@ -136,7 +148,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 307.0, 665.0, 96.0, 38.0 ],
-									"text" : "-1.086957 2.608696"
+									"text" : "-2.981366 3.10559"
 								}
 
 							}
@@ -510,6 +522,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-58",
 									"maxclass" : "jsui",
@@ -738,7 +751,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 956.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -794,7 +807,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 80.0, 135.0, 20.0, 20.0 ],
+									"patching_rect" : [ 291.0, 135.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1383,7 +1396,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 102.0, 133.0, 213.0, 25.0 ],
+									"patching_rect" : [ 76.0, 133.0, 213.0, 25.0 ],
 									"text" : "generate a random set of points."
 								}
 
@@ -1397,19 +1410,6 @@
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 50.0, 133.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-101",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 50.0, 100.0, 62.0, 23.0 ],
-									"text" : "loadbang"
 								}
 
 							}
@@ -2000,7 +2000,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 674.0, 283.0, 125.0, 70.0 ],
-									"saturation" : 0.752941176470588
+									"saturation" : 0.556862745098039
 								}
 
 							}
@@ -2032,6 +2032,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-1",
 									"maxclass" : "jsui",
@@ -2078,13 +2079,6 @@
 							}
  ],
 						"lines" : [ 							{
-								"patchline" : 								{
-									"destination" : [ "obj-103", 0 ],
-									"source" : [ "obj-101", 0 ]
-								}
-
-							}
-, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-80", 0 ],
 									"source" : [ "obj-103", 0 ]
@@ -2324,7 +2318,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 956.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2445,7 +2439,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 458.75, 203.902831999999989, 20.0, 20.0 ],
+									"patching_rect" : [ 850.0, 206.902831999999989, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2461,7 +2455,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 490.25, 179.402831999999989, 378.0, 69.0 ],
+									"patching_rect" : [ 470.0, 180.902831999999989, 378.0, 69.0 ],
 									"text" : "Click these messages to start adjusting the range to the minimum and maximum of the original data. You will see that the data is now visible in the space. Wiggle the number boxes to see how it affects the display of points."
 								}
 
@@ -2480,7 +2474,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 389.25, 532.5, 20.0, 20.0 ],
+									"patching_rect" : [ 731.0, 532.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2495,7 +2489,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 411.25, 524.5, 339.0, 36.0 ],
+									"patching_rect" : [ 390.0, 524.5, 339.0, 36.0 ],
 									"text" : "You'll notice that there is nothing in the plotter. By default it is displaying the 0 to 1 range in both dimensions.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2611,7 +2605,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 85.0, 147.0, 20.0, 20.0 ],
+									"patching_rect" : [ 390.0, 147.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2627,13 +2621,14 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 111.25, 125.0, 299.0, 69.0 ],
+									"patching_rect" : [ 90.0, 122.5, 299.0, 69.0 ],
 									"text" : "Generate random data between a range that is not normal. In this case the horizontal values range between 0 and 10000, and the vertical values range between 40 and 600."
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-36",
 									"maxclass" : "jsui",
@@ -3283,7 +3278,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 956.0, 753.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3340,7 +3335,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 772.0, 248.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "7",
+									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -3374,7 +3369,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 159.5, 319.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "6",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -3445,7 +3440,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 395.0, 575.0, 20.0, 20.0 ],
+									"patching_rect" : [ 849.0, 577.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3461,7 +3456,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 417.0, 566.5, 457.0, 40.0 ],
+									"patching_rect" : [ 390.0, 565.5, 457.0, 40.0 ],
 									"text" : "These are the coordinates of your mouse inside the two-dimensional space according to the ranges which have been set by xrange and yrange."
 								}
 
@@ -3480,7 +3475,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 488.5, 408.0, 20.0, 20.0 ],
+									"patching_rect" : [ 768.0, 412.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3495,7 +3490,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 510.5, 408.0, 277.0, 25.0 ],
+									"patching_rect" : [ 488.5, 410.0, 277.0, 25.0 ],
 									"text" : "Move your mouse around the fluid.plotter."
 								}
 
@@ -3514,7 +3509,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 75.0, 112.0, 20.0, 20.0 ],
+									"patching_rect" : [ 680.0, 112.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3562,6 +3557,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-36",
 									"maxclass" : "jsui",
@@ -3634,7 +3630,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 222.5, 574.0, 161.5, 23.0 ],
-									"text" : "0.295455 0.359848"
+									"text" : "0.348485 0.715909"
 								}
 
 							}
@@ -4527,7 +4523,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 956.0, 753.0 ],
+						"rect" : [ 35.0, 114.0, 965.0, 767.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4558,12 +4554,28 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.plotter" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 330.0, 99.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-11",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.0, 170.0, 49.0, 22.0 ],
+									"patching_rect" : [ 10.0, 200.0, 49.0, 22.0 ],
 									"text" : "read $1"
 								}
 
@@ -4584,7 +4596,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.0, 100.0, 175.0, 63.363631999999996 ],
+									"patching_rect" : [ 10.0, 130.0, 175.0, 63.363631999999996 ],
 									"viewvisibility" : 1
 								}
 
@@ -4597,7 +4609,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 711.0, 210.5, 172.0, 166.0 ],
+									"patching_rect" : [ 691.0, 240.5, 172.0, 166.0 ],
 									"text" : "Dump the clustering from fluid.kmeans~ and send the output dictionary to the second inlet of the fluid.plotter.\n\nEach unique label in the fluid.labelset~ will be randomly assigned to a colour inside the fluid.plotter.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -4617,9 +4629,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 863.0, 102.5, 20.0, 20.0 ],
+									"patching_rect" : [ 843.0, 132.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "4",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -4632,7 +4644,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 740.0, 100.0, 117.0, 25.0 ],
+									"patching_rect" : [ 720.0, 130.0, 117.0, 25.0 ],
 									"text" : "Cluster the data"
 								}
 
@@ -4645,7 +4657,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 629.0, 300.0, 74.0, 23.0 ],
+									"patching_rect" : [ 609.0, 330.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -4658,7 +4670,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 220.0, 41.0, 23.0 ],
+									"patching_rect" : [ 480.0, 250.0, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -4671,7 +4683,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 500.0, 260.0, 148.0, 23.0 ],
+									"patching_rect" : [ 480.0, 290.0, 148.0, 23.0 ],
 									"text" : "fluid.labelset~ clustering"
 								}
 
@@ -4684,7 +4696,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 500.0, 180.0, 91.0, 23.0 ],
+									"patching_rect" : [ 480.0, 210.0, 91.0, 23.0 ],
 									"text" : "route fitpredict"
 								}
 
@@ -4697,7 +4709,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 500.0, 100.0, 236.0, 23.0 ],
+									"patching_rect" : [ 480.0, 130.0, 236.0, 23.0 ],
 									"text" : "clear, fitpredict help.plotting.1 clustering"
 								}
 
@@ -4710,7 +4722,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 500.0, 140.0, 187.0, 23.0 ],
+									"patching_rect" : [ 480.0, 170.0, 187.0, 23.0 ],
 									"text" : "fluid.kmeans~ @numclusters 4"
 								}
 
@@ -4723,43 +4735,9 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 263.0, 278.0, 213.0, 108.0 ],
+									"patching_rect" : [ 243.0, 308.0, 213.0, 108.0 ],
 									"text" : "A temporary dict is output when you dump from a fluid.dataset~. The randomly assigned name for this dictionary can be sent to the plotter's first inlet and it will draw the points. The fluid.dataset~ must be only two dimensions.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
-									"fontname" : "Arial Bold",
-									"fontsize" : 13.0,
-									"hint" : "",
-									"id" : "obj-69",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 235.0, 245.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "2",
-									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"fontsize" : 13.0,
-									"id" : "obj-70",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 70.0, 242.5, 163.0, 25.0 ],
-									"text" : "Dump the fluid.dataset~"
 								}
 
 							}
@@ -4771,13 +4749,14 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 30.0, 242.5, 41.0, 23.0 ],
+									"patching_rect" : [ 10.0, 272.5, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-58",
 									"maxclass" : "jsui",
@@ -4785,7 +4764,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 182.0, 398.0, 322.0, 322.0 ]
+									"patching_rect" : [ 162.0, 428.0, 322.0, 322.0 ]
 								}
 
 							}
@@ -4797,7 +4776,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 182.0, 320.0, 74.0, 23.0 ],
+									"patching_rect" : [ 162.0, 350.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -4810,7 +4789,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 283.0, 171.0, 23.0 ],
+									"patching_rect" : [ 10.0, 313.0, 171.0, 23.0 ],
 									"text" : "fluid.dataset~ help.plotting.1"
 								}
 
@@ -4829,7 +4808,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 358.0, 123.181815999999998, 20.0, 20.0 ],
+									"patching_rect" : [ 339.5, 132.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4843,7 +4822,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 207.0, 119.681815999999998, 149.0, 24.0 ],
+									"patching_rect" : [ 187.0, 130.0, 149.0, 24.0 ],
 									"text" : "Select a prefab dataset"
 								}
 
@@ -4856,37 +4835,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 200.0, 171.0, 23.0 ],
+									"patching_rect" : [ 10.0, 230.0, 171.0, 23.0 ],
 									"text" : "fluid.dataset~ help.plotting.1"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-6",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 66.0, 280.0, 21.0 ],
-									"text" : "An abstraction for plotting fluid.dataset~ data.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-3",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.plotter" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 334.0, 55.0 ]
 								}
 
 							}
@@ -4908,7 +4858,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-68", 0 ],
-									"midpoints" : [ 191.5, 232.25, 39.5, 232.25 ],
+									"midpoints" : [ 171.5, 262.25, 19.5, 262.25 ],
 									"source" : [ "obj-17", 1 ]
 								}
 
@@ -4972,7 +4922,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-58", 1 ],
-									"midpoints" : [ 638.5, 371.0, 494.5, 371.0 ],
+									"midpoints" : [ 618.5, 401.0, 474.5, 401.0 ],
 									"source" : [ "obj-84", 0 ]
 								}
 
