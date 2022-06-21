@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8' standalone='yes'?>
+<?xml-stylesheet href="./_c74_ref.xsl" type="text/xsl"?>
+<!--
+Part of the Fluid Corpus Manipulation Project (http://www.flucoma.org/)
+Copyright 2017-2019 University of Huddersfield.
+Licensed under the BSD-3 License.
+See license.md file in the project root for full license information.
+This project has received funding from the European Research Council (ERC)
+under the European Union’s Horizon 2020 research and innovation programme
+(grant agreement No 725899).
+-->
+<c74object name='fluid.concataudiofiles' category='FluidCorpusManuipulation'>
+    <digest>Concatenate audio files</digest>
+    <description>Concatenate a list of audio files into a single buffer~.</description>
+    <discussion>
+        <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
+        Given a list of valid paths to audio files, this abstraction concatenates them into a single destination buffer~. It also reports a dictionary of the items that are concatenated, including their positions in the destination buffer, number of channels and sampling rates.
+
+        <p>fluid.concataudiofiles is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
+    </discussion>
+	<!--METADATA-->
+	<metadatalist>
+		<metadata name='author'>FluCoMa</metadata>
+		<metadata name='tag'>Fluid Decomposition</metadata>
+		<metadata name='tag'>corpus</metadata>
+	</metadatalist>
+
+    <inletlist>
+    </inletlist>
+
+    <outletlist>
+    </outletlist>
+
+    <objarglist>
+    </objarglist>
+
+    <!--MESSAGES-->
+    <methodlist>
+    <method name='list'>
+        <arglist>
+        </arglist>
+        <digest>
+        A list of valid audio file paths.
+        </digest>
+        <description>
+        A list of valid audio file paths. They should be absolute paths to the files. The files will be concatenated in the order they are listed.
+        
+        </description>
+    </method>
+
+	</methodlist>
+	<!--MESSAGES-->
+
+	<!--ATTRIBUTES-->
+	<attributelist>
+        <attribute name='destination' get='1' set='1' type='symbol' size='1'>
+        <digest> 
+        The <o>buffer~</o> to concatenate the audio files values to. 
+        </digest>
+        <description> 
+        Sets the destination <o>buffer~</o> for files to be concatenated to. 
+        </description>
+
+
+        </attribute>
+	</attributelist>
+	<!--ATTRIBUTES-->
+
+	<!--RELATED-->
+	<seealsolist>
+    <seealso name='fluid.audiofilesin'/>
+	</seealsolist>
+	<!--RELATED-->
+</c74object>
