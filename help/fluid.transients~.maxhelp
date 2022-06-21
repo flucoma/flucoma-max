@@ -106,7 +106,7 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"args" : [ "kmeans" ],
+									"args" : [ "transients" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -120,7 +120,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 362.0, 10.0, 230.0, 100.0 ],
+									"patching_rect" : [ 362.0, 10.0, 242.0, 100.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -791,7 +791,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 237.5, 186.0, 25.0 ],
+									"patching_rect" : [ 406.0, 320.0, 186.0, 25.0 ],
 									"text" : "experiment with parameters",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -810,7 +810,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 598.0, 240.0, 20.0, 20.0 ],
+									"patching_rect" : [ 594.0, 322.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
