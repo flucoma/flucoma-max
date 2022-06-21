@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 811.0, 746.0 ],
+						"rect" : [ 34.0, 113.0, 811.0, 746.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -358,7 +358,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 98.0, 310.0, 333.0, 23.0 ],
-									"presentation_linecount" : 4,
 									"text" : "select centroid spread skew kurtosis rolloff flatness crest"
 								}
 
@@ -370,8 +369,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 10.0, 490.0, 147.0, 23.0 ],
-									"text" : "fluid.stats 7 @history 40"
+									"patching_rect" : [ 10.0, 490.0, 223.0, 23.0 ],
+									"text" : "fluid.stats 7 @history 40 @autosize 0"
 								}
 
 							}
@@ -756,7 +755,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 811.0, 746.0 ],
+						"rect" : [ 0.0, 26.0, 811.0, 746.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
