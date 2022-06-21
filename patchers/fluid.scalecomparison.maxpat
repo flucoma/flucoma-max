@@ -109,13 +109,37 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 17.0, 301.0, 73.0, 22.0 ],
+									"text" : "speedlim 20"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 101.0, 301.0, 165.0, 22.0 ],
+									"text" : "loadmess pointsizescale 0.15"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"comment" : "",
 									"id" : "obj-8",
 									"index" : 1,
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 17.0, 305.0, 30.0, 30.0 ]
+									"patching_rect" : [ 17.0, 343.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -252,7 +276,22 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
+									"midpoints" : [ 110.5, 339.0, 26.5, 339.0 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -357,7 +396,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 77.0, 139.0, 22.0 ],
-									"text" : "fittransform u554000892"
+									"text" : "fittransform u445011362"
 								}
 
 							}
@@ -545,7 +584,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 77.0, 139.0, 22.0 ],
-									"text" : "fittransform u930000829"
+									"text" : "fittransform u507011364"
 								}
 
 							}
@@ -733,7 +772,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 77.0, 139.0, 22.0 ],
-									"text" : "fittransform u245000884"
+									"text" : "fittransform u872011359"
 								}
 
 							}
