@@ -1271,7 +1271,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 758.0, 104.5, 20.0, 20.0 ],
+									"patching_rect" : [ 747.0, 102.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1286,7 +1286,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 540.0, 102.5, 216.0, 40.0 ],
+									"patching_rect" : [ 540.0, 102.5, 205.0, 40.0 ],
 									"text" : "Normalise the dataset of raw data"
 								}
 
@@ -1542,7 +1542,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 950.0, 731.0 ],
+						"rect" : [ 34.0, 113.0, 950.0, 731.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1633,7 +1633,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 560.0, 150.0, 216.0, 40.0 ],
+									"patching_rect" : [ 560.0, 150.0, 205.0, 40.0 ],
 									"text" : "Normalise the dataset of raw data"
 								}
 
