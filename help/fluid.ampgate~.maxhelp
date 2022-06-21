@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 946.0, 656.0 ],
+						"rect" : [ 100.0, 126.0, 946.0, 656.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1027,7 +1027,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 946.0, 656.0 ],
+						"rect" : [ 0.0, 26.0, 946.0, 656.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1250,8 +1250,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 36.0, 120.0, 101.0, 25.0 ],
-									"text" : "turn on audio",
+									"patching_rect" : [ 36.0, 120.0, 110.0, 25.0 ],
+									"text" : "Play sound file",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1269,9 +1269,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 139.0, 122.5, 20.0, 20.0 ],
+									"patching_rect" : [ 151.5, 122.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1413,8 +1413,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 55.5, 610.0, 101.0, 25.0 ],
-									"text" : "turn on audio",
+									"patching_rect" : [ 55.5, 610.0, 77.0, 25.0 ],
+									"text" : "Audio on",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1432,7 +1432,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 158.5, 612.5, 20.0, 20.0 ],
+									"patching_rect" : [ 134.5, 612.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
