@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 811.0, 746.0 ],
+						"rect" : [ 34.0, 113.0, 811.0, 746.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -91,6 +91,39 @@
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
 									"hint" : "",
+									"id" : "obj-3",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 126.5, 102.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-4",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 34.0, 100.0, 90.0, 25.0 ],
+									"text" : "Play sound",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
 									"id" : "obj-41",
 									"ignoreclick" : 1,
 									"legacytextcolor" : 1,
@@ -99,7 +132,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 394.5, 350.0, 20.0, 20.0 ],
+									"patching_rect" : [ 570.0, 312.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -444,7 +477,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 570.0, 312.5, 20.0, 20.0 ],
+									"patching_rect" : [ 372.5, 271.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -477,9 +510,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 375.0, 272.5, 20.0, 20.0 ],
+									"patching_rect" : [ 394.5, 350.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -542,7 +575,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 450.0, 124.0, 23.0 ],
+									"patching_rect" : [ 10.0, 410.0, 124.0, 23.0 ],
 									"text" : "fluid.spectralshape~"
 								}
 
@@ -586,7 +619,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 19.5, 306.0, 19.5, 306.0 ],
+									"midpoints" : [ 19.5, 286.0, 19.5, 286.0 ],
 									"order" : 2,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -613,7 +646,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 107.5, 391.0, 19.5, 391.0 ],
+									"midpoints" : [ 107.5, 371.0, 19.5, 371.0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
@@ -635,7 +668,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 133.0, 411.0, 19.5, 411.0 ],
+									"midpoints" : [ 133.0, 391.0, 19.5, 391.0 ],
 									"source" : [ "obj-43", 0 ]
 								}
 
@@ -650,7 +683,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 89.5, 371.0, 19.5, 371.0 ],
+									"midpoints" : [ 89.5, 351.0, 19.5, 351.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -738,7 +771,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 811.0, 746.0 ],
+						"rect" : [ 0.0, 26.0, 811.0, 746.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
