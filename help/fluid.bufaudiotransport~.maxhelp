@@ -68,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 832.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 832.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -98,6 +98,38 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 58.0, 686.0, 77.0, 25.0 ],
+									"text" : "Audio on"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 140.0, 688.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"hidden" : 1,
 									"id" : "obj-44",
@@ -460,7 +492,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 146.0, 582.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -492,7 +524,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 783.0, 155.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "4",
+									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -584,7 +616,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 420.0, 190.0, 96.0 ],
+									"patching_rect" : [ 10.0, 420.0, 193.0, 96.0 ],
 									"text" : "fluid.bufaudiotransport~ @sourcea help.at.sourcea @sourceb help.at.sourceb @destination help.at.output @blocking 0 @interpolation 0.5 @maxfftsize 8192"
 								}
 
