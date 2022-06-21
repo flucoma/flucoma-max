@@ -927,28 +927,6 @@
 			}
 , 			{
 				"box" : 				{
-					"args" : [ "@file", "Olencki-TenTromboneLongTones-M.wav" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-3",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "fluid.bufloader.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 110.0, 290.0, 30.0 ],
-					"viewvisibility" : 1
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-40",
 					"linecount" : 15,
 					"maxclass" : "comment",
@@ -1114,12 +1092,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-1",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 30.0, 150.0, 204.0, 23.0 ],
-					"text" : "buffer~ help.scalercomparison.src"
+					"patching_rect" : [ 30.0, 113.5, 255.0, 38.0 ],
+					"text" : "buffer~ help.scalercomparison.src Olencki-TenTromboneLongTones-M.wav"
 				}
 
 			}
@@ -1185,13 +1164,6 @@
 					"midpoints" : [ 349.5, 147.25, 729.5, 147.25 ],
 					"order" : 0,
 					"source" : [ "obj-16", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-3", 0 ]
 				}
 
 			}
