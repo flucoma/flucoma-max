@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="_c74_vig.xsl" type="text/xsl"?>
+<vignette name="Automatic buffer~ and fluid.dataset~ management" package="FluidCorpusManipulation">
+	<h1>Automatic <o>buffer~</o> and <o>fluid.dataset~</o> management.</h1>
+	
+	<h2><o>buffer~</o> and <o>fluid.dataset~</o> management.</h2>
+	
+	<bluebox>
+		<openfilelink filename="buffermanagement-example.maxpat">Patch</openfilelink>
+		<br />
+		<a href="https://youtu.be/2cbpSMON7ys">Video</a>
+	</bluebox>
+
+	<p>
+		The <o>buffer~</o> and <o>fluid.dataset~</o> objects are essential components for dealing with data in the Fluid Corpus Manipulation Toolkit. Typically, we create instances of these objects as containers for storing data input and output. Overall, this makes the <i>language</i> of the toolkit verbose; at any stage you can probe data that is being created. However, it can be an exhausting pattern, particularly as you gain fluency in using and connecting the objects into pipelines of objects and you know what you want to do.
+	</p>
+
+	<p>
+		To address this interface friction, the toolkit offers the possibility of <i>automatically</i> managed <o>buffer~</o> and <o>fluid.dataset~</o> objects. These objects are created as needed, rather than at each stage of a processing pipeline, simplifying much of the workflow around analysis and data transformation.
+	</p>
+
+	<h2>
+	Explaining automatic management.
+	</h2>
+	<p>
+		The following set of patches explains how the toolkit handles <o>buffer~</o> and <o>fluid.dataset~</o> objects automatically for you as well as the caveats that you need to be aware of.
+	</p>
+
+	<p>
+		To start, it might be worth watching a video which briefly explains the concepts behind this interface. This video can be on the FluCoMa YouTube channel: <a href="https://youtu.be/2cbpSMON7ys">https://youtu.be/2cbpSMON7ys</a>
+	</p>
+
+	<p>
+		After that, we encourage you to explore<openfilelink filename="buffermanagement-example.maxpat"> this patch</openfilelink> which demonstrates the interface. 
+	</p>
+</vignette>
