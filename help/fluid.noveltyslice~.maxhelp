@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
+						"rect" : [ 100.0, 126.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -358,8 +358,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 198.0, 400.0, 229.0, 23.0 ],
-									"text" : "fluid.noveltyslice~ @maxkernelsize 41"
+									"patching_rect" : [ 198.0, 400.0, 335.0, 23.0 ],
+									"text" : "fluid.noveltyslice~ @maxkernelsize 41 @maxfiltersize 11"
 								}
 
 							}
@@ -550,7 +550,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 792.0, 555.0 ],
+						"rect" : [ 0.0, 26.0, 792.0, 555.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -750,7 +750,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 123.0, 300.0, 139.5, 23.0 ],
+									"patching_rect" : [ 122.75, 290.0, 139.5, 23.0 ],
 									"text" : "getattr latency"
 								}
 
