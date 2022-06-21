@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
+						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -932,13 +932,13 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 69.5, 250.0, 150.0, 23.0 ],
-									"text" : "buffer u979000824"
+									"text" : "buffer u513011206"
 								}
 
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "u979000824",
+									"buffername" : "u513011206",
 									"id" : "obj-3",
 									"maxclass" : "waveform~",
 									"numinlets" : 5,
@@ -1123,7 +1123,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 688.0, 455.0 ],
+						"rect" : [ 100.0, 126.0, 688.0, 455.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1155,6 +1155,22 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-2",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.list2buf" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 281.0, 100.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
 									"filename" : "helpargs.js",
 									"id" : "obj-3",
 									"ignoreclick" : 1,
@@ -1164,7 +1180,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 270.0, 190.0, 196.235519409179688, 39.0 ]
+									"patching_rect" : [ 280.0, 220.0, 196.235519409179688, 39.0 ]
 								}
 
 							}
@@ -1181,7 +1197,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 634.0, 123.5, 20.0, 20.0 ],
+									"patching_rect" : [ 644.0, 153.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1194,7 +1210,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 210.0, 310.0, 224.0, 21.0 ],
+									"patching_rect" : [ 220.0, 340.0, 224.0, 21.0 ],
 									"text" : "The buffer now contains those values",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1208,7 +1224,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 470.0, 106.5, 164.0, 54.0 ],
+									"patching_rect" : [ 480.0, 136.5, 164.0, 54.0 ],
 									"text" : "Send the object a list of values to be inserted into the buffer",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1221,20 +1237,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 210.0, 264.0, 143.0, 23.0 ],
+									"patching_rect" : [ 220.0, 294.0, 143.0, 23.0 ],
 									"text" : "buffer~ help.list2buf.dst"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-16",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 58.0, 334.0, 21.0 ],
-									"text" : "Store the values of a list in a buffer~",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
 							}
@@ -1247,7 +1251,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 10.0, 240.0, 194.0, 119.0 ],
+									"patching_rect" : [ 20.0, 270.0, 194.0, 119.0 ],
 									"selectioncolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 0.0 ]
 								}
 
@@ -1260,7 +1264,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 100.0, 454.0, 67.0 ],
+									"patching_rect" : [ 20.0, 130.0, 454.0, 67.0 ],
 									"text" : "0. 0.19509 0.382683 0.55557 0.707107 0.83147 0.92388 0.980785 1. 0.980785 0.92388 0.83147 0.707107 0.55557 0.382683 0.19509 0. -0.19509 -0.382683 -0.55557 -0.707107 -0.83147 -0.92388 -0.980785 -1. -0.980785 -0.92388 -0.83147 -0.707107 -0.55557 -0.382683 -0.19509"
 								}
 
@@ -1272,24 +1276,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "buffer" ],
-									"patching_rect" : [ 10.0, 190.0, 251.0, 23.0 ],
+									"patching_rect" : [ 20.0, 220.0, 251.0, 23.0 ],
 									"text" : "fluid.list2buf @destination help.list2buf.dst"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.list2buf" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 290.0, 46.0 ]
 								}
 
 							}
