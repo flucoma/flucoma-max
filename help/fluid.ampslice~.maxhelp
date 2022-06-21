@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 829.0, 652.0 ],
+						"rect" : [ 0.0, 26.0, 829.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -107,7 +107,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 310.0, 159.0, 100.0 ],
+									"patching_rect" : [ 410.0, 310.0, 162.0, 100.0 ],
 									"text" : "an example where many of the parameters are tuned to a specific musical example.\n\nThe sensitivity doesn't catch everything, but its sensitive to the most salient hits.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -447,7 +447,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 829.0, 652.0 ],
+						"rect" : [ 35.0, 114.0, 829.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
