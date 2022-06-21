@@ -126,7 +126,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 795.0, 412.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "4",
+									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -139,7 +139,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 464.0, 360.0, 234.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "set the temporal shape to the drums"
 								}
 
@@ -172,7 +171,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 500.0, 160.0, 135.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "decompose pianos"
 								}
 
@@ -205,7 +203,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.0, 160.0, 132.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "decompose drums"
 								}
 
@@ -299,7 +296,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 470.0, 195.932372999999984, 242.0, 67.0 ],
+									"patching_rect" : [ 470.0, 195.932372999999984, 243.0, 67.0 ],
 									"text" : "fluid.bufnmf~ @source help.morph.src.2 @bases help.morph.bases.2 @activations help.morph.act.2 @numchans 1 @components 5"
 								}
 
