@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1260,7 +1260,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 768.0, 114.5, 20.0, 20.0 ],
+									"patching_rect" : [ 731.0, 112.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1275,7 +1275,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 550.0, 112.5, 216.0, 40.0 ],
+									"patching_rect" : [ 550.0, 112.5, 179.0, 40.0 ],
 									"text" : "Scale the dataset of raw data"
 								}
 
@@ -2050,23 +2050,12 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-12::obj-1" : [ "live.slider", "Zoom", 0 ],
+			"obj-1::obj-6::obj-1" : [ "live.slider", "Zoom", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
 					"name" : "",
 					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-1::obj-12::obj-1" : 				{
-					"parameter_exponent" : 1.0,
-					"parameter_longname" : "live.slider",
-					"parameter_range" : [ 1.0, 10.0 ],
-					"parameter_shortname" : "Zoom",
-					"parameter_unitstyle" : 1
 				}
 
 			}
