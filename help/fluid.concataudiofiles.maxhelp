@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 533.0, 472.0 ],
+		"rect" : [ 100.0, 100.0, 522.0, 569.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -74,7 +74,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 533.0, 446.0 ],
+						"rect" : [ 100.0, 126.0, 522.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -110,7 +110,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 120.0, 109.0, 187.0, 25.0 ],
+									"patching_rect" : [ 120.0, 129.0, 187.0, 25.0 ],
 									"text" : "Load this path of media files",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -129,7 +129,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 310.0, 112.0, 20.0, 20.0 ],
+									"patching_rect" : [ 310.0, 132.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -142,7 +142,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 286.0, 494.0, 99.0 ]
+									"patching_rect" : [ 10.0, 306.0, 450.0, 224.0 ]
 								}
 
 							}
@@ -153,21 +153,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.0, 400.0, 155.0, 23.0 ],
+									"patching_rect" : [ 330.0, 250.0, 155.0, 23.0 ],
 									"text" : "buffer~ contactaudio.help"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-10",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 326.0, 223.5, 133.0, 36.0 ],
-									"text" : "set output buffer with @destination",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.51 ]
 								}
 
 							}
@@ -178,7 +165,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 110.0, 103.0, 23.0 ],
+									"patching_rect" : [ 10.0, 130.0, 103.0, 23.0 ],
 									"text" : "C74:/media/msp"
 								}
 
@@ -190,7 +177,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "int" ],
-									"patching_rect" : [ 10.0, 150.0, 138.0, 23.0 ],
+									"patching_rect" : [ 10.0, 170.0, 138.0, 23.0 ],
 									"text" : "conformpath max boot"
 								}
 
@@ -202,21 +189,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 190.0, 101.0, 23.0 ],
+									"patching_rect" : [ 10.0, 210.0, 101.0, 23.0 ],
 									"text" : "fluid.audiofilesin"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-6",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 61.0, 497.0, 36.0 ],
-									"text" : "This object takes a list of audio files, loads them one after the other into a buffer, and returns a dict of filenames with start + end times, sampling rate and channel count.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
 							}
@@ -227,7 +201,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
-									"patching_rect" : [ 10.0, 230.0, 314.0, 23.0 ],
+									"patching_rect" : [ 10.0, 250.0, 314.0, 23.0 ],
 									"text" : "fluid.concataudiofiles @destination contactaudio.help",
 									"varname" : "fluid.concataudiofiles"
 								}
@@ -245,7 +219,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 460.0, 49.0 ]
+									"patching_rect" : [ 10.0, 10.0, 460.0, 110.0 ]
 								}
 
 							}
@@ -377,7 +351,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 533.0, 446.0 ],
+						"rect" : [ 0.0, 26.0, 522.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
