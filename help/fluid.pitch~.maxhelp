@@ -114,7 +114,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.5, 100.0, 90.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Play sound",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -147,7 +146,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 243.5, 330.0, 133.0, 25.0 ],
+									"patching_rect" : [ 268.5, 330.0, 133.0, 25.0 ],
 									"text" : "Back to the default",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -160,8 +159,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 132.5, 330.0, 109.0, 23.0 ],
-									"text" : "select confidence"
+									"patching_rect" : [ 126.5, 330.0, 140.0, 23.0 ],
+									"text" : "select pitch confidence"
 								}
 
 							}
@@ -193,7 +192,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 218.0, 290.0, 119.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Only confidence",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -477,7 +475,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 378.5, 332.5, 20.0, 20.0 ],
+									"patching_rect" : [ 403.5, 332.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -491,7 +489,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 272.0, 212.0, 181.0 ],
+									"patching_rect" : [ 430.0, 270.0, 212.0, 181.0 ],
 									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -594,7 +592,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 142.0, 366.0, 19.5, 366.0 ],
+									"midpoints" : [ 136.0, 366.0, 19.5, 366.0 ],
 									"source" : [ "obj-12", 0 ]
 								}
 
