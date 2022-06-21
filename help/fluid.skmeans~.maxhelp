@@ -1862,7 +1862,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 839.5, 115.499999999999972, 20.0, 20.0 ],
+									"patching_rect" : [ 852.5, 115.499999999999972, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2323,7 +2323,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 872.5, 235.318184000000002, 20.0, 20.0 ],
+									"patching_rect" : [ 878.5, 235.318184000000002, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2337,7 +2337,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 531.5, 168.5, 422.0, 25.0 ],
+									"patching_rect" : [ 540.0, 168.5, 422.0, 25.0 ],
 									"text" : "Retrieve the means that fluid.skmeans learned and store in a dataset",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -2793,6 +2793,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-9",
 									"maxclass" : "jsui",
@@ -2811,7 +2812,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 610.5, 112.999999999999972, 227.0, 25.0 ],
+									"patching_rect" : [ 623.5, 112.999999999999972, 227.0, 25.0 ],
 									"text" : "Predict four clusters for the dataset",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -2830,7 +2831,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 949.5, 171.0, 20.0, 20.0 ],
+									"patching_rect" : [ 964.0, 171.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3040,7 +3041,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 919.0, 192.5, 20.0, 20.0 ],
+									"patching_rect" : [ 933.0, 192.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3055,7 +3056,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 716.0, 153.5, 195.0, 98.0 ],
+									"patching_rect" : [ 730.0, 153.5, 195.0, 98.0 ],
 									"text" : "Click this several times while looking at the plot. Notice how the clustering slightly shifts each time as the algorithm learns a more optimal clustering."
 								}
 
@@ -3550,6 +3551,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-9",
 									"maxclass" : "jsui",
@@ -3741,6 +3743,28 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"args" : [ 4 ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-1",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.dataloader.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 10.0, 110.0, 175.0, 63.363631999999996 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
 									"id" : "obj-6",
@@ -3780,7 +3804,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 945.0, 310.0, 20.0, 20.0 ],
+									"patching_rect" : [ 955.0, 310.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3808,7 +3832,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 650.0, 301.5, 293.0, 40.0 ],
+									"patching_rect" : [ 660.0, 301.5, 293.0, 40.0 ],
 									"text" : "Then fitpredict to predict the cluster for each point based on the means we provided.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4316,18 +4340,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-36",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 140.0, 95.0, 23.0 ],
-									"text" : "gaussian4.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-15",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -4389,7 +4401,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 84.0, 131.0, 289.0, 247.0 ],
+										"rect" : [ 84.0, 131.0, 399.0, 305.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -4448,7 +4460,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 197.0, 153.5, 74.0, 22.0 ],
+													"patching_rect" : [ 203.0, 154.5, 74.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -4456,12 +4468,11 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-55",
-													"linecount" : 2,
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 18.0, 120.0, 198.0, 22.0 ],
+													"patching_rect" : [ 18.0, 120.0, 204.0, 22.0 ],
 													"text" : "fluid.labelset~ help.skmeans.3.labels"
 												}
 
@@ -4487,7 +4498,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 197.0, 189.5, 30.0, 30.0 ]
+													"patching_rect" : [ 203.0, 190.5, 30.0, 30.0 ]
 												}
 
 											}
@@ -4783,7 +4794,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 180.0, 78.0, 23.0 ],
+									"patching_rect" : [ 10.0, 189.5, 78.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4821,6 +4832,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter.js",
 									"id" : "obj-9",
 									"jsarguments" : [ 0.3 ],
@@ -4853,7 +4865,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 493.0, 234.5, 248.0, 54.0 ],
+									"patching_rect" : [ 500.0, 234.5, 248.0, 54.0 ],
 									"text" : "Once the means have been stored in a dataset~ we then \"set\" those means in the fluid.skmeans~ object like so",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4872,7 +4884,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 739.0, 250.0, 20.0, 20.0 ],
+									"patching_rect" : [ 746.0, 250.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4898,6 +4910,13 @@
 							}
  ],
 						"lines" : [ 							{
+								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"midpoints" : [ 232.5, 165.0, 232.5, 165.0 ],
@@ -4933,15 +4952,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-36", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 232.5, 216.0, 19.0, 216.0, 19.0, 390.0, 19.5, 390.0 ],
+									"midpoints" : [ 232.5, 426.0, 19.5, 426.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -4963,7 +4975,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 19.5, 230.0, 19.5, 230.0 ],
+									"midpoints" : [ 19.5, 213.0, 19.5, 213.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -5310,7 +5322,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 920.0, 172.5, 20.0, 20.0 ],
+									"patching_rect" : [ 936.0, 172.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -5324,7 +5336,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 654.0, 170.0, 264.0, 25.0 ],
+									"patching_rect" : [ 670.0, 170.0, 264.0, 25.0 ],
 									"text" : "Predict clusters from the selected dataset"
 								}
 
