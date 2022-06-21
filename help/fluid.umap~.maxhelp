@@ -88,6 +88,70 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 433.0, 412.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "4",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 322.0, 410.0, 109.0, 25.0 ],
+									"text" : "Click and drag"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-1",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 327.0, 692.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-6",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 247.0, 690.0, 77.0, 25.0 ],
+									"text" : "Audio on"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -121,7 +185,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 660.0, 127.0, 324.0, 471.0 ],
+									"patching_rect" : [ 530.0, 230.0, 328.0, 471.0 ],
 									"text" : "The UMAP algorithm can be nudged to favour the global or local structure of the original data. In essence, this is about whether or not you care about the overall shape of the data, or smaller clusters of points when it is reduced.\n\nThe numneighbours attribute dictates how many points from the original data are considered together when it is determining a transform for the data. These are related to the size of your data. For example, imagine that you have a dataset with 100 points and wanted the whole space to be considered as \"one thing\", setting numneighbours to 100 might be an interesting place to start.\n\nThe minimum distance attribute dictates how close points can be represented in the output dataset. Small values tending towards 0 let UMAP pack the points in tightly while larger values cause the data to be more spread out.\n\nMusically speaking, this decision making will be bound up in lots of different attentions, like what kind of sounds are being analysed and how those sounds will be used in conjunction with the UMAP representation. If you want tight perceptually meaningful clusters then lowering the number of neighbours (relative to your total dataset) and increasing the minimum distance could be a tool for creating more stark separations between points. Likewise, lowering the mindist and increasing the numneighbours might create a flatter and more spread out space for exploring more widely.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -140,7 +204,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 630.0, 151.5, 20.0, 20.0 ],
+									"patching_rect" : [ 690.0, 161.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -156,7 +220,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 130.0, 180.0, 150.0, 23.0 ],
+									"patching_rect" : [ 190.0, 190.0, 150.0, 23.0 ],
 									"text_width" : 82.0
 								}
 
@@ -170,7 +234,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 80.0, 150.0, 200.0, 23.0 ],
+									"patching_rect" : [ 140.0, 160.0, 200.0, 23.0 ],
 									"text_width" : 132.0
 								}
 
@@ -334,7 +398,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 20.0, 560.0, 107.0, 23.0 ],
+									"patching_rect" : [ 80.0, 570.0, 107.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -353,7 +417,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 140.0, 670.0, 45.0, 45.0 ]
+									"patching_rect" : [ 200.0, 680.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -981,7 +1045,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 140.0, 600.0, 160.0, 60.0 ],
+									"patching_rect" : [ 200.0, 610.0, 160.0, 60.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -993,7 +1057,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.0, 600.0, 108.0, 23.0 ],
+									"patching_rect" : [ 80.0, 610.0, 108.0, 23.0 ],
 									"text" : "prepend highlight"
 								}
 
@@ -1006,7 +1070,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 330.0, 127.0, 297.0, 69.0 ],
+									"patching_rect" : [ 390.0, 137.0, 297.0, 69.0 ],
 									"text" : "Reduce the dataset from the first tab with 140 values per identifier. Experiment with the numneighbours and mindist values to see how it affects the characteristics of the output."
 								}
 
@@ -1019,7 +1083,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 222.0, 237.0, 177.0, 23.0 ],
+									"patching_rect" : [ 282.0, 247.0, 177.0, 23.0 ],
 									"text" : "fluid.dataset~ help.umap.2.dr"
 								}
 
@@ -1032,7 +1096,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 237.0, 195.0, 23.0 ],
+									"patching_rect" : [ 80.0, 247.0, 195.0, 23.0 ],
 									"text" : "fluid.umap~ @numdimensions 2"
 								}
 
@@ -1344,7 +1408,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 20.0, 270.0, 220.0, 23.0 ],
+									"patching_rect" : [ 80.0, 280.0, 220.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1363,7 +1427,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.0, 110.0, 290.0, 23.0 ],
+									"patching_rect" : [ 80.0, 120.0, 290.0, 23.0 ],
 									"text" : "fittransform help.umap.1.analysis help.umap.2.dr"
 								}
 
@@ -1379,7 +1443,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 20.0, 302.0, 240.0, 240.0 ]
+									"patching_rect" : [ 80.0, 312.0, 240.0, 240.0 ]
 								}
 
 							}
@@ -1395,7 +1459,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 14.0, 103.0, 306.0, 117.0 ],
+									"patching_rect" : [ 74.0, 113.0, 306.0, 117.0 ],
 									"proportion" : 0.5
 								}
 
@@ -1404,7 +1468,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-56", 0 ],
-									"midpoints" : [ 29.5, 585.0, 29.5, 585.0 ],
+									"midpoints" : [ 89.5, 595.0, 89.5, 595.0 ],
 									"source" : [ "obj-19", 0 ]
 								}
 
@@ -1419,7 +1483,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
-									"midpoints" : [ 29.5, 134.0, 29.5, 134.0 ],
+									"midpoints" : [ 89.5, 144.0, 89.5, 144.0 ],
 									"source" : [ "obj-30", 0 ]
 								}
 
@@ -1427,7 +1491,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-19", 1 ],
-									"midpoints" : [ 29.5, 730.0, 314.0, 730.0, 314.0, 291.0, 250.5, 291.0 ],
+									"midpoints" : [ 89.5, 740.0, 374.0, 740.0, 374.0, 301.0, 310.5, 301.0 ],
 									"source" : [ "obj-35", 0 ]
 								}
 
@@ -1458,7 +1522,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
-									"midpoints" : [ 29.5, 584.0, 29.5, 584.0 ],
+									"midpoints" : [ 89.5, 594.0, 89.5, 594.0 ],
 									"order" : 0,
 									"source" : [ "obj-56", 0 ]
 								}
@@ -1467,7 +1531,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-48", 0 ],
-									"midpoints" : [ 29.5, 591.0, 149.5, 591.0 ],
+									"midpoints" : [ 89.5, 601.0, 209.5, 601.0 ],
 									"order" : 1,
 									"source" : [ "obj-56", 0 ]
 								}
@@ -1476,7 +1540,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
-									"midpoints" : [ 89.5, 224.0, 29.5, 224.0 ],
+									"midpoints" : [ 149.5, 234.0, 89.5, 234.0 ],
 									"source" : [ "obj-7", 0 ]
 								}
 
@@ -1484,7 +1548,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-22", 0 ],
-									"midpoints" : [ 139.5, 224.0, 29.5, 224.0 ],
+									"midpoints" : [ 199.5, 234.0, 89.5, 234.0 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -1602,6 +1666,71 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 721.0, 392.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "4",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 610.0, 390.0, 109.0, 25.0 ],
+									"presentation_linecount" : 2,
+									"text" : "Click and drag"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-1",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 590.0, 673.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 510.0, 671.0, 77.0, 25.0 ],
+									"text" : "Audio on"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-56",
 									"maxclass" : "newobj",
@@ -4008,7 +4137,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 370.0, 690.0, 607.0, 21.0 ],
+									"patching_rect" : [ 295.5, 680.0, 607.0, 21.0 ],
 									"text" : "This example and the data is drawn almost entirely from https://pair-code.github.io/understanding-umap/",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
