@@ -115,7 +115,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 802.0, 290.0, 148.0, 83.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Filter the spectral shape analyses by the pitch confidence values of the pitch dataset."
 								}
 
@@ -191,8 +190,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 316.5, 530.0, 130.0, 152.0 ],
-									"presentation_linecount" : 6,
+									"patching_rect" : [ 316.5, 530.0, 131.0, 152.0 ],
 									"text" : "Once we filter the data based on pitch confidence there are fewer rows in the dataset. Any identifier where the confidence was lower than 0.9 in the pitch dataset is removed from both.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -301,7 +299,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 29.5, 520.0, 210.0, 79.0 ],
+									"patching_rect" : [ 29.5, 520.0, 212.0, 79.0 ],
 									"text" : "Double click the dict objects to see the data inside these dictionaries.\n\nNote the size (number of rows) in each dataset.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -661,8 +659,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 582.0, 305.5, 210.0, 52.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 582.0, 305.5, 212.0, 52.0 ],
 									"text" : "clear, filter 1 > 0.9, transformjoin dsq.help.pitch dsq.help.specshape dsq.help.specshape.filtered"
 								}
 
@@ -1044,7 +1041,6 @@
 					}
 ,
 					"patching_rect" : [ 430.0, 85.0, 154.0, 22.0 ],
-					"presentation_linecount" : 2,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3801,12 +3797,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-33",
-									"linecount" : 4,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 498.0, 208.0, 355.0, 65.0 ],
-									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A. It is important to note that it merges the second provided dataset with the first for each identifier.",
+									"patching_rect" : [ 498.0, 208.0, 355.0, 50.0 ],
+									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
