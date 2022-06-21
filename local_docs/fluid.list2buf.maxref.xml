@@ -54,8 +54,11 @@ Be aware that if a buffer of a predefined size is not supplied as the output it 
     <method name='list'>
         <arglist>
         </arglist>
+        <digest>
+        Trigger processing
+        </digest>
         <description>
-        
+        Copy the values from the incoming list to the <at>destination</at> <o>buffer~</o>. If the <o>buffer~</o> is not big enough, <at>autosize</at> is enabled and procesing is triggered from the main thread, then the <o>buffer~</o> will be resized. If called from the scheduler thread, no resize will be attempted and a warning will be printed to the console.
         
         </description>
     </method>

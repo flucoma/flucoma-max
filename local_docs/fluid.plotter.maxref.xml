@@ -77,6 +77,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='min' optional='0' type='float' />
             <arg name='max' optional='0' type='float' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Set the x-axis range.
         
@@ -87,6 +90,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='min' optional='0' type='float' />
             <arg name='max' optional='0' type='float' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Set the y-axis range.
         
@@ -97,6 +103,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='min' optional='0' type='float' />
             <arg name='max' optional='0' type='float' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Set the x- and y-axis ranges.
         
@@ -106,6 +115,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         <arglist>
             <arg name='scheme' optional='0' type='symbol' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Change the colour scheme for automatic colouring via a fluid.labelset~. Options are default, cat, accent, dark, paired, tableau, R4, R3, R2, R1, random. Taken mostly from <a href='https://github.com/d3/d3-scale-chromatic'>d3-scale-chromatic</a>.
         
@@ -117,6 +129,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='x' optional='0' type='float' />
             <arg name='y' optional='0' type='float' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Set the point at the given coordinates.
         
@@ -130,6 +145,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='blue' optional='0' type='float' />
             <arg name='alpha' optional='0' type='float' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Set the color of the point with a given identifier.
         
@@ -140,6 +158,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='identifier' optional='0' type='symbol' />
             <arg name='size' optional='0' type='float' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Set the size of the point with a given identifier.
         
@@ -149,6 +170,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         <arglist>
             <arg name='scale' optional='0' type='float' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Set the overall size of the points.
         
@@ -158,6 +182,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         <arglist>
             <arg name='shape' optional='0' type='symbol' />
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Modifies the shape of the points.
         
@@ -166,6 +193,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
     <method name='clear'>
         <arglist>
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         Clears the graph and all associated data and settings.
         
@@ -174,6 +204,9 @@ There is also an 'advanced' interface that allows the user to specify the coordi
     <method name='reset'>
         <arglist>
         </arglist>
+        <digest>
+        
+        </digest>
         <description>
         An alias of clear. Clears the graph.
         
