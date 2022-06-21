@@ -2092,7 +2092,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 643.600000649690628, 147.0, 20.0, 20.0 ],
+									"patching_rect" : [ 875.0, 152.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2107,7 +2107,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 668.600000649690628, 108.0, 230.0, 98.0 ],
+									"patching_rect" : [ 643.600000649690628, 113.0, 230.0, 98.0 ],
 									"text" : "Analyse the buffer named src with the mel-frequency cepstrum coefficient descriptor. Calculate the statistics across each coefficient per spectral frame and flatten the data to a single dimension."
 								}
 
@@ -3999,7 +3999,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 200.0, 660.0, 280.0, 50.0 ],
+									"patching_rect" : [ 206.0, 656.5, 280.0, 50.0 ],
 									"text" : "fluid.dataset~ will report back when an operation is complete from its left outlet. You can use this to chain together processes.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
