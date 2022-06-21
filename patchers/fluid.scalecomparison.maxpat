@@ -856,6 +856,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-31",
 					"jsarguments" : [ 0.15 ],
@@ -870,6 +871,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-28",
 					"jsarguments" : [ 0.15 ],
@@ -884,6 +886,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-26",
 					"jsarguments" : [ 0.15 ],
