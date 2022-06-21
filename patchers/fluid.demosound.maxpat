@@ -1146,7 +1146,6 @@
 									"outlettype" : [ "int", "", "" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 154.0, 279.0, 100.0, 22.0 ],
-									"prefix" : "~/dev/flucoma/max/media/",
 									"presentation" : 1,
 									"presentation_rect" : [ 32.0, 3.0, 147.641829999999999, 22.0 ],
 									"style" : "AudioStatus_Menu",
