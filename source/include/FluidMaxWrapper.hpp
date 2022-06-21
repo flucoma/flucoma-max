@@ -1471,21 +1471,6 @@ public:
                     0);
   }
 
-  template <typename CType = Client>
-  static std::enable_if_t<!IsThreadedShared<CType>::value>
-  checkName(ParamSetType&)
-  {}
-
-  template <typename CType = Client>
-  static std::enable_if_t<IsThreadedShared<CType>::value>
-  checkName(ParamSetType& params)
-  {
-    if (params.template get<0>().size() == 0)
-    {
-      params.template set<0>(std::string(symbol_unique()->s_name), nullptr);
-    }
-  }
-
   void resizeListHandlers(index newSize)
   {
       index numIns = mClient.controlChannelsIn();
@@ -1657,9 +1642,26 @@ private:
     }
   };
 
-  ParamSetType& initParamsFromArgs(long ac, t_atom* av)
+  ParamSetType& initParamsFromArgs(long argc, t_atom* argv)
   {
-      
+    long ac = argc;
+    
+    std::vector<t_atom> av_vec = [&](){
+      bool needsNameAtom = IsThreadedShared<Client>::value &&
+                            !attr_args_offset(static_cast<short>(argc), argv);
+      ac = argc + needsNameAtom;
+      std::vector<t_atom> result(ac);
+      std::copy_n(argv, argc, result.data() + needsNameAtom);
+      if(needsNameAtom)
+      {
+          t_symbol* autoName = symbol_unique();
+          atom_setsym(result.data(), autoName);
+      }
+      return result;
+    }();
+    
+    t_atom* av = av_vec.data();
+  
     // Process arguments for instantiation parameters
     if (long numArgs = attr_args_offset(static_cast<short>(ac), av))
     {
@@ -1696,7 +1698,6 @@ private:
     }
     // process in-box attributes for mutable params
     attr_args_process((t_object*) this, static_cast<short>(ac), av);
-    checkName(mParams);
     // return params so this can be called in client initaliser
     return mParams;
   }
