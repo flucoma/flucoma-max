@@ -182,7 +182,7 @@ install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic
         RENAME LICENSE.md)
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/local_docs/"
         DESTINATION "${MAX_PACKAGE_ROOT}/docs")
-install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/vignettes/"
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/vignettes"
         DESTINATION "${MAX_PACKAGE_ROOT}/docs")
 
 if(DOCS)
