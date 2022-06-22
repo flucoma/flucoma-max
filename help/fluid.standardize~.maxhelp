@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 182.0, 222.0, 205.0, 23.0 ],
+					"text" : "fluid.dsinterface fluid.standardize~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-8",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 160.0, 190.0, 239.0, 23.0 ],
+					"patching_rect" : [ 120.0, 180.0, 239.0, 23.0 ],
 					"text" : "fluid.scalecomparison fluid.standardize~"
 				}
 
@@ -1542,7 +1553,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 950.0, 731.0 ],
+						"rect" : [ 34.0, 113.0, 950.0, 731.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2049,7 +2060,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 230.0, 220.0, 50.0, 23.0 ],
+					"patching_rect" : [ 270.0, 260.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
