@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 1011.0, 774.0 ],
+		"rect" : [ 35.0, 88.0, 906.0, 731.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 240.0, 163.0, 194.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufselect~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 350.0, 85.0, 275.0, 22.0 ],
+					"patching_rect" : [ 370.0, 230.0, 275.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufselectevery~"
 				}
 
@@ -68,7 +79,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1011.0, 748.0 ],
+						"rect" : [ 0.0, 26.0, 906.0, 705.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -105,7 +116,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 455.0, 230.0, 165.0, 23.0 ],
+									"patching_rect" : [ 435.0, 220.0, 165.0, 23.0 ],
 									"text" : "buffer~ bufselect.help.7hop"
 								}
 
@@ -118,7 +129,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 380.0, 184.660370999999998, 164.0, 23.0 ],
+									"patching_rect" : [ 360.0, 174.660370999999998, 164.0, 23.0 ],
 									"text" : "buffer~ bufselect.help.stats"
 								}
 
@@ -131,7 +142,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 230.0, 406.0, 23.0 ],
+									"patching_rect" : [ 20.0, 220.0, 406.0, 23.0 ],
 									"text" : "fluid.bufselectevery~ @framehop 7 @destination bufselect.help.7hop"
 								}
 
@@ -144,7 +155,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 318.0, 92.5, 302.0, 23.0 ],
+									"patching_rect" : [ 298.0, 82.5, 302.0, 23.0 ],
 									"text" : "buffer~ bufselect.help.audiosrc Nicol-LoopE-M.wav"
 								}
 
@@ -162,7 +173,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 617.0, 512.5, 20.0, 20.0 ],
+									"patching_rect" : [ 597.0, 502.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -178,7 +189,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 275.0, 510.0, 336.0, 25.0 ],
+									"patching_rect" : [ 255.0, 500.0, 336.0, 25.0 ],
 									"text" : "Copy the output of bufselectevery~ to a fluid.dataset~"
 								}
 
@@ -196,7 +207,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 613.0, 292.5, 20.0, 20.0 ],
+									"patching_rect" : [ 593.0, 282.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -212,7 +223,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 275.0, 290.0, 336.0, 25.0 ],
+									"patching_rect" : [ 255.0, 280.0, 336.0, 25.0 ],
 									"text" : "Copy the bufselect.help.stats buffer to a fluid.dataset~"
 								}
 
@@ -224,7 +235,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 710.0, 410.0, 198.0, 79.0 ],
+									"patching_rect" : [ 690.0, 400.0, 198.0, 79.0 ],
 									"text" : "You can think of this as a single channel in a buffer with 21 frames. Each consecutive group of 7 statistics belong to a single derivative.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -237,7 +248,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 205.0, 632.5, 360.0, 65.0 ],
+									"patching_rect" : [ 185.0, 622.5, 360.0, 65.0 ],
 									"text" : "bufselectevery~ extracts every seventh value. Because bufstats~ returns 7 statistics for each derivative (21 values) using bufselect~ in this way extracts the mean (the first item in every group of 7) of each derivative.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -250,7 +261,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 590.0, 74.0, 23.0 ],
+									"patching_rect" : [ 20.0, 580.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -262,7 +273,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 510.0, 234.0, 23.0 ],
+									"patching_rect" : [ 20.0, 500.0, 234.0, 23.0 ],
 									"text" : "frombuffer bufselect.help.7hop 1, dump"
 								}
 
@@ -274,7 +285,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 550.0, 86.0, 23.0 ],
+									"patching_rect" : [ 20.0, 540.0, 86.0, 23.0 ],
 									"text" : "fluid.dataset~"
 								}
 
@@ -285,7 +296,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 630.0, 163.0, 70.0 ]
+									"patching_rect" : [ 20.0, 620.0, 163.0, 70.0 ]
 								}
 
 							}
@@ -296,7 +307,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 370.0, 74.0, 23.0 ],
+									"patching_rect" : [ 20.0, 360.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -308,7 +319,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 290.0, 233.0, 23.0 ],
+									"patching_rect" : [ 20.0, 280.0, 233.0, 23.0 ],
 									"text" : "frombuffer bufselect.help.stats 1, dump"
 								}
 
@@ -320,7 +331,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 330.0, 86.0, 23.0 ],
+									"patching_rect" : [ 20.0, 320.0, 86.0, 23.0 ],
 									"text" : "fluid.dataset~"
 								}
 
@@ -331,7 +342,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 410.0, 663.0, 70.0 ]
+									"patching_rect" : [ 20.0, 400.0, 663.0, 70.0 ]
 								}
 
 							}
@@ -343,7 +354,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 40.0, 90.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 80.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -360,7 +371,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 282.0, 92.5, 20.0, 20.0 ],
+									"patching_rect" : [ 262.0, 82.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -376,7 +387,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 66.0, 90.0, 213.0, 25.0 ],
+									"patching_rect" : [ 46.0, 80.0, 213.0, 25.0 ],
 									"text" : "Trigger some descriptor analysis"
 								}
 
@@ -406,7 +417,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 550.0, 178.160370999999998, 295.0, 36.0 ],
+									"patching_rect" : [ 530.0, 168.160370999999998, 295.0, 36.0 ],
 									"text" : "Compute 7 statistics for 1 derivative of the loudness. Select then only the mean (average).",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -420,7 +431,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 460.0, 134.660370999999998, 213.0, 21.0 ],
+									"patching_rect" : [ 440.0, 124.660370999999998, 213.0, 21.0 ],
 									"text" : "Compute loudness audio descriptor",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
@@ -434,7 +445,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 184.660370999999998, 336.0, 23.0 ],
+									"patching_rect" : [ 20.0, 174.660370999999998, 336.0, 23.0 ],
 									"text" : "fluid.bufstats~ @numderivs 2 @stats bufselect.help.stats"
 								}
 
@@ -447,7 +458,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 134.660370999999998, 412.0, 23.0 ],
+									"patching_rect" : [ 20.0, 124.660370999999998, 412.0, 23.0 ],
 									"text" : "fluid.bufloudness~ @source bufselect.help.audiosrc @select loudness"
 								}
 
@@ -463,7 +474,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 116.5, 361.0, 49.5, 361.0 ],
+									"midpoints" : [ 96.5, 351.0, 29.5, 351.0 ],
 									"source" : [ "obj-14", 1 ]
 								}
 
@@ -499,7 +510,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
-									"midpoints" : [ 116.5, 581.0, 49.5, 581.0 ],
+									"midpoints" : [ 96.5, 571.0, 29.5, 571.0 ],
 									"source" : [ "obj-20", 1 ]
 								}
 
@@ -601,7 +612,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 1011.0, 748.0 ],
+						"rect" : [ 35.0, 114.0, 906.0, 705.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -764,7 +775,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 405.0, 285.0, 240.0, 50.0 ],
+									"patching_rect" : [ 405.0, 305.0, 240.0, 50.0 ],
 									"text" : "here we taken every second channel and every second frame from a 4 frame x 5 channel source buffer.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -1021,7 +1032,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 287.0, 245.0, 48.0, 23.0 ],
+									"patching_rect" : [ 287.0, 265.0, 48.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1440,7 +1451,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "list" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 287.0, 285.0, 113.0, 165.0 ],
+									"patching_rect" : [ 287.0, 305.0, 113.0, 165.0 ],
 									"range" : 9,
 									"rows" : 3
 								}
@@ -1453,7 +1464,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 10.264151999999996, 565.0, 254.0, 23.0 ],
+									"patching_rect" : [ 10.264151999999996, 585.0, 254.0, 23.0 ],
 									"text" : "buffer~ help.selectevery.1.src @samps 4 5"
 								}
 
@@ -1465,7 +1476,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 287.0, 455.0, 254.0, 23.0 ],
+									"patching_rect" : [ 287.0, 475.0, 254.0, 23.0 ],
 									"text" : "buffer~ help.selectevery.1.dst @samps 2 2"
 								}
 
@@ -1473,11 +1484,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-3",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 287.0, 210.0, 680.0, 23.0 ],
+									"patching_rect" : [ 287.0, 210.0, 378.0, 38.0 ],
 									"text" : "fluid.bufselectevery~ @source help.selectevery.1.src @destination help.selectevery.1.dst @chanhop 2 @framehop 2"
 								}
 
@@ -1495,7 +1507,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "list", "list" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.264151999999996, 285.0, 214.735848000000004, 270.0 ],
+									"patching_rect" : [ 10.264151999999996, 305.0, 214.735848000000004, 270.0 ],
 									"range" : 9,
 									"rows" : 5
 								}
@@ -1636,7 +1648,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1011.0, 748.0 ],
+						"rect" : [ 0.0, 26.0, 906.0, 705.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1669,7 +1681,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 643.0, 84.0, 25.0, 22.0 ],
+					"patching_rect" : [ 663.0, 229.0, 25.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

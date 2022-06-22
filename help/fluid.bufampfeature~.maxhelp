@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 136.0, 147.0, 223.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufampfeature~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -779,7 +790,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 9.0, 32.0, 102.0, 22.0 ],
+					"patching_rect" : [ 9.0, 32.0, 55.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -787,7 +798,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"amp detection\"",
+					"text" : "p basic",
 					"varname" : "basic_tab[1]"
 				}
 
@@ -798,7 +809,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 32.0, 275.0, 22.0 ],
+					"patching_rect" : [ 195.0, 194.0, 275.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufampfeature~"
 				}
 
@@ -853,7 +864,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 397.0, 32.0, 50.0, 22.0 ],
+					"patching_rect" : [ 477.0, 194.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

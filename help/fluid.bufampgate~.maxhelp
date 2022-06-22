@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 841.0, 688.0 ],
+		"rect" : [ 35.0, 88.0, 843.0, 688.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 321.0, 289.0, 226.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufampgate~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 841.0, 662.0 ],
+						"rect" : [ 0.0, 26.0, 843.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -587,7 +598,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 317.0, 266.0, 282.0, 23.0 ],
+					"patching_rect" : [ 410.0, 350.0, 282.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufampgate~"
 				}
 
@@ -609,7 +620,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 841.0, 662.0 ],
+						"rect" : [ 0.0, 26.0, 843.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1324,7 +1335,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 841.0, 662.0 ],
+						"rect" : [ 0.0, 26.0, 843.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2236,7 +2247,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 841.0, 662.0 ],
+						"rect" : [ 0.0, 26.0, 843.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3007,7 +3018,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 262.0, 231.0, 203.0, 23.0 ],
+					"patching_rect" : [ 262.0, 231.0, 126.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -3016,7 +3027,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"removing silence from a buffer\""
+					"text" : "p \"removing silence\""
 				}
 
 			}
@@ -3053,7 +3064,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 841.0, 662.0 ],
+						"rect" : [ 0.0, 26.0, 843.0, 662.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3086,7 +3097,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 387.0, 331.0, 50.0, 23.0 ],
+					"patching_rect" : [ 480.0, 415.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

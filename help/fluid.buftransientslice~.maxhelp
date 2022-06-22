@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 846.0, 626.0 ],
+		"rect" : [ 100.0, 100.0, 775.0, 626.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 81.0, 148.0, 251.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.buftransientslice~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 55.0, 118.0, 307.0, 23.0 ],
+					"patching_rect" : [ 110.0, 200.0, 307.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.buftransientslice~"
 				}
 
@@ -84,7 +95,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 846.0, 600.0 ],
+						"rect" : [ 0.0, 26.0, 775.0, 600.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -117,7 +128,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 120.0, 150.0, 50.0, 23.0 ],
+					"patching_rect" : [ 175.0, 232.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -148,7 +159,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 846.0, 600.0 ],
+						"rect" : [ 100.0, 126.0, 775.0, 600.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -298,7 +309,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 525.0, 120.0, 158.0, 79.0 ],
-									"presentation_linecount" : 5,
 									"text" : "fluid.transientslice~ has a lot of parameters. These 6 are a good place to start if you want to configure the algorithm.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -412,7 +422,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 39.0, 273.5, 179.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "slice using transient slicing"
 								}
 

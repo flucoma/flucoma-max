@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 789.0, 642.0 ],
+		"rect" : [ 34.0, 100.0, 771.0, 642.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 216.0, 98.0, 216.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufonsetslice~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 789.0, 616.0 ],
+						"rect" : [ 0.0, 26.0, 771.0, 616.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3696,7 +3707,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 126.0, 789.0, 616.0 ],
+						"rect" : [ 0.0, 26.0, 771.0, 616.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4654,7 +4665,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 275.0, 50.0, 268.0, 22.0 ],
+					"patching_rect" : [ 333.0, 140.0, 268.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufonsetslice~"
 				}
 
@@ -4676,7 +4687,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 789.0, 616.0 ],
+						"rect" : [ 0.0, 26.0, 771.0, 616.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4709,7 +4720,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 545.0, 50.0, 25.0, 22.0 ],
+					"patching_rect" : [ 605.0, 164.0, 25.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

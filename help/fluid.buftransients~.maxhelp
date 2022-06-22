@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 115.0, 215.0, 232.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.buftransients~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 80.0, 159.0, 288.0, 23.0 ],
+					"patching_rect" : [ 160.0, 250.0, 288.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.buftransients~"
 				}
 
@@ -85,7 +96,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 828.0, 651.0 ],
+						"rect" : [ 0.0, 26.0, 828.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -946,7 +957,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 53.666663999999997, 125.666640999999998, 92.0, 23.0 ],
+					"patching_rect" : [ 50.0, 140.0, 92.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2031,7 +2042,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 152.666655999999989, 189.0, 50.0, 23.0 ],
+					"patching_rect" : [ 232.666655999999989, 280.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2057,7 +2068,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 414.968017999999972, 57.599854000000001 ]
+					"patching_rect" : [ 10.0, 10.0, 414.968017578125, 57.599853515625 ]
 				}
 
 			}

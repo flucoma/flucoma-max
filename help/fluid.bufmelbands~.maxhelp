@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 782.0, 761.0 ],
+		"rect" : [ 100.0, 100.0, 731.0, 761.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 190.0, 260.0, 232.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufmelbands~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 782.0, 735.0 ],
+						"rect" : [ 0.0, 26.0, 731.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -94,7 +105,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 120.0, 250.0, 117.0, 23.0 ],
-									"text" : "buffer u745001054"
+									"text" : "buffer u789011981"
 								}
 
 							}
@@ -321,7 +332,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 170.333327999999995, 219.666686999999996, 288.0, 23.0 ],
+					"patching_rect" : [ 270.0, 360.0, 288.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufmelbands~"
 				}
 
@@ -343,7 +354,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 782.0, 735.0 ],
+						"rect" : [ 0.0, 26.0, 731.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -868,7 +879,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 782.0, 735.0 ],
+						"rect" : [ 0.0, 26.0, 731.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2642,7 +2653,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 782.0, 735.0 ],
+						"rect" : [ 0.0, 26.0, 731.0, 735.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2675,7 +2686,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 254.333327999999995, 254.666686999999996, 27.0, 23.0 ],
+					"patching_rect" : [ 354.0, 395.0, 27.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
