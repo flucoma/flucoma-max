@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
+		"rect" : [ 35.0, 87.0, 1370.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1177,7 +1177,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 481.0, 90.0, 429.0, 69.0 ],
+									"patching_rect" : [ 481.0, 90.0, 431.0, 69.0 ],
 									"text" : "See how in the below patching only the first object has a source specfied? This is how we start the processing, using the passing of \"buffer\" messages to automatically pass along the output of one object as input to the next and trigger processing."
 								}
 
@@ -1319,7 +1319,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 20.0, 90.0, 416.0, 69.0 ],
+									"patching_rect" : [ 20.0, 90.0, 418.0, 69.0 ],
 									"text" : "We can go one step further than this. Let's see what happens if we omit attributes such as @destination, @features and @stats (attributes that denote output for buffer processing objects). We'll also keep using the \"buffer\" message to set and trigger the processing."
 								}
 
@@ -2032,7 +2032,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 1370.0, 751.0 ],
+						"rect" : [ 35.0, 113.0, 1370.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2069,7 +2069,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 480.0, 510.0, 73.0, 23.0 ],
+									"patching_rect" : [ 480.0, 520.0, 73.0, 23.0 ],
 									"text" : "buffer input"
 								}
 
@@ -2083,8 +2083,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 460.0, 295.0, 38.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 480.0, 470.0, 295.0, 38.0 ],
 									"text" : "So, another way of patching what we had above is this. Notice how the @source is omitted?"
 								}
 
@@ -2097,7 +2096,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 480.0, 590.0, 73.0, 23.0 ],
+									"patching_rect" : [ 480.0, 600.0, 73.0, 23.0 ],
 									"text" : "buffer mfcc"
 								}
 
@@ -2110,7 +2109,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 480.0, 549.0, 184.0, 23.0 ],
+									"patching_rect" : [ 480.0, 559.0, 184.0, 23.0 ],
 									"text" : "fluid.bufmfcc~ @features mfcc"
 								}
 
@@ -2451,7 +2450,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 305.0, 402.0, 69.0 ],
+									"patching_rect" : [ 480.0, 305.0, 406.0, 69.0 ],
 									"text" : "The reason they output this message is that the \"buffer\" message is special for FluCoMa buffer~ processing objects. If an object that can process a buffer receives this message, it set the @source attribute to that buffer name and triggers processing. It is the equivalent of this:"
 								}
 
@@ -2673,7 +2672,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-42", 1 ],
-									"midpoints" : [ 489.5, 580.5, 543.5, 580.5 ],
+									"midpoints" : [ 489.5, 590.5, 543.5, 590.5 ],
 									"source" : [ "obj-43", 0 ]
 								}
 
