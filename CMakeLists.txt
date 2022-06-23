@@ -187,6 +187,9 @@ if(DOCS)
   install(DIRECTORY "${MAX_DOC_OUT}/" 
           DESTINATION "${MAX_PACKAGE_ROOT}/docs"  
           PATTERN "*.xml")
+  install(FILES "${MAX_DOC_OUT}/../interfaces/flucoma-obj-qlookup.json" 
+                "${MAX_DOC_OUT}/../interfaces/max.db.json" 
+          DESTINATION "${MAX_PACKAGE_ROOT}/interfaces")
 endif()
 
 install(DIRECTORY "${fluid_waveform_SOURCE_DIR}/" DESTINATION ${MAX_PACKAGE_ROOT})
