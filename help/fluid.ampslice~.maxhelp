@@ -61,7 +61,7 @@
 						"rect" : [ 0.0, 26.0, 829.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
-						"default_fontsize" : 12.0,
+						"default_fontsize" : 13.0,
 						"default_fontface" : 0,
 						"default_fontname" : "Arial",
 						"gridonopen" : 2,
@@ -90,24 +90,73 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"fontsize" : 13.0,
+									"id" : "obj-9",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 315.0, 202.5, 90.0, 25.0 ],
+									"presentation_linecount" : 2,
+									"text" : "Play sound"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-12",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 407.0, 205.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"fontsize" : 13.0,
+									"id" : "obj-6",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 100.0, 510.0, 77.0, 25.0 ],
+									"text" : "Audio on"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-10",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 130.0, 440.0, 40.0, 22.0 ],
+									"patching_rect" : [ 140.0, 440.0, 43.0, 23.0 ],
 									"text" : "*~ 0.5"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-4",
 									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 310.0, 162.0, 100.0 ],
+									"patching_rect" : [ 420.0, 324.0, 174.0, 108.0 ],
 									"text" : "an example where many of the parameters are tuned to a specific musical example.\n\nThe sensitivity doesn't catch everything, but its sensitive to the most salient hits.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -121,18 +170,19 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 230.0, 540.0, 24.0, 24.0 ]
+									"patching_rect" : [ 310.0, 540.0, 24.0, 24.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "bang", "bang" ],
-									"patching_rect" : [ 230.0, 500.0, 42.0, 22.0 ],
+									"patching_rect" : [ 310.0, 500.0, 45.0, 23.0 ],
 									"text" : "edge~"
 								}
 
@@ -190,19 +240,20 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 530.0, 10.0, 230.0, 110.0 ],
+									"patching_rect" : [ 540.0, 10.0, 230.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-2",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 114.0, 260.0, 151.0, 22.0 ],
+									"patching_rect" : [ 121.0, 270.0, 162.0, 23.0 ],
 									"text" : "getattr latency"
 								}
 
@@ -219,20 +270,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 510.0, 110.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-39",
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 122.0, 512.5, 88.0, 21.0 ],
-									"text" : "Turn on audio",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"patching_rect" : [ 10.0, 10.0, 530.0, 120.0 ]
 								}
 
 							}
@@ -249,7 +287,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 100.0, 512.5, 20.0, 20.0 ],
+									"patching_rect" : [ 179.0, 512.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -258,25 +296,27 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-24",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 50.0, 330.0, 83.0, 22.0 ],
+									"patching_rect" : [ 50.0, 330.0, 90.0, 23.0 ],
 									"text" : "delay~ 44100"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-1",
 									"linecount" : 6,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 180.0, 330.0, 200.0, 89.0 ],
+									"patching_rect" : [ 192.5, 330.0, 217.0, 96.0 ],
 									"text" : "fluid.ampslice~ @fastrampup 10 @fastrampdown 10 @slowrampup 50 @slowrampdown 50 @onthreshold 3.5 @offthreshold 0 @highpassfreq 200 @floor -48 @minslicelength 4410"
 								}
 
@@ -296,7 +336,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"midpoints" : [ 189.5, 422.0, 139.5, 422.0 ],
+									"midpoints" : [ 202.0, 429.0, 150.0, 429.0, 150.0, 435.0, 149.5, 435.0 ],
 									"order" : 1,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -305,7 +345,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
-									"midpoints" : [ 189.5, 485.0, 239.5, 485.0 ],
+									"midpoints" : [ 202.0, 485.0, 319.5, 485.0 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -314,7 +354,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 1 ],
-									"midpoints" : [ 139.5, 485.0, 85.5, 485.0 ],
+									"midpoints" : [ 149.5, 485.0, 85.5, 485.0 ],
 									"source" : [ "obj-10", 0 ]
 								}
 
@@ -344,7 +384,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 59.5, 297.0, 189.5, 297.0 ],
+									"midpoints" : [ 59.5, 315.0, 202.0, 315.0 ],
 									"order" : 0,
 									"source" : [ "obj-7", 0 ]
 								}
@@ -422,6 +462,7 @@
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
+						"fontsize" : 13.0,
 						"globalpatchername" : "",
 						"tags" : ""
 					}
@@ -484,8 +525,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 380.0, 190.0, 418.0, 21.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 380.0, 210.0, 418.0, 21.0 ],
 									"text" : "First time you press this message you'll hear a single click, but no more",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -495,6 +535,7 @@
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
 									"hint" : "",
 									"id" : "obj-14",
 									"ignoreclick" : 1,
@@ -504,7 +545,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 742.0, 421.0, 20.0, 20.0 ],
+									"patching_rect" : [ 747.0, 441.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -784,7 +825,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.0, 90.0, 450.0, 90.0 ],
+									"patching_rect" : [ 14.0, 91.5, 450.0, 90.0 ],
 									"preservehref" : 1,
 									"text" : "The fluid.ampslice~ object performs segmentation by comparing the difference between two amplitude envelopes, one capturing slow changes, one capturing fast changes in a signal. The slow one provides a context which the fast one is compared to, meaning the threshold of this slicer is dynamic. For a more detailed explanation see: <link href=\"; max launchbrowser https://learn.flucoma.org/reference/ampslice\" >https://learn.flucoma.org/reference/ampslice</link>.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
@@ -795,6 +836,7 @@
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
 									"hint" : "",
 									"id" : "obj-73",
 									"ignoreclick" : 1,
@@ -804,7 +846,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 771.5, 321.5, 20.0, 20.0 ],
+									"patching_rect" : [ 777.5, 341.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -820,7 +862,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 562.75, 389.5, 177.25, 83.0 ],
+									"patching_rect" : [ 567.75, 409.5, 177.25, 83.0 ],
 									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -830,6 +872,7 @@
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
 									"hint" : "",
 									"id" : "obj-70",
 									"ignoreclick" : 1,
@@ -839,7 +882,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 742.0, 240.0, 20.0, 20.0 ],
+									"patching_rect" : [ 752.0, 260.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -848,12 +891,13 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-69",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 212.0, 100.0, 22.0 ],
+									"patching_rect" : [ 40.0, 212.0, 97.0, 23.0 ],
 									"text" : "loadmess 1000"
 								}
 
@@ -867,7 +911,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 533.5, 290.0, 236.0, 83.0 ],
+									"patching_rect" : [ 539.5, 310.0, 236.0, 83.0 ],
 									"text" : "Make the fast envelope a bit smoother, and the slow envelope a lot smoother. \n\nIt's not perfect but a little less jittery.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -882,7 +926,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 472.0, 224.0, 268.0, 54.0 ],
+									"patching_rect" : [ 482.0, 244.0, 268.0, 54.0 ],
 									"text" : "Fast envelope has to go 6dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -892,6 +936,7 @@
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
 									"hint" : "",
 									"id" : "obj-65",
 									"ignoreclick" : 1,
@@ -901,7 +946,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 764.0, 161.0, 20.0, 20.0 ],
+									"patching_rect" : [ 764.0, 181.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -916,7 +961,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 440.0, 158.5, 322.0, 25.0 ],
+									"patching_rect" : [ 440.0, 178.5, 322.0, 25.0 ],
 									"text" : "Fast envelope has to exceed slow envelope by 6dB",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -926,6 +971,7 @@
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
 									"hint" : "",
 									"id" : "obj-38",
 									"ignoreclick" : 1,
@@ -935,7 +981,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 188.0, 593.5, 20.0, 20.0 ],
+									"patching_rect" : [ 194.0, 594.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -944,11 +990,12 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-61",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 92.0, 247.0, 56.0, 20.0 ],
+									"patching_rect" : [ 92.0, 247.0, 60.0, 21.0 ],
 									"text" : "rate (ms)",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -956,61 +1003,66 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-57",
 									"maxclass" : "number",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 40.0, 246.0, 50.0, 22.0 ]
+									"patching_rect" : [ 40.0, 246.0, 53.0, 23.0 ]
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-45",
 									"linecount" : 4,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 410.0, 300.0, 115.0, 62.0 ],
+									"patching_rect" : [ 410.0, 320.0, 125.0, 67.0 ],
 									"text" : "fastrampup 100, fastrampdown 100, slowrampup 500, slowrampdown 500"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-31",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 440.0, 420.0, 115.0, 22.0 ],
+									"patching_rect" : [ 440.0, 440.0, 123.0, 23.0 ],
 									"text" : "minslicelength 4410"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-27",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 350.0, 160.0, 81.0, 22.0 ],
+									"patching_rect" : [ 350.0, 180.0, 87.0, 23.0 ],
 									"text" : "onthreshold 6"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-26",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 389.0, 240.0, 81.0, 22.0 ],
+									"patching_rect" : [ 389.0, 260.0, 87.0, 23.0 ],
 									"text" : "offthreshold 6"
 								}
 
@@ -1033,26 +1085,27 @@
 								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-12",
 									"maxclass" : "number~",
 									"mode" : 2,
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "float" ],
-									"patching_rect" : [ 230.0, 591.5, 56.0, 22.0 ],
+									"patching_rect" : [ 230.0, 591.5, 56.0, 23.0 ],
 									"sig" : 0.0
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-10",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 230.0, 550.0, 30.0, 22.0 ],
+									"patching_rect" : [ 230.0, 550.0, 31.0, 23.0 ],
 									"text" : "+=~"
 								}
 
@@ -1060,11 +1113,12 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
+									"fontsize" : 13.0,
 									"id" : "obj-9",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 87.0, 591.5, 99.0, 24.0 ],
+									"patching_rect" : [ 87.0, 591.5, 105.0, 25.0 ],
 									"text" : "Turn audio on"
 								}
 
@@ -1082,36 +1136,39 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-22",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 114.0, 440.0, 84.0, 22.0 ],
+									"patching_rect" : [ 122.0, 440.0, 90.0, 23.0 ],
 									"text" : "getattr latency"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-3",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 40.0, 503.0, 93.0, 22.0 ],
+									"patching_rect" : [ 40.0, 503.0, 101.0, 23.0 ],
 									"text" : "delay~ 44100 1"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-1",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 230.0, 490.0, 88.0, 22.0 ],
+									"patching_rect" : [ 230.0, 490.0, 95.0, 23.0 ],
 									"text" : "fluid.ampslice~"
 								}
 
@@ -1187,7 +1244,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 156.0, 476.0, 239.5, 476.0 ],
+									"midpoints" : [ 167.0, 477.0, 239.5, 477.0 ],
 									"source" : [ "obj-22", 1 ]
 								}
 
@@ -1195,6 +1252,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 1 ],
+									"midpoints" : [ 131.5, 465.0, 131.5, 465.0 ],
 									"source" : [ "obj-22", 0 ]
 								}
 
