@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 157.0, 196.0, 203.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufchroma~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 186.920043945312557, 108.0, 254.0, 22.0 ],
+					"patching_rect" : [ 204.920043945312557, 240.0, 254.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufchroma~",
 					"varname" : "basic_tab[2]"
 				}
@@ -3685,7 +3696,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 444.9200439453125, 108.0, 50.0, 22.0 ],
+					"patching_rect" : [ 462.9200439453125, 240.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 987.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 1004.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 618.0, 50.0, 176.0, 22.0 ],
+					"text" : "fluid.dsinterface fluid.skmeans~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 987.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1004.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1747,7 +1758,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 987.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1004.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2984,7 +2995,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 987.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1004.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3588,6 +3599,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
+									"midpoints" : [ 59.5, 204.0, 59.5, 204.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -3624,7 +3636,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 59.5, 171.0, 59.5, 171.0 ],
+									"midpoints" : [ 59.5, 240.0, 59.5, 240.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -3712,7 +3724,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 987.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1004.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -5063,7 +5075,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 987.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 1004.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -5776,7 +5788,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 987.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1004.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5809,7 +5821,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 633.0, 11.0, 25.0, 22.0 ],
+					"patching_rect" : [ 760.0, 90.0, 25.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

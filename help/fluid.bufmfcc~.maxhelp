@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 121.0, 236.0, 203.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufmfcc~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 90.0, 204.0, 259.0, 23.0 ],
+					"patching_rect" : [ 170.0, 300.0, 259.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufmfcc~"
 				}
 
@@ -85,7 +96,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 927.0, 648.0 ],
+						"rect" : [ 0.0, 26.0, 927.0, 648.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -449,7 +460,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 927.0, 648.0 ],
+						"rect" : [ 100.0, 126.0, 927.0, 648.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1027,7 +1038,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 132.0, 241.0, 50.0, 23.0 ],
+					"patching_rect" : [ 212.0, 337.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

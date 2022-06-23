@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 190.0, 220.0, 205.0, 23.0 ],
+					"text" : "fluid.dsinterface fluid.robustscale~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -2033,7 +2044,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 174.0, 190.0, 27.0, 23.0 ],
+					"patching_rect" : [ 240.0, 270.0, 27.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

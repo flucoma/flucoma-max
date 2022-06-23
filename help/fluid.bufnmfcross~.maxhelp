@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 88.0, 145.0, 228.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufnmfcross~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -421,7 +432,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 552.0, 10.0, 259.0, 110.0 ],
+									"patching_rect" : [ 572.0, 10.0, 259.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -553,7 +564,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 540.0, 110.0 ]
+									"patching_rect" : [ 10.0, 10.0, 560.0, 110.0 ]
 								}
 
 							}
@@ -818,7 +829,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 164.0, 85.0, 50.0, 23.0 ],
+					"patching_rect" : [ 184.0360107421875, 190.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
