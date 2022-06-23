@@ -40,13 +40,26 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"buffername" : "piano",
-					"id" : "obj-40",
-					"maxclass" : "waveform~",
-					"numinlets" : 5,
-					"numoutlets" : 6,
-					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-					"patching_rect" : [ 67.5, 586.0, 1041.0, 241.0 ]
+					"id" : "obj-32",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 2,
+					"outlettype" : [ "", "clear" ],
+					"patching_rect" : [ 67.5, 554.0, 47.0, 22.0 ],
+					"text" : "t l clear"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"filename" : "fluid.waveform~",
+					"id" : "obj-30",
+					"maxclass" : "jsui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 67.5, 610.0, 1085.0, 218.0 ]
 				}
 
 			}
@@ -57,8 +70,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 67.5, 518.0, 72.0, 22.0 ],
-					"text" : "prepend set"
+					"patching_rect" : [ 67.5, 518.0, 108.0, 22.0 ],
+					"text" : "prepend waveform"
 				}
 
 			}
@@ -556,7 +569,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 79.0, 275.0, 482.0 ],
+						"rect" : [ 34.0, 87.0, 275.0, 482.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -632,6 +645,18 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-13",
+													"maxclass" : "button",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "bang" ],
+													"parameter_enable" : 0,
+													"patching_rect" : [ 79.0, 347.0, 24.0, 24.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-9",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
@@ -673,7 +698,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 173.0, 341.0, 250.0, 60.0 ],
+													"patching_rect" : [ 173.0, 392.0, 250.0, 60.0 ],
 													"text" : "we count the number of times we are reported done by bufcompose and send a final bang when it is matching the number of concatenation needed."
 												}
 
@@ -727,7 +752,7 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "int" ],
 													"parameter_enable" : 0,
-													"patching_rect" : [ 151.0, 341.0, 20.0, 20.0 ],
+													"patching_rect" : [ 151.0, 392.0, 20.0, 20.0 ],
 													"rounded" : 60.0,
 													"text" : "4",
 													"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -861,7 +886,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "bang", "" ],
-													"patching_rect" : [ 79.0, 380.0, 29.5, 22.0 ],
+													"patching_rect" : [ 79.0, 431.0, 29.5, 22.0 ],
 													"text" : "sel"
 												}
 
@@ -873,7 +898,7 @@
 													"numinlets" : 5,
 													"numoutlets" : 4,
 													"outlettype" : [ "int", "", "", "int" ],
-													"patching_rect" : [ 79.0, 340.0, 61.0, 22.0 ],
+													"patching_rect" : [ 79.0, 391.0, 61.0, 22.0 ],
 													"text" : "counter"
 												}
 
@@ -958,7 +983,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 79.0, 423.0, 30.0, 30.0 ]
+													"patching_rect" : [ 79.0, 474.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -994,6 +1019,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-8", 0 ],
 													"source" : [ "obj-11", 8 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-13", 0 ]
 												}
 
 											}
@@ -1058,7 +1090,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-24", 0 ],
+													"destination" : [ "obj-13", 0 ],
 													"source" : [ "obj-26", 0 ]
 												}
 
@@ -1740,7 +1772,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 378.0, 79.0, 758.0, 496.0 ],
+										"rect" : [ 378.0, 87.0, 758.0, 496.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2555,8 +2587,22 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-40", 0 ],
+					"destination" : [ "obj-32", 0 ],
 					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"source" : [ "obj-32", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-30", 0 ],
+					"source" : [ "obj-32", 0 ]
 				}
 
 			}
