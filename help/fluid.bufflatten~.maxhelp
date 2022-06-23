@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 97.0, 100.0, 777.0, 647.0 ],
+		"rect" : [ 97.0, 100.0, 790.0, 647.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -42,6 +42,28 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 160.0, 190.0, 267.0, 23.0 ],
+					"text" : "fluid_decomposition.blocking fluid.bufflatten~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 120.0, 140.0, 211.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufflatten~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +79,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 97.0, 126.0, 777.0, 621.0 ],
+						"rect" : [ 0.0, 26.0, 790.0, 621.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -600,7 +622,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 777.0, 621.0 ],
+						"rect" : [ 97.0, 126.0, 790.0, 621.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1873,7 +1895,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 777.0, 621.0 ],
+						"rect" : [ 0.0, 26.0, 790.0, 621.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1906,7 +1928,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 205.0, 205.0, 50.0, 23.0 ],
+					"patching_rect" : [ 260.0, 240.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1922,6 +1944,20 @@
 			}
  ],
 		"lines" : [  ],
+		"parameters" : 		{
+			"obj-6::obj-39" : [ "live.text", "live.text", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",

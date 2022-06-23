@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 150.0, 170.0, 243.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufnoveltyslice~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 139.0, 164.0, 299.0, 23.0 ],
+					"patching_rect" : [ 220.0, 230.0, 299.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufnoveltyslice~"
 				}
 
@@ -109,7 +120,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 472.158004760742188, 400.0, 198.841995239257812, 54.0 ]
+									"patching_rect" : [ 472.0, 400.0, 198.841995239257812, 54.0 ]
 								}
 
 							}
@@ -1147,7 +1158,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 55.0, 107.0, 112.0, 23.0 ],
+					"patching_rect" : [ 55.0, 107.0, 59.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1156,7 +1167,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"basic example\""
+					"text" : "p basic"
 				}
 
 			}
@@ -1210,7 +1221,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 195.0, 197.0, 50.0, 23.0 ],
+					"patching_rect" : [ 276.0, 263.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

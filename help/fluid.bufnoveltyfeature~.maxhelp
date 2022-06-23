@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 65.0, 153.0, 225.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufnoveltyslice~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -775,7 +786,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 71.0, 97.0, 290.0, 22.0 ],
+					"patching_rect" : [ 115.0, 198.0, 290.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufnoveltyfeature~"
 				}
 
@@ -830,7 +841,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 363.0, 97.0, 50.0, 22.0 ],
+					"patching_rect" : [ 407.0, 198.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 87.0, 89.0, 843.0, 722.0 ],
+		"rect" : [ 87.0, 89.0, 819.0, 722.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 190.0, 140.0, 211.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufloudness~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 306.0, 30.0, 262.0, 22.0 ],
+					"patching_rect" : [ 340.0, 200.0, 262.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufloudness~"
 				}
 
@@ -68,7 +79,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 843.0, 696.0 ],
+						"rect" : [ 0.0, 26.0, 819.0, 696.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -782,7 +793,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 87.0, 115.0, 843.0, 696.0 ],
+						"rect" : [ 0.0, 26.0, 819.0, 696.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1489,7 +1500,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 843.0, 696.0 ],
+						"rect" : [ 0.0, 26.0, 819.0, 696.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1522,7 +1533,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 579.5, 30.0, 50.0, 22.0 ],
+					"patching_rect" : [ 613.5, 200.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

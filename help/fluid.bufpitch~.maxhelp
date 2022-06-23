@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 87.0, 890.0, 697.0 ],
+		"rect" : [ 40.0, 87.0, 814.0, 679.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 13.0,
@@ -42,13 +42,12 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"id" : "obj-6",
+					"id" : "obj-9",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 2,
-					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 390.0, 160.0, 143.0, 23.0 ],
-					"text" : "fluid.bufspectralshape~"
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 180.0, 250.0, 203.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufpitch~"
 				}
 
 			}
@@ -69,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 890.0, 671.0 ],
+						"rect" : [ 0.0, 26.0, 814.0, 653.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -491,7 +490,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 175.666672000000005, 239.333359000000002, 259.0, 23.0 ],
+					"patching_rect" : [ 240.0, 310.0, 259.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufpitch~"
 				}
 
@@ -513,7 +512,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 890.0, 671.0 ],
+						"rect" : [ 0.0, 26.0, 814.0, 653.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1114,7 +1113,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 618.0, 220.0, 231.0, 23.0 ],
+									"patching_rect" : [ 510.0, 221.0, 231.0, 23.0 ],
 									"text" : "buffer~ help.bufpitch.3.pitchconfidence"
 								}
 
@@ -1127,8 +1126,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 19.0, 180.0, 830.0, 23.0 ],
-									"text" : "fluid.bufpitch~ @source help.bufpitch.3.src @features help.bufpitch.3.pitchconfidence @fftsettings 8192 @select confidence @maxfftsize 8192"
+									"patching_rect" : [ 19.0, 180.0, 722.0, 23.0 ],
+									"text" : "fluid.bufpitch~ @source help.bufpitch.3.src @features help.bufpitch.3.pitchconfidence @fftsettings 8192 @select confidence"
 								}
 
 							}
@@ -1327,7 +1326,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 890.0, 671.0 ],
+						"rect" : [ 0.0, 26.0, 814.0, 653.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1620,7 +1619,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 113.0, 890.0, 671.0 ],
+						"rect" : [ 40.0, 113.0, 814.0, 653.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1650,6 +1649,27 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"args" : [ "pitch" ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-8",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.learn.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 0,
+									"offset" : [ 0.0, 0.0 ],
+									"patching_rect" : [ 570.0, 10.0, 220.0, 120.0 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-13",
 									"maxclass" : "newobj",
@@ -2129,7 +2149,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 890.0, 671.0 ],
+						"rect" : [ 0.0, 26.0, 814.0, 653.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2162,7 +2182,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 299.666672000000005, 295.333358999999973, 50.0, 23.0 ],
+					"patching_rect" : [ 364.0, 366.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

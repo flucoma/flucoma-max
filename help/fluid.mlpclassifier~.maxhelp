@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 87.0, 939.0, 812.0 ],
+		"rect" : [ 35.0, 88.0, 937.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 280.0, 130.0, 210.0, 23.0 ],
+					"text" : "fluid.dsinterface fluid.mlpclassifier~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 113.0, 939.0, 786.0 ],
+						"rect" : [ 0.0, 26.0, 937.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -94,7 +105,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 57.0, 424.0, 21.0 ],
-									"presentation_linecount" : 3,
 									"text" : "Predict the classification of one dataset based on the training of another.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1439,7 +1449,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 939.0, 786.0 ],
+						"rect" : [ 35.0, 114.0, 937.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2997,7 +3007,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 939.0, 786.0 ],
+						"rect" : [ 0.0, 26.0, 937.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,

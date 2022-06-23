@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 821.0, 677.0 ],
+		"rect" : [ 34.0, 87.0, 820.0, 677.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 188.0, 272.0, 237.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufspectralshape~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 821.0, 651.0 ],
+						"rect" : [ 0.0, 26.0, 820.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -489,7 +500,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 821.0, 651.0 ],
+						"rect" : [ 0.0, 26.0, 820.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1060,7 +1071,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 178.0, 270.0, 289.0, 22.0 ],
+					"patching_rect" : [ 246.0, 315.0, 289.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufspectralshape~"
 				}
 
@@ -1082,7 +1093,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 821.0, 651.0 ],
+						"rect" : [ 34.0, 113.0, 820.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2151,7 +2162,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 821.0, 651.0 ],
+						"rect" : [ 0.0, 26.0, 820.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2184,7 +2195,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 272.0, 315.0, 25.0, 22.0 ],
+					"patching_rect" : [ 340.0, 360.0, 25.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
