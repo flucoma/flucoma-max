@@ -253,11 +253,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-61",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 380.0, 216.0, 226.0, 36.0 ],
+									"patching_rect" : [ 380.0, 220.0, 371.0, 21.0 ],
 									"text" : "size of 'harmonic' median filter (in hops). Bigger = more latency",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -935,7 +934,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 937.0, 715.0 ],
+						"rect" : [ 100.0, 126.0, 937.0, 715.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2260,7 +2259,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 937.0, 715.0 ],
+						"rect" : [ 0.0, 26.0, 937.0, 715.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
