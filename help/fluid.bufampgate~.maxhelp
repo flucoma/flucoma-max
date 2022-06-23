@@ -235,11 +235,11 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-7",
-													"linecount" : 6,
+													"linecount" : 4,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 381.0, 135.0, 150.0, 87.0 ],
+													"patching_rect" : [ 381.0, 135.0, 255.0, 60.0 ],
 													"text" : "using automatic buffer management we can succintly separate onsets (channel 0) from offsets (channel 1) and return a new buffer for each ",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -717,7 +717,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 606.0, 261.0, 20.0, 20.0 ],
+									"patching_rect" : [ 636.0, 261.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -737,7 +737,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 567.0, 221.25, 20.0, 20.0 ],
+									"patching_rect" : [ 597.0, 221.25, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -757,7 +757,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 547.0, 181.5, 20.0, 20.0 ],
+									"patching_rect" : [ 577.0, 181.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -777,7 +777,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 657.0, 141.75, 20.0, 20.0 ],
+									"patching_rect" : [ 687.0, 141.75, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -787,12 +787,12 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-53",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 397.0, 259.0, 208.0, 24.0 ],
+									"patching_rect" : [ 397.0, 259.0, 223.0, 25.0 ],
 									"text" : "set both, e.g. to capture reverb tail",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -801,12 +801,12 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-52",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 288.0, 219.25, 279.0, 24.0 ],
+									"patching_rect" : [ 288.0, 219.25, 301.0, 25.0 ],
 									"text" : "move offset forwards to minimum within window",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -815,12 +815,12 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-51",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 255.0, 179.5, 291.0, 24.0 ],
+									"patching_rect" : [ 255.0, 179.5, 313.0, 25.0 ],
 									"text" : "move onset backwards to minimum within window",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -829,12 +829,12 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-50",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 247.0, 139.75, 405.0, 24.0 ],
+									"patching_rect" : [ 247.0, 139.75, 436.0, 25.0 ],
 									"text" : "set a minimum time for a transition to be below offthreshold, else ignore",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -843,12 +843,12 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-47",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 220.0, 100.0, 406.0, 24.0 ],
+									"patching_rect" : [ 220.0, 100.0, 438.0, 25.0 ],
 									"text" : "set a minimum time for a transition to be above onthreshold, else ignore",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -867,7 +867,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 632.0, 102.0, 20.0, 20.0 ],
+									"patching_rect" : [ 662.0, 102.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1385,7 +1385,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 532.0, 10.0, 242.0, 119.0 ],
+									"patching_rect" : [ 420.0, 10.0, 242.0, 119.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1417,8 +1417,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 542.0, 407.5, 75.0, 25.0 ],
-									"text" : "audio on"
+									"patching_rect" : [ 542.0, 407.5, 77.0, 25.0 ],
+									"text" : "Audio on"
 								}
 
 							}
@@ -1435,7 +1435,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 727.0, 242.5, 20.0, 20.0 ],
+									"patching_rect" : [ 729.0, 242.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1449,8 +1449,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 542.0, 240.0, 183.0, 25.0 ],
-									"text" : "play back onset/offset pairs"
+									"patching_rect" : [ 542.0, 240.0, 184.0, 25.0 ],
+									"text" : "Play back onset/offset pairs"
 								}
 
 							}
@@ -1494,8 +1494,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 93.5, 230.0, 116.0, 25.0 ],
-									"text" : "slice the source"
+									"patching_rect" : [ 93.5, 230.0, 118.0, 25.0 ],
+									"text" : "Slice the source"
 								}
 
 							}
@@ -2083,7 +2083,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 520.0, 119.0 ]
+									"patching_rect" : [ 10.0, 10.0, 400.0, 100.0 ]
 								}
 
 							}
@@ -2405,7 +2405,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 30.0, 590.0, 440.0, 60.0 ]
+									"patching_rect" : [ 30.0, 580.0, 440.0, 60.0 ]
 								}
 
 							}

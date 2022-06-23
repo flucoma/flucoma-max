@@ -510,7 +510,7 @@
 								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-7",
 									"maxclass" : "number~",
 									"mode" : 2,

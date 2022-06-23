@@ -85,7 +85,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 828.0, 651.0 ],
+						"rect" : [ 0.0, 26.0, 828.0, 651.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -548,7 +548,7 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 12.0,
+													"fontsize" : 13.0,
 													"id" : "obj-28",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 1,
@@ -824,7 +824,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 420.0, 50.0 ]
+									"patching_rect" : [ 10.0, 10.0, 420.0, 48.0 ]
 								}
 
 							}
@@ -1479,7 +1479,7 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 12.0,
+													"fontsize" : 13.0,
 													"id" : "obj-28",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 1,

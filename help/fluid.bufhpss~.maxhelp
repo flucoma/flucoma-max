@@ -1488,7 +1488,7 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 12.0,
+													"fontsize" : 13.0,
 													"id" : "obj-28",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 1,
@@ -1699,7 +1699,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 16.600006103515625, 353.999999999999943, 168.0, 23.0 ],
+									"patching_rect" : [ 16.600006103515625, 383.999999999999943, 168.0, 23.0 ],
 									"text" : "buffer~ help.hpss.residual.3"
 								}
 
@@ -1824,7 +1824,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 16.600006103515625, 326.999999999999943, 185.0, 23.0 ],
+									"patching_rect" : [ 16.600006103515625, 346.999999999999943, 185.0, 23.0 ],
 									"text" : "buffer~ help.hpss.percussive.3"
 								}
 
@@ -1836,7 +1836,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 16.600006103515625, 299.999999999999943, 176.0, 23.0 ],
+									"patching_rect" : [ 16.600006103515625, 309.999999999999943, 176.0, 23.0 ],
 									"text" : "buffer~ help.hpss.harmonic.3"
 								}
 
@@ -2188,7 +2188,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 35.5, 289.5, 290.0, 30.0 ],
+									"patching_rect" : [ 23.20001220703125, 230.0, 290.0, 30.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -2322,7 +2322,7 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 12.0,
+													"fontsize" : 13.0,
 													"id" : "obj-28",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 1,
@@ -3136,12 +3136,11 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"bubbleside" : 2,
 									"id" : "obj-107",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 61.5, 247.5, 98.0, 40.0 ],
+									"patching_rect" : [ 315.20001220703125, 232.5, 113.0, 25.0 ],
 									"text" : "select a source"
 								}
 
@@ -3159,7 +3158,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 40.0, 250.0, 20.0, 20.0 ],
+									"patching_rect" : [ 430.20001220703125, 235.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3172,7 +3171,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 386.375, 590.432372999999984, 105.0, 21.0 ],
+									"patching_rect" : [ 386.375, 612.5, 105.0, 21.0 ],
 									"text" : "bang when done",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -3186,7 +3185,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 355.375, 588.432372999999984, 24.0, 24.0 ]
+									"patching_rect" : [ 355.375, 610.5, 24.0, 24.0 ]
 								}
 
 							}
@@ -3217,7 +3216,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 35.5, 324.0, 140.0, 23.0 ],
+									"patching_rect" : [ 23.20001220703125, 274.0, 140.0, 23.0 ],
 									"text" : "buffer~ help.hpss.src.2"
 								}
 
@@ -3229,7 +3228,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 35.5, 388.885581999999999, 185.0, 23.0 ],
+									"patching_rect" : [ 23.20001220703125, 360.0, 185.0, 23.0 ],
 									"text" : "buffer~ help.hpss.percussive.2"
 								}
 
@@ -3241,7 +3240,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 35.5, 356.453209000000015, 176.0, 23.0 ],
+									"patching_rect" : [ 23.20001220703125, 320.0, 176.0, 23.0 ],
 									"text" : "buffer~ help.hpss.harmonic.2"
 								}
 
@@ -3254,7 +3253,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 355.375, 527.932372999999984, 383.0, 52.0 ],
+									"patching_rect" : [ 355.375, 550.0, 383.0, 52.0 ],
 									"text" : "fluid.bufhpss~ @source help.hpss.src.2 @harmonic help.hpss.harmonic.2 @percussive help.hpss.percussive.2 @maskingmode 1"
 								}
 
@@ -3497,7 +3496,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3645,7 +3644,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 813.0, 570.0, 748.0, 279.0 ],
+										"rect" : [ 658.0, 570.0, 748.0, 279.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3926,7 +3925,7 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 12.0,
+													"fontsize" : 13.0,
 													"id" : "obj-28",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 1,
@@ -4380,7 +4379,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4711,7 +4710,7 @@
 											}
 , 											{
 												"box" : 												{
-													"fontsize" : 12.0,
+													"fontsize" : 13.0,
 													"id" : "obj-28",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 1,
@@ -4994,7 +4993,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 320.0, 412.0, 105.0, 21.0 ],
+									"patching_rect" : [ 320.0, 420.0, 105.0, 21.0 ],
 									"text" : "bang when done",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
