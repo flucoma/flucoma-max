@@ -4534,7 +4534,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 942.0, 685.0 ],
+						"rect" : [ 35.0, 114.0, 942.0, 685.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -4571,8 +4571,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 509.916687000000024, 398.0, 75.0, 25.0 ],
-									"text" : "audio on"
+									"patching_rect" : [ 509.916687000000024, 398.0, 77.0, 25.0 ],
+									"text" : "Audio on"
 								}
 
 							}
@@ -4652,8 +4652,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 488.916687000000024, 210.0, 106.0, 25.0 ],
-									"text" : "start playback"
+									"patching_rect" : [ 502.416687000000024, 210.0, 108.0, 25.0 ],
+									"text" : "Start playback"
 								}
 
 							}
@@ -4670,7 +4670,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 600.0, 212.5, 20.0, 20.0 ],
+									"patching_rect" : [ 610.0, 212.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -4686,7 +4686,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 740.0, 285.083374000000049, 142.0, 40.0 ],
-									"text" : "select a component to listen to"
+									"text" : "Select a component to listen to"
 								}
 
 							}
@@ -5935,7 +5935,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 670.0, 21.0 ],
 									"style" : "helpfile_label",
-									"text" : "using the basesmode or actmode attributes, we can guide NMF's behaviour to 'find' particular spectral components"
+									"text" : "Using the basesmode or actmode attributes, we can guide NMF's behaviour to 'find' particular spectral components"
 								}
 
 							}
@@ -5999,8 +5999,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 55.5, 110.0, 101.0, 25.0 ],
-									"text" : "start analysis"
+									"patching_rect" : [ 55.5, 110.0, 104.0, 25.0 ],
+									"text" : "Start analysis"
 								}
 
 							}
@@ -6017,7 +6017,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 158.5, 112.5, 20.0, 20.0 ],
+									"patching_rect" : [ 162.0, 112.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]

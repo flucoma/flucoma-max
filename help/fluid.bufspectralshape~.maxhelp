@@ -1162,7 +1162,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 200.0, 560.0, 480.0, 21.0 ],
-									"text" : "These are the features formatted as a dictionary so that you can easily read then. ",
+									"text" : "These are the features formatted as a dictionary so that you can easily read them. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 

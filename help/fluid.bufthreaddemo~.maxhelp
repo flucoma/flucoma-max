@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 1174.0, 849.0 ],
+						"rect" : [ 0.0, 26.0, 1174.0, 849.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1674,7 +1674,7 @@
 										"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ]
 									}
 ,
-									"patching_rect" : [ 590.0, 465.0, 67.0, 22.0 ],
+									"patching_rect" : [ 590.0, 465.0, 69.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -2434,7 +2434,7 @@
 										"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ]
 									}
 ,
-									"patching_rect" : [ 371.5, 465.0, 67.0, 22.0 ],
+									"patching_rect" : [ 371.5, 465.0, 69.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3206,7 +3206,7 @@
 										"bgfillcolor_color" : [ 0.290196, 0.309804, 0.301961, 1.0 ]
 									}
 ,
-									"patching_rect" : [ 147.0, 465.0, 67.0, 22.0 ],
+									"patching_rect" : [ 147.0, 465.0, 69.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3304,7 +3304,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 1 ],
-									"midpoints" : [ 36.5, 449.0, 204.5, 449.0 ],
+									"midpoints" : [ 36.5, 449.0, 206.5, 449.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -3497,7 +3497,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-86", 1 ],
-									"midpoints" : [ 250.75, 436.0, 429.0, 436.0 ],
+									"midpoints" : [ 250.75, 436.0, 431.0, 436.0 ],
 									"source" : [ "obj-88", 0 ]
 								}
 
@@ -3526,7 +3526,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-96", 1 ],
-									"midpoints" : [ 465.0, 443.0, 647.5, 443.0 ],
+									"midpoints" : [ 465.0, 443.0, 649.5, 443.0 ],
 									"source" : [ "obj-98", 0 ]
 								}
 
@@ -3914,7 +3914,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1174.0, 849.0 ],
+						"rect" : [ 100.0, 126.0, 1174.0, 849.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3964,7 +3964,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 67.0, 559.0, 36.0 ],
-									"text" : "The Fluid Decomposition Toolkit has some different options for threading, depending on the type of processing you're doing"
+									"text" : "The Fluid Corpus Manipulation Toolkit has some different options for threading, depending on the type of processing you're doing"
 								}
 
 							}
@@ -4248,7 +4248,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.75, 276.0, 169.0, 33.0 ],
+									"patching_rect" : [ 151.75, 276.0, 175.0, 36.0 ],
 									"text" : "You can abort a threaded job using the 'cancel' message",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -4262,7 +4262,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 421.0, 370.0, 309.0, 87.0 ],
+									"patching_rect" : [ 421.0, 370.0, 309.0, 94.0 ],
 									"text" : "When blocking = 0, the right outlet of the object will report approximate job progress.\n\nThe left outlet will still output a message when finished, which you can use to trigger your next round of processing",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -4276,7 +4276,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 194.5, 166.0, 390.0, 47.0 ],
+									"patching_rect" : [ 194.5, 166.0, 390.0, 50.0 ],
 									"text" : "For more intensive jobs, this might cause 'beach balling'. In these circumstances you can opt to use a custom thread instead, to avoid locking up Max, by setting 'blocking' to 0. ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -4315,7 +4315,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 98.0, 281.5, 45.0, 22.0 ],
+									"patching_rect" : [ 98.0, 281.5, 46.0, 23.0 ],
 									"text" : "cancel"
 								}
 
@@ -4328,7 +4328,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 67.0, 224.0, 97.0, 22.0 ],
+									"patching_rect" : [ 67.0, 224.0, 102.0, 23.0 ],
 									"text" : "time 3000, bang"
 								}
 
@@ -4342,7 +4342,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 36.0, 457.0, 50.0, 22.0 ]
+									"patching_rect" : [ 36.0, 457.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -4373,7 +4373,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 67.0, 390.0, 30.0, 22.0 ],
+									"patching_rect" : [ 67.0, 390.0, 30.0, 23.0 ],
 									"text" : "0"
 								}
 
@@ -4386,7 +4386,7 @@
 									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "float" ],
-									"patching_rect" : [ 67.0, 422.0, 76.0, 22.0 ],
+									"patching_rect" : [ 67.0, 422.0, 80.0, 23.0 ],
 									"text" : "peek~ result"
 								}
 
@@ -4399,7 +4399,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 67.0, 356.0, 201.0, 22.0 ],
+									"patching_rect" : [ 67.0, 356.0, 215.0, 23.0 ],
 									"text" : "fluid.bufthreaddemo~ @result result"
 								}
 
@@ -4414,7 +4414,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 194.5, 219.0, 267.0, 22.0 ]
+									"patching_rect" : [ 194.5, 219.0, 267.0, 23.0 ]
 								}
 
 							}

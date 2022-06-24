@@ -79,7 +79,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 790.0, 621.0 ],
+						"rect" : [ 97.0, 126.0, 790.0, 621.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -342,11 +342,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-30",
-									"linecount" : 3,
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 270.0, 223.5, 262.0, 50.0 ],
+									"patching_rect" : [ 270.0, 230.5, 332.0, 36.0 ],
 									"text" : "Produces a buffer of 12 channels with 7 frames. Each frame is a statistical measurement of the chroma values",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -622,7 +622,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 97.0, 126.0, 790.0, 621.0 ],
+						"rect" : [ 0.0, 26.0, 790.0, 621.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1143,7 +1143,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 234.0, 246.0, 206.0, 21.0 ],
-									"text" : "input ( here 3 frames, 3 channels) ",
+									"text" : "input (here 3 frames, 3 channels) ",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 

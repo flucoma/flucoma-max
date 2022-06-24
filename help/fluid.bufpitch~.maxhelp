@@ -739,7 +739,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 298.0, 330.0, 312.0, 47.0 ],
-													"text" : "we use this formula to convert slice indices into milliseconds. We use the hop size (4096 samples) here as a static variablebut it would be dynamically changed!",
+													"text" : "we use this formula to convert slice indices into milliseconds. We use the hop size (4096 samples) here as a static variable but it would be dynamically changed!",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
@@ -1149,8 +1149,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 11.0, 64.0, 275.0, 21.0 ],
-									"text" : "grains from just the piched portions of a sound",
+									"patching_rect" : [ 11.0, 64.0, 278.0, 21.0 ],
+									"text" : "Grains from just the piched portions of a sound",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1361,7 +1361,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 69.599853515625, 326.0, 21.0 ],
+									"patching_rect" : [ 10.0, 60.0, 326.0, 21.0 ],
 									"text" : "Multichannel buffers are processed channel by channel",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1462,7 +1462,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 313.279998779296875, 57.599853515625 ]
+									"patching_rect" : [ 10.0, 10.0, 310.0, 57.599853515625 ]
 								}
 
 							}
@@ -1809,8 +1809,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 67.0, 250.0, 75.0, 25.0 ],
-									"text" : "audio on"
+									"patching_rect" : [ 67.0, 250.0, 77.0, 25.0 ],
+									"text" : "Audio on"
 								}
 
 							}

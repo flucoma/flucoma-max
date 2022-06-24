@@ -1079,8 +1079,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 412.5, 222.0, 299.0, 21.0 ],
-									"text" : "gets the latency calculation directly from the object",
+									"patching_rect" : [ 420.0, 222.0, 302.0, 21.0 ],
+									"text" : "Gets the latency calculation directly from the object",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1091,8 +1091,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 345.0, 299.0, 188.0, 21.0 ],
-									"text" : "the delay compensated original",
+									"patching_rect" : [ 345.0, 299.0, 193.0, 21.0 ],
+									"text" : "The delay compensated original",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 

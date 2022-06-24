@@ -79,7 +79,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 906.0, 705.0 ],
+						"rect" : [ 35.0, 114.0, 906.0, 705.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -236,7 +236,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 690.0, 400.0, 198.0, 79.0 ],
-									"text" : "You can think of this as a single channel in a buffer with 21 frames. Each consecutive group of 7 statistics belong to a single derivative.",
+									"text" : "You can think of this as a single channel in a buffer with 21 frames. Each consecutive group of 7 statistics belongs to a single derivative.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -612,7 +612,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 906.0, 705.0 ],
+						"rect" : [ 0.0, 26.0, 906.0, 705.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -776,7 +776,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 405.0, 305.0, 240.0, 50.0 ],
-									"text" : "here we taken every second channel and every second frame from a 4 frame x 5 channel source buffer.",
+									"text" : "Here we have taken every second channel and every second frame from a 4 frame x 5 channel source buffer.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 

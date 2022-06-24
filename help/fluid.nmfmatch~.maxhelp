@@ -1858,7 +1858,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 886.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 886.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1896,7 +1896,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 400.0, 301.382858999999996, 392.0, 67.0 ],
-									"text" : "626.064087 606.312195 450.551544 349.782501 1581.245605 2322.650391 500.837158 1296.033081 485.683136 521.20343 1346.610352 1301.424438 540.170349 362.851349 706.258667 3266.686768"
+									"text" : "616.558716 502.433472 1576.040283 657.483459 406.496796 1518.972778 2352.266846 524.6651 616.41748 3105.3 1442.16687 354.806519 361.575867 524.216675 511.891449 1288.352539"
 								}
 
 							}
@@ -3018,38 +3018,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
-									"id" : "obj-52",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 384.0, 1118.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "2",
-									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-54",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 425.0, 1118.0, 301.0, 36.0 ],
-									"text" : "wait for it to finish. The 2 bases with the lowest centroid is copied to the first channel"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-12",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -3490,7 +3458,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 886.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 886.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,

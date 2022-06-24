@@ -58,7 +58,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 829.0, 652.0 ],
+						"rect" : [ 35.0, 114.0, 829.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -97,7 +97,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 315.0, 202.5, 90.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Play sound"
 								}
 
@@ -157,7 +156,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 420.0, 324.0, 174.0, 108.0 ],
-									"text" : "an example where many of the parameters are tuned to a specific musical example.\n\nThe sensitivity doesn't catch everything, but its sensitive to the most salient hits.",
+									"text" : "An example where many of the parameters are tuned to a specific musical example.\n\nThe sensitivity doesn't catch everything, but its sensitive to the most salient hits.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -240,7 +239,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 540.0, 10.0, 230.0, 110.0 ],
+									"patching_rect" : [ 550.0, 10.0, 220.0, 105.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -488,7 +487,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 829.0, 652.0 ],
+						"rect" : [ 0.0, 26.0, 829.0, 652.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -858,12 +857,12 @@
 									"bubble" : 1,
 									"fontsize" : 13.0,
 									"id" : "obj-71",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 567.75, 409.5, 177.25, 83.0 ],
-									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms.",
+									"patching_rect" : [ 567.75, 409.5, 177.25, 69.0 ],
+									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -912,7 +911,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 539.5, 310.0, 236.0, 83.0 ],
-									"text" : "Make the fast envelope a bit smoother, and the slow envelope a lot smoother. \n\nIt's not perfect but a little less jittery.",
+									"text" : "Make the fast envelope a bit smoother, and the slow envelope a lot smoother. \n\nIt's not perfect but a little less jittery",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -927,7 +926,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 482.0, 244.0, 268.0, 54.0 ],
-									"text" : "Fast envelope has to go 6dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected.",
+									"text" : "Fast envelope has to go 6dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -995,7 +994,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 92.0, 247.0, 60.0, 21.0 ],
+									"patching_rect" : [ 100.0, 246.0, 60.0, 21.0 ],
 									"text" : "rate (ms)",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}

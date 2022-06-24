@@ -235,7 +235,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 704.699999675154686, 218.5, 170.0, 36.0 ],
-									"text" : "Compure the stats across each spectral shape feature",
+									"text" : "Compute the stats across each spectral shape feature",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -599,8 +599,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 120.0, 213.0, 25.0 ],
-									"text" : "generate some random data first"
+									"patching_rect" : [ 50.0, 120.0, 216.0, 25.0 ],
+									"text" : "Generate some random data first"
 								}
 
 							}
@@ -2923,7 +2923,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 199.0, 298.0, 557.0, 36.0 ],
+									"patching_rect" : [ 199.0, 291.5, 557.0, 36.0 ],
 									"text" : "Get the number of columns, or dimensions of the data points. Since all points must have the same number of dimensions, this is just a single number. It is reported out the left outlet.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}

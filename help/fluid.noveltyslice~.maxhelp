@@ -693,7 +693,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 77.0, 450.5, 89.0, 25.0 ],
-									"text" : "Start Audio"
+									"text" : "Start audio"
 								}
 
 							}

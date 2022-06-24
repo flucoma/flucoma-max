@@ -187,7 +187,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.0, 260.0, 157.0, 94.0 ],
-									"text" : "By matching the various amplitude envelope attributes we get a sense for how the slicer is determining changes in the signal.",
+									"text" : "By matching the various amplitude envelope attributes we get a sense of how the slicer is determining changes in the signal.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 

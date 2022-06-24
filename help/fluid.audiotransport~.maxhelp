@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 832.0, 694.0 ],
+						"rect" : [ 35.0, 114.0, 832.0, 694.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -93,7 +93,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 444.0, 21.0 ],
-									"presentation_linecount" : 8,
 									"text" : "Demonstrating the significant impact of FFT setings on fluid.audiotransport~",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -360,7 +359,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 600.0, 353.0, 151.0, 98.0 ],
-									"text" : "Try these different fftsettings to see how it affects the results of the audiotransport~ algorithm. "
+									"text" : "Try these different fftsettings to see how it affects the results of the audiotransport~ algorithm"
 								}
 
 							}
@@ -639,7 +638,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 832.0, 694.0 ],
+						"rect" : [ 0.0, 26.0, 832.0, 694.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -734,7 +733,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 630.0, 420.0, 20.0, 20.0 ],
+									"patching_rect" : [ 640.0, 406.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -818,7 +817,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 450.0, 394.0, 174.0, 55.0 ],
+									"patching_rect" : [ 460.0, 380.0, 174.0, 55.0 ],
 									"text" : "Interpolate between the two different source sounds"
 								}
 

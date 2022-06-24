@@ -79,7 +79,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 828.0, 633.0 ],
+						"rect" : [ 35.0, 114.0, 828.0, 633.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -187,7 +187,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 415.0, 301.5, 373.0, 50.0 ],
-									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling. You can optionall clip the output, as to not exceed the specified output minimum and maximum.",
+									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling. You can optionally clip the output, as to not exceed the specified output minimum and maximum.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 

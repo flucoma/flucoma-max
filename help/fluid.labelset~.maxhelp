@@ -93,7 +93,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 76.0, 310.0, 390.0, 25.0 ],
+									"patching_rect" : [ 46.0, 310.0, 390.0, 25.0 ],
 									"text" : "Set the point and label of corresponding dataset~ and labelset~"
 								}
 
@@ -106,7 +106,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 310.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 310.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -116,7 +116,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 208.0, 478.5, 156.0, 95.0 ]
+									"patching_rect" : [ 178.0, 478.5, 156.0, 95.0 ]
 								}
 
 							}
@@ -127,7 +127,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 208.0, 443.5, 74.0, 23.0 ],
+									"patching_rect" : [ 178.0, 443.5, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -140,7 +140,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 320.0, 260.0, 152.0, 23.0 ],
+									"patching_rect" : [ 310.0, 250.0, 152.0, 23.0 ],
 									"text" : "buffer~ features.stats.flat"
 								}
 
@@ -186,7 +186,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 468.0, 312.5, 20.0, 20.0 ],
+									"patching_rect" : [ 438.0, 312.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -200,8 +200,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 320.0, 282.0, 123.0 ],
-									"text" : "setlabel message is sent to the fluid.labelset~ below associating the identifier \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the identifier \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that identifier.",
+									"patching_rect" : [ 540.0, 312.5, 283.0, 123.0 ],
+									"text" : "The setlabel message is sent to the fluid.labelset~ below associating the identifier \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the identifier \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that identifier.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -212,7 +212,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 507.0, 478.5, 156.0, 95.0 ]
+									"patching_rect" : [ 477.0, 478.5, 156.0, 95.0 ]
 								}
 
 							}
@@ -223,7 +223,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 507.0, 443.5, 74.0, 23.0 ],
+									"patching_rect" : [ 477.0, 443.5, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -235,7 +235,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 360.0, 370.0, 207.0, 23.0 ],
+									"patching_rect" : [ 330.0, 370.0, 207.0, 23.0 ],
 									"text" : "setlabel scratch-synth noisy, dump"
 								}
 
@@ -247,7 +247,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 360.0, 410.0, 166.0, 23.0 ],
+									"patching_rect" : [ 330.0, 410.0, 166.0, 23.0 ],
 									"text" : "fluid.labelset~ sound-labels"
 								}
 
@@ -265,7 +265,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 620.0, 132.0, 20.0, 20.0 ],
+									"patching_rect" : [ 610.0, 122.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -280,7 +280,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 60.0, 115.0, 549.0, 54.0 ],
+									"patching_rect" : [ 50.0, 105.0, 549.0, 54.0 ],
 									"text" : "Calculate the MFCCs across a source buffer. Calculate the statistics across each coefficient per spectral frame and flatten the data to a single dimension. This is a common workflow for storing a large number of descriptors in a dataset"
 								}
 
@@ -292,7 +292,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 410.0, 177.0, 23.0 ],
+									"patching_rect" : [ 20.0, 410.0, 177.0, 23.0 ],
 									"text" : "fluid.dataset~ sound-analysis"
 								}
 
@@ -304,7 +304,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 370.0, 277.0, 23.0 ],
+									"patching_rect" : [ 20.0, 370.0, 277.0, 23.0 ],
 									"text" : "setpoint scratch-synth features.stats.flat, dump"
 								}
 
@@ -317,7 +317,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 30.0, 130.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 120.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -329,7 +329,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 260.0, 279.0, 23.0 ],
+									"patching_rect" : [ 20.0, 250.0, 279.0, 23.0 ],
 									"text" : "fluid.bufflatten~ @destination features.stats.flat"
 								}
 
@@ -342,7 +342,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 220.0, 89.0, 23.0 ],
+									"patching_rect" : [ 20.0, 210.0, 89.0, 23.0 ],
 									"text" : "fluid.bufstats~"
 								}
 
@@ -355,7 +355,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 180.0, 292.0, 23.0 ],
+									"patching_rect" : [ 20.0, 170.0, 292.0, 23.0 ],
 									"text" : "fluid.bufmfcc~ 13 @source help.labelset.srcaudio"
 								}
 
@@ -367,7 +367,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 333.0, 180.0, 421.0, 23.0 ],
+									"patching_rect" : [ 323.0, 170.0, 421.0, 23.0 ],
 									"text" : "buffer~ help.labelset.srcaudio Tremblay-ASWINE-ScratchySynth-M.wav"
 								}
 
@@ -397,7 +397,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 59.5, 356.0, 369.5, 356.0 ],
+									"midpoints" : [ 29.5, 356.0, 339.5, 356.0 ],
 									"order" : 0,
 									"source" : [ "obj-16", 0 ]
 								}
@@ -406,7 +406,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-18", 0 ],
-									"midpoints" : [ 59.5, 335.0, 59.5, 335.0 ],
+									"midpoints" : [ 29.5, 335.0, 29.5, 335.0 ],
 									"order" : 1,
 									"source" : [ "obj-16", 0 ]
 								}
@@ -1084,7 +1084,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 209.0, 465.0, 161.0, 210.0 ]
+									"patching_rect" : [ 209.0, 465.0, 191.0, 195.0 ]
 								}
 
 							}
@@ -1456,8 +1456,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 62.0, 499.0, 20.0 ],
-									"text" : "You can load the contents of a dictionary into a fluid.abelset~ assuming the format is correct.",
+									"patching_rect" : [ 10.0, 62.0, 501.0, 20.0 ],
+									"text" : "You can load the contents of a dictionary into a fluid.labelset~ assuming the format is correct.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -2167,7 +2167,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 393.0, 262.25, 421.0, 54.0 ],
-									"text" : "Set and update labels with the corresponding messages. The setlabel message will create the label if it doesn't exist, while updatelabel message assumes it already exists and will not make it."
+									"text" : "Set and update labels with the corresponding messages. The setlabel message will create the label if it doesn't exist, while the updatelabel message assumes it already exists and will not make it."
 								}
 
 							}

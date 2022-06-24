@@ -94,7 +94,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 430.0, 154.0, 36.0 ],
-									"text" : "This is the mean of each coefficient in order",
+									"text" : "This is the mean of each coefficient in order.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -107,7 +107,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 250.0, 117.0, 23.0 ],
-									"text" : "buffer u900005461"
+									"text" : "buffer u331005129"
 								}
 
 							}
@@ -118,7 +118,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 383.0, 193.5, 217.0, 36.0 ],
+									"patching_rect" : [ 383.0, 193.5, 221.0, 36.0 ],
 									"text" : "The buffer of audio features is made for you automatically.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -132,7 +132,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 150.0, 283.5, 265.0, 36.0 ],
-									"text" : "The buffer for output is automatically created for you and passed to fluid.buf2list",
+									"text" : "The buffer for output is automatically created for you and passed to fluid.buf2list.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
 
