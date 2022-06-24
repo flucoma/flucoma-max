@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-4",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 190.0, 220.0, 205.0, 23.0 ],
+					"text" : "fluid.dsinterface fluid.robustscale~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -198,7 +209,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 38.0, 864.0, 352.0, 36.0 ],
-									"text" : "By normalizing to a uniform scale, both would be weighted equally",
+									"text" : "By scaling to a uniform scale, both would be weighted equally",
 									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
 								}
 
@@ -1111,7 +1122,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @source standardize.help.point",
+													"text" : "fluid.buf2list @source robustscale.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -1260,7 +1271,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 768.0, 114.5, 20.0, 20.0 ],
+									"patching_rect" : [ 731.0, 112.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1275,8 +1286,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 550.0, 112.5, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"patching_rect" : [ 550.0, 112.5, 179.0, 40.0 ],
+									"text" : "Scale the dataset of raw data"
 								}
 
 							}
@@ -1509,7 +1520,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"visualising standardisation\"",
+					"text" : "p \"visualising robust scaling\"",
 					"varname" : "basic_tab[2]"
 				}
 
@@ -1613,7 +1624,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 580.5, 160.0, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"text" : "Scale the dataset of raw data"
 								}
 
 							}
@@ -2033,7 +2044,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 174.0, 190.0, 27.0, 23.0 ],
+					"patching_rect" : [ 240.0, 270.0, 27.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2050,23 +2061,12 @@
  ],
 		"lines" : [  ],
 		"parameters" : 		{
-			"obj-1::obj-12::obj-1" : [ "live.slider", "Zoom", 0 ],
+			"obj-1::obj-6::obj-1" : [ "live.slider", "Zoom", 0 ],
 			"parameterbanks" : 			{
 				"0" : 				{
 					"index" : 0,
 					"name" : "",
 					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
-				}
-
-			}
-,
-			"parameter_overrides" : 			{
-				"obj-1::obj-12::obj-1" : 				{
-					"parameter_exponent" : 1.0,
-					"parameter_longname" : "live.slider",
-					"parameter_range" : [ 1.0, 10.0 ],
-					"parameter_shortname" : "Zoom",
-					"parameter_unitstyle" : 1
 				}
 
 			}

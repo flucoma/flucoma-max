@@ -42,6 +42,18 @@
 		"title" : "comparing scalers",
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "button",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 30.0, 390.0, 24.0, 24.0 ]
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"bgmode" : 0,
 					"border" : 1,
 					"clickthrough" : 0,
@@ -97,13 +109,37 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "newobj",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 17.0, 301.0, 73.0, 22.0 ],
+									"text" : "speedlim 20"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 101.0, 301.0, 165.0, 22.0 ],
+									"text" : "loadmess pointsizescale 0.15"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"comment" : "",
 									"id" : "obj-8",
 									"index" : 1,
 									"maxclass" : "outlet",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 17.0, 305.0, 30.0, 30.0 ]
+									"patching_rect" : [ 17.0, 343.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -240,7 +276,22 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-8", 0 ],
+									"midpoints" : [ 110.5, 339.0, 26.5, 339.0 ],
+									"source" : [ "obj-6", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-7", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-8", 0 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -345,7 +396,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 77.0, 139.0, 22.0 ],
-									"text" : "fittransform u554000892"
+									"text" : "fittransform u445011362"
 								}
 
 							}
@@ -533,7 +584,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 77.0, 139.0, 22.0 ],
-									"text" : "fittransform u930000829"
+									"text" : "fittransform u507011364"
 								}
 
 							}
@@ -721,7 +772,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 77.0, 139.0, 22.0 ],
-									"text" : "fittransform u245000884"
+									"text" : "fittransform u872011359"
 								}
 
 							}
@@ -844,6 +895,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-31",
 					"jsarguments" : [ 0.15 ],
@@ -858,6 +910,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-28",
 					"jsarguments" : [ 0.15 ],
@@ -872,6 +925,7 @@
 			}
 , 			{
 				"box" : 				{
+					"border" : 0,
 					"filename" : "fluid.plotter",
 					"id" : "obj-26",
 					"jsarguments" : [ 0.15 ],
@@ -907,28 +961,6 @@
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 720.0, 160.0, 100.0, 23.0 ],
 					"text" : "fluid.normalize~"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"args" : [ "@file", "Olencki-TenTromboneLongTones-M.wav" ],
-					"bgmode" : 0,
-					"border" : 0,
-					"clickthrough" : 0,
-					"enablehscroll" : 0,
-					"enablevscroll" : 0,
-					"id" : "obj-3",
-					"lockeddragscroll" : 0,
-					"lockedsize" : 0,
-					"maxclass" : "bpatcher",
-					"name" : "fluid.bufloader.maxpat",
-					"numinlets" : 0,
-					"numoutlets" : 1,
-					"offset" : [ 0.0, 0.0 ],
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 110.0, 290.0, 30.0 ],
-					"viewvisibility" : 1
 				}
 
 			}
@@ -1099,12 +1131,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-1",
+					"linecount" : 2,
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 30.0, 150.0, 204.0, 23.0 ],
-					"text" : "buffer~ help.scalercomparison.src"
+					"patching_rect" : [ 30.0, 113.5, 255.0, 38.0 ],
+					"text" : "buffer~ help.scalercomparison.src Olencki-TenTromboneLongTones-M.wav"
 				}
 
 			}
@@ -1175,13 +1208,6 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-1", 0 ],
-					"source" : [ "obj-3", 0 ]
-				}
-
-			}
-, 			{
-				"patchline" : 				{
 					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-4", 0 ]
 				}
@@ -1191,6 +1217,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-26", 0 ],
 					"source" : [ "obj-47", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}

@@ -163,7 +163,7 @@ public:
     }
 
     if(!(client.controlChannelsIn() > 0))
-    object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform),
+      object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform),
                   0, nullptr);
   }
 
@@ -211,8 +211,13 @@ public:
     switch (io)
     {
     case 1:
-      snprintf_zero(s, 512, "(signal) %s", client.getInputLabel(index));
+    {
+      if(!client.controlChannelsIn())
+        snprintf_zero(s, 512, "(signal) %s", client.getInputLabel(index));
+      else
+        snprintf_zero(s, 512, "(list) %s", client.getInputLabel(index));
       break;
+    }
     case 2:
       if (index < client.audioChannelsOut())
       {
@@ -462,11 +467,16 @@ struct NonRealTime
     {
       switch (io)
       {
-      case 1: strncpy_zero(s, "(bang) start processing", 512); break;
+      case 1:
+        {
+          if(index == 0) strncpy_zero(s, "(bang) start processing; (buffer <symbol>) set source and start processing", 512);
+          else x->mInputBufferAssist[index](x,s);
+          break;
+        }
       case 2:
           if(index < Wrapper::NumOutputBuffers)
           {
-             x->mBufferAssist[index](x,s);
+             x->mOutputBufferAssist[index](x,s);
           }
           else strncpy_zero(s, "(anything) dumpout", 512);
       }
@@ -1186,8 +1196,9 @@ public:
                 static_cast<long>(mClient.audioChannelsIn()));
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
     }
-
-    if (index new_ins = mClient.controlChannelsIn())
+    
+    //TODO: this implicitly assumes no audio in?
+    if (index new_ins = mClient.controlChannelsIn() > 1)
     {
       mAutosize = true;      
       if(mListSize)
@@ -1225,10 +1236,21 @@ public:
     });
     
     
+    //functions for buffer inlet assistance
+    mParams.template forEachParamType<InputBufferT>([this](auto&, auto idx){
+       static constexpr index N = decltype(idx)::value;
+       mInputBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
+       {
+          static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
+          sprintf(s,"(buffer <symbol>): set %s buffer", param_name.c_str());
+       });
+    });
+
+    
     //functions for buffer outlet assistance
     mParams.template forEachParamType<BufferT>([this](auto&, auto idx){
        static constexpr index N = decltype(idx)::value; 
-       mBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
+       mOutputBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
        {
           static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
           sprintf(s,"buffer: %s", param_name.c_str());
@@ -1402,6 +1424,8 @@ public:
 
   static void makeClass(const char* className)
   {
+    
+    static constexpr bool AudioInput = isAudioIn<typename Client::Client>;
     const ParamDescType& p = Client::getParameterDescriptors();
     const auto&          m = Client::getMessageDescriptors();
     getClass(class_new(className, (method) create, (method) destroy,
@@ -1442,7 +1466,12 @@ public:
 
     p.template iterateMutable<SetupAttribute>();
     p.template iterateFixed<SetupReadOnlyAttribute>();
-
+    
+    
+    //for non-audio classes, give us cold inlets for non-left
+    if(!AudioInput)
+      class_addmethod(getClass(), (method)stdinletinfo, "inletinfo", A_CANT, 0);
+    
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
@@ -1469,21 +1498,6 @@ public:
   {
     class_addmethod(getClass(), (method) doSharedClientRefer, "refer", A_SYM,
                     0);
-  }
-
-  template <typename CType = Client>
-  static std::enable_if_t<!IsThreadedShared<CType>::value>
-  checkName(ParamSetType&)
-  {}
-
-  template <typename CType = Client>
-  static std::enable_if_t<IsThreadedShared<CType>::value>
-  checkName(ParamSetType& params)
-  {
-    if (params.template get<0>().size() == 0)
-    {
-      params.template set<0>(std::string(symbol_unique()->s_name), nullptr);
-    }
   }
 
   void resizeListHandlers(index newSize)
@@ -1657,9 +1671,26 @@ private:
     }
   };
 
-  ParamSetType& initParamsFromArgs(long ac, t_atom* av)
+  ParamSetType& initParamsFromArgs(long argc, t_atom* argv)
   {
-      
+    long ac = argc;
+    
+    std::vector<t_atom> av_vec = [&](){
+      bool needsNameAtom = IsThreadedShared<Client>::value &&
+                            !attr_args_offset(static_cast<short>(argc), argv);
+      ac = argc + needsNameAtom;
+      std::vector<t_atom> result(ac);
+      std::copy_n(argv, argc, result.data() + needsNameAtom);
+      if(needsNameAtom)
+      {
+          t_symbol* autoName = symbol_unique();
+          atom_setsym(result.data(), autoName);
+      }
+      return result;
+    }();
+    
+    t_atom* av = av_vec.data();
+  
     // Process arguments for instantiation parameters
     if (long numArgs = attr_args_offset(static_cast<short>(ac), av))
     {
@@ -1696,7 +1727,6 @@ private:
     }
     // process in-box attributes for mutable params
     attr_args_process((t_object*) this, static_cast<short>(ac), av);
-    checkName(mParams);
     // return params so this can be called in client initaliser
     return mParams;
   }
@@ -2416,7 +2446,8 @@ private:
   std::vector<t_object*>    mHostedOutputBufferObjects;
   std::vector<void(*)(FluidMaxWrapper*,long,t_atom*)> mBufferDispatch;
   
-  std::vector<void(*)(FluidMaxWrapper*,char* s)> mBufferAssist;
+  std::vector<void(*)(FluidMaxWrapper*,char* s)> mInputBufferAssist;
+  std::vector<void(*)(FluidMaxWrapper*,char* s)> mOutputBufferAssist;
     
   long mProxyNumber;
   std::vector<void*> mDataOutlets;

@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 2,
-			"revision" : 2,
+			"minor" : 3,
+			"revision" : 0,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-5",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 121.0, 236.0, 203.0, 23.0 ],
+					"text" : "fluid.bufferinterface fluid.bufmfcc~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 90.0, 204.0, 259.0, 23.0 ],
+					"patching_rect" : [ 170.0, 300.0, 259.0, 23.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufmfcc~"
 				}
 
@@ -78,8 +89,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -442,8 +453,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -480,6 +491,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufmfcc~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 680.0, 329.0, 202.638015747070312, 54.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"args" : [ "mfcc" ],
 									"bgmode" : 0,
 									"border" : 0,
@@ -507,7 +534,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 150.0, 100.0, 40.0 ],
+									"patching_rect" : [ 50.0, 159.0, 100.0, 40.0 ],
 									"text" : "Select a source"
 								}
 
@@ -519,7 +546,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 488.0, 450.0, 150.0, 108.0 ],
+									"patching_rect" : [ 388.0, 491.0, 150.0, 108.0 ],
 									"text" : "This plots each of the MFCC coefficients in time as it changes. It's not too informative, but may be useful to get a sense of what these MFCC curves look like.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -533,7 +560,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 612.5, 358.0, 159.0, 23.0 ],
+									"patching_rect" : [ 512.5, 369.0, 159.0, 23.0 ],
 									"text" : "buffer~ help.mfcc.features"
 								}
 
@@ -545,7 +572,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 354.5, 398.0, 188.0, 23.0 ],
+									"patching_rect" : [ 254.5, 409.0, 188.0, 23.0 ],
 									"text" : "features help.mfcc.features red"
 								}
 
@@ -557,7 +584,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 150.0, 288.0, 180.0, 23.0 ],
+									"patching_rect" : [ 50.0, 329.0, 180.0, 23.0 ],
 									"text" : "clear, waveform help.mfcc.src"
 								}
 
@@ -569,7 +596,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 40.0, 237.0, 129.0, 23.0 ],
+									"patching_rect" : [ 50.0, 246.0, 129.0, 23.0 ],
 									"text" : "buffer~ help.mfcc.src"
 								}
 
@@ -583,7 +610,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 150.0, 446.0, 336.0, 109.0 ]
+									"patching_rect" : [ 50.0, 487.0, 336.0, 109.0 ]
 								}
 
 							}
@@ -604,7 +631,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 191.0, 280.0, 31.0 ],
+									"patching_rect" : [ 50.0, 200.0, 280.0, 31.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -633,7 +660,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 258.5, 150.0, 23.0 ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 426.5, 267.5, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
 
@@ -646,7 +674,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 233.5, 150.0, 23.0 ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 426.5, 242.5, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
 
@@ -664,7 +693,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 142.0, 150.0, 20.0, 20.0 ],
+									"patching_rect" : [ 152.0, 159.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -677,7 +706,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 382.5, 358.0, 105.0, 21.0 ],
+									"patching_rect" : [ 282.5, 369.0, 105.0, 21.0 ],
 									"text" : "bang when done",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -690,7 +719,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 382.5, 129.5, 143.0, 25.0 ],
+									"patching_rect" : [ 392.5, 138.5, 143.0, 25.0 ],
 									"text" : "start MFCC analysis"
 								}
 
@@ -701,7 +730,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 416.5, 161.0, 169.0, 21.0 ],
+									"patching_rect" : [ 426.5, 170.0, 169.0, 21.0 ],
 									"text" : "experiment with parameters",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -720,7 +749,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 524.5, 132.0, 20.0, 20.0 ],
+									"patching_rect" : [ 534.5, 141.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -735,7 +764,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 354.5, 129.5, 24.0, 24.0 ]
+									"patching_rect" : [ 364.5, 138.5, 24.0, 24.0 ]
 								}
 
 							}
@@ -747,7 +776,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 354.5, 356.5, 24.0, 24.0 ]
+									"patching_rect" : [ 254.5, 367.5, 24.0, 24.0 ]
 								}
 
 							}
@@ -759,7 +788,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 354.5, 318.0, 417.0, 23.0 ],
+									"patching_rect" : [ 254.5, 329.0, 417.0, 23.0 ],
 									"text" : "fluid.bufmfcc~ 13 @source help.mfcc.src @features help.mfcc.features"
 								}
 
@@ -772,7 +801,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 184.0, 150.0, 23.0 ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 426.5, 193.0, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
 
@@ -785,7 +815,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 416.5, 208.0, 150.0, 23.0 ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 426.5, 217.0, 150.0, 23.0 ],
 									"text_width" : 89.0
 								}
 
@@ -801,6 +832,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
+									"midpoints" : [ 169.5, 315.0, 59.5, 315.0 ],
 									"source" : [ "obj-11", 1 ]
 								}
 
@@ -815,7 +847,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-10", 0 ],
-									"midpoints" : [ 364.0, 432.0, 159.5, 432.0 ],
+									"midpoints" : [ 264.0, 473.0, 59.5, 473.0 ],
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -823,7 +855,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 426.0, 208.0, 389.5, 208.0, 389.5, 304.0, 364.0, 304.0 ],
+									"midpoints" : [ 436.0, 219.0, 340.0, 219.0, 340.0, 315.0, 264.0, 315.0 ],
 									"source" : [ "obj-23", 0 ]
 								}
 
@@ -831,7 +863,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 364.0, 211.0, 364.0, 211.0 ],
+									"midpoints" : [ 374.0, 315.0, 264.0, 315.0 ],
 									"source" : [ "obj-38", 0 ]
 								}
 
@@ -839,7 +871,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 426.0, 232.0, 364.0, 232.0 ],
+									"midpoints" : [ 436.0, 243.0, 264.0, 243.0 ],
 									"source" : [ "obj-41", 0 ]
 								}
 
@@ -854,7 +886,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 426.0, 304.0, 364.0, 304.0 ],
+									"midpoints" : [ 436.0, 315.0, 264.0, 315.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -869,7 +901,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 426.0, 259.0, 364.0, 259.0 ],
+									"midpoints" : [ 436.0, 267.0, 264.0, 267.0 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -966,8 +998,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 2,
-							"revision" : 2,
+							"minor" : 3,
+							"revision" : 0,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1006,7 +1038,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 132.0, 241.0, 50.0, 23.0 ],
+					"patching_rect" : [ 212.0, 337.0, 50.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -1031,71 +1063,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "fluid.bufloader.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufmfcc~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.learn.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.patchpath.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.waveform~.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/jsui",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid_decomposition.blocking.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/flucoma-max/help",
-				"patcherrelativepath" : ".",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpstarter.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",

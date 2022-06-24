@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 757.0, 731.0 ],
+						"rect" : [ 35.0, 114.0, 757.0, 731.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -88,12 +88,59 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"fontsize" : 13.0,
+									"id" : "obj-11",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 57.0, 650.0, 75.0, 25.0 ],
+									"text" : "audio on",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
+									"hint" : "",
+									"id" : "obj-12",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 134.0, 652.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 10.0, 60.0, 158.0, 20.0 ],
+									"text" : "Variable numbers of chroma",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-14",
 									"local" : 1,
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 12.0, 680.0, 45.0, 45.0 ]
+									"patching_rect" : [ 10.0, 640.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -108,7 +155,7 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 12.0, 610.0, 136.0, 41.0 ],
+									"patching_rect" : [ 10.0, 570.0, 136.0, 41.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~[2]",
@@ -127,6 +174,7 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-44",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -539,8 +587,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 105.0, 341.357142857142833, 309.0, 33.0 ],
-													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis."
+													"patching_rect" : [ 153.0, 341.357142857142833, 309.0, 33.0 ],
+													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis.",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
 											}
@@ -551,7 +600,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 72.0, 225.571428571428555, 309.0, 20.0 ],
-													"text" : "Interlace the amplitude values and the frequency values."
+													"text" : "Interlace the amplitude values and the frequency values.",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
 											}
@@ -562,7 +612,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 184.0, 181.285714285714278, 278.0, 20.0 ],
-													"text" : "Calculate the frequency values of the chroma bins."
+													"text" : "Calculate the frequency values of the chroma bins.",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
 											}
@@ -622,8 +673,8 @@
 													"numinlets" : 4,
 													"numoutlets" : 1,
 													"outlettype" : [ "signal" ],
-													"patching_rect" : [ 21.0, 346.857142857142833, 80.0, 22.0 ],
-													"text" : "ioscbank~ 19"
+													"patching_rect" : [ 21.0, 346.857142857142833, 126.0, 22.0 ],
+													"text" : "ioscbank~ 19 64 4096"
 												}
 
 											}
@@ -780,7 +831,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 12.0, 570.0, 104.0, 22.0 ],
+									"patching_rect" : [ 10.0, 530.0, 112.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -794,12 +845,13 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-8",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 12.0, 470.0, 60.0, 22.0 ],
+									"patching_rect" : [ 10.0, 430.0, 64.0, 23.0 ],
 									"text" : "zl.change"
 								}
 
@@ -812,7 +864,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 180.0, 285.0, 500.0, 37.0 ],
+									"patching_rect" : [ 148.0, 245.0, 500.0, 37.0 ],
 									"text" : "With @normalize 1 the chroma calculation is compensated by the amplitude of the incoming signal. Try changing the gain here and seeing how it doesn't effect the result.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -831,9 +883,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 160.0, 293.5, 20.0, 20.0 ],
+									"patching_rect" : [ 650.0, 253.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -848,7 +900,7 @@
 									"orientation" : 1,
 									"outlettype" : [ "signal", "signal", "", "float", "list" ],
 									"parameter_enable" : 1,
-									"patching_rect" : [ 12.0, 280.0, 136.0, 47.0 ],
+									"patching_rect" : [ 10.0, 240.0, 136.0, 47.0 ],
 									"saved_attribute_attributes" : 									{
 										"valueof" : 										{
 											"parameter_longname" : "live.gain~",
@@ -874,7 +926,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 117.0, 383.0, 150.0, 22.0 ]
+									"patching_rect" : [ 115.0, 343.0, 150.0, 22.0 ]
 								}
 
 							}
@@ -886,7 +938,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 292.0, 367.5, 380.0, 51.0 ],
+									"patching_rect" : [ 268.0, 328.5, 380.0, 51.0 ],
 									"text" : "The number of chroma can be changed. Note, the maximum number of chroma is always returned and so the maximum chroma has to be set also. This is the first argument of the object.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -905,7 +957,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 270.0, 383.0, 20.0, 20.0 ],
+									"patching_rect" : [ 650.0, 344.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -914,12 +966,13 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-24",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 464.0, 583.5, 216.0, 33.0 ],
+									"patching_rect" : [ 462.0, 543.5, 235.0, 36.0 ],
 									"text" : "The list is now 19 elements long: each element in the list is a chroma bin.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -933,29 +986,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 12.0, 510.0, 155.0, 23.0 ],
+									"patching_rect" : [ 10.0, 470.0, 155.0, 23.0 ],
 									"text" : "fluid.stats 19 @history 40"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"args" : [ "chroma" ],
-									"bgmode" : 0,
-									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
-									"id" : "obj-75",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.learn.maxpat",
-									"numinlets" : 0,
-									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 522.0, 10.0, 230.0, 110.0 ],
-									"viewvisibility" : 1
 								}
 
 							}
@@ -969,7 +1001,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 170.0, 570.0, 288.0, 60.0 ],
+									"patching_rect" : [ 168.0, 530.0, 288.0, 60.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 4.833344, 2.5, 425.0, 156.0 ],
 									"setminmax" : [ 0.0, 0.200000002980232 ],
@@ -994,7 +1026,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 12.0, 144.0, 233.0, 123.0 ],
+									"patching_rect" : [ 10.0, 90.0, 233.0, 123.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1011,7 +1043,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 510.0, 120.0 ]
+									"patching_rect" : [ 10.0, 10.0, 300.0, 50.0 ]
 								}
 
 							}
@@ -1019,12 +1051,11 @@
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-41",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 270.0, 187.0, 367.0, 37.0 ],
-									"text" : "The default here is an extended passage of oboe multiphonics. Keep it for now and change it after you've looked at this tab.",
+									"patching_rect" : [ 245.0, 140.0, 105.0, 24.0 ],
+									"text" : "Play the sound",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1042,9 +1073,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 247.0, 195.5, 20.0, 20.0 ],
+									"patching_rect" : [ 352.0, 142.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1056,7 +1087,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 40.0, 360.0, 45.0, 45.0 ]
+									"patching_rect" : [ 38.0, 320.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1068,8 +1099,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 12.0, 430.0, 455.0, 23.0 ],
-									"text" : "fluid.chroma~ 19 @fftsettings 4096 512 4096 @normalize 1 @numchroma 19"
+									"patching_rect" : [ 10.0, 390.0, 352.0, 23.0 ],
+									"text" : "fluid.chroma~ 19 @fftsettings 4096 512 4096 @normalize 1"
 								}
 
 							}
@@ -1077,7 +1108,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-26", 0 ],
-									"midpoints" : [ 21.5, 550.0, 179.5, 550.0 ],
+									"midpoints" : [ 19.5, 510.0, 177.5, 510.0 ],
 									"order" : 0,
 									"source" : [ "obj-1", 0 ]
 								}
@@ -1108,7 +1139,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 1 ],
-									"midpoints" : [ 21.5, 665.0, 47.5, 665.0 ],
+									"midpoints" : [ 19.5, 625.0, 45.5, 625.0 ],
 									"order" : 0,
 									"source" : [ "obj-45", 0 ]
 								}
@@ -1117,7 +1148,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-14", 0 ],
-									"midpoints" : [ 21.5, 653.0, 21.5, 653.0 ],
+									"midpoints" : [ 19.5, 613.0, 19.5, 613.0 ],
 									"order" : 1,
 									"source" : [ "obj-45", 0 ]
 								}
@@ -1133,7 +1164,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 126.5, 417.0, 21.5, 417.0 ],
+									"midpoints" : [ 124.5, 377.0, 19.5, 377.0 ],
 									"source" : [ "obj-6", 0 ]
 								}
 
@@ -1141,7 +1172,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 21.5, 330.0, 21.5, 330.0 ],
+									"midpoints" : [ 19.5, 290.0, 19.5, 290.0 ],
 									"order" : 2,
 									"source" : [ "obj-7", 0 ]
 								}
@@ -1150,7 +1181,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-60", 1 ],
-									"midpoints" : [ 21.5, 345.0, 75.5, 345.0 ],
+									"midpoints" : [ 19.5, 305.0, 73.5, 305.0 ],
 									"order" : 0,
 									"source" : [ "obj-7", 0 ]
 								}
@@ -1159,7 +1190,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-60", 0 ],
-									"midpoints" : [ 21.5, 345.0, 49.5, 345.0 ],
+									"midpoints" : [ 19.5, 305.0, 47.5, 305.0 ],
 									"order" : 1,
 									"source" : [ "obj-7", 0 ]
 								}
@@ -1271,7 +1302,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 757.0, 731.0 ],
+						"rect" : [ 0.0, 26.0, 757.0, 731.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1302,12 +1333,43 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"attr" : "numchroma",
+									"fontsize" : 13.0,
+									"id" : "obj-21",
+									"maxclass" : "attrui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 100.0, 294.0, 152.0, 23.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-19",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.chroma~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 120.0, 350.0, 210.106521606445312, 39.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bubble" : 1,
+									"fontsize" : 13.0,
 									"id" : "obj-4",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 92.5, 300.5, 72.0, 24.0 ],
+									"patching_rect" : [ 60.0, 610.5, 75.0, 25.0 ],
 									"text" : "audio on",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1317,6 +1379,7 @@
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
 									"hint" : "",
 									"id" : "obj-11",
 									"ignoreclick" : 1,
@@ -1326,9 +1389,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 166.5, 302.5, 20.0, 20.0 ],
+									"patching_rect" : [ 137.0, 613.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1437,7 +1500,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 97.0, 283.357142857142833, 309.0, 33.0 ],
-													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis."
+													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis.",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
 											}
@@ -1448,7 +1512,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 64.0, 201.571428571428555, 309.0, 20.0 ],
-													"text" : "Interlace the amplitude values and the frequency values."
+													"text" : "Interlace the amplitude values and the frequency values.",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
 											}
@@ -1459,7 +1524,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 178.0, 157.428571428571388, 218.0, 20.0 ],
-													"text" : "Transpose those pitches up an octave. "
+													"text" : "Transpose those pitches up an octave. ",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
 											}
@@ -1471,7 +1537,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 463.0, 106.785714285714278, 150.0, 33.0 ],
-													"text" : "Pitch values in hertz for A, A#, B, C, C#...etc."
+													"text" : "Pitch values in hertz for A, A#, B, C, C#...etc.",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
 											}
@@ -1664,18 +1731,19 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 12.0, 396.0, 71.0, 23.0 ],
-									"text" : "list.change"
+									"patching_rect" : [ 12.0, 396.0, 64.0, 23.0 ],
+									"text" : "zl.change"
 								}
 
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-3",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 170.0, 441.5, 472.0, 20.0 ],
+									"patching_rect" : [ 170.0, 441.5, 511.0, 21.0 ],
 									"text" : "Consecutive frames of analysis are smoothed to make the visualisation easier to follow.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1683,12 +1751,13 @@
 							}
 , 							{
 								"box" : 								{
+									"fontsize" : 13.0,
 									"id" : "obj-24",
 									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 530.0, 500.0, 168.0, 74.0 ],
+									"patching_rect" : [ 530.0, 500.0, 168.0, 79.0 ],
 									"text" : "Each index of the list is a pitch class. The strength of that pitch class is determined by the corresponding element.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1934,12 +2003,13 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
+									"fontsize" : 13.0,
 									"id" : "obj-41",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 271.409090909090878, 195.5, 329.0, 24.0 ],
-									"text" : "Select a source. The default is a polyphonic piano sound.",
+									"patching_rect" : [ 247.0, 193.0, 112.0, 25.0 ],
+									"text" : "Play the sound",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -1948,6 +2018,7 @@
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
 									"hint" : "",
 									"id" : "obj-42",
 									"ignoreclick" : 1,
@@ -1957,9 +2028,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 247.0, 195.5, 20.0, 20.0 ],
+									"patching_rect" : [ 361.0, 195.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1971,7 +2042,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 46.0, 290.0, 45.0, 45.0 ]
+									"patching_rect" : [ 46.0, 290.0, 30.0, 30.0 ]
 								}
 
 							}
@@ -1983,8 +2054,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 12.0, 350.0, 208.0, 23.0 ],
-									"text" : "fluid.chroma~ 12 @numchroma 12"
+									"patching_rect" : [ 12.0, 350.0, 105.0, 23.0 ],
+									"text" : "fluid.chroma~ 12"
 								}
 
 							}
@@ -2011,6 +2082,14 @@
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
 									"source" : [ "obj-2", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"midpoints" : [ 109.5, 336.0, 21.5, 336.0 ],
+									"source" : [ "obj-21", 0 ]
 								}
 
 							}
@@ -2049,7 +2128,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-60", 1 ],
-									"midpoints" : [ 21.5, 285.0, 81.5, 285.0 ],
+									"midpoints" : [ 21.5, 285.0, 66.5, 285.0 ],
 									"order" : 0,
 									"source" : [ "obj-50", 0 ]
 								}

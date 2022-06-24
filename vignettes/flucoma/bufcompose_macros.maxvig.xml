@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml-stylesheet href="_c74_vig.xsl" type="text/xsl"?>
+<vignette name="fluid.bufcompose~ macros" package="FluidCorpusManipulation">
+	<h1><o>fluid.bufcompose~</o> macros</h1>
+
+	<bluebox>
+		<openfilelink filename="bufcompose-example.maxpat">Patch</openfilelink>
+	</bluebox>
+
+	<p>
+	The <o>fluid.bufcompose~</o> object is a tool for low-level manipulation of <o>buffer~</o> data. It is a powerful tool that you can be used on its own, or as part of larger abstractions with more bespoke needs. To this end, this guide presents three possible "macros" or "workflows" that could be valuable with bufcompose. 
+	</p>
+
+	<p>
+	Check out the <openfilelink filename="bufcompose-example.maxpat">patch</openfilelink>.
+	</p>
+</vignette>

@@ -1558,7 +1558,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Tremblay-BeatRemember.wav", "@file", "Tremblay-BeatRemember.wav", "@loop", 1, "@vol", 0 ],
+									"args" : [ "@file", "Tremblay-BeatRemember.wav", "@loop", 1, "@vol", 0 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,

@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 967.0, 788.0 ],
+		"rect" : [ 35.0, 88.0, 985.0, 774.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 643.0, 155.0, 170.0, 22.0 ],
+					"text" : "fluid.dsinterface fluid.kmeans~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 967.0, 762.0 ],
+						"rect" : [ 0.0, 26.0, 985.0, 748.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1747,7 +1758,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 762.0 ],
+						"rect" : [ 0.0, 26.0, 985.0, 748.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2982,7 +2993,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 762.0 ],
+						"rect" : [ 0.0, 26.0, 985.0, 748.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3039,7 +3050,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 919.0, 192.5, 20.0, 20.0 ],
+									"patching_rect" : [ 885.0, 196.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3054,7 +3065,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 716.0, 153.5, 195.0, 98.0 ],
+									"patching_rect" : [ 696.0, 157.5, 187.0, 98.0 ],
 									"text" : "Click this several times while looking at the plot. Notice how the clustering slightly shifts each time as the algorithm learns a more optimal clustering."
 								}
 
@@ -3066,7 +3077,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 357.0, 141.0, 37.0, 23.0 ],
+									"patching_rect" : [ 337.0, 157.5, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -3229,7 +3240,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 357.0, 311.0, 104.0, 23.0 ],
+									"patching_rect" : [ 337.0, 315.0, 104.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3264,7 +3275,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 380.0, 476.5, 115.0, 65.0 ],
+									"patching_rect" : [ 360.0, 480.5, 115.0, 65.0 ],
 									"text" : "The colour denotes which cluster the point belongs to.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -3283,7 +3294,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 593.5, 142.5, 20.0, 20.0 ],
+									"patching_rect" : [ 573.5, 159.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3297,7 +3308,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 397.5, 140.0, 194.0, 25.0 ],
+									"patching_rect" : [ 377.5, 156.5, 194.0, 25.0 ],
 									"text" : "Clear any learning of clusters"
 								}
 
@@ -3315,7 +3326,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 268.0, 215.0, 20.0, 20.0 ],
+									"patching_rect" : [ 337.0, 116.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3325,12 +3336,11 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
-									"bubbleside" : 0,
 									"id" : "obj-11",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 139.0, 198.0, 127.0, 40.0 ],
+									"patching_rect" : [ 208.0, 114.0, 127.0, 25.0 ],
 									"text" : "Choose a dataset"
 								}
 
@@ -3510,7 +3520,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 50.0, 215.0, 78.0, 23.0 ],
+									"patching_rect" : [ 30.0, 219.0, 78.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -3529,7 +3539,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 414.0, 191.0, 300.0, 23.0 ],
+									"patching_rect" : [ 394.0, 195.0, 300.0, 23.0 ],
 									"text" : "fitpredict help.kmeans.2.data help.kmeans.2.labels"
 								}
 
@@ -3542,7 +3552,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 357.0, 241.0, 113.0, 52.0 ],
+									"patching_rect" : [ 337.0, 245.0, 113.0, 52.0 ],
 									"text" : "fluid.kmeans~ @maxiter 1 @numclusters 4"
 								}
 
@@ -3557,7 +3567,7 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 346.0, 326.0, 326.0 ]
+									"patching_rect" : [ 30.0, 350.0, 326.0, 326.0 ]
 								}
 
 							}
@@ -3577,7 +3587,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 140.0, 175.0, 63.363631999999996 ],
+									"patching_rect" : [ 30.0, 114.0, 175.0, 63.363631999999996 ],
 									"viewvisibility" : 1
 								}
 
@@ -3586,6 +3596,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
+									"midpoints" : [ 39.5, 178.0, 39.5, 178.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -3607,7 +3618,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-12", 0 ],
-									"midpoints" : [ 423.5, 226.0, 366.5, 226.0 ],
+									"midpoints" : [ 403.5, 230.0, 346.5, 230.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -3622,7 +3633,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 59.5, 171.0, 59.5, 171.0 ],
+									"midpoints" : [ 39.5, 244.0, 39.5, 244.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -3710,7 +3721,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 762.0 ],
+						"rect" : [ 0.0, 26.0, 985.0, 748.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3740,6 +3751,28 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"args" : [ 4 ],
+									"bgmode" : 0,
+									"border" : 0,
+									"clickthrough" : 0,
+									"enablehscroll" : 0,
+									"enablevscroll" : 0,
+									"id" : "obj-1",
+									"lockeddragscroll" : 0,
+									"lockedsize" : 0,
+									"maxclass" : "bpatcher",
+									"name" : "fluid.dataloader.maxpat",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"offset" : [ 0.0, 0.0 ],
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 10.0, 127.5, 175.0, 63.363631999999996 ],
+									"viewvisibility" : 1
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
@@ -3780,7 +3813,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 945.0, 310.0, 20.0, 20.0 ],
+									"patching_rect" : [ 850.0, 318.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -3804,11 +3837,11 @@
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-18",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 650.0, 301.5, 293.0, 40.0 ],
+									"patching_rect" : [ 650.0, 301.5, 190.0, 54.0 ],
 									"text" : "Then fitpredict to predict the cluster for each point based on the means we provided.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -4316,18 +4349,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-36",
-									"maxclass" : "message",
-									"numinlets" : 2,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 140.0, 95.0, 23.0 ],
-									"text" : "gaussian4.json"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-15",
 									"maxclass" : "message",
 									"numinlets" : 2,
@@ -4781,7 +4802,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 180.0, 78.0, 23.0 ],
+									"patching_rect" : [ 10.0, 220.0, 78.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -4898,6 +4919,14 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"midpoints" : [ 19.5, 192.0, 19.5, 192.0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
 									"midpoints" : [ 232.5, 165.0, 232.5, 165.0 ],
 									"order" : 1,
@@ -4932,15 +4961,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-5", 0 ],
-									"source" : [ "obj-36", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 232.5, 216.0, 19.0, 216.0, 19.0, 390.0, 19.5, 390.0 ],
+									"midpoints" : [ 232.5, 426.0, 19.5, 426.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -4962,7 +4984,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-9", 0 ],
-									"midpoints" : [ 19.5, 230.0, 19.5, 230.0 ],
+									"midpoints" : [ 19.5, 246.0, 19.5, 246.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -5050,7 +5072,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 762.0 ],
+						"rect" : [ 35.0, 114.0, 985.0, 748.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -5764,7 +5786,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 967.0, 762.0 ],
+						"rect" : [ 0.0, 26.0, 985.0, 748.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

@@ -44,16 +44,10 @@
 				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
-					"numoutlets" : 1,
-					"outlettype" : [ "" ],
-					"patching_rect" : [ 153.0, 119.0, 205.0, 23.0 ],
-					"saved_object_attributes" : 					{
-						"filename" : "helpstarter.js",
-						"parameter_enable" : 0
-					}
-,
-					"text" : "js helpstarter.js fluid.knnclassifier~"
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 100.0, 150.0, 210.0, 23.0 ],
+					"text" : "fluid.dsinterface fluid.knnclassifier~"
 				}
 
 			}
@@ -1237,7 +1231,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 140.0, 540.0, 155.0, 166.0 ],
+									"patching_rect" : [ 140.0, 540.0, 158.0, 166.0 ],
 									"text" : "The detected class here should correspond to the source sound type.\n\nYou might notice that silence is detected as the piano. This makes sense as a large portion of the first second of audio that was analysed in that source is silence.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1799,7 +1793,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 10.0, 10.0, 215.432021999999989, 57.599854000000001 ]
+					"patching_rect" : [ 10.0, 10.0, 397.784027099609375, 57.599853515625 ]
 				}
 
 			}

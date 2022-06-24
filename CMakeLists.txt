@@ -182,11 +182,16 @@ install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic
         RENAME LICENSE.md)
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/local_docs/"
         DESTINATION "${MAX_PACKAGE_ROOT}/docs")
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/vignettes"
+        DESTINATION "${MAX_PACKAGE_ROOT}/docs")
 
 if(DOCS)
   install(DIRECTORY "${MAX_DOC_OUT}/" 
           DESTINATION "${MAX_PACKAGE_ROOT}/docs"  
           PATTERN "*.xml")
+  install(FILES "${MAX_DOC_OUT}/../interfaces/flucoma-obj-qlookup.json" 
+                "${MAX_DOC_OUT}/../interfaces/max.db.json" 
+          DESTINATION "${MAX_PACKAGE_ROOT}/interfaces")
 endif()
 
 install(DIRECTORY "${fluid_waveform_SOURCE_DIR}/" DESTINATION ${MAX_PACKAGE_ROOT})

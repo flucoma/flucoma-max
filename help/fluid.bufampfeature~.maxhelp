@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-2",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 136.0, 147.0, 223.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufampfeature~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -305,7 +316,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 84.0, 131.0, 479.0, 370.0 ],
+										"rect" : [ 84.0, 131.0, 453.0, 195.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -335,12 +346,12 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
-													"id" : "obj-5",
+													"id" : "obj-2",
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 13.0, 99.0, 197.0, 22.0 ],
+													"patching_rect" : [ 249.0, 92.0, 197.0, 22.0 ],
 													"text" : "slices help.amp.slices help.amp.src"
 												}
 
@@ -373,24 +384,13 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-11",
+													"linecount" : 2,
 													"maxclass" : "message",
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 249.0, 99.0, 197.0, 22.0 ],
-													"text" : "features help.amp.curve 1. 0. 0. 0.8"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-31",
-													"maxclass" : "message",
-													"numinlets" : 2,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 276.0, 135.0, 133.0, 22.0 ],
-													"text" : "waveform help.amp.src"
+													"patching_rect" : [ 13.0, 48.0, 204.0, 35.0 ],
+													"text" : "features help.amp.curve 1. 0. 0. 0.8, waveform help.amp.src"
 												}
 
 											}
@@ -415,25 +415,14 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 13.0, 267.0, 30.0, 30.0 ]
+													"patching_rect" : [ 13.0, 149.0, 30.0, 30.0 ]
 												}
 
 											}
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-11", 0 ],
-													"midpoints" : [ 258.5, 73.0, 258.5, 73.0 ],
-													"order" : 1,
-													"source" : [ "obj-1", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-31", 0 ],
-													"midpoints" : [ 258.5, 85.0, 234.0, 85.0, 234.0, 133.0, 273.0, 133.0, 273.0, 130.0, 285.5, 130.0 ],
-													"order" : 0,
+													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-1", 0 ]
 												}
 
@@ -441,7 +430,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-40", 0 ],
-													"midpoints" : [ 320.5, 85.0, 222.0, 85.0, 222.0, 253.0, 22.5, 253.0 ],
+													"midpoints" : [ 320.5, 83.0, 228.0, 83.0, 228.0, 135.0, 22.5, 135.0 ],
 													"source" : [ "obj-1", 1 ]
 												}
 
@@ -449,23 +438,23 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-40", 0 ],
-													"midpoints" : [ 258.5, 253.0, 22.5, 253.0 ],
+													"midpoints" : [ 22.5, 84.0, 22.5, 84.0 ],
 													"source" : [ "obj-11", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-5", 0 ],
-													"source" : [ "obj-3", 0 ]
+													"destination" : [ "obj-40", 0 ],
+													"midpoints" : [ 258.5, 135.0, 22.5, 135.0 ],
+													"source" : [ "obj-2", 0 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-40", 0 ],
-													"midpoints" : [ 285.5, 253.0, 22.5, 253.0 ],
-													"source" : [ "obj-31", 0 ]
+													"destination" : [ "obj-11", 0 ],
+													"source" : [ "obj-3", 0 ]
 												}
 
 											}
@@ -473,13 +462,6 @@
 												"patchline" : 												{
 													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-39", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-40", 0 ],
-													"source" : [ "obj-5", 0 ]
 												}
 
 											}
@@ -808,7 +790,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 9.0, 32.0, 102.0, 22.0 ],
+					"patching_rect" : [ 9.0, 32.0, 55.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -816,7 +798,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"amp detection\"",
+					"text" : "p basic",
 					"varname" : "basic_tab[1]"
 				}
 
@@ -827,7 +809,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 115.0, 32.0, 275.0, 22.0 ],
+					"patching_rect" : [ 195.0, 194.0, 275.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufampfeature~"
 				}
 
@@ -882,7 +864,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 397.0, 32.0, 50.0, 22.0 ],
+					"patching_rect" : [ 477.0, 194.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

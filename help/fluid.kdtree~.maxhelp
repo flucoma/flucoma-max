@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 89.0, 1055.0, 777.0 ],
+		"rect" : [ 35.0, 87.0, 1055.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -41,6 +41,17 @@
 		"showontab" : 0,
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 410.0, 146.0, 162.0, 22.0 ],
+					"text" : "fluid.dsinterface fluid.kdtree~"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
@@ -1342,6 +1353,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-6",
 									"maxclass" : "jsui",
@@ -2372,7 +2384,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 115.0, 1055.0, 751.0 ],
+						"rect" : [ 35.0, 113.0, 1055.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3058,8 +3070,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 387.0, 248.0, 281.0, 210.0 ],
-									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values, loudness and spectral centroid, that attempt to represent perceived qualities of the sound.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space.",
+									"patching_rect" : [ 387.0, 248.0, 286.0, 210.0 ],
+									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values from dimensionality reduction (UMAP) that attempt to represent the perceptual differences between this corpus.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space.",
 									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
 								}
 
@@ -3231,8 +3243,19 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-12",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 366.0, 385.75, 104.0, 22.0 ],
+													"text" : "pointsizescale 0.5"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-26",
 													"maxclass" : "newobj",
@@ -3884,6 +3907,14 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-18", 0 ],
+													"midpoints" : [ 375.5, 468.0, 312.5, 468.0 ],
+													"source" : [ "obj-12", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-2", 0 ]
 												}
@@ -3899,7 +3930,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-18", 0 ],
-													"midpoints" : [ 312.5, 410.0, 312.5, 410.0 ],
+													"midpoints" : [ 312.5, 408.0, 312.5, 408.0 ],
 													"source" : [ "obj-22", 1 ]
 												}
 
@@ -3907,7 +3938,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-27", 0 ],
-													"midpoints" : [ 273.5, 427.0, 76.5, 427.0 ],
+													"midpoints" : [ 273.5, 429.0, 76.5, 429.0 ],
 													"source" : [ "obj-22", 0 ]
 												}
 
@@ -3935,7 +3966,18 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-12", 0 ],
+													"midpoints" : [ 273.5, 372.0, 375.5, 372.0 ],
+													"order" : 0,
+													"source" : [ "obj-5", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-22", 0 ],
+													"midpoints" : [ 273.5, 372.0, 273.5, 372.0 ],
+													"order" : 1,
 													"source" : [ "obj-5", 1 ]
 												}
 
@@ -4042,7 +4084,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 521.0, 10.0, 240.0, 95.0 ],
+									"patching_rect" : [ 510.0, 13.0, 240.0, 95.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -4085,6 +4127,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-6",
 									"jsarguments" : [ 0.5 ],
@@ -4354,7 +4397,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 405.0, 85.0, 50.0, 22.0 ],
+					"patching_rect" : [ 514.0, 209.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 120.0, 170.0, 163.0, 23.0 ],
+					"text" : "fluid.dsinterface fluid.mds~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-1",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -57,7 +68,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 992.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 992.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -196,7 +207,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 358.0, 357.0, 114.0, 21.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Squared Euclidian",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
@@ -347,6 +357,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -581,6 +592,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -815,6 +827,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1049,6 +1062,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1283,6 +1297,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1655,6 +1670,7 @@
 											}
 , 											{
 												"box" : 												{
+													"border" : 0,
 													"filename" : "fluid.plotter",
 													"id" : "obj-1",
 													"jsarguments" : [ 0.5 ],
@@ -1888,7 +1904,6 @@
 					}
 ,
 					"patching_rect" : [ 60.0, 130.0, 187.0, 23.0 ],
-					"presentation_linecount" : 7,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -2260,6 +2275,7 @@
 							}
 , 							{
 								"box" : 								{
+									"border" : 0,
 									"filename" : "fluid.plotter",
 									"id" : "obj-26",
 									"jsarguments" : [ 0.35 ],

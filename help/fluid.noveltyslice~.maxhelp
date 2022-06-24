@@ -358,8 +358,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "" ],
-									"patching_rect" : [ 198.0, 400.0, 229.0, 23.0 ],
-									"text" : "fluid.noveltyslice~ @maxkernelsize 41"
+									"patching_rect" : [ 198.0, 400.0, 335.0, 23.0 ],
+									"text" : "fluid.noveltyslice~ @maxkernelsize 41 @maxfiltersize 11"
 								}
 
 							}
@@ -582,6 +582,22 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-6",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.noveltyslice~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 490.0, 340.0, 198.841995239257812, 54.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-7",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -611,7 +627,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 490.0, 333.5, 150.0, 137.0 ],
+									"patching_rect" : [ 273.0, 380.0, 150.0, 137.0 ],
 									"text" : "Produces impulses when a slice is detected.\n\nWith these settings it can pick up the \"wiggles\" around changes in the note which is one of novelty slicing's strengths.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -677,7 +693,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 77.0, 450.5, 89.0, 25.0 ],
-									"text" : "Start Audio"
+									"text" : "Start audio"
 								}
 
 							}
@@ -734,7 +750,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 123.0, 300.0, 139.5, 23.0 ],
+									"patching_rect" : [ 122.75, 290.0, 139.5, 23.0 ],
 									"text" : "getattr latency"
 								}
 

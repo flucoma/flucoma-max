@@ -301,7 +301,7 @@
 								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-22",
 									"maxclass" : "number~",
 									"mode" : 2,
@@ -579,7 +579,7 @@
 								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-15",
 									"maxclass" : "number~",
 									"mode" : 2,
@@ -637,7 +637,7 @@
 								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-10",
 									"maxclass" : "number~",
 									"mode" : 2,
@@ -654,7 +654,7 @@
 								"box" : 								{
 									"fontface" : 0,
 									"fontname" : "Arial",
-									"fontsize" : 12.0,
+									"fontsize" : 13.0,
 									"id" : "obj-5",
 									"maxclass" : "number~",
 									"mode" : 2,

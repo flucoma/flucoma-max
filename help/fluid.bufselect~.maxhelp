@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 87.0, 781.0, 569.0 ],
+		"rect" : [ 35.0, 87.0, 790.0, 569.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -42,11 +42,22 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-6",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 190.0, 174.0, 194.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufselect~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-3",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 231.0, 85.0, 246.0, 22.0 ],
+					"patching_rect" : [ 345.0, 111.0, 246.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufselect~"
 				}
 
@@ -68,7 +79,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 781.0, 543.0 ],
+						"rect" : [ 0.0, 26.0, 790.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2449,7 +2460,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 781.0, 543.0 ],
+						"rect" : [ 35.0, 113.0, 790.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2539,7 +2550,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ -10.0, -8.0 ],
-									"patching_rect" : [ 550.0, 10.0, 200.0, 100.0 ],
+									"patching_rect" : [ 550.0, 10.0, 230.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -3528,7 +3539,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 781.0, 543.0 ],
+						"rect" : [ 0.0, 26.0, 790.0, 543.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3561,7 +3572,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 484.0, 85.0, 50.0, 22.0 ],
+					"patching_rect" : [ 598.0, 111.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

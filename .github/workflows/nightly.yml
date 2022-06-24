@@ -1,35 +1,51 @@
-name: Nightly Releases
+name: nightly
 
 on:
   workflow_dispatch:
   push:
     branches: [ dev, ci/** ]
 
+concurrency:
+  group: environment-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs: 
   winbuild:
     runs-on: windows-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v5
-      - uses: flucoma/actions/max@v5
+      - uses: actions/checkout@v3
+      - uses: flucoma/actions/env@main
+      - uses: flucoma/actions/max@main
         with:
           branch: origin/dev
 
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v3
         with:
           name: winbuild
           path: "release-packaging/FluidCorpusManipulation/externals/"
   
   macbuild:
-    runs-on: macos-11
+    runs-on: macos-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: flucoma/actions/env@v5
-      - uses: flucoma/actions/max@v5
+      - uses: actions/checkout@v3
+      - uses: flucoma/actions/env@main
+      - uses: flucoma/actions/max@main
         with:
           branch: origin/dev
 
-      - uses: actions/upload-artifact@v2
+      - name: sign and notarise
+        uses: flucoma/actions/distribution@main
+        with:
+          glob: '-e mxo'
+          package: 'release-packaging'
+          output_type: 'bundle'
+          cert: ${{ secrets.CERT }}
+          certpwd: ${{ secrets.CERTPWD }}
+          teamid: ${{ secrets.WWDRTEAMID }}
+          apppwd: ${{ secrets.APPSTORECONNECTPWD }}
+          appusr: ${{ secrets.APPSTORECONNECTUSERNAME }}
+
+      - uses: actions/upload-artifact@v3
         with:
           name: macbuild
           path: release-packaging/FluidCorpusManipulation/
@@ -67,7 +83,7 @@ jobs:
         with:
           name: FluCoMa Max Nightly Release
           body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-          files: FluCoMa-Max-nightly.zip
+          files: FluCoMa*
           prerelease: true
           tag_name: nightly
           draft: false

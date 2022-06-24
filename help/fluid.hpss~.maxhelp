@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 937.0, 715.0 ],
+						"rect" : [ 0.0, 26.0, 937.0, 715.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -88,6 +88,22 @@
 						"isolateaudio" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-3",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.hpss~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 662.0, 365.0, 219.863006591796875, 54.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-8",
 									"linecount" : 4,
@@ -182,7 +198,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "@file", "Green-Box639.wav", "@vol", 0, "@loop", 1 ],
+									"args" : [ "@file", "Nicol-LoopE-M.wav", "@vol", 0, "@loop", 1 ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
@@ -237,11 +253,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-61",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 380.0, 216.0, 226.0, 36.0 ],
+									"patching_rect" : [ 380.0, 220.0, 371.0, 21.0 ],
 									"text" : "size of 'harmonic' median filter (in hops). Bigger = more latency",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -704,8 +719,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "signal", "signal", "signal", "" ],
-									"patching_rect" : [ 284.0, 365.833327999999995, 73.0, 23.0 ],
-									"text" : "fluid.hpss~"
+									"patching_rect" : [ 284.0, 365.833327999999995, 376.0, 23.0 ],
+									"text" : "fluid.hpss~ 17 31 @maxharmfiltersize 51 @maxpercfiltersize 51"
 								}
 
 							}
@@ -730,7 +745,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-46", 2 ],
-									"midpoints" : [ 311.5, 457.833327999999995, 351.5, 457.833327999999995 ],
+									"midpoints" : [ 412.5, 457.833327999999995, 351.5, 457.833327999999995 ],
 									"source" : [ "obj-1", 1 ]
 								}
 
@@ -919,7 +934,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 937.0, 715.0 ],
+						"rect" : [ 100.0, 126.0, 937.0, 715.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -952,11 +967,44 @@
 						"boxes" : [ 							{
 								"box" : 								{
 									"bubble" : 1,
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 80.0, 670.0, 101.0, 25.0 ],
+									"text" : "turn audio on",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-7",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 183.0, 672.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-9",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 172.0, 625.5, 298.0, 25.0 ],
+									"patching_rect" : [ 179.0, 609.5, 298.0, 25.0 ],
 									"text" : "select which component or components to hear",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -975,7 +1023,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 471.625, 628.0, 20.0, 20.0 ],
+									"patching_rect" : [ 478.625, 612.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -990,7 +1038,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 402.875, 267.520844000000011, 188.0, 40.0 ],
+									"patching_rect" : [ 527.5, 221.5, 188.0, 40.0 ],
 									"text" : "Modify the frequency threshold",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1009,9 +1057,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 598.875, 269.333313000000032, 20.0, 20.0 ],
+									"patching_rect" : [ 723.5, 223.312469000000021, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1023,7 +1071,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 45.0, 252.875, 113.0, 25.0 ],
+									"patching_rect" : [ 263.0, 290.5, 113.0, 25.0 ],
 									"text" : "select a source",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -1042,9 +1090,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 23.0, 255.375, 20.0, 20.0 ],
+									"patching_rect" : [ 378.0, 293.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1056,7 +1104,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 322.5, 487.0, 351.0, 36.0 ],
+									"patching_rect" : [ 329.5, 451.625, 351.0, 36.0 ],
 									"text" : "harmthresh is two frequency-amplitude pairs. frequency is normalised (0-1), amp in dB",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1352,7 +1400,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 23.0, 626.0, 147.0, 24.0 ],
+									"patching_rect" : [ 30.0, 610.0, 147.0, 24.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1874,7 +1922,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 285.375, 438.520812999999976, 327.0, 41.0 ],
+									"patching_rect" : [ 410.0, 392.499968999999965, 327.0, 41.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1889,7 +1937,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 285.375, 310.0, 251.5, 118.041672000000005 ]
+									"patching_rect" : [ 410.0, 263.979155999999989, 251.5, 118.041672000000005 ]
 								}
 
 							}
@@ -1920,7 +1968,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 322.5, 522.0, 360.0, 23.0 ],
+									"patching_rect" : [ 329.5, 486.625, 360.0, 23.0 ],
 									"text_width" : 84.0
 								}
 
@@ -1934,7 +1982,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 474.625, 552.0, 150.0, 23.0 ]
+									"patching_rect" : [ 481.625, 516.625, 150.0, 23.0 ]
 								}
 
 							}
@@ -1948,7 +1996,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 322.5, 552.0, 150.0, 23.0 ]
+									"patching_rect" : [ 329.5, 516.625, 150.0, 23.0 ]
 								}
 
 							}
@@ -1959,7 +2007,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 23.0, 660.0, 45.0, 45.0 ]
+									"patching_rect" : [ 30.0, 660.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1980,7 +2028,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "signal" ],
-									"patching_rect" : [ 23.0, 277.375, 231.0, 122.0 ],
+									"patching_rect" : [ 30.0, 242.0, 231.0, 122.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1992,8 +2040,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "signal", "signal", "signal", "" ],
-									"patching_rect" : [ 23.0, 580.0, 180.0, 23.0 ],
-									"text" : "fluid.hpss~ @maskingmode 1"
+									"patching_rect" : [ 30.0, 560.0, 449.0, 23.0 ],
+									"text" : "fluid.hpss~ @maskingmode 1 @maxharmfiltersize 51 @maxpercfiltersize 51"
 								}
 
 							}
@@ -2004,7 +2052,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 285.375, 276.020844000000011, 37.0, 23.0 ],
+									"patching_rect" : [ 410.0, 230.0, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -2016,7 +2064,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 330.5, 276.020844000000011, 62.0, 23.0 ],
+									"patching_rect" : [ 455.125, 230.0, 62.0, 23.0 ],
 									"text" : "loadbang"
 								}
 
@@ -2026,11 +2074,11 @@
 									"background" : 1,
 									"fontsize" : 13.0,
 									"id" : "obj-20",
-									"linecount" : 10,
+									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 91.567627000000002, 697.0, 152.0 ],
+									"patching_rect" : [ 10.0, 91.567627000000002, 814.0, 108.0 ],
 									"text" : "in mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are. \n\nIn modes 1 and 2, a binary mask is used instead, where a component is designated as being harmonic or percussive if the respective median filter output exceeds some threshold. This yields greater separation, but can have more audible artefacts. \n\nfluid.hpss~ lets you adjust this threshold with respect to frequency, to enable fine-tuning. In mode 1, just use the harmthresh attribute, which will internally make a complementary threshold for the percussive part – guaranteeing that the two components still sum to the source. ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -2040,7 +2088,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 332.0, 543.5, 32.5, 543.5 ],
+									"midpoints" : [ 339.0, 510.0, 39.5, 510.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -2064,7 +2112,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 332.0, 579.0, 32.5, 579.0 ],
+									"midpoints" : [ 339.0, 540.0, 39.5, 540.0 ],
 									"source" : [ "obj-36", 0 ]
 								}
 
@@ -2072,7 +2120,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 294.875, 483.0, 32.5, 483.0 ],
+									"midpoints" : [ 419.5, 435.0, 39.5, 435.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -2094,7 +2142,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 32.5, 410.0, 32.5, 410.0 ],
+									"midpoints" : [ 39.5, 366.0, 39.5, 366.0 ],
 									"source" : [ "obj-43", 0 ]
 								}
 
@@ -2102,7 +2150,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 0 ],
-									"midpoints" : [ 484.125, 583.5, 32.5, 583.5 ],
+									"midpoints" : [ 491.125, 548.125, 39.5, 548.125 ],
 									"source" : [ "obj-47", 0 ]
 								}
 
@@ -2117,7 +2165,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-55", 0 ],
-									"midpoints" : [ 340.0, 303.510406999999987, 294.875, 303.510406999999987 ],
+									"midpoints" : [ 464.625, 257.489562999999976, 419.5, 257.489562999999976 ],
 									"source" : [ "obj-63", 0 ]
 								}
 
@@ -2242,6 +2290,39 @@
 						"isolateaudio" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-11",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 60.0, 652.0, 101.0, 25.0 ],
+									"text" : "turn audio on",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-15",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 163.0, 654.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-9",
@@ -3816,11 +3897,12 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
+									"bubbleside" : 2,
 									"id" : "obj-25",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 44.0, 233.375, 113.0, 25.0 ],
+									"patching_rect" : [ 60.0, 213.375, 98.0, 40.0 ],
 									"text" : "select a source",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -3839,9 +3921,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 17.0, 233.375, 20.0, 20.0 ],
+									"patching_rect" : [ 160.0, 213.375, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -3886,8 +3968,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "signal", "signal", "signal", "" ],
-									"patching_rect" : [ 12.0, 560.0, 349.0, 23.0 ],
-									"text" : "fluid.hpss~ @maskingmode 2 @fftsettings 4096 1024 4096"
+									"patching_rect" : [ 12.0, 560.0, 619.0, 23.0 ],
+									"text" : "fluid.hpss~ @maskingmode 2 @fftsettings 4096 1024 4096 @maxharmfiltersize 51 @maxpercfiltersize 51"
 								}
 
 							}
@@ -3906,7 +3988,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 516.0, 235.187469000000021, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -4009,6 +4091,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 2 ],
+									"midpoints" : [ 421.5, 595.0, 241.5, 595.0 ],
 									"source" : [ "obj-40", 2 ]
 								}
 
@@ -4016,6 +4099,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 1 ],
+									"midpoints" : [ 221.5, 595.0, 131.5, 595.0 ],
 									"source" : [ "obj-40", 1 ]
 								}
 

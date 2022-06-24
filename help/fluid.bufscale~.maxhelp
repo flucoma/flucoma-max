@@ -42,6 +42,28 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-3",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 150.0, 180.0, 242.0, 22.0 ],
+					"text" : "fluid_decomposition.blocking fluid.bufscale~"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 60.0, 130.0, 191.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufscale~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -95,7 +117,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 190.0, 360.0, 190.0, 23.0 ]
+									"patching_rect" : [ 215.0, 370.0, 190.0, 23.0 ]
 								}
 
 							}
@@ -106,7 +128,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 120.0, 558.5, 280.0, 36.0 ],
+									"patching_rect" : [ 145.0, 568.5, 280.0, 36.0 ],
 									"text" : "The input (ranging from 1 to 5) is scaled to the output range of (0 to 1).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -119,7 +141,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 565.0, 113.0, 23.0 ]
+									"patching_rect" : [ 30.0, 575.0, 113.0, 23.0 ],
+									"text" : "0. 0.25 0.5 0.75 1."
 								}
 
 							}
@@ -131,7 +154,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 35.0, 462.0, 280.0, 40.0 ],
+									"patching_rect" : [ 60.0, 472.0, 280.0, 40.0 ],
 									"text" : "Extract the destination buffer data to see how bufscale processed the source buffer"
 								}
 
@@ -149,7 +172,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 317.0, 470.0, 20.0, 20.0 ],
+									"patching_rect" : [ 342.0, 480.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -163,8 +186,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 390.0, 291.5, 373.0, 50.0 ],
-									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling. You can optionall clip the output, as to not exceed the specified output minimum and maximum.",
+									"patching_rect" : [ 415.0, 301.5, 373.0, 50.0 ],
+									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling. You can optionally clip the output, as to not exceed the specified output minimum and maximum.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -177,7 +200,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 370.0, 200.0, 205.0, 40.0 ],
+									"patching_rect" : [ 395.0, 210.0, 205.0, 40.0 ],
 									"text" : "Scale the source buffer and copy to the destination buffer"
 								}
 
@@ -195,7 +218,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 578.0, 208.0, 20.0, 20.0 ],
+									"patching_rect" : [ 603.0, 218.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -211,7 +234,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 190.0, 332.5, 190.0, 23.0 ]
+									"patching_rect" : [ 215.0, 342.5, 190.0, 23.0 ]
 								}
 
 							}
@@ -224,7 +247,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 190.0, 305.0, 190.0, 23.0 ]
+									"patching_rect" : [ 215.0, 315.0, 190.0, 23.0 ]
 								}
 
 							}
@@ -237,7 +260,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 190.0, 277.5, 190.0, 23.0 ]
+									"patching_rect" : [ 215.0, 287.5, 190.0, 23.0 ]
 								}
 
 							}
@@ -250,7 +273,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 190.0, 250.0, 190.0, 23.0 ]
+									"patching_rect" : [ 215.0, 260.0, 190.0, 23.0 ]
 								}
 
 							}
@@ -262,7 +285,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 70.0, 121.5, 150.0, 40.0 ],
+									"patching_rect" : [ 95.0, 131.5, 150.0, 40.0 ],
 									"text" : "Fill the source buffer with some numbers"
 								}
 
@@ -274,7 +297,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 130.0, 59.0, 23.0 ],
+									"patching_rect" : [ 30.0, 140.0, 59.0, 23.0 ],
 									"text" : "1 2 3 4 5"
 								}
 
@@ -287,7 +310,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "buffer" ],
-									"patching_rect" : [ 5.0, 170.0, 258.0, 23.0 ],
+									"patching_rect" : [ 30.0, 180.0, 258.0, 23.0 ],
 									"text" : "fluid.list2buf @destination bufscale.help.src"
 								}
 
@@ -300,7 +323,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 470.0, 24.0, 24.0 ]
+									"patching_rect" : [ 30.0, 480.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -312,7 +335,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 5.0, 510.0, 241.0, 23.0 ],
+									"patching_rect" : [ 30.0, 520.0, 241.0, 23.0 ],
 									"text" : "fluid.buf2list @source bufscale.help.dest"
 								}
 
@@ -333,7 +356,7 @@
 									"numinlets" : 0,
 									"numoutlets" : 0,
 									"offset" : [ 0.0, 0.0 ],
-									"patching_rect" : [ 415.0, 5.0, 235.0, 110.0 ],
+									"patching_rect" : [ 365.0, 10.0, 235.0, 110.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -351,7 +374,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 222.0, 131.5, 20.0, 20.0 ],
+									"patching_rect" : [ 247.0, 141.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -365,7 +388,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 5.0, 208.5, 363.0, 23.0 ],
+									"patching_rect" : [ 30.0, 218.5, 363.0, 23.0 ],
 									"text" : "source bufscale.help.src, destination bufscale.help.dest, bang"
 								}
 
@@ -378,7 +401,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 435.0, 405.0, 158.0, 23.0 ],
+									"patching_rect" : [ 460.0, 415.0, 158.0, 23.0 ],
 									"text" : "buffer~ bufscale.help.dest"
 								}
 
@@ -391,7 +414,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 265.0, 170.0, 150.0, 23.0 ],
+									"patching_rect" : [ 290.0, 180.0, 150.0, 23.0 ],
 									"text" : "buffer~ bufscale.help.src"
 								}
 
@@ -404,7 +427,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 5.0, 405.0, 427.0, 23.0 ],
+									"patching_rect" : [ 30.0, 415.0, 427.0, 23.0 ],
 									"text" : "fluid.bufscale~ @inputlow 1 @inputhigh 5 @outputlow 0. @outputhigh 1."
 								}
 
@@ -421,7 +444,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 5.0, 5.0, 405.0, 110.0 ]
+									"patching_rect" : [ 10.0, 10.0, 355.0, 105.0 ]
 								}
 
 							}
@@ -429,7 +452,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 14.5, 353.0, 14.5, 353.0 ],
+									"midpoints" : [ 39.5, 363.0, 39.5, 363.0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -444,7 +467,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 199.5, 273.0, 14.5, 273.0 ],
+									"midpoints" : [ 224.5, 283.0, 39.5, 283.0 ],
 									"source" : [ "obj-29", 0 ]
 								}
 
@@ -452,7 +475,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-40", 1 ],
-									"midpoints" : [ 14.5, 552.0, 108.5, 552.0 ],
+									"midpoints" : [ 39.5, 562.0, 133.5, 562.0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -460,7 +483,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 199.5, 303.0, 14.5, 303.0 ],
+									"midpoints" : [ 224.5, 313.0, 39.5, 313.0 ],
 									"source" : [ "obj-30", 0 ]
 								}
 
@@ -468,7 +491,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 199.5, 330.0, 14.5, 330.0 ],
+									"midpoints" : [ 224.5, 340.0, 39.5, 340.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -476,7 +499,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 199.5, 357.0, 14.5, 357.0 ],
+									"midpoints" : [ 224.5, 367.0, 39.5, 367.0 ],
 									"source" : [ "obj-32", 0 ]
 								}
 
@@ -484,7 +507,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
-									"midpoints" : [ 199.5, 384.0, 14.5, 384.0 ],
+									"midpoints" : [ 224.5, 394.0, 39.5, 394.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -628,7 +651,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 205.0, 205.0, 50.0, 22.0 ],
+					"patching_rect" : [ 240.0, 230.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -643,6 +666,20 @@
 			}
  ],
 		"lines" : [  ],
+		"parameters" : 		{
+			"obj-3::obj-39" : [ "live.text", "live.text", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"autosave" : 0
 	}
 

@@ -106,7 +106,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 587.0, 410.0, 208.0, 25.0 ],
+									"patching_rect" : [ 627.0, 410.0, 208.0, 25.0 ],
 									"text" : "set temporal shape to the piano"
 								}
 
@@ -124,9 +124,9 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 795.0, 412.5, 20.0, 20.0 ],
+									"patching_rect" : [ 835.0, 412.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "4",
+									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -138,8 +138,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 464.0, 360.0, 234.0, 25.0 ],
-									"presentation_linecount" : 3,
+									"patching_rect" : [ 503.0, 360.0, 234.0, 25.0 ],
 									"text" : "set the temporal shape to the drums"
 								}
 
@@ -157,7 +156,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 700.0, 362.5, 20.0, 20.0 ],
+									"patching_rect" : [ 739.0, 362.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -172,7 +171,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 500.0, 160.0, 135.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "decompose pianos"
 								}
 
@@ -205,7 +203,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.0, 160.0, 132.0, 25.0 ],
-									"presentation_linecount" : 3,
 									"text" : "decompose drums"
 								}
 
@@ -249,8 +246,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 123.0, 410.0, 464.0, 23.0 ],
-									"text" : "activations help.morph.act.2, interp 0, autoassign 0, autoassign 1, autoassign 0"
+									"patching_rect" : [ 123.0, 410.0, 502.0, 23.0 ],
+									"text" : "activations help.morph.act.2, interpolation 0, autoassign 0, autoassign 1, autoassign 0"
 								}
 
 							}
@@ -261,8 +258,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 80.0, 360.0, 383.0, 23.0 ],
-									"text" : "activations help.morph.act.1, interp 1, autoassign 0, autoassign 1"
+									"patching_rect" : [ 80.0, 360.0, 421.0, 23.0 ],
+									"text" : "activations help.morph.act.1, interpolation 1, autoassign 0, autoassign 1"
 								}
 
 							}
@@ -299,7 +296,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 470.0, 195.932372999999984, 242.0, 67.0 ],
+									"patching_rect" : [ 470.0, 195.932372999999984, 243.0, 67.0 ],
 									"text" : "fluid.bufnmf~ @source help.morph.src.2 @bases help.morph.bases.2 @activations help.morph.act.2 @numchans 1 @components 5"
 								}
 

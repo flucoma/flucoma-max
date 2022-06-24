@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -108,20 +108,6 @@
 									"patching_rect" : [ 388.0, 490.0, 215.0, 166.0 ],
 									"text" : "By default, each row is layed out framewise, so all of channel 1 is ordered in time as the columns of identifier 0.\n\nWhen frombuffer <buffer> 1 is passed (implicitly 0), the copying is transposed. This means each identifier will contain the same index across all channels as the columns of a given identifier.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"bubble" : 1,
-									"id" : "obj-25",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 1107.0, 417.0, 185.0, 54.0 ],
-									"text" : "Channels become \"rows\" or \"identifiers\" and the frames become columns.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -249,7 +235,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 704.699999675154686, 218.5, 170.0, 36.0 ],
-									"text" : "Compure the stats across each spectral shape feature",
+									"text" : "Compute the stats across each spectral shape feature",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -613,8 +599,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 120.0, 213.0, 25.0 ],
-									"text" : "generate some random data first"
+									"patching_rect" : [ 50.0, 120.0, 216.0, 25.0 ],
+									"text" : "Generate some random data first"
 								}
 
 							}
@@ -2006,7 +1992,7 @@
 									"maxclass" : "live.line",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 621.0, 179.0, 35.600000649690628, 6.0 ]
+									"patching_rect" : [ 606.0, 154.0, 35.600000649690628, 6.0 ]
 								}
 
 							}
@@ -2017,7 +2003,7 @@
 									"maxclass" : "live.line",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 619.0, 142.0, 5.0, 40.0 ]
+									"patching_rect" : [ 604.0, 117.0, 5.0, 40.0 ]
 								}
 
 							}
@@ -2050,7 +2036,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 209.5, 551.5, 20.0, 20.0 ],
+									"patching_rect" : [ 513.0, 606.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2065,7 +2051,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 235.0, 538.5, 356.0, 54.0 ],
+									"patching_rect" : [ 155.0, 589.5, 356.0, 54.0 ],
 									"text" : "Open the max console to see the data that was generated and stored in the dataset with the identity \"scratch-synth\"",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -2078,7 +2064,7 @@
 									"maxclass" : "live.line",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 81.25, 138.0, 540.75, 7.0 ]
+									"patching_rect" : [ 66.25, 113.0, 540.75, 7.0 ]
 								}
 
 							}
@@ -2088,8 +2074,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 50.0, 550.0, 156.0, 23.0 ],
-									"text" : "print \"fluid.dataset~ help:\""
+									"patching_rect" : [ 35.0, 604.999999999999886, 115.0, 23.0 ],
+									"text" : "print fluid.dataset~"
 								}
 
 							}
@@ -2106,7 +2092,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 658.600000649690628, 172.0, 20.0, 20.0 ],
+									"patching_rect" : [ 875.0, 152.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2121,7 +2107,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 683.600000649690628, 133.0, 230.0, 98.0 ],
+									"patching_rect" : [ 643.600000649690628, 113.0, 230.0, 98.0 ],
 									"text" : "Analyse the buffer named src with the mel-frequency cepstrum coefficient descriptor. Calculate the statistics across each coefficient per spectral frame and flatten the data to a single dimension."
 								}
 
@@ -2134,7 +2120,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "list" ],
-									"patching_rect" : [ 50.0, 510.0, 77.0, 23.0 ],
+									"patching_rect" : [ 35.0, 556.428571428571331, 77.0, 23.0 ],
 									"text" : "fluid.buf2list"
 								}
 
@@ -2146,7 +2132,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 475.0, 151.0, 23.0 ],
+									"patching_rect" : [ 35.0, 507.857142857142776, 151.0, 23.0 ],
 									"text" : "substitute getpoint buffer"
 								}
 
@@ -2158,7 +2144,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 405.0, 238.0, 23.0 ],
+									"patching_rect" : [ 35.0, 410.714285714285666, 238.0, 23.0 ],
 									"text" : "getpoint scratch-synth features.stats.flat"
 								}
 
@@ -2170,7 +2156,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 440.0, 177.0, 23.0 ],
+									"patching_rect" : [ 35.0, 459.285714285714221, 177.0, 23.0 ],
 									"text" : "fluid.dataset~ sound-analysis"
 								}
 
@@ -2182,7 +2168,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 370.0, 87.0, 23.0 ],
+									"patching_rect" : [ 35.0, 362.14285714285711, 87.0, 23.0 ],
 									"text" : "route setpoint"
 								}
 
@@ -2194,7 +2180,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 330.0, 177.0, 23.0 ],
+									"patching_rect" : [ 35.0, 313.571428571428555, 177.0, 23.0 ],
 									"text" : "fluid.dataset~ sound-analysis"
 								}
 
@@ -2205,7 +2191,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 290.0, 292.0, 185.0, 21.0 ],
+									"patching_rect" : [ 275.0, 267.0, 185.0, 21.0 ],
 									"text" : "setpoint <identifier> <buffer>",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2218,7 +2204,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 290.0, 238.0, 23.0 ],
+									"patching_rect" : [ 35.0, 265.0, 238.0, 23.0 ],
 									"text" : "setpoint scratch-synth features.stats.flat"
 								}
 
@@ -2231,7 +2217,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 50.0, 130.0, 24.0, 24.0 ]
+									"patching_rect" : [ 35.0, 105.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -2243,7 +2229,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 470.0, 245.0, 152.0, 23.0 ],
+									"patching_rect" : [ 455.0, 220.0, 152.0, 23.0 ],
 									"text" : "buffer~ features.stats.flat"
 								}
 
@@ -2256,7 +2242,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 245.0, 417.0, 23.0 ],
+									"patching_rect" : [ 35.0, 220.0, 417.0, 23.0 ],
 									"text" : "fluid.bufflatten~ @source features.stats @destination features.stats.flat"
 								}
 
@@ -2269,7 +2255,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 470.0, 205.0, 131.0, 23.0 ],
+									"patching_rect" : [ 455.0, 180.0, 131.0, 23.0 ],
 									"text" : "buffer~ features.stats"
 								}
 
@@ -2282,8 +2268,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 205.0, 409.0, 23.0 ],
-									"text" : "fluid.bufstats~ @source features @stats features.stats @numderivs 0"
+									"patching_rect" : [ 35.0, 180.0, 321.0, 23.0 ],
+									"text" : "fluid.bufstats~ @source features @stats features.stats"
 								}
 
 							}
@@ -2295,7 +2281,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 470.0, 165.0, 100.0, 23.0 ],
+									"patching_rect" : [ 455.0, 140.0, 100.0, 23.0 ],
 									"text" : "buffer~ features"
 								}
 
@@ -2308,7 +2294,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 50.0, 165.0, 298.0, 23.0 ],
+									"patching_rect" : [ 35.0, 140.0, 298.0, 23.0 ],
 									"text" : "fluid.bufmfcc~ 13 @source src @features features"
 								}
 
@@ -2320,7 +2306,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 635.0, 245.0, 313.0, 23.0 ],
+									"patching_rect" : [ 620.0, 220.0, 313.0, 23.0 ],
 									"text" : "buffer~ src Tremblay-ASWINE-ScratchySynth-M.wav"
 								}
 
@@ -2337,7 +2323,7 @@
 									"mode" : 0,
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 45.0, 125.0, 585.0, 150.0 ],
+									"patching_rect" : [ 30.0, 100.0, 585.0, 150.0 ],
 									"proportion" : 0.5
 								}
 
@@ -2533,6 +2519,18 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 60.0, 488.0, 120.0, 38.0 ],
+									"text" : "print fluid.dataset~ @popup 1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-9",
 									"maxclass" : "comment",
@@ -2925,7 +2923,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 199.0, 298.0, 557.0, 36.0 ],
+									"patching_rect" : [ 199.0, 291.5, 557.0, 36.0 ],
 									"text" : "Get the number of columns, or dimensions of the data points. Since all points must have the same number of dimensions, this is just a single number. It is reported out the left outlet.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2949,8 +2947,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 435.0, 533.0, 98.0, 23.0 ],
-									"text" : "print @popup 1"
+									"patching_rect" : [ 435.0, 533.0, 179.0, 23.0 ],
+									"text" : "print fluid.dataset~ @popup 1"
 								}
 
 							}
@@ -3079,6 +3077,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
 									"source" : [ "obj-1", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-3", 0 ],
+									"source" : [ "obj-1", 0 ]
 								}
 
 							}
@@ -3670,7 +3675,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3988,34 +3993,14 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 0.015686274509804, 0.015686274509804, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
-									"id" : "obj-57",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 400.0, 685.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "!!!",
-									"textcolor" : [ 1.0, 0.968627450980392, 0.0, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontface" : 2,
 									"id" : "obj-58",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 118.0, 670.0, 280.0, 50.0 ],
-									"text" : "fluid.dataset~ will report back when an operation is complete from its right outlet. You can use this to chain together processes.",
+									"patching_rect" : [ 206.0, 656.5, 280.0, 50.0 ],
+									"text" : "fluid.dataset~ will report back when an operation is complete from its left outlet. You can use this to chain together processes.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -4026,8 +4011,8 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 17.0, 670.0, 98.0, 23.0 ],
-									"text" : "print @popup 1"
+									"patching_rect" : [ 17.0, 670.0, 179.0, 23.0 ],
+									"text" : "print fluid.dataset~ @popup 1"
 								}
 
 							}

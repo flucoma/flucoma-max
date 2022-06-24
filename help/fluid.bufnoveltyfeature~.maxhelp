@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 65.0, 153.0, 225.0, 22.0 ],
+					"text" : "fluid.bufferinterface fluid.bufnoveltyslice~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-6",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -87,6 +98,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-6",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.bufnoveltyfeature~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 368.0, 300.0, 198.841995239257812, 54.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"args" : [ "noveltyfeature" ],
 									"bgmode" : 0,
@@ -478,13 +505,13 @@
 								"box" : 								{
 									"color" : [ 0.254901960784314, 0.905882352941176, 0.450980392156863, 1.0 ],
 									"id" : "obj-22",
-									"linecount" : 4,
+									"linecount" : 6,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 10.0, 300.0, 161.0, 62.0 ],
-									"text" : "fluid.bufnoveltyslice~ @source help.novelty.src @indices help.novelty.slices @threshold 0.1"
+									"patching_rect" : [ 10.0, 300.0, 161.0, 89.0 ],
+									"text" : "fluid.bufnoveltyslice~ @source help.novelty.src @indices help.novelty.slices @threshold 0.5 @maxfiltersize 11 @maxkernelsize 51"
 								}
 
 							}
@@ -552,13 +579,13 @@
 								"box" : 								{
 									"color" : [ 1.0, 0.43921568627451, 0.662745098039216, 1.0 ],
 									"id" : "obj-1",
-									"linecount" : 3,
+									"linecount" : 5,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 190.0, 300.0, 170.0, 49.0 ],
-									"text" : "fluid.bufnoveltyfeature~ @source help.novelty.src @features help.novelty.curve"
+									"patching_rect" : [ 190.0, 300.0, 170.0, 76.0 ],
+									"text" : "fluid.bufnoveltyfeature~ @source help.novelty.src @features help.novelty.curve @maxfiltersize 11 @maxkernelsize 51"
 								}
 
 							}
@@ -583,7 +610,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-41", 1 ],
-									"midpoints" : [ 199.5, 390.0, 131.5, 390.0 ],
+									"midpoints" : [ 199.5, 396.0, 131.5, 396.0 ],
 									"source" : [ "obj-1", 0 ]
 								}
 
@@ -759,7 +786,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 0,
 					"numoutlets" : 0,
-					"patching_rect" : [ 71.0, 97.0, 290.0, 22.0 ],
+					"patching_rect" : [ 115.0, 198.0, 290.0, 22.0 ],
 					"text" : "fluid_decomposition.blocking fluid.bufnoveltyfeature~"
 				}
 
@@ -814,7 +841,7 @@
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 363.0, 97.0, 50.0, 22.0 ],
+					"patching_rect" : [ 407.0, 198.0, 50.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",

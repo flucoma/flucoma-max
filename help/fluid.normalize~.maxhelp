@@ -1122,7 +1122,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "list" ],
 													"patching_rect" : [ 146.5, 137.5, 247.0, 22.0 ],
-													"text" : "fluid.buf2list @source standardize.help.point",
+													"text" : "fluid.buf2list @source normalize.help.point",
 													"varname" : "fluid.buf2list"
 												}
 
@@ -1271,7 +1271,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 758.0, 104.5, 20.0, 20.0 ],
+									"patching_rect" : [ 747.0, 102.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1286,8 +1286,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 540.0, 102.5, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"patching_rect" : [ 540.0, 102.5, 205.0, 40.0 ],
+									"text" : "Normalise the dataset of raw data"
 								}
 
 							}
@@ -1441,7 +1441,7 @@
 									"filename" : "helpdetails.js",
 									"id" : "obj-2",
 									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.standardize~" ],
+									"jsarguments" : [ "fluid.normalize~" ],
 									"maxclass" : "jsui",
 									"numinlets" : 1,
 									"numoutlets" : 1,
@@ -1520,7 +1520,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"visualising standardisation\"",
+					"text" : "p \"visualising normalisation\"",
 					"varname" : "basic_tab[2]"
 				}
 
@@ -1542,7 +1542,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 950.0, 731.0 ],
+						"rect" : [ 34.0, 113.0, 950.0, 731.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1633,8 +1633,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 560.0, 150.0, 216.0, 40.0 ],
-									"text" : "Standardise the dataset of raw data"
+									"patching_rect" : [ 560.0, 150.0, 205.0, 40.0 ],
+									"text" : "Normalise the dataset of raw data"
 								}
 
 							}
@@ -1989,7 +1989,7 @@
 					"filename" : "helpname.js",
 					"id" : "obj-4",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.standardize~" ],
+					"jsarguments" : [ "fluid.normalize~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,
@@ -2069,7 +2069,7 @@
 					"filename" : "helpname.js",
 					"id" : "obj-7",
 					"ignoreclick" : 1,
-					"jsarguments" : [ "fluid.standardize~" ],
+					"jsarguments" : [ "fluid.normalize~" ],
 					"maxclass" : "jsui",
 					"numinlets" : 1,
 					"numoutlets" : 1,

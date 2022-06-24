@@ -42,6 +42,17 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-1",
+					"maxclass" : "newobj",
+					"numinlets" : 0,
+					"numoutlets" : 0,
+					"patching_rect" : [ 150.0, 170.0, 214.0, 23.0 ],
+					"text" : "fluid.dsinterface fluid.mlpregressor~"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-2",
 					"maxclass" : "newobj",
 					"numinlets" : 0,
@@ -114,7 +125,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 662.0, 290.0, 294.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Predict for a datum an output from the network"
 								}
 
@@ -201,7 +211,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
-									"outlettype" : [ "list" ],
+									"outlettype" : [ "buffer" ],
 									"patching_rect" : [ 470.0, 368.5, 153.0, 23.0 ],
 									"text" : "fluid.list2buf @autosize 1"
 								}
@@ -215,7 +225,6 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 470.0, 401.0, 238.0, 23.0 ],
-									"presentation_linecount" : 2,
 									"text" : "predictpoint $2 help.mlpr.pointprediction"
 								}
 
@@ -228,7 +237,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 675.5, 315.0, 304.5, 50.0 ],
-									"presentation_linecount" : 6,
 									"text" : "You can also predict individual points with the \"predictpoint\" message. This takes arguments in the form <input> <output> as two buffers",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -253,8 +261,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 645.0, 504.5, 154.0, 166.0 ],
-									"presentation_linecount" : 11,
+									"patching_rect" : [ 645.0, 504.5, 157.0, 166.0 ],
 									"text" : "Predicting the outputs for an exponential ramp shows how the mapping works.\n\nWe have a quasi-exponential sine wave here as a result of predicting based on the curved ramp of help.mlpr.query",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -340,7 +347,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 509.0, 179.0, 285.0, 25.0 ],
-									"presentation_linecount" : 2,
 									"text" : "now fit two fluid.dataset~s against each other"
 								}
 
@@ -838,7 +844,7 @@
 							}
 , 							{
 								"box" : 								{
-									"buffername" : "u039003968",
+									"buffername" : "u509010541",
 									"gridcolor" : [ 0.349019607843137, 0.349019607843137, 0.349019607843137, 0.0 ],
 									"id" : "obj-21",
 									"maxclass" : "waveform~",

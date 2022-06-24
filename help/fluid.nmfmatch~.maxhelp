@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 995.0, 777.0 ],
+		"rect" : [ 35.0, 88.0, 886.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 886.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -105,7 +105,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 230.0, 580.0, 132.0, 23.0 ],
+									"patching_rect" : [ 230.0, 580.0, 147.0, 23.0 ],
 									"text" : "fluid.stats 2 @history 10"
 								}
 
@@ -660,7 +660,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 886.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -690,6 +690,22 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpargs.js",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.nmfmatch~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 412.0, 430.0, 236.178009033203125, 39.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-57",
@@ -1544,6 +1560,7 @@
 							}
 , 							{
 								"box" : 								{
+									"color" : [ 1.0, 0.792156862745098, 0.0, 1.0 ],
 									"id" : "obj-14",
 									"maxclass" : "newobj",
 									"numinlets" : 1,
@@ -1560,7 +1577,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 469.0, 254.0, 21.0 ],
+									"patching_rect" : [ 580.0, 354.0, 254.0, 21.0 ],
 									"text" : "These are the \"bases\" of each component.",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
@@ -1596,7 +1613,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 570.0, 399.0, 301.0, 68.0 ],
+									"patching_rect" : [ 580.0, 298.0, 270.0, 54.0 ],
 									"selectioncolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 0.0 ],
 									"setunit" : 1,
 									"waveformcolor" : [ 1.0, 0.43921568627451, 0.662745098039216, 1.0 ]
@@ -1612,7 +1629,7 @@
 									"numinlets" : 5,
 									"numoutlets" : 6,
 									"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-									"patching_rect" : [ 570.0, 329.0, 301.0, 68.0 ],
+									"patching_rect" : [ 580.0, 228.0, 270.0, 54.0 ],
 									"selectioncolor" : [ 0.929411764705882, 0.929411764705882, 0.352941176470588, 0.0 ],
 									"setunit" : 1,
 									"waveformcolor" : [ 0.423529411764706, 0.513725490196078, 1.0, 1.0 ]
@@ -1841,7 +1858,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 35.0, 114.0, 886.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1879,7 +1896,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 400.0, 301.382858999999996, 392.0, 67.0 ],
-									"text" : "502.583252 366.988739 1566.338867 1585.26709 613.120544 578.441772 2444.402344 479.14 1292.404785 3297.306152 521.82843 546.293213 478.534271 552.170532 352.872833 1428.319458"
+									"text" : "616.558716 502.433472 1576.040283 657.483459 406.496796 1518.972778 2352.266846 524.6651 616.41748 3105.3 1442.16687 354.806519 361.575867 524.216675 511.891449 1288.352539"
 								}
 
 							}
@@ -1887,11 +1904,11 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-30",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 547.877480999999989, 416.833344000000011, 431.0, 36.0 ],
+									"patching_rect" : [ 560.0, 409.833344000000011, 281.0, 50.0 ],
 									"text" : "These control the relative strengths of filters who have their centre frequencies set to the median spectral centroid of each component",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2018,7 +2035,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 244.877481000000017, 470.0, 125.0, 23.0 ],
+									"patching_rect" : [ 244.877481000000017, 470.0, 140.0, 23.0 ],
 									"text" : "fluid.stats 8 @history 5"
 								}
 
@@ -3001,38 +3018,6 @@
 							}
 , 							{
 								"box" : 								{
-									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
-									"fontname" : "Arial Bold",
-									"hint" : "",
-									"id" : "obj-52",
-									"ignoreclick" : 1,
-									"legacytextcolor" : 1,
-									"maxclass" : "textbutton",
-									"numinlets" : 1,
-									"numoutlets" : 3,
-									"outlettype" : [ "", "", "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 384.0, 1118.0, 20.0, 20.0 ],
-									"rounded" : 60.0,
-									"text" : "2",
-									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-54",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 425.0, 1118.0, 301.0, 36.0 ],
-									"text" : "wait for it to finish. The 2 bases with the lowest centroid is copied to the first channel"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"id" : "obj-12",
 									"maxclass" : "button",
 									"numinlets" : 1,
@@ -3473,7 +3458,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 886.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3509,7 +3494,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 135.0, 468.0, 132.0, 23.0 ],
+									"patching_rect" : [ 135.0, 468.0, 147.0, 23.0 ],
 									"text" : "fluid.stats 2 @history 10"
 								}
 
@@ -3522,7 +3507,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 775.0, 508.0, 87.0, 23.0 ],
-									"text" : "loadmess -30"
+									"text" : "loadmess -12"
 								}
 
 							}
@@ -4520,7 +4505,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 886.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
