@@ -103,8 +103,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 30.0, 410.0, 149.0, 23.0 ],
-					"text" : "fittransform u927007052"
+					"patching_rect" : [ 30.0, 410.0, 149.0, 23.0 ]
 				}
 
 			}
