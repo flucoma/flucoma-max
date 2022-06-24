@@ -163,7 +163,7 @@ public:
     }
 
     if(!(client.controlChannelsIn() > 0))
-    object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform),
+      object_method(dsp64, gensym("dsp_add64"), wrapper, ((method) callPerform),
                   0, nullptr);
   }
 
@@ -211,8 +211,13 @@ public:
     switch (io)
     {
     case 1:
-      snprintf_zero(s, 512, "(signal) %s", client.getInputLabel(index));
+    {
+      if(!client.controlChannelsIn())
+        snprintf_zero(s, 512, "(signal) %s", client.getInputLabel(index));
+      else
+        snprintf_zero(s, 512, "(list) %s", client.getInputLabel(index));
       break;
+    }
     case 2:
       if (index < client.audioChannelsOut())
       {
@@ -462,11 +467,16 @@ struct NonRealTime
     {
       switch (io)
       {
-      case 1: strncpy_zero(s, "(bang) start processing", 512); break;
+      case 1:
+        {
+          if(index == 0) strncpy_zero(s, "(bang) start processing; (buffer <symbol>) set source and start processing", 512);
+          else x->mInputBufferAssist[index](x,s);
+          break;
+        }
       case 2:
           if(index < Wrapper::NumOutputBuffers)
           {
-             x->mBufferAssist[index](x,s);
+             x->mOutputBufferAssist[index](x,s);
           }
           else strncpy_zero(s, "(anything) dumpout", 512);
       }
@@ -1186,8 +1196,9 @@ public:
                 static_cast<long>(mClient.audioChannelsIn()));
       impl::MaxBase::getMSPObject()->z_misc |= Z_NO_INPLACE;
     }
-
-    if (index new_ins = mClient.controlChannelsIn())
+    
+    //TODO: this implicitly assumes no audio in?
+    if (index new_ins = mClient.controlChannelsIn() > 1)
     {
       mAutosize = true;      
       if(mListSize)
@@ -1225,10 +1236,21 @@ public:
     });
     
     
+    //functions for buffer inlet assistance
+    mParams.template forEachParamType<InputBufferT>([this](auto&, auto idx){
+       static constexpr index N = decltype(idx)::value;
+       mInputBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
+       {
+          static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
+          sprintf(s,"(buffer <symbol>): set %s buffer", param_name.c_str());
+       });
+    });
+
+    
     //functions for buffer outlet assistance
     mParams.template forEachParamType<BufferT>([this](auto&, auto idx){
        static constexpr index N = decltype(idx)::value; 
-       mBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
+       mOutputBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
        {
           static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
           sprintf(s,"buffer: %s", param_name.c_str());
@@ -1402,6 +1424,8 @@ public:
 
   static void makeClass(const char* className)
   {
+    
+    static constexpr bool AudioInput = isAudioIn<typename Client::Client>;
     const ParamDescType& p = Client::getParameterDescriptors();
     const auto&          m = Client::getMessageDescriptors();
     getClass(class_new(className, (method) create, (method) destroy,
@@ -1442,7 +1466,12 @@ public:
 
     p.template iterateMutable<SetupAttribute>();
     p.template iterateFixed<SetupReadOnlyAttribute>();
-
+    
+    
+    //for non-audio classes, give us cold inlets for non-left
+    if(!AudioInput)
+      class_addmethod(getClass(), (method)stdinletinfo, "inletinfo", A_CANT, 0);
+    
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
   }
@@ -2417,7 +2446,8 @@ private:
   std::vector<t_object*>    mHostedOutputBufferObjects;
   std::vector<void(*)(FluidMaxWrapper*,long,t_atom*)> mBufferDispatch;
   
-  std::vector<void(*)(FluidMaxWrapper*,char* s)> mBufferAssist;
+  std::vector<void(*)(FluidMaxWrapper*,char* s)> mInputBufferAssist;
+  std::vector<void(*)(FluidMaxWrapper*,char* s)> mOutputBufferAssist;
     
   long mProxyNumber;
   std::vector<void*> mDataOutlets;
