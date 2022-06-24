@@ -192,11 +192,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-18",
-									"linecount" : 31,
+									"linecount" : 29,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 210.0, 338.0, 457.0 ],
+									"patching_rect" : [ 480.0, 210.0, 342.0, 428.0 ],
 									"text" : "The UMAP algorithm can be nudged to favour the global or local structure of the original data. In essence, this is about whether or not you care about the overall shape of the data, or smaller clusters of points when it is reduced.\n\nThe numneighbours attribute dictates how many points from the original data are considered together when it is determining a transform for the data. These are related to the size of your data. For example, imagine that you have a dataset with 100 points and wanted the whole space to be considered as \"one thing\", setting numneighbours to 100 might be an interesting place to start.\n\nThe minimum distance attribute dictates how close points can be represented in the output dataset. Small values tending towards 0 let UMAP pack the points in tightly while larger values cause the data to be more spread out.\n\nMusically speaking, this decision making will be bound up in lots of different attentions, like what kind of sounds are being analysed and how those sounds will be used in conjunction with the UMAP representation. If you want tight perceptually meaningful clusters then lowering the number of neighbours (relative to your total dataset) and increasing the minimum distance could be a tool for creating more stark separations between points. Likewise, lowering the mindist and increasing the numneighbours might create a flatter and more spread out space for exploring more widely.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2689,6 +2689,18 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-4",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 91.0, 353.0, 104.0, 22.0 ],
+													"text" : "pointsizescale 0.5"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-1",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
@@ -2768,7 +2780,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 189.0, 338.0, 69.0, 22.0 ],
+													"patching_rect" : [ 17.0, 353.0, 69.0, 22.0 ],
 													"text" : "route dump"
 												}
 
@@ -2854,7 +2866,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 189.0, 380.0, 30.0, 30.0 ]
+													"patching_rect" : [ 17.0, 395.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2916,7 +2928,18 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-4", 0 ],
+													"midpoints" : [ 198.5, 339.0, 100.5, 339.0 ],
+													"order" : 0,
+													"source" : [ "obj-35", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-41", 0 ],
+													"midpoints" : [ 198.5, 339.0, 26.5, 339.0 ],
+													"order" : 1,
 													"source" : [ "obj-35", 1 ]
 												}
 
@@ -2925,6 +2948,14 @@
 												"patchline" : 												{
 													"destination" : [ "obj-40", 0 ],
 													"source" : [ "obj-38", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-44", 0 ],
+													"midpoints" : [ 100.5, 390.0, 26.5, 390.0 ],
+													"source" : [ "obj-4", 0 ]
 												}
 
 											}
