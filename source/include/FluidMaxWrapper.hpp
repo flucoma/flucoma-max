@@ -1198,18 +1198,20 @@ public:
     }
     
     //TODO: this implicitly assumes no audio in?
-    if (index new_ins = mClient.controlChannelsIn() > 1)
+    if (index controlInputs = mClient.controlChannelsIn())
     {
       mAutosize = true;      
       if(mListSize)
       {
-        mInputListData.resize(new_ins, mListSize);
-        for (index i = 1; i <= new_ins; ++i)
+        mInputListData.resize(controlInputs, mListSize);
+        for (index i = 1; i <= controlInputs; ++i)
           mInputListViews.emplace_back(mInputListData.row(i - 1));
       }
-
-      mProxies.reserve(new_ins);
-      for (index i = 1; i <= new_ins; ++i)
+      
+      //we already have a left inlet, but do we need more?
+      index newInlets = controlInputs - 1;
+      mProxies.reserve(newInlets);
+      for (index i = 1; i <= newInlets; ++i)
         mProxies.push_back(proxy_new(this, i + 1, &this->mProxyNumber));
     }
     
