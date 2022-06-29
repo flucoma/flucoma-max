@@ -1116,8 +1116,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 69.599853515625, 589.0, 21.0 ],
-									"text" : "we can move onsets / offsets to more desireable positions, or supress state changes that are too fast",
+									"patching_rect" : [ 10.0, 69.599853515625, 630.0, 21.0 ],
+									"text" : "We can move onsets / offsets to more desirable positions, or suppress state changes that are too fast",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -1473,7 +1473,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 279.0, 500.0, 150.0, 108.0 ],
-									"text" : "Unlike other slices the output is two channels:\n\nOne for the times of on states and one for the times of off stats of the gate.",
+									"text" : "Unlike other slices the output is two channels:\n\nOne for the times of on states and one for the times of off states of the gate.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
