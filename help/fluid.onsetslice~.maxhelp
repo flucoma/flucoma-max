@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -52,7 +52,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -89,6 +89,29 @@
 						"isolateaudio" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-13",
+									"maxclass" : "playbar",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "int" ],
+									"patching_rect" : [ 60.0, 360.0, 228.0, 19.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-7",
+									"maxclass" : "toggle",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 290.0, 390.0, 24.0, 24.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-1",
@@ -230,7 +253,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -893,7 +916,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -948,7 +971,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 180.0, 556.0, 50.0, 22.0 ],
-													"text" : "6"
+													"text" : "0"
 												}
 
 											}
@@ -964,7 +987,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1456,7 +1479,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1842,7 +1865,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2153,7 +2176,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2323,7 +2346,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 2,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2969,13 +2992,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
-									"outlettype" : [ "" ],
+									"outlettype" : [ "int" ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3011,6 +3034,30 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-5",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 187.5, 245.0, 83.0, 22.0 ],
+													"text" : "prepend open"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-4",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 2,
+													"outlettype" : [ "int", "" ],
+													"patching_rect" : [ 130.5, 204.0, 76.0, 22.0 ],
+													"text" : "t 1 l"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"comment" : "",
 													"id" : "obj-3",
 													"index" : 1,
@@ -3042,19 +3089,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 130.5, 218.0, 30.0, 30.0 ]
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-48",
-													"maxclass" : "newobj",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "" ],
-													"patching_rect" : [ 130.5, 191.833344000000011, 85.0, 22.0 ],
-													"text" : "prepend open"
+													"patching_rect" : [ 130.5, 290.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -3074,7 +3109,7 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Constanzo-PreparedSnare-M.wav", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+													"items" : [ "Constanzo-PreparedSnare-M.wav", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774691222011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774722891361.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774764061691.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774801058011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779518266731.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779532395371.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779544652791.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779545550871.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779547760421.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779552509121.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779560524461.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779568052221.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779612463381.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774691222011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774722891371.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774764061691.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774801058011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779518266731.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779532395371.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779544652791.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779545550881.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779547760421.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779552509121.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779560524471.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779568052221.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779612463381.wav", ",", "Olencki-TenTromboneLongTones-M_nmf_165774721969671.wav", ",", "Olencki-TenTromboneLongTones-M_sines-r_165774712383571.wav", ",", "Olencki-TenTromboneLongTones-M_sines-s_165774712383571.wav", ",", "Olencki-TenTromboneLongTones-M_ts-r_165774711761181.wav", ",", "Olencki-TenTromboneLongTones-M_ts-t_165774711761181.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
@@ -3159,6 +3194,21 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-1", 0 ],
+													"midpoints" : [ 140.0, 228.0, 140.0, 228.0 ],
+													"source" : [ "obj-4", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-5", 0 ],
+													"source" : [ "obj-4", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-45", 0 ],
 													"source" : [ "obj-40", 0 ]
 												}
@@ -3166,7 +3216,7 @@
 											}
 , 											{
 												"patchline" : 												{
-													"destination" : [ "obj-48", 0 ],
+													"destination" : [ "obj-4", 0 ],
 													"source" : [ "obj-44", 1 ]
 												}
 
@@ -3181,7 +3231,8 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-1", 0 ],
-													"source" : [ "obj-48", 0 ]
+													"midpoints" : [ 197.0, 270.0, 140.0, 270.0 ],
+													"source" : [ "obj-5", 0 ]
 												}
 
 											}
@@ -3322,18 +3373,6 @@
 							}
 , 							{
 								"box" : 								{
-									"hiderwff" : 1,
-									"id" : "obj-64",
-									"maxclass" : "playbar",
-									"numinlets" : 1,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "int" ],
-									"patching_rect" : [ 37.0, 360.0, 183.0, 28.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 13.0,
 									"id" : "obj-66",
@@ -3341,7 +3380,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 20.0, 447.0, 52.0, 23.0 ],
+									"patching_rect" : [ 20.0, 420.0, 52.0, 23.0 ],
 									"text" : "sfplay~"
 								}
 
@@ -3441,6 +3480,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-66", 0 ],
+									"midpoints" : [ 69.5, 405.0, 29.5, 405.0 ],
+									"source" : [ "obj-13", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-172", 0 ],
 									"source" : [ "obj-156", 0 ]
 								}
@@ -3513,14 +3560,6 @@
 									"destination" : [ "obj-68", 0 ],
 									"midpoints" : [ 483.5, 496.0, 158.0, 496.0 ],
 									"source" : [ "obj-56", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
-									"destination" : [ "obj-66", 0 ],
-									"midpoints" : [ 46.5, 417.0, 29.5, 417.0 ],
-									"source" : [ "obj-64", 0 ]
 								}
 
 							}
@@ -3634,7 +3673,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4045,7 +4084,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
