@@ -100,7 +100,7 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -825.0, 0.0 ],
+									"offset" : [ -1650.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -112,7 +112,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ -154.0, -1112.0, 1476.0, 1077.0 ],
+										"rect" : [ -154.0, -1112.0, 1850.0, 1077.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -141,6 +141,40 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"fontface" : 2,
+													"fontname" : "Lato",
+													"id" : "obj-19",
+													"linecount" : 5,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 1560.0, 270.0, 179.0, 78.0 ],
+													"presentation" : 1,
+													"presentation_linecount" : 4,
+													"presentation_rect" : [ 1665.0, 165.0, 198.0, 64.0 ],
+													"text" : "These examples serve as intermediate and advanced applications achieved by combining several FluCoMa objects together.",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 2,
+													"fontname" : "Lato",
+													"id" : "obj-17",
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 1560.0, 105.0, 139.0, 21.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 1665.0, 15.0, 139.0, 21.0 ],
+													"text" : "Select an example...",
+													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-14",
 													"maxclass" : "newobj",
@@ -804,7 +838,7 @@
 													"parameter_enable" : 1,
 													"patching_rect" : [ 1560.0, 131.0, 179.0, 122.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 1665.0, 7.0, 198.0, 122.0 ],
+													"presentation_rect" : [ 1665.0, 37.0, 198.0, 122.0 ],
 													"saved_attribute_attributes" : 													{
 														"activebgoncolor" : 														{
 															"expression" : "themecolor.live_value_bar"
