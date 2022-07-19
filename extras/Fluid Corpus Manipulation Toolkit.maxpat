@@ -100,7 +100,7 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -2475.0, 0.0 ],
+									"offset" : [ -825.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -112,7 +112,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ -154.0, -1112.0, 1850.0, 1077.0 ],
+										"rect" : [ -154.0, -1112.0, 1476.0, 1077.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -141,6 +141,418 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"bgmode" : 0,
+													"border" : 0,
+													"clickthrough" : 0,
+													"embed" : 1,
+													"enablehscroll" : 0,
+													"enablevscroll" : 0,
+													"id" : "obj-80",
+													"lockeddragscroll" : 0,
+													"lockedsize" : 0,
+													"maxclass" : "bpatcher",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"offset" : [ 0.0, 0.0 ],
+													"patcher" : 													{
+														"fileversion" : 1,
+														"appversion" : 														{
+															"major" : 8,
+															"minor" : 3,
+															"revision" : 2,
+															"architecture" : "x64",
+															"modernui" : 1
+														}
+,
+														"classnamespace" : "box",
+														"rect" : [ 35.0, 88.0, 996.0, 777.0 ],
+														"bglocked" : 0,
+														"openinpresentation" : 1,
+														"default_fontsize" : 12.0,
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"gridonopen" : 2,
+														"gridsize" : [ 5.0, 5.0 ],
+														"gridsnaponopen" : 2,
+														"objectsnaponopen" : 1,
+														"statusbarvisible" : 2,
+														"toolbarvisible" : 1,
+														"lefttoolbarpinned" : 0,
+														"toptoolbarpinned" : 0,
+														"righttoolbarpinned" : 0,
+														"bottomtoolbarpinned" : 0,
+														"toolbars_unpinned_last_save" : 0,
+														"tallnewobj" : 0,
+														"boxanimatetime" : 200,
+														"enablehscroll" : 1,
+														"enablevscroll" : 1,
+														"devicewidth" : 0.0,
+														"description" : "",
+														"digest" : "",
+														"tags" : "",
+														"style" : "",
+														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
+														"boxes" : [ 															{
+																"box" : 																{
+																	"id" : "obj-20",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 71.0, 85.0, 55.0, 22.0 ],
+																	"text" : "0, 1. 300"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-18",
+																	"maxclass" : "newobj",
+																	"numinlets" : 3,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
+																	"patching_rect" : [ 71.0, 120.0, 41.0, 22.0 ],
+																	"text" : "line 0."
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-15",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "bang" ],
+																	"patching_rect" : [ 5.0, 50.0, 85.0, 22.0 ],
+																	"text" : "t l b"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-4",
+																	"maxclass" : "message",
+																	"numinlets" : 2,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 71.0, 155.0, 101.0, 22.0 ],
+																	"text" : "textcolor 0 0 0 $1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-1",
+																	"index" : 1,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 5.0, 5.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"fontface" : 2,
+																	"fontname" : "Lato",
+																	"fontsize" : 14.0,
+																	"id" : "obj-90",
+																	"linecount" : 14,
+																	"maxclass" : "comment",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 5.0, 195.0, 353.0, 242.0 ],
+																	"presentation" : 1,
+																	"presentation_linecount" : 14,
+																	"presentation_rect" : [ 5.0, 5.0, 353.0, 242.0 ],
+																	"text" : "Lauren Sarah Hayes is a Scottish improviser and sound artist. Her music is a mix of experimental pop/live electronics/techno/noise/free improvisation and has been described as 'voracious' and 'exhilarating'. She is a sculptress of sound, manipulating, remixing, and bending voice, drum machines, analogue synths and self-built software live and physically. She is excited by what can happen in the vulnerable relationships between sound, space, and audience. Her shows are highly physical, making the performance of live electronic music more engaging for audiences. Over the last decade she has developed and honed a deliberately challenging and unpredictable performance system that explores the relationships between bodies, sound, environments, and technology.",
+																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+																}
+
+															}
+ ],
+														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-15", 0 ],
+																	"source" : [ "obj-1", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-20", 0 ],
+																	"source" : [ "obj-15", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-90", 0 ],
+																	"source" : [ "obj-15", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-4", 0 ],
+																	"source" : [ "obj-18", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-18", 0 ],
+																	"source" : [ "obj-20", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-90", 0 ],
+																	"midpoints" : [ 80.5, 185.5, 14.5, 185.5 ],
+																	"source" : [ "obj-4", 0 ]
+																}
+
+															}
+ ]
+													}
+,
+													"patching_rect" : [ 2700.0, 131.0, 360.0, 252.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 2747.0, 142.0, 360.0, 295.0 ],
+													"viewvisibility" : 1
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-79",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patcher" : 													{
+														"fileversion" : 1,
+														"appversion" : 														{
+															"major" : 8,
+															"minor" : 3,
+															"revision" : 2,
+															"architecture" : "x64",
+															"modernui" : 1
+														}
+,
+														"classnamespace" : "box",
+														"rect" : [ 59.0, 106.0, 640.0, 480.0 ],
+														"bglocked" : 0,
+														"openinpresentation" : 0,
+														"default_fontsize" : 12.0,
+														"default_fontface" : 0,
+														"default_fontname" : "Arial",
+														"gridonopen" : 1,
+														"gridsize" : [ 15.0, 15.0 ],
+														"gridsnaponopen" : 1,
+														"objectsnaponopen" : 1,
+														"statusbarvisible" : 2,
+														"toolbarvisible" : 1,
+														"lefttoolbarpinned" : 0,
+														"toptoolbarpinned" : 0,
+														"righttoolbarpinned" : 0,
+														"bottomtoolbarpinned" : 0,
+														"toolbars_unpinned_last_save" : 0,
+														"tallnewobj" : 0,
+														"boxanimatetime" : 200,
+														"enablehscroll" : 1,
+														"enablevscroll" : 1,
+														"devicewidth" : 0.0,
+														"description" : "",
+														"digest" : "",
+														"tags" : "",
+														"style" : "",
+														"subpatcher_template" : "",
+														"assistshowspatchername" : 0,
+														"boxes" : [ 															{
+																"box" : 																{
+																	"id" : "obj-2",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 12.5, 217.0, 72.0, 22.0 ],
+																	"text" : "prepend set"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-1",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "int", "bang" ],
+																	"patching_rect" : [ 13.0, 58.0, 55.5, 22.0 ],
+																	"text" : "t i b"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-73",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
+																	"patching_rect" : [ 12.5, 183.0, 56.0, 22.0 ],
+																	"text" : "zl.lookup"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"id" : "obj-70",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 49.5, 142.0, 140.0, 22.0 ],
+																	"text" : "dict.unpack descriptions:"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"data" : 																	{
+																		"descriptions" : [ "Lauren Sarah Hayes is a Scottish improviser and sound artist. Her music is a mix of experimental pop/live electronics/techno/noise/free improvisation and has been described as 'voracious' and 'exhilarating'. She is a sculptress of sound, manipulating, remixing, and bending voice, drum machines, analogue synths and self-built software live and physically. She is excited by what can happen in the vulnerable relationships between sound, space, and audience. Her shows are highly physical, making the performance of live electronic music more engaging for audiences. Over the last decade she has developed and honed a deliberately challenging and unpredictable performance system that explores the relationships between bodies, sound, environments, and technology.", "John's first recordings reached the offices of Planet Mu Records in 1999 where its founder and Aphex Twin collaborator Mike Paradinas encouraged John's more experimental efforts. During this time, he acquired the name Leafcutter John, suggested by a friend who compared his creativity and industriousness to that of a leafcutter ant. Working with Planet Mu, John released three critically-acclaimed albums which culminated in the release of The Housebound Spirit, an album which combined elements of music-concrete and electro-acoustic music with voice and guitar work more commonly found in folk music. It won an Honorary Mention at the 2004 Ars Electronica Awards, and was featured in The Wire's top 50 records of 2003.", "Olivier Pasquet is a sound, visual artist and music producer. His generative pieces are contextualised within a rationalist theory-fiction. He has been working with a variety of artists at IRCAM and other places. Besides music and installations, he is also involved in performance pieces such as dance, theatre, opera. All has consequently a strong relation with architecture, architectural design and specific sites. Beyond a close interest for duality between art and science, he endeavors links throughout scientific and artistic research.", "Rodrigo Constanzo makes art and thinks that it's an important thing to do. The art he makes is generally smeared in time, in the form of music. He improvises and acts ad the antennae to the beauty, electricity, and endless surprise that is living a crazy life. He composes and tries to create new sounds, interactions, and behaviours that he finds interesting and challenging.", "Alex Harker is a musician and audio programmer who composes for instruments and electronics. He enjoys collaborating closely with performers to explore timbral approaches to acoustic instruments, as well as creating software tools to support his creative work, and that of others. He previously studied composition at the University of Birmingham and the University of York and has been taught by numerous composers including Gwyn Pritchard, Vic Hoyland, Jonty Harrison, Scott Wilson, Roger Marsh and Ambrose Field. His approach to music making embraces both the abstractions and formalism employed by some of these composers and the intuitive, more open-ended approach of others.", "Sam Pluta is a Chicago-based composer, laptop improviser, electronics performer, and sound artist. Though his work has a wide breadth, his central focus is on the laptop as a performance instrument capable of sharing the stage with groups ranging from new music ensembles to world-class improvisers. By creating unique interactions of electronics, instruments, and sonic spaces, Pluta's vibrant musical universe fuses the traditionally separate sound worlds of acoustic instruments and electronics, creating sonic spaces which envelop the audience and resulting in a music focused on visceral interaction of instrumental performers with reactive computerized sound worlds.", "Richard Devine is an Atlanta-based electronic musician and sound designer. He is recognized for producing a layered and heavily processed sound, combining influences from glitch music to old and modern electronic music. Devine largely records for the Miami-based Schematic Records, which was founded by Josh Kay of Phoenecia. He has also done extensive recording and sample work with Josh Kay under the name DEVSND. As a result of praise of his music from Autechre as well as a remix of Aphex Twin's 'Come to Daddy', Devine recorded an album for Warp Records which was jointly released by Schematic and Warp.", "Hans Tutschku is a composer of instrumental and electroacoustic music. In 1982 he joined the 'Ensemble for intuitive music Weimar' and later studied theatre and composition in Berlin, Dresden, The Hague, Paris, and Birmingham. He collaborated in film, theatre and dance productions, and participated in concert cycles with Karlheinz Stockhausen. Since 2004 he directs the electroacoustic studios at Harvard University.", "Alice Eldridge is a musician, researcher and Lecturer working at the interstices of music, technology & ecology. Described as a voluntary hybrid she is recognised internationally for her contributions to creative technology and new music research and the emerging science of ecoacoustics. Chris Kiefer is a computer-musician and musical instrument designer, specialising in musician-computer interaction, physical computing, and machine learning. He performs with custom-made instruments including malleable foam interfaces, touch screen software, interactive sculptures and a modified self-resonating cello." ]
+																	}
+,
+																	"id" : "obj-57",
+																	"maxclass" : "newobj",
+																	"numinlets" : 2,
+																	"numoutlets" : 4,
+																	"outlettype" : [ "dictionary", "", "", "" ],
+																	"patching_rect" : [ 49.5, 98.0, 239.0, 22.0 ],
+																	"saved_object_attributes" : 																	{
+																		"embed" : 1,
+																		"parameter_enable" : 0,
+																		"parameter_mappable" : 0
+																	}
+,
+																	"text" : "dict fluid-composer-descriptions @embed 1"
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-77",
+																	"index" : 1,
+																	"maxclass" : "inlet",
+																	"numinlets" : 0,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 13.0, 15.0, 30.0, 30.0 ]
+																}
+
+															}
+, 															{
+																"box" : 																{
+																	"comment" : "",
+																	"id" : "obj-78",
+																	"index" : 1,
+																	"maxclass" : "outlet",
+																	"numinlets" : 1,
+																	"numoutlets" : 0,
+																	"patching_rect" : [ 12.5, 250.0, 30.0, 30.0 ]
+																}
+
+															}
+ ],
+														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-57", 0 ],
+																	"source" : [ "obj-1", 1 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-73", 0 ],
+																	"source" : [ "obj-1", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-78", 0 ],
+																	"source" : [ "obj-2", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-70", 0 ],
+																	"source" : [ "obj-57", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-73", 1 ],
+																	"source" : [ "obj-70", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-2", 0 ],
+																	"source" : [ "obj-73", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-1", 0 ],
+																	"source" : [ "obj-77", 0 ]
+																}
+
+															}
+ ]
+													}
+,
+													"patching_rect" : [ 2756.0, 405.0, 98.0, 22.0 ],
+													"saved_object_attributes" : 													{
+														"description" : "",
+														"digest" : "",
+														"globalpatchername" : "",
+														"tags" : ""
+													}
+,
+													"text" : "p \"get artist bios\""
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontname" : "Lato",
+													"fontsize" : 15.0,
+													"id" : "obj-55",
+													"linecount" : 5,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 2490.0, 15.0, 705.0, 96.0 ],
+													"presentation" : 1,
+													"presentation_linecount" : 5,
+													"presentation_rect" : [ 2490.0, 15.0, 780.0, 96.0 ],
+													"text" : "A major part of the FluCoMa project involved commissioning composers to create works using the toolkit. These works are recorded and have also been investigated in detail by Jacob Hart (one of the team members) in \"explore\" articles. These long-form articles draw out how objects were used, and he has even created patches for you to plunder for your own creative endeavours. This is a great place to start if you're searching for musical inspiration with the FluCoMa Toolkit. "
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-52",
 													"linecount" : 3,
@@ -205,7 +617,7 @@
 													"parameter_enable" : 1,
 													"patching_rect" : [ 2490.0, 405.0, 255.0, 32.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 2490.0, 300.0, 255.0, 32.0 ],
+													"presentation_rect" : [ 2490.0, 413.0, 255.0, 32.0 ],
 													"saved_attribute_attributes" : 													{
 														"activebgcolor" : 														{
 															"expression" : "themecolor.live_led_bg"
@@ -444,7 +856,7 @@
 													"numoutlets" : 0,
 													"patching_rect" : [ 2490.0, 105.0, 139.0, 21.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 2490.0, 14.0, 139.0, 21.0 ],
+													"presentation_rect" : [ 2490.0, 128.0, 139.0, 21.0 ],
 													"text" : "Select a composer(s)...",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -463,16 +875,16 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "float" ],
 													"parameter_enable" : 1,
-													"patching_rect" : [ 2490.0, 131.0, 255.0, 259.0 ],
+													"patching_rect" : [ 2490.0, 131.0, 195.0, 259.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 2490.0, 37.0, 255.0, 259.0 ],
+													"presentation_rect" : [ 2490.0, 150.0, 255.0, 259.0 ],
 													"saved_attribute_attributes" : 													{
 														"activebgoncolor" : 														{
 															"expression" : "themecolor.live_value_bar"
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "Alice Eldridge & Chris Kiefer", "Lauren Sarah Hayes", "Leafcutter John", "Alex Harker", "Sam Pluta", "Olivier Pasquet", "Rodrigo Constanzo", "Richard Devine", "Hans Tutschku" ],
+															"parameter_enum" : [ "Lauren Sarah Hayes", "Leafcutter John", "Olivier Pasquet", "Rodrigo Constanzo", "Alex Harker", "Sam Pluta", "Richard Devine", "Hans Tutschku", "Alice Eldridge & Chris Kiefer" ],
 															"parameter_longname" : "live.tab[4]",
 															"parameter_mmax" : 8,
 															"parameter_shortname" : "live.tab",
@@ -3711,7 +4123,7 @@
 												"patchline" : 												{
 													"destination" : [ "obj-43", 1 ],
 													"midpoints" : [ 2499.5, 393.0, 2475.0, 393.0, 2475.0, 543.0, 2738.5, 543.0 ],
-													"order" : 0,
+													"order" : 1,
 													"source" : [ "obj-25", 0 ]
 												}
 
@@ -3720,7 +4132,16 @@
 												"patchline" : 												{
 													"destination" : [ "obj-45", 1 ],
 													"midpoints" : [ 2499.5, 393.0, 2475.0, 393.0, 2475.0, 543.0, 2528.5, 543.0 ],
-													"order" : 1,
+													"order" : 2,
+													"source" : [ "obj-25", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-79", 0 ],
+													"midpoints" : [ 2499.5, 399.0, 2765.5, 399.0 ],
+													"order" : 0,
 													"source" : [ "obj-25", 0 ]
 												}
 
@@ -3891,6 +4312,14 @@
 													"destination" : [ "obj-96", 0 ],
 													"midpoints" : [ 276.75, 77.0, 445.5, 77.0 ],
 													"source" : [ "obj-75", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-80", 0 ],
+													"midpoints" : [ 2765.5, 429.0, 2745.0, 429.0, 2745.0, 384.0, 2697.0, 384.0, 2697.0, 126.0, 2709.5, 126.0 ],
+													"source" : [ "obj-79", 0 ]
 												}
 
 											}
