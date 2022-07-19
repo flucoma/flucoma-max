@@ -100,7 +100,7 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -825.0, 0.0 ],
+									"offset" : [ 0.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -141,6 +141,105 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-85",
+													"justification" : 1,
+													"linecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+													"maxclass" : "live.line",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 315.0, 525.0, 5.0, 100.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 2490.0, 120.0, 780.0, 8.5 ],
+													"saved_attribute_attributes" : 													{
+														"linecolor" : 														{
+															"expression" : "themecolor.live_assignment_text_bg"
+														}
+
+													}
+
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-84",
+													"justification" : 1,
+													"linecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+													"maxclass" : "live.line",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 300.0, 510.0, 5.0, 100.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 1665.0, 84.5, 780.0, 8.5 ],
+													"saved_attribute_attributes" : 													{
+														"linecolor" : 														{
+															"expression" : "themecolor.live_assignment_text_bg"
+														}
+
+													}
+
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontname" : "Lato",
+													"fontsize" : 15.0,
+													"id" : "obj-83",
+													"linecount" : 3,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 1590.0, 21.0, 706.0, 60.0 ],
+													"presentation" : 1,
+													"presentation_linecount" : 3,
+													"presentation_rect" : [ 1665.0, 15.0, 780.0, 60.0 ],
+													"text" : "These examples serve as some musical applications that you can explore with the toolkit. This is by no means exhaustive, rather, various starting points accumulated over the life of the project (often as learning patches). We hope to continue adding more examples from the community and elsewhere."
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-82",
+													"justification" : 1,
+													"linecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+													"maxclass" : "live.line",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 285.0, 495.0, 5.0, 100.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 840.0, 102.5, 780.0, 8.5 ],
+													"saved_attribute_attributes" : 													{
+														"linecolor" : 														{
+															"expression" : "themecolor.live_assignment_text_bg"
+														}
+
+													}
+
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"fontface" : 0,
+													"fontname" : "Lato",
+													"fontsize" : 15.0,
+													"id" : "obj-81",
+													"linecount" : 4,
+													"maxclass" : "comment",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 870.0, 21.0, 706.0, 78.0 ],
+													"presentation" : 1,
+													"presentation_linecount" : 4,
+													"presentation_rect" : [ 840.0, 15.0, 780.0, 78.0 ],
+													"text" : "We've worked toward making a set of concise tutorials that cover a very wide range of objects and workflows found in the FluCoMa toolkit. We think that if you at least watch these three tutorials, you'll be familiar with most of the objects and be able to start building your own patches and systems out of the toolkit. Select a tutorial to explore below."
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"bgmode" : 0,
 													"border" : 0,
@@ -907,10 +1006,10 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 1560.0, 270.0, 179.0, 78.0 ],
+													"patching_rect" : [ 1590.0, 261.0, 179.0, 78.0 ],
 													"presentation" : 1,
 													"presentation_linecount" : 4,
-													"presentation_rect" : [ 1665.0, 165.0, 198.0, 64.0 ],
+													"presentation_rect" : [ 1665.0, 270.0, 198.0, 64.0 ],
 													"text" : "These examples serve as intermediate and advanced applications achieved by combining several FluCoMa objects together.",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -924,9 +1023,9 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 1560.0, 105.0, 139.0, 21.0 ],
+													"patching_rect" : [ 1590.0, 96.0, 139.0, 21.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 1665.0, 15.0, 139.0, 21.0 ],
+													"presentation_rect" : [ 1665.0, 120.0, 139.0, 21.0 ],
 													"text" : "Select an example...",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -963,7 +1062,7 @@
 													"parameter_enable" : 1,
 													"patching_rect" : [ 870.0, 358.0, 255.0, 32.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 840.0, 225.0, 255.0, 30.0 ],
+													"presentation_rect" : [ 840.0, 330.0, 255.0, 30.0 ],
 													"saved_attribute_attributes" : 													{
 														"activebgcolor" : 														{
 															"expression" : "themecolor.live_led_bg"
@@ -1014,7 +1113,7 @@
 													"patching_rect" : [ 1140.0, 390.0, 139.0, 78.0 ],
 													"presentation" : 1,
 													"presentation_linecount" : 3,
-													"presentation_rect" : [ 840.0, 165.0, 255.0, 50.0 ],
+													"presentation_rect" : [ 840.0, 270.0, 255.0, 50.0 ],
 													"text" : "Be aware, some of the patches you can open from within the package will differ slightly from the tutorial video's final result.",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -1544,7 +1643,7 @@
 ,
 													"patching_rect" : [ 1140.0, 131.0, 360.0, 252.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 1097.0, 30.0, 404.0, 255.0 ],
+													"presentation_rect" : [ 1097.0, 135.0, 404.0, 255.0 ],
 													"viewvisibility" : 1
 												}
 
@@ -1559,7 +1658,7 @@
 													"numoutlets" : 0,
 													"patching_rect" : [ 870.0, 108.0, 139.0, 21.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 840.0, 15.0, 139.0, 21.0 ],
+													"presentation_rect" : [ 840.0, 120.0, 139.0, 21.0 ],
 													"text" : "Select a tutorial...",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -1594,9 +1693,9 @@
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "float" ],
 													"parameter_enable" : 1,
-													"patching_rect" : [ 1560.0, 131.0, 179.0, 122.0 ],
+													"patching_rect" : [ 1590.0, 122.0, 179.0, 122.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 1665.0, 37.0, 375.0, 122.0 ],
+													"presentation_rect" : [ 1665.0, 142.0, 375.0, 122.0 ],
 													"saved_attribute_attributes" : 													{
 														"activebgoncolor" : 														{
 															"expression" : "themecolor.live_value_bar"
@@ -1632,7 +1731,7 @@
 													"parameter_enable" : 1,
 													"patching_rect" : [ 870.0, 131.0, 255.0, 169.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 840.0, 37.0, 255.0, 122.0 ],
+													"presentation_rect" : [ 840.0, 142.0, 255.0, 122.0 ],
 													"saved_attribute_attributes" : 													{
 														"activebgoncolor" : 														{
 															"expression" : "themecolor.live_value_bar"
