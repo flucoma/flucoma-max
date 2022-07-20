@@ -45,8 +45,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 205.5, 325.5, 247.0, 47.0 ],
-					"presentation_linecount" : 8,
+					"patching_rect" : [ 236.5, 340.5, 247.0, 47.0 ],
 					"text" : "Use the content of the buffer~ called 'bases' as a spectral template for filtering a realtime signal into two decomposed signals",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
@@ -59,8 +58,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 367.0, 394.0, 113.0, 60.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 398.0, 409.0, 113.0, 60.0 ],
 					"text" : "Constantly fill up a ring buffer with sound from the drum playback",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
@@ -72,7 +70,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 524.5, 420.5, 171.0, 20.0 ],
+					"patching_rect" : [ 555.5, 435.5, 171.0, 20.0 ],
 					"text" : "bang when done (its fast)",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
@@ -85,8 +83,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 569.5, 232.5, 171.0, 47.0 ],
-					"presentation_linecount" : 2,
+					"patching_rect" : [ 600.5, 247.5, 171.0, 47.0 ],
 					"text" : "fluid.bufnmf~ processes the contents of 'ringbuffer' every 2.3 seconds.",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
@@ -100,7 +97,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 496.0, 418.5, 24.0, 24.0 ]
+					"patching_rect" : [ 527.0, 433.5, 24.0, 24.0 ]
 				}
 
 			}
@@ -111,8 +108,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.5, 78.0, 299.0, 87.0 ],
-					"presentation_linecount" : 6,
+					"patching_rect" : [ 21.5, 78.0, 303.0, 87.0 ],
 					"text" : "fluid.bufnmf~ is quite a heavy process to perform. However you can tell it perform less 'iterations' in order to make it work faster, with less precision in the decomposition. The upside of this, is that makes it more feasible to use in realtime, for example, as an autopanner effect!",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
@@ -126,7 +122,7 @@
 					"numinlets" : 5,
 					"numoutlets" : 6,
 					"outlettype" : [ "float", "float", "float", "float", "list", "" ],
-					"patching_rect" : [ 213.0, 481.0, 152.0, 49.0 ]
+					"patching_rect" : [ 244.0, 496.0, 152.0, 49.0 ]
 				}
 
 			}
@@ -138,7 +134,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 496.0, 280.0, 24.0, 24.0 ]
+					"patching_rect" : [ 527.0, 295.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -148,7 +144,7 @@
 					"maxclass" : "ezdac~",
 					"numinlets" : 2,
 					"numoutlets" : 0,
-					"patching_rect" : [ 21.5, 390.0, 45.0, 45.0 ]
+					"patching_rect" : [ 52.5, 405.0, 45.0, 45.0 ]
 				}
 
 			}
@@ -159,7 +155,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 496.0, 245.0, 69.0, 22.0 ],
+					"patching_rect" : [ 527.0, 260.0, 69.0, 22.0 ],
 					"text" : "metro 2300"
 				}
 
@@ -171,7 +167,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 496.0, 454.0, 81.0, 22.0 ],
+					"patching_rect" : [ 527.0, 469.0, 81.0, 22.0 ],
 					"text" : "buffer~ bases"
 				}
 
@@ -183,7 +179,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "signal", "signal", "" ],
-					"patching_rect" : [ 21.5, 338.0, 176.0, 22.0 ],
+					"patching_rect" : [ 52.5, 353.0, 176.0, 22.0 ],
 					"text" : "fluid.nmffilter~ 2 @bases bases"
 				}
 
@@ -195,7 +191,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
-					"patching_rect" : [ 213.0, 413.0, 152.0, 22.0 ],
+					"patching_rect" : [ 244.0, 428.0, 152.0, 22.0 ],
 					"text" : "record~ ringbuffer @loop 1"
 				}
 
@@ -207,7 +203,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "bang" ],
-					"patching_rect" : [ 213.0, 448.0, 130.0, 22.0 ],
+					"patching_rect" : [ 244.0, 463.0, 130.0, 22.0 ],
 					"text" : "buffer~ ringbuffer 2000"
 				}
 
@@ -220,7 +216,7 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"parameter_enable" : 0,
-					"patching_rect" : [ 21.5, 180.0, 24.0, 24.0 ]
+					"patching_rect" : [ 52.5, 195.0, 24.0, 24.0 ]
 				}
 
 			}
@@ -231,7 +227,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "signal", "bang" ],
-					"patching_rect" : [ 21.5, 245.0, 263.0, 22.0 ],
+					"patching_rect" : [ 52.5, 260.0, 263.0, 22.0 ],
 					"text" : "sfplay~ @audiofile Nicol-LoopE-M.wav @loop 1"
 				}
 
@@ -270,7 +266,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 496.0, 319.0, 112.0, 89.0 ],
+					"patching_rect" : [ 527.0, 334.0, 114.0, 89.0 ],
 					"text" : "fluid.bufnmf~ @source ringbuffer @components 2 @iterations 50 @blocking 0 @bases bases"
 				}
 
@@ -286,7 +282,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-20", 1 ],
-					"midpoints" : [ 109.5, 374.5, 57.0, 374.5 ],
+					"midpoints" : [ 140.5, 389.5, 88.0, 389.5 ],
 					"source" : [ "obj-13", 1 ]
 				}
 
@@ -315,7 +311,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"midpoints" : [ 31.0, 324.0, 6.0, 324.0, 6.0, 375.0, 186.0, 375.0, 186.0, 399.0, 222.5, 399.0 ],
+					"midpoints" : [ 62.0, 339.0, 37.0, 339.0, 37.0, 390.0, 217.0, 390.0, 217.0, 414.0, 253.5, 414.0 ],
 					"order" : 0,
 					"source" : [ "obj-6", 0 ]
 				}
@@ -332,7 +328,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-11", 0 ],
-					"midpoints" : [ 31.0, 231.0, 6.0, 231.0, 6.0, 375.0, 186.0, 375.0, 186.0, 399.0, 222.5, 399.0 ],
+					"midpoints" : [ 62.0, 246.0, 37.0, 246.0, 37.0, 390.0, 217.0, 390.0, 217.0, 414.0, 253.5, 414.0 ],
 					"order" : 1,
 					"source" : [ "obj-9", 0 ]
 				}
@@ -341,7 +337,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-15", 0 ],
-					"midpoints" : [ 31.0, 231.0, 505.5, 231.0 ],
+					"midpoints" : [ 62.0, 246.0, 536.5, 246.0 ],
 					"order" : 0,
 					"source" : [ "obj-9", 0 ]
 				}
@@ -350,7 +346,7 @@
 , 			{
 				"patchline" : 				{
 					"destination" : [ "obj-6", 0 ],
-					"midpoints" : [ 31.0, 207.0, 31.0, 207.0 ],
+					"midpoints" : [ 62.0, 222.0, 62.0, 222.0 ],
 					"order" : 2,
 					"source" : [ "obj-9", 0 ]
 				}

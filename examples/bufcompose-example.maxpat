@@ -74,7 +74,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 196.0, 406.0, 382.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "All of the \"macros\" are created purely in Max around the fluid.bufcompose~ object",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
