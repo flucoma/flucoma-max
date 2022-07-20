@@ -27,7 +27,7 @@ function reset(v) {
 	outlet(0,startThresh);//sends the initial thresh out
 }
 
-function setTarget(v) {
+function slice_target(v) {
 	if (v<1){
 		error("threshfinder: the target number of slices should be positive\n");
 		return;
@@ -35,7 +35,7 @@ function setTarget(v) {
 	target = Math.floor(v);
 }
 
-function setTolerance(v) {
+function slice_tolerance(v) {
 	if (v<0){
 		error("threshfinder: the tolerance should be positive\n");
 		return;
