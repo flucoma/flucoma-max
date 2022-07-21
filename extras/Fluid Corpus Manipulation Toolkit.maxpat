@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 824.0, 775.0 ],
+		"rect" : [ 35.0, 88.0, 890.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 824.0, 749.0 ],
+						"rect" : [ 35.0, 114.0, 890.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -160,7 +160,7 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -3300.0, 0.0 ],
+									"offset" : [ 0.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -172,7 +172,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 35.0, 88.0, 831.0, 777.0 ],
+										"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -201,6 +201,30 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-50",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 285.0, 210.0, 54.0, 22.0 ],
+													"text" : "deferlow"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-19",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 285.0, 180.0, 70.0, 22.0 ],
+													"text" : "loadmess 0"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-95",
 													"maxclass" : "newobj",
@@ -312,8 +336,8 @@
 													"fontsize" : 12.0,
 													"id" : "obj-73",
 													"maxclass" : "live.tab",
-													"num_lines_patching" : 5,
-													"num_lines_presentation" : 5,
+													"num_lines_patching" : 7,
+													"num_lines_presentation" : 7,
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "float" ],
@@ -327,9 +351,9 @@
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "fluid.mlpclassifier~", "fluid.knnclassifier~", "fluid.kdtree~", "fluid.kmeans~", "fluid.skmeans~" ],
+															"parameter_enum" : [ "fluid.bufnmf~", "fluid.sines~", "fluid.transients~", "fluid.hpss~", "fluid.nmfmorph~", "fluid.bufnmfcross~", "fluid.audiotransport~" ],
 															"parameter_longname" : "live.tab[8]",
-															"parameter_mmax" : 4,
+															"parameter_mmax" : 6,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -622,15 +646,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 3,
+																	"linecount" : 5,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 360.0, 57.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 360.0, 90.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 3,
-																	"presentation_rect" : [ 5.0, 5.0, 360.0, 57.0 ],
-																	"text" : "The FluCoMa toolkit is designed to be modular, so that small parts of it can be useful. This example shows how slicing and 'features' can make a cute audio-reactive patch.",
+																	"presentation_linecount" : 5,
+																	"presentation_rect" : [ 5.0, 5.0, 360.0, 90.0 ],
+																	"text" : "Because FluCoMa relies on the buffer~ object so heavily, fluid.bufcompose~, a utility object for manipulating the content of buffers~ had to exist. This example shows how you can use this low-level object to build abstractions for transforming the contents of buffers~ intuitively.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -2287,15 +2311,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 7,
+																	"linecount" : 13,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 357.0, 124.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 357.0, 225.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 7,
-																	"presentation_rect" : [ 5.0, 5.0, 357.0, 124.0 ],
-																	"text" : "The multilayer perceptron is a really powerful neural network that can be used for a variety of applications including classification. In this tutorial, you'll build a fluid.dataset~ of audio analysis and provide a bunch of human-readable labels to teach a neural network to classify different sound archetypes. This might let you build a 'content-aware' audio-reactive patch for example.",
+																	"presentation_linecount" : 13,
+																	"presentation_rect" : [ 5.0, 5.0, 357.0, 225.0 ],
+																	"text" : "The multilayer perceptron is a really powerful neural network that can be used for a variety of applications, including regression. Regression is formally known as 'a measure of the relation between the mean value of one variable (e.g. output) and corresponding values of other variables (e.g. time and cost)'. In this example you'll learn how to 'regress' different combinations of data against each other; in this case a two-dimensional 'chaos-pad' like space, to a multi-dimensional set of synthesiser parameters. By providing coupled examples of positions on the 'chaos-pad' and combinations of parameters in the multi-dimensional synthesiser space you can construct a rich bespoke space to explore.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -4943,6 +4967,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-50", 0 ],
+													"source" : [ "obj-19", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-9", 0 ],
 													"source" : [ "obj-2", 0 ]
 												}
@@ -5182,6 +5213,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-6", 0 ],
 													"source" : [ "obj-5", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-64", 0 ],
+													"source" : [ "obj-50", 0 ]
 												}
 
 											}
