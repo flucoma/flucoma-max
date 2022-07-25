@@ -160,7 +160,7 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -825.0, 0.0 ],
+									"offset" : [ -3300.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -201,6 +201,102 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-74",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 3075.0, 174.0, 54.0, 22.0 ],
+													"text" : "deferlow"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-76",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 3075.0, 129.0, 70.0, 22.0 ],
+													"text" : "loadmess 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-71",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 2520.0, 195.0, 54.0, 22.0 ],
+													"text" : "deferlow"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-72",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 2520.0, 150.0, 70.0, 22.0 ],
+													"text" : "loadmess 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-57",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 1470.0, 64.0, 54.0, 22.0 ],
+													"text" : "deferlow"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-66",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 1470.0, 19.0, 70.0, 22.0 ],
+													"text" : "loadmess 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-56",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 630.0, 60.0, 54.0, 22.0 ],
+													"text" : "deferlow"
+												}
+
+											}
+, 											{
+												"box" : 												{
+													"id" : "obj-53",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 630.0, 15.0, 70.0, 22.0 ],
+													"text" : "loadmess 0"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-50",
 													"maxclass" : "newobj",
@@ -646,15 +742,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 5,
+																	"linecount" : 3,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 360.0, 90.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 360.0, 57.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 5,
-																	"presentation_rect" : [ 5.0, 5.0, 360.0, 90.0 ],
-																	"text" : "Because FluCoMa relies on the buffer~ object so heavily, fluid.bufcompose~, a utility object for manipulating the content of buffers~ had to exist. This example shows how you can use this low-level object to build abstractions for transforming the contents of buffers~ intuitively.",
+																	"presentation_linecount" : 3,
+																	"presentation_rect" : [ 5.0, 5.0, 360.0, 57.0 ],
+																	"text" : "Analysing pitch is a complex problem to solve. This example shows how by using some statistical inferences, the true value of pitch can be more accurately measured.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -2311,15 +2407,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 13,
+																	"linecount" : 11,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 357.0, 225.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 357.0, 191.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 13,
-																	"presentation_rect" : [ 5.0, 5.0, 357.0, 225.0 ],
-																	"text" : "The multilayer perceptron is a really powerful neural network that can be used for a variety of applications, including regression. Regression is formally known as 'a measure of the relation between the mean value of one variable (e.g. output) and corresponding values of other variables (e.g. time and cost)'. In this example you'll learn how to 'regress' different combinations of data against each other; in this case a two-dimensional 'chaos-pad' like space, to a multi-dimensional set of synthesiser parameters. By providing coupled examples of positions on the 'chaos-pad' and combinations of parameters in the multi-dimensional synthesiser space you can construct a rich bespoke space to explore.",
+																	"presentation_linecount" : 11,
+																	"presentation_rect" : [ 5.0, 5.0, 357.0, 191.0 ],
+																	"text" : "Imagine you have a large corpus of sounds that you've collected from a studio session, some outside sound walks or experimenting with a synthesiser on a rainy afternoon. This tutorial teaches you how to build a '2D Corpus Explorer', a patch that will enable you to interrogate and listen to those sounds in a structured manner. The end result is similar to CataRT and AudioStellar in that small segments of your corpus sounds are analysed and mapped to a two-dimensional space that can be explored using your mouse. It will cover topics such as segmentation, analysis, data processing and visualisation.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -5233,8 +5329,29 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-56", 0 ],
+													"source" : [ "obj-53", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-61", 0 ],
 													"source" : [ "obj-54", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-75", 0 ],
+													"source" : [ "obj-56", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-23", 0 ],
+													"source" : [ "obj-57", 0 ]
 												}
 
 											}
@@ -5282,6 +5399,13 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-57", 0 ],
+													"source" : [ "obj-66", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-62", 0 ],
 													"source" : [ "obj-7", 0 ]
 												}
@@ -5289,8 +5413,29 @@
 											}
 , 											{
 												"patchline" : 												{
+													"destination" : [ "obj-24", 0 ],
+													"source" : [ "obj-71", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-71", 0 ],
+													"source" : [ "obj-72", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-94", 0 ],
 													"source" : [ "obj-73", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-25", 0 ],
+													"source" : [ "obj-74", 0 ]
 												}
 
 											}
@@ -5306,6 +5451,13 @@
 													"destination" : [ "obj-96", 0 ],
 													"midpoints" : [ 969.25, 75.0, 1138.0, 75.0 ],
 													"source" : [ "obj-75", 1 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-74", 0 ],
+													"source" : [ "obj-76", 0 ]
 												}
 
 											}
