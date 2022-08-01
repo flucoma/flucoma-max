@@ -24,6 +24,8 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <clients/common/ParameterTypes.hpp>
 #include <clients/nrt/FluidSharedInstanceAdaptor.hpp>
 
+#include <data/FluidMemory.hpp>
+
 #include "MaxBufferAdaptor.hpp"
 
 #include <FluidVersion.hpp>
@@ -117,12 +119,14 @@ public:
     x->perform(dsp64, ins, numins, outs, numouts, vec_size, flags, userparam);
   }
 
-  void dsp(t_object* dsp64, short* count, double samplerate,
-           long /*maxvectorsize*/, long /*flags*/)
+  void dsp(t_object* dsp64, short* count, double samplerate, long maxvectorsize,
+           long /*flags*/)
   {
     Wrapper* wrapper = static_cast<Wrapper*>(this);
     if (!Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
-      wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
+      wrapper->mClient = typename Wrapper::ClientType{
+          wrapper->mParams,
+          FluidContext(maxvectorsize, FluidDefaultAllocator())};
 
     auto& client = wrapper->client();
 
@@ -1187,7 +1191,7 @@ public:
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mListSize{32}, mMessages{}, mParams(Client::getParameterDescriptors()),
         mParamSnapshot{mParams.toTuple()},
-        mClient{initParamsFromArgs(ac, av)}, mDumpDictionary{nullptr}
+        mClient{initParamsFromArgs(ac, av), FluidContext()}, mDumpDictionary{nullptr}
   {
     if (mClient.audioChannelsIn())
     {
@@ -1433,7 +1437,9 @@ public:
     getClass(class_new(className, (method) create, (method) destroy,
                        sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     WrapperBase::setup(getClass());
-
+    
+    (void)FFTSetup();
+    
     if (isControlIn<typename Client::Client>)
     {
       class_addmethod(getClass(), (method) handleList, "list", A_GIMME, 0);
@@ -1580,7 +1586,7 @@ public:
         Client::getParameterDescriptors().template iterate<RemoveListener>(
             x, x->mParams);
         x->mParams.refer(name);
-        x->mClient = Client(x->mParams);
+        x->mClient = Client(x->mParams, FluidContext());
         Client::getParameterDescriptors().template iterate<AddListener>(
             x, x->mParams);
       }
@@ -2419,7 +2425,7 @@ private:
   static t_symbol* maxAttrType(LongArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(LongRuntimeMaxT) { return USESYM(atom_long); }
   static t_symbol* maxAttrType(ChoicesT) { return gensym("atom"); }
-
+  
   template <typename T>
   static std::enable_if_t<IsSharedClient<typename T::type>::value, t_symbol*>
       maxAttrType(T)
