@@ -86,7 +86,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						"isolateaudio" : 1,
+						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
