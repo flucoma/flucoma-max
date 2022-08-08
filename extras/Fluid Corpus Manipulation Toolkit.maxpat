@@ -160,7 +160,7 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -3300.0, 0.0 ],
+									"offset" : [ -1650.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -2411,10 +2411,10 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 357.0, 191.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 360.0, 191.0 ],
 																	"presentation" : 1,
 																	"presentation_linecount" : 11,
-																	"presentation_rect" : [ 5.0, 5.0, 357.0, 191.0 ],
+																	"presentation_rect" : [ 5.0, 5.0, 360.0, 191.0 ],
 																	"text" : "Imagine you have a large corpus of sounds that you've collected from a studio session, some outside sound walks or experimenting with a synthesiser on a rainy afternoon. This tutorial teaches you how to build a '2D Corpus Explorer', a patch that will enable you to interrogate and listen to those sounds in a structured manner. The end result is similar to CataRT and AudioStellar in that small segments of your corpus sounds are analysed and mapped to a two-dimensional space that can be explored using your mouse. It will cover topics such as segmentation, analysis, data processing and visualisation.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
