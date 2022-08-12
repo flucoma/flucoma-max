@@ -809,9 +809,9 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 2,
-									"outlettype" : [ "int", "bang" ],
+									"outlettype" : [ "", "bang" ],
 									"patching_rect" : [ 138.464285999999987, 62.329711000000003, 29.5, 22.0 ],
-									"text" : "t i b"
+									"text" : "t l b"
 								}
 
 							}

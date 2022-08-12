@@ -2688,13 +2688,15 @@
 												"box" : 												{
 													"fontsize" : 13.0,
 													"id" : "obj-20",
+													"linecount" : 2,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 32.800000488758087, 63.200000941753387, 162.0, 21.0 ],
+													"patching_rect" : [ 32.800000488758087, 63.200000941753387, 162.0, 36.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 7.0, 25.0, 136.0, 21.0 ],
-													"text" : "together they null sum",
+													"presentation_linecount" : 2,
+													"presentation_rect" : [ 7.0, 25.0, 140.0, 36.0 ],
+													"text" : "together they perfectly reproduce the original",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
 
@@ -4562,7 +4564,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						"isolateaudio" : 1,
+						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
@@ -6319,7 +6321,7 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						"isolateaudio" : 1,
+						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{

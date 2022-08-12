@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 2,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -62,7 +62,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -494,7 +494,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1087,7 +1087,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1149,7 +1149,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 135.5, 456.0, 380.0, 21.0 ],
+									"patching_rect" : [ 135.5, 446.0, 380.0, 21.0 ],
 									"text" : "Look inside to see how the features are extracted from the buffer",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1161,7 +1161,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 200.0, 560.0, 480.0, 21.0 ],
+									"patching_rect" : [ 200.0, 550.0, 483.0, 21.0 ],
 									"text" : "These are the features formatted as a dictionary so that you can easily read them. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1173,7 +1173,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 20.0, 490.0, 170.0, 150.0 ]
+									"patching_rect" : [ 20.0, 480.0, 170.0, 150.0 ]
 								}
 
 							}
@@ -1189,13 +1189,13 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 341.0, 132.0, 302.0, 725.0 ],
+										"rect" : [ 341.0, 132.0, 515.0, 725.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1225,12 +1225,24 @@
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
 												"box" : 												{
+													"id" : "obj-1",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 81.5, 476.0, 130.0, 22.0 ],
+													"text" : "loadmess 0 0 0 0 0 0 0"
+												}
+
+											}
+, 											{
+												"box" : 												{
 													"id" : "obj-2",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
 													"numoutlets" : 8,
 													"outlettype" : [ "", "", "", "", "", "", "", "" ],
-													"patching_rect" : [ 28.5, 517.0, 111.866666666666646, 22.0 ],
+													"patching_rect" : [ 28.5, 517.0, 113.208333333333371, 22.0 ],
 													"text" : "unjoin 7"
 												}
 
@@ -1422,6 +1434,14 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"midpoints" : [ 91.0, 501.0, 39.0, 501.0, 39.0, 513.0, 38.0, 513.0 ],
+													"source" : [ "obj-1", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
 													"destination" : [ "obj-25", 6 ],
 													"source" : [ "obj-2", 6 ]
 												}
@@ -1543,6 +1563,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-65", 0 ],
+													"midpoints" : [ 48.5, 339.0, 103.0, 339.0 ],
 													"source" : [ "obj-58", 2 ]
 												}
 
@@ -1557,7 +1578,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-60", 1 ],
-													"midpoints" : [ 98.5, 294.0, 165.5, 294.0 ],
+													"midpoints" : [ 98.5, 336.5, 165.5, 336.5 ],
 													"source" : [ "obj-59", 1 ]
 												}
 
@@ -1651,7 +1672,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 20.0, 455.0, 111.0, 23.0 ],
+									"patching_rect" : [ 20.0, 445.0, 111.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1671,7 +1692,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 520.0, 358.0, 175.0, 69.0 ],
+									"patching_rect" : [ 520.0, 348.0, 175.0, 69.0 ],
 									"text" : "Use the mouse to scrub through different parts of the audio file and retrieve the analysis"
 								}
 
@@ -1708,7 +1729,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 2,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1827,7 +1848,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 20.0, 303.0, 141.0, 23.0 ],
+									"patching_rect" : [ 20.0, 293.0, 141.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1850,7 +1871,7 @@
 									"orientation" : 0,
 									"outlettype" : [ "", "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 20.0, 340.0, 490.0, 100.0 ],
+									"patching_rect" : [ 20.0, 330.0, 490.0, 100.0 ],
 									"setminmax" : [ 0.0, 1.0 ],
 									"slidercolor" : [ 0.254901960784314, 0.905882352941176, 0.450980392156863, 1.0 ]
 								}
@@ -1865,7 +1886,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 20.0, 340.0, 490.0, 100.0 ]
+									"patching_rect" : [ 20.0, 330.0, 490.0, 100.0 ]
 								}
 
 							}
@@ -1876,7 +1897,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 46.0, 230.0, 181.0, 25.0 ],
+									"patching_rect" : [ 46.0, 220.0, 181.0, 25.0 ],
 									"text" : "Do spectral shape analysis"
 								}
 
@@ -1894,7 +1915,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 229.0, 232.5, 20.0, 20.0 ],
+									"patching_rect" : [ 229.0, 222.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1908,7 +1929,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 312.0, 153.0, 125.0, 25.0 ],
+									"patching_rect" : [ 312.0, 143.0, 125.0, 25.0 ],
 									"text" : "Load a sound file"
 								}
 
@@ -1929,7 +1950,7 @@
 									"numoutlets" : 1,
 									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 20.0, 150.0, 290.0, 30.0 ],
+									"patching_rect" : [ 20.0, 140.0, 290.0, 30.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -1963,7 +1984,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 439.0, 155.5, 20.0, 20.0 ],
+									"patching_rect" : [ 439.0, 145.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1978,7 +1999,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 20.0, 230.0, 24.0, 24.0 ]
+									"patching_rect" : [ 20.0, 220.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -1989,7 +2010,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 20.0, 190.0, 165.0, 23.0 ],
+									"patching_rect" : [ 20.0, 180.0, 165.0, 23.0 ],
 									"text" : "buffer~ help.specshape.src"
 								}
 
@@ -2002,7 +2023,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 439.0, 232.5, 194.0, 23.0 ],
+									"patching_rect" : [ 439.0, 222.5, 194.0, 23.0 ],
 									"text" : "buffer~ help.specshape.features"
 								}
 
@@ -2015,7 +2036,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 20.0, 270.0, 611.0, 23.0 ],
+									"patching_rect" : [ 20.0, 260.0, 611.0, 23.0 ],
 									"text" : "fluid.bufspectralshape~ @source help.specshape.src @features help.specshape.features @numchans 1"
 								}
 
@@ -2156,7 +2177,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 2,
 							"architecture" : "x64",
 							"modernui" : 1
 						}

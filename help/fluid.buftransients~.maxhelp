@@ -1024,7 +1024,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 470.0, 290.0, 220.0, 94.0 ],
-									"text" : "This is the first two seconsds of the sound file zoomed in. You can see where the transients (rust coloured) are detected and how they have been extracted from the original sound and \"inpainted\" (green).",
+									"text" : "This is the first two seconds of the sound file zoomed in. You can see where the transients (rust coloured) are detected and how they have been extracted from the original sound and \"inpainted\" (green).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 

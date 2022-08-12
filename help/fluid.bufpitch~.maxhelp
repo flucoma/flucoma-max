@@ -656,7 +656,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 46.5, 141.5, 239.0, 25.0 ],
-									"text" : "Trigger pitch analyss of source buffer"
+									"text" : "Trigger pitch analysis of source buffer"
 								}
 
 							}
@@ -1150,7 +1150,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 11.0, 64.0, 278.0, 21.0 ],
-									"text" : "Grains from just the piched portions of a sound",
+									"text" : "Grains from just the pitched portions of a sound",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
