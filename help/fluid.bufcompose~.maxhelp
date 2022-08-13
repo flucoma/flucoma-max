@@ -339,7 +339,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 127.5, 164.5, 306.0, 54.0 ],
 									"style" : "helpfile_label",
-									"text" : "By default the destination gain is 1 meaning the content is overwritten. You can \"dub\" new content variably, by using the destgain attribute.",
+									"text" : "By default the destination gain is 0 meaning the content is overwritten. You can \"dub\" new content variably, by using the destgain attribute.",
 									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
 								}
 
