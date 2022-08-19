@@ -1,6 +1,6 @@
 {
 	"author" : "FluCoMa",
-	"description" : "Fluid Corpus Manipulation Toolkit",
+	"description" : "FluCoMa introduces a suite of tools to Max that can help you work with audio in a number of new and flexible ways through analyzing and transforming rhythm, pitch, timbre, and other audio/musical characteristics with the help of machine learning. The package links out to a body of educational content, tutorials, and inspirational examples from the world of FluCoMa and Max users.",
 	"homepatcher" : "Fluid Corpus Manipulation Toolkit.maxpat",
 	"max_version_min" : "7.0",
 	"name" : "FluidCorpusManipulation",
@@ -20,5 +20,5 @@
 	},
 	"tags" : [ ],
 	"version" : "@FLUCOMA_VERSION_TAG@",
-	"website" : "http://www.github.com/flucoma/"
+	"website" : "https://flucoma.org"
 }
