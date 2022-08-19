@@ -20,5 +20,5 @@
 	},
 	"tags" : [ ],
 	"version" : "@FLUCOMA_VERSION_TAG@",
-	"website" : "http://www.github.com/flucoma/"
+	"website" : "https://flucoma.org"
 }
