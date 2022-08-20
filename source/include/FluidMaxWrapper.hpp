@@ -640,7 +640,7 @@ class FluidMaxWrapper
   template <size_t N>
   static constexpr auto makeValue()
   {
-    return Client::getParameterDescriptors().template makeValue<N>();
+    return Client::getParameterDescriptors().template makeValue<N>(FluidDefaultAllocator());
   }
 
   bool checkResult(Result& res)
@@ -1189,7 +1189,7 @@ public:
   static constexpr index NumOutputBuffers = ParamDescType::template NumOfType<BufferT>;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
-      : mListSize{32}, mMessages{}, mParams(Client::getParameterDescriptors()),
+      : mListSize{32}, mMessages{}, mParams(Client::getParameterDescriptors(), FluidDefaultAllocator()),
         mParamSnapshot{mParams.toTuple()},
         mClient{initParamsFromArgs(ac, av), FluidContext()}, mDumpDictionary{nullptr}
   {
