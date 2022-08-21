@@ -2427,7 +2427,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 391.0, 461.0, 370.0, 40.0 ],
-									"text" : "For a relevant tutorial, see here: <link href=\"; max launchbrowser https://learn.flucoma.org/overviews/2d-sound-browsing-tutorial\" >https://learn.flucoma.org/overviews/2d-sound-browsing-tutorial</link>",
+									"text" : "For a relevant tutorial, see here: <link href=\"; max launchbrowser https://learn.flucoma.org/learn/2d-corpus-explorer/\" >https://learn.flucoma.org/learn/2d-corpus-explorer</link>",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
