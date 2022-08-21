@@ -1600,39 +1600,39 @@
 														"count" : 9,
 														"data" : [ 															{
 																"key" : 0,
-																"value" : [ "hayes" ]
+																"value" : [ "eldridge-kiefer" ]
 															}
 , 															{
 																"key" : 1,
-																"value" : [ "burton" ]
+																"value" : [ "hayes" ]
 															}
 , 															{
 																"key" : 2,
-																"value" : [ "pasquet" ]
+																"value" : [ "burton" ]
 															}
 , 															{
 																"key" : 3,
-																"value" : [ "constanzo" ]
-															}
-, 															{
-																"key" : 4,
 																"value" : [ "harker" ]
 															}
 , 															{
-																"key" : 5,
+																"key" : 4,
 																"value" : [ "pluta" ]
 															}
 , 															{
+																"key" : 5,
+																"value" : [ "pasquet" ]
+															}
+, 															{
 																"key" : 6,
-																"value" : [ "devine" ]
+																"value" : [ "constanzo" ]
 															}
 , 															{
 																"key" : 7,
-																"value" : [ "tutschku" ]
+																"value" : [ "devine" ]
 															}
 , 															{
 																"key" : 8,
-																"value" : [ "eldridge-kiefer" ]
+																"value" : [ "tutschku" ]
 															}
  ]
 													}
@@ -1682,39 +1682,39 @@
 														"count" : 9,
 														"data" : [ 															{
 																"key" : 0,
-																"value" : [ "https://youtu.be/BzSRs_7S9cg" ]
+																"value" : [ "https://youtu.be/c03_84_P7PQ" ]
 															}
 , 															{
 																"key" : 1,
-																"value" : [ "https://youtu.be/hYaZq1JCTQo" ]
+																"value" : [ "https://youtu.be/BzSRs_7S9cg" ]
 															}
 , 															{
 																"key" : 2,
-																"value" : [ "https://youtu.be/qqR_gORRwRA" ]
+																"value" : [ "https://youtu.be/hYaZq1JCTQo" ]
 															}
 , 															{
 																"key" : 3,
-																"value" : [ "https://youtu.be/MTWklm1oXWQ" ]
-															}
-, 															{
-																"key" : 4,
 																"value" : [ "https://youtu.be/lHEWsysupaA" ]
 															}
 , 															{
-																"key" : 5,
+																"key" : 4,
 																"value" : [ "https://youtu.be/jWwJd9UmixQ" ]
 															}
 , 															{
+																"key" : 5,
+																"value" : [ "https://youtu.be/qqR_gORRwRA" ]
+															}
+, 															{
 																"key" : 6,
-																"value" : [ "https://youtu.be/F0iCU_uqJHg" ]
+																"value" : [ "https://www.youtube.com/watch?v=MTWklm1oXWQ" ]
 															}
 , 															{
 																"key" : 7,
-																"value" : [ "https://youtu.be/xPqT-atQIik" ]
+																"value" : [ "https://youtu.be/F0iCU_uqJHg" ]
 															}
 , 															{
 																"key" : 8,
-																"value" : [ "https://youtu.be/c03_84_P7PQ" ]
+																"value" : [ "https://youtu.be/xPqT-atQIik" ]
 															}
  ]
 													}
