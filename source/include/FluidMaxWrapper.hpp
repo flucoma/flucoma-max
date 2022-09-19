@@ -716,7 +716,7 @@ class FluidMaxWrapper
   template <size_t N>
   struct Fetcher<N, StringT>
   {
-    std::string operator()(const long ac, t_atom* av, long& currentCount)
+    rt::string operator()(const long ac, t_atom* av, long& currentCount)
     {
       auto defaultValue = paramDescriptor<N>().defaultValue;
       return {currentCount < ac ? atom_getsym(av + currentCount++)->s_name
@@ -730,12 +730,12 @@ class FluidMaxWrapper
   struct ParamAtomConverter
   {
 
-    static std::string getString(t_atom* a)
+    static rt::string getString(t_atom* a)
     {
       switch (atom_gettype(a))
       {
-      case A_LONG: return std::to_string(atom_getlong(a));
-      case A_FLOAT: return std::to_string(atom_getfloat(a));
+      case A_LONG: return rt::string{std::to_string(atom_getlong(a))};
+      case A_FLOAT: return rt::string{std::to_string(atom_getfloat(a))};
       default: return {atom_getsym(a)->s_name};
       }
     }
@@ -770,9 +770,10 @@ class FluidMaxWrapper
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
 
-    static auto fromAtom(t_object*, t_atom* a, StringT::type)
+    template <typename Allocator>
+    static auto fromAtom(t_object*, t_atom* a, std::basic_string<char,std::char_traits<char>, Allocator>)
     {
-      return getString(a);
+      return std::basic_string<char,std::char_traits<char>, Allocator>{getString(a)};
     }
 
     template <typename T>
@@ -807,12 +808,14 @@ class FluidMaxWrapper
       atom_setsym(a, b ? b->name() : nullptr);
     }
 
-    static auto toAtom(t_atom* a, StringT::type v)
+    template<typename Allocator>
+    static auto toAtom(t_atom* a, std::basic_string<char,std::char_traits<char>,Allocator> v)
     {
       atom_setsym(a, gensym(v.c_str()));
     }
 
-    static auto toAtom(t_atom* a, FluidTensor<std::string, 1> v)
+    template<typename Allocator>
+    static auto toAtom(t_atom* a, FluidTensor<std::basic_string<char,std::char_traits<char>,Allocator>, 1> v)
     {
       for (auto& s : v) atom_setsym(a++, gensym(s.c_str()));
     }
@@ -840,7 +843,7 @@ class FluidMaxWrapper
     }
 
     template <typename... Ts, size_t... Is>
-    static void toAtom(t_atom* a, std::tuple<Ts...>&& x,
+    static void toAtom(t_atom* a, std::tuple<Ts...> const& x,
                        std::index_sequence<Is...>,
                        std::array<size_t, sizeof...(Ts)> offsets)
     {
@@ -1128,8 +1131,8 @@ class FluidMaxWrapper
 
       for (index i = 0, arg = 0; i < desc.numOptions; i++)
       {
-        if(a[i])
-          ParamAtomConverter::toAtom(*av + arg++,desc.strings[i]);
+        if (a[i])
+          ParamAtomConverter::toAtom(*av + arg++, std::string{desc.strings[i]});
       }
 
       return MAX_ERR_NONE;
@@ -1576,8 +1579,8 @@ public:
   
   static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
   {
-    std::string name(newName->s_name);
-    if (std::string(name) != x->mParams.template get<0>())
+    rt::string name(newName->s_name);
+    if (name != x->mParams.template get<0>())
     {
       //      auto newParams = ParamSetType(Client::getParameterDescriptors());
       Result r = x->mParams.lookup(name);
@@ -1865,14 +1868,14 @@ private:
   }
 
   template <template <typename, size_t> class Tensor, typename T>
-  static size_t ResultSize(Tensor<T, 1>&& x)
+  static size_t ResultSize(Tensor<T, 1> const& x)
   {
     return static_cast<FluidTensor<T, 1>>(x).size();
   }
 
   template <typename... Ts, size_t... Is>
   static std::tuple<std::array<size_t, sizeof...(Ts)>, size_t>
-  ResultSize(std::tuple<Ts...>&& x, std::index_sequence<Is...>)
+  ResultSize(std::tuple<Ts...> const& x, std::index_sequence<Is...>)
   {
     size_t                            size = 0;
     std::array<size_t, sizeof...(Ts)> offsets;
@@ -1892,21 +1895,24 @@ private:
     outlet_anything(x->mDataOutlets[0],s,static_cast<long>(resultSize), out.data());
   }
 
-  template <typename... Ts>
-  static void messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens,
-                            MessageResult<std::tuple<Ts...>> r)
+  template <typename Tuple>
+  static std::enable_if_t<isSpecialization<Tuple, std::tuple>::value>
+  messageOutput(FluidMaxWrapper* x, t_symbol* s,
+                std::vector<t_atom>& outputTokens, MessageResult<Tuple> r)
   {
-    auto   indices = std::index_sequence_for<Ts...>();
-    size_t resultSize;
-    std::array<size_t, sizeof...(Ts)> offsets;
-    std::tie(offsets, resultSize) =
-        ResultSize(static_cast<std::tuple<Ts...>>(r), indices);
+    constexpr auto N = std::tuple_size_v<Tuple>;
+    auto           indices = std::make_index_sequence<N>();
+
+    size_t                resultSize;
+    std::array<size_t, N> offsets;
+    std::tie(offsets, resultSize) = ResultSize(r.value(), indices);
     resultSize += outputTokens.size();
     std::vector<t_atom> out(resultSize);
-    std::copy_n(outputTokens.begin(), outputTokens.size(),out.begin());
-    ParamAtomConverter::toAtom(out.data() + outputTokens.size(), static_cast<std::tuple<Ts...>>(r),
+    std::copy_n(outputTokens.begin(), outputTokens.size(), out.begin());
+    ParamAtomConverter::toAtom(out.data() + outputTokens.size(), r.value(),
                                indices, offsets);
-    outlet_anything(x->mDataOutlets[0],s,static_cast<long>(resultSize), out.data());
+    outlet_anything(x->mDataOutlets[0], s, static_cast<long>(resultSize),
+                    out.data());
   }
 
   static void messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens,
@@ -2057,10 +2063,11 @@ private:
       object_obex_dumpout(x, gensym("load"), 0, nullptr);
   }
 
-  static void updateParams(FluidMaxWrapper*                                 x,
-                           MessageResult<typename ParamSetType::ValueTuple> v)
+  static void
+  updateParams(FluidMaxWrapper*                                        x,
+               MessageResult<typename ParamSetType::ValueTuple> const& v)
   {
-    x->mParams.fromTuple(typename ParamSetType::ValueTuple(v));
+    x->mParams.fromTuple(typename ParamSetType::ValueTuple(v.value()));
   }
 
   static void updateParams(FluidMaxWrapper*, MessageResult<void>) {}
