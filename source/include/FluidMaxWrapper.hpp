@@ -1186,7 +1186,7 @@ public:
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
       : mListSize{32}, mMessages{}, mParams(Client::getParameterDescriptors()),
-        mParamSnapshot{mParams.toTuple()},
+        mParamSnapshot{mParams.toTuple()}, mAutosize{true},
         mClient{initParamsFromArgs(ac, av)}, mDumpDictionary{nullptr}
   {
     if (mClient.audioChannelsIn())
@@ -1200,7 +1200,6 @@ public:
     //TODO: this implicitly assumes no audio in?
     if (index controlInputs = mClient.controlChannelsIn())
     {
-      mAutosize = true;      
       if(mListSize)
       {
         mInputListData.resize(controlInputs, mListSize);
@@ -1442,7 +1441,7 @@ public:
       class_addattr(getClass(), a);
       CLASS_ATTR_FILTER_CLIP(getClass(), "autosize", 0, 1);
       CLASS_ATTR_STYLE_LABEL(getClass(), "autosize", 0, "onoff",
-                           "Report Warnings");
+                           "Set auto size for list output");
                                   
     }
     
