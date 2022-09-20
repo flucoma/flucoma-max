@@ -123,10 +123,10 @@ public:
            long /*flags*/)
   {
     Wrapper* wrapper = static_cast<Wrapper*>(this);
+    mContext = FluidContext(maxvectorsize, FluidDefaultAllocator());
     if (!Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
-      wrapper->mClient = typename Wrapper::ClientType{
-          wrapper->mParams,
-          FluidContext(maxvectorsize, FluidDefaultAllocator())};
+      wrapper->mClient =
+          typename Wrapper::ClientType{wrapper->mParams, mContext};
 
     auto& client = wrapper->client();
 
