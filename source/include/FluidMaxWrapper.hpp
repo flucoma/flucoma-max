@@ -1439,9 +1439,7 @@ public:
     getClass(class_new(className, (method) create, (method) destroy,
                        sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     WrapperBase::setup(getClass());
-    
-    (void)FFTSetup();
-    
+        
     if (isControlIn<typename Client::Client>)
     {
       class_addmethod(getClass(), (method) handleList, "list", A_GIMME, 0);
