@@ -9,7 +9,6 @@ var prevThresh=0;
 var prevVal=0;
 var iters=0;
 var curThresh;
-var maxIter = 10;
 
 function reset(v) {
 	iters=0;//resets the interation count
@@ -28,7 +27,7 @@ function reset(v) {
 	outlet(0,startThresh);//sends the initial thresh out
 }
 
-function setTarget(v) {
+function slice_target(v) {
 	if (v<1){
 		error("threshfinder: the target number of slices should be positive\n");
 		return;
@@ -36,7 +35,7 @@ function setTarget(v) {
 	target = Math.floor(v);
 }
 
-function setTolerance(v) {
+function slice_tolerance(v) {
 	if (v<0){
 		error("threshfinder: the tolerance should be positive\n");
 		return;
@@ -46,7 +45,7 @@ function setTolerance(v) {
 
 function msg_int(v) {
 	var dVal, dThresh, nThresh;
-	if (iters > maxIter) { //if we reach the max number of iterations, stops and tell us so
+	if (iters > 100) { //if we reach the max number of iterations, stops and tell us so
 		outlet(1,"failed");
 		return;
 	} else if (!iters) { //otherwise if we are in the first iteration (aka no past) just make another pass with a threshold half the size, to get a first pair
