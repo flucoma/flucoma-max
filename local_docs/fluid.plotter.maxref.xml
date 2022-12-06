@@ -153,6 +153,17 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         
         </description>
     </method>
+    <method name='highlight'>
+        <arglist>
+            <arg name='identifier' optional='0' type='symbol' />
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        Emphasises the given identifier's points in the plot. Any number of identifiers as a list of symbols can be provided.
+        </description>
+    </method>
     <method name='pointsize'>
         <arglist>
             <arg name='identifier' optional='0' type='symbol' />
