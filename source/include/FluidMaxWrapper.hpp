@@ -158,12 +158,16 @@ public:
                         : clock_new((t_object*) wrapper, (method) doControlOut);
       mTick.clear();
 
-      mControlOutputs.resize(asUnsigned(client.maxControlChannelsOut()));
-      
-      mOutputs.clear(); 
-      mOutputs.emplace_back(mControlOutputs.data(),0,mControlOutputs.size());
-      mControlAtoms.resize(asUnsigned(client.maxControlChannelsOut()));
-      
+      mControlOutputs.resize(client.controlChannelsOut().count,
+                             client.maxControlChannelsOut());
+      mControlAtoms.resize(client.controlChannelsOut().count,
+                           client.maxControlChannelsOut());
+
+      mOutputs.clear();
+      for (index i = 0; i < client.controlChannelsOut().count; ++i)
+      {
+        mOutputs.emplace_back(mControlOutputs.row(i));
+      }
     }
 
     if(!(client.controlChannelsIn() > 0))
@@ -201,11 +205,15 @@ public:
   {
     Wrapper* w = static_cast<Wrapper*>(this);
     auto&    client = w->client();
-    atom_setdouble_array(
-        static_cast<long>(client.controlChannelsOut().size), mControlAtoms.data(),
-        static_cast<long>(client.controlChannelsOut().size), mControlOutputs.data());
-    w->controlOut(static_cast<long>(client.controlChannelsOut().size),
-                  mControlAtoms.data());
+    index listSize = static_cast<long>(client.controlChannelsOut().size);
+    for (index i = 0; i < client.controlChannelsOut().count; ++i)
+    {
+      atom_setdouble_array(
+          listSize, mControlAtoms[i].data(),
+          listSize, mControlOutputs[i].data());
+      w->controlOut(i, listSize,
+                    mControlAtoms[i].data());
+    }
     mTick.clear();
   }
 
@@ -253,8 +261,8 @@ private:
   std::vector<ViewType> mOutputs;
   std::vector<short>    audioInputConnections;
   std::vector<short>    audioOutputConnections;
-  std::vector<double>   mControlOutputs;
-  std::vector<t_atom>   mControlAtoms;
+  FluidTensor<double,2> mControlOutputs;
+  FluidTensor<t_atom,2> mControlAtoms;
   void*                 mControlClock;
   std::atomic_flag      mTick;
   FluidContext          mContext;
@@ -373,24 +381,28 @@ struct NonRealTime
 
   static void deferProcess(Wrapper* x)
   {
-    x->mClient.enqueue(x->mParams);
-
-    if (x->mSynchronous != 2)
+    auto r = x->mClient.enqueue(x->mParams);
+    if (r.ok())
     {
-      if(x->mSynchronous == 0)
+      if (x->mSynchronous != 2)
       {
-        t_box *b;
-        t_max_err err = object_obex_lookup((t_object*)x, gensym("#B"), (t_object **)&b);
-        if(!err)
-          object_method(b, gensym("startprogress"),&x->mProgress);
+        if (x->mSynchronous == 0)
+        {
+          t_box*    b;
+          t_max_err err =
+              object_obex_lookup((t_object*) x, gensym("#B"), (t_object**) &b);
+          if (!err) object_method(b, gensym("startprogress"), &x->mProgress);
+        }
+
+        defer(x, (method) &callProcess, nullptr, 0, nullptr);
       }
-    
-      defer(x, (method) &callProcess, nullptr, 0, nullptr);
+      else
+      {
+        callProcess(x, nullptr, 0, nullptr);
+      }
     }
     else
-    {
-      callProcess(x, nullptr, 0, nullptr);
-    }
+      Wrapper::printResult(x, r);
   }
 
   static void callProcess(Wrapper* x, t_symbol*, short, t_atom*)
@@ -1313,14 +1325,17 @@ public:
   
     if (mClient.controlChannelsOut().count)
     {
-      if(mListSize)
+      index outputSize = mClient.controlChannelsOut().max > -1
+                             ? mClient.controlChannelsOut().max
+                             : mListSize;
+
+      if (outputSize)
       {
-        mOutputListData.resize(mClient.controlChannelsOut().count, mListSize);
-        mOutputListAtoms.reserve(mListSize);
+        mOutputListData.resize(mClient.controlChannelsOut().count, outputSize);
+        mOutputListAtoms.reserve(outputSize);
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
           mOutputListViews.emplace_back(mOutputListData.row(i));
       }
-      mControlOutlet = mDataOutlets[0];
     }
 
     for (index i = 0; i < mClient.audioChannelsOut(); ++i)
@@ -1408,9 +1423,9 @@ public:
     });
   }
 
-  void controlOut(long ac, t_atom* av)
+  void controlOut(long outletIndex, long ac, t_atom* av)
   {
-    outlet_list(mControlOutlet, nullptr, static_cast<short>(ac), av);
+    outlet_list(mDataOutlets[outletIndex], nullptr, static_cast<short>(ac), av);
   }
 
   static void* create(t_symbol* sym, long ac, t_atom* av)
@@ -1520,14 +1535,18 @@ public:
         {
           mInputListViews.emplace_back(mInputListData.row(i));
         }
-        mOutputListData.resize(mClient.controlChannelsOut().count,mListSize);
-        mOutputListAtoms.reserve(mListSize);
+
+        index outputSize = mClient.controlChannelsOut().size > -1
+                               ? mClient.controlChannelsOut().size
+                               : mListSize;
+
+        mOutputListData.resize(mClient.controlChannelsOut().count, outputSize);
+        mOutputListAtoms.reserve(outputSize);
         mOutputListViews.clear();
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
         {
           mOutputListViews.emplace_back(mOutputListData.row(i));
         }
-        
       }
   }
 
@@ -2230,9 +2249,6 @@ private:
   template <size_t N>
   static void doWrite(FluidMaxWrapper* x, t_symbol* s)
   {
-    //    t_fourcc filetype = FOUR_CHAR_CODE('JSON');
-    //
-    //    t_fourcc outtype;
     char  filename[MAX_PATH_CHARS];
     short path;
     char  fullpath[MAX_PATH_CHARS];
@@ -2441,7 +2457,6 @@ private:
   std::deque<Result> mMessages;
   Result             mResult;
   void*              mNRTDoneOutlet;
-  void*              mControlOutlet;
   void*              mDumpOutlet;
   double             mProgress;
   bool               mVerbose;
@@ -2494,8 +2509,6 @@ struct InputTypeWrapper<std::false_type>
 template <class Client>
 void makeMaxWrapper(const char* classname)
 {
-  //  using InputType = typename
-  //  InputTypeWrapper<isRealTime<Client<double>>>::type;
   common_symbols_init();
   FluidMaxWrapper<Client>::makeClass(classname);
 }

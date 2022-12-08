@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 0,
+			"minor" : 3,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 0,
+							"minor" : 3,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -160,13 +160,13 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -1650.0, 0.0 ],
+									"offset" : [ -825.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 0,
+											"minor" : 3,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -394,7 +394,7 @@
 														"Mapping" : [ "fluid.mlpregressor~", "fluid.knnregressor~", "fluid.kmeans~", "fluid.skmeans~" ],
 														"Dimension Reduction" : [ "fluid.umap~", "fluid.mds~", "fluid.pca~", "fluid.mlpregressor~" ],
 														"Event Detection" : [ "fluid.ampgate~", "fluid.ampslice~", "fluid.noveltyslice~", "fluid.onsetslice~", "fluid.transientslice~" ],
-														"Audio Analysis" : [ "fluid.ampfeature~", "fluid.chroma~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.pitch~", "fluid.noveltyfeature~", "fluid.onsetfeature~", "fluid.pitch~", "fluid.spectralshape~" ]
+														"Audio Analysis" : [ "fluid.ampfeature~", "fluid.chroma~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.pitch~", "fluid.noveltyfeature~", "fluid.onsetfeature~", "fluid.sinefeature~", "fluid.pitch~", "fluid.spectralshape~" ]
 													}
 ,
 													"id" : "obj-87",
@@ -433,7 +433,7 @@
 													"id" : "obj-73",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 7,
-													"num_lines_presentation" : 7,
+													"num_lines_presentation" : 10,
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "float" ],
@@ -447,9 +447,9 @@
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "fluid.bufnmf~", "fluid.sines~", "fluid.transients~", "fluid.hpss~", "fluid.nmfmorph~", "fluid.bufnmfcross~", "fluid.audiotransport~" ],
+															"parameter_enum" : [ "fluid.ampfeature~", "fluid.chroma~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.pitch~", "fluid.noveltyfeature~", "fluid.onsetfeature~", "fluid.pitch~", "fluid.spectralshape~" ],
 															"parameter_longname" : "live.tab[8]",
-															"parameter_mmax" : 6,
+															"parameter_mmax" : 9,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -640,8 +640,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1085,8 +1085,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1265,8 +1265,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2103,8 +2103,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2305,8 +2305,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2411,10 +2411,10 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 360.0, 191.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 363.0, 191.0 ],
 																	"presentation" : 1,
 																	"presentation_linecount" : 11,
-																	"presentation_rect" : [ 5.0, 5.0, 360.0, 191.0 ],
+																	"presentation_rect" : [ 5.0, 5.0, 363.0, 191.0 ],
 																	"text" : "Imagine you have a large corpus of sounds that you've collected from a studio session, some outside sound walks or experimenting with a synthesiser on a rainy afternoon. This tutorial teaches you how to build a '2D Corpus Explorer', a patch that will enable you to interrogate and listen to those sounds in a structured manner. The end result is similar to CataRT and AudioStellar in that small segments of your corpus sounds are analysed and mapped to a two-dimensional space that can be explored using your mouse. It will cover topics such as segmentation, analysis, data processing and visualisation.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
@@ -2589,8 +2589,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2921,8 +2921,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3023,15 +3023,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 7,
+																	"linecount" : 4,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 352.0, 124.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 352.0, 74.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 7,
-																	"presentation_rect" : [ 5.0, 5.0, 352.0, 124.0 ],
-																	"text" : "Slicing, segmenting, chopping, or dividing. These words all refer to the same type of process in which a sound is separated into 'chunks' or 'slices' across time. Each of these objects embodies a different model of listening for identifying 'slice points'. In other words, different types of change can be measured and used to determine how to segment a sound.",
+																	"presentation_linecount" : 4,
+																	"presentation_rect" : [ 5.0, 5.0, 352.0, 74.0 ],
+																	"text" : "The foundation of many sound corpora workflows is to first analyse the corpus using audio-descriptors. This collection of objects encapsulate several useful algorithms for doing this in realtime and in non-realtime using buffers~.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -3152,14 +3152,14 @@
 													"maxclass" : "bpatcher",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"offset" : [ 0.0, 0.0 ],
+													"offset" : [ -820.0, 0.0 ],
 													"outlettype" : [ "" ],
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3254,8 +3254,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 0,
+																			"minor" : 3,
+																			"revision" : 3,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3446,8 +3446,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 0,
+																			"minor" : 3,
+																			"revision" : 3,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3696,8 +3696,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 0,
+																			"minor" : 3,
+																			"revision" : 3,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3890,8 +3890,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 0,
+																			"minor" : 3,
+																			"revision" : 3,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4320,8 +4320,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 0,
+																			"minor" : 3,
+																			"revision" : 3,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4405,23 +4405,23 @@
 																					"id" : "obj-41",
 																					"maxclass" : "live.tab",
 																					"num_lines_patching" : 11,
-																					"num_lines_presentation" : 11,
+																					"num_lines_presentation" : 12,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
 																					"patching_rect" : [ 185.0, 28.0, 177.0, 270.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 28.0, 198.0, 252.5 ],
+																					"presentation_rect" : [ 200.0, 28.0, 198.0, 275.5 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnmfseed~", "fluid.bufstft~", "fluid.bufampfeature~", "fluid.bufonsetfeature~", "fluid.bufnoveltyfeature~" ],
+																							"parameter_enum" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnmfseed~", "fluid.bufstft~", "fluid.bufampfeature~", "fluid.bufonsetfeature~", "fluid.bufnoveltyfeature~", "fluid.bufsinefeature~" ],
 																							"parameter_longname" : "live.tab[23]",
-																							"parameter_mmax" : 10,
+																							"parameter_mmax" : 11,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4441,23 +4441,23 @@
 																					"id" : "obj-40",
 																					"maxclass" : "live.tab",
 																					"num_lines_patching" : 10,
-																					"num_lines_presentation" : 10,
+																					"num_lines_presentation" : 11,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
 																					"patching_rect" : [ 4.0, 28.0, 179.0, 245.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 0.0, 28.0, 198.0, 229.0 ],
+																					"presentation_rect" : [ 0.0, 28.0, 198.0, 252.5 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.pitch~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.spectralshape~", "fluid.chroma~", "fluid.nmfmatch~", "fluid.ampfeature~", "fluid.onsetfeature~", "fluid.noveltyfeature~" ],
+																							"parameter_enum" : [ "fluid.pitch~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.spectralshape~", "fluid.chroma~", "fluid.nmfmatch~", "fluid.ampfeature~", "fluid.onsetfeature~", "fluid.noveltyfeature~", "fluid.sinefeature~" ],
 																							"parameter_longname" : "live.tab[34]",
-																							"parameter_mmax" : 9,
+																							"parameter_mmax" : 10,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4488,7 +4488,7 @@
  ]
 																	}
 ,
-																	"patching_rect" : [ 820.0, 0.0, 405.0, 285.0 ],
+																	"patching_rect" : [ 820.0, 0.0, 408.0, 315.0 ],
 																	"viewvisibility" : 1
 																}
 
@@ -4513,8 +4513,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 0,
+																			"minor" : 3,
+																			"revision" : 3,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4771,8 +4771,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 0,
+															"minor" : 3,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5794,6 +5794,7 @@
 			"inherited_shortname" : 1
 		}
 ,
+		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
