@@ -104,8 +104,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 440.0, 340.0, 300.0, 100.0 ],
-									"presentation_linecount" : 15,
+									"patching_rect" : [ 440.0, 340.0, 303.0, 100.0 ],
 									"text" : "With the default window size of 1024, there are only 2 peaks... this is because the distance between 2 peaks has to be clearly segregated in the FFT world. At the default 1024 and the usual SR of 44100, this is 43Hz per bin, so 440 and 535 are too near each other... if we reprocess with a higher frame size, we get the right values. Run with the fftsetting to 2048: volilà!",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -142,7 +141,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 306.0, 152.0, 20.0 ],
-									"text" : "peak magnitudes",
+									"text" : "peak magnitude",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -154,7 +153,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 276.0, 152.0, 20.0 ],
-									"text" : "peak frequencies",
+									"text" : "peak frequency",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -166,8 +165,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 470.0, 140.0, 131.0, 24.0 ],
-									"text" : "read each frame"
+									"patching_rect" : [ 462.0, 140.0, 298.0, 24.0 ],
+									"text" : "Query a frame for a peak frequency and magnitude"
 								}
 
 							}
@@ -320,7 +319,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 47.25, 125.0, 247.0, 24.0 ],
-									"presentation_linecount" : 2,
 									"text" : "Play the sound source, a chord of 3 sines"
 								}
 
