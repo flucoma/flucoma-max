@@ -328,7 +328,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 69.599853999999993, 255.0, 21.0 ],
-					"text" : "Choose with thread to use for processing"
+					"text" : "Choose which thread to use for processing"
 				}
 
 			}
