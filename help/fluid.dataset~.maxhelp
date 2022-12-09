@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 94.0, 146.0, 995.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -437,12 +437,12 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-14",
-									"linecount" : 3,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 62.0, 729.0, 50.0 ],
-									"text" : "A fluid.dataset~ can be searched via brute-force. Note: This feature is computationally expensive on a large DataSet, as it needs to compute the distance of the queried point to each point in the DataSet. It is recommended to use it after triming down the data with DataSetQuery. For large DataSets, it is recommended to use fluid.kdtree.",
+									"patching_rect" : [ 10.0, 62.0, 729.0, 65.0 ],
+									"text" : "A fluid.dataset~ can be queried with an input point to return the nearest match to that point. Note: This feature is can be computationally expensive on a large dataset, as it needs to compute the distance of the queried point to each point in the dataset. If you need to perform multiple nearest neighbour queries on a fluid.dataset~ it is recommended to use fluid.kdtree~. This facility is most useful with smaller, ephemeral datasets such as those returned by fluid.datasetquery~",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -743,7 +743,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 289.0, 411.0, 127.0, 23.0 ],
+					"patching_rect" : [ 289.0, 411.0, 176.0, 23.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -752,7 +752,7 @@
 						"tags" : ""
 					}
 ,
-					"text" : "p \"brute force query\""
+					"text" : "p \"nearest neighbour search\""
 				}
 
 			}
@@ -4391,7 +4391,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 751.0 ],
+						"rect" : [ 94.0, 146.0, 995.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
