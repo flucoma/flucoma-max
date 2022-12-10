@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -62,7 +62,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -98,6 +98,31 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 820.0, 563.0, 152.0, 50.0 ],
+									"presentation_linecount" : 3,
+									"text" : "This is the computed distance we retrieved with knearestdist",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 820.0, 536.0, 95.0, 23.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-5",
 									"maxclass" : "comment",
@@ -155,7 +180,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 160.0, 340.0, 20.0, 20.0 ],
+									"patching_rect" : [ 160.0, 380.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -169,7 +194,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 182.0, 338.0, 285.0, 25.0 ],
+									"patching_rect" : [ 182.0, 378.0, 285.0, 25.0 ],
 									"text" : "Fit a kdtree to the dataset that was just made"
 								}
 
@@ -217,7 +242,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -534,8 +559,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 690.0, 536.0, 50.0, 23.0 ],
-									"text" : "\"0\""
+									"patching_rect" : [ 690.0, 536.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -551,7 +575,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -729,8 +753,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 750.0, 340.0, 151.0, 23.0 ],
-									"text" : "1. 0."
+									"patching_rect" : [ 750.0, 340.0, 151.0, 23.0 ]
 								}
 
 							}
@@ -777,8 +800,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 489.0, 536.0, 50.0, 23.0 ],
-									"text" : "1. 0.2"
+									"patching_rect" : [ 489.0, 536.0, 50.0, 23.0 ]
 								}
 
 							}
@@ -786,11 +808,11 @@
 								"box" : 								{
 									"id" : "obj-37",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
-									"numoutlets" : 2,
-									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 520.0, 460.0, 92.0, 23.0 ],
-									"text" : "route knearest"
+									"numinlets" : 3,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "" ],
+									"patching_rect" : [ 520.0, 460.0, 165.0, 23.0 ],
+									"text" : "route knearest knearestdist"
 								}
 
 							}
@@ -813,8 +835,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 520.0, 380.0, 76.0, 23.0 ],
-									"text" : "knearest $2"
+									"patching_rect" : [ 520.0, 380.0, 172.0, 23.0 ],
+									"text" : "knearest $2, knearestdist $2"
 								}
 
 							}
@@ -838,7 +860,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 40.0, 340.0, 115.0, 23.0 ],
+									"patching_rect" : [ 40.0, 380.0, 115.0, 23.0 ],
 									"text" : "fit kdtree.help.2.ds"
 								}
 
@@ -923,7 +945,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 40.0, 380.0, 184.0, 23.0 ],
+									"patching_rect" : [ 40.0, 420.0, 184.0, 23.0 ],
 									"text" : "fluid.kdtree~ kdtree.help.2.tree"
 								}
 
@@ -1049,6 +1071,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-6", 1 ],
+									"midpoints" : [ 602.5, 488.0, 905.5, 488.0 ],
+									"source" : [ "obj-37", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-62", 0 ],
 									"order" : 1,
 									"source" : [ "obj-37", 0 ]
@@ -1058,7 +1088,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-64", 1 ],
-									"midpoints" : [ 529.5, 491.0, 730.0, 491.0, 730.0, 530.0, 730.5, 530.0 ],
+									"midpoints" : [ 529.5, 497.0, 730.0, 497.0, 730.0, 530.0, 730.5, 530.0 ],
 									"order" : 0,
 									"source" : [ "obj-37", 0 ]
 								}
@@ -1187,7 +1217,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1377,7 +1407,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2378,13 +2408,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 113.0, 1055.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2453,7 +2483,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2524,7 +2554,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2763,7 +2793,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3209,7 +3239,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3279,7 +3309,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3618,7 +3648,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4358,7 +4388,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4421,6 +4451,77 @@
 			"inherited_shortname" : 1
 		}
 ,
+		"dependency_cache" : [ 			{
+				"name" : "fluid.buf2list.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufcompose~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.concataudiofiles.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.dsinterface.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.dslink.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.learn.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.list2buf.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.plotter.js",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/jsui",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/jsui",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "helpname.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
 		"autosave" : 0
 	}
 
