@@ -3596,7 +3596,7 @@
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~", "fluid.buf2list", "fluid.list2buf", "fluid.bufresize" ],
+																							"parameter_enum" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~", "fluid.buf2list", "fluid.list2buf" ],
 																							"parameter_longname" : "live.tab[36]",
 																							"parameter_mmax" : 8,
 																							"parameter_shortname" : "live.tab",
