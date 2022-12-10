@@ -3560,7 +3560,7 @@
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.bufaudiotransport~", "fluid.bufnmfcross~" ],
+																							"parameter_enum" : [ "fluid.plotter", "fluid.waveform~" ],
 																							"parameter_longname" : "live.tab[35]",
 																							"parameter_mmax" : 1,
 																							"parameter_shortname" : "live.tab",
