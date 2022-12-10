@@ -4,7 +4,7 @@
 		"appversion" : 		{
 			"major" : 8,
 			"minor" : 3,
-			"revision" : 0,
+			"revision" : 3,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -51,7 +51,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -531,13 +531,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
+						"rect" : [ 35.0, 114.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -567,6 +567,30 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-12",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 250.0, 341.0, 204.0, 21.0 ],
+									"text" : "Completely reset a fluid.labelset~.",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-9",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 209.0, 340.0, 37.0, 23.0 ],
+									"text" : "clear"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"maxclass" : "comment",
@@ -618,7 +642,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -725,7 +749,7 @@
 														"appversion" : 														{
 															"major" : 8,
 															"minor" : 3,
-															"revision" : 0,
+															"revision" : 3,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1106,7 +1130,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 209.0, 395.0, 74.0, 23.0 ],
+									"patching_rect" : [ 209.0, 405.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -1189,8 +1213,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 226.5, 307.0, 204.0, 21.0 ],
-									"text" : "Completely reset a fluid.labelset~.",
+									"patching_rect" : [ 226.5, 307.0, 343.5, 21.0 ],
+									"text" : "Print a sample of the fluid.labelset~.in the Max window.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1202,8 +1226,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 186.0, 305.0, 37.0, 23.0 ],
-									"text" : "clear"
+									"patching_rect" : [ 186.0, 305.0, 34.0, 23.0 ],
+									"text" : "print"
 								}
 
 							}
@@ -1214,7 +1238,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 355.0, 198.0, 23.0 ],
+									"patching_rect" : [ 30.0, 375.0, 198.0, 23.0 ],
 									"text" : "fluid.labelset~ help.labelset.other"
 								}
 
@@ -1230,7 +1254,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 113.5, 340.0, 39.5, 340.0 ],
+									"midpoints" : [ 113.5, 369.0, 39.5, 369.0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -1238,7 +1262,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 141.5, 340.0, 39.5, 340.0 ],
+									"midpoints" : [ 141.5, 369.0, 39.5, 369.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -1267,7 +1291,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 169.5, 340.0, 39.5, 340.0 ],
+									"midpoints" : [ 169.5, 369.0, 39.5, 369.0 ],
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -1275,7 +1299,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 195.5, 340.0, 39.5, 340.0 ],
+									"midpoints" : [ 195.5, 369.0, 39.5, 369.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -1291,8 +1315,16 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 89.5, 340.0, 39.5, 340.0 ],
+									"midpoints" : [ 89.5, 369.0, 39.5, 369.0 ],
 									"source" : [ "obj-8", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"midpoints" : [ 218.5, 369.5, 39.5, 369.5 ],
+									"source" : [ "obj-9", 0 ]
 								}
 
 							}
@@ -1373,13 +1405,13 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 853.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1490,7 +1522,7 @@
 										"appversion" : 										{
 											"major" : 8,
 											"minor" : 3,
-											"revision" : 0,
+											"revision" : 3,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1969,7 +2001,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2504,7 +2536,7 @@
 						"appversion" : 						{
 							"major" : 8,
 							"minor" : 3,
-							"revision" : 0,
+							"revision" : 3,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -2558,6 +2590,43 @@
 			}
  ],
 		"lines" : [  ],
+		"dependency_cache" : [ 			{
+				"name" : "fluid.bufflatten~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufmfcc~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.bufstats~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.flucomaorg.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.learn.maxpat",
+				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
+				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.libmanipulation.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "helpdetails.js",
+				"bootpath" : "C74:/help/resources",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+ ],
 		"autosave" : 0
 	}
 
