@@ -2220,7 +2220,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 20.0, 90.0, 422.0, 84.0 ],
-									"text" : "The same principles of automatic management can be used with objects that use the fluid.dataset~ as inputs and outputs. \n\nLet's start by creating a simple synthetic dataset mde out of MFCC analysis."
+									"text" : "The same principles of automatic management can be used with objects that use the fluid.dataset~ as inputs and outputs. \n\nLet's start by creating a simple synthetic dataset made out of MFCC analysis."
 								}
 
 							}
