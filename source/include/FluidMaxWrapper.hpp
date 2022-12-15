@@ -24,6 +24,8 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <clients/common/ParameterTypes.hpp>
 #include <clients/nrt/FluidSharedInstanceAdaptor.hpp>
 
+#include <data/FluidMemory.hpp>
+
 #include "MaxBufferAdaptor.hpp"
 
 #include <FluidVersion.hpp>
@@ -117,12 +119,14 @@ public:
     x->perform(dsp64, ins, numins, outs, numouts, vec_size, flags, userparam);
   }
 
-  void dsp(t_object* dsp64, short* count, double samplerate,
-           long /*maxvectorsize*/, long /*flags*/)
+  void dsp(t_object* dsp64, short* count, double samplerate, long maxvectorsize,
+           long /*flags*/)
   {
     Wrapper* wrapper = static_cast<Wrapper*>(this);
+    mContext = FluidContext(maxvectorsize, FluidDefaultAllocator());
     if (!Wrapper::template IsModel_t<typename Wrapper::ClientType>::value)
-      wrapper->mClient = typename Wrapper::ClientType{wrapper->mParams};
+      wrapper->mClient =
+          typename Wrapper::ClientType{wrapper->mParams, mContext};
 
     auto& client = wrapper->client();
 
@@ -154,12 +158,16 @@ public:
                         : clock_new((t_object*) wrapper, (method) doControlOut);
       mTick.clear();
 
-      mControlOutputs.resize(asUnsigned(client.maxControlChannelsOut()));
-      
-      mOutputs.clear(); 
-      mOutputs.emplace_back(mControlOutputs.data(),0,mControlOutputs.size());
-      mControlAtoms.resize(asUnsigned(client.maxControlChannelsOut()));
-      
+      mControlOutputs.resize(client.controlChannelsOut().count,
+                             client.maxControlChannelsOut());
+      mControlAtoms.resize(client.controlChannelsOut().count,
+                           client.maxControlChannelsOut());
+
+      mOutputs.clear();
+      for (index i = 0; i < client.controlChannelsOut().count; ++i)
+      {
+        mOutputs.emplace_back(mControlOutputs.row(i));
+      }
     }
 
     if(!(client.controlChannelsIn() > 0))
@@ -197,11 +205,15 @@ public:
   {
     Wrapper* w = static_cast<Wrapper*>(this);
     auto&    client = w->client();
-    atom_setdouble_array(
-        static_cast<long>(client.controlChannelsOut().size), mControlAtoms.data(),
-        static_cast<long>(client.controlChannelsOut().size), mControlOutputs.data());
-    w->controlOut(static_cast<long>(client.controlChannelsOut().size),
-                  mControlAtoms.data());
+    index listSize = static_cast<long>(client.controlChannelsOut().size);
+    for (index i = 0; i < client.controlChannelsOut().count; ++i)
+    {
+      atom_setdouble_array(
+          listSize, mControlAtoms[i].data(),
+          listSize, mControlOutputs[i].data());
+      w->controlOut(i, listSize,
+                    mControlAtoms[i].data());
+    }
     mTick.clear();
   }
 
@@ -249,8 +261,8 @@ private:
   std::vector<ViewType> mOutputs;
   std::vector<short>    audioInputConnections;
   std::vector<short>    audioOutputConnections;
-  std::vector<double>   mControlOutputs;
-  std::vector<t_atom>   mControlAtoms;
+  FluidTensor<double,2> mControlOutputs;
+  FluidTensor<t_atom,2> mControlAtoms;
   void*                 mControlClock;
   std::atomic_flag      mTick;
   FluidContext          mContext;
@@ -369,24 +381,28 @@ struct NonRealTime
 
   static void deferProcess(Wrapper* x)
   {
-    x->mClient.enqueue(x->mParams);
-
-    if (x->mSynchronous != 2)
+    auto r = x->mClient.enqueue(x->mParams);
+    if (r.ok())
     {
-      if(x->mSynchronous == 0)
+      if (x->mSynchronous != 2)
       {
-        t_box *b;
-        t_max_err err = object_obex_lookup((t_object*)x, gensym("#B"), (t_object **)&b);
-        if(!err)
-          object_method(b, gensym("startprogress"),&x->mProgress);
+        if (x->mSynchronous == 0)
+        {
+          t_box*    b;
+          t_max_err err =
+              object_obex_lookup((t_object*) x, gensym("#B"), (t_object**) &b);
+          if (!err) object_method(b, gensym("startprogress"), &x->mProgress);
+        }
+
+        defer(x, (method) &callProcess, nullptr, 0, nullptr);
       }
-    
-      defer(x, (method) &callProcess, nullptr, 0, nullptr);
+      else
+      {
+        callProcess(x, nullptr, 0, nullptr);
+      }
     }
     else
-    {
-      callProcess(x, nullptr, 0, nullptr);
-    }
+      Wrapper::printResult(x, r);
   }
 
   static void callProcess(Wrapper* x, t_symbol*, short, t_atom*)
@@ -636,7 +652,7 @@ class FluidMaxWrapper
   template <size_t N>
   static constexpr auto makeValue()
   {
-    return Client::getParameterDescriptors().template makeValue<N>();
+    return Client::getParameterDescriptors().template makeValue<N>(FluidDefaultAllocator());
   }
 
   bool checkResult(Result& res)
@@ -712,7 +728,7 @@ class FluidMaxWrapper
   template <size_t N>
   struct Fetcher<N, StringT>
   {
-    std::string operator()(const long ac, t_atom* av, long& currentCount)
+    rt::string operator()(const long ac, t_atom* av, long& currentCount)
     {
       auto defaultValue = paramDescriptor<N>().defaultValue;
       return {currentCount < ac ? atom_getsym(av + currentCount++)->s_name
@@ -726,12 +742,12 @@ class FluidMaxWrapper
   struct ParamAtomConverter
   {
 
-    static std::string getString(t_atom* a)
+    static rt::string getString(t_atom* a)
     {
       switch (atom_gettype(a))
       {
-      case A_LONG: return std::to_string(atom_getlong(a));
-      case A_FLOAT: return std::to_string(atom_getfloat(a));
+      case A_LONG: return rt::string{std::to_string(atom_getlong(a))};
+      case A_FLOAT: return rt::string{std::to_string(atom_getfloat(a))};
       default: return {atom_getsym(a)->s_name};
       }
     }
@@ -766,9 +782,10 @@ class FluidMaxWrapper
       return InputBufferT::type(new MaxBufferAdaptor(x, atom_getsym(a)));
     }
 
-    static auto fromAtom(t_object*, t_atom* a, StringT::type)
+    template <typename Allocator>
+    static auto fromAtom(t_object*, t_atom* a, std::basic_string<char,std::char_traits<char>, Allocator>)
     {
-      return getString(a);
+      return std::basic_string<char,std::char_traits<char>, Allocator>{getString(a)};
     }
 
     template <typename T>
@@ -803,12 +820,14 @@ class FluidMaxWrapper
       atom_setsym(a, b ? b->name() : nullptr);
     }
 
-    static auto toAtom(t_atom* a, StringT::type v)
+    template<typename Allocator>
+    static auto toAtom(t_atom* a, std::basic_string<char,std::char_traits<char>,Allocator> v)
     {
       atom_setsym(a, gensym(v.c_str()));
     }
 
-    static auto toAtom(t_atom* a, FluidTensor<std::string, 1> v)
+    template<typename Allocator>
+    static auto toAtom(t_atom* a, FluidTensor<std::basic_string<char,std::char_traits<char>,Allocator>, 1> v)
     {
       for (auto& s : v) atom_setsym(a++, gensym(s.c_str()));
     }
@@ -836,7 +855,7 @@ class FluidMaxWrapper
     }
 
     template <typename... Ts, size_t... Is>
-    static void toAtom(t_atom* a, std::tuple<Ts...>&& x,
+    static void toAtom(t_atom* a, std::tuple<Ts...> const& x,
                        std::index_sequence<Is...>,
                        std::array<size_t, sizeof...(Ts)> offsets)
     {
@@ -929,63 +948,95 @@ class FluidMaxWrapper
       return MAX_ERR_NONE;
     }
   };
-  
+
   template <size_t N>
-  struct Setter<LongRuntimeMaxT,N>
+  struct Setter<LongRuntimeMaxT, N>
   {
-    static t_max_err set(FluidMaxWrapper<Client>* x, t_object*, long ac, t_atom* av)
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object*, long ac,
+                         t_atom* av)
     {
       if (!ac) return MAX_ERR_NONE;
       while (x->mInPerform) {}
       x->messages().reset();
-      auto& a = x->params().template get<N>();
-      
-      if(!x->mInitialized)
-         x->params().template set<N>(LongRuntimeMaxParam(atom_getlong(av), a.maxRaw()),
-                                  x->verbose() ? &x->messages() : nullptr);
-      else
-         x->params().template set<N>(LongRuntimeMaxParam(atom_getlong(av), a.max()),
-                                  x->verbose() ? &x->messages() : nullptr);
-                                  
-//      x->params().template constrain<N>()
-                                  
-      printResult(x, x->messages());
 
+      /// Possible scenarios to cope with;
+      /// 1. object is not yet initialized (i.e @something in the box vs setter
+      /// being called from outside world
+      /// 2. initial value could already have been set by argument for 'primary'
+      /// params: attribute-in-box should 'win' in that case?
+      /// 3. clients will need to call max() in constructors, so constraints
+      /// that can increase the value for some need to be applied ASAP
+      /// 4. for in-box attribute user can pass list (initial, max): if only one
+      /// is present, then this becomes both initial and max UNLESS max set by
+      /// argument is bigger
+
+      auto a = x->params().template get<N>();
+
+      if (!x->mInitialized)
+      {
+        index val = atom_getlong(av);
+        index incomingMax =
+            std::max<index>(a.maxRaw(), atom_getlong(ac > 1 ? av + 1 : av));
+        incomingMax = std::max(val, incomingMax);
+        incomingMax = x->params().template applyConstraintToMax<N>(incomingMax);
+        a = LongRuntimeMaxParam(val, incomingMax);
+      }
+      else
+      {
+        a = LongRuntimeMaxParam(atom_getlong(av), a.max());
+      }
+
+      x->params().template set<N>(std::move(a),
+                                  x->verbose() ? &x->messages() : nullptr);
+      printResult(x, x->messages());
       object_attr_touch((t_object*) x, gensym("latency"));
       return MAX_ERR_NONE;
     }
   };
-  
+
   template <size_t N>
-  struct Setter<FFTParamsT,N>
+  struct Setter<FFTParamsT, N>
   {
-    static t_max_err set(FluidMaxWrapper<Client>* x, t_object*, long ac, t_atom* av)
+    static t_max_err set(FluidMaxWrapper<Client>* x, t_object*, long ac,
+                         t_atom* av)
     {
       if (!ac) return MAX_ERR_NONE;
       while (x->mInPerform) {}
       x->messages().reset();
       auto& a = x->params().template get<N>();
-     
-      std::array<index,3> defaults{1024,-1,-1};
+
+      std::array<index, 4> values{a.winSize(), a.hopRaw(), a.fftRaw(),
+                                  a.maxRaw()};
+
       for (index i = 0; i < 3 && i < static_cast<index>(ac); i++)
-            defaults[i] = ParamAtomConverter::fromAtom((t_object*) x, av + i, defaults[0]);
-     
-      if(!x->mInitialized)
-        a = FFTParams(defaults[0], defaults[1], defaults[2], a.maxRaw());
-      else
-        x->params().template set<N>(FFTParams(defaults[0], defaults[1], defaults[2], a.max()),
-                                  x->verbose() ? &x->messages() : nullptr);
-                                  
-//      x->params().template constrain<N>()
-                                  
-      printResult(x, x->messages());
+        values[i] =
+            ParamAtomConverter::fromAtom((t_object*) x, av + i, values[0]);
 
+      if (!x->mInitialized)
+      {
+        if (ac > 3)
+        {
+          values[3] = std::max<index>(
+              {values[0], values[2], values[3], atom_getlong(av + 3)});
+        }
+        a = FFTParams(values[0], values[1], values[2], values[3]);
+      }
+      else
+      {
+        a.setWin(values[0]);
+        a.setHop(values[1]);
+        a.setFFT(values[2]);
+      }
+
+      a = x->params().template applyConstraintsTo<N>(a);
+      x->params().template set<N>(std::move(a),
+                                  x->verbose() ? &x->messages() : nullptr);
+
+      printResult(x, x->messages());
       object_attr_touch((t_object*) x, gensym("latency"));
       return MAX_ERR_NONE;
     }
   };
-  
-  
 
   template <size_t N>
   struct Setter<ChoicesT, N>
@@ -1124,8 +1175,8 @@ class FluidMaxWrapper
 
       for (index i = 0, arg = 0; i < desc.numOptions; i++)
       {
-        if(a[i])
-          ParamAtomConverter::toAtom(*av + arg++,desc.strings[i]);
+        if (a[i])
+          ParamAtomConverter::toAtom(*av + arg++, std::string{desc.strings[i]});
       }
 
       return MAX_ERR_NONE;
@@ -1185,9 +1236,9 @@ public:
   static constexpr index NumOutputBuffers = ParamDescType::template NumOfType<BufferT>;
 
   FluidMaxWrapper(t_symbol*, long ac, t_atom* av)
-      : mListSize{32}, mMessages{}, mParams(Client::getParameterDescriptors()),
-        mParamSnapshot{mParams.toTuple()},
-        mClient{initParamsFromArgs(ac, av)}, mDumpDictionary{nullptr}
+      : mListSize{32}, mUserMessageQueue{}, mParams(Client::getParameterDescriptors(), FluidDefaultAllocator()),
+        mParamSnapshot{mParams.toTuple()}, mAutosize{true},
+        mClient{initParamsFromArgs(ac, av), FluidContext()}, mDumpDictionary{nullptr}
   {
     if (mClient.audioChannelsIn())
     {
@@ -1200,7 +1251,6 @@ public:
     //TODO: this implicitly assumes no audio in?
     if (index controlInputs = mClient.controlChannelsIn())
     {
-      mAutosize = true;      
       if(mListSize)
       {
         mInputListData.resize(controlInputs, mListSize);
@@ -1280,21 +1330,17 @@ public:
     });
     
 
-    while (mMessages.size() > 0)
+    while (mUserMessageQueue.size() > 0)
     {
-      printResult(this, mMessages.front(), true);
-      mMessages.pop_front();
+      printResult(this, mUserMessageQueue.front(), true);
+      mUserMessageQueue.pop_front();
     }
 
-    auto results = mParams.keepConstrained(true);
     mParamSnapshot = mParams.toTuple();
-
-    for (auto& r : results) printResult(this, r);
 
     object_obex_store(this, gensym("dumpout"),
                       (t_object*) outlet_new(this, nullptr));
-    
-    
+        
     //how many non-signal outlets do we need?
     index numDataOutlets = std::max<index>({NumOutputBuffers,mClient.controlChannelsOut().count,
       Client::getMessageDescriptors().size() > 0
@@ -1307,14 +1353,17 @@ public:
   
     if (mClient.controlChannelsOut().count)
     {
-      if(mListSize)
+      index outputSize = mClient.controlChannelsOut().max > -1
+                             ? mClient.controlChannelsOut().max
+                             : mListSize;
+
+      if (outputSize)
       {
-        mOutputListData.resize(mClient.controlChannelsOut().count, mListSize);
-        mOutputListAtoms.reserve(mListSize);
+        mOutputListData.resize(mClient.controlChannelsOut().count, outputSize);
+        mOutputListAtoms.reserve(outputSize);
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
           mOutputListViews.emplace_back(mOutputListData.row(i));
       }
-      mControlOutlet = mDataOutlets[0];
     }
 
     for (index i = 0; i < mClient.audioChannelsOut(); ++i)
@@ -1402,9 +1451,9 @@ public:
     });
   }
 
-  void controlOut(long ac, t_atom* av)
+  void controlOut(long outletIndex, long ac, t_atom* av)
   {
-    outlet_list(mControlOutlet, nullptr, static_cast<short>(ac), av);
+    outlet_list(mDataOutlets[outletIndex], nullptr, static_cast<short>(ac), av);
   }
 
   static void* create(t_symbol* sym, long ac, t_atom* av)
@@ -1433,7 +1482,7 @@ public:
     getClass(class_new(className, (method) create, (method) destroy,
                        sizeof(FluidMaxWrapper), 0, A_GIMME, 0));
     WrapperBase::setup(getClass());
-
+        
     if (isControlIn<typename Client::Client>)
     {
       class_addmethod(getClass(), (method) handleList, "list", A_GIMME, 0);
@@ -1442,7 +1491,7 @@ public:
       class_addattr(getClass(), a);
       CLASS_ATTR_FILTER_CLIP(getClass(), "autosize", 0, 1);
       CLASS_ATTR_STYLE_LABEL(getClass(), "autosize", 0, "onoff",
-                           "Report Warnings");
+                           "Set auto size for list output");
                                   
     }
     
@@ -1514,14 +1563,18 @@ public:
         {
           mInputListViews.emplace_back(mInputListData.row(i));
         }
-        mOutputListData.resize(mClient.controlChannelsOut().count,mListSize);
-        mOutputListAtoms.reserve(mListSize);
+
+        index outputSize = mClient.controlChannelsOut().size > -1
+                               ? mClient.controlChannelsOut().size
+                               : mListSize;
+
+        mOutputListData.resize(mClient.controlChannelsOut().count, outputSize);
+        mOutputListAtoms.reserve(outputSize);
         mOutputListViews.clear();
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
         {
           mOutputListViews.emplace_back(mOutputListData.row(i));
         }
-        
       }
   }
 
@@ -1570,8 +1623,8 @@ public:
   
   static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
   {
-    std::string name(newName->s_name);
-    if (std::string(name) != x->mParams.template get<0>())
+    rt::string name(newName->s_name);
+    if (name != x->mParams.template get<0>())
     {
       //      auto newParams = ParamSetType(Client::getParameterDescriptors());
       Result r = x->mParams.lookup(name);
@@ -1580,7 +1633,7 @@ public:
         Client::getParameterDescriptors().template iterate<RemoveListener>(
             x, x->mParams);
         x->mParams.refer(name);
-        x->mClient = Client(x->mParams);
+        x->mClient = Client(x->mParams, FluidContext());
         Client::getParameterDescriptors().template iterate<AddListener>(
             x, x->mParams);
       }
@@ -1707,28 +1760,34 @@ private:
       }
       
       auto r1 = mParams.setPrimaryParameterValues(true,
-        [](auto idx, long ac, t_atom* av, long& currentCount)
+        [this](auto idx, long ac, t_atom* av, long& currentCount)
         {
             auto defaultValue = paramDescriptor<idx()>().defaultValue;
-            
-            if constexpr (std::is_same<std::decay_t<decltype(defaultValue)>,LongRuntimeMaxParam>())
+
+            if constexpr (std::is_same<std::decay_t<decltype(defaultValue)>,
+                                       LongRuntimeMaxParam>())
             {
-              index val = currentCount < ac ? atom_getlong(av + currentCount++) : defaultValue();
-              return LongRuntimeMaxParam{val,-1};
+              index val = currentCount < ac ? atom_getlong(av + currentCount++)
+                                            : defaultValue();
+              val = mParams.template applyConstraintToMax<idx()>(val);
+              return LongRuntimeMaxParam{val, val};
             }
             else
             {
-              return currentCount < ac ? atom_getlong(av + currentCount++) : defaultValue;
+              return currentCount < ac ? atom_getlong(av + currentCount++)
+                                       : defaultValue;
             }
         },
       numArgs,av,argCount);
-      for (auto& r : r1) mMessages.push_back(r);
+      for (auto& r : r1) mUserMessageQueue.push_back(r);
       auto results = mParams.template setFixedParameterValues<Fetcher>(
           true, numArgs, av, argCount);
-      for (auto& r : results) mMessages.push_back(r);
+      for (auto& r : results) mUserMessageQueue.push_back(r);
     }
     // process in-box attributes for mutable params
     attr_args_process((t_object*) this, static_cast<short>(ac), av);
+    auto results = mParams.keepConstrained(true);
+    for (auto& r : results) mUserMessageQueue.push_back(r);
     // return params so this can be called in client initaliser
     return mParams;
   }
@@ -1859,14 +1918,14 @@ private:
   }
 
   template <template <typename, size_t> class Tensor, typename T>
-  static size_t ResultSize(Tensor<T, 1>&& x)
+  static size_t ResultSize(Tensor<T, 1> const& x)
   {
     return static_cast<FluidTensor<T, 1>>(x).size();
   }
 
   template <typename... Ts, size_t... Is>
   static std::tuple<std::array<size_t, sizeof...(Ts)>, size_t>
-  ResultSize(std::tuple<Ts...>&& x, std::index_sequence<Is...>)
+  ResultSize(std::tuple<Ts...> const& x, std::index_sequence<Is...>)
   {
     size_t                            size = 0;
     std::array<size_t, sizeof...(Ts)> offsets;
@@ -1886,21 +1945,24 @@ private:
     outlet_anything(x->mDataOutlets[0],s,static_cast<long>(resultSize), out.data());
   }
 
-  template <typename... Ts>
-  static void messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens,
-                            MessageResult<std::tuple<Ts...>> r)
+  template <typename Tuple>
+  static std::enable_if_t<isSpecialization<Tuple, std::tuple>::value>
+  messageOutput(FluidMaxWrapper* x, t_symbol* s,
+                std::vector<t_atom>& outputTokens, MessageResult<Tuple> r)
   {
-    auto   indices = std::index_sequence_for<Ts...>();
-    size_t resultSize;
-    std::array<size_t, sizeof...(Ts)> offsets;
-    std::tie(offsets, resultSize) =
-        ResultSize(static_cast<std::tuple<Ts...>>(r), indices);
+    constexpr auto N = std::tuple_size_v<Tuple>;
+    auto           indices = std::make_index_sequence<N>();
+
+    size_t                resultSize;
+    std::array<size_t, N> offsets;
+    std::tie(offsets, resultSize) = ResultSize(r.value(), indices);
     resultSize += outputTokens.size();
     std::vector<t_atom> out(resultSize);
-    std::copy_n(outputTokens.begin(), outputTokens.size(),out.begin());
-    ParamAtomConverter::toAtom(out.data() + outputTokens.size(), static_cast<std::tuple<Ts...>>(r),
+    std::copy_n(outputTokens.begin(), outputTokens.size(), out.begin());
+    ParamAtomConverter::toAtom(out.data() + outputTokens.size(), r.value(),
                                indices, offsets);
-    outlet_anything(x->mDataOutlets[0],s,static_cast<long>(resultSize), out.data());
+    outlet_anything(x->mDataOutlets[0], s, static_cast<long>(resultSize),
+                    out.data());
   }
 
   static void messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens,
@@ -2051,10 +2113,11 @@ private:
       object_obex_dumpout(x, gensym("load"), 0, nullptr);
   }
 
-  static void updateParams(FluidMaxWrapper*                                 x,
-                           MessageResult<typename ParamSetType::ValueTuple> v)
+  static void
+  updateParams(FluidMaxWrapper*                                        x,
+               MessageResult<typename ParamSetType::ValueTuple> const& v)
   {
-    x->mParams.fromTuple(typename ParamSetType::ValueTuple(v));
+    x->mParams.fromTuple(typename ParamSetType::ValueTuple(v.value()));
   }
 
   static void updateParams(FluidMaxWrapper*, MessageResult<void>) {}
@@ -2220,9 +2283,6 @@ private:
   template <size_t N>
   static void doWrite(FluidMaxWrapper* x, t_symbol* s)
   {
-    //    t_fourcc filetype = FOUR_CHAR_CODE('JSON');
-    //
-    //    t_fourcc outtype;
     char  filename[MAX_PATH_CHARS];
     short path;
     char  fullpath[MAX_PATH_CHARS];
@@ -2303,23 +2363,46 @@ private:
     
     void decorateAttr(const LongRuntimeMaxT& attr, std::string name)
     {
+      /// Apparently we need to be able to specify max<X> attributes *in the box* only as their own
+      /// `@max<whatever>` as well as part of a list attached to the main attribute.
+      ///  This is pretty hairy and makes me sad, given that the logic for this is already over-complex.
+      ///  Basically, policy is that the biggest proposed maximum 'wins' (think this is safest and easist to enforce)
       std::string maxName = "max" + name;
       std::string maxLabel = std::string("Maximum ") + attr.displayName;
             
       using stype = t_max_err(*)(FluidMaxWrapper* x, t_object*, long ac, t_atom* av);
       using gtype = t_max_err(*)(FluidMaxWrapper* x, t_object*, long* ac, t_atom** av);
-      
+                  
       stype setter = [](FluidMaxWrapper* x, t_object*, long ac, t_atom* av) -> t_max_err
       {
-        static constexpr index Idx = N;
-        if(ac && !x->mInitialized)
+        static constexpr index Idx = N;//for MSVC
+        if (ac && !x->mInitialized)
         {
-          auto current = x->mParams.template get<Idx>();
-          index newMax = atom_getlong(av);
-          if(newMax > 0)
+          auto  a = x->params().template get<N>(); // get the whole param
+          index incomingMax = atom_getlong(av);
+          if (incomingMax > 0)
           {
-            x->mParams.template set<Idx>(LongRuntimeMaxParam(current(),newMax),nullptr);
+            incomingMax = std::max<index>(a.max(), incomingMax);
+            incomingMax =
+                x->params().template applyConstraintToMax<Idx>(incomingMax);
+            a = LongRuntimeMaxParam(a(), incomingMax);
+            x->params().template set<Idx>(
+                std::move(a), x->verbose() ? &x->messages() : nullptr);
+            printResult(x, x->messages());
           }
+        }
+        else
+        {
+          /// Can't capture here (we need function pointer behaviour),
+          /// so need to go through some rigmarole to get attribute name for
+          /// warning string
+          std::string attrname =
+              std::string("max") +
+              lowerCase(x->template paramDescriptor<Idx>().name);
+          Result onlySetInBox{
+              Result::Status::kWarning, attrname,
+              " attribute can only be set at object instantiation"};
+          printResult(x, onlySetInBox);
         }
         return MAX_ERR_NONE;
       };
@@ -2356,16 +2439,34 @@ private:
       
       stype setter = [](FluidMaxWrapper* x, t_object*, long ac, t_atom* av) -> t_max_err
       {
-        static constexpr index Idx = N;
-        if(ac && !x->mInitialized)
+        static constexpr index Idx = N; //for MSVC
+        if (ac && !x->mInitialized)
         {
-          auto current = x->mParams.template get<Idx>();
+          auto  a = x->mParams.template get<Idx>();
           index newMax = atom_getlong(av);
-          if(newMax > 0)
+          if (newMax > 0)
           {
-            x->mParams.template set<Idx>(FFTParams(current.winSize(), current.hopRaw(), current.fftRaw(), newMax),nullptr);
+            newMax = std::max(newMax, a.max());
+            a = FFTParams(a.winSize(), a.hopRaw(), a.fftRaw(), newMax);
+            a = x->params().template applyConstraintsTo<N>(a);
+            x->mParams.template set<Idx>(
+                std::move(a), x->verbose() ? &x->messages() : nullptr);
           }
         }
+        else
+        {
+          /// Can't capture here (we need function pointer behaviour),
+          /// so need to go through some rigmarole to get attribute name for
+          /// warning string
+          std::string attrname =
+              std::string("max") +
+              lowerCase(x->template paramDescriptor<Idx>().name);
+          Result onlySetInBox{
+              Result::Status::kWarning, attrname,
+              " attribute can only be set at object instantiation"};
+          printResult(x, onlySetInBox);
+        }
+
         return MAX_ERR_NONE;
       };
       
@@ -2419,7 +2520,7 @@ private:
   static t_symbol* maxAttrType(LongArrayT) { return gensym("atom"); }
   static t_symbol* maxAttrType(LongRuntimeMaxT) { return USESYM(atom_long); }
   static t_symbol* maxAttrType(ChoicesT) { return gensym("atom"); }
-
+  
   template <typename T>
   static std::enable_if_t<IsSharedClient<typename T::type>::value, t_symbol*>
       maxAttrType(T)
@@ -2428,16 +2529,15 @@ private:
   }
 
   index mListSize;
-  std::deque<Result> mMessages;
+  std::deque<Result> mUserMessageQueue;
   Result             mResult;
   void*              mNRTDoneOutlet;
-  void*              mControlOutlet;
   void*              mDumpOutlet;
   double             mProgress;
   bool               mVerbose;
-  bool               mAutosize;
   ParamSetType       mParams;
   ParamValues        mParamSnapshot;
+  bool               mAutosize;
 
   Client             mClient;
   t_int32_atomic     mInPerform{0};
@@ -2484,8 +2584,6 @@ struct InputTypeWrapper<std::false_type>
 template <class Client>
 void makeMaxWrapper(const char* classname)
 {
-  //  using InputType = typename
-  //  InputTypeWrapper<isRealTime<Client<double>>>::type;
   common_symbols_init();
   FluidMaxWrapper<Client>::makeClass(classname);
 }

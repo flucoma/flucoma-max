@@ -8,7 +8,7 @@ Minimal build steps below. For detailed guidance see https://github.com/flucoma/
 
 ## Prerequisites 
 
-* C++14 compliant compiler (clang, GCC or MSVC)
+* C++17 compliant compiler (clang, GCC or MSVC)
 * cmake 
 * make (or Ninja or XCode or VisualStudio)
 * git 

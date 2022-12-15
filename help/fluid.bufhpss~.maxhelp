@@ -4572,7 +4572,7 @@
 							}
 , 							{
 								"box" : 								{
-									"args" : [ "bufhpss" ],
+									"args" : [ "hpss" ],
 									"bgmode" : 0,
 									"border" : 0,
 									"clickthrough" : 0,
