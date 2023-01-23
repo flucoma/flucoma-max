@@ -1263,19 +1263,20 @@ public:
       index newInlets = controlInputs - 1;
       mProxies.reserve(newInlets);
       for (index i = 1; i <= newInlets; ++i)
-        mProxies.push_back(proxy_new(this, i + 1, &this->mProxyNumber));
+        mProxies.push_back(
+            proxy_new(this, static_cast<long>(i + 1), &this->mProxyNumber));
     }
-    
-    
+
     //new proxy inlets for any additional input buffers beyond the first
     if(asSigned(mProxies.size()) < NumInputBuffers - 1)
     {
-      for(index i = mProxies.size(); i < NumInputBuffers - 1; i++)
+      for (index i = mProxies.size(); i < NumInputBuffers - 1; i++)
       {
-        mProxies.push_back(proxy_new(this,i + 1, &this->mProxyNumber));
+        mProxies.push_back(
+            proxy_new(this, static_cast<long>(i + 1), &this->mProxyNumber));
       }
     }
-    
+
     //handle runtime dispatch of `buffer` message through a lookup table of functions that will set the attr
     mParams.template forEachParamType<InputBufferT>([this](auto&, auto idx){
       static constexpr index N = decltype(idx)::value;
@@ -1605,8 +1606,8 @@ public:
         if(x->mAutosize && ac != x->mListSize)
         {
           object_warn((t_object*)x, "input list size (%d) != object argument (%d) and autosize is enabled: this operation will be deferred",ac,x->mListSize);
-          defer(x,method(doListResize),s,ac,av);
-          defer(x,(method)doList,s, ac, av);
+          defer(x, method(doListResize), s, static_cast<short>(ac), av);
+          defer(x, (method) doList, s, static_cast<short>(ac), av);
           return;
         }
 
@@ -1943,7 +1944,8 @@ private:
     std::vector<t_atom> out(resultSize);
     std::copy_n(outputTokens.begin(), outputTokens.size(),out.begin());
     ParamAtomConverter::toAtom(out.data() + outputTokens.size(), static_cast<T>(r));
-    outlet_anything(x->mDataOutlets[0],s,static_cast<long>(resultSize), out.data());
+    outlet_anything(x->mDataOutlets[0], s, static_cast<short>(resultSize),
+                    out.data());
   }
 
   template <typename Tuple>
@@ -1966,10 +1968,13 @@ private:
                     out.data());
   }
 
-  static void messageOutput(FluidMaxWrapper* x, t_symbol* s, std::vector<t_atom>& outputTokens,
+  static void messageOutput(FluidMaxWrapper* x, t_symbol* s,
+                            std::vector<t_atom>& outputTokens,
                             MessageResult<void>)
   {
-    outlet_anything(x->mDataOutlets[0],s,outputTokens.size(), outputTokens.data());
+    outlet_anything(x->mDataOutlets[0], s,
+                    static_cast<short>(outputTokens.size()),
+                    outputTokens.data());
   }
 
   // Sets up a single message
@@ -2075,7 +2080,7 @@ private:
   template <size_t N>
   static void deferLoad(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-    defer(x, (method) doLoad<N>, nullptr, ac, av);
+    defer(x, (method) doLoad<N>, nullptr, static_cast<short>(ac), av);
   }
 
   template <size_t N>
@@ -2126,7 +2131,7 @@ private:
   template <size_t N>
   static void deferDump(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-    defer(x, (method) doDump<N>, nullptr, ac, av);
+    defer(x, (method) doDump<N>, nullptr, static_cast<short>(ac), av);
   }
 
   template <size_t N>
