@@ -205,8 +205,9 @@ public:
   {
     Wrapper* w = static_cast<Wrapper*>(this);
     auto&    client = w->client();
-    index listSize = static_cast<long>(client.controlChannelsOut().size);
-    for (index i = 0; i < client.controlChannelsOut().count; ++i)
+    //using long here to avoid warnings on MSVC
+    long listSize = static_cast<long>(client.controlChannelsOut().size);
+    for (index i = client.controlChannelsOut().count - 1; i >= 0; --i)
     {
       atom_setdouble_array(
           listSize, mControlAtoms[i].data(),
@@ -592,8 +593,8 @@ class FluidMaxWrapper
                            std::min<index>(x->mListSize, ac),
                            x->mInputListData[0].data());
       x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
-      
-      for (index i = 0; i <  asSigned(x->mDataOutlets.size()); ++i)
+
+      for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i)
       {
         atom_setdouble_array(
             std::min<index>(x->mListSize, ac), x->mOutputListAtoms.data(),
@@ -1429,26 +1430,26 @@ public:
 
   void doneBang()
   {
-    t_box *b;
-    t_max_err err = object_obex_lookup((t_object*)this, gensym("#B"), (t_object **)&b);
-    if(!err)
-      object_method(b, gensym("stopprogress"));
+    t_box*    b;
+    t_max_err err =
+        object_obex_lookup((t_object*) this, gensym("#B"), (t_object**) &b);
+    if (!err) object_method(b, gensym("stopprogress"));
 
     t_atom a;
-    atom_setfloat(&a,1);
-    object_obex_dumpout(this,gensym("progress"),1,&a);
+    atom_setfloat(&a, 1);
+    object_obex_dumpout(this, gensym("progress"), 1, &a);
 
-    params().template forEachParamType<BufferT>([this,i=0](auto&, auto idx)mutable{
-    
+    static constexpr index count = ParamDescType::template NumOfType<BufferT>;
+    std::array<t_atom, count> bufferNames;
+    params().template forEachParamType<BufferT>([this, i = 0, &bufferNames](
+                                                    auto&, auto idx) mutable {
       constexpr index N = idx();
-      
       auto b = static_cast<MaxBufferAdaptor*>(params().template get<N>().get());
-      
-      atom a;
-      atom_setsym(&a,b->name());
-
-      outlet_anything(mDataOutlets[i++],gensym("buffer"), 1, &a);
+      atom_setsym(&bufferNames[i++], b->name());
     });
+
+    for (index i = count - 1; i >= 0; --i)
+      outlet_anything(mDataOutlets[i], gensym("buffer"), 1, &bufferNames[i]);
   }
 
   void controlOut(long outletIndex, long ac, t_atom* av)
