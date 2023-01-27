@@ -179,7 +179,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 590.0, 180.0, 263.0, 40.0 ],
-									"text" : "Merge doesn't replace by default the point if the identifier was already present"
+									"text" : "By default, merge doesn't replace the label if the identifier was already present"
 								}
 
 							}
@@ -191,7 +191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 670.0, 290.0, 150.0, 94.0 ],
-									"text" : "Notice after clicking merge that some new animals will appear in this dictionary (a representation of the dataset).",
+									"text" : "Notice after clicking merge that some new animals will appear in this dictionary (a representation of the labelset).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -378,7 +378,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 8.5, 62.0, 584.0, 50.0 ],
-									"text" : "You can merge the labels in one labelset with another. If the labesetl you call merge on already has an identifier existing in the labelset you want to merge, the caller's will be preserved. Any identifier not found in the dataset to merge will be added to the caller.",
+									"text" : "You can merge the labels in one labelset with another. If the labeset you call merge on already has an identifier existing in the labelset you want to merge, the caller's will be preserved. Any identifier not found in the dataset to merge will be added to the caller.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1580,8 +1580,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 204.5, 269.0, 350.0, 21.0 ],
-									"text" : "Dump the contents of the fluid.dataset~ to a Max dictionary.",
+									"patching_rect" : [ 204.5, 269.0, 355.5, 21.0 ],
+									"text" : "Dump the contents of the fluid.labelset~ to a Max dictionary.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
