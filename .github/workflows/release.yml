@@ -10,7 +10,7 @@ jobs:
       - uses: flucoma/actions/env@main
       - uses: flucoma/actions/max@main
         with:
-          branch: origin/main
+          branch: origin/production
 
       - uses: actions/upload-artifact@v3
         with:
@@ -26,7 +26,7 @@ jobs:
       - uses: flucoma/actions/env@main
       - uses: flucoma/actions/max@main
         with:
-          branch: origin/main
+          branch: origin/production
 
       - name: sign and notarise
         uses: flucoma/actions/distribution@main
