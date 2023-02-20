@@ -3,7 +3,7 @@ name: nightly
 on:
   workflow_dispatch:
   push:
-    branches: [ dev, ci/** ]
+    branches: [ main, ci/** ]
 
 concurrency:
   group: environment-${{ github.ref }}
@@ -17,7 +17,7 @@ jobs:
       - uses: flucoma/actions/env@main
       - uses: flucoma/actions/max@main
         with:
-          branch: origin/dev
+          branch: origin/main
 
       - uses: actions/upload-artifact@v3
         with:
@@ -31,7 +31,7 @@ jobs:
       - uses: flucoma/actions/env@main
       - uses: flucoma/actions/max@main
         with:
-          branch: origin/dev
+          branch: origin/main
 
       - name: sign and notarise
         uses: flucoma/actions/distribution@main
