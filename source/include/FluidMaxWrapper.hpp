@@ -595,7 +595,8 @@ class FluidMaxWrapper
                            std::min<index>(x->mListSize, ac),
                            x->mInputListData[whichIn].data());
     
-      if (!whichIn) x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+        if (!whichIn) {
+            x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
 
       for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i)
       {
@@ -605,6 +606,7 @@ class FluidMaxWrapper
         outlet_list(x->mDataOutlets[i], nullptr, x->mListSize,
                     x->mOutputListAtoms.data());
       }
+        }
     }
   };
 
