@@ -588,11 +588,14 @@ class FluidMaxWrapper
     void operator()(FluidMaxWrapper* x, long ac, t_atom* av)
     {
       FluidContext c;
-            
+      
+      index whichIn =  proxy_getinlet((t_object *)x);
+        
       atom_getdouble_array(std::min<index>(x->mListSize, ac), av,
                            std::min<index>(x->mListSize, ac),
-                           x->mInputListData[0].data());
-      x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+                           x->mInputListData[whichIn].data());
+    
+      if (!whichIn) x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
 
       for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i)
       {
@@ -1262,9 +1265,9 @@ public:
       //we already have a left inlet, but do we need more?
       index newInlets = controlInputs - 1;
       mProxies.reserve(newInlets);
-      for (index i = 1; i <= newInlets; ++i)
+      for (index i = newInlets; i >= 1; --i)
         mProxies.push_back(
-            proxy_new(this, static_cast<long>(i + 1), &this->mProxyNumber));
+            proxy_new(this, static_cast<long>(i), &this->mProxyNumber));
     }
 
     //new proxy inlets for any additional input buffers beyond the first
