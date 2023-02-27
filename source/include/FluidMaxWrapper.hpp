@@ -588,25 +588,25 @@ class FluidMaxWrapper
     void operator()(FluidMaxWrapper* x, long ac, t_atom* av)
     {
       FluidContext c;
-      
-      index whichIn =  proxy_getinlet((t_object *)x);
-        
+
+      index whichIn = proxy_getinlet((t_object *)x);
+
       atom_getdouble_array(std::min<index>(x->mListSize, ac), av,
                            std::min<index>(x->mListSize, ac),
                            x->mInputListData[whichIn].data());
-    
-        if (!whichIn) {
-            x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
 
-      for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i)
-      {
-        atom_setdouble_array(
-            std::min<index>(x->mListSize, ac), x->mOutputListAtoms.data(),
-            std::min<index>(x->mListSize, ac), x->mOutputListData[i].data());
-        outlet_list(x->mDataOutlets[i], nullptr, x->mListSize,
-                    x->mOutputListAtoms.data());
+      if (!whichIn) {
+          x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+
+          for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i) {
+             atom_setdouble_array(std::min<index>(x->mListSize, ac),
+                                  x->mOutputListAtoms.data(),
+                                  std::min<index>(x->mListSize, ac),
+                                  x->mOutputListData[i].data());
+             outlet_list(x->mDataOutlets[i], nullptr, x->mListSize,
+                         x->mOutputListAtoms.data());
+          }
       }
-        }
     }
   };
 
