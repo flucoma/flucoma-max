@@ -10,7 +10,7 @@ jobs:
       - uses: flucoma/actions/env@main
       - uses: flucoma/actions/max@main
         with:
-          branch: origin/production
+          branch: origin/${{ github.ref_name }}
 
       - uses: actions/upload-artifact@v3
         with:
@@ -26,7 +26,7 @@ jobs:
       - uses: flucoma/actions/env@main
       - uses: flucoma/actions/max@main
         with:
-          branch: origin/production
+          branch: origin/${{ github.ref_name }}
 
       - name: sign and notarise
         uses: flucoma/actions/distribution@main
@@ -46,7 +46,7 @@ jobs:
           path: release-packaging/FluidCorpusManipulation/
 
       - id: get-version
-        run: echo "::set-output name=version::$(cat flucoma.version.rc)"
+        run: echo "version=$(cat flucoma.version.rc)" >> $GITHUB_OUTPUT
         working-directory: build/_deps/flucoma-core-src
   
   release:
@@ -69,6 +69,14 @@ jobs:
       
       - name: zip
         run: zip -r FluCoMa-Max-"${{ needs.macbuild.outputs.version }}".zip "FluidCorpusManipulation"
+      
+      - name: delete pre-existing release
+        uses: dev-drprasad/delete-tag-and-release@v0.2.1
+        with:
+          delete_release: true # default: false
+          tag_name: ${{ needs.macbuild.outputs.version }} # tag name to delete
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: package and upload
         uses: softprops/action-gh-release@v1
@@ -78,4 +86,5 @@ jobs:
           files: FluCoMa*
           prerelease: true
           tag_name: ${{ needs.macbuild.outputs.version }}
+          target_commitish: ${{ github.sha }}
           draft: false
