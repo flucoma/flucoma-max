@@ -71,7 +71,7 @@ jobs:
       - name: zip
         run: zip -r FluCoMa-Max-nightly.zip "FluidCorpusManipulation"
 
-      - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
         with:
           delete_release: true # default: false
           tag_name: nightly # tag name to delete
