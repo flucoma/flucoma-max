@@ -1,13 +1,13 @@
 {
 	"author" : "FluCoMa",
-	"description" : "FluCoMa introduces a suite of tools to Max that can help you work with audio in a number of new and flexible ways through analyzing and transforming rhythm, pitch, timbre, and other audio/musical characteristics with the help of machine learning. The package links out to a body of educational content, tutorials, and inspirational examples from the world of FluCoMa and Max users.",
+	"description" : "FluCoMa introduces a suite of tools to Max that can help you work with sounds and collections of them in new and flexible ways. Possibilities include slicing, decomposition and hybridisation of sounds, audio-descriptor analysis and machine learning driven musicking. The package links out to a body of educational content, tutorials, and inspirational examples from the world of FluCoMa and Max users.",
 	"homepatcher" : "Fluid Corpus Manipulation Toolkit.maxpat",
 	"max_version_min" : "7.0",
 	"name" : "FluidCorpusManipulation",
 	"os" : {
 		"macintosh" : {
 			"platform" : [ "aarch64", "x64" ],
-			"min_version" : "10.9"
+			"min_version" : "10.9.x"
 		},
 		"windows" : {
 			"platform" : [ "x64" ],
@@ -18,7 +18,7 @@
 		"reverse_domain" : "org.flucoma",
 		"copyright" : "Copyright (c) University of Huddersfield"
 	},
-	"tags" : [ ],
+	"tags" : [ "machine listening", "sound bank mining", "corpus", "data processing", "flucoma", "machine learning", "spectral analysis", "audio descriptors", "data pipelines", "analysis" ],
 	"version" : "@FLUCOMA_VERSION_TAG@",
 	"website" : "https://flucoma.org"
 }
