@@ -9,13 +9,19 @@ var prevWidth, prevHeight;
 // Task.interval by intervalMult on every step.
 // It keeps ticking at this low rate until a new
 // resize is detected.
-var minInterval = 50;
+var minInterval = 10;
 var maxInterval = 1000;
 var intervalMult = 1.1;
+// optionally force square aspect ratio (kind of janky)
+var forceSquareBpatcher = true;
 
 
 // the callback function for the Task
 function getBpatcherRect() {
+	// force square aspect ratio
+	if (this.patcher.box != null && forceSquareBpatcher) {
+		forceSquareAR();
+	}
 	// get bpatcher width and height
 	r = this.patcher.box.rect;
 	width = r[2] - r[0];
@@ -27,6 +33,18 @@ function getBpatcherRect() {
 	// save width & height for comparison
 	prevWidth = width;
 	prevHeight = height;
+}
+
+
+function forceSquareAR() {
+	// get bpatcher width and height
+	r = this.patcher.box.rect;
+	width = r[2] - r[0];
+	height = r[3] - r[1];
+	if (width == prevWidth || height == prevHeight) {
+		longestSide = width >= height ? width : height;
+		this.patcher.box.rect = [r[0], r[1], r[0]+longestSide, r[1]+longestSide];
+	}
 }
 
 
