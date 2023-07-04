@@ -41,12 +41,60 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-18",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 364.0, 293.0, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-17",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 364.0, 346.0, 29.5, 22.0 ],
+					"text" : "$3"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-8",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 3,
+					"outlettype" : [ "", "", "" ],
+					"patching_rect" : [ 364.0, 319.0, 192.0, 22.0 ],
+					"text" : "getattr presentation_rect @listen 0"
+				}
+
+			}
+, 			{
+				"box" : 				{
+					"id" : "obj-12",
+					"maxclass" : "message",
+					"numinlets" : 2,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"patching_rect" : [ 415.0, 193.0, 29.5, 22.0 ],
+					"text" : "$3"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-31",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 415.0, 152.0, 149.0, 22.0 ],
+					"patching_rect" : [ 433.25, 155.0, 149.0, 22.0 ],
 					"text" : "prepend presentation_rect"
 				}
 
@@ -256,11 +304,11 @@
 				"box" : 				{
 					"comment" : "normalized mouse XY",
 					"id" : "obj-6",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 308.0, 607.0, 31.0, 31.0 ]
+					"patching_rect" : [ 308.0, 618.0, 31.0, 31.0 ]
 				}
 
 			}
@@ -562,7 +610,7 @@
 				"box" : 				{
 					"comment" : "refer <fluid.dataset~>, highlight <id>",
 					"id" : "obj-1",
-					"index" : 0,
+					"index" : 1,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -626,7 +674,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 308.0, 578.0, 61.0, 22.0 ],
+					"patching_rect" : [ 308.0, 589.0, 61.0, 22.0 ],
 					"text" : "pack f f"
 				}
 
@@ -638,7 +686,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "float" ],
-					"patching_rect" : [ 350.0, 550.0, 29.5, 22.0 ],
+					"patching_rect" : [ 350.0, 561.0, 29.5, 22.0 ],
 					"text" : "!- 1."
 				}
 
@@ -650,7 +698,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "float", "float" ],
-					"patching_rect" : [ 308.0, 519.0, 61.0, 22.0 ],
+					"patching_rect" : [ 308.0, 530.0, 61.0, 22.0 ],
 					"text" : "unpack f f"
 				}
 
@@ -727,7 +775,7 @@
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 27.0, 93.0, 300.0, 300.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 300.0, 300.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 264.0, 264.0 ],
 					"sync" : 1
 				}
 
@@ -739,7 +787,7 @@
 					"numinlets" : 3,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 308.0, 482.0, 53.0, 22.0 ],
+					"patching_rect" : [ 308.0, 500.0, 53.0, 22.0 ],
 					"text" : "clip 0. 1."
 				}
 
@@ -747,12 +795,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-572",
+					"linecount" : 2,
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 308.0, 455.0, 91.0, 22.0 ],
-					"text" : "vexpr $f1 / 300."
+					"patching_rect" : [ 308.0, 455.0, 126.0, 35.0 ],
+					"text" : "vexpr $f1 / $f2 @scalarmode 1"
 				}
 
 			}
@@ -855,13 +904,13 @@
 			}
 , 			{
 				"box" : 				{
-					"id" : "obj-11",
+					"id" : "obj-5",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 590.388050000000021, 208.0, 144.0, 22.0 ],
-					"text" : "fluid.dataset~ #0_none",
+					"patching_rect" : [ 590.388050000000021, 208.0, 146.0, 22.0 ],
+					"text" : "fluid.dataset~ dummydata",
 					"varname" : "dataset"
 				}
 
@@ -897,8 +946,8 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-21", 0 ],
-					"source" : [ "obj-11", 0 ]
+					"destination" : [ "obj-572", 1 ],
+					"source" : [ "obj-12", 0 ]
 				}
 
 			}
@@ -911,7 +960,30 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-572", 1 ],
+					"source" : [ "obj-17", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-8", 0 ],
+					"source" : [ "obj-18", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-12", 0 ],
+					"order" : 1,
+					"source" : [ "obj-19", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-31", 0 ],
+					"order" : 0,
 					"source" : [ "obj-19", 0 ]
 				}
 
@@ -939,7 +1011,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-11", 0 ],
+					"destination" : [ "obj-5", 0 ],
 					"source" : [ "obj-25", 0 ]
 				}
 
@@ -1006,6 +1078,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-529", 0 ],
 					"source" : [ "obj-4", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-21", 0 ],
+					"source" : [ "obj-5", 0 ]
 				}
 
 			}
@@ -1158,6 +1237,20 @@
 			}
 , 			{
 				"patchline" : 				{
+					"destination" : [ "obj-17", 0 ],
+					"source" : [ "obj-8", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-580", 0 ],
+					"source" : [ "obj-8", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
 					"destination" : [ "obj-566", 0 ],
 					"source" : [ "obj-9", 0 ]
 				}
@@ -1177,24 +1270,7 @@
 				}
 
 			}
- ],
-		"dependency_cache" : [ 			{
-				"name" : "fluid.buf2list.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.dataset~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "resize_pworld.js",
-				"bootpath" : "~/Documents/Max 8/Library/bl.fluid",
-				"patcherrelativepath" : ".",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
-		"autosave" : 0
+ ]
 	}
 
 }
