@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 921.0, 754.0 ],
+		"rect" : [ 35.0, 87.0, 921.0, 724.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -72,14 +72,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 921.0, 728.0 ],
+						"rect" : [ 35.0, 113.0, 921.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -115,7 +115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 220.0, 570.0, 215.0, 22.0 ],
+									"patching_rect" : [ 220.0, 540.0, 215.0, 22.0 ],
 									"text" : "play~ help.bufsines.1.residual @loop 1"
 								}
 
@@ -128,7 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 690.0, 480.0, 175.0, 22.0 ],
+									"patching_rect" : [ 690.0, 450.0, 175.0, 22.0 ],
 									"text" : "buffer~ help.bufsines.1.residual"
 								}
 
@@ -140,7 +140,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 359.0, 510.0, 318.0, 33.0 ],
+									"patching_rect" : [ 359.0, 480.0, 318.0, 33.0 ],
 									"text" : "@numchans 1 makes it so that only the left channel is processed in case we load a stereo file.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -200,8 +200,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -636,7 +636,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 10.0, 620.0, 144.5, 23.0 ],
+									"patching_rect" : [ 10.0, 590.0, 144.5, 23.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -648,7 +648,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 10.0, 520.0, 29.5, 22.0 ],
+									"patching_rect" : [ 10.0, 490.0, 29.5, 22.0 ],
 									"text" : "1"
 								}
 
@@ -660,7 +660,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "signal", "bang" ],
-									"patching_rect" : [ 10.0, 570.0, 201.0, 22.0 ],
+									"patching_rect" : [ 10.0, 540.0, 201.0, 22.0 ],
 									"text" : "play~ help.bufsines.1.sines @loop 1"
 								}
 
@@ -685,7 +685,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "float", "bang" ],
-									"patching_rect" : [ 690.0, 510.0, 161.0, 22.0 ],
+									"patching_rect" : [ 690.0, 480.0, 161.0, 22.0 ],
 									"text" : "buffer~ help.bufsines.1.sines"
 								}
 
@@ -710,7 +710,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "" ],
-									"patching_rect" : [ 10.0, 480.0, 667.0, 22.0 ],
+									"patching_rect" : [ 10.0, 450.0, 667.0, 22.0 ],
 									"text" : "fluid.bufsines~ @source help.bufsines.1.src @sines help.bufsines.1.sines @residual help.bufsines.1.residual @numchans 1"
 								}
 
@@ -813,7 +813,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 60.0, 680.0, 84.0, 24.0 ],
+									"patching_rect" : [ 60.0, 650.0, 84.0, 24.0 ],
 									"text" : "Start audio",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -880,7 +880,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 145.0, 682.0, 20.0, 20.0 ],
+									"patching_rect" : [ 145.0, 652.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -908,7 +908,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 156.5, 620.0, 470.0, 24.0 ],
+									"patching_rect" : [ 156.5, 590.0, 470.0, 24.0 ],
 									"text" : "Select which component you want to hear. Selecting both sums to the original input.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -982,7 +982,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 628.5, 622.0, 20.0, 20.0 ],
+									"patching_rect" : [ 628.5, 592.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -996,7 +996,7 @@
 									"maxclass" : "ezdac~",
 									"numinlets" : 2,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 670.0, 45.0, 45.0 ]
+									"patching_rect" : [ 10.0, 640.0, 45.0, 45.0 ]
 								}
 
 							}
@@ -1038,7 +1038,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 1 ],
-									"midpoints" : [ 19.5, 656.0, 45.5, 656.0 ],
+									"midpoints" : [ 19.5, 626.0, 45.5, 626.0 ],
 									"order" : 0,
 									"source" : [ "obj-13", 0 ]
 								}
@@ -1047,7 +1047,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-17", 0 ],
-									"midpoints" : [ 19.5, 644.0, 19.5, 644.0 ],
+									"midpoints" : [ 19.5, 614.0, 19.5, 614.0 ],
 									"order" : 1,
 									"source" : [ "obj-13", 0 ]
 								}
@@ -1094,7 +1094,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-13", 1 ],
-									"midpoints" : [ 229.5, 606.0, 145.0, 606.0 ],
+									"midpoints" : [ 229.5, 576.0, 145.0, 576.0 ],
 									"source" : [ "obj-3", 0 ]
 								}
 
@@ -1102,7 +1102,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-6", 0 ],
-									"midpoints" : [ 513.75, 327.0, 19.5, 327.0 ],
+									"midpoints" : [ 513.75, 331.0, 482.0, 331.0, 482.0, 426.0, 19.5, 426.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -1125,7 +1125,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-27", 0 ],
-									"midpoints" : [ 19.5, 543.0, 19.5, 543.0 ],
+									"midpoints" : [ 19.5, 513.0, 19.5, 513.0 ],
 									"order" : 1,
 									"source" : [ "obj-8", 0 ]
 								}
@@ -1134,7 +1134,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-3", 0 ],
-									"midpoints" : [ 19.5, 560.0, 229.5, 560.0 ],
+									"midpoints" : [ 19.5, 530.0, 229.5, 530.0 ],
 									"order" : 0,
 									"source" : [ "obj-8", 0 ]
 								}
@@ -1231,14 +1231,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 921.0, 728.0 ],
+						"rect" : [ 0.0, 26.0, 921.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
