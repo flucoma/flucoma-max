@@ -57,7 +57,7 @@ include(FetchContent)
 
 FetchContent_Declare(
   flucoma-core
-  GIT_REPOSITORY https://github.com/flucoma/flucoma-core.git
+  GIT_REPOSITORY https://github.com/AlexHarker/flucoma-core.git
   GIT_PROGRESS TRUE
   GIT_TAG ${FLUID_BRANCH}
 )
