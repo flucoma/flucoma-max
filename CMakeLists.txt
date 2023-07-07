@@ -66,7 +66,7 @@ FetchContent_Declare(
   flucoma-docs
   GIT_REPOSITORY https://github.com/flucoma/flucoma-docs.git
   GIT_PROGRESS TRUE  
-  GIT_TAG ${FLUID_BRANCH}
+  GIT_TAG "origin/main"
 )
 
 if(FLUID_PATH)
