@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -426.0, -1353.0, 2492.0, 1319.0 ],
+		"rect" : [ -426.0, -1353.0, 2098.0, 1319.0 ],
 		"openrect" : [ 0.0, 0.0, 300.0, 300.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -6020,8 +6020,8 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 108.0, 1171.0, 118.0, 49.0 ],
-					"text" : "sendrender erase_color 1 1 1 1, sendrender ortho 2"
+					"patching_rect" : [ 108.0, 1171.0, 119.0, 49.0 ],
+					"text" : "fsaa 1, sendrender erase_color 1 1 1 1, sendrender ortho 2"
 				}
 
 			}
@@ -6031,6 +6031,7 @@
 					"fps" : 30.0,
 					"id" : "obj-580",
 					"maxclass" : "jit.pworld",
+					"name" : "u697000810",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
