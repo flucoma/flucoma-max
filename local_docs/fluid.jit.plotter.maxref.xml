@@ -9,18 +9,22 @@ This project has received funding from the European Research Council (ERC)
 under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 -->
-<c74object name='fluid.plotter' category='FluidCorpusManuipulation'>
+<c74object name='fluid.jit.plotter' category='FluidCorpusManuipulation'>
     <digest>Plot data in a two-dimensional graph.</digest>
-    <description>A JSUI object that plots data in a two-dimensional graph.</description>
+    <description>An abstraction around jit.pworld that plots data in a two-dimensional graph. Similar to fluid.plotter.</description>
     <discussion>
         <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
-        The fluid.plotter object can be used as a versatile solution for plotting points in a two-dimensional graph.
+        The fluid.jit.plotter abstraction can be used as a versatile solution for plotting points in a two-dimensional graph.
 
-It is designed to easily accept the contents of a fluid.dataset~ via a dictionary as coordinates within the graph as well as the contents of a fluid.labelset~ via a dictionary as colours for points.
+It is a performance-oriented variant of the fluid.plotter object, built around jit.pworld. While it is less flexible than fluid.plotter, it is more efficient and can handle larger datasets (such as ones with millions of points).
 
-There is also an 'advanced' interface that allows the user to specify the coordinates and colours of the points in a more flexible and bespoke manner. See the help file for more information on this.
+To use it, use the refer message (left inlet) with the name of a fluid.dataset~ that contains the 2D coordinates of the points. Similarly, you can use the refer message (right inlet) with the name of a fluid.labelset~ to be used for assigning colors to the points based on pre-defined color palettes.
 
-        <p>fluid.plotter is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
+Note that, contrary to the fluid.plotter object, with fluid.jit.plotter you cannot specify the coordinates and colors of the points directly. You must use a fluid.dataset~ and a fluid.labelset~. Nor can you assign individual sizes to points. These restrictions were necessary to enable the performance improvements with large datasets.
+
+The interface is also slightly different from the one of fluid.plotter. For more information, see the help file.
+
+        <p>fluid.jit.plotter is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
     </discussion>
 	<!--METADATA-->
 	<metadatalist>
@@ -32,18 +36,18 @@ There is also an 'advanced' interface that allows the user to specify the coordi
     <inletlist>
         <inlet id='0' type='anything'>
             <digest>
-            A dictionary of coordinates for the points in the graph.
+            Refer to a fluid.dataset~ or highlight points.
             </digest>
             <description>
-            The dictionary of coordinates in the correct format for the plotter. By default, the <m>dump</m> method of a <o>fluid.dataset~</o> will work.
+            Use the refer message with the name of the <o>fluid.dataset~</o> to be plotted. Alternatively, use the highlight message with a list of identifiers to highlight the corresponding points in the plot.
             </description>
         </inlet>
         <inlet id='1' type='anything'>
             <digest>
-            A dictionary of labels for the points in the graph.
+            Refer to a fluid.labelset~ to be used for assigning colors to the points.
             </digest>
             <description>
-            The dictionary of labale in the correct format for the plotter. By default, the <m>dump</m> method of a <o>fluid.labelset~</o> will work.
+            Use the refer message with the name of the <o>fluid.labelset~</o> to be used for assigning colors to the points.
             </description>
         </inlet>
     </inletlist>
@@ -72,6 +76,19 @@ There is also an 'advanced' interface that allows the user to specify the coordi
 
     <!--MESSAGES-->
     <methodlist>
+    <method name='refer'>
+        <arglist>
+            <arg name='datasetname' optional='1' type='symbol' />
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        In left inlet: refer to the name of a <o>fluid.dataset~</o> with the coordinates to be plotted. Using the refer message with no arguments will remove the reference and clear the plotter.
+        In right inlet: refer to the name of a <o>fluid.labelset~</o> with the colors to be used for the points. Using the refer message with no arguments will remove the reference and reset colors to black.
+        
+        </description>
+    </method>
     <method name='xrange'>
         <arglist>
             <arg name='min' optional='0' type='float' />
@@ -123,36 +140,6 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         
         </description>
     </method>
-    <method name='setpoint'>
-        <arglist>
-            <arg name='identifier' optional='0' type='symbol' />
-            <arg name='x' optional='0' type='float' />
-            <arg name='y' optional='0' type='float' />
-        </arglist>
-        <digest>
-        
-        </digest>
-        <description>
-        Set the point at the given coordinates.
-        
-        </description>
-    </method>
-    <method name='pointcolor'>
-        <arglist>
-            <arg name='identifier' optional='0' type='symbol' />
-            <arg name='red' optional='0' type='float' />
-            <arg name='green' optional='0' type='float' />
-            <arg name='blue' optional='0' type='float' />
-            <arg name='alpha' optional='0' type='float' />
-        </arglist>
-        <digest>
-        
-        </digest>
-        <description>
-        Set the color of the point with a given identifier.
-        
-        </description>
-    </method>
     <method name='highlight'>
         <arglist>
             <arg name='identifier' optional='0' type='symbol' />
@@ -166,26 +153,25 @@ There is also an 'advanced' interface that allows the user to specify the coordi
     </method>
     <method name='pointsize'>
         <arglist>
-            <arg name='identifier' optional='0' type='symbol' />
-            <arg name='size' optional='0' type='float' />
+            <arg name='size' optional='0' type='int' />
         </arglist>
         <digest>
         
         </digest>
         <description>
-        Set the size of the point with a given identifier.
+        Set the size of all points that are not highlighted.
         
         </description>
     </method>
-    <method name='pointsizescale'>
+    <method name='highlightedpointsize'>
         <arglist>
-            <arg name='scale' optional='0' type='float' />
+            <arg name='size' optional='0' type='int' />
         </arglist>
         <digest>
         
         </digest>
         <description>
-        Set the overall size of the points.
+        Set the size of all highlighted points.
         
         </description>
     </method>
@@ -197,29 +183,22 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         
         </digest>
         <description>
-        Modifies the shape of the points.
+        Modifies the shape of the points. Options are circle or square.
         
         </description>
     </method>
-    <method name='clear'>
+    <method name='bgcolor'>
         <arglist>
+            <arg name='r' optional='0' type='float' />
+            <arg name='g' optional='0' type='float' />
+            <arg name='b' optional='0' type='float' />
+            <arg name='a' optional='0' type='float' />
         </arglist>
         <digest>
         
         </digest>
         <description>
-        Clears the graph and all associated data and settings.
-        
-        </description>
-    </method>
-    <method name='reset'>
-        <arglist>
-        </arglist>
-        <digest>
-        
-        </digest>
-        <description>
-        An alias of clear. Clears the graph.
+        Sets the background colour of the plotter.
         
         </description>
     </method>
@@ -234,7 +213,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
 
 	<!--RELATED-->
 	<seealsolist>
-    <seealso name='fluid.jit.plotter'/>
+    <seealso name='fluid.plotter'/>
     <seealso name='fluid.waveform~'/>
 	</seealsolist>
 	<!--RELATED-->
