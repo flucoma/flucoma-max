@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1660.0, 983.0 ],
+		"rect" : [ -426.0, -1353.0, 2098.0, 1319.0 ],
 		"openrect" : [ 0.0, 0.0, 300.0, 300.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -115,7 +115,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 79.0, 11.000000249999971, 326.0, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "mouse tracking \n(x, y, button, cmd[mac]/ctrl[win], shift, caps, opt/alt ctrl[mac])"
 								}
 
@@ -4738,8 +4737,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1096.888050000000021, 252.0, 134.0, 33.0 ],
-					"presentation_linecount" : 3,
+					"patching_rect" : [ 1096.888050000000021, 252.0, 136.0, 33.0 ],
 					"text" : "bang when created dict with color palette"
 				}
 
@@ -4809,7 +4807,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1314.388050000000476, 17.0, 120.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "matrices for meshes:"
 				}
 
@@ -4855,7 +4852,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 364.638049870729446, 219.5, 139.0, 20.0 ],
-					"presentation_linecount" : 3,
 					"text" : "update highlighted mesh"
 				}
 
@@ -5547,7 +5543,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 835.388050000000021, 558.700000000000045, 106.0, 22.0 ],
+					"patching_rect" : [ 878.388050000000021, 558.700000000000045, 106.0, 22.0 ],
 					"text" : "pv bpatcher_width"
 				}
 
@@ -6473,7 +6469,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1314.388050000000476, 586.0, 199.0, 20.0 ],
-					"presentation_linecount" : 3,
 					"text" : "placeholders (for safe dereference):"
 				}
 
@@ -6603,7 +6598,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 364.638049870729446, 115.5, 53.0, 20.0 ],
-					"presentation_linecount" : 2,
 					"text" : "highlight"
 				}
 
@@ -6616,7 +6610,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 704.888049870729446, 188.5, 240.0, 47.0 ],
-					"presentation_linecount" : 5,
 					"text" : "shape, pointsize and highlightedpointsize will control gl attributes of the jit.gl.meshes, bgcolor controls the pworld's erase_color"
 				}
 
@@ -6628,7 +6621,7 @@
 					"numinlets" : 0,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 690.888050000000021, 379.700000000000045, 101.0, 22.0 ],
+					"patching_rect" : [ 690.888050000000021, 341.5, 101.0, 22.0 ],
 					"text" : "r #0_to_pworld"
 				}
 
@@ -7101,7 +7094,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 140.0, 206.0, 112.0, 20.0 ],
-									"presentation_linecount" : 2,
 									"text" : "count unique labels"
 								}
 
@@ -7601,7 +7593,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.5, 190.0, 152.0, 47.0 ],
-									"presentation_linecount" : 5,
 									"text" : "loop through points, look up their label and the color corresponding to that label"
 								}
 
@@ -8405,7 +8396,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 835.388050000000021, 427.700000000000045, 58.0, 22.0 ],
+					"patching_rect" : [ 878.388050000000021, 427.700000000000045, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -8418,7 +8409,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
-					"patching_rect" : [ 835.388050000000021, 454.700000000000045, 105.0, 49.0 ],
+					"patching_rect" : [ 878.388050000000021, 454.700000000000045, 105.0, 49.0 ],
 					"text" : "getattr presentation_rect @listen 0"
 				}
 
@@ -8430,7 +8421,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 835.388050000000021, 528.700000000000045, 29.5, 22.0 ],
+					"patching_rect" : [ 878.388050000000021, 528.700000000000045, 29.5, 22.0 ],
 					"text" : "$3"
 				}
 
@@ -8519,7 +8510,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 709.888050000000021, 408.700000000000045, 58.0, 22.0 ],
+					"patching_rect" : [ 710.888050000000021, 421.700000000000045, 58.0, 22.0 ],
 					"text" : "loadbang"
 				}
 
@@ -8959,13 +8950,13 @@
 , 			{
 				"box" : 				{
 					"id" : "obj-584",
-					"linecount" : 4,
+					"linecount" : 3,
 					"maxclass" : "message",
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 709.888050000000021, 441.700000000000045, 110.0, 62.0 ],
-					"text" : "fsaa 0, sendrender erase_color 1 1 1 1, sendrender ortho 2"
+					"patching_rect" : [ 710.888050000000021, 454.700000000000045, 118.0, 49.0 ],
+					"text" : "sendrender erase_color 1 1 1 1, sendrender ortho 2"
 				}
 
 			}
@@ -8975,13 +8966,12 @@
 					"fps" : 30.0,
 					"id" : "obj-580",
 					"maxclass" : "jit.pworld",
-					"name" : "u171001053",
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 690.888050000000021, 528.700000000000045, 82.0, 85.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 295.0, 295.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 311.0, 311.0 ],
 					"sync" : 1
 				}
 
