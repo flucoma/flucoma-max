@@ -85,7 +85,7 @@ void main()
   class_addmethod(FluidListToBufClass, (method) FluidListToBuf_dblclick,
                   "dblclick", A_CANT, 0);
 
-  CLASS_ATTR_SYM(FluidListToBufClass, "destination", 0, FluidListToBuf, outName);
+  CLASS_ATTR_ATOM(FluidListToBufClass, "destination", 0, FluidListToBuf, outName);
   CLASS_ATTR_LABEL(FluidListToBufClass, "destination", 0, "Output Buffer");
   CLASS_ATTR_ACCESSORS(FluidListToBufClass, "destination", FluidListToBuf_getOut,
                        FluidListToBuf_setOut);
