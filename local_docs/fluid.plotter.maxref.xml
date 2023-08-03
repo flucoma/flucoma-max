@@ -201,6 +201,21 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         
         </description>
     </method>
+    <method name='bgcolor'>
+        <arglist>
+            <arg name='r' optional='0' type='float' />
+            <arg name='g' optional='0' type='float' />
+            <arg name='b' optional='0' type='float' />
+            <arg name='a' optional='0' type='float' />
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        Sets the background colour of the plotter.
+        
+        </description>
+    </method>
     <method name='clear'>
         <arglist>
         </arglist>
