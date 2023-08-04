@@ -1,6 +1,17 @@
-*.xml	text=auto
-*.json	text=auto
-*.cmake text=auto
-*.txt	text=auto
+* text=auto
 
-* binary
+*.cmake text
+*.cpp text
+*.gitattributes text
+*.gitignore text
+*.hpp text
+*.in text
+*.js text
+*.maxhelp text
+*.maxpat text
+*.md text
+*.txt text
+*.xml text
+*.yml text
+
+*.png binary
