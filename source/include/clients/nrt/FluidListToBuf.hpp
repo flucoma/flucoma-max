@@ -32,7 +32,7 @@ struct FluidListToBuf
   t_object*     defaultOut;
   t_buffer_ref* outputRef;
   t_symbol*     defaultOutName{nullptr};
-  t_symbol*     outName;
+  t_atom        outName;
   index         axis{0};
   index         canResize;
   index         startChannel{0};
@@ -85,7 +85,7 @@ void main()
   class_addmethod(FluidListToBufClass, (method) FluidListToBuf_dblclick,
                   "dblclick", A_CANT, 0);
 
-  CLASS_ATTR_SYM(FluidListToBufClass, "destination", 0, FluidListToBuf, outName);
+  CLASS_ATTR_ATOM(FluidListToBufClass, "destination", 0, FluidListToBuf, outName);
   CLASS_ATTR_LABEL(FluidListToBufClass, "destination", 0, "Output Buffer");
   CLASS_ATTR_ACCESSORS(FluidListToBufClass, "destination", FluidListToBuf_getOut,
                        FluidListToBuf_setOut);
@@ -130,7 +130,7 @@ void* FluidListToBuf_new(t_symbol*, long argc, t_atom* argv)
                                                &bufferArgs);
                                       
   x->output.reset(new MaxBufferAdaptor((t_object*) x, x->defaultOutName));
-  x->outName = x->defaultOutName;
+  atom_setsym(&x->outName, x->defaultOutName);
   {
   auto buf = MaxBufferAdaptor::Access(x->output.get());
   buf.resize(argCount > 0 ? atom_getlong(argv) : 0,
@@ -150,12 +150,12 @@ t_max_err FluidListToBuf_setOut(FluidListToBuf* x, t_object* /*attr*/,
     t_symbol* s = atom_getsym(argv);
     if (s == gensym(""))
     {
-      x->outName = x->defaultOutName;
+      atom_setsym(&x->outName, x->defaultOutName);
       x->output.reset(new MaxBufferAdaptor((t_object*) x, x->defaultOutName));
     }
     else
     {
-      x->outName = s;
+      atom_setsym(&x->outName, s);
       x->output.reset(new MaxBufferAdaptor((t_object*) x, s));
     }
   }
@@ -254,9 +254,7 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
     std::transform(argv, argv + count, frames.begin(),
                    [](const atom& a) -> float { return atom_getfloat(&a); });
 
-    t_atom outNameAtom;
-    atom_setsym(&outNameAtom, x->outName);
-    outlet_anything(x->outlet, bufferSym, 1, &outNameAtom);
+    outlet_anything(x->outlet, bufferSym, 1, &x->outName);
   }
 }
 
