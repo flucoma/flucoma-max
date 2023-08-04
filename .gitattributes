@@ -1,0 +1,6 @@
+*.xml	text=auto
+*.json	text=auto
+*.cmake text=auto
+*.txt	text=auto
+
+* binary
