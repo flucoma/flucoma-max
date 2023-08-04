@@ -147,7 +147,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 252.5, 349.0, 140.0, 25.0 ],
-									"text" : "The same as step 2",
+									"text" : "The same as step 3",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
