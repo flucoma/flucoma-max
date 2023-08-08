@@ -32,7 +32,7 @@ struct FluidListToBuf
   t_object*     defaultOut;
   t_buffer_ref* outputRef;
   t_symbol*     defaultOutName{nullptr};
-  t_symbol*     outName;
+  t_symbol*     outName{nullptr};
   index         axis{0};
   index         canResize;
   index         startChannel{0};
