@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ -426.0, -1353.0, 2492.0, 1319.0 ],
+		"rect" : [ 34.0, 100.0, 1660.0, 983.0 ],
 		"openrect" : [ 0.0, 0.0, 300.0, 300.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -553,7 +553,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 154.0, -1155.0, 902.0, 1033.0 ],
+										"rect" : [ 340.0, 100.0, 902.0, 983.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -666,7 +666,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 46.5, 278.0, 137.0, 33.0 ],
+													"patching_rect" : [ 46.5, 278.0, 138.0, 33.0 ],
 													"text" : "mouse xy when starting the rectangle (x0, y0)"
 												}
 
@@ -9475,6 +9475,19 @@
 				}
 
 			}
+, 			{
+				"box" : 				{
+					"attr" : "enable",
+					"id" : "obj-4",
+					"maxclass" : "attrui",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
+					"parameter_enable" : 0,
+					"patching_rect" : [ 187.526099741458893, 438.699999999999989, 150.0, 22.0 ]
+				}
+
+			}
  ],
 		"lines" : [ 			{
 				"patchline" : 				{
@@ -9748,6 +9761,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-212", 0 ],
 					"source" : [ "obj-31", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-586", 0 ],
+					"source" : [ "obj-4", 0 ]
 				}
 
 			}
