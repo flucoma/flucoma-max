@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
+						"rect" : [ 100.0, -1080.0, 963.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -94,8 +94,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 407.0, 590.0, 224.0, 22.0 ],
-									"text" : "0.607717 0.745981"
+									"patching_rect" : [ 407.0, 590.0, 224.0, 22.0 ]
 								}
 
 							}
@@ -147,7 +146,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 640.0, 334.0, 186.0, 79.0 ],
-									"text" : "On the first glance it looks like that almost the whole plot turned black.\nZoom in the plot using option/alt drag and explore!",
+									"text" : "On the first glance it looks like that almost the whole plot turned black.\nZoom in the plot using option/alt+drag and explore!",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1899,7 +1898,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, -1080.0, 963.0, 761.0 ],
+						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3352,7 +3351,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 514.5, 340.0, 125.0, 70.0 ],
-									"saturation" : 0.219607843137255
+									"saturation" : 0.262745098039216
 								}
 
 							}
