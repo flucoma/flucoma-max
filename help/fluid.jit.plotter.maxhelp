@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 963.0, 787.0 ],
+		"rect" : [ 220.0, 148.0, 963.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -1915,7 +1915,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 963.0, 761.0 ],
+						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -3368,7 +3368,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 514.5, 340.0, 125.0, 70.0 ],
-									"saturation" : 0.752941176470588
+									"saturation" : 0.733333333333333
 								}
 
 							}
@@ -5782,7 +5782,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
+						"rect" : [ 220.0, 174.0, 963.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5959,7 +5959,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 320.0, 110.0 ]
+									"patching_rect" : [ 10.0, 10.0, 410.0, 110.0 ]
 								}
 
 							}
@@ -6290,10 +6290,24 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "fluid.jit.plotter.labels2colors.js",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
 				"name" : "fluid.jit.plotter.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.jit.plotter.resize.pworld.js",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
@@ -6315,20 +6329,6 @@
 , 			{
 				"name" : "helpdetails.js",
 				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jit_plotter_labels2colors.js",
-				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "jit_plotter_resize_pworld.js",
-				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
-				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
