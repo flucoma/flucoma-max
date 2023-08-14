@@ -8217,7 +8217,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 179.0, 99.0, 151.0, 60.0 ],
+									"patching_rect" : [ 184.0, 99.0, 151.0, 60.0 ],
 									"text" : "this replicates the creation of the colorscheme from fluid.plotter and outputs the scheme as a dictionary"
 								}
 
@@ -8293,13 +8293,13 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 18.0, 99.0, 146.0, 22.0 ],
+									"patching_rect" : [ 18.0, 99.0, 164.0, 22.0 ],
 									"saved_object_attributes" : 									{
-										"filename" : "jit_plotter_labels2colors",
+										"filename" : "fluid.jit.plotter.labels2colors",
 										"parameter_enable" : 0
 									}
 ,
-									"text" : "js jit_plotter_labels2colors"
+									"text" : "js fluid.jit.plotter.labels2colors"
 								}
 
 							}
@@ -9943,13 +9943,13 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 388.388049870729503, 347.5, 162.0, 22.0 ],
+					"patching_rect" : [ 388.388049870729503, 347.5, 165.0, 22.0 ],
 					"saved_object_attributes" : 					{
-						"filename" : "jit_plotter_resize_pworld.js",
+						"filename" : "fluid.jit.plotter.resize.pworld",
 						"parameter_enable" : 0
 					}
 ,
-					"text" : "js jit_plotter_resize_pworld.js"
+					"text" : "js fluid.jit.plotter.resize.pworld"
 				}
 
 			}
