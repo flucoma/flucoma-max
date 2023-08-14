@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 963.0, 761.0 ],
+						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -88,14 +88,26 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-8",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 630.5, 373.0, 179.0, 37.0 ],
+									"text" : "Zoom in the plot using option/alt+drag and explore!"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"dontreplace" : 1,
 									"id" : "obj-7",
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 407.0, 590.0, 224.0, 22.0 ],
-									"text" : "0.392283 0.749196"
+									"patching_rect" : [ 407.0, 590.0, 224.0, 22.0 ]
 								}
 
 							}
@@ -126,15 +138,17 @@
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 2,
 									"fontsize" : 13.0,
 									"id" : "obj-29",
 									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 640.0, 453.0, 160.0, 36.0 ],
+									"patching_rect" : [ 640.0, 443.0, 162.0, 55.0 ],
 									"text" : "Alternatively you can also zoom the patcher.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -142,12 +156,12 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-28",
-									"linecount" : 5,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 640.0, 334.0, 186.0, 79.0 ],
-									"text" : "On the first glance it looks like that almost the whole plot turned black.\nZoom in the plot using option/alt+drag and explore!",
+									"patching_rect" : [ 640.0, 310.0, 186.0, 50.0 ],
+									"text" : "On the first glance it looks like that almost the whole plot turned black.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -202,14 +216,15 @@
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
 									"fontsize" : 13.0,
 									"id" : "obj-10",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 78.0, 129.5, 152.0, 21.0 ],
+									"patching_rect" : [ 78.0, 129.5, 169.0, 25.0 ],
 									"text" : "Generate 1 million points",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -502,7 +517,8 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 407.0, 623.0, 150.0, 22.0 ]
+									"patching_rect" : [ 407.0, 623.0, 173.0, 22.0 ],
+									"text_width" : 114.0
 								}
 
 							}
@@ -562,7 +578,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 799.0, 460.0, 20.0, 20.0 ],
+									"patching_rect" : [ 806.0, 450.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -583,7 +599,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 824.0, 363.5, 20.0, 20.0 ],
+									"patching_rect" : [ 814.5, 381.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -604,7 +620,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 232.0, 129.5, 20.0, 20.0 ],
+									"patching_rect" : [ 249.0, 132.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1636,8 +1652,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 429.5, 665.0, 97.0, 23.0 ],
-									"text" : "-3.25 0.15625"
+									"patching_rect" : [ 429.5, 665.0, 97.0, 23.0 ]
 								}
 
 							}
@@ -1646,13 +1661,11 @@
 									"dontreplace" : 1,
 									"fontsize" : 13.0,
 									"id" : "obj-11",
-									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 305.0, 665.0, 96.0, 38.0 ],
-									"text" : "0.0625 3.21875"
+									"patching_rect" : [ 305.0, 665.0, 96.0, 23.0 ]
 								}
 
 							}
@@ -1902,7 +1915,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
+						"rect" : [ 100.0, 126.0, 963.0, 761.0 ],
 						"bglocked" : 1,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -1962,7 +1975,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 0.0, 0.0, 640.0, 480.0 ],
+										"rect" : [ 84.0, 144.0, 302.0, 329.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -1998,7 +2011,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 70.0, 200.0, 79.0, 23.0 ],
+													"patching_rect" : [ 185.0, 145.0, 79.0, 23.0 ],
 													"text" : "speedlim 20"
 												}
 
@@ -2011,7 +2024,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 278.0, 92.0, 23.0 ],
+													"patching_rect" : [ 27.0, 240.0, 92.0, 23.0 ],
 													"text" : "route knearest"
 												}
 
@@ -2024,7 +2037,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 50.0, 100.0, 136.0, 23.0 ],
+													"patching_rect" : [ 27.0, 80.0, 136.0, 23.0 ],
 													"text" : "fit plotting.appearance"
 												}
 
@@ -2037,7 +2050,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 70.0, 162.0, 76.0, 23.0 ],
+													"patching_rect" : [ 185.0, 113.0, 76.0, 23.0 ],
 													"text" : "knearest $2"
 												}
 
@@ -2050,7 +2063,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "buffer" ],
-													"patching_rect" : [ 70.0, 130.0, 77.0, 23.0 ],
+													"patching_rect" : [ 185.0, 80.0, 77.0, 23.0 ],
 													"text" : "fluid.list2buf"
 												}
 
@@ -2063,7 +2076,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 50.0, 240.0, 80.0, 23.0 ],
+													"patching_rect" : [ 27.0, 202.0, 80.0, 23.0 ],
 													"text" : "fluid.kdtree~"
 												}
 
@@ -2077,7 +2090,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 50.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 27.0, 20.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2090,7 +2103,7 @@
 													"numinlets" : 0,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 85.0, 40.0, 30.0, 30.0 ]
+													"patching_rect" : [ 185.0, 20.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2102,7 +2115,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 50.0, 361.0, 30.0, 30.0 ]
+													"patching_rect" : [ 27.0, 284.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -2145,7 +2158,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-57", 0 ],
-													"midpoints" : [ 79.5, 199.0, 79.5, 199.0 ],
+													"midpoints" : [ 194.5, 150.0, 194.5, 150.0 ],
 													"source" : [ "obj-27", 0 ]
 												}
 
@@ -3355,7 +3368,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 514.5, 340.0, 125.0, 70.0 ],
-									"saturation" : 0.32156862745098
+									"saturation" : 0.752941176470588
 								}
 
 							}
@@ -4940,7 +4953,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 222.5, 574.0, 161.5, 23.0 ],
-									"text" : "0.310606 1."
+									"text" : "0.583333 0.287879"
 								}
 
 							}
