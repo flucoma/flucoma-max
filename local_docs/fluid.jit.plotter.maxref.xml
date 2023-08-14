@@ -202,6 +202,28 @@ The interface is also slightly different from the one of fluid.plotter. For more
         
         </description>
     </method>
+    <method name='clear'>
+        <arglist>
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        Clears the graph and all associated data and settings.
+        
+        </description>
+    </method>
+    <method name='reset'>
+        <arglist>
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        An alias of clear. Clears the graph.
+        
+        </description>
+    </method>
 
 	</methodlist>
 	<!--MESSAGES-->
