@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 375.0, -880.0, 300.0, 300.0 ],
+		"rect" : [ -426.0, -1353.0, 2492.0, 1319.0 ],
 		"openrect" : [ 0.0, 0.0, 300.0, 300.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -47,7 +47,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 704.888049741458872, 252.099999999999909, 175.0, 33.0 ],
-					"presentation_linecount" : 2,
 					"text" : "colorscheme message is redirected to [p labels2colors]"
 				}
 
@@ -5285,7 +5284,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1050.888050000000021, 84.5, 134.0, 22.0 ],
+					"patching_rect" : [ 1050.888050000000021, 89.0, 134.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -10115,7 +10114,7 @@
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 690.888050000000021, 528.700000000000045, 82.0, 85.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 322.0, 322.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 320.0, 320.0 ],
 					"sync" : 1
 				}
 
@@ -10263,6 +10262,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-297", 0 ],
 					"source" : [ "obj-16", 1 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-3", 0 ],
+					"midpoints" : [ 1122.888050000000021, 81.5, 976.388049935364734, 81.5, 976.388049935364734, 45.0, 25.888049870729446, 45.0 ],
+					"source" : [ "obj-16", 2 ]
 				}
 
 			}
