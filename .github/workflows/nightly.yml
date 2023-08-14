@@ -82,10 +82,11 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           name: FluCoMa Max Nightly Release
-          artifacts: "*.zip"
+          artifacts: "FluCoMa*"
           body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
           tag: nightly
           prerelease: true
           draft: false
-          allowUpdates: false
+          allowUpdates: true
+
 
