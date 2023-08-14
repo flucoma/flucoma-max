@@ -41,6 +41,18 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
+					"id" : "obj-10",
+					"maxclass" : "newobj",
+					"numinlets" : 1,
+					"numoutlets" : 1,
+					"outlettype" : [ "bang" ],
+					"patching_rect" : [ 16.388049870729446, 215.5, 58.0, 22.0 ],
+					"text" : "loadbang"
+				}
+
+			}
+, 			{
+				"box" : 				{
 					"id" : "obj-4",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
@@ -3654,7 +3666,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 191.638049870729446, 57.0, 162.0, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "redraw highlighted points when color scheme changes"
 								}
 
@@ -6284,7 +6295,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 28.999999870729447, 177.5, 141.0, 20.0 ],
+					"patching_rect" : [ 28.999999870729447, 245.5, 141.0, 20.0 ],
 					"text" : "start resize listener script"
 				}
 
@@ -6308,7 +6319,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 16.638049870729439, 370.0, 29.5, 22.0 ],
+					"patching_rect" : [ 16.638049870729439, 438.0, 29.5, 22.0 ],
 					"text" : "$3"
 				}
 
@@ -6320,7 +6331,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 16.888049870729439, 399.0, 106.0, 22.0 ],
+					"patching_rect" : [ 16.888049870729439, 467.0, 106.0, 22.0 ],
 					"text" : "pv bpatcher_width"
 				}
 
@@ -6344,7 +6355,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 121.499999870729454, 229.0, 189.0, 47.0 ],
+					"patching_rect" : [ 121.499999870729454, 297.0, 189.0, 47.0 ],
 					"text" : "listen to changes in the bpatcher box size and set the pworld's presentation_rect accordingly"
 				}
 
@@ -6355,7 +6366,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 53.888049870729439, 370.0, 103.0, 22.0 ],
+					"patching_rect" : [ 53.888049870729439, 438.0, 103.0, 22.0 ],
 					"text" : "s #0_to_pworld"
 				}
 
@@ -7723,7 +7734,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 16.388049870729446, 314.5, 56.499999999999993, 22.0 ],
+					"patching_rect" : [ 16.388049870729446, 382.5, 56.499999999999993, 22.0 ],
 					"text" : "t l l"
 				}
 
@@ -9637,7 +9648,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 53.888049870729439, 343.5, 149.0, 22.0 ],
+					"patching_rect" : [ 53.888049870729439, 411.5, 149.0, 22.0 ],
 					"text" : "prepend presentation_rect"
 				}
 
@@ -9649,7 +9660,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 54.388049870729446, 215.5, 63.0, 22.0 ],
+					"patching_rect" : [ 54.388049870729446, 283.5, 63.0, 22.0 ],
 					"text" : "closebang"
 				}
 
@@ -9661,7 +9672,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 54.388049870729446, 241.5, 31.0, 22.0 ],
+					"patching_rect" : [ 54.388049870729446, 309.5, 31.0, 22.0 ],
 					"text" : "stop"
 				}
 
@@ -9673,7 +9684,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 16.388049870729446, 241.5, 32.0, 22.0 ],
+					"patching_rect" : [ 16.388049870729446, 309.5, 32.0, 22.0 ],
 					"text" : "start"
 				}
 
@@ -9685,7 +9696,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 16.388049870729446, 279.5, 162.0, 22.0 ],
+					"patching_rect" : [ 16.388049870729446, 347.5, 162.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"filename" : "jit_plotter_resize_pworld.js",
 						"parameter_enable" : 0
@@ -10175,7 +10186,7 @@
 					"outlettype" : [ "jit_matrix", "" ],
 					"patching_rect" : [ 690.888050000000021, 528.700000000000045, 82.0, 85.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 0.0, 0.0, 240.0, 240.0 ],
+					"presentation_rect" : [ 0.0, 0.0, 325.0, 325.0 ],
 					"sync" : 1
 				}
 
@@ -10210,6 +10221,13 @@
 				"patchline" : 				{
 					"destination" : [ "obj-3", 0 ],
 					"source" : [ "obj-1", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-15", 0 ],
+					"source" : [ "obj-10", 0 ]
 				}
 
 			}
@@ -10401,7 +10419,7 @@
 			}
 , 			{
 				"patchline" : 				{
-					"destination" : [ "obj-15", 0 ],
+					"destination" : [ "obj-10", 0 ],
 					"source" : [ "obj-211", 0 ]
 				}
 
