@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 100.0, 1660.0, 983.0 ],
+		"rect" : [ 375.0, -880.0, 300.0, 300.0 ],
 		"openrect" : [ 0.0, 0.0, 300.0, 300.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -40,6 +40,19 @@
 		"subpatcher_template" : "",
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
+				"box" : 				{
+					"id" : "obj-5",
+					"linecount" : 2,
+					"maxclass" : "comment",
+					"numinlets" : 1,
+					"numoutlets" : 0,
+					"patching_rect" : [ 704.888049741458872, 252.099999999999909, 175.0, 33.0 ],
+					"presentation_linecount" : 2,
+					"text" : "colorscheme message is redirected to [p labels2colors]"
+				}
+
+			}
+, 			{
 				"box" : 				{
 					"id" : "obj-11",
 					"maxclass" : "message",
@@ -5366,7 +5379,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1062.388050000000021, 227.5, 136.0, 33.0 ],
+					"patching_rect" : [ 1062.388050000000021, 324.5, 136.0, 33.0 ],
 					"text" : "bang when created dict with color palette"
 				}
 
@@ -5513,7 +5526,8 @@
 					"id" : "obj-244",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
-					"numoutlets" : 0,
+					"numoutlets" : 1,
+					"outlettype" : [ "" ],
 					"patcher" : 					{
 						"fileversion" : 1,
 						"appversion" : 						{
@@ -5525,7 +5539,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 59.0, 119.0, 592.0, 275.0 ],
+						"rect" : [ 59.0, 119.0, 686.0, 283.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5554,6 +5568,29 @@
 						"subpatcher_template" : "",
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 556.00001199999997, 235.0, 77.0, 20.0 ],
+									"text" : "colorscheme"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "colorscheme",
+									"id" : "obj-241",
+									"index" : 1,
+									"maxclass" : "outlet",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 524.00001199999997, 230.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-2",
 									"linecount" : 4,
@@ -5650,11 +5687,11 @@
 								"box" : 								{
 									"id" : "obj-154",
 									"maxclass" : "newobj",
-									"numinlets" : 5,
-									"numoutlets" : 5,
-									"outlettype" : [ "", "", "", "", "" ],
-									"patching_rect" : [ 12.00001199999997, 107.0, 531.0, 22.0 ],
-									"text" : "route shape pointsize highlightedpointsize bgcolor"
+									"numinlets" : 6,
+									"numoutlets" : 6,
+									"outlettype" : [ "", "", "", "", "", "" ],
+									"patching_rect" : [ 12.00001199999997, 107.0, 659.0, 22.0 ],
+									"text" : "route shape pointsize highlightedpointsize bgcolor colorscheme"
 								}
 
 							}
@@ -5697,6 +5734,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-160", 0 ],
 									"source" : [ "obj-154", 3 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-241", 0 ],
+									"source" : [ "obj-154", 4 ]
 								}
 
 							}
@@ -5748,7 +5792,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 690.888050000000021, 240.5, 109.0, 22.0 ],
+					"patching_rect" : [ 690.888049870729446, 220.5, 109.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -6332,7 +6376,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 565.914149612188112, 89.5, 103.473900258541107, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "reset view ranges to the default 0-1"
 								}
 
@@ -7524,7 +7567,7 @@
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1050.888050000000021, 301.5, 159.0, 22.0 ],
+					"patching_rect" : [ 1050.888050000000021, 398.5, 159.0, 22.0 ],
 					"text" : "s #0_update_point_colors"
 				}
 
@@ -7583,7 +7626,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 704.888049870729446, 188.5, 240.0, 47.0 ],
+					"patching_rect" : [ 704.888049741458872, 168.5, 240.0, 47.0 ],
 					"text" : "shape, pointsize and highlightedpointsize will control gl attributes of the jit.gl.meshes, bgcolor controls the pworld's erase_color"
 				}
 
@@ -7770,7 +7813,7 @@
 				"box" : 				{
 					"id" : "obj-136",
 					"maxclass" : "newobj",
-					"numinlets" : 1,
+					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
 					"patcher" : 					{
@@ -7784,7 +7827,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 84.0, 144.0, 340.0, 253.0 ],
+						"rect" : [ 84.0, 144.0, 354.0, 252.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -7814,13 +7857,49 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 238.0, 25.0, 77.0, 20.0 ],
+									"text" : "colorscheme"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 206.0, 60.0, 124.0, 22.0 ],
+									"text" : "prepend colorscheme"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"comment" : "colorscheme",
+									"id" : "obj-1",
+									"index" : 2,
+									"maxclass" : "inlet",
+									"numinlets" : 0,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 206.0, 20.0, 30.0, 30.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-3",
 									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 179.0, 99.0, 151.0, 60.0 ],
-									"text" : "this replicates the creation of the color palette from fluid.plotter and outputs the palette as a dictionary"
+									"text" : "this replicates the creation of the colorscheme from fluid.plotter and outputs the scheme as a dictionary"
 								}
 
 							}
@@ -7933,6 +8012,13 @@
  ],
 						"lines" : [ 							{
 								"patchline" : 								{
+									"destination" : [ "obj-5", 0 ],
+									"source" : [ "obj-1", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-135", 0 ],
 									"source" : [ "obj-128", 0 ]
 								}
@@ -7954,6 +8040,13 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-75", 0 ],
+									"source" : [ "obj-5", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-128", 0 ],
 									"source" : [ "obj-75", 0 ]
 								}
@@ -7969,7 +8062,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1050.888050000000021, 203.5, 89.0, 22.0 ],
+					"patching_rect" : [ 1050.888050000000021, 300.5, 89.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -9009,7 +9102,7 @@
  ]
 					}
 ,
-					"patching_rect" : [ 1050.888050000000021, 272.5, 108.0, 22.0 ],
+					"patching_rect" : [ 1050.888050000000021, 369.5, 108.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -10247,6 +10340,14 @@
 				"patchline" : 				{
 					"destination" : [ "obj-244", 0 ],
 					"source" : [ "obj-242", 0 ]
+				}
+
+			}
+, 			{
+				"patchline" : 				{
+					"destination" : [ "obj-136", 1 ],
+					"midpoints" : [ 700.388049870729446, 292.5, 1130.388050000000021, 292.5 ],
+					"source" : [ "obj-244", 0 ]
 				}
 
 			}

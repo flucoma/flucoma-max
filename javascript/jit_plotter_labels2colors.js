@@ -5,7 +5,7 @@ autowatch = 1;
 // https://github.com/d3/d3-scale-chromatic
 // https://sashamaps.net/docs/resources/20-colors/
 const colors = {
-	_default: 'e6194b3cb44bffe1194363d8f58231911eb446f0f0f032e6bcf60cfabebe008080e6beff9a6324fffac8800000aaffc3808000ffd8b1000075808080',
+	default: 'e6194b3cb44bffe1194363d8f58231911eb446f0f0f032e6bcf60cfabebe008080e6beff9a6324fffac8800000aaffc3808000ffd8b1000075808080',
 	cat : '1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf',
 	accent : '7fc97fbeaed4fdc086ffff99386cb0f0027fbf5b17666666',
 	dark : '1b9e77d95f027570b3e7298a66a61ee6ab02a6761d666666',
@@ -19,7 +19,7 @@ const colors = {
 	random : '4718b25810c14dc677ad56e049fd52a3e7399539afcf8c552a9e59492382a64418e5bd612919f266de12df6e600c9347a52c34c432d4a0ad016a8df898c855f14b77b3a521020cfabf5516a105cd5bfc1e096eccc282de30977be174dbcc7035b3e50774d556eb343880d788b82c31692acb296388b85fd7133faf99341df43ec06d58e6b614bb3f6eed2dca896069f660ddecd5395df064ae3cd9ac186891f059d1bec62e2c81aa33a559c28e065da9e4bf74030c9bb9371eaa1a30e5ce164295eb3d3c8218f68510b33d06dde380cae16b2d67929075e9ec4b903ade4939a9c0aa1a9b23ec54cf7be7da164c31ada1d671ab1fa525cbe46f03109c90a601729fe53093ddc20e374ae45415c09ee61405434ae3183693c776e87633af6f269e46f948d3697474ef972c57eb34c6789cd570dc44d1de7093672ed2fa417e38bd604feca644297e05d64393db521073ea64f658fa28cd88971bfa74134771fc1d6b80aa801d45eb97a7fd5e9075e61a8f399462dbe88271617f24a5eb3ab382d97ce355f052ffc042c821efae7691d7c11e35c9cb59277afe2288c3ac4a03a9a833d870b6eb976f14ec438ed04027afa6d3b2708c193ef7100e1cce4251f0a00b93342d06b99d66183c50c9fb2fa868e44ce1d273bd63033ec33a7fec66950f9acc58761cd3a1aa5b08b1ee12802c87a3e05f0a5fa16d61d2a42a91e4c16d194f9909a7f38bba32a43112ce0b0ec964ded42ffe39d7f505f02f1f5d830da7927f1787e032a2361dfdbb26350ead2e531fb7ebd35209b139b6324a6d50d25a05dd44d7d1c130f02fb767cddb1c6a2da71905f730e73b0449dc'
 };
 
-var colorscheme = colors._default;
+var _colorscheme = colors.default;
 var uniques = [];
 
 function hexToRGB(hex, alpha) {
@@ -48,11 +48,19 @@ function labels2colors() {
     constructColorScheme(uniques);
 }
 
+// this is called from the patcher
+function colorscheme(scheme) {
+	if (colors[scheme]) {
+		_colorscheme = colors[scheme]
+	}
+	constructColorScheme(uniques);
+}
+
 // simplified for new context
 function constructColorScheme(uniques) {
     // list of unique labels come as args
     var colorMap = new Dict();
-    var scheme = strChunk(colorscheme, 6);
+    var scheme = strChunk(_colorscheme, 6);
     uniques.sort();
     uniques.forEach(function(u, i) {
         i = i % scheme.length;
