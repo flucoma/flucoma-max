@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 621.0, 374.0, 300.0, 300.0 ],
+		"rect" : [ 34.0, 100.0, 1660.0, 983.0 ],
 		"openrect" : [ 0.0, 0.0, 300.0, 300.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
@@ -47,7 +47,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 61.749999870729539, 102.5, 158.0, 33.0 ],
-					"text" : "clear and reset are an aliases to refer with no args"
+					"text" : "clear and reset are aliases to refer with no args"
 				}
 
 			}
@@ -8024,7 +8024,7 @@
 				"box" : 				{
 					"comment" : "report zoomxrange zoomyrange",
 					"id" : "obj-68",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -9460,7 +9460,7 @@
 				"box" : 				{
 					"comment" : "refer (to labelset) or dictionary (of labels)",
 					"id" : "obj-14",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -9981,7 +9981,7 @@
 				"box" : 				{
 					"comment" : "normalized mouse XY",
 					"id" : "obj-6",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -10005,7 +10005,7 @@
 				"box" : 				{
 					"comment" : "refer <fluid.dataset~>, highlight <id>",
 					"id" : "obj-1",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -10906,7 +10906,35 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "fluid.buf2list.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.dataset~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.jit.plotter.labels2colors.js",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.jit.plotter.resize.pworld.js",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.labelset~.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
