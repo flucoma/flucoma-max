@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 855.0, 566.0 ],
+		"rect" : [ 565.0, 197.0, 785.0, 533.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -40,28 +40,12 @@
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
-					"bgcolor" : [ 0.631372549019608, 0.494117647058824, 0.494117647058824, 1.0 ],
-					"fontsize" : 24.0,
-					"id" : "obj-23",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 212.0, 184.0, 262.0, 33.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 212.0, 184.0, 213.0, 33.0 ],
-					"text" : "TALK ABOUT NMF",
-					"textcolor" : [ 0.666666666666667, 0.007843137254902, 0.007843137254902, 1.0 ]
-				}
-
-			}
-, 			{
-				"box" : 				{
 					"id" : "obj-22",
 					"maxclass" : "newobj",
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "bang" ],
-					"patching_rect" : [ 760.465497573216453, 124.569259405136108, 22.0, 22.0 ],
+					"patching_rect" : [ 346.112564643223777, 368.086568355560303, 22.0, 22.0 ],
 					"text" : "t b"
 				}
 
@@ -74,9 +58,9 @@
 					"numinlets" : 1,
 					"numoutlets" : 4,
 					"outlettype" : [ "", "", "", "" ],
-					"patching_rect" : [ 760.465497573216453, 27.649350166320801, 233.0, 42.0 ],
+					"patching_rect" : [ 346.112564643223777, 271.166659116744995, 233.0, 42.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 492.97886073589325, 61.5, 181.0, 42.0 ],
+					"presentation_rect" : [ 426.0, 61.5, 181.0, 42.0 ],
 					"text" : "fluid.bufnmf~"
 				}
 
@@ -100,9 +84,9 @@
 					"numinlets" : 2,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 760.465497573216453, 86.569259405136108, 114.0, 28.0 ],
+					"patching_rect" : [ 346.112564643223777, 330.086568355560303, 114.0, 28.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 526.47886073589325, 105.5, 114.0, 28.0 ],
+					"presentation_rect" : [ 613.47886073589325, 68.5, 114.0, 28.0 ],
 					"text" : "Open Help File",
 					"textcolor" : [ 0.321569, 0.54902, 0.792157, 1.0 ]
 				}
@@ -115,7 +99,7 @@
 					"numinlets" : 2,
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
-					"patching_rect" : [ 760.465497573216453, 154.569259405136108, 51.0, 22.0 ],
+					"patching_rect" : [ 346.112564643223777, 398.086568355560303, 51.0, 22.0 ],
 					"text" : "zl.reg"
 				}
 
@@ -127,7 +111,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 760.465497573216453, 188.827906847000122, 79.0, 22.0 ],
+					"patching_rect" : [ 346.112564643223777, 432.345215797424316, 79.0, 22.0 ],
 					"text" : "prepend load"
 				}
 
@@ -139,7 +123,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 760.465497573216453, 218.827906847000122, 51.0, 22.0 ],
+					"patching_rect" : [ 346.112564643223777, 462.345215797424316, 51.0, 22.0 ],
 					"text" : "pcontrol"
 				}
 
@@ -151,24 +135,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 792.465497573216453, 124.569259405136108, 181.0, 22.0 ],
+					"patching_rect" : [ 378.112564643223777, 368.086568355560303, 181.0, 22.0 ],
 					"text" : "loadmess fluid.bufnmf~.maxhelp"
-				}
-
-			}
-, 			{
-				"box" : 				{
-					"bgcolor" : [ 0.631372549019608, 0.494117647058824, 0.494117647058824, 1.0 ],
-					"fontsize" : 24.0,
-					"id" : "obj-5",
-					"maxclass" : "comment",
-					"numinlets" : 1,
-					"numoutlets" : 0,
-					"patching_rect" : [ 451.0, 708.666659116744995, 262.0, 33.0 ],
-					"presentation" : 1,
-					"presentation_rect" : [ 426.0, 324.0, 262.0, 33.0 ],
-					"text" : "WRONG DEFINITIONS",
-					"textcolor" : [ 0.666666666666667, 0.007843137254902, 0.007843137254902, 1.0 ]
 				}
 
 			}
@@ -179,7 +147,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 248.33346962928772, 336.666659116744995, 54.0, 22.0 ],
+					"patching_rect" : [ 10.83346962928772, 263.666659116744995, 54.0, 22.0 ],
 					"text" : "deferlow"
 				}
 
@@ -191,7 +159,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
-					"patching_rect" : [ 248.33346962928772, 291.666659116744995, 70.0, 22.0 ],
+					"patching_rect" : [ 10.83346962928772, 234.666659116744995, 70.0, 22.0 ],
 					"text" : "loadmess 0"
 				}
 
@@ -307,7 +275,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 136.0, 996.0, 519.0 ],
+						"rect" : [ 855.0, 87.0, 996.0, 519.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -402,15 +370,15 @@
 									"fontname" : "Lato",
 									"fontsize" : 14.0,
 									"id" : "obj-90",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 195.0, 360.0, 90.0 ],
+									"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
 									"presentation" : 1,
-									"presentation_linecount" : 5,
-									"presentation_rect" : [ 5.0, 5.0, 360.0, 90.0 ],
-									"text" : "Because FluCoMa relies on the buffer~ object so heavily, fluid.bufcompose~, a utility object for manipulating the content of buffers~ had to exist. This example shows how you can use this low-level object to build abstractions for transforming the contents of buffers~ intuitively.",
+									"presentation_linecount" : 4,
+									"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
+									"text" : "When using a small number of iterations, fluid.bufnmf~ can process in close to realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately in real time.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -464,7 +432,7 @@
 ,
 					"patching_rect" : [ 391.83346962928772, 662.166659116744995, 360.0, 252.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 395.97886073589325, 295.070424437522888, 375.0, 135.0 ],
+					"presentation_rect" : [ 395.97886073589325, 246.070424437522888, 375.0, 135.0 ],
 					"viewvisibility" : 1
 				}
 
@@ -496,10 +464,10 @@
 , 			{
 				"box" : 				{
 					"data" : 					{
-						"Drum Classifier" : "Analysing pitch is a complex problem to solve. This example shows how by using some statistical inferences, the true value of pitch can be more accurately measured.",
-						"Resynthesis" : "The FluCoMa toolkit is designed to be modular, so that small parts of it can be useful. This example shows how slicing and 'features' can make a cute audio-reactive patch.",
-						"Autopanner" : "A neural network typically learns some relationship between input and output data. It can also learn the relationship between the same set of data in a lower or higher dimensional space. 'Autoencoding' is demonstrated here, where a lower-dimensional space is constructed by asking the multilayer perceptron to regress with the same fluid.dataset~ as the input and output.",
-						"Piano Key Classifier" : "Because FluCoMa relies on the buffer~ object so heavily, fluid.bufcompose~, a utility object for manipulating the content of buffers~ had to exist. This example shows how you can use this low-level object to build abstractions for transforming the contents of buffers~ intuitively."
+						"Drum Classifier" : "This example demonstrates how fluid.bufnmf~ can be seeded with various drum hits to create 'spectral templates'. Once the components are stored, bufnmf~ can then recognise each drum to a degree of confidence",
+						"Resynthesis" : "Furthering on the real time processing experiment in the autopanner patch, this example shows how using a circular buffer can create fake real time processing with fluid.bufnmf~. by utilising two resynth buffers, one can always play whilst the other is processing.",
+						"Autopanner" : "When using a small number of iterations, fluid.bufnmf~ can process in close to realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately in real time.",
+						"Piano Key Classifier" : "By pushing the fluid.bufnmf~ object to the limit, this example demonstrates how each note on the piano can be detected by training an individual 'component' on each note. A live signal is then used to drive classification of those notes, culminating in a robust polyphonic 'pitch tracker'."
 					}
 ,
 					"id" : "obj-30",
@@ -573,7 +541,7 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 85.83346962928772, 609.166659116744995, 44.0, 15.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 18.97886073589325, 452.070424437522888, 375.0, 45.0 ],
+					"presentation_rect" : [ 18.97886073589325, 403.070424437522888, 375.0, 45.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgcolor" : 						{
 							"expression" : "themecolor.live_led_bg"
@@ -627,16 +595,16 @@
 					"fontname" : "Lato",
 					"fontsize" : 15.0,
 					"id" : "obj-83",
-					"linecount" : 5,
+					"linecount" : 3,
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.83346962928772, 160.666659116744995, 707.0, 96.0 ],
+					"patching_rect" : [ 10.83346962928772, 131.666659116744995, 707.0, 60.0 ],
 					"presentation" : 1,
-					"presentation_linecount" : 5,
-					"presentation_rect" : [ 18.97886073589325, 160.070424437522888, 780.0, 96.0 ],
-					"text" : "These examples serve as some musical applications that you can explore with the toolkit. This is by no means exhaustive, rather, various starting points accumulated over the life of the project (often as learning patches). We hope to continue adding more examples from the community and elsewhere.\n\nIf you're looking for more straightforward examples check out the help files for each object!",
-					"textcolor" : [ 0.666666666666667, 0.007843137254902, 0.007843137254902, 1.0 ]
+					"presentation_linecount" : 3,
+					"presentation_rect" : [ 18.97886073589325, 160.070424437522888, 780.0, 60.0 ],
+					"text" : "These example patches display creative uses of nmf processing, each with increasing complexity.\n\nIf you lack a basic understanding of the nmf objects, check out their help files before diving deeper!",
+					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
 			}
@@ -648,9 +616,9 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 10.83346962928772, 270.166659116744995, 139.0, 21.0 ],
+					"patching_rect" : [ 65.83346962928772, 271.166659116744995, 139.0, 21.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 18.97886073589325, 280.070424437522888, 139.0, 21.0 ],
+					"presentation_rect" : [ 18.97886073589325, 231.070424437522888, 139.0, 21.0 ],
 					"text" : "Select an example...",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
@@ -671,14 +639,14 @@
 					"parameter_enable" : 1,
 					"patching_rect" : [ 10.83346962928772, 294.166659116744995, 195.0, 212.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 18.97886073589325, 302.070424437522888, 375.0, 122.0 ],
+					"presentation_rect" : [ 18.97886073589325, 253.070424437522888, 375.0, 122.0 ],
 					"saved_attribute_attributes" : 					{
 						"activebgoncolor" : 						{
 							"expression" : "themecolor.live_value_bar"
 						}
 ,
 						"valueof" : 						{
-							"parameter_enum" : [ "Drum Classifier", "Resynthesis", "Autopanner", "Piano Key Classifier" ],
+							"parameter_enum" : [ "Autopanner", "Resynthesis", "Drum Classifier", "Piano Key Classifier" ],
 							"parameter_longname" : "live.tab[1]",
 							"parameter_mmax" : 3,
 							"parameter_shortname" : "live.tab",
