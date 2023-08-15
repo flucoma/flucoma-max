@@ -160,7 +160,7 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ 0.0, 0.0 ],
+									"offset" : [ -3300.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
@@ -172,7 +172,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 87.0, 1370.0, 779.0 ],
+										"rect" : [ 34.0, 87.0, 1058.0, 779.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -201,6 +201,27 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-67",
+													"justification" : 1,
+													"linecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+													"maxclass" : "live.line",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 1667.0, 95.0, 5.0, 100.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 1665.0, 90.0, 600.0, 10.5 ],
+													"saved_attribute_attributes" : 													{
+														"linecolor" : 														{
+															"expression" : "themecolor.live_assignment_text_bg"
+														}
+
+													}
+
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-74",
 													"maxclass" : "newobj",
@@ -433,7 +454,7 @@
 													"id" : "obj-73",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 7,
-													"num_lines_presentation" : 10,
+													"num_lines_presentation" : 7,
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "float" ],
@@ -589,7 +610,7 @@
 														"Audio-Reactive" : "audioreactive.maxpat",
 														"Autoencoder" : "autoencoder.maxpat",
 														"Composing Buffers" : "bufcompose-example.maxpat",
-														"JIT NMF" : "jit-nmf-header.maxpat",
+														"NMF" : "jit-nmf-header.maxpat",
 														"Intelligent Slicing" : "intelligent-slicing-linear-regression.maxpat"
 													}
 ,
@@ -742,15 +763,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 3,
+																	"linecount" : 4,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 360.0, 57.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 3,
-																	"presentation_rect" : [ 5.0, 5.0, 360.0, 57.0 ],
-																	"text" : "Analysing pitch is a complex problem to solve. This example shows how by using some statistical inferences, the true value of pitch can be more accurately measured.",
+																	"presentation_linecount" : 4,
+																	"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
+																	"text" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This tab will take you to a handful of examples.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -840,7 +861,7 @@
 														"Audio-Reactive" : "The FluCoMa toolkit is designed to be modular, so that small parts of it can be useful. This example shows how slicing and 'features' can make a cute audio-reactive patch.",
 														"Autoencoder" : "A neural network typically learns some relationship between input and output data. It can also learn the relationship between the same set of data in a lower or higher dimensional space. 'Autoencoding' is demonstrated here, where a lower-dimensional space is constructed by asking the multilayer perceptron to regress with the same fluid.dataset~ as the input and output.",
 														"Composing Buffers" : "Because FluCoMa relies on the buffer~ object so heavily, fluid.bufcompose~, a utility object for manipulating the content of buffers~ had to exist. This example shows how you can use this low-level object to build abstractions for transforming the contents of buffers~ intuitively.",
-														"JIT NMF" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This example demonstrates just one that could be used.",
+														"NMF" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This tab will take you to a handful of examples.",
 														"Piano Classifier" : "By pushing the fluid.bufnmf~ object to the limit, this example demonstrates how each note on the piano can be detected by training an individual 'component' on each note. A live signal is then used to drive classification of those notes, culminating in a robust polyphonic 'pitch tracker'.",
 														"Intelligent Slicing" : "All of the slicing objects in FluCoMa ask for parameters and give you some segmentation results back. Sometimes you might want to slice according to a number of slices, so that you can achieve a certain density of segmentation for example. This example demonstrates how you can hack around the objects to customise the way they slice.",
 														"NMF Classifier" : "fluid.bufnmf~ can be used to create 'spectral templates' that can then be used as the foundation of a classifier. This example shows how that works using three distinct classes in realtime.",
@@ -2528,7 +2549,7 @@
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "Analysing Pitch", "Audio-Reactive", "Autoencoder", "Composing Buffers", "JIT NMF", "Intelligent Slicing" ],
+															"parameter_enum" : [ "Analysing Pitch", "Audio-Reactive", "Autoencoder", "Composing Buffers", "NMF", "Intelligent Slicing" ],
 															"parameter_longname" : "live.tab[1]",
 															"parameter_mmax" : 5,
 															"parameter_shortname" : "live.tab",
