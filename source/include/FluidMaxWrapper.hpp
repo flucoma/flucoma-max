@@ -598,12 +598,15 @@ class FluidMaxWrapper
       if (!whichIn) {
           x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
 
+          index outSize = x->mClient.controlChannelsOut().size == -1 ? std::min<index>(x->mListSize, ac) : x->mClient.controlChannelsOut().size; //if -1 we change, if not we stick to the value provided
+          
           for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i) {
-             atom_setdouble_array(std::min<index>(x->mListSize, ac),
+            assert(x->mOutputListData[i].size() == outSize);
+             atom_setdouble_array(outSize,
                                   x->mOutputListAtoms.data(),
-                                  std::min<index>(x->mListSize, ac),
+                                  outSize,
                                   x->mOutputListData[i].data());
-             outlet_list(x->mDataOutlets[i], nullptr, x->mListSize,
+             outlet_list(x->mDataOutlets[i], nullptr, outSize,
                          x->mOutputListAtoms.data());
           }
       }
