@@ -59,7 +59,8 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 26.5, 46.639239311218262, 372.0, 47.0 ],
-					"text" : "In this patch two resynth buffers are used to create fake real time processing. Whilst one buffer plays, the other is processed by fluid.bufnmf~. They then swap places so that one is always playing."
+					"text" : "In this patch two resynth buffers are used to create fake real time processing. Whilst one buffer plays, the other is processed by fluid.bufnmf~. They then swap places so that one is always playing.",
+					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
 
 			}

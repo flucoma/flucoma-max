@@ -46,8 +46,8 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 17.988965749740601, 13.0, 321.0, 30.0 ],
-					"text" : "Retriggering Drums with Fluid.nmf~"
+					"patching_rect" : [ 17.988965749740601, 13.0, 350.0, 30.0 ],
+					"text" : "Retriggering Drums with Fluid.bufnmf~"
 				}
 
 			}
@@ -3831,7 +3831,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 442.096143126487732, 675.271475672721863, 115.0, 40.0 ],
+					"patching_rect" : [ 442.096143126487732, 675.271475672721863, 117.0, 40.0 ],
 					"text" : "factorise the input in the best combination of the 3 defined components",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
@@ -3873,7 +3873,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 582.648085474967957, 367.677168953964156, 87.0, 62.0 ],
+					"patching_rect" : [ 582.648085474967957, 367.677168953964156, 90.0, 62.0 ],
 					"text" : "filling the dict with DC as a starting point. positive noise would do a similar job",
 					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 				}
