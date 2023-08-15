@@ -226,14 +226,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 98.83346962928772, 564.166659116744995, 197.0, 22.0 ],
+					"patching_rect" : [ 98.83346962928772, 564.166659116744995, 195.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict fluid-example-patch @embed 1"
+					"text" : "dict nmf-example-patch @embed 1"
 				}
 
 			}
@@ -370,15 +370,15 @@
 									"fontname" : "Lato",
 									"fontsize" : 14.0,
 									"id" : "obj-90",
-									"linecount" : 4,
+									"linecount" : 5,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
+									"patching_rect" : [ 5.0, 195.0, 360.0, 90.0 ],
 									"presentation" : 1,
-									"presentation_linecount" : 4,
-									"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
-									"text" : "When using a small number of iterations, fluid.bufnmf~ can process in close to realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately in real time.",
+									"presentation_linecount" : 5,
+									"presentation_rect" : [ 5.0, 5.0, 360.0, 90.0 ],
+									"text" : "By pushing the fluid.bufnmf~ object to the limit, this example demonstrates how each note on the piano can be detected by training an individual 'component' on each note. A live signal is then used to drive classification of those notes, culminating in a robust polyphonic 'pitch tracker'.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -475,14 +475,14 @@
 					"numinlets" : 2,
 					"numoutlets" : 4,
 					"outlettype" : [ "dictionary", "", "", "" ],
-					"patching_rect" : [ 297.83346962928772, 564.166659116744995, 193.0, 22.0 ],
+					"patching_rect" : [ 297.83346962928772, 564.166659116744995, 191.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"embed" : 1,
 						"parameter_enable" : 0,
 						"parameter_mappable" : 0
 					}
 ,
-					"text" : "dict fluid-example-desc @embed 1"
+					"text" : "dict nmf-example-desc @embed 1"
 				}
 
 			}
