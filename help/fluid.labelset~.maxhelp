@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 103.0, 87.0, 853.0, 707.0 ],
+		"rect" : [ 523.0, 87.0, 853.0, 707.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
+						"rect" : [ 523.0, 113.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -141,7 +141,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 930.0, 180.0, 20.0, 20.0 ],
+									"patching_rect" : [ 832.5, 182.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -165,7 +165,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 456.0, 188.5, 132.0, 23.0 ],
+									"patching_rect" : [ 433.5, 190.5, 132.0, 23.0 ],
 									"text" : "merge data1 1, dump"
 								}
 
@@ -178,7 +178,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 590.0, 180.0, 263.0, 40.0 ],
+									"patching_rect" : [ 567.5, 182.0, 263.0, 40.0 ],
 									"text" : "By default, merge doesn't replace the label if the identifier was already present"
 								}
 
@@ -190,8 +190,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 670.0, 290.0, 150.0, 94.0 ],
-									"text" : "Notice after clicking merge that some new animals will appear in this dictionary (a representation of the labelset).",
+									"patching_rect" : [ 643.0, 292.0, 150.0, 94.0 ],
+									"text" : "Notice after clicking merge that some new numbers will appear in this dictionary (a representation of the labelset).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -209,7 +209,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 848.0, 130.0, 20.0, 20.0 ],
+									"patching_rect" : [ 805.0, 132.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -273,7 +273,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 447.0, 138.0, 121.0, 23.0 ],
+									"patching_rect" : [ 420.0, 140.0, 121.0, 23.0 ],
 									"text" : "merge data1, dump"
 								}
 
@@ -306,7 +306,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 570.0, 122.5, 260.0, 54.0 ],
+									"patching_rect" : [ 543.0, 124.5, 260.0, 54.0 ],
 									"text" : "Merge the contents of fluid.labelset~ named \"data1\" into \"data2\". \"dump\" is automatically called afterwards."
 								}
 
@@ -317,7 +317,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 463.0, 288.0, 196.25, 195.0 ],
+									"patching_rect" : [ 439.0, 290.0, 196.25, 195.0 ],
 									"stripecolor" : [ 1.0, 0.392156862745098, 0.0, 0.54 ]
 								}
 
@@ -329,7 +329,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 463.0, 253.0, 74.0, 23.0 ],
+									"patching_rect" : [ 439.0, 255.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -342,7 +342,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 360.0, 220.0, 125.0, 23.0 ],
+									"patching_rect" : [ 333.0, 222.0, 125.0, 23.0 ],
 									"text" : "fluid.labelset~ data2"
 								}
 
@@ -353,7 +353,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 123.0, 288.0, 195.875, 190.0 ],
+									"patching_rect" : [ 126.0, 290.0, 195.875, 190.0 ],
 									"stripecolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 0.45 ]
 								}
 
@@ -365,7 +365,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 123.0, 253.0, 74.0, 23.0 ],
+									"patching_rect" : [ 126.0, 255.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -421,6 +421,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
+									"midpoints" : [ 229.5, 209.5, 342.5, 209.5 ],
 									"source" : [ "obj-16", 0 ]
 								}
 
@@ -442,7 +443,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
-									"midpoints" : [ 456.5, 213.0, 369.5, 213.0 ],
+									"midpoints" : [ 429.5, 215.0, 342.5, 215.0 ],
 									"source" : [ "obj-44", 0 ]
 								}
 
@@ -450,7 +451,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-34", 0 ],
-									"midpoints" : [ 465.5, 211.0, 369.5, 211.0 ],
+									"midpoints" : [ 443.0, 217.0, 342.5, 217.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -466,6 +467,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-16", 0 ],
+									"midpoints" : [ 29.5, 151.5, 229.5, 151.5 ],
 									"order" : 0,
 									"source" : [ "obj-9", 0 ]
 								}
@@ -2522,7 +2524,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 103.0, 113.0, 853.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
