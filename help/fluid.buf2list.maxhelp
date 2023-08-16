@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -50,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -107,7 +107,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 110.0, 250.0, 117.0, 23.0 ],
-									"text" : "buffer u331005129"
+									"text" : "buffer u064009041"
 								}
 
 							}
@@ -152,11 +152,13 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-7",
+									"linecount" : 2,
 									"maxclass" : "message",
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 380.0, 514.0, 23.0 ]
+									"patching_rect" : [ 50.0, 380.0, 514.0, 38.0 ],
+									"text" : "-26.493025 9.522013 10.670277 15.141257 -2.881981 -1.405288 -5.336903 -1.311817 -3.925783 0.707925 1.762497 1.237725 1.939072"
 								}
 
 							}
@@ -303,8 +305,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -381,14 +383,15 @@
 							}
 , 							{
 								"box" : 								{
+									"fontface" : 1,
 									"id" : "obj-6",
 									"linecount" : 7,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 312.0, 365.0, 262.0, 108.0 ],
+									"patching_rect" : [ 311.0, 352.0, 264.0, 108.0 ],
 									"text" : "Be aware that the maximum list size in Max is 32767. The object will not try to read more than that. By default it reads only 256 values much like the zl family of objects. Providing a first argument to increase this maximum is essential if you need a bigger input maximum size.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
 								}
 
 							}
@@ -431,6 +434,7 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-11",
+									"ignoreclick" : 1,
 									"maxclass" : "multislider",
 									"numinlets" : 1,
 									"numoutlets" : 2,
