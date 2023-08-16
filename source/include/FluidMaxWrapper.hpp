@@ -601,7 +601,7 @@ class FluidMaxWrapper
           index outSize = x->mClient.controlChannelsOut().size == -1 ? std::min<index>(x->mListSize, ac) : x->mClient.controlChannelsOut().size; //if -1 we change, if not we stick to the value provided
           
           for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i) {
-            assert(x->mOutputListData[i].size() == outSize);
+            //assert(x->mOutputListData[i].size() == outSize);
              atom_setdouble_array(outSize,
                                   x->mOutputListAtoms.data(),
                                   outSize,
@@ -1574,7 +1574,7 @@ public:
           mInputListViews.emplace_back(mInputListData.row(i));
         }
 
-        index outputSize = mClient.controlChannelsOut().size > -1
+        /*index outputSize = mClient.controlChannelsOut().size > -1
                                ? mClient.controlChannelsOut().size
                                : mListSize;
 
@@ -1584,7 +1584,7 @@ public:
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
         {
           mOutputListViews.emplace_back(mOutputListData.row(i));
-        }
+        }*/
       }
   }
 
@@ -1611,7 +1611,7 @@ public:
       
       if(isr())
       {
-        if(x->mAutosize && ac != x->mListSize)
+        if(x->mAutosize)
         {
           object_warn((t_object*)x, "input list size (%d) != object argument (%d) and autosize is enabled: this operation will be deferred",ac,x->mListSize);
           defer(x, method(doListResize), s, static_cast<short>(ac), av);
@@ -1625,7 +1625,7 @@ public:
           return;
         }
       }
-      else if(ac != x->mListSize) doListResize(x,s,ac,av);
+      else doListResize(x,s,ac,av);
       
       doList(x,s,ac,av);
       
