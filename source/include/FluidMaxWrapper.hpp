@@ -588,19 +588,27 @@ class FluidMaxWrapper
     void operator()(FluidMaxWrapper* x, long ac, t_atom* av)
     {
       FluidContext c;
-            
+
+      index whichIn = proxy_getinlet((t_object *)x);
+
       atom_getdouble_array(std::min<index>(x->mListSize, ac), av,
                            std::min<index>(x->mListSize, ac),
-                           x->mInputListData[0].data());
-      x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+                           x->mInputListData[whichIn].data());
 
-      for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i)
-      {
-        atom_setdouble_array(
-            std::min<index>(x->mListSize, ac), x->mOutputListAtoms.data(),
-            std::min<index>(x->mListSize, ac), x->mOutputListData[i].data());
-        outlet_list(x->mDataOutlets[i], nullptr, x->mListSize,
-                    x->mOutputListAtoms.data());
+      if (!whichIn) {
+          x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+
+          index outSize = x->mClient.controlChannelsOut().size == -1 ? std::min<index>(x->mListSize, ac) : x->mClient.controlChannelsOut().size; //if -1 we change, if not we stick to the value provided
+          
+          for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i) {
+            //assert(x->mOutputListData[i].size() == outSize);
+             atom_setdouble_array(outSize,
+                                  x->mOutputListAtoms.data(),
+                                  outSize,
+                                  x->mOutputListData[i].data());
+             outlet_list(x->mDataOutlets[i], nullptr, outSize,
+                         x->mOutputListAtoms.data());
+          }
       }
     }
   };
@@ -1262,9 +1270,9 @@ public:
       //we already have a left inlet, but do we need more?
       index newInlets = controlInputs - 1;
       mProxies.reserve(newInlets);
-      for (index i = 1; i <= newInlets; ++i)
+      for (index i = newInlets; i >= 1; --i)
         mProxies.push_back(
-            proxy_new(this, static_cast<long>(i + 1), &this->mProxyNumber));
+            proxy_new(this, static_cast<long>(i), &this->mProxyNumber));
     }
 
     //new proxy inlets for any additional input buffers beyond the first
@@ -1566,7 +1574,7 @@ public:
           mInputListViews.emplace_back(mInputListData.row(i));
         }
 
-        index outputSize = mClient.controlChannelsOut().size > -1
+        /*index outputSize = mClient.controlChannelsOut().size > -1
                                ? mClient.controlChannelsOut().size
                                : mListSize;
 
@@ -1576,7 +1584,7 @@ public:
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
         {
           mOutputListViews.emplace_back(mOutputListData.row(i));
-        }
+        }*/
       }
   }
 
@@ -1603,7 +1611,7 @@ public:
       
       if(isr())
       {
-        if(x->mAutosize && ac != x->mListSize)
+        if(x->mAutosize)
         {
           object_warn((t_object*)x, "input list size (%d) != object argument (%d) and autosize is enabled: this operation will be deferred",ac,x->mListSize);
           defer(x, method(doListResize), s, static_cast<short>(ac), av);
@@ -1617,7 +1625,7 @@ public:
           return;
         }
       }
-      else if(ac != x->mListSize) doListResize(x,s,ac,av);
+      else doListResize(x,s,ac,av);
       
       doList(x,s,ac,av);
       
