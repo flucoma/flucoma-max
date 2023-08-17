@@ -1467,7 +1467,7 @@ public:
     {
       object_warn((t_object*) x,
                   "Too many arguments. Got %d, expect at most %d", ac,
-                  ParamDescType::NumFixedParams + isControlIn<typename Client::Client>);
+                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + isControlIn<typename Client::Client>);
     }
 
     return x;
