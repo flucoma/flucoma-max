@@ -370,15 +370,15 @@
 									"fontname" : "Lato",
 									"fontsize" : 14.0,
 									"id" : "obj-90",
-									"linecount" : 5,
+									"linecount" : 4,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 5.0, 195.0, 360.0, 90.0 ],
+									"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
 									"presentation" : 1,
-									"presentation_linecount" : 5,
-									"presentation_rect" : [ 5.0, 5.0, 360.0, 90.0 ],
-									"text" : "By pushing the fluid.bufnmf~ object to the limit, this example demonstrates how each note on the piano can be detected by training an individual 'component' on each note. A live signal is then used to drive classification of those notes, culminating in a robust polyphonic 'pitch tracker'.",
+									"presentation_linecount" : 4,
+									"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
+									"text" : "When using a small number of iterations, fluid.bufnmf~ can process in close-to-realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately.",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
@@ -464,9 +464,9 @@
 , 			{
 				"box" : 				{
 					"data" : 					{
-						"Drum Classifier" : "This example demonstrates how fluid.bufnmf~ can be seeded with various drum hits to create 'spectral templates'. Once the components are stored, bufnmf~ can then recognise each drum to a degree of confidence",
-						"Resynthesis" : "Furthering on the real time processing experiment in the autopanner patch, this example shows how using a circular buffer can create fake real time processing with fluid.bufnmf~. by utilising two resynth buffers, one can always play whilst the other is processing.",
-						"Autopanner" : "When using a small number of iterations, fluid.bufnmf~ can process in close to realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately in real time.",
+						"Drum Classifier" : "This example demonstrates how fluid.bufnmf~ can be seeded with various drum hits to create 'spectral templates'. Once the components are stored, bufnmf~ can then recognise each drum to a degree of confidence.",
+						"Resynthesis" : "Furthering on the close-to-realtime processing experiment in the autopanner patch, this example shows how using a circular buffer can create fake realtime processing with fluid.bufnmf~. Two resynth buffers are used so that one can be played whilst the other is processed.",
+						"Autopanner" : "When using a small number of iterations, fluid.bufnmf~ can process in close-to-realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately.",
 						"Piano Key Classifier" : "By pushing the fluid.bufnmf~ object to the limit, this example demonstrates how each note on the piano can be detected by training an individual 'component' on each note. A live signal is then used to drive classification of those notes, culminating in a robust polyphonic 'pitch tracker'."
 					}
 ,
@@ -602,8 +602,8 @@
 					"patching_rect" : [ 10.83346962928772, 131.666659116744995, 707.0, 60.0 ],
 					"presentation" : 1,
 					"presentation_linecount" : 3,
-					"presentation_rect" : [ 18.97886073589325, 160.070424437522888, 780.0, 60.0 ],
-					"text" : "These example patches display creative uses of nmf processing, each with increasing complexity.\n\nIf you lack a basic understanding of the nmf objects, check out their help files before diving deeper!",
+					"presentation_rect" : [ 18.97886073589325, 160.070424437522888, 639.0, 60.0 ],
+					"text" : "These example patches display creative uses of nmf processing, each with increasing complexity.\n\nIf you aren't familiar with the nmf objects, check out their help files before diving deeper!",
 					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 				}
 
