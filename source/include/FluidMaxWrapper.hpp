@@ -603,7 +603,7 @@ class FluidMaxWrapper
           
         for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i)
         {
-          assert(x->mOutputListData[i].size() == outSize);
+          assert(x->mOutputListData[i].size() >= outSize);
           atom_setdouble_array(outSize,
                                x->mOutputListAtoms.data(),
                                outSize,
