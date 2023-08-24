@@ -1472,7 +1472,7 @@ public:
   {
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
-    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlOutFollowsIn<typename Client::Client>>
+    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlOutFollowsIn<typename Client::Client> >
         ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams)
     {
       object_warn((t_object*) x,
