@@ -1369,7 +1369,7 @@ public:
                          ? mListSize
                          : mClient.controlChannelsOut().max;
 
-      if (outputSize)
+      if (outputSize > 0)
       {
         mOutputListData.resize(mClient.controlChannelsOut().count, outputSize);
         mOutputListAtoms.reserve(outputSize);
