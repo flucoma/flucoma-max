@@ -1472,12 +1472,13 @@ public:
   {
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
-    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlOutFollowsIn<typename Client::Client> >
+    static constexpr index numListArgs = static_cast<index>(isControlOutFollowsIn<typename Client::Client>);
+    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av) - numListArgs) >
         ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams)
     {
       object_warn((t_object*) x,
                   "Too many arguments. Got %d, expect at most %d", ac,
-                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + isControlOutFollowsIn<typename Client::Client>);
+                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + numListArgs);
     }
 
     return x;
