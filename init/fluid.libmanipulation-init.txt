@@ -1,4 +1,5 @@
 max objectfile fluid.dataset~ fluid.libmanipulation fluid.dataset~;
+max objectfile fluid.dataseries~ fluid.libmanipulation fluid.dataseries~;
 max objectfile fluid.labelset~ fluid.libmanipulation fluid.labelset~;
 max objectfile fluid.kdtree~ fluid.libmanipulation fluid.kdtree~;
 max objectfile fluid.kmeans~ fluid.libmanipulation fluid.kmeans~;
