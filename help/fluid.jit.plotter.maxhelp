@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 220.0, 148.0, 963.0, 787.0 ],
+		"rect" : [ 100.0, 100.0, 963.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
+						"rect" : [ 100.0, 126.0, 963.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -90,12 +90,12 @@
 								"box" : 								{
 									"bubble" : 1,
 									"id" : "obj-8",
-									"linecount" : 2,
+									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 630.5, 373.0, 179.0, 37.0 ],
-									"text" : "Zoom in the plot using option/alt+drag and explore!"
+									"patching_rect" : [ 630.5, 373.0, 180.0, 51.0 ],
+									"text" : "Zoom in the plot using option/alt+drag and explore! Pan around using shift+drag."
 								}
 
 							}
@@ -599,7 +599,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 814.5, 381.5, 20.0, 20.0 ],
+									"patching_rect" : [ 814.0, 389.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -1010,6 +1010,116 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
+									"hint" : "",
+									"id" : "obj-52",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 862.625, 436.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 2,
+									"fontsize" : 13.0,
+									"id" : "obj-25",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 708.875, 419.0, 151.75, 69.0 ],
+									"text" : "alter the amount or direction of the panning (when shift + dragging)."
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-24",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 810.0, 490.0, 29.5, 22.0 ],
+									"text" : "-1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-23",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 730.0, 490.0, 29.5, 22.0 ],
+									"text" : "0.1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-22",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 770.0, 490.0, 29.5, 22.0 ],
+									"text" : "1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-20",
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 1,
+									"patching_rect" : [ 770.0, 530.0, 50.0, 22.0 ],
+									"saved_attribute_attributes" : 									{
+										"valueof" : 										{
+											"parameter_initial" : [ 1 ],
+											"parameter_initial_enable" : 1,
+											"parameter_invisible" : 1,
+											"parameter_longname" : "number",
+											"parameter_shortname" : "number",
+											"parameter_type" : 3
+										}
+
+									}
+,
+									"varname" : "number"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 770.0, 560.0, 75.0, 22.0 ],
+									"text" : "panfactor $1"
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-4",
 									"maxclass" : "newobj",
@@ -1700,12 +1810,12 @@
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-7",
-									"linecount" : 11,
+									"linecount" : 14,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 409.0, 360.0, 279.0, 166.0 ],
-									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5]).",
+									"patching_rect" : [ 410.0, 360.0, 279.0, 210.0 ],
+									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5]).\n\nIf you (shift + drag) you can pan the view around within the current zoom range. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1770,9 +1880,45 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-58", 0 ],
+									"midpoints" : [ 779.5, 590.0, 405.0, 590.0, 405.0, 279.0, 90.5, 279.0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-58", 1 ],
 									"midpoints" : [ 311.0, 271.0, 391.5, 271.0 ],
 									"source" : [ "obj-15", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-14", 0 ],
+									"source" : [ "obj-20", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-22", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-23", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-20", 0 ],
+									"source" : [ "obj-24", 0 ]
 								}
 
 							}
@@ -3368,7 +3514,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 514.5, 340.0, 125.0, 70.0 ],
-									"saturation" : 0.733333333333333
+									"saturation" : 0.533333333333333
 								}
 
 							}
@@ -5782,7 +5928,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 220.0, 174.0, 963.0, 761.0 ],
+						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6274,6 +6420,20 @@
 			}
  ],
 		"lines" : [  ],
+		"parameters" : 		{
+			"obj-4::obj-20" : [ "number", "number", 0 ],
+			"parameterbanks" : 			{
+				"0" : 				{
+					"index" : 0,
+					"name" : "",
+					"parameters" : [ "-", "-", "-", "-", "-", "-", "-", "-" ]
+				}
+
+			}
+,
+			"inherited_shortname" : 1
+		}
+,
 		"dependency_cache" : [ 			{
 				"name" : "fluid.buf2list.mxo",
 				"type" : "iLaX"
