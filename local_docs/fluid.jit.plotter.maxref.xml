@@ -128,6 +128,18 @@ The interface is also slightly different from the one of fluid.plotter. For more
         
         </description>
     </method>
+    <method name='panfactor'>
+        <arglist>
+            <arg name='factor' optional='0' type='float' />
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        Set the strength of the panning action when shift-clicking and dragging. Set to a negative value to invert the direction of the panning. Defaults to 1.
+        
+        </description>
+    </method>
     <method name='colorscheme'>
         <arglist>
             <arg name='scheme' optional='0' type='symbol' />
