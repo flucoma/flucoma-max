@@ -16,4 +16,6 @@ max objectfile fluid.grid~ fluid.libmanipulation fluid.grid~;
 max objectfile fluid.datasetquery~ fluid.libmanipulation fluid.datasetquery~;
 max objectfile fluid.mlpregressor~ fluid.libmanipulation fluid.mlpregressor~;
 max objectfile fluid.mlpclassifier~ fluid.libmanipulation fluid.mlpclassifier~;
-max objectfile fluid.dtw~ fluid.libmanipulation fluid.dtw~
+max objectfile fluid.dtw~ fluid.libmanipulation fluid.dtw~;
+max objectfile fluid.dtwclassifier~ fluid.libmanipulation fluid.dtwclassifier~;
+max objectfile fluid.dtwregressor~ fluid.libmanipulation fluid.dtwregressor~;
