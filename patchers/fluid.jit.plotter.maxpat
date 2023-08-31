@@ -213,7 +213,6 @@
 					}
 ,
 					"patching_rect" : [ 1062.888049870729446, 161.5, 111.0, 22.0 ],
-					"presentation_linecount" : 3,
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -723,7 +722,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 438.0, 449.45703125, 230.0, 33.0 ],
-									"presentation_linecount" : 2,
 									"text" : "if shift is held while mousing then pan view around keeping current zoom level"
 								}
 
@@ -757,7 +755,7 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 1124.0, -1316.0, 846.0, 1064.0 ],
+										"rect" : [ 508.0, 193.0, 846.0, 784.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -792,8 +790,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 648.888049870729446, 323.0, 131.0, 33.0 ],
-													"presentation_linecount" : 2,
+													"patching_rect" : [ 648.888049870729446, 323.0, 135.0, 33.0 ],
 													"text" : "save view ranges upon entering panning mode"
 												}
 
@@ -806,7 +803,6 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 364.75, 582.0, 142.0, 33.0 ],
-													"presentation_linecount" : 5,
 													"text" : "scale displacement by current zoom proportions"
 												}
 
@@ -818,8 +814,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 433.83207480609417, 914.0, 112.0, 33.0 ],
-													"presentation_linecount" : 3,
+													"patching_rect" : [ 433.83207480609417, 914.0, 115.0, 33.0 ],
 													"text" : "apply displacement to x/y ranges"
 												}
 
@@ -1190,7 +1185,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 591.388049870729446, 24.0, 127.0, 47.0 ],
+													"patching_rect" : [ 591.388049870729446, 24.0, 129.0, 47.0 ],
 													"text" : "bang to reset onegate and onebang (upon lifting shift key)"
 												}
 
@@ -1211,12 +1206,11 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-28",
-													"linecount" : 3,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 46.611950129270554, 1090.5, 134.0, 47.0 ],
-													"text" : "update mesh scaling, erase zoom rectangle,\nchange mousing mode"
+													"patching_rect" : [ 47.5, 1114.5, 119.0, 20.0 ],
+													"text" : "update mesh scaling"
 												}
 
 											}
@@ -1282,7 +1276,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 291.66792519390583, 1281.0, 182.0, 20.0 ],
+													"patching_rect" : [ 291.66792519390583, 1239.0, 182.0, 20.0 ],
 													"text" : "report zoomxrange, zoomyrange"
 												}
 
@@ -1316,7 +1310,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 258.555975064635277, 1212.0, 122.0, 22.0 ],
+													"patching_rect" : [ 258.555975064635277, 1170.0, 122.0, 22.0 ],
 													"text" : "prepend zoomyrange"
 												}
 
@@ -1328,7 +1322,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 187.5, 1243.0, 122.0, 22.0 ],
+													"patching_rect" : [ 187.5, 1201.0, 122.0, 22.0 ],
 													"text" : "prepend zoomxrange"
 												}
 
@@ -1341,7 +1335,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 258.555975064635277, 1276.0, 30.0, 30.0 ]
+													"patching_rect" : [ 258.555975064635277, 1234.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1966,7 +1960,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 245.750014999999962, 192.45703125, 147.0, 37.0 ],
-									"presentation_linecount" : 2,
 									"text" : "enter panning mode upon shift is pressed"
 								}
 
@@ -9693,7 +9686,7 @@
 					"maxclass" : "comment",
 					"numinlets" : 1,
 					"numoutlets" : 0,
-					"patching_rect" : [ 1648.888050000000021, 876.957031000000143, 182.0, 20.0 ],
+					"patching_rect" : [ 1644.442766537395983, 876.957031000000143, 182.0, 20.0 ],
 					"text" : "report zoomxrange, zoomyrange"
 				}
 
@@ -9702,7 +9695,7 @@
 				"box" : 				{
 					"comment" : "report zoomxrange zoomyrange",
 					"id" : "obj-68",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -11138,7 +11131,7 @@
 				"box" : 				{
 					"comment" : "refer (to labelset) or dictionary (of labels)",
 					"id" : "obj-14",
-					"index" : 2,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -11659,7 +11652,7 @@
 				"box" : 				{
 					"comment" : "normalized mouse XY",
 					"id" : "obj-6",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "outlet",
 					"numinlets" : 1,
 					"numoutlets" : 0,
@@ -11683,7 +11676,7 @@
 				"box" : 				{
 					"comment" : "refer <fluid.dataset~>, highlight <id>",
 					"id" : "obj-1",
-					"index" : 1,
+					"index" : 0,
 					"maxclass" : "inlet",
 					"numinlets" : 0,
 					"numoutlets" : 1,
@@ -12591,7 +12584,35 @@
 				}
 
 			}
- ]
+ ],
+		"dependency_cache" : [ 			{
+				"name" : "fluid.buf2list.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.dataset~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
+				"name" : "fluid.jit.plotter.labels2colors.js",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.jit.plotter.resize.pworld.js",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
+				"patcherrelativepath" : "../javascript",
+				"type" : "TEXT",
+				"implicit" : 1
+			}
+, 			{
+				"name" : "fluid.labelset~.mxo",
+				"type" : "iLaX"
+			}
+ ],
+		"autosave" : 0
 	}
 
 }
