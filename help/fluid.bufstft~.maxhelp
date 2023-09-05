@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 100.0, 100.0, 877.0, 648.0 ],
+		"rect" : [ 34.0, 87.0, 877.0, 648.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -61,14 +61,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 877.0, 622.0 ],
+						"rect" : [ 34.0, 113.0, 877.0, 622.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -98,6 +98,38 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-6",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 310.0, 102.5, 124.0, 25.0 ],
+									"text" : "Choose a source"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-14",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 436.0, 105.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"id" : "obj-10",
 									"maxclass" : "button",
@@ -160,7 +192,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 530.0, 372.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "5",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -192,7 +224,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 516.0, 482.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -224,7 +256,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 643.0, 272.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -251,8 +283,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -447,8 +479,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -820,7 +852,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 177.0, 182.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1071,14 +1103,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 877.0, 622.0 ],
+						"rect" : [ 0.0, 26.0, 877.0, 622.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1108,6 +1140,39 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 0,
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 160.0, 166.432372999999984, 109.0, 40.0 ],
+									"text" : "Choose a source"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 270.0, 183.432372999999984, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "1",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"filename" : "fluid.waveform~",
 									"id" : "obj-1",
@@ -1147,7 +1212,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 416.0, 425.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "3",
+									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1221,7 +1286,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 853.0, 142.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "2",
+									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1310,7 +1375,7 @@
 									"parameter_enable" : 0,
 									"patching_rect" : [ 177.0, 252.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
-									"text" : "1",
+									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
 								}
 
@@ -1335,8 +1400,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1422,14 +1487,14 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Constanzo-PreparedSnare-M.wav", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+													"items" : [ "Constanzo-PreparedSnare-M.wav", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
 													"patching_rect" : [ 73.5, 140.833344000000011, 133.0, 23.0 ],
-													"prefix" : "~/dev/flucoma/max/media/",
+													"prefix" : "~/Documents/FlucomaCode/flucoma-max/media/",
 													"presentation" : 1,
 													"presentation_rect" : [ 2.5, 2.833344, 282.0, 23.0 ],
 													"types" : [ "WAVE", "AIFF" ]
@@ -1834,8 +1899,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}

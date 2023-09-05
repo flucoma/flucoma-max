@@ -1961,7 +1961,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 431.5, 665.0, 97.0, 38.0 ],
-									"text" : "-3.167702 2.888199"
+									"text" : "-1.428571 -0.403727"
 								}
 
 							}
@@ -1975,7 +1975,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 307.0, 665.0, 96.0, 38.0 ],
-									"text" : "-2.981366 3.10559"
+									"text" : "-1.273292 -0.062112"
 								}
 
 							}
@@ -2329,7 +2329,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 409.0, 360.0, 279.0, 166.0 ],
-									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5]).",
+									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + click) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5]).",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -2375,7 +2375,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 80.0, 112.0, 20.0, 20.0 ],
+									"patching_rect" : [ 441.0, 113.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "1",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -2390,7 +2390,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 110.0, 107.0, 363.0, 25.0 ],
+									"patching_rect" : [ 76.0, 110.0, 363.0, 25.0 ],
 									"text" : "Generate some random points with the advanced interface"
 								}
 
@@ -2578,7 +2578,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -2608,6 +2608,41 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"bubbleside" : 3,
+									"fontsize" : 13.0,
+									"id" : "obj-8",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 430.0, 121.0, 213.0, 25.0 ],
+									"text" : "Play around with the parameters"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"fontsize" : 13.0,
+									"hint" : "",
+									"id" : "obj-5",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 408.0, 123.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "2",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-6",
@@ -3944,7 +3979,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 683.5, 380.0, 639.5, 380.0 ],
+									"midpoints" : [ 683.5, 389.0, 639.5, 389.0 ],
 									"source" : [ "obj-31", 0 ]
 								}
 
@@ -3982,7 +4017,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 683.5, 104.0, 639.5, 104.0 ],
+									"midpoints" : [ 683.5, 118.0, 639.5, 118.0 ],
 									"source" : [ "obj-50", 0 ]
 								}
 
@@ -3990,7 +4025,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 683.5, 140.0, 639.5, 140.0 ],
+									"midpoints" : [ 683.5, 152.0, 639.5, 152.0 ],
 									"source" : [ "obj-51", 0 ]
 								}
 
@@ -4145,7 +4180,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4175,6 +4210,19 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-14",
+									"linecount" : 2,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 390.0, 524.5, 330.0, 37.0 ],
+									"text" : "You'll notice that there is nothing in the plotter. By default it is displaying the 0 to 1 range in both dimensions."
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"fontsize" : 13.0,
 									"id" : "obj-4",
@@ -4301,24 +4349,10 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 731.0, 532.5, 20.0, 20.0 ],
+									"patching_rect" : [ 726.0, 533.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"fontsize" : 13.0,
-									"id" : "obj-8",
-									"linecount" : 2,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 390.0, 524.5, 339.0, 36.0 ],
-									"text" : "You'll notice that there is nothing in the plotter. By default it is displaying the 0 to 1 range in both dimensions.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
 							}
@@ -5105,7 +5139,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -5302,7 +5336,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 768.0, 412.5, 20.0, 20.0 ],
+									"patching_rect" : [ 671.5, 420.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -5314,11 +5348,12 @@
 									"bubble" : 1,
 									"fontsize" : 13.0,
 									"id" : "obj-51",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 488.5, 410.0, 277.0, 25.0 ],
-									"text" : "Move your mouse around the fluid.plotter."
+									"patching_rect" : [ 488.5, 410.0, 181.0, 40.0 ],
+									"text" : "Click and drag your mouse around the fluid.plotter."
 								}
 
 							}
@@ -5457,7 +5492,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 222.5, 574.0, 161.5, 23.0 ],
-									"text" : "0.348485 0.715909"
+									"text" : "0.647727 0.757576"
 								}
 
 							}
@@ -6350,7 +6385,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
+						"rect" : [ 249.0, 125.0, 965.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 40.0, 87.0, 814.0, 679.0 ],
+		"rect" : [ 139.0, 87.0, 814.0, 679.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 13.0,
@@ -61,8 +61,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -99,6 +99,52 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"bubble" : 1,
+									"id" : "obj-17",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 322.0, 330.0, 133.0, 25.0 ],
+									"text" : "Back to the default",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-18",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 457.0, 332.5, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "4",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-14",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 140.0, 330.0, 176.0, 23.0 ],
+									"presentation_linecount" : 2,
+									"text" : "select confidence pitch, bang"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
 									"hint" : "",
@@ -110,7 +156,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 447.0, 302.5, 20.0, 20.0 ],
+									"patching_rect" : [ 447.0, 297.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -124,7 +170,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 265.0, 300.0, 178.0, 25.0 ],
+									"patching_rect" : [ 265.0, 295.0, 178.0, 25.0 ],
 									"text" : "Only return the confidence",
 									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
@@ -157,7 +203,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 190.0, 212.0, 181.0 ],
+									"patching_rect" : [ 530.0, 190.0, 212.0, 181.0 ],
 									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -208,7 +254,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 118.0, 300.0, 145.0, 23.0 ],
+									"patching_rect" : [ 118.0, 295.0, 145.0, 23.0 ],
 									"text" : "select confidence, bang"
 								}
 
@@ -382,6 +428,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-2", 0 ],
+									"midpoints" : [ 149.5, 366.0, 39.5, 366.0 ],
+									"source" : [ "obj-14", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-20", 0 ],
 									"midpoints" : [ 39.5, 406.0, 39.5, 406.0 ],
 									"source" : [ "obj-2", 0 ]
@@ -405,7 +459,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 79.5, 331.0, 39.5, 331.0 ],
+									"midpoints" : [ 79.5, 350.0, 39.5, 350.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -413,7 +467,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-2", 0 ],
-									"midpoints" : [ 127.5, 351.0, 39.5, 351.0 ],
+									"midpoints" : [ 127.5, 358.0, 39.5, 358.0 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
@@ -505,8 +559,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -655,7 +709,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 46.5, 141.5, 239.0, 25.0 ],
+									"patching_rect" : [ 46.5, 141.5, 242.0, 25.0 ],
 									"text" : "Trigger pitch analysis of source buffer"
 								}
 
@@ -670,8 +724,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -725,7 +779,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 96.0, 130.5, 149.0, 33.0 ],
+													"patching_rect" : [ 107.0, 130.5, 149.0, 33.0 ],
 													"text" : "pair up indices and which slice number they are",
 													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 												}
@@ -861,8 +915,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "list" ],
-													"patching_rect" : [ 34.0, 136.0, 60.0, 22.0 ],
-													"text" : "listfunnel"
+													"patching_rect" : [ 34.0, 136.0, 70.0, 22.0 ],
+													"text" : "listfunnel -1"
 												}
 
 											}
@@ -1149,7 +1203,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 11.0, 64.0, 278.0, 21.0 ],
+									"patching_rect" : [ 11.0, 64.0, 282.0, 21.0 ],
 									"text" : "Grains from just the pitched portions of a sound",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1319,8 +1373,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -1357,6 +1411,54 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 642.0, 357.909090909090878, 149.0, 21.0 ],
+									"text" : "2) Confidence - Left",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-4",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 642.0, 499.727272727272748, 149.0, 21.0 ],
+									"text" : "4) Confidence - Right",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-3",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 642.0, 428.818181818181813, 149.0, 21.0 ],
+									"text" : "3) Pitch (Hz) - Right",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-2",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 642.0, 287.0, 149.0, 21.0 ],
+									"text" : "1) Pitch (Hz) - Left",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-86",
 									"maxclass" : "comment",
 									"numinlets" : 1,
@@ -1370,12 +1472,11 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-15",
-									"linecount" : 6,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 650.0, 350.0, 149.0, 94.0 ],
-									"text" : "The result is 4 channels:\n\n1) Pitch (Hz) - Left\n2) Confidence - Left\n3) Pitch (Hz) - Right\n4) Confidence - Right",
+									"patching_rect" : [ 642.0, 230.0, 149.0, 21.0 ],
+									"text" : "The result is 4 channels:",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -1462,7 +1563,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 310.0, 57.599853515625 ]
+									"patching_rect" : [ 10.0, 10.0, 313.279998779296875, 57.599853515625 ]
 								}
 
 							}
@@ -1612,14 +1713,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 40.0, 113.0, 814.0, 653.0 ],
+						"rect" : [ 139.0, 113.0, 814.0, 653.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1680,14 +1781,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 863.0, 718.0, 640.0, 480.0 ],
+										"rect" : [ 589.0, 383.0, 640.0, 480.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -2142,8 +2243,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
