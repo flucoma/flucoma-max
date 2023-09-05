@@ -88,6 +88,18 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-26",
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 789.0, 360.0, 159.0, 22.0 ],
+									"text" : "loadmess pointsizescale 0.1"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"hidden" : 1,
 									"id" : "obj-60",
 									"maxclass" : "newobj",
@@ -160,8 +172,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 729.0, 521.5, 79.0, 20.0 ],
-									"text" : "fluid.jit.plotter",
+									"patching_rect" : [ 741.0, 520.0, 67.0, 20.0 ],
+									"text" : "fluid.plotter",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -227,13 +239,13 @@
 									"bubbleside" : 3,
 									"fontsize" : 13.0,
 									"id" : "obj-22",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 325.0, 281.0, 203.0, 25.0 ],
-									"text" : "Pass the dataset as dictionary",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"textjustification" : 1
+									"patching_rect" : [ 317.0, 273.0, 209.0, 40.0 ],
+									"text" : "Pass and copy the dictionary to fluid.plotter",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -251,7 +263,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 301.5, 496.0, 20.0, 20.0 ],
+									"patching_rect" : [ 295.0, 496.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "4",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -551,13 +563,13 @@
 									"bubbleside" : 3,
 									"fontsize" : 13.0,
 									"id" : "obj-49",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 325.0, 493.5, 203.0, 25.0 ],
-									"text" : "Pass the dataset using refer",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"textjustification" : 1
+									"patching_rect" : [ 317.0, 486.0, 211.0, 40.0 ],
+									"text" : "Pass the name of the dataset without copying to fluid.jit.plotter",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -575,7 +587,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 301.5, 283.5, 20.0, 20.0 ],
+									"patching_rect" : [ 295.0, 283.5, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "3",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -588,13 +600,13 @@
 									"bubbleside" : 3,
 									"fontsize" : 13.0,
 									"id" : "obj-47",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 325.0, 108.5, 203.0, 25.0 ],
-									"text" : "Render dictionary from dataset",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
-									"textjustification" : 1
+									"patching_rect" : [ 317.0, 102.0, 212.0, 40.0 ],
+									"text" : "Render a dictionary from the dataset via 'dump'",
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -612,7 +624,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 301.5, 111.0, 20.0, 20.0 ],
+									"patching_rect" : [ 295.0, 111.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -991,7 +1003,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 810.0, 360.0, 121.0, 22.0 ],
+									"patching_rect" : [ 820.0, 560.0, 121.0, 22.0 ],
 									"text" : "loadmess pointsize 1"
 								}
 
@@ -1440,22 +1452,15 @@
 							}
 , 							{
 								"box" : 								{
-									"bgmode" : 0,
 									"border" : 0,
-									"clickthrough" : 0,
-									"enablehscroll" : 0,
-									"enablevscroll" : 0,
+									"filename" : "fluid.plotter",
 									"id" : "obj-30",
-									"lockeddragscroll" : 0,
-									"lockedsize" : 0,
-									"maxclass" : "bpatcher",
-									"name" : "fluid.jit.plotter.maxpat",
+									"maxclass" : "jsui",
 									"numinlets" : 2,
 									"numoutlets" : 2,
-									"offset" : [ 0.0, 0.0 ],
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 680.0, 391.0, 128.0, 128.0 ],
-									"viewvisibility" : 1
+									"parameter_enable" : 0,
+									"patching_rect" : [ 680.0, 391.5, 128.0, 128.0 ]
 								}
 
 							}
@@ -1568,16 +1573,13 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-30", 1 ],
-									"order" : 1,
-									"source" : [ "obj-28", 0 ]
+									"source" : [ "obj-26", 0 ]
 								}
 
 							}
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-91", 1 ],
-									"midpoints" : [ 819.5, 591.25, 798.5, 591.25 ],
-									"order" : 0,
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -3827,7 +3829,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 674.0, 283.0, 125.0, 70.0 ],
-									"saturation" : 0.949019607843137
+									"saturation" : 0.682352941176471
 								}
 
 							}
