@@ -3483,6 +3483,57 @@
 																		"assistshowspatchername" : 0,
 																		"boxes" : [ 																			{
 																				"box" : 																				{
+																					"fontname" : "Lato",
+																					"id" : "obj-1",
+																					"maxclass" : "comment",
+																					"numinlets" : 1,
+																					"numoutlets" : 0,
+																					"patching_rect" : [ 200.0, 180.0, 97.0, 21.0 ],
+																					"presentation" : 1,
+																					"presentation_rect" : [ 249.0, 171.833333194255829, 100.0, 21.0 ],
+																					"text" : "Voice Allocation",
+																					"textjustification" : 1
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
+																					"activebgoncolor" : [ 0.427450980392157, 0.843137254901961, 1.0, 1.0 ],
+																					"fontname" : "Lato",
+																					"fontsize" : 12.0,
+																					"id" : "obj-3",
+																					"maxclass" : "live.tab",
+																					"num_lines_patching" : 2,
+																					"num_lines_presentation" : 2,
+																					"numinlets" : 1,
+																					"numoutlets" : 3,
+																					"outlettype" : [ "", "", "float" ],
+																					"parameter_enable" : 1,
+																					"patching_rect" : [ 200.0, 202.0, 197.5, 48.5 ],
+																					"presentation" : 1,
+																					"presentation_rect" : [ 200.0, 194.833333194255829, 198.0, 48.5 ],
+																					"saved_attribute_attributes" : 																					{
+																						"activebgoncolor" : 																						{
+																							"expression" : "themecolor.live_value_bar"
+																						}
+,
+																						"valueof" : 																						{
+																							"parameter_enum" : [ "fluid.voiceallocator", "fluid.bufvoiceallocator" ],
+																							"parameter_longname" : "live.tab[9]",
+																							"parameter_mmax" : 1,
+																							"parameter_shortname" : "live.tab",
+																							"parameter_type" : 2,
+																							"parameter_unitstyle" : 9
+																						}
+
+																					}
+,
+																					"varname" : "live.tab[1]"
+																				}
+
+																			}
+, 																			{
+																				"box" : 																				{
 																					"comment" : "",
 																					"id" : "obj-2",
 																					"index" : 1,
@@ -3648,6 +3699,13 @@
 																			}
  ],
 																		"lines" : [ 																			{
+																				"patchline" : 																				{
+																					"destination" : [ "obj-2", 0 ],
+																					"source" : [ "obj-3", 1 ]
+																				}
+
+																			}
+, 																			{
 																				"patchline" : 																				{
 																					"destination" : [ "obj-2", 0 ],
 																					"source" : [ "obj-58", 1 ]
@@ -5781,6 +5839,7 @@
 			"obj-6::obj-23::obj-9::obj-70::obj-47" : [ "live.tab[32]", "live.tab", 0 ],
 			"obj-6::obj-23::obj-9::obj-71::obj-10" : [ "live.tab[37]", "live.tab", 0 ],
 			"obj-6::obj-23::obj-9::obj-71::obj-9" : [ "live.tab[31]", "live.tab", 0 ],
+			"obj-6::obj-23::obj-9::obj-72::obj-3" : [ "live.tab[9]", "live.tab", 0 ],
 			"obj-6::obj-23::obj-9::obj-72::obj-58" : [ "live.tab[21]", "live.tab", 0 ],
 			"obj-6::obj-23::obj-9::obj-72::obj-59" : [ "live.tab[36]", "live.tab", 0 ],
 			"obj-6::obj-23::obj-9::obj-72::obj-60" : [ "live.tab[35]", "live.tab", 0 ],
@@ -5794,7 +5853,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
