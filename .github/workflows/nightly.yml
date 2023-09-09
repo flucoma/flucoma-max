@@ -78,12 +78,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: package and upload
-        uses: softprops/action-gh-release@v1
+      - name: create release
+        uses: ncipollo/release-action@v1
         with:
           name: FluCoMa Max Nightly Release
+          artifacts: "FluCoMa*"
           body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-          files: FluCoMa*
+          tag: nightly
           prerelease: true
-          tag_name: nightly
           draft: false
+          allowUpdates: true
+
+
