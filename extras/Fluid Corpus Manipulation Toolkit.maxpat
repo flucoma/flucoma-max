@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 890.0, 777.0 ],
+		"rect" : [ 35.0, 87.0, 890.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 890.0, 751.0 ],
+						"rect" : [ 35.0, 113.0, 890.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -165,14 +165,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
+										"rect" : [ 35.0, 88.0, 1058.0, 777.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -433,7 +433,7 @@
 													"id" : "obj-73",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 7,
-													"num_lines_presentation" : 10,
+													"num_lines_presentation" : 7,
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "float" ],
@@ -447,9 +447,9 @@
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "fluid.ampfeature~", "fluid.chroma~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.pitch~", "fluid.noveltyfeature~", "fluid.onsetfeature~", "fluid.pitch~", "fluid.spectralshape~" ],
+															"parameter_enum" : [ "fluid.bufnmf~", "fluid.sines~", "fluid.transients~", "fluid.hpss~", "fluid.nmfmorph~", "fluid.bufnmfcross~", "fluid.audiotransport~" ],
 															"parameter_longname" : "live.tab[8]",
-															"parameter_mmax" : 9,
+															"parameter_mmax" : 6,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -640,8 +640,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1085,8 +1085,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1265,8 +1265,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2103,8 +2103,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2305,8 +2305,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2589,8 +2589,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2921,8 +2921,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3031,7 +3031,7 @@
 																	"presentation" : 1,
 																	"presentation_linecount" : 4,
 																	"presentation_rect" : [ 5.0, 5.0, 352.0, 74.0 ],
-																	"text" : "The foundation of many sound corpora workflows is to first analyse the corpus using audio-descriptors. This collection of objects encapsulate several useful algorithms for doing this in realtime and in non-realtime using buffers~.",
+																	"text" : "If you have some corpus data, you'll probably want to analyse, manipulate and transform it. A variety of objects fall under this category and help you to make different manoeuvres around your data.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -3152,14 +3152,14 @@
 													"maxclass" : "bpatcher",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"offset" : [ -820.0, 0.0 ],
+													"offset" : [ -1230.0, 0.0 ],
 													"outlettype" : [ "" ],
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3202,7 +3202,7 @@
 																	"maxclass" : "outlet",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 0.0, 310.0, 30.0, 30.0 ]
+																	"patching_rect" : [ 0.0, 335.0, 30.0, 30.0 ]
 																}
 
 															}
@@ -3254,8 +3254,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3446,8 +3446,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3582,7 +3582,7 @@
 																					"id" : "obj-59",
 																					"maxclass" : "live.tab",
 																					"num_lines_patching" : 9,
-																					"num_lines_presentation" : 9,
+																					"num_lines_presentation" : 8,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
@@ -3598,7 +3598,7 @@
 																						"valueof" : 																						{
 																							"parameter_enum" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~", "fluid.buf2list", "fluid.list2buf" ],
 																							"parameter_longname" : "live.tab[36]",
-																							"parameter_mmax" : 8,
+																							"parameter_mmax" : 7,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3696,8 +3696,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3890,8 +3890,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4034,24 +4034,24 @@
 																					"fontsize" : 12.0,
 																					"id" : "obj-47",
 																					"maxclass" : "live.tab",
-																					"num_lines_patching" : 6,
-																					"num_lines_presentation" : 6,
+																					"num_lines_patching" : 7,
+																					"num_lines_presentation" : 7,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
-																					"patching_rect" : [ 5.0, 217.0, 193.0, 139.0 ],
+																					"patching_rect" : [ 5.0, 217.0, 190.0, 164.164502292871475 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 0.0, 217.0, 198.0, 139.0 ],
+																					"presentation_rect" : [ 0.0, 217.0, 198.0, 163.0 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.pca~", "fluid.kmeans~", "fluid.skmeans~", "fluid.mds~", "fluid.umap~", "fluid.grid~" ],
+																							"parameter_enum" : [ "fluid.pca~", "fluid.kmeans~", "fluid.skmeans~", "fluid.mds~", "fluid.umap~", "fluid.grid~", "fluid.polynomialregressor~" ],
 																							"parameter_longname" : "live.tab[32]",
-																							"parameter_mmax" : 5,
+																							"parameter_mmax" : 6,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4287,7 +4287,7 @@
 , 																			{
 																				"patchline" : 																				{
 																					"destination" : [ "obj-1", 0 ],
-																					"midpoints" : [ 101.5, 357.0, 101.5, 357.0 ],
+																					"midpoints" : [ 100.0, 390.082251146435738, 101.5, 390.082251146435738 ],
 																					"source" : [ "obj-47", 1 ]
 																				}
 
@@ -4295,7 +4295,7 @@
  ]
 																	}
 ,
-																	"patching_rect" : [ 1230.0, 0.0, 405.0, 360.0 ],
+																	"patching_rect" : [ 1230.0, 0.0, 405.0, 390.0 ],
 																	"viewvisibility" : 1
 																}
 
@@ -4320,8 +4320,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4513,8 +4513,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4709,7 +4709,7 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-1", 0 ],
 																	"hidden" : 1,
-																	"midpoints" : [ 829.5, 297.0, 9.5, 297.0 ],
+																	"midpoints" : [ 829.5, 323.0, 9.5, 323.0 ],
 																	"source" : [ "obj-69", 0 ]
 																}
 
@@ -4718,7 +4718,7 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-1", 0 ],
 																	"hidden" : 1,
-																	"midpoints" : [ 1239.5, 363.0, 42.0, 363.0, 42.0, 297.0, 9.5, 297.0 ],
+																	"midpoints" : [ 1239.5, 403.0, 42.0, 403.0, 42.0, 324.0, 9.5, 324.0 ],
 																	"source" : [ "obj-70", 0 ]
 																}
 
@@ -4736,7 +4736,7 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-1", 0 ],
 																	"hidden" : 1,
-																	"midpoints" : [ 2059.5, 372.0, 42.0, 372.0, 42.0, 297.0, 9.5, 297.0 ],
+																	"midpoints" : [ 2059.5, 402.0, 42.0, 402.0, 42.0, 324.0, 9.5, 324.0 ],
 																	"source" : [ "obj-72", 0 ]
 																}
 
@@ -4745,7 +4745,7 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-1", 0 ],
 																	"hidden" : 1,
-																	"midpoints" : [ 1649.5, 372.0, 42.0, 372.0, 42.0, 297.0, 9.5, 297.0 ],
+																	"midpoints" : [ 1649.5, 402.0, 42.0, 402.0, 42.0, 325.0, 9.5, 325.0 ],
 																	"source" : [ "obj-73", 0 ]
 																}
 
@@ -4755,7 +4755,7 @@
 ,
 													"patching_rect" : [ 705.0, 129.0, 410.0, 374.0 ],
 													"presentation" : 1,
-													"presentation_rect" : [ 840.0, 128.0, 405.0, 373.0 ],
+													"presentation_rect" : [ 840.0, 128.0, 405.0, 387.285714626312256 ],
 													"viewvisibility" : 1
 												}
 
@@ -4771,8 +4771,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -5523,7 +5523,7 @@
 ,
 									"patching_rect" : [ 15.0, 300.0, 795.0, 450.0 ],
 									"presentation" : 1,
-									"presentation_rect" : [ 0.0, 232.0, 810.0, 496.0 ],
+									"presentation_rect" : [ 0.0, 232.0, 810.0, 513.0 ],
 									"viewvisibility" : 1
 								}
 
@@ -5794,7 +5794,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [  ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",
