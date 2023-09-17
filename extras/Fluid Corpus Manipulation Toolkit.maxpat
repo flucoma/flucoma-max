@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 890.0, 777.0 ],
+		"rect" : [ 243.0, 239.0, 890.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 890.0, 751.0 ],
+						"rect" : [ 243.0, 265.0, 890.0, 751.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -165,8 +165,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -447,9 +447,9 @@
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "fluid.ampfeature~", "fluid.chroma~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.pitch~", "fluid.noveltyfeature~", "fluid.onsetfeature~", "fluid.pitch~", "fluid.spectralshape~" ],
+															"parameter_enum" : [ "fluid.bufnmf~", "fluid.sines~", "fluid.transients~", "fluid.hpss~", "fluid.nmfmorph~", "fluid.bufnmfcross~", "fluid.audiotransport~" ],
 															"parameter_longname" : "live.tab[8]",
-															"parameter_mmax" : 9,
+															"parameter_mmax" : 6,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -640,8 +640,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1085,8 +1085,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1265,8 +1265,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2103,8 +2103,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2305,8 +2305,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2589,8 +2589,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2921,8 +2921,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3023,15 +3023,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 4,
+																	"linecount" : 2,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 352.0, 74.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 352.0, 40.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 4,
-																	"presentation_rect" : [ 5.0, 5.0, 352.0, 74.0 ],
-																	"text" : "The foundation of many sound corpora workflows is to first analyse the corpus using audio-descriptors. This collection of objects encapsulate several useful algorithms for doing this in realtime and in non-realtime using buffers~.",
+																	"presentation_linecount" : 2,
+																	"presentation_rect" : [ 5.0, 5.0, 352.0, 40.0 ],
+																	"text" : "A selection of patches, abstractions and objects that assist in building and working with corpora.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -3152,14 +3152,14 @@
 													"maxclass" : "bpatcher",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"offset" : [ -820.0, 0.0 ],
+													"offset" : [ -2050.0, 0.0 ],
 													"outlettype" : [ "" ],
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3254,8 +3254,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3446,14 +3446,14 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 35.0, 88.0, 996.0, 777.0 ],
+																		"rect" : [ 35.0, 100.0, 996.0, 777.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 1,
 																		"default_fontsize" : 12.0,
@@ -3515,9 +3515,9 @@
 																					"maxclass" : "comment",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
-																					"patching_rect" : [ 200.0, 101.0, 92.0, 21.0 ],
+																					"patching_rect" : [ 200.0, 113.0, 92.0, 21.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 253.0, 100.0, 92.0, 21.0 ],
+																					"presentation_rect" : [ 253.0, 117.0, 92.0, 21.0 ],
 																					"text" : "Corpus Building",
 																					"textjustification" : 1
 																				}
@@ -3545,24 +3545,24 @@
 																					"fontsize" : 12.0,
 																					"id" : "obj-60",
 																					"maxclass" : "live.tab",
-																					"num_lines_patching" : 2,
-																					"num_lines_presentation" : 2,
+																					"num_lines_patching" : 3,
+																					"num_lines_presentation" : 3,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
-																					"patching_rect" : [ 200.0, 27.0, 197.5, 48.5 ],
+																					"patching_rect" : [ 200.0, 27.0, 197.5, 72.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 27.0, 198.0, 48.5 ],
+																					"presentation_rect" : [ 200.0, 27.0, 198.0, 81.0 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.plotter", "fluid.waveform~" ],
+																							"parameter_enum" : [ "fluid.plotter", "fluid.jit.plotter", "fluid.waveform~" ],
 																							"parameter_longname" : "live.tab[35]",
-																							"parameter_mmax" : 1,
+																							"parameter_mmax" : 2,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3581,8 +3581,8 @@
 																					"fontsize" : 12.0,
 																					"id" : "obj-59",
 																					"maxclass" : "live.tab",
-																					"num_lines_patching" : 9,
-																					"num_lines_presentation" : 9,
+																					"num_lines_patching" : 8,
+																					"num_lines_presentation" : 8,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
@@ -3598,7 +3598,7 @@
 																						"valueof" : 																						{
 																							"parameter_enum" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~", "fluid.buf2list", "fluid.list2buf" ],
 																							"parameter_longname" : "live.tab[36]",
-																							"parameter_mmax" : 8,
+																							"parameter_mmax" : 7,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3623,9 +3623,9 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
-																					"patching_rect" : [ 200.0, 123.0, 197.5, 48.5 ],
+																					"patching_rect" : [ 200.0, 135.0, 197.5, 48.5 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 123.0, 198.0, 48.5 ],
+																					"presentation_rect" : [ 200.0, 135.0, 198.0, 53.0 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
@@ -3696,8 +3696,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3890,8 +3890,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4320,8 +4320,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4513,8 +4513,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4771,8 +4771,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
