@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 985.0, 706.0 ],
+		"rect" : [ 28.0, 129.0, 985.0, 706.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -72,8 +72,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -208,8 +208,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -756,7 +756,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 339.0, 21.0 ],
-									"text" : "use mode 2 for more extreme separation and fine-tuning",
+									"text" : "Use mode 2 for more extreme separation and fine-tuning",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -781,8 +781,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1390,8 +1390,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1892,7 +1892,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 80.0, 690.0, 108.0 ],
-									"text" : "in mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are.  In modes 1 and 2, a binary mask is used instead (see mode 1 tab)\n\nIn mode 2,  the harmonic and percussive masks use separate thresholds. This means that two components are no longer guarranteed to sum to the source, and so the residual buffer contains any leftovers. With some patient experimentation, one can sometimes manage to place noisier material in the residual, with tonal / persussive material in the other two channels. ",
+									"text" : "In mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are.  In modes 1 and 2, a binary mask is used instead (see mode 1 tab)\n\nIn mode 2,  the harmonic and percussive masks use separate thresholds. This means that two components are no longer guarranteed to sum to the source, and so the residual buffer contains any leftovers. With some patient experimentation, one can sometimes manage to place noisier material in the residual, with tonal / persussive material in the other two channels. ",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -2103,14 +2103,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 985.0, 680.0 ],
+						"rect" : [ 0.0, 26.0, 985.0, 680.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2236,8 +2236,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2543,8 +2543,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3293,7 +3293,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 249.0, 21.0 ],
-									"text" : "use mode 1 for more extreme separation ",
+									"text" : "Use mode 1 for more extreme separation ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -3500,14 +3500,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 985.0, 680.0 ],
+						"rect" : [ 28.0, 155.0, 985.0, 680.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -3619,8 +3619,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 50.0, 220.0, 146.0, 23.0 ],
-									"text" : "waveform help.mc.src.3"
+									"patching_rect" : [ 50.0, 220.0, 156.0, 23.0 ],
+									"text" : "waveform help.hpss.src.4"
 								}
 
 							}
@@ -3648,14 +3648,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 658.0, 1110.0, 748.0, 279.0 ],
+										"rect" : [ 805.0, 267.0, 748.0, 279.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3715,8 +3715,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "float", "bang" ],
-													"patching_rect" : [ 334.0, 194.0, 192.0, 22.0 ],
-													"text" : "buffer~ help.mc.src.3 @samps 1 2"
+													"patching_rect" : [ 334.0, 194.0, 201.0, 22.0 ],
+													"text" : "buffer~ help.hpss.src.4 @samps 1 2"
 												}
 
 											}
@@ -3739,8 +3739,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 20.0, 126.0, 254.0, 22.0 ],
-													"text" : "fluid.bufcompose~ @destination help.mc.src.3"
+													"patching_rect" : [ 20.0, 126.0, 264.0, 22.0 ],
+													"text" : "fluid.bufcompose~ @destination help.hpss.src.4"
 												}
 
 											}
@@ -3850,14 +3850,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 768.0, 309.0, 263.0, 192.0 ],
+										"rect" : [ 844.0, 316.0, 263.0, 192.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 13.0,
@@ -4196,8 +4196,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 4,
 									"outlettype" : [ "", "", "", "" ],
-									"patching_rect" : [ 400.0, 171.067641999999978, 230.0, 52.0 ],
-									"text" : "fluid.bufhpss~ @source help.mc.src.3 @harmonic help.hpss.harmonic.4 @percussive help.hpss.percussive.4"
+									"patching_rect" : [ 400.0, 171.067641999999978, 240.0, 52.0 ],
+									"text" : "fluid.bufhpss~ @source help.hpss.src.4 @harmonic help.hpss.harmonic.4 @percussive help.hpss.percussive.4"
 								}
 
 							}
@@ -4382,8 +4382,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -4623,8 +4623,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -5244,8 +5244,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}

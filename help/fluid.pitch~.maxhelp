@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 237.0, 93.0, 791.0, 658.0 ],
+		"rect" : [ 100.0, 93.0, 791.0, 658.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -854,7 +854,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 791.0, 632.0 ],
+						"rect" : [ 100.0, 119.0, 791.0, 632.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -884,6 +884,26 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
+									"fontname" : "Arial Bold",
+									"hint" : "",
+									"id" : "obj-1",
+									"ignoreclick" : 1,
+									"legacytextcolor" : 1,
+									"maxclass" : "textbutton",
+									"numinlets" : 1,
+									"numoutlets" : 3,
+									"outlettype" : [ "", "", "int" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 475.0, 310.0, 20.0, 20.0 ],
+									"rounded" : 60.0,
+									"text" : "3",
+									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bgmode" : 0,
 									"border" : 0,
@@ -1281,13 +1301,15 @@
 							}
 , 							{
 								"box" : 								{
+									"bubble" : 1,
 									"id" : "obj-31",
+									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 235.666655999999989, 300.0, 416.0, 21.0 ],
+									"patching_rect" : [ 235.666655999999989, 300.0, 235.0, 40.0 ],
 									"text" : "If latency is no issue, higher window size will give more precise results.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 								}
 
 							}
@@ -1597,7 +1619,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 237.0, 119.0, 791.0, 632.0 ],
+						"rect" : [ 0.0, 26.0, 791.0, 632.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1627,6 +1649,20 @@
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
+								"box" : 								{
+									"format" : 6,
+									"id" : "obj-4",
+									"ignoreclick" : 1,
+									"maxclass" : "flonum",
+									"numinlets" : 1,
+									"numoutlets" : 2,
+									"outlettype" : [ "", "bang" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 440.0, 410.0, 50.0, 23.0 ]
+								}
+
+							}
+, 							{
 								"box" : 								{
 									"bgcolor" : [ 1.0, 0.788235, 0.470588, 1.0 ],
 									"fontname" : "Arial Bold",
@@ -1808,8 +1844,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 66.500000000000014, 466.0, 21.0 ],
-									"text" : "using the pitch confidence of a source to control what gets sent to a delay effect",
+									"patching_rect" : [ 10.0, 66.500000000000014, 469.0, 21.0 ],
+									"text" : "Using the pitch confidence of a source to control what gets sent to a delay effect",
 									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
 								}
 
@@ -2941,6 +2977,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-123", 0 ],
+									"midpoints" : [ 449.5, 429.0, 449.5, 429.0 ],
+									"source" : [ "obj-4", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-60", 1 ],
 									"midpoints" : [ 224.5, 567.0, 65.5, 567.0 ],
 									"source" : [ "obj-47", 1 ]
@@ -2957,8 +3001,8 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-123", 0 ],
-									"midpoints" : [ 171.0, 336.0, 450.0, 336.0, 450.0, 429.0, 449.5, 429.0 ],
+									"destination" : [ "obj-4", 0 ],
+									"midpoints" : [ 171.0, 336.0, 449.5, 336.0 ],
 									"order" : 0,
 									"source" : [ "obj-53", 0 ]
 								}

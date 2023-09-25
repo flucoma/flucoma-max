@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 2,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -39,7 +39,6 @@
 		"subpatcher_template" : "",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
-		
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -51,8 +50,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -86,7 +85,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
@@ -96,18 +94,6 @@
 									"numoutlets" : 2,
 									"outlettype" : [ "", "int" ],
 									"patching_rect" : [ 60.0, 360.0, 228.0, 19.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-7",
-									"maxclass" : "toggle",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 290.0, 390.0, 24.0, 24.0 ]
 								}
 
 							}
@@ -252,8 +238,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -915,8 +901,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -986,8 +972,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1478,8 +1464,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1864,8 +1850,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2175,8 +2161,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2345,8 +2331,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 2,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2997,8 +2983,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 2,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -3109,14 +3095,14 @@
 												"box" : 												{
 													"autopopulate" : 1,
 													"id" : "obj-44",
-													"items" : [ "Constanzo-PreparedSnare-M.wav", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774691222011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774722891361.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774764061691.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165774801058011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779518266731.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779532395371.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779544652791.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779545550871.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779547760421.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779552509121.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779560524461.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779568052221.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-h_165779612463381.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774691222011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774722891371.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774764061691.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165774801058011.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779518266731.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779532395371.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779544652791.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779545550881.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779547760421.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779552509121.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779560524471.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779568052221.wav", ",", "Olencki-TenTromboneLongTones-M_hpss-p_165779612463381.wav", ",", "Olencki-TenTromboneLongTones-M_nmf_165774721969671.wav", ",", "Olencki-TenTromboneLongTones-M_sines-r_165774712383571.wav", ",", "Olencki-TenTromboneLongTones-M_sines-s_165774712383571.wav", ",", "Olencki-TenTromboneLongTones-M_ts-r_165774711761181.wav", ",", "Olencki-TenTromboneLongTones-M_ts-t_165774711761181.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-SlideChoirSin-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
+													"items" : [ "Constanzo-PreparedSnare-M.wav", ",", "Green-Box639.wav", ",", "Green-Box641.wav", ",", "Harker-DS-TenOboeMultiphonics-M.wav", ",", "Nicol-LoopE-M.wav", ",", "Olencki-TenTromboneLongTones-M.wav", ",", "Tremblay-AaS-AcBassGuit-Melo-M.wav", ",", "Tremblay-AaS-AcousticStrums-M.wav", ",", "Tremblay-AaS-SynthTwoVoices-M.wav", ",", "Tremblay-AaS-VoiceQC-B2K-M.wav", ",", "Tremblay-ASWINE-ScratchySynth-M.wav", ",", "Tremblay-BaB-HumDC-M.wav", ",", "Tremblay-BaB-SoundscapeGolcarWithDog.wav", ",", "Tremblay-BeatRemember.wav", ",", "Tremblay-CEL-GlitchyMusicBoxMelo.wav", ",", "Tremblay-CF-ChurchBells.wav", ",", "Tremblay-FMTriDist-M.wav", ",", "Tremblay-Iterative-M.wav", ",", "Tremblay-SA-UprightPianoPedalWide.wav", ",", "Tremblay-SlideChoirAdd-M.wav", ",", "Tremblay-UW-ComplexDescent-M.wav" ],
 													"maxclass" : "umenu",
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
 													"patching_rect" : [ 73.5, 164.833344000000011, 133.0, 22.0 ],
-													"prefix" : "~/dev/flucoma/max/media/",
+													"prefix" : "~/Documents/FlucomaCode/flucoma-max/media/",
 													"presentation" : 1,
 													"presentation_rect" : [ 2.5, 2.833344, 282.0, 22.0 ],
 													"types" : [ "WAVE", "AIFF" ]
@@ -3672,8 +3658,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -3707,7 +3693,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
@@ -4083,8 +4068,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 2,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
