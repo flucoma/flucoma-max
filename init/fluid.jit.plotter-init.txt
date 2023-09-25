@@ -1,0 +1,2 @@
+max objectfile fluid.jit.plotter fluid.jit.plotter;
+max definesubstitution fluid.jit.plotter bpatcher fluid.jit.plotter;
