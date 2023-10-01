@@ -18,4 +18,4 @@ max objectfile fluid.mlpregressor~ fluid.libmanipulation fluid.mlpregressor~;
 max objectfile fluid.mlpclassifier~ fluid.libmanipulation fluid.mlpclassifier~;
 max objectfile fluid.lstmclassifier~ fluid.libmanipulation fluid.lstmclassifier~;
 max objectfile fluid.lstmregressor~ fluid.libmanipulation fluid.lstmregressor~;
-max objectfile fluid.lstmforecast~ fluid.libmanipulation fluid.lstmforecast~;
+max objectfile fluid.lstmforecaster~ fluid.libmanipulation fluid.lstmforecaster~;
