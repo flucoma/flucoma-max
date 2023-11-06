@@ -12,7 +12,7 @@ setoutletassist(0, 'Position of mouse in x/y space');
 
 // https://github.com/d3/d3-scale-chromatic
 // https://sashamaps.net/docs/resources/20-colors/
-const colors = {
+var colors = {
 	default: 'e6194b3cb44bffe1194363d8f58231911eb446f0f0f032e6bcf60cfabebe008080e6beff9a6324fffac8800000aaffc3808000ffd8b1000075808080',
 	cat : '1f77b4ff7f0e2ca02cd627289467bd8c564be377c27f7f7fbcbd2217becf',
 	accent : '7fc97fbeaed4fdc086ffff99386cb0f0027fbf5b17666666',
@@ -28,8 +28,8 @@ const colors = {
 };
 
 // Constant Values
-const defaultPointColor = [0, 0, 0, 0.8];
-const pointSizeScaler = 0.075;
+var defaultPointColor = [0, 0, 0, 0.8];
+var pointSizeScaler = 0.075;
 
 // Internal State for Mousing
 var w = [0,0,0];
@@ -241,26 +241,28 @@ function setcategories(name) {
 
 function constructColorScheme() {
 	if (labelDict) {
-		const data = labelDict.get('data');
-		const keys = data.getkeys();
-		var uniques = new Array();
+		var labelDictAsJson = JSON.parse(labelDict.stringify());
+		var data = labelDictAsJson.data;
+		var keys = Object.keys(data)
+		var uniques = []
 
 		// How many unique labels are there?
 		keys.forEach(function(key) {
-			var label = data.get(key);
+			var label = data[key]
 			if (uniques.indexOf(label) == -1) {
-				uniques.push(label)
+				uniques.push(label[0])
 			}
 		})
-		
-		colorMap = {};
-		var scheme = strChunk(_colorscheme, 6);
+		uniques = uniques.removeDuplicates()
 		uniques.sort();
-		uniques.forEach(function(u, i) {
-			i = i % scheme.length;
-			var color = hexToRGB(scheme[i], 1.0);
-			colorMap[u] = color;
-		});
+
+		var scheme = strChunk(_colorscheme, 6);
+		colorMap = {}
+		colorMap = uniques.reduce(function(map, u, i) {
+			const color = hexToRGB(scheme[i % scheme.length], 1.0);
+			map[u] = color;
+			return map;
+		}, {});
 
 		// Strip any of the points from the pointColors if they have been assigned here
 		keys.forEach(function(pt) {
@@ -436,3 +438,13 @@ function onresize(w, h) {
 	forcesize(w, h);
 }
 onresize.local = 1; //private
+
+Array.prototype.removeDuplicates = function() {
+	var uniqueArray = [];
+	for (var i = 0; i < this.length; i++) {
+		if (uniqueArray.indexOf(this[i]) === -1) {
+			uniqueArray.push(this[i]);
+		}
+	}
+	return uniqueArray;
+};
