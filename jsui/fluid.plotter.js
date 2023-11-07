@@ -249,7 +249,7 @@ function constructColorScheme() {
 		// How many unique labels are there?
 		keys.forEach(function(key) {
 			var label = data[key]
-			if (uniques.indexOf(label) == -1) {
+			if (uniques.indexOf(label[0]) == -1) {
 				uniques.push(label[0])
 			}
 		})
