@@ -253,7 +253,7 @@ function constructColorScheme() {
 				uniques.push(label[0])
 			}
 		})
-		uniques = uniques.removeDuplicates()
+
 		uniques.sort();
 
 		var scheme = strChunk(_colorscheme, 6);
@@ -438,13 +438,3 @@ function onresize(w, h) {
 	forcesize(w, h);
 }
 onresize.local = 1; //private
-
-Array.prototype.removeDuplicates = function() {
-	var uniqueArray = [];
-	for (var i = 0; i < this.length; i++) {
-		if (uniqueArray.indexOf(this[i]) === -1) {
-			uniqueArray.push(this[i]);
-		}
-	}
-	return uniqueArray;
-};
