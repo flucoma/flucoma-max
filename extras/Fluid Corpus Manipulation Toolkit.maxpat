@@ -3474,7 +3474,7 @@
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 35.0, 88.0, 996.0, 777.0 ],
+																		"rect" : [ 35.0, 100.0, 996.0, 777.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 1,
 																		"default_fontsize" : 12.0,
@@ -3536,9 +3536,9 @@
 																					"maxclass" : "comment",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
-																					"patching_rect" : [ 200.0, 101.0, 92.0, 21.0 ],
+																					"patching_rect" : [ 200.0, 113.0, 92.0, 21.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 253.0, 100.0, 92.0, 21.0 ],
+																					"presentation_rect" : [ 253.0, 117.0, 92.0, 21.0 ],
 																					"text" : "Corpus Building",
 																					"textjustification" : 1
 																				}
@@ -3566,24 +3566,24 @@
 																					"fontsize" : 12.0,
 																					"id" : "obj-60",
 																					"maxclass" : "live.tab",
-																					"num_lines_patching" : 2,
-																					"num_lines_presentation" : 2,
+																					"num_lines_patching" : 3,
+																					"num_lines_presentation" : 3,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
-																					"patching_rect" : [ 200.0, 27.0, 197.5, 48.5 ],
+																					"patching_rect" : [ 200.0, 27.0, 197.5, 72.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 27.0, 198.0, 48.5 ],
+																					"presentation_rect" : [ 200.0, 27.0, 198.0, 81.0 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.plotter", "fluid.waveform~" ],
+																							"parameter_enum" : [ "fluid.plotter", "fluid.jit.plotter", "fluid.waveform~" ],
 																							"parameter_longname" : "live.tab[35]",
-																							"parameter_mmax" : 1,
+																							"parameter_mmax" : 2,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3602,8 +3602,8 @@
 																					"fontsize" : 12.0,
 																					"id" : "obj-59",
 																					"maxclass" : "live.tab",
-																					"num_lines_patching" : 9,
-																					"num_lines_presentation" : 9,
+																					"num_lines_patching" : 8,
+																					"num_lines_presentation" : 8,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
@@ -3644,9 +3644,9 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
-																					"patching_rect" : [ 200.0, 123.0, 197.5, 48.5 ],
+																					"patching_rect" : [ 200.0, 135.0, 197.5, 48.5 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 123.0, 198.0, 48.5 ],
+																					"presentation_rect" : [ 200.0, 135.0, 198.0, 53.0 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
