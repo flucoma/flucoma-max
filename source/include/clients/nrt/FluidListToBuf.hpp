@@ -210,7 +210,11 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
     {
       if(isr())
       {
-        object_error((t_object*) x, "Internal buffer %s not initialised and called on high-priority thread. Either initialise object with size, or call on main thread", x->output->name());
+        object_error((t_object*) x,
+                     "Internal buffer %s not initialised and called on "
+                     "high-priority thread. Either initialise object with "
+                     "size, or call on main thread",
+                     x->output->name()->s_name);
         return;
       } else resizeAnyway = true;
     }
@@ -221,7 +225,8 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
 
     if (!buf.exists())
     {
-      object_error((t_object*) x, "Buffer %s not found", x->output->name());
+      object_error((t_object*) x, "Buffer %s not found",
+                   x->output->name()->s_name);
       return;
     }
 
@@ -236,14 +241,16 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
                                      x->axis == 0 ? 1 : x->startChannel + argc,
                                      x->output->sampleRate())
                               .ok())
-        object_error((t_object*) x, "Can't resize buffer %s", x->output->name());
+        object_error((t_object*) x, "Can't resize buffer %s",
+                     x->output->name()->s_name);
       else
         count = argc;
     }
 
     if (!buf.valid())
     {
-      object_error((t_object*) x, "Buffer %s not initialised", x->output->name());
+      object_error((t_object*) x, "Buffer %s not initialised",
+                   x->output->name()->s_name);
       return;
     }
 
