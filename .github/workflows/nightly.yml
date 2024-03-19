@@ -58,12 +58,12 @@ jobs:
       - name: make parent folder
         run : mkdir -p "FluidCorpusManipulation"
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: macbuild
           path: "FluidCorpusManipulation"
 
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v3
         with:
           name: winbuild
           path: "FluidCorpusManipulation/externals"
@@ -71,19 +71,22 @@ jobs:
       - name: zip
         run: zip -r FluCoMa-Max-nightly.zip "FluidCorpusManipulation"
 
-      - uses: dev-drprasad/delete-tag-and-release@v0.2.0
+      - uses: dev-drprasad/delete-tag-and-release@v0.2.1
         with:
           delete_release: true # default: false
           tag_name: nightly # tag name to delete
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: package and upload
-        uses: softprops/action-gh-release@v1
+      - name: create release
+        uses: ncipollo/release-action@v1
         with:
           name: FluCoMa Max Nightly Release
+          artifacts: "FluCoMa*"
           body: "This is a nightly build of the FluCoMa Max package. As such, be warned there may be bugs or other unexpected behaviour. The build hash is ${{ github.sha }}"
-          files: FluCoMa*
+          tag: nightly
           prerelease: true
-          tag_name: nightly
           draft: false
+          allowUpdates: true
+
+

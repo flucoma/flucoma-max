@@ -1,6 +1,6 @@
 BSD 3-Clause License
 
-Copyright (c) 2017-2020 University of Huddersfield
+Copyright University of Huddersfield
 All rights reserved.
 
 Redistribution and use in source and binary forms, with or without
