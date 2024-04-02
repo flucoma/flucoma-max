@@ -3,8 +3,8 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
@@ -61,8 +61,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
@@ -99,11 +99,36 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-6",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 464.0, 352.0, 29.0, 21.0 ],
+									"text" : "Full",
+									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-5",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 250.0, 351.0, 212.0, 23.0 ],
+									"presentation_linecount" : 2,
+									"text" : "startframe 0, numframes 100, bang"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-42",
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 420.0, 350.0, 58.0, 21.0 ],
+									"patching_rect" : [ 454.0, 311.0, 58.0, 21.0 ],
 									"text" : "First half",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -115,7 +140,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 424.0, 309.0, 77.0, 21.0 ],
+									"patching_rect" : [ 458.0, 270.0, 77.0, 21.0 ],
 									"text" : "Second half",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -128,8 +153,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 250.0, 350.0, 168.0, 23.0 ],
-									"text" : "startframe 0, numframes 50"
+									"patching_rect" : [ 250.0, 311.5, 204.0, 23.0 ],
+									"text" : "startframe 0, numframes 50, bang"
 								}
 
 							}
@@ -140,8 +165,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 250.0, 309.0, 172.0, 23.0 ],
-									"text" : "startframe 50, numframes -1"
+									"patching_rect" : [ 250.0, 270.0, 209.0, 23.0 ],
+									"text" : "startframe 50, numframes -1, bang"
 								}
 
 							}
@@ -158,7 +183,7 @@
 									"numoutlets" : 3,
 									"outlettype" : [ "", "", "int" ],
 									"parameter_enable" : 0,
-									"patching_rect" : [ 700.0, 326.0, 20.0, 20.0 ],
+									"patching_rect" : [ 710.0, 328.0, 20.0, 20.0 ],
 									"rounded" : 60.0,
 									"text" : "2",
 									"textcolor" : [ 0.34902, 0.34902, 0.34902, 1.0 ]
@@ -173,7 +198,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 510.0, 309.0, 188.0, 54.0 ],
+									"patching_rect" : [ 520.0, 311.0, 188.0, 54.0 ],
 									"text" : "Optionally change the region of the source buffer you want to process"
 								}
 
@@ -229,7 +254,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 340.0, 160.0, 250.0, 36.0 ],
+									"patching_rect" : [ 330.0, 173.5, 250.0, 36.0 ],
 									"text" : "Load a buffer (help.bufthresh.src) with a linear ramp from 0 to 1 over 100 samples",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -264,6 +289,8 @@
 									"format" : 6,
 									"id" : "obj-16",
 									"maxclass" : "flonum",
+									"maximum" : 1.0,
+									"minimum" : -1.0,
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "bang" ],
@@ -441,7 +468,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 259.5, 333.0, 237.0, 333.0, 237.0, 387.0, 19.5, 387.0 ],
+									"midpoints" : [ 259.5, 304.0, 236.0, 304.0, 236.0, 387.0, 19.5, 387.0 ],
 									"source" : [ "obj-38", 0 ]
 								}
 
@@ -449,8 +476,16 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-4", 0 ],
-									"midpoints" : [ 259.5, 387.0, 19.5, 387.0 ],
+									"midpoints" : [ 259.5, 343.0, 237.0, 343.0, 237.0, 387.0, 19.5, 387.0 ],
 									"source" : [ "obj-39", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-4", 0 ],
+									"midpoints" : [ 259.5, 386.5, 19.5, 386.5 ],
+									"source" : [ "obj-5", 0 ]
 								}
 
 							}
@@ -553,8 +588,8 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}

@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 0,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 906.0, 731.0 ],
+		"rect" : [ 35.0, 87.0, 906.0, 724.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -72,14 +72,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 906.0, 705.0 ],
+						"rect" : [ 0.0, 26.0, 906.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -235,7 +235,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 690.0, 400.0, 198.0, 79.0 ],
+									"patching_rect" : [ 690.0, 400.0, 199.0, 79.0 ],
 									"text" : "You can think of this as a single channel in a buffer with 21 frames. Each consecutive group of 7 statistics belongs to a single derivative.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -605,14 +605,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 906.0, 705.0 ],
+						"rect" : [ 35.0, 113.0, 906.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -775,7 +775,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 405.0, 305.0, 240.0, 50.0 ],
+									"patching_rect" : [ 405.0, 305.0, 241.0, 50.0 ],
 									"text" : "Here we have taken every second channel and every second frame from a 4 frame x 5 channel source buffer.",
 									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
 								}
@@ -792,14 +792,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 766.0, 284.0, 640.0, 480.0 ],
+										"rect" : [ 107.0, 187.0, 318.0, 432.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -827,6 +827,7 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
+										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-1",
@@ -932,7 +933,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 30.0, 300.0, 30.0, 30.0 ]
+													"patching_rect" : [ 35.0, 300.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1011,6 +1012,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-54", 2 ],
+													"midpoints" : [ 259.5, 240.5, 130.5, 240.5 ],
 													"source" : [ "obj-55", 1 ]
 												}
 
@@ -1055,8 +1057,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 0,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1158,7 +1160,7 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 321.0, 264.0, 55.0, 22.0 ],
+													"patching_rect" : [ 320.0, 304.0, 55.0, 22.0 ],
 													"text" : "$1 $3 $2"
 												}
 
@@ -1170,7 +1172,7 @@
 													"numinlets" : 5,
 													"numoutlets" : 4,
 													"outlettype" : [ "int", "", "", "int" ],
-													"patching_rect" : [ 390.0, 180.0, 61.0, 22.0 ],
+													"patching_rect" : [ 390.0, 220.0, 61.0, 22.0 ],
 													"text" : "counter"
 												}
 
@@ -1182,20 +1184,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 320.0, 230.0, 89.0, 22.0 ],
+													"patching_rect" : [ 320.0, 264.0, 89.0, 22.0 ],
 													"text" : "join"
-												}
-
-											}
-, 											{
-												"box" : 												{
-													"id" : "obj-77",
-													"maxclass" : "button",
-													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"parameter_enable" : 0,
-													"patching_rect" : [ 50.0, 10.0, 24.0, 24.0 ]
 												}
 
 											}
@@ -1204,10 +1194,10 @@
 													"id" : "obj-75",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 2,
-													"outlettype" : [ "bang", "bang" ],
-													"patching_rect" : [ 10.0, 60.0, 32.0, 22.0 ],
-													"text" : "t b b"
+													"numoutlets" : 3,
+													"outlettype" : [ "bang", "bang", "bang" ],
+													"patching_rect" : [ 10.0, 60.0, 42.0, 22.0 ],
+													"text" : "t b b b"
 												}
 
 											}
@@ -1218,7 +1208,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "list" ],
-													"patching_rect" : [ 320.0, 180.0, 56.0, 22.0 ],
+													"patching_rect" : [ 320.0, 220.0, 56.0, 22.0 ],
 													"text" : "listfunnel"
 												}
 
@@ -1231,7 +1221,7 @@
 													"maxclass" : "outlet",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 360.0, 310.0, 30.0, 30.0 ]
+													"patching_rect" : [ 320.0, 340.0, 30.0, 30.0 ]
 												}
 
 											}
@@ -1242,7 +1232,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "bang" ],
-													"patching_rect" : [ 320.0, 140.0, 89.0, 22.0 ],
+													"patching_rect" : [ 320.0, 180.0, 89.0, 22.0 ],
 													"text" : "t l b"
 												}
 
@@ -1294,6 +1284,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-66", 0 ],
+													"midpoints" : [ 19.5, 170.5, 329.5, 170.5 ],
 													"order" : 0,
 													"source" : [ "obj-54", 0 ]
 												}
@@ -1338,25 +1329,16 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-80", 2 ],
-													"midpoints" : [ 32.5, 83.0, 420.5, 83.0 ],
-													"order" : 0,
-													"source" : [ "obj-75", 1 ]
+													"midpoints" : [ 42.5, 89.0, 420.5, 89.0 ],
+													"source" : [ "obj-75", 2 ]
 												}
 
 											}
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-90", 2 ],
-													"midpoints" : [ 32.5, 96.0, 6.0, 96.0, 6.0, 216.0, 40.5, 216.0 ],
-													"order" : 1,
+													"midpoints" : [ 31.0, 90.0, 6.0, 90.0, 6.0, 216.0, 40.5, 216.0 ],
 													"source" : [ "obj-75", 1 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-75", 0 ],
-													"source" : [ "obj-77", 0 ]
 												}
 
 											}
@@ -1641,14 +1623,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 0,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 906.0, 705.0 ],
+						"rect" : [ 0.0, 26.0, 906.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,

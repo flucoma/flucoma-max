@@ -1,6 +1,6 @@
 /*
 Part of the Fluid Corpus Manipulation Project (http://www.flucoma.org/)
-Copyright 2017-2019 University of Huddersfield.
+Copyright University of Huddersfield.
 Licensed under the BSD-3 License.
 See license.md file in the project root for full license information.
 This project has received funding from the European Research Council (ERC)
@@ -32,7 +32,7 @@ struct FluidListToBuf
   t_object*     defaultOut;
   t_buffer_ref* outputRef;
   t_symbol*     defaultOutName{nullptr};
-  t_atom        outName;
+  t_symbol*     outName{nullptr};
   index         axis{0};
   index         canResize;
   index         startChannel{0};
@@ -130,7 +130,7 @@ void* FluidListToBuf_new(t_symbol*, long argc, t_atom* argv)
                                                &bufferArgs);
                                       
   x->output.reset(new MaxBufferAdaptor((t_object*) x, x->defaultOutName));
-  atom_setsym(&x->outName, x->defaultOutName);
+  x->outName = x->defaultOutName;
   {
   auto buf = MaxBufferAdaptor::Access(x->output.get());
   buf.resize(argCount > 0 ? atom_getlong(argv) : 0,
@@ -150,12 +150,12 @@ t_max_err FluidListToBuf_setOut(FluidListToBuf* x, t_object* /*attr*/,
     t_symbol* s = atom_getsym(argv);
     if (s == gensym(""))
     {
-      atom_setsym(&x->outName, x->defaultOutName);
+      x->outName = x->defaultOutName;
       x->output.reset(new MaxBufferAdaptor((t_object*) x, x->defaultOutName));
     }
     else
     {
-      atom_setsym(&x->outName, s);
+      x->outName = s;
       x->output.reset(new MaxBufferAdaptor((t_object*) x, s));
     }
   }
@@ -210,7 +210,11 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
     {
       if(isr())
       {
-        object_error((t_object*) x, "Internal buffer %s not initialised and called on high-priority thread. Either initialise object with size, or call on main thread", x->output->name());
+        object_error((t_object*) x,
+                     "Internal buffer %s not initialised and called on "
+                     "high-priority thread. Either initialise object with "
+                     "size, or call on main thread",
+                     x->output->name()->s_name);
         return;
       } else resizeAnyway = true;
     }
@@ -221,7 +225,8 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
 
     if (!buf.exists())
     {
-      object_error((t_object*) x, "Buffer %s not found", x->output->name());
+      object_error((t_object*) x, "Buffer %s not found",
+                   x->output->name()->s_name);
       return;
     }
 
@@ -236,14 +241,16 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
                                      x->axis == 0 ? 1 : x->startChannel + argc,
                                      x->output->sampleRate())
                               .ok())
-        object_error((t_object*) x, "Can't resize buffer %s", x->output->name());
+        object_error((t_object*) x, "Can't resize buffer %s",
+                     x->output->name()->s_name);
       else
         count = argc;
     }
 
     if (!buf.valid())
     {
-      object_error((t_object*) x, "Buffer %s not initialised", x->output->name());
+      object_error((t_object*) x, "Buffer %s not initialised",
+                   x->output->name()->s_name);
       return;
     }
 
@@ -254,7 +261,9 @@ void FluidListToBuf_list(FluidListToBuf* x, t_symbol* /*s*/, long argc,
     std::transform(argv, argv + count, frames.begin(),
                    [](const atom& a) -> float { return atom_getfloat(&a); });
 
-    outlet_anything(x->outlet, bufferSym, 1, &x->outName);
+    t_atom outNameAtom;
+    atom_setsym(&outNameAtom, x->outName);
+    outlet_anything(x->outlet, bufferSym, 1, &outNameAtom);
   }
 }
 
