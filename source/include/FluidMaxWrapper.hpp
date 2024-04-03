@@ -595,20 +595,22 @@ class FluidMaxWrapper
                            std::min<index>(x->mListSize, ac),
                            x->mInputListData[whichIn].data());
 
-      if (!whichIn) {
-          x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
+      if (!whichIn)
+      {
+        x->mClient.process(x->mInputListViews, x->mOutputListViews, c);
 
-          index outSize = x->mClient.controlChannelsOut().size == -1 ? std::min<index>(x->mListSize, ac) : x->mClient.controlChannelsOut().size; //if -1 we change, if not we stick to the value provided
+        index outSize = isControlOutFollowsIn<typename Client::Client> ? std::min<index>(x->mListSize, ac) : x->mClient.controlChannelsOut().size;
           
-          for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i) {
-            //assert(x->mOutputListData[i].size() == outSize);
-             atom_setdouble_array(outSize,
-                                  x->mOutputListAtoms.data(),
-                                  outSize,
-                                  x->mOutputListData[i].data());
-             outlet_list(x->mDataOutlets[i], nullptr, outSize,
-                         x->mOutputListAtoms.data());
-          }
+        for (index i = asSigned(x->mDataOutlets.size()) - 1; i >= 0; --i)
+        {
+          assert(x->mOutputListData[i].size() >= outSize);
+          atom_setdouble_array(outSize,
+                               x->mOutputListAtoms.data(),
+                               outSize,
+                               x->mOutputListData[i].data());
+          outlet_list(x->mDataOutlets[i], nullptr, outSize,
+                      x->mOutputListAtoms.data());
+        }
       }
     }
   };
@@ -1260,7 +1262,7 @@ public:
     //TODO: this implicitly assumes no audio in?
     if (index controlInputs = mClient.controlChannelsIn())
     {
-      if(mListSize)
+      if (mListSize)
       {
         mInputListData.resize(controlInputs, mListSize);
         for (index i = 1; i <= controlInputs; ++i)
@@ -1363,11 +1365,11 @@ public:
   
     if (mClient.controlChannelsOut().count)
     {
-      index outputSize = mClient.controlChannelsOut().max > -1
-                             ? mClient.controlChannelsOut().max
-                             : mListSize;
+      index outputSize = isControlOutFollowsIn<typename Client::Client>
+                         ? mListSize
+                         : mClient.controlChannelsOut().max;
 
-      if (outputSize)
+      if (outputSize > 0)
       {
         mOutputListData.resize(mClient.controlChannelsOut().count, outputSize);
         mOutputListAtoms.reserve(outputSize);
@@ -1470,12 +1472,13 @@ public:
   {
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
-    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av)) - isControlIn<typename Client::Client> >
+    static constexpr index numListArgs = static_cast<index>(isControlOutFollowsIn<typename Client::Client>);
+    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av) - numListArgs) >
         ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams)
     {
       object_warn((t_object*) x,
                   "Too many arguments. Got %d, expect at most %d", ac,
-                  ParamDescType::NumFixedParams + isControlIn<typename Client::Client>);
+                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + numListArgs);
     }
 
     return x;
@@ -1485,7 +1488,6 @@ public:
 
   static void makeClass(const char* className)
   {
-    
     static constexpr bool AudioInput = isAudioIn<typename Client::Client>;
     const ParamDescType& p = Client::getParameterDescriptors();
     const auto&          m = Client::getMessageDescriptors();
@@ -1496,13 +1498,16 @@ public:
     if (isControlIn<typename Client::Client>)
     {
       class_addmethod(getClass(), (method) handleList, "list", A_GIMME, 0);
+    }
+    
+    if (isControlOutFollowsIn<typename Client::Client>)
+    {
       t_object* a = attr_offset_new("autosize", USESYM(atom_long), 0, nullptr, nullptr,
                                   calcoffset(FluidMaxWrapper, mAutosize));
       class_addattr(getClass(), a);
       CLASS_ATTR_FILTER_CLIP(getClass(), "autosize", 0, 1);
       CLASS_ATTR_STYLE_LABEL(getClass(), "autosize", 0, "onoff",
-                           "Set auto size for list output");
-                                  
+                           "Set auto resizing of list input and output");
     }
     
     class_addmethod(getClass(), (method) doNotify, "notify", A_CANT, 0);
@@ -1528,9 +1533,8 @@ public:
     p.template iterateMutable<SetupAttribute>();
     p.template iterateFixed<SetupReadOnlyAttribute>();
     
-    
     //for non-audio classes, give us cold inlets for non-left
-    if(!AudioInput)
+    if (!AudioInput)
       class_addmethod(getClass(), (method)stdinletinfo, "inletinfo", A_CANT, 0);
     
     class_dumpout_wrap(getClass());
@@ -1563,72 +1567,48 @@ public:
 
   void resizeListHandlers(index newSize)
   {
+    if (mListSize != newSize)
+    {
+      mListSize = newSize;
       index numIns = mClient.controlChannelsIn();
-      mListSize = newSize; 
-      if(mListSize)
+      mInputListData.resize(numIns, mListSize);
+      mInputListViews.clear();
+      for (index i = 0; i < numIns; ++i)
       {
-        mInputListData.resize(numIns,mListSize);
-        mInputListViews.clear();
-        for (index i = 0; i < numIns; ++i)
-        {
-          mInputListViews.emplace_back(mInputListData.row(i));
-        }
+        mInputListViews.emplace_back(mInputListData.row(i));
+      }
 
-        /*index outputSize = mClient.controlChannelsOut().size > -1
-                               ? mClient.controlChannelsOut().size
-                               : mListSize;
-
-        mOutputListData.resize(mClient.controlChannelsOut().count, outputSize);
-        mOutputListAtoms.reserve(outputSize);
+      if (isControlOutFollowsIn<typename Client::Client>)
+      {
+        mOutputListData.resize(mClient.controlChannelsOut().count, mListSize);
+        mOutputListAtoms.reserve(mListSize);
         mOutputListViews.clear();
         for (index i = 0; i < mClient.controlChannelsOut().count; ++i)
         {
           mOutputListViews.emplace_back(mOutputListData.row(i));
-        }*/
+        }
       }
+    }
   }
 
-  static void doList(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
+  static void handleList(FluidMaxWrapper* x, t_symbol* /*s*/, long ac, t_atom* av)
   {
+    if (!x->mListSize && !x->mAutosize)
+    {
+      object_error((t_object*)x, "No list size argument nor autosize enabled: can't do anything");
+      return;
+    }
 
-//    if(!isr() && x->mAutosize && (ac != x->mListSize)) x->resizeListHandlers(ac);
+    if (!x->mAutosize && ac != x->mListSize)
+    {
+      object_warn((t_object*)x, "bad input list size (%d), expect %d",ac,x->mListSize);
+      return;
+    }
+     
+    if (x->mAutosize)
+      x->resizeListHandlers(ac);
+      
     x->mListHandler(x, ac, av);
-  }
-  
-  static void doListResize(FluidMaxWrapper* x, t_symbol*, long ac, t_atom*)
-  {
-    x->resizeListHandlers(ac);
-  }
-  
-  
-  static void handleList(FluidMaxWrapper* x, t_symbol* s, long ac, t_atom* av)
-  {
-      if(!x->mListSize && !x->mAutosize)
-      {
-        object_error((t_object*)x, "No list size argument nor autosize enabled: can't do anything");
-        return;
-      }
-      
-      if(isr())
-      {
-        if(x->mAutosize)
-        {
-          object_warn((t_object*)x, "input list size (%d) != object argument (%d) and autosize is enabled: this operation will be deferred",ac,x->mListSize);
-          defer(x, method(doListResize), s, static_cast<short>(ac), av);
-          defer(x, (method) doList, s, static_cast<short>(ac), av);
-          return;
-        }
-
-        if(!x->mAutosize && ac != x->mListSize)
-        {
-          object_warn((t_object*)x, "bad input list size (%d), expect %d",ac,x->mListSize);
-          return;
-        }
-      }
-      else doListResize(x,s,ac,av);
-      
-      doList(x,s,ac,av);
-      
   }
   
   static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
@@ -1761,7 +1741,7 @@ private:
     {
       long argCount{0};
       
-      if(isControlIn<typename Client::Client>)
+      if (isControlOutFollowsIn<typename Client::Client>)
       {
         mListSize = atom_getlong(av);
         numArgs -= 1;
