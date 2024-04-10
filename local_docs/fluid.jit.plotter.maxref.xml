@@ -152,6 +152,22 @@ The interface is also slightly different from the one of fluid.plotter. For more
         
         </description>
     </method>
+    <method name='pointcolor'>
+        <arglist>
+            <arg name='identifier' optional='0' type='symbol' />
+            <arg name='red' optional='0' type='float' />
+            <arg name='green' optional='0' type='float' />
+            <arg name='blue' optional='0' type='float' />
+            <arg name='alpha' optional='0' type='float' />
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        Set the color of the point with a given identifier.
+        
+        </description>
+    </method>
     <method name='highlight'>
         <arglist>
             <arg name='identifier' optional='0' type='symbol' />
