@@ -10,7 +10,7 @@
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 352.0, 209.0, 963.0, 787.0 ],
+		"rect" : [ 100.0, 100.0, 963.0, 787.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 963.0, 761.0 ],
+						"rect" : [ 59.0, 119.0, 640.0, 480.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -86,11 +86,12 @@
 						"subpatcher_template" : "",
 						"showontab" : 1,
 						"assistshowspatchername" : 0,
+						"visible" : 1,
 						"boxes" : [  ],
 						"lines" : [  ]
 					}
 ,
-					"patching_rect" : [ 529.0, 23.0, 25.0, 22.0 ],
+					"patching_rect" : [ 530.0, 23.0, 25.0, 22.0 ],
 					"saved_object_attributes" : 					{
 						"description" : "",
 						"digest" : "",
@@ -156,7 +157,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 630.5, 373.0, 180.0, 52.0 ],
+									"patching_rect" : [ 630.5, 373.0, 180.0, 51.0 ],
 									"text" : "Zoom in the plot using option/alt+drag and explore! Pan around using shift+drag."
 								}
 
@@ -222,7 +223,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 640.0, 310.0, 186.0, 51.0 ],
+									"patching_rect" : [ 640.0, 310.0, 186.0, 50.0 ],
 									"text" : "On the first glance it looks like that almost the whole plot turned black.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -323,7 +324,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 700.0, 198.0, 193.0, 51.0 ],
+									"patching_rect" : [ 700.0, 198.0, 193.0, 50.0 ],
 									"text" : "Note that with large datasets it is likely that you have to reduce the default point sizes.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1102,7 +1103,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 708.875, 419.0, 151.75, 70.0 ],
+									"patching_rect" : [ 708.875, 419.0, 151.75, 69.0 ],
 									"text" : "alter the amount or direction of the panning (when shift + dragging)."
 								}
 
@@ -1797,7 +1798,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 460.0, 210.0, 279.0, 66.0 ],
+									"patching_rect" : [ 460.0, 210.0, 279.0, 65.0 ],
 									"text" : "The range of the generated data sits between -2.5 and 2.5 but the view of the data is set to be between -5 and 5 on both axes to have some whitespace around the edges.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -1876,7 +1877,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 410.0, 360.0, 279.0, 216.0 ],
+									"patching_rect" : [ 410.0, 360.0, 279.0, 210.0 ],
 									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5]).\n\nIf you (shift + drag) you can pan the view around within the current zoom range. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2159,7 +2160,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 399.5, 560.0, 490.5, 48.0 ],
+									"patching_rect" : [ 399.5, 560.0, 490.5, 47.0 ],
 									"text" : "Note: fluid.jit.plotter does not support setpoint, pointcolor and pointsize (for individual point size) like fluid.plotter does. While fluid.jit.plotter behaves similarly to fluid.plotter in most cases, fluid.jit.plotter is geared towards speed and as such sacrifices a bit of flexibility.",
 									"textcolor" : [ 1.0, 0.0, 0.0, 1.0 ]
 								}
@@ -2421,7 +2422,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 842.0, 85.5, 99.0, 81.0 ],
+									"patching_rect" : [ 842.0, 85.5, 99.0, 79.0 ],
 									"text" : "Change the color scheme used when assigning colors to labels.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -2487,7 +2488,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 795.5, 290.0, 84.5, 36.0 ],
+									"patching_rect" : [ 795.5, 290.0, 84.5, 35.0 ],
 									"text" : "prepend colorscheme"
 								}
 
@@ -3576,7 +3577,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 514.5, 340.0, 125.0, 70.0 ],
-									"saturation" : 0.862745098039216
+									"saturation" : 0.376470588235294
 								}
 
 							}
@@ -4010,7 +4011,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 470.0, 180.902831999999989, 378.0, 70.0 ],
+									"patching_rect" : [ 470.0, 180.902831999999989, 378.0, 69.0 ],
 									"text" : "Click these messages to start adjusting the range to the minimum and maximum of the original data. You will see that the data is now visible in the space. Wiggle the number boxes to see how it affects the display of points."
 								}
 
@@ -4176,7 +4177,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 90.0, 122.5, 299.0, 70.0 ],
+									"patching_rect" : [ 90.0, 122.5, 299.0, 69.0 ],
 									"text" : "Generate random data between a range that is not normal. In this case the horizontal values range between 0 and 10000, and the vertical values range between 40 and 600."
 								}
 
@@ -4905,7 +4906,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 100.0, 404.0, 106.0, 103.0 ],
+									"patching_rect" : [ 100.0, 404.0, 106.0, 100.0 ],
 									"text" : "The highlight message dictates which \"identifiers\" will be emphasised visually in the plotter.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -5990,7 +5991,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 352.0, 235.0, 963.0, 761.0 ],
+						"rect" : [ 100.0, 126.0, 963.0, 761.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6039,6 +6040,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 28.0, 528.0, 35.0, 22.0 ],
+									"presentation_linecount" : 2,
 									"text" : "clear"
 								}
 
@@ -6052,6 +6054,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 490.0, 100.0, 36.0 ],
+									"presentation_linecount" : 2,
 									"text" : "...just like clear or reset",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -6102,7 +6105,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 550.0, 530.0, 240.0, 126.0 ],
+									"patching_rect" : [ 550.0, 530.0, 240.0, 123.0 ],
 									"text" : "fluid.jit.plotter aims for speed with large datasets (– check the last tab).\nUsing the refer message instead of a dictionary avoids some copying and gives you several times the load speed with large datasets.\nNevertheless, the dictionary input still works, just like with fluid.plotter. ",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -6116,7 +6119,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 550.0, 422.0, 113.0, 51.0 ],
+									"patching_rect" : [ 550.0, 422.0, 113.0, 50.0 ],
 									"text" : "refer without arguments resets all colors to black",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -6130,7 +6133,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 28.0, 422.0, 100.0, 51.0 ],
+									"patching_rect" : [ 28.0, 422.0, 100.0, 50.0 ],
 									"text" : "refer without arguments erases the plot",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -6168,7 +6171,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 490.0, 333.5, 240.0, 81.0 ],
+									"patching_rect" : [ 490.0, 333.5, 240.0, 79.0 ],
 									"text" : "The right inlet expects the name of a fluid.labelset~ with the refer message.\nEach unique label in the fluid.labelset~ will be randomly assigned to a colour inside the fluid.plotter.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -6387,7 +6390,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 190.0, 333.5, 243.0, 51.0 ],
+									"patching_rect" : [ 190.0, 333.5, 243.0, 50.0 ],
 									"text" : "Use the refer message with the name of a fluid.dataset~. The fluid.dataset~ must be only two dimensions.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
@@ -6626,8 +6629,8 @@
 		}
 ,
 		"dependency_cache" : [ 			{
-				"name" : "fluid.buf2list.mxe64",
-				"type" : "mx64"
+				"name" : "fluid.buf2list.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "fluid.dataloader.maxpat",
@@ -6637,8 +6640,8 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.dataset~.mxe64",
-				"type" : "mx64"
+				"name" : "fluid.dataset~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "fluid.jit.plotter.labels2colors.js",
@@ -6662,20 +6665,20 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.kdtree~.mxe64",
-				"type" : "mx64"
+				"name" : "fluid.kdtree~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.kmeans~.mxe64",
-				"type" : "mx64"
+				"name" : "fluid.kmeans~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.labelset~.mxe64",
-				"type" : "mx64"
+				"name" : "fluid.labelset~.mxo",
+				"type" : "iLaX"
 			}
 , 			{
-				"name" : "fluid.list2buf.mxe64",
-				"type" : "mx64"
+				"name" : "fluid.list2buf.mxo",
+				"type" : "iLaX"
 			}
 , 			{
 				"name" : "helpdetails.js",
