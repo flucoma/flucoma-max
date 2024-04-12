@@ -1741,12 +1741,15 @@ private:
     {
       long argCount{0};
       
-      if (isControlOutFollowsIn<typename Client::Client>)
+        if (isControlIn<typename Client::Client>)
       {
         mListSize = atom_getlong(av);
-        numArgs -= 1;
-        av += 1;
-        ac--;
+        if (isControlOutFollowsIn<typename Client::Client>)
+        {
+            numArgs -= 1;
+            av += 1;
+            ac--;
+        }
       }
       
       auto r1 = mParams.setPrimaryParameterValues(true,
