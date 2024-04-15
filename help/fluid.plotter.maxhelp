@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 100.0, 126.0, 965.0, 767.0 ],
+						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -88,12 +88,26 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
-									"id" : "obj-26",
+									"id" : "obj-37",
+									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 789.0, 360.0, 159.0, 22.0 ],
+									"patching_rect" : [ 820.0, 547.0, 113.0, 35.0 ],
+									"text" : "loadmess pointsizescale 0.01"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-26",
+									"linecount" : 2,
+									"maxclass" : "newobj",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 820.0, 340.0, 113.0, 35.0 ],
 									"text" : "loadmess pointsizescale 0.1"
 								}
 
@@ -174,19 +188,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 741.0, 520.0, 67.0, 20.0 ],
 									"text" : "fluid.plotter",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"id" : "obj-29",
-									"linecount" : 3,
-									"maxclass" : "comment",
-									"numinlets" : 1,
-									"numoutlets" : 0,
-									"patching_rect" : [ 100.0, 681.0, 490.5, 47.0 ],
-									"text" : "Note: fluid.jit.plotter does not support setpoint and pointsize (for individual point size) like fluid.plotter does. While fluid.jit.plotter behaves similarly to fluid.plotter in most cases, fluid.jit.plotter is geared towards speed and as such sacrifices a bit of flexibility.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -998,18 +999,6 @@
 							}
 , 							{
 								"box" : 								{
-									"id" : "obj-28",
-									"maxclass" : "newobj",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"patching_rect" : [ 820.0, 560.0, 121.0, 22.0 ],
-									"text" : "loadmess pointsize 1"
-								}
-
-							}
-, 							{
-								"box" : 								{
 									"fontname" : "Arial",
 									"fontsize" : 12.0,
 									"id" : "obj-17",
@@ -1579,13 +1568,6 @@
 							}
 , 							{
 								"patchline" : 								{
-									"destination" : [ "obj-91", 1 ],
-									"source" : [ "obj-28", 0 ]
-								}
-
-							}
-, 							{
-								"patchline" : 								{
 									"destination" : [ "obj-35", 0 ],
 									"source" : [ "obj-31", 1 ]
 								}
@@ -1630,6 +1612,13 @@
 								"patchline" : 								{
 									"destination" : [ "obj-32", 0 ],
 									"source" : [ "obj-36", 1 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
+									"destination" : [ "obj-91", 1 ],
+									"source" : [ "obj-37", 0 ]
 								}
 
 							}
@@ -1963,7 +1952,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 431.5, 665.0, 97.0, 38.0 ],
-									"text" : "-3.167702 2.888199"
+									"text" : "-0.807453 1.459627"
 								}
 
 							}
@@ -1977,7 +1966,7 @@
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 307.0, 665.0, 96.0, 38.0 ],
-									"text" : "-2.981366 3.10559"
+									"text" : "-0.993789 2.111801"
 								}
 
 							}
@@ -2616,8 +2605,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 67.0, 474.0, 21.0 ],
-									"text" : "Drawing through the \"advanced\" interface lets you be more draw at a lower level.",
+									"patching_rect" : [ 10.0, 67.0, 422.0, 21.0 ],
+									"text" : "Drawing through the \"advanced\" interface lets you draw at a lower level.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -3829,7 +3818,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 674.0, 283.0, 125.0, 70.0 ],
-									"saturation" : 0.827450980392157
+									"saturation" : 0.549019607843137
 								}
 
 							}
@@ -5237,8 +5226,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 222.5, 700.0, 79.0, 23.0 ],
-									"text" : "speedlim 20"
+									"patching_rect" : [ 222.5, 700.0, 50.0, 23.0 ],
+									"text" : "qlim 20"
 								}
 
 							}
@@ -6352,7 +6341,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 965.0, 767.0 ],
+						"rect" : [ 100.0, 126.0, 965.0, 767.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -6827,6 +6816,10 @@
 				"type" : "iLaX"
 			}
 , 			{
+				"name" : "fluid.bufcompose~.mxo",
+				"type" : "iLaX"
+			}
+, 			{
 				"name" : "fluid.dataloader.maxpat",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/patchers",
 				"patcherrelativepath" : "../patchers",
@@ -6852,7 +6845,7 @@
 				"implicit" : 1
 			}
 , 			{
-				"name" : "fluid.jit.plotter.resize.pworld.js",
+				"name" : "fluid.jit.plotter.resize.pwindow.js",
 				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
