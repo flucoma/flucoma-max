@@ -16,13 +16,11 @@ under the European Union’s Horizon 2020 research and innovation programme
         <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
         The fluid.jit.plotter abstraction can be used as a versatile solution for plotting points in a two-dimensional graph.
 
-It is a performance-oriented variant of the fluid.plotter object, built around jit.pworld. While it is less flexible than fluid.plotter, it is more efficient and can handle larger datasets (such as ones with millions of points).
+It is a performance-oriented variant of the fluid.plotter object, built in a jit.gl environment. It is more efficien than fluid.plotter and can handle larger datasets (such as ones with millions of points).
 
 To use it, use the refer message (left inlet) with the name of a fluid.dataset~ that contains the 2D coordinates of the points. Similarly, you can use the refer message (right inlet) with the name of a fluid.labelset~ to be used for assigning colors to the points based on pre-defined color palettes.
 
-Note that, contrary to the fluid.plotter object, with fluid.jit.plotter you cannot specify the coordinates and colors of the points directly. You must use a fluid.dataset~ and a fluid.labelset~. Nor can you assign individual sizes to points. These restrictions were necessary to enable the performance improvements with large datasets.
-
-The interface is also slightly different from the one of fluid.plotter. For more information, see the help file.
+There is also an 'advanced' interface that allows the user to specify the coordinates and colours of the points in a more flexible and bespoke manner. See the help file for more information on this.
 
         <p>fluid.jit.plotter is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
     </discussion>
@@ -152,6 +150,20 @@ The interface is also slightly different from the one of fluid.plotter. For more
         
         </description>
     </method>
+    <method name='setpoint'>
+        <arglist>
+            <arg name='identifier' optional='0' type='symbol' />
+            <arg name='x' optional='0' type='float' />
+            <arg name='y' optional='0' type='float' />
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        Set the point at the given coordinates. Note that, to avoid accidentally modifying outside datasets, if an earlier reference was specified (via the refer message) the plot with switch to its internal dataset, making the previous set of points disappear. If you want to load a dataset and then edit its points via the setpoint message, then load the dataset first as a dictionary.
+        
+        </description>
+    </method>
     <method name='pointcolor'>
         <arglist>
             <arg name='identifier' optional='0' type='symbol' />
@@ -181,25 +193,38 @@ The interface is also slightly different from the one of fluid.plotter. For more
     </method>
     <method name='pointsize'>
         <arglist>
-            <arg name='size' optional='0' type='int' />
+            <arg name='identifier' optional='0' type='symbol' />
+            <arg name='size' optional='0' type='float' />
         </arglist>
         <digest>
         
         </digest>
         <description>
-        Set the size of all points that are not highlighted.
+        Set the size of the point with a given identifier.
         
         </description>
     </method>
-    <method name='highlightedpointsize'>
+    <method name='pointsizescale'>
         <arglist>
-            <arg name='size' optional='0' type='int' />
+            <arg name='scale' optional='0' type='float' />
         </arglist>
         <digest>
         
         </digest>
         <description>
-        Set the size of all highlighted points.
+        Set the overall size of the points. Defaults to 1.
+        
+        </description>
+    </method>
+    <method name='highlightscale'>
+        <arglist>
+            <arg name='scale' optional='0' type='float' />
+        </arglist>
+        <digest>
+        
+        </digest>
+        <description>
+        Set the ratio of the size of the highlighted points to the regular points. Defaults to 2.4.
         
         </description>
     </method>
