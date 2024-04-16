@@ -1,5 +1,6 @@
+outlets = 2;
 // create a Task event loop detecting bpatcher resizing
-// and adjusting pworld presentatin_rect accordingly
+// and adjusting pwindow presentatin_rect accordingly
 var task = new Task(getBpatcherRect, this);
 // buffers for comparison
 var prevWidthPatching, prevHeightPatching, prevWidthPresentation, prevHeightPresentation, prevPresentation;
@@ -38,6 +39,8 @@ function getBpatcherRect() {
 	} else {
 		outlet(0, 0, 0, patchingWidth, patchingHeight);
 	}
+	// output the parent's window location on 2nd outlet
+	outlet(1, this.patcher.parentpatcher.wind.location);
 	// slow down Task refresh rate if idle
 	adjustInterval(patchingWidth, patchingHeight, presentationWidth, presentationHeight, presentation);
 	// save width & height & presentation for comparison
