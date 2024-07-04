@@ -320,6 +320,7 @@ struct NonRealTime
       CLASS_ATTR_LONG(c, "queue", 0, Wrapper, mQueueEnabled);
       CLASS_ATTR_FILTER_CLIP(c, "queue", 0, 1);
       CLASS_ATTR_STYLE_LABEL(c, "queue", 0, "onoff", "Non-Blocking Queue Flag");
+      c->c_flags |= CLASS_FLAG_POLYGLOT;
     }
   }
 
@@ -1536,9 +1537,29 @@ public:
     //for non-audio classes, give us cold inlets for non-left
     if (!AudioInput)
       class_addmethod(getClass(), (method)stdinletinfo, "inletinfo", A_CANT, 0);
-    
+
+    // if an object is frozen by max for live it will call this method to include
+    // files like init/help/etc, whatever you define in this function
+    class_addmethod(getClass(), (method)packageFreezingSupport, "fileusage", A_CANT, 0);
     class_dumpout_wrap(getClass());
     class_register(CLASS_BOX, getClass());
+  }
+
+  static void packageFreezingSupport(FluidMaxWrapper* x, void* w)
+  {
+    t_atom subfolders[6];
+    t_fourcc filetype;
+    short pathId;
+    char pathbuffer[MAX_PATH_CHARS];
+
+    atom_setsym(subfolders + 0, gensym("externals"));
+    atom_setsym(subfolders + 1, gensym("help"));
+    atom_setsym(subfolders + 2, gensym("init"));
+    atom_setsym(subfolders + 3, gensym("misc"));
+    atom_setsym(subfolders + 4, gensym("patchers"));
+    atom_setsym(subfolders + 5, gensym("source"));
+    t_atomarray* a = atomarray_new(6, subfolders);
+    fileusage_addpackage(w, "FluidCorpusManipulation", a);
   }
 
   static void doReset(FluidMaxWrapper* x)
