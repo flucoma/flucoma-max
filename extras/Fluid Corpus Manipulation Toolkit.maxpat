@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 5,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 88.0, 890.0, 777.0 ],
+		"rect" : [ 34.0, 87.0, 890.0, 780.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 5,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 35.0, 114.0, 890.0, 751.0 ],
+						"rect" : [ 34.0, 113.0, 890.0, 754.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -160,19 +160,19 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -825.0, 0.0 ],
+									"offset" : [ -3300.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 5,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
+										"rect" : [ 34.0, 87.0, 1058.0, 779.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -201,6 +201,27 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-67",
+													"justification" : 1,
+													"linecolor" : [ 0.647058823529412, 0.647058823529412, 0.647058823529412, 1.0 ],
+													"maxclass" : "live.line",
+													"numinlets" : 1,
+													"numoutlets" : 0,
+													"patching_rect" : [ 1667.0, 95.0, 5.0, 100.0 ],
+													"presentation" : 1,
+													"presentation_rect" : [ 1665.0, 90.0, 600.0, 10.5 ],
+													"saved_attribute_attributes" : 													{
+														"linecolor" : 														{
+															"expression" : "themecolor.live_assignment_text_bg"
+														}
+
+													}
+
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-74",
 													"maxclass" : "newobj",
@@ -433,7 +454,7 @@
 													"id" : "obj-73",
 													"maxclass" : "live.tab",
 													"num_lines_patching" : 7,
-													"num_lines_presentation" : 10,
+													"num_lines_presentation" : 7,
 													"numinlets" : 1,
 													"numoutlets" : 3,
 													"outlettype" : [ "", "", "float" ],
@@ -447,9 +468,9 @@
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "fluid.ampfeature~", "fluid.chroma~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.pitch~", "fluid.noveltyfeature~", "fluid.onsetfeature~", "fluid.pitch~", "fluid.spectralshape~" ],
+															"parameter_enum" : [ "fluid.bufnmf~", "fluid.sines~", "fluid.transients~", "fluid.hpss~", "fluid.nmfmorph~", "fluid.bufnmfcross~", "fluid.audiotransport~" ],
 															"parameter_longname" : "live.tab[8]",
-															"parameter_mmax" : 9,
+															"parameter_mmax" : 6,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -589,7 +610,7 @@
 														"Audio-Reactive" : "audioreactive.maxpat",
 														"Autoencoder" : "autoencoder.maxpat",
 														"Composing Buffers" : "bufcompose-example.maxpat",
-														"JIT NMF" : "nmf-jit.maxpat",
+														"NMF" : "jit-nmf-header.maxpat",
 														"Intelligent Slicing" : "intelligent-slicing-linear-regression.maxpat"
 													}
 ,
@@ -640,8 +661,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -742,15 +763,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 3,
+																	"linecount" : 4,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 360.0, 57.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 3,
-																	"presentation_rect" : [ 5.0, 5.0, 360.0, 57.0 ],
-																	"text" : "Analysing pitch is a complex problem to solve. This example shows how by using some statistical inferences, the true value of pitch can be more accurately measured.",
+																	"presentation_linecount" : 4,
+																	"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
+																	"text" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This tab will take you to a handful of examples.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -840,7 +861,7 @@
 														"Audio-Reactive" : "The FluCoMa toolkit is designed to be modular, so that small parts of it can be useful. This example shows how slicing and 'features' can make a cute audio-reactive patch.",
 														"Autoencoder" : "A neural network typically learns some relationship between input and output data. It can also learn the relationship between the same set of data in a lower or higher dimensional space. 'Autoencoding' is demonstrated here, where a lower-dimensional space is constructed by asking the multilayer perceptron to regress with the same fluid.dataset~ as the input and output.",
 														"Composing Buffers" : "Because FluCoMa relies on the buffer~ object so heavily, fluid.bufcompose~, a utility object for manipulating the content of buffers~ had to exist. This example shows how you can use this low-level object to build abstractions for transforming the contents of buffers~ intuitively.",
-														"JIT NMF" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This example demonstrates just one that could be used.",
+														"NMF" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This tab will take you to a handful of examples.",
 														"Piano Classifier" : "By pushing the fluid.bufnmf~ object to the limit, this example demonstrates how each note on the piano can be detected by training an individual 'component' on each note. A live signal is then used to drive classification of those notes, culminating in a robust polyphonic 'pitch tracker'.",
 														"Intelligent Slicing" : "All of the slicing objects in FluCoMa ask for parameters and give you some segmentation results back. Sometimes you might want to slice according to a number of slices, so that you can achieve a certain density of segmentation for example. This example demonstrates how you can hack around the objects to customise the way they slice.",
 														"NMF Classifier" : "fluid.bufnmf~ can be used to create 'spectral templates' that can then be used as the foundation of a classifier. This example shows how that works using three distinct classes in realtime.",
@@ -1085,8 +1106,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1265,8 +1286,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2103,8 +2124,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2305,8 +2326,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2528,7 +2549,7 @@
 														}
 ,
 														"valueof" : 														{
-															"parameter_enum" : [ "Analysing Pitch", "Audio-Reactive", "Autoencoder", "Composing Buffers", "JIT NMF", "Intelligent Slicing" ],
+															"parameter_enum" : [ "Analysing Pitch", "Audio-Reactive", "Autoencoder", "Composing Buffers", "NMF", "Intelligent Slicing" ],
 															"parameter_longname" : "live.tab[1]",
 															"parameter_mmax" : 5,
 															"parameter_shortname" : "live.tab",
@@ -2589,8 +2610,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2921,8 +2942,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3023,15 +3044,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 4,
+																	"linecount" : 7,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 352.0, 74.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 352.0, 124.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 4,
-																	"presentation_rect" : [ 5.0, 5.0, 352.0, 74.0 ],
-																	"text" : "The foundation of many sound corpora workflows is to first analyse the corpus using audio-descriptors. This collection of objects encapsulate several useful algorithms for doing this in realtime and in non-realtime using buffers~.",
+																	"presentation_linecount" : 7,
+																	"presentation_rect" : [ 5.0, 5.0, 352.0, 124.0 ],
+																	"text" : "Slicing, segmenting, chopping, or dividing. These words all refer to the same type of process in which a sound is separated into 'chunks' or 'slices' across time. Each of these objects embodies a different model of listening for identifying 'slice points'. In other words, different types of change can be measured and used to determine how to segment a sound.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -3152,14 +3173,14 @@
 													"maxclass" : "bpatcher",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"offset" : [ -820.0, 0.0 ],
+													"offset" : [ 0.0, 0.0 ],
 													"outlettype" : [ "" ],
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3254,8 +3275,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3446,14 +3467,14 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
 ,
 																		"classnamespace" : "box",
-																		"rect" : [ 35.0, 88.0, 996.0, 777.0 ],
+																		"rect" : [ 35.0, 100.0, 996.0, 777.0 ],
 																		"bglocked" : 0,
 																		"openinpresentation" : 1,
 																		"default_fontsize" : 12.0,
@@ -3566,9 +3587,9 @@
 																					"maxclass" : "comment",
 																					"numinlets" : 1,
 																					"numoutlets" : 0,
-																					"patching_rect" : [ 200.0, 101.0, 92.0, 21.0 ],
+																					"patching_rect" : [ 200.0, 113.0, 92.0, 21.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 253.0, 100.0, 92.0, 21.0 ],
+																					"presentation_rect" : [ 253.0, 117.0, 92.0, 21.0 ],
 																					"text" : "Corpus Building",
 																					"textjustification" : 1
 																				}
@@ -3596,24 +3617,24 @@
 																					"fontsize" : 12.0,
 																					"id" : "obj-60",
 																					"maxclass" : "live.tab",
-																					"num_lines_patching" : 2,
-																					"num_lines_presentation" : 2,
+																					"num_lines_patching" : 3,
+																					"num_lines_presentation" : 3,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
-																					"patching_rect" : [ 200.0, 27.0, 197.5, 48.5 ],
+																					"patching_rect" : [ 200.0, 27.0, 197.5, 72.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 27.0, 198.0, 48.5 ],
+																					"presentation_rect" : [ 200.0, 27.0, 198.0, 81.0 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
 																						}
 ,
 																						"valueof" : 																						{
-																							"parameter_enum" : [ "fluid.plotter", "fluid.waveform~" ],
+																							"parameter_enum" : [ "fluid.plotter", "fluid.jit.plotter", "fluid.waveform~" ],
 																							"parameter_longname" : "live.tab[35]",
-																							"parameter_mmax" : 1,
+																							"parameter_mmax" : 2,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3632,8 +3653,8 @@
 																					"fontsize" : 12.0,
 																					"id" : "obj-59",
 																					"maxclass" : "live.tab",
-																					"num_lines_patching" : 9,
-																					"num_lines_presentation" : 9,
+																					"num_lines_patching" : 8,
+																					"num_lines_presentation" : 8,
 																					"numinlets" : 1,
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
@@ -3649,7 +3670,7 @@
 																						"valueof" : 																						{
 																							"parameter_enum" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~", "fluid.buf2list", "fluid.list2buf" ],
 																							"parameter_longname" : "live.tab[36]",
-																							"parameter_mmax" : 8,
+																							"parameter_mmax" : 7,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3674,9 +3695,9 @@
 																					"numoutlets" : 3,
 																					"outlettype" : [ "", "", "float" ],
 																					"parameter_enable" : 1,
-																					"patching_rect" : [ 200.0, 123.0, 197.5, 48.5 ],
+																					"patching_rect" : [ 200.0, 135.0, 197.5, 48.5 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 123.0, 198.0, 48.5 ],
+																					"presentation_rect" : [ 200.0, 135.0, 198.0, 53.0 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
@@ -3754,8 +3775,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3948,8 +3969,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4378,8 +4399,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4571,8 +4592,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 3,
-																			"revision" : 3,
+																			"minor" : 5,
+																			"revision" : 5,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4829,8 +4850,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 5,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
