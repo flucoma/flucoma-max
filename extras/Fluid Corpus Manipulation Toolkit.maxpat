@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
-			"revision" : 5,
+			"minor" : 6,
+			"revision" : 1,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 890.0, 780.0 ],
+		"rect" : [ 134.0, 121.0, 890.0, 780.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 1,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
-							"revision" : 5,
+							"minor" : 6,
+							"revision" : 1,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 890.0, 754.0 ],
+						"rect" : [ 134.0, 147.0, 890.0, 754.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 1,
 						"default_fontsize" : 12.0,
@@ -111,6 +111,7 @@
 											"parameter_enum" : [ "Tutorials", "Objects", "Tasks", "Inspiration", "Examples" ],
 											"parameter_longname" : "live.tab[6]",
 											"parameter_mmax" : 4,
+											"parameter_modmode" : 0,
 											"parameter_shortname" : "live.tab",
 											"parameter_type" : 2,
 											"parameter_unitstyle" : 9
@@ -160,19 +161,19 @@
 									"maxclass" : "bpatcher",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"offset" : [ -3300.0, 0.0 ],
+									"offset" : [ -825.0, 0.0 ],
 									"patcher" : 									{
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
-											"revision" : 5,
+											"minor" : 6,
+											"revision" : 1,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 34.0, 87.0, 1058.0, 779.0 ],
+										"rect" : [ 34.0, 100.0, 1058.0, 779.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 1,
 										"default_fontsize" : 12.0,
@@ -421,11 +422,12 @@
 													"id" : "obj-87",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 75.0, 410.0, 210.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 1,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -471,6 +473,7 @@
 															"parameter_enum" : [ "fluid.bufnmf~", "fluid.sines~", "fluid.transients~", "fluid.hpss~", "fluid.nmfmorph~", "fluid.bufnmfcross~", "fluid.audiotransport~" ],
 															"parameter_longname" : "live.tab[8]",
 															"parameter_mmax" : 6,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -544,6 +547,7 @@
 															"parameter_enum" : [ "Decomposition and Hybridisation", "Classification", "Mapping", "Dimension Reduction", "Event Detection", "Audio Analysis" ],
 															"parameter_longname" : "live.tab[7]",
 															"parameter_mmax" : 5,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -617,11 +621,12 @@
 													"id" : "obj-4",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 2370.5, 422.5, 197.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 1,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -661,8 +666,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -763,15 +768,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 4,
+																	"linecount" : 3,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 360.0, 57.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 4,
-																	"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
-																	"text" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This tab will take you to a handful of examples.",
+																	"presentation_linecount" : 3,
+																	"presentation_rect" : [ 5.0, 5.0, 360.0, 57.0 ],
+																	"text" : "Analysing pitch is a complex problem to solve. This example shows how by using some statistical inferences, the true value of pitch can be more accurately measured.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -872,11 +877,12 @@
 													"id" : "obj-30",
 													"maxclass" : "newobj",
 													"numinlets" : 2,
-													"numoutlets" : 4,
-													"outlettype" : [ "dictionary", "", "", "" ],
+													"numoutlets" : 5,
+													"outlettype" : [ "dictionary", "", "", "", "" ],
 													"patching_rect" : [ 2569.5, 422.5, 193.0, 22.0 ],
 													"saved_object_attributes" : 													{
 														"embed" : 1,
+														"legacy" : 1,
 														"parameter_enable" : 0,
 														"parameter_mappable" : 0
 													}
@@ -974,6 +980,7 @@
 															"parameter_enum" : [ "Open Patch", "Open Patch" ],
 															"parameter_longname" : "live.text",
 															"parameter_mmax" : 1,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.text",
 															"parameter_type" : 2
 														}
@@ -1106,8 +1113,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1286,8 +1293,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -1362,9 +1369,13 @@
 																	"id" : "obj-70",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 1,
-																	"outlettype" : [ "" ],
+																	"numoutlets" : 2,
+																	"outlettype" : [ "", "" ],
 																	"patching_rect" : [ 49.5, 142.0, 140.0, 22.0 ],
+																	"saved_object_attributes" : 																	{
+																		"legacy" : 1
+																	}
+,
 																	"text" : "dict.unpack descriptions:"
 																}
 
@@ -1378,11 +1389,12 @@
 																	"id" : "obj-57",
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
-																	"numoutlets" : 4,
-																	"outlettype" : [ "dictionary", "", "", "" ],
+																	"numoutlets" : 5,
+																	"outlettype" : [ "dictionary", "", "", "", "" ],
 																	"patching_rect" : [ 49.5, 98.0, 239.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 1,
+																		"legacy" : 1,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
@@ -1590,6 +1602,7 @@
 															"parameter_enum" : [ "YouTube Video", "Learn Article" ],
 															"parameter_longname" : "live.tab[5]",
 															"parameter_mmax" : 1,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab[3]",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -1833,6 +1846,7 @@
 															"parameter_enum" : [ "Lauren Sarah Hayes", "Leafcutter John", "Olivier Pasquet", "Rodrigo Constanzo", "Alex Harker", "Sam Pluta", "Richard Devine", "Hans Tutschku", "Alice Eldridge & Chris Kiefer" ],
 															"parameter_longname" : "live.tab[4]",
 															"parameter_mmax" : 8,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -1917,6 +1931,7 @@
 															"parameter_enum" : [ "YouTube Video", "Open Patch" ],
 															"parameter_longname" : "live.tab[3]",
 															"parameter_mmax" : 1,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab[3]",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -2124,8 +2139,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2206,11 +2221,12 @@
 																	"id" : "obj-29",
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
-																	"numoutlets" : 4,
-																	"outlettype" : [ "dictionary", "", "", "" ],
+																	"numoutlets" : 5,
+																	"outlettype" : [ "dictionary", "", "", "", "" ],
 																	"patching_rect" : [ 22.000000000000028, 109.0, 161.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 1,
+																		"legacy" : 1,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
@@ -2326,8 +2342,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2552,6 +2568,7 @@
 															"parameter_enum" : [ "Analysing Pitch", "Audio-Reactive", "Autoencoder", "Composing Buffers", "NMF", "Intelligent Slicing" ],
 															"parameter_longname" : "live.tab[1]",
 															"parameter_mmax" : 5,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -2588,6 +2605,7 @@
 															"parameter_enum" : [ "Building a 2D Corpus Explorer", "Classifying Sounds with a Neural Network", "Controlling a Synth with a Neural Network" ],
 															"parameter_longname" : "live.tab[19]",
 															"parameter_mmax" : 2,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
@@ -2610,8 +2628,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2942,8 +2960,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3044,15 +3062,15 @@
 																	"fontname" : "Lato",
 																	"fontsize" : 14.0,
 																	"id" : "obj-90",
-																	"linecount" : 7,
+																	"linecount" : 2,
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 5.0, 195.0, 352.0, 124.0 ],
+																	"patching_rect" : [ 5.0, 195.0, 352.0, 40.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 7,
-																	"presentation_rect" : [ 5.0, 5.0, 352.0, 124.0 ],
-																	"text" : "Slicing, segmenting, chopping, or dividing. These words all refer to the same type of process in which a sound is separated into 'chunks' or 'slices' across time. Each of these objects embodies a different model of listening for identifying 'slice points'. In other words, different types of change can be measured and used to determine how to segment a sound.",
+																	"presentation_linecount" : 2,
+																	"presentation_rect" : [ 5.0, 5.0, 352.0, 40.0 ],
+																	"text" : "A selection of patches, abstractions and objects that assist in building and working with corpora.",
 																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
 																}
 
@@ -3173,20 +3191,20 @@
 													"maxclass" : "bpatcher",
 													"numinlets" : 1,
 													"numoutlets" : 1,
-													"offset" : [ 0.0, 0.0 ],
+													"offset" : [ -2050.0, 0.0 ],
 													"outlettype" : [ "" ],
 													"patcher" : 													{
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
 ,
 														"classnamespace" : "box",
-														"rect" : [ 35.0, 88.0, 1370.0, 777.0 ],
+														"rect" : [ 35.0, 100.0, 1370.0, 777.0 ],
 														"bglocked" : 0,
 														"openinpresentation" : 0,
 														"default_fontsize" : 12.0,
@@ -3275,8 +3293,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 5,
+																			"minor" : 6,
+																			"revision" : 1,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3377,6 +3395,7 @@
 																							"parameter_enum" : [ "fluid.bufsines~", "fluid.buftransients~", "fluid.bufhpss~", "fluid.bufnmf~" ],
 																							"parameter_longname" : "live.tab[20]",
 																							"parameter_mmax" : 3,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3413,6 +3432,7 @@
 																							"parameter_enum" : [ "fluid.sines~", "fluid.transients~", "fluid.hpss~" ],
 																							"parameter_longname" : "live.tab[30]",
 																							"parameter_mmax" : 2,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3467,8 +3487,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 5,
+																			"minor" : 6,
+																			"revision" : 1,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3511,7 +3531,7 @@
 																					"numoutlets" : 0,
 																					"patching_rect" : [ 200.0, 180.0, 97.0, 21.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 249.0, 171.833333194255829, 100.0, 21.0 ],
+																					"presentation_rect" : [ 249.0, 195.0, 100.0, 21.0 ],
 																					"text" : "Voice Allocation",
 																					"textjustification" : 1
 																				}
@@ -3532,7 +3552,7 @@
 																					"parameter_enable" : 1,
 																					"patching_rect" : [ 200.0, 202.0, 197.5, 48.5 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 200.0, 194.833333194255829, 198.0, 48.5 ],
+																					"presentation_rect" : [ 200.000004768371582, 217.142862319946289, 197.959181785583496, 53.061223983764648 ],
 																					"saved_attribute_attributes" : 																					{
 																						"activebgoncolor" : 																						{
 																							"expression" : "themecolor.live_value_bar"
@@ -3542,6 +3562,7 @@
 																							"parameter_enum" : [ "fluid.voiceallocator", "fluid.bufvoiceallocator" ],
 																							"parameter_longname" : "live.tab[9]",
 																							"parameter_mmax" : 1,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3589,7 +3610,7 @@
 																					"numoutlets" : 0,
 																					"patching_rect" : [ 200.0, 113.0, 92.0, 21.0 ],
 																					"presentation" : 1,
-																					"presentation_rect" : [ 253.0, 117.0, 92.0, 21.0 ],
+																					"presentation_rect" : [ 253.0, 110.0, 92.0, 21.0 ],
 																					"text" : "Corpus Building",
 																					"textjustification" : 1
 																				}
@@ -3635,6 +3656,7 @@
 																							"parameter_enum" : [ "fluid.plotter", "fluid.jit.plotter", "fluid.waveform~" ],
 																							"parameter_longname" : "live.tab[35]",
 																							"parameter_mmax" : 2,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3671,6 +3693,7 @@
 																							"parameter_enum" : [ "fluid.bufcompose~", "fluid.bufscale~", "fluid.bufthresh~", "fluid.bufselect~", "fluid.bufselectevery~", "fluid.bufflatten~", "fluid.buf2list", "fluid.list2buf" ],
 																							"parameter_longname" : "live.tab[36]",
 																							"parameter_mmax" : 7,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3707,6 +3730,7 @@
 																							"parameter_enum" : [ "fluid.audiofilesin", "fluid.concataudiofiles" ],
 																							"parameter_longname" : "live.tab[21]",
 																							"parameter_mmax" : 1,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3750,7 +3774,7 @@
  ]
 																	}
 ,
-																	"patching_rect" : [ 2050.0, 0.0, 405.0, 245.5 ],
+																	"patching_rect" : [ 2050.0, 0.0, 405.0, 280.0 ],
 																	"viewvisibility" : 1
 																}
 
@@ -3775,8 +3799,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 5,
+																			"minor" : 6,
+																			"revision" : 1,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -3877,6 +3901,7 @@
 																							"parameter_enum" : [ "fluid.bufaudiotransport~", "fluid.bufnmfcross~" ],
 																							"parameter_longname" : "live.tab[31]",
 																							"parameter_mmax" : 1,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3913,6 +3938,7 @@
 																							"parameter_enum" : [ "fluid.audiotransport~", "fluid.nmffilter~", "fluid.nmfmorph~" ],
 																							"parameter_longname" : "live.tab[37]",
 																							"parameter_mmax" : 2,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -3969,8 +3995,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 5,
+																			"minor" : 6,
+																			"revision" : 1,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4131,6 +4157,7 @@
 																							"parameter_enum" : [ "fluid.pca~", "fluid.kmeans~", "fluid.skmeans~", "fluid.mds~", "fluid.umap~", "fluid.grid~" ],
 																							"parameter_longname" : "live.tab[32]",
 																							"parameter_mmax" : 5,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4167,6 +4194,7 @@
 																							"parameter_enum" : [ "fluid.knnregressor~", "fluid.knnclassifier~", "fluid.mlpregressor~", "fluid.mlpclassifier~" ],
 																							"parameter_longname" : "live.tab[38]",
 																							"parameter_mmax" : 3,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4203,6 +4231,7 @@
 																							"parameter_enum" : [ "fluid.normalize~", "fluid.standardize~", "fluid.robustscale~" ],
 																							"parameter_longname" : "live.tab[22]",
 																							"parameter_mmax" : 2,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4239,6 +4268,7 @@
 																							"parameter_enum" : [ "fluid.kdtree~", "fluid.datasetquery~" ],
 																							"parameter_longname" : "live.tab[33]",
 																							"parameter_mmax" : 1,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4275,6 +4305,7 @@
 																							"parameter_enum" : [ "fluid.bufstats~", "fluid.stats" ],
 																							"parameter_longname" : "live.tab[39]",
 																							"parameter_mmax" : 1,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4311,6 +4342,7 @@
 																							"parameter_enum" : [ "fluid.dataset~", "fluid.labelset~" ],
 																							"parameter_longname" : "live.tab[40]",
 																							"parameter_mmax" : 1,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4399,8 +4431,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 5,
+																			"minor" : 6,
+																			"revision" : 1,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4501,6 +4533,7 @@
 																							"parameter_enum" : [ "fluid.bufpitch~", "fluid.bufloudness~", "fluid.bufmelbands~", "fluid.bufmfcc~", "fluid.bufspectralshape~", "fluid.bufchroma~", "fluid.bufnmfseed~", "fluid.bufstft~", "fluid.bufampfeature~", "fluid.bufonsetfeature~", "fluid.bufnoveltyfeature~", "fluid.bufsinefeature~" ],
 																							"parameter_longname" : "live.tab[23]",
 																							"parameter_mmax" : 11,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4537,6 +4570,7 @@
 																							"parameter_enum" : [ "fluid.pitch~", "fluid.loudness~", "fluid.melbands~", "fluid.mfcc~", "fluid.spectralshape~", "fluid.chroma~", "fluid.nmfmatch~", "fluid.ampfeature~", "fluid.onsetfeature~", "fluid.noveltyfeature~", "fluid.sinefeature~" ],
 																							"parameter_longname" : "live.tab[34]",
 																							"parameter_mmax" : 10,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4592,8 +4626,8 @@
 																		"fileversion" : 1,
 																		"appversion" : 																		{
 																			"major" : 8,
-																			"minor" : 5,
-																			"revision" : 5,
+																			"minor" : 6,
+																			"revision" : 1,
 																			"architecture" : "x64",
 																			"modernui" : 1
 																		}
@@ -4694,6 +4728,7 @@
 																							"parameter_enum" : [ "fluid.bufonsetslice~", "fluid.bufnoveltyslice~", "fluid.buftransientslice~", "fluid.bufampslice~", "fluid.bufampgate~" ],
 																							"parameter_longname" : "live.tab[41]",
 																							"parameter_mmax" : 4,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4730,6 +4765,7 @@
 																							"parameter_enum" : [ "fluid.onsetslice~", "fluid.noveltyslice~", "fluid.transientslice~", "fluid.ampslice~", "fluid.ampgate~" ],
 																							"parameter_longname" : "live.tab[42]",
 																							"parameter_mmax" : 4,
+																							"parameter_modmode" : 0,
 																							"parameter_shortname" : "live.tab",
 																							"parameter_type" : 2,
 																							"parameter_unitstyle" : 9
@@ -4850,8 +4886,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
-															"revision" : 5,
+															"minor" : 6,
+															"revision" : 1,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -4935,11 +4971,12 @@
 																	"id" : "obj-80",
 																	"maxclass" : "newobj",
 																	"numinlets" : 2,
-																	"numoutlets" : 4,
-																	"outlettype" : [ "dictionary", "", "", "" ],
+																	"numoutlets" : 5,
+																	"outlettype" : [ "dictionary", "", "", "", "" ],
 																	"patching_rect" : [ 50.0, 112.0, 174.0, 22.0 ],
 																	"saved_object_attributes" : 																	{
 																		"embed" : 1,
+																		"legacy" : 1,
 																		"parameter_enable" : 0,
 																		"parameter_mappable" : 0
 																	}
@@ -5054,6 +5091,7 @@
 															"parameter_enum" : [ "Slice Audio", "Transform Audio", "Analyse Audio", "Analyse Data", "Decompose Audio", "Helpers and Utilites" ],
 															"parameter_longname" : "live.tab[24]",
 															"parameter_mmax" : 5,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "live.tab[17]",
 															"parameter_type" : 2,
 															"parameter_unitstyle" : 9
