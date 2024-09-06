@@ -12,7 +12,7 @@ jobs:
         with:
           branch: origin/${{ github.ref_name }}
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4.3.6
         with:
           name: winbuild
           path: "release-packaging/FluidCorpusManipulation/externals/"
@@ -40,7 +40,7 @@ jobs:
           apppwd: ${{ secrets.APPSTORECONNECTPWD }}
           appusr: ${{ secrets.APPSTORECONNECTUSERNAME }}
 
-      - uses: actions/upload-artifact@v3
+      - uses: actions/upload-artifact@v4.3.6
         with:
           name: macbuild
           path: release-packaging/FluidCorpusManipulation/
