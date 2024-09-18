@@ -1,4 +1,4 @@
-outlets = 2;
+outlets = 1;
 // create a Task event loop detecting bpatcher resizing
 // and adjusting pwindow presentatin_rect accordingly
 var task = new Task(getBpatcherRect, this);
@@ -14,7 +14,7 @@ var minInterval = 10;
 var maxInterval = 1000;
 var intervalMult = 1.1;
 // optionally force square aspect ratio (kind of janky)
-var forceSquareBpatcher = true;
+var forceSquareBpatcher = false;
 
 
 // the callback function for the Task
@@ -40,7 +40,7 @@ function getBpatcherRect() {
 		outlet(0, 0, 0, patchingWidth, patchingHeight);
 	}
 	// output the parent's window location on 2nd outlet
-	outlet(1, this.patcher.parentpatcher.wind.location);
+	// outlet(1, this.patcher.parentpatcher.wind.location); // don't need this anymore
 	// slow down Task refresh rate if idle
 	adjustInterval(patchingWidth, patchingHeight, presentationWidth, presentationHeight, presentation);
 	// save width & height & presentation for comparison
