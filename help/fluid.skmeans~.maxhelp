@@ -239,8 +239,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 2,
 													"outlettype" : [ "", "" ],
-													"patching_rect" : [ 21.0, 58.0, 90.0, 22.0 ],
-													"text" : "route transform"
+													"patching_rect" : [ 21.0, 58.0, 79.0, 22.0 ],
+													"text" : "route encode"
 												}
 
 											}
@@ -276,8 +276,8 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 371.0, 497.5, 213.0, 22.0 ],
-													"text" : "vexpr pow(1 - $f1\\, 20) @scalarmode 1"
+													"patching_rect" : [ 371.0, 497.5, 223.0, 22.0 ],
+													"text" : "vexpr pow(1.1 - $f1\\, 10) @scalarmode 1"
 												}
 
 											}
@@ -636,7 +636,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 430.0, 350.0, 117.0, 23.0 ],
+									"patching_rect" : [ 529.0, 350.0, 117.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1063,7 +1063,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 549.0, 350.0, 92.0, 23.0 ],
+									"patching_rect" : [ 432.0, 350.0, 92.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1082,8 +1082,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 400.0, 250.0, 305.0, 23.0 ],
-									"text" : "transform help.skmeans.5.data help.skmeans.5.dist"
+									"patching_rect" : [ 400.0, 250.0, 293.0, 23.0 ],
+									"text" : "encode help.skmeans.5.data help.skmeans.5.dist"
 								}
 
 							}
@@ -1527,8 +1527,8 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 317.0, 300.0, 187.0, 23.0 ],
-									"text" : "fluid.kmeans~ @numclusters 4"
+									"patching_rect" : [ 317.0, 300.0, 193.0, 23.0 ],
+									"text" : "fluid.skmeans~ @numclusters 4"
 								}
 
 							}
