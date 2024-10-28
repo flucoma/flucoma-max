@@ -9,7 +9,7 @@ This project has received funding from the European Research Council (ERC)
 under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 -->
-<c74object name='fluid.waveform~' category='FluidCorpusManuipulation'>
+<c74object name='fluid.waveform~' category='Fluid Corpus Manipulation'>
     <digest>Visualise audio waveforms and data.</digest>
     <description>A JSUI object for visualising waveforms, feature data, slices and spectrograms.</description>
     <discussion>

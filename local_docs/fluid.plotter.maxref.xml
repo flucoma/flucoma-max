@@ -9,7 +9,7 @@ This project has received funding from the European Research Council (ERC)
 under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 -->
-<c74object name='fluid.plotter' category='FluidCorpusManuipulation'>
+<c74object name='fluid.plotter' category='Fluid Corpus Manipulation'>
     <digest>Plot data in a two-dimensional graph.</digest>
     <description>A JSUI object that plots data in a two-dimensional graph.</description>
     <discussion>
