@@ -9,7 +9,7 @@ This project has received funding from the European Research Council (ERC)
 under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 -->
-<c74object name='fluid.concataudiofiles' category='FluidCorpusManuipulation'>
+<c74object name='fluid.concataudiofiles' category='Fluid Corpus Manipulation'>
     <digest>Concatenate audio files</digest>
     <description>Concatenate a list of audio files into a single buffer~.</description>
     <discussion>

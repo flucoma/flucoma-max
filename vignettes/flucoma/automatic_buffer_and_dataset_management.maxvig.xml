@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <?xml-stylesheet href="_c74_vig.xsl" type="text/xsl"?>
-<vignette name="Automatic buffer~ and fluid.dataset~ management" package="FluidCorpusManipulation">
+<vignette name="Automatic buffer~ and fluid.dataset~ management" package="Fluid Corpus Manipulation">
 	<h1>Automatic <o>buffer~</o> and <o>fluid.dataset~</o> management.</h1>
 	
 	<h2><o>buffer~</o> and <o>fluid.dataset~</o> management.</h2>

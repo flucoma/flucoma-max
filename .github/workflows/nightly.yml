@@ -22,7 +22,7 @@ jobs:
       - uses: actions/upload-artifact@v4.3.6
         with:
           name: winbuild
-          path: "release-packaging/FluidCorpusManipulation/externals/"
+          path: "release-packaging/Fluid Corpus Manipulation/externals/"
   
   macbuild:
     runs-on: macos-latest
@@ -48,7 +48,7 @@ jobs:
       - uses: actions/upload-artifact@v4.3.6
         with:
           name: macbuild
-          path: release-packaging/FluidCorpusManipulation/
+          path: "release-packaging/Fluid Corpus Manipulation/""
   
   release:
     runs-on: ubuntu-latest
@@ -56,20 +56,20 @@ jobs:
 
     steps:
       - name: make parent folder
-        run : mkdir -p "FluidCorpusManipulation"
+        run : mkdir -p "Fluid Corpus Manipulation"
 
       - uses: actions/download-artifact@v4.1.7
         with:
           name: macbuild
-          path: "FluidCorpusManipulation"
+          path: "Fluid Corpus Manipulation"
 
       - uses: actions/download-artifact@v4.1.7
         with:
           name: winbuild
-          path: "FluidCorpusManipulation/externals"
+          path: "Fluid Corpus Manipulation/externals"
       
       - name: zip
-        run: zip -r FluCoMa-Max-nightly.zip "FluidCorpusManipulation"
+        run: zip -r FluCoMa-Max-nightly.zip "Fluid Corpus Manipulation"
 
       - uses: dev-drprasad/delete-tag-and-release@v0.2.1
         with:

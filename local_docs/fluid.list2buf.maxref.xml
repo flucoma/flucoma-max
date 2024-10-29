@@ -9,7 +9,7 @@ This project has received funding from the European Research Council (ERC)
 under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 -->
-<c74object name='fluid.list2buf' category='FluidCorpusManuipulation'>
+<c74object name='fluid.list2buf' category='Fluid Corpus Manipulation'>
     <digest>Copy a list to a buffer~</digest>
     <description>Copies the values of a list to a buffer~.</description>
     <discussion>
