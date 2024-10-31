@@ -202,7 +202,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 316.5, 530.0, 131.0, 152.0 ],
-									"text" : "Once we filter the data based on pitch confidence there are fewer rows in the dataset. Any identifier where the confidence was lower than 0.9 in the pitch dataset is removed from both.",
+									"text" : "Once we filter the data based on pitch confidence there are fewer points in the dataset. Any identifier where the confidence was lower than 0.9 in the pitch dataset is removed from both.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
@@ -311,7 +311,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 29.5, 520.0, 212.0, 79.0 ],
-									"text" : "Double click the dict objects to see the data inside these dictionaries.\n\nNote the size (number of rows) in each dataset.",
+									"text" : "Double click the dict objects to see the data inside these dictionaries.\n\nNote the size (number of points) in each dataset.",
 									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
 								}
 
