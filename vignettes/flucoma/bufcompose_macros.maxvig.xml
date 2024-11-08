@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <?xml-stylesheet href="_c74_vig.xsl" type="text/xsl"?>
-<vignette name="fluid.bufcompose~ macros" package="Fluid Corpus Manipulation">
+<vignette name="fluid.bufcompose~ macros" package="FluidCorpusManipulation">
 	<h1><o>fluid.bufcompose~</o> macros</h1>
 
 	<bluebox>
