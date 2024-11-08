@@ -2,7 +2,7 @@
 
 ## How to start:
 
-1) move the full Fluid Corpus Manipulation folder in your Packages folder (~/Documents/Max/Packages/), and restart Max.
+1) move the full `FluidCorpusManipulation` folder in your Packages folder (~/Documents/Max/Packages/), and restart Max.
 
 There is now an 'extras' giving the overview of the toolbox, and a shortcut (shift-f) to create fluid.* objects. Full documentation, and examples, are also available.
 

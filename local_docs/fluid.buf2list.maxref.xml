@@ -9,7 +9,7 @@ This project has received funding from the European Research Council (ERC)
 under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 -->
-<c74object name='fluid.buf2list' category='Fluid Corpus Manipulation'>
+<c74object name='fluid.buf2list' category='FluidCorpusManipulation'>
     <digest>Copy the contents of a buffer~ to a list</digest>
     <description>A simplified workflow for extracting numerical data from buffers as lists of numbers.</description>
     <discussion>

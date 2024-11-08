@@ -3,7 +3,7 @@
 	"description" : "FluCoMa introduces a suite of tools to Max that can help you work with sounds and collections of them in new and flexible ways. Possibilities include slicing, decomposition and hybridisation of sounds, audio-descriptor analysis and machine learning driven musicking. The package links out to a body of educational content, tutorials, and inspirational examples from the world of FluCoMa and Max users.",
 	"homepatcher" : "Fluid Corpus Manipulation Toolkit.maxpat",
 	"max_version_min" : "7.0",
-	"name" : "Fluid Corpus Manipulation",
+	"name" : "FluidCorpusManipulation",
 	"os" : {
 		"macintosh" : {
 			"platform" : [ "aarch64", "x64" ],

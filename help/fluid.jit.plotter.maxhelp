@@ -6631,7 +6631,7 @@
 			}
 , 			{
 				"name" : "fluid.dataloader.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Fluid Corpus Manipulation/patchers",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
@@ -6642,21 +6642,21 @@
 			}
 , 			{
 				"name" : "fluid.jit.plotter.labels2colors.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Fluid Corpus Manipulation/javascript",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.jit.plotter.maxpat",
-				"bootpath" : "~/Documents/Max 8/Packages/Fluid Corpus Manipulation/patchers",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/patchers",
 				"patcherrelativepath" : "../patchers",
 				"type" : "JSON",
 				"implicit" : 1
 			}
 , 			{
 				"name" : "fluid.jit.plotter.resize.pworld.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Fluid Corpus Manipulation/javascript",
+				"bootpath" : "~/Documents/Max 8/Packages/FluidCorpusManipulation/javascript",
 				"patcherrelativepath" : "../javascript",
 				"type" : "TEXT",
 				"implicit" : 1
