@@ -221,69 +221,6 @@
 			}
  ],
 		"lines" : [  ],
-		"dependency_cache" : [ 			{
-				"name" : "fluid.plotter.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Fluid Corpus Manipulation/jsui",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/Fluid Corpus Manipulation/jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.waveform~.js",
-				"bootpath" : "~/Documents/Max 8/Packages/Fluid Corpus Manipulation/jsui",
-				"patcherrelativepath" : "../../../../../Documents/Max 8/Packages/Fluid Corpus Manipulation/jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.bufnmf~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufspectralshape~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufnoveltyslice~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufampgate~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufstats~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.sines~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.mfcc~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.ampslice~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.ampgate~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
- ],
 		"autosave" : 0
 	}
 
