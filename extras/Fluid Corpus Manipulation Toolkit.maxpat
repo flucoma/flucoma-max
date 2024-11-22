@@ -5609,8 +5609,15 @@
 									"patching_rect" : [ 194.000000000000114, 851.0, 107.0, 28.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 538.0, 87.0, 107.0, 28.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.maxwindow_bugtext"
+										}
+
+									}
+,
 									"text" : "learn platform",
-									"textcolor" : [ 0.321569, 0.54902, 0.792157, 1.0 ]
+									"textcolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ]
 								}
 
 							}
@@ -5693,8 +5700,15 @@
 									"patching_rect" : [ 21.046584000000053, 851.0, 78.0, 28.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 618.0, 59.0, 78.0, 28.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.maxwindow_bugtext"
+										}
+
+									}
+,
 									"text" : "our forum",
-									"textcolor" : [ 0.321569, 0.54902, 0.792157, 1.0 ]
+									"textcolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ]
 								}
 
 							}

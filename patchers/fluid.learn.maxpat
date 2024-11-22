@@ -156,8 +156,15 @@
 					"patching_rect" : [ 267.0, 285.0, 108.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.0, 10.0, 224.0, 24.0 ],
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.maxwindow_bugtext"
+						}
+
+					}
+,
 					"text" : "Online Reference",
-					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
+					"textcolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ]
 				}
 
 			}
@@ -245,8 +252,15 @@
 					"patching_rect" : [ 35.0, 282.0, 221.0, 24.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 10.0, 25.0, 410.0, 24.0 ],
-					"text" : "learn.flucoma.org/reference/hpss",
-					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.maxwindow_bugtext"
+						}
+
+					}
+,
+					"text" : "learn.flucoma.org/reference/#1",
+					"textcolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ]
 				}
 
 			}

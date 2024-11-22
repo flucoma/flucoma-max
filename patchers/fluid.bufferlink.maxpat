@@ -59,9 +59,16 @@
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 25.0, 27.0, 235.0, 24.0 ],
 					"presentation" : 1,
-					"presentation_rect" : [ 1.0, 3.0, 411.0, 24.0 ],
+					"presentation_rect" : [ 1.0, 3.0, 442.0, 24.0 ],
+					"saved_attribute_attributes" : 					{
+						"textcolor" : 						{
+							"expression" : "themecolor.maxwindow_bugtext"
+						}
+
+					}
+,
 					"text" : "Automatic buffer~ management tutorial",
-					"textcolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ]
+					"textcolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ]
 				}
 
 			}
@@ -94,7 +101,7 @@
 					"angle" : 270.0,
 					"bgcolor" : [ 0.2, 0.2, 0.2, 0.0 ],
 					"border" : 2,
-					"bordercolor" : [ 0.32156862745098, 0.549019607843137, 0.792156862745098, 1.0 ],
+					"bordercolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ],
 					"id" : "obj-1",
 					"maxclass" : "panel",
 					"mode" : 0,
@@ -103,7 +110,14 @@
 					"patching_rect" : [ 25.0, 134.0, 128.0, 128.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 1.0, 3.0, 237.0, 24.0 ],
-					"proportion" : 0.5
+					"proportion" : 0.5,
+					"saved_attribute_attributes" : 					{
+						"bordercolor" : 						{
+							"expression" : "themecolor.maxwindow_bugtext"
+						}
+
+					}
+
 				}
 
 			}
