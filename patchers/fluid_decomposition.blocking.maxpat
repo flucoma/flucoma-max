@@ -49,9 +49,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 25.0, 330.0, 245.0, 36.0 ],
-					"presentation_linecount" : 2,
-					"text" : "With @blocking 2, the progress of a job is visually shown on the object itself.",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "With @blocking 2, the progress of a job is visually shown on the object itself."
 				}
 
 			}
@@ -63,8 +61,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 160.0, 195.0, 230.0, 21.0 ],
-					"text" : "Use calling thread (for very small jobs)",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "Use calling thread (for very small jobs)"
 				}
 
 			}
@@ -76,8 +73,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 160.0, 172.0, 221.0, 21.0 ],
-					"text" : "Use Max main thread (for small jobs)",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "Use Max main thread (for small jobs)"
 				}
 
 			}
@@ -89,8 +85,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 160.0, 150.0, 280.0, 21.0 ],
-					"text" : "Use a dedicated worker thread (for longer jobs)",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "Use a dedicated worker thread (for longer jobs)"
 				}
 
 			}
@@ -102,8 +97,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 92.599853999999993, 334.0, 21.0 ],
-					"text" : "By default non-realtime objects use the Max main thread",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "By default non-realtime objects use the Max main thread"
 				}
 
 			}
@@ -205,8 +199,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 128.0, 161.0, 21.0 ],
-					"text" : "Options",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "Options"
 				}
 
 			}
