@@ -114,8 +114,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 386.0, 145.0, 150.0, 87.0 ],
-					"text" : "Modify the threshold to your taste. Lower numbers are more sensitive and higher numbers are less sensitive.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Modify the threshold to your taste. Lower numbers are more sensitive and higher numbers are less sensitive."
 				}
 
 			}
@@ -127,8 +126,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 762.000003427267075, 347.5, 124.0, 87.0 ],
-					"text" : "Measuring the \"novelty\" of the sound. Things that are \"newer\", i.e more novel increase the distortion.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Measuring the \"novelty\" of the sound. Things that are \"newer\", i.e more novel increase the distortion."
 				}
 
 			}
@@ -140,8 +138,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 301.000003427267075, 362.833337247371674, 123.0, 33.0 ],
-					"text" : "Time between consecutive bangs",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Time between consecutive bangs"
 				}
 
 			}
@@ -152,8 +149,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 73.0, 400.333337247371674, 123.0, 20.0 ],
-					"text" : "Bang on every trigger",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Bang on every trigger"
 				}
 
 			}
@@ -165,8 +161,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 376.5, 13.0, 440.0, 100.0 ],
-					"text" : "This patch shows you could very quickly start integrating FluComa objects into a patch that makes sound. This patch leverages fluid.onsetslice~ to detect when changes in the input sound. This creates a trigger which generates sound by passing the signal-rate click into a resonant filter. That signal is converted into a bang event using edge~ which also modulates the pitch. The fluid.noveltyfeature~ object estimates how \"new\" the signal is, which is then mapped onto the distortion amount.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "This patch shows you could very quickly start integrating FluComa objects into a patch that makes sound. This patch leverages fluid.onsetslice~ to detect when changes in the input sound. This creates a trigger which generates sound by passing the signal-rate click into a resonant filter. That signal is converted into a bang event using edge~ which also modulates the pitch. The fluid.noveltyfeature~ object estimates how \"new\" the signal is, which is then mapped onto the distortion amount."
 				}
 
 			}
@@ -289,8 +284,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 16.0, 45.0, 299.0, 20.0 ],
-					"text" : "Using a segmentation algorithm to trigger audio events",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Using a segmentation algorithm to trigger audio events"
 				}
 
 			}
