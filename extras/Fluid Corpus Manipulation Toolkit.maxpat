@@ -514,8 +514,7 @@
 													"patching_rect" : [ 15.0, 120.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 1665.0, 107.0, 139.0, 21.0 ],
-													"text" : "Select a task...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a task..."
 												}
 
 											}
@@ -1803,8 +1802,7 @@
 													"patching_rect" : [ 3182.5, 103.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 2490.0, 121.0, 139.0, 21.0 ],
-													"text" : "Select a composer(s)...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a composer(s)..."
 												}
 
 											}
@@ -1855,8 +1853,7 @@
 													"patching_rect" : [ 2282.5, 128.5, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 3315.0, 128.0, 139.0, 21.0 ],
-													"text" : "Select an example...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select an example..."
 												}
 
 											}
@@ -1943,8 +1940,7 @@
 													"presentation" : 1,
 													"presentation_linecount" : 3,
 													"presentation_rect" : [ 15.0, 263.0, 257.0, 50.0 ],
-													"text" : "Be aware, some of the patches you can open from within the package will differ slightly from the tutorial video's final result.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Be aware, some of the patches you can open from within the package will differ slightly from the tutorial video's final result."
 												}
 
 											}
@@ -2506,8 +2502,7 @@
 													"patching_rect" : [ 1562.5, 106.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 15.0, 113.0, 139.0, 21.0 ],
-													"text" : "Select a tutorial...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a tutorial..."
 												}
 
 											}
@@ -2522,8 +2517,7 @@
 													"patching_rect" : [ 782.5, 99.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 840.0, 8.0, 139.0, 21.0 ],
-													"text" : "Select a category...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a category..."
 												}
 
 											}
