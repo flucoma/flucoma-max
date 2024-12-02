@@ -109,8 +109,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 381.0, 378.218443274497986, 157.0, 123.0 ],
-									"text" : "Generated labels are \n<filename>-<index> \n\nFilename without leading path \nIndices count from 1\n\nPositions in samples",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"text" : "Generated labels are \n<filename>-<index> \n\nFilename without leading path \nIndices count from 1\n\nPositions in samples"
 								}
 
 							}
@@ -133,8 +132,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 310.0, 317.0, 150.0, 21.0 ],
-									"text" : "monitor progress",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"text" : "monitor progress"
 								}
 
 							}
@@ -193,8 +191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 447.0, 260.218443274497986, 157.0, 50.0 ],
-									"text" : "We use bach's awesome 'lambda' idiom to make choice of slicer flexible",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"text" : "We use bach's awesome 'lambda' idiom to make choice of slicer flexible"
 								}
 
 							}
@@ -268,8 +265,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 174.0, 203.0, 402.0, 33.0 ],
-													"text" : "the 'loop' will work with objects in non-blocking mode! (so you can stick a progress bar on here to see progress-per-segment...)",
-													"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+													"text" : "the 'loop' will work with objects in non-blocking mode! (so you can stick a progress bar on here to see progress-per-segment...)"
 												}
 
 											}
@@ -281,8 +277,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 110.0, 268.0, 402.0, 33.0 ],
-													"text" : "Important: make sure to foward the bang when done, to keep the loop going",
-													"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+													"text" : "Important: make sure to foward the bang when done, to keep the loop going"
 												}
 
 											}
@@ -306,8 +301,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 110.0, 124.0, 402.0, 47.0 ],
-													"text" : "For simplest use, these can go straight into a fluid slicer, and it should Just Work. However, you can capture these messages (using route) and make things arbitarily more sophisticated ",
-													"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+													"text" : "For simplest use, these can go straight into a fluid slicer, and it should Just Work. However, you can capture these messages (using route) and make things arbitarily more sophisticated "
 												}
 
 											}
@@ -319,8 +313,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 110.0, 89.0, 402.0, 33.0 ],
-													"text" : "It gets passed a *sequence* of messages: \nsource <buffer>, startframe <x>, numframes <x>, indices <buffer>, bang",
-													"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+													"text" : "It gets passed a *sequence* of messages: \nsource <buffer>, startframe <x>, numframes <x>, indices <buffer>, bang"
 												}
 
 											}
@@ -332,8 +325,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 110.0, 50.0, 368.0, 33.0 ],
-													"text" : "This patch is 'called' once for every slice in the dictionary passed to segmentcorpus",
-													"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+													"text" : "This patch is 'called' once for every slice in the dictionary passed to segmentcorpus"
 												}
 
 											}
@@ -519,8 +511,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 63.0, 510.0, 65.0 ],
-									"text" : "Given a dict of labels and start / end indices into a 'flat' buffer of sounds, segment each chunk with a user provided segmenter. \n\nReturns a dictionary with generated labels and start + end times for each slice",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"text" : "Given a dict of labels and start / end indices into a 'flat' buffer of sounds, segment each chunk with a user provided segmenter. \n\nReturns a dictionary with generated labels and start + end times for each slice"
 								}
 
 							}

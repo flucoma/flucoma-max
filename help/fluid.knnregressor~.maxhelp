@@ -117,8 +117,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 283.5, 554.0, 157.0, 166.0 ],
-									"text" : "Predicting the outputs for an exponential ramp shows how the mapping works.\n\nWe have a quasi-exponential sine wave here as a result of predicting based on the curved ramp of help.knnreg.query",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Predicting the outputs for an exponential ramp shows how the mapping works.\n\nWe have a quasi-exponential sine wave here as a result of predicting based on the curved ramp of help.knnreg.query"
 								}
 
 							}
@@ -238,8 +237,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 590.0, 250.0, 200.0, 79.0 ],
-									"text" : "Each of these buffers is representative of a dataset.\n\nLook inside the sub patchers to see how that works.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each of these buffers is representative of a dataset.\n\nLook inside the sub patchers to see how that works."
 								}
 
 							}

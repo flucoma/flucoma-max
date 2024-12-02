@@ -169,7 +169,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 838.0, 357.0, 114.0, 21.0 ],
 									"text" : "KL Divergence",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -182,7 +181,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 678.0, 357.0, 114.0, 21.0 ],
 									"text" : "Min Distance",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -195,7 +193,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 518.0, 357.0, 114.0, 21.0 ],
 									"text" : "Max Distance",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -208,7 +205,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 358.0, 357.0, 114.0, 21.0 ],
 									"text" : "Squared Euclidian",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -221,7 +217,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 220.0, 357.0, 70.0, 21.0 ],
 									"text" : "Euclidian",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -234,7 +229,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 357.0, 70.0, 21.0 ],
 									"text" : "Manhattan",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1794,8 +1788,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 339.0, 21.0 ],
-									"text" : "comparing distance metrics (@distancemetric parameter)",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "comparing distance metrics (@distancemetric parameter)"
 								}
 
 							}
@@ -2122,8 +2115,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 250.0, 135.0, 152.0, 127.0 ],
-													"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message."
 												}
 
 											}
@@ -2318,8 +2310,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 750.0, 390.0, 189.0, 65.0 ],
-									"text" : "This is a visualisation of the two dimensions that are produced from the fluid.mds~ algorithm.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is a visualisation of the two dimensions that are produced from the fluid.mds~ algorithm."
 								}
 
 							}

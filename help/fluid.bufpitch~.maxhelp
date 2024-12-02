@@ -105,8 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 322.0, 330.0, 133.0, 25.0 ],
-									"text" : "Back to the default",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Back to the default"
 								}
 
 							}
@@ -171,8 +170,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 265.0, 295.0, 178.0, 25.0 ],
-									"text" : "Only return the confidence",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Only return the confidence"
 								}
 
 							}
@@ -204,8 +202,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 530.0, 190.0, 212.0, 181.0 ],
-									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs."
 								}
 
 							}
@@ -217,8 +214,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 182.0, 260.0, 143.0, 25.0 ],
-									"text" : "Only return the pitch",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Only return the pitch"
 								}
 
 							}
@@ -291,8 +287,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 500.0, 36.0 ],
-									"text" : "You can also select which outputs should even be copied to the destination buffer. This removes the need for a fluid.bufselect~ to capture descriptors you care about.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can also select which outputs should even be copied to the destination buffer. This removes the need for a fluid.bufselect~ to capture descriptors you care about."
 								}
 
 							}
@@ -666,8 +661,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 266.0, 221.0, 115.0, 21.0 ],
-									"text" : "take a look in here",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "take a look in here"
 								}
 
 							}
@@ -767,8 +761,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 133.0, 203.5, 123.0, 47.0 ],
-													"text" : "only pass through indices with 0.98 or greater confidence",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "only pass through indices with 0.98 or greater confidence"
 												}
 
 											}
@@ -780,8 +773,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 107.0, 130.5, 149.0, 33.0 ],
-													"text" : "pair up indices and which slice number they are",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "pair up indices and which slice number they are"
 												}
 
 											}
@@ -793,8 +785,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 298.0, 330.0, 312.0, 47.0 ],
-													"text" : "we use this formula to convert slice indices into milliseconds. We use the hop size (4096 samples) here as a static variable but it would be dynamically changed!",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "we use this formula to convert slice indices into milliseconds. We use the hop size (4096 samples) here as a static variable but it would be dynamically changed!"
 												}
 
 											}
@@ -1204,8 +1195,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 11.0, 64.0, 282.0, 21.0 ],
-									"text" : "Grains from just the pitched portions of a sound",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Grains from just the pitched portions of a sound"
 								}
 
 							}
@@ -1416,8 +1406,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 642.0, 357.909090909090878, 149.0, 21.0 ],
-									"text" : "2) Confidence - Left",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "2) Confidence - Left"
 								}
 
 							}
@@ -1428,8 +1417,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 642.0, 499.727272727272748, 149.0, 21.0 ],
-									"text" : "4) Confidence - Right",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "4) Confidence - Right"
 								}
 
 							}
@@ -1440,8 +1428,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 642.0, 428.818181818181813, 149.0, 21.0 ],
-									"text" : "3) Pitch (Hz) - Right",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "3) Pitch (Hz) - Right"
 								}
 
 							}
@@ -1452,8 +1439,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 642.0, 287.0, 149.0, 21.0 ],
-									"text" : "1) Pitch (Hz) - Left",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "1) Pitch (Hz) - Left"
 								}
 
 							}
@@ -1464,8 +1450,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 326.0, 21.0 ],
-									"text" : "Multichannel buffers are processed channel by channel",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Multichannel buffers are processed channel by channel"
 								}
 
 							}
@@ -1476,8 +1461,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 642.0, 230.0, 149.0, 21.0 ],
-									"text" : "The result is 4 channels:",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The result is 4 channels:"
 								}
 
 							}
@@ -1586,8 +1570,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 678.0, 120.0, 116.0, 21.0 ],
-									"text" : "a stereo source",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "a stereo source"
 								}
 
 							}
@@ -1923,8 +1906,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 20.0, 560.0, 680.0, 79.0 ],
-									"text" : "The original audio is in white. There are two channels of audio features (the same structure as the buffer) in fuschia. \n\nThe first channel is the pitch in hertz and the second channel is pitch confidence between 0.0 and1.0.\n\nSee the next tab for how we might use this information musically.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The original audio is in white. There are two channels of audio features (the same structure as the buffer) in fuschia. \n\nThe first channel is the pitch in hertz and the second channel is pitch confidence between 0.0 and1.0.\n\nSee the next tab for how we might use this information musically."
 								}
 
 							}

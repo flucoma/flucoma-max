@@ -105,8 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 540.0, 36.0 ],
-									"text" : "Constraining the grid to an \"extent\" along either axis is possible. This means you can enforce the grid to have a certain dimensionality. Good for mapping sounds onto controllers!",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Constraining the grid to an \"extent\" along either axis is possible. This means you can enforce the grid to have a certain dimensionality. Good for mapping sounds onto controllers!"
 								}
 
 							}
@@ -133,8 +132,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 773.0, 231.0, 50.0, 21.0 ],
-									"text" : "extent",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "extent"
 								}
 
 							}
@@ -214,8 +212,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 320.0, 410.0, 122.0, 123.0 ],
-									"text" : "The raw dataset is plotted here and each point is assigned a colour based on its position to create a smooth colour change spectrum",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The raw dataset is plotted here and each point is assigned a colour based on its position to create a smooth colour change spectrum"
 								}
 
 							}
@@ -610,8 +607,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 730.0, 197.0, 50.0, 21.0 ],
-									"text" : "vertical",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "vertical"
 								}
 
 							}
@@ -622,8 +618,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 706.0, 160.0, 65.0, 21.0 ],
-									"text" : "horizontal",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "horizontal"
 								}
 
 							}
@@ -684,8 +679,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 730.0, 420.0, 233.0, 181.0 ],
-									"text" : "The extent attribute constrains the dimensions of the selected axis when the grid is created. When the value is 0, the constraints are disabled.\n\nThis allows you to control how points are compacted and arranged in the grid output, facilitating distinct arrangements of points in lines of varying density and uniformity. \n\n",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The extent attribute constrains the dimensions of the selected axis when the grid is created. When the value is 0, the constraints are disabled.\n\nThis allows you to control how points are compacted and arranged in the grid output, facilitating distinct arrangements of points in lines of varying density and uniformity. \n\n"
 								}
 
 							}
@@ -1299,8 +1293,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 757.0, 21.0 ],
-									"text" : "fluid.grid~ attemps to create a square grid from the input data. You can change the \"resolution\" of the target grid with oversampling",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.grid~ attemps to create a square grid from the input data. You can change the \"resolution\" of the target grid with oversampling"
 								}
 
 							}
@@ -1396,8 +1389,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 330.0, 410.0, 122.0, 123.0 ],
-									"text" : "The raw dataset is plotted here and each point is assigned a colour based on its position to create a smooth colour change spectrum",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The raw dataset is plotted here and each point is assigned a colour based on its position to create a smooth colour change spectrum"
 								}
 
 							}
@@ -1820,8 +1812,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 730.0, 420.0, 233.0, 195.0 ],
-									"text" : "As the grid oversamples the original shape of the space is preseved. This gives you a flexible control over how \"gridded\" the result is.\n\nIt is important to remember that oversampling changes the dimensions of the grid too as it essentially is a control of resolution.\n\nIn this instance the changes in shape of the output are overcome by normalising the space.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "As the grid oversamples the original shape of the space is preseved. This gives you a flexible control over how \"gridded\" the result is.\n\nIt is important to remember that oversampling changes the dimensions of the grid too as it essentially is a control of resolution.\n\nIn this instance the changes in shape of the output are overcome by normalising the space."
 								}
 
 							}
@@ -2637,8 +2628,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 680.0, 425.0, 215.0, 94.0 ],
-									"text" : "Each point retains the same colour between the input and griddified output, so you can see how the algorithm tries to preserve the original layout of points in space while conforming it to a grid.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each point retains the same colour between the input and griddified output, so you can see how the algorithm tries to preserve the original layout of points in space while conforming it to a grid."
 								}
 
 							}
@@ -2684,8 +2674,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 280.0, 425.0, 122.0, 123.0 ],
-									"text" : "The raw dataset is plotted here and each point is assigned a colour based on its position to create a smooth colour change spectrum",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The raw dataset is plotted here and each point is assigned a colour based on its position to create a smooth colour change spectrum"
 								}
 
 							}

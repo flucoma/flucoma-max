@@ -104,8 +104,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 464.0, 352.0, 29.0, 21.0 ],
-									"text" : "Full",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Full"
 								}
 
 							}
@@ -129,8 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 454.0, 311.0, 58.0, 21.0 ],
-									"text" : "First half",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "First half"
 								}
 
 							}
@@ -141,8 +139,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 458.0, 270.0, 77.0, 21.0 ],
-									"text" : "Second half",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Second half"
 								}
 
 							}
@@ -255,8 +252,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 330.0, 173.5, 250.0, 36.0 ],
-									"text" : "Load a buffer (help.bufthresh.src) with a linear ramp from 0 to 1 over 100 samples",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Load a buffer (help.bufthresh.src) with a linear ramp from 0 to 1 over 100 samples"
 								}
 
 							}
@@ -267,8 +263,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 268.0, 551.5, 351.0, 21.0 ],
-									"text" : "destination (values below the threshold are replaced with 0)",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "destination (values below the threshold are replaced with 0)"
 								}
 
 							}
@@ -279,8 +274,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 471.5, 48.0, 21.0 ],
-									"text" : "source",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "source"
 								}
 
 							}

@@ -672,8 +672,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 614.0, 21.0 ],
-									"text" : "A selection of metric and sound file combinations, to demonstrate the different characteristics of each one",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A selection of metric and sound file combinations, to demonstrate the different characteristics of each one"
 								}
 
 							}
@@ -873,8 +872,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 443.25, 158.0, 143.0, 69.0 ],
-									"text" : "Select from a combination of curated sound files and parameters",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Select from a combination of curated sound files and parameters"
 								}
 
 							}
@@ -2012,8 +2010,7 @@
 													"patching_rect" : [ 338.333344000000011, 448.333344000000011, 154.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 188.199996999999996, 5.599999, 44.0, 21.0 ],
-													"text" : "metric",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "metric"
 												}
 
 											}
@@ -3860,8 +3857,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 539.0, 262.0, 130.0, 21.0 ],
-									"text" : "change the threshold",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "change the threshold"
 								}
 
 							}

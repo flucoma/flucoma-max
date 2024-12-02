@@ -236,8 +236,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 690.0, 400.0, 199.0, 79.0 ],
-									"text" : "You can think of this as a single channel in a buffer with 21 frames. Each consecutive group of 7 statistics belongs to a single derivative.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can think of this as a single channel in a buffer with 21 frames. Each consecutive group of 7 statistics belongs to a single derivative."
 								}
 
 							}
@@ -249,8 +248,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 185.0, 622.5, 360.0, 65.0 ],
-									"text" : "bufselectevery~ extracts every seventh value. Because bufstats~ returns 7 statistics for each derivative (21 values) using bufselect~ in this way extracts the mean (the first item in every group of 7) of each derivative.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "bufselectevery~ extracts every seventh value. Because bufstats~ returns 7 statistics for each derivative (21 values) using bufselect~ in this way extracts the mean (the first item in every group of 7) of each derivative."
 								}
 
 							}
@@ -418,8 +416,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 530.0, 168.160370999999998, 295.0, 36.0 ],
-									"text" : "Compute 7 statistics for 1 derivative of the loudness. Select then only the mean (average).",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "Compute 7 statistics for 1 derivative of the loudness. Select then only the mean (average)."
 								}
 
 							}
@@ -432,8 +429,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 124.660370999999998, 213.0, 21.0 ],
-									"text" : "Compute loudness audio descriptor",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "Compute loudness audio descriptor"
 								}
 
 							}
@@ -776,8 +772,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 405.0, 305.0, 241.0, 50.0 ],
-									"text" : "Here we have taken every second channel and every second frame from a 4 frame x 5 channel source buffer.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "Here we have taken every second channel and every second frame from a 4 frame x 5 channel source buffer."
 								}
 
 							}

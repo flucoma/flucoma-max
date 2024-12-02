@@ -126,8 +126,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 219.0, 450.5, 460.0, 79.0 ],
-									"text" : "The standard deviations of each coefficient. Higher values mean that they have deviated from the mean more over the history of the fluid.stats object.\n\nYou might like to think of this as its own kind of descriptor that can indicate variation or how sporadic the data is over time.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The standard deviations of each coefficient. Higher values mean that they have deviated from the mean more over the history of the fluid.stats object.\n\nYou might like to think of this as its own kind of descriptor that can indicate variation or how sporadic the data is over time."
 								}
 
 							}
@@ -139,8 +138,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 219.0, 390.0, 487.0, 36.0 ],
-									"text" : "The mean values of the last 15 MFCC frames. The changes are much smoother because the mean of the last 15 frames is being taken instead of the raw values.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The mean values of the last 15 MFCC frames. The changes are much smoother because the mean of the last 15 frames is being taken instead of the raw values."
 								}
 
 							}
@@ -152,8 +150,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 219.0, 272.0, 161.0, 36.0 ],
-									"text" : "The raw MFCC values of the current frame.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The raw MFCC values of the current frame."
 								}
 
 							}
@@ -242,8 +239,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 240.0, 21.0 ],
-									"text" : "smoothing a stream of audio descriptors",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "smoothing a stream of audio descriptors"
 								}
 
 							}
@@ -480,8 +476,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 213.0, 530.0, 87.0, 94.0 ],
-									"text" : "the centre of the red dot is the mean, its\nwidth is the standard deviation",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "the centre of the red dot is the mean, its\nwidth is the standard deviation"
 								}
 
 							}
@@ -557,8 +552,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 330.0, 216.0, 150.0, 21.0 ],
-									"text" : "rolling window size",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "rolling window size"
 								}
 
 							}
@@ -569,8 +563,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 213.0, 396.0, 124.0, 21.0 ],
-									"text" : "standard deviations",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "standard deviations"
 								}
 
 							}
@@ -581,8 +574,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 100.0, 396.0, 48.0, 21.0 ],
-									"text" : "means",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "means"
 								}
 
 							}

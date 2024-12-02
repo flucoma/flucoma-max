@@ -275,10 +275,8 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 164.102585, 276.923112, 248.0, 20.0 ],
-																	"style" : "",
-																	"text" : "re-sequence messages (<attribute> <value>)",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.52 ]
+																	"patching_rect" : [ 164.102585000000005, 276.923112000000003, 248.0, 20.0 ],
+																	"text" : "re-sequence messages (<attribute> <value>)"
 																}
 
 															}
@@ -327,10 +325,8 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 202.884622, 563.782075, 150.0, 20.0 ],
-																	"style" : "",
-																	"text" : "allocate output buffer",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.52 ]
+																	"patching_rect" : [ 202.884622000000007, 563.782074999999963, 150.0, 20.0 ],
+																	"text" : "allocate output buffer"
 																}
 
 															}
@@ -367,10 +363,8 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 402.499991, 331.435903, 101.000019, 87.0 ],
-																	"style" : "",
-																	"text" : "loop still works when objects are non-blocking! So, you can output progress if you like",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"patching_rect" : [ 402.499991000000023, 331.435902999999996, 101.000018999999995, 87.0 ],
+																	"text" : "loop still works when objects are non-blocking! So, you can output progress if you like"
 																}
 
 															}
@@ -407,10 +401,8 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 600.0, 660.435903, 150.0, 33.0 ],
-																	"style" : "",
-																	"text" : "write mean values to output",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"patching_rect" : [ 600.0, 660.435903000000053, 150.0, 33.0 ],
+																	"text" : "write mean values to output"
 																}
 
 															}
@@ -421,10 +413,8 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 408.128209, 429.435903, 89.743582, 33.0 ],
-																	"style" : "",
-																	"text" : "stats on each feature",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"patching_rect" : [ 408.128209000000027, 429.435902999999996, 89.743582000000004, 33.0 ],
+																	"text" : "stats on each feature"
 																}
 
 															}
@@ -435,10 +425,8 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 590.0, 580.435903, 150.0, 33.0 ],
-																	"style" : "",
-																	"text" : "point peek~ at our output buffer",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"patching_rect" : [ 590.0, 580.435903000000053, 150.0, 33.0 ],
+																	"text" : "point peek~ at our output buffer"
 																}
 
 															}
@@ -449,10 +437,8 @@
 																	"maxclass" : "comment",
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
-																	"patching_rect" : [ 529.0, 202.115414, 150.0, 87.0 ],
-																	"style" : "",
-																	"text" : "Peel off the 'features' buffer (i.e. the output buffer we need to use), and forward the other parameters to our analysers",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"patching_rect" : [ 529.0, 202.115413999999987, 150.0, 87.0 ],
+																	"text" : "Peel off the 'features' buffer (i.e. the output buffer we need to use), and forward the other parameters to our analysers"
 																}
 
 															}
@@ -464,9 +450,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 354.0, 153.0, 150.0, 33.0 ],
-																	"style" : "",
-																	"text" : "This will be a list of 8 things",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"text" : "This will be a list of 8 things"
 																}
 
 															}
@@ -478,9 +462,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 354.0, 100.0, 150.0, 47.0 ],
-																	"style" : "",
-																	"text" : "Capture messges with route and buddy to give us control",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"text" : "Capture messges with route and buddy to give us control"
 																}
 
 															}
@@ -491,9 +473,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 566.0, 25.0, 150.0, 20.0 ],
-																	"style" : "",
-																	"text" : "Intermediate storage",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.54 ]
+																	"text" : "Intermediate storage"
 																}
 
 															}
@@ -1187,9 +1167,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 178.0, 163.5, 402.0, 33.0 ],
-													"style" : "",
-													"text" : "Let's make features of mean pitch, loudness and spectral centroid for each slice",
-													"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+													"text" : "Let's make features of mean pitch, loudness and spectral centroid for each slice"
 												}
 
 											}
@@ -1228,9 +1206,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 86.0, 107.0, 402.0, 47.0 ],
-													"style" : "",
-													"text" : "For simplest use, these can go straight into a fluid buf analyser, and it should Just Work. However, you can capture these messages (using route) and make things arbitarily more sophisticated (which is probable).",
-													"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+													"text" : "For simplest use, these can go straight into a fluid buf analyser, and it should Just Work. However, you can capture these messages (using route) and make things arbitarily more sophisticated (which is probable)."
 												}
 
 											}
@@ -1242,9 +1218,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 86.0, 72.0, 402.0, 33.0 ],
-													"style" : "",
-													"text" : "It gets passed a *sequence* of messages: \nsource <buffer>, startframe <x>, numframes <x>, features <buffer>, bang",
-													"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+													"text" : "It gets passed a *sequence* of messages: \nsource <buffer>, startframe <x>, numframes <x>, features <buffer>, bang"
 												}
 
 											}
@@ -1256,9 +1230,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 86.0, 33.0, 368.0, 33.0 ],
-													"style" : "",
-													"text" : "This patch is 'called' once for every slice in the dictionary passed to processsegments",
-													"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+													"text" : "This patch is 'called' once for every slice in the dictionary passed to processsegments"
 												}
 
 											}
@@ -1510,9 +1482,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 174.0, 203.0, 402.0, 33.0 ],
-																	"style" : "",
-																	"text" : "the 'loop' will work with objects in non-blocking mode! (so you can stick a progress bar on here to see progress-per-segment...)",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+																	"text" : "the 'loop' will work with objects in non-blocking mode! (so you can stick a progress bar on here to see progress-per-segment...)"
 																}
 
 															}
@@ -1524,9 +1494,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 110.0, 268.0, 402.0, 33.0 ],
-																	"style" : "",
-																	"text" : "Important: make sure to foward the bang when done, to keep the loop going",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+																	"text" : "Important: make sure to foward the bang when done, to keep the loop going"
 																}
 
 															}
@@ -1551,9 +1519,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 110.0, 124.0, 402.0, 47.0 ],
-																	"style" : "",
-																	"text" : "For simplest use, these can go straight into a fluid slicer, and it should Just Work. However, you can capture these messages (using route) and make things arbitarily more sophisticated ",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+																	"text" : "For simplest use, these can go straight into a fluid slicer, and it should Just Work. However, you can capture these messages (using route) and make things arbitarily more sophisticated "
 																}
 
 															}
@@ -1565,9 +1531,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 110.0, 89.0, 402.0, 33.0 ],
-																	"style" : "",
-																	"text" : "It gets passed a *sequence* of messages: \nsource <buffer>, startframe <x>, numframes <x>, indices <buffer>, bang",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+																	"text" : "It gets passed a *sequence* of messages: \nsource <buffer>, startframe <x>, numframes <x>, indices <buffer>, bang"
 																}
 
 															}
@@ -1579,9 +1543,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 110.0, 50.0, 368.0, 33.0 ],
-																	"style" : "",
-																	"text" : "This patch is 'called' once for every slice in the dictionary passed to segmentcorpus",
-																	"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.53 ]
+																	"text" : "This patch is 'called' once for every slice in the dictionary passed to segmentcorpus"
 																}
 
 															}
@@ -1893,9 +1855,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 59.0, 618.0, 36.0 ],
-									"style" : "",
-									"text" : "Given a dict of labels and slice points into a buffer, run an analysis process on each slice and return a dict of labels and features ",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.62 ]
+									"text" : "Given a dict of labels and slice points into a buffer, run an analysis process on each slice and return a dict of labels and features "
 								}
 
 							}

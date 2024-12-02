@@ -288,8 +288,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 281.0, 340.0, 172.0, 123.0 ],
-									"text" : "The fftsettings have a drastic impact on the result of this algorithm.\n\nSee the real-time version of the object for a more interactive demonstration of their effect.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "The fftsettings have a drastic impact on the result of this algorithm.\n\nSee the real-time version of the object for a more interactive demonstration of their effect."
 								}
 
 							}
@@ -403,8 +402,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 344.5, 604.0, 171.0, 50.0 ],
-									"text" : "The output will be the same length as the shortest source buffer.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "The output will be the same length as the shortest source buffer."
 								}
 
 							}
@@ -515,8 +513,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 511.5, 105.0, 21.0 ],
-									"text" : "bang when done",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "bang when done"
 								}
 
 							}

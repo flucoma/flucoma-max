@@ -94,8 +94,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 58.0, 486.5, 84.0, 24.0 ],
-									"text" : "Start audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Start audio"
 								}
 
 							}
@@ -685,8 +684,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 218.0, 293.0, 194.0 ],
-									"text" : "The fluid.sines~ object attempts to reconstruct the input signal as a bank of sinusoids. We might expect that for a pure sine tone, the algorithm has no problems.\n\nWith these settings everything in the sound is considered a sinusoid, even short and quiet peaks.\n\nBecause the decomposition is a windowed process, the detected sinusoidal peaks are located in time based on the window of analysis. When the oscillator changes even slowly over time we hear the artefact and failure of the algorithm emerging in the residual output.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The fluid.sines~ object attempts to reconstruct the input signal as a bank of sinusoids. We might expect that for a pure sine tone, the algorithm has no problems.\n\nWith these settings everything in the sound is considered a sinusoid, even short and quiet peaks.\n\nBecause the decomposition is a windowed process, the detected sinusoidal peaks are located in time based on the window of analysis. When the oscillator changes even slowly over time we hear the artefact and failure of the algorithm emerging in the residual output."
 								}
 
 							}
@@ -966,8 +964,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 570.0, 260.0, 227.75, 33.0 ],
-									"text" : "Increase the threshold drastically but lower the minimum track length.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Increase the threshold drastically but lower the minimum track length."
 								}
 
 							}
@@ -979,8 +976,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 570.0, 215.666666666666686, 227.75, 33.0 ],
-									"text" : "Lower the threshold but increase the track length drastically.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Lower the threshold but increase the track length drastically."
 								}
 
 							}
@@ -991,8 +987,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 570.0, 178.833333333333343, 227.75, 20.0 ],
-									"text" : "Increase the minimum track length.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Increase the minimum track length."
 								}
 
 							}
@@ -1004,8 +999,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 570.0, 130.0, 227.75, 33.0 ],
-									"text" : "Tracks can be short but the detection threshold is higher than default.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Tracks can be short but the detection threshold is higher than default."
 								}
 
 							}
@@ -1017,8 +1011,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 282.000000000000057, 412.5, 453.0, 33.0 ],
-									"text" : "Changing the minimum track length adds latency at the benefit of potentially being less jittery.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Changing the minimum track length adds latency at the benefit of potentially being less jittery."
 								}
 
 							}
@@ -1042,8 +1035,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 79.5, 541.25, 84.0, 24.0 ],
-									"text" : "Start audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Start audio"
 								}
 
 							}
@@ -1620,8 +1612,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 257.0, 120.0, 150.0, 37.0 ],
-									"text" : "Play the default sound (or choose your own)",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play the default sound (or choose your own)"
 								}
 
 							}
@@ -1633,8 +1624,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 182.000000000000028, 470.0, 470.0, 24.0 ],
-									"text" : "Select which component you want to hear. Selecting both sums to the original input.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Select which component you want to hear. Selecting both sums to the original input."
 								}
 
 							}
@@ -1687,8 +1677,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 634.75, 311.5, 163.0, 39.0 ],
-									"text" : "experiment with parameters",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "experiment with parameters"
 								}
 
 							}

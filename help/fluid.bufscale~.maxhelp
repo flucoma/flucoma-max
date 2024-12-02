@@ -129,8 +129,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.0, 568.5, 280.0, 36.0 ],
-									"text" : "The input (ranging from 1 to 5) is scaled to the output range of (0 to 1).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The input (ranging from 1 to 5) is scaled to the output range of (0 to 1)."
 								}
 
 							}
@@ -187,8 +186,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 415.0, 301.5, 373.0, 50.0 ],
-									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling. You can optionally clip the output, as to not exceed the specified output minimum and maximum.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can modify the minima and maxima for both input and output to adjust the scaling. You can optionally clip the output, as to not exceed the specified output minimum and maximum."
 								}
 
 							}
