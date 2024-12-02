@@ -151,8 +151,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 30.0, 450.0, 402.0, 36.0 ],
-					"text" : "Each object uses different arguments (fittransform, fitpredict, etc.) in this regard, so it's best to see the tutorial to see how this works.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Each object uses different arguments (fittransform, fitpredict, etc.) in this regard, so it's best to see the tutorial to see how this works."
 				}
 
 			}
@@ -236,8 +235,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 100.0, 401.0, 79.0 ],
-					"text" : "Instead of always having to supply a fluid.dataset~ for FluCoMa fluid.dataset~ processing objects, you can have those objects automatically manage their own fluid.dataset~(s).\n\nHere is a quick example with fluid.standardize~.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Instead of always having to supply a fluid.dataset~ for FluCoMa fluid.dataset~ processing objects, you can have those objects automatically manage their own fluid.dataset~(s).\n\nHere is a quick example with fluid.standardize~."
 				}
 
 			}
@@ -301,8 +299,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 69.599853515625, 432.0, 21.0 ],
-					"text" : "Learn how fluid.dataset~(s) can be automatically managed with FluCoMa.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Learn how fluid.dataset~(s) can be automatically managed with FluCoMa."
 				}
 
 			}

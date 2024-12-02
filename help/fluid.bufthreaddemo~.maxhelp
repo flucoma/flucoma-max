@@ -739,8 +739,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 74.0, 195.5, 583.0, 60.0 ],
-									"text" : "The plots below show the distributions of recorded timings for these cases. The precise shapes will depend on what else is happening, but we would expect 1 & 2 to be similar, and for 3 to exhibit much more variablility (because switching threads introduces overhead and jitter), especially when the lots of drawing is happening",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "The plots below show the distributions of recorded timings for these cases. The precise shapes will depend on what else is happening, but we would expect 1 & 2 to be similar, and for 3 to exhibit much more variablility (because switching threads introduces overhead and jitter), especially when the lots of drawing is happening"
 								}
 
 							}
@@ -861,8 +860,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 169.0, 754.0, 105.0, 20.0 ],
-									"text" : "This video tutorial",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "This video tutorial"
 								}
 
 							}
@@ -873,8 +871,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 169.0, 727.0, 93.0, 20.0 ],
-									"text" : "See this article:",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "See this article:"
 								}
 
 							}
@@ -3239,8 +3236,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 90.5, 561.0, 33.0 ],
-									"text" : "If you are running frequent, *very small* non-realtime tasks with critcal timing needs, you might prefer to use the scheduler. To do this, set blocking = 2. ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "If you are running frequent, *very small* non-realtime tasks with critcal timing needs, you might prefer to use the scheduler. To do this, set blocking = 2. "
 								}
 
 							}
@@ -3612,8 +3608,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 285.0, 283.5, 302.0, 33.0 ],
-									"text" : "If you want to enable this sort of idiom with custom threads, you can turn the queue attribute on",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "If you want to enable this sort of idiom with custom threads, you can turn the queue attribute on"
 								}
 
 							}
@@ -3625,8 +3620,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 424.0, 239.0, 302.0, 33.0 ],
-									"text" : "In non-blocking mode, this will give an error for the second and third jobs that the object is busy",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "In non-blocking mode, this will give an error for the second and third jobs that the object is busy"
 								}
 
 							}
@@ -3673,8 +3667,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 90.5, 556.5, 33.0 ],
-									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to process in Max's main thread, equivalent to using the [defer] object. ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to process in Max's main thread, equivalent to using the [defer] object. "
 								}
 
 							}
@@ -3686,8 +3679,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 86.0, 165.0, 324.0, 33.0 ],
-									"text" : "In blocking mode, you can queue calls like this (check the console for output): ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "In blocking mode, you can queue calls like this (check the console for output): "
 								}
 
 							}
@@ -3976,8 +3968,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 346.0, 263.5, 212.0, 33.0 ],
-									"text" : "This will wait for 3 seconds, and then write 3000 into the buffer~ 'result' ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "This will wait for 3 seconds, and then write 3000 into the buffer~ 'result' "
 								}
 
 							}
@@ -4050,8 +4041,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 9.0, 108.0, 534.0, 94.0 ],
-									"text" : "Here is a simple object to help demonstrate the options for (a)synchronous processing in the fluid decomposition toolkit's non-realtime objects. \n\nfluid.bufthreaddemo~ has two attributes. 'time' denotes how long the objects takes to 'process'; result is a buffer~ to output to. The object's processing consists simply of waiting for 'time' milliseconds, and then writing this number into the output buffer.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Here is a simple object to help demonstrate the options for (a)synchronous processing in the fluid decomposition toolkit's non-realtime objects. \n\nfluid.bufthreaddemo~ has two attributes. 'time' denotes how long the objects takes to 'process'; result is a buffer~ to output to. The object's processing consists simply of waiting for 'time' milliseconds, and then writing this number into the output buffer."
 								}
 
 							}
@@ -4248,9 +4238,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 151.75, 276.0, 175.0, 36.0 ],
-									"text" : "You can abort a threaded job using the 'cancel' message",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"patching_rect" : [ 151.75, 276.0, 179.0, 36.0 ],
+									"text" : "You can abort a threaded job using the 'cancel' message"
 								}
 
 							}
@@ -4263,8 +4252,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 421.0, 370.0, 309.0, 94.0 ],
-									"text" : "When blocking = 0, the right outlet of the object will report approximate job progress.\n\nThe left outlet will still output a message when finished, which you can use to trigger your next round of processing",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "When blocking = 0, the right outlet of the object will report approximate job progress.\n\nThe left outlet will still output a message when finished, which you can use to trigger your next round of processing"
 								}
 
 							}
@@ -4277,8 +4265,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 194.5, 166.0, 390.0, 50.0 ],
-									"text" : "For more intensive jobs, this might cause 'beach balling'. In these circumstances you can opt to use a custom thread instead, to avoid locking up Max, by setting 'blocking' to 0. ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "For more intensive jobs, this might cause 'beach balling'. In these circumstances you can opt to use a custom thread instead, to avoid locking up Max, by setting 'blocking' to 0. "
 								}
 
 							}
@@ -4290,8 +4277,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 11.5, 88.5, 556.5, 36.0 ],
-									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to process in Max's main thread, equivalent to using the [defer] object. ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "The default for all Fluid Decomposition Toolkit non-realtime objects is to process in Max's main thread, equivalent to using the [defer] object. "
 								}
 
 							}
@@ -4526,8 +4512,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 9.0, 71.0, 206.0, 21.0 ],
-					"text" : "Fluid Decomposition and Threads",
-					"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+					"text" : "Fluid Decomposition and Threads"
 				}
 
 			}

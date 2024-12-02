@@ -657,9 +657,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 333.599852000000169, 54.0, 273.0, 127.0 ],
-					"presentation_linecount" : 9,
-					"text" : "Sometimes instead of thinking about what parameters we'd like to set for a segmentation algorithm we'd rather dictate how many slices we'd like to find.\n\nIn this example we impose a feedback process on the slicing, so that a threshold can be found which satisfies a number of slices within a +/- range.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Sometimes instead of thinking about what parameters we'd like to set for a segmentation algorithm we'd rather dictate how many slices we'd like to find.\n\nIn this example we impose a feedback process on the slicing, so that a threshold can be found which satisfies a number of slices within a +/- range."
 				}
 
 			}
@@ -707,8 +705,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 36.5, 54.0, 273.0, 20.0 ],
-					"text" : "Discover threshold required for a number of slices",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Discover threshold required for a number of slices"
 				}
 
 			}
@@ -864,8 +861,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 62.300048999999944, 400.799987999999985, 60.0, 20.0 ],
-					"text" : "threshold",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "threshold"
 				}
 
 			}
@@ -876,8 +872,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 175.40002400000003, 610.000030000000038, 128.0, 20.0 ],
-					"text" : "final number of slices",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "final number of slices"
 				}
 
 			}

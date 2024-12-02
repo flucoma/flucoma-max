@@ -105,8 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 57.0, 424.0, 21.0 ],
-									"text" : "Predict the classification of one dataset based on the training of another.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Predict the classification of one dataset based on the training of another."
 								}
 
 							}
@@ -118,8 +117,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 630.0, 588.0, 193.0, 50.0 ],
-									"text" : "If you change the dataset you can call \"predict\" again to generate new predictions.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "If you change the dataset you can call \"predict\" again to generate new predictions."
 								}
 
 							}
@@ -131,8 +129,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 650.0, 334.0, 184.0, 123.0 ],
-									"text" : "Every point in the dataset has a prediction made for it and is coloured accordingly.\n\nWe should see the quadrant separation learned from the first dataset mapped on to the second dataset here.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Every point in the dataset has a prediction made for it and is coloured accordingly.\n\nWe should see the quadrant separation learned from the first dataset mapped on to the second dataset here."
 								}
 
 							}
@@ -403,8 +400,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 68.0, 11.0, 298.0, 47.0 ],
-													"text" : "This is essentially an automatic version of what the first tab does to generate labels for a dataset based on the position of points in four quadrants.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This is essentially an automatic version of what the first tab does to generate labels for a dataset based on the position of points in four quadrants."
 												}
 
 											}
@@ -416,8 +412,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 540.0, 214.0, 169.0, 87.0 ],
-													"text" : "Labels are assigned like so:\n\ntop left yellow\ntop right blue\nbottom left red\nbottom right green",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Labels are assigned like so:\n\ntop left yellow\ntop right blue\nbottom left red\nbottom right green"
 												}
 
 											}
@@ -428,8 +423,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 411.0, 191.0, 298.0, 20.0 ],
-													"text" : "provide a label for each point based on its position",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "provide a label for each point based on its position"
 												}
 
 											}
@@ -487,8 +481,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 399.0, 21.0, 158.0, 154.0 ],
-																	"text" : "This patch might seem complicated because of the many \"if\" objects.\n\nAt it's core, it just iterates over the datapoints of the fluid.dataset~ and creates an accompanying label in a labelset based on the position in the x/y space separated into quadrants.",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "This patch might seem complicated because of the many \"if\" objects.\n\nAt it's core, it just iterates over the datapoints of the fluid.dataset~ and creates an accompanying label in a labelset based on the position in the x/y space separated into quadrants."
 																}
 
 															}
@@ -499,8 +492,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 311.5, 493.0, 158.0, 20.0 ],
-																	"text" : "add the label to the labelset",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "add the label to the labelset"
 																}
 
 															}
@@ -512,8 +504,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 591.0, 344.0, 158.0, 47.0 ],
-																	"text" : "assign symbols as labels to points based on which quadrant they belong to",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "assign symbols as labels to points based on which quadrant they belong to"
 																}
 
 															}
@@ -540,8 +531,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 334.0, 190.0, 158.0, 20.0 ],
-																	"text" : "iterate over the dataset data",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "iterate over the dataset data"
 																}
 
 															}
@@ -1486,8 +1476,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 393.0, 370.0, 382.0, 21.0 ],
-									"text" : "A prediction will be made based on the position of your mouse. ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A prediction will be made based on the position of your mouse. "
 								}
 
 							}
@@ -1499,8 +1488,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 670.0, 529.0, 257.5, 36.0 ],
-									"text" : "You can repeatedly train to get a better \"fit\". (See the message below the object)",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can repeatedly train to get a better \"fit\". (See the message below the object)"
 								}
 
 							}
@@ -1512,8 +1500,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 176.0, 560.0, 180.0, 79.0 ],
-									"text" : "The predictpoint message here tells the neural network that new data (in the buffer) needs to have a label predicted for it.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The predictpoint message here tells the neural network that new data (in the buffer) needs to have a label predicted for it."
 								}
 
 							}
@@ -1557,8 +1544,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 738.0, 194.5, 169.0, 94.0 ],
-									"text" : "Labels are assigned like so:\n\ntop left yellow\ntop right blue\nbottom left red\nbottom right green",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Labels are assigned like so:\n\ntop left yellow\ntop right blue\nbottom left red\nbottom right green"
 								}
 
 							}
@@ -1570,8 +1556,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 528.0, 696.5, 103.0, 36.0 ],
-									"text" : "This is the predicted label.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the predicted label."
 								}
 
 							}
@@ -1583,8 +1568,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 207.0, 663.5, 149.0, 36.0 ],
-									"text" : "The \"error\" after fitting the data and the labels",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The \"error\" after fitting the data and the labels"
 								}
 
 							}
@@ -1596,8 +1580,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 700.5, 656.5, 150.0, 50.0 ],
-									"text" : "updates the colour of the cursor as you move around the space",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "updates the colour of the cursor as you move around the space"
 								}
 
 							}
@@ -1674,8 +1657,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 52.5, 378.0, 100.0, 65.0 ],
-									"text" : "Have a cursor appear in the space when querying",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Have a cursor appear in the space when querying"
 								}
 
 							}
@@ -1686,8 +1668,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 609.0, 171.5, 298.0, 21.0 ],
-									"text" : "provide a label for each point based on its position",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "provide a label for each point based on its position"
 								}
 
 							}
@@ -2212,8 +2193,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 390.0, 18.0, 158.0, 154.0 ],
-													"text" : "This patch might seem complicated because of the many \"if\" objects.\n\nAt it's core, it just iterates over the datapoints of the fluid.dataset~ and creates an accompanying label in a labelset based on the position in the x/y space separated into quadrants.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This patch might seem complicated because of the many \"if\" objects.\n\nAt it's core, it just iterates over the datapoints of the fluid.dataset~ and creates an accompanying label in a labelset based on the position in the x/y space separated into quadrants."
 												}
 
 											}
@@ -2224,8 +2204,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 302.5, 490.0, 158.0, 20.0 ],
-													"text" : "add the label to the labelset",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "add the label to the labelset"
 												}
 
 											}
@@ -2237,8 +2216,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 582.0, 341.0, 158.0, 47.0 ],
-													"text" : "assign symbols as labels to points based on which quadrant they belong to",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "assign symbols as labels to points based on which quadrant they belong to"
 												}
 
 											}
@@ -2265,8 +2243,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 325.0, 187.0, 158.0, 20.0 ],
-													"text" : "iterate over the dataset data",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "iterate over the dataset data"
 												}
 
 											}

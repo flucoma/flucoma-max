@@ -603,8 +603,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 3,
 					"presentation_rect" : [ 18.97886073589325, 160.070424437522888, 639.0, 60.0 ],
-					"text" : "These example patches display creative uses of nmf processing, each with increasing complexity.\n\nIf you aren't familiar with the nmf objects, check out their help files before diving deeper!",
-					"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+					"text" : "These example patches display creative uses of nmf processing, each with increasing complexity.\n\nIf you aren't familiar with the nmf objects, check out their help files before diving deeper!"
 				}
 
 			}
@@ -619,8 +618,7 @@
 					"patching_rect" : [ 65.83346962928772, 271.166659116744995, 139.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 18.97886073589325, 231.070424437522888, 139.0, 21.0 ],
-					"text" : "Select an example...",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Select an example..."
 				}
 
 			}

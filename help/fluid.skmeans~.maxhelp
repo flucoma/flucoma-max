@@ -104,8 +104,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 412.0, 21.0 ],
-									"text" : "Calculating distances between points and each learned mean/centroid",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Calculating distances between points and each learned mean/centroid"
 								}
 
 							}
@@ -117,8 +116,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 350.0, 480.0, 153.0, 152.0 ],
-									"text" : "The point size is scaled by the distance that the point has to the cluster it belongs to.\n\nSo, you should see that points further away from the centroid are smaller and ones which are closer are larger.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The point size is scaled by the distance that the point has to the cluster it belongs to.\n\nSo, you should see that points further away from the centroid are smaller and ones which are closer are larger."
 								}
 
 							}
@@ -786,8 +784,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 560.0, 418.954543999999942, 150.0, 33.0 ],
-													"text" : "This plots the position of our means as seeds",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This plots the position of our means as seeds"
 												}
 
 											}
@@ -1794,8 +1791,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 670.0, 21.0 ],
-									"text" : "You can also retrieve the \"means\" i.e the centres of each cluster either for visualisation or perhaps further analysis.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can also retrieve the \"means\" i.e the centres of each cluster either for visualisation or perhaps further analysis."
 								}
 
 							}
@@ -1808,8 +1804,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 302.5, 447.5, 150.0, 50.0 ],
-									"text" : "The larger black circles are the means of each cluster.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The larger black circles are the means of each cluster."
 								}
 
 							}
@@ -1821,8 +1816,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 498.5, 232.818184000000002, 378.0, 25.0 ],
-									"text" : "Plot the means that are now stored in help.skmeans.4.means",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Plot the means that are now stored in help.skmeans.4.means"
 								}
 
 							}
@@ -1835,8 +1829,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 30.0, 110.0, 160.0, 40.0 ],
-									"text" : "Select a dataset to cluster",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Select a dataset to cluster"
 								}
 
 							}
@@ -2006,8 +1999,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 570.0, 386.954543999999942, 150.0, 33.0 ],
-													"text" : "This plots the position of our means as seeds",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This plots the position of our means as seeds"
 												}
 
 											}
@@ -2349,8 +2341,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 540.0, 168.5, 422.0, 25.0 ],
-									"text" : "Retrieve the means that fluid.skmeans learned and store in a dataset",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Retrieve the means that fluid.skmeans learned and store in a dataset"
 								}
 
 							}
@@ -2824,8 +2815,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 623.5, 112.999999999999972, 227.0, 25.0 ],
-									"text" : "Predict four clusters for the dataset",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Predict four clusters for the dataset"
 								}
 
 							}
@@ -3034,8 +3024,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 385.0, 36.0 ],
-									"text" : "You can incrementally \"fit\" a dataset, allowing you to iterate slowly through the learning process of the skmeans algorithm",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "You can incrementally \"fit\" a dataset, allowing you to iterate slowly through the learning process of the skmeans algorithm"
 								}
 
 							}
@@ -3278,8 +3267,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 476.5, 115.0, 65.0 ],
-									"text" : "The colour denotes which cluster the point belongs to.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The colour denotes which cluster the point belongs to."
 								}
 
 							}
@@ -3785,8 +3773,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 420.0, 36.0 ],
-									"text" : "You can also \"set\" the means from which skmeans will learn clusters. With low iteration counts, this allows you to bias the clustering process",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "You can also \"set\" the means from which skmeans will learn clusters. With low iteration counts, this allows you to bias the clustering process"
 								}
 
 							}
@@ -3798,8 +3785,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 290.0, 484.5, 154.0, 181.0 ],
-									"text" : "You will notice that after one interation, the space is roughly around the 4 means that were set in step 2.\n\nThis means that we can \"seed\" skmeans to find certain clusters rather than letting it come to its own conclusions from a random starting point.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You will notice that after one interation, the space is roughly around the 4 means that were set in step 2.\n\nThis means that we can \"seed\" skmeans to find certain clusters rather than letting it come to its own conclusions from a random starting point."
 								}
 
 							}
@@ -3831,8 +3817,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 528.0, 380.0, 150.0, 137.0 ],
-									"text" : "fluid.skmeans~ can converge on similar clustering even with extreme means set as the seed. By keeping the iterations low it is more obvious how it affects the clustering process.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.skmeans~ can converge on similar clustering even with extreme means set as the seed. By keeping the iterations low it is more obvious how it affects the clustering process."
 								}
 
 							}
@@ -3845,8 +3830,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 660.0, 301.5, 293.0, 40.0 ],
-									"text" : "Then fitpredict to predict the cluster for each point based on the means we provided.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Then fitpredict to predict the cluster for each point based on the means we provided."
 								}
 
 							}
@@ -3903,8 +3887,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 165.0, 76.0, 150.0, 60.0 ],
-													"text" : "creates a dictionary of points to load into the dataset which will be our means",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "creates a dictionary of points to load into the dataset which will be our means"
 												}
 
 											}
@@ -4133,8 +4116,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 424.0, 249.954543999999942, 150.0, 33.0 ],
-													"text" : "This plots the position of our means as seeds",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This plots the position of our means as seeds"
 												}
 
 											}
@@ -4878,8 +4860,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 500.0, 234.5, 248.0, 54.0 ],
-									"text" : "Once the means have been stored in a dataset~ we then \"set\" those means in the fluid.skmeans~ object like so",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Once the means have been stored in a dataset~ we then \"set\" those means in the fluid.skmeans~ object like so"
 								}
 
 							}
@@ -5303,8 +5284,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 509.5, 209.5, 215.0, 36.0 ],
-									"text" : "Change the number of clusters and retrigger the prediction of clusters",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Change the number of clusters and retrigger the prediction of clusters"
 								}
 
 							}
@@ -5316,8 +5296,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 340.0, 480.5, 115.0, 65.0 ],
-									"text" : "The colour denotes which cluster the point belongs to.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The colour denotes which cluster the point belongs to."
 								}
 
 							}

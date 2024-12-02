@@ -168,8 +168,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 614.0, 21.0 ],
-									"text" : "Adjusting the parameters to affect the \"embedding\" or \"projection\" of data into a lower dimensional space.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Adjusting the parameters to affect the \"embedding\" or \"projection\" of data into a lower dimensional space."
 								}
 
 							}
@@ -196,9 +195,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 480.0, 210.0, 349.0, 428.0 ],
-									"text" : "The UMAP algorithm can be nudged to favour the global or local structure of the original data. In essence, this is about whether or not you care about the overall shape of the data, or smaller clusters of points when it is reduced.\n\nThe numneighbours attribute dictates how many points from the original data are considered together when it is determining a transform for the data. These are related to the size of your data. For example, imagine that you have a dataset with 100 points and wanted the whole space to be considered as \"one thing\", setting numneighbours to 100 might be an interesting place to start.\n\nThe minimum distance attribute dictates how close points can be represented in the output dataset. Small values tending towards 0 let UMAP pack the points in tightly while larger values cause the data to be more spread out.\n\nMusically speaking, this decision making will be bound up in lots of different attentions, like what kind of sounds are being analysed and how those sounds will be used in conjunction with the UMAP representation. If you want tight perceptually meaningful clusters then lowering the number of neighbours (relative to your total dataset) and increasing the minimum distance could be a tool for creating more stark separations between points. Likewise, lowering the mindist and increasing the numneighbours might create a flatter and more spread out space for exploring more widely.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"patching_rect" : [ 480.0, 210.0, 352.0, 428.0 ],
+									"text" : "The UMAP algorithm can be nudged to favour the global or local structure of the original data. In essence, this is about whether or not you care about the overall shape of the data, or smaller clusters of points when it is reduced.\n\nThe numneighbours attribute dictates how many points from the original data are considered together when it is determining a transform for the data. These are related to the size of your data. For example, imagine that you have a dataset with 100 points and wanted the whole space to be considered as \"one thing\", setting numneighbours to 100 might be an interesting place to start.\n\nThe minimum distance attribute dictates how close points can be represented in the output dataset. Small values tending towards 0 let UMAP pack the points in tightly while larger values cause the data to be more spread out.\n\nMusically speaking, this decision making will be bound up in lots of different attentions, like what kind of sounds are being analysed and how those sounds will be used in conjunction with the UMAP representation. If you want tight perceptually meaningful clusters then lowering the number of neighbours (relative to your total dataset) and increasing the minimum distance could be a tool for creating more stark separations between points. Likewise, lowering the mindist and increasing the numneighbours might create a flatter and more spread out space for exploring more widely."
 								}
 
 							}
@@ -1166,8 +1164,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 483.0, 278.0, 152.0, 60.0 ],
-													"text" : "fit a kdtree so we can use our mouse to navgiate around the fluid.umap~ outputs in the fluid.plotter.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "fit a kdtree so we can use our mouse to navgiate around the fluid.umap~ outputs in the fluid.plotter."
 												}
 
 											}
@@ -1179,8 +1176,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 340.0, 71.5, 155.0, 60.0 ],
-													"text" : "Normalise the fluid.umap~ output because it results in an arbitrary range for the values.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Normalise the fluid.umap~ output because it results in an arbitrary range for the values."
 												}
 
 											}
@@ -2719,8 +2715,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 464.0, 301.0, 152.0, 60.0 ],
-													"text" : "fit a kdtree so we can use our mouse to navgiate around the fluid.umap~ outputs in the fluid.plotter.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "fit a kdtree so we can use our mouse to navgiate around the fluid.umap~ outputs in the fluid.plotter."
 												}
 
 											}
@@ -2732,8 +2727,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 334.0, 117.5, 155.0, 60.0 ],
-													"text" : "Normalise the fluid.umap~ output because it results in an arbitrary range for the values.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Normalise the fluid.umap~ output because it results in an arbitrary range for the values."
 												}
 
 											}
@@ -3031,8 +3025,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 30.0, 430.0, 270.0, 239.0 ],
-									"text" : "Each identifier is a segment of sound from a corpus of all the media files in the Fluid Corpus Manipulation Toolkit package.\n\nFor each identifier, there are 26 values derived from MFCC analysis.We're going to use fluid.umap~ to reduce the data, so that each identifier only has two variables. \n\nIdeally, these new values that fluid.umap~ calculates will be able to preserve much of the intrinsic characteristics of the higher dimension data and in theory, we should get a two dimensional representation that has some kind of perceptually meaningful shape to it.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each identifier is a segment of sound from a corpus of all the media files in the Fluid Corpus Manipulation Toolkit package.\n\nFor each identifier, there are 26 values derived from MFCC analysis.We're going to use fluid.umap~ to reduce the data, so that each identifier only has two variables. \n\nIdeally, these new values that fluid.umap~ calculates will be able to preserve much of the intrinsic characteristics of the higher dimension data and in theory, we should get a two dimensional representation that has some kind of perceptually meaningful shape to it."
 								}
 
 							}
@@ -4167,8 +4160,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 660.0, 21.0 ],
-									"text" : "This is a fun example to see how UMAP \"thinks\". A three-dimensional mammoth is reduced into two dimensions.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is a fun example to see how UMAP \"thinks\". A three-dimensional mammoth is reduced into two dimensions."
 								}
 
 							}
@@ -4179,8 +4171,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 305.5, 630.0, 607.0, 21.0 ],
-									"text" : "This example and the data is drawn almost entirely from https://pair-code.github.io/understanding-umap/",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This example and the data is drawn almost entirely from https://pair-code.github.io/understanding-umap/"
 								}
 
 							}
@@ -4257,8 +4248,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 680.0, 400.0, 153.0, 152.0 ],
-									"text" : "The colours for each point stay the same betwen the 3 and 2 dimensional representation. \n\nYou can see how certain features are grouped together such as legs, the  body, the tusk.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The colours for each point stay the same betwen the 3 and 2 dimensional representation. \n\nYou can see how certain features are grouped together such as legs, the  body, the tusk."
 								}
 
 							}
@@ -4283,8 +4273,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 160.0, 267.0, 150.0, 65.0 ],
-									"text" : "Using jitter the mammoth dataset is projected into a 3 dimensional space.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Using jitter the mammoth dataset is projected into a 3 dimensional space."
 								}
 
 							}
@@ -4431,8 +4420,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 419.0, 81.5, 150.0, 87.0 ],
-													"text" : "These colours are the same as the ones drawn in the 3d mammoth so that we can trace how the 3d shape is collapsed into two dimensions",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "These colours are the same as the ones drawn in the 3d mammoth so that we can trace how the 3d shape is collapsed into two dimensions"
 												}
 
 											}

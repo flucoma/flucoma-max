@@ -61,8 +61,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 89.0, 102.0, 382.0, 20.0 ],
-					"text" : "If you need to reset the state of the buffers~ double click this loadbang",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "If you need to reset the state of the buffers~ double click this loadbang"
 				}
 
 			}
@@ -74,8 +73,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 196.0, 406.0, 382.0, 33.0 ],
-					"text" : "All of the \"macros\" are created purely in Max around the fluid.bufcompose~ object",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "All of the \"macros\" are created purely in Max around the fluid.bufcompose~ object"
 				}
 
 			}
@@ -134,8 +132,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 27.0, 47.0, 299.0, 20.0 ],
-					"text" : "Advanced usage of fluid.bufcompose~ with \"macros\"",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Advanced usage of fluid.bufcompose~ with \"macros\""
 				}
 
 			}

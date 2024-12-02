@@ -277,7 +277,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 158.0, 137.0, 71.0, 21.0 ],
 					"text" : "confidence",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"textjustification" : 1
 				}
 
@@ -317,7 +316,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 151.0, 55.0, 21.0 ],
 					"text" : "0",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"textjustification" : 2
 				}
 
@@ -333,7 +331,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 242.0, 56.0, 21.0 ],
 					"text" : "0",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"textjustification" : 2
 				}
 
@@ -350,7 +347,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 165.0, 6.0, 57.0, 21.0 ],
 					"text" : "pitch Hz",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"textjustification" : 1
 				}
 
@@ -402,7 +398,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 21.0, 55.0, 21.0 ],
 					"text" : "0",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"textjustification" : 2
 				}
 
@@ -418,7 +413,6 @@
 					"presentation" : 1,
 					"presentation_rect" : [ 4.0, 110.0, 55.0, 21.0 ],
 					"text" : "0",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 					"textjustification" : 2
 				}
 
@@ -749,7 +743,8 @@
 				}
 
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }

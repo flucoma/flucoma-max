@@ -109,8 +109,7 @@
 					"presentation" : 1,
 					"presentation_linecount" : 2,
 					"presentation_rect" : [ 2.0, 28.0, 166.0, 33.0 ],
-					"text" : "Two overlapping crescent shapes",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Two overlapping crescent shapes"
 				}
 
 			}
@@ -245,7 +244,8 @@
 				}
 
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }

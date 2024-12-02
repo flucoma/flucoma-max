@@ -133,8 +133,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 600.0, 343.5, 257.0, 36.0 ],
-									"text" : "Smooth out bumps in the detection of novelty (makes it less sensitive).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Smooth out bumps in the detection of novelty (makes it less sensitive)."
 								}
 
 							}
@@ -146,8 +145,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 343.25, 180.0, 491.0, 21.0 ],
-									"text" : "Modifying these parameters in this order is a good way to tune fluid.bufnoveltyslice~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Modifying these parameters in this order is a good way to tune fluid.bufnoveltyslice~"
 								}
 
 							}
@@ -174,8 +172,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 526.0, 240.0, 304.0, 50.0 ],
-									"text" : "Change the size of the novelty \"kernel\". The larger this number is the bigger the context of time is considered as part of the novelty calculation.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Change the size of the novelty \"kernel\". The larger this number is the bigger the context of time is considered as part of the novelty calculation."
 								}
 
 							}
@@ -201,8 +198,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 534.75, 211.0, 283.0, 21.0 ],
-									"text" : "What feature do you want to look for novelty in?",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "What feature do you want to look for novelty in?"
 								}
 
 							}
@@ -228,8 +224,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 571.0, 300.0, 136.0, 21.0 ],
-									"text" : "Change the threshold.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Change the threshold."
 								}
 
 							}

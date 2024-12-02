@@ -160,8 +160,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 316.0, 21.0 ],
-									"text" : "manipulating the magnitudes as a creative entry point",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "manipulating the magnitudes as a creative entry point"
 								}
 
 							}
@@ -522,8 +521,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 343.0, 161.0, 150.0, 33.0 ],
-													"text" : "extracts the magnitude of each bin and reverses it",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "extracts the magnitude of each bin and reverses it"
 												}
 
 											}
@@ -1224,8 +1222,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 345.0, 497.0, 74.0, 21.0 ],
-									"text" : "resynthesis",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "resynthesis"
 								}
 
 							}
@@ -1254,8 +1251,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 20.0, 497.0, 48.0, 21.0 ],
-									"text" : "source",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "source"
 								}
 
 							}

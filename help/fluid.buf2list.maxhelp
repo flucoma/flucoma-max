@@ -94,8 +94,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 430.0, 154.0, 36.0 ],
-									"text" : "This is the mean of each coefficient in order.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the mean of each coefficient in order."
 								}
 
 							}
@@ -119,8 +118,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 383.0, 193.5, 221.0, 36.0 ],
-									"text" : "The buffer of audio features is made for you automatically.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "The buffer of audio features is made for you automatically."
 								}
 
 							}
@@ -132,8 +130,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 150.0, 283.5, 265.0, 36.0 ],
-									"text" : "The buffer for output is automatically created for you and passed to fluid.buf2list.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "The buffer for output is automatically created for you and passed to fluid.buf2list."
 								}
 
 							}
@@ -217,8 +214,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 57.0, 268.0, 21.0 ],
-									"text" : "Dumping the output of fluid.bufstats~ as a list",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "Dumping the output of fluid.bufstats~ as a list"
 								}
 
 							}
@@ -376,8 +372,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 311.0, 140.0, 264.0, 210.0 ],
-									"text" : "attributes: \n- source <buffername> assigns the buffer to be converted\n- startframe <int>\n- startchan <int>\n- axis <0|1> reading consecutive values frame- or channel-wise\n- numvalues <int> how many values to pick from the start position in the buffer\n\nmessages:\n- bang: triggers the process\n- buffer: changes the name of the source buffer and triggers the process",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "attributes: \n- source <buffername> assigns the buffer to be converted\n- startframe <int>\n- startchan <int>\n- axis <0|1> reading consecutive values frame- or channel-wise\n- numvalues <int> how many values to pick from the start position in the buffer\n\nmessages:\n- bang: triggers the process\n- buffer: changes the name of the source buffer and triggers the process"
 								}
 
 							}
@@ -389,9 +384,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 311.0, 352.0, 264.0, 108.0 ],
-									"text" : "Be aware that the maximum list size in Max is 32767. The object will not try to read more than that. By default it reads only 256 values much like the zl family of objects. Providing a first argument to increase this maximum is essential if you need a bigger input maximum size.",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 1.0 ]
+									"patching_rect" : [ 311.0, 352.0, 268.0, 108.0 ],
+									"text" : "Be aware that the maximum list size in Max is 32767. The object will not try to read more than that. By default it reads only 256 values much like the zl family of objects. Providing a first argument to increase this maximum is essential if you need a bigger input maximum size."
 								}
 
 							}
