@@ -167,8 +167,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 240.0, 546.0, 50.0 ],
-									"text" : "The dog's bark is very present in this recording but not always. By just decomposing the first four seconds (where the dog barks a lot) we can extract nmf bases that will help differentiate moments in time where the dog barking is an obvious feature.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "The dog's bark is very present in this recording but not always. By just decomposing the first four seconds (where the dog barks a lot) we can extract nmf bases that will help differentiate moments in time where the dog barking is an obvious feature."
 								}
 
 							}
@@ -286,8 +285,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 546.0, 21.0 ],
-									"text" : "Helping fluid.nmfmatch~ discover known \"features\" by only decomposing sections of a source",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Helping fluid.nmfmatch~ discover known \"features\" by only decomposing sections of a source"
 								}
 
 							}
@@ -354,8 +352,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 357.0, 606.0, 386.0, 94.0 ],
-									"text" : "One of these activation levels will jump up noticeably when the dog barks.\n\nBecause the NMF algorithm starts from a stochastic state, the contents of the decomposition will be vaguely similar, but not always in the same order.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "One of these activation levels will jump up noticeably when the dog barks.\n\nBecause the NMF algorithm starts from a stochastic state, the contents of the decomposition will be vaguely similar, but not always in the same order."
 								}
 
 							}
@@ -843,8 +840,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 95.0, 15.0, 150.0, 74.0 ],
-													"text" : "This patch records one second of a 500Hz sine wave into a buffer, and then a further one second of 5000Hz into a buffer.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This patch records one second of a 500Hz sine wave into a buffer, and then a further one second of 5000Hz into a buffer."
 												}
 
 											}
@@ -1165,8 +1161,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 173.5, 469.5, 198.0, 21.0 ],
-									"text" : "output is a list of activation levels",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "output is a list of activation levels"
 								}
 
 							}
@@ -1177,8 +1172,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 291.0, 511.0, 386.0, 21.0 ],
-									"text" : "the activation levels grow in the presence of a learned component",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "the activation levels grow in the presence of a learned component"
 								}
 
 							}
@@ -1550,8 +1544,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 580.0, 354.0, 254.0, 21.0 ],
-									"text" : "These are the \"bases\" of each component.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "These are the \"bases\" of each component."
 								}
 
 							}
@@ -1881,8 +1874,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 560.0, 409.833344000000011, 281.0, 50.0 ],
-									"text" : "These control the relative strengths of filters who have their centre frequencies set to the median spectral centroid of each component",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "These control the relative strengths of filters who have their centre frequencies set to the median spectral centroid of each component"
 								}
 
 							}
@@ -1926,8 +1918,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 370.0, 265.216186999999991, 490.0, 21.0 ],
-									"text" : "find the median spectral centroid of each component and return it as a list",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "find the median spectral centroid of each component and return it as a list"
 								}
 
 							}
@@ -2796,8 +2787,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 70.0, 264.0, 21.0 ],
-									"text" : "Make a filter bank from learned components",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Make a filter bank from learned components"
 								}
 
 							}
@@ -3555,8 +3545,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 391.0, 592.0, 175.0, 79.0 ],
-									"text" : "This ensures that the match against the plectrum component is being used to drive the delay time of the comb filter",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "This ensures that the match against the plectrum component is being used to drive the delay time of the comb filter"
 								}
 
 							}
@@ -3805,8 +3794,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 60.0, 10.0, 418.0, 181.0 ],
-													"text" : "This part of the patch uses fluid.bufnmf~ to derive some components based on the crude assumption that if a small part of the guitar sound is broken down into two components, one of those components will contain the plectrum sound almost exclusively. The other component will contain the resonant part of the guitar sound.\n\nTo try and measure this automatically with the computer, we resynthesise two components and then measure the median spectral centroid of each one. We assume that the component with the higher median spectral centroid will be the plectrum. The buffer channel index is then stored so that we can extract it later when we retrieve the matching.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This part of the patch uses fluid.bufnmf~ to derive some components based on the crude assumption that if a small part of the guitar sound is broken down into two components, one of those components will contain the plectrum sound almost exclusively. The other component will contain the resonant part of the guitar sound.\n\nTo try and measure this automatically with the computer, we resynthesise two components and then measure the median spectral centroid of each one. We assume that the component with the higher median spectral centroid will be the plectrum. The buffer channel index is then stored so that we can extract it later when we retrieve the matching."
 												}
 
 											}
@@ -3853,8 +3841,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 80.0, 397.083373999999992, 417.0, 21.0 ],
-													"text" : "the component with the highest centroid will most likely be the plectrum",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "the component with the highest centroid will most likely be the plectrum"
 												}
 
 											}
@@ -4075,8 +4062,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 65.567627000000002, 311.0, 21.0 ],
-									"text" : "control a compressor based on learned components",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "control a compressor based on learned components"
 								}
 
 							}
@@ -4171,8 +4157,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 220.5, 286.600006000000008, 112.0, 21.0 ],
-									"text" : "Take a look inside",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Take a look inside"
 								}
 
 							}

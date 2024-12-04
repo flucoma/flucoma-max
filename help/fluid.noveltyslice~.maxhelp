@@ -39,7 +39,6 @@
 		"subpatcher_template" : "",
 		"showrootpatcherontab" : 0,
 		"showontab" : 0,
-		
 		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
@@ -86,7 +85,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
@@ -96,8 +94,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 259.0, 21.0 ],
-									"text" : "Tuning the parameters of fluid.noveltyslice~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Tuning the parameters of fluid.noveltyslice~"
 								}
 
 							}
@@ -143,8 +140,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 494.0, 290.0, 218.0, 108.0 ],
-									"text" : "A small kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes without sacrificing latency because the threshold is much higher. It is at times a little noisy though.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A small kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes without sacrificing latency because the threshold is much higher. It is at times a little noisy though."
 								}
 
 							}
@@ -170,8 +166,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.0, 200.0, 193.0, 79.0 ],
-									"text" : "A large kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes at the expense of latency.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A large kernelsize calculating novelty on the spectrum of the signal. Captures only the more significant changes at the expense of latency."
 								}
 
 							}
@@ -210,8 +205,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 392.0, 118.0, 205.0, 65.0 ],
-									"text" : "A small kernelsize calculating novelty on the loudness of the signal. Captures a medium amount of detail in the drum loop.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A small kernelsize calculating novelty on the loudness of the signal. Captures a medium amount of detail in the drum loop."
 								}
 
 							}
@@ -578,7 +572,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
@@ -628,8 +621,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 273.0, 380.0, 150.0, 137.0 ],
-									"text" : "Produces impulses when a slice is detected.\n\nWith these settings it can pick up the \"wiggles\" around changes in the note which is one of novelty slicing's strengths.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Produces impulses when a slice is detected.\n\nWith these settings it can pick up the \"wiggles\" around changes in the note which is one of novelty slicing's strengths."
 								}
 
 							}

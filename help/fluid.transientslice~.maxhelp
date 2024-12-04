@@ -95,8 +95,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 253.0, 358.0, 150.0, 65.0 ],
-									"text" : "Everytime a slice is detected a panner progresses across the stereo image",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Everytime a slice is detected a panner progresses across the stereo image"
 								}
 
 							}
@@ -171,8 +170,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 432.0, 464.5, 19.0, 21.0 ],
-									"text" : "R",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "R"
 								}
 
 							}
@@ -183,8 +181,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 210.5, 464.5, 19.0, 21.0 ],
-									"text" : "L",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "L"
 								}
 
 							}
@@ -246,8 +243,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 186.0, 21.0 ],
-									"text" : "Using transientslice~ musically",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Using transientslice~ musically"
 								}
 
 							}
@@ -615,8 +611,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 240.0, 158.0, 79.0 ],
-									"text" : "fluid.transientslice~ has a lot of parameters. These 6 are a good place to start if you want to configure the algorithm.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.transientslice~ has a lot of parameters. These 6 are a good place to start if you want to configure the algorithm."
 								}
 
 							}

@@ -117,8 +117,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 281.0, 181.0, 320.0, 21.0 ],
-									"text" : "This subpatch contains the analysis and bufselect-ing.",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "This subpatch contains the analysis and bufselect-ing."
 								}
 
 							}
@@ -151,8 +150,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 640.0, 21.0 ],
-									"text" : "Extract specific channels and frames of analysis with fluid.bufselect~",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "Extract specific channels and frames of analysis with fluid.bufselect~"
 								}
 
 							}
@@ -332,8 +330,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 330.0, 260.0, 310.0, 137.0 ],
-									"text" : "The dictionary here represents the final result after bufselect has extracted the requested spectral shape descriptors and the subsequent statistical analyses of these.\n\nWhen this patch loads, the dictionary will show the average spectral centroid. Try adding more descriptors and statistical analyses to see how the data grows and shrinks.",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "The dictionary here represents the final result after bufselect has extracted the requested spectral shape descriptors and the subsequent statistical analyses of these.\n\nWhen this patch loads, the dictionary will show the average spectral centroid. Try adding more descriptors and statistical analyses to see how the data grows and shrinks."
 								}
 
 							}
@@ -393,8 +390,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 801.5, 328.0, 384.0, 36.0 ],
-													"text" : "Finally, this will extract only the specific stats requested for each of the selected features.",
-													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+													"text" : "Finally, this will extract only the specific stats requested for each of the selected features."
 												}
 
 											}
@@ -407,8 +403,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 763.5, 285.0, 384.0, 21.0 ],
-													"text" : "This will contain all of the stats for the selected spectral features.",
-													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+													"text" : "This will contain all of the stats for the selected spectral features."
 												}
 
 											}
@@ -421,8 +416,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 825.5, 235.0, 320.0, 21.0 ],
-													"text" : "This will contain only a subset of the spectral features.",
-													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+													"text" : "This will contain only a subset of the spectral features."
 												}
 
 											}
@@ -435,8 +429,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 801.5, 185.0, 278.0, 21.0 ],
-													"text" : "This buffer contains all of the spectral features.",
-													"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+													"text" : "This buffer contains all of the spectral features."
 												}
 
 											}
@@ -2499,8 +2492,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 640.0, 239.283009999999877, 120.0, 65.0 ],
-									"text" : "Indices and channels are set with a list of 0 counting positions.",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "Indices and channels are set with a list of 0 counting positions."
 								}
 
 							}
@@ -2514,8 +2506,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 540.0, 359.283009999999877, 131.0, 94.0 ],
-									"text" : "This visual representation of the output shows how only certain values were extracted from the source buffer.",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "This visual representation of the output shows how only certain values were extracted from the source buffer."
 								}
 
 							}
@@ -2529,8 +2520,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 280.0, 239.283009999999877, 130.0, 137.0 ],
-									"text" : "In this 5 sample x 5 channel buffer there are mostly values set to 0. However, in channels 0 2 and 4 and at indices 0 2 and 4 there are some unique values that we will extract!",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "In this 5 sample x 5 channel buffer there are mostly values set to 0. However, in channels 0 2 and 4 and at indices 0 2 and 4 there are some unique values that we will extract!"
 								}
 
 							}

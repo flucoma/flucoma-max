@@ -114,8 +114,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 34.0, 100.0, 90.0, 25.0 ],
-									"text" : "Play sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play sound"
 								}
 
 							}
@@ -147,8 +146,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 252.5, 349.0, 140.0, 25.0 ],
-									"text" : "The same as step 3",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "The same as step 3"
 								}
 
 							}
@@ -171,8 +169,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 192.5, 571.0, 273.0, 21.0 ],
-									"text" : "This will reflect the number of \"selected\" items",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This will reflect the number of \"selected\" items"
 								}
 
 							}
@@ -424,8 +421,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 98.0, 209.0, 77.0, 25.0 ],
-									"text" : "Audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -492,8 +488,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 435.0, 310.0, 133.0, 25.0 ],
-									"text" : "Back to the default",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Back to the default"
 								}
 
 							}
@@ -525,8 +520,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 252.5, 380.0, 212.0, 181.0 ],
-									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs."
 								}
 
 							}
@@ -538,8 +532,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 209.0, 269.0, 163.0, 25.0 ],
-									"text" : "Only centroid and rolloff",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Only centroid and rolloff"
 								}
 
 							}
@@ -562,8 +555,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.0, 500.0, 21.0 ],
-									"text" : "Specifically select which descriptors from a multivariate output.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Specifically select which descriptors from a multivariate output."
 								}
 
 							}
@@ -894,8 +886,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 540.0, 166.0, 108.0 ],
-									"text" : "The output of the filter is modualted by a cheap and cheerful envelope follower. \n\nTake a look inside for how this works (it uses fluid.loudness~).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The output of the filter is modualted by a cheap and cheerful envelope follower. \n\nTake a look inside for how this works (it uses fluid.loudness~)."
 								}
 
 							}
@@ -921,8 +912,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 480.0, 386.0, 167.0, 94.0 ],
-									"text" : "The logarithmic spectral centroid and the logarithmic spectral spread are used to drive the frequency and Q values of the reson~ filter below.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The logarithmic spectral centroid and the logarithmic spectral spread are used to drive the frequency and Q values of the reson~ filter below."
 								}
 
 							}
@@ -1916,8 +1906,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 40.0, 570.0, 679.0, 108.0 ],
-									"text" : "Compare the values of the centroid and the spread in both scales: the lower one gets in frequency, the more the linear spectral bias shows.\n\nThe same applies to the spread. The logarythmic unit is in semitones. To convert, either divide by 12 to get the octave of one standard deviation, or divide by 6 to get the width of the filter in octaves. One clear observation is that the width is now in a range that scales with what we hear, growing fourfold as the filter goes from resonating to more broadband.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Compare the values of the centroid and the spread in both scales: the lower one gets in frequency, the more the linear spectral bias shows.\n\nThe same applies to the spread. The logarythmic unit is in semitones. To convert, either divide by 12 to get the octave of one standard deviation, or divide by 6 to get the width of the filter in octaves. One clear observation is that the width is now in a range that scales with what we hear, growing fourfold as the filter goes from resonating to more broadband."
 								}
 
 							}
@@ -1959,8 +1948,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 335.0, 177.432372999999984, 69.0, 21.0 ],
-									"text" : "resonance",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "resonance"
 								}
 
 							}
@@ -1986,8 +1974,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 200.0, 176.432372999999984, 66.0, 21.0 ],
-									"text" : "frequency",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "frequency"
 								}
 
 							}
@@ -1999,8 +1986,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 503.0, 546.0, 72.0, 21.0 ],
-									"text" : "log spread",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "log spread"
 								}
 
 							}
@@ -2012,8 +1998,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 349.0, 546.0, 140.0, 21.0 ],
-									"text" : "log centroid back in Hz",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "log centroid back in Hz"
 								}
 
 							}
@@ -2025,8 +2010,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 174.0, 546.0, 72.0, 21.0 ],
-									"text" : "lin spread",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "lin spread"
 								}
 
 							}
@@ -2038,8 +2022,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 40.0, 546.0, 71.0, 21.0 ],
-									"text" : "lin centroid",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "lin centroid"
 								}
 
 							}
@@ -2212,8 +2195,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 677.0, 50.0 ],
-									"text" : "The computation of the spectral centroids can also be done considering a logarithmic pitch scale as well as the power of the magnitudes. This yields values that are generally considered to be more in line with perception, for instance where the shape is often drawn and described in logairhmic terms, i.e. dB per octave.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The computation of the spectral centroids can also be done considering a logarithmic pitch scale as well as the power of the magnitudes. This yields values that are generally considered to be more in line with perception, for instance where the shape is often drawn and described in logairhmic terms, i.e. dB per octave."
 								}
 
 							}
@@ -2514,8 +2496,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 209.000031000000007, 538.5, 162.0, 108.0 ],
-									"text" : "fluid.spectralshape~ outputs a list, so we've tried to make it easier to udnerstand what the numbers relate to by formatting it as a dictionary",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.spectralshape~ outputs a list, so we've tried to make it easier to udnerstand what the numbers relate to by formatting it as a dictionary"
 								}
 
 							}

@@ -207,8 +207,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 576.0, 153.5, 180.0, 87.0 ],
-									"text" : "By matching the algorithm, kernelsize and filtersize attributes we get a glimpse of the novelty curve that noveltyslice uses to measure the \"novelty\" of the audio.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By matching the algorithm, kernelsize and filtersize attributes we get a glimpse of the novelty curve that noveltyslice uses to measure the \"novelty\" of the audio."
 								}
 
 							}
@@ -285,8 +284,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 572.0, 468.0, 188.0, 87.0 ],
-									"text" : "The amount of novelty over time is depicted by the red line.\n\nSlices detected by the noveltyslice object can be seen where are \"peaks\" in the novelty.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The amount of novelty over time is depicted by the red line.\n\nSlices detected by the noveltyslice object can be seen where are \"peaks\" in the novelty."
 								}
 
 							}

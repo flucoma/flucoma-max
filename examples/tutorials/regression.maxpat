@@ -319,8 +319,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 34.5, 195.942887504895566, 109.0, 36.0 ],
-					"text" : "-Selecting points\n-Predicting points",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "-Selecting points\n-Predicting points"
 				}
 
 			}

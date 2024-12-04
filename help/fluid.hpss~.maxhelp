@@ -110,8 +110,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.0, 344.833327999999995, 100.0, 65.0 ],
-									"text" : "delay compensation for processing of hpss.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "delay compensation for processing of hpss."
 								}
 
 							}
@@ -123,8 +122,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 373.0, 170.0, 101.0, 25.0 ],
-									"text" : "play a sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "play a sound"
 								}
 
 							}
@@ -136,8 +134,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 190.0, 525.333327999999938, 101.0, 25.0 ],
-									"text" : "turn audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "turn audio on"
 								}
 
 							}
@@ -149,8 +146,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 363.0, 471.333327999999995, 298.0, 25.0 ],
-									"text" : "select which component or components to hear",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "select which component or components to hear"
 								}
 
 							}
@@ -244,8 +240,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 289.0, 290.0, 21.0 ],
-									"text" : "size of 'percussive' median filter (in spectral bins)",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "size of 'percussive' median filter (in spectral bins)"
 								}
 
 							}
@@ -256,8 +251,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 220.0, 371.0, 21.0 ],
-									"text" : "size of 'harmonic' median filter (in hops). Bigger = more latency",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "size of 'harmonic' median filter (in hops). Bigger = more latency"
 								}
 
 							}
@@ -970,8 +964,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 80.0, 670.0, 101.0, 25.0 ],
-									"text" : "turn audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "turn audio on"
 								}
 
 							}
@@ -1003,8 +996,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 179.0, 609.5, 298.0, 25.0 ],
-									"text" : "select which component or components to hear",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "select which component or components to hear"
 								}
 
 							}
@@ -1037,8 +1029,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 527.5, 221.5, 188.0, 40.0 ],
-									"text" : "Modify the frequency threshold",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Modify the frequency threshold"
 								}
 
 							}
@@ -1070,8 +1061,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 263.0, 290.5, 113.0, 25.0 ],
-									"text" : "select a source",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "select a source"
 								}
 
 							}
@@ -1103,8 +1093,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 329.5, 451.625, 351.0, 36.0 ],
-									"text" : "harmthresh is two frequency-amplitude pairs. frequency is normalised (0-1), amp in dB",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "harmthresh is two frequency-amplitude pairs. frequency is normalised (0-1), amp in dB"
 								}
 
 							}
@@ -1116,8 +1105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 68.567627000000002, 249.0, 21.0 ],
-									"text" : "Use mode 1 for more extreme separation ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Use mode 1 for more extreme separation "
 								}
 
 							}
@@ -1545,8 +1533,7 @@
 													"patching_rect" : [ 210.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 299.5, 9.5, 21.0, 18.0 ],
-													"text" : "dB",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "dB"
 												}
 
 											}
@@ -1560,8 +1547,7 @@
 													"patching_rect" : [ 147.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 134.5, 9.5, 21.0, 18.0 ],
-													"text" : "dB",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "dB"
 												}
 
 											}
@@ -1575,8 +1561,7 @@
 													"patching_rect" : [ 75.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 229.5, 9.5, 21.0, 18.0 ],
-													"text" : "Hz",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "Hz"
 												}
 
 											}
@@ -1590,8 +1575,7 @@
 													"patching_rect" : [ 32.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 67.0, 9.5, 21.0, 18.0 ],
-													"text" : "Hz",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "Hz"
 												}
 
 											}
@@ -2077,8 +2061,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 91.567627000000002, 814.0, 108.0 ],
-									"text" : "In mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are. \n\nIn modes 1 and 2, a binary mask is used instead, where a component is designated as being harmonic or percussive if the respective median filter output exceeds some threshold. This yields greater separation, but can have more audible artefacts. \n\nfluid.hpss~ lets you adjust this threshold with respect to frequency, to enable fine-tuning. In mode 1, just use the harmthresh attribute, which will internally make a complementary threshold for the percussive part – guaranteeing that the two components still sum to the source. ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "In mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are. \n\nIn modes 1 and 2, a binary mask is used instead, where a component is designated as being harmonic or percussive if the respective median filter output exceeds some threshold. This yields greater separation, but can have more audible artefacts. \n\nfluid.hpss~ lets you adjust this threshold with respect to frequency, to enable fine-tuning. In mode 1, just use the harmthresh attribute, which will internally make a complementary threshold for the percussive part – guaranteeing that the two components still sum to the source. "
 								}
 
 							}
@@ -2294,8 +2277,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 652.0, 101.0, 25.0 ],
-									"text" : "turn audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "turn audio on"
 								}
 
 							}
@@ -2327,8 +2309,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 236.375, 606.5, 298.0, 25.0 ],
-									"text" : "select which component or components to hear",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "select which component or components to hear"
 								}
 
 							}
@@ -2361,8 +2342,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 233.375, 134.0, 40.0 ],
-									"text" : "modify the thresholds",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "modify the thresholds"
 								}
 
 							}
@@ -2524,8 +2504,7 @@
 													"patching_rect" : [ 210.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 299.5, 9.5, 21.0, 18.0 ],
-													"text" : "dB",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "dB"
 												}
 
 											}
@@ -2539,8 +2518,7 @@
 													"patching_rect" : [ 147.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 134.5, 9.5, 21.0, 18.0 ],
-													"text" : "dB",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "dB"
 												}
 
 											}
@@ -2554,8 +2532,7 @@
 													"patching_rect" : [ 75.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 229.5, 9.5, 21.0, 18.0 ],
-													"text" : "Hz",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "Hz"
 												}
 
 											}
@@ -2569,8 +2546,7 @@
 													"patching_rect" : [ 32.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 67.0, 9.5, 21.0, 18.0 ],
-													"text" : "Hz",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "Hz"
 												}
 
 											}
@@ -2949,8 +2925,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 120.625, 475.0, 605.0, 21.0 ],
-									"text" : "harmthresh and percthresh are two frequency-amplitude pairs. frequency is normalised (0-1), amp in dB",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "harmthresh and percthresh are two frequency-amplitude pairs. frequency is normalised (0-1), amp in dB"
 								}
 
 							}
@@ -2962,8 +2937,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 68.567627000000002, 249.0, 21.0 ],
-									"text" : "Use mode 2 for more extreme separation ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Use mode 2 for more extreme separation "
 								}
 
 							}
@@ -3465,8 +3439,7 @@
 													"patching_rect" : [ 210.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 299.5, 9.5, 21.0, 18.0 ],
-													"text" : "dB",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "dB"
 												}
 
 											}
@@ -3480,8 +3453,7 @@
 													"patching_rect" : [ 147.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 134.5, 9.5, 21.0, 18.0 ],
-													"text" : "dB",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "dB"
 												}
 
 											}
@@ -3495,8 +3467,7 @@
 													"patching_rect" : [ 75.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 229.5, 9.5, 21.0, 18.0 ],
-													"text" : "Hz",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "Hz"
 												}
 
 											}
@@ -3510,8 +3481,7 @@
 													"patching_rect" : [ 32.0, 189.5, 21.0, 18.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 67.0, 9.5, 21.0, 18.0 ],
-													"text" : "Hz",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "Hz"
 												}
 
 											}
@@ -3900,8 +3870,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 213.375, 98.0, 40.0 ],
-									"text" : "select a source",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "select a source"
 								}
 
 							}
@@ -4024,8 +3993,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 91.567627000000002, 690.0, 108.0 ],
-									"text" : "In mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are. In modes 1 and 2, a binary mask is used instead (see mode 1 tab)\n\nIn mode 2,  the harmonic and percussive masks use separate thresholds. This means that two components are no longer guarranteed to sum to the source, and so the residual outlet contains any leftovers. With some patient experimentation, one can sometimes manage to place noisier material in the residual, with tonal / persussive material in the other two channels. ",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "In mode 0, fluid.hpss~ uses a soft-masking approach that produces smooth results, at the cost of how separated they are. In modes 1 and 2, a binary mask is used instead (see mode 1 tab)\n\nIn mode 2,  the harmonic and percussive masks use separate thresholds. This means that two components are no longer guarranteed to sum to the source, and so the residual outlet contains any leftovers. With some patient experimentation, one can sometimes manage to place noisier material in the residual, with tonal / persussive material in the other two channels. "
 								}
 
 							}

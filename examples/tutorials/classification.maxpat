@@ -297,8 +297,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 638.015305578708649, 273.965023547410965, 238.333333194255829, 36.0 ],
-					"text" : "-Adding examples to dataset & labelset\n-Making predictions",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "-Adding examples to dataset & labelset\n-Making predictions"
 				}
 
 			}

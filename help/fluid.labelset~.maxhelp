@@ -191,8 +191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 643.0, 292.0, 150.0, 94.0 ],
-									"text" : "Notice after clicking merge that some new numbers will appear in this dictionary (a representation of the labelset).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Notice after clicking merge that some new numbers will appear in this dictionary (a representation of the labelset)."
 								}
 
 							}
@@ -378,8 +377,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 8.5, 62.0, 584.0, 50.0 ],
-									"text" : "You can merge the labels in one labelset with another. If the labeset you call merge on already has an identifier existing in the labelset you want to merge, the caller's will be preserved. Any identifier not found in the dataset to merge will be added to the caller.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can merge the labels in one labelset with another. If the labeset you call merge on already has an identifier existing in the labelset you want to merge, the caller's will be preserved. Any identifier not found in the dataset to merge will be added to the caller."
 								}
 
 							}
@@ -650,8 +648,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 603.0, 21.0 ],
-									"text" : "Create associations between identifiers shared across fluid.dataset~ objects and fluid.labelset~ objects.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Create associations between identifiers shared across fluid.dataset~ objects and fluid.labelset~ objects."
 								}
 
 							}
@@ -699,8 +696,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 540.0, 312.5, 283.0, 123.0 ],
-									"text" : "The setlabel message is sent to the fluid.labelset~ below associating the identifier \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the identifier \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that identifier.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The setlabel message is sent to the fluid.labelset~ below associating the identifier \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the identifier \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that identifier."
 								}
 
 							}
@@ -1083,8 +1079,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 250.0, 341.0, 204.0, 21.0 ],
-									"text" : "Completely reset a fluid.labelset~.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Completely reset a fluid.labelset~."
 								}
 
 							}
@@ -1107,8 +1102,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 244.0, 21.0 ],
-									"text" : "Other useful messages for fluid.labelset~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Other useful messages for fluid.labelset~"
 								}
 
 							}
@@ -1595,8 +1589,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 204.5, 269.0, 355.5, 21.0 ],
-									"text" : "Dump the contents of the fluid.labelset~ to a Max dictionary.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Dump the contents of the fluid.labelset~ to a Max dictionary."
 								}
 
 							}
@@ -1652,8 +1645,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 169.5, 230.5, 342.0, 21.0 ],
-									"text" : "Get the size (number of identifiers with associated labels).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Get the size (number of identifiers with associated labels)."
 								}
 
 							}
@@ -1676,8 +1668,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 145.0, 190.5, 194.0, 21.0 ],
-									"text" : "Read a fluid.labelset~ from disk.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Read a fluid.labelset~ from disk."
 								}
 
 							}
@@ -1700,8 +1691,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 119.5, 155.5, 178.0, 21.0 ],
-									"text" : "Write a fluid.labelset~ to disk.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Write a fluid.labelset~ to disk."
 								}
 
 							}
@@ -1724,8 +1714,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 226.5, 307.0, 343.5, 21.0 ],
-									"text" : "Print a sample of the fluid.labelset~.in the Max window.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Print a sample of the fluid.labelset~.in the Max window."
 								}
 
 							}
@@ -1964,8 +1953,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 222.5, 400.0, 164.0, 20.0 ],
-									"text" : "look in here to see the format",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "look in here to see the format"
 								}
 
 							}
@@ -2006,8 +1994,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 501.0, 20.0 ],
-									"text" : "You can load the contents of a dictionary into a fluid.labelset~ assuming the format is correct.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can load the contents of a dictionary into a fluid.labelset~ assuming the format is correct."
 								}
 
 							}

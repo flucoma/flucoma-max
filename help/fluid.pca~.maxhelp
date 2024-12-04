@@ -138,8 +138,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 600.0, 200.0, 340.0, 239.0 ],
-									"text" : "Without whitening, the first principal component always has a longer variance. This makes sense the first principal component always captures the most variance. Consecutive components will capture less and less.\n\nWhitening enforces unit variance for the principal components. It is a bit like standardising the values so that they exist in comparable ranges.\n\nCompare the clustering results here on the two plots which have whitening and don't have whitening respectively.\n\nThe plots are normalised so the shape is the same, but the fluid.kmeans~ object is operating on the raw PCA values.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Without whitening, the first principal component always has a longer variance. This makes sense the first principal component always captures the most variance. Consecutive components will capture less and less.\n\nWhitening enforces unit variance for the principal components. It is a bit like standardising the values so that they exist in comparable ranges.\n\nCompare the clustering results here on the two plots which have whitening and don't have whitening respectively.\n\nThe plots are normalised so the shape is the same, but the fluid.kmeans~ object is operating on the raw PCA values."
 								}
 
 							}
@@ -788,8 +787,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 244.0, 21.0 ],
-									"text" : "Whitening principal components",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Whitening principal components"
 								}
 
 							}
@@ -1412,8 +1410,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 20.0, 600.0, 244.0, 94.0 ],
-									"text" : "Each frame of analysis contains 13 MFCC values. PCA reduces this to 2 values, so that we can create a \"map\" of each frame. In theory, frames that are similar will be clumped together creating a perceptually meaningful space.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each frame of analysis contains 13 MFCC values. PCA reduces this to 2 values, so that we can create a \"map\" of each frame. In theory, frames that are similar will be clumped together creating a perceptually meaningful space."
 								}
 
 							}
@@ -1461,8 +1458,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 137.0, 511.0, 242.0, 21.0 ],
-									"text" : "also fit a fluid.kdtree~ for looking up later",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "also fit a fluid.kdtree~ for looking up later"
 								}
 
 							}
@@ -1942,8 +1938,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 64.5, 205.5, 286.0, 33.0 ],
-													"text" : "this is the hop size of the analysis, to convert the position of the lookup to a position in the audio file",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "this is the hop size of the analysis, to convert the position of the lookup to a position in the audio file"
 												}
 
 											}

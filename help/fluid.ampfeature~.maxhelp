@@ -116,8 +116,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 230.0, 179.0, 85.0, 24.0 ],
-									"text" : "Play sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play sound"
 								}
 
 							}
@@ -150,8 +149,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 492.0, 77.0, 25.0 ],
-									"text" : "Audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -185,8 +183,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.0, 260.0, 157.0, 94.0 ],
-									"text" : "By matching the various amplitude envelope attributes we get a sense of how the slicer is determining changes in the signal.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By matching the various amplitude envelope attributes we get a sense of how the slicer is determining changes in the signal."
 								}
 
 							}
@@ -211,8 +208,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 550.0, 43.0, 21.0 ],
-									"text" : "-12.0",
-									"textcolor" : [ 0.298039215686275, 0.407843137254902, 0.870588235294118, 1.0 ]
+									"text" : "-12.0"
 								}
 
 							}
@@ -224,8 +220,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 440.0, 43.0, 21.0 ],
-									"text" : "24.0",
-									"textcolor" : [ 0.298039215686275, 0.407843137254902, 0.870588235294118, 1.0 ]
+									"text" : "24.0"
 								}
 
 							}
@@ -238,8 +233,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 481.5, 170.0, 50.0 ],
-									"text" : "This represents the change in the underlying feature of fluid.ampslice~ in realtime.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This represents the change in the underlying feature of fluid.ampslice~ in realtime."
 								}
 
 							}
