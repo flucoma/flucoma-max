@@ -2068,7 +2068,7 @@ private:
   template <size_t N>
   static void deferLoad(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-    defer(x, (method) doLoad<N>, nullptr, static_cast<short>(ac), av);
+    defer_low(x, (method) doLoad<N>, nullptr, static_cast<short>(ac), av);
   }
 
   template <size_t N>
@@ -2120,7 +2120,7 @@ private:
   template <size_t N>
   static void deferDump(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-    defer(x, (method) doDump<N>, nullptr, static_cast<short>(ac), av);
+    defer_low(x, (method) doDump<N>, nullptr, static_cast<short>(ac), av);
   }
 
   template <size_t N>
@@ -2207,7 +2207,7 @@ private:
   template <size_t N>
   static void deferPrint(FluidMaxWrapper* x, t_symbol*, long, t_atom*)
   {
-    defer(x, (method) doPrint<N>, nullptr, 0, nullptr);
+    defer_low(x, (method) doPrint<N>, nullptr, 0, nullptr);
   }
 
   template <size_t N>
@@ -2225,7 +2225,8 @@ private:
   template <size_t N>
   static void deferRead(FluidMaxWrapper* x, t_symbol* s)
   {
-    defer(x, (method) &doRead<N>, s, 0, nullptr);
+    // defer_low because we have a dialog box situation 
+    defer_low(x, (method) &doRead<N>, s, 0, nullptr);
   }
 
   template <size_t N>
@@ -2245,9 +2246,12 @@ private:
     char     fullpath[MAX_PATH_CHARS];
 
     if (s == gensym(""))
-    {
-      if (open_dialog(filename, &path, &outtype, &filetype, 1))
+    { 
+      short openResult = open_dialog(filename, &path, &outtype, &filetype, 1);  
+      if (openResult != 0)
+      {
         return; // non-zero -> cancel
+      }
     }
     else
     {
@@ -2272,7 +2276,8 @@ private:
   template <size_t N>
   static void deferWrite(FluidMaxWrapper* x, t_symbol* s)
   {
-    defer(x, (method) &doWrite<N>, s, 0, nullptr);
+    // defer_low because we have a dialog box situation 
+    defer_low(x, (method) &doWrite<N>, s, 0, nullptr);
   }
 
   template <size_t N>
