@@ -2068,7 +2068,7 @@ private:
   template <size_t N>
   static void deferLoad(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-    defer_low(x, (method) doLoad<N>, nullptr, static_cast<short>(ac), av);
+    defer(x, (method) doLoad<N>, nullptr, static_cast<short>(ac), av);
   }
 
   template <size_t N>
@@ -2120,7 +2120,7 @@ private:
   template <size_t N>
   static void deferDump(FluidMaxWrapper* x, t_symbol*, long ac, t_atom* av)
   {
-    defer_low(x, (method) doDump<N>, nullptr, static_cast<short>(ac), av);
+    defer(x, (method) doDump<N>, nullptr, static_cast<short>(ac), av);
   }
 
   template <size_t N>
