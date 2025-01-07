@@ -426,8 +426,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 175.792554438114166, 749.65609073638916, 217.0, 29.0 ],
-					"text" : "checks the first sample of activations to decide which drum(s) were played",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "checks the first sample of activations to decide which drum(s) were played"
 				}
 
 			}
@@ -3818,8 +3817,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 281.996204376220703, 338.618428826332092, 204.0, 18.0 ],
-					"text" : "detecting attacks to trigger the classification",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "detecting attacks to trigger the classification"
 				}
 
 			}
@@ -3832,8 +3830,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 442.096143126487732, 675.271475672721863, 117.0, 40.0 ],
-					"text" : "factorise the input in the best combination of the 3 defined components",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "factorise the input in the best combination of the 3 defined components"
 				}
 
 			}
@@ -3846,8 +3843,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 854.290943086147308, 499.518941271850508, 223.0, 29.0 ],
-					"text" : "trains a 1 component nmf, updating the filter each time, 'improving' the definition of the class",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "trains a 1 component nmf, updating the filter each time, 'improving' the definition of the class"
 				}
 
 			}
@@ -3860,8 +3856,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 442.096143126487732, 586.519464731216431, 107.0, 51.0 ],
-					"text" : "process 128 samples after the detected attack \n(super short!)",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "process 128 samples after the detected attack \n(super short!)"
 				}
 
 			}
@@ -3874,8 +3869,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 582.648085474967957, 367.677168953964156, 90.0, 62.0 ],
-					"text" : "filling the dict with DC as a starting point. positive noise would do a similar job",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "filling the dict with DC as a starting point. positive noise would do a similar job"
 				}
 
 			}

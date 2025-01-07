@@ -2111,7 +2111,8 @@ private:
   updateParams(FluidMaxWrapper*                                        x,
                MessageResult<typename ParamSetType::ValueTuple> const& v)
   {
-    x->mParams.fromTuple(typename ParamSetType::ValueTuple(v.value()));
+    if(v.ok())
+      x->mParams.fromTuple(typename ParamSetType::ValueTuple(v.value()));
   }
 
   static void updateParams(FluidMaxWrapper*, MessageResult<void>) {}

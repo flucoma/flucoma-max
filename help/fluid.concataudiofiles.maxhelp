@@ -111,8 +111,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 120.0, 129.0, 187.0, 25.0 ],
-									"text" : "Load this path of media files",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Load this path of media files"
 								}
 
 							}

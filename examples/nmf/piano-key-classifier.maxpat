@@ -353,8 +353,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 244.214771151542664, 156.494286818163573, 119.867148876190186, 29.0 ],
-					"text" : "matches the audio input to the premade 88 bases",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "matches the audio input to the premade 88 bases"
 				}
 
 			}
@@ -366,8 +365,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 538.949068903923035, 359.186833381652832, 187.0, 18.0 ],
-					"text" : "applies gating and clips values over 0.2",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "applies gating and clips values over 0.2"
 				}
 
 			}
@@ -503,8 +501,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 289.5, 179.790258382871599, 124.0, 74.0 ],
-									"text" : "if freeze is on, the gate is closed right after an attack is detected. this only lets through the initial amplitudes  and none of the tail",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "if freeze is on, the gate is closed right after an attack is detected. this only lets through the initial amplitudes  and none of the tail"
 								}
 
 							}
@@ -517,8 +514,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 185.5, 330.397766704931087, 124.0, 40.0 ],
-									"text" : "laces the frequency with the amplitude for each oscillator",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "laces the frequency with the amplitude for each oscillator"
 								}
 
 							}
@@ -1855,8 +1851,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 696.949068903923035, 332.186833381652832, 118.0, 18.0 ],
-					"text" : "activation volume gating",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "activation volume gating"
 				}
 
 			}
@@ -1869,8 +1864,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 572.449068903923035, 291.686833381652832, 75.0, 29.0 ],
-					"text" : "activation volume scaling",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "activation volume scaling"
 				}
 
 			}

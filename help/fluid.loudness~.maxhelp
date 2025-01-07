@@ -114,8 +114,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.5, 100.0, 90.0, 25.0 ],
-									"text" : "Play sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play sound"
 								}
 
 							}
@@ -147,8 +146,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 264.0, 330.0, 133.0, 25.0 ],
-									"text" : "Back to the default",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Back to the default"
 								}
 
 							}
@@ -192,8 +190,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 183.0, 290.0, 84.0, 25.0 ],
-									"text" : "Only peak",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Only peak"
 								}
 
 							}
@@ -204,8 +201,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 194.0, 510.0, 273.0, 21.0 ],
-									"text" : "This will reflect the number of \"selected\" items",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This will reflect the number of \"selected\" items"
 								}
 
 							}
@@ -422,8 +418,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 98.0, 209.0, 77.0, 25.0 ],
-									"text" : "Audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -489,9 +484,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 420.0, 243.0, 172.0, 210.0 ],
-									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"patching_rect" : [ 420.0, 243.0, 173.0, 210.0 ],
+									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs."
 								}
 
 							}
@@ -503,8 +497,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 177.0, 250.0, 108.0, 25.0 ],
-									"text" : "Only loudness",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Only loudness"
 								}
 
 							}
@@ -527,8 +520,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.0, 500.0, 21.0 ],
-									"text" : "Specifically select which descriptors from a multivariate output.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Specifically select which descriptors from a multivariate output."
 								}
 
 							}
@@ -793,8 +785,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 250.0, 179.0, 99.0, 24.0 ],
-									"text" : "Play a sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play a sound"
 								}
 
 							}
@@ -826,8 +817,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 290.0, 290.5, 99.0, 24.0 ],
-									"text" : "Turn on audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Turn on audio"
 								}
 
 							}
@@ -861,8 +851,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 338.0, 378.5, 243.0, 74.0 ],
-									"text" : "These windowsize and hopsize settings are what the ITU BS 1770 specification defines for metering loudness of a signal. They define it with a 400millisecond window updated every 100ms.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "These windowsize and hopsize settings are what the ITU BS 1770 specification defines for metering loudness of a signal. They define it with a 400millisecond window updated every 100ms."
 								}
 
 							}
@@ -873,8 +862,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 68.0, 447.0, 243.0, 20.0 ],
-									"text" : "The true peak and loudness measurements.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The true peak and loudness measurements."
 								}
 
 							}
@@ -886,8 +874,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 510.0, 47.0 ],
-									"text" : "Because the underlying model in fluid.loudness~ approximates human hearing, the overall strength across different frequencies influences the reading it provides. Even with the same frequency and amplitude, different oscillators will produce different measures of loudness.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Because the underlying model in fluid.loudness~ approximates human hearing, the overall strength across different frequencies influences the reading it provides. Even with the same frequency and amplitude, different oscillators will produce different measures of loudness."
 								}
 
 							}
@@ -914,8 +901,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 58.499938999999983, 513.5, 61.0, 20.0 ],
-									"text" : "Loudness",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Loudness"
 								}
 
 							}
@@ -926,8 +912,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 58.499938999999983, 382.0, 63.0, 20.0 ],
-									"text" : "True-peak",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "True-peak"
 								}
 
 							}
@@ -1084,8 +1069,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 186.166626000000008, 110.0, 173.0, 20.0 ],
-													"text" : "filter the redundant information",
-													"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+													"text" : "filter the redundant information"
 												}
 
 											}
@@ -1479,8 +1463,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 410.0, 263.5, 170.0, 37.0 ],
-									"text" : "Experiment with windowsize and hopsize",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Experiment with windowsize and hopsize"
 								}
 
 							}
@@ -1512,8 +1495,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 230.0, 169.0, 99.0, 24.0 ],
-									"text" : "Play a sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play a sound"
 								}
 
 							}
@@ -1524,8 +1506,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 80.0, 470.0, 435.0, 20.0 ],
-									"text" : "A noise source is shaped by the loudness value converted from dB to amplitude.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A noise source is shaped by the loudness value converted from dB to amplitude."
 								}
 
 							}
@@ -1569,8 +1550,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 520.5, 99.0, 24.0 ],
-									"text" : "Turn on audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Turn on audio"
 								}
 
 							}
@@ -1581,8 +1561,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 430.0, 327.0, 20.0 ],
-									"text" : "fluid.loudness~ reports the loudness and true peak in dBFS.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.loudness~ reports the loudness and true peak in dBFS."
 								}
 
 							}

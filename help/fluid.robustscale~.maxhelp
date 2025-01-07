@@ -104,8 +104,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 184.0, 21.0 ],
-									"text" : "visualising the effect of scaling",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "visualising the effect of scaling"
 								}
 
 							}
@@ -117,8 +116,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 554.5, 320.0, 295.0, 50.0 ],
-									"text" : "This shows the data scaled using robust scaling.\n\nThey are now in more comparable ranges.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This shows the data scaled using robust scaling.\n\nThey are now in more comparable ranges."
 								}
 
 							}
@@ -130,8 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.5, 370.0, 102.0, 94.0 ],
-									"text" : "This plot shows the unscaled ranges of the pitch and pitch confidence analysis",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This plot shows the unscaled ranges of the pitch and pitch confidence analysis"
 								}
 
 							}
@@ -209,8 +206,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 38.0, 864.0, 352.0, 36.0 ],
-									"text" : "By scaling to a uniform scale, both would be weighted equally",
-									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
+									"text" : "By scaling to a uniform scale, both would be weighted equally"
 								}
 
 							}
@@ -1590,8 +1586,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 700.5, 420.0, 200.0, 166.0 ],
-									"text" : "The robust scaled analysis.\n\nNotice that it's the exact same \"shape\" as the raw data but the values are in a different range now.\n\nBoth of the scales for pitch and confidence are now expressed as values within a comparable range.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The robust scaled analysis.\n\nNotice that it's the exact same \"shape\" as the raw data but the values are in a different range now.\n\nBoth of the scales for pitch and confidence are now expressed as values within a comparable range."
 								}
 
 							}
@@ -1636,8 +1631,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 187.5, 420.0, 200.0, 79.0 ],
-									"text" : "The raw analysis, where each identifier is an analysis window of two columns. The first column is the pitch in Hz, the second is the confidence in linear values.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The raw analysis, where each identifier is an analysis window of two columns. The first column is the pitch in Hz, the second is the confidence in linear values."
 								}
 
 							}
@@ -1649,8 +1643,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 200.5, 331.0, 113.0, 65.0 ],
-									"text" : "Turn the two channel buffer into a two column dataset.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Turn the two channel buffer into a two column dataset."
 								}
 
 							}
@@ -1694,8 +1687,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 411.5, 247.5, 113.0, 65.0 ],
-									"text" : "Two channels of feature data. One pitch, the other confidence",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Two channels of feature data. One pitch, the other confidence"
 								}
 
 							}

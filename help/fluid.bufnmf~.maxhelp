@@ -106,8 +106,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 610.0, 411.0, 250.0, 94.0 ],
-									"text" : "Make sure you've filled the buffers on the tab2!",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Make sure you've filled the buffers on the tab2!"
 								}
 
 							}
@@ -119,8 +118,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 160.0, 690.0, 36.0 ],
-									"text" : "You might find it useful to think of the NMF algorithm as a bit like a vododer. This abstraction below demonstrates how you could use the bases and activations to reconstruct a sound in realtime, based on what the algorithm has learned.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You might find it useful to think of the NMF algorithm as a bit like a vododer. This abstraction below demonstrates how you could use the bases and activations to reconstruct a sound in realtime, based on what the algorithm has learned."
 								}
 
 							}
@@ -291,8 +289,7 @@
 													"patching_rect" : [ 425.0, 64.0, 59.0, 20.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 264.0, 98.0, 59.0, 20.0 ],
-													"text" : "activation",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "activation"
 												}
 
 											}
@@ -305,8 +302,7 @@
 													"patching_rect" : [ 123.0, 63.0, 35.0, 20.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 264.0, 32.0, 35.0, 20.0 ],
-													"text" : "base",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "base"
 												}
 
 											}
@@ -605,8 +601,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 286.0, 21.0 ],
-									"text" : "Using bases and activations to create a vododer",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Using bases and activations to create a vododer"
 								}
 
 							}
@@ -851,8 +846,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 215.0, 460.0, 250.0, 94.0 ],
-									"text" : "Make sure you've filled the buffers on the previous tab!",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Make sure you've filled the buffers on the previous tab!"
 								}
 
 							}
@@ -1292,8 +1286,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 760.0, 162.5, 170.0, 137.0 ],
-									"text" : "In a similar fashion we might also use the bases from NMF as filters for any other kind of sound.\n\nWe could do this manually with pfft~ or we could use the fluid.nmffilter~ object here to simplify things.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "In a similar fashion we might also use the bases from NMF as filters for any other kind of sound.\n\nWe could do this manually with pfft~ or we could use the fluid.nmffilter~ object here to simplify things."
 								}
 
 							}
@@ -1686,8 +1679,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 170.0, 21.0 ],
-									"text" : "Using bases and activations",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Using bases and activations"
 								}
 
 							}
@@ -2066,8 +2058,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 660.0, 341.5, 250.0, 123.0 ],
-									"text" : "See the next tab for how you can experiment with this data!",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "See the next tab for how you can experiment with this data!"
 								}
 
 							}
@@ -2079,8 +2070,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 370.0, 610.0, 252.0, 36.0 ],
-									"text" : "The activations are like \"how active is this component\" at a given point in time.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The activations are like \"how active is this component\" at a given point in time."
 								}
 
 							}
@@ -2092,8 +2082,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 25.0, 610.0, 251.0, 36.0 ],
-									"text" : "You can think of bases like filters for each component.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can think of bases like filters for each component."
 								}
 
 							}
@@ -2104,8 +2093,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 375.0, 437.0, 164.0, 21.0 ],
-									"text" : "Activations buffer channels",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Activations buffer channels"
 								}
 
 							}
@@ -2116,8 +2104,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 25.0, 437.0, 137.0, 21.0 ],
-									"text" : "Bases buffer channels",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Bases buffer channels"
 								}
 
 							}
@@ -2128,8 +2115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 627.0, 556.5, 65.0, 21.0 ],
-									"text" : "channel 2",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "channel 2"
 								}
 
 							}
@@ -2140,8 +2126,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 627.0, 490.0, 65.0, 21.0 ],
-									"text" : "channel 1",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "channel 1"
 								}
 
 							}
@@ -2152,8 +2137,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 277.0, 556.5, 65.0, 21.0 ],
-									"text" : "channel 2",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "channel 2"
 								}
 
 							}
@@ -2164,8 +2148,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 277.0, 490.0, 65.0, 21.0 ],
-									"text" : "channel 1",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "channel 1"
 								}
 
 							}
@@ -2299,8 +2282,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 25.0, 105.0, 700.0, 50.0 ],
-									"text" : "In the previous tab you can see how fluid.bufnmf~ can be used to decompose a sound into some components. We can also spy on the information that the object uses to perform this decomposition: the bases and activations. In either case we can extract these two things from the process by specifying the relevant attributes in the object.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "In the previous tab you can see how fluid.bufnmf~ can be used to decompose a sound into some components. We can also spy on the information that the object uses to perform this decomposition: the bases and activations. In either case we can extract these two things from the process by specifying the relevant attributes in the object."
 								}
 
 							}
@@ -2311,8 +2293,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 25.0, 77.0, 457.0, 21.0 ],
-									"text" : "Bases and activations: the data under the hood that powers the NMF process",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Bases and activations: the data under the hood that powers the NMF process"
 								}
 
 							}
@@ -2323,8 +2304,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 51.0, 341.5, 105.0, 21.0 ],
-									"text" : "bang when done",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "bang when done"
 								}
 
 							}
@@ -2335,8 +2315,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 187.0, 381.0, 334.0, 21.0 ],
-									"text" : "a buffer for the decomposed components to be written to",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "a buffer for the decomposed components to be written to"
 								}
 
 							}
@@ -2833,8 +2812,7 @@
 													"presentation" : 1,
 													"presentation_linecount" : 2,
 													"presentation_rect" : [ 7.0, 25.0, 141.0, 36.0 ],
-													"text" : "together they perfectly reproduce the original",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "together they perfectly reproduce the original"
 												}
 
 											}
@@ -3035,8 +3013,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 46.0, 301.5, 105.0, 21.0 ],
-									"text" : "bang when done",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "bang when done"
 								}
 
 							}
@@ -3047,8 +3024,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 181.0, 340.0, 334.0, 21.0 ],
-									"text" : "a buffer for the decomposed components to be written to",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "a buffer for the decomposed components to be written to"
 								}
 
 							}
@@ -3550,8 +3526,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 245.0, 542.0, 220.0, 123.0 ],
-									"text" : "Everytime you bang the bases are incrementally updated as the algorithm \"learns\" about the decomposition.\n\nTry playing back the result on the right at each stage to see how it progresses.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Everytime you bang the bases are incrementally updated as the algorithm \"learns\" about the decomposition.\n\nTry playing back the result on the right at each stage to see how it progresses."
 								}
 
 							}
@@ -3583,8 +3558,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 670.0, 480.0, 131.0, 36.0 ],
-									"text" : "Left is component 1\nRight is component 2",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Left is component 1\nRight is component 2"
 								}
 
 							}
@@ -4088,8 +4062,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 324.5, 48.0, 21.0 ],
-									"text" : "Bases ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Bases "
 								}
 
 							}
@@ -4211,8 +4184,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 388.25, 50.0, 182.0, 123.0 ],
-													"text" : "a blank buffer of 513 samples and 3 channels.\n\nThe 513 value are related to the size of the FFT processing that bufnmf will do, which by default uses a window size of 1024.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "a blank buffer of 513 samples and 3 channels.\n\nThe 513 value are related to the size of the FFT processing that bufnmf will do, which by default uses a window size of 1024."
 												}
 
 											}
@@ -4224,8 +4196,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 250.0, 190.0, 180.0, 137.0 ],
-													"text" : "channels 1 and 2 have low and high pass characteristics respectively, with a sharp cutoff at bin 50 so we fill those respective values in each channel of the bases.\n\nWe leave the third channel in a blank state.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "channels 1 and 2 have low and high pass characteristics respectively, with a sharp cutoff at bin 50 so we fill those respective values in each channel of the bases.\n\nWe leave the third channel in a blank state."
 												}
 
 											}
@@ -4742,8 +4713,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 610.0, 341.0, 325.0, 94.0 ],
-									"text" : "Because we used @basesmode 2 (fixed bases), the order of bases is no longer random but instead decided by the bases buffer we provide to the object.\n\nThis is how we can label channel 1 pick and channel 2 resonance beforehand.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Because we used @basesmode 2 (fixed bases), the order of bases is no longer random but instead decided by the bases buffer we provide to the object.\n\nThis is how we can label channel 1 pick and channel 2 resonance beforehand."
 								}
 
 							}
@@ -4754,8 +4724,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 523.916687000000024, 261.0, 65.0, 21.0 ],
-									"text" : "stop early",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "stop early"
 								}
 
 							}
@@ -5306,8 +5275,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 310.0, 10.0, 325.0, 94.0 ],
-													"text" : "Because the indices from the list correlate to channels in the source buffer, we can use those indices to drive the composition of a new buffer which is two channels.\n\nThe first channel is the highest centroid base and the remaining 9 are summed to the second channel.",
-													"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+													"text" : "Because the indices from the list correlate to channels in the source buffer, we can use those indices to drive the composition of a new buffer which is two channels.\n\nThe first channel is the highest centroid base and the remaining 9 are summed to the second channel."
 												}
 
 											}
@@ -5544,8 +5512,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 150.0, 141.0, 209.0, 21.0 ],
-													"text" : "slice off the first index (the highest)",
-													"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+													"text" : "slice off the first index (the highest)"
 												}
 
 											}
@@ -5557,8 +5524,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 70.0, 43.5, 278.0, 36.0 ],
-													"text" : "reverse sort the centroid and output the ordinal (how the indices of the list were sorted)",
-													"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+													"text" : "reverse sort the centroid and output the ordinal (how the indices of the list were sorted)"
 												}
 
 											}
@@ -5760,8 +5726,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 150.0, 483.5, 328.0, 36.0 ],
-													"text" : "Finally, we output each median centroid value as a list. We use @axis 1 to reorientate the list channel-wise.",
-													"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+													"text" : "Finally, we output each median centroid value as a list. We use @axis 1 to reorientate the list channel-wise."
 												}
 
 											}
@@ -5773,8 +5738,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 180.0, 356.5, 337.0, 50.0 ],
-													"text" : "This is ergonomically similar to spectralshape. We receive a buffer to process and haven't set an output so everything operates on buffers internal to each object.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This is ergonomically similar to spectralshape. We receive a buffer to process and haven't set an output so everything operates on buffers internal to each object."
 												}
 
 											}
@@ -5786,8 +5750,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 260.0, 243.5, 350.0, 36.0 ],
-													"text" : "Process each channel of the resynthesised output. Only retrieve the centroid giving us a new 10 channel buffer.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Process each channel of the resynthesised output. Only retrieve the centroid giving us a new 10 channel buffer."
 												}
 
 											}
@@ -5811,8 +5774,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 129.0, 303.5, 337.0, 36.0 ],
-													"text" : "No output buffer is set for fluid.bufspectralshape~ so it uses an internal one and provides the name for us.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "No output buffer is set for fluid.bufspectralshape~ so it uses an internal one and provides the name for us."
 												}
 
 											}
@@ -5824,8 +5786,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 170.0, 149.0, 388.0, 65.0 ],
-													"text" : "10 channel buffer in. Each channel is a resynthesised component.\n\nWhen we pass this message to bufspectralshape~ it processes this as the input.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "10 channel buffer in. Each channel is a resynthesised component.\n\nWhen we pass this message to bufspectralshape~ it processes this as the input."
 												}
 
 											}
@@ -5875,8 +5836,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 10.0, 10.0, 500.0, 94.0 ],
-													"text" : "This subpatch analyses each resynthesised component for the median spectral centroid.\n\nIt uses automatic buffer management to minimise the number of temporary buffers we have to use as well as leverages @select to pick out the descriptors we want instead of having to parse through a multi-channel buffer ourselves.",
-													"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+													"text" : "This subpatch analyses each resynthesised component for the median spectral centroid.\n\nIt uses automatic buffer management to minimise the number of temporary buffers we have to use as well as leverages @select to pick out the descriptors we want instead of having to parse through a multi-channel buffer ourselves."
 												}
 
 											}
@@ -6126,8 +6086,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 400.0, 480.0, 490.0, 181.0 ],
-									"text" : "How this works!\n\n1) Decompose 2 seconds of guitar in 10 components. \n\n2) Analyse the median spectral centroid of each resynthesised components.\n\n3) Find the component that has the highest median spectral centroid, which we estimate to be the best guess of where the pick sound is. \n\n4) We then take the activation of that pick sound and place it in a buffer on channel 1, and sum all the others to channel 2. This 2 channel buffer becomes our new, fixed template for a secondary fluid.bufnmf~ object that decomposes the whole file.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "How this works!\n\n1) Decompose 2 seconds of guitar in 10 components. \n\n2) Analyse the median spectral centroid of each resynthesised components.\n\n3) Find the component that has the highest median spectral centroid, which we estimate to be the best guess of where the pick sound is. \n\n4) We then take the activation of that pick sound and place it in a buffer on channel 1, and sum all the others to channel 2. This 2 channel buffer becomes our new, fixed template for a secondary fluid.bufnmf~ object that decomposes the whole file."
 								}
 
 							}

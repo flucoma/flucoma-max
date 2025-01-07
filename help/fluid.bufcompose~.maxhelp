@@ -138,8 +138,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 458.5, 417.25, 77.0, 25.0 ],
 									"style" : "helpfile_label",
-									"text" : "Audio on",
-									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -211,8 +210,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 436.5, 303.5, 203.0, 25.0 ],
 									"style" : "helpfile_label",
-									"text" : "Play back the composed result",
-									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+									"text" : "Play back the composed result"
 								}
 
 							}
@@ -295,8 +293,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 409.5, 241.5, 279.0, 40.0 ],
 									"style" : "helpfile_label",
-									"text" : "Trigger a series of bufcompose copies from various sources to a single destination",
-									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+									"text" : "Trigger a series of bufcompose copies from various sources to a single destination"
 								}
 
 							}
@@ -339,8 +336,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 127.5, 164.5, 306.0, 54.0 ],
 									"style" : "helpfile_label",
-									"text" : "By default the destination gain is 0 meaning the content is overwritten. You can \"dub\" new content variably, by using the destgain attribute.",
-									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+									"text" : "By default the destination gain is 0 meaning the content is overwritten. You can \"dub\" new content variably, by using the destgain attribute."
 								}
 
 							}
@@ -640,8 +636,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 411.0, 77.0, 25.0 ],
 									"style" : "helpfile_label",
-									"text" : "Audio on",
-									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -667,8 +662,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 395.0, 162.0, 133.0, 54.0 ],
-									"text" : "44100 samples starting from 30000 samples",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "44100 samples starting from 30000 samples"
 								}
 
 							}
@@ -724,8 +718,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 321.0, 130.0, 205.0, 25.0 ],
-									"text" : "9000 samples of help.bc.3.src1",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "9000 samples of help.bc.3.src1"
 								}
 
 							}
@@ -978,8 +971,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 595.0, 294.0, 100.0, 54.0 ],
-									"text" : "Listen to the sources and results",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Listen to the sources and results"
 								}
 
 							}
@@ -1288,8 +1280,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 476.5, 400.0, 77.0, 25.0 ],
 									"style" : "helpfile_label",
-									"text" : "Audio on",
-									"textcolor" : [ 0.2, 0.2, 0.2, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -1326,8 +1317,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 530.0, 142.5, 220.0, 40.0 ],
-									"text" : "Copy the mono source to the destination (which is now stereo)",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Copy the mono source to the destination (which is now stereo)"
 								}
 
 							}
@@ -1359,8 +1349,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 240.0, 110.0, 263.0, 25.0 ],
-									"text" : "Copy the stereo source to the destination",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Copy the stereo source to the destination"
 								}
 
 							}
@@ -1373,8 +1362,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 634.75, 294.0, 100.0, 54.0 ],
-									"text" : "Listen to the sources and results",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Listen to the sources and results"
 								}
 
 							}
@@ -2002,8 +1990,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 650.0, 320.0, 155.0, 123.0 ],
-									"text" : "When bufcompose receives a bang it copies the source to the destination. These waveforms display the contents of each buffer, visualising the result of the copy process.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "When bufcompose receives a bang it copies the source to the destination. These waveforms display the contents of each buffer, visualising the result of the copy process."
 								}
 
 							}
@@ -2108,8 +2095,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 420.0, 189.0, 154.0, 65.0 ],
-									"text" : "Like all other FluCoMa objects, the buffer inputs and outputs can be set as attributes.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Like all other FluCoMa objects, the buffer inputs and outputs can be set as attributes."
 								}
 
 							}

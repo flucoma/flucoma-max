@@ -105,9 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 820.0, 563.0, 152.0, 50.0 ],
-									"presentation_linecount" : 3,
-									"text" : "This is the computed distance we retrieved with knearestdist",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the computed distance we retrieved with knearestdist"
 								}
 
 							}
@@ -129,8 +127,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 330.0, 21.0 ],
-									"text" : "A stripped back example for how the fluid.kdtree~ works",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A stripped back example for how the fluid.kdtree~ works"
 								}
 
 							}
@@ -477,8 +474,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 655.0, 563.0, 152.0, 50.0 ],
-									"text" : "This is the identifier of the point as it was entered in the dataset.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the identifier of the point as it was entered in the dataset."
 								}
 
 							}
@@ -490,8 +486,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 489.0, 563.0, 152.0, 65.0 ],
-									"text" : "This is the value of the closest points. Compare them to the input to see how \"close\" they are.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the value of the closest points. Compare them to the input to see how \"close\" they are."
 								}
 
 							}
@@ -503,8 +498,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 750.0, 367.0, 152.0, 65.0 ],
-									"text" : "This is our input or \"query\". We want to find which stored point in the dataset is closest to this.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is our input or \"query\". We want to find which stored point in the dataset is closest to this."
 								}
 
 							}
@@ -1259,8 +1253,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 574.0, 21.0 ],
-									"text" : "Change the specificity of searches by constraining the distance and number of nearest neighbours",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "Change the specificity of searches by constraining the distance and number of nearest neighbours"
 								}
 
 							}
@@ -1979,8 +1972,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 536.0, 467.0, 186.0, 50.0 ],
-									"text" : "only the extent within radius is searched; number of returned points is uncapped",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+									"text" : "only the extent within radius is searched; number of returned points is uncapped"
 								}
 
 							}
@@ -2003,8 +1995,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 531.0, 374.0, 186.0, 65.0 ],
-									"text" : "only the extent within radius is searched; number of returned points is capped at numneighbours",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "only the extent within radius is searched; number of returned points is capped at numneighbours"
 								}
 
 							}
@@ -2027,8 +2018,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 531.0, 310.0, 185.0, 36.0 ],
-									"text" : "radius is ignored: the whole extent of the tree is searched",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "radius is ignored: the whole extent of the tree is searched"
 								}
 
 							}
@@ -2051,8 +2041,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 517.0, 228.0, 312.0, 50.0 ],
-									"text" : "Because the range of distances is hard to predict a priori, you can use the knearestdist message to get an idea of useful values for radius. ",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "Because the range of distances is hard to predict a priori, you can use the knearestdist message to get an idea of useful values for radius. "
 								}
 
 							}
@@ -3101,8 +3090,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 387.0, 248.0, 286.0, 210.0 ],
-									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values from dimensionality reduction (UMAP) that attempt to represent the perceptual differences between this corpus.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space.",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values from dimensionality reduction (UMAP) that attempt to represent the perceptual differences between this corpus.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space."
 								}
 
 							}
@@ -4451,77 +4439,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "fluid.buf2list.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufcompose~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.concataudiofiles.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.dsinterface.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.dslink.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.learn.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.list2buf.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.plotter.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/jsui",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 

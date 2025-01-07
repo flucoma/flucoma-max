@@ -93,9 +93,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 0.0, 435.0, 138.0, 21.0 ],
-									"presentation_linecount" : 2,
-									"text" : "Reset impulse counter",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Reset impulse counter"
 								}
 
 							}
@@ -106,9 +104,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 40.0, 507.0, 101.0, 21.0 ],
-									"presentation_linecount" : 2,
-									"text" : "Impulse counter",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Impulse counter"
 								}
 
 							}
@@ -132,8 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 134.0, 344.5, 100.0, 65.0 ],
-									"text" : "a synthetic signal that has a defined \"on\" and \"off\" period",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "a synthetic signal that has a defined \"on\" and \"off\" period"
 								}
 
 							}
@@ -186,8 +181,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 387.25, 340.0, 106.0, 25.0 ],
-									"text" : "sonify triggers",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "sonify triggers"
 								}
 
 							}
@@ -200,8 +194,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 324.75, 488.375, 101.0, 25.0 ],
-									"text" : "turn on audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "turn on audio"
 								}
 
 							}
@@ -356,8 +349,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 627.5, 342.5, 31.0, 21.0 ],
-									"text" : "- on",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "- on"
 								}
 
 							}
@@ -368,8 +360,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 627.5, 390.25, 31.0, 21.0 ],
-									"text" : "- off",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "- off"
 								}
 
 							}
@@ -487,8 +478,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 637.75, 238.5, 223.0, 25.0 ],
-									"text" : "set both, e.g. to capture reverb tail",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "set both, e.g. to capture reverb tail"
 								}
 
 							}
@@ -501,8 +491,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 530.5, 206.0, 301.0, 25.0 ],
-									"text" : "move offset forwards to minimum within window",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "move offset forwards to minimum within window"
 								}
 
 							}
@@ -515,8 +504,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 504.0, 175.0, 313.0, 25.0 ],
-									"text" : "move onset backwards to minimum within window",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "move onset backwards to minimum within window"
 								}
 
 							}
@@ -529,8 +517,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 507.0, 141.0, 440.0, 25.0 ],
-									"text" : "set a minimum time for a transition to be below absthreshoff, else ignore",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "set a minimum time for a transition to be below absthreshoff, else ignore"
 								}
 
 							}
@@ -543,8 +530,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 474.0, 110.0, 442.0, 25.0 ],
-									"text" : "set a minimum time for a transition to be above absthreshon, else ignore",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "set a minimum time for a transition to be above absthreshon, else ignore"
 								}
 
 							}
@@ -556,8 +542,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 64.567627000000002, 372.0, 21.0 ],
-									"text" : "look forward or backward in the signal to exercise more control",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "look forward or backward in the signal to exercise more control"
 								}
 
 							}
@@ -1103,8 +1088,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 420.0, 222.0, 302.0, 21.0 ],
-									"text" : "Gets the latency calculation directly from the object",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Gets the latency calculation directly from the object"
 								}
 
 							}
@@ -1115,8 +1099,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 345.0, 299.0, 193.0, 21.0 ],
-									"text" : "The delay compensated original",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The delay compensated original"
 								}
 
 							}
@@ -1276,8 +1259,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.0, 120.0, 110.0, 25.0 ],
-									"text" : "Play sound file",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play sound file"
 								}
 
 							}
@@ -1439,8 +1421,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 55.5, 610.0, 77.0, 25.0 ],
-									"text" : "Audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -1471,8 +1452,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 315.0, 524.0, 31.0, 21.0 ],
-									"text" : "- on",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "- on"
 								}
 
 							}
@@ -1483,8 +1463,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 315.0, 543.0, 31.0, 21.0 ],
-									"text" : "- off",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "- off"
 								}
 
 							}

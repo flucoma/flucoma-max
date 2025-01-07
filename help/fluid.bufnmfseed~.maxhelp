@@ -718,8 +718,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 180.0, 326.5, 383.0, 50.0 ],
-									"text" : "By retrieveing the number of channels in the bases buffer, we can determine how many components fluid.bufnmf~ should decompose to, to achieve the coverage of variance we specified.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By retrieveing the number of channels in the bases buffer, we can determine how many components fluid.bufnmf~ should decompose to, to achieve the coverage of variance we specified."
 								}
 
 							}
@@ -763,8 +762,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 390.0, 121.0, 206.5, 94.0 ],
-									"text" : "The coverage dictates how much of the information is preserved in the decomposition. Higher values will require more components, to express the intricacies of the original information.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The coverage dictates how much of the information is preserved in the decomposition. Higher values will require more components, to express the intricacies of the original information."
 								}
 
 							}

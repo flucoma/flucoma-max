@@ -137,8 +137,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 721.0, 457.0, 109.0, 21.0 ],
-									"text" : "Offset positions",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Offset positions"
 								}
 
 							}
@@ -149,8 +148,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 720.0, 250.0, 109.0, 21.0 ],
-									"text" : "Onset positions",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Onset positions"
 								}
 
 							}
@@ -174,8 +172,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 223.0, 221.0, 109.0, 21.0 ],
-									"text" : "take a look inside",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "take a look inside"
 								}
 
 							}
@@ -284,8 +281,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 381.0, 135.0, 255.0, 60.0 ],
-													"text" : "using automatic buffer management we can succintly separate onsets (channel 0) from offsets (channel 1) and return a new buffer for each ",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "using automatic buffer management we can succintly separate onsets (channel 0) from offsets (channel 1) and return a new buffer for each "
 												}
 
 											}
@@ -837,8 +833,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 397.0, 259.0, 223.0, 25.0 ],
-									"text" : "set both, e.g. to capture reverb tail",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "set both, e.g. to capture reverb tail"
 								}
 
 							}
@@ -851,8 +846,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 288.0, 219.25, 301.0, 25.0 ],
-									"text" : "move offset forwards to minimum within window",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "move offset forwards to minimum within window"
 								}
 
 							}
@@ -865,8 +859,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 255.0, 179.5, 313.0, 25.0 ],
-									"text" : "move onset backwards to minimum within window",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "move onset backwards to minimum within window"
 								}
 
 							}
@@ -879,8 +872,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 247.0, 139.75, 436.0, 25.0 ],
-									"text" : "set a minimum time for a transition to be below offthreshold, else ignore",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "set a minimum time for a transition to be below offthreshold, else ignore"
 								}
 
 							}
@@ -893,8 +885,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 220.0, 100.0, 438.0, 25.0 ],
-									"text" : "set a minimum time for a transition to be above onthreshold, else ignore",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "set a minimum time for a transition to be above onthreshold, else ignore"
 								}
 
 							}
@@ -1150,8 +1141,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 630.0, 21.0 ],
-									"text" : "We can move onsets / offsets to more desirable positions, or suppress state changes that are too fast",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "We can move onsets / offsets to more desirable positions, or suppress state changes that are too fast"
 								}
 
 							}
@@ -1558,8 +1548,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 279.0, 500.0, 150.0, 108.0 ],
-									"text" : "Unlike other slices the output is two channels:\n\nOne for the times of on states and one for the times of off states of the gate.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Unlike other slices the output is two channels:\n\nOne for the times of on states and one for the times of off states of the gate."
 								}
 
 							}
@@ -2432,8 +2421,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 333.0, 21.0 ],
-									"text" : "Removing silences using bufampgates onset offset pairs",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Removing silences using bufampgates onset offset pairs"
 								}
 
 							}
@@ -2457,8 +2445,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 701.0, 470.0, 90.0, 50.0 ],
-									"text" : "no silences on the right channel",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "no silences on the right channel"
 								}
 
 							}
@@ -2841,8 +2828,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 129.0, 351.0, 260.0, 21.0 ],
-									"text" : "flatten to a single buffer of onset/offset pairs",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "flatten to a single buffer of onset/offset pairs"
 								}
 
 							}

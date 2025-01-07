@@ -94,8 +94,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 360.0, 450.0, 150.0, 65.0 ],
-									"text" : "To update the assignment autoassign has to change from 0 to 1 or 1 to 0. ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "To update the assignment autoassign has to change from 0 to 1 or 1 to 0. "
 								}
 
 							}

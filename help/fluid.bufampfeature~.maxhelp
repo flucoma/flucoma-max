@@ -247,8 +247,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 606.0, 134.75, 156.0, 87.0 ],
-									"text" : "By matching the various amplitude envelope attributes we get a sense for how the slicer is determining changes in the signal.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By matching the various amplitude envelope attributes we get a sense for how the slicer is determining changes in the signal."
 								}
 
 							}
@@ -326,8 +325,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 580.0, 518.5, 228.0, 100.0 ],
-									"text" : "The differential envelope calculated on the fast and slow \"ramps\" is shown in red. \n\nDetected slices can be seen when the differential rises above the onthreshold, and goes below the offthreshold.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The differential envelope calculated on the fast and slow \"ramps\" is shown in red. \n\nDetected slices can be seen when the differential rises above the onthreshold, and goes below the offthreshold."
 								}
 
 							}
