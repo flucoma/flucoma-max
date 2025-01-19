@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
+			"minor" : 6,
 			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 523.0, 87.0, 853.0, 707.0 ],
+		"rect" : [ 134.0, 178.0, 853.0, 707.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 523.0, 113.0, 853.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -546,7 +546,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1024,14 +1024,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
+						"rect" : [ 134.0, 204.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1067,7 +1067,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 405.0, 120.0, 38.0 ],
+									"patching_rect" : [ 30.0, 405.0, 121.0, 38.0 ],
 									"text" : "print fluid.labelset~ @popup 1"
 								}
 
@@ -1145,7 +1145,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1252,7 +1252,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
+															"minor" : 6,
 															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -1408,7 +1408,7 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 75.75, 275.0, 130.0, 22.0 ],
@@ -1667,8 +1667,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 145.0, 190.5, 194.0, 21.0 ],
-									"text" : "Read a fluid.labelset~ from disk."
+									"patching_rect" : [ 145.0, 190.5, 679.0, 21.0 ],
+									"text" : "Read a fluid.labelset~ from disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -1690,8 +1690,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 119.5, 155.5, 178.0, 21.0 ],
-									"text" : "Write a fluid.labelset~ to disk."
+									"patching_rect" : [ 119.5, 155.5, 663.0, 21.0 ],
+									"text" : "Write a fluid.labelset~ to disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -1910,7 +1910,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1962,11 +1962,12 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 170.0, 400.0, 50.5, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -2025,7 +2026,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2259,7 +2260,7 @@
 								"box" : 								{
 									"id" : "obj-71",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
 									"patching_rect" : [ 57.75, 360.0, 121.0, 22.0 ],
@@ -2504,7 +2505,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3039,7 +3040,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1

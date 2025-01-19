@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
+			"minor" : 6,
 			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 995.0, 724.0 ],
+		"rect" : [ 134.0, 178.0, 995.0, 724.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 698.0 ],
+						"rect" : [ 134.0, 204.0, 995.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -283,7 +283,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -799,14 +799,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 995.0, 698.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1264,7 +1264,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1422,7 +1422,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1487,7 +1487,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 286.0, 205.0, 78.0, 22.0 ],
 													"text" : "random 100"
 												}
@@ -1521,7 +1521,7 @@
 												"box" : 												{
 													"id" : "obj-28",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 77.75, 333.0, 121.0, 22.0 ],
@@ -1727,7 +1727,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1816,7 +1816,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 286.0, 205.0, 78.0, 22.0 ],
 													"text" : "random 100"
 												}
@@ -1838,7 +1838,7 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 77.75, 300.0, 130.0, 22.0 ],
@@ -2322,7 +2322,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2864,7 +2864,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2962,7 +2962,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -3064,7 +3064,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 198.5, 184.0, 78.0, 23.0 ],
 													"text" : "random 100"
 												}
@@ -3086,7 +3086,7 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 63.5, 297.0, 130.0, 23.0 ],
@@ -3372,8 +3372,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 158.0, 219.0, 205.0, 21.0 ],
-									"text" : "Read a fluid.dataset~ from disk"
+									"patching_rect" : [ 158.0, 219.0, 775.0, 21.0 ],
+									"text" : "Read a fluid.dataset~ from disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -3395,8 +3395,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 131.0, 184.0, 189.0, 21.0 ],
-									"text" : "Write a fluid.dataset~ to disk"
+									"patching_rect" : [ 131.0, 184.0, 746.0, 21.0 ],
+									"text" : "Write a fluid.dataset~ to disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -3617,7 +3617,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3659,7 +3659,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 183.5, 220.0, 78.0, 23.0 ],
 									"text" : "random 100"
 								}
@@ -3775,7 +3775,7 @@
 								"box" : 								{
 									"id" : "obj-71",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
 									"patching_rect" : [ 57.75, 330.0, 130.0, 23.0 ],
@@ -4042,7 +4042,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -4792,7 +4792,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
