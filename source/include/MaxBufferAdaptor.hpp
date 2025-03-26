@@ -15,8 +15,8 @@ under the European Union’s Horizon 2020 research and innovation programme
 #pragma clang diagnostic ignored "-Wgnu-zero-variadic-macro-arguments"
 #endif
 
-#include <clients/common/BufferAdaptor.hpp>
-#include <data/FluidTensor.hpp>
+#include <flucoma/clients/common/BufferAdaptor.hpp>
+#include <flucoma/data/FluidTensor.hpp>
 #include <atomic>
 #include <ext_buffer.h>
 #include <ext_systhread.h>

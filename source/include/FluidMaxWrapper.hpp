@@ -17,18 +17,17 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <ext_obex_util.h>
 #include <z_dsp.h>
 
-#include <clients/common/FluidBaseClient.hpp>
-#include <clients/common/FluidNRTClientWrapper.hpp>
-#include <clients/common/OfflineClient.hpp>
-#include <clients/common/ParameterSet.hpp>
-#include <clients/common/ParameterTypes.hpp>
-#include <clients/nrt/FluidSharedInstanceAdaptor.hpp>
-
-#include <data/FluidMemory.hpp>
+#include <flucoma/FluidVersion.hpp>
+#include <flucoma/clients/common/FluidBaseClient.hpp>
+#include <flucoma/clients/common/FluidNRTClientWrapper.hpp>
+#include <flucoma/clients/common/OfflineClient.hpp>
+#include <flucoma/clients/common/ParameterSet.hpp>
+#include <flucoma/clients/common/ParameterTypes.hpp>
+#include <flucoma/clients/nrt/FluidSharedInstanceAdaptor.hpp>
+#include <flucoma/data/FluidMemory.hpp>
 
 #include "MaxBufferAdaptor.hpp"
 
-#include <FluidVersion.hpp>
 #include <atomic>
 #include <cctype> //std::tolower
 #include <deque>
@@ -304,7 +303,7 @@ struct NonRealTime
     }
     else
     {
-      class_addmethod(c, (method) deferProcess, "bang", 0);
+      class_addmethod(c, (method) deferProcess, "bang", 0); 
       if(Wrapper::NumInputBuffers) class_addmethod(Wrapper::getClass(), (method) doBuffer, "buffer", A_GIMME, 0);
       class_addmethod(c, (method) callCancel, "cancel", 0);
       class_addmethod(c, (method) assist, "assist", A_CANT, 0);
@@ -1319,7 +1318,7 @@ public:
           static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
           sprintf(s,"buffer: %s", param_name.c_str());
        });
-    });
+    }); 
     
     //setup an array of buffer~ object that we'll use if the respective params are unset when process is called
     mParams.template forEachParamType<BufferT>([this](auto&, auto idx){
