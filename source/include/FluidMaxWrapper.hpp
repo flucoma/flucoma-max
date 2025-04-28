@@ -1516,7 +1516,18 @@ public:
 
     makeReferable();
 
+    // Register messages for object 
     m.template iterate<SetupMessage>();
+    // If valid read() and dump() messages were found, SetupMessage also
+    // registered A_CANT methods of the direct doRead /doDump, so we can setup a
+    // readdump() without needing to know about any template woowoo:
+    method doRead = class_method(getClass(), gensym("doRead")); 
+    method doDump = class_method(getClass(), gensym("doDump")); 
+    if(doRead && doDump)
+    {
+      class_addmethod(getClass(), (method) deferReadDump, "readdump", A_DEFSYM,
+                      0);
+    }
 
     class_addmethod(getClass(), (method) doVersion, "version", 0);
     // Change for MSVC, which didn't like the macro version
@@ -1997,6 +2008,9 @@ private:
               class_addmethod(getClass(),
                               (method) deferDump<decltype(M)::value>,
                               lowerCase(message.name).c_str(), A_GIMME, 0);
+              class_addmethod(getClass(),
+                              (method) doDump<decltype(M)::value>,
+                              "doDump", A_CANT, 0);
             });
         return;
       }
@@ -2027,6 +2041,9 @@ private:
               class_addmethod(getClass(),
                               (method) deferRead<decltype(M)::value>,
                               lowerCase(message.name).c_str(), A_DEFSYM, 0);
+              class_addmethod(getClass(),
+                              (method) doRead<decltype(M)::value>,
+                              "doRead", A_CANT, 0);
             });
         return;
       }
@@ -2201,6 +2218,25 @@ private:
     if (d) object_free(d);
     object_notify(dest, modified, nullptr);
     object_obex_dumpout(x, gensym("dump"), 2, a);
+  }
+
+  static void deferReadDump(FluidMaxWrapper* x, t_symbol* s, long, t_atom*)
+  {
+    defer_low(x, (method) doReadDump, s, 0, nullptr);
+  }
+
+  static void doReadDump(FluidMaxWrapper* x, t_symbol* s, long, t_atom*)
+  {
+    using ReadSig = void (*)(FluidMaxWrapper*, t_symbol*);
+    using DumpSig = void (*)(FluidMaxWrapper*, t_symbol*, long, t_atom*);
+
+    ReadSig fRead = (ReadSig) (object_method_direct_getmethod(
+        (t_object*) x, gensym("doRead")));
+    DumpSig fDump = (DumpSig) (object_method_direct_getmethod(
+        (t_object*) x, gensym("doDump")));
+
+    fRead(x, s);
+    fDump(x, nullptr, 0, nullptr);
   }
 
   template <size_t N>
