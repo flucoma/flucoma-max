@@ -1840,9 +1840,21 @@
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 59.0, 119.0, 346.0, 277.0 ],
+										"rect" : [ 59.0, 119.0, 353.0, 277.0 ],
 										"gridsize" : [ 15.0, 15.0 ],
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-2",
+													"maxclass" : "message",
+													"numinlets" : 2,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 87.0, 138.0, 80.0, 22.0 ],
+													"text" : "setall 1, bang"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-24",
 													"maxclass" : "comment",
@@ -1856,11 +1868,12 @@
 , 											{
 												"box" : 												{
 													"id" : "obj-22",
+													"linecount" : 2,
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 207.0, 150.0, 112.0, 20.0 ],
-													"text" : "add a new 1D point"
+													"patching_rect" : [ 207.0, 166.0, 140.0, 33.0 ],
+													"text" : "add a new 1D point with default point size"
 												}
 
 											}
@@ -1895,7 +1908,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "jit_matrix", "" ],
-													"patching_rect" : [ 87.0, 149.0, 113.0, 22.0 ],
+													"patching_rect" : [ 87.0, 165.0, 113.0, 22.0 ],
 													"text" : "jit.matrix 1 float32 1"
 												}
 
@@ -1919,7 +1932,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 2,
 													"outlettype" : [ "jit_matrix", "" ],
-													"patching_rect" : [ 50.0, 113.0, 143.0, 22.0 ],
+													"patching_rect" : [ 50.0, 109.0, 143.0, 22.0 ],
 													"text" : "jit.matrix #0_pointsizes"
 												}
 
@@ -1962,7 +1975,7 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-12", 0 ],
-													"source" : [ "obj-20", 1 ]
+													"source" : [ "obj-2", 0 ]
 												}
 
 											}
@@ -1970,6 +1983,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-137", 0 ],
 													"source" : [ "obj-20", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-2", 0 ],
+													"source" : [ "obj-20", 1 ]
 												}
 
 											}
