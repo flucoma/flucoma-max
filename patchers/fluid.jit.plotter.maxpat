@@ -14045,8 +14045,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 565.914149612188112, 89.5, 106.0, 33.0 ],
-									"text" : "reset view ranges to the default 0-1"
+									"patching_rect" : [ 566.0, 89.5, 244.0, 33.0 ],
+									"text" : "reset view ranges to the default 0-1\nUPDATE: disabled for parity with fluid.plotter"
 								}
 
 							}
@@ -14776,6 +14776,7 @@
 						"lines" : [ 							{
 								"patchline" : 								{
 									"destination" : [ "obj-23", 0 ],
+									"disabled" : 1,
 									"source" : [ "obj-1", 2 ]
 								}
 
