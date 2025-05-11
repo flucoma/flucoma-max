@@ -1277,7 +1277,7 @@
 													"maxclass" : "comment",
 													"numinlets" : 1,
 													"numoutlets" : 0,
-													"patching_rect" : [ 41.0, 109.0, 142.0, 20.0 ],
+													"patching_rect" : [ 75.0, 109.0, 142.0, 20.0 ],
 													"text" : "for parity with fluid.plotter"
 												}
 
@@ -1289,7 +1289,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 16.0, 108.0, 23.0, 22.0 ],
+													"patching_rect" : [ 38.0, 108.0, 23.0, 22.0 ],
 													"text" : "* 2"
 												}
 
@@ -1376,13 +1376,6 @@
 , 											{
 												"patchline" : 												{
 													"destination" : [ "obj-4", 0 ],
-													"source" : [ "obj-2", 0 ]
-												}
-
-											}
-, 											{
-												"patchline" : 												{
-													"destination" : [ "obj-2", 0 ],
 													"source" : [ "obj-3", 0 ]
 												}
 
@@ -1754,7 +1747,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
-					"patching_rect" : [ 938.0, 908.0, 163.0, 49.0 ],
+					"patching_rect" : [ 938.0, 908.0, 165.0, 49.0 ],
 					"text" : "jit.gl.render #0_fluid.jit.plotter @erase_color 1 1 1 1 @blend_enable 1"
 				}
 
