@@ -78,7 +78,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the x-axis range
         </digest>
         <description>
         Set the x-axis range.
@@ -91,7 +91,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the y-axis range
         </digest>
         <description>
         Set the y-axis range.
@@ -104,7 +104,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the x- and y-axis ranges
         </digest>
         <description>
         Set the x- and y-axis ranges.
@@ -116,7 +116,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='scheme' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Choose a colour scheme
         </digest>
         <description>
         Change the colour scheme for automatic colouring via a fluid.labelset~. Options are default, cat, accent, dark, paired, tableau, R4, R3, R2, R1, random. Taken mostly from <a href='https://github.com/d3/d3-scale-chromatic'>d3-scale-chromatic</a>.
@@ -130,7 +130,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='y' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the position of a point
         </digest>
         <description>
         Set the point at the given coordinates.
@@ -146,7 +146,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='alpha' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the color of a point
         </digest>
         <description>
         Set the color of the point with a given identifier.
@@ -158,7 +158,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='identifier' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Emphasise points on the plot
         </digest>
         <description>
         Emphasises the given identifier's points in the plot. Any number of identifiers as a list of symbols can be provided.
@@ -170,7 +170,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='size' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the size of a point
         </digest>
         <description>
         Set the size of the point with a given identifier.
@@ -182,7 +182,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='scale' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the overall size of the points
         </digest>
         <description>
         Set the overall size of the points.
@@ -194,7 +194,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='shape' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Set the shape of all points
         </digest>
         <description>
         Modifies the shape of the points.
@@ -209,7 +209,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='a' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the background colour
         </digest>
         <description>
         Sets the background colour of the plotter.
@@ -220,7 +220,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         <arglist>
         </arglist>
         <digest>
-        
+        Clear the plot
         </digest>
         <description>
         Clears the graph and all associated data and settings.
@@ -231,7 +231,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         <arglist>
         </arglist>
         <digest>
-        
+        Clear the plot
         </digest>
         <description>
         An alias of clear. Clears the graph.
