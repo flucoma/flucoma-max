@@ -1634,7 +1634,7 @@
 									"outlettype" : [ "", "float" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 675.0, 360.0, 125.0, 70.0 ],
-									"saturation" : 0.835294117647059
+									"saturation" : 0.152941176470588
 								}
 
 							}
@@ -2065,7 +2065,8 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 407.0, 590.0, 224.0, 22.0 ]
+									"patching_rect" : [ 407.0, 590.0, 224.0, 22.0 ],
+									"text" : "0.436627 0.48672"
 								}
 
 							}
@@ -5967,8 +5968,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 490.0, 100.0, 36.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.theme_textcolor"
+										}
+
+									}
+,
 									"text" : "...just like clear or reset",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
 								}
 
 							}
@@ -6018,8 +6026,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 550.0, 530.0, 240.0, 123.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.theme_textcolor"
+										}
+
+									}
+,
 									"text" : "fluid.jit.plotter aims for speed with large datasets (– check the last tab).\nUsing the refer message instead of a dictionary avoids some copying and gives you several times the load speed with large datasets.\nNevertheless, the dictionary input still works, just like with fluid.plotter. ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
 								}
 
 							}
@@ -6032,8 +6047,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 550.0, 422.0, 113.0, 50.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.theme_textcolor"
+										}
+
+									}
+,
 									"text" : "refer without arguments resets all colors to black",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
 								}
 
 							}
@@ -6046,8 +6068,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 28.0, 422.0, 100.0, 50.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.theme_textcolor"
+										}
+
+									}
+,
 									"text" : "refer without arguments erases the plot",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
 								}
 
 							}
@@ -6084,8 +6113,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 490.0, 333.5, 240.0, 79.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.theme_textcolor"
+										}
+
+									}
+,
 									"text" : "The right inlet expects the name of a fluid.labelset~ with the refer message.\nEach unique label in the fluid.labelset~ will be randomly assigned to a colour inside the fluid.plotter.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
 								}
 
 							}
@@ -6303,8 +6339,15 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 190.0, 333.5, 243.0, 50.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.theme_textcolor"
+										}
+
+									}
+,
 									"text" : "Use the refer message with the name of a fluid.dataset~. The fluid.dataset~ must be only two dimensions.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
 								}
 
 							}
