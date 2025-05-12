@@ -149,8 +149,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 356.0, 250.0, 111.0, 25.0 ],
-									"text" : "Back to default",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Back to default"
 								}
 
 							}
@@ -182,8 +181,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 290.0, 212.0, 181.0 ],
-									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs."
 								}
 
 							}
@@ -194,8 +192,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 276.5, 301.0, 160.0, 21.0 ],
-									"text" : "This is the same as step 2",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the same as step 2"
 								}
 
 							}
@@ -207,8 +204,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 179.0, 209.0, 203.0, 25.0 ],
-									"text" : "only return the mean and skew",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "only return the mean and skew"
 								}
 
 							}
@@ -268,8 +264,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 500.0, 36.0 ],
-									"text" : "You can also select which outputs should even be copied to the destination buffer. This removes the need for a fluid.bufselect~ to capture descriptors you care about.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can also select which outputs should even be copied to the destination buffer. This removes the need for a fluid.bufselect~ to capture descriptors you care about."
 								}
 
 							}
@@ -549,8 +544,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 447.5, 584.5, 230.0, 94.0 ],
-									"text" : "This is the skewness of the raw data, and the skewness of the 1st derivative. This single piece of information can help us differentiate the upward and downward trends of each of these distributions.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the skewness of the raw data, and the skewness of the 1st derivative. This single piece of information can help us differentiate the upward and downward trends of each of these distributions."
 								}
 
 							}
@@ -701,8 +695,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 593.5, 384.5, 162.0, 94.0 ],
-									"text" : "These two sets of values are very similar. It would be hard to gather any meaningful information for differentiating these two ramps from each other.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "These two sets of values are very similar. It would be hard to gather any meaningful information for differentiating these two ramps from each other."
 								}
 
 							}
@@ -1273,8 +1266,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 623.5, 120.0, 141.0, 123.0 ],
-									"text" : "Derivatives can be useful in differntiating the trajectory or shape of data. It is another piece of useful information in discriminating two different distributions.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Derivatives can be useful in differntiating the trajectory or shape of data. It is another piece of useful information in discriminating two different distributions."
 								}
 
 							}
@@ -1286,8 +1278,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.567627000000002, 297.0, 21.0 ],
-									"text" : "Calculating derivatives to differentiate distributions",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Calculating derivatives to differentiate distributions"
 								}
 
 							}
@@ -1607,8 +1598,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 470.0, 486.5, 152.0, 127.0 ],
-									"text" : "Play back the section of the source that was analysed alongside a sine tone at the detected frequency. Decide which one is the closest for yourself!",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play back the section of the source that was analysed alongside a sine tone at the detected frequency. Decide which one is the closest for yourself!"
 								}
 
 							}
@@ -1660,8 +1650,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 610.0, 354.0, 151.0, 94.0 ],
-									"text" : "Each of these sub patchers here contain a unique approach for measuring the fundamental pitch of the small source segment.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each of these sub patchers here contain a unique approach for measuring the fundamental pitch of the small source segment."
 								}
 
 							}
@@ -2287,8 +2276,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 493.0, 299.0, 258.0, 33.0 ],
-													"text" : "Pitch confidence values over the portion of the analysed source",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Pitch confidence values over the portion of the analysed source"
 												}
 
 											}
@@ -2325,8 +2313,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 293.0, 195.0, 181.0, 127.0 ],
-													"text" : "In addition to weighting the analysis with the pitch confidence, we can filter outliers which fall outside the interquartile range (the middle half of our data) by a certain factor. This helps to remove frames of analysis that are truly outliers.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "In addition to weighting the analysis with the pitch confidence, we can filter outliers which fall outside the interquartile range (the middle half of our data) by a certain factor. This helps to remove frames of analysis that are truly outliers."
 												}
 
 											}
@@ -2577,8 +2564,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 377.0, 318.0, 256.0, 33.0 ],
-													"text" : "Pitch confidence values over the portion of the analysed source",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Pitch confidence values over the portion of the analysed source"
 												}
 
 											}
@@ -2639,8 +2625,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 325.0, 67.0, 242.0, 100.0 ],
-													"text" : "This receives the pitch analysis buffer (automatically generated for you by the object itself) and extracts just the second channel (index 1 counting from 0).\n\nThis is supplied to the weights buffer input on the fluid.bufstats~ object.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This receives the pitch analysis buffer (automatically generated for you by the object itself) and extracts just the second channel (index 1 counting from 0).\n\nThis is supplied to the weights buffer input on the fluid.bufstats~ object."
 												}
 
 											}
@@ -2652,8 +2637,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 186.0, 214.0, 180.0, 74.0 ],
-													"text" : "Still calculate the mean (average) but this time weight the anaysis values by the pitch confidence (the second channel of the raw pitch analysis).",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Still calculate the mean (average) but this time weight the anaysis values by the pitch confidence (the second channel of the raw pitch analysis)."
 												}
 
 											}
@@ -2880,8 +2864,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 186.0, 59.0, 297.0, 60.0 ],
-													"text" : "Only calculate the mean (average) spectral centroid.\n\nThis approach might be fine but it is prone to outliers influencing the average as much as any other values.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Only calculate the mean (average) spectral centroid.\n\nThis approach might be fine but it is prone to outliers influencing the average as much as any other values."
 												}
 
 											}
@@ -3007,8 +2990,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 159.0, 339.5, 409.0, 21.0 ],
-									"text" : "When an output buffer is not specified one is named and used for you",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "When an output buffer is not specified one is named and used for you"
 								}
 
 							}
@@ -3052,8 +3034,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 56.5, 250.0, 239.0, 25.0 ],
-									"text" : "Analyse a small portion of the source",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Analyse a small portion of the source"
 								}
 
 							}
@@ -3100,8 +3081,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 56.0, 110.0, 393.0, 25.0 ],
-									"text" : "Listen to the source sound (a scratchy modular synth with pitch)",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Listen to the source sound (a scratchy modular synth with pitch)"
 								}
 
 							}
@@ -3202,8 +3182,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 375.0, 21.0 ],
-									"text" : "apply weightings and removing outliers for refining observations",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "apply weightings and removing outliers for refining observations"
 								}
 
 							}
@@ -3564,8 +3543,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 193.472015380859375, 460.0, 206.0, 25.0 ],
-									"text" : "Play back slices sorted by pitch",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play back slices sorted by pitch"
 								}
 
 							}
@@ -3598,8 +3576,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 53.472015380859375, 202.0, 200.0, 40.0 ],
-									"text" : "Slice and analyse the segments of the source sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Slice and analyse the segments of the source sound"
 								}
 
 							}
@@ -3642,8 +3619,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 363.472015380859375, 123.0, 291.0, 25.0 ],
-									"text" : "Listen to the source sound (an acoustic bass)",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Listen to the source sound (an acoustic bass)"
 								}
 
 							}
@@ -3675,8 +3651,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 401.472015380859375, 492.5, 193.0, 50.0 ],
-									"text" : "By indexing the ordinal linearly we effectively \"sort\" the segments by their pitch value",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By indexing the ordinal linearly we effectively \"sort\" the segments by their pitch value"
 								}
 
 							}
@@ -3688,8 +3663,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 117.472015380859375, 377.0, 150.0, 65.0 ],
-									"text" : "Sort each segment's value of fundamental pitch analysis and retrieve the ordinal. ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Sort each segment's value of fundamental pitch analysis and retrieve the ordinal. "
 								}
 
 							}
@@ -3701,8 +3675,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 221.472015380859375, 269.0, 150.0, 65.0 ],
-									"text" : "look in here for detailed explanation of the analysis processing chain",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "look in here for detailed explanation of the analysis processing chain"
 								}
 
 							}
@@ -3760,8 +3733,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 293.0, 273.0, 198.0, 74.0 ],
-													"text" : "Using @select we extract only the  \"mid\" statistic (by default this is the 50th percentile and therefore the median). This is a little more robust to outliers than the mean",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Using @select we extract only the  \"mid\" statistic (by default this is the 50th percentile and therefore the median). This is a little more robust to outliers than the mean"
 												}
 
 											}
@@ -3773,8 +3745,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 629.0, 204.0, 189.0, 74.0 ],
-													"text" : "use the pitch confidence channel of analysis as statistical weights. This makes analysis frames with higher pitch confidence worth more in the statistical analysis",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "use the pitch confidence channel of analysis as statistical weights. This makes analysis frames with higher pitch confidence worth more in the statistical analysis"
 												}
 
 											}
@@ -3785,8 +3756,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 181.0, 203.0, 229.0, 20.0 ],
-													"text" : "calculate the stats of the segment's pitch",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "calculate the stats of the segment's pitch"
 												}
 
 											}
@@ -3797,8 +3767,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 582.0, 154.0, 229.0, 20.0 ],
-													"text" : "analyse the pitch of contiguous segments",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "analyse the pitch of contiguous segments"
 												}
 
 											}
@@ -3809,8 +3778,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 140.0, 115.0, 125.0, 20.0 ],
-													"text" : "iterate over slice pairs",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "iterate over slice pairs"
 												}
 
 											}
@@ -3821,8 +3789,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 558.0, 73.0, 150.0, 20.0 ],
-													"text" : "slice the source sound file",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "slice the source sound file"
 												}
 
 											}
@@ -4890,8 +4857,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.567627000000002, 261.0, 21.0 ],
-									"text" : "sort buffer segments by descriptor statistics",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "sort buffer segments by descriptor statistics"
 								}
 
 							}
@@ -5183,8 +5149,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 396.0, 94.0, 285.0, 25.0 ],
-									"text" : "calculate the stats of the multichannel source",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "calculate the stats of the multichannel source"
 								}
 
 							}
@@ -5196,8 +5161,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 45.0, 91.0, 247.0, 25.0 ],
-									"text" : "generate an exaggerated stereo buffer",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "generate an exaggerated stereo buffer"
 								}
 
 							}
@@ -6393,8 +6357,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 396.0, 180.0, 325.0, 25.0 ],
-									"text" : "Analyse the statistics of the values you just selected",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Analyse the statistics of the values you just selected"
 								}
 
 							}
@@ -6440,8 +6403,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 574.5, 271.5, 172.0, 21.0 ],
-									"text" : "high centile to return (0-100)",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "high centile to return (0-100)"
 								}
 
 							}
@@ -6452,8 +6414,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 574.5, 247.5, 168.0, 21.0 ],
-									"text" : "mid centile to return (0-100)",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "mid centile to return (0-100)"
 								}
 
 							}
@@ -6464,8 +6425,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 574.5, 223.5, 167.0, 21.0 ],
-									"text" : "low centile to return (0-100)",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "low centile to return (0-100)"
 								}
 
 							}
@@ -7134,8 +7094,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 448.5, 118.0, 50.0 ],
-									"text" : "These are the calculated statistics",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "These are the calculated statistics"
 								}
 
 							}
@@ -7147,8 +7106,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 120.0, 130.0, 221.0, 25.0 ],
-									"text" : "Choose a set of values to analyse",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Choose a set of values to analyse"
 								}
 
 							}

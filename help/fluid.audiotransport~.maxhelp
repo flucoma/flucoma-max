@@ -93,8 +93,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 444.0, 21.0 ],
-									"text" : "Demonstrating the significant impact of FFT setings on fluid.audiotransport~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Demonstrating the significant impact of FFT setings on fluid.audiotransport~"
 								}
 
 							}
@@ -190,8 +189,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 600.0, 462.0, 197.0, 94.0 ],
-									"text" : "The larger the fft size the better it blends the spectral qualities at the expense of smearing attacks. This will have a drastic impact on the characteristic of the interpolation.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The larger the fft size the better it blends the spectral qualities at the expense of smearing attacks. This will have a drastic impact on the characteristic of the interpolation."
 								}
 
 							}
@@ -214,8 +212,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 260.0, 267.0, 68.0, 21.0 ],
-									"text" : "Music Box",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Music Box"
 								}
 
 							}
@@ -226,8 +223,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 533.0, 267.0, 47.0, 21.0 ],
-									"text" : "Drums",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Drums"
 								}
 
 							}
@@ -767,8 +763,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 280.0, 350.0, 68.0, 21.0 ],
-									"text" : "Music Box",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Music Box"
 								}
 
 							}
@@ -779,8 +774,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 552.0, 350.0, 47.0, 21.0 ],
-									"text" : "Drums",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Drums"
 								}
 
 							}

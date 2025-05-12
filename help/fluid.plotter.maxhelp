@@ -82,15 +82,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 618.0, 446.5, 24.0, 20.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "ms",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "ms"
 								}
 
 							}
@@ -120,15 +112,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 461.0, 446.5, 68.0, 21.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Total time:",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Total time:"
 								}
 
 							}
@@ -139,15 +123,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 729.0, 730.0, 79.0, 20.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "fluid.jit.plotter",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "fluid.jit.plotter"
 								}
 
 							}
@@ -158,15 +134,19 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 741.0, 520.0, 67.0, 20.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
+									"text" : "fluid.plotter"
+								}
 
-									}
-,
-									"text" : "fluid.plotter",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-29",
+									"linecount" : 3,
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 100.0, 681.0, 490.5, 47.0 ],
+									"text" : "Note: fluid.jit.plotter does not support setpoint, pointcolor and pointsize (for individual point size) like fluid.plotter does. While fluid.jit.plotter behaves similarly to fluid.plotter in most cases, fluid.jit.plotter is geared towards speed and as such sacrifices a bit of flexibility."
 								}
 
 							}
@@ -179,15 +159,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 461.0, 576.5, 88.0, 65.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Time it takes to init plot from reference",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Time it takes to init plot from reference"
 								}
 
 							}
@@ -200,15 +172,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 461.0, 364.5, 88.0, 65.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Time it takes to init plot from dictionary",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Time it takes to init plot from dictionary"
 								}
 
 							}
@@ -221,15 +185,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 461.0, 208.5, 88.0, 50.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Time it takes to render the dictionary",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Time it takes to render the dictionary"
 								}
 
 							}
@@ -244,17 +200,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 317.0, 273.0, 210.0, 40.0 ],
-									"saved_attribute_attributes" : 									{
-										"bubble_bgcolor" : 										{
-											"expression" : "themecolor.theme_bubble_bgcolor"
-										}
-,
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
 									"text" : "Pass and copy the dictionary to fluid.plotter"
 								}
 
@@ -311,15 +256,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 618.0, 404.0, 24.0, 20.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "ms",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "ms"
 								}
 
 							}
@@ -556,17 +493,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 317.0, 486.0, 211.0, 40.0 ],
-									"saved_attribute_attributes" : 									{
-										"bubble_bgcolor" : 										{
-											"expression" : "themecolor.theme_bubble_bgcolor"
-										}
-,
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
 									"text" : "Pass the name of the dataset without copying to fluid.jit.plotter"
 								}
 
@@ -603,17 +529,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 317.0, 102.0, 212.0, 40.0 ],
-									"saved_attribute_attributes" : 									{
-										"bubble_bgcolor" : 										{
-											"expression" : "themecolor.theme_bubble_bgcolor"
-										}
-,
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
 									"text" : "Render a dictionary from the dataset via 'dump'"
 								}
 
@@ -646,15 +561,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 618.0, 616.0, 24.0, 20.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "ms",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "ms"
 								}
 
 							}
@@ -683,15 +590,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 618.0, 233.0, 24.0, 20.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "ms",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "ms"
 								}
 
 							}
@@ -1215,17 +1114,6 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 63.0, 107.5, 152.0, 25.0 ],
-									"saved_attribute_attributes" : 									{
-										"bubble_bgcolor" : 										{
-											"expression" : "themecolor.theme_bubble_bgcolor"
-										}
-,
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
 									"text" : "Generate 100K points"
 								}
 
@@ -1391,15 +1279,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.0, 380.0, 33.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Rendering dictionaries from large datasets can become increasingly prohibitive. For large datasets try fluid.jit.plotter and its refer message.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Rendering dictionaries from large datasets can become increasingly prohibitive. For large datasets try fluid.jit.plotter and its refer message."
 								}
 
 							}
@@ -1841,15 +1721,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.0, 215.0, 279.0, 65.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "The range of the generated data sits between -2.5 and 2.5 but the view of the data is set to be between -5 and 5 on both axes to have some whitespace around the edges.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "The range of the generated data sits between -2.5 and 2.5 but the view of the data is set to be between -5 and 5 on both axes to have some whitespace around the edges."
 								}
 
 							}
@@ -1860,15 +1732,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.0, 415.0, 20.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "fluid.plotter has a zoom feature allowing you to zone in on subsets of the plot",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "fluid.plotter has a zoom feature allowing you to zone in on subsets of the plot"
 								}
 
 							}
@@ -2201,15 +2065,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 660.0, 623.5, 258.0, 36.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "The selected range is output from the right in response to drag + modifier events.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "The selected range is output from the right in response to drag + modifier events."
 								}
 
 							}
@@ -2222,15 +2078,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 409.0, 360.0, 279.0, 166.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5]).",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "You can interactively control the range of the x and y areas using different keyboard modifiers while clicking and dragging.\n\nIf you (hold option / alt / winkey + drag) a box will be drawn over the canvas, showing which area of the plot you will \"zoom\" in on in.\n\nIf you (control + drag) it resets the x and y ranges to the last stored values received from a message (such as range [-5 5])."
 								}
 
 							}
@@ -2483,16 +2331,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 10.0, 67.0, 422.0, 21.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Drawing through the \"advanced\" interface lets you draw at a lower level.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"patching_rect" : [ 10.0, 67.0, 474.0, 21.0 ],
+									"text" : "Drawing through the \"advanced\" interface lets you be more draw at a lower level."
 								}
 
 							}
@@ -2539,15 +2379,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 471.5, 276.0, 113.0, 79.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Set the size of each point.\nFormat is:\n<identifer>\n<size>",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Set the size of each point.\nFormat is:\n<identifer>\n<size>"
 								}
 
 							}
@@ -2698,15 +2530,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 297.0, 283.0, 138.0, 65.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Set the pointcolor of each point. Format is:\n<identifier>\n<r><g><b><a>",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Set the pointcolor of each point. Format is:\n<identifier>\n<r><g><b><a>"
 								}
 
 							}
@@ -2719,15 +2543,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 97.0, 283.0, 165.0, 79.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "You don't need a fluid.dataset~ necessarily. Using the setpoint message you can create a plot point by point.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "You don't need a fluid.dataset~ necessarily. Using the setpoint message you can create a plot point by point."
 								}
 
 							}
@@ -3080,15 +2896,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 728.0, 157.5, 131.0, 36.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Change the overall point size scale",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Change the overall point size scale"
 								}
 
 							}
@@ -3101,15 +2909,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 760.0, 98.0, 160.0, 36.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Change the shape of the points as they're drawn.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Change the shape of the points as they're drawn."
 								}
 
 							}
@@ -3122,15 +2922,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 805.0, 308.0, 124.0, 36.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Change the background colour",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Change the background colour"
 								}
 
 							}
@@ -4072,15 +3864,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 390.0, 524.5, 339.0, 36.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "You'll notice that there is nothing in the plotter. By default it is displaying the 0 to 1 range in both dimensions.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "You'll notice that there is nothing in the plotter. By default it is displaying the 0 to 1 range in both dimensions."
 								}
 
 							}
@@ -4093,15 +3877,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.0, 736.0, 36.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "By default, the range of the fluid.plotter is between 0 and 1 for both the X and Y axis. You can modify the displayed range of the plotter with two messages, xrange and yrange. Each message accepts two values, the minimum and maximum for each.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "By default, the range of the fluid.plotter is between 0 and 1 for both the X and Y axis. You can modify the displayed range of the plotter with two messages, xrange and yrange. Each message accepts two values, the minimum and maximum for each."
 								}
 
 							}
@@ -4914,15 +4690,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 100.0, 404.0, 106.0, 100.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "The highlight message dictates which \"identifiers\" will be emphasised visually in the plotter.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "The highlight message dictates which \"identifiers\" will be emphasised visually in the plotter."
 								}
 
 							}
@@ -4934,15 +4702,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 305.0, 658.0, 355.0, 21.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Query for the nearest point in the original data to the mouse.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Query for the nearest point in the original data to the mouse."
 								}
 
 							}
@@ -4967,15 +4727,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 305.0, 616.0, 258.0, 21.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Store the coordinates in a temporary buffer.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Store the coordinates in a temporary buffer."
 								}
 
 							}
@@ -5779,15 +5531,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 66.0, 239.0, 21.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "An abstraction for plotting fluid.dataset~",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "An abstraction for plotting fluid.dataset~"
 								}
 
 							}
@@ -6073,15 +5817,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 691.0, 240.5, 172.0, 166.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "Dump the clustering from fluid.kmeans~ and send the output dictionary to the second inlet of the fluid.plotter.\n\nEach unique label in the fluid.labelset~ will be randomly assigned to a colour inside the fluid.plotter.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "Dump the clustering from fluid.kmeans~ and send the output dictionary to the second inlet of the fluid.plotter.\n\nEach unique label in the fluid.labelset~ will be randomly assigned to a colour inside the fluid.plotter."
 								}
 
 							}
@@ -6206,15 +5942,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 243.0, 308.0, 213.0, 108.0 ],
-									"saved_attribute_attributes" : 									{
-										"textcolor" : 										{
-											"expression" : "themecolor.theme_textcolor"
-										}
-
-									}
-,
-									"text" : "A temporary dict is output when you dump from a fluid.dataset~. The randomly assigned name for this dictionary can be sent to the plotter's first inlet and it will draw the points. The fluid.dataset~ must be only two dimensions.",
-									"textcolor" : [ 0.85, 0.85, 0.85, 1.0 ]
+									"text" : "A temporary dict is output when you dump from a fluid.dataset~. The randomly assigned name for this dictionary can be sent to the plotter's first inlet and it will draw the points. The fluid.dataset~ must be only two dimensions."
 								}
 
 							}
@@ -6463,82 +6191,6 @@
 			}
  ],
 		"lines" : [  ],
-		"dependency_cache" : [ 			{
-				"name" : "fluid.buf2list.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufcompose~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.dataloader.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.dataset~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.jit.plotter.labels2colors.js",
-				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.jit.plotter.maxpat",
-				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.jit.plotter.resize.pwindow.js",
-				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/javascript",
-				"patcherrelativepath" : "../javascript",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.kdtree~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.kmeans~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.labelset~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.list2buf.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.plotter.js",
-				"bootpath" : "~/Documents/Max 9/Packages/FluidCorpusManipulation/jsui",
-				"patcherrelativepath" : "../jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "thru.maxpat",
-				"bootpath" : "C74:/patchers/m4l/Pluggo for Live resources/patches",
-				"type" : "JSON",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0,
 		"styles" : [ 			{
 				"name" : "max6box",

@@ -125,8 +125,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 560.0, 180.0, 212.0, 181.0 ],
-									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs."
 								}
 
 							}
@@ -137,8 +136,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 284.5, 341.0, 212.0, 21.0 ],
-									"text" : "this is actually the same as above",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "this is actually the same as above"
 								}
 
 							}
@@ -150,8 +148,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 233.0, 301.0, 217.0, 25.0 ],
-									"text" : "only return the centroid and skew",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "only return the centroid and skew"
 								}
 
 							}
@@ -236,8 +233,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 500.0, 36.0 ],
-									"text" : "You can also select which outputs should even be copied to the destination buffer. This removes the need for a fluid.bufselect~ to capture descriptors you care about.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can also select which outputs should even be copied to the destination buffer. This removes the need for a fluid.bufselect~ to capture descriptors you care about."
 								}
 
 							}
@@ -573,8 +569,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 130.0, 541.0, 40.0, 21.0 ],
-									"text" : "value",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "value"
 								}
 
 							}
@@ -735,8 +730,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 436.0, 36.0 ],
-									"text" : "fluid.bufspectralshape~ outputs its results to a buffer where each channel is a different descriptor and each \"frame\" is a window of spectral analysis.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.bufspectralshape~ outputs its results to a buffer where each channel is a different descriptor and each \"frame\" is a window of spectral analysis."
 								}
 
 							}
@@ -1150,8 +1144,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 135.5, 446.0, 380.0, 21.0 ],
-									"text" : "Look inside to see how the features are extracted from the buffer",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Look inside to see how the features are extracted from the buffer"
 								}
 
 							}
@@ -1162,8 +1155,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 200.0, 550.0, 483.0, 21.0 ],
-									"text" : "These are the features formatted as a dictionary so that you can easily read them. ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "These are the features formatted as a dictionary so that you can easily read them. "
 								}
 
 							}

@@ -514,8 +514,7 @@
 													"patching_rect" : [ 15.0, 120.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 1665.0, 107.0, 139.0, 21.0 ],
-													"text" : "Select a task...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a task..."
 												}
 
 											}
@@ -769,10 +768,9 @@
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
 																	"presentation" : 1,
-																	"presentation_linecount" : 4,
-																	"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
-																	"text" : "fluid.bufnmf~ is a relatively heavy object in terms of processing. However, you can tune it to work in a more lightweight manner, facilitating all sorts of 'just in time' approaches. This tab will take you to a handful of examples.",
-																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+																	"presentation_linecount" : 3,
+																	"presentation_rect" : [ 5.0, 5.0, 360.0, 57.0 ],
+																	"text" : "Analysing pitch is a complex problem to solve. This example shows how by using some statistical inferences, the true value of pitch can be more accurately measured."
 																}
 
 															}
@@ -781,13 +779,6 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-15", 0 ],
 																	"source" : [ "obj-1", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-20", 0 ],
-																	"source" : [ "obj-15", 1 ]
 																}
 
 															}
@@ -1216,8 +1207,7 @@
 																	"presentation" : 1,
 																	"presentation_linecount" : 14,
 																	"presentation_rect" : [ 5.0, 5.0, 353.0, 242.0 ],
-																	"text" : "Lauren Sarah Hayes is a Scottish improviser and sound artist. Her music is a mix of experimental pop/live electronics/techno/noise/free improvisation and has been described as 'voracious' and 'exhilarating'. She is a sculptress of sound, manipulating, remixing, and bending voice, drum machines, analogue synths and self-built software live and physically. She is excited by what can happen in the vulnerable relationships between sound, space, and audience. Her shows are highly physical, making the performance of live electronic music more engaging for audiences. Over the last decade she has developed and honed a deliberately challenging and unpredictable performance system that explores the relationships between bodies, sound, environments, and technology.",
-																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+																	"text" : "Lauren Sarah Hayes is a Scottish improviser and sound artist. Her music is a mix of experimental pop/live electronics/techno/noise/free improvisation and has been described as 'voracious' and 'exhilarating'. She is a sculptress of sound, manipulating, remixing, and bending voice, drum machines, analogue synths and self-built software live and physically. She is excited by what can happen in the vulnerable relationships between sound, space, and audience. Her shows are highly physical, making the performance of live electronic music more engaging for audiences. Over the last decade she has developed and honed a deliberately challenging and unpredictable performance system that explores the relationships between bodies, sound, environments, and technology."
 																}
 
 															}
@@ -1226,13 +1216,6 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-15", 0 ],
 																	"source" : [ "obj-1", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-20", 0 ],
-																	"source" : [ "obj-15", 1 ]
 																}
 
 															}
@@ -1803,8 +1786,7 @@
 													"patching_rect" : [ 3182.5, 103.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 2490.0, 121.0, 139.0, 21.0 ],
-													"text" : "Select a composer(s)...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a composer(s)..."
 												}
 
 											}
@@ -1855,8 +1837,7 @@
 													"patching_rect" : [ 2282.5, 128.5, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 3315.0, 128.0, 139.0, 21.0 ],
-													"text" : "Select an example...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select an example..."
 												}
 
 											}
@@ -1943,8 +1924,7 @@
 													"presentation" : 1,
 													"presentation_linecount" : 3,
 													"presentation_rect" : [ 15.0, 263.0, 257.0, 50.0 ],
-													"text" : "Be aware, some of the patches you can open from within the package will differ slightly from the tutorial video's final result.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Be aware, some of the patches you can open from within the package will differ slightly from the tutorial video's final result."
 												}
 
 											}
@@ -2436,8 +2416,7 @@
 																	"presentation" : 1,
 																	"presentation_linecount" : 11,
 																	"presentation_rect" : [ 5.0, 5.0, 363.0, 191.0 ],
-																	"text" : "Imagine you have a large corpus of sounds that you've collected from a studio session, some outside sound walks or experimenting with a synthesiser on a rainy afternoon. This tutorial teaches you how to build a '2D Corpus Explorer', a patch that will enable you to interrogate and listen to those sounds in a structured manner. The end result is similar to CataRT and AudioStellar in that small segments of your corpus sounds are analysed and mapped to a two-dimensional space that can be explored using your mouse. It will cover topics such as segmentation, analysis, data processing and visualisation.",
-																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+																	"text" : "Imagine you have a large corpus of sounds that you've collected from a studio session, some outside sound walks or experimenting with a synthesiser on a rainy afternoon. This tutorial teaches you how to build a '2D Corpus Explorer', a patch that will enable you to interrogate and listen to those sounds in a structured manner. The end result is similar to CataRT and AudioStellar in that small segments of your corpus sounds are analysed and mapped to a two-dimensional space that can be explored using your mouse. It will cover topics such as segmentation, analysis, data processing and visualisation."
 																}
 
 															}
@@ -2446,13 +2425,6 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-15", 0 ],
 																	"source" : [ "obj-1", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-20", 0 ],
-																	"source" : [ "obj-15", 1 ]
 																}
 
 															}
@@ -2506,8 +2478,7 @@
 													"patching_rect" : [ 1562.5, 106.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 15.0, 113.0, 139.0, 21.0 ],
-													"text" : "Select a tutorial...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a tutorial..."
 												}
 
 											}
@@ -2522,8 +2493,7 @@
 													"patching_rect" : [ 782.5, 99.0, 139.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 840.0, 8.0, 139.0, 21.0 ],
-													"text" : "Select a category...",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Select a category..."
 												}
 
 											}
@@ -3052,8 +3022,7 @@
 																	"presentation" : 1,
 																	"presentation_linecount" : 7,
 																	"presentation_rect" : [ 5.0, 5.0, 352.0, 124.0 ],
-																	"text" : "Slicing, segmenting, chopping, or dividing. These words all refer to the same type of process in which a sound is separated into 'chunks' or 'slices' across time. Each of these objects embodies a different model of listening for identifying 'slice points'. In other words, different types of change can be measured and used to determine how to segment a sound.",
-																	"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+																	"text" : "Slicing, segmenting, chopping, or dividing. These words all refer to the same type of process in which a sound is separated into 'chunks' or 'slices' across time. Each of these objects embodies a different model of listening for identifying 'slice points'. In other words, different types of change can be measured and used to determine how to segment a sound."
 																}
 
 															}
@@ -3062,13 +3031,6 @@
 																"patchline" : 																{
 																	"destination" : [ "obj-15", 0 ],
 																	"source" : [ "obj-1", 0 ]
-																}
-
-															}
-, 															{
-																"patchline" : 																{
-																	"destination" : [ "obj-20", 0 ],
-																	"source" : [ "obj-15", 1 ]
 																}
 
 															}
@@ -5609,8 +5571,15 @@
 									"patching_rect" : [ 194.000000000000114, 851.0, 107.0, 28.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 538.0, 87.0, 107.0, 28.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.maxwindow_bugtext"
+										}
+
+									}
+,
 									"text" : "learn platform",
-									"textcolor" : [ 0.321569, 0.54902, 0.792157, 1.0 ]
+									"textcolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ]
 								}
 
 							}
@@ -5693,8 +5662,15 @@
 									"patching_rect" : [ 21.046584000000053, 851.0, 78.0, 28.0 ],
 									"presentation" : 1,
 									"presentation_rect" : [ 618.0, 59.0, 78.0, 28.0 ],
+									"saved_attribute_attributes" : 									{
+										"textcolor" : 										{
+											"expression" : "themecolor.maxwindow_bugtext"
+										}
+
+									}
+,
 									"text" : "our forum",
-									"textcolor" : [ 0.321569, 0.54902, 0.792157, 1.0 ]
+									"textcolor" : [ 0.090196, 0.658824, 0.901961, 1.0 ]
 								}
 
 							}

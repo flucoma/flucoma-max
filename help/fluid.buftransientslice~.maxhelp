@@ -309,8 +309,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 525.0, 120.0, 158.0, 79.0 ],
-									"text" : "fluid.transientslice~ has a lot of parameters. These 6 are a good place to start if you want to configure the algorithm.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.transientslice~ has a lot of parameters. These 6 are a good place to start if you want to configure the algorithm."
 								}
 
 							}

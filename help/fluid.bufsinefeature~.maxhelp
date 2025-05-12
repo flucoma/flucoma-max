@@ -137,8 +137,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 340.0, 303.0, 100.0 ],
-									"text" : "With the default window size of 1024, there are only 2 peaks... this is because the distance between 2 peaks has to be clearly segregated in the FFT world. At the default 1024 and the usual SR of 44100, this is 43Hz per bin, so 440 and 535 are too near each other... if we reprocess with a higher frame size, we get the right values. Run with the fftsetting to 2048: volilà!",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "With the default window size of 1024, there are only 2 peaks... this is because the distance between 2 peaks has to be clearly segregated in the FFT world. At the default 1024 and the usual SR of 44100, this is 43Hz per bin, so 440 and 535 are too near each other... if we reprocess with a higher frame size, we get the right values. Run with the fftsetting to 2048: volilà!"
 								}
 
 							}
@@ -149,8 +148,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 169.0, 39.0, 20.0 ],
-									"text" : "frame",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "frame"
 								}
 
 							}
@@ -161,8 +159,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 632.0, 168.0, 152.0, 20.0 ],
-									"text" : "channel: which peak",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "channel: which peak"
 								}
 
 							}
@@ -173,8 +170,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 306.0, 152.0, 20.0 ],
-									"text" : "peak magnitude",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "peak magnitude"
 								}
 
 							}
@@ -185,8 +181,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 492.0, 276.0, 152.0, 20.0 ],
-									"text" : "peak frequency",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "peak frequency"
 								}
 
 							}
@@ -281,8 +276,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 250.0, 333.5, 155.0, 47.0 ],
-									"text" : "Same arguments as fluid.bufsines peak detection algorithm",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Same arguments as fluid.bufsines peak detection algorithm"
 								}
 
 							}
@@ -537,8 +531,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 27.0, 15.5, 179.0, 20.0 ],
-													"text" : "makes a 3 sine chord in a buffer",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "makes a 3 sine chord in a buffer"
 												}
 
 											}

@@ -95,8 +95,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 251.0, 130.0, 113.0, 25.0 ],
-									"text" : "select a source",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "select a source"
 								}
 
 							}
@@ -144,8 +143,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 230.0, 585.0, 240.0, 79.0 ],
-									"text" : "This example uses mel bands as a resynthesis / vocoder. Each mel band drives an oscillator that has its frequency determined by the spacing of the bands.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "This example uses mel bands as a resynthesis / vocoder. Each mel band drives an oscillator that has its frequency determined by the spacing of the bands."
 								}
 
 							}
@@ -746,8 +744,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 370.0, 280.0, 172.0, 152.0 ],
-																	"text" : "Mel bands are like a spectrum where each \"bin\" will have a centre frequency. \n\nThis subpatch calculates the centre frequency of each bin, based on how many mel bands have been used and the minimum and maximum frequencies",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "Mel bands are like a spectrum where each \"bin\" will have a centre frequency. \n\nThis subpatch calculates the centre frequency of each bin, based on how many mel bands have been used and the minimum and maximum frequencies"
 																}
 
 															}
@@ -758,8 +755,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 160.0, 212.0, 311.0, 21.0 ],
-																	"text" : "synchronise number of bands and two ranges of mel",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "synchronise number of bands and two ranges of mel"
 																}
 
 															}
@@ -794,8 +790,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 270.0, 483.0, 171.0, 21.0 ],
-																	"text" : "converts them all back in Hz",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "converts them all back in Hz"
 																}
 
 															}
@@ -806,8 +801,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 305.999938999999983, 131.0, 116.0, 21.0 ],
-																	"text" : "converts Hz to Mel",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "converts Hz to Mel"
 																}
 
 															}
@@ -1443,8 +1437,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 210.0, 266.666687000000024, 126.0, 54.0 ],
-									"text" : "select what to listen to source / resynth",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "select what to listen to source / resynth"
 								}
 
 							}
@@ -1950,8 +1943,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 247.0, 260.0, 77.0, 25.0 ],
-									"text" : "Audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -1982,8 +1974,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 180.0, 511.0, 393.0, 21.0 ],
-									"text" : "Smoothing the mel bands output makes it a bit easier to visualise it",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Smoothing the mel bands output makes it a bit easier to visualise it"
 								}
 
 							}
@@ -2030,8 +2021,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 134.0, 21.0 ],
-									"text" : "Visualising mel bands",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Visualising mel bands"
 								}
 
 							}
@@ -2122,8 +2112,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 150.0, 400.0, 488.0, 50.0 ],
-									"text" : "More mel bands increases the precision of the model and will always output that number of elements in a list. Changing the lowest and highest frequency modelled is helpful to focus the descriptor on a useful range.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "More mel bands increases the precision of the model and will always output that number of elements in a list. Changing the lowest and highest frequency modelled is helpful to focus the descriptor on a useful range."
 								}
 
 							}
@@ -2135,8 +2124,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 268.0, 139.0, 115.0, 25.0 ],
-									"text" : "Select a source",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Select a source"
 								}
 
 							}

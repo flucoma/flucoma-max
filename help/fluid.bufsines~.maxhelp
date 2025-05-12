@@ -141,8 +141,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 359.0, 480.0, 318.0, 33.0 ],
-									"text" : "@numchans 1 makes it so that only the left channel is processed in case we load a stereo file.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "@numchans 1 makes it so that only the left channel is processed in case we load a stereo file."
 								}
 
 							}
@@ -174,8 +173,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.0, 250.0, 183.0, 24.0 ],
-									"text" : "Decompose the source buffer",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Decompose the source buffer"
 								}
 
 							}
@@ -765,8 +763,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 504.25, 348.0, 377.0, 20.0 ],
-									"text" : "Increase the threshold drastically but lower the minimum track length.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Increase the threshold drastically but lower the minimum track length."
 								}
 
 							}
@@ -777,8 +774,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 504.25, 281.333333333333371, 327.0, 20.0 ],
-									"text" : "Lower the threshold but increase the track length drastically.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Lower the threshold but increase the track length drastically."
 								}
 
 							}
@@ -789,8 +785,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 504.25, 214.666666666666629, 195.0, 20.0 ],
-									"text" : "Increase the minimum track length.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Increase the minimum track length."
 								}
 
 							}
@@ -801,8 +796,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 504.25, 147.0, 376.0, 20.0 ],
-									"text" : "Tracks can be short but the detection threshold is higher than default.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Tracks can be short but the detection threshold is higher than default."
 								}
 
 							}
@@ -814,8 +808,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 650.0, 84.0, 24.0 ],
-									"text" : "Start audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Start audio"
 								}
 
 							}
@@ -896,8 +889,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 322.0, 130.0, 151.0, 37.0 ],
-									"text" : "Load the default sound (or choose your own)",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Load the default sound (or choose your own)"
 								}
 
 							}
@@ -909,8 +901,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 156.5, 590.0, 470.0, 24.0 ],
-									"text" : "Select which component you want to hear. Selecting both sums to the original input.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Select which component you want to hear. Selecting both sums to the original input."
 								}
 
 							}
@@ -964,7 +955,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 668.25, 400.0, 163.0, 39.0 ],
 									"text" : "experiment with parameters",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ],
 									"textjustification" : 1
 								}
 

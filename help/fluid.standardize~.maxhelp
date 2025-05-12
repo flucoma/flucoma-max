@@ -115,8 +115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 160.0, 21.0 ],
-									"text" : "visualising standardisation",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "visualising standardisation"
 								}
 
 							}
@@ -128,8 +127,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 544.5, 310.0, 295.0, 50.0 ],
-									"text" : "This shows the data scaled using standardisation.\n\nThey are now in more comparable ranges.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This shows the data scaled using standardisation.\n\nThey are now in more comparable ranges."
 								}
 
 							}
@@ -141,8 +139,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 378.5, 360.0, 102.0, 94.0 ],
-									"text" : "This plot shows the unscaled ranges of the pitch and pitch confidence analysis",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This plot shows the unscaled ranges of the pitch and pitch confidence analysis"
 								}
 
 							}
@@ -220,8 +217,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 38.0, 864.0, 352.0, 36.0 ],
-									"text" : "By normalizing to a uniform scale, both would be weighted equally",
-									"textcolor" : [ 0.129412, 0.137255, 0.145098, 0.44 ]
+									"text" : "By normalizing to a uniform scale, both would be weighted equally"
 								}
 
 							}
@@ -1611,8 +1607,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 680.0, 410.0, 200.0, 181.0 ],
-									"text" : "The standardised analysis.\n\nNotice that it's the exact same \"shape\" as the raw data but the values are in a different range now.\n\nBoth of the scales for pitch and confidence are now expressed as standard deviations from a mean of 0, meaning they are more comparable.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The standardised analysis.\n\nNotice that it's the exact same \"shape\" as the raw data but the values are in a different range now.\n\nBoth of the scales for pitch and confidence are now expressed as standard deviations from a mean of 0, meaning they are more comparable."
 								}
 
 							}
@@ -1657,8 +1652,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 167.0, 410.0, 200.0, 79.0 ],
-									"text" : "The raw analysis, where each identifier is an analysis window of two columns. The first column is the pitch in Hz, the second is the confidence in linear values.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The raw analysis, where each identifier is an analysis window of two columns. The first column is the pitch in Hz, the second is the confidence in linear values."
 								}
 
 							}
@@ -1670,8 +1664,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 180.0, 321.0, 113.0, 65.0 ],
-									"text" : "Turn the two channel buffer into a two column dataset.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Turn the two channel buffer into a two column dataset."
 								}
 
 							}
@@ -1715,8 +1708,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 391.0, 237.5, 113.0, 65.0 ],
-									"text" : "Two channels of feature data. One pitch, the other confidence",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Two channels of feature data. One pitch, the other confidence"
 								}
 
 							}

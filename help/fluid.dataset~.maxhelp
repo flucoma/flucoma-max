@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
+			"minor" : 6,
 			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 34.0, 87.0, 995.0, 724.0 ],
+		"rect" : [ 134.0, 178.0, 995.0, 724.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 13.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 698.0 ],
+						"rect" : [ 134.0, 204.0, 995.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -94,9 +94,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 390.0, 465.0, 280.5, 50.0 ],
-									"presentation_linecount" : 4,
-									"text" : "displays the 9 nearest neighbours as symbols. They can be converted to numbers using `fromsymbol`",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "displays the 9 nearest neighbours as symbols. They can be converted to numbers using `fromsymbol`"
 								}
 
 							}
@@ -107,8 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 580.0, 341.0, 199.0, 21.0 ],
-									"text" : "request the 9 nearest neighbours",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "request the 9 nearest neighbours"
 								}
 
 							}
@@ -286,7 +283,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -497,8 +494,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 729.0, 65.0 ],
-									"text" : "A fluid.dataset~ can be queried with an input point to return the nearest match to that point. Note: This feature is can be computationally expensive on a large dataset, as it needs to compute the distance of the queried point to each point in the dataset. If you need to perform multiple nearest neighbour queries on a fluid.dataset~ it is recommended to use fluid.kdtree~. This facility is most useful with smaller, ephemeral datasets such as those returned by fluid.datasetquery~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A fluid.dataset~ can be queried with an input point to return the nearest match to that point. Note: This feature is can be computationally expensive on a large dataset, as it needs to compute the distance of the queried point to each point in the dataset. If you need to perform multiple nearest neighbour queries on a fluid.dataset~ it is recommended to use fluid.kdtree~. This facility is most useful with smaller, ephemeral datasets such as those returned by fluid.datasetquery~"
 								}
 
 							}
@@ -511,8 +507,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 549.5, 185.0, 151.0, 40.0 ],
-									"text" : "make a point on the poltter to query",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "make a point on the poltter to query"
 								}
 
 							}
@@ -565,8 +560,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 54.0, 129.0, 279.0, 40.0 ],
-									"text" : "dump the simple grid dataset to see its content",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "dump the simple grid dataset to see its content"
 								}
 
 							}
@@ -805,14 +799,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 34.0, 113.0, 995.0, 698.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -848,8 +842,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 729.0, 21.0 ],
-									"text" : "A fluid.dataset~ can be created from the contents of a buffer as well as converted from its internal representation TO a buffer. ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A fluid.dataset~ can be created from the contents of a buffer as well as converted from its internal representation TO a buffer. "
 								}
 
 							}
@@ -861,8 +854,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.0, 490.0, 215.0, 166.0 ],
-									"text" : "By default, each row is layed out framewise, so all of channel 1 is ordered in time as the columns of identifier 0.\n\nWhen frombuffer <buffer> 1 is passed (implicitly 0), the copying is transposed. This means each identifier will contain the same index across all channels as the columns of a given identifier.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By default, each row is layed out framewise, so all of channel 1 is ordered in time as the columns of identifier 0.\n\nWhen frombuffer <buffer> 1 is passed (implicitly 0), the copying is transposed. This means each identifier will contain the same index across all channels as the columns of a given identifier."
 								}
 
 							}
@@ -895,8 +887,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 570.0, 339.5, 201.0, 54.0 ],
-									"text" : "You can provide an optional number (0 or 1) to change the transposition of the copying.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "You can provide an optional number (0 or 1) to change the transposition of the copying."
 								}
 
 							}
@@ -943,8 +934,7 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.0, 280.0, 207.0, 69.0 ],
 									"suppressinlet" : 1,
-									"text" : "frombuffer messages copies the contents of the buffer you provide as an argument to the dataset.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "frombuffer messages copies the contents of the buffer you provide as an argument to the dataset."
 								}
 
 							}
@@ -977,8 +967,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 122.0, 123.5, 167.0, 40.0 ],
-									"text" : "Trigger audio-descriptor analysis",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Trigger audio-descriptor analysis"
 								}
 
 							}
@@ -990,8 +979,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 704.699999675154686, 218.5, 170.0, 36.0 ],
-									"text" : "Compute the stats across each spectral shape feature",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Compute the stats across each spectral shape feature"
 								}
 
 							}
@@ -1003,8 +991,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 805.0, 168.5, 150.0, 36.0 ],
-									"text" : "Analyse spectral shape features of the source",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Analyse spectral shape features of the source"
 								}
 
 							}
@@ -1015,8 +1002,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 602.0, 133.0, 156.0, 21.0 ],
-									"text" : "A sound stored in a buffer",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A sound stored in a buffer"
 								}
 
 							}
@@ -1278,7 +1264,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1377,8 +1363,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 670.0, 290.0, 150.0, 94.0 ],
-									"text" : "Notice after clicking merge that some new animals will appear in this dictionary (a representation of the dataset).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Notice after clicking merge that some new animals will appear in this dictionary (a representation of the dataset)."
 								}
 
 							}
@@ -1437,7 +1422,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1502,7 +1487,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 286.0, 205.0, 78.0, 22.0 ],
 													"text" : "random 100"
 												}
@@ -1536,7 +1521,7 @@
 												"box" : 												{
 													"id" : "obj-28",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 77.75, 333.0, 121.0, 22.0 ],
@@ -1742,7 +1727,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1831,7 +1816,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 286.0, 205.0, 78.0, 22.0 ],
 													"text" : "random 100"
 												}
@@ -1853,7 +1838,7 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 77.75, 300.0, 130.0, 22.0 ],
@@ -2168,8 +2153,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 8.5, 62.0, 584.0, 50.0 ],
-									"text" : "You can merge the points in one dataset with another. If the dataset you call merge on already has a key existing in the dataset you want to merge, the caller's will be preserved. Any keys not found in the dataset to merge will be added to the caller.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can merge the points in one dataset with another. If the dataset you call merge on already has a key existing in the dataset you want to merge, the caller's will be preserved. Any keys not found in the dataset to merge will be added to the caller."
 								}
 
 							}
@@ -2338,7 +2322,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2381,8 +2365,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 354.0, 21.0 ],
-									"text" : "An example of storing audio descriptors into a fluid.dataset~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "An example of storing audio descriptors into a fluid.dataset~"
 								}
 
 							}
@@ -2453,8 +2436,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 155.0, 589.5, 356.0, 54.0 ],
-									"text" : "Open the max console to see the data that was generated and stored in the dataset with the identity \"scratch-synth\"",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Open the max console to see the data that was generated and stored in the dataset with the identity \"scratch-synth\""
 								}
 
 							}
@@ -2593,8 +2575,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 275.0, 267.0, 185.0, 21.0 ],
-									"text" : "setpoint <identifier> <buffer>",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "setpoint <identifier> <buffer>"
 								}
 
 							}
@@ -2883,7 +2864,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -2938,8 +2919,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 350.0, 21.0 ],
-									"text" : "Other useful messages that can be used with fluid.dataset~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Other useful messages that can be used with fluid.dataset~"
 								}
 
 							}
@@ -2982,7 +2962,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -3084,7 +3064,7 @@
 													"maxclass" : "newobj",
 													"numinlets" : 2,
 													"numoutlets" : 1,
-													"outlettype" : [ "int" ],
+													"outlettype" : [ "" ],
 													"patching_rect" : [ 198.5, 184.0, 78.0, 23.0 ],
 													"text" : "random 100"
 												}
@@ -3106,7 +3086,7 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 63.5, 297.0, 130.0, 23.0 ],
@@ -3290,8 +3270,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 228.0, 339.0, 365.0, 21.0 ],
-									"text" : "Dump the contents of the fluid.dataset~ to a Max dictionary",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Dump the contents of the fluid.dataset~ to a Max dictionary"
 								}
 
 							}
@@ -3325,8 +3304,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 199.0, 291.5, 557.0, 36.0 ],
-									"text" : "Get the number of columns, or dimensions of the data points. Since all points must have the same number of dimensions, this is just a single number. It is reported out the left outlet.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Get the number of columns, or dimensions of the data points. Since all points must have the same number of dimensions, this is just a single number. It is reported out the left outlet."
 								}
 
 							}
@@ -3372,8 +3350,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 179.0, 259.0, 630.0, 21.0 ],
-									"text" : "Get the size (the number of <identifier> <data> pairs in the dataset), which is reported out the left outlet.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Get the size (the number of <identifier> <data> pairs in the dataset), which is reported out the left outlet."
 								}
 
 							}
@@ -3395,9 +3372,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 158.0, 219.0, 205.0, 21.0 ],
-									"text" : "Read a fluid.dataset~ from disk",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"patching_rect" : [ 158.0, 219.0, 775.0, 21.0 ],
+									"text" : "Read a fluid.dataset~ from disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -3419,9 +3395,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 131.0, 184.0, 189.0, 21.0 ],
-									"text" : "Write a fluid.dataset~ to disk",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"patching_rect" : [ 131.0, 184.0, 746.0, 21.0 ],
+									"text" : "Write a fluid.dataset~ to disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -3444,8 +3419,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 253.0, 378.0, 280.0, 21.0 ],
-									"text" : "Completely empty and reset a fluid.dataset~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Completely empty and reset a fluid.dataset~"
 								}
 
 							}
@@ -3643,7 +3617,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3685,7 +3659,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 2,
 									"numoutlets" : 1,
-									"outlettype" : [ "int" ],
+									"outlettype" : [ "" ],
 									"patching_rect" : [ 183.5, 220.0, 78.0, 23.0 ],
 									"text" : "random 100"
 								}
@@ -3801,7 +3775,7 @@
 								"box" : 								{
 									"id" : "obj-71",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
 									"patching_rect" : [ 57.75, 330.0, 130.0, 23.0 ],
@@ -3865,8 +3839,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 80.0, 210.0, 137.0 ],
-									"text" : "You can construct the contents of a fluid.dataset~ programatically by creating a dictionary in the correct format before \"loading\" it into a dataset. In the example below, we will use random number generation to create a toy dataset by first loading the information into a dictionary.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can construct the contents of a fluid.dataset~ programatically by creating a dictionary in the correct format before \"loading\" it into a dataset. In the example below, we will use random number generation to create a toy dataset by first loading the information into a dictionary."
 								}
 
 							}
@@ -4069,7 +4042,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -4160,8 +4133,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 629.0, 370.5, 154.0, 50.0 ],
-									"text" : "Retrieve the values for a given identifier. Outputs to a buffer.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Retrieve the values for a given identifier. Outputs to a buffer."
 								}
 
 							}
@@ -4220,8 +4192,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 409.0, 508.5, 154.0, 36.0 ],
-									"text" : "Update the values for an existing point.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Update the values for an existing point."
 								}
 
 							}
@@ -4280,8 +4251,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 369.0, 370.5, 159.0, 50.0 ],
-									"text" : "Will overwrite an existing point or create a new one if doesn't exist.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Will overwrite an existing point or create a new one if doesn't exist."
 								}
 
 							}
@@ -4340,8 +4310,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 164.0, 515.5, 151.0, 36.0 ],
-									"text" : "Delete a point with deletepoint <identifier>.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Delete a point with deletepoint <identifier>."
 								}
 
 							}
@@ -4401,8 +4370,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 200.0, 643.0, 280.0, 50.0 ],
-									"text" : "fluid.dataset~ will report back when an operation is complete from its left outlet. You can use this to chain together processes.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "fluid.dataset~ will report back when an operation is complete from its left outlet. You can use this to chain together processes."
 								}
 
 							}
@@ -4447,7 +4415,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 77.0, 377.5, 186.0, 36.0 ],
 									"text" : "Add a point with the message addpoint <identifier> <buffer>.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 2
 								}
 
@@ -4531,8 +4498,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 130.0, 760.0, 36.0 ],
-									"text" : "The fluid.dataset~ object is central to the FluCoMa data analysis objects. It is used for storing many data points, each of which will be attached to an identifier, also known as a key. All of the data points in a dataset must have the same number of dimensions",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The fluid.dataset~ object is central to the FluCoMa data analysis objects. It is used for storing many data points, each of which will be attached to an identifier, also known as a key. All of the data points in a dataset must have the same number of dimensions"
 								}
 
 							}
@@ -4826,7 +4792,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1

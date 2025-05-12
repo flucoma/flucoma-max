@@ -109,8 +109,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 588.5, 498.0, 105.0, 20.0 ],
-					"text" : "Process time (ms)",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Process time (ms)"
 				}
 
 			}
@@ -146,8 +145,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 236.5, 340.5, 247.0, 47.0 ],
-					"text" : "Use the content of the buffer~ called 'bases' as a spectral template for filtering a realtime signal into two decomposed signals",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Use the content of the buffer~ called 'bases' as a spectral template for filtering a realtime signal into two decomposed signals"
 				}
 
 			}
@@ -159,8 +157,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 188.0, 463.0, 113.0, 60.0 ],
-					"text" : "Constantly fill up a ring buffer with sound from the drum playback",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Constantly fill up a ring buffer with sound from the drum playback"
 				}
 
 			}
@@ -171,8 +168,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 555.5, 435.5, 171.0, 20.0 ],
-					"text" : "bang when done (its fast)",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "bang when done (its fast)"
 				}
 
 			}
@@ -184,8 +180,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 600.5, 247.5, 171.0, 47.0 ],
-					"text" : "fluid.bufnmf~ processes the contents of 'ringbuffer' every 2.3 seconds.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "fluid.bufnmf~ processes the contents of 'ringbuffer' every 2.3 seconds."
 				}
 
 			}
@@ -209,8 +204,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.5, 78.0, 303.0, 87.0 ],
-					"text" : "fluid.bufnmf~ is quite a heavy process to perform. However you can tell it perform less 'iterations' in order to make it work faster, with less precision in the decomposition. The upside of this, is that makes it more feasible to use in realtime, for example, as an autopanner effect!",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "fluid.bufnmf~ is quite a heavy process to perform. However you can tell it perform less 'iterations' in order to make it work faster, with less precision in the decomposition. The upside of this, is that makes it more feasible to use in realtime, for example, as an autopanner effect!"
 				}
 
 			}
@@ -339,8 +333,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 21.5, 49.0, 299.0, 20.0 ],
-					"text" : "Splitting a sound into two components in realtime",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Splitting a sound into two components in realtime"
 				}
 
 			}

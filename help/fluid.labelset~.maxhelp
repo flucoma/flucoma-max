@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 5,
+			"minor" : 6,
 			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 523.0, 87.0, 853.0, 707.0 ],
+		"rect" : [ 134.0, 178.0, 853.0, 707.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -50,14 +50,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 523.0, 113.0, 853.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -191,8 +191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 643.0, 292.0, 150.0, 94.0 ],
-									"text" : "Notice after clicking merge that some new numbers will appear in this dictionary (a representation of the labelset).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Notice after clicking merge that some new numbers will appear in this dictionary (a representation of the labelset)."
 								}
 
 							}
@@ -378,8 +377,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 8.5, 62.0, 584.0, 50.0 ],
-									"text" : "You can merge the labels in one labelset with another. If the labeset you call merge on already has an identifier existing in the labelset you want to merge, the caller's will be preserved. Any identifier not found in the dataset to merge will be added to the caller.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can merge the labels in one labelset with another. If the labeset you call merge on already has an identifier existing in the labelset you want to merge, the caller's will be preserved. Any identifier not found in the dataset to merge will be added to the caller."
 								}
 
 							}
@@ -548,7 +546,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -650,8 +648,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 603.0, 21.0 ],
-									"text" : "Create associations between identifiers shared across fluid.dataset~ objects and fluid.labelset~ objects.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Create associations between identifiers shared across fluid.dataset~ objects and fluid.labelset~ objects."
 								}
 
 							}
@@ -699,8 +696,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 540.0, 312.5, 283.0, 123.0 ],
-									"text" : "The setlabel message is sent to the fluid.labelset~ below associating the identifier \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the identifier \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that identifier.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The setlabel message is sent to the fluid.labelset~ below associating the identifier \"scratch-synth\" with the label \"noisy\". Both the fluid.dataset~ and fluid.labelset~ have the identifier \"scratch-synth\". If for example, a fluid.mlpclassifier~ was trained with this data, the \"noisy\" label would be the training label for the data inside the dataset with that identifier."
 								}
 
 							}
@@ -1028,14 +1024,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
+						"rect" : [ 134.0, 204.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1071,7 +1067,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 405.0, 120.0, 38.0 ],
+									"patching_rect" : [ 30.0, 405.0, 121.0, 38.0 ],
 									"text" : "print fluid.labelset~ @popup 1"
 								}
 
@@ -1083,8 +1079,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 250.0, 341.0, 204.0, 21.0 ],
-									"text" : "Completely reset a fluid.labelset~.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Completely reset a fluid.labelset~."
 								}
 
 							}
@@ -1107,8 +1102,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 244.0, 21.0 ],
-									"text" : "Other useful messages for fluid.labelset~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Other useful messages for fluid.labelset~"
 								}
 
 							}
@@ -1151,7 +1145,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -1258,7 +1252,7 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 5,
+															"minor" : 6,
 															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
@@ -1414,7 +1408,7 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 75.75, 275.0, 130.0, 22.0 ],
@@ -1595,8 +1589,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 204.5, 269.0, 355.5, 21.0 ],
-									"text" : "Dump the contents of the fluid.labelset~ to a Max dictionary.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Dump the contents of the fluid.labelset~ to a Max dictionary."
 								}
 
 							}
@@ -1652,8 +1645,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 169.5, 230.5, 342.0, 21.0 ],
-									"text" : "Get the size (number of identifiers with associated labels).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Get the size (number of identifiers with associated labels)."
 								}
 
 							}
@@ -1675,9 +1667,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 145.0, 190.5, 194.0, 21.0 ],
-									"text" : "Read a fluid.labelset~ from disk.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"patching_rect" : [ 145.0, 190.5, 679.0, 21.0 ],
+									"text" : "Read a fluid.labelset~ from disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -1699,9 +1690,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 119.5, 155.5, 178.0, 21.0 ],
-									"text" : "Write a fluid.labelset~ to disk.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"patching_rect" : [ 119.5, 155.5, 663.0, 21.0 ],
+									"text" : "Write a fluid.labelset~ to disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
 							}
@@ -1724,8 +1714,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 226.5, 307.0, 343.5, 21.0 ],
-									"text" : "Print a sample of the fluid.labelset~.in the Max window.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Print a sample of the fluid.labelset~.in the Max window."
 								}
 
 							}
@@ -1921,7 +1910,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -1964,8 +1953,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 222.5, 400.0, 164.0, 20.0 ],
-									"text" : "look in here to see the format",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "look in here to see the format"
 								}
 
 							}
@@ -1974,11 +1962,12 @@
 									"id" : "obj-11",
 									"maxclass" : "newobj",
 									"numinlets" : 2,
-									"numoutlets" : 4,
-									"outlettype" : [ "dictionary", "", "", "" ],
+									"numoutlets" : 5,
+									"outlettype" : [ "dictionary", "", "", "", "" ],
 									"patching_rect" : [ 170.0, 400.0, 50.5, 22.0 ],
 									"saved_object_attributes" : 									{
 										"embed" : 0,
+										"legacy" : 1,
 										"parameter_enable" : 0,
 										"parameter_mappable" : 0
 									}
@@ -2006,8 +1995,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 501.0, 20.0 ],
-									"text" : "You can load the contents of a dictionary into a fluid.labelset~ assuming the format is correct.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can load the contents of a dictionary into a fluid.labelset~ assuming the format is correct."
 								}
 
 							}
@@ -2038,7 +2026,7 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 5,
+											"minor" : 6,
 											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
@@ -2272,7 +2260,7 @@
 								"box" : 								{
 									"id" : "obj-71",
 									"maxclass" : "newobj",
-									"numinlets" : 2,
+									"numinlets" : 3,
 									"numoutlets" : 1,
 									"outlettype" : [ "dictionary" ],
 									"patching_rect" : [ 57.75, 360.0, 121.0, 22.0 ],
@@ -2517,7 +2505,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
@@ -3052,7 +3040,7 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 5,
+							"minor" : 6,
 							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
