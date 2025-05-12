@@ -9,18 +9,18 @@ This project has received funding from the European Research Council (ERC)
 under the European Union’s Horizon 2020 research and innovation programme
 (grant agreement No 725899).
 -->
-<c74object name='fluid.jit.plotter' category='FluidCorpusManuipulation'>
+<c74object name='fluid.jit.plotter' category='FluidCorpusManipulation'>
     <digest>Plot very large 2D datasets fast.</digest>
-    <description>An abstraction around jit.pworld that plots data in a two-dimensional graph. Similar to fluid.plotter, but more performant on large datasets.</description>
+    <description>An abstraction based on OpenGL that plots data in a two-dimensional graph. Similar to fluid.plotter, but more performant on large datasets.</description>
     <discussion>
         <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
         The fluid.jit.plotter abstraction can be used as a versatile solution for plotting points in a two-dimensional graph.
 
-It is a performance-oriented variant of the fluid.plotter object, built in a jit.gl environment. It is more efficien than fluid.plotter and can handle larger datasets (such as ones with millions of points).
+It is a performance-oriented variant of the fluid.plotter object, based on OpenGL, which allows it to be more efficient and to handle larger datasets (potentially with millions of points).
 
 To use it, use the refer message (left inlet) with the name of a fluid.dataset~ that contains the 2D coordinates of the points. Similarly, you can use the refer message (right inlet) with the name of a fluid.labelset~ to be used for assigning colors to the points based on pre-defined color palettes.
 
-There is also an 'advanced' interface that allows the user to specify the coordinates and colours of the points in a more flexible and bespoke manner. See the help file for more information on this.
+The interface of fluid.jit.plotter is in parity with that of fluid.plotter, offering a drop-in replacement for the latter.
 
         <p>fluid.jit.plotter is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
     </discussion>
@@ -79,7 +79,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='datasetname' optional='1' type='symbol' />
         </arglist>
         <digest>
-        
+        Reference a dataset or labelset
         </digest>
         <description>
         In left inlet: refer to the name of a <o>fluid.dataset~</o> with the coordinates to be plotted. Using the refer message with no arguments will remove the reference and clear the plotter.
@@ -93,7 +93,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the x-axis range
         </digest>
         <description>
         Set the x-axis range.
@@ -106,7 +106,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the y-axis range
         </digest>
         <description>
         Set the y-axis range.
@@ -119,7 +119,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the x- and y-axis ranges
         </digest>
         <description>
         Set the x- and y-axis ranges.
@@ -131,7 +131,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='factor' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the strengh and direction of the panning
         </digest>
         <description>
         Set the strength of the panning action when shift-clicking and dragging. Set to a negative value to invert the direction of the panning. Defaults to 1.
@@ -143,7 +143,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='scheme' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Choose a colour scheme
         </digest>
         <description>
         Change the colour scheme for automatic colouring via a fluid.labelset~. Options are default, cat, accent, dark, paired, tableau, R4, R3, R2, R1, random. Taken mostly from <a href='https://github.com/d3/d3-scale-chromatic'>d3-scale-chromatic</a>.
@@ -157,10 +157,10 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='y' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the position of a point
         </digest>
         <description>
-        Set the point at the given coordinates. Note that, to avoid accidentally modifying outside datasets, if an earlier reference was specified (via the refer message) the plot with switch to its internal dataset, making the previous set of points disappear. If you want to load a dataset and then edit its points via the setpoint message, then load the dataset first as a dictionary.
+        Set the point at the given coordinates.
         
         </description>
     </method>
@@ -173,7 +173,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='alpha' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the color of a point
         </digest>
         <description>
         Set the color of the point with a given identifier.
@@ -185,7 +185,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='identifier' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Emphasise points on the plot
         </digest>
         <description>
         Emphasises the given identifier's points in the plot. Any number of identifiers as a list of symbols can be provided.
@@ -197,7 +197,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='size' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the size of a point
         </digest>
         <description>
         Set the size of the point with a given identifier.
@@ -209,10 +209,10 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='scale' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the overall size of the points
         </digest>
         <description>
-        Set the overall size of the points. Defaults to 1.
+        Set the overall size of the points.
         
         </description>
     </method>
@@ -221,10 +221,10 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='scale' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the ratio between highlighted and normal point size
         </digest>
         <description>
-        Set the ratio of the size of the highlighted points to the regular points. Defaults to 2.4.
+        Set the ratio between highlighted and normal point size.
         
         </description>
     </method>
@@ -233,7 +233,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='shape' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Set the shape of all points
         </digest>
         <description>
         Modifies the shape of the points. Options are circle or square.
@@ -248,7 +248,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
             <arg name='a' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the background colour
         </digest>
         <description>
         Sets the background colour of the plotter.
@@ -259,7 +259,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         <arglist>
         </arglist>
         <digest>
-        
+        Clear the plot
         </digest>
         <description>
         Clears the graph and all associated data and settings.
@@ -270,7 +270,7 @@ There is also an 'advanced' interface that allows the user to specify the coordi
         <arglist>
         </arglist>
         <digest>
-        
+        Clear the plot
         </digest>
         <description>
         An alias of clear. Clears the graph.
