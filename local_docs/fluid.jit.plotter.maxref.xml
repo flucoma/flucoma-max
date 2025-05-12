@@ -11,18 +11,16 @@ under the European Union’s Horizon 2020 research and innovation programme
 -->
 <c74object name='fluid.jit.plotter' category='FluidCorpusManipulation'>
     <digest>Plot very large 2D datasets fast.</digest>
-    <description>An abstraction around jit.pworld that plots data in a two-dimensional graph. Similar to fluid.plotter, but more performant on large datasets.</description>
+    <description>An abstraction based on OpenGL that plots data in a two-dimensional graph. Similar to fluid.plotter, but more performant on large datasets.</description>
     <discussion>
         <h4><openfilelink filename="Fluid Corpus Manipulation Toolkit.maxpat">Open the Overview Patch</openfilelink></h4>
         The fluid.jit.plotter abstraction can be used as a versatile solution for plotting points in a two-dimensional graph.
 
-It is a performance-oriented variant of the fluid.plotter object, built around jit.pworld. While it is less flexible than fluid.plotter, it is more efficient and can handle larger datasets (such as ones with millions of points).
+It is a performance-oriented variant of the fluid.plotter object, based on OpenGL, which allows it to be more efficient and to handle larger datasets (potentially with millions of points).
 
 To use it, use the refer message (left inlet) with the name of a fluid.dataset~ that contains the 2D coordinates of the points. Similarly, you can use the refer message (right inlet) with the name of a fluid.labelset~ to be used for assigning colors to the points based on pre-defined color palettes.
 
-Note that, contrary to the fluid.plotter object, with fluid.jit.plotter you cannot specify the coordinates and colors of the points directly. You must use a fluid.dataset~ and a fluid.labelset~. Nor can you assign individual sizes to points. These restrictions were necessary to enable the performance improvements with large datasets.
-
-The interface is also slightly different from the one of fluid.plotter. For more information, see the help file.
+The interface of fluid.jit.plotter is in parity with that of fluid.plotter, offering a drop-in replacement for the latter.
 
         <p>fluid.jit.plotter is part of the Fluid Decomposition Toolkit of the FluCoMa project. For more explanations, learning material, and discussions on its musicianly uses, visit <a href="http://www.flucoma.org/">flucoma.org</a>.</p>
     </discussion>
@@ -81,7 +79,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='datasetname' optional='1' type='symbol' />
         </arglist>
         <digest>
-        
+        Reference a dataset or labelset
         </digest>
         <description>
         In left inlet: refer to the name of a <o>fluid.dataset~</o> with the coordinates to be plotted. Using the refer message with no arguments will remove the reference and clear the plotter.
@@ -95,7 +93,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the x-axis range
         </digest>
         <description>
         Set the x-axis range.
@@ -108,7 +106,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the y-axis range
         </digest>
         <description>
         Set the y-axis range.
@@ -121,7 +119,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='max' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the x- and y-axis ranges
         </digest>
         <description>
         Set the x- and y-axis ranges.
@@ -133,7 +131,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='factor' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the strengh and direction of the panning
         </digest>
         <description>
         Set the strength of the panning action when shift-clicking and dragging. Set to a negative value to invert the direction of the panning. Defaults to 1.
@@ -145,10 +143,40 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='scheme' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Choose a colour scheme
         </digest>
         <description>
         Change the colour scheme for automatic colouring via a fluid.labelset~. Options are default, cat, accent, dark, paired, tableau, R4, R3, R2, R1, random. Taken mostly from <a href='https://github.com/d3/d3-scale-chromatic'>d3-scale-chromatic</a>.
+        
+        </description>
+    </method>
+    <method name='setpoint'>
+        <arglist>
+            <arg name='identifier' optional='0' type='symbol' />
+            <arg name='x' optional='0' type='float' />
+            <arg name='y' optional='0' type='float' />
+        </arglist>
+        <digest>
+        Set the position of a point
+        </digest>
+        <description>
+        Set the point at the given coordinates.
+        
+        </description>
+    </method>
+    <method name='pointcolor'>
+        <arglist>
+            <arg name='identifier' optional='0' type='symbol' />
+            <arg name='red' optional='0' type='float' />
+            <arg name='green' optional='0' type='float' />
+            <arg name='blue' optional='0' type='float' />
+            <arg name='alpha' optional='0' type='float' />
+        </arglist>
+        <digest>
+        Set the color of a point
+        </digest>
+        <description>
+        Set the color of the point with a given identifier.
         
         </description>
     </method>
@@ -157,7 +185,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='identifier' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Emphasise points on the plot
         </digest>
         <description>
         Emphasises the given identifier's points in the plot. Any number of identifiers as a list of symbols can be provided.
@@ -168,7 +196,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='size' optional='0' type='int' />
         </arglist>
         <digest>
-        
+        Set the size of a point
         </digest>
         <description>
         Set the size of all points that are not highlighted.
@@ -180,10 +208,22 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='size' optional='0' type='int' />
         </arglist>
         <digest>
-        
+        Set the overall size of the points
         </digest>
         <description>
-        Set the size of all highlighted points.
+        Set the overall size of the points.
+        
+        </description>
+    </method>
+    <method name='highlightscale'>
+        <arglist>
+            <arg name='scale' optional='0' type='float' />
+        </arglist>
+        <digest>
+        Set the ratio between highlighted and normal point size
+        </digest>
+        <description>
+        Set the ratio between highlighted and normal point size.
         
         </description>
     </method>
@@ -192,7 +232,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='shape' optional='0' type='symbol' />
         </arglist>
         <digest>
-        
+        Set the shape of all points
         </digest>
         <description>
         Modifies the shape of the points. Options are circle or square.
@@ -207,7 +247,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
             <arg name='a' optional='0' type='float' />
         </arglist>
         <digest>
-        
+        Set the background colour
         </digest>
         <description>
         Sets the background colour of the plotter.
@@ -218,7 +258,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
         <arglist>
         </arglist>
         <digest>
-        
+        Clear the plot
         </digest>
         <description>
         Clears the graph and all associated data and settings.
@@ -229,7 +269,7 @@ The interface is also slightly different from the one of fluid.plotter. For more
         <arglist>
         </arglist>
         <digest>
-        
+        Clear the plot
         </digest>
         <description>
         An alias of clear. Clears the graph.
