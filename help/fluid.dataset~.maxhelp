@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 204.0, 995.0, 698.0 ],
+						"rect" : [ 0.0, 26.0, 995.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -806,7 +806,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 995.0, 698.0 ],
+						"rect" : [ 134.0, 204.0, 995.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -842,7 +842,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 729.0, 21.0 ],
-									"text" : "A fluid.dataset~ can be created from the contents of a buffer as well as converted from its internal representation TO a buffer. "
+									"text" : "A fluid.dataset~ can be created from the contents of a buffer as well as converted from its internal representation to a buffer. "
 								}
 
 							}
