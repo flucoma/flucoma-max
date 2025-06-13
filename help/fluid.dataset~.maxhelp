@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 48.0, 208.0, 854.0, 698.0 ],
+						"rect" : [ 0.0, 26.0, 854.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1601,7 +1601,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 854.0, 698.0 ],
+						"rect" : [ 48.0, 208.0, 854.0, 698.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1769,7 +1769,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 640.0, 540.0, 141.0, 23.0 ],
+									"patching_rect" : [ 649.0, 633.0, 141.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1804,12 +1804,13 @@
 , 							{
 								"box" : 								{
 									"bubble" : 1,
+									"bubbleside" : 0,
 									"id" : "obj-13",
 									"linecount" : 3,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 760.0, 434.5, 201.0, 54.0 ],
+									"patching_rect" : [ 619.0, 475.0, 201.0, 69.0 ],
 									"text" : "Finally, you can provide a labelset that will associate each channel to an identifier."
 								}
 
@@ -1965,11 +1966,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-20",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 704.699999675154686, 218.5, 170.0, 36.0 ],
+									"patching_rect" : [ 350.0, 250.0, 340.0, 21.0 ],
 									"text" : "Compute the stats across each spectral shape feature"
 								}
 
@@ -1977,11 +1977,10 @@
 , 							{
 								"box" : 								{
 									"id" : "obj-19",
-									"linecount" : 2,
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 805.0, 168.5, 150.0, 36.0 ],
+									"patching_rect" : [ 430.0, 202.0, 290.0, 21.0 ],
 									"text" : "Analyse spectral shape features of the source"
 								}
 
