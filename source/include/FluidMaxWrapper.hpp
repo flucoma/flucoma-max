@@ -1600,11 +1600,11 @@ public:
 
     if (!x->mAutosize && ac != x->mListSize)
     {
-      object_warn((t_object*)x, "bad input list size (%d), expect %d",ac,x->mListSize);
+      object_warn((t_object*)x, "bad input list size (%d), expected %d",ac,x->mListSize);
       return;
     }
      
-    if (x->mAutosize)
+    if (x->mAutosize && isControlOutFollowsIn<typename Client::Client>)
       x->resizeListHandlers(ac);
       
     x->mListHandler(x, ac, av);
@@ -1740,12 +1740,15 @@ private:
     {
       long argCount{0};
       
-      if (isControlOutFollowsIn<typename Client::Client>)
+        if (isControlIn<typename Client::Client>)
       {
         mListSize = atom_getlong(av);
-        numArgs -= 1;
-        av += 1;
-        ac--;
+        if (isControlOutFollowsIn<typename Client::Client>)
+        {
+            numArgs -= 1;
+            av += 1;
+            ac--;
+        }
       }
       
       auto r1 = mParams.setPrimaryParameterValues(true,
