@@ -59,8 +59,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 26.5, 46.639239311218262, 372.0, 47.0 ],
-					"text" : "In this patch two resynth buffers are used to create fake real time processing. Whilst one buffer plays, the other is processed by fluid.bufnmf~. They then swap places so that one is always playing.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "In this patch two resynth buffers are used to create fake real time processing. Whilst one buffer plays, the other is processed by fluid.bufnmf~. They then swap places so that one is always playing."
 				}
 
 			}
@@ -73,8 +72,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 881.38846432018272, 343.487466156482697, 78.000000715255737, 29.0 ],
-					"text" : "enveloping removes clicks",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "enveloping removes clicks"
 				}
 
 			}
@@ -87,8 +85,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1030.886895179748535, 270.367163002490997, 325.0, 40.0 ],
-					"text" : "each component is being randomly seeded each time fluid.bufnmf~ is processed, meaning that each channel plays back a randomly chosen spectral component every time it is triggered, creating a random pan",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "each component is being randomly seeded each time fluid.bufnmf~ is processed, meaning that each channel plays back a randomly chosen spectral component every time it is triggered, creating a random pan"
 				}
 
 			}
@@ -100,8 +97,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 667.827184598854728, 414.616247236728668, 199.0, 18.0 ],
-					"text" : "each resynth channel is panned seperately",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "each resynth channel is panned seperately"
 				}
 
 			}
@@ -114,8 +110,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 346.0, 451.291928708553314, 138.0, 62.0 ],
-					"text" : "no bases buffer means the three components are being randomised across the three buffer channels each time fluid.bufnmf~ is processed",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "no bases buffer means the three components are being randomised across the three buffer channels each time fluid.bufnmf~ is processed"
 				}
 
 			}
@@ -128,8 +123,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 74.01374340057373, 292.421054363250732, 141.0, 51.0 ],
-					"text" : "at the start of each second: \nset resynth buffer to resynth2,\nstart frame 22050, \nprocess fluidbufnmf~",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "at the start of each second: \nset resynth buffer to resynth2,\nstart frame 22050, \nprocess fluidbufnmf~"
 				}
 
 			}
@@ -423,8 +417,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 276.676352977752686, 293.373435437679291, 141.0, 51.0 ],
-					"text" : "every other 0.5 seconds: \nset resynth buffer to resynth1,\nstart frame zero, \nprocess fluidbufnmf~",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "every other 0.5 seconds: \nset resynth buffer to resynth1,\nstart frame zero, \nprocess fluidbufnmf~"
 				}
 
 			}
@@ -481,8 +474,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 340.5, 198.5, 124.0, 20.0 ],
-									"text" : "2 second audio buffer",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "2 second audio buffer"
 								}
 
 							}
@@ -494,8 +486,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 268.0, 73.0, 47.0 ],
-									"text" : "writes first half of audio buffer",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "writes first half of audio buffer"
 								}
 
 							}
@@ -507,8 +498,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 130.0, 268.0, 84.0, 47.0 ],
-									"text" : "writes second half of audio buffer",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "writes second half of audio buffer"
 								}
 
 							}

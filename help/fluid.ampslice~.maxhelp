@@ -154,8 +154,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 420.0, 324.0, 174.0, 108.0 ],
-									"text" : "An example where many of the parameters are tuned to a specific musical example.\n\nThe sensitivity doesn't catch everything, but its sensitive to the most salient hits.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "An example where many of the parameters are tuned to a specific musical example.\n\nThe sensitivity doesn't catch everything, but its sensitive to the most salient hits."
 								}
 
 							}
@@ -522,8 +521,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 307.0, 520.0, 138.0, 21.0 ],
-									"text" : "Reset impulse counter",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Reset impulse counter"
 								}
 
 							}
@@ -547,8 +545,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 210.0, 418.0, 21.0 ],
-									"text" : "First time you press this message you'll hear a single click, but no more",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "First time you press this message you'll hear a single click, but no more"
 								}
 
 							}
@@ -828,8 +825,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 470.0, 21.0 ],
-									"text" : "Understanding how fluid.ampslice~ works",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Understanding how fluid.ampslice~ works"
 								}
 
 							}
@@ -884,8 +880,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 567.75, 409.5, 177.25, 69.0 ],
-									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "The minimum time between detected segments is now 4410 samples, or about 100 ms"
 								}
 
 							}
@@ -933,8 +928,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 539.5, 310.0, 236.0, 83.0 ],
-									"text" : "Make the fast envelope a bit smoother, and the slow envelope a lot smoother. \n\nIt's not perfect but a little less jittery",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Make the fast envelope a bit smoother, and the slow envelope a lot smoother. \n\nIt's not perfect but a little less jittery"
 								}
 
 							}
@@ -948,8 +942,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 482.0, 244.0, 268.0, 54.0 ],
-									"text" : "Fast envelope has to go 6dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Fast envelope has to go 6dB below slow envelope for a new onset to be detected. This causes \"false\" onsets to be detected"
 								}
 
 							}
@@ -983,8 +976,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 178.5, 322.0, 25.0 ],
-									"text" : "Fast envelope has to exceed slow envelope by 6dB",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Fast envelope has to exceed slow envelope by 6dB"
 								}
 
 							}
@@ -1017,8 +1009,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 100.0, 246.0, 60.0, 21.0 ],
-									"text" : "rate (ms)",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "rate (ms)"
 								}
 
 							}
@@ -1097,8 +1088,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 290.0, 586.0, 369.0, 36.0 ],
-									"text" : "Each time an onset is triggered the object produces an impulse. +=~ counts how many impulses have happened.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each time an onset is triggered the object produces an impulse. +=~ counts how many impulses have happened."
 								}
 
 							}

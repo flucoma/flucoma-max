@@ -133,8 +133,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 160.0, 498.0, 200.0, 25.0 ],
-									"text" : "Listen to a specific component",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Listen to a specific component"
 								}
 
 							}
@@ -648,8 +647,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 239.0, 160.0, 101.0, 25.0 ],
-									"text" : "Play a sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play a sound"
 								}
 
 							}
@@ -661,8 +659,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 553.0, 88.0, 25.0 ],
-									"text" : "Start audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Start audio"
 								}
 
 							}
@@ -792,8 +789,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 406.0, 320.0, 186.0, 25.0 ],
-									"text" : "experiment with parameters",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "experiment with parameters"
 								}
 
 							}

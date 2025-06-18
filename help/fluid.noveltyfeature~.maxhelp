@@ -86,7 +86,6 @@
 						"style" : "",
 						"subpatcher_template" : "",
 						"showontab" : 1,
-						
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
@@ -165,8 +164,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.0, 137.5, 180.0, 100.0 ],
-									"text" : "By matching the algorithm, kernelsize and filtersize attributes we get a glimpse of the novelty curve that fluid.noveltyslice~ uses to measure the \"novelty\" of the audio.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By matching the algorithm, kernelsize and filtersize attributes we get a glimpse of the novelty curve that fluid.noveltyslice~ uses to measure the \"novelty\" of the audio."
 								}
 
 							}
@@ -190,8 +188,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 488.0, 480.0, 25.0, 20.0 ],
-									"text" : "0.0",
-									"textcolor" : [ 0.298039215686275, 0.407843137254902, 0.870588235294118, 1.0 ]
+									"text" : "0.0"
 								}
 
 							}
@@ -202,8 +199,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 488.0, 370.0, 25.0, 20.0 ],
-									"text" : "1.0",
-									"textcolor" : [ 0.298039215686275, 0.407843137254902, 0.870588235294118, 1.0 ]
+									"text" : "1.0"
 								}
 
 							}
@@ -215,8 +211,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 488.0, 411.5, 170.0, 47.0 ],
-									"text" : "This represents the change in the underlying feature of fluid.noveltyslice~ in realtime.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This represents the change in the underlying feature of fluid.noveltyslice~ in realtime."
 								}
 
 							}

@@ -184,8 +184,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 200.0, 21.0 ],
-									"text" : "Using variable number of chroma",
-									"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+									"text" : "Using variable number of chroma"
 								}
 
 							}
@@ -271,7 +270,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-8",
@@ -350,8 +348,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 390.0, 206.0, 413.0, 123.0 ],
-									"text" : "More chromas can be specified with both the @numchroma attribute and by providing the maximum number of chromas as the first argument. You can allocate a higher maximum chroma than numchromas. However, this will result in empty channels that you will need to account for.\n\nThe chroma values are also scaled with @normalize 1, meaning each collection of chromas will sum to a value of 1.",
-									"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+									"text" : "More chromas can be specified with both the @numchroma attribute and by providing the maximum number of chromas as the first argument. You can allocate a higher maximum chroma than numchromas. However, this will result in empty channels that you will need to account for.\n\nThe chroma values are also scaled with @normalize 1, meaning each collection of chromas will sum to a value of 1."
 								}
 
 							}
@@ -422,8 +419,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 149.0, 339.857142857142776, 323.0, 36.0 ],
-													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis.",
-													"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis."
 												}
 
 											}
@@ -437,8 +433,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 66.0, 217.571428571428555, 197.0, 36.0 ],
-													"text" : "Interlace the amplitude values and the frequency values.",
-													"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+													"text" : "Interlace the amplitude values and the frequency values."
 												}
 
 											}
@@ -452,8 +447,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 184.0, 173.285714285714278, 197.0, 36.0 ],
-													"text" : "Calculate the frequency values of the chroma bins.",
-													"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+													"text" : "Calculate the frequency values of the chroma bins."
 												}
 
 											}
@@ -467,8 +461,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 237.0, 86.0, 197.0, 50.0 ],
-													"text" : "Scale the amplitudes slightly to avoid issues of too much gain in the oscillator bank",
-													"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+													"text" : "Scale the amplitudes slightly to avoid issues of too much gain in the oscillator bank"
 												}
 
 											}
@@ -1104,8 +1097,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 118.0, 560.0, 474.0, 21.0 ],
-									"text" : "Lookup the value for each chroma at any given point of time in the source sound.",
-									"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+									"text" : "Lookup the value for each chroma at any given point of time in the source sound."
 								}
 
 							}
@@ -1119,8 +1111,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 551.0, 470.0, 146.0, 50.0 ],
-									"text" : "Feature buffer has 19 channels. One channel for each pitch class.",
-									"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+									"text" : "Feature buffer has 19 channels. One channel for each pitch class."
 								}
 
 							}
@@ -2642,8 +2633,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 118.0, 560.0, 474.0, 21.0 ],
-									"text" : "Lookup the value for each chroma at any given point of time in the source sound.",
-									"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+									"text" : "Lookup the value for each chroma at any given point of time in the source sound."
 								}
 
 							}
@@ -2657,8 +2647,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 470.0, 440.0, 188.0, 79.0 ],
-									"text" : "Each channel will contain a single pitch class. Each frame  of each channel describes the strength of that pitch class in a single FFT analysis window.",
-									"textcolor" : [ 0.501961, 0.501961, 0.501961, 1.0 ]
+									"text" : "Each channel will contain a single pitch class. Each frame  of each channel describes the strength of that pitch class in a single FFT analysis window."
 								}
 
 							}

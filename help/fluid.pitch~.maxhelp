@@ -114,8 +114,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.5, 100.0, 90.0, 25.0 ],
-									"text" : "Play sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play sound"
 								}
 
 							}
@@ -147,8 +146,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 268.5, 330.0, 133.0, 25.0 ],
-									"text" : "Back to the default",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Back to the default"
 								}
 
 							}
@@ -192,8 +190,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 218.0, 290.0, 119.0, 25.0 ],
-									"text" : "Only confidence",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Only confidence"
 								}
 
 							}
@@ -204,8 +201,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 198.5, 510.0, 273.0, 21.0 ],
-									"text" : "This will reflect the number of \"selected\" items",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This will reflect the number of \"selected\" items"
 								}
 
 							}
@@ -541,8 +537,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 98.0, 209.0, 77.0, 25.0 ],
-									"text" : "Audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -609,8 +604,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 430.0, 270.0, 212.0, 181.0 ],
-									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "No matter what order you specify the selection in, the order that those choices are returned will follow the same order as if you didn't select any. A good trick for getting the order is to see the attributes listed out in the object when no @select is chosen.\n\nThink of this parameter like a filter, rather than a reordering of the outputs."
 								}
 
 							}
@@ -622,8 +616,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 156.0, 249.0, 83.0, 25.0 ],
-									"text" : "Only pitch",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Only pitch"
 								}
 
 							}
@@ -646,8 +639,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 67.0, 500.0, 21.0 ],
-									"text" : "Specifically select which descriptors from a multivariate output.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Specifically select which descriptors from a multivariate output."
 								}
 
 							}
@@ -1269,8 +1261,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 324.666655999999989, 518.5, 146.0, 36.0 ],
-									"text" : "compare with the native\nin noisy contexts...",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "compare with the native\nin noisy contexts..."
 								}
 
 							}
@@ -1307,9 +1298,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 235.666655999999989, 300.0, 235.0, 40.0 ],
-									"text" : "If latency is no issue, higher window size will give more precise results.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"patching_rect" : [ 235.666655999999989, 300.0, 236.0, 40.0 ],
+									"text" : "If latency is no issue, higher window size will give more precise results."
 								}
 
 							}
@@ -1321,8 +1311,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 57.5, 497.5, 38.0, 21.0 ],
-									"text" : "pitch",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "pitch"
 								}
 
 							}
@@ -1413,8 +1402,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 146.166655999999989, 497.5, 73.0, 21.0 ],
-									"text" : "confidence",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "confidence"
 								}
 
 							}
@@ -1713,8 +1701,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 592.0, 117.0, 153.0, 21.0 ],
-									"text" : "Replace the sample here",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Replace the sample here"
 								}
 
 							}
@@ -1738,8 +1725,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 480.0, 287.5, 239.0, 50.0 ],
-									"text" : "moments in time ABOVE this value of pitch confidence will be let through the gate to the delays",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "moments in time ABOVE this value of pitch confidence will be let through the gate to the delays"
 								}
 
 							}
@@ -1750,8 +1736,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 500.0, 415.5, 178.0, 21.0 ],
-									"text" : "visualise the pitch confidence",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "visualise the pitch confidence"
 								}
 
 							}
@@ -1845,8 +1830,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 66.500000000000014, 469.0, 21.0 ],
-									"text" : "Using the pitch confidence of a source to control what gets sent to a delay effect",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Using the pitch confidence of a source to control what gets sent to a delay effect"
 								}
 
 							}
@@ -2809,8 +2793,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 213.5, 301.0, 152.0, 21.0 ],
-									"text" : "take the pitch confidence",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "take the pitch confidence"
 								}
 
 							}

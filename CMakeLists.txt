@@ -31,7 +31,7 @@ set(FLUID_DOCS_PATH "" CACHE PATH "Optional path to flucoma-docs (needed for doc
 if (APPLE)
   set(CMAKE_XCODE_GENERATE_SCHEME ON)
   set(CMAKE_XCODE_SCHEME_EXECUTABLE "/Applications/Max.app")
-  set(CMAKE_OSX_DEPLOYMENT_TARGET "10.8" CACHE STRING "")
+  set(CMAKE_OSX_DEPLOYMENT_TARGET "10.9" CACHE STRING "")
   #A consequence of targetting 10.8. Needs to be set globally from 10.15 onwards in order for the test program to compile successfully during configure 
   string(APPEND CMAKE_CXX_FLAGS " -stdlib=libc++")
 endif()
@@ -175,6 +175,8 @@ install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/AudioFiles/"
         DESTINATION "${MAX_PACKAGE_ROOT}/media")
 install(DIRECTORY "${flucoma-core_SOURCE_DIR}/Resources/Data/"
         DESTINATION "${MAX_PACKAGE_ROOT}/misc")
+install(FILES FluidCorpusManipulation_toolbar.svg
+        DESTINATION "${MAX_PACKAGE_ROOT}/misc")
 install(FILES icon.png package-info.json QuickStart.md 
         DESTINATION ${MAX_PACKAGE_ROOT})
 install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic 
@@ -182,6 +184,8 @@ install(FILES ${flucoma-core_SOURCE_DIR}/distribution.lic
         RENAME LICENSE.md)
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/local_docs/"
         DESTINATION "${MAX_PACKAGE_ROOT}/docs")
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/code/"
+        DESTINATION "${MAX_PACKAGE_ROOT}/code")
 install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/vignettes"
         DESTINATION "${MAX_PACKAGE_ROOT}/docs")
 

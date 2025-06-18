@@ -681,8 +681,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 611.0, 400.0, 154.0, 137.0 ],
-									"text" : "It is always a good idea to prototype with the realtime version of these objects so you can hear how parameter changes work almost immediately.\n\nCheck out fluid.ampslice~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "It is always a good idea to prototype with the realtime version of these objects so you can hear how parameter changes work almost immediately.\n\nCheck out fluid.ampslice~"
 								}
 
 							}
@@ -694,8 +693,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 318.0, 340.0, 327.0, 50.0 ],
-									"text" : "This makes both envelopes in the internal tracking slower than the default, meaning it is less nervous but also less precise.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This makes both envelopes in the internal tracking slower than the default, meaning it is less nervous but also less precise."
 								}
 
 							}
@@ -707,8 +705,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 263.0, 269.0, 326.0, 65.0 ],
-									"text" : "Small changes in thresholds can have a drastic effect.  This increases the amount of energy required for an onset meaning less quiet (potentially erroneous) sounds are detected.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Small changes in thresholds can have a drastic effect.  This increases the amount of energy required for an onset meaning less quiet (potentially erroneous) sounds are detected."
 								}
 
 							}
@@ -732,8 +729,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 230.0, 227.0, 329.0, 36.0 ],
-									"text" : "Adding a minimum slice length is always a good idea for debouncing the time between onsets",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Adding a minimum slice length is always a good idea for debouncing the time between onsets"
 								}
 
 							}
@@ -770,8 +766,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 40.0, 160.0, 542.0, 65.0 ],
-									"text" : "This is a small selection of ways that the algorithm can be tuned to be less or more sensitive.\n\nThe default settings here that have been set are incredibly sensitive. Sometimes oversegmenting little hits.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is a small selection of ways that the algorithm can be tuned to be less or more sensitive.\n\nThe default settings here that have been set are incredibly sensitive. Sometimes oversegmenting little hits."
 								}
 
 							}
@@ -845,8 +840,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 450.0, 21.0 ],
-									"text" : "How to tweak the parameters of fluid.bufampslice~ to segment to your needs",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "How to tweak the parameters of fluid.bufampslice~ to segment to your needs"
 								}
 
 							}

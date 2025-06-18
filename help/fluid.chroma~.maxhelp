@@ -107,8 +107,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 57.0, 650.0, 75.0, 25.0 ],
-									"text" : "audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "audio on"
 								}
 
 							}
@@ -140,8 +139,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 158.0, 20.0 ],
-									"text" : "Variable numbers of chroma",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Variable numbers of chroma"
 								}
 
 							}
@@ -600,8 +598,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 153.0, 341.357142857142833, 309.0, 33.0 ],
-													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis."
 												}
 
 											}
@@ -612,8 +609,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 72.0, 225.571428571428555, 309.0, 20.0 ],
-													"text" : "Interlace the amplitude values and the frequency values.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Interlace the amplitude values and the frequency values."
 												}
 
 											}
@@ -624,8 +620,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 184.0, 181.285714285714278, 278.0, 20.0 ],
-													"text" : "Calculate the frequency values of the chroma bins.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Calculate the frequency values of the chroma bins."
 												}
 
 											}
@@ -877,8 +872,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 148.0, 245.0, 500.0, 37.0 ],
-									"text" : "With @normalize 1 the chroma calculation is compensated by the amplitude of the incoming signal. Try changing the gain here and seeing how it doesn't effect the result.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "With @normalize 1 the chroma calculation is compensated by the amplitude of the incoming signal. Try changing the gain here and seeing how it doesn't effect the result."
 								}
 
 							}
@@ -951,8 +945,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 268.0, 328.5, 380.0, 51.0 ],
-									"text" : "The number of chroma can be changed. Note, the maximum number of chroma is always returned and so the maximum chroma has to be set also. This is the first argument of the object.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "The number of chroma can be changed. Note, the maximum number of chroma is always returned and so the maximum chroma has to be set also. This is the first argument of the object."
 								}
 
 							}
@@ -985,8 +978,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 462.0, 543.5, 235.0, 36.0 ],
-									"text" : "The list is now 19 elements long: each element in the list is a chroma bin.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The list is now 19 elements long: each element in the list is a chroma bin."
 								}
 
 							}
@@ -1068,8 +1060,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 245.0, 140.0, 105.0, 24.0 ],
-									"text" : "Play the sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play the sound"
 								}
 
 							}
@@ -1390,8 +1381,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 60.0, 610.5, 75.0, 25.0 ],
-									"text" : "audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "audio on"
 								}
 
 							}
@@ -1520,8 +1510,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 97.0, 283.357142857142833, 309.0, 33.0 ],
-													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Drive an oscillator bank with fixed pitches using the relative strength of each bin from the chroma analysis."
 												}
 
 											}
@@ -1532,8 +1521,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 64.0, 201.571428571428555, 309.0, 20.0 ],
-													"text" : "Interlace the amplitude values and the frequency values.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Interlace the amplitude values and the frequency values."
 												}
 
 											}
@@ -1544,8 +1532,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 178.0, 157.428571428571388, 218.0, 20.0 ],
-													"text" : "Transpose those pitches up an octave. ",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Transpose those pitches up an octave. "
 												}
 
 											}
@@ -1557,8 +1544,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 463.0, 106.785714285714278, 150.0, 33.0 ],
-													"text" : "Pitch values in hertz for A, A#, B, C, C#...etc.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "Pitch values in hertz for A, A#, B, C, C#...etc."
 												}
 
 											}
@@ -1764,8 +1750,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 170.0, 441.5, 511.0, 21.0 ],
-									"text" : "Consecutive frames of analysis are smoothed to make the visualisation easier to follow.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Consecutive frames of analysis are smoothed to make the visualisation easier to follow."
 								}
 
 							}
@@ -1778,8 +1763,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 530.0, 500.0, 168.0, 79.0 ],
-									"text" : "Each index of the list is a pitch class. The strength of that pitch class is determined by the corresponding element.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each index of the list is a pitch class. The strength of that pitch class is determined by the corresponding element."
 								}
 
 							}
@@ -1805,7 +1789,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 502.471923450031341, 580.0, 25.0, 20.0 ],
 									"text" : "G#",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1819,7 +1802,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 475.099275175988964, 580.0, 19.0, 20.0 ],
 									"text" : "G",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1833,7 +1815,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 443.643784138487717, 580.0, 23.0, 20.0 ],
 									"text" : "F#",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1847,7 +1828,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 416.271135864445228, 580.0, 19.0, 20.0 ],
 									"text" : "F",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1861,7 +1841,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 388.898487590402851, 580.0, 19.0, 20.0 ],
 									"text" : "E",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1875,7 +1854,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 356.422285862036915, 580.0, 24.0, 20.0 ],
 									"text" : "D#",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1889,7 +1867,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 329.049637587994482, 580.0, 19.0, 20.0 ],
 									"text" : "D",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1903,7 +1880,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 296.573435859628489, 580.0, 24.0, 20.0 ],
 									"text" : "C#",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1917,7 +1893,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 269.200787585586113, 580.0, 19.0, 20.0 ],
 									"text" : "C",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1931,7 +1906,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 241.82813931154368, 580.0, 19.0, 20.0 ],
 									"text" : "B",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1945,7 +1919,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 210.372648274042405, 580.0, 23.0, 20.0 ],
 									"text" : "A#",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -1959,7 +1932,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 183.0, 580.0, 19.0, 20.0 ],
 									"text" : "A",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -2030,8 +2002,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 247.0, 193.0, 112.0, 25.0 ],
-									"text" : "Play the sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play the sound"
 								}
 
 							}

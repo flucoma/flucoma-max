@@ -237,8 +237,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 675.5, 315.0, 304.5, 50.0 ],
-									"text" : "You can also predict individual points with the \"predictpoint\" message. This takes arguments in the form <input> <output> as two buffers",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can also predict individual points with the \"predictpoint\" message. This takes arguments in the form <input> <output> as two buffers"
 								}
 
 							}
@@ -262,8 +261,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 645.0, 504.5, 157.0, 166.0 ],
-									"text" : "Predicting the outputs for an exponential ramp shows how the mapping works.\n\nWe have a quasi-exponential sine wave here as a result of predicting based on the curved ramp of help.mlpr.query",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Predicting the outputs for an exponential ramp shows how the mapping works.\n\nWe have a quasi-exponential sine wave here as a result of predicting based on the curved ramp of help.mlpr.query"
 								}
 
 							}
@@ -383,8 +381,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 100.0, 130.0, 200.0, 79.0 ],
-									"text" : "Each of these buffers is representative of a dataset.\n\nLook inside the sub patchers to see how that works.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Each of these buffers is representative of a dataset.\n\nLook inside the sub patchers to see how that works."
 								}
 
 							}

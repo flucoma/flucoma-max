@@ -311,8 +311,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 530.0, 480.0, 186.0, 94.0 ],
-					"text" : "Standardise produces a similar shape to the robust scaler. Notice how outliers still pull the entire shape such that centrally located data is still warped toward the outliers.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Standardise produces a similar shape to the robust scaler. Notice how outliers still pull the entire shape such that centrally located data is still warped toward the outliers."
 				}
 
 			}
@@ -324,8 +323,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 720.0, 480.0, 184.0, 79.0 ],
-					"text" : "Normalise retains the exact same shape as the original data but remaps the extrema between 0 and 1 in both dimensions.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Normalise retains the exact same shape as the original data but remaps the extrema between 0 and 1 in both dimensions."
 				}
 
 			}
@@ -383,8 +381,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 257.0, 77.0, 150.0, 127.0 ],
-									"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message."
 								}
 
 							}
@@ -571,8 +568,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 257.0, 77.0, 150.0, 127.0 ],
-									"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message."
 								}
 
 							}
@@ -759,8 +755,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 257.0, 77.0, 152.0, 127.0 ],
-									"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "the second part of this message is a reference to a fluid.dataset~ that is internal to the relevant scaling object. It means you don't have to create one by hand everytime and can instead parse this message."
 								}
 
 							}
@@ -972,8 +967,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 340.0, 480.0, 189.0, 224.0 ],
-					"text" : "Robust scaling keeps more of the data centred around 0 in both dimensions compared to the standardised output.\n\nHowever, notice how lots of data is \"off the plot\", because samples outside the IQR are pushed further from those that are.\n\nThis makes it a scaler that is \"robust\" against outliers, compared to say normalisation or standardisation.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Robust scaling keeps more of the data centred around 0 in both dimensions compared to the standardised output.\n\nHowever, notice how lots of data is \"off the plot\", because samples outside the IQR are pushed further from those that are.\n\nThis makes it a scaler that is \"robust\" against outliers, compared to say normalisation or standardisation."
 				}
 
 			}
@@ -1048,8 +1042,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 62.0, 263.0, 21.0 ],
-					"text" : "Comparing the shape of scalers",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Comparing the shape of scalers"
 				}
 
 			}

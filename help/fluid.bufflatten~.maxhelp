@@ -115,8 +115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 30.0, 460.0, 193.0, 21.0 ],
-									"text" : "check the console for the output",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "check the console for the output"
 								}
 
 							}
@@ -206,8 +205,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 50.0, 20.0, 84.0, 25.0 ],
-													"text" : "Press me!",
-													"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+													"text" : "Press me!"
 												}
 
 											}
@@ -220,8 +218,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 244.0, 116.0, 161.0, 79.0 ],
-													"text" : "We can also use automatic buffer management to simplify the attributes of the processing chain.",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "We can also use automatic buffer management to simplify the attributes of the processing chain."
 												}
 
 											}
@@ -365,8 +362,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 324.0, 333.5, 294.0, 36.0 ],
-									"text" : "Flattens the 12 channels with a single frame in each, to a single channel of 12 values.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Flattens the 12 channels with a single frame in each, to a single channel of 12 values."
 								}
 
 							}
@@ -378,8 +374,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 385.0, 283.5, 294.0, 36.0 ],
-									"text" : "Extracts only the first index of each channel. This isolates the \"mean\" amplitude of each chroma.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Extracts only the first index of each channel. This isolates the \"mean\" amplitude of each chroma."
 								}
 
 							}
@@ -391,8 +386,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 230.5, 332.0, 36.0 ],
-									"text" : "Produces a buffer of 12 channels with 7 frames. Each frame is a statistical measurement of the chroma values",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Produces a buffer of 12 channels with 7 frames. Each frame is a statistical measurement of the chroma values"
 								}
 
 							}
@@ -404,8 +398,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 568.5, 166.5, 190.0, 50.0 ],
-									"text" : "Produces a  buffer of 12 channels with as many frames as there are analysis windows ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Produces a  buffer of 12 channels with as many frames as there are analysis windows "
 								}
 
 							}
@@ -568,8 +561,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 333.0, 21.0 ],
-									"text" : "Flattening analysis so it can be added to a fluid.dataset~",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "Flattening analysis so it can be added to a fluid.dataset~"
 								}
 
 							}
@@ -787,8 +779,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 260.0, 309.0, 249.0, 25.0 ],
-									"text" : "Flatten the source buffer to a flat buffer",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Flatten the source buffer to a flat buffer"
 								}
 
 							}
@@ -1174,8 +1165,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 270.0, 374.0, 194.0, 40.0 ],
-									"text" : "change the axis of the flattening",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "change the axis of the flattening"
 								}
 
 							}
@@ -1198,8 +1188,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 130.0, 516.0, 367.0, 21.0 ],
-									"text" : "output will be 1 channel with (in channels * in frames) samples",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "output will be 1 channel with (in channels * in frames) samples"
 								}
 
 							}
@@ -1210,8 +1199,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 234.0, 246.0, 206.0, 21.0 ],
-									"text" : "input (here 3 frames, 3 channels) ",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "input (here 3 frames, 3 channels) "
 								}
 
 							}
@@ -1222,8 +1210,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 130.0, 197.0, 61.0, 21.0 ],
-									"text" : "samples",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "samples"
 								}
 
 							}
@@ -1234,8 +1221,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 22.0, 261.5, 61.0, 21.0 ],
-									"text" : "channels",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "channels"
 								}
 
 							}

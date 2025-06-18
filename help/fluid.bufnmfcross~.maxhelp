@@ -105,8 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.0, 650.0, 75.0, 25.0 ],
-									"text" : "audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "audio on"
 								}
 
 							}
@@ -137,8 +136,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 550.0, 48.0, 21.0 ],
-									"text" : "output",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "output"
 								}
 
 							}
@@ -149,8 +147,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 355.75, 554.0, 42.0, 21.0 ],
-									"text" : "target",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "target"
 								}
 
 							}
@@ -186,8 +183,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 214.0, 554.0, 48.0, 21.0 ],
-									"text" : "source",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "source"
 								}
 
 							}
@@ -224,8 +220,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 399.75, 554.0, 219.0, 25.0 ],
-									"text" : "audition output, source and target",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "audition output, source and target"
 								}
 
 							}
@@ -249,8 +244,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 505.5, 350.0, 354.0, 79.0 ],
-									"text" : "Encourage the reconstruction to use this many temporally consecutive frames from the source. Higher values tend to preserve the character of the source while being less flexible in reconstructing the target. Higher values also increase computation time.",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"text" : "Encourage the reconstruction to use this many temporally consecutive frames from the source. Higher values tend to preserve the character of the source while being less flexible in reconstructing the target. Higher values also increase computation time."
 								}
 
 							}
@@ -262,8 +256,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 475.5, 286.5, 384.0, 50.0 ],
-									"text" : "Encourages the algorithm to avoid overlapping more than this number of source components at the same time. A higher value, in theory, will let you reconstruct more accurately the target.",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"text" : "Encourages the algorithm to avoid overlapping more than this number of source components at the same time. A higher value, in theory, will let you reconstruct more accurately the target."
 								}
 
 							}
@@ -275,8 +268,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 425.5, 219.0, 336.0, 65.0 ],
-									"text" : "The algorithm will avoid reusing a component from the source for this number of time frames. Therefore, higher values enforce a minimum variety of components that can be chosen over a given time window.",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.5 ]
+									"text" : "The algorithm will avoid reusing a component from the source for this number of time frames. Therefore, higher values enforce a minimum variety of components that can be chosen over a given time window."
 								}
 
 							}
@@ -330,8 +322,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 303.5, 430.0, 142.0, 50.0 ],
-									"text" : "@blocking 0 is useful as this algorithm can take a while to process",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "@blocking 0 is useful as this algorithm can take a while to process"
 								}
 
 							}
@@ -445,8 +436,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 50.0, 360.0, 118.0, 25.0 ],
-									"text" : "bang to process",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "bang to process"
 								}
 
 							}

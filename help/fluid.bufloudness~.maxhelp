@@ -115,8 +115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 552.0, 642.0, 173.0, 20.0 ],
-									"text" : "The maximum true-peak",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The maximum true-peak"
 								}
 
 							}
@@ -178,8 +177,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 334.0, 320.0, 153.0, 60.0 ],
-									"text" : "Loudness and true-peak represented by two lines overlayed on the waveform.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Loudness and true-peak represented by two lines overlayed on the waveform."
 								}
 
 							}
@@ -190,8 +188,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 292.0, 642.0, 173.0, 20.0 ],
-									"text" : "The average loudness in dBFS",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The average loudness in dBFS"
 								}
 
 							}
@@ -247,8 +244,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 62.0, 642.0, 169.0, 20.0 ],
-									"text" : "The median loudness in dBFS",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The median loudness in dBFS"
 								}
 
 							}
@@ -260,8 +256,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 37.0, 460.0, 481.0, 24.0 ],
-									"text" : "Use the loudness analysis to compute the median loudness over the whole sound file.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Use the loudness analysis to compute the median loudness over the whole sound file."
 								}
 
 							}
@@ -858,8 +853,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 520.0, 165.0, 74.0 ],
-									"text" : "The loudness analysis extracted is extracted as the sound plays by using the groove playback progression as a lookup index.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The loudness analysis extracted is extracted as the sound plays by using the groove playback progression as a lookup index."
 								}
 
 							}
@@ -973,8 +967,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.0, 497.0, 160.0, 60.0 ],
-									"text" : "The upper feature curve displays the loudness in dBFS. The lower feature curve shows the true-peak.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The upper feature curve displays the loudness in dBFS. The lower feature curve shows the true-peak."
 								}
 
 							}
