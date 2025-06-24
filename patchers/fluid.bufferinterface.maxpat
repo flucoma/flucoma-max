@@ -81,7 +81,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 485.0, 350.0, 117.0, 23.0 ],
-					"text" : "buffer u284009895",
 					"varname" : "fluidoutput[3]"
 				}
 
@@ -95,7 +94,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 366.0, 350.0, 117.0, 23.0 ],
-					"text" : "buffer u475009893",
 					"varname" : "fluidoutput[2]"
 				}
 
@@ -109,7 +107,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 247.0, 350.0, 117.0, 23.0 ],
-					"text" : "buffer u596009818",
 					"varname" : "fluidoutput[1]"
 				}
 
@@ -147,8 +144,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 410.0, 401.0, 21.0 ],
-					"text" : "To learn how this works see the tutorial by clicking the button below.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "To learn how this works see the tutorial by clicking the button below."
 				}
 
 			}
@@ -180,8 +176,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 150.0, 401.0, 50.0 ],
-					"text" : "Instead of always having to supply output buffers~ for FluCoMa buffer processing objects, you can have those objects automatically manage their own buffers~.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Instead of always having to supply output buffers~ for FluCoMa buffer processing objects, you can have those objects automatically manage their own buffers~."
 				}
 
 			}
@@ -233,7 +228,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 42.0, 350.0, 117.0, 23.0 ],
-					"text" : "buffer u854008822",
 					"varname" : "fluidoutput"
 				}
 
@@ -257,8 +251,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 10.0, 60.0, 400.0, 21.0 ],
-					"text" : "Learn how buffers~ can be automatically managed with FluCoMa",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Learn how buffers~ can be automatically managed with FluCoMa"
 				}
 
 			}

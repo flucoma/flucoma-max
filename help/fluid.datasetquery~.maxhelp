@@ -202,8 +202,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 316.5, 530.0, 131.0, 152.0 ],
-									"text" : "Once we filter the data based on pitch confidence there are fewer rows in the dataset. Any identifier where the confidence was lower than 0.9 in the pitch dataset is removed from both.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Once we filter the data based on pitch confidence there are fewer points in the dataset. Any identifier where the confidence was lower than 0.9 in the pitch dataset is removed from both."
 								}
 
 							}
@@ -311,8 +310,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 29.5, 520.0, 212.0, 79.0 ],
-									"text" : "Double click the dict objects to see the data inside these dictionaries.\n\nNote the size (number of rows) in each dataset.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Double click the dict objects to see the data inside these dictionaries.\n\nNote the size (number of points) in each dataset."
 								}
 
 							}
@@ -781,8 +779,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 650.0, 21.0 ],
-									"text" : "Use transformjoin to filter multiple analyses based on conditions of each other.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Use transformjoin to filter multiple analyses based on conditions of each other."
 								}
 
 							}
@@ -1118,8 +1115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 430.0, 21.0 ],
-									"text" : "Only copy a range of columns using addrange",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Only copy a range of columns using addrange"
 								}
 
 							}
@@ -1151,8 +1147,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 389.0, 110.0, 212.0, 25.0 ],
-									"text" : "Clear the filters so we start fresh",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Clear the filters so we start fresh"
 								}
 
 							}
@@ -1196,8 +1191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 460.5, 150.0, 165.0, 25.0 ],
-									"text" : "Now add our basic filter",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Now add our basic filter"
 								}
 
 							}
@@ -1419,8 +1413,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 517.0, 201.0, 215.0, 65.0 ],
-									"text" : "Add a range of columns in the format <start> <number of columns>. This will add two columns starting from the second.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "Add a range of columns in the format <start> <number of columns>. This will add two columns starting from the second."
 								}
 
 							}
@@ -1433,8 +1426,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 710.0, 281.5, 195.0, 40.0 ],
-									"text" : "Transform to do the query and copy",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Transform to do the query and copy"
 								}
 
 							}
@@ -1447,8 +1439,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 740.0, 211.5, 155.0, 40.0 ],
-									"text" : "Add a range of columns to copy",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Add a range of columns to copy"
 								}
 
 							}
@@ -1480,8 +1471,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 66.0, 110.0, 247.0, 25.0 ],
-									"text" : "Generate some example data to query",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Generate some example data to query"
 								}
 
 							}
@@ -2223,8 +2213,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 430.0, 21.0 ],
-									"text" : "We can also combine multiple operators to refine the filter for the query.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "We can also combine multiple operators to refine the filter for the query."
 								}
 
 							}
@@ -2276,8 +2265,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 379.0, 150.0, 212.0, 25.0 ],
-									"text" : "Clear the filters so we start fresh",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Clear the filters so we start fresh"
 								}
 
 							}
@@ -2288,8 +2276,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 547.5, 308.0, 250.0, 21.0 ],
-									"text" : "OR Last column is equal to 3000",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "OR Last column is equal to 3000"
 								}
 
 							}
@@ -2300,8 +2287,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.0, 268.0, 281.0, 21.0 ],
-									"text" : "AND Second column is less than or equal to 20",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "AND Second column is less than or equal to 20"
 								}
 
 							}
@@ -2350,8 +2336,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 819.5, 268.0, 147.0, 69.0 ],
-									"text" : "Optionally add any number of additional opeartors to constrain the search",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Optionally add any number of additional opeartors to constrain the search"
 								}
 
 							}
@@ -2395,8 +2380,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 434.5, 210.0, 165.0, 25.0 ],
-									"text" : "Now add our basic filter",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Now add our basic filter"
 								}
 
 							}
@@ -2618,8 +2602,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 547.5, 368.0, 124.0, 65.0 ],
-									"text" : "Add columns that we want to copy for points where the filter is satisfied",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "Add columns that we want to copy for points where the filter is satisfied"
 								}
 
 							}
@@ -2632,8 +2615,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 700.0, 451.5, 195.0, 40.0 ],
-									"text" : "Transform to do the query and copy",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Transform to do the query and copy"
 								}
 
 							}
@@ -2646,8 +2628,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 688.0, 387.5, 156.0, 40.0 ],
-									"text" : "Then add columns we want to copy",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Then add columns we want to copy"
 								}
 
 							}
@@ -2679,8 +2660,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 56.0, 150.0, 247.0, 25.0 ],
-									"text" : "Generate some example data to query",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Generate some example data to query"
 								}
 
 							}
@@ -3654,8 +3634,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 650.0, 21.0 ],
-									"text" : "The transformjoin message allows filtering the contents of a dataset based on the contents found in another. ",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The transformjoin message allows filtering the contents of a dataset based on the contents found in another. "
 								}
 
 							}
@@ -3691,8 +3670,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 660.0, 324.25, 238.0, 137.0 ],
-									"text" : "When a column is manually added with addcolumn, the filter only respects the contents of dataset A. Any points that satisfy the filter have the respective column merged with that of dataset B. In this case, any point where the first column is equal to 6000 has the corresponding column for that point in dataset B's merged with dataset A.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "When a column is manually added with addcolumn, the filter only respects the contents of dataset A. Any points that satisfy the filter have the respective column merged with that of dataset B. In this case, any point where the first column is equal to 6000 has the corresponding column for that point in dataset B's merged with dataset A."
 								}
 
 							}
@@ -3813,8 +3791,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 498.0, 208.0, 355.0, 50.0 ],
-									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "Unlike transform, we're not obliged to add columns to the query. In this case, we can just filter dataset B based on conditions in dataset A."
 								}
 
 							}
@@ -5059,8 +5036,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 480.5, 577.5, 207.0, 65.0 ],
-									"text" : "The result is such that only the first column (0th) of each point is copied over if the value in this column is less than 0.5.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "The result is such that only the first column (0th) of each point is copied over if the value in this column is less than 0.5."
 								}
 
 							}
@@ -5073,8 +5049,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 729.5, 436.5, 158.0, 40.0 ],
-									"text" : "Composing the query as one message",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Composing the query as one message"
 								}
 
 							}
@@ -5086,8 +5061,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 711.5, 254.0, 207.0, 65.0 ],
-									"text" : "In effect, we are saying, for each point where the filter is satisfied copy THIS column to our destination.",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "In effect, we are saying, for each point where the filter is satisfied copy THIS column to our destination."
 								}
 
 							}
@@ -5100,8 +5074,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 675.0, 343.5, 197.0, 69.0 ],
-									"text" : "Calling transform executes the query and copies the results from the source to the destination.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Calling transform executes the query and copies the results from the source to the destination."
 								}
 
 							}
@@ -5114,8 +5087,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 496.0, 261.0, 191.5, 54.0 ],
-									"text" : "Then we specify which columns we would like to copy if they satisfy the filter.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Then we specify which columns we would like to copy if they satisfy the filter."
 								}
 
 							}
@@ -5147,8 +5119,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 76.0, 170.0, 247.0, 25.0 ],
-									"text" : "Generate some example data to query",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Generate some example data to query"
 								}
 
 							}
@@ -5634,8 +5605,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 461.5, 391.5, 207.0, 21.0 ],
-									"text" : "transform <source> <destination> ",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "transform <source> <destination> "
 								}
 
 							}
@@ -5671,8 +5641,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 682.0, 143.0, 253.0, 79.0 ],
-									"text" : "filter <column index> <operator> <value> \n\nIn this case this says that we are only interested in points in the dataset where the first column is less than 3",
-									"textcolor" : [ 0.129412, 0.129412, 0.129412, 0.5 ]
+									"text" : "filter <column index> <operator> <value> \n\nIn this case this says that we are only interested in points in the dataset where the first column is less than 3"
 								}
 
 							}
@@ -5696,8 +5665,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 440.0, 170.0, 212.0, 25.0 ],
-									"text" : "Queries always start with a filter.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Queries always start with a filter."
 								}
 
 							}

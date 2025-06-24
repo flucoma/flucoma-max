@@ -198,8 +198,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 575.0, 266.0, 281.0, 50.0 ],
-									"text" : "At the end here we \"refer\" an unnamed fluid.dataset~ to the output of fluid.normalize~ in order to dump its contents.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "At the end here we \"refer\" an unnamed fluid.dataset~ to the output of fluid.normalize~ in order to dump its contents."
 								}
 
 							}
@@ -442,8 +441,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 47.0, 314.0, 21.0 ],
-									"text" : "Getting to grip with the basics of fluid.dataset~ usage",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Getting to grip with the basics of fluid.dataset~ usage"
 								}
 
 							}
@@ -1082,8 +1080,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 47.0, 206.0, 21.0 ],
-									"text" : "Caveats and things to be aware of",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Caveats and things to be aware of"
 								}
 
 							}
@@ -1420,8 +1417,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 47.0, 179.0, 21.0 ],
-									"text" : "Automatic output buffers~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Automatic output buffers~"
 								}
 
 							}
@@ -2193,8 +2189,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 47.0, 314.0, 21.0 ],
-									"text" : "Getting to grip with the basics of fluid.dataset~ usage",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Getting to grip with the basics of fluid.dataset~ usage"
 								}
 
 							}
@@ -2897,8 +2892,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 47.0, 210.0, 21.0 ],
-									"text" : "The basics of buffer~ management",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The basics of buffer~ management"
 								}
 
 							}

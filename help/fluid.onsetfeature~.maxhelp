@@ -94,8 +94,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 230.0, 130.0, 85.0, 24.0 ],
-									"text" : "Play sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play sound"
 								}
 
 							}
@@ -129,8 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 1.5, 425.0, 62.0, 40.0 ],
-									"text" : "Audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Audio on"
 								}
 
 							}
@@ -184,8 +182,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 510.0, 160.0, 155.0, 100.0 ],
-									"text" : "By matching the metric, filtersize and framedelta attributes we get a glimpse of the onset curve that fluid.onsetslice~ uses to measure changes in the spectrum over time",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By matching the metric, filtersize and framedelta attributes we get a glimpse of the onset curve that fluid.onsetslice~ uses to measure changes in the spectrum over time"
 								}
 
 							}
@@ -209,8 +206,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 302.0, 480.0, 25.0, 20.0 ],
-									"text" : "0.0",
-									"textcolor" : [ 0.298039215686275, 0.407843137254902, 0.870588235294118, 1.0 ]
+									"text" : "0.0"
 								}
 
 							}
@@ -221,8 +217,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 302.0, 370.0, 25.0, 20.0 ],
-									"text" : "2.5",
-									"textcolor" : [ 0.298039215686275, 0.407843137254902, 0.870588235294118, 1.0 ]
+									"text" : "2.5"
 								}
 
 							}
@@ -234,8 +229,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 302.0, 405.0, 152.0, 60.0 ],
-									"text" : "This represents the change in the underlying feature of fluid.onsetslice~ in realtime.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This represents the change in the underlying feature of fluid.onsetslice~ in realtime."
 								}
 
 							}

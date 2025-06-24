@@ -105,8 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 614.0, 21.0 ],
-									"text" : "A selection of metric and sound file combinations, to demonstrate the different characteristics of each one",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A selection of metric and sound file combinations, to demonstrate the different characteristics of each one"
 								}
 
 							}
@@ -120,8 +119,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 92.25, 393.0, 136.0, 40.0 ],
-									"text" : "Play the source audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play the source audio"
 								}
 
 							}
@@ -135,8 +133,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 433.25, 148.0, 143.0, 69.0 ],
-									"text" : "Select from a combination of curated sound files and parameters",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Select from a combination of curated sound files and parameters"
 								}
 
 							}
@@ -221,8 +218,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 67.0, 589.0, 88.0, 25.0 ],
-									"text" : "Start audio",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Start audio"
 								}
 
 							}
@@ -1339,8 +1335,7 @@
 													"patching_rect" : [ 338.333344000000011, 448.333344000000011, 154.0, 21.0 ],
 													"presentation" : 1,
 													"presentation_rect" : [ 188.199996999999996, 5.599999, 44.0, 21.0 ],
-													"text" : "metric",
-													"textcolor" : [ 0.92, 0.92, 0.92, 1.0 ]
+													"text" : "metric"
 												}
 
 											}
@@ -3102,7 +3097,6 @@
 													"outlettype" : [ "int", "", "" ],
 													"parameter_enable" : 0,
 													"patching_rect" : [ 73.5, 164.833344000000011, 133.0, 22.0 ],
-													"prefix" : "~/Documents/FlucomaCode/flucoma-max/media/",
 													"presentation" : 1,
 													"presentation_rect" : [ 2.5, 2.833344, 282.0, 22.0 ],
 													"types" : [ "WAVE", "AIFF" ]
@@ -3407,8 +3401,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 290.0, 207.0, 21.0 ],
-									"text" : "experiment with your own settings",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "experiment with your own settings"
 								}
 
 							}
@@ -3714,8 +3707,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 243.5, 374.5, 240.0, 36.0 ],
-									"text" : "Compensates for the delay incurred by the spectral processing of the algorithm",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Compensates for the delay incurred by the spectral processing of the algorithm"
 								}
 
 							}
@@ -3727,8 +3719,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 310.0, 290.0, 262.0, 21.0 ],
-									"text" : "Outputs an impulse when a slice is detected",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Outputs an impulse when a slice is detected"
 								}
 
 							}

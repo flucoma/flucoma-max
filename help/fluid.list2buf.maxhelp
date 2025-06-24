@@ -115,8 +115,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 200.0, 191.5, 240.0, 40.0 ],
-									"text" : "Now turn on autosize on and see how it affects the destination buffer",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Now turn on autosize on and see how it affects the destination buffer"
 								}
 
 							}
@@ -324,8 +323,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 210.0, 133.5, 470.0, 36.0 ],
-									"text" : "With autosize 0 fluid.list2buf won't try to resize the destination buffer (internal or external). This means the buffer cannot grow to accomodate more values",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "With autosize 0 fluid.list2buf won't try to resize the destination buffer (internal or external). This means the buffer cannot grow to accomodate more values"
 								}
 
 							}
@@ -370,8 +368,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 62.0, 77.0, 283.0, 40.0 ],
-									"text" : "Drag this value up and down between 1 and 100 to generate lists of values of that length",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Drag this value up and down between 1 and 100 to generate lists of values of that length"
 								}
 
 							}
@@ -586,8 +583,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 170.0, 90.0, 245.0, 79.0 ],
-									"text" : "You can also alter the axis or orientation that the buffer will take the values in. This changes whether values are written to individual channels or as frames in a single channel",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "You can also alter the axis or orientation that the buffer will take the values in. This changes whether values are written to individual channels or as frames in a single channel"
 								}
 
 							}
@@ -598,8 +594,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 62.0, 411.0, 150.0, 21.0 ],
-									"text" : "Channels",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Channels"
 								}
 
 							}
@@ -610,8 +605,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 62.0, 380.0, 150.0, 21.0 ],
-									"text" : "Frames",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Frames"
 								}
 
 							}
@@ -895,8 +889,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 153.0, 140.0, 327.0, 25.0 ],
-									"text" : "Notice that the buffer will be resized downards",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Notice that the buffer will be resized downards"
 								}
 
 							}
@@ -956,8 +949,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 100.0, 183.5, 483.0, 36.0 ],
-									"text" : "If no @destination buffer is set, an internal buffer is resized and used instead. The outlet reports the name of the destination buffer that was operated on",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "If no @destination buffer is set, an internal buffer is resized and used instead. The outlet reports the name of the destination buffer that was operated on"
 								}
 
 							}
@@ -988,8 +980,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 268.0, 331.5, 224.0, 21.0 ],
-									"text" : "The buffer now contains those values",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The buffer now contains those values"
 								}
 
 							}
@@ -1002,8 +993,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 290.0, 64.5, 164.0, 54.0 ],
-									"text" : "Send the object a list of values to be inserted into the buffer",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Send the object a list of values to be inserted into the buffer"
 								}
 
 							}
@@ -1211,8 +1201,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 220.0, 340.0, 224.0, 21.0 ],
-									"text" : "The buffer now contains those values",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The buffer now contains those values"
 								}
 
 							}
@@ -1225,8 +1214,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 480.0, 136.5, 164.0, 54.0 ],
-									"text" : "Send the object a list of values to be inserted into the buffer",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Send the object a list of values to be inserted into the buffer"
 								}
 
 							}

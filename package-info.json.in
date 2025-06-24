@@ -18,6 +18,8 @@
 		"reverse_domain" : "org.flucoma",
 		"copyright" : "Copyright (c) University of Huddersfield"
 	},
+ 	"extends" : "",
+	"extensible" : 1,
 	"tags" : [ "machine listening", "sound bank mining", "corpus", "data processing", "flucoma", "machine learning", "spectral analysis", "audio descriptors", "data pipelines", "analysis" ],
 	"version" : "@FLUCOMA_VERSION_TAG@",
 	"website" : "https://flucoma.org"

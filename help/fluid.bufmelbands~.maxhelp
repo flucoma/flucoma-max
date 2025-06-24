@@ -148,8 +148,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 341.0, 21.0 ],
-									"text" : "Visualising mel bands as a spectrum with fluid.waveform~",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Visualising mel bands as a spectrum with fluid.waveform~"
 								}
 
 							}
@@ -161,8 +160,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 380.0, 172.0, 150.0, 79.0 ],
-									"text" : "Because no @features are set, an output buffer is automatically assigned for us that we can then visualise",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Because no @features are set, an output buffer is automatically assigned for us that we can then visualise"
 								}
 
 							}
@@ -432,10 +430,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 692.0, 630.0, 88.569887161254883, 50.0 ],
-									"presentation_linecount" : 2,
+									"patching_rect" : [ 692.0, 630.0, 92.0, 50.0 ],
 									"text" : "The second 10 display the right channel",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -449,7 +445,6 @@
 									"numoutlets" : 0,
 									"patching_rect" : [ 692.0, 540.0, 86.569887161254883, 50.0 ],
 									"text" : "The first 10 display the left channel",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ],
 									"textjustification" : 1
 								}
 
@@ -461,8 +456,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 167.0, 482.0, 342.0, 21.0 ],
-									"text" : "Every band is computed for the left and then right channel",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Every band is computed for the left and then right channel"
 								}
 
 							}
@@ -763,8 +757,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.599853515625, 188.0, 21.0 ],
-									"text" : "Processing multichannel inputs",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Processing multichannel inputs"
 								}
 
 							}
@@ -788,8 +781,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 27.5, 390.0, 71.0, 25.0 ],
-									"text" : "process",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "process"
 								}
 
 							}
@@ -1134,8 +1126,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 480.0, 596.0, 172.0, 65.0 ],
-									"text" : "Using a multislider we lookup the index of analysis for the selected moment of time from the source buffer.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Using a multislider we lookup the index of analysis for the selected moment of time from the source buffer."
 								}
 
 							}
@@ -1221,7 +1212,6 @@
 										"style" : "",
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
-										"visible" : 1,
 										"boxes" : [ 											{
 												"box" : 												{
 													"id" : "obj-2",
@@ -1558,8 +1548,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 53.0, 549.0, 258.0, 65.0 ],
-									"text" : "This example uses mel bands as a resynthesis / vocoder. Each mel band drives an oscillator that has its frequency determined by the spacing of the bands.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "This example uses mel bands as a resynthesis / vocoder. Each mel band drives an oscillator that has its frequency determined by the spacing of the bands."
 								}
 
 							}
@@ -1731,8 +1720,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 370.0, 280.0, 176.0, 152.0 ],
-																	"text" : "Mel bands are like a spectrum where each \"bin\" will have a centre frequency. \n\nThis subpatch calculates the centre frequency of each bin, based on how many mel bands have been used and the minimum and maximum frequencies",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "Mel bands are like a spectrum where each \"bin\" will have a centre frequency. \n\nThis subpatch calculates the centre frequency of each bin, based on how many mel bands have been used and the minimum and maximum frequencies"
 																}
 
 															}
@@ -1743,8 +1731,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 160.0, 212.0, 311.0, 21.0 ],
-																	"text" : "synchronise number of bands and two ranges of mel",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "synchronise number of bands and two ranges of mel"
 																}
 
 															}
@@ -1779,8 +1766,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 270.0, 483.0, 171.0, 21.0 ],
-																	"text" : "converts them all back in Hz",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "converts them all back in Hz"
 																}
 
 															}
@@ -1791,8 +1777,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 305.999938999999983, 131.0, 116.0, 21.0 ],
-																	"text" : "converts Hz to Mel",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "converts Hz to Mel"
 																}
 
 															}

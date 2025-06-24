@@ -3,14 +3,14 @@
 		"fileversion" : 1,
 		"appversion" : 		{
 			"major" : 8,
-			"minor" : 3,
-			"revision" : 3,
+			"minor" : 6,
+			"revision" : 5,
 			"architecture" : "x64",
 			"modernui" : 1
 		}
 ,
 		"classnamespace" : "box",
-		"rect" : [ 35.0, 87.0, 1055.0, 777.0 ],
+		"rect" : [ 134.0, 178.0, 1055.0, 777.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
 		"default_fontsize" : 12.0,
@@ -61,14 +61,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1055.0, 725.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -105,9 +105,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 820.0, 563.0, 152.0, 50.0 ],
-									"presentation_linecount" : 3,
-									"text" : "This is the computed distance we retrieved with knearestdist",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the computed distance we retrieved with knearestdist"
 								}
 
 							}
@@ -129,8 +127,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 330.0, 21.0 ],
-									"text" : "A stripped back example for how the fluid.kdtree~ works",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "A stripped back example for how the fluid.kdtree~ works"
 								}
 
 							}
@@ -241,8 +238,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -477,8 +474,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 655.0, 563.0, 152.0, 50.0 ],
-									"text" : "This is the identifier of the point as it was entered in the dataset.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the identifier of the point as it was entered in the dataset."
 								}
 
 							}
@@ -490,8 +486,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 489.0, 563.0, 152.0, 65.0 ],
-									"text" : "This is the value of the closest points. Compare them to the input to see how \"close\" they are.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the value of the closest points. Compare them to the input to see how \"close\" they are."
 								}
 
 							}
@@ -503,8 +498,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 750.0, 367.0, 152.0, 65.0 ],
-									"text" : "This is our input or \"query\". We want to find which stored point in the dataset is closest to this.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is our input or \"query\". We want to find which stored point in the dataset is closest to this."
 								}
 
 							}
@@ -574,8 +568,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1216,14 +1210,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1055.0, 725.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1259,8 +1253,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 62.0, 574.0, 21.0 ],
-									"text" : "Change the specificity of searches by constraining the distance and number of nearest neighbours",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "Change the specificity of searches by constraining the distance and number of nearest neighbours"
 								}
 
 							}
@@ -1406,8 +1399,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -1577,7 +1570,7 @@
 												"box" : 												{
 													"id" : "obj-71",
 													"maxclass" : "newobj",
-													"numinlets" : 2,
+													"numinlets" : 3,
 													"numoutlets" : 1,
 													"outlettype" : [ "dictionary" ],
 													"patching_rect" : [ 29.0, 282.0, 121.0, 22.0 ],
@@ -1979,8 +1972,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 536.0, 467.0, 186.0, 50.0 ],
-									"text" : "only the extent within radius is searched; number of returned points is uncapped",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+									"text" : "only the extent within radius is searched; number of returned points is uncapped"
 								}
 
 							}
@@ -2003,8 +1995,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 531.0, 374.0, 186.0, 65.0 ],
-									"text" : "only the extent within radius is searched; number of returned points is capped at numneighbours",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "only the extent within radius is searched; number of returned points is capped at numneighbours"
 								}
 
 							}
@@ -2027,8 +2018,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 531.0, 310.0, 185.0, 36.0 ],
-									"text" : "radius is ignored: the whole extent of the tree is searched",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "radius is ignored: the whole extent of the tree is searched"
 								}
 
 							}
@@ -2051,8 +2041,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 517.0, 228.0, 312.0, 50.0 ],
-									"text" : "Because the range of distances is hard to predict a priori, you can use the knearestdist message to get an idea of useful values for radius. ",
-									"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.51 ]
+									"text" : "Because the range of distances is hard to predict a priori, you can use the knearestdist message to get an idea of useful values for radius. "
 								}
 
 							}
@@ -2407,14 +2396,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
+						"rect" : [ 134.0, 230.0, 1055.0, 725.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -2482,8 +2471,8 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
@@ -2553,8 +2542,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 6,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2758,6 +2747,7 @@
 															"parameter_longname" : "live.gain~",
 															"parameter_mmax" : 6.0,
 															"parameter_mmin" : -70.0,
+															"parameter_modmode" : 0,
 															"parameter_shortname" : "gain",
 															"parameter_type" : 0,
 															"parameter_unitstyle" : 4
@@ -2792,8 +2782,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 6,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -2832,8 +2822,8 @@
 																	"id" : "obj-4",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 9,
-																	"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int" ],
+																	"numoutlets" : 10,
+																	"outlettype" : [ "float", "list", "float", "float", "float", "float", "float", "", "int", "" ],
 																	"patching_rect" : [ 213.0, 105.0, 127.0, 22.0 ],
 																	"text" : "info~ kdtree.help.1.src"
 																}
@@ -3101,8 +3091,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 387.0, 248.0, 286.0, 210.0 ],
-									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values from dimensionality reduction (UMAP) that attempt to represent the perceptual differences between this corpus.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space.",
-									"textcolor" : [ 0.50196099281311, 0.50196099281311, 0.50196099281311, 1.0 ]
+									"text" : "Each of these points on this space represents a small segment of a large sound file.\n\nUsing audio descriptors each segment is assigned two values from dimensionality reduction (UMAP) that attempt to represent the perceptual differences between this corpus.\n\nThe fluid.kdtree~ performs the function of mapping our mouse inside the space, to the point that has the most similar set of descriptor values. In effect, it is a fast lookup mechanism so that we can scrub through the analysis space."
 								}
 
 							}
@@ -3238,14 +3227,14 @@
 										"fileversion" : 1,
 										"appversion" : 										{
 											"major" : 8,
-											"minor" : 3,
-											"revision" : 3,
+											"minor" : 6,
+											"revision" : 5,
 											"architecture" : "x64",
 											"modernui" : 1
 										}
 ,
 										"classnamespace" : "box",
-										"rect" : [ 35.0, 87.0, 655.0, 529.0 ],
+										"rect" : [ 134.0, 178.0, 655.0, 529.0 ],
 										"bglocked" : 0,
 										"openinpresentation" : 0,
 										"default_fontsize" : 12.0,
@@ -3274,6 +3263,18 @@
 										"subpatcher_template" : "",
 										"assistshowspatchername" : 0,
 										"boxes" : [ 											{
+												"box" : 												{
+													"id" : "obj-3",
+													"maxclass" : "newobj",
+													"numinlets" : 1,
+													"numoutlets" : 1,
+													"outlettype" : [ "" ],
+													"patching_rect" : [ 67.0, 308.0, 54.0, 22.0 ],
+													"text" : "deferlow"
+												}
+
+											}
+, 											{
 												"box" : 												{
 													"id" : "obj-12",
 													"maxclass" : "message",
@@ -3308,8 +3309,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 6,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3345,13 +3346,25 @@
 														"assistshowspatchername" : 0,
 														"boxes" : [ 															{
 																"box" : 																{
+																	"id" : "obj-1",
+																	"maxclass" : "newobj",
+																	"numinlets" : 1,
+																	"numoutlets" : 1,
+																	"outlettype" : [ "" ],
+																	"patching_rect" : [ 16.0, 169.0, 54.0, 22.0 ],
+																	"text" : "deferlow"
+																}
+
+															}
+, 															{
+																"box" : 																{
 																	"id" : "obj-30",
 																	"maxclass" : "newobj",
 																	"numinlets" : 1,
-																	"numoutlets" : 2,
-																	"outlettype" : [ "", "" ],
-																	"patching_rect" : [ 16.0, 131.0, 360.0, 22.0 ],
-																	"text" : "t l l"
+																	"numoutlets" : 3,
+																	"outlettype" : [ "size", "", "" ],
+																	"patching_rect" : [ 16.0, 131.0, 322.0, 22.0 ],
+																	"text" : "t size l l"
 																}
 
 															}
@@ -3458,8 +3471,8 @@
 																	"numinlets" : 2,
 																	"numoutlets" : 1,
 																	"outlettype" : [ "" ],
-																	"patching_rect" : [ 16.0, 169.0, 247.0, 22.0 ],
-																	"text" : "read $1/misc/flucoma_corpus_files.json, size"
+																	"patching_rect" : [ 73.0, 169.0, 219.0, 22.0 ],
+																	"text" : "read $1/misc/flucoma_corpus_files.json"
 																}
 
 															}
@@ -3514,6 +3527,13 @@
 															}
  ],
 														"lines" : [ 															{
+																"patchline" : 																{
+																	"destination" : [ "obj-10", 0 ],
+																	"source" : [ "obj-1", 0 ]
+																}
+
+															}
+, 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-15", 0 ],
 																	"source" : [ "obj-10", 0 ]
@@ -3601,16 +3621,24 @@
 															}
 , 															{
 																"patchline" : 																{
+																	"destination" : [ "obj-1", 0 ],
+																	"source" : [ "obj-30", 0 ]
+																}
+
+															}
+, 															{
+																"patchline" : 																{
 																	"destination" : [ "obj-29", 0 ],
-																	"midpoints" : [ 366.5, 420.0, 151.5, 420.0 ],
-																	"source" : [ "obj-30", 1 ]
+																	"midpoints" : [ 328.5, 420.0, 151.5, 420.0 ],
+																	"source" : [ "obj-30", 2 ]
 																}
 
 															}
 , 															{
 																"patchline" : 																{
 																	"destination" : [ "obj-7", 0 ],
-																	"source" : [ "obj-30", 0 ]
+																	"midpoints" : [ 177.0, 160.5, 82.5, 160.5 ],
+																	"source" : [ "obj-30", 1 ]
 																}
 
 															}
@@ -3647,8 +3675,8 @@
 														"fileversion" : 1,
 														"appversion" : 														{
 															"major" : 8,
-															"minor" : 3,
-															"revision" : 3,
+															"minor" : 6,
+															"revision" : 5,
 															"architecture" : "x64",
 															"modernui" : 1
 														}
@@ -3810,10 +3838,10 @@
 													"id" : "obj-10",
 													"maxclass" : "newobj",
 													"numinlets" : 1,
-													"numoutlets" : 1,
-													"outlettype" : [ "bang" ],
-													"patching_rect" : [ 67.0, 269.875, 22.0, 22.0 ],
-													"text" : "t b"
+													"numoutlets" : 2,
+													"outlettype" : [ "dump", "bang" ],
+													"patching_rect" : [ 67.0, 269.875, 55.0, 22.0 ],
+													"text" : "t dump b"
 												}
 
 											}
@@ -3898,8 +3926,8 @@
 													"numinlets" : 2,
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
-													"patching_rect" : [ 67.0, 308.5, 183.0, 22.0 ],
-													"text" : "read flucoma_corpus.json, dump"
+													"patching_rect" : [ 123.0, 308.0, 146.0, 22.0 ],
+													"text" : "read flucoma_corpus.json"
 												}
 
 											}
@@ -3930,8 +3958,15 @@
  ],
 										"lines" : [ 											{
 												"patchline" : 												{
-													"destination" : [ "obj-9", 0 ],
+													"destination" : [ "obj-3", 0 ],
 													"source" : [ "obj-10", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-9", 0 ],
+													"source" : [ "obj-10", 1 ]
 												}
 
 											}
@@ -3984,6 +4019,13 @@
 												"patchline" : 												{
 													"destination" : [ "obj-1", 0 ],
 													"source" : [ "obj-27", 0 ]
+												}
+
+											}
+, 											{
+												"patchline" : 												{
+													"destination" : [ "obj-5", 0 ],
+													"source" : [ "obj-3", 0 ]
 												}
 
 											}
@@ -4387,14 +4429,14 @@
 						"fileversion" : 1,
 						"appversion" : 						{
 							"major" : 8,
-							"minor" : 3,
-							"revision" : 3,
+							"minor" : 6,
+							"revision" : 5,
 							"architecture" : "x64",
 							"modernui" : 1
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 1055.0, 751.0 ],
+						"rect" : [ 0.0, 26.0, 1055.0, 725.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 12.0,
@@ -4451,77 +4493,6 @@
 			"inherited_shortname" : 1
 		}
 ,
-		"dependency_cache" : [ 			{
-				"name" : "fluid.buf2list.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.bufcompose~.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.concataudiofiles.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.dsinterface.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.dslink.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.flucomaorg.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.learn.maxpat",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/patchers",
-				"type" : "JSON",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "fluid.libmanipulation.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.list2buf.mxo",
-				"type" : "iLaX"
-			}
-, 			{
-				"name" : "fluid.plotter.js",
-				"bootpath" : "~/Documents/documents@hudd/research/projects/fluid corpus navigation/research/nightly_builds/Max/FluidCorpusManipulation/jsui",
-				"patcherrelativepath" : "../../nightly_builds/Max/FluidCorpusManipulation/jsui",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpdetails.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
-, 			{
-				"name" : "helpname.js",
-				"bootpath" : "C74:/help/resources",
-				"type" : "TEXT",
-				"implicit" : 1
-			}
- ],
 		"autosave" : 0
 	}
 

@@ -191,8 +191,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 580.0, 128.0, 155.0, 100.0 ],
-									"text" : "By matching the metric, filtersize and framedelta attributes we get a glimpse of the onset curve that bufonsetslice~ uses to measure changes in the spectrum over time",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "By matching the metric, filtersize and framedelta attributes we get a glimpse of the onset curve that bufonsetslice~ uses to measure changes in the spectrum over time"
 								}
 
 							}
@@ -269,8 +268,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 572.0, 426.0, 155.0, 114.0 ],
-									"text" : "The amount of difference between spectral frames is show in red.\n\nDetected slices can be seen where there are significant changes in the difference.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The amount of difference between spectral frames is show in red.\n\nDetected slices can be seen where there are significant changes in the difference."
 								}
 
 							}

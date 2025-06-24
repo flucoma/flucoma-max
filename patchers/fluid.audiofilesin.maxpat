@@ -9,6 +9,7 @@
 			"modernui" : 1
 		}
 ,
+		"classnamespace" : "box",
 		"rect" : [ 84.0, 129.0, 523.0, 547.0 ],
 		"bglocked" : 0,
 		"openinpresentation" : 0,
@@ -36,6 +37,7 @@
 		"tags" : "",
 		"style" : "",
 		"subpatcher_template" : "",
+		"assistshowspatchername" : 0,
 		"boxes" : [ 			{
 				"box" : 				{
 					"id" : "obj-16",
@@ -45,7 +47,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 179.0, 298.5, 198.0, 35.0 ],
-					"style" : "",
 					"text" : "Too many files\\, only the first 32768 will be taken into account"
 				}
 
@@ -57,7 +58,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 179.0, 339.0, 123.0, 22.0 ],
-					"style" : "",
 					"text" : "print fluid.audiofilesin"
 				}
 
@@ -70,7 +70,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "bang", "" ],
 					"patching_rect" : [ 179.0, 274.0, 36.0, 22.0 ],
-					"style" : "",
 					"text" : "sel 1"
 				}
 
@@ -82,7 +81,6 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 179.0, 274.0, 34.0, 22.0 ],
-					"style" : "",
 					"text" : "print"
 				}
 
@@ -95,7 +93,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "int" ],
 					"patching_rect" : [ 179.0, 250.0, 54.0, 22.0 ],
-					"style" : "",
 					"text" : "> 32768"
 				}
 
@@ -108,7 +105,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 44.0, 333.0, 37.0, 22.0 ],
-					"style" : "",
 					"text" : "zl rev"
 				}
 
@@ -121,7 +117,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 44.0, 247.0, 57.0, 22.0 ],
-					"style" : "",
 					"text" : "tosymbol"
 				}
 
@@ -134,7 +129,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 44.0, 305.0, 80.0, 22.0 ],
-					"style" : "",
 					"text" : "pack s s"
 				}
 
@@ -147,7 +141,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 105.0, 247.0, 57.0, 22.0 ],
-					"style" : "",
 					"text" : "tosymbol"
 				}
 
@@ -160,7 +153,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "bang", "", "bang", "", "zlclear" ],
 					"patching_rect" : [ 20.0, 75.0, 466.0, 22.0 ],
-					"style" : "",
 					"text" : "t b s b s zlclear"
 				}
 
@@ -173,7 +165,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 298.0, 151.260869, 87.0, 22.0 ],
-					"style" : "",
 					"text" : "combine path /"
 				}
 
@@ -186,7 +177,6 @@
 					"numoutlets" : 5,
 					"outlettype" : [ "", "", "", "", "" ],
 					"patching_rect" : [ 260.5, 112.260869, 69.0, 22.0 ],
-					"style" : "",
 					"text" : "regexp .+/$"
 				}
 
@@ -199,7 +189,6 @@
 					"numoutlets" : 3,
 					"outlettype" : [ "", "", "" ],
 					"patching_rect" : [ 44.0, 194.936215, 109.0, 22.0 ],
-					"style" : "",
 					"text" : "route append clear"
 				}
 
@@ -212,7 +201,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 44.0, 410.476021, 294.716466, 22.0 ],
-					"style" : "",
 					"text" : "zl 32768 group"
 				}
 
@@ -225,7 +213,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "" ],
 					"patching_rect" : [ 119.0, 112.260869, 137.0, 22.0 ],
-					"style" : "",
 					"text" : "types AIFF WAVE FLAC"
 				}
 
@@ -238,7 +225,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "int" ],
 					"patching_rect" : [ 44.0, 158.260869, 39.0, 22.0 ],
-					"style" : "",
 					"text" : "folder"
 				}
 
@@ -251,7 +237,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 44.0, 363.958813, 99.0, 22.0 ],
-					"style" : "",
 					"text" : "combine path file"
 				}
 
@@ -447,7 +432,8 @@
 				}
 
 			}
- ]
+ ],
+		"autosave" : 0
 	}
 
 }

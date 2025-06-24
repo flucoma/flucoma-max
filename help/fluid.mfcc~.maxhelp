@@ -155,8 +155,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 280.333374000000049, 340.0, 300.0, 79.0 ],
-									"text" : "Inside this subpatch a Euclidian distance is calculated on the current MFCC analysis to the one stored against either the first or second template. The lower the number, the more similar it is.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Inside this subpatch a Euclidian distance is calculated on the current MFCC analysis to the one stored against either the first or second template. The lower the number, the more similar it is."
 								}
 
 							}
@@ -199,8 +198,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.333374000000049, 62.0, 222.0, 21.0 ],
-									"text" : "A real-time timbral matching example",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "A real-time timbral matching example"
 								}
 
 							}
@@ -265,9 +263,8 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 348.333374000000049, 150.0, 196.0, 181.0 ],
-									"text" : "1) Play one of the playlist sources.\n\n2) Click on Learn Template 1 to define a timbre template. \n\n3) Select the second source and click Learn Template 2\n\n4) Now the Match Template buttons will activate when their associated source is played",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"patching_rect" : [ 348.333374000000049, 150.0, 199.0, 181.0 ],
+									"text" : "1) Play one of the playlist sources.\n\n2) Click on Learn Template 1 to define a timbre template. \n\n3) Select the second source and click Learn Template 2\n\n4) Now the Match Template buttons will activate when their associated source is played"
 								}
 
 							}
@@ -1354,8 +1351,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 223.833374000000049, 342.0, 344.0, 21.0 ],
-									"text" : "or just have the default behaviour of counting from the first",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "or just have the default behaviour of counting from the first"
 								}
 
 							}
@@ -1366,8 +1362,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 190.333374000000049, 302.0, 449.0, 21.0 ],
-									"text" : "ask the object for 13 MFCCs starting from the second (it counts starting at 0)",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "ask the object for 13 MFCCs starting from the second (it counts starting at 0)"
 								}
 
 							}
@@ -1391,8 +1386,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 282.0, 120.25, 278.0, 166.0 ],
-									"text" : "The first coefficient (the first index) is essentally a value that represents the loudness.\n\nTry modulating the volume here on any of the sources, and watch that it doesn't really effect the \"shape\" of the coefficients.\n\nRemoving the first coefficient is a common practice if you only care about the timbre of the measured sound.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "The first coefficient (the first index) is essentally a value that represents the loudness.\n\nTry modulating the volume here on any of the sources, and watch that it doesn't really effect the \"shape\" of the coefficients.\n\nRemoving the first coefficient is a common practice if you only care about the timbre of the measured sound."
 								}
 
 							}
@@ -1403,8 +1397,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.333374000000049, 62.0, 304.0, 21.0 ],
-									"text" : "Understanding the role of the first MFCC coefficient",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Understanding the role of the first MFCC coefficient"
 								}
 
 							}
@@ -1759,8 +1752,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 314.0, 510.5, 220.0, 65.0 ],
-									"text" : "MFCCs are output as a list which can be used for many applications where we are interested in the timbral differences between sounds.",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "MFCCs are output as a list which can be used for many applications where we are interested in the timbral differences between sounds."
 								}
 
 							}

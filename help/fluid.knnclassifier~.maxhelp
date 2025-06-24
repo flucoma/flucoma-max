@@ -128,8 +128,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 220.0, 161.0, 151.0, 21.0 ],
-									"text" : "Have a look in here!",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Have a look in here!"
 								}
 
 							}
@@ -199,8 +198,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 521.0, 118.0, 231.0, 167.0 ],
-													"text" : "This patcher compiles a singular fluid.dataset~ and fluid.labelset~ using analysis of two sound files.\n\nIt only analyses the first second of audio so that we don't classify every single frame of audio in the source. This way we can test to see how well the fluid.knnclassifier~ can classify data it hasn't seen before.\n\n",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "This patcher compiles a singular fluid.dataset~ and fluid.labelset~ using analysis of two sound files.\n\nIt only analyses the first second of audio so that we don't classify every single frame of audio in the source. This way we can test to see how well the fluid.knnclassifier~ can classify data it hasn't seen before.\n\n"
 												}
 
 											}
@@ -320,8 +318,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 396.5, 374.0, 143.0, 100.0 ],
-																	"text" : "Add points and labels to a dataset~ and labelset~ respectively.\n\nThese share their name for the analysis of the other sound.",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "Add points and labels to a dataset~ and labelset~ respectively.\n\nThese share their name for the analysis of the other sound."
 																}
 
 															}
@@ -332,8 +329,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 278.0, 245.0, 140.0, 20.0 ],
-																	"text" : "create a unique identifier",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "create a unique identifier"
 																}
 
 															}
@@ -345,8 +341,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 382.0, 281.5, 169.0, 47.0 ],
-																	"text" : "iterate over each frame of analysis and get each MFCC coefficient (13 values)",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "iterate over each frame of analysis and get each MFCC coefficient (13 values)"
 																}
 
 															}
@@ -357,8 +352,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 213.0, 155.0, 259.0, 20.0 ],
-																	"text" : "get the number of samples in the mfcc analysis",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "get the number of samples in the mfcc analysis"
 																}
 
 															}
@@ -727,8 +721,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 396.5, 374.0, 143.0, 100.0 ],
-																	"text" : "Add points and labels to a dataset~ and labelset~ respectively.\n\nThese share their name for the analysis of the other sound.",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "Add points and labels to a dataset~ and labelset~ respectively.\n\nThese share their name for the analysis of the other sound."
 																}
 
 															}
@@ -740,8 +733,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 278.0, 245.0, 140.0, 20.0 ],
-																	"text" : "create a unique identifier",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "create a unique identifier"
 																}
 
 															}
@@ -753,8 +745,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 382.0, 281.5, 169.0, 47.0 ],
-																	"text" : "iterate over each frame of analysis and get each MFCC coefficient (13 values)",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "iterate over each frame of analysis and get each MFCC coefficient (13 values)"
 																}
 
 															}
@@ -765,8 +756,7 @@
 																	"numinlets" : 1,
 																	"numoutlets" : 0,
 																	"patching_rect" : [ 213.0, 155.0, 259.0, 20.0 ],
-																	"text" : "get the number of samples in the mfcc analysis",
-																	"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+																	"text" : "get the number of samples in the mfcc analysis"
 																}
 
 															}
@@ -1232,8 +1222,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 140.0, 540.0, 158.0, 166.0 ],
-									"text" : "The detected class here should correspond to the source sound type.\n\nYou might notice that silence is detected as the piano. This makes sense as a large portion of the first second of audio that was analysed in that source is silence.",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "The detected class here should correspond to the source sound type.\n\nYou might notice that silence is detected as the piano. This makes sense as a large portion of the first second of audio that was analysed in that source is silence."
 								}
 
 							}

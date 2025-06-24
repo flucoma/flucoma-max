@@ -377,9 +377,8 @@
 									"patching_rect" : [ 5.0, 195.0, 360.0, 74.0 ],
 									"presentation" : 1,
 									"presentation_linecount" : 4,
-									"presentation_rect" : [ 5.0, 5.0, 360.0, 74.0 ],
-									"text" : "When using a small number of iterations, fluid.bufnmf~ can process in close-to-realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately.",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"presentation_rect" : [ 5.0, 5.0, 362.0, 74.0 ],
+									"text" : "When using a small number of iterations, fluid.bufnmf~ can process in close-to-realtime. In this example, fluid.bufnmf~ is used to dissect components of a sound and pan them seperately."
 								}
 
 							}
@@ -619,8 +618,7 @@
 					"patching_rect" : [ 65.83346962928772, 271.166659116744995, 139.0, 21.0 ],
 					"presentation" : 1,
 					"presentation_rect" : [ 18.97886073589325, 231.070424437522888, 139.0, 21.0 ],
-					"text" : "Select an example...",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Select an example..."
 				}
 
 			}

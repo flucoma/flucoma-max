@@ -1096,8 +1096,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 14.0, 43.0, 202.0, 20.0 ],
-					"text" : "Refining results by using... statistics!",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Refining results by using... statistics!"
 				}
 
 			}
@@ -1901,8 +1900,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 137.0, 402.0, 99.0, 60.0 ],
-					"text" : "With the outliers stripped, we see a much tighter range...",
-					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+					"text" : "With the outliers stripped, we see a much tighter range..."
 				}
 
 			}
@@ -1914,8 +1912,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 471.833316500000024, 395.166625999999951, 97.0, 74.0 ],
-					"text" : "The weighted stats have the same range but much less variance",
-					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+					"text" : "The weighted stats have the same range but much less variance"
 				}
 
 			}
@@ -1927,8 +1924,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 807.0, 395.166625999999951, 97.0, 74.0 ],
-					"text" : "The unweighted stats have a huge range (145-6.7kHz) and variance",
-					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.53 ]
+					"text" : "The unweighted stats have a huge range (145-6.7kHz) and variance"
 				}
 
 			}
@@ -1940,8 +1936,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 1019.0, 474.0, 259.333313000000089, 47.0 ],
-					"text" : "We can see clear bits in the pitch confidence where it's higher / lower: we're hoping this can be used to get more beleiveable statistics",
-					"textcolor" : [ 0.129411764705882, 0.129411764705882, 0.129411764705882, 0.47 ]
+					"text" : "We can see clear bits in the pitch confidence where it's higher / lower: we're hoping this can be used to get more beleiveable statistics"
 				}
 
 			}

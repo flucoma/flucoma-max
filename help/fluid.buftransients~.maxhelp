@@ -132,8 +132,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 60.0, 188.0, 21.0 ],
-									"text" : "Processing multichannel inputs",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Processing multichannel inputs"
 								}
 
 							}
@@ -381,8 +380,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 560.0, 245.833344000000125, 119.0, 21.0 ],
-									"text" : "stereo is preserved",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "stereo is preserved"
 								}
 
 							}
@@ -734,8 +732,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.5, 492.0, 105.0, 21.0 ],
-									"text" : "bang when done",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "bang when done"
 								}
 
 							}
@@ -1024,8 +1021,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 470.0, 290.0, 220.0, 94.0 ],
-									"text" : "This is the first two seconds of the sound file zoomed in. You can see where the transients (rust coloured) are detected and how they have been extracted from the original sound and \"inpainted\" (green).",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "This is the first two seconds of the sound file zoomed in. You can see where the transients (rust coloured) are detected and how they have been extracted from the original sound and \"inpainted\" (green)."
 								}
 
 							}
@@ -1718,8 +1714,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 35.375, 603.5, 105.0, 21.0 ],
-									"text" : "bang when done",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "bang when done"
 								}
 
 							}

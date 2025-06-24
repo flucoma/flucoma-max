@@ -142,8 +142,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 310.0, 424.5, 220.089004516601562, 36.0 ],
-									"text" : "Sounds a lot like the resynthesis outputs....",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "Sounds a lot like the resynthesis outputs...."
 								}
 
 							}
@@ -592,8 +591,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 622.0, 583.0, 220.089004516601562, 94.0 ],
-									"text" : "nmffilter is pointed to the bases produced by fluid.bufnmf~\n\nthis allows you to filter audio based on what has been \"learned\" and which is stored in the \"bases\".",
-									"textcolor" : [ 0.5, 0.5, 0.5, 1.0 ]
+									"text" : "nmffilter is pointed to the bases produced by fluid.bufnmf~\n\nthis allows you to filter audio based on what has been \"learned\" and which is stored in the \"bases\"."
 								}
 
 							}
@@ -1448,9 +1446,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 302.0, 127.0, 277.0, 29.0 ],
-									"presentation_linecount" : 2,
-									"text" : "try playing the guitar through the piano's filter or repeat step one to reprocess for the guitar",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "try playing the guitar through the piano's filter or repeat step one to reprocess for the guitar"
 								}
 
 							}
@@ -1462,8 +1458,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 407.0, 610.0, 101.0, 25.0 ],
-									"text" : "turn audio on",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "turn audio on"
 								}
 
 							}
@@ -1495,8 +1490,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 302.0, 102.5, 225.0, 25.0 ],
-									"text" : "try it with the acoustic guitar sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "try it with the acoustic guitar sound"
 								}
 
 							}
@@ -1540,8 +1534,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 386.0, 300.0, 250.0, 25.0 ],
-									"text" : "play the source sound through the filter",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "play the source sound through the filter"
 								}
 
 							}
@@ -1601,8 +1594,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.0, 300.0, 254.166655999999989, 79.0 ],
-									"text" : "discern which component has the lowest median spectral centroid\n\nwe make the assumption this component will be the resonant material",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "discern which component has the lowest median spectral centroid\n\nwe make the assumption this component will be the resonant material"
 								}
 
 							}
@@ -1708,8 +1700,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 10.0, 69.567627000000002, 267.0, 21.0 ],
-									"text" : "delay components with low spectral centroid",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "delay components with low spectral centroid"
 								}
 
 							}
@@ -1794,8 +1785,7 @@
 													"numinlets" : 1,
 													"numoutlets" : 0,
 													"patching_rect" : [ 55.0, 176.0, 256.0, 21.0 ],
-													"text" : "The first index will have the lowest centroid",
-													"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+													"text" : "The first index will have the lowest centroid"
 												}
 
 											}
@@ -1944,8 +1934,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 36.0, 190.0, 278.0, 25.0 ],
-									"text" : "divide the piano sound into two components",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "divide the piano sound into two components"
 								}
 
 							}

@@ -166,8 +166,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 230.0, 134.0, 95.0, 24.0 ],
-									"text" : "Play a sound",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Play a sound"
 								}
 
 							}
@@ -180,8 +179,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 477.0, 231.666666984558105, 180.0, 78.0 ],
-									"text" : "Every 'bang' will sample and resynthesis the 'numpeak' loudest/lowest (depending on 'order') peaks above 'detectionthreshold'",
-									"textcolor" : [ 0.0, 0.0, 0.0, 1.0 ]
+									"text" : "Every 'bang' will sample and resynthesis the 'numpeak' loudest/lowest (depending on 'order') peaks above 'detectionthreshold'"
 								}
 
 							}
@@ -712,8 +710,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 283.5, 387.0, 152.0, 20.0 ],
-									"text" : "peak magnitudes",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "peak magnitudes"
 								}
 
 							}
@@ -842,8 +839,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 470.0, 130.0, 155.0, 47.0 ],
-									"text" : "Same arguments as fluid.sines peak detection algorithm",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "Same arguments as fluid.sines peak detection algorithm"
 								}
 
 							}
@@ -854,8 +850,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 283.5, 357.0, 152.0, 20.0 ],
-									"text" : "peak frequencies",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "peak frequencies"
 								}
 
 							}

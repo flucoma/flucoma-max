@@ -46,8 +46,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 714.0, 373.0, 323.0, 87.0 ],
-					"text" : "This space represents the values of each neuron in the central hidden layer of the neural network.\n\nIt has, to some extent, learned a lower-dimensional representation of the input-norm data space by figuring out how it can reconstruct it with only 2 dimensions.",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "This space represents the values of each neuron in the central hidden layer of the neural network.\n\nIt has, to some extent, learned a lower-dimensional representation of the input-norm data space by figuring out how it can reconstruct it with only 2 dimensions."
 				}
 
 			}
@@ -59,8 +58,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 151.0, 399.762878000000001, 328.5, 33.0 ],
-					"text" : "Keep pressing stage (4) until the fit number seems to stop moving. A good value is around 0.20 in this example",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Keep pressing stage (4) until the fit number seems to stop moving. A good value is around 0.20 in this example"
 				}
 
 			}
@@ -212,8 +210,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 297.5, 20.0, 699.0, 60.0 ],
-					"text" : "Without getting too deep into the weeds a neural network learns the relationship between input and output data. If we ask it to learn the relationship between the same data as the input and output it essentially learns how it 'reconstruct' the data using a smaller number of dimensions (the neurons in the hidden layers). This means we can use the fluid.mlpregressor~ as a form of dimension reduction!",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Without getting too deep into the weeds a neural network learns the relationship between input and output data. If we ask it to learn the relationship between the same data as the input and output it essentially learns how it 'reconstruct' the data using a smaller number of dimensions (the neurons in the hidden layers). This means we can use the fluid.mlpregressor~ as a form of dimension reduction!"
 				}
 
 			}
@@ -224,8 +221,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 13.0, 48.0, 269.0, 20.0 ],
-					"text" : "Neural networks learning how to reconstruct data",
-					"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+					"text" : "Neural networks learning how to reconstruct data"
 				}
 
 			}
@@ -612,8 +608,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 0,
 									"patching_rect" : [ 70.5, 205.5, 286.0, 33.0 ],
-									"text" : "this is the hop size of the analysis, to convert the position of the lookup to a position in the audio file",
-									"textcolor" : [ 0.501960784313725, 0.501960784313725, 0.501960784313725, 1.0 ]
+									"text" : "this is the hop size of the analysis, to convert the position of the lookup to a position in the audio file"
 								}
 
 							}
@@ -870,8 +865,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 834.0, 651.0, 190.0, 20.0 ],
-					"text" : "predicting from the neural network",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "predicting from the neural network"
 				}
 
 			}
@@ -882,8 +876,7 @@
 					"numinlets" : 1,
 					"numoutlets" : 0,
 					"patching_rect" : [ 540.0, 651.0, 55.0, 20.0 ],
-					"text" : "raw data",
-					"textcolor" : [ 1.0, 1.0, 1.0, 1.0 ]
+					"text" : "raw data"
 				}
 
 			}

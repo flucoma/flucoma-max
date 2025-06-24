@@ -44,7 +44,6 @@
 					"numoutlets" : 1,
 					"outlettype" : [ "signal" ],
 					"patching_rect" : [ 107.0, 311.0, 90.0, 22.0 ],
-					"style" : "",
 					"text" : "*~"
 				}
 
@@ -57,7 +56,6 @@
 					"numoutlets" : 4,
 					"outlettype" : [ "signal", "signal", "", "" ],
 					"patching_rect" : [ 178.0, 220.0, 94.0, 22.0 ],
-					"style" : "",
 					"text" : "adsr~ 10 0 1 10"
 				}
 
@@ -70,7 +68,6 @@
 					"numoutlets" : 2,
 					"outlettype" : [ "", "" ],
 					"patching_rect" : [ 178.0, 177.0, 38.0, 22.0 ],
-					"style" : "",
 					"text" : "route"
 				}
 
