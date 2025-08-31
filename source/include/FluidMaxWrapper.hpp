@@ -17,18 +17,17 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <ext_obex_util.h>
 #include <z_dsp.h>
 
-#include <clients/common/FluidBaseClient.hpp>
-#include <clients/common/FluidNRTClientWrapper.hpp>
-#include <clients/common/OfflineClient.hpp>
-#include <clients/common/ParameterSet.hpp>
-#include <clients/common/ParameterTypes.hpp>
-#include <clients/nrt/FluidSharedInstanceAdaptor.hpp>
-
-#include <data/FluidMemory.hpp>
+#include <flucoma/FluidVersion.hpp>
+#include <flucoma/clients/common/FluidBaseClient.hpp>
+#include <flucoma/clients/common/FluidNRTClientWrapper.hpp>
+#include <flucoma/clients/common/OfflineClient.hpp>
+#include <flucoma/clients/common/ParameterSet.hpp>
+#include <flucoma/clients/common/ParameterTypes.hpp>
+#include <flucoma/clients/nrt/FluidSharedInstanceAdaptor.hpp>
+#include <flucoma/data/FluidMemory.hpp>
 
 #include "MaxBufferAdaptor.hpp"
 
-#include <FluidVersion.hpp>
 #include <atomic>
 #include <cctype> //std::tolower
 #include <deque>
@@ -304,7 +303,7 @@ struct NonRealTime
     }
     else
     {
-      class_addmethod(c, (method) deferProcess, "bang", 0);
+      class_addmethod(c, (method) deferProcess, "bang", 0); 
       if(Wrapper::NumInputBuffers) class_addmethod(Wrapper::getClass(), (method) doBuffer, "buffer", A_GIMME, 0);
       class_addmethod(c, (method) callCancel, "cancel", 0);
       class_addmethod(c, (method) assist, "assist", A_CANT, 0);
@@ -1319,7 +1318,7 @@ public:
           static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
           sprintf(s,"buffer: %s", param_name.c_str());
        });
-    });
+    }); 
     
     //setup an array of buffer~ object that we'll use if the respective params are unset when process is called
     mParams.template forEachParamType<BufferT>([this](auto&, auto idx){
@@ -2207,7 +2206,7 @@ private:
   template <size_t N>
   static void deferPrint(FluidMaxWrapper* x, t_symbol*, long, t_atom*)
   {
-    defer(x, (method) doPrint<N>, nullptr, 0, nullptr);
+    defer_low(x, (method) doPrint<N>, nullptr, 0, nullptr);
   }
 
   template <size_t N>
@@ -2225,7 +2224,8 @@ private:
   template <size_t N>
   static void deferRead(FluidMaxWrapper* x, t_symbol* s)
   {
-    defer(x, (method) &doRead<N>, s, 0, nullptr);
+    // defer_low because we have a dialog box situation 
+    defer_low(x, (method) &doRead<N>, s, 0, nullptr);
   }
 
   template <size_t N>
@@ -2245,9 +2245,12 @@ private:
     char     fullpath[MAX_PATH_CHARS];
 
     if (s == gensym(""))
-    {
-      if (open_dialog(filename, &path, &outtype, &filetype, 1))
+    { 
+      short openResult = open_dialog(filename, &path, &outtype, &filetype, 1);  
+      if (openResult != 0)
+      {
         return; // non-zero -> cancel
+      }
     }
     else
     {
@@ -2272,7 +2275,8 @@ private:
   template <size_t N>
   static void deferWrite(FluidMaxWrapper* x, t_symbol* s)
   {
-    defer(x, (method) &doWrite<N>, s, 0, nullptr);
+    // defer_low because we have a dialog box situation 
+    defer_low(x, (method) &doWrite<N>, s, 0, nullptr);
   }
 
   template <size_t N>
