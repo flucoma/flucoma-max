@@ -25,7 +25,6 @@ endif ()
 
 set(C74_MAX_INCLUDES ${C74_MAX_API_DIR}/max-includes)
 set(C74_MSP_INCLUDES ${C74_MAX_API_DIR}/msp-includes)
-set(C74_JIT_INCLUDES ${C74_MAX_API_DIR}/jit-includes)
 
 set(FLUID_MAX_SCRIPTS "${CMAKE_CURRENT_LIST_DIR}")
 
@@ -35,38 +34,26 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_RELWITHDEBINFO "${CMAKE_LIBRARY_OUTPUT_DIRECT
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY_TEST "${CMAKE_LIBRARY_OUTPUT_DIRECTORY}")
 
 if (WIN32)
-
 	set(CMAKE_COMPILE_PDB_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tmp")
 	set(CMAKE_PDB_OUTPUT_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/tmp")
+  set(MaxAPI_LIB ${C74_MAX_INCLUDES}/x64/MaxAPI.lib)
+  set(MaxAudio_LIB ${C74_MSP_INCLUDES}/x64/MaxAudio.lib)
 
-	if (CMAKE_SIZEOF_VOID_P EQUAL 8)
-		SET(MaxAPI_LIB ${C74_MAX_INCLUDES}/x64/MaxAPI.lib)
-		SET(MaxAudio_LIB ${C74_MSP_INCLUDES}/x64/MaxAudio.lib)
-		SET(Jitter_LIB ${C74_JIT_INCLUDES}/x64/jitlib.lib)
-	else ()
-		SET(MaxAPI_LIB ${C74_MAX_INCLUDES}/MaxAPI.lib)
-		SET(MaxAudio_LIB ${C74_MSP_INCLUDES}/MaxAudio.lib)
-		SET(Jitter_LIB ${C74_JIT_INCLUDES}/jitlib.lib)
-	endif ()
-
-	MARK_AS_ADVANCED (MaxAPI_LIB)
+  MARK_AS_ADVANCED (MaxAPI_LIB)
 	MARK_AS_ADVANCED (MaxAudio_LIB)
-	MARK_AS_ADVANCED (Jitter_LIB)
-
+	
 	add_definitions(
 		-DMAXAPI_USE_MSCRT
 		-DWIN_VERSION
 		-D_USE_MATH_DEFINES
 	)
-else ()
+endif ()
+
+if (APPLE)
 	file (STRINGS "${C74_MAX_INCLUDES}/c74_linker_flags.txt" C74_SYM_LINKER_FLAGS)
 	set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} ${C74_SYM_LINKER_FLAGS}")
 	set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${C74_SYM_LINKER_FLAGS}")
 	set(CMAKE_MODULE_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} ${C74_SYM_LINKER_FLAGS}")
-endif ()
-
-if (APPLE)
-  find_library(JITTER_LIBRARY "JitterAPI" HINTS  "${C74_JIT_INCLUDES}")
   find_library(MAX_AUDIO_API "MaxAudioAPI" HINTS "${C74_MSP_INCLUDES}")
 endif()
 
@@ -119,14 +106,13 @@ function(add_max_external)
     SYSTEM PRIVATE   
     "${C74_MAX_INCLUDES}"
     "${C74_MSP_INCLUDES}"
-    "${C74_JIT_INCLUDES}"
   )
 
   if(MSVC)
     target_compile_options(${safe_name} PRIVATE /external:W0 /W3)
   else()
     target_compile_options(${safe_name} PRIVATE
-      -Wall -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wpedantic -Wreturn-type -include "${C74_MAX_INCLUDES}/macho-prefix.pch"
+      -Wall -Wno-gnu-zero-variadic-macro-arguments -Wextra -Wpedantic -Wreturn-type 
     )
   endif()
 
@@ -159,26 +145,16 @@ function(add_max_external)
       XCODE_GENERATE_SCHEME ON
   		XCODE_SCHEME_EXECUTABLE "/Applications/Max.app"    
     )
-      
-    #If we target < 10.9 we have to manually include this:
-    target_compile_options(${safe_name} PRIVATE -stdlib=libc++)
-    
+          
     target_link_libraries(${safe_name} PRIVATE
-      ${JITTER_LIBRARY}
       ${MAX_AUDIO_API}
     )
     
   elseif (WIN32)      
-  	if (CMAKE_SIZEOF_VOID_P EQUAL 8)
-  		set_target_properties(${safe_name} PROPERTIES SUFFIX ".mxe64")
-  	else ()
-  		set_target_properties(${safe_name} PROPERTIES SUFFIX ".mxe")
-  	endif ()
-    
+    set_target_properties(${safe_name} PROPERTIES SUFFIX ".mxe64")    
     target_link_libraries(${safe_name} PRIVATE 
       "${MaxAPI_LIB}"
       "${MaxAudio_LIB}"
-      "${Jitter_LIB}"
     )
   endif()
   

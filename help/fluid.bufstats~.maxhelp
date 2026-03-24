@@ -5436,7 +5436,7 @@
 													"numoutlets" : 1,
 													"outlettype" : [ "" ],
 													"patching_rect" : [ 172.0, 277.0, 350.0, 23.0 ],
-													"text" : "jstrigger (new Buffer('help.bufstats.4.src').peek(a[0]\\,0\\, a[1]))"
+													"text" : "jstrigger (new Buffer('help.bufstats.4.stats').peek(a[0]\\,0\\, a[1]))"
 												}
 
 											}

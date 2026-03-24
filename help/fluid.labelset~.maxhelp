@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
+						"rect" : [ 134.0, 204.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -109,22 +109,6 @@
 									"outlettype" : [ "" ],
 									"patching_rect" : [ 20.0, 160.0, 190.0, 38.0 ],
 									"text" : "addlabel one un, addlabel two deux, dump"
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-8",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.labelset~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 10.0, 10.0, 300.0, 50.0 ]
 								}
 
 							}
@@ -236,22 +220,6 @@
 									"outlettype" : [ "bang" ],
 									"parameter_enable" : 0,
 									"patching_rect" : [ 20.0, 120.0, 24.0, 24.0 ]
-								}
-
-							}
-, 							{
-								"box" : 								{
-									"border" : 0,
-									"filename" : "helpdetails.js",
-									"id" : "obj-2",
-									"ignoreclick" : 1,
-									"jsarguments" : [ "fluid.dataset~" ],
-									"maxclass" : "jsui",
-									"numinlets" : 1,
-									"numoutlets" : 1,
-									"outlettype" : [ "" ],
-									"parameter_enable" : 0,
-									"patching_rect" : [ 8.5, 10.0, 291.5, 50.0 ]
 								}
 
 							}
@@ -391,6 +359,22 @@
 									"outlettype" : [ "", "" ],
 									"patching_rect" : [ 20.0, 220.0, 125.0, 23.0 ],
 									"text" : "fluid.labelset~ data1"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"border" : 0,
+									"filename" : "helpdetails.js",
+									"id" : "obj-8",
+									"ignoreclick" : 1,
+									"jsarguments" : [ "fluid.labelset~" ],
+									"maxclass" : "jsui",
+									"numinlets" : 1,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"parameter_enable" : 0,
+									"patching_rect" : [ 10.0, 10.0, 300.0, 50.0 ]
 								}
 
 							}
@@ -1031,7 +1015,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 204.0, 853.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
