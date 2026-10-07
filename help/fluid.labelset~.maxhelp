@@ -57,7 +57,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 134.0, 204.0, 853.0, 681.0 ],
+						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1015,7 +1015,7 @@
 						}
 ,
 						"classnamespace" : "box",
-						"rect" : [ 0.0, 26.0, 853.0, 681.0 ],
+						"rect" : [ 134.0, 204.0, 853.0, 681.0 ],
 						"bglocked" : 0,
 						"openinpresentation" : 0,
 						"default_fontsize" : 13.0,
@@ -1046,12 +1046,35 @@
 						"assistshowspatchername" : 0,
 						"boxes" : [ 							{
 								"box" : 								{
+									"id" : "obj-19",
+									"maxclass" : "comment",
+									"numinlets" : 1,
+									"numoutlets" : 0,
+									"patching_rect" : [ 360.0, 341.0, 291.0, 21.0 ],
+									"text" : "Return 1 if the identifier is present in the dataset"
+								}
+
+							}
+, 							{
+								"box" : 								{
+									"id" : "obj-17",
+									"maxclass" : "message",
+									"numinlets" : 2,
+									"numoutlets" : 1,
+									"outlettype" : [ "" ],
+									"patching_rect" : [ 240.0, 340.0, 118.0, 23.0 ],
+									"text" : "containsid entry-13"
+								}
+
+							}
+, 							{
+								"box" : 								{
 									"id" : "obj-15",
 									"linecount" : 2,
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 30.0, 405.0, 121.0, 38.0 ],
+									"patching_rect" : [ 30.0, 415.0, 121.0, 38.0 ],
 									"text" : "print fluid.labelset~ @popup 1"
 								}
 
@@ -1062,7 +1085,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 250.0, 341.0, 204.0, 21.0 ],
+									"patching_rect" : [ 246.0, 311.0, 204.0, 21.0 ],
 									"text" : "Completely reset a fluid.labelset~."
 								}
 
@@ -1074,7 +1097,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 209.0, 340.0, 37.0, 23.0 ],
+									"patching_rect" : [ 207.0, 310.0, 37.0, 23.0 ],
 									"text" : "clear"
 								}
 
@@ -1113,7 +1136,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 1,
 									"outlettype" : [ "bang" ],
-									"patching_rect" : [ 30.0, 90.0, 62.0, 23.0 ],
+									"patching_rect" : [ 30.0, 85.0, 62.0, 23.0 ],
 									"text" : "loadbang"
 								}
 
@@ -1554,7 +1577,7 @@
  ]
 									}
 ,
-									"patching_rect" : [ 30.0, 123.0, 166.0, 23.0 ],
+									"patching_rect" : [ 30.0, 113.0, 166.0, 23.0 ],
 									"saved_object_attributes" : 									{
 										"description" : "",
 										"digest" : "",
@@ -1572,7 +1595,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 204.5, 269.0, 355.5, 21.0 ],
+									"patching_rect" : [ 190.0, 251.0, 355.5, 21.0 ],
 									"text" : "Dump the contents of the fluid.labelset~ to a Max dictionary."
 								}
 
@@ -1584,7 +1607,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 160.0, 270.0, 41.0, 23.0 ],
+									"patching_rect" : [ 147.0, 250.0, 41.0, 23.0 ],
 									"text" : "dump"
 								}
 
@@ -1595,7 +1618,7 @@
 									"maxclass" : "dict.view",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 209.0, 465.0, 191.0, 195.0 ]
+									"patching_rect" : [ 209.0, 475.0, 191.0, 195.0 ]
 								}
 
 							}
@@ -1605,7 +1628,7 @@
 									"maxclass" : "newobj",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 264.0, 435.0, 181.0, 23.0 ],
+									"patching_rect" : [ 264.0, 445.0, 181.0, 23.0 ],
 									"text" : "print fluid.labelset~ @popup 1"
 								}
 
@@ -1617,7 +1640,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 209.0, 405.0, 74.0, 23.0 ],
+									"patching_rect" : [ 209.0, 415.0, 74.0, 23.0 ],
 									"text" : "route dump"
 								}
 
@@ -1628,7 +1651,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 169.5, 230.5, 342.0, 21.0 ],
+									"patching_rect" : [ 147.0, 221.0, 342.0, 21.0 ],
 									"text" : "Get the size (number of identifiers with associated labels)."
 								}
 
@@ -1640,7 +1663,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 132.0, 230.0, 32.0, 23.0 ],
+									"patching_rect" : [ 117.0, 220.0, 32.0, 23.0 ],
 									"text" : "size"
 								}
 
@@ -1651,7 +1674,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 145.0, 190.5, 679.0, 21.0 ],
+									"patching_rect" : [ 124.0, 191.0, 679.0, 21.0 ],
 									"text" : "Read a fluid.labelset~ from disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
@@ -1663,7 +1686,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 104.0, 190.0, 35.0, 23.0 ],
+									"patching_rect" : [ 87.0, 190.0, 35.0, 23.0 ],
 									"text" : "read"
 								}
 
@@ -1674,7 +1697,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 119.5, 155.5, 663.0, 21.0 ],
+									"patching_rect" : [ 95.0, 161.0, 663.0, 21.0 ],
 									"text" : "Write a fluid.labelset~ to disk. It is always done at the lowest priority on the main thread, using 'deferlow' internally."
 								}
 
@@ -1686,7 +1709,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 80.0, 155.0, 36.0, 23.0 ],
+									"patching_rect" : [ 57.0, 160.0, 36.0, 23.0 ],
 									"text" : "write"
 								}
 
@@ -1697,7 +1720,7 @@
 									"maxclass" : "comment",
 									"numinlets" : 1,
 									"numoutlets" : 0,
-									"patching_rect" : [ 226.5, 307.0, 343.5, 21.0 ],
+									"patching_rect" : [ 213.0, 281.0, 343.5, 21.0 ],
 									"text" : "Print a sample of the fluid.labelset~.in the Max window."
 								}
 
@@ -1709,7 +1732,7 @@
 									"numinlets" : 2,
 									"numoutlets" : 1,
 									"outlettype" : [ "" ],
-									"patching_rect" : [ 186.0, 305.0, 34.0, 23.0 ],
+									"patching_rect" : [ 177.0, 280.0, 34.0, 23.0 ],
 									"text" : "print"
 								}
 
@@ -1721,7 +1744,7 @@
 									"numinlets" : 1,
 									"numoutlets" : 2,
 									"outlettype" : [ "", "" ],
-									"patching_rect" : [ 30.0, 375.0, 198.0, 23.0 ],
+									"patching_rect" : [ 30.0, 385.0, 198.0, 23.0 ],
 									"text" : "fluid.labelset~ help.labelset.other"
 								}
 
@@ -1744,7 +1767,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 113.5, 369.0, 39.5, 369.0 ],
+									"midpoints" : [ 96.5, 379.0, 39.5, 379.0 ],
 									"source" : [ "obj-11", 0 ]
 								}
 
@@ -1752,7 +1775,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 141.5, 369.0, 39.5, 369.0 ],
+									"midpoints" : [ 126.5, 379.0, 39.5, 379.0 ],
 									"source" : [ "obj-14", 0 ]
 								}
 
@@ -1773,6 +1796,14 @@
 							}
 , 							{
 								"patchline" : 								{
+									"destination" : [ "obj-1", 0 ],
+									"midpoints" : [ 249.5, 378.5, 39.5, 378.5 ],
+									"source" : [ "obj-17", 0 ]
+								}
+
+							}
+, 							{
+								"patchline" : 								{
 									"destination" : [ "obj-5", 0 ],
 									"source" : [ "obj-18", 0 ]
 								}
@@ -1781,7 +1812,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 169.5, 369.0, 39.5, 369.0 ],
+									"midpoints" : [ 156.5, 379.0, 39.5, 379.0 ],
 									"source" : [ "obj-28", 0 ]
 								}
 
@@ -1789,7 +1820,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 195.5, 369.0, 39.5, 369.0 ],
+									"midpoints" : [ 186.5, 379.0, 39.5, 379.0 ],
 									"source" : [ "obj-4", 0 ]
 								}
 
@@ -1797,7 +1828,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 39.5, 148.0, 39.5, 148.0 ],
+									"midpoints" : [ 39.5, 158.0, 39.5, 158.0 ],
 									"source" : [ "obj-5", 0 ]
 								}
 
@@ -1805,7 +1836,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 89.5, 369.0, 39.5, 369.0 ],
+									"midpoints" : [ 66.5, 379.0, 39.5, 379.0 ],
 									"source" : [ "obj-8", 0 ]
 								}
 
@@ -1813,7 +1844,7 @@
 , 							{
 								"patchline" : 								{
 									"destination" : [ "obj-1", 0 ],
-									"midpoints" : [ 218.5, 369.5, 39.5, 369.5 ],
+									"midpoints" : [ 216.5, 379.5, 39.5, 379.5 ],
 									"source" : [ "obj-9", 0 ]
 								}
 
