@@ -35,6 +35,10 @@ under the European Union’s Horizon 2020 research and innovation programme
 #include <tuple>
 #include <utility>
 
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Winvalid-offsetof"
+#pragma clang diagnostic ignored  "-Wcast-function-type-mismatch"
+
 namespace fluid {
 namespace client {
 
@@ -225,26 +229,26 @@ public:
     case 1:
     {
       if(!client.controlChannelsIn())
-        snprintf_zero(s, 512, "(signal) %s", client.getInputLabel(index));
+        snprintf_zero(s, 256, "(signal) %s", client.getInputLabel(index));
       else
-        snprintf_zero(s, 512, "(list) %s", client.getInputLabel(index));
+        snprintf_zero(s, 256, "(list) %s", client.getInputLabel(index));
       break;
     }
     case 2:
       if (index < client.audioChannelsOut())
       {
-        snprintf_zero(s, 512, "(signal) %s", client.getOutputLabel(index));
+        snprintf_zero(s, 256, "(signal) %s", client.getOutputLabel(index));
         break;
       }
       else if (index <
                client.audioChannelsOut() + client.controlChannelsOut().count)
       {
-        snprintf_zero(s, 512, "(list) %s", client.getOutputLabel(index));
+        snprintf_zero(s, 256, "(list) %s", client.getOutputLabel(index));
         break;
       }
       else
       {
-        strncpy_zero(s, "(list) dumpout", 512);
+        strncpy_zero(s, "(list) dumpout", 256);
         break;
       }
     }
@@ -465,16 +469,16 @@ struct NonRealTime
     {
       switch (io)
       {
-      case 1: strncpy_zero(s, "(anything) messages in", 512); break;
+      case 1: strncpy_zero(s, "(anything) messages in", 256); break;
       case 2:
         if (index < 1)
         {
-          strncpy_zero(s, "(anything) message results", 512);
+          strncpy_zero(s, "(anything) message results", 256);
           break;
         }
         else
         {
-          strncpy_zero(s, "(anything) dumpout", 512);
+          strncpy_zero(s, "(anything) dumpout", 256);
           break;
         }
       }
@@ -485,7 +489,7 @@ struct NonRealTime
       {
       case 1:
         {
-          if(index == 0) strncpy_zero(s, "(bang) start processing; (buffer <symbol>) set source and start processing", 512);
+          if(index == 0) strncpy_zero(s, "(bang) start processing; (buffer <symbol>) set source and start processing", 256);
           else x->mInputBufferAssist[index](x,s);
           break;
         }
@@ -494,7 +498,7 @@ struct NonRealTime
           {
              x->mOutputBufferAssist[index](x,s);
           }
-          else strncpy_zero(s, "(anything) dumpout", 512);
+          else strncpy_zero(s, "(anything) dumpout", 256);
       }
     }
   }
@@ -1304,8 +1308,8 @@ public:
        static constexpr index N = decltype(idx)::value;
        mInputBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
        {
-          static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
-          sprintf(s,"(buffer <symbol>): set %s buffer", param_name.c_str());
+          static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);          
+          snprintf(s, 256, "(buffer <symbol>): set %s buffer", param_name.c_str());
        });
     });
 
@@ -1316,7 +1320,7 @@ public:
        mOutputBufferAssist.push_back([](FluidMaxWrapper *x, char* s)
        {
           static const std::string param_name = lowerCase(x->params().template descriptorAt<N>().name);
-          sprintf(s,"buffer: %s", param_name.c_str());
+          snprintf(s, 256, "buffer: %s", param_name.c_str());
        });
     }); 
     
@@ -1641,7 +1645,7 @@ public:
   {
     switch (io)
     {
-    case 1: strncpy_zero(s, "(anything) messages in", 512); break;
+    case 1: strncpy_zero(s, "(anything) messages in", 256); break;
     case 2:
       if (index < 2)
       {
@@ -1650,16 +1654,16 @@ public:
         using ClientClass = typename ClientType::Client;
         if (index == 0 && isModel && isAudioOut<ClientClass>)
         {
-          strncpy_zero(s, "(signal) audio out", 512);
+          strncpy_zero(s, "(signal) audio out", 256);
           break;
         }
 
-        strncpy_zero(s, "(unused)", 512);
+        strncpy_zero(s, "(unused)", 256);
         break;
       }
       else
       {
-        strncpy_zero(s, "(list) message results / dumpout", 512);
+        strncpy_zero(s, "(list) message results / dumpout", 256);
         break;
       }
     }
@@ -2589,3 +2593,5 @@ void makeMaxWrapper(const char* classname)
 
 } // namespace client
 } // namespace fluid
+
+#pragma clang diagnostic pop  
