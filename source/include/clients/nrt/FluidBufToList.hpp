@@ -206,8 +206,8 @@ void FluidBufToList_assist(FluidBufToList*, void*, long io, long, char* s)
 {
   switch (io)
   {
-  case 1: strncpy_zero(s, "(list) input", 512); break;
-  case 2: strncpy_zero(s, "(list) buffer output", 512); break;
+  case 1: strncpy_zero(s, "(bang) start processing; (buffer <symbol>) set source and start processing", 512); break;
+  case 2: strncpy_zero(s, "(list) buffer content as list", 512); break;
   }
 } 
 

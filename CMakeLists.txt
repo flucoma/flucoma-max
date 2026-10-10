@@ -8,6 +8,8 @@
 
 cmake_minimum_required(VERSION 3.18)
 
+cmake_policy(SET CMP0177 NEW)
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
@@ -110,9 +112,10 @@ endif()
 
 FetchContent_Declare(
   fluid_waveform
-  URL https://github.com/flucoma/fluid.waveform/releases/download/build/fluid.waveform.tar.gz
+  URL https://github.com/flucoma/fluid.waveform/releases/download/build/fluid.waveform.tar.gz 
   CONFIGURE_COMMAND ""
   BUILD_COMMAND ""
+  DOWNLOAD_EXTRACT_TIMESTAMP
 )
 FetchContent_MakeAvailable(fluid_waveform)
 
