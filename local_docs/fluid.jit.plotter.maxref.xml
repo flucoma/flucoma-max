@@ -19,6 +19,16 @@ under the European Union’s Horizon 2020 research and innovation programme
 It is a performance-oriented variant of the fluid.plotter object, based on OpenGL, which allows it to be more efficient and to handle larger datasets (potentially with millions of points).
 
 To use it, use the refer message (left inlet) with the name of a fluid.dataset~ that contains the 2D coordinates of the points. Similarly, you can use the refer message (right inlet) with the name of a fluid.labelset~ to be used for assigning colors to the points based on pre-defined color palettes.
+It is also possible to load datasets with up-to 7 dimensions. In this case, the dimensions will be interpreted in the following ways:
+<ul>
+<li>1D: x (=y)</li>
+<li>2D: x, y</li>
+<li>3D: x, y, size</li>
+<li>4D: x, y, size, LUT x</li>
+<li>5D: x, y, r, g, b (a=1)</li>
+<li>6D: x, y, r, g, b, a</li>
+<li>7D: x, y, size, r, g, b, a</li>
+</ul>
 
 The interface of fluid.jit.plotter is in parity with that of fluid.plotter, offering a drop-in replacement for the latter.
 
@@ -178,6 +188,45 @@ The interface of fluid.jit.plotter is in parity with that of fluid.plotter, offe
         <description>
         Set the color of the point with a given identifier.
         
+        </description>
+    </method>
+    <method name='lut'>
+        <arglist>
+            <arg name='LUT name' optional='0' type='symbol' />
+        </arglist>
+        <digest>
+        Set the color lookup table (LUT) to use when displaying a 4D dataset.
+        </digest>
+        <description>
+        Set the color lookup table (LUT) to use when displaying a 4D dataset.
+        Possible options are C1, C1s, C2, C2s, C3, C3s, C4, C4s, C5, C5s, C6, C6s, C7, C7s, CBC1, CBC2, CBD1, CBL1, CBL2, D01, D01A, D02, D03, D04, D06, D07, D08, D09, D10, D11, D12, D13, I1, I2, I3, L01, L02, L03, L04, L05, L06, L07, L08, L09, L10, L11, L12, L13, L14, L15, L16, L17, L18, L19, L20, R1, R2, R3, R4, HSL. Apart from HSL, these are taken from <a href='https://colorcet.com/gallery.html'>Peter Kovesi's research</a> on perceptually uniform color maps.
+        
+        </description>
+    </method>
+    <method name='lutoffset'>
+        <arglist>
+            <arg name='LUT offset' optional='0' type='float' />
+        </arglist>
+        <digest>
+        Offset for the color lookup table (LUT) when displaying a 4D dataset.
+        </digest>
+        <description>
+        Set the offset for the color lookup table (LUT) when displaying a 4D dataset. This allows to shift the mapping of values to colors in the LUT.
+        
+        </description>
+    </method>
+    <method name='dimmap'>
+        <arglist>
+            <arg name='list of dimension indices' optional='1' type='list' />
+        </arglist>
+        <digest>
+        Map dataset dimensions to displayed dimensions.
+        </digest>
+        <description>
+        Map dataset dimensions to displayed dimensions. This allows to specify which dimensions of the dataset should be interpreted as x, y, size, color, etc. when loading datasets with more than 2 dimensions.
+        The dimmap message without arguments reverts to the original number/order of dimensions.
+        It is possible to specify less or more dimensions than those present in the dataset. See list.indexmap to get an intuition about the syntax.
+
         </description>
     </method>
     <method name='highlight'>
