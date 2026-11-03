@@ -10,17 +10,32 @@ include_guard()
 
 if (NOT DEFINED C74_MAX_API_DIR)
    file(TO_CMAKE_PATH "${MAX_SDK_PATH}" MAX_SDK_FULLPATH)
-   if(EXISTS "${MAX_SDK_FULLPATH}/source/c74support")
-     set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/c74support")
-   # newer SDK layout, full Max-SDK download 
-   elseif(EXISTS "${MAX_SDK_FULLPATH}/source/max-sdk-base/c74support") 
-     set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/source/max-sdk-base/c74support")
-    # newer SDK layout, just max-sdk-base   
-   elseif(EXISTS "${MAX_SDK_FULLPATH}/c74support")   
-      set(C74_MAX_API_DIR "${MAX_SDK_FULLPATH}/c74support")
-   else()
-     message(FATAL_ERROR "Could not find Cycling 74 support folder")
-   endif()
+# Find every ext.h anywhere under the SDK, keep only those inside c74support/max-includes
+  file(GLOB_RECURSE _c74_candidates "${MAX_SDK_FULLPATH}/ext.h")
+  list(FILTER _c74_candidates INCLUDE REGEX "/c74support/max-includes/ext\\.h$")
+
+  if(NOT _c74_candidates)
+    message(FATAL_ERROR
+      "Could not find a c74support folder anywhere under ${MAX_SDK_FULLPATH}. "
+      "Pass -DC74_MAX_API_DIR=/path/to/c74support to specify it directly.")
+  endif()
+
+  # If several copies exist, prefer the shallowest (shortest path)
+  set(_c74_best "")
+  set(_c74_best_len 0)
+  foreach(_hit IN LISTS _c74_candidates)
+    string(LENGTH "${_hit}" _len)
+    if(_c74_best STREQUAL "" OR _len LESS _c74_best_len)
+      set(_c74_best "${_hit}")
+      set(_c74_best_len ${_len})
+    endif()
+  endforeach()
+
+  # .../c74support/max-includes/ext.h -> .../c74support
+  get_filename_component(_c74_includes "${_c74_best}" DIRECTORY)
+  get_filename_component(C74_MAX_API_DIR "${_c74_includes}" DIRECTORY)
+
+  message(STATUS "Found Cycling 74 support folder: ${C74_MAX_API_DIR}")
 endif ()
 
 set(C74_MAX_INCLUDES ${C74_MAX_API_DIR}/max-includes)
