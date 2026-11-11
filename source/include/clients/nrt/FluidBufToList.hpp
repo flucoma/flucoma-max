@@ -119,7 +119,7 @@ void* FluidBufToList_new(t_symbol*, long argc, t_atom* argv)
   x->maxSize =
       argCount ? std::min(atom_getlong(argv), t_atom_long(32767)) : 256;
 
-  x->output.reserve(x->maxSize);
+  x->output.resize(x->maxSize);
 
   attr_args_process(x, argc - argCount, argv + argCount);
   x->numValues = -1;
@@ -183,7 +183,7 @@ void FluidBufToList_process(FluidBufToList* x)
     auto frames =
         buf.allFrames()(Slice(x->startChannel, x->axis == 0 ? 1 : count),
                         Slice(x->startFrame, x->axis == 0 ? count : 1));
-
+      
     std::for_each(frames.begin(), frames.end(),
                   [x, n = 0](const float& f) mutable -> void {
                     atom_setfloat(&x->output[n++], f);
