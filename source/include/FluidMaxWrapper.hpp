@@ -1476,12 +1476,14 @@ public:
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
     static constexpr index numListArgs = static_cast<index>(isControlOutFollowsIn<typename Client::Client>);
-    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av) - numListArgs) >
+    // shared objects take their name as first argument; it isn't a parameter
+    static constexpr index numNameArgs = static_cast<index>(IsThreadedShared<Client>::value);
+    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av) - numListArgs - numNameArgs) >
         ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams)
     {
       object_warn((t_object*) x,
                   "Too many arguments. Got %d, expect at most %d", ac,
-                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + numListArgs);
+                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + numListArgs + numNameArgs);
     }
 
     return x;
@@ -1566,6 +1568,8 @@ public:
   {
     class_addmethod(getClass(), (method) doSharedClientRefer, "refer", A_SYM,
                     0);
+    class_addmethod(getClass(), (method) doSharedClientRename, "name", A_SYM,
+                    0);
   }
 
   void resizeListHandlers(index newSize)
@@ -1617,7 +1621,7 @@ public:
   static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
   {
     rt::string name(newName->s_name);
-    if (name != x->mParams.template get<0>())
+    if (name != x->mParams.name())
     {
       //      auto newParams = ParamSetType(Client::getParameterDescriptors());
       Result r = x->mParams.lookup(name);
@@ -1633,6 +1637,14 @@ public:
       else
         printResult(x, r);
     }
+  }
+
+  // Change the name under which this object's shared data is registered. The
+  // data itself is untouched, and every object sharing it follows the new name
+  static void doSharedClientRename(FluidMaxWrapper* x, t_symbol* newName)
+  {
+    Result r = x->mParams.rename(rt::string(newName->s_name));
+    if (!r.ok()) printResult(x, r, true);
   }
 
   Result&       messages() { return mResult; }
@@ -1751,7 +1763,21 @@ private:
         av += 1;
         ac--;
       }
-      
+
+      // Shared objects: the first argument is the name, which is not part of
+      // the parameter set (an automatic one was added above if needed)
+      if constexpr (IsThreadedShared<Client>::value)
+      {
+        if (numArgs > 0)
+        {
+          mUserMessageQueue.push_back(
+              mParams.setName(ParamAtomConverter::getString(av)));
+          numArgs -= 1;
+          av += 1;
+          ac--;
+        }
+      }
+
       auto r1 = mParams.setPrimaryParameterValues(true,
         [this](auto idx, long ac, t_atom* av, long& currentCount)
         {
