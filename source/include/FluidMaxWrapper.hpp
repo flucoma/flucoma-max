@@ -1568,8 +1568,9 @@ public:
   {
     class_addmethod(getClass(), (method) doSharedClientRefer, "refer", A_SYM,
                     0);
-    class_addmethod(getClass(), (method) doSharedClientRename, "name", A_SYM,
-                    0);
+    class_addmethod(getClass(), (method) doSharedClientSetName, "setname",
+                    A_SYM, 0);
+    class_addmethod(getClass(), (method) doSharedClientGetName, "getname", 0);
   }
 
   void resizeListHandlers(index newSize)
@@ -1641,10 +1642,18 @@ public:
 
   // Change the name under which this object's shared data is registered. The
   // data itself is untouched, and every object sharing it follows the new name
-  static void doSharedClientRename(FluidMaxWrapper* x, t_symbol* newName)
+  static void doSharedClientSetName(FluidMaxWrapper* x, t_symbol* newName)
   {
     Result r = x->mParams.rename(rt::string(newName->s_name));
     if (!r.ok()) printResult(x, r, true);
+  }
+
+  // Report the current name from the dump outlet, as 'name <symbol>'
+  static void doSharedClientGetName(FluidMaxWrapper* x)
+  {
+    t_atom name;
+    atom_setsym(&name, gensym(x->mParams.name().c_str()));
+    object_obex_dumpout(x, gensym("name"), 1, &name);
   }
 
   Result&       messages() { return mResult; }
