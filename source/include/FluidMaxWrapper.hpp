@@ -1634,26 +1634,29 @@ public:
         x->mClient = Client(x->mParams, FluidContext());
         Client::getParameterDescriptors().template iterate<AddListener>(
             x, x->mParams);
+        outlet_anything(x->mDataOutlets[0], gensym("refer"), 0, nullptr);
       }
       else
         printResult(x, r);
     }
   }
 
-  // Change the name under which this object's shared data is registered. The
-  // data itself is untouched, and every object sharing it follows the new name
   static void doSharedClientSetName(FluidMaxWrapper* x, t_symbol* newName)
   {
     Result r = x->mParams.rename(rt::string(newName->s_name));
-    if (!r.ok()) printResult(x, r, true);
+    if (!r.ok())
+    {
+      printResult(x, r, true);
+      return;
+    }
+    outlet_anything(x->mDataOutlets[0], gensym("setname"), 0, nullptr);
   }
 
-  // Report the current name from the dump outlet, as 'name <symbol>'
   static void doSharedClientGetName(FluidMaxWrapper* x)
   {
     t_atom name;
     atom_setsym(&name, gensym(x->mParams.name().c_str()));
-    object_obex_dumpout(x, gensym("name"), 1, &name);
+    outlet_anything(x->mDataOutlets[0], gensym("getname"), 1, &name);
   }
 
   Result&       messages() { return mResult; }
