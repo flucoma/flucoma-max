@@ -1476,12 +1476,14 @@ public:
     void* x = object_alloc(getClass());
     new (x) FluidMaxWrapper(sym, ac, av);
     static constexpr index numListArgs = static_cast<index>(isControlOutFollowsIn<typename Client::Client>);
-    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av) - numListArgs) >
+    // shared objects take their name as first argument; it isn't a parameter
+    static constexpr index numNameArgs = static_cast<index>(IsThreadedShared<Client>::value);
+    if (static_cast<index>(attr_args_offset(static_cast<short>(ac), av) - numListArgs - numNameArgs) >
         ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams)
     {
       object_warn((t_object*) x,
                   "Too many arguments. Got %d, expect at most %d", ac,
-                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + numListArgs);
+                  ParamDescType::NumFixedParams + ParamDescType::NumPrimaryParams + numListArgs + numNameArgs);
     }
 
     return x;
@@ -1518,8 +1520,8 @@ public:
                     0);
     class_addmethod(getClass(), (method) doReset, "reset", 0);
 
-    makeReferable();
-
+    // for shared objects this includes refer, setname and getname, which
+    // flucoma-core declares for every shared client
     m.template iterate<SetupMessage>();
 
     class_addmethod(getClass(), (method) doVersion, "version", 0);
@@ -1555,17 +1557,6 @@ public:
   {
     object_post((t_object*) x, "Fluid Corpus Manipulation Toolkit, version %s",
                 fluidVersion());
-  }
-
-  template <typename CType = Client>
-  static std::enable_if_t<!IsThreadedShared<CType>::value> makeReferable()
-  {}
-
-  template <typename CType = Client>
-  static std::enable_if_t<IsThreadedShared<CType>::value> makeReferable()
-  {
-    class_addmethod(getClass(), (method) doSharedClientRefer, "refer", A_SYM,
-                    0);
   }
 
   void resizeListHandlers(index newSize)
@@ -1614,27 +1605,6 @@ public:
     x->mListHandler(x, ac, av);
   }
   
-  static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
-  {
-    rt::string name(newName->s_name);
-    if (name != x->mParams.template get<0>())
-    {
-      //      auto newParams = ParamSetType(Client::getParameterDescriptors());
-      Result r = x->mParams.lookup(name);
-      if (r.ok())
-      {
-        Client::getParameterDescriptors().template iterate<RemoveListener>(
-            x, x->mParams);
-        x->mParams.refer(name);
-        x->mClient = Client(x->mParams, FluidContext());
-        Client::getParameterDescriptors().template iterate<AddListener>(
-            x, x->mParams);
-      }
-      else
-        printResult(x, r);
-    }
-  }
-
   Result&       messages() { return mResult; }
   long          verbose() { return mVerbose; }
   Client&       client() { return mClient; }
@@ -1751,7 +1721,21 @@ private:
         av += 1;
         ac--;
       }
-      
+
+      // Shared objects: the first argument is the name, which is not part of
+      // the parameter set (an automatic one was added above if needed)
+      if constexpr (IsThreadedShared<Client>::value)
+      {
+        if (numArgs > 0)
+        {
+          mUserMessageQueue.push_back(
+              mParams.setName(ParamAtomConverter::getString(av)));
+          numArgs -= 1;
+          av += 1;
+          ac--;
+        }
+      }
+
       auto r1 = mParams.setPrimaryParameterValues(true,
         [this](auto idx, long ac, t_atom* av, long& currentCount)
         {
