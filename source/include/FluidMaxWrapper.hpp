@@ -1520,8 +1520,8 @@ public:
                     0);
     class_addmethod(getClass(), (method) doReset, "reset", 0);
 
-    makeReferable();
-
+    // for shared objects this includes refer, setname and getname, which
+    // flucoma-core declares for every shared client
     m.template iterate<SetupMessage>();
 
     class_addmethod(getClass(), (method) doVersion, "version", 0);
@@ -1557,20 +1557,6 @@ public:
   {
     object_post((t_object*) x, "Fluid Corpus Manipulation Toolkit, version %s",
                 fluidVersion());
-  }
-
-  template <typename CType = Client>
-  static std::enable_if_t<!IsThreadedShared<CType>::value> makeReferable()
-  {}
-
-  template <typename CType = Client>
-  static std::enable_if_t<IsThreadedShared<CType>::value> makeReferable()
-  {
-    class_addmethod(getClass(), (method) doSharedClientRefer, "refer", A_SYM,
-                    0);
-    class_addmethod(getClass(), (method) doSharedClientSetName, "setname",
-                    A_SYM, 0);
-    class_addmethod(getClass(), (method) doSharedClientGetName, "getname", 0);
   }
 
   void resizeListHandlers(index newSize)
@@ -1619,46 +1605,6 @@ public:
     x->mListHandler(x, ac, av);
   }
   
-  static void doSharedClientRefer(FluidMaxWrapper* x, t_symbol* newName)
-  {
-    rt::string name(newName->s_name);
-    if (name != x->mParams.name())
-    {
-      //      auto newParams = ParamSetType(Client::getParameterDescriptors());
-      Result r = x->mParams.lookup(name);
-      if (r.ok())
-      {
-        Client::getParameterDescriptors().template iterate<RemoveListener>(
-            x, x->mParams);
-        x->mParams.refer(name);
-        x->mClient = Client(x->mParams, FluidContext());
-        Client::getParameterDescriptors().template iterate<AddListener>(
-            x, x->mParams);
-        outlet_anything(x->mDataOutlets[0], gensym("refer"), 0, nullptr);
-      }
-      else
-        printResult(x, r);
-    }
-  }
-
-  static void doSharedClientSetName(FluidMaxWrapper* x, t_symbol* newName)
-  {
-    Result r = x->mParams.rename(rt::string(newName->s_name));
-    if (!r.ok())
-    {
-      printResult(x, r, true);
-      return;
-    }
-    outlet_anything(x->mDataOutlets[0], gensym("setname"), 0, nullptr);
-  }
-
-  static void doSharedClientGetName(FluidMaxWrapper* x)
-  {
-    t_atom name;
-    atom_setsym(&name, gensym(x->mParams.name().c_str()));
-    outlet_anything(x->mDataOutlets[0], gensym("getname"), 1, &name);
-  }
-
   Result&       messages() { return mResult; }
   long          verbose() { return mVerbose; }
   Client&       client() { return mClient; }
